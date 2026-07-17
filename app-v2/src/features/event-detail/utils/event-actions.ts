@@ -1,8 +1,9 @@
 import { Linking, Platform, Share } from 'react-native';
 
-import { DemoEvent, formatEventDateTime } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
+import { formatEventDateTime } from '@/features/events';
 
-export async function shareEvent(event: DemoEvent): Promise<void> {
+export async function shareEvent(event: EventDisplayModel): Promise<void> {
   const message = [
     event.title,
     formatEventDateTime(event),
@@ -27,7 +28,7 @@ export async function openEventTicketUrl(url: string): Promise<boolean> {
   }
 }
 
-export async function openEventInMaps(event: DemoEvent): Promise<boolean> {
+export async function openEventInMaps(event: EventDisplayModel): Promise<boolean> {
   if (!event.address) {
     return false;
   }

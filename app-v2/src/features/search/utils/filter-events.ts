@@ -1,7 +1,12 @@
-import { DemoEvent } from '@/features/events/data/demo-events';
+import {
+  EVENT_REFERENCE_DATE,
+  isThisMonthEvent,
+  isThisWeekEvent,
+  isUpcomingEvent,
+  type Event,
+} from '@/features/events';
 
 import {
-  SEARCH_DEMO_REFERENCE_DATE,
   SearchGenreChipId,
   SearchSortOption,
   buildEventSearchIndex,
@@ -16,7 +21,7 @@ function getQueryTerms(query: string): string[] {
   return normalizeQuery(query).split(/\s+/).filter(Boolean);
 }
 
-export function matchesSearchQuery(event: DemoEvent, query: string): boolean {
+export function matchesSearchQuery(event: Event, query: string): boolean {
   const terms = getQueryTerms(query);
 
   if (terms.length === 0) {
@@ -27,7 +32,7 @@ export function matchesSearchQuery(event: DemoEvent, query: string): boolean {
   return terms.every((term) => haystack.includes(term));
 }
 
-export function matchesSearchGenre(event: DemoEvent, genreId: SearchGenreChipId): boolean {
+export function matchesSearchGenre(event: Event, genreId: SearchGenreChipId): boolean {
   if (genreId === 'all') {
     return true;
   }
@@ -36,59 +41,32 @@ export function matchesSearchGenre(event: DemoEvent, genreId: SearchGenreChipId)
   return event.genres.some((genre) => genre.toLowerCase() === genreLabel);
 }
 
-function startOfDay(date: Date): Date {
-  const next = new Date(date);
-  next.setHours(0, 0, 0, 0);
-  return next;
-}
-
-function endOfDay(date: Date): Date {
-  const next = new Date(date);
-  next.setHours(23, 59, 59, 999);
-  return next;
-}
-
-function addDays(date: Date, days: number): Date {
-  const next = new Date(date);
-  next.setDate(next.getDate() + days);
-  return next;
-}
-
-function endOfMonth(date: Date): Date {
-  return endOfDay(new Date(date.getFullYear(), date.getMonth() + 1, 0));
-}
-
 export function matchesSearchSort(
-  event: DemoEvent,
+  event: Event,
   sort: SearchSortOption,
-  referenceDate: Date = SEARCH_DEMO_REFERENCE_DATE,
+  referenceDate: Date = EVENT_REFERENCE_DATE,
 ): boolean {
   if (sort === 'all') {
     return true;
   }
 
-  const eventDate = new Date(event.startsAt);
-  const referenceStart = startOfDay(referenceDate);
-
   if (sort === 'upcoming') {
-    return eventDate >= referenceStart;
+    return isUpcomingEvent(event, referenceDate);
   }
 
   if (sort === 'this-week') {
-    const weekEnd = endOfDay(addDays(referenceStart, 6));
-    return eventDate >= referenceStart && eventDate <= weekEnd;
+    return isThisWeekEvent(event, referenceDate);
   }
 
-  const monthEnd = endOfMonth(referenceStart);
-  return eventDate >= referenceStart && eventDate <= monthEnd;
+  return isThisMonthEvent(event, referenceDate);
 }
 
 export function filterSearchEvents(
-  events: DemoEvent[],
+  events: Event[],
   query: string,
   genreId: SearchGenreChipId,
   sort: SearchSortOption,
-): DemoEvent[] {
+): Event[] {
   return events
     .filter(
       (event) =>
@@ -96,5 +74,5 @@ export function filterSearchEvents(
         matchesSearchGenre(event, genreId) &&
         matchesSearchSort(event, sort),
     )
-    .sort((left, right) => left.startsAt.localeCompare(right.startsAt));
+    .sort((left, right) => left.startDateTime.localeCompare(right.startDateTime));
 }

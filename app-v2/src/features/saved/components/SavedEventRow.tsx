@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 import { EventCard } from '@/features/home/components';
 
 export interface SavedEventRowProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   isFavorite: boolean;
   onToggleFavorite: (eventId: string) => void;
 }

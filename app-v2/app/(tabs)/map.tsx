@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppScreen } from '@/components';
 import { appConfig, layout } from '@/design/layout';
 import { spacing } from '@/design/spacing';
-import { getDemoEventById, getMapDemoEvents } from '@/features/events/data/demo-events';
+import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import {
   MapEmptyState,
@@ -26,7 +26,12 @@ export default function MapScreen() {
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [mapReady, setMapReady] = useState(false);
 
-  const mapEvents = useMemo(() => getMapDemoEvents(), []);
+  const mapEvents = useMemo(() => {
+    return eventRepository.getEventsForMap().map((event) => {
+      const display = toEventDisplayModel(event);
+      return display as EventDisplayModel & { latitude: number; longitude: number };
+    });
+  }, []);
   const initialRegion = useMemo(
     () => getInitialMapRegion(mapEvents, appConfig.defaultCity),
     [mapEvents],
@@ -38,7 +43,14 @@ export default function MapScreen() {
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
   const previewBottomInset = tabBarHeight + spacing.md;
 
-  const selectedEvent = selectedEventId ? getDemoEventById(selectedEventId) : undefined;
+  const selectedEvent = useMemo(() => {
+    if (!selectedEventId) {
+      return undefined;
+    }
+
+    const event = eventRepository.getEventById(selectedEventId);
+    return event ? toEventDisplayModel(event) : undefined;
+  }, [selectedEventId]);
 
   const handleExploreEvents = useCallback(() => {
     router.navigate('/(tabs)/search');
