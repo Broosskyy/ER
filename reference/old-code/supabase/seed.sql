@@ -1,0 +1,7 @@
+-- Eternal Rave — database seed (Sprint 2.1)
+--
+-- Run the full seed in Supabase SQL Editor:
+--   supabase/seed_published_events.sql
+--
+-- Inserts 30 published events with lineups across 11 European cities.
+-- Idempotent (source_type = 'seed').
