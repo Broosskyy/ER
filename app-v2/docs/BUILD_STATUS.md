@@ -1,7 +1,7 @@
 # Build Status — Eternal Rave (app-v2)
 
 **Stand:** 17. Juli 2026  
-**Phase:** V1 Design System (preliminary) — abgeschlossen; Screen-Implementierung ausstehend
+**Phase:** Sprint 1 — Home Foundation — abgeschlossen
 
 ---
 
@@ -23,8 +23,7 @@
 - [x] iOS Bundle Identifier: `com.eternalrave.app`
 - [x] Projektstruktur (`app/`, `src/components/`, `src/design/`, `src/features/`)
 - [x] Design-Tokens (colors, spacing, typography, radii, shadows, layout)
-- [x] 10 Basis-Komponenten (AppScreen, ScreenContent, SafeAreaContainer, AppText, PrimaryButton, SecondaryButton, IconButton, SurfaceCard, ImagePlaceholder, EmptyState)
-- [x] Technischer Startscreen (`app/index.tsx`)
+- [x] 10 Basis-Komponenten + FavoriteButton
 - [x] Eternal Rave App-Icons übernommen
 - [x] TypeScript strict + `noUncheckedIndexedAccess`
 - [x] ESLint + Prettier konfiguriert
@@ -32,6 +31,17 @@
 - [x] Dokumentation (ARCHITECTURE, DESIGN_SYSTEM, BUILD_STATUS, MOCKUP_MAPPING)
 - [x] Vorläufiges V1-Designsystem aus Mockups abgeleitet (`DESIGN_GUIDELINES.md`)
 - [x] Design-Tokens erweitert: semantische Farbrollen, Textrollen, Spacing, Komponentenmaße
+
+### Sprint 1 — Home (neu)
+
+- [x] Tab-Navigation (5 Tabs) mit Expo Router
+- [x] Home Screen nach Mockup 09
+- [x] 10 Home-Feature-Komponenten
+- [x] 5 Demo-Events mit lokalen Bildern
+- [x] Lokaler Favoriten-State (Session)
+- [x] Event-Detail-Platzhalter (`/event/[id]`)
+- [x] Platzhalter-Tabs: Search, Map, Saved, Profile
+- [x] `SPRINT_01_HOME_REPORT.md`
 
 ---
 
@@ -41,9 +51,9 @@
 |---------|----------|
 | `npm install` | ✅ Erfolgreich |
 | `npx expo-doctor` | ✅ 20/20 checks passed |
-| `npm run lint` | ✅ 0 errors, 0 warnings (nach --fix) |
+| `npm run lint` | ✅ 0 errors |
 | `npx tsc --noEmit` | ✅ Keine Fehler |
-| `npx expo start --web` | ✅ Bundle erfolgreich, Startscreen geladen |
+| `npx expo start --web` | ✅ Home lädt, Tabs funktionieren |
 
 ---
 
@@ -51,49 +61,46 @@
 
 | Punkt | Priorität | Anmerkung |
 |-------|-----------|-----------|
+| Top Clubs Sektion fehlt auf Home | Mittel | Im Mockup 09 sichtbar, Sprint 2+ |
 | Font-Familie nicht definiert | Mittel | Review erforderlich — siehe DESIGN_GUIDELINES.md §10 |
-| V1-Designsystem unvalidiert | Hoch | Muss durch Home-Screen-Umsetzung (Mockup 09) verifiziert werden |
-| 10 Token-Punkte Review erforderlich | Mittel | Dokumentiert in DESIGN_GUIDELINES.md §10 |
-| Feature-Ordner leer | Erwartet | Platzhalter für kommende Screens |
-| Keine Navigation | Erwartet | Bewusst nicht in Bootstrap-Phase |
-| Kein Backend | Erwartet | Supabase-Integration später |
-| `migration_export.zip` im Root | Niedrig | Duplikat zu `reference/migration/` — später bereinigen |
-| Audit-Docs auf separatem Branch | Niedrig | `docs/rebuild-audit/` aus Audit-PR mergen |
+| Suchfeld nicht interaktiv | Niedrig | Sprint 2 mit Search Screen |
+| Favoriten ohne Persistenz | Erwartet | Sprint später |
+| `migration_export.zip` im Root | Niedrig | Duplikat zu `reference/migration/` |
+
+---
+
+## Designsystem-Validierung (Sprint 1)
+
+Durch Home-Umsetzung bestätigt:
+
+- `headerContentHeight`: 56px
+- `chipHeight`: 32px
+- `featuredHeroAspectRatio`: 16/9
+- `bottomNavHeight`: 64px
+- `searchFieldHeight`: 44px
+
+Siehe `DESIGN_GUIDELINES.md` und `SPRINT_01_HOME_REPORT.md`.
 
 ---
 
 ## Bewusst nicht implementiert
 
-- Mockup-basierte Screen-Umsetzung
-- Bottom Tab Navigation
-- Auth / Login / Register
-- Map / Mapbox
-- Backend / Supabase
-- Animationen
+- Backend / Supabase / API
+- Auth / Push
+- Echte Map
+- Vollständige weiteren Screens
+- Top Clubs auf Home
 - NativeWind / Tailwind
-
----
-
-## V1 Design System
-
-Ein vorläufiges, verbindliches Designsystem wurde aus den Mockups unter `reference/mockups/` abgeleitet:
-
-- Analysiert: V1-Kernscreens (09–15), UI-Bibliotheken (52–57), Design-System-Mockups (62–65)
-- Erweitert: `colors.ts`, `spacing.ts`, `typography.ts`, `radii.ts`, `shadows.ts`, `layout.ts`, `theme.ts`
-- Dokumentiert: `DESIGN_GUIDELINES.md`
-
-**Wichtig:** Das Designsystem ist bereit als Grundlage, muss aber durch die konkrete Umsetzung des Home-Screens (Mockup 09) validiert werden. 10 Punkte sind als „Review erforderlich" markiert.
 
 ---
 
 ## Nächster Schritt
 
-**Home-Screen (Mockup 09) implementieren:**
+**Sprint 2 — Events/Search Screen (Mockup 10)**
 
-1. Tab-Navigation-Grundgerüst anlegen
-2. Home-Screen gemäß `reference/mockups/screens/09_Home.jpg`
-3. Basis-Komponenten erweitern (SearchBar, EventCard, FilterChips)
-4. Demo-Daten für Event-Feed
-5. Visueller Abgleich mit Mockup
+1. `app/(tabs)/search.tsx` vollständig umsetzen
+2. Ergebniszähler und Listen-Layout
+3. Filter-Logik erweitern
+4. Optional: Top Clubs auf Home ergänzen
 
-Siehe `MOCKUP_MAPPING.md` für vollständiges Mockup-Inventar.
+Siehe `SPRINT_01_HOME_REPORT.md` für Details.

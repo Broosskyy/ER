@@ -290,9 +290,9 @@
 | # | Token / Thema | Datei | Grund |
 |---|---------------|-------|-------|
 | 1 | `fontFamily.primary` | typography.ts | Schriftname nicht aus Mockup lesbar |
-| 2 | `componentSize.headerContentHeight` (56) | layout.ts | Nicht pixelgenau messbar (JPEG) |
-| 3 | `componentSize.chipHeight` (32) | layout.ts | Chips variieren leicht in 55_Chips |
-| 4 | `componentSize.featuredHeroAspectRatio` (16/9) | layout.ts | Mockup misst ~2.31 |
+| 2 | `componentSize.headerContentHeight` (56) | layout.ts | **Bestätigt** durch Home-Umsetzung |
+| 3 | `componentSize.chipHeight` (32) | layout.ts | **Bestätigt** durch Home-Umsetzung |
+| 4 | `componentSize.featuredHeroAspectRatio` (16/9) | layout.ts | **Bestätigt** — visuell passend für Featured Cards |
 | 5 | `colorRoles.mapUserLocation` (#3B82F6) | colors.ts | Blau sichtbar, Hex unklar |
 | 6 | `colorRoles.overlayScrim` | colors.ts | Opazität geschätzt |
 | 7 | `colorRoles.imageOverlayGradientEnd` | colors.ts | Gradient nicht exakt messbar |

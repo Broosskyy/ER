@@ -6,6 +6,7 @@ export { AppText } from './layout/AppText';
 export { PrimaryButton } from './buttons/PrimaryButton';
 export { SecondaryButton } from './buttons/SecondaryButton';
 export { IconButton } from './buttons/IconButton';
+export { FavoriteButton } from './buttons/FavoriteButton';
 
 export { SurfaceCard } from './cards/SurfaceCard';
 
