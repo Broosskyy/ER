@@ -1,8 +1,16 @@
 import { memo, useCallback, useEffect, useMemo } from 'react';
-import { FlatList, ListRenderItem, Platform, StyleSheet, View } from 'react-native';
+import {
+  FlatList,
+  Keyboard,
+  ListRenderItem,
+  Platform,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, AppText, SafeAreaContainer } from '@/components';
+import { AppScreen, SafeAreaContainer } from '@/components';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
 import {
@@ -13,10 +21,11 @@ import {
 import { useFavorites } from '@/features/favorites';
 import { EventCard } from '@/features/home/components';
 import {
+  ExploreFeed,
+  ExploreTimeFilterRow,
   SearchEmptyState,
   SearchGenreChipRow,
   SearchInput,
-  SortSegmentControl,
   filterSearchEvents,
 } from '@/features/search';
 import { useSearchFilters } from '@/features/search/SearchContext';
@@ -46,15 +55,17 @@ export default function SearchScreen() {
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const {
     query,
+    timeFilter,
     genreId,
-    sort,
     setQuery,
+    setTimeFilter,
     setGenreId,
-    setSort,
     clearFilters,
     shouldAutoFocus,
     clearSearchFocus,
   } = useSearchFilters();
+
+  const isSearchActive = query.trim().length > 0;
 
   useEffect(() => {
     if (!shouldAutoFocus) {
@@ -77,10 +88,10 @@ export default function SearchScreen() {
       eventRepository.getPublishedEvents(),
       query,
       genreId,
-      sort,
+      timeFilter,
     );
     return filtered.map(toEventDisplayModel);
-  }, [query, genreId, sort]);
+  }, [query, genreId, timeFilter]);
 
   const renderItem: ListRenderItem<EventDisplayModel> = useCallback(
     ({ item }) => (
@@ -98,33 +109,48 @@ export default function SearchScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
-        <View style={styles.header}>
-          <AppText variant="title">Search</AppText>
-        </View>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          <View style={styles.filters}>
+            <SearchInput
+              value={query}
+              onChangeText={setQuery}
+              autoFocus={shouldAutoFocus}
+            />
 
-        <SearchInput
-          value={query}
-          onChangeText={setQuery}
-          autoFocus={shouldAutoFocus}
-        />
+            <ExploreTimeFilterRow selectedId={timeFilter} onSelect={setTimeFilter} />
+            <SearchGenreChipRow selectedId={genreId} onSelect={setGenreId} />
+          </View>
+        </TouchableWithoutFeedback>
 
-        <SearchGenreChipRow selectedId={genreId} onSelect={setGenreId} />
-
-        <SortSegmentControl selected={sort} onSelect={setSort} />
-
-        {results.length === 0 ? (
-          <SearchEmptyState onClearFilters={clearFilters} />
+        {isSearchActive ? (
+          results.length === 0 ? (
+            <SearchEmptyState onClearFilters={clearFilters} />
+          ) : (
+            <FlatList
+              data={results}
+              keyExtractor={keyExtractor}
+              renderItem={renderItem}
+              showsVerticalScrollIndicator={false}
+              keyboardShouldPersistTaps="handled"
+              onScrollBeginDrag={Keyboard.dismiss}
+              contentContainerStyle={[
+                styles.listContent,
+                { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
+              ]}
+            />
+          )
         ) : (
           <FlatList
-            data={results}
-            keyExtractor={keyExtractor}
-            renderItem={renderItem}
+            data={[{ key: 'explore' }]}
+            keyExtractor={(item) => item.key}
             showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            onScrollBeginDrag={Keyboard.dismiss}
             contentContainerStyle={[
               styles.listContent,
               { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
             ]}
-            keyboardShouldPersistTaps="handled"
+            renderItem={() => <ExploreFeed timeFilter={timeFilter} genreId={genreId} />}
           />
         )}
       </SafeAreaContainer>
@@ -136,9 +162,8 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
-  header: {
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingBottom: spacing.md,
+  filters: {
+    gap: 0,
   },
   listContent: {
     flexGrow: 0,

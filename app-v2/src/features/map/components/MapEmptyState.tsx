@@ -30,8 +30,23 @@ export function MapEmptyState({ onExploreEvents }: MapEmptyStateProps) {
   );
 }
 
-export function MapErrorState({ onRetry }: { onRetry: () => void }) {
+export function MapErrorState({
+  onRetry,
+  onExploreEvents,
+}: {
+  onRetry: () => void;
+  onExploreEvents?: () => void;
+}) {
   const router = useRouter();
+
+  const handleExploreEvents = () => {
+    if (onExploreEvents) {
+      onExploreEvents();
+      return;
+    }
+
+    router.navigate('/(tabs)/search');
+  };
 
   return (
     <View style={styles.container}>
@@ -42,12 +57,12 @@ export function MapErrorState({ onRetry }: { onRetry: () => void }) {
       />
       <AppText style={styles.title}>Map unavailable</AppText>
       <AppText style={styles.description}>
-        The map could not be loaded. Please try again later.
+        The map could not be loaded. Please try again.
       </AppText>
-      <PrimaryButton label="Try again" onPress={onRetry} style={styles.button} />
+      <PrimaryButton label="Retry" onPress={onRetry} style={styles.button} />
       <PrimaryButton
-        label="Go to Search"
-        onPress={() => router.navigate('/(tabs)/search')}
+        label="Go to Events"
+        onPress={handleExploreEvents}
         style={styles.secondaryButton}
       />
     </View>

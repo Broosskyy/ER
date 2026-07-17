@@ -2,15 +2,15 @@ import { createContext, ReactNode, useCallback, useContext, useMemo, useState } 
 
 import {
   DEFAULT_SEARCH_FILTERS,
+  ExploreTimeFilterId,
   SearchFiltersState,
   SearchGenreChipId,
-  SearchSortOption,
 } from './constants';
 
 interface SearchContextValue extends SearchFiltersState {
   setQuery: (query: string) => void;
+  setTimeFilter: (timeFilter: ExploreTimeFilterId) => void;
   setGenreId: (genreId: SearchGenreChipId) => void;
-  setSort: (sort: SearchSortOption) => void;
   clearFilters: () => void;
   shouldAutoFocus: boolean;
   requestSearchFocus: () => void;
@@ -25,14 +25,16 @@ export interface SearchProviderProps {
 
 export function SearchProvider({ children }: SearchProviderProps) {
   const [query, setQuery] = useState(DEFAULT_SEARCH_FILTERS.query);
+  const [timeFilter, setTimeFilter] = useState<ExploreTimeFilterId>(
+    DEFAULT_SEARCH_FILTERS.timeFilter,
+  );
   const [genreId, setGenreId] = useState<SearchGenreChipId>(DEFAULT_SEARCH_FILTERS.genreId);
-  const [sort, setSort] = useState<SearchSortOption>(DEFAULT_SEARCH_FILTERS.sort);
   const [shouldAutoFocus, setShouldAutoFocus] = useState(false);
 
   const clearFilters = useCallback(() => {
     setQuery(DEFAULT_SEARCH_FILTERS.query);
+    setTimeFilter(DEFAULT_SEARCH_FILTERS.timeFilter);
     setGenreId(DEFAULT_SEARCH_FILTERS.genreId);
-    setSort(DEFAULT_SEARCH_FILTERS.sort);
   }, []);
 
   const requestSearchFocus = useCallback(() => {
@@ -46,11 +48,11 @@ export function SearchProvider({ children }: SearchProviderProps) {
   const value = useMemo<SearchContextValue>(
     () => ({
       query,
+      timeFilter,
       genreId,
-      sort,
       setQuery,
+      setTimeFilter,
       setGenreId,
-      setSort,
       clearFilters,
       shouldAutoFocus,
       requestSearchFocus,
@@ -58,8 +60,8 @@ export function SearchProvider({ children }: SearchProviderProps) {
     }),
     [
       query,
+      timeFilter,
       genreId,
-      sort,
       clearFilters,
       shouldAutoFocus,
       requestSearchFocus,
