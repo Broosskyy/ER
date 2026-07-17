@@ -28,7 +28,7 @@
 | 06 | `06_Onboarding_04_Tickets.jpg` | Onboarding Tickets | ⬜ | `app/(onboarding)/tickets` |
 | 07 | `07_Login.jpg` | Login | ⬜ | `app/(auth)/login` |
 | 08 | `08_Register.jpg` | Registrierung | ⬜ | `app/(auth)/register` |
-| 09 | `09_Home.jpg` | **Home (Tab)** | 🎯 | `app/(tabs)/home` |
+| 09 | `09_Home.jpg` | **Home (Tab)** | ✅ | `app/(tabs)/index` |
 | 10 | `10_Events.jpg` | Events-Liste (Tab) | ⬜ | `app/(tabs)/events` |
 | 11 | `11_Event_Details.jpg` | Event-Detail | ⬜ | `app/event/[id]` |
 | 12 | `12_Map.jpg` | Karte (Tab) | ⬜ | `app/(tabs)/map` |
@@ -155,10 +155,10 @@
 
 | Kategorie | Anzahl | Implementiert |
 |-----------|--------|---------------|
-| App-Screens | 51 | 0 |
+| App-Screens | 51 | 1 |
 | UI-Bibliothek | 10 | 0 (Referenz) |
 | Design System | 8 | 0 (Tokens in Code) |
 | Motion | 10 | 0 (Referenz) |
-| **Gesamt** | **79** | **0** |
+| **Gesamt** | **79** | **1** |
 
 Der technische Startscreen (`app/index.tsx`) ist **kein Mockup-Screen** und dient nur als Bootstrap-Platzhalter.
