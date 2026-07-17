@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -24,6 +25,7 @@ import {
   SectionHeader,
   getFeaturedCardWidth,
 } from '@/features/home/components';
+import { useSearchFilters } from '@/features/search/SearchContext';
 
 function matchesFilter(event: EventDisplayModel, filterId: HomeFilterChipId): boolean {
   if (filterId === 'all') return true;
@@ -37,13 +39,15 @@ function matchesFilter(event: EventDisplayModel, filterId: HomeFilterChipId): bo
 }
 
 export default function HomeScreen() {
+  const router = useRouter();
+  const { requestSearchFocus } = useSearchFilters();
   const insets = useSafeAreaInsets();
   const tabBarHeight =
     layout.bottomNavHeight +
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
   const featuredCardWidth = getFeaturedCardWidth();
   const featuredSnapInterval = featuredCardWidth + spacing.md;
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const [selectedFilter, setSelectedFilter] = useState<HomeFilterChipId>('all');
 
   const featuredEvents = useMemo(() => {
@@ -72,7 +76,12 @@ export default function HomeScreen() {
             onPress={() => undefined}
           />
         </View>
-        <SearchBar />
+        <SearchBar
+          onPress={() => {
+            requestSearchFocus();
+            router.navigate('/(tabs)/search');
+          }}
+        />
         <FilterChipRow selectedId={selectedFilter} onSelect={setSelectedFilter} />
 
         <ScrollView
@@ -98,7 +107,7 @@ export default function HomeScreen() {
                 key={event.id}
                 event={event}
                 width={featuredCardWidth}
-                isFavorite={isFavorite(event.id)}
+                isFavorite={isHydrated && isFavorite(event.id)}
                 onToggleFavorite={() => toggleFavorite(event.id)}
               />
             ))}
@@ -110,7 +119,7 @@ export default function HomeScreen() {
               <EventCard
                 key={event.id}
                 event={event}
-                isFavorite={isFavorite(event.id)}
+                isFavorite={isHydrated && isFavorite(event.id)}
                 onToggleFavorite={() => toggleFavorite(event.id)}
               />
             ))}

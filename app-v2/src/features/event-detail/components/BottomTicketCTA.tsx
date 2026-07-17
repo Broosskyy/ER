@@ -20,7 +20,10 @@ export function BottomTicketCTA({ ticketUrl, onPressTickets }: BottomTicketCTAPr
   }
 
   return (
-    <View style={[styles.container, { paddingBottom: Math.max(insets.bottom, spacing.md) }]}>
+    <View
+      pointerEvents="box-none"
+      style={[styles.container, { paddingBottom: Math.max(insets.bottom, spacing.md) }]}
+    >
       <PrimaryButton label="Tickets" onPress={onPressTickets} style={styles.button} />
     </View>
   );

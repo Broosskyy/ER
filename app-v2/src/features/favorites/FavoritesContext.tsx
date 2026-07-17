@@ -3,16 +3,24 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
 import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
 
+import {
+  FAVORITES_STORAGE_KEY,
+  loadFavoriteIdsFromStorage,
+  saveFavoriteIdsToStorage,
+} from './favorites-storage';
 import type { EventId, FavoritesStore } from './types';
 
 interface FavoritesContextValue extends FavoritesStore {
   favoriteEvents: EventDisplayModel[];
+  isHydrated: boolean;
 }
 
 const FavoritesContext = createContext<FavoritesContextValue | null>(null);
@@ -24,16 +32,66 @@ function resolveFavoriteEvents(favoriteIds: ReadonlySet<EventId>): EventDisplayM
     .map(toEventDisplayModel);
 }
 
+function sanitizeFavoriteIds(ids: readonly EventId[]): EventId[] {
+  const seen = new Set<EventId>();
+
+  return ids.filter((eventId) => {
+    if (!eventId || seen.has(eventId) || !eventRepository.hasPublishedEvent(eventId)) {
+      return false;
+    }
+
+    seen.add(eventId);
+    return true;
+  });
+}
+
 export interface FavoritesProviderProps {
   children: ReactNode;
 }
 
 export function FavoritesProvider({ children }: FavoritesProviderProps) {
   const [favoriteIds, setFavoriteIds] = useState<Set<EventId>>(() => new Set());
+  const [isHydrated, setIsHydrated] = useState(false);
+  const skipNextPersistRef = useRef(true);
+
+  useEffect(() => {
+    let active = true;
+
+    async function hydrateFavorites() {
+      const storedIds = await loadFavoriteIdsFromStorage();
+      const validIds = sanitizeFavoriteIds(storedIds);
+
+      if (!active) {
+        return;
+      }
+
+      setFavoriteIds(new Set(validIds));
+      setIsHydrated(true);
+    }
+
+    void hydrateFavorites();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isHydrated) {
+      return;
+    }
+
+    if (skipNextPersistRef.current) {
+      skipNextPersistRef.current = false;
+      return;
+    }
+
+    void saveFavoriteIdsToStorage(Array.from(favoriteIds));
+  }, [favoriteIds, isHydrated]);
 
   const isFavorite = useCallback(
-    (eventId: EventId) => favoriteIds.has(eventId),
-    [favoriteIds],
+    (eventId: EventId) => isHydrated && favoriteIds.has(eventId),
+    [favoriteIds, isHydrated],
   );
 
   const addFavorite = useCallback((eventId: EventId) => {
@@ -90,8 +148,9 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
       toggleFavorite,
       addFavorite,
       removeFavorite,
+      isHydrated,
     }),
-    [favoriteIds, favoriteEvents, isFavorite, toggleFavorite, addFavorite, removeFavorite],
+    [favoriteIds, favoriteEvents, isFavorite, toggleFavorite, addFavorite, removeFavorite, isHydrated],
   );
 
   return <FavoritesContext.Provider value={value}>{children}</FavoritesContext.Provider>;
@@ -106,3 +165,5 @@ export function useFavorites(): FavoritesContextValue {
 
   return context;
 }
+
+export { FAVORITES_STORAGE_KEY };

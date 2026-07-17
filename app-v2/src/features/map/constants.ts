@@ -3,18 +3,20 @@ import type { Region } from 'react-native-maps';
 import { appConfig } from '@/design/layout';
 import type { EventDisplayModel } from '@/features/events';
 
-export type MapCityId = 'Berlin';
+import { sanitizeMapRegion } from './utils/coordinates';
+
+export type MapCityId = 'Köln';
 
 export const MAP_CITY_REGIONS: Record<MapCityId, Region> = {
-  Berlin: {
-    latitude: 52.52,
-    longitude: 13.405,
-    latitudeDelta: 0.14,
-    longitudeDelta: 0.14,
+  Köln: {
+    latitude: 50.9375,
+    longitude: 6.9603,
+    latitudeDelta: 0.12,
+    longitudeDelta: 0.12,
   },
 };
 
-export const DEFAULT_MAP_CITY: MapCityId = 'Berlin';
+export const DEFAULT_MAP_CITY: MapCityId = 'Köln';
 
 export function resolveMapCityLabel(city?: string): string {
   if (city && city.trim().length > 0) {
@@ -31,11 +33,11 @@ export function getInitialMapRegion(
   const cityRegion = MAP_CITY_REGIONS[preferredCity as MapCityId];
 
   if (cityRegion) {
-    return cityRegion;
+    return sanitizeMapRegion(cityRegion);
   }
 
   if (events.length === 0) {
-    return MAP_CITY_REGIONS[DEFAULT_MAP_CITY];
+    return sanitizeMapRegion(MAP_CITY_REGIONS[DEFAULT_MAP_CITY]);
   }
 
   const latitudes = events.map((event) => event.latitude);
@@ -50,10 +52,10 @@ export function getInitialMapRegion(
   const latitudeDelta = Math.max((maxLat - minLat) * 1.6, 0.08);
   const longitudeDelta = Math.max((maxLng - minLng) * 1.6, 0.08);
 
-  return {
+  return sanitizeMapRegion({
     latitude,
     longitude,
     latitudeDelta,
     longitudeDelta,
-  };
+  });
 }

@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo } from 'react';
 import { FlatList, ListRenderItem, Platform, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -13,15 +13,13 @@ import {
 import { useFavorites } from '@/features/favorites';
 import { EventCard } from '@/features/home/components';
 import {
-  DEFAULT_SEARCH_FILTERS,
   SearchEmptyState,
   SearchGenreChipRow,
   SearchInput,
-  SearchGenreChipId,
-  SearchSortOption,
   SortSegmentControl,
   filterSearchEvents,
 } from '@/features/search';
+import { useSearchFilters } from '@/features/search/SearchContext';
 
 interface SearchEventRowProps {
   event: EventDisplayModel;
@@ -45,10 +43,30 @@ const SearchEventRow = memo(function SearchEventRow({
 
 export default function SearchScreen() {
   const insets = useSafeAreaInsets();
-  const { isFavorite, toggleFavorite } = useFavorites();
-  const [query, setQuery] = useState(DEFAULT_SEARCH_FILTERS.query);
-  const [genreId, setGenreId] = useState<SearchGenreChipId>(DEFAULT_SEARCH_FILTERS.genreId);
-  const [sort, setSort] = useState<SearchSortOption>(DEFAULT_SEARCH_FILTERS.sort);
+  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
+  const {
+    query,
+    genreId,
+    sort,
+    setQuery,
+    setGenreId,
+    setSort,
+    clearFilters,
+    shouldAutoFocus,
+    clearSearchFocus,
+  } = useSearchFilters();
+
+  useEffect(() => {
+    if (!shouldAutoFocus) {
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      clearSearchFocus();
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [shouldAutoFocus, clearSearchFocus]);
 
   const tabBarHeight =
     layout.bottomNavHeight +
@@ -64,21 +82,15 @@ export default function SearchScreen() {
     return filtered.map(toEventDisplayModel);
   }, [query, genreId, sort]);
 
-  const handleClearFilters = useCallback(() => {
-    setQuery(DEFAULT_SEARCH_FILTERS.query);
-    setGenreId(DEFAULT_SEARCH_FILTERS.genreId);
-    setSort(DEFAULT_SEARCH_FILTERS.sort);
-  }, []);
-
   const renderItem: ListRenderItem<EventDisplayModel> = useCallback(
     ({ item }) => (
       <SearchEventRow
         event={item}
-        isFavorite={isFavorite(item.id)}
+        isFavorite={isHydrated && isFavorite(item.id)}
         onToggleFavorite={toggleFavorite}
       />
     ),
-    [isFavorite, toggleFavorite],
+    [isFavorite, isHydrated, toggleFavorite],
   );
 
   const keyExtractor = useCallback((item: EventDisplayModel) => item.id, []);
@@ -90,14 +102,18 @@ export default function SearchScreen() {
           <AppText variant="title">Search</AppText>
         </View>
 
-        <SearchInput value={query} onChangeText={setQuery} />
+        <SearchInput
+          value={query}
+          onChangeText={setQuery}
+          autoFocus={shouldAutoFocus}
+        />
 
         <SearchGenreChipRow selectedId={genreId} onSelect={setGenreId} />
 
         <SortSegmentControl selected={sort} onSelect={setSort} />
 
         {results.length === 0 ? (
-          <SearchEmptyState onClearFilters={handleClearFilters} />
+          <SearchEmptyState onClearFilters={clearFilters} />
         ) : (
           <FlatList
             data={results}
