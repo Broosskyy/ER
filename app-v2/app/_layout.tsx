@@ -7,14 +7,14 @@ import { Platform } from 'react-native';
 import 'react-native-reanimated';
 
 import { colors } from '@/design/colors';
-import { useAndroidImmersiveSystemUi } from '@/platform/android-immersive-system-ui';
+import { useAndroidSystemUi } from '@/platform/android-system-ui';
 
 export { ErrorBoundary } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  useAndroidImmersiveSystemUi();
+  useAndroidSystemUi();
 
   useEffect(() => {
     SplashScreen.hideAsync();
@@ -22,7 +22,7 @@ export default function RootLayout() {
 
   return (
     <>
-      <StatusBar style="light" hidden />
+      <StatusBar style="light" />
       {Platform.OS === 'android' ? <NavigationBar hidden style="dark" /> : null}
       <Stack
         screenOptions={{

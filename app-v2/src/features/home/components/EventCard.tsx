@@ -63,8 +63,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.md,
+    minHeight: componentSize.eventListRowMinHeight,
     paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingVertical: spacing.md,
+    paddingVertical: spacing.lg,
     backgroundColor: colorRoles.cardBackground,
     borderTopWidth: 1,
     borderBottomWidth: 1,
@@ -100,8 +101,9 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    gap: spacing.xs,
+    gap: spacing.sm,
     minWidth: 0,
+    justifyContent: 'center',
   },
   title: {
     ...textRoles.cardTitle,
@@ -113,7 +115,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: spacing.sm,
-    marginTop: spacing.xs,
   },
   tag: {
     backgroundColor: colorRoles.tagBackground,
@@ -128,6 +129,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
+    minHeight: THUMB_WIDTH / componentSize.eventListThumbnailAspectRatio,
     paddingVertical: spacing.xs,
     gap: spacing.sm,
   },

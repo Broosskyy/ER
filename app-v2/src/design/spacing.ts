@@ -25,10 +25,16 @@ export const spacingRoles = {
   screenHorizontal: spacing.screen,
 
   /** Vertical gap between major sections (e.g. filter row → featured → list) */
-  sectionGap: spacing.xxl,
+  sectionGap: spacing.lg,
+
+  /** Gap before the first home section after filters */
+  sectionGapFirst: spacing.md,
 
   /** Gap between section title and its content */
-  sectionTitleGap: spacing.md,
+  sectionTitleGap: spacing.sm,
+
+  /** Scroll padding below the last list item before the tab bar */
+  listBottomInset: spacing.md,
 
   /** Vertical gap between list rows / event cards */
   listItemGap: spacing.md,
