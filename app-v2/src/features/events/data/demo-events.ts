@@ -3,14 +3,23 @@ import { ImageSourcePropType } from 'react-native';
 export type DemoEvent = {
   id: string;
   title: string;
-  venueName: string;
+  image: ImageSourcePropType;
+  date: string;
+  startTime: string;
+  endTime?: string;
+  venue: string;
   city: string;
-  dateLabel: string;
-  timeLabel: string;
+  address?: string;
   genres: string[];
   artists: string[];
+  lineup?: string[];
+  description: string;
+  ageRestriction?: string;
+  organizer?: string;
+  sourceName?: string;
+  ticketUrl?: string;
+  priceText?: string;
   startsAt: string;
-  image: ImageSourcePropType;
   isFeatured: boolean;
 };
 
@@ -28,12 +37,22 @@ export const demoEvents: DemoEvent[] = [
   {
     id: 'void-techno-saturday',
     title: 'VOID: Techno Saturday',
-    venueName: 'Sisyphos',
+    venue: 'Sisyphos',
     city: 'Berlin',
-    dateLabel: '24 MAI',
-    timeLabel: '23:00',
+    address: 'Hauptstraße 15, 10317 Berlin',
+    date: '24 MAI',
+    startTime: '23:00',
+    endTime: '08:00',
     genres: ['Techno', 'Hard Techno'],
     artists: ['VOID Collective'],
+    lineup: ['VOID Collective', 'Amelie Lens', 'I Hate Models', 'Kobosil'],
+    description:
+      'VOID returns to Sisyphos with a night of uncompromising techno. Expect a marathon session across indoor and outdoor floors, immersive lighting, and a crowd that knows how to rave until sunrise. Dress for Berlin weather and arrive early — the queue moves fast once doors open.',
+    ageRestriction: '18+',
+    organizer: 'VOID Events',
+    sourceName: 'Eternal Rave',
+    priceText: 'from €15',
+    ticketUrl: 'https://www.sisyphos-berlin.net/',
     startsAt: '2026-05-24T23:00:00',
     image: require('../../../../assets/demo/event-void.png'),
     isFeatured: true,
@@ -41,12 +60,22 @@ export const demoEvents: DemoEvent[] = [
   {
     id: 'klangkuenstler-berghain',
     title: 'Klangkuenstler',
-    venueName: 'Berghain',
+    venue: 'Berghain',
     city: 'Berlin',
-    dateLabel: '25 MAI',
-    timeLabel: '00:00',
+    address: 'Am Wriezener Bahnhof, 10243 Berlin',
+    date: '25 MAI',
+    startTime: '00:00',
+    endTime: '12:00',
     genres: ['Techno'],
     artists: ['Klangkuenstler'],
+    lineup: ['Klangkuenstler', 'Dax J', 'Somewhen'],
+    description:
+      'Klangkuenstler takes over Berghain with a driving, industrial-leaning techno set. One of Berlin’s most iconic rooms meets one of the scene’s most in-demand artists for a late-night session built for the dedicated.',
+    ageRestriction: '18+',
+    organizer: 'Berghain',
+    sourceName: 'Eternal Rave',
+    priceText: 'from €20',
+    ticketUrl: 'https://www.berghain.berlin/',
     startsAt: '2026-05-25T00:00:00',
     image: require('../../../../assets/demo/event-berghain.png'),
     isFeatured: true,
@@ -54,12 +83,21 @@ export const demoEvents: DemoEvent[] = [
   {
     id: 'fckng-serious',
     title: 'FCKNG SERIOUS',
-    venueName: '://about blank',
+    venue: '://about blank',
     city: 'Berlin',
-    dateLabel: '24 MAI',
-    timeLabel: '23:30',
+    address: 'Markgrafendamm 24b, 10245 Berlin',
+    date: '24 MAI',
+    startTime: '23:30',
+    endTime: '10:00',
     genres: ['Techno', 'Hard Techno'],
     artists: ['FCKNG SERIOUS'],
+    lineup: ['FCKNG SERIOUS', '999999999', 'Nico Moreno'],
+    description:
+      'Hard, fast, and unapologetic — FCKNG SERIOUS brings peak-time energy to ://about blank. A night for those who like their techno raw, with relentless kicks and a warehouse atmosphere that does not let up.',
+    ageRestriction: '18+',
+    organizer: '://about blank',
+    sourceName: 'Eternal Rave',
+    priceText: 'from €12',
     startsAt: '2026-05-24T23:30:00',
     image: require('../../../../assets/demo/event-about-blank.png'),
     isFeatured: false,
@@ -67,12 +105,22 @@ export const demoEvents: DemoEvent[] = [
   {
     id: 'watergate-nights',
     title: 'Watergate Nights',
-    venueName: 'Watergate',
+    venue: 'Watergate',
     city: 'Berlin',
-    dateLabel: '24 MAI',
-    timeLabel: '22:00',
+    address: 'Falckensteinstraße 49, 10997 Berlin',
+    date: '24 MAI',
+    startTime: '22:00',
+    endTime: '06:00',
     genres: ['House', 'Techno'],
     artists: ['Watergate Residents'],
+    lineup: ['Magda', 'Ellen Allien', 'Rodriguez Jr.'],
+    description:
+      'Watergate Nights blends house and techno with panoramic Spree views. Two floors, resident selectors, and a crowd that bridges melodic grooves with late-night drive. Perfect for a full evening by the river.',
+    ageRestriction: '18+',
+    organizer: 'Watergate',
+    sourceName: 'Eternal Rave',
+    priceText: 'from €14',
+    ticketUrl: 'https://water-gate.de/',
     startsAt: '2026-05-24T22:00:00',
     image: require('../../../../assets/demo/event-watergate.png'),
     isFeatured: false,
@@ -80,12 +128,19 @@ export const demoEvents: DemoEvent[] = [
   {
     id: 'sisyphos-open-air',
     title: 'Sisyphos Open Air',
-    venueName: 'Sisyphos',
+    venue: 'Sisyphos',
     city: 'Berlin',
-    dateLabel: '25 MAI',
-    timeLabel: '18:00',
+    address: 'Hauptstraße 15, 10317 Berlin',
+    date: '25 MAI',
+    startTime: '18:00',
+    endTime: '02:00',
     genres: ['House'],
     artists: ['Sisyphos'],
+    lineup: ['Dixon', 'Ame', 'Adriatique'],
+    description:
+      'An open-air afternoon flowing into a warm house night at Sisyphos. Sunsets, garden vibes, and deeper grooves across the club’s outdoor areas before the party moves inside.',
+    organizer: 'Sisyphos',
+    sourceName: 'Eternal Rave',
     startsAt: '2026-05-25T18:00:00',
     image: require('../../../../assets/demo/event-sisyphos.png'),
     isFeatured: false,
@@ -106,4 +161,16 @@ export function getTonightDemoEvents(): DemoEvent[] {
 
 export function getAllDemoEvents(): DemoEvent[] {
   return demoEvents;
+}
+
+export function formatEventTimeRange(event: DemoEvent): string {
+  if (event.endTime) {
+    return `${event.startTime} – ${event.endTime}`;
+  }
+
+  return event.startTime;
+}
+
+export function formatEventDateTime(event: DemoEvent): string {
+  return `${event.date} · ${formatEventTimeRange(event)}`;
 }
