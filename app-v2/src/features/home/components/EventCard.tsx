@@ -28,7 +28,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
       <View style={styles.thumbnailWrap}>
         <Image source={event.image} style={styles.thumbnail} resizeMode="cover" />
         <View style={styles.dateOverlay}>
-          <AppText style={styles.dateText}>{event.dateLabel}</AppText>
+          <AppText style={styles.dateText}>{event.date}</AppText>
         </View>
       </View>
 
@@ -37,7 +37,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
           {event.title}
         </AppText>
         <AppText style={styles.venue} numberOfLines={1}>
-          {event.venueName}, {event.city}
+          {event.venue}, {event.city}
         </AppText>
         <View style={styles.tagRow}>
           {event.genres.slice(0, 2).map((genre) => (
@@ -49,7 +49,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
       </View>
 
       <View style={styles.trailing} onStartShouldSetResponder={() => true}>
-        <AppText style={styles.time}>{event.timeLabel}</AppText>
+        <AppText style={styles.time}>{event.startTime}</AppText>
         <FavoriteButton active={isFavorite} onPress={onToggleFavorite} />
       </View>
     </Pressable>
