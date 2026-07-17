@@ -13,18 +13,24 @@ import { DemoEvent } from '@/features/events/data/demo-events';
 
 export interface FeaturedEventCardProps {
   event: DemoEvent;
+  width: number;
   isFavorite: boolean;
   onToggleFavorite: () => void;
 }
 
-export function FeaturedEventCard({ event, isFavorite, onToggleFavorite }: FeaturedEventCardProps) {
+export function FeaturedEventCard({
+  event,
+  width,
+  isFavorite,
+  onToggleFavorite,
+}: FeaturedEventCardProps) {
   const router = useRouter();
 
   return (
     <Pressable
       accessibilityRole="button"
       onPress={() => router.push(`/event/${event.id}`)}
-      style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+      style={({ pressed }) => [styles.card, { width }, pressed && styles.pressed]}
     >
       <View style={styles.imageWrap}>
         <Image source={event.image} style={styles.image} resizeMode="cover" />
@@ -59,11 +65,8 @@ export function FeaturedEventCard({ event, isFavorite, onToggleFavorite }: Featu
   );
 }
 
-const CARD_WIDTH = 300;
-
 const styles = StyleSheet.create({
   card: {
-    width: CARD_WIDTH,
     borderRadius: radiusRoles.card,
     overflow: 'hidden',
     backgroundColor: colorRoles.cardBackground,
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
   },
   imageOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(11, 11, 15, 0.2)',
+    backgroundColor: 'rgba(11, 11, 15, 0.28)',
   },
   dateBadge: {
     position: 'absolute',
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     padding: spacing.lg,
     gap: spacing.xs,
-    backgroundColor: 'rgba(11, 11, 15, 0.55)',
+    backgroundColor: 'rgba(11, 11, 15, 0.62)',
   },
   category: {
     ...textRoles.badge,
@@ -150,5 +153,3 @@ const styles = StyleSheet.create({
     ...textRoles.badge,
   },
 });
-
-export const featuredCardWidth = CARD_WIDTH;

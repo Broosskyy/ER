@@ -1,9 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import { Platform, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { colorRoles } from '@/design/colors';
 import { componentSize, layout } from '@/design/layout';
+import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
 
 type TabIconName = keyof typeof Ionicons.glyphMap;
@@ -12,22 +14,36 @@ function tabIcon(name: TabIconName, focused: boolean) {
   return (
     <Ionicons
       name={name}
-      size={componentSize.iconMd}
+      size={focused ? componentSize.bottomNavIconSizeActive : componentSize.bottomNavIconSize}
       color={focused ? colorRoles.bottomNavActive : colorRoles.bottomNavInactive}
     />
   );
 }
 
 export default function TabLayout() {
+  const insets = useSafeAreaInsets();
+  const androidBottomPadding = spacing.sm;
+  const iosBottomPadding = Math.max(insets.bottom, spacing.sm);
+  const tabBarHeight =
+    layout.bottomNavHeight + (Platform.OS === 'ios' ? iosBottomPadding : androidBottomPadding);
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colorRoles.bottomNavActive,
         tabBarInactiveTintColor: colorRoles.bottomNavInactive,
-        tabBarStyle: styles.tabBar,
+        tabBarStyle: [
+          styles.tabBar,
+          {
+            height: tabBarHeight,
+            paddingBottom: Platform.OS === 'ios' ? iosBottomPadding : androidBottomPadding,
+          },
+        ],
         tabBarLabelStyle: styles.tabBarLabel,
         tabBarItemStyle: styles.tabBarItem,
+        tabBarIconStyle: styles.tabBarIcon,
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tabs.Screen
@@ -74,9 +90,7 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   tabBar: {
-    height: layout.bottomNavHeight,
-    paddingTop: 6,
-    paddingBottom: Platform.select({ ios: 4, android: 6, default: 6 }),
+    paddingTop: spacing.sm,
     backgroundColor: colorRoles.bottomNavBackground,
     borderTopColor: colorRoles.bottomNavBorder,
     borderTopWidth: 1,
@@ -84,9 +98,14 @@ const styles = StyleSheet.create({
   tabBarLabel: {
     fontSize: fontSize.xs,
     fontWeight: '500',
-    marginTop: 2,
+    marginTop: spacing.xs,
+    marginBottom: 0,
   },
   tabBarItem: {
-    paddingVertical: 2,
+    paddingVertical: 0,
+    justifyContent: 'center',
+  },
+  tabBarIcon: {
+    marginBottom: 0,
   },
 });
