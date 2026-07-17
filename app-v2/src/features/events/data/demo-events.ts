@@ -10,7 +10,6 @@ export type DemoEvent = {
   genres: string[];
   image: ImageSourcePropType;
   isFeatured: boolean;
-  isFavorite: boolean;
 };
 
 export const HOME_FILTER_CHIPS = [
@@ -34,7 +33,6 @@ export const demoEvents: DemoEvent[] = [
     genres: ['Techno', 'Hard Techno'],
     image: require('../../../../assets/demo/event-void.png'),
     isFeatured: true,
-    isFavorite: false,
   },
   {
     id: 'klangkuenstler-berghain',
@@ -46,7 +44,6 @@ export const demoEvents: DemoEvent[] = [
     genres: ['Techno'],
     image: require('../../../../assets/demo/event-berghain.png'),
     isFeatured: true,
-    isFavorite: false,
   },
   {
     id: 'fckng-serious',
@@ -58,7 +55,6 @@ export const demoEvents: DemoEvent[] = [
     genres: ['Techno', 'Hard Techno'],
     image: require('../../../../assets/demo/event-about-blank.png'),
     isFeatured: false,
-    isFavorite: false,
   },
   {
     id: 'watergate-nights',
@@ -70,7 +66,6 @@ export const demoEvents: DemoEvent[] = [
     genres: ['House', 'Techno'],
     image: require('../../../../assets/demo/event-watergate.png'),
     isFeatured: false,
-    isFavorite: false,
   },
   {
     id: 'sisyphos-open-air',
@@ -82,7 +77,6 @@ export const demoEvents: DemoEvent[] = [
     genres: ['House'],
     image: require('../../../../assets/demo/event-sisyphos.png'),
     isFeatured: false,
-    isFavorite: false,
   },
 ];
 

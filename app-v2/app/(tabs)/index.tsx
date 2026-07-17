@@ -13,6 +13,7 @@ import {
   getFeaturedDemoEvents,
   getTonightDemoEvents,
 } from '@/features/events/data/demo-events';
+import { useFavorites } from '@/features/favorites';
 import {
   EventCard,
   FeaturedEventCard,
@@ -42,8 +43,8 @@ export default function HomeScreen() {
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
   const featuredCardWidth = getFeaturedCardWidth();
   const featuredSnapInterval = featuredCardWidth + spacing.md;
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedFilter, setSelectedFilter] = useState<HomeFilterChipId>('all');
-  const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
 
   const featuredEvents = useMemo(() => {
     return getFeaturedDemoEvents().filter((event) => matchesFilter(event, selectedFilter));
@@ -52,18 +53,6 @@ export default function HomeScreen() {
   const tonightEvents = useMemo(() => {
     return getTonightDemoEvents().filter((event) => matchesFilter(event, selectedFilter));
   }, [selectedFilter]);
-
-  const toggleFavorite = (eventId: string) => {
-    setFavoriteIds((current) => {
-      const next = new Set(current);
-      if (next.has(eventId)) {
-        next.delete(eventId);
-      } else {
-        next.add(eventId);
-      }
-      return next;
-    });
-  };
 
   return (
     <AppScreen>
@@ -103,7 +92,7 @@ export default function HomeScreen() {
                 key={event.id}
                 event={event}
                 width={featuredCardWidth}
-                isFavorite={favoriteIds.has(event.id)}
+                isFavorite={isFavorite(event.id)}
                 onToggleFavorite={() => toggleFavorite(event.id)}
               />
             ))}
@@ -115,7 +104,7 @@ export default function HomeScreen() {
               <EventCard
                 key={event.id}
                 event={event}
-                isFavorite={favoriteIds.has(event.id)}
+                isFavorite={isFavorite(event.id)}
                 onToggleFavorite={() => toggleFavorite(event.id)}
               />
             ))}

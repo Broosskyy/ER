@@ -7,6 +7,7 @@ import { Platform } from 'react-native';
 import 'react-native-reanimated';
 
 import { colors } from '@/design/colors';
+import { FavoritesProvider } from '@/features/favorites';
 import { useAndroidSystemUi } from '@/platform/android-system-ui';
 
 export { ErrorBoundary } from 'expo-router';
@@ -21,7 +22,7 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <>
+    <FavoritesProvider>
       <StatusBar style="light" />
       {Platform.OS === 'android' ? <NavigationBar hidden style="dark" /> : null}
       <Stack
@@ -33,6 +34,6 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="event/[id]" />
       </Stack>
-    </>
+    </FavoritesProvider>
   );
 }
