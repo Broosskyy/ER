@@ -30,6 +30,7 @@ export const appConfig = {
 export const componentSize = {
   headerContentHeight: 48,
   searchFieldHeight: 40,
+  searchScreenFieldHeight: 48,
   chipHeight: 34,
   buttonHeight: 48,
   iconButtonSize: 44,
