@@ -1,5 +1,4 @@
-import { useRouter } from 'expo-router';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -8,39 +7,23 @@ import { AppScreen } from '@/components/layout/AppScreen';
 import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
-import {
-  eventRepository,
-  toEventDisplayModel,
-  type EventDisplayModel,
-  type HomeFilterChipId,
-} from '@/features/events';
+import { eventRepository, toEventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import {
   EventCard,
   FeaturedEventCard,
-  FilterChipRow,
   HomeHeader,
   LocationSelector,
-  SearchBar,
   SectionHeader,
   getFeaturedCardWidth,
 } from '@/features/home/components';
-import { useSearchFilters } from '@/features/search/SearchContext';
-
-function matchesFilter(event: EventDisplayModel, filterId: HomeFilterChipId): boolean {
-  if (filterId === 'all') return true;
-  if (filterId === 'techno') {
-    return event.genres.some((genre) => genre.toLowerCase().includes('techno'));
-  }
-  if (filterId === 'house') {
-    return event.genres.some((genre) => genre.toLowerCase().includes('house'));
-  }
-  return true;
-}
+import {
+  getMoreUpcomingEvents,
+  getTonightEvents,
+  getWeekendEvents,
+} from '@/features/home/utils/home-sections';
 
 export default function HomeScreen() {
-  const router = useRouter();
-  const { requestSearchFocus } = useSearchFilters();
   const insets = useSafeAreaInsets();
   const tabBarHeight =
     layout.bottomNavHeight +
@@ -48,21 +31,28 @@ export default function HomeScreen() {
   const featuredCardWidth = getFeaturedCardWidth();
   const featuredSnapInterval = featuredCardWidth + spacing.md;
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
-  const [selectedFilter, setSelectedFilter] = useState<HomeFilterChipId>('all');
 
-  const featuredEvents = useMemo(() => {
-    return eventRepository
-      .getFeaturedEvents()
-      .map(toEventDisplayModel)
-      .filter((event) => matchesFilter(event, selectedFilter));
-  }, [selectedFilter]);
+  const publishedEvents = useMemo(() => eventRepository.getPublishedEvents(), []);
 
-  const tonightEvents = useMemo(() => {
-    return eventRepository
-      .getSecondaryHomeEvents()
-      .map(toEventDisplayModel)
-      .filter((event) => matchesFilter(event, selectedFilter));
-  }, [selectedFilter]);
+  const featuredEvents = useMemo(
+    () => eventRepository.getFeaturedEvents().map(toEventDisplayModel),
+    [],
+  );
+
+  const tonightEvents = useMemo(
+    () => getTonightEvents(publishedEvents).map(toEventDisplayModel),
+    [publishedEvents],
+  );
+
+  const weekendEvents = useMemo(
+    () => getWeekendEvents(publishedEvents).map(toEventDisplayModel),
+    [publishedEvents],
+  );
+
+  const moreEvents = useMemo(
+    () => getMoreUpcomingEvents(publishedEvents).map(toEventDisplayModel),
+    [publishedEvents],
+  );
 
   return (
     <AppScreen>
@@ -76,13 +66,6 @@ export default function HomeScreen() {
             onPress={() => undefined}
           />
         </View>
-        <SearchBar
-          onPress={() => {
-            requestSearchFocus();
-            router.navigate('/(tabs)/search');
-          }}
-        />
-        <FilterChipRow selectedId={selectedFilter} onSelect={setSelectedFilter} />
 
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -91,7 +74,7 @@ export default function HomeScreen() {
             { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
           ]}
         >
-          <SectionHeader title="Events in deiner Nähe" actionLabel="Mehr anzeigen" isFirst />
+          <SectionHeader title="Highlights" actionLabel="Mehr anzeigen" isFirst />
           <ScrollView
             horizontal
             nestedScrollEnabled
@@ -113,17 +96,53 @@ export default function HomeScreen() {
             ))}
           </ScrollView>
 
-          <SectionHeader title="Heute Abend" actionLabel="Mehr anzeigen" />
-          <View style={styles.listSection}>
-            {tonightEvents.map((event) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                isFavorite={isHydrated && isFavorite(event.id)}
-                onToggleFavorite={() => toggleFavorite(event.id)}
-              />
-            ))}
-          </View>
+          {tonightEvents.length > 0 ? (
+            <>
+              <SectionHeader title="Heute Abend" actionLabel="Mehr anzeigen" />
+              <View style={styles.listSection}>
+                {tonightEvents.map((event) => (
+                  <EventCard
+                    key={event.id}
+                    event={event}
+                    isFavorite={isHydrated && isFavorite(event.id)}
+                    onToggleFavorite={() => toggleFavorite(event.id)}
+                  />
+                ))}
+              </View>
+            </>
+          ) : null}
+
+          {weekendEvents.length > 0 ? (
+            <>
+              <SectionHeader title="Dieses Wochenende" actionLabel="Mehr anzeigen" />
+              <View style={styles.listSection}>
+                {weekendEvents.map((event) => (
+                  <EventCard
+                    key={event.id}
+                    event={event}
+                    isFavorite={isHydrated && isFavorite(event.id)}
+                    onToggleFavorite={() => toggleFavorite(event.id)}
+                  />
+                ))}
+              </View>
+            </>
+          ) : null}
+
+          {moreEvents.length > 0 ? (
+            <>
+              <SectionHeader title="Kommende Events" actionLabel="Mehr anzeigen" />
+              <View style={styles.listSection}>
+                {moreEvents.map((event) => (
+                  <EventCard
+                    key={event.id}
+                    event={event}
+                    isFavorite={isHydrated && isFavorite(event.id)}
+                    onToggleFavorite={() => toggleFavorite(event.id)}
+                  />
+                ))}
+              </View>
+            </>
+          ) : null}
         </ScrollView>
       </SafeAreaContainer>
     </AppScreen>

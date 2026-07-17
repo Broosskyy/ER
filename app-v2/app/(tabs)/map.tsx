@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
-import { Component, ReactNode, useCallback, useMemo, useState } from 'react';
+import { Component, ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, type Region } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, UrlTile, type Region } from 'react-native-maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppScreen } from '@/components';
@@ -15,13 +15,19 @@ import {
   MapEventMarker,
   MapEventPreview,
   MapHeaderOverlay,
+  MapLoadingOverlay,
+  OSM_TILE_MAX_ZOOM,
+  OSM_TILE_URL_TEMPLATE,
   eternalRaveMapStyle,
-  getInitialMapRegion,
-  isAndroidMapConfigured,
+  getMapLoadTimeoutMs,
   isRenderableCoordinate,
   resolveMapCityLabel,
   sanitizeMapRegion,
+  shouldUseOsmMapTiles,
+  getInitialMapRegion,
 } from '@/features/map';
+
+type MapLoadStatus = 'loading' | 'loaded' | 'error';
 
 interface MapErrorBoundaryProps {
   children: ReactNode;
@@ -57,11 +63,10 @@ export default function MapScreen() {
   const insets = useSafeAreaInsets();
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
-  const [mapReady, setMapReady] = useState(false);
-  const [mapLoadFailed, setMapLoadFailed] = useState(false);
+  const [mapStatus, setMapStatus] = useState<MapLoadStatus>('loading');
   const [retryKey, setRetryKey] = useState(0);
 
-  const canRenderNativeMap = isAndroidMapConfigured();
+  const useOsmTiles = shouldUseOsmMapTiles();
 
   const mapEvents = useMemo(() => {
     return eventRepository
@@ -109,26 +114,35 @@ export default function MapScreen() {
   }, [router]);
 
   const handleMapReady = useCallback(() => {
-    setMapReady(true);
-    setMapLoadFailed(false);
+    setMapStatus('loaded');
   }, []);
 
   const handleMapFailure = useCallback(() => {
-    setMapLoadFailed(true);
-    setMapReady(false);
+    setMapStatus('error');
   }, []);
 
   const handleRetryMap = useCallback(() => {
-    setMapLoadFailed(false);
-    setMapReady(false);
+    setMapStatus('loading');
     setSelectedEventId(null);
     setRetryKey((current) => current + 1);
   }, []);
 
-  if (!canRenderNativeMap || mapLoadFailed) {
+  useEffect(() => {
+    if (mapStatus !== 'loading') {
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setMapStatus((current) => (current === 'loading' ? 'error' : current));
+    }, getMapLoadTimeoutMs());
+
+    return () => clearTimeout(timeout);
+  }, [mapStatus, retryKey]);
+
+  if (mapStatus === 'error') {
     return (
       <AppScreen>
-        <MapErrorState onRetry={handleRetryMap} />
+        <MapErrorState onRetry={handleRetryMap} onExploreEvents={handleExploreEvents} />
       </AppScreen>
     );
   }
@@ -148,9 +162,18 @@ export default function MapScreen() {
           <MapView
             key={retryKey}
             style={styles.map}
-            provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
+            provider={
+              useOsmTiles
+                ? undefined
+                : Platform.OS === 'android'
+                  ? PROVIDER_GOOGLE
+                  : undefined
+            }
+            mapType={useOsmTiles ? 'none' : 'standard'}
             initialRegion={initialRegion as Region}
-            customMapStyle={Platform.OS === 'android' ? [...eternalRaveMapStyle] : undefined}
+            customMapStyle={
+              !useOsmTiles && Platform.OS === 'android' ? [...eternalRaveMapStyle] : undefined
+            }
             showsUserLocation={false}
             showsMyLocationButton={false}
             showsCompass={false}
@@ -159,6 +182,14 @@ export default function MapScreen() {
             onMapReady={handleMapReady}
             onMapLoaded={handleMapReady}
           >
+            {useOsmTiles ? (
+              <UrlTile
+                urlTemplate={OSM_TILE_URL_TEMPLATE}
+                maximumZ={OSM_TILE_MAX_ZOOM}
+                flipY={false}
+                shouldReplaceMapContent
+              />
+            ) : null}
             {mapEvents.map((event) => (
               <MapEventMarker
                 key={event.id}
@@ -170,7 +201,9 @@ export default function MapScreen() {
           </MapView>
         </MapErrorBoundary>
 
-        {mapReady ? (
+        {mapStatus === 'loading' ? <MapLoadingOverlay /> : null}
+
+        {mapStatus === 'loaded' ? (
           <>
             <MapHeaderOverlay cityLabel={cityLabel} eventCount={mapEvents.length} />
             {selectedEvent ? (

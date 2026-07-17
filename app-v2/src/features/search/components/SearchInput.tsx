@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 
-import { colorRoles } from '@/design/colors';
+import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { radiusRoles } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
@@ -22,6 +22,8 @@ export function SearchInput({
   testID,
   autoFocus = false,
 }: SearchInputProps) {
+  const hasValue = value.trim().length > 0;
+
   return (
     <View style={styles.container}>
       <Ionicons
@@ -36,7 +38,7 @@ export function SearchInput({
         autoCapitalize="none"
         autoCorrect={false}
         autoFocus={autoFocus}
-        clearButtonMode="while-editing"
+        clearButtonMode="never"
         placeholder={placeholder}
         placeholderTextColor={colorRoles.searchPlaceholder}
         returnKeyType="search"
@@ -45,6 +47,17 @@ export function SearchInput({
         value={value}
         onChangeText={onChangeText}
       />
+      {hasValue ? (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Clear search"
+          hitSlop={8}
+          onPress={() => onChangeText('')}
+          style={({ pressed }) => [styles.clearButton, pressed && styles.pressed]}
+        >
+          <Ionicons name="close-circle" size={componentSize.iconSm} color={colors.textSecondary} />
+        </Pressable>
+      ) : null}
     </View>
   );
 }
@@ -69,5 +82,12 @@ const styles = StyleSheet.create({
     flex: 1,
     ...textRoles.searchInput,
     paddingVertical: 0,
+  },
+  clearButton: {
+    marginLeft: spacing.sm,
+    padding: spacing.xs,
+  },
+  pressed: {
+    opacity: 0.85,
   },
 });

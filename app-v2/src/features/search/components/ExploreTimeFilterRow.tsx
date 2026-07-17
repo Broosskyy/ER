@@ -2,14 +2,14 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import { spacing, spacingRoles } from '@/design/spacing';
 import { FilterChip } from '@/features/home/components/FilterChip';
-import { SEARCH_GENRE_CHIPS, SearchGenreChipId } from '@/features/search/constants';
+import { EXPLORE_TIME_FILTERS, ExploreTimeFilterId } from '@/features/search/constants';
 
-export interface SearchGenreChipRowProps {
-  selectedId: SearchGenreChipId;
-  onSelect: (id: SearchGenreChipId) => void;
+export interface ExploreTimeFilterRowProps {
+  selectedId: ExploreTimeFilterId;
+  onSelect: (id: ExploreTimeFilterId) => void;
 }
 
-export function SearchGenreChipRow({ selectedId, onSelect }: SearchGenreChipRowProps) {
+export function ExploreTimeFilterRow({ selectedId, onSelect }: ExploreTimeFilterRowProps) {
   return (
     <ScrollView
       horizontal
@@ -17,7 +17,7 @@ export function SearchGenreChipRow({ selectedId, onSelect }: SearchGenreChipRowP
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.content}
     >
-      {SEARCH_GENRE_CHIPS.map((chip) => (
+      {EXPLORE_TIME_FILTERS.map((chip) => (
         <FilterChip
           key={chip.id}
           label={chip.label}
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacingRoles.screenHorizontal,
     paddingRight: spacingRoles.screenHorizontal + spacing.lg,
     gap: spacingRoles.chipGap,
-    paddingBottom: spacing.md,
+    paddingBottom: spacing.sm,
   },
 });
