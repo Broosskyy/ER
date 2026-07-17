@@ -1,7 +1,7 @@
 # Build Status — Eternal Rave (app-v2)
 
 **Stand:** 17. Juli 2026  
-**Phase:** Technical Bootstrap — abgeschlossen
+**Phase:** V1 Design System (preliminary) — abgeschlossen; Screen-Implementierung ausstehend
 
 ---
 
@@ -30,6 +30,8 @@
 - [x] ESLint + Prettier konfiguriert
 - [x] `.env.example` angelegt
 - [x] Dokumentation (ARCHITECTURE, DESIGN_SYSTEM, BUILD_STATUS, MOCKUP_MAPPING)
+- [x] Vorläufiges V1-Designsystem aus Mockups abgeleitet (`DESIGN_GUIDELINES.md`)
+- [x] Design-Tokens erweitert: semantische Farbrollen, Textrollen, Spacing, Komponentenmaße
 
 ---
 
@@ -49,7 +51,9 @@
 
 | Punkt | Priorität | Anmerkung |
 |-------|-----------|-----------|
-| Font-Familie nicht definiert | Mittel | System-Font als Fallback; aus Mockup 63 ableiten |
+| Font-Familie nicht definiert | Mittel | Review erforderlich — siehe DESIGN_GUIDELINES.md §10 |
+| V1-Designsystem unvalidiert | Hoch | Muss durch Home-Screen-Umsetzung (Mockup 09) verifiziert werden |
+| 10 Token-Punkte Review erforderlich | Mittel | Dokumentiert in DESIGN_GUIDELINES.md §10 |
 | Feature-Ordner leer | Erwartet | Platzhalter für kommende Screens |
 | Keine Navigation | Erwartet | Bewusst nicht in Bootstrap-Phase |
 | Kein Backend | Erwartet | Supabase-Integration später |
@@ -67,6 +71,18 @@
 - Backend / Supabase
 - Animationen
 - NativeWind / Tailwind
+
+---
+
+## V1 Design System
+
+Ein vorläufiges, verbindliches Designsystem wurde aus den Mockups unter `reference/mockups/` abgeleitet:
+
+- Analysiert: V1-Kernscreens (09–15), UI-Bibliotheken (52–57), Design-System-Mockups (62–65)
+- Erweitert: `colors.ts`, `spacing.ts`, `typography.ts`, `radii.ts`, `shadows.ts`, `layout.ts`, `theme.ts`
+- Dokumentiert: `DESIGN_GUIDELINES.md`
+
+**Wichtig:** Das Designsystem ist bereit als Grundlage, muss aber durch die konkrete Umsetzung des Home-Screens (Mockup 09) validiert werden. 10 Punkte sind als „Review erforderlich" markiert.
 
 ---
 

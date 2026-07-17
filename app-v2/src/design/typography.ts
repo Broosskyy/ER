@@ -33,6 +33,7 @@ export const lineHeight = {
   relaxed: 1.6,
 } as const;
 
+/** Base text variants — unchanged from bootstrap */
 export const textVariants = {
   display: {
     fontSize: fontSize.display,
@@ -78,4 +79,101 @@ export const textVariants = {
   },
 } as const satisfies Record<string, TextStyle>;
 
+/**
+ * V1 semantic typography roles derived from mockup hierarchy.
+ * Visible on 09_Home, 10_Events, 11_Event_Details, 15_Profile.
+ */
+export const textRoles = {
+  screenTitle: {
+    fontSize: fontSize.xxl,
+    fontWeight: fontWeight.bold,
+    color: colors.textPrimary,
+    lineHeight: fontSize.xxl * lineHeight.tight,
+  },
+  sectionTitle: {
+    fontSize: fontSize.xl,
+    fontWeight: fontWeight.semibold,
+    color: colors.textPrimary,
+    lineHeight: fontSize.xl * lineHeight.tight,
+  },
+  cardTitle: {
+    fontSize: fontSize.md,
+    fontWeight: fontWeight.semibold,
+    color: colors.textPrimary,
+    lineHeight: fontSize.md * lineHeight.tight,
+  },
+  cardSubtitle: {
+    fontSize: fontSize.base,
+    fontWeight: fontWeight.regular,
+    color: colors.textSecondary,
+    lineHeight: fontSize.base * lineHeight.normal,
+  },
+  body: textVariants.body,
+  metadata: {
+    fontSize: fontSize.sm,
+    fontWeight: fontWeight.regular,
+    color: colors.textSecondary,
+    lineHeight: fontSize.sm * lineHeight.normal,
+  },
+  label: textVariants.label,
+  button: {
+    fontSize: fontSize.md,
+    fontWeight: fontWeight.semibold,
+    color: colors.textOnPrimary,
+    lineHeight: fontSize.md * lineHeight.tight,
+  },
+  chip: {
+    fontSize: fontSize.sm,
+    fontWeight: fontWeight.medium,
+    color: colors.textSecondary,
+    lineHeight: fontSize.sm * lineHeight.tight,
+  },
+  chipSelected: {
+    fontSize: fontSize.sm,
+    fontWeight: fontWeight.semibold,
+    color: colors.textOnPrimary,
+    lineHeight: fontSize.sm * lineHeight.tight,
+  },
+  navLabel: {
+    fontSize: fontSize.xs,
+    fontWeight: fontWeight.medium,
+    color: colors.textSecondary,
+    lineHeight: fontSize.xs * lineHeight.tight,
+  },
+  navLabelActive: {
+    fontSize: fontSize.xs,
+    fontWeight: fontWeight.semibold,
+    color: colors.primary,
+    lineHeight: fontSize.xs * lineHeight.tight,
+  },
+  searchInput: {
+    fontSize: fontSize.base,
+    fontWeight: fontWeight.regular,
+    color: colors.textPrimary,
+    lineHeight: fontSize.base * lineHeight.normal,
+  },
+  searchPlaceholder: {
+    fontSize: fontSize.base,
+    fontWeight: fontWeight.regular,
+    color: colors.textSecondary,
+    lineHeight: fontSize.base * lineHeight.normal,
+  },
+  badge: {
+    fontSize: fontSize.xs,
+    fontWeight: fontWeight.semibold,
+    color: colors.textSecondary,
+    lineHeight: fontSize.xs * lineHeight.tight,
+  },
+} as const satisfies Record<string, TextStyle>;
+
 export type TextVariant = keyof typeof textVariants;
+export type TextRole = keyof typeof textRoles;
+
+/**
+ * REVIEW REQUIRED: Font family not legible from compressed mockups.
+ * Mockup 63 + MOCKUP-SCREENS.md specify "clean sans-serif".
+ * Use system default until validated during Home screen implementation.
+ */
+export const fontFamily = {
+  primary: undefined,
+} as const;
