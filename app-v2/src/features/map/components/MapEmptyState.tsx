@@ -42,7 +42,7 @@ export function MapErrorState({ onRetry }: { onRetry: () => void }) {
       />
       <AppText style={styles.title}>Map unavailable</AppText>
       <AppText style={styles.description}>
-        The map could not be loaded. You can still browse events in Search or Home.
+        The map could not be loaded. Please try again later.
       </AppText>
       <PrimaryButton label="Try again" onPress={onRetry} style={styles.button} />
       <PrimaryButton

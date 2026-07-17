@@ -20,7 +20,7 @@ export const appConfig = {
   name: 'Eternal Rave',
   tagline: 'Discover. Connect. Rave.',
   locationLabel: 'Near you',
-  defaultCity: 'Berlin',
+  defaultCity: 'Köln',
 } as const;
 
 /**
