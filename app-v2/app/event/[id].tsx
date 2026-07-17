@@ -23,9 +23,10 @@ import {
   shareEvent,
 } from '@/features/event-detail';
 import {
+  eventRepository,
   formatEventDateTime,
-  getDemoEventById,
-} from '@/features/events/data/demo-events';
+  toEventDisplayModel,
+} from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 
 const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
@@ -35,7 +36,14 @@ export default function EventDetailScreen() {
   const insets = useSafeAreaInsets();
   const { id } = useLocalSearchParams<{ id: string }>();
   const eventId = Array.isArray(id) ? id[0] : id;
-  const event = eventId ? getDemoEventById(eventId) : undefined;
+  const event = useMemo(() => {
+    if (!eventId) {
+      return undefined;
+    }
+
+    const found = eventRepository.getEventById(eventId);
+    return found ? toEventDisplayModel(found) : undefined;
+  }, [eventId]);
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const hasTicketAction = Boolean(event?.ticketUrl);
@@ -150,8 +158,8 @@ export default function EventDetailScreen() {
             <EventInfoRow icon="people-outline" label="Organizer" value={event.organizer} />
           ) : null}
 
-          {event.sourceName ? (
-            <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceName} />
+          {event.sourceLabel ? (
+            <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceLabel} />
           ) : null}
         </View>
       </ScrollView>

@@ -1,7 +1,7 @@
 import type { Region } from 'react-native-maps';
 
 import { appConfig } from '@/design/layout';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 
 export type MapCityId = 'Berlin';
 
@@ -25,7 +25,7 @@ export function resolveMapCityLabel(city?: string): string {
 }
 
 export function getInitialMapRegion(
-  events: (DemoEvent & { latitude: number; longitude: number })[],
+  events: (EventDisplayModel & { latitude: number; longitude: number })[],
   preferredCity = appConfig.defaultCity,
 ): Region {
   const cityRegion = MAP_CITY_REGIONS[preferredCity as MapCityId];

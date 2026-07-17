@@ -3,10 +3,10 @@ import { StyleSheet, View } from 'react-native';
 import { Marker } from 'react-native-maps';
 
 import { colors } from '@/design/colors';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 
 export interface MapEventMarkerProps {
-  event: DemoEvent & { latitude: number; longitude: number };
+  event: EventDisplayModel & { latitude: number; longitude: number };
   selected: boolean;
   onSelect: (eventId: string) => void;
 }

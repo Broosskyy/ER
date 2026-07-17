@@ -6,10 +6,10 @@ import { FavoriteButton } from '@/components/buttons/FavoriteButton';
 import { IconButton } from '@/components/buttons/IconButton';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 
 export interface EventDetailHeroProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   isFavorite: boolean;
   onBack: () => void;
   onToggleFavorite: () => void;

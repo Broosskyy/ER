@@ -5,7 +5,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppScreen, AppText, SafeAreaContainer } from '@/components';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { getAllDemoEvents, type DemoEvent } from '@/features/events/data/demo-events';
+import {
+  eventRepository,
+  toEventDisplayModel,
+  type EventDisplayModel,
+} from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { EventCard } from '@/features/home/components';
 import {
@@ -20,7 +24,7 @@ import {
 } from '@/features/search';
 
 interface SearchEventRowProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   isFavorite: boolean;
   onToggleFavorite: (eventId: string) => void;
 }
@@ -50,10 +54,15 @@ export default function SearchScreen() {
     layout.bottomNavHeight +
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
 
-  const results = useMemo(
-    () => filterSearchEvents(getAllDemoEvents(), query, genreId, sort),
-    [query, genreId, sort],
-  );
+  const results = useMemo(() => {
+    const filtered = filterSearchEvents(
+      eventRepository.getPublishedEvents(),
+      query,
+      genreId,
+      sort,
+    );
+    return filtered.map(toEventDisplayModel);
+  }, [query, genreId, sort]);
 
   const handleClearFilters = useCallback(() => {
     setQuery(DEFAULT_SEARCH_FILTERS.query);
@@ -61,7 +70,7 @@ export default function SearchScreen() {
     setSort(DEFAULT_SEARCH_FILTERS.sort);
   }, []);
 
-  const renderItem: ListRenderItem<DemoEvent> = useCallback(
+  const renderItem: ListRenderItem<EventDisplayModel> = useCallback(
     ({ item }) => (
       <SearchEventRow
         event={item}
@@ -72,7 +81,7 @@ export default function SearchScreen() {
     [isFavorite, toggleFavorite],
   );
 
-  const keyExtractor = useCallback((item: DemoEvent) => item.id, []);
+  const keyExtractor = useCallback((item: EventDisplayModel) => item.id, []);
 
   return (
     <AppScreen>

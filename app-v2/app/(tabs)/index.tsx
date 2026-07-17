@@ -8,11 +8,11 @@ import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
 import {
-  DemoEvent,
-  HomeFilterChipId,
-  getFeaturedDemoEvents,
-  getTonightDemoEvents,
-} from '@/features/events/data/demo-events';
+  eventRepository,
+  toEventDisplayModel,
+  type EventDisplayModel,
+  type HomeFilterChipId,
+} from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import {
   EventCard,
@@ -25,7 +25,7 @@ import {
   getFeaturedCardWidth,
 } from '@/features/home/components';
 
-function matchesFilter(event: DemoEvent, filterId: HomeFilterChipId): boolean {
+function matchesFilter(event: EventDisplayModel, filterId: HomeFilterChipId): boolean {
   if (filterId === 'all') return true;
   if (filterId === 'techno') {
     return event.genres.some((genre) => genre.toLowerCase().includes('techno'));
@@ -47,11 +47,17 @@ export default function HomeScreen() {
   const [selectedFilter, setSelectedFilter] = useState<HomeFilterChipId>('all');
 
   const featuredEvents = useMemo(() => {
-    return getFeaturedDemoEvents().filter((event) => matchesFilter(event, selectedFilter));
+    return eventRepository
+      .getFeaturedEvents()
+      .map(toEventDisplayModel)
+      .filter((event) => matchesFilter(event, selectedFilter));
   }, [selectedFilter]);
 
   const tonightEvents = useMemo(() => {
-    return getTonightDemoEvents().filter((event) => matchesFilter(event, selectedFilter));
+    return eventRepository
+      .getSecondaryHomeEvents()
+      .map(toEventDisplayModel)
+      .filter((event) => matchesFilter(event, selectedFilter));
   }, [selectedFilter]);
 
   return (

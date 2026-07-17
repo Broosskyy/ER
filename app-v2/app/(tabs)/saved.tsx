@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppScreen, SafeAreaContainer } from '@/components';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { SavedEmptyState, SavedEventRow, SavedHeader } from '@/features/saved';
 
@@ -22,7 +22,7 @@ export default function SavedScreen() {
     router.navigate('/(tabs)');
   }, [router]);
 
-  const renderItem: ListRenderItem<DemoEvent> = useCallback(
+  const renderItem: ListRenderItem<EventDisplayModel> = useCallback(
     ({ item }) => (
       <SavedEventRow
         event={item}
@@ -33,7 +33,7 @@ export default function SavedScreen() {
     [isFavorite, toggleFavorite],
   );
 
-  const keyExtractor = useCallback((item: DemoEvent) => item.id, []);
+  const keyExtractor = useCallback((item: EventDisplayModel) => item.id, []);
 
   return (
     <AppScreen>

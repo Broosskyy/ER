@@ -9,10 +9,11 @@ import { componentSize } from '@/design/layout';
 import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { DemoEvent, formatEventDateTime } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
+import { formatEventDateTime } from '@/features/events';
 
 export interface MapEventPreviewProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   isFavorite: boolean;
   onToggleFavorite: () => void;
   onClose: () => void;
