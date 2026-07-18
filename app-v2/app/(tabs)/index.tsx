@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useRouter } from 'expo-router';
+import { useCallback, useMemo } from 'react';
 import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -7,7 +8,12 @@ import { AppScreen } from '@/components/layout/AppScreen';
 import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { eventRepository, toEventDisplayModel } from '@/features/events';
+import {
+  getCollectionConfig,
+  getCollectionPreviewEvents,
+  type CollectionType,
+} from '@/features/collections';
+import { toEventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import {
   EventCard,
@@ -17,13 +23,11 @@ import {
   SectionHeader,
   getFeaturedCardWidth,
 } from '@/features/home/components';
-import {
-  getMoreUpcomingEvents,
-  getTonightEvents,
-  getWeekendEvents,
-} from '@/features/home/utils/home-sections';
+
+const HOME_SECTIONS: CollectionType[] = ['highlights', 'tonight', 'weekend', 'upcoming', 'techno', 'house'];
 
 export default function HomeScreen() {
+  const router = useRouter();
   const insets = useSafeAreaInsets();
   const tabBarHeight =
     layout.bottomNavHeight +
@@ -32,27 +36,20 @@ export default function HomeScreen() {
   const featuredSnapInterval = featuredCardWidth + spacing.md;
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
 
-  const publishedEvents = useMemo(() => eventRepository.getPublishedEvents(), []);
-
-  const featuredEvents = useMemo(
-    () => eventRepository.getFeaturedEvents().map(toEventDisplayModel),
-    [],
+  const openCollection = useCallback(
+    (type: CollectionType) => {
+      router.push(`/collection/${type}`);
+    },
+    [router],
   );
 
-  const tonightEvents = useMemo(
-    () => getTonightEvents(publishedEvents).map(toEventDisplayModel),
-    [publishedEvents],
-  );
-
-  const weekendEvents = useMemo(
-    () => getWeekendEvents(publishedEvents).map(toEventDisplayModel),
-    [publishedEvents],
-  );
-
-  const moreEvents = useMemo(
-    () => getMoreUpcomingEvents(publishedEvents).map(toEventDisplayModel),
-    [publishedEvents],
-  );
+  const sectionData = useMemo(() => {
+    return HOME_SECTIONS.map((type) => {
+      const config = getCollectionConfig(type);
+      const events = getCollectionPreviewEvents(type).map(toEventDisplayModel);
+      return { type, config, events };
+    }).filter((section) => section.events.length > 0);
+  }, []);
 
   return (
     <AppScreen>
@@ -63,7 +60,7 @@ export default function HomeScreen() {
           <IconButton
             icon="options-outline"
             accessibilityLabel="Filters"
-            onPress={() => undefined}
+            onPress={() => router.navigate('/(tabs)/search')}
           />
         </View>
 
@@ -74,75 +71,50 @@ export default function HomeScreen() {
             { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
           ]}
         >
-          <SectionHeader title="Highlights" actionLabel="Mehr anzeigen" isFirst />
-          <ScrollView
-            horizontal
-            nestedScrollEnabled
-            showsHorizontalScrollIndicator={false}
-            decelerationRate="fast"
-            snapToInterval={featuredSnapInterval}
-            snapToAlignment="start"
-            disableIntervalMomentum
-            contentContainerStyle={styles.featuredRow}
-          >
-            {featuredEvents.map((event) => (
-              <FeaturedEventCard
-                key={event.id}
-                event={event}
-                width={featuredCardWidth}
-                isFavorite={isHydrated && isFavorite(event.id)}
-                onToggleFavorite={() => toggleFavorite(event.id)}
+          {sectionData.map((section, index) => (
+            <View key={section.type}>
+              <SectionHeader
+                title={section.config.title}
+                actionLabel="See all"
+                isFirst={index === 0}
+                onActionPress={() => openCollection(section.type)}
               />
-            ))}
-          </ScrollView>
 
-          {tonightEvents.length > 0 ? (
-            <>
-              <SectionHeader title="Heute Abend" actionLabel="Mehr anzeigen" />
-              <View style={styles.listSection}>
-                {tonightEvents.map((event) => (
-                  <EventCard
-                    key={event.id}
-                    event={event}
-                    isFavorite={isHydrated && isFavorite(event.id)}
-                    onToggleFavorite={() => toggleFavorite(event.id)}
-                  />
-                ))}
-              </View>
-            </>
-          ) : null}
-
-          {weekendEvents.length > 0 ? (
-            <>
-              <SectionHeader title="Dieses Wochenende" actionLabel="Mehr anzeigen" />
-              <View style={styles.listSection}>
-                {weekendEvents.map((event) => (
-                  <EventCard
-                    key={event.id}
-                    event={event}
-                    isFavorite={isHydrated && isFavorite(event.id)}
-                    onToggleFavorite={() => toggleFavorite(event.id)}
-                  />
-                ))}
-              </View>
-            </>
-          ) : null}
-
-          {moreEvents.length > 0 ? (
-            <>
-              <SectionHeader title="Kommende Events" actionLabel="Mehr anzeigen" />
-              <View style={styles.listSection}>
-                {moreEvents.map((event) => (
-                  <EventCard
-                    key={event.id}
-                    event={event}
-                    isFavorite={isHydrated && isFavorite(event.id)}
-                    onToggleFavorite={() => toggleFavorite(event.id)}
-                  />
-                ))}
-              </View>
-            </>
-          ) : null}
+              {section.type === 'highlights' ? (
+                <ScrollView
+                  horizontal
+                  nestedScrollEnabled
+                  showsHorizontalScrollIndicator={false}
+                  decelerationRate="fast"
+                  snapToInterval={featuredSnapInterval}
+                  snapToAlignment="start"
+                  disableIntervalMomentum
+                  contentContainerStyle={styles.featuredRow}
+                >
+                  {section.events.map((event) => (
+                    <FeaturedEventCard
+                      key={event.id}
+                      event={event}
+                      width={featuredCardWidth}
+                      isFavorite={isHydrated && isFavorite(event.id)}
+                      onToggleFavorite={() => toggleFavorite(event.id)}
+                    />
+                  ))}
+                </ScrollView>
+              ) : (
+                <View style={styles.listSection}>
+                  {section.events.map((event) => (
+                    <EventCard
+                      key={event.id}
+                      event={event}
+                      isFavorite={isHydrated && isFavorite(event.id)}
+                      onToggleFavorite={() => toggleFavorite(event.id)}
+                    />
+                  ))}
+                </View>
+              )}
+            </View>
+          ))}
         </ScrollView>
       </SafeAreaContainer>
     </AppScreen>

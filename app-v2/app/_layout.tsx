@@ -33,6 +33,7 @@ export default function RootLayout() {
       >
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="event/[id]" />
+        <Stack.Screen name="collection/[type]" />
       </Stack>
     </FavoritesProvider>
   );

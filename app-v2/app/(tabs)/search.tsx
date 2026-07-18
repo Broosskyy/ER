@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import {
   FlatList,
   Keyboard,
@@ -22,13 +22,19 @@ import { useFavorites } from '@/features/favorites';
 import { EventCard } from '@/features/home/components';
 import {
   ExploreFeed,
-  ExploreTimeFilterRow,
+  FilterSheet,
+  QuickFilterRow,
   SearchEmptyState,
-  SearchGenreChipRow,
   SearchInput,
-  filterSearchEvents,
+  SearchResultsMeta,
 } from '@/features/search';
 import { useSearchFilters } from '@/features/search/SearchContext';
+import { DEFAULT_EVENT_FILTERS } from '@/features/search/constants';
+import {
+  applyEventFilters,
+  countActiveFilters,
+  summarizeActiveFilters,
+} from '@/features/search/utils/filter-events';
 
 interface SearchEventRowProps {
   event: EventDisplayModel;
@@ -54,18 +60,19 @@ export default function SearchScreen() {
   const insets = useSafeAreaInsets();
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const {
-    query,
-    timeFilter,
-    genreId,
+    filters,
     setQuery,
-    setTimeFilter,
-    setGenreId,
+    setDateRange,
+    applyFilters,
     clearFilters,
     shouldAutoFocus,
     clearSearchFocus,
   } = useSearchFilters();
+  const [filterSheetVisible, setFilterSheetVisible] = useState(false);
+  const [genreSheetVisible, setGenreSheetVisible] = useState(false);
 
-  const isSearchActive = query.trim().length > 0;
+  const isSearchActive = filters.query.trim().length > 0;
+  const activeFilterCount = countActiveFilters(filters);
 
   useEffect(() => {
     if (!shouldAutoFocus) {
@@ -84,14 +91,8 @@ export default function SearchScreen() {
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
 
   const results = useMemo(() => {
-    const filtered = filterSearchEvents(
-      eventRepository.getPublishedEvents(),
-      query,
-      genreId,
-      timeFilter,
-    );
-    return filtered.map(toEventDisplayModel);
-  }, [query, genreId, timeFilter]);
+    return applyEventFilters(eventRepository.getPublishedEvents(), filters).map(toEventDisplayModel);
+  }, [filters]);
 
   const renderItem: ListRenderItem<EventDisplayModel> = useCallback(
     ({ item }) => (
@@ -106,23 +107,33 @@ export default function SearchScreen() {
 
   const keyExtractor = useCallback((item: EventDisplayModel) => item.id, []);
 
+  const handleOpenGenreSheet = useCallback(() => {
+    setGenreSheetVisible(true);
+  }, []);
+
+  const filterSummary = summarizeActiveFilters(filters);
+
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <View style={styles.filters}>
             <SearchInput
-              value={query}
+              value={filters.query}
               onChangeText={setQuery}
               autoFocus={shouldAutoFocus}
             />
-
-            <ExploreTimeFilterRow selectedId={timeFilter} onSelect={setTimeFilter} />
-            <SearchGenreChipRow selectedId={genreId} onSelect={setGenreId} />
+            <QuickFilterRow
+              dateRange={filters.dateRange}
+              activeFilterCount={activeFilterCount}
+              onSelectDateRange={setDateRange}
+              onOpenGenre={handleOpenGenreSheet}
+              onOpenFilters={() => setFilterSheetVisible(true)}
+            />
           </View>
         </TouchableWithoutFeedback>
 
-        {isSearchActive ? (
+        {isSearchActive || activeFilterCount > 0 ? (
           results.length === 0 ? (
             <SearchEmptyState onClearFilters={clearFilters} />
           ) : (
@@ -133,6 +144,13 @@ export default function SearchScreen() {
               showsVerticalScrollIndicator={false}
               keyboardShouldPersistTaps="handled"
               onScrollBeginDrag={Keyboard.dismiss}
+              ListHeaderComponent={
+                <SearchResultsMeta
+                  count={results.length}
+                  summary={filterSummary || undefined}
+                  onClear={activeFilterCount > 0 ? clearFilters : undefined}
+                />
+              }
               contentContainerStyle={[
                 styles.listContent,
                 { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
@@ -150,9 +168,43 @@ export default function SearchScreen() {
               styles.listContent,
               { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
             ]}
-            renderItem={() => <ExploreFeed timeFilter={timeFilter} genreId={genreId} />}
+            renderItem={() => (
+              <ExploreFeed dateRange={filters.dateRange} genreId={filters.genreId} />
+            )}
           />
         )}
+
+        <FilterSheet
+          visible={filterSheetVisible}
+          initialFilters={filters}
+          mode="full"
+          availableCities={[...new Set(eventRepository.getPublishedEvents().map((event) => event.city))]}
+          onClose={() => setFilterSheetVisible(false)}
+          onApply={(next) => {
+            applyFilters(next);
+            setFilterSheetVisible(false);
+          }}
+          onReset={() => {
+            clearFilters();
+            setFilterSheetVisible(false);
+          }}
+        />
+
+        <FilterSheet
+          visible={genreSheetVisible}
+          initialFilters={filters}
+          mode="collection"
+          availableCities={[...new Set(eventRepository.getPublishedEvents().map((event) => event.city))]}
+          onClose={() => setGenreSheetVisible(false)}
+          onApply={(next) => {
+            applyFilters({ ...filters, genreId: next.genreId, sortBy: next.sortBy, city: next.city });
+            setGenreSheetVisible(false);
+          }}
+          onReset={() => {
+            applyFilters({ ...filters, genreId: DEFAULT_EVENT_FILTERS.genreId });
+            setGenreSheetVisible(false);
+          }}
+        />
       </SafeAreaContainer>
     </AppScreen>
   );
