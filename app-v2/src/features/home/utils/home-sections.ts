@@ -2,8 +2,8 @@ import {
   EVENT_REFERENCE_DATE,
   isThisWeekEvent,
   isUpcomingEvent,
-  type Event,
-} from '@/features/events';
+} from '@/features/events/formatting/date-time';
+import type { Event } from '@/features/events/types/event';
 import { isFeaturedEventId } from '@/features/events/data/home-config';
 
 function isSameDay(isoDateTime: string, referenceDate: Date): boolean {
