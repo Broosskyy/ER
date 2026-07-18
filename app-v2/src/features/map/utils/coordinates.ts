@@ -1,4 +1,4 @@
-import type { Region } from 'react-native-maps';
+import type { MapRegion } from '../types';
 
 const MIN_LATITUDE = -90;
 const MAX_LATITUDE = 90;
@@ -21,7 +21,7 @@ export function isRenderableCoordinate(
   );
 }
 
-export function sanitizeMapRegion(region: Region): Region {
+export function sanitizeMapRegion(region: MapRegion): MapRegion {
   const latitude = Number.isFinite(region.latitude) ? region.latitude : 50.9375;
   const longitude = Number.isFinite(region.longitude) ? region.longitude : 6.9603;
   const latitudeDelta = Number.isFinite(region.latitudeDelta)
