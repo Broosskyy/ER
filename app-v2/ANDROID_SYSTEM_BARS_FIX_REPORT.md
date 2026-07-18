@@ -78,9 +78,8 @@ Android previously used a fixed `spacing.sm` bottom padding because the system n
 | **Filename** | `eternal-rave-0.1.2-android-system-bars-fix.apk` |
 | **Size** | ~99 MB |
 | **Build** | `npx expo prebuild --platform android` + `./gradlew assembleRelease` |
+| **Download** | https://github.com/Broosskyy/ER/releases/download/v1-android-0.1.2-system-bars-fix/eternal-rave-0.1.2-android-system-bars-fix.apk |
 | **Artifact path** | `/opt/cursor/artifacts/apk/eternal-rave-0.1.2-android-system-bars-fix.apk` |
-
-> Upload to GitHub Releases for a public download URL (same pattern as `v1-android-0.1.1-preview`).
 
 ## Manual Test Checklist (Android device)
 
