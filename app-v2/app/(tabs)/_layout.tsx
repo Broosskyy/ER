@@ -1,13 +1,14 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { colorRoles } from '@/design/colors';
-import { componentSize, layout } from '@/design/layout';
+import { componentSize } from '@/design/layout';
 import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
 import { SearchProvider } from '@/features/search/SearchContext';
+import { getBottomTabBarHeight, getBottomTabBarPadding } from '@/platform/tab-bar-insets';
 
 type TabIconName = keyof typeof Ionicons.glyphMap;
 
@@ -23,10 +24,8 @@ function tabIcon(name: TabIconName, focused: boolean) {
 
 export default function TabLayout() {
   const insets = useSafeAreaInsets();
-  const androidBottomPadding = spacing.sm;
-  const iosBottomPadding = Math.max(insets.bottom, spacing.sm);
-  const tabBarHeight =
-    layout.bottomNavHeight + (Platform.OS === 'ios' ? iosBottomPadding : androidBottomPadding);
+  const bottomPadding = getBottomTabBarPadding(insets);
+  const tabBarHeight = getBottomTabBarHeight(insets);
 
   return (
     <SearchProvider>
@@ -39,7 +38,7 @@ export default function TabLayout() {
           styles.tabBar,
           {
             height: tabBarHeight,
-            paddingBottom: Platform.OS === 'ios' ? iosBottomPadding : androidBottomPadding,
+            paddingBottom: bottomPadding,
           },
         ],
         tabBarLabelStyle: styles.tabBarLabel,

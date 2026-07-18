@@ -1,12 +1,11 @@
 import { memo, useCallback, useMemo, useState } from 'react';
-import { FlatList, ListRenderItem, Platform, StyleSheet } from 'react-native';
+import { FlatList, ListRenderItem, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { AppScreen, SafeAreaContainer } from '@/components';
-import { layout } from '@/design/layout';
-import { spacing, spacingRoles } from '@/design/spacing';
+import { spacingRoles } from '@/design/spacing';
 import { CollectionHeader } from '@/features/collections/components/CollectionHeader';
 import {
   getCollectionConfig,
@@ -19,6 +18,7 @@ import { EventCard } from '@/features/home/components';
 import { FilterSheet } from '@/features/search/components/FilterSheet';
 import { DEFAULT_EVENT_FILTERS, type EventFilters } from '@/features/search/constants';
 import { applyEventFilters } from '@/features/search/utils/filter-events';
+import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 export interface CollectionScreenProps {
   type: CollectionType;
@@ -52,9 +52,7 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
   });
   const [filterSheetVisible, setFilterSheetVisible] = useState(false);
 
-  const tabBarHeight =
-    layout.bottomNavHeight +
-    (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
+  const tabBarHeight = getBottomTabBarHeight(insets);
 
   const baseEvents = useMemo(() => getCollectionEvents(type), [type]);
 

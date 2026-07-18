@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useCallback, useMemo } from 'react';
-import { Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IconButton } from '@/components/buttons/IconButton';
@@ -23,15 +23,14 @@ import {
   SectionHeader,
   getFeaturedCardWidth,
 } from '@/features/home/components';
+import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 const HOME_SECTIONS: CollectionType[] = ['highlights', 'tonight', 'weekend', 'upcoming', 'techno', 'house'];
 
 export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const tabBarHeight =
-    layout.bottomNavHeight +
-    (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
+  const tabBarHeight = getBottomTabBarHeight(insets);
   const featuredCardWidth = getFeaturedCardWidth();
   const featuredSnapInterval = featuredCardWidth + spacing.md;
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();

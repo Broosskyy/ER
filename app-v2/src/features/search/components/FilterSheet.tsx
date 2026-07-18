@@ -11,7 +11,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
-import { layout } from '@/design/layout';
 import { radiusRoles } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
@@ -26,6 +25,7 @@ import {
   type SearchGenreChipId,
   type SortByFilter,
 } from '@/features/search/constants';
+import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 export interface FilterSheetProps {
   visible: boolean;
@@ -74,7 +74,7 @@ export function FilterSheet({
         style={[
           styles.sheet,
           {
-            paddingBottom: Math.max(insets.bottom, spacing.md) + layout.bottomNavHeight,
+            paddingBottom: getBottomTabBarHeight(insets) + spacing.md,
           },
         ]}
       >
