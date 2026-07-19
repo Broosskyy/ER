@@ -70,6 +70,8 @@ Use this checklist before shipping a web or Android release of Eternal Rave.
 - [ ] Error logs monitored
 - [ ] Version/build recorded in release notes
 
+See also [Launch Checklist](launch-checklist.md) for beta/store release.
+
 ## Quick smoke test (≈15 minutes)
 
 1. Home
