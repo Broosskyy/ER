@@ -101,4 +101,51 @@ rg -i "password\s*=\s*['\"]" app-v2/app app-v2/src
 npm run typecheck
 npm test
 npm run build:web
+npm run validate:build-output
 ```
+
+## PWA caching
+
+Sprint 12.6D adds a conservative production service worker (`public/sw.js`).
+
+Rules:
+
+- hashed static bundles may be cached
+- HTML navigation uses network-first with offline fallback
+- `/admin/*` requests are network-only
+- Supabase/auth traffic is not cached
+
+Auth security must not rely on the service worker. Route guards and RLS remain authoritative.
+
+## Service worker risks
+
+| Risk | Mitigation |
+|---|---|
+| stale app shell | versioned caches + update banner |
+| cached admin pages | admin paths bypass SW cache |
+| cached auth responses | Supabase requests not intercepted |
+| logout + browser back | admin guards + session cleared on logout |
+
+## Web bundle
+
+- Only `EXPO_PUBLIC_*` variables belong in the client bundle
+- Run `npm run validate:build-output` after web export
+- Do not ship `.env` files in `dist/`
+
+## Security headers
+
+See `docs/web-deployment.md` for recommended host-level headers (CSP, HSTS, referrer policy).
+
+## Deployment risks
+
+- serving `index.html` with long immutable cache breaks updates
+- missing HTTPS blocks PWA install and weakens auth
+- exposing service role or DB passwords in hosting env UI logs
+
+## Cache invalidation
+
+After deploy:
+
+- bump service worker cache version when needed (`PWA_CONFIG.cacheVersion` / `public/sw.js`)
+- prefer short cache TTL for `sw.js` and HTML entry files
+- users may need one reload to pick up waiting SW updates

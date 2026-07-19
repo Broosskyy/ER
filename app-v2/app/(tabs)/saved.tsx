@@ -7,8 +7,11 @@ import type { EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { SavedEmptyState, SavedEventRow, SavedHeader } from '@/features/saved';
 import { useScreenBottomInset } from '@/platform/screen-insets';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function SavedScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.saved);
   const router = useRouter();
   const bottomInset = useScreenBottomInset();
 

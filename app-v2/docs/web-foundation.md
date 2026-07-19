@@ -69,14 +69,15 @@ Applied to: Home, Search, Saved, Map, Event Detail, Collections.
 | `BackHandler` | guarded to Android only in filter sheets |
 | `react-native-maps` | not mounted on any route; map tab shows placeholder |
 
-## Known limitations (Sprint 12.6B+)
+## Known limitations (Sprint 12.6D+)
 
-- No PWA manifest or service worker
-- Admin routes are exported statically and reachable by URL (out of scope for 12.6A)
+- PWA manifest, icons, and production service worker are documented in [pwa.md](./pwa.md)
+- Admin routes are exported statically and reachable by URL (protected by auth guards)
 - Native map (`react-native-maps`) requires `.web.tsx` alternative before enabling
 - Filter sheet uses mobile `Modal` pattern — usable on desktop but not optimised
 - Remote notification images may hit CORS depending on host
 - Supabase `detectSessionInUrl` is not configured for web OAuth callbacks
+- Dynamic SEO/SSR is not available in static export
 
 ## Build commands
 

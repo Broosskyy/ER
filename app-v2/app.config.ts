@@ -34,6 +34,17 @@ const config: ExpoConfig = {
     bundler: 'metro',
     output: 'static',
     favicon: './assets/images/favicon.png',
+    name: 'Eternal Rave',
+    shortName: 'Eternal Rave',
+    description:
+      'Entdecke elektronische Musikveranstaltungen, speichere Events und bleibe über Updates informiert.',
+    themeColor: '#0B0B0F',
+    backgroundColor: '#0B0B0F',
+    display: 'standalone',
+    orientation: 'portrait',
+    lang: 'de',
+    startUrl: '/',
+    scope: '/',
   },
   plugins: [
     'expo-router',

@@ -14,8 +14,11 @@ import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { isSafeAdminReturnRoute } from '@/features/admin/admin-route-utils';
 import { AdminForbiddenState } from '@/features/admin/components/AdminForbidden';
 import { AdminLoadingState } from '@/features/admin/components/AdminStates';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function AdminLoginScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.adminLogin);
   const router = useRouter();
   const params = useLocalSearchParams<{ returnTo?: string }>();
   const { signIn, isAuthenticated, hasAdminAccess, isRoleLoading, clearAuthError } = useAdminAuth();

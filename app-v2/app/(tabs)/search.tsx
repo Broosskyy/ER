@@ -35,6 +35,8 @@ import {
   isExploreMode,
 } from '@/features/search/utils/filter-events';
 import { useScreenBottomInset } from '@/platform/screen-insets';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 interface SearchEventRowProps {
   event: EventDisplayModel;
@@ -57,6 +59,7 @@ const SearchEventRow = memo(function SearchEventRow({
 });
 
 export default function SearchScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.search);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const {
     filters,

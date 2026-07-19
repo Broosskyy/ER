@@ -16,6 +16,8 @@ import {
 } from '@/features/admin/components/AdminStates';
 import { canViewEvents, canViewImports } from '@/features/admin/admin-permissions';
 import { useAdminRole } from '@/features/import/admin/use-admin-role';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 function StatCard({ label, value }: { label: string; value: number }) {
   return (
@@ -27,6 +29,7 @@ function StatCard({ label, value }: { label: string; value: number }) {
 }
 
 export default function AdminDashboardScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.adminDashboard);
   const router = useRouter();
   const { role } = useAdminRole();
   const [stats, setStats] = useState<DashboardStats | null>(null);

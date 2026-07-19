@@ -10,6 +10,7 @@ import { RepositoryProvider } from '@/data/repositories/RepositoryProvider';
 import { FavoritesProvider } from '@/features/favorites';
 import { NotificationsProvider } from '@/features/notifications';
 import { useAndroidSystemUi } from '@/platform/android-system-ui';
+import { PwaProvider } from '@/platform/pwa/PwaProvider';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -22,20 +23,22 @@ export default function RootLayout() {
     <RepositoryProvider>
       <FavoritesProvider>
         <NotificationsProvider>
-          <StatusBar style="light" />
-          {Platform.OS === 'android' ? <NavigationBar style="light" /> : null}
-          <Stack
-            screenOptions={{
-              headerShown: false,
-              contentStyle: { backgroundColor: colors.background },
-            }}
-          >
-            <Stack.Screen name="(tabs)" />
-            <Stack.Screen name="notifications" />
-            <Stack.Screen name="event/[id]" />
-            <Stack.Screen name="collection/[type]" />
-            <Stack.Screen name="admin" />
-          </Stack>
+          <PwaProvider>
+            <StatusBar style="light" />
+            {Platform.OS === 'android' ? <NavigationBar style="light" /> : null}
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                contentStyle: { backgroundColor: colors.background },
+              }}
+            >
+              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name="notifications" />
+              <Stack.Screen name="event/[id]" />
+              <Stack.Screen name="collection/[type]" />
+              <Stack.Screen name="admin" />
+            </Stack>
+          </PwaProvider>
         </NotificationsProvider>
       </FavoritesProvider>
     </RepositoryProvider>
