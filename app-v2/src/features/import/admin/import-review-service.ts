@@ -66,7 +66,7 @@ export class ImportReviewService {
     private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
   ) {}
 
-  private role(session: AuthSession | null): AdminRole {
+  private role(session: AuthSession | null): AdminRole | null {
     return resolveAdminRole(session);
   }
 

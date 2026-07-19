@@ -329,6 +329,6 @@ describe('Sprint 12 Acceptance — Migration structure', () => {
   it('validates migration script passes', async () => {
     const { execSync } = await import('node:child_process');
     const out = execSync('npm run validate:migrations', { cwd: process.cwd(), encoding: 'utf8' });
-    expect(out).toContain('Validated 6 migration file(s)');
+    expect(out).toContain('Validated 7 migration file(s)');
   });
 });
