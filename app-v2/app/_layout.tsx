@@ -23,26 +23,10 @@ export default function RootLayout() {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <FavoritesProvider>
-      <StatusBar style="light" />
-      {Platform.OS === 'android' ? <NavigationBar style="light" /> : null}
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: colors.background },
-        }}
-      >
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="event/[id]" />
-        <Stack.Screen name="collection/[type]" />
-      </Stack>
-    </FavoritesProvider>
-=======
     <RepositoryProvider>
       <FavoritesProvider>
         <StatusBar style="light" />
-        {Platform.OS === 'android' ? <NavigationBar hidden style="dark" /> : null}
+        {Platform.OS === 'android' ? <NavigationBar style="light" /> : null}
         <Stack
           screenOptions={{
             headerShown: false,
@@ -56,6 +40,5 @@ export default function RootLayout() {
         </Stack>
       </FavoritesProvider>
     </RepositoryProvider>
->>>>>>> 622c4db (feat(sprint-11): backend foundation and admin core)
   );
 }

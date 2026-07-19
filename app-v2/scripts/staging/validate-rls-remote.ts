@@ -15,6 +15,9 @@ if (!url || !anonKey) {
   process.exit(1);
 }
 
+const supabaseUrl: string = url;
+const supabaseAnonKey: string = anonKey;
+
 interface TestCase {
   label: string;
   jwt?: string;
@@ -24,7 +27,7 @@ interface TestCase {
 }
 
 async function runTest(test: TestCase): Promise<boolean> {
-  const client = createClient(url!, test.jwt ?? anonKey, {
+  const client = createClient(supabaseUrl, test.jwt ?? supabaseAnonKey, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
