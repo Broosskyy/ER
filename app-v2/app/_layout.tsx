@@ -34,7 +34,7 @@ export default function RootLayout() {
             <Stack.Screen name="notifications" />
             <Stack.Screen name="event/[id]" />
             <Stack.Screen name="collection/[type]" />
-            <Stack.Screen name="admin" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="admin" />
           </Stack>
         </NotificationsProvider>
       </FavoritesProvider>

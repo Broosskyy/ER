@@ -26,7 +26,36 @@ function mapSession(session: Session): AuthSession {
   };
 }
 
+export type AuthStateChangeCallback = (session: AuthSession | null) => void;
+
 export const authService = {
+  onAuthStateChange(callback: AuthStateChangeCallback): () => void {
+    if (!featureFlags.useSupabase) {
+      return () => {};
+    }
+
+    const { data } = getSupabaseClient().auth.onAuthStateChange((_event, session) => {
+      callback(session ? mapSession(session) : null);
+    });
+
+    return () => {
+      data.subscription.unsubscribe();
+    };
+  },
+
+  async refreshSession(): Promise<AuthSession | null> {
+    if (!featureFlags.useSupabase) {
+      return localSession;
+    }
+
+    const { data, error } = await getSupabaseClient().auth.refreshSession();
+    if (error || !data.session) {
+      return null;
+    }
+
+    return mapSession(data.session);
+  },
+
   async signIn(email: string, password: string): Promise<AuthSession> {
     if (!featureFlags.useSupabase) {
       if (email === LOCAL_ADMIN_EMAIL && password === LOCAL_ADMIN_PASSWORD) {

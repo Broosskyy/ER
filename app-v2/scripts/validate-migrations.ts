@@ -12,6 +12,7 @@ const requiredChecks = [
   'admin_manage_import_logs',
   'admin_read_sources',
   'admin_manage_sources',
+  'admin_manage_events',
   'completed_with_warnings',
   'fetched_count',
   'validation_errors',
