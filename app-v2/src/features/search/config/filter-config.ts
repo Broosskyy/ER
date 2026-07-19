@@ -64,6 +64,13 @@ export const filterConfig: FilterConfig = {
       active: true,
       sortOrder: 0,
     },
+    {
+      id: 'berlin',
+      label: 'Berlin',
+      value: 'Berlin',
+      active: true,
+      sortOrder: 1,
+    },
   ],
 
   sortOptions: [

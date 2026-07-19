@@ -37,6 +37,47 @@ function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResul
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SupabaseTable = ReturnType<ReturnType<typeof getSupabaseClient>['from']>;
 
+const PUBLISHED_EVENT_SELECT =
+  '*, venues(name, latitude, longitude, address), cities(name), genres(name), artists(name)';
+
+interface SupabaseVenueRelation {
+  name?: string;
+  latitude?: number | null;
+  longitude?: number | null;
+  address?: string | null;
+}
+
+interface SupabaseEventRowWithRelations {
+  venues?: SupabaseVenueRelation | SupabaseVenueRelation[] | null;
+  cities?: { name?: string } | { name?: string }[] | null;
+  genres?: { name?: string } | { name?: string }[] | null;
+  artists?: { name?: string } | { name?: string }[] | null;
+}
+
+function firstRelation<T>(value: T | T[] | null | undefined): T | undefined {
+  if (Array.isArray(value)) {
+    return value[0];
+  }
+  return value ?? undefined;
+}
+
+function mapSupabaseEventRow(row: SupabaseEventRowWithRelations & Record<string, unknown>) {
+  const venue = firstRelation(row.venues);
+  const city = firstRelation(row.cities);
+  const genre = firstRelation(row.genres);
+  const artist = firstRelation(row.artists);
+
+  return mapEventRowToDomain(row as never, {
+    venueName: venue?.name,
+    cityName: city?.name,
+    genreName: genre?.name,
+    artists: artist?.name ? [artist.name] : [],
+    latitude: venue?.latitude ?? undefined,
+    longitude: venue?.longitude ?? undefined,
+    address: venue?.address ?? undefined,
+  });
+}
+
 function createSupabaseTableDatasource<T extends { id: string; active?: boolean }>(
   table: string,
 ) {
@@ -89,19 +130,22 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     events: {
       async getPublishedEvents() {
         const { data, error } = await withRetry(async () =>
-          eventsTable().select('*').eq('status', 'published'),
+          eventsTable().select(PUBLISHED_EVENT_SELECT).eq('status', 'published'),
         );
         if (error) {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
         }
-        return (data ?? []).map((row: unknown) => mapEventRowToDomain(row as never));
+        return (data ?? []).map((row: unknown) => mapSupabaseEventRow(row as never));
       },
       async getEventById(id) {
-        const { data, error } = await eventsTable().select('*').eq('id', id).maybeSingle();
+        const { data, error } = await eventsTable()
+          .select(PUBLISHED_EVENT_SELECT)
+          .eq('id', id)
+          .maybeSingle();
         if (error) {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
         }
-        return data ? mapEventRowToDomain(data as never) : null;
+        return data ? mapSupabaseEventRow(data as never) : null;
       },
       async getAllEvents() {
         const { data, error } = await eventsTable().select('*').neq('status', 'deleted');

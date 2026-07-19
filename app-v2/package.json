@@ -50,6 +50,7 @@
     "validate:staging:local": "bash scripts/staging/apply-migrations-local.sh && bash scripts/staging/validate-schema-local.sh && bash scripts/staging/validate-rls-local.sh",
     "validate:staging:remote": "bash scripts/staging/validate-remote.sh",
     "validate:staging:rls-remote": "tsx scripts/staging/validate-rls-remote.ts",
+    "validate:staging:seed": "tsx scripts/validate-staging-seed.ts",
     "test:staging:connection": "bash scripts/staging/test-connection.sh",
     "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
   },
