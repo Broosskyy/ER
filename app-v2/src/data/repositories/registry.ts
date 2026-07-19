@@ -1,4 +1,5 @@
 import { bindEventRepository, bootstrapApp } from '@/core/bootstrap/app-bootstrap';
+import { NotificationRepository } from '@/data/repositories/notification-repository';
 import {
   AdminEventRepository,
   ArtistRepository,
@@ -32,6 +33,8 @@ registerImportAdapters(importAdapterRegistry);
 
 export const eventRepository = new EventRepository();
 bindEventRepository(eventRepository);
+
+export const notificationRepository = new NotificationRepository(eventRepository);
 
 export const adminEventRepository = new AdminEventRepository();
 export const genreRepository = new GenreRepository();
