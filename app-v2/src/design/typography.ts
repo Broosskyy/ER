@@ -7,9 +7,9 @@ import { colors } from './colors';
  * Source: reference/old-code/src/constants/theme.ts (Typography)
  */
 export const fontSize = {
-  caption: 10,
-  xs: 11,
-  sm: 12,
+  caption: 11,
+  xs: 12,
+  sm: 13,
   base: 14,
   md: 16,
   lg: 18,
@@ -110,10 +110,10 @@ export const textRoles = {
   },
   body: textVariants.body,
   metadata: {
-    fontSize: fontSize.sm,
+    fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
     color: colors.textSecondary,
-    lineHeight: fontSize.sm * lineHeight.normal,
+    lineHeight: fontSize.base * lineHeight.normal,
   },
   label: textVariants.label,
   button: {
@@ -123,16 +123,16 @@ export const textRoles = {
     lineHeight: fontSize.md * lineHeight.tight,
   },
   chip: {
-    fontSize: fontSize.sm,
+    fontSize: fontSize.base,
     fontWeight: fontWeight.medium,
     color: colors.textSecondary,
-    lineHeight: fontSize.sm * lineHeight.tight,
+    lineHeight: fontSize.base * lineHeight.tight,
   },
   chipSelected: {
-    fontSize: fontSize.sm,
+    fontSize: fontSize.base,
     fontWeight: fontWeight.semibold,
     color: colors.textOnPrimary,
-    lineHeight: fontSize.sm * lineHeight.tight,
+    lineHeight: fontSize.base * lineHeight.tight,
   },
   navLabel: {
     fontSize: fontSize.xs,
@@ -159,10 +159,10 @@ export const textRoles = {
     lineHeight: fontSize.base * lineHeight.normal,
   },
   badge: {
-    fontSize: fontSize.xs,
+    fontSize: fontSize.caption,
     fontWeight: fontWeight.semibold,
     color: colors.textSecondary,
-    lineHeight: fontSize.xs * lineHeight.tight,
+    lineHeight: fontSize.caption * lineHeight.tight,
   },
 } as const satisfies Record<string, TextStyle>;
 

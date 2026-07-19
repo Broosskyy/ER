@@ -5,7 +5,7 @@ import { AppText } from '@/components/layout/AppText';
 import { colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { textRoles } from '@/design/typography';
+import { fontSize, textRoles } from '@/design/typography';
 
 import { NotificationButton } from './NotificationButton';
 
@@ -13,7 +13,7 @@ export function HomeHeader() {
   return (
     <View style={styles.container}>
       <View style={styles.logoMark}>
-        <Ionicons name="diamond" size={componentSize.iconMd} color={colors.primary} />
+        <Ionicons name="diamond" size={componentSize.iconSm} color={colors.primary} />
       </View>
       <AppText style={styles.brand}>ETERNAL RΛVE</AppText>
       <NotificationButton />
@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    minHeight: componentSize.headerContentHeight,
+    height: componentSize.headerContentHeight,
     paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingBottom: spacing.sm,
+    marginBottom: spacing.xs,
   },
   logoMark: {
     width: componentSize.iconButtonSize,
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
   },
   brand: {
     ...textRoles.sectionTitle,
-    fontSize: 16,
-    letterSpacing: 2,
+    fontSize: fontSize.md,
+    letterSpacing: 1.5,
     textTransform: 'uppercase',
     flex: 1,
     textAlign: 'center',

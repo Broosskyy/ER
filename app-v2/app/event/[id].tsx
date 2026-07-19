@@ -1,65 +1,185 @@
-import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Pressable, StyleSheet } from 'react-native';
+import { useCallback, useMemo } from 'react';
+import { Alert, ScrollView, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, AppText, SafeAreaContainer, ScreenContent } from '@/components';
+import { AppScreen, AppText } from '@/components';
 import { colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
-import { spacing } from '@/design/spacing';
-import { getDemoEventById } from '@/features/events/data/demo-events';
+import { spacing, spacingRoles } from '@/design/spacing';
+import { textRoles } from '@/design/typography';
+import {
+  BottomTicketCTA,
+  EventDetailHero,
+  EventGenreChips,
+  EventInfoRow,
+  EventNotFoundState,
+  EventSection,
+  ExpandableDescription,
+  LineupList,
+  LocationSection,
+  openEventInMaps,
+  openEventTicketUrl,
+  shareEvent,
+} from '@/features/event-detail';
+import {
+  eventRepository,
+  formatEventDateTime,
+  toEventDisplayModel,
+} from '@/features/events';
+import { useFavorites } from '@/features/favorites';
+
+const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
 
 export default function EventDetailScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { id } = useLocalSearchParams<{ id: string }>();
-  const event = id ? getDemoEventById(id) : undefined;
+  const eventId = Array.isArray(id) ? id[0] : id;
+  const event = useMemo(() => {
+    if (!eventId) {
+      return undefined;
+    }
+
+    const found = eventRepository.getEventById(eventId);
+    return found ? toEventDisplayModel(found) : undefined;
+  }, [eventId]);
+  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
+
+  const hasTicketAction = Boolean(event?.ticketUrl);
+  const scrollBottomPadding = useMemo(() => {
+    if (hasTicketAction) {
+      return TICKET_CTA_HEIGHT + Math.max(insets.bottom, spacing.md);
+    }
+
+    return Math.max(insets.bottom, spacing.lg);
+  }, [hasTicketAction, insets.bottom]);
+
+  const handleShare = useCallback(async () => {
+    if (!event) {
+      return;
+    }
+
+    try {
+      await shareEvent(event);
+    } catch {
+      // Share sheet dismissed or unavailable — no crash.
+    }
+  }, [event]);
+
+  const handleOpenMaps = useCallback(async () => {
+    if (!event) {
+      return;
+    }
+
+    const opened = await openEventInMaps(event);
+
+    if (!opened) {
+      Alert.alert('Maps unavailable', 'Could not open maps for this location.');
+    }
+  }, [event]);
+
+  const handleOpenTickets = useCallback(async () => {
+    if (!event?.ticketUrl) {
+      return;
+    }
+
+    const opened = await openEventTicketUrl(event.ticketUrl);
+
+    if (!opened) {
+      Alert.alert('Tickets unavailable', 'Could not open the ticket link.');
+    }
+  }, [event]);
+
+  if (!event) {
+    return (
+      <AppScreen>
+        <EventNotFoundState onGoBack={() => router.back()} />
+      </AppScreen>
+    );
+  }
 
   return (
     <AppScreen>
-      <SafeAreaContainer>
-        <ScreenContent>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Go back"
-            onPress={() => router.back()}
-            style={({ pressed }) => [styles.backButton, pressed && styles.pressed]}
-          >
-            <Ionicons name="arrow-back" size={componentSize.iconMd} color={colors.textPrimary} />
-            <AppText variant="body">Back</AppText>
-          </Pressable>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[styles.scrollContent, { paddingBottom: scrollBottomPadding }]}
+      >
+        <EventDetailHero
+          event={event}
+          isFavorite={isHydrated && isFavorite(event.id)}
+          onBack={() => router.back()}
+          onShare={handleShare}
+          onToggleFavorite={() => toggleFavorite(event.id)}
+        />
 
-          <AppText variant="title" style={styles.title}>
-            {event?.title ?? 'Event'}
-          </AppText>
-          <AppText variant="bodySmall" color={colors.textSecondary} style={styles.meta}>
-            Event ID: {id}
-          </AppText>
-          <AppText variant="body" color={colors.textSecondary} style={styles.note}>
-            Event detail implementation pending
-          </AppText>
-        </ScreenContent>
-      </SafeAreaContainer>
+        <View style={styles.content}>
+          <AppText style={styles.title}>{event.title}</AppText>
+
+          <EventInfoRow
+            icon="calendar-outline"
+            label="Date & time"
+            value={formatEventDateTime(event)}
+          />
+
+          <EventInfoRow
+            icon="location-outline"
+            label="Venue"
+            value={`${event.venue}, ${event.city}`}
+          />
+
+          {event.priceText ? (
+            <EventInfoRow icon="pricetag-outline" label="Price" value={event.priceText} />
+          ) : null}
+
+          <EventGenreChips genres={event.genres} />
+
+          {event.lineup && event.lineup.length > 0 ? (
+            <EventSection title="Line-up">
+              <LineupList artists={event.lineup} />
+            </EventSection>
+          ) : null}
+
+          {event.description ? (
+            <EventSection title="About">
+              <ExpandableDescription text={event.description} />
+            </EventSection>
+          ) : null}
+
+          <EventSection title="Location">
+            <LocationSection event={event} onOpenMaps={handleOpenMaps} />
+          </EventSection>
+
+          {event.ageRestriction ? (
+            <EventInfoRow icon="id-card-outline" label="Age" value={event.ageRestriction} />
+          ) : null}
+
+          {event.organizer ? (
+            <EventInfoRow icon="people-outline" label="Organizer" value={event.organizer} />
+          ) : null}
+
+          {event.sourceLabel ? (
+            <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceLabel} />
+          ) : null}
+        </View>
+      </ScrollView>
+
+      <BottomTicketCTA ticketUrl={event.ticketUrl} onPressTickets={handleOpenTickets} />
     </AppScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  backButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    minHeight: componentSize.iconButtonSize,
-    marginBottom: spacing.xl,
+  scrollContent: {
+    flexGrow: 0,
   },
-  pressed: {
-    opacity: 0.8,
+  content: {
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingTop: spacing.lg,
+    gap: spacing.lg,
   },
   title: {
-    marginBottom: spacing.sm,
-  },
-  meta: {
-    marginBottom: spacing.lg,
-  },
-  note: {
-    marginTop: spacing.md,
+    ...textRoles.screenTitle,
+    color: colors.textPrimary,
   },
 });

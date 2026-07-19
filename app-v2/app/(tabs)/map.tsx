@@ -1,26 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { AppScreen } from '@/components';
+import { MapUnavailableState } from '@/features/map/components/MapUnavailableState';
 
-import { AppScreen, AppText, SafeAreaContainer, ScreenContent } from '@/components';
-import { colors } from '@/design/colors';
-
-export default function MapPlaceholderScreen() {
+export default function MapTabScreen() {
   return (
     <AppScreen>
-      <SafeAreaContainer>
-        <ScreenContent centered>
-          <AppText variant="heading">Map</AppText>
-          <AppText variant="bodySmall" color={colors.textSecondary} style={styles.note}>
-            Map screen — coming in a future sprint.
-          </AppText>
-        </ScreenContent>
-      </SafeAreaContainer>
+      <MapUnavailableState />
     </AppScreen>
   );
 }
-
-const styles = StyleSheet.create({
-  note: {
-    marginTop: 8,
-    textAlign: 'center',
-  },
-});

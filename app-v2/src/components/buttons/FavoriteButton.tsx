@@ -20,7 +20,7 @@ export function FavoriteButton({
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel}
       accessibilityState={{ selected: active }}
-      hitSlop={8}
+      hitSlop={12}
       onPress={(event) => {
         event.stopPropagation();
         onPress();

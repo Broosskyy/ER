@@ -8,10 +8,10 @@ import { componentSize } from '@/design/layout';
 import { radii, radiusRoles } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 
 export interface EventCardProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   isFavorite: boolean;
   onToggleFavorite: () => void;
 }
@@ -28,7 +28,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
       <View style={styles.thumbnailWrap}>
         <Image source={event.image} style={styles.thumbnail} resizeMode="cover" />
         <View style={styles.dateOverlay}>
-          <AppText style={styles.dateText}>{event.dateLabel}</AppText>
+          <AppText style={styles.dateText}>{event.date}</AppText>
         </View>
       </View>
 
@@ -37,7 +37,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
           {event.title}
         </AppText>
         <AppText style={styles.venue} numberOfLines={1}>
-          {event.venueName}, {event.city}
+          {event.venue}, {event.city}
         </AppText>
         <View style={styles.tagRow}>
           {event.genres.slice(0, 2).map((genre) => (
@@ -49,7 +49,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
       </View>
 
       <View style={styles.trailing} onStartShouldSetResponder={() => true}>
-        <AppText style={styles.time}>{event.timeLabel}</AppText>
+        <AppText style={styles.time}>{event.startTime}</AppText>
         <FavoriteButton active={isFavorite} onPress={onToggleFavorite} />
       </View>
     </Pressable>
@@ -63,8 +63,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.md,
+    minHeight: componentSize.eventListRowMinHeight,
     paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingVertical: spacing.md,
+    paddingVertical: spacing.lg,
     backgroundColor: colorRoles.cardBackground,
     borderTopWidth: 1,
     borderBottomWidth: 1,
@@ -100,8 +101,9 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    gap: spacing.xs,
+    gap: spacing.sm,
     minWidth: 0,
+    justifyContent: 'center',
   },
   title: {
     ...textRoles.cardTitle,
@@ -113,7 +115,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: spacing.sm,
-    marginTop: spacing.xs,
   },
   tag: {
     backgroundColor: colorRoles.tagBackground,
@@ -128,6 +129,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
+    minHeight: THUMB_WIDTH / componentSize.eventListThumbnailAspectRatio,
     paddingVertical: spacing.xs,
     gap: spacing.sm,
   },
