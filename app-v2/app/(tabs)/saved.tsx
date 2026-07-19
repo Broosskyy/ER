@@ -1,48 +1,61 @@
-import { Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useCallback } from 'react';
+import { FlatList, ListRenderItem, Platform, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, AppText, EmptyState, SafeAreaContainer } from '@/components';
+import { AppScreen, SafeAreaContainer } from '@/components';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
+import { DemoEvent } from '@/features/events/data/demo-events';
 import { useFavorites } from '@/features/favorites';
-import { EventCard } from '@/features/home/components';
+import { SavedEmptyState, SavedEventRow, SavedHeader } from '@/features/saved';
 
 export default function SavedScreen() {
+  const router = useRouter();
   const insets = useSafeAreaInsets();
   const { favoriteEvents, isFavorite, toggleFavorite } = useFavorites();
   const tabBarHeight =
     layout.bottomNavHeight +
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
 
+  const handleExploreEvents = useCallback(() => {
+    router.navigate('/(tabs)');
+  }, [router]);
+
+  const renderItem: ListRenderItem<DemoEvent> = useCallback(
+    ({ item }) => (
+      <SavedEventRow
+        event={item}
+        isFavorite={isFavorite(item.id)}
+        onToggleFavorite={toggleFavorite}
+      />
+    ),
+    [isFavorite, toggleFavorite],
+  );
+
+  const keyExtractor = useCallback((item: DemoEvent) => item.id, []);
+
   return (
     <AppScreen>
-      <SafeAreaContainer edges={['top']}>
-        <View style={styles.header}>
-          <AppText variant="title">Saved</AppText>
-        </View>
+      <SafeAreaContainer edges={['top']} style={styles.safeArea}>
+        <SavedHeader count={favoriteEvents.length} />
 
         {favoriteEvents.length === 0 ? (
-          <EmptyState
-            title="Noch keine Favoriten"
-            description="Tippe auf das Herz bei einem Event, um es hier zu speichern."
-          />
+          <View style={[styles.emptyWrap, { paddingBottom: tabBarHeight }]}>
+            <SavedEmptyState onExploreEvents={handleExploreEvents} />
+          </View>
         ) : (
-          <ScrollView
+          <FlatList
+            data={favoriteEvents}
+            keyExtractor={keyExtractor}
+            renderItem={renderItem}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={[
               styles.listContent,
               { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
             ]}
-          >
-            {favoriteEvents.map((event) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                isFavorite={isFavorite(event.id)}
-                onToggleFavorite={() => toggleFavorite(event.id)}
-              />
-            ))}
-          </ScrollView>
+            extraData={favoriteEvents.length}
+          />
         )}
       </SafeAreaContainer>
     </AppScreen>
@@ -50,9 +63,11 @@ export default function SavedScreen() {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingBottom: spacing.md,
+  safeArea: {
+    flex: 1,
+  },
+  emptyWrap: {
+    flex: 1,
   },
   listContent: {
     flexGrow: 0,
