@@ -3,7 +3,7 @@ import { Platform, StyleSheet, View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, type Region } from 'react-native-maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { appConfig, layout } from '@/design/layout';
+import { appConfig } from '@/design/layout';
 import { spacing } from '@/design/spacing';
 import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
@@ -16,6 +16,7 @@ import { MapEventPreview } from '@/features/map/components/MapEventPreview';
 import { MapHeaderOverlay } from '@/features/map/components/MapHeaderOverlay';
 import { MapLoadingOverlay } from '@/features/map/components/MapLoadingOverlay';
 import { MapEventMarker } from '@/features/map/components/MapEventMarker';
+import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 type MapLoadStatus = 'loading' | 'loaded' | 'error';
 
@@ -76,9 +77,7 @@ export default function NativeEventMap({ onExploreEvents }: NativeEventMapProps)
   );
   const cityLabel = resolveMapCityLabel(appConfig.defaultCity);
 
-  const tabBarHeight =
-    layout.bottomNavHeight +
-    (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
+  const tabBarHeight = getBottomTabBarHeight(insets);
   const previewBottomInset = tabBarHeight + spacing.md;
 
   const selectedEvent = useMemo(() => {

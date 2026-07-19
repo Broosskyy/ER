@@ -24,7 +24,7 @@ export default function RootLayout() {
   return (
     <FavoritesProvider>
       <StatusBar style="light" />
-      {Platform.OS === 'android' ? <NavigationBar hidden style="dark" /> : null}
+      {Platform.OS === 'android' ? <NavigationBar style="light" /> : null}
       <Stack
         screenOptions={{
           headerShown: false,

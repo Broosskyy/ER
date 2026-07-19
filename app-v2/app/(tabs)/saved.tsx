@@ -1,22 +1,20 @@
 import { useRouter } from 'expo-router';
 import { useCallback } from 'react';
-import { FlatList, ListRenderItem, Platform, StyleSheet, View } from 'react-native';
+import { FlatList, ListRenderItem, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppScreen, SafeAreaContainer } from '@/components';
-import { layout } from '@/design/layout';
-import { spacing, spacingRoles } from '@/design/spacing';
+import { spacingRoles } from '@/design/spacing';
 import type { EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { SavedEmptyState, SavedEventRow, SavedHeader } from '@/features/saved';
+import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 export default function SavedScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { favoriteEvents, isFavorite, toggleFavorite, isHydrated } = useFavorites();
-  const tabBarHeight =
-    layout.bottomNavHeight +
-    (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
+  const tabBarHeight = getBottomTabBarHeight(insets);
 
   const handleExploreEvents = useCallback(() => {
     router.navigate('/(tabs)');

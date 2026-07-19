@@ -10,8 +10,8 @@ function applyAndroidSystemUi() {
 
   StatusBar.setHidden(false, 'fade');
   StatusBar.setStyle('light');
-  NavigationBar.setHidden(true);
-  NavigationBar.setStyle('dark');
+  NavigationBar.setHidden(false);
+  NavigationBar.setStyle('light');
 }
 
 export function useAndroidSystemUi() {

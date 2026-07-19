@@ -5,7 +5,7 @@ const googleMapsApiKey = process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 const config: ExpoConfig = {
   name: 'Eternal Rave',
   slug: 'eternal-rave',
-  version: '0.1.1',
+  version: '0.1.2',
   orientation: 'portrait',
   icon: './assets/images/icon.png',
   scheme: 'eternal-rave',
@@ -16,7 +16,7 @@ const config: ExpoConfig = {
   },
   android: {
     package: 'com.eternalrave.app',
-    versionCode: 2,
+    versionCode: 3,
     adaptiveIcon: {
       backgroundColor: '#0B0B0F',
       foregroundImage: './assets/images/android-icon-foreground.png',
@@ -55,8 +55,8 @@ const config: ExpoConfig = {
     [
       'expo-navigation-bar',
       {
-        hidden: true,
-        style: 'dark',
+        hidden: false,
+        style: 'light',
         enforceContrast: false,
       },
     ],

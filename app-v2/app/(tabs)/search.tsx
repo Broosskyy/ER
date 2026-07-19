@@ -3,7 +3,6 @@ import {
   FlatList,
   Keyboard,
   ListRenderItem,
-  Platform,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
@@ -11,8 +10,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AppScreen, SafeAreaContainer } from '@/components';
-import { layout } from '@/design/layout';
-import { spacing, spacingRoles } from '@/design/spacing';
+import { spacingRoles } from '@/design/spacing';
 import {
   eventRepository,
   toEventDisplayModel,
@@ -35,6 +33,7 @@ import {
   countActiveFilters,
   summarizeActiveFilters,
 } from '@/features/search/utils/filter-events';
+import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 interface SearchEventRowProps {
   event: EventDisplayModel;
@@ -86,9 +85,7 @@ export default function SearchScreen() {
     return () => clearTimeout(timeout);
   }, [shouldAutoFocus, clearSearchFocus]);
 
-  const tabBarHeight =
-    layout.bottomNavHeight +
-    (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
+  const tabBarHeight = getBottomTabBarHeight(insets);
 
   const results = useMemo(() => {
     return applyEventFilters(eventRepository.getPublishedEvents(), filters).map(toEventDisplayModel);
