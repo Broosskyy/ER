@@ -16,6 +16,8 @@ const requiredChecks = [
   'fetched_count',
   'validation_errors',
   'source_config',
+  'matched_city_id',
+  'duplicate_score',
 ];
 
 function main(): void {
