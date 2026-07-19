@@ -54,6 +54,13 @@ export interface ImportRecord {
   normalizedPayload?: Record<string, unknown>;
   validationErrors?: ValidationIssue[];
   validationWarnings?: ValidationIssue[];
+  matchedCityId?: string;
+  matchedVenueId?: string;
+  matchedArtistIds?: string[];
+  matchedGenreIds?: string[];
+  duplicateEventId?: string;
+  duplicateScore?: number;
+  matchingWarnings?: string[];
   status: ImportRecordStatus;
   createdAt: string;
   updatedAt: string;
@@ -84,6 +91,13 @@ export interface CreateImportRecordInput {
   normalizedPayload?: Record<string, unknown>;
   validationErrors?: ValidationIssue[];
   validationWarnings?: ValidationIssue[];
+  matchedCityId?: string;
+  matchedVenueId?: string;
+  matchedArtistIds?: string[];
+  matchedGenreIds?: string[];
+  duplicateEventId?: string;
+  duplicateScore?: number;
+  matchingWarnings?: string[];
   status?: ImportRecordStatus;
 }
 

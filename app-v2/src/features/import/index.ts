@@ -32,6 +32,7 @@ export {
   ImportRepositoryError,
   ImportAdapterError,
   ImportExecutionError,
+  ImportMatchingError,
 } from './errors/import-errors';
 export type { ImportErrorCode } from './errors/import-errors';
 
@@ -50,5 +51,8 @@ export type {
 export { EventNormalizer, eventNormalizer } from './normalization/event-normalizer';
 export { ImportCandidateValidator, importCandidateValidator } from './validation/import-candidate-validator';
 export { ImportFetchService, importFetchService, assertSafeImportUrl } from './services/import-fetch-service';
+export type { MatchResult, MatchingCatalog } from './matching/match-result';
+export { matchingConfig } from './matching/matching-config';
+export { ImportMatchingService, importMatchingService } from './matching/import-matching-service';
 export { ImportLoggingService } from './services/import-logging-service';
 export { ImportOrchestrator } from './services/import-orchestrator';
