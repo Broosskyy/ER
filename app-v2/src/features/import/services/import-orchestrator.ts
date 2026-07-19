@@ -1,12 +1,13 @@
 import { importConfig } from '@/features/import/config/import-config';
 import type { ImportAdapterRegistry } from '@/features/import/adapters/import-adapter-registry';
+import type { ImportAdapterRecordResult } from '@/features/import/adapters/types';
 import {
   ImportAdapterError,
   ImportError,
   ImportExecutionError,
 } from '@/features/import/errors/import-errors';
 import type { ImportTriggerType } from '@/features/import/models/statuses';
-import type { ImportJob } from '@/features/import/models/types';
+import { createEmptyJobMetrics, type ImportJob } from '@/features/import/models/types';
 import type {
   ImportJobRepository,
   ImportRecordRepository,
@@ -30,6 +31,35 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
         reject(error);
       });
   });
+}
+
+function computeMetrics(records: ImportAdapterRecordResult[]) {
+  const metrics = createEmptyJobMetrics();
+  metrics.fetchedCount = records.length;
+
+  for (const record of records) {
+    if (record.status === 'needs_review') {
+      metrics.parsedCount += 1;
+    }
+    if (record.status === 'invalid') {
+      metrics.invalidCount += 1;
+    }
+    if (record.validationWarnings && record.validationWarnings.length > 0) {
+      metrics.warningCount += 1;
+    }
+    if (record.validationErrors && record.validationErrors.length > 0) {
+      metrics.errorCount += 1;
+    }
+  }
+
+  return metrics;
+}
+
+function resolveJobStatus(metrics: ReturnType<typeof computeMetrics>): ImportJob['status'] {
+  if (metrics.invalidCount > 0 || metrics.warningCount > 0 || metrics.errorCount > 0) {
+    return 'completed_with_warnings';
+  }
+  return 'completed';
 }
 
 export class ImportOrchestrator {
@@ -80,37 +110,55 @@ export class ImportOrchestrator {
         `Running adapter "${adapter.adapterKey}".`,
       );
 
-      const fetchedRecords = await withTimeout(
-        adapter.fetchRecords(source),
+      const adapterResult = await withTimeout(
+        adapter.execute(source, {
+          jobId: runningJob.id,
+          log: async (level, code, message) => {
+            await this.loggingService[level](runningJob.id, code, message);
+          },
+        }),
         importConfig.timeoutMs,
       );
 
-      if (fetchedRecords.length > importConfig.maxRecordsPerJob) {
+      if (adapterResult.records.length > importConfig.maxRecordsPerJob) {
         throw new ImportExecutionError(
-          `Adapter returned ${fetchedRecords.length} records, exceeding limit of ${importConfig.maxRecordsPerJob}.`,
+          `Adapter returned ${adapterResult.records.length} records, exceeding limit of ${importConfig.maxRecordsPerJob}.`,
           'IMPORT_RECORD_LIMIT_EXCEEDED',
         );
       }
 
-      const savedRecords = await this.recordRepository.createMany(
-        fetchedRecords.map((record) => ({
+      for (const warning of adapterResult.warnings) {
+        await this.loggingService.warning(runningJob.id, 'IMPORT_ADAPTER_WARNING', warning);
+      }
+
+      await this.recordRepository.createMany(
+        adapterResult.records.map((record) => ({
           importJobId: runningJob.id,
           sourceId: source.id,
           externalId: record.externalId,
+          sourceUrl: record.sourceUrl,
           rawPayload: record.rawPayload,
-          status: 'fetched' as const,
+          normalizedPayload: record.normalizedCandidate
+            ? (record.normalizedCandidate as unknown as Record<string, unknown>)
+            : undefined,
+          validationErrors: record.validationErrors,
+          validationWarnings: record.validationWarnings,
+          status: record.status,
         })),
       );
+
+      const metrics = computeMetrics(adapterResult.records);
 
       await this.loggingService.info(
         runningJob.id,
         'IMPORT_RECORDS_SAVED',
-        `Saved ${savedRecords.length} import records.`,
+        `Saved ${adapterResult.records.length} import records.`,
       );
 
       return await this.jobRepository.update({
         ...runningJob,
-        status: 'completed',
+        status: resolveJobStatus(metrics),
+        metrics,
         finishedAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       });
@@ -121,6 +169,7 @@ export class ImportOrchestrator {
       return await this.jobRepository.update({
         ...runningJob,
         status: 'failed',
+        errorSummary: message,
         finishedAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       });
