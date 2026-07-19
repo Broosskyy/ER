@@ -1,13 +1,12 @@
-import type { Region } from 'react-native-maps';
-
 import { appConfig } from '@/design/layout';
 import type { EventDisplayModel } from '@/features/events';
 
+import type { MapRegion } from './types';
 import { sanitizeMapRegion } from './utils/coordinates';
 
 export type MapCityId = 'Köln';
 
-export const MAP_CITY_REGIONS: Record<MapCityId, Region> = {
+export const MAP_CITY_REGIONS: Record<MapCityId, MapRegion> = {
   Köln: {
     latitude: 50.9375,
     longitude: 6.9603,
@@ -29,7 +28,7 @@ export function resolveMapCityLabel(city?: string): string {
 export function getInitialMapRegion(
   events: (EventDisplayModel & { latitude: number; longitude: number })[],
   preferredCity = appConfig.defaultCity,
-): Region {
+): MapRegion {
   const cityRegion = MAP_CITY_REGIONS[preferredCity as MapCityId];
 
   if (cityRegion) {
