@@ -37,7 +37,9 @@ async function main(): Promise<void> {
   const health = await fetch(`${url}/rest/v1/`, {
     headers: { apikey: anonKey },
   });
-  if (!health.ok && health.status !== 404) {
+  // Publishable keys (sb_publishable_*) return 401 on the OpenAPI root; table queries still work.
+  const rootOk = health.ok || health.status === 404 || health.status === 401;
+  if (!rootOk) {
     fail(`REST health check failed with HTTP ${health.status}`);
   }
   console.log(`  ✅ REST endpoint reachable (HTTP ${health.status})`);
