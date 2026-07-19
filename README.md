@@ -79,6 +79,10 @@ Never put service role keys in client env vars.
 - [Search Console](app-v2/docs/search-console.md)
 - [Performance](app-v2/docs/performance.md)
 - [Web Manifest](app-v2/docs/web-manifest.md)
+- [Release Management](app-v2/docs/release.md)
+- [Store Listings & Assets](app-v2/docs/store.md)
+- [Beta Program](app-v2/docs/beta.md)
+- [Launch Checklist](app-v2/docs/launch-checklist.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
 
@@ -92,3 +96,4 @@ Never put service role keys in client env vars.
 - 12.7B Domain, Email & Brand Foundation — complete
 - 12.7C Legal, Privacy & Consent — complete
 - 12.7D Analytics, Search Console & SEO — complete
+- 12.7E Store Preparation & Public Beta — complete
