@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { Alert, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, AppText } from '@/components';
+import { AppScreen, AppText, ResponsiveScreen } from '@/components';
 import { colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
@@ -105,15 +105,16 @@ export default function EventDetailScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[styles.scrollContent, { paddingBottom: scrollBottomPadding }]}
       >
-        <EventDetailHero
-          event={event}
-          isFavorite={isHydrated && isFavorite(event.id)}
-          onBack={() => router.back()}
-          onShare={handleShare}
-          onToggleFavorite={() => toggleFavorite(event.id)}
-        />
+        <ResponsiveScreen style={styles.detailFrame}>
+          <EventDetailHero
+            event={event}
+            isFavorite={isHydrated && isFavorite(event.id)}
+            onBack={() => router.back()}
+            onShare={handleShare}
+            onToggleFavorite={() => toggleFavorite(event.id)}
+          />
 
-        <View style={styles.content}>
+          <View style={styles.content}>
           <AppText style={styles.title}>{event.title}</AppText>
 
           <EventInfoRow
@@ -161,7 +162,8 @@ export default function EventDetailScreen() {
           {event.sourceLabel ? (
             <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceLabel} />
           ) : null}
-        </View>
+          </View>
+        </ResponsiveScreen>
       </ScrollView>
 
       <BottomTicketCTA ticketUrl={event.ticketUrl} onPressTickets={handleOpenTickets} />
@@ -172,6 +174,10 @@ export default function EventDetailScreen() {
 const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 0,
+    width: '100%',
+  },
+  detailFrame: {
+    flex: 0,
   },
   content: {
     paddingHorizontal: spacingRoles.screenHorizontal,

@@ -11,7 +11,10 @@ import { spacing, spacingRoles } from './spacing';
 export const layout = {
   bottomNavHeight: 58,
   minTouchTarget: 44,
+  /** Legacy mobile narrow cap — prefer responsive tokens below on web/tablet. */
   maxContentWidth: 480,
+  maxContentWidthTablet: 720,
+  maxContentWidthDesktop: 960,
   screenPadding: spacing.screen,
   featuredCardPeek: 40,
 } as const;
