@@ -47,7 +47,7 @@ export function getSearchGenreLabel(genreId: SearchGenreChipId): string {
 export function buildEventSearchIndex(event: DemoEvent): string {
   return [
     event.title,
-    event.venueName,
+    event.venue,
     event.city,
     ...event.genres,
     ...event.artists,

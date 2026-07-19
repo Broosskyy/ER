@@ -36,7 +36,7 @@ export function FeaturedEventCard({
         <Image source={event.image} style={styles.image} resizeMode="cover" />
         <View style={styles.imageOverlay} />
         <View style={styles.dateBadge}>
-          <AppText style={styles.dateBadgeText}>{event.dateLabel}</AppText>
+          <AppText style={styles.dateBadgeText}>{event.date}</AppText>
         </View>
         <View style={styles.favoriteWrap} onStartShouldSetResponder={() => true}>
           <FavoriteButton active={isFavorite} onPress={onToggleFavorite} />
@@ -49,7 +49,7 @@ export function FeaturedEventCard({
           <View style={styles.venueRow}>
             <Ionicons name="location" size={componentSize.iconSm} color={colors.primary} />
             <AppText style={styles.venue} numberOfLines={1}>
-              {event.venueName}, {event.city}
+              {event.venue}, {event.city}
             </AppText>
           </View>
           <View style={styles.tagRow}>
