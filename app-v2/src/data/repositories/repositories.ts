@@ -113,6 +113,14 @@ export class EventRepository {
     }
   }
 
+  /** @internal Used by app bootstrap tests only. */
+  resetForTesting(): void {
+    this.initialized = false;
+    this.publishedEvents = [];
+    this.eventsById = new Map();
+    this.cache.invalidate();
+  }
+
   getPublishedEvents(): Event[] {
     this.ensureReady();
     return [...this.publishedEvents];
