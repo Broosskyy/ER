@@ -7,6 +7,7 @@ import { colorRoles } from '@/design/colors';
 import { componentSize, layout } from '@/design/layout';
 import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
+import { SearchProvider } from '@/features/search/SearchContext';
 
 type TabIconName = keyof typeof Ionicons.glyphMap;
 
@@ -28,8 +29,9 @@ export default function TabLayout() {
     layout.bottomNavHeight + (Platform.OS === 'ios' ? iosBottomPadding : androidBottomPadding);
 
   return (
-    <Tabs
-      screenOptions={{
+    <SearchProvider>
+      <Tabs
+        screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colorRoles.bottomNavActive,
         tabBarInactiveTintColor: colorRoles.bottomNavInactive,
@@ -84,7 +86,8 @@ export default function TabLayout() {
             tabIcon(focused ? 'person' : 'person-outline', focused),
         }}
       />
-    </Tabs>
+      </Tabs>
+    </SearchProvider>
   );
 }
 

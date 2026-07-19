@@ -44,7 +44,7 @@ export default function EventDetailScreen() {
     const found = eventRepository.getEventById(eventId);
     return found ? toEventDisplayModel(found) : undefined;
   }, [eventId]);
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
 
   const hasTicketAction = Boolean(event?.ticketUrl);
   const scrollBottomPadding = useMemo(() => {
@@ -107,7 +107,7 @@ export default function EventDetailScreen() {
       >
         <EventDetailHero
           event={event}
-          isFavorite={isFavorite(event.id)}
+          isFavorite={isHydrated && isFavorite(event.id)}
           onBack={() => router.back()}
           onShare={handleShare}
           onToggleFavorite={() => toggleFavorite(event.id)}

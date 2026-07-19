@@ -13,3 +13,4 @@ export {
   SortSegmentControl,
 } from './components';
 export { filterSearchEvents } from './utils/filter-events';
+export { SearchProvider, useSearchFilters } from './SearchContext';

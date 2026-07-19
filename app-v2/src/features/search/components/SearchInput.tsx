@@ -12,6 +12,7 @@ export interface SearchInputProps {
   onChangeText: (value: string) => void;
   placeholder?: string;
   testID?: string;
+  autoFocus?: boolean;
 }
 
 export function SearchInput({
@@ -19,6 +20,7 @@ export function SearchInput({
   onChangeText,
   placeholder = 'Search events, artists or venues...',
   testID,
+  autoFocus = false,
 }: SearchInputProps) {
   return (
     <View style={styles.container}>
@@ -33,6 +35,7 @@ export function SearchInput({
         accessibilityLabel="Search events"
         autoCapitalize="none"
         autoCorrect={false}
+        autoFocus={autoFocus}
         clearButtonMode="while-editing"
         placeholder={placeholder}
         placeholderTextColor={colorRoles.searchPlaceholder}

@@ -15,7 +15,7 @@ describe('normalizeRawEvent', () => {
 
     expect(errors).toHaveLength(0);
     expect(event.title).toBe('VOID: Techno Saturday');
-    expect(event.city).toBe('Berlin');
+    expect(event.city).toBe('Köln');
     expect(event.genres).toEqual(['Techno', 'Hard Techno']);
     expect(event.startDateTime).toContain('2026-05-24');
   });
@@ -134,7 +134,7 @@ describe('EventRepository', () => {
   });
 
   it('searches by title, artist, venue, city, and genre', () => {
-    expect(repository.searchEvents({ query: 'berghain' })).toHaveLength(1);
+    expect(repository.searchEvents({ query: 'bootshaus' })).toHaveLength(1);
     expect(repository.searchEvents({ query: 'klangkuenstler' })).toHaveLength(1);
     expect(repository.searchEvents({ genre: 'house' }).length).toBeGreaterThan(0);
   });

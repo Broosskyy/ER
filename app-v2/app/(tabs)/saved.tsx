@@ -13,7 +13,7 @@ import { SavedEmptyState, SavedEventRow, SavedHeader } from '@/features/saved';
 export default function SavedScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { favoriteEvents, isFavorite, toggleFavorite } = useFavorites();
+  const { favoriteEvents, isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const tabBarHeight =
     layout.bottomNavHeight +
     (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
@@ -26,11 +26,11 @@ export default function SavedScreen() {
     ({ item }) => (
       <SavedEventRow
         event={item}
-        isFavorite={isFavorite(item.id)}
+        isFavorite={isHydrated && isFavorite(item.id)}
         onToggleFavorite={toggleFavorite}
       />
     ),
-    [isFavorite, toggleFavorite],
+    [isFavorite, isHydrated, toggleFavorite],
   );
 
   const keyExtractor = useCallback((item: EventDisplayModel) => item.id, []);
@@ -38,9 +38,11 @@ export default function SavedScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
-        <SavedHeader count={favoriteEvents.length} />
+        <SavedHeader count={isHydrated ? favoriteEvents.length : 0} />
 
-        {favoriteEvents.length === 0 ? (
+        {!isHydrated ? (
+          <View style={[styles.emptyWrap, { paddingBottom: tabBarHeight }]} />
+        ) : favoriteEvents.length === 0 ? (
           <View style={[styles.emptyWrap, { paddingBottom: tabBarHeight }]}>
             <SavedEmptyState onExploreEvents={handleExploreEvents} />
           </View>

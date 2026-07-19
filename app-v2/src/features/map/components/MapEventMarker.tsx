@@ -16,6 +16,10 @@ export const MapEventMarker = memo(function MapEventMarker({
   selected,
   onSelect,
 }: MapEventMarkerProps) {
+  if (!Number.isFinite(event.latitude) || !Number.isFinite(event.longitude)) {
+    return null;
+  }
+
   return (
     <Marker
       identifier={event.id}

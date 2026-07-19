@@ -8,3 +8,5 @@ export {
   MapHeaderOverlay,
 } from './components';
 export { eternalRaveMapStyle } from './map-style-dark';
+export { getGoogleMapsApiKey, isAndroidMapConfigured } from './map-availability';
+export { isRenderableCoordinate, sanitizeMapRegion } from './utils/coordinates';
