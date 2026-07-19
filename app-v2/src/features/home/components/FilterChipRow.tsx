@@ -14,6 +14,7 @@ export function FilterChipRow({ selectedId, onSelect }: FilterChipRowProps) {
   return (
     <ScrollView
       horizontal
+      nestedScrollEnabled
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.content}
     >
@@ -32,7 +33,8 @@ export function FilterChipRow({ selectedId, onSelect }: FilterChipRowProps) {
 const styles = StyleSheet.create({
   content: {
     paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingRight: spacingRoles.screenHorizontal + spacing.sm,
     gap: spacingRoles.chipGap,
-    paddingBottom: spacing.md,
+    paddingBottom: spacing.sm,
   },
 });

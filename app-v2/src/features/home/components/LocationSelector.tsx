@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     minHeight: componentSize.chipHeight,
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.xs,
     borderRadius: radiusRoles.chip,
     backgroundColor: colorRoles.chipBackground,
     borderWidth: 1,

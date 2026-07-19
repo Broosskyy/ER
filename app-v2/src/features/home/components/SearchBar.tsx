@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: componentSize.searchFieldHeight,
     marginHorizontal: spacingRoles.screenHorizontal,
-    marginBottom: spacing.md,
+    marginBottom: spacing.sm,
     paddingHorizontal: spacingRoles.searchPaddingHorizontal,
     borderRadius: radiusRoles.searchField,
     backgroundColor: colorRoles.searchBackground,

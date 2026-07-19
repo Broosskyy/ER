@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IconButton } from '@/components/buttons/IconButton';
@@ -13,6 +13,7 @@ import {
   getFeaturedDemoEvents,
   getTonightDemoEvents,
 } from '@/features/events/data/demo-events';
+import { useFavorites } from '@/features/favorites';
 import {
   EventCard,
   FeaturedEventCard,
@@ -21,6 +22,7 @@ import {
   LocationSelector,
   SearchBar,
   SectionHeader,
+  getFeaturedCardWidth,
 } from '@/features/home/components';
 
 function matchesFilter(event: DemoEvent, filterId: HomeFilterChipId): boolean {
@@ -36,9 +38,13 @@ function matchesFilter(event: DemoEvent, filterId: HomeFilterChipId): boolean {
 
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
-  const tabBarHeight = layout.bottomNavHeight + insets.bottom;
+  const tabBarHeight =
+    layout.bottomNavHeight +
+    (Platform.OS === 'ios' ? Math.max(insets.bottom, spacing.sm) : spacing.sm);
+  const featuredCardWidth = getFeaturedCardWidth();
+  const featuredSnapInterval = featuredCardWidth + spacing.md;
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedFilter, setSelectedFilter] = useState<HomeFilterChipId>('all');
-  const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
 
   const featuredEvents = useMemo(() => {
     return getFeaturedDemoEvents().filter((event) => matchesFilter(event, selectedFilter));
@@ -47,18 +53,6 @@ export default function HomeScreen() {
   const tonightEvents = useMemo(() => {
     return getTonightDemoEvents().filter((event) => matchesFilter(event, selectedFilter));
   }, [selectedFilter]);
-
-  const toggleFavorite = (eventId: string) => {
-    setFavoriteIds((current) => {
-      const next = new Set(current);
-      if (next.has(eventId)) {
-        next.delete(eventId);
-      } else {
-        next.add(eventId);
-      }
-      return next;
-    });
-  };
 
   return (
     <AppScreen>
@@ -79,20 +73,26 @@ export default function HomeScreen() {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={[
             styles.scrollContent,
-            { paddingBottom: tabBarHeight + spacing.lg },
+            { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
           ]}
         >
-          <SectionHeader title="Events in deiner Nähe" actionLabel="Mehr anzeigen" />
+          <SectionHeader title="Events in deiner Nähe" actionLabel="Mehr anzeigen" isFirst />
           <ScrollView
             horizontal
+            nestedScrollEnabled
             showsHorizontalScrollIndicator={false}
+            decelerationRate="fast"
+            snapToInterval={featuredSnapInterval}
+            snapToAlignment="start"
+            disableIntervalMomentum
             contentContainerStyle={styles.featuredRow}
           >
             {featuredEvents.map((event) => (
               <FeaturedEventCard
                 key={event.id}
                 event={event}
-                isFavorite={favoriteIds.has(event.id)}
+                width={featuredCardWidth}
+                isFavorite={isFavorite(event.id)}
                 onToggleFavorite={() => toggleFavorite(event.id)}
               />
             ))}
@@ -104,7 +104,7 @@ export default function HomeScreen() {
               <EventCard
                 key={event.id}
                 event={event}
-                isFavorite={favoriteIds.has(event.id)}
+                isFavorite={isFavorite(event.id)}
                 onToggleFavorite={() => toggleFavorite(event.id)}
               />
             ))}
@@ -121,14 +121,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: spacingRoles.screenHorizontal,
-    marginBottom: spacing.md,
+    marginBottom: spacing.sm,
     gap: spacing.sm,
   },
   scrollContent: {
-    flexGrow: 1,
+    flexGrow: 0,
   },
   featuredRow: {
-    paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingLeft: spacingRoles.screenHorizontal,
+    paddingRight: layout.featuredCardPeek,
     gap: spacing.md,
     paddingBottom: spacing.xs,
   },

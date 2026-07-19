@@ -9,10 +9,11 @@ import { spacing, spacingRoles } from './spacing';
  * - reference/mockups/screens/09–15, 52–57
  */
 export const layout = {
-  bottomNavHeight: 64,
+  bottomNavHeight: 58,
   minTouchTarget: 44,
   maxContentWidth: 480,
   screenPadding: spacing.screen,
+  featuredCardPeek: 40,
 } as const;
 
 export const appConfig = {
@@ -27,19 +28,22 @@ export const appConfig = {
  * Values marked REVIEW in DESIGN_GUIDELINES.md where uncertain.
  */
 export const componentSize = {
-  headerContentHeight: 56,
-  searchFieldHeight: 44,
-  chipHeight: 32,
+  headerContentHeight: 48,
+  searchFieldHeight: 40,
+  chipHeight: 34,
   buttonHeight: 48,
   iconButtonSize: 44,
   bottomNavHeight: layout.bottomNavHeight,
+  bottomNavIconSize: 22,
+  bottomNavIconSizeActive: 24,
 
   iconSm: 20,
   iconMd: 24,
   iconLg: 28,
 
-  eventListThumbnailWidth: 96,
+  eventListThumbnailWidth: 108,
   eventListThumbnailAspectRatio: 4 / 3,
+  eventListRowMinHeight: 96,
   featuredHeroAspectRatio: 16 / 9,
   eventDetailHeroAspectRatio: 16 / 9,
   mapPreviewAspectRatio: 16 / 9,

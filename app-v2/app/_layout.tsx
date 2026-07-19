@@ -7,22 +7,23 @@ import { Platform } from 'react-native';
 import 'react-native-reanimated';
 
 import { colors } from '@/design/colors';
-import { useAndroidImmersiveSystemUi } from '@/platform/android-immersive-system-ui';
+import { FavoritesProvider } from '@/features/favorites';
+import { useAndroidSystemUi } from '@/platform/android-system-ui';
 
 export { ErrorBoundary } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  useAndroidImmersiveSystemUi();
+  useAndroidSystemUi();
 
   useEffect(() => {
     SplashScreen.hideAsync();
   }, []);
 
   return (
-    <>
-      <StatusBar style="light" hidden />
+    <FavoritesProvider>
+      <StatusBar style="light" />
       {Platform.OS === 'android' ? <NavigationBar hidden style="dark" /> : null}
       <Stack
         screenOptions={{
@@ -33,6 +34,6 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="event/[id]" />
       </Stack>
-    </>
+    </FavoritesProvider>
   );
 }

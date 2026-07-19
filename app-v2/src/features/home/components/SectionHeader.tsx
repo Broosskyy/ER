@@ -9,11 +9,17 @@ export interface SectionHeaderProps {
   title: string;
   actionLabel?: string;
   onActionPress?: () => void;
+  isFirst?: boolean;
 }
 
-export function SectionHeader({ title, actionLabel, onActionPress }: SectionHeaderProps) {
+export function SectionHeader({
+  title,
+  actionLabel,
+  onActionPress,
+  isFirst = false,
+}: SectionHeaderProps) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isFirst ? styles.containerFirst : null]}>
       <AppText style={styles.title}>{title}</AppText>
       {actionLabel ? (
         <Pressable
@@ -37,6 +43,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacingRoles.screenHorizontal,
     marginBottom: spacingRoles.sectionTitleGap,
     marginTop: spacingRoles.sectionGap,
+  },
+  containerFirst: {
+    marginTop: spacingRoles.sectionGapFirst,
   },
   title: {
     ...textRoles.sectionTitle,

@@ -3,28 +3,28 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { AppState, Platform, type AppStateStatus } from 'react-native';
 
-function applyAndroidImmersiveSystemUi() {
+function applyAndroidSystemUi() {
   if (Platform.OS !== 'android') {
     return;
   }
 
+  StatusBar.setHidden(false, 'fade');
+  StatusBar.setStyle('light');
   NavigationBar.setHidden(true);
   NavigationBar.setStyle('dark');
-  StatusBar.setHidden(true, 'fade');
-  StatusBar.setStyle('light');
 }
 
-export function useAndroidImmersiveSystemUi() {
+export function useAndroidSystemUi() {
   useEffect(() => {
     if (Platform.OS !== 'android') {
       return;
     }
 
-    applyAndroidImmersiveSystemUi();
+    applyAndroidSystemUi();
 
     const handleAppStateChange = (nextState: AppStateStatus) => {
       if (nextState === 'active') {
-        applyAndroidImmersiveSystemUi();
+        applyAndroidSystemUi();
       }
     };
 

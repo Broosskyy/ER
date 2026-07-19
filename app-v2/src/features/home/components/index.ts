@@ -1,5 +1,6 @@
 export { EventCard } from './EventCard';
-export { FeaturedEventCard, featuredCardWidth } from './FeaturedEventCard';
+export { FeaturedEventCard } from './FeaturedEventCard';
+export { getFeaturedCardWidth } from './featured-card-layout';
 export { FilterChip } from './FilterChip';
 export { FilterChipRow } from './FilterChipRow';
 export { HomeHeader } from './HomeHeader';
