@@ -38,5 +38,17 @@ export type { ImportErrorCode } from './errors/import-errors';
 export type { ImportSourceAdapter, ImportFetchedRecord } from './adapters/types';
 export { ImportAdapterRegistry, importAdapterRegistry } from './adapters/import-adapter-registry';
 
+export type { NormalizedEventCandidate, RawSourceType } from './models/normalized-event-candidate';
+export type { ImportSourceConfig, CsvFieldMapping, FeedFieldMapping } from './models/source-config';
+export type {
+  ValidationIssue,
+  CandidateValidationResult,
+  ValidationErrorCode,
+  ValidationWarningCode,
+} from './validation/validation-codes';
+
+export { EventNormalizer, eventNormalizer } from './normalization/event-normalizer';
+export { ImportCandidateValidator, importCandidateValidator } from './validation/import-candidate-validator';
+export { ImportFetchService, importFetchService, assertSafeImportUrl } from './services/import-fetch-service';
 export { ImportLoggingService } from './services/import-logging-service';
 export { ImportOrchestrator } from './services/import-orchestrator';

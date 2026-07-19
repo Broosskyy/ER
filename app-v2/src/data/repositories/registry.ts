@@ -18,8 +18,11 @@ import {
   ImportSourceRepositoryImpl,
 } from '@/data/repositories/import-repository-impl';
 import { importAdapterRegistry } from '@/features/import/adapters/import-adapter-registry';
+import { registerImportAdapters } from '@/features/import/adapters/register-adapters';
 import { ImportLoggingService } from '@/features/import/services/import-logging-service';
 import { ImportOrchestrator } from '@/features/import/services/import-orchestrator';
+
+registerImportAdapters(importAdapterRegistry);
 
 export const eventRepository = new EventRepository();
 export const adminEventRepository = new AdminEventRepository();

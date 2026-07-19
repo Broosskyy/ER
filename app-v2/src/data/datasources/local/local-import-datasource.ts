@@ -7,6 +7,7 @@ import type {
   ImportRecord,
   ImportSource,
 } from '@/features/import/models/types';
+import { createEmptyJobMetrics } from '@/features/import/models/types';
 import type {
   ImportJobDatasource,
   ImportLogDatasource,
@@ -66,6 +67,7 @@ export function createLocalImportJobDatasource(store: LocalImportStore): ImportJ
         sourceId: input.sourceId,
         status: input.status ?? 'pending',
         triggerType: input.triggerType,
+        metrics: createEmptyJobMetrics(),
         createdAt: now,
         updatedAt: now,
       };
@@ -98,8 +100,11 @@ export function createLocalImportRecordDatasource(store: LocalImportStore): Impo
         importJobId: input.importJobId,
         sourceId: input.sourceId,
         externalId: input.externalId,
+        sourceUrl: input.sourceUrl,
         rawPayload: input.rawPayload,
         normalizedPayload: input.normalizedPayload,
+        validationErrors: input.validationErrors,
+        validationWarnings: input.validationWarnings,
         status: input.status ?? 'fetched',
         createdAt: now,
         updatedAt: now,
