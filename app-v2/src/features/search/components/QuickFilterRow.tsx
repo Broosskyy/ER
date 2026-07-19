@@ -1,17 +1,17 @@
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet } from 'react-native';
 
 import { AppText } from '@/components/layout/AppText';
 import { colors } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { FilterChip } from '@/features/home/components/FilterChip';
+import { getQuickDateOptions } from '@/features/search/config/filter-config';
 import type { DateRangeFilter } from '@/features/search/constants';
 
 export interface QuickFilterRowProps {
   dateRange: DateRangeFilter;
   activeFilterCount: number;
   onSelectDateRange: (dateRange: DateRangeFilter) => void;
-  onOpenGenre: () => void;
   onOpenFilters: () => void;
 }
 
@@ -19,9 +19,10 @@ export function QuickFilterRow({
   dateRange,
   activeFilterCount,
   onSelectDateRange,
-  onOpenGenre,
   onOpenFilters,
 }: QuickFilterRowProps) {
+  const quickDateOptions = getQuickDateOptions();
+
   return (
     <ScrollView
       horizontal
@@ -29,28 +30,22 @@ export function QuickFilterRow({
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.content}
     >
-      <FilterChip
-        label="Today"
-        selected={dateRange === 'today'}
-        onPress={() => onSelectDateRange('today')}
-      />
-      <FilterChip
-        label="This Weekend"
-        selected={dateRange === 'this-weekend'}
-        onPress={() => onSelectDateRange('this-weekend')}
-      />
-      <FilterChip label="Genre" selected={false} onPress={onOpenGenre} />
+      {quickDateOptions.map((option) => (
+        <FilterChip
+          key={option.id}
+          label={option.label}
+          selected={dateRange === option.id}
+          onPress={() => onSelectDateRange(option.id)}
+        />
+      ))}
       <Pressable
         accessibilityRole="button"
         onPress={onOpenFilters}
         style={({ pressed }) => [styles.filtersButton, pressed && styles.pressed]}
       >
-        <AppText style={styles.filtersLabel}>Filters</AppText>
-        {activeFilterCount > 0 ? (
-          <View style={styles.badge}>
-            <AppText style={styles.badgeText}>{activeFilterCount}</AppText>
-          </View>
-        ) : null}
+        <AppText style={styles.filtersLabel}>
+          Filters{activeFilterCount > 0 ? ` • ${activeFilterCount}` : ''}
+        </AppText>
       </Pressable>
     </ScrollView>
   );
@@ -78,21 +73,6 @@ const styles = StyleSheet.create({
     ...textRoles.metadata,
     color: colors.textPrimary,
     fontWeight: '600',
-  },
-  badge: {
-    minWidth: 18,
-    height: 18,
-    borderRadius: 9,
-    backgroundColor: colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 4,
-  },
-  badgeText: {
-    ...textRoles.badge,
-    color: colors.textOnPrimary,
-    fontSize: 10,
-    lineHeight: 12,
   },
   pressed: {
     opacity: 0.85,

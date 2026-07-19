@@ -5,6 +5,9 @@ import { DEFAULT_EVENT_FILTERS } from '@/features/search/constants';
 import {
   applyEventFilters,
   countActiveFilters,
+  getActiveFilterSummaries,
+  isExploreMode,
+  matchesSearchGenres,
   matchesSearchQuery,
 } from '@/features/search/utils/filter-events';
 
@@ -58,10 +61,10 @@ describe('applyEventFilters', () => {
     expect(results[0]?.venue.toLowerCase()).toContain('bootshaus');
   });
 
-  it('combines genre and date range filters', () => {
+  it('combines multi-genre and date range filters', () => {
     const results = applyEventFilters(sampleEvents, {
       ...DEFAULT_EVENT_FILTERS,
-      genreId: 'techno',
+      genres: ['techno'],
       dateRange: 'today',
     });
 
@@ -69,10 +72,19 @@ describe('applyEventFilters', () => {
     expect(results[0]?.id).toBe('event-1');
   });
 
+  it('matches any selected genre in multi-select', () => {
+    const results = applyEventFilters(sampleEvents, {
+      ...DEFAULT_EVENT_FILTERS,
+      genres: ['house', 'techno'],
+    });
+
+    expect(results).toHaveLength(2);
+  });
+
   it('sorts events alphabetically', () => {
     const results = applyEventFilters(sampleEvents, {
       ...DEFAULT_EVENT_FILTERS,
-      sortBy: 'name',
+      sortBy: 'alphabetical',
     });
 
     const titles = results.map((event) => event.title);
@@ -88,15 +100,59 @@ describe('matchesSearchQuery', () => {
   });
 });
 
+describe('matchesSearchGenres', () => {
+  it('returns all events when no genres selected', () => {
+    expect(matchesSearchGenres(sampleEvents[0]!, [])).toBe(true);
+  });
+
+  it('matches exact genre labels', () => {
+    expect(matchesSearchGenres(sampleEvents[0]!, ['techno'])).toBe(true);
+    expect(matchesSearchGenres(sampleEvents[1]!, ['techno'])).toBe(false);
+  });
+});
+
 describe('countActiveFilters', () => {
-  it('counts active non-default filters', () => {
+  it('counts active non-default filters only', () => {
     expect(countActiveFilters(DEFAULT_EVENT_FILTERS)).toBe(0);
     expect(
       countActiveFilters({
         ...DEFAULT_EVENT_FILTERS,
-        query: 'techno',
         dateRange: 'this-weekend',
+        genres: ['techno', 'house'],
+        sortBy: 'alphabetical',
       }),
-    ).toBe(2);
+    ).toBe(3);
+  });
+
+  it('does not count default city Köln', () => {
+    expect(countActiveFilters(DEFAULT_EVENT_FILTERS)).toBe(0);
+  });
+});
+
+describe('getActiveFilterSummaries', () => {
+  it('summarizes single and multiple genres', () => {
+    expect(
+      getActiveFilterSummaries({
+        ...DEFAULT_EVENT_FILTERS,
+        dateRange: 'today',
+        genres: ['techno'],
+        sortBy: 'alphabetical',
+      }),
+    ).toEqual(['Today', 'Techno', 'Alphabetical']);
+
+    expect(
+      getActiveFilterSummaries({
+        ...DEFAULT_EVENT_FILTERS,
+        genres: ['techno', 'house', 'trance'],
+      }),
+    ).toEqual(['3 Genres']);
+  });
+});
+
+describe('isExploreMode', () => {
+  it('is true only without query and active filters', () => {
+    expect(isExploreMode(DEFAULT_EVENT_FILTERS)).toBe(true);
+    expect(isExploreMode({ ...DEFAULT_EVENT_FILTERS, query: 'techno' })).toBe(false);
+    expect(isExploreMode({ ...DEFAULT_EVENT_FILTERS, genres: ['techno'] })).toBe(false);
   });
 });
