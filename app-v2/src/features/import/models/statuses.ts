@@ -2,6 +2,7 @@ export const IMPORT_JOB_STATUSES = [
   'pending',
   'running',
   'completed',
+  'completed_with_warnings',
   'failed',
   'cancelled',
 ] as const;

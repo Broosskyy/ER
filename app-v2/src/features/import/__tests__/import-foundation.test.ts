@@ -83,8 +83,19 @@ describe('ImportAdapterRegistry', () => {
     const registry = new ImportAdapterRegistry();
     const adapter: ImportSourceAdapter = {
       adapterKey: 'mock',
-      async fetchRecords() {
-        return [{ externalId: 'ext-1', rawPayload: { title: 'Test' } }];
+      async execute() {
+        return {
+          records: [
+            {
+              externalId: 'ext-1',
+              rawPayload: { title: 'Test' },
+              status: 'fetched',
+            },
+          ],
+          warnings: [],
+          skippedCount: 0,
+          metadata: {},
+        };
       },
     };
 
@@ -98,8 +109,8 @@ describe('ImportAdapterRegistry', () => {
     const registry = new ImportAdapterRegistry();
     const adapter: ImportSourceAdapter = {
       adapterKey: 'mock',
-      async fetchRecords() {
-        return [];
+      async execute() {
+        return { records: [], warnings: [], skippedCount: 0, metadata: {} };
       },
     };
     registry.register(adapter);
@@ -188,20 +199,42 @@ describe('ImportOrchestrator', () => {
 
     stack.adapterRegistry.register({
       adapterKey: 'mock',
-      async fetchRecords() {
-        return [
-          { externalId: 'a', rawPayload: { id: 'a' } },
-          { externalId: 'b', rawPayload: { id: 'b' } },
-        ];
+      async execute() {
+        return {
+          records: [
+            {
+              externalId: 'a',
+              rawPayload: { id: 'a', title: 'Event A', startDate: '2026-08-01T20:00:00Z', cityName: 'Köln' },
+              normalizedCandidate: {
+                externalId: 'a',
+                title: 'Event A',
+                startDate: '2026-08-01T20:00:00.000Z',
+                cityName: 'Köln',
+                rawSourceType: 'unknown',
+              },
+              status: 'needs_review',
+            },
+            {
+              externalId: 'b',
+              rawPayload: { id: 'b' },
+              status: 'invalid',
+              validationErrors: [{ code: 'TITLE_MISSING', message: 'missing' }],
+            },
+          ],
+          warnings: [],
+          skippedCount: 0,
+          metadata: {},
+        };
       },
     });
 
     const job = await stack.orchestrator.run('src-mock', 'manual');
 
-    expect(job.status).toBe('completed');
+    expect(job.status).toBe('completed_with_warnings');
     const records = await stack.recordRepository.listByJobId(job.id);
     expect(records).toHaveLength(2);
-    expect(records.every((record) => record.status === 'fetched')).toBe(true);
+    expect(records.some((record) => record.status === 'needs_review')).toBe(true);
+    expect(records.some((record) => record.status === 'invalid')).toBe(true);
 
     const logs = await stack.logRepository.listByJobId(job.id);
     expect(logs.length).toBeGreaterThan(0);
@@ -221,7 +254,7 @@ describe('ImportOrchestrator', () => {
 
     stack.adapterRegistry.register({
       adapterKey: 'fail',
-      async fetchRecords() {
+      async execute() {
         throw new Error('Adapter failure');
       },
     });

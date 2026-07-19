@@ -61,6 +61,9 @@ export interface SourceRecord {
   name: string;
   type: string;
   website?: string;
+  sourceUrl?: string;
+  sourceConfig?: import('@/features/import/models/source-config').ImportSourceConfig;
+  defaultTimezone?: string;
   trustScore: number;
   active: boolean;
   adapterKey?: string;
