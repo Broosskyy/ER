@@ -10,6 +10,7 @@ import {
   StatsRepository,
   VenueRepository,
 } from '@/data/repositories/repositories';
+import { NotificationRepository } from '@/data/repositories/notification-repository';
 import {
   ImportJobRepositoryImpl,
   ImportLogRepositoryImpl,
@@ -32,6 +33,8 @@ registerImportAdapters(importAdapterRegistry);
 
 export const eventRepository = new EventRepository();
 bindEventRepository(eventRepository);
+
+export const notificationRepository = new NotificationRepository(eventRepository);
 
 export const adminEventRepository = new AdminEventRepository();
 export const genreRepository = new GenreRepository();
