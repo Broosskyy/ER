@@ -55,7 +55,39 @@ Safe to log:
 
 ## Access Control
 
-Import tables and sources remain admin-only via RLS (`is_admin()`). No service role keys in client code.
+Import tables and sources remain admin-only via RLS (`is_admin()`). Sprint 12D extends role-based access:
+
+| Role | Capabilities |
+|------|-------------|
+| `viewer` | Read sources, jobs, records, logs, audit |
+| `editor` | Edit records (no final review decision) |
+| `reviewer` | Edit, approve, reject, duplicate |
+| `source_manager` | Manage sources, test, start imports |
+| `admin` / `owner` | Full access |
+
+Role is read from JWT `app_metadata.role`. Local dev admin (`admin@eternalrave.app`) maps to `owner`.
+
+Permission checks occur in `ImportOperationsService` and `ImportReviewService` via `assertPermission()`. UI button visibility is not a security boundary.
+
+## Audit Logging (Sprint 12D)
+
+`import_audit_logs` records:
+
+- Source created/updated/activated/deactivated/tested
+- Import manually started
+- Record edited/approved/rejected/marked duplicate
+
+Audit entries store actor ID, action, entity type/ID, and safe summary. No secrets or full raw payloads.
+
+## Concurrency Protection (Sprint 12D)
+
+Review actions use optimistic locking on `import_records.updated_at`. Conflicts return `IMPORT_CONCURRENCY_CONFLICT`.
+
+Active import jobs per source are limited to one (`pending` or `running`) via unique partial index.
+
+## Service Role
+
+No service role keys in client code. All admin operations use authenticated user sessions with RLS.
 
 ## Network Architecture
 

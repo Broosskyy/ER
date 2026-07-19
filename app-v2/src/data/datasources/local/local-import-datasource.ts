@@ -1,10 +1,16 @@
 import type {
+  CreateImportAuditLogInput,
   CreateImportJobInput,
   CreateImportLogInput,
   CreateImportRecordInput,
+  ImportAuditLog,
   ImportJob,
+  ImportJobListParams,
   ImportLog,
+  ImportLogListParams,
+  ImportMonitoringStats,
   ImportRecord,
+  ImportRecordListParams,
   ImportSource,
 } from '@/features/import/models/types';
 import { createEmptyJobMetrics } from '@/features/import/models/types';
@@ -14,6 +20,18 @@ import type {
   ImportRecordDatasource,
   ImportSourceDatasource,
 } from '@/data/datasources/import-types';
+import type {
+  ImportAdminDatasource,
+  ImportAuditLogDatasource,
+} from '@/data/datasources/import-admin-types';
+import { ImportConcurrencyError } from '@/features/import/errors/import-errors';
+import {
+  getActiveJobForSourceLocal,
+  getMonitoringStatsLocal,
+  listJobsLocal,
+  listLogsLocal,
+  listRecordsLocal,
+} from './local-import-admin-queries';
 
 function createId(prefix: string): string {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
@@ -24,6 +42,7 @@ export interface LocalImportStore {
   jobs: ImportJob[];
   records: ImportRecord[];
   logs: ImportLog[];
+  auditLogs: ImportAuditLog[];
 }
 
 export function createLocalImportStore(): LocalImportStore {
@@ -32,6 +51,7 @@ export function createLocalImportStore(): LocalImportStore {
     jobs: [],
     records: [],
     logs: [],
+    auditLogs: [],
   };
 }
 
@@ -67,6 +87,7 @@ export function createLocalImportJobDatasource(store: LocalImportStore): ImportJ
         sourceId: input.sourceId,
         status: input.status ?? 'pending',
         triggerType: input.triggerType,
+        triggeredBy: input.triggeredBy,
         metrics: createEmptyJobMetrics(),
         createdAt: now,
         updatedAt: now,
@@ -131,8 +152,8 @@ export function createLocalImportRecordDatasource(store: LocalImportStore): Impo
       if (index < 0) {
         throw new Error(`Import record "${record.id}" not found.`);
       }
-      store.records[index] = record;
-      return record;
+      store.records[index] = { ...record, updatedAt: new Date().toISOString() };
+      return store.records[index];
     },
     async getById(id) {
       return store.records.find((record) => record.id === id) ?? null;
@@ -164,12 +185,79 @@ export function createLocalImportLogDatasource(store: LocalImportStore): ImportL
   };
 }
 
-export function createLocalImportDatasourceBundle(store = createLocalImportStore()) {
+export function createLocalImportAuditLogDatasource(
+  store: LocalImportStore,
+): ImportAuditLogDatasource {
   return {
-    sources: createLocalImportSourceDatasource(store),
-    jobs: createLocalImportJobDatasource(store),
-    records: createLocalImportRecordDatasource(store),
-    logs: createLocalImportLogDatasource(store),
+    async create(input: CreateImportAuditLogInput) {
+      const entry: ImportAuditLog = {
+        id: createId('audit'),
+        actorId: input.actorId,
+        action: input.action,
+        entityType: input.entityType,
+        entityId: input.entityId,
+        summary: input.summary,
+        createdAt: new Date().toISOString(),
+      };
+      store.auditLogs.push(entry);
+      return entry;
+    },
+    async listByEntity(entityType, entityId) {
+      return store.auditLogs.filter(
+        (entry) => entry.entityType === entityType && entry.entityId === entityId,
+      );
+    },
+  };
+}
+
+export function createLocalImportAdminDatasource(store: LocalImportStore): ImportAdminDatasource {
+  return {
+    listJobs: (params: ImportJobListParams) => Promise.resolve(listJobsLocal(store, params)),
+    getActiveJobForSource: (sourceId: string) =>
+      Promise.resolve(getActiveJobForSourceLocal(store, sourceId)),
+    listRecords: (params: ImportRecordListParams) =>
+      Promise.resolve(listRecordsLocal(store, params)),
+    listLogs: (params: ImportLogListParams) => Promise.resolve(listLogsLocal(store, params)),
+    getMonitoringStats: () => Promise.resolve(getMonitoringStatsLocal(store)),
+    async updateIfUnchanged(record, expectedUpdatedAt) {
+      const current = store.records.find((entry) => entry.id === record.id);
+      if (!current) {
+        throw new Error(`Import record "${record.id}" not found.`);
+      }
+      if (current.updatedAt !== expectedUpdatedAt) {
+        throw new ImportConcurrencyError();
+      }
+      const index = store.records.findIndex((entry) => entry.id === record.id);
+      const updated = { ...record, updatedAt: new Date().toISOString() };
+      store.records[index] = updated;
+      return updated;
+    },
+  };
+}
+
+export function createLocalImportDatasourceBundle(store = createLocalImportStore()) {
+  const importSources = createLocalImportSourceDatasource(store);
+  const importJobs = createLocalImportJobDatasource(store);
+  const importRecords = createLocalImportRecordDatasource(store);
+  const importLogs = createLocalImportLogDatasource(store);
+  const importAuditLogs = createLocalImportAuditLogDatasource(store);
+  const importAdmin = createLocalImportAdminDatasource(store);
+
+  return {
+    importSources,
+    importJobs,
+    importRecords,
+    importLogs,
+    importAuditLogs,
+    importAdmin,
+    /** @deprecated Use importSources */
+    sources: importSources,
+    /** @deprecated Use importJobs */
+    jobs: importJobs,
+    /** @deprecated Use importRecords */
+    records: importRecords,
+    /** @deprecated Use importLogs */
+    logs: importLogs,
     store,
   };
 }
