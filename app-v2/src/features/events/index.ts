@@ -5,9 +5,10 @@ export type { EventDisplayModel } from './formatting/display-event';
 export type { EventSourceAdapter } from './adapters/types';
 export type { PipelineReport, PipelineEventRecord } from './pipeline/run-pipeline';
 export type { ValidationResult } from './pipeline/validation-result';
-export type { EventSearchFilters } from './repository/event-repository';
+export type { EventSearchFilters } from '@/data/repositories/registry';
 
-export { eventRepository, EventRepository } from './repository/event-repository';
+export { eventRepository, initializeRepositories } from '@/data/repositories/registry';
+export { EventRepository } from '@/data/repositories/repositories';
 export { runDefaultEventPipeline, runEventPipeline } from './pipeline/run-pipeline';
 export { normalizeRawEvent } from './pipeline/normalize';
 export { validateEvent } from './pipeline/validate';
