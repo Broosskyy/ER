@@ -32,6 +32,7 @@
     "eslint": "^9.39.2",
     "eslint-config-expo": "~57.0.0",
     "eslint-config-prettier": "^10.1.8",
+    "pg": "^8.22.0",
     "prettier": "^3.8.1",
     "tsx": "^4.20.3",
     "typescript": "~6.0.3",
@@ -63,6 +64,7 @@
     "validate:staging:remote": "bash scripts/staging/validate-remote.sh",
     "validate:staging:rls-remote": "tsx scripts/staging/validate-rls-remote.ts",
     "validate:staging:seed": "tsx scripts/validate-staging-seed.ts",
+    "seed:staging:remote": "tsx scripts/staging/apply-staging-seed-remote.ts",
     "test:staging:connection": "bash scripts/staging/test-connection.sh",
     "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
   },
