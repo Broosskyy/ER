@@ -12,6 +12,19 @@ import type {
   SourceRecord,
   VenueRecord,
 } from '../types/records';
+import type {
+  ImportJobDatasource,
+  ImportLogDatasource,
+  ImportRecordDatasource,
+  ImportSourceDatasource,
+} from './import-types';
+
+export type {
+  ImportJobDatasource,
+  ImportLogDatasource,
+  ImportRecordDatasource,
+  ImportSourceDatasource,
+} from './import-types';
 
 export interface EventDatasource {
   getPublishedEvents(): Promise<Event[]>;
@@ -53,6 +66,7 @@ export interface CollectionDatasource {
 export interface SourceDatasource {
   getAll(): Promise<SourceRecord[]>;
   getActive(): Promise<SourceRecord[]>;
+  getById(id: string): Promise<SourceRecord | null>;
   save(source: SourceRecord): Promise<SourceRecord>;
 }
 
@@ -69,4 +83,8 @@ export interface DatasourceBundle {
   collections: CollectionDatasource;
   sources: SourceDatasource;
   stats: StatsDatasource;
+  importSources: ImportSourceDatasource;
+  importJobs: ImportJobDatasource;
+  importRecords: ImportRecordDatasource;
+  importLogs: ImportLogDatasource;
 }

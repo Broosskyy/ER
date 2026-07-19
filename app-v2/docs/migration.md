@@ -9,6 +9,7 @@ All database changes go through Supabase migrations in `supabase/migrations/`. N
 | File | Description |
 |---|---|
 | `20260719000000_initial_schema.sql` | Full Sprint 11 schema: tables, indexes, RLS, storage buckets |
+| `20260720000000_import_foundation.sql` | Sprint 12A: import staging tables, `adapter_key` on sources, admin-only RLS |
 
 ## Setup
 
@@ -44,6 +45,6 @@ Edit the generated file, then `supabase db push`.
 ## Sprint 12 TODO
 
 - Seed migration for genres, cities, initial Köln data
-- Admin role claims / custom JWT
-- Import staging tables
+- Admin role claims / custom JWT (partial: `is_admin()` helper in 12A)
 - Audit log table
+- Format adapters (JSON-LD, RSS, iCal, CSV, API) — see `docs/import-foundation.md`

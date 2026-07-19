@@ -26,6 +26,12 @@ import type {
   StatsDatasource,
   VenueDatasource,
 } from '@/data/datasources/types';
+import {
+  createLocalImportDatasourceBundle,
+  createLocalImportSourceDatasource,
+  type LocalImportStore,
+} from '@/data/datasources/local/local-import-datasource';
+import { mapSourceRecordToImportSource } from '@/data/mappers/import-mapper';
 
 function mapPipelineStatusToAdmin(status: EventStatus): AdminEventStatus {
   switch (status) {
@@ -144,8 +150,22 @@ function buildLocalCollections(): CollectionRecord[] {
 
 function buildLocalSources(): SourceRecord[] {
   return [
-    { id: 'demo', name: 'Demo Source', type: 'manual', trustScore: 1, active: true },
-    { id: 'admin', name: 'Admin', type: 'manual', trustScore: 1, active: true },
+    {
+      id: 'demo',
+      name: 'Demo Source',
+      type: 'manual',
+      trustScore: 1,
+      active: true,
+      adapterKey: 'demo',
+    },
+    {
+      id: 'admin',
+      name: 'Admin',
+      type: 'manual',
+      trustScore: 1,
+      active: true,
+      adapterKey: 'manual',
+    },
   ];
 }
 
@@ -287,6 +307,9 @@ function createCrudDatasource<T extends { id: string }>(
     async getActive() {
       return [...getItems()].filter((item) => ('active' in item ? item.active : true));
     },
+    async getById(id: string) {
+      return getItems().find((item) => item.id === id) ?? null;
+    },
     async save(item: T) {
       const items = getItems();
       const index = items.findIndex((entry) => entry.id === item.id);
@@ -351,5 +374,37 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     },
   };
 
-  return { events, genres, cities, venues, artists, collections, sources, stats };
+  const importStore: LocalImportStore = {
+    sources: store.sources.map(mapSourceRecordToImportSource),
+    jobs: [],
+    records: [],
+    logs: [],
+  };
+  const importBundle = createLocalImportDatasourceBundle(importStore);
+  const importSources = createLocalImportSourceDatasource(importStore);
+
+  const syncImportSources = () => {
+    importStore.sources = store.sources.map(mapSourceRecordToImportSource);
+  };
+  const originalSave = sources.save.bind(sources);
+  sources.save = async (source) => {
+    const saved = await originalSave(source);
+    syncImportSources();
+    return saved;
+  };
+
+  return {
+    events,
+    genres,
+    cities,
+    venues,
+    artists,
+    collections,
+    sources,
+    stats,
+    importSources,
+    importJobs: importBundle.jobs,
+    importRecords: importBundle.records,
+    importLogs: importBundle.logs,
+  };
 }

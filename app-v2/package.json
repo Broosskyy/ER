@@ -44,6 +44,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
+    "validate:migrations": "tsx scripts/validate-migrations.ts",
     "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
   },
   "private": true
