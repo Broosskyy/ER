@@ -32,6 +32,8 @@ function main(): void {
     'sw.js',
     'offline.html',
     'favicon.ico',
+    'robots.txt',
+    'sitemap.xml',
     'pwa/icon-192.png',
     'pwa/icon-512.png',
     'notifications.html',

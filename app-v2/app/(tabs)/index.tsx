@@ -28,7 +28,7 @@ import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 const HOME_SECTIONS: CollectionType[] = ['highlights', 'tonight', 'weekend', 'upcoming', 'techno', 'house'];
 
 export default function HomeScreen() {
-  useWebDocumentTitle(WEB_PAGE_TITLES.home);
+  useWebDocumentTitle(WEB_PAGE_TITLES.home, '/');
   const router = useRouter();
   const bottomInset = useScreenBottomInset();
   const featuredCardWidth = getFeaturedCardWidth();
