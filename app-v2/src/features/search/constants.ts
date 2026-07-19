@@ -1,4 +1,4 @@
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { Event } from '@/features/events';
 
 export const SEARCH_GENRE_CHIPS = [
   { id: 'all', label: 'All' },
@@ -22,8 +22,7 @@ export const SEARCH_SORT_OPTIONS = [
 
 export type SearchSortOption = (typeof SEARCH_SORT_OPTIONS)[number]['id'];
 
-/** Fixed demo reference date for sort windows (May 24, 2026). */
-export const SEARCH_DEMO_REFERENCE_DATE = new Date('2026-05-24T12:00:00');
+export { EVENT_REFERENCE_DATE as SEARCH_DEMO_REFERENCE_DATE } from '@/features/events';
 
 export const DEFAULT_SEARCH_GENRE: SearchGenreChipId = 'all';
 export const DEFAULT_SEARCH_SORT: SearchSortOption = 'upcoming';
@@ -44,14 +43,8 @@ export function getSearchGenreLabel(genreId: SearchGenreChipId): string {
   return SEARCH_GENRE_CHIPS.find((chip) => chip.id === genreId)?.label ?? '';
 }
 
-export function buildEventSearchIndex(event: DemoEvent): string {
-  return [
-    event.title,
-    event.venue,
-    event.city,
-    ...event.genres,
-    ...event.artists,
-  ]
+export function buildEventSearchIndex(event: Event): string {
+  return [event.title, event.venue, event.city, ...event.genres, ...event.artists]
     .join(' ')
     .toLowerCase();
 }

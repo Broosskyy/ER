@@ -5,10 +5,10 @@ import { colorRoles, colors } from '@/design/colors';
 import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 
 export interface LocationSectionProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   onOpenMaps: () => void;
 }
 

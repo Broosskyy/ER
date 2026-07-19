@@ -1,0 +1,30 @@
+export interface RawEvent {
+  source: string;
+  sourceEventId: string;
+  rawTitle: string;
+  rawDate: string;
+  rawEndDate?: string;
+  rawVenue: string;
+  rawCity: string;
+  rawCountry?: string;
+  rawArtists: string[];
+  rawGenres: string[];
+  rawDescription: string;
+  rawImageUrl?: string;
+  rawImageAssetKey?: string;
+  rawTicketUrl?: string;
+  rawSourceUrl?: string;
+  rawAddress?: string;
+  rawLatitude?: string | number;
+  rawLongitude?: string | number;
+  rawOrganizer?: string;
+  rawAgeRestriction?: string;
+  rawPriceText?: string;
+  rawLineup?: string[];
+  rawTimezone?: string;
+  rawSlug?: string;
+  rawId?: string;
+  importedAt: string;
+  rawPayload?: Record<string, unknown>;
+  metadata?: Record<string, unknown>;
+}

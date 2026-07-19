@@ -28,7 +28,9 @@
     "eslint-config-expo": "~57.0.0",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.1",
-    "typescript": "~6.0.3"
+    "tsx": "^4.20.3",
+    "typescript": "~6.0.3",
+    "vitest": "^3.2.4"
   },
   "scripts": {
     "start": "expo start",
@@ -37,7 +39,10 @@
     "web": "expo start --web",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
   },
   "private": true
 }

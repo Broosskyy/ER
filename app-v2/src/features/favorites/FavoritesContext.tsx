@@ -7,20 +7,21 @@ import {
   useState,
 } from 'react';
 
-import { DemoEvent, getDemoEventById } from '@/features/events/data/demo-events';
+import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
 
 import type { EventId, FavoritesStore } from './types';
 
 interface FavoritesContextValue extends FavoritesStore {
-  favoriteEvents: DemoEvent[];
+  favoriteEvents: EventDisplayModel[];
 }
 
 const FavoritesContext = createContext<FavoritesContextValue | null>(null);
 
-function resolveFavoriteEvents(favoriteIds: ReadonlySet<EventId>): DemoEvent[] {
+function resolveFavoriteEvents(favoriteIds: ReadonlySet<EventId>): EventDisplayModel[] {
   return Array.from(favoriteIds)
-    .map((eventId) => getDemoEventById(eventId))
-    .filter((event): event is DemoEvent => event !== undefined);
+    .map((eventId) => eventRepository.getEventById(eventId))
+    .filter((event) => event !== undefined)
+    .map(toEventDisplayModel);
 }
 
 export interface FavoritesProviderProps {
@@ -36,7 +37,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
   );
 
   const addFavorite = useCallback((eventId: EventId) => {
-    if (!getDemoEventById(eventId)) {
+    if (!eventRepository.hasPublishedEvent(eventId)) {
       return;
     }
 
@@ -65,7 +66,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
 
   const toggleFavorite = useCallback((eventId: EventId) => {
     setFavoriteIds((current) => {
-      if (!getDemoEventById(eventId)) {
+      if (!eventRepository.hasPublishedEvent(eventId)) {
         return current;
       }
 

@@ -9,10 +9,10 @@ import { componentSize } from '@/design/layout';
 import { radii, radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { DemoEvent } from '@/features/events/data/demo-events';
+import type { EventDisplayModel } from '@/features/events';
 
 export interface FeaturedEventCardProps {
-  event: DemoEvent;
+  event: EventDisplayModel;
   width: number;
   isFavorite: boolean;
   onToggleFavorite: () => void;
