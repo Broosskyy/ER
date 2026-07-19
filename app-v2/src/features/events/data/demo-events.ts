@@ -21,6 +21,9 @@ export type DemoEvent = {
   priceText?: string;
   startsAt: string;
   isFeatured: boolean;
+  /** Demo coordinates for map markers — optional; events without coords are excluded from map. */
+  latitude?: number;
+  longitude?: number;
 };
 
 export const HOME_FILTER_CHIPS = [
@@ -54,6 +57,8 @@ export const demoEvents: DemoEvent[] = [
     priceText: 'from €15',
     ticketUrl: 'https://www.sisyphos-berlin.net/',
     startsAt: '2026-05-24T23:00:00',
+    latitude: 52.5109,
+    longitude: 13.4969,
     image: require('../../../../assets/demo/event-void.png'),
     isFeatured: true,
   },
@@ -77,6 +82,8 @@ export const demoEvents: DemoEvent[] = [
     priceText: 'from €20',
     ticketUrl: 'https://www.berghain.berlin/',
     startsAt: '2026-05-25T00:00:00',
+    latitude: 52.5112,
+    longitude: 13.4437,
     image: require('../../../../assets/demo/event-berghain.png'),
     isFeatured: true,
   },
@@ -99,6 +106,8 @@ export const demoEvents: DemoEvent[] = [
     sourceName: 'Eternal Rave',
     priceText: 'from €12',
     startsAt: '2026-05-24T23:30:00',
+    latitude: 52.5074,
+    longitude: 13.4648,
     image: require('../../../../assets/demo/event-about-blank.png'),
     isFeatured: false,
   },
@@ -122,6 +131,8 @@ export const demoEvents: DemoEvent[] = [
     priceText: 'from €14',
     ticketUrl: 'https://water-gate.de/',
     startsAt: '2026-05-24T22:00:00',
+    latitude: 52.4986,
+    longitude: 13.4418,
     image: require('../../../../assets/demo/event-watergate.png'),
     isFeatured: false,
   },
@@ -142,6 +153,8 @@ export const demoEvents: DemoEvent[] = [
     organizer: 'Sisyphos',
     sourceName: 'Eternal Rave',
     startsAt: '2026-05-25T18:00:00',
+    latitude: 52.5111,
+    longitude: 13.4972,
     image: require('../../../../assets/demo/event-sisyphos.png'),
     isFeatured: false,
   },
@@ -161,6 +174,21 @@ export function getTonightDemoEvents(): DemoEvent[] {
 
 export function getAllDemoEvents(): DemoEvent[] {
   return demoEvents;
+}
+
+export function hasMapCoordinates(
+  event: DemoEvent,
+): event is DemoEvent & { latitude: number; longitude: number } {
+  return (
+    typeof event.latitude === 'number' &&
+    typeof event.longitude === 'number' &&
+    Number.isFinite(event.latitude) &&
+    Number.isFinite(event.longitude)
+  );
+}
+
+export function getMapDemoEvents(): (DemoEvent & { latitude: number; longitude: number })[] {
+  return demoEvents.filter(hasMapCoordinates);
 }
 
 export function formatEventTimeRange(event: DemoEvent): string {
