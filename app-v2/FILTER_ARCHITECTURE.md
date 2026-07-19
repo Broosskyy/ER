@@ -196,4 +196,5 @@ Query is separate and triggers results mode but is not included in the filter ba
 |---|---|
 | **Filename** | `eternal-rave-0.1.3-filter-architecture-preview.apk` |
 | **Version** | 0.1.3 (versionCode 4) |
+| **Download** | https://github.com/Broosskyy/ER/releases/download/v1-android-0.1.3-filter-architecture/eternal-rave-0.1.3-filter-architecture-preview.apk |
 | **Build** | `npx expo prebuild --platform android` + `./gradlew assembleRelease` |
