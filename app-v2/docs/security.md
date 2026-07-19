@@ -149,3 +149,158 @@ After deploy:
 - bump service worker cache version when needed (`PWA_CONFIG.cacheVersion` / `public/sw.js`)
 - prefer short cache TTL for `sw.js` and HTML entry files
 - users may need one reload to pick up waiting SW updates
+
+---
+
+## Secrets management (Sprint 12.7F)
+
+### Inventory
+
+| Secret | Storage location | In client bundle? | Rotation |
+|--------|------------------|-------------------|----------|
+| `EXPO_PUBLIC_SUPABASE_ANON_KEY` | EAS secrets, `.env` | **Yes** (intended) | On compromise |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server/EAS only | **Never** | Quarterly |
+| `EXPO_PUBLIC_GOOGLE_MAPS_API_KEY` | EAS secrets | Yes | On compromise |
+| `EXPO_PUBLIC_GA4_MEASUREMENT_ID` | EAS secrets | Yes | Rare |
+| Apple distribution cert | EAS credentials | No | Annual |
+| Google Play signing key | Play App Signing | No | Google-managed |
+| Admin passwords | Supabase Auth | No | Per policy |
+| Staging JWTs | CI secrets only | No | Per rotation |
+| `IMPORT_API_HEADER_*` | Server env only | No | Per provider |
+
+### Rules
+
+- **Never** commit secrets to git (`.env` in `.gitignore`)
+- **Never** log secrets (import pipeline redacts patterns)
+- Run `npm run validate:build-output` after every web release
+- Run `npm run validate:env -- --production` before production deploy
+- Store production secrets in EAS Secrets + team password manager
+- Rotate service role key if any suspicion of exposure
+
+### Rotation procedure
+
+1. Generate new key in Supabase/provider dashboard
+2. Update EAS secrets and hosting env
+3. Deploy new build
+4. Revoke old key after verification
+5. Document rotation in operations log
+
+---
+
+## Roles & permissions
+
+| Role | Access | Assignment |
+|------|--------|------------|
+| Anonymous user | Read published events (RLS) | Default |
+| Authenticated (non-admin) | Same as anon currently | N/A |
+| Admin: viewer | Read import data | `app_metadata.role` |
+| Admin: editor | Edit events | JWT role |
+| Admin: reviewer | Approve imports | JWT role |
+| Admin: source_manager | Manage sources | JWT role |
+| Admin: admin | Full admin except owner actions | JWT role |
+| Admin: owner | Full access | JWT role |
+| Service role | Bypass RLS | Server only — never client |
+
+See `src/features/import/admin/admin-roles.ts` and RLS policies in `supabase/migrations/`.
+
+**Least privilege:** Assign minimum role required. Review quarterly.
+
+---
+
+## Incident response
+
+### Severity levels
+
+| Level | Definition | Examples | Response |
+|-------|------------|----------|----------|
+| **SEV-1** | Production down or data breach | RLS bypass, DB exposed, site down | Immediate, all hands |
+| **SEV-2** | Major feature broken | Events not loading, admin inaccessible | < 1 hour |
+| **SEV-3** | Degraded service | Slow API, partial import failure | < 4 hours |
+| **SEV-4** | Minor issue | UI glitch, non-critical bug | Next sprint |
+
+### Response procedure
+
+1. **Detect** — monitoring alert, user report, or internal discovery
+2. **Triage** — assign severity, incident commander
+3. **Contain** — disable affected feature, revoke compromised keys, halt rollout
+4. **Communicate** — notify stakeholders per severity
+5. **Resolve** — fix, deploy, verify
+6. **Recover** — rollback if fix not fast enough
+7. **Review** — post-incident report within 48h (SEV-1/2)
+
+### Data breach (GDPR Art. 33/34)
+
+If personal data breach confirmed:
+
+1. Contain and assess scope within 24 hours
+2. Notify supervisory authority within **72 hours** if risk to individuals
+3. Notify affected users if high risk
+4. Document: nature, categories, approximate count, consequences, measures taken
+5. Contact: privacy@<domain>.tld
+
+### Communication templates
+
+- **Internal:** Slack/email to engineering + product
+- **Users:** support@ response, status page (future)
+- **Authority:** Formal notification per legal counsel guidance
+
+Full operations context: [operations.md](operations.md)
+
+---
+
+## Disaster recovery
+
+| Scenario | Impact | Recovery | RTO estimate |
+|----------|--------|----------|--------------|
+| Supabase region outage | No event data | Wait for provider / restore to new region | 1–24 hours |
+| Supabase project deleted | Total data loss | Restore from backup/PITR | 1–4 hours |
+| DNS failure | Site unreachable | Fix DNS at registrar/CDN | 5 min–48 hours |
+| Hosting outage | Web/admin down | Redeploy to alternate host | 1–2 hours |
+| EAS build failure | Cannot ship update | Fix config, rebuild | 1–4 hours |
+| GitHub unavailable | Cannot deploy from CI | Use local clone + cached artifacts | Low impact |
+| Domain expired | Total web loss | Renew domain urgently | Hours–days |
+
+### DR priorities
+
+1. Restore event data (Supabase)
+2. Restore web app (static deploy)
+3. Restore mobile apps (previous store version)
+4. Restore admin access
+
+### Business continuity (minimal operation)
+
+During outage, users can:
+
+- Use **cached PWA shell** (offline page — no event data)
+- Use **installed mobile app** with last-loaded data (no refresh)
+- **Not available:** new events, admin imports, favorites sync
+
+Emergency contact: support@<domain>.tld
+
+---
+
+## OWASP risk summary
+
+| OWASP category | Risk level | Mitigation |
+|----------------|------------|------------|
+| A01 Broken Access Control | Low-Med | RLS + admin guards |
+| A02 Cryptographic Failures | Low | TLS everywhere, no secrets in client |
+| A03 Injection | Low | Parameterized Supabase queries |
+| A04 Insecure Design | Low | Privacy by design, no accounts |
+| A05 Security Misconfiguration | Med | Env validation, staging noindex |
+| A06 Vulnerable Components | Med | `npm audit`, Expo SDK updates |
+| A07 Auth Failures | Low-Med | Fail-closed admin auth |
+| A08 Data Integrity | Low | RLS, signed JWTs |
+| A09 Logging Failures | Med | No centralized logging yet |
+| A10 SSRF | Low | Import fetch blocks private IPs |
+
+Full audit: [security-privacy.md](security-privacy.md)
+
+---
+
+## Governance references
+
+- [Compliance overview](compliance.md)
+- [Operations runbook](operations.md)
+- [Go-live gate](go-live.md)
+- [Privacy architecture](privacy.md)
