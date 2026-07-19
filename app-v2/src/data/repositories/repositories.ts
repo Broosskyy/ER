@@ -250,6 +250,18 @@ export class SourceRepository {
   getAll(): Promise<SourceRecord[]> {
     return getDatasourceBundle().sources.getAll();
   }
+
+  getActive(): Promise<SourceRecord[]> {
+    return getDatasourceBundle().sources.getActive();
+  }
+
+  getById(id: string): Promise<SourceRecord | null> {
+    return getDatasourceBundle().sources.getById(id);
+  }
+
+  save(source: SourceRecord): Promise<SourceRecord> {
+    return getDatasourceBundle().sources.save(source);
+  }
 }
 
 export class StatsRepository {

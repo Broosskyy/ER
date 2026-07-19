@@ -1,0 +1,194 @@
+import { AppError } from '@/core/errors/app-error';
+import {
+  mapImportJobRowToDomain,
+  mapImportJobToRow,
+  mapImportLogRowToDomain,
+  mapImportRecordRowToDomain,
+  mapImportRecordToRow,
+  mapImportSourceToSourceRow,
+  mapSourceRowToImportSource,
+  type ImportJobRow,
+  type ImportLogRow,
+  type ImportRecordRow,
+  type SourceRow,
+} from '@/data/mappers/import-mapper';
+import type {
+  CreateImportJobInput,
+  CreateImportLogInput,
+  CreateImportRecordInput,
+  ImportJob,
+  ImportRecord,
+} from '@/features/import/models/types';
+import type {
+  ImportJobDatasource,
+  ImportLogDatasource,
+  ImportRecordDatasource,
+  ImportSourceDatasource,
+} from '@/data/datasources/import-types';
+import { getSupabaseClient } from '@/services/supabase/client';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SupabaseTable = ReturnType<ReturnType<typeof getSupabaseClient>['from']>;
+
+function throwRepositoryError(error: { message: string }): never {
+  throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+}
+
+export function createSupabaseImportSourceDatasource(): ImportSourceDatasource {
+  const supabase = getSupabaseClient();
+  const table = () => supabase.from('sources') as SupabaseTable;
+
+  return {
+    async getAll() {
+      const { data, error } = await table().select('*');
+      if (error) throwRepositoryError(error);
+      return (data ?? []).map((row: unknown) => mapSourceRowToImportSource(row as SourceRow));
+    },
+    async getActive() {
+      const { data, error } = await table().select('*').eq('active', true);
+      if (error) throwRepositoryError(error);
+      return (data ?? []).map((row: unknown) => mapSourceRowToImportSource(row as SourceRow));
+    },
+    async getById(id) {
+      const { data, error } = await table().select('*').eq('id', id).maybeSingle();
+      if (error) throwRepositoryError(error);
+      return data ? mapSourceRowToImportSource(data as SourceRow) : null;
+    },
+    async save(source) {
+      const payload = mapImportSourceToSourceRow(source);
+      const { data, error } = await table().upsert(payload).select('*').single();
+      if (error) throwRepositoryError(error);
+      return mapSourceRowToImportSource(data as SourceRow);
+    },
+  };
+}
+
+export function createSupabaseImportJobDatasource(): ImportJobDatasource {
+  const supabase = getSupabaseClient();
+  const table = () => supabase.from('import_jobs') as SupabaseTable;
+
+  return {
+    async create(input: CreateImportJobInput) {
+      const now = new Date().toISOString();
+      const payload = {
+        source_id: input.sourceId,
+        status: input.status ?? 'pending',
+        trigger_type: input.triggerType,
+        created_at: now,
+        updated_at: now,
+      };
+      const { data, error } = await table().insert(payload).select('*').single();
+      if (error) throwRepositoryError(error);
+      return mapImportJobRowToDomain(data as ImportJobRow);
+    },
+    async update(job: ImportJob) {
+      const payload = mapImportJobToRow({ ...job, updatedAt: new Date().toISOString() });
+      const { data, error } = await table().update(payload).eq('id', job.id).select('*').single();
+      if (error) throwRepositoryError(error);
+      return mapImportJobRowToDomain(data as ImportJobRow);
+    },
+    async getById(id) {
+      const { data, error } = await table().select('*').eq('id', id).maybeSingle();
+      if (error) throwRepositoryError(error);
+      return data ? mapImportJobRowToDomain(data as ImportJobRow) : null;
+    },
+    async listBySourceId(sourceId) {
+      const { data, error } = await table().select('*').eq('source_id', sourceId);
+      if (error) throwRepositoryError(error);
+      return (data ?? []).map((row: unknown) => mapImportJobRowToDomain(row as ImportJobRow));
+    },
+  };
+}
+
+export function createSupabaseImportRecordDatasource(): ImportRecordDatasource {
+  const supabase = getSupabaseClient();
+  const table = () => supabase.from('import_records') as SupabaseTable;
+
+  return {
+    async create(input: CreateImportRecordInput) {
+      const now = new Date().toISOString();
+      const payload = {
+        import_job_id: input.importJobId,
+        source_id: input.sourceId,
+        external_id: input.externalId,
+        raw_payload: input.rawPayload,
+        normalized_payload: input.normalizedPayload ?? null,
+        status: input.status ?? 'fetched',
+        created_at: now,
+        updated_at: now,
+      };
+      const { data, error } = await table().insert(payload).select('*').single();
+      if (error) throwRepositoryError(error);
+      return mapImportRecordRowToDomain(data as ImportRecordRow);
+    },
+    async createMany(inputs) {
+      if (inputs.length === 0) {
+        return [];
+      }
+      const now = new Date().toISOString();
+      const payload = inputs.map((input) => ({
+        import_job_id: input.importJobId,
+        source_id: input.sourceId,
+        external_id: input.externalId,
+        raw_payload: input.rawPayload,
+        normalized_payload: input.normalizedPayload ?? null,
+        status: input.status ?? 'fetched',
+        created_at: now,
+        updated_at: now,
+      }));
+      const { data, error } = await table().insert(payload).select('*');
+      if (error) throwRepositoryError(error);
+      return (data ?? []).map((row: unknown) => mapImportRecordRowToDomain(row as ImportRecordRow));
+    },
+    async update(record: ImportRecord) {
+      const payload = mapImportRecordToRow({ ...record, updatedAt: new Date().toISOString() });
+      const { data, error } = await table().update(payload).eq('id', record.id).select('*').single();
+      if (error) throwRepositoryError(error);
+      return mapImportRecordRowToDomain(data as ImportRecordRow);
+    },
+    async getById(id) {
+      const { data, error } = await table().select('*').eq('id', id).maybeSingle();
+      if (error) throwRepositoryError(error);
+      return data ? mapImportRecordRowToDomain(data as ImportRecordRow) : null;
+    },
+    async listByJobId(importJobId) {
+      const { data, error } = await table().select('*').eq('import_job_id', importJobId);
+      if (error) throwRepositoryError(error);
+      return (data ?? []).map((row: unknown) => mapImportRecordRowToDomain(row as ImportRecordRow));
+    },
+  };
+}
+
+export function createSupabaseImportLogDatasource(): ImportLogDatasource {
+  const supabase = getSupabaseClient();
+  const table = () => supabase.from('import_logs') as SupabaseTable;
+
+  return {
+    async create(input: CreateImportLogInput) {
+      const payload = {
+        import_job_id: input.importJobId,
+        import_record_id: input.importRecordId ?? null,
+        level: input.level,
+        code: input.code,
+        message: input.message,
+      };
+      const { data, error } = await table().insert(payload).select('*').single();
+      if (error) throwRepositoryError(error);
+      return mapImportLogRowToDomain(data as ImportLogRow);
+    },
+    async listByJobId(importJobId) {
+      const { data, error } = await table().select('*').eq('import_job_id', importJobId);
+      if (error) throwRepositoryError(error);
+      return (data ?? []).map((row: unknown) => mapImportLogRowToDomain(row as ImportLogRow));
+    },
+  };
+}
+
+export function createSupabaseImportDatasourceBundle() {
+  return {
+    importSources: createSupabaseImportSourceDatasource(),
+    importJobs: createSupabaseImportJobDatasource(),
+    importRecords: createSupabaseImportRecordDatasource(),
+    importLogs: createSupabaseImportLogDatasource(),
+  };
+}

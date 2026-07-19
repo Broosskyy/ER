@@ -21,6 +21,7 @@ import type {
 } from '@/data/types/records';
 import type { DatasourceBundle } from '@/data/datasources/types';
 import { createLocalDatasourceBundle } from '@/data/datasources/local/local-datasource';
+import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabase/supabase-import-datasource';
 import { getSupabaseClient } from '@/services/supabase/client';
 
 function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResult<T> {
@@ -56,6 +57,16 @@ function createSupabaseTableDatasource<T extends { id: string; active?: boolean 
         throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
       }
       return (data ?? []) as T[];
+    },
+    async getById(id: string) {
+      const { data, error } = await (supabase.from(table) as SupabaseTable)
+        .select('*')
+        .eq('id', id)
+        .maybeSingle();
+      if (error) {
+        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+      }
+      return (data as T | null) ?? null;
     },
     async save(item: T) {
       const { data, error } = await (supabase.from(table) as SupabaseTable)
@@ -163,6 +174,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
         };
       },
     },
+    ...createSupabaseImportDatasourceBundle(),
   };
 }
 
