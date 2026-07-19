@@ -9,7 +9,12 @@ export type ImportErrorCode =
   | 'IMPORT_SOURCE_INACTIVE'
   | 'IMPORT_JOB_NOT_FOUND'
   | 'IMPORT_RECORD_LIMIT_EXCEEDED'
-  | 'IMPORT_TIMEOUT';
+  | 'IMPORT_TIMEOUT'
+  | 'CITY_MATCH_FAILED'
+  | 'VENUE_MATCH_FAILED'
+  | 'ARTIST_MATCH_FAILED'
+  | 'GENRE_MATCH_FAILED'
+  | 'DUPLICATE_CHECK_FAILED';
 
 export class ImportError extends Error {
   readonly code: ImportErrorCode;
@@ -55,5 +60,23 @@ export class ImportExecutionError extends ImportError {
   ) {
     super(message, code, cause);
     this.name = 'ImportExecutionError';
+  }
+}
+
+export class ImportMatchingError extends ImportError {
+  constructor(
+    message: string,
+    code: Extract<
+      ImportErrorCode,
+      | 'CITY_MATCH_FAILED'
+      | 'VENUE_MATCH_FAILED'
+      | 'ARTIST_MATCH_FAILED'
+      | 'GENRE_MATCH_FAILED'
+      | 'DUPLICATE_CHECK_FAILED'
+    >,
+    cause?: unknown,
+  ) {
+    super(message, code, cause);
+    this.name = 'ImportMatchingError';
   }
 }

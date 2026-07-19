@@ -60,6 +60,13 @@ interface ImportRecordRow {
   normalized_payload: Record<string, unknown> | null;
   validation_errors: ValidationIssue[] | null;
   validation_warnings: ValidationIssue[] | null;
+  matched_city_id: string | null;
+  matched_venue_id: string | null;
+  matched_artist_ids: string[] | null;
+  matched_genre_ids: string[] | null;
+  duplicate_event_id: string | null;
+  duplicate_score: number | null;
+  matching_warnings: string[] | null;
   status: ImportRecordStatus;
   created_at: string;
   updated_at: string;
@@ -177,6 +184,13 @@ export function mapImportRecordRowToDomain(row: ImportRecordRow): ImportRecord {
     normalizedPayload: row.normalized_payload ?? undefined,
     validationErrors: row.validation_errors ?? undefined,
     validationWarnings: row.validation_warnings ?? undefined,
+    matchedCityId: row.matched_city_id ?? undefined,
+    matchedVenueId: row.matched_venue_id ?? undefined,
+    matchedArtistIds: row.matched_artist_ids ?? undefined,
+    matchedGenreIds: row.matched_genre_ids ?? undefined,
+    duplicateEventId: row.duplicate_event_id ?? undefined,
+    duplicateScore: row.duplicate_score ?? undefined,
+    matchingWarnings: row.matching_warnings ?? undefined,
     status: row.status,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
@@ -194,6 +208,13 @@ export function mapImportRecordToRow(record: ImportRecord): Record<string, unkno
     normalized_payload: record.normalizedPayload ?? null,
     validation_errors: record.validationErrors ?? null,
     validation_warnings: record.validationWarnings ?? null,
+    matched_city_id: record.matchedCityId ?? null,
+    matched_venue_id: record.matchedVenueId ?? null,
+    matched_artist_ids: record.matchedArtistIds ?? [],
+    matched_genre_ids: record.matchedGenreIds ?? [],
+    duplicate_event_id: record.duplicateEventId ?? null,
+    duplicate_score: record.duplicateScore ?? null,
+    matching_warnings: record.matchingWarnings ?? null,
     status: record.status,
     created_at: record.createdAt,
     updated_at: record.updatedAt,

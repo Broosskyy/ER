@@ -6,6 +6,9 @@ import {
   ImportError,
   ImportExecutionError,
 } from '@/features/import/errors/import-errors';
+import { matchingConfig } from '@/features/import/matching/matching-config';
+import { loadMatchingCatalog } from '@/features/import/matching/matching-catalog';
+import { ImportMatchingService } from '@/features/import/matching/import-matching-service';
 import type { ImportTriggerType } from '@/features/import/models/statuses';
 import { createEmptyJobMetrics, type ImportJob } from '@/features/import/models/types';
 import type {
@@ -33,6 +36,34 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
   });
 }
 
+function enrichRecordsWithMatching(
+  records: ImportAdapterRecordResult[],
+  matchingService: ImportMatchingService,
+  catalog: Awaited<ReturnType<typeof loadMatchingCatalog>>,
+): ImportAdapterRecordResult[] {
+  return records.map((record) => {
+    if (record.status !== 'needs_review' || !record.normalizedCandidate) {
+      return record;
+    }
+
+    const { result, logs } = matchingService.match(record.normalizedCandidate, catalog);
+
+    return {
+      ...record,
+      matchResult: result,
+      validationWarnings: [
+        ...(record.validationWarnings ?? []),
+        ...result.warnings.map((warning) => ({
+          code: 'MATCHING_WARNING',
+          message: warning,
+        })),
+      ],
+      status: 'needs_review',
+      _matchLogs: logs,
+    } as ImportAdapterRecordResult & { _matchLogs?: typeof logs };
+  });
+}
+
 function computeMetrics(records: ImportAdapterRecordResult[]) {
   const metrics = createEmptyJobMetrics();
   metrics.fetchedCount = records.length;
@@ -49,6 +80,12 @@ function computeMetrics(records: ImportAdapterRecordResult[]) {
     }
     if (record.validationErrors && record.validationErrors.length > 0) {
       metrics.errorCount += 1;
+    }
+    if (
+      record.matchResult &&
+      record.matchResult.duplicateScore >= matchingConfig.duplicateThreshold
+    ) {
+      metrics.duplicateCount += 1;
     }
   }
 
@@ -69,6 +106,8 @@ export class ImportOrchestrator {
     private readonly recordRepository: ImportRecordRepository,
     private readonly adapterRegistry: ImportAdapterRegistry,
     private readonly loggingService: ImportLoggingService,
+    private readonly matchingService: ImportMatchingService = new ImportMatchingService(),
+    private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
   ) {}
 
   async run(sourceId: string, triggerType: ImportTriggerType): Promise<ImportJob> {
@@ -131,8 +170,28 @@ export class ImportOrchestrator {
         await this.loggingService.warning(runningJob.id, 'IMPORT_ADAPTER_WARNING', warning);
       }
 
+      const catalog = await this.catalogLoader();
+      const matchedRecords = enrichRecordsWithMatching(
+        adapterResult.records,
+        this.matchingService,
+        catalog,
+      );
+
+      for (const record of matchedRecords) {
+        const matchLogs = (record as ImportAdapterRecordResult & { _matchLogs?: Array<{ level: string; code: string; message: string }> })._matchLogs;
+        if (matchLogs) {
+          for (const entry of matchLogs) {
+            if (entry.level === 'warning') {
+              await this.loggingService.warning(runningJob.id, entry.code, entry.message);
+            } else {
+              await this.loggingService.info(runningJob.id, entry.code, entry.message);
+            }
+          }
+        }
+      }
+
       await this.recordRepository.createMany(
-        adapterResult.records.map((record) => ({
+        matchedRecords.map((record) => ({
           importJobId: runningJob.id,
           sourceId: source.id,
           externalId: record.externalId,
@@ -143,16 +202,23 @@ export class ImportOrchestrator {
             : undefined,
           validationErrors: record.validationErrors,
           validationWarnings: record.validationWarnings,
+          matchedCityId: record.matchResult?.matchedCityId,
+          matchedVenueId: record.matchResult?.matchedVenueId,
+          matchedArtistIds: record.matchResult?.matchedArtistIds,
+          matchedGenreIds: record.matchResult?.matchedGenreIds,
+          duplicateEventId: record.matchResult?.duplicateEventId,
+          duplicateScore: record.matchResult?.duplicateScore,
+          matchingWarnings: record.matchResult?.warnings,
           status: record.status,
         })),
       );
 
-      const metrics = computeMetrics(adapterResult.records);
+      const metrics = computeMetrics(matchedRecords);
 
       await this.loggingService.info(
         runningJob.id,
         'IMPORT_RECORDS_SAVED',
-        `Saved ${adapterResult.records.length} import records.`,
+        `Saved ${matchedRecords.length} import records.`,
       );
 
       return await this.jobRepository.update({

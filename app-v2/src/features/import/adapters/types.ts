@@ -1,5 +1,6 @@
 import type { ImportRecordStatus } from '@/features/import/models/statuses';
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
+import type { MatchResult } from '@/features/import/matching/match-result';
 import type { ValidationIssue } from '@/features/import/validation/validation-codes';
 
 export interface ImportAdapterRecordResult {
@@ -9,6 +10,7 @@ export interface ImportAdapterRecordResult {
   normalizedCandidate?: NormalizedEventCandidate;
   validationErrors?: ValidationIssue[];
   validationWarnings?: ValidationIssue[];
+  matchResult?: MatchResult;
   status: ImportRecordStatus;
   skipped?: boolean;
   skipReason?: string;
