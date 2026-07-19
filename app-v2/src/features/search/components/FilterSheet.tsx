@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { useCallback, useEffect, useState } from 'react';
 import {
   Modal,
   Pressable,
@@ -9,46 +10,58 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
+import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
-import { layout } from '@/design/layout';
+import { componentSize, layout } from '@/design/layout';
 import { radiusRoles } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { FilterChip } from '@/features/home/components/FilterChip';
 import {
-  DATE_RANGE_FILTERS,
+  getActiveCityOptions,
+  getActiveDateOptions,
+  getActiveGenreOptions,
+  getActiveSortOptions,
+} from '@/features/search/config/filter-config';
+import type { GenreFilterId } from '@/features/search/config/filter-config.types';
+import {
   DEFAULT_EVENT_FILTERS,
-  SEARCH_GENRE_CHIPS,
-  SORT_BY_FILTERS,
   type DateRangeFilter,
   type EventFilters,
-  type SearchGenreChipId,
   type SortByFilter,
 } from '@/features/search/constants';
 
 export interface FilterSheetProps {
   visible: boolean;
-  initialFilters: EventFilters;
+  appliedFilters: EventFilters;
   mode?: 'full' | 'collection';
-  activeFilterCount?: number;
-  availableCities?: string[];
   onClose: () => void;
   onApply: (filters: EventFilters) => void;
-  onReset: () => void;
+}
+
+function createDraftDefaults(mode: 'full' | 'collection', appliedFilters: EventFilters): EventFilters {
+  if (mode === 'collection') {
+    return {
+      ...appliedFilters,
+      dateRange: 'all-dates',
+      query: '',
+    };
+  }
+
+  return appliedFilters;
 }
 
 export function FilterSheet({
   visible,
-  initialFilters,
+  appliedFilters,
   mode = 'full',
   onClose,
   onApply,
-  onReset,
-  availableCities = ['Köln'],
 }: FilterSheetProps) {
   const insets = useSafeAreaInsets();
-  const [draft, setDraft] = useState<EventFilters>(initialFilters);
+  const [draft, setDraft] = useState<EventFilters>(appliedFilters);
+  const tabBarInset = Math.max(insets.bottom, spacing.sm);
 
   useEffect(() => {
     if (!visible) {
@@ -56,16 +69,39 @@ export function FilterSheet({
     }
 
     const frame = requestAnimationFrame(() => {
-      setDraft(initialFilters);
+      setDraft(createDraftDefaults(mode, appliedFilters));
     });
 
     return () => cancelAnimationFrame(frame);
-  }, [visible, initialFilters]);
+  }, [visible, appliedFilters, mode]);
 
-  const dateOptions =
-    mode === 'collection'
-      ? DATE_RANGE_FILTERS.filter((item) => item.id === 'all-dates')
-      : DATE_RANGE_FILTERS;
+  const toggleGenre = useCallback((genreId: GenreFilterId) => {
+    setDraft((current) => {
+      const isSelected = current.genres.includes(genreId);
+      const genres = isSelected
+        ? current.genres.filter((id) => id !== genreId)
+        : [...current.genres, genreId];
+
+      return { ...current, genres };
+    });
+  }, []);
+
+  const handleResetDraft = useCallback(() => {
+    setDraft({
+      ...DEFAULT_EVENT_FILTERS,
+      ...(mode === 'collection' ? { dateRange: 'all-dates' as const, query: '' } : {}),
+    });
+  }, [mode]);
+
+  const handleApply = useCallback(() => {
+    onApply(draft);
+    onClose();
+  }, [draft, onApply, onClose]);
+
+  const dateOptions = getActiveDateOptions();
+  const genreOptions = getActiveGenreOptions();
+  const cityOptions = getActiveCityOptions();
+  const sortOptions = getActiveSortOptions();
 
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onClose}>
@@ -74,12 +110,22 @@ export function FilterSheet({
         style={[
           styles.sheet,
           {
-            paddingBottom: Math.max(insets.bottom, spacing.md) + layout.bottomNavHeight,
+            paddingBottom: layout.bottomNavHeight + tabBarInset + spacing.md,
           },
         ]}
       >
-        <View style={styles.handle} />
-        <AppText style={styles.title}>Filters</AppText>
+        <View style={styles.header}>
+          <AppText style={styles.title}>Filters</AppText>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Close filters"
+            onPress={onClose}
+            hitSlop={8}
+            style={({ pressed }) => [styles.closeIconButton, pressed && styles.pressed]}
+          >
+            <Ionicons name="close" size={componentSize.iconMd} color={colors.textPrimary} />
+          </Pressable>
+        </View>
 
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
           {mode === 'full' ? (
@@ -106,17 +152,12 @@ export function FilterSheet({
           <View style={styles.section}>
             <AppText style={styles.sectionTitle}>Genres</AppText>
             <View style={styles.chipWrap}>
-              {SEARCH_GENRE_CHIPS.map((chip) => (
+              {genreOptions.map((option) => (
                 <FilterChip
-                  key={chip.id}
-                  label={chip.label}
-                  selected={draft.genreId === chip.id}
-                  onPress={() =>
-                    setDraft((current) => ({
-                      ...current,
-                      genreId: chip.id as SearchGenreChipId,
-                    }))
-                  }
+                  key={option.id}
+                  label={option.label}
+                  selected={draft.genres.includes(option.id)}
+                  onPress={() => toggleGenre(option.id)}
                 />
               ))}
             </View>
@@ -125,12 +166,12 @@ export function FilterSheet({
           <View style={styles.section}>
             <AppText style={styles.sectionTitle}>City</AppText>
             <View style={styles.chipWrap}>
-              {availableCities.map((city) => (
+              {cityOptions.map((option) => (
                 <FilterChip
-                  key={city}
-                  label={city}
-                  selected={draft.city === city}
-                  onPress={() => setDraft((current) => ({ ...current, city }))}
+                  key={option.id}
+                  label={option.label}
+                  selected={draft.city === option.value}
+                  onPress={() => setDraft((current) => ({ ...current, city: option.value }))}
                 />
               ))}
             </View>
@@ -139,7 +180,7 @@ export function FilterSheet({
           <View style={styles.section}>
             <AppText style={styles.sectionTitle}>Sort by</AppText>
             <View style={styles.chipWrap}>
-              {SORT_BY_FILTERS.map((option) => (
+              {sortOptions.map((option) => (
                 <FilterChip
                   key={option.id}
                   label={option.label}
@@ -157,24 +198,8 @@ export function FilterSheet({
         </ScrollView>
 
         <View style={styles.actions}>
-          <PrimaryButton label="Apply Filters" onPress={() => onApply(draft)} />
-          <Pressable
-            accessibilityRole="button"
-            onPress={() => {
-              onReset();
-              setDraft(DEFAULT_EVENT_FILTERS);
-            }}
-            style={({ pressed }) => [styles.resetButton, pressed && styles.pressed]}
-          >
-            <AppText style={styles.resetText}>Reset</AppText>
-          </Pressable>
-          <Pressable
-            accessibilityRole="button"
-            onPress={onClose}
-            style={({ pressed }) => [styles.closeButton, pressed && styles.pressed]}
-          >
-            <AppText style={styles.closeText}>Close</AppText>
-          </Pressable>
+          <PrimaryButton label="Apply Filters" onPress={handleApply} />
+          <SecondaryButton label="Reset All" onPress={handleResetDraft} />
         </View>
       </View>
     </Modal>
@@ -194,17 +219,20 @@ const styles = StyleSheet.create({
     paddingTop: spacing.sm,
     paddingHorizontal: spacingRoles.screenHorizontal,
   },
-  handle: {
-    alignSelf: 'center',
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: colors.border,
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     marginBottom: spacing.md,
   },
   title: {
     ...textRoles.sectionTitle,
-    marginBottom: spacing.md,
+  },
+  closeIconButton: {
+    width: componentSize.iconButtonSize,
+    height: componentSize.iconButtonSize,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   content: {
     gap: spacing.lg,
@@ -226,23 +254,6 @@ const styles = StyleSheet.create({
   actions: {
     gap: spacing.sm,
     paddingTop: spacing.md,
-  },
-  resetButton: {
-    alignItems: 'center',
-    paddingVertical: spacing.sm,
-  },
-  resetText: {
-    ...textRoles.metadata,
-    color: colors.primary,
-    fontWeight: '600',
-  },
-  closeButton: {
-    alignItems: 'center',
-    paddingVertical: spacing.sm,
-  },
-  closeText: {
-    ...textRoles.metadata,
-    color: colorRoles.emptyStateDescription,
   },
   pressed: {
     opacity: 0.85,

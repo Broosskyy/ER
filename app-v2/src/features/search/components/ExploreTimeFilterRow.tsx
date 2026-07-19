@@ -2,14 +2,17 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import { spacing, spacingRoles } from '@/design/spacing';
 import { FilterChip } from '@/features/home/components/FilterChip';
-import { EXPLORE_TIME_FILTERS, ExploreTimeFilterId } from '@/features/search/constants';
+import { getActiveDateOptions } from '@/features/search/config/filter-config';
+import type { DateRangeFilter } from '@/features/search/constants';
 
 export interface ExploreTimeFilterRowProps {
-  selectedId: ExploreTimeFilterId;
-  onSelect: (id: ExploreTimeFilterId) => void;
+  selectedId: DateRangeFilter;
+  onSelect: (id: DateRangeFilter) => void;
 }
 
 export function ExploreTimeFilterRow({ selectedId, onSelect }: ExploreTimeFilterRowProps) {
+  const options = getActiveDateOptions().filter((option) => option.id !== 'all-dates');
+
   return (
     <ScrollView
       horizontal
@@ -17,7 +20,7 @@ export function ExploreTimeFilterRow({ selectedId, onSelect }: ExploreTimeFilter
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.content}
     >
-      {EXPLORE_TIME_FILTERS.map((chip) => (
+      {options.map((chip) => (
         <FilterChip
           key={chip.id}
           label={chip.label}

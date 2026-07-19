@@ -1,34 +1,32 @@
 export { SearchProvider, useSearchFilters } from './SearchContext';
 export {
-  DATE_RANGE_FILTERS,
   DEFAULT_EVENT_FILTERS,
-  EXPLORE_TIME_FILTERS,
-  SEARCH_GENRE_CHIPS,
-  SORT_BY_FILTERS,
-  matchesExploreTimeFilter,
+  filterConfig,
+  getSearchGenreLabel,
 } from './constants';
 export type {
   DateRangeFilter,
   EventFilters,
-  ExploreTimeFilterId,
+  FilterConfig,
+  GenreFilterId,
   SearchGenreChipId,
   SortByFilter,
 } from './constants';
 export {
   applyEventFilters,
   countActiveFilters,
-  filterExploreEvents,
-  filterSearchEvents,
+  getActiveFilterSummaries,
+  hasActiveFilters,
+  isExploreMode,
   summarizeActiveFilters,
 } from './utils/filter-events';
 export {
   ExploreFeed,
   ExplorePosterGrid,
-  ExploreTimeFilterRow,
   FilterSheet,
+  FilterSummaryBar,
   QuickFilterRow,
   SearchEmptyState,
-  SearchGenreChipRow,
   SearchInput,
   SearchResultsMeta,
 } from './components';

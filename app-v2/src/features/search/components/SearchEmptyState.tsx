@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, View } from 'react-native';
 
+import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles } from '@/design/colors';
@@ -9,10 +10,11 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 
 export interface SearchEmptyStateProps {
-  onClearFilters: () => void;
+  onClearAll: () => void;
+  onAdjustFilters: () => void;
 }
 
-export function SearchEmptyState({ onClearFilters }: SearchEmptyStateProps) {
+export function SearchEmptyState({ onClearAll, onAdjustFilters }: SearchEmptyStateProps) {
   return (
     <View style={styles.container}>
       <View style={styles.iconWrap}>
@@ -22,9 +24,12 @@ export function SearchEmptyState({ onClearFilters }: SearchEmptyStateProps) {
           color={colorRoles.emptyStateIcon}
         />
       </View>
-      <AppText style={styles.title}>No events found</AppText>
-      <AppText style={styles.description}>Try another search or change the filters.</AppText>
-      <SecondaryButton label="Clear Filters" onPress={onClearFilters} style={styles.button} />
+      <AppText style={styles.title}>No matching events</AppText>
+      <AppText style={styles.description}>Try removing one or more filters.</AppText>
+      <View style={styles.actions}>
+        <PrimaryButton label="Clear All" onPress={onClearAll} style={styles.button} />
+        <SecondaryButton label="Adjust Filters" onPress={onAdjustFilters} style={styles.button} />
+      </View>
     </View>
   );
 }
@@ -52,7 +57,12 @@ const styles = StyleSheet.create({
     color: colorRoles.emptyStateDescription,
     marginBottom: spacing.md,
   },
+  actions: {
+    width: '100%',
+    gap: spacing.sm,
+    alignItems: 'center',
+  },
   button: {
-    minWidth: 180,
+    minWidth: 200,
   },
 });
