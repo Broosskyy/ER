@@ -91,7 +91,7 @@ export default function ReviewQueueScreen() {
               </AppText>
               {item.duplicateScore !== undefined && item.duplicateScore > 0 ? (
                 <AppText style={styles.dup}>
-                  Duplicate score: {Math.round(item.duplicateScore * 100)}%
+                  Duplicate score: {Math.round(item.duplicateScore)}%
                 </AppText>
               ) : null}
             </Pressable>
