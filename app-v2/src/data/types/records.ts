@@ -63,6 +63,7 @@ export interface SourceRecord {
   website?: string;
   trustScore: number;
   active: boolean;
+  adapterKey?: string;
 }
 
 export interface AdminEventRecord {
