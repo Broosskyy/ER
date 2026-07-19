@@ -22,10 +22,13 @@ import {
   getFeaturedCardWidth,
 } from '@/features/home/components';
 import { useScreenBottomInset } from '@/platform/screen-insets';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 const HOME_SECTIONS: CollectionType[] = ['highlights', 'tonight', 'weekend', 'upcoming', 'techno', 'house'];
 
 export default function HomeScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.home);
   const router = useRouter();
   const bottomInset = useScreenBottomInset();
   const featuredCardWidth = getFeaturedCardWidth();

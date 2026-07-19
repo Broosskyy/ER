@@ -20,8 +20,11 @@ import {
 } from '@/features/notifications';
 import type { NotificationSection } from '@/features/notifications/services/notification-grouping';
 import type { Notification as AppNotification } from '@/features/notifications/types/notification';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function NotificationsScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.notifications);
   const router = useRouter();
   const {
     notifications,

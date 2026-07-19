@@ -2,17 +2,16 @@
 
 **Discover. Connect. Rave.**
 
-Premium mobile-first event discovery platform — technical rebuild in progress.
+Premium event discovery platform for electronic music — Android, iOS-compatible (Expo), and Web/PWA.
 
-## Repository Structure
+## Platforms
 
-```
-├── app-v2/          # New Expo app (active development)
-├── reference/       # Exported reference material from old project
-├── docs/
-│   └── rebuild/     # Bootstrap reports
-└── migration_export.zip  # Original export archive (preserved)
-```
+| Platform | Status |
+|---|---|
+| Android | supported |
+| iOS | Expo-compatible (shared codebase) |
+| Web | supported (static export) |
+| PWA | installable online-first foundation (Sprint 12.6D) |
 
 ## Quick Start
 
@@ -22,14 +21,55 @@ npm install
 npm start
 ```
 
+Web development:
+
+```bash
+npm run web
+```
+
+Web production build:
+
+```bash
+npm run build:web
+npm run validate:build-output
+```
+
+Release validation:
+
+```bash
+npm run release:check
+```
+
+## Environment
+
+Copy `.env.example` to `.env` and set:
+
+- `EXPO_PUBLIC_USE_SUPABASE`
+- `EXPO_PUBLIC_SUPABASE_URL`
+- `EXPO_PUBLIC_SUPABASE_ANON_KEY`
+
+Optional:
+
+- `EXPO_PUBLIC_WEB_BASE_URL`
+- `EXPO_PUBLIC_WEB_NOINDEX=true` (preview/staging)
+
+Never put service role keys in client env vars.
+
 ## Documentation
 
 - [Architecture](app-v2/docs/ARCHITECTURE.md)
+- [Web Foundation](app-v2/docs/web-foundation.md)
+- [PWA](app-v2/docs/pwa.md)
+- [Web Deployment](app-v2/docs/web-deployment.md)
+- [Release Checklist](app-v2/docs/release-checklist.md)
+- [Admin Web Access](app-v2/docs/admin-web.md)
+- [Security](app-v2/docs/security.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
-- [Mockup Mapping](app-v2/docs/MOCKUP_MAPPING.md)
-- [Mockup Extraction Report](docs/rebuild/MOCKUP_EXTRACTION_REPORT.md)
 
-## Reference Material
+## Sprint status
 
-See [reference/README.md](reference/README.md) — not for direct import into app code.
+- 12.6A Web Foundation — complete
+- 12.6B Notification Center — complete
+- 12.6C Admin Web Access — complete
+- 12.6D PWA & Release Hardening — complete

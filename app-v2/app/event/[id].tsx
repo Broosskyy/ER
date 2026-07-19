@@ -28,6 +28,8 @@ import {
   toEventDisplayModel,
 } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
 
@@ -45,6 +47,7 @@ export default function EventDetailScreen() {
     return found ? toEventDisplayModel(found) : undefined;
   }, [eventId]);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
+  useWebDocumentTitle(event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail);
 
   const hasTicketAction = Boolean(event?.ticketUrl);
   const scrollBottomPadding = useMemo(() => {
