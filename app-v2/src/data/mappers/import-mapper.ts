@@ -2,17 +2,22 @@ import type {
   ImportJob,
   ImportLog,
   ImportRecord,
+  ImportRecordSummary,
   ImportSource,
+  ReviewerEdits,
 } from '@/features/import/models/types';
 import { createEmptyJobMetrics } from '@/features/import/models/types';
 import type { ImportSourceConfig } from '@/features/import/models/source-config';
 import type { ValidationIssue } from '@/features/import/validation/validation-codes';
 import type {
+  DuplicateDecision,
   ImportJobStatus,
   ImportLogLevel,
   ImportRecordStatus,
   ImportTriggerType,
+  RejectReason,
 } from '@/features/import/models/statuses';
+import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
 import type { SourceRecord } from '@/data/types/records';
 
 interface SourceRow {
@@ -26,6 +31,10 @@ interface SourceRow {
   trust_score: number;
   active: boolean;
   adapter_key: string | null;
+  review_required: boolean;
+  last_import_at: string | null;
+  last_job_status: ImportJobStatus | null;
+  next_scheduled_at: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -35,6 +44,7 @@ interface ImportJobRow {
   source_id: string;
   status: ImportJobStatus;
   trigger_type: ImportTriggerType;
+  triggered_by: string | null;
   started_at: string | null;
   finished_at: string | null;
   error_summary: string | null;
@@ -68,6 +78,13 @@ interface ImportRecordRow {
   duplicate_score: number | null;
   matching_warnings: string[] | null;
   status: ImportRecordStatus;
+  resulting_event_id: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  reject_reason: RejectReason | null;
+  reject_note: string | null;
+  reviewer_edits: ReviewerEdits | null;
+  duplicate_decision: DuplicateDecision | null;
   created_at: string;
   updated_at: string;
 }
@@ -94,6 +111,10 @@ export function mapSourceRecordToImportSource(record: SourceRecord): ImportSourc
     trustScore: record.trustScore,
     active: record.active,
     adapterKey: record.adapterKey,
+    reviewRequired: record.reviewRequired,
+    lastImportAt: record.lastImportAt,
+    lastJobStatus: record.lastJobStatus,
+    nextScheduledAt: record.nextScheduledAt,
   };
 }
 
@@ -109,6 +130,10 @@ export function mapSourceRowToImportSource(row: SourceRow): ImportSource {
     trustScore: Number(row.trust_score),
     active: row.active,
     adapterKey: row.adapter_key ?? undefined,
+    reviewRequired: row.review_required,
+    lastImportAt: row.last_import_at ?? undefined,
+    lastJobStatus: row.last_job_status ?? undefined,
+    nextScheduledAt: row.next_scheduled_at ?? undefined,
   };
 }
 
@@ -124,6 +149,10 @@ export function mapImportSourceToSourceRow(source: ImportSource): Record<string,
     trust_score: source.trustScore,
     active: source.active,
     adapter_key: source.adapterKey ?? null,
+    review_required: source.reviewRequired ?? true,
+    last_import_at: source.lastImportAt ?? null,
+    last_job_status: source.lastJobStatus ?? null,
+    next_scheduled_at: source.nextScheduledAt ?? null,
   };
 }
 
@@ -133,6 +162,7 @@ export function mapImportJobRowToDomain(row: ImportJobRow): ImportJob {
     sourceId: row.source_id,
     status: row.status,
     triggerType: row.trigger_type,
+    triggeredBy: row.triggered_by ?? undefined,
     startedAt: row.started_at ?? undefined,
     finishedAt: row.finished_at ?? undefined,
     errorSummary: row.error_summary ?? undefined,
@@ -157,6 +187,7 @@ export function mapImportJobToRow(job: ImportJob): Record<string, unknown> {
     source_id: job.sourceId,
     status: job.status,
     trigger_type: job.triggerType,
+    triggered_by: job.triggeredBy ?? null,
     started_at: job.startedAt ?? null,
     finished_at: job.finishedAt ?? null,
     error_summary: job.errorSummary ?? null,
@@ -192,6 +223,13 @@ export function mapImportRecordRowToDomain(row: ImportRecordRow): ImportRecord {
     duplicateScore: row.duplicate_score ?? undefined,
     matchingWarnings: row.matching_warnings ?? undefined,
     status: row.status,
+    resultingEventId: row.resulting_event_id ?? undefined,
+    reviewedBy: row.reviewed_by ?? undefined,
+    reviewedAt: row.reviewed_at ?? undefined,
+    rejectReason: row.reject_reason ?? undefined,
+    rejectNote: row.reject_note ?? undefined,
+    reviewerEdits: row.reviewer_edits ?? undefined,
+    duplicateDecision: row.duplicate_decision ?? undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -216,6 +254,13 @@ export function mapImportRecordToRow(record: ImportRecord): Record<string, unkno
     duplicate_score: record.duplicateScore ?? null,
     matching_warnings: record.matchingWarnings ?? null,
     status: record.status,
+    resulting_event_id: record.resultingEventId ?? null,
+    reviewed_by: record.reviewedBy ?? null,
+    reviewed_at: record.reviewedAt ?? null,
+    reject_reason: record.rejectReason ?? null,
+    reject_note: record.rejectNote ?? null,
+    reviewer_edits: record.reviewerEdits ?? null,
+    duplicate_decision: record.duplicateDecision ?? null,
     created_at: record.createdAt,
     updated_at: record.updatedAt,
   };
@@ -243,6 +288,57 @@ export function mapImportLogToRow(log: ImportLog): Record<string, unknown> {
     message: log.message,
     created_at: log.createdAt,
   };
+}
+
+function asCandidate(payload?: Record<string, unknown>): Partial<NormalizedEventCandidate> {
+  return (payload ?? {}) as Partial<NormalizedEventCandidate>;
+}
+
+export function mapImportRecordToSummary(
+  record: ImportRecord,
+  sourceName?: string,
+): ImportRecordSummary {
+  const candidate = asCandidate(record.normalizedPayload);
+  const matchConfidence = computeMatchConfidence(record);
+  return {
+    id: record.id,
+    importJobId: record.importJobId,
+    sourceId: record.sourceId,
+    externalId: record.externalId,
+    title: candidate.title,
+    eventDate: candidate.startDate,
+    venueName: candidate.venueName,
+    cityName: candidate.cityName,
+    sourceName,
+    matchConfidence,
+    duplicateScore: record.duplicateScore,
+    warningCount: record.validationWarnings?.length ?? 0,
+    status: record.status,
+    createdAt: record.createdAt,
+    updatedAt: record.updatedAt,
+  };
+}
+
+export function computeMatchConfidence(record: ImportRecord): number {
+  let score = 0;
+  let factors = 0;
+  if (record.matchedCityId) {
+    score += 1;
+    factors += 1;
+  }
+  if (record.matchedVenueId) {
+    score += 1;
+    factors += 1;
+  }
+  if (record.matchedArtistIds && record.matchedArtistIds.length > 0) {
+    score += 1;
+    factors += 1;
+  }
+  if (record.matchedGenreIds && record.matchedGenreIds.length > 0) {
+    score += 1;
+    factors += 1;
+  }
+  return factors > 0 ? score / factors : 0;
 }
 
 export type {

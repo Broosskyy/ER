@@ -379,6 +379,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     jobs: [],
     records: [],
     logs: [],
+    auditLogs: [],
   };
   const importBundle = createLocalImportDatasourceBundle(importStore);
   const importSources = createLocalImportSourceDatasource(importStore);
@@ -403,8 +404,10 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     sources,
     stats,
     importSources,
-    importJobs: importBundle.jobs,
-    importRecords: importBundle.records,
-    importLogs: importBundle.logs,
+    importJobs: importBundle.importJobs,
+    importRecords: importBundle.importRecords,
+    importLogs: importBundle.importLogs,
+    importAuditLogs: importBundle.importAuditLogs,
+    importAdmin: importBundle.importAdmin,
   };
 }

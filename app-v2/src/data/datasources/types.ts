@@ -18,6 +18,10 @@ import type {
   ImportRecordDatasource,
   ImportSourceDatasource,
 } from './import-types';
+import type {
+  ImportAdminDatasource,
+  ImportAuditLogDatasource,
+} from './import-admin-types';
 
 export type {
   ImportJobDatasource,
@@ -87,4 +91,6 @@ export interface DatasourceBundle {
   importJobs: ImportJobDatasource;
   importRecords: ImportRecordDatasource;
   importLogs: ImportLogDatasource;
+  importAuditLogs: ImportAuditLogDatasource;
+  importAdmin: ImportAdminDatasource;
 }

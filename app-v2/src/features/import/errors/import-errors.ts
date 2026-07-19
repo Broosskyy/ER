@@ -14,7 +14,14 @@ export type ImportErrorCode =
   | 'VENUE_MATCH_FAILED'
   | 'ARTIST_MATCH_FAILED'
   | 'GENRE_MATCH_FAILED'
-  | 'DUPLICATE_CHECK_FAILED';
+  | 'DUPLICATE_CHECK_FAILED'
+  | 'IMPORT_CONCURRENCY_CONFLICT'
+  | 'IMPORT_PERMISSION_DENIED'
+  | 'IMPORT_VALIDATION_BLOCKED'
+  | 'IMPORT_ACTIVE_JOB_EXISTS'
+  | 'IMPORT_RECORD_NOT_REVIEWABLE'
+  | 'IMPORT_EVENT_CREATE_FAILED'
+  | 'IMPORT_DUPLICATE_UNRESOLVED';
 
 export class ImportError extends Error {
   readonly code: ImportErrorCode;
@@ -78,5 +85,19 @@ export class ImportMatchingError extends ImportError {
   ) {
     super(message, code, cause);
     this.name = 'ImportMatchingError';
+  }
+}
+
+export class ImportConcurrencyError extends ImportError {
+  constructor(message = 'The record was modified by another user.', cause?: unknown) {
+    super(message, 'IMPORT_CONCURRENCY_CONFLICT', cause);
+    this.name = 'ImportConcurrencyError';
+  }
+}
+
+export class ImportPermissionError extends ImportError {
+  constructor(message = 'You do not have permission to perform this action.', cause?: unknown) {
+    super(message, 'IMPORT_PERMISSION_DENIED', cause);
+    this.name = 'ImportPermissionError';
   }
 }
