@@ -1,16 +1,16 @@
+export { SearchProvider, useSearchFilters } from './SearchContext';
 export {
-  DEFAULT_SEARCH_FILTERS,
-  DEFAULT_SEARCH_GENRE,
-  DEFAULT_SEARCH_SORT,
+  EXPLORE_TIME_FILTERS,
   SEARCH_GENRE_CHIPS,
-  SEARCH_SORT_OPTIONS,
+  matchesExploreTimeFilter,
 } from './constants';
-export type { SearchFiltersState, SearchGenreChipId, SearchSortOption } from './constants';
+export type { ExploreTimeFilterId, SearchGenreChipId } from './constants';
+export { filterExploreEvents, filterSearchEvents } from './utils/filter-events';
 export {
+  ExploreFeed,
+  ExplorePosterGrid,
+  ExploreTimeFilterRow,
   SearchEmptyState,
   SearchGenreChipRow,
   SearchInput,
-  SortSegmentControl,
 } from './components';
-export { filterSearchEvents } from './utils/filter-events';
-export { SearchProvider, useSearchFilters } from './SearchContext';
