@@ -74,6 +74,11 @@ Never put service role keys in client env vars.
 - [Legal Documents](app-v2/docs/legal.md)
 - [Data Retention](app-v2/docs/data-retention.md)
 - [Security & Privacy Review](app-v2/docs/security-privacy.md)
+- [Analytics](app-v2/docs/analytics.md)
+- [SEO](app-v2/docs/seo.md)
+- [Search Console](app-v2/docs/search-console.md)
+- [Performance](app-v2/docs/performance.md)
+- [Web Manifest](app-v2/docs/web-manifest.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
 
@@ -86,3 +91,4 @@ Never put service role keys in client env vars.
 - 12.7A iOS Foundation & TestFlight — complete
 - 12.7B Domain, Email & Brand Foundation — complete
 - 12.7C Legal, Privacy & Consent — complete
+- 12.7D Analytics, Search Console & SEO — complete

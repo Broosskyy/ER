@@ -6,6 +6,8 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
+  "categories": ["entertainment", "music"],
+  "id": "/",
   "lang": "de",
   "theme_color": "#0B0B0F",
   "background_color": "#0B0B0F",

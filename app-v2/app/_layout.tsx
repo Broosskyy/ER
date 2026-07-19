@@ -11,6 +11,7 @@ import { FavoritesProvider } from '@/features/favorites';
 import { NotificationsProvider } from '@/features/notifications';
 import { useAndroidSystemUi } from '@/platform/android-system-ui';
 import { PwaProvider } from '@/platform/pwa/PwaProvider';
+import { AnalyticsProvider } from '@/platform/analytics/AnalyticsProvider';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -24,6 +25,7 @@ export default function RootLayout() {
       <FavoritesProvider>
         <NotificationsProvider>
           <PwaProvider>
+            <AnalyticsProvider>
             <StatusBar style="light" />
             {Platform.OS === 'android' ? <NavigationBar style="light" /> : null}
             <Stack
@@ -38,6 +40,7 @@ export default function RootLayout() {
               <Stack.Screen name="collection/[type]" />
               <Stack.Screen name="admin" />
             </Stack>
+            </AnalyticsProvider>
           </PwaProvider>
         </NotificationsProvider>
       </FavoritesProvider>

@@ -29,7 +29,8 @@ import {
 } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
-import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
+import { buildEventJsonLd } from '@/platform/seo/structured-data';
+import { useWebSeo } from '@/platform/seo/use-web-seo';
 
 const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
 
@@ -47,7 +48,27 @@ export default function EventDetailScreen() {
     return found ? toEventDisplayModel(found) : undefined;
   }, [eventId]);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
-  useWebDocumentTitle(event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail);
+
+  useWebSeo({
+    title: event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail,
+    description: event?.description?.slice(0, 160),
+    path: eventId ? `/event/${eventId}` : undefined,
+    ogType: 'article',
+    jsonLd:
+      event && eventId
+        ? buildEventJsonLd({
+            id: event.id,
+            title: event.title,
+            description: event.description,
+            startDate: event.startDateTime,
+            endDate: event.endDateTime,
+            venueName: event.venue,
+            city: event.city,
+            ticketUrl: event.ticketUrl,
+          })
+        : null,
+    jsonLdId: 'event-json-ld',
+  });
 
   const hasTicketAction = Boolean(event?.ticketUrl);
   const scrollBottomPadding = useMemo(() => {

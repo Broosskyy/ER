@@ -1,12 +1,6 @@
-import { useEffect } from 'react';
-import { Platform } from 'react-native';
+import { useWebSeo } from '@/platform/seo/use-web-seo';
 
-export function useWebDocumentTitle(title: string): void {
-  useEffect(() => {
-    if (Platform.OS !== 'web' || typeof document === 'undefined') {
-      return;
-    }
-
-    document.title = title;
-  }, [title]);
+/** @deprecated Prefer useWebSeo for full meta tag support. */
+export function useWebDocumentTitle(title: string, path?: string): void {
+  useWebSeo({ title, path });
 }
