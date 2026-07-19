@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
@@ -24,9 +24,28 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { FilterChip } from '@/features/home/components/FilterChip';
 import { filterConfig } from '@/features/search/config/filter-config';
 
 const STATUSES: AdminEventStatus[] = ['draft', 'review', 'published', 'archived', 'deleted'];
+const ADMIN_EVENTS_LIST_ROUTE = '/admin/events' as const;
+
+function getSaveSuccessMessage(status: AdminEventStatus): string {
+  switch (status) {
+    case 'published':
+      return 'Event published successfully.';
+    case 'draft':
+      return 'Event saved as draft.';
+    case 'archived':
+      return 'Event archived.';
+    case 'review':
+      return 'Event submitted for review.';
+    case 'deleted':
+      return 'Event deleted.';
+    default:
+      return 'Event saved successfully.';
+  }
+}
 
 function createEmptyEvent(id: string): AdminEventRecord {
   const now = new Date().toISOString();
@@ -50,9 +69,11 @@ export default function AdminEventEditorScreen() {
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [optionsLoaded, setOptionsLoaded] = useState(false);
   const [genreOptions, setGenreOptions] = useState<{ id: string; label: string }[]>([]);
   const [cityOptions, setCityOptions] = useState<{ id: string; label: string }[]>([]);
+  const draftEventIdRef = useRef(`event-${Date.now()}`);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -73,14 +94,14 @@ export default function AdminEventEditorScreen() {
       setOptionsLoaded(true);
 
       if (isNew) {
-        setRecord(createEmptyEvent(`event-${Date.now()}`));
+        setRecord((current) => current ?? createEmptyEvent(draftEventIdRef.current));
       } else {
         const existing = await adminEventRepository.getById(id);
         if (!existing) {
           setError('Event not found.');
           return;
         }
-        setRecord(existing);
+        setRecord((current) => (current?.id === existing.id ? current : existing));
       }
     } catch (cause) {
       setError(getErrorMessage(cause));
@@ -100,18 +121,30 @@ export default function AdminEventEditorScreen() {
     setRecord((current) => (current ? { ...current, [key]: value } : current));
   };
 
+  const navigateToEventList = useCallback(
+    (message: string) => {
+      setSuccess(message);
+      setTimeout(() => {
+        router.replace(ADMIN_EVENTS_LIST_ROUTE);
+      }, 700);
+    },
+    [router],
+  );
+
   const save = async (status?: AdminEventStatus) => {
     if (!record) return;
     setSaving(true);
     setError(null);
+    setSuccess(null);
     try {
+      const nextStatus = status ?? record.status;
       const payload = {
         ...record,
-        status: status ?? record.status,
+        status: nextStatus,
         updatedAt: new Date().toISOString(),
       };
       await adminEventRepository.save(payload);
-      router.back();
+      navigateToEventList(getSaveSuccessMessage(nextStatus));
     } catch (cause) {
       setError(getErrorMessage(cause));
     } finally {
@@ -122,9 +155,11 @@ export default function AdminEventEditorScreen() {
   const remove = async () => {
     if (!record) return;
     setSaving(true);
+    setError(null);
+    setSuccess(null);
     try {
       await adminEventRepository.delete(record.id);
-      router.back();
+      navigateToEventList(getSaveSuccessMessage('deleted'));
     } catch (cause) {
       setError(getErrorMessage(cause));
     } finally {
@@ -189,9 +224,10 @@ export default function AdminEventEditorScreen() {
           <AppText style={styles.section}>Genre</AppText>
           <View style={styles.chips}>
             {genreOptions.map((option) => (
-              <SecondaryButton
+              <FilterChip
                 key={option.id}
                 label={option.label}
+                selected={record.genreId === option.id}
                 onPress={() => updateField('genreId', option.id)}
               />
             ))}
@@ -200,9 +236,10 @@ export default function AdminEventEditorScreen() {
           <AppText style={styles.section}>City</AppText>
           <View style={styles.chips}>
             {cityOptions.map((option) => (
-              <SecondaryButton
+              <FilterChip
                 key={option.id}
                 label={option.label}
+                selected={record.cityId === option.id}
                 onPress={() => updateField('cityId', option.id)}
               />
             ))}
@@ -211,15 +248,17 @@ export default function AdminEventEditorScreen() {
           <AppText style={styles.section}>Status</AppText>
           <View style={styles.chips}>
             {STATUSES.map((status) => (
-              <SecondaryButton
+              <FilterChip
                 key={status}
                 label={status}
+                selected={record.status === status}
                 onPress={() => updateField('status', status)}
               />
             ))}
           </View>
 
           {error ? <AppText style={styles.error}>{error}</AppText> : null}
+          {success ? <AppText style={styles.success}>{success}</AppText> : null}
 
           <PrimaryButton
             label={saving ? 'Saving…' : 'Save'}
@@ -275,4 +314,5 @@ const styles = StyleSheet.create({
   section: { ...textRoles.metadata, fontWeight: '600' },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
   error: { ...textRoles.metadata, color: colors.live },
+  success: { ...textRoles.metadata, color: colors.primary },
 });
