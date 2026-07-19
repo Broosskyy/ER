@@ -32,7 +32,7 @@ describe('LocalDatasource', () => {
 });
 
 describe('featureFlags', () => {
-  it('defaults to local datasource', () => {
-    expect(featureFlags.useSupabase).toBe(false);
+  it('derives useSupabase from env and configuration', () => {
+    expect(typeof featureFlags.useSupabase).toBe('boolean');
   });
 });

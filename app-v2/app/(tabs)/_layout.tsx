@@ -1,13 +1,15 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { WebTopNav } from '@/components/navigation/WebTopNav';
 import { colorRoles } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
 import { SearchProvider } from '@/features/search/SearchContext';
+import { useResponsiveLayout } from '@/platform/responsive';
 import { getBottomTabBarHeight, getBottomTabBarPadding } from '@/platform/tab-bar-insets';
 
 type TabIconName = keyof typeof Ionicons.glyphMap;
@@ -24,29 +26,34 @@ function tabIcon(name: TabIconName, focused: boolean) {
 
 export default function TabLayout() {
   const insets = useSafeAreaInsets();
+  const { showWebTopNav } = useResponsiveLayout();
   const bottomPadding = getBottomTabBarPadding(insets);
   const tabBarHeight = getBottomTabBarHeight(insets);
 
   return (
     <SearchProvider>
-      <Tabs
-        screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: colorRoles.bottomNavActive,
-        tabBarInactiveTintColor: colorRoles.bottomNavInactive,
-        tabBarStyle: [
-          styles.tabBar,
-          {
-            height: tabBarHeight,
-            paddingBottom: bottomPadding,
-          },
-        ],
-        tabBarLabelStyle: styles.tabBarLabel,
-        tabBarItemStyle: styles.tabBarItem,
-        tabBarIconStyle: styles.tabBarIcon,
-        tabBarHideOnKeyboard: true,
-      }}
-    >
+      <View style={styles.root}>
+        {showWebTopNav ? <WebTopNav /> : null}
+        <Tabs
+          screenOptions={{
+            headerShown: false,
+            tabBarActiveTintColor: colorRoles.bottomNavActive,
+            tabBarInactiveTintColor: colorRoles.bottomNavInactive,
+            tabBarStyle: showWebTopNav
+              ? styles.hiddenTabBar
+              : [
+                  styles.tabBar,
+                  {
+                    height: tabBarHeight,
+                    paddingBottom: bottomPadding,
+                  },
+                ],
+            tabBarLabelStyle: styles.tabBarLabel,
+            tabBarItemStyle: styles.tabBarItem,
+            tabBarIconStyle: styles.tabBarIcon,
+            tabBarHideOnKeyboard: true,
+          }}
+        >
       <Tabs.Screen
         name="index"
         options={{
@@ -86,11 +93,18 @@ export default function TabLayout() {
         }}
       />
       </Tabs>
+      </View>
     </SearchProvider>
   );
 }
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+  hiddenTabBar: {
+    display: 'none',
+  },
   tabBar: {
     paddingTop: spacing.sm,
     backgroundColor: colorRoles.bottomNavBackground,
