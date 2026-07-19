@@ -1,5 +1,4 @@
-import { featureFlags } from '@/core/config/feature-flags';
-import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
+import { bindEventRepository, bootstrapApp } from '@/core/bootstrap/app-bootstrap';
 import {
   AdminEventRepository,
   ArtistRepository,
@@ -32,6 +31,8 @@ import { ImportReviewService } from '@/features/import/admin/import-review-servi
 registerImportAdapters(importAdapterRegistry);
 
 export const eventRepository = new EventRepository();
+bindEventRepository(eventRepository);
+
 export const adminEventRepository = new AdminEventRepository();
 export const genreRepository = new GenreRepository();
 export const cityRepository = new CityRepository();
@@ -74,25 +75,8 @@ export const importReviewService = new ImportReviewService(
 
 export { importAdapterRegistry };
 
-let initialized = false;
-let initPromise: Promise<void> | undefined;
-
-if (!featureFlags.useSupabase) {
-  const report = runDefaultEventPipeline();
-  eventRepository.initializeSync(report.publishedEvents);
-  initialized = true;
-}
-
 export async function initializeRepositories(): Promise<void> {
-  if (initialized) {
-    return;
-  }
-  if (!initPromise) {
-    initPromise = eventRepository.initialize().then(() => {
-      initialized = true;
-    });
-  }
-  return initPromise;
+  return bootstrapApp();
 }
 
 export type { EventSearchFilters } from '@/data/repositories/repositories';
