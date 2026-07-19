@@ -75,6 +75,7 @@ export default function AdminDashboardScreen() {
             <StatCard label="Collections" value={stats.collections} />
           </View>
           <PrimaryButton label="Manage Events" onPress={() => router.push('/admin/events')} />
+          <PrimaryButton label="Import Operations" onPress={() => router.push('/admin/imports')} />
           <Pressable onPress={() => router.back()} style={styles.backLink}>
             <AppText style={styles.backText}>Back to app</AppText>
           </Pressable>

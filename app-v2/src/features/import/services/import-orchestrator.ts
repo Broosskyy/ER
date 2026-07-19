@@ -110,7 +110,11 @@ export class ImportOrchestrator {
     private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
   ) {}
 
-  async run(sourceId: string, triggerType: ImportTriggerType): Promise<ImportJob> {
+  async run(
+    sourceId: string,
+    triggerType: ImportTriggerType,
+    triggeredBy?: string,
+  ): Promise<ImportJob> {
     const source = await this.sourceRepository.getById(sourceId);
     if (!source) {
       throw new ImportError(`Source "${sourceId}" was not found.`, 'IMPORT_SOURCE_NOT_FOUND');
@@ -131,6 +135,7 @@ export class ImportOrchestrator {
       sourceId: source.id,
       triggerType,
       status: 'pending',
+      triggeredBy,
     });
 
     await this.loggingService.info(job.id, 'IMPORT_JOB_CREATED', `Import job created for source ${source.name}.`);
