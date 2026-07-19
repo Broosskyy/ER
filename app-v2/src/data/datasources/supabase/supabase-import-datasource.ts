@@ -26,6 +26,10 @@ import type {
   ImportSourceDatasource,
 } from '@/data/datasources/import-types';
 import { getSupabaseClient } from '@/services/supabase/client';
+import {
+  createSupabaseImportAdminDatasource,
+  createSupabaseImportAuditLogDatasource,
+} from './supabase-import-admin-datasource';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SupabaseTable = ReturnType<ReturnType<typeof getSupabaseClient>['from']>;
@@ -74,6 +78,7 @@ export function createSupabaseImportJobDatasource(): ImportJobDatasource {
         source_id: input.sourceId,
         status: input.status ?? 'pending',
         trigger_type: input.triggerType,
+        triggered_by: input.triggeredBy ?? null,
         created_at: now,
         updated_at: now,
       };
@@ -124,6 +129,13 @@ export function createSupabaseImportRecordDatasource(): ImportRecordDatasource {
         duplicate_score: input.duplicateScore ?? null,
         matching_warnings: input.matchingWarnings ?? null,
         status: input.status ?? 'fetched',
+        resulting_event_id: null,
+        reviewed_by: null,
+        reviewed_at: null,
+        reject_reason: null,
+        reject_note: null,
+        reviewer_edits: null,
+        duplicate_decision: null,
         created_at: now,
         updated_at: now,
       };
@@ -210,5 +222,7 @@ export function createSupabaseImportDatasourceBundle() {
     importJobs: createSupabaseImportJobDatasource(),
     importRecords: createSupabaseImportRecordDatasource(),
     importLogs: createSupabaseImportLogDatasource(),
+    importAuditLogs: createSupabaseImportAuditLogDatasource(),
+    importAdmin: createSupabaseImportAdminDatasource(),
   };
 }

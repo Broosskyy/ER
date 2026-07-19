@@ -21,6 +21,13 @@ import { importAdapterRegistry } from '@/features/import/adapters/import-adapter
 import { registerImportAdapters } from '@/features/import/adapters/register-adapters';
 import { ImportLoggingService } from '@/features/import/services/import-logging-service';
 import { ImportOrchestrator } from '@/features/import/services/import-orchestrator';
+import {
+  ImportAdminRepositoryImpl,
+  ImportAuditLogRepositoryImpl,
+} from '@/data/repositories/import-admin-repository';
+import { ImportAuditService } from '@/features/import/admin/import-audit-service';
+import { ImportOperationsService } from '@/features/import/admin/import-operations-service';
+import { ImportReviewService } from '@/features/import/admin/import-review-service';
 
 registerImportAdapters(importAdapterRegistry);
 
@@ -45,6 +52,24 @@ export const importOrchestrator = new ImportOrchestrator(
   importRecordRepository,
   importAdapterRegistry,
   importLoggingService,
+);
+
+export const importAuditLogRepository = new ImportAuditLogRepositoryImpl();
+export const importAdminRepository = new ImportAdminRepositoryImpl();
+export const importAuditService = new ImportAuditService(importAuditLogRepository);
+export const importOperationsService = new ImportOperationsService(
+  importSourceRepository,
+  importJobRepository,
+  importAdminRepository,
+  importOrchestrator,
+  importAdapterRegistry,
+  importAuditService,
+);
+export const importReviewService = new ImportReviewService(
+  importRecordRepository,
+  importAdminRepository,
+  adminEventRepository,
+  importAuditService,
 );
 
 export { importAdapterRegistry };

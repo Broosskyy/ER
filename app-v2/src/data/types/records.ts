@@ -67,6 +67,10 @@ export interface SourceRecord {
   trustScore: number;
   active: boolean;
   adapterKey?: string;
+  reviewRequired?: boolean;
+  lastImportAt?: string;
+  lastJobStatus?: import('@/features/import/models/statuses').ImportJobStatus;
+  nextScheduledAt?: string;
 }
 
 export interface AdminEventRecord {

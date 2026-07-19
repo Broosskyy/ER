@@ -10,14 +10,19 @@ const LOCAL_ADMIN_PASSWORD = 'admin-local-dev';
 export interface AuthSession {
   user: { id: string; email: string };
   accessToken: string;
+  role?: string;
 }
 
 let localSession: AuthSession | null = null;
 
 function mapSession(session: Session): AuthSession {
+  const role = typeof session.user.app_metadata?.role === 'string'
+    ? session.user.app_metadata.role
+    : undefined;
   return {
     user: { id: session.user.id, email: session.user.email ?? '' },
     accessToken: session.access_token,
+    role,
   };
 }
 
@@ -28,6 +33,7 @@ export const authService = {
         localSession = {
           user: { id: 'local-admin', email },
           accessToken: 'local-token',
+          role: 'owner',
         };
         return localSession;
       }
