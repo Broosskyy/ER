@@ -270,7 +270,7 @@ describe('Import review service', () => {
     const withDup = await stack.recordRepository.update({
       ...record,
       duplicateEventId: 'existing-evt-1',
-      duplicateScore: 0.9,
+      duplicateScore: 90,
       status: 'needs_review',
     });
     const confirmed = await stack.reviewService.confirmDuplicate(

@@ -224,7 +224,7 @@ export default function ReviewDetailScreen() {
             <View style={styles.card}>
               <AppText style={styles.sectionTitle}>Duplicate Detection</AppText>
               <AppText style={styles.meta}>
-                Score: {Math.round(record.duplicateScore * 100)}%
+                Score: {Math.round(record.duplicateScore)}%
               </AppText>
               <AppText style={styles.meta}>
                 Suggested event: {record.duplicateEventId ?? '—'}

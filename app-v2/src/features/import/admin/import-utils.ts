@@ -1,5 +1,6 @@
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
 import type { ImportRecord, ReviewerEdits } from '@/features/import/models/types';
+import { matchingConfig } from '@/features/import/matching/matching-config';
 
 export function getEffectiveCandidate(record: ImportRecord): NormalizedEventCandidate {
   const base = (record.normalizedPayload ?? {}) as Partial<NormalizedEventCandidate>;
@@ -50,7 +51,7 @@ export function canApproveRecord(record: ImportRecord): boolean {
   }
   if (
     record.duplicateScore !== undefined &&
-    record.duplicateScore >= 0.7 &&
+    record.duplicateScore >= matchingConfig.duplicateThreshold &&
     record.duplicateDecision !== 'dismissed'
   ) {
     return false;
