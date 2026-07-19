@@ -1,6 +1,8 @@
 import type { ExpoConfig } from 'expo/config';
 
 const googleMapsApiKey = process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+const iosBuildNumber = process.env.EXPO_IOS_BUILD_NUMBER ?? '1';
+const associatedDomain = process.env.EXPO_PUBLIC_IOS_ASSOCIATED_DOMAIN?.replace(/^https?:\/\//, '');
 
 const config: ExpoConfig = {
   name: 'Eternal Rave',
@@ -10,9 +12,29 @@ const config: ExpoConfig = {
   icon: './assets/images/icon.png',
   scheme: 'eternal-rave',
   userInterfaceStyle: 'dark',
+  ...(process.env.EXPO_ACCOUNT_OWNER ? { owner: process.env.EXPO_ACCOUNT_OWNER } : {}),
   ios: {
     supportsTablet: false,
     bundleIdentifier: 'com.eternalrave.app',
+    buildNumber: iosBuildNumber,
+    icon: './assets/images/icon.png',
+    userInterfaceStyle: 'dark',
+    requireFullScreen: true,
+    associatedDomains: associatedDomain ? [`applinks:${associatedDomain}`] : [],
+    infoPlist: {
+      CFBundleDisplayName: 'Eternal Rave',
+      LSApplicationQueriesSchemes: ['https', 'http', 'maps'],
+      UIBackgroundModes: [],
+      ITSAppUsesNonExemptEncryption: false,
+    },
+    privacyManifests: {
+      NSPrivacyAccessedAPITypes: [
+        {
+          NSPrivacyAccessedAPIType: 'NSPrivacyAccessedAPICategoryUserDefaults',
+          NSPrivacyAccessedAPITypeReasons: ['CA92.1'],
+        },
+      ],
+    },
   },
   android: {
     package: 'com.eternalrave.app',
@@ -49,6 +71,17 @@ const config: ExpoConfig = {
   plugins: [
     'expo-router',
     [
+      'expo-build-properties',
+      {
+        ios: {
+          deploymentTarget: '15.1',
+        },
+        android: {
+          minSdkVersion: 24,
+        },
+      },
+    ],
+    [
       'react-native-maps',
       {
         googleMapsApiKey: googleMapsApiKey,
@@ -60,6 +93,10 @@ const config: ExpoConfig = {
         image: './assets/images/splash-icon.png',
         resizeMode: 'contain',
         backgroundColor: '#0B0B0F',
+        dark: {
+          image: './assets/images/splash-icon.png',
+          backgroundColor: '#0B0B0F',
+        },
       },
     ],
     'expo-font',
@@ -74,6 +111,14 @@ const config: ExpoConfig = {
   ],
   experiments: {
     typedRoutes: true,
+  },
+  extra: {
+    eas: {
+      projectId: process.env.EAS_PROJECT_ID,
+    },
+    router: {
+      origin: process.env.EXPO_PUBLIC_WEB_BASE_URL,
+    },
   },
 };
 

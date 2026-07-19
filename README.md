@@ -9,7 +9,7 @@ Premium event discovery platform for electronic music — Android, iOS-compatibl
 | Platform | Status |
 |---|---|
 | Android | supported |
-| iOS | Expo-compatible (shared codebase) |
+| iOS | Expo-compatible; EAS/TestFlight prepared (Sprint 12.7A) |
 | Web | supported (static export) |
 | PWA | installable online-first foundation (Sprint 12.6D) |
 
@@ -63,7 +63,7 @@ Never put service role keys in client env vars.
 - [Web Deployment](app-v2/docs/web-deployment.md)
 - [Release Checklist](app-v2/docs/release-checklist.md)
 - [Admin Web Access](app-v2/docs/admin-web.md)
-- [Security](app-v2/docs/security.md)
+- [iOS Build & TestFlight](app-v2/docs/ios-build.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
 
@@ -73,3 +73,4 @@ Never put service role keys in client env vars.
 - 12.6B Notification Center — complete
 - 12.6C Admin Web Access — complete
 - 12.6D PWA & Release Hardening — complete
+- 12.7A iOS Foundation & TestFlight — complete
