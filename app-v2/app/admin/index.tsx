@@ -3,21 +3,21 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
-import { SecondaryButton } from '@/components/buttons/SecondaryButton';
-import { AppScreen } from '@/components/layout/AppScreen';
 import { AppText } from '@/components/layout/AppText';
-import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
 import { colors, colorRoles } from '@/design/colors';
-import { spacing, spacingRoles } from '@/design/spacing';
+import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { DashboardStats } from '@/data/types/records';
 import { statsRepository } from '@/data/repositories/registry';
-import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { canViewEvents, canViewImports } from '@/features/admin/admin-permissions';
+import { useAdminRole } from '@/features/import/admin/use-admin-role';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 function StatCard({ label, value }: { label: string; value: number }) {
   return (
@@ -29,8 +29,9 @@ function StatCard({ label, value }: { label: string; value: number }) {
 }
 
 export default function AdminDashboardScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.adminDashboard);
   const router = useRouter();
-  const { signOut } = useAdminAuth();
+  const { role } = useAdminRole();
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -60,42 +61,29 @@ export default function AdminDashboardScreen() {
   }
 
   return (
-    <AppScreen>
-      <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
-          <View style={styles.header}>
-            <AppText style={styles.title}>Admin Dashboard</AppText>
-            <SecondaryButton label="Logout" onPress={signOut} />
-          </View>
-          <View style={styles.grid}>
-            <StatCard label="Events" value={stats.events} />
-            <StatCard label="Cities" value={stats.cities} />
-            <StatCard label="Genres" value={stats.genres} />
-            <StatCard label="Venues" value={stats.venues} />
-            <StatCard label="Collections" value={stats.collections} />
-          </View>
-          <PrimaryButton label="Manage Events" onPress={() => router.push('/admin/events')} />
-          <PrimaryButton label="Import Operations" onPress={() => router.push('/admin/imports')} />
-          <Pressable onPress={() => router.back()} style={styles.backLink}>
-            <AppText style={styles.backText}>Back to app</AppText>
-          </Pressable>
-        </ScrollView>
-      </SafeAreaContainer>
-    </AppScreen>
+    <ScrollView contentContainerStyle={styles.content}>
+      <AppText style={styles.title}>Dashboard</AppText>
+      <View style={styles.grid}>
+        <StatCard label="Events" value={stats.events} />
+        <StatCard label="Cities" value={stats.cities} />
+        <StatCard label="Genres" value={stats.genres} />
+        <StatCard label="Venues" value={stats.venues} />
+        <StatCard label="Collections" value={stats.collections} />
+      </View>
+      {canViewEvents(role) ? (
+        <PrimaryButton label="Manage Events" onPress={() => router.push('/admin/events')} />
+      ) : null}
+      {canViewImports(role) ? (
+        <PrimaryButton label="Import Operations" onPress={() => router.push('/admin/imports')} />
+      ) : null}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
   content: {
-    padding: spacingRoles.screenHorizontal,
     gap: spacing.lg,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    gap: spacing.sm,
+    paddingBottom: spacing.xl,
   },
   title: { ...textRoles.screenTitle },
   grid: {
@@ -114,6 +102,4 @@ const styles = StyleSheet.create({
   },
   statValue: { ...textRoles.screenTitle, fontSize: 28 },
   statLabel: { ...textRoles.metadata, color: colorRoles.emptyStateDescription },
-  backLink: { alignSelf: 'center' },
-  backText: { ...textRoles.metadata, color: colors.primary },
 });

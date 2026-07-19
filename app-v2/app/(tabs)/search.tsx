@@ -4,14 +4,12 @@ import {
   FlatList,
   Keyboard,
   ListRenderItem,
+  Platform,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
-import { AppScreen, SafeAreaContainer } from '@/components';
-import { spacingRoles } from '@/design/spacing';
+import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import {
   eventRepository,
   toEventDisplayModel,
@@ -36,7 +34,9 @@ import {
   getActiveFilterSummaries,
   isExploreMode,
 } from '@/features/search/utils/filter-events';
-import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
+import { useScreenBottomInset } from '@/platform/screen-insets';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 interface SearchEventRowProps {
   event: EventDisplayModel;
@@ -59,7 +59,7 @@ const SearchEventRow = memo(function SearchEventRow({
 });
 
 export default function SearchScreen() {
-  const insets = useSafeAreaInsets();
+  useWebDocumentTitle(WEB_PAGE_TITLES.search);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const {
     filters,
@@ -89,7 +89,7 @@ export default function SearchScreen() {
   }, [shouldAutoFocus, clearSearchFocus]);
 
   useEffect(() => {
-    if (!filterSheetVisible) {
+    if (!filterSheetVisible || Platform.OS !== 'android') {
       return;
     }
 
@@ -101,7 +101,7 @@ export default function SearchScreen() {
     return () => subscription.remove();
   }, [filterSheetVisible]);
 
-  const tabBarHeight = getBottomTabBarHeight(insets);
+  const bottomInset = useScreenBottomInset();
 
   const results = useMemo(() => {
     return applyEventFilters(eventRepository.getPublishedEvents(), filters).map(toEventDisplayModel);
@@ -138,7 +138,8 @@ export default function SearchScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <ResponsiveScreen>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <View style={styles.filters}>
             <SearchInput
               value={filters.query}
@@ -167,7 +168,7 @@ export default function SearchScreen() {
             onScrollBeginDrag={Keyboard.dismiss}
             contentContainerStyle={[
               styles.listContent,
-              { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
+              { paddingBottom: bottomInset },
             ]}
             renderItem={() => <ExploreFeed />}
           />
@@ -193,7 +194,7 @@ export default function SearchScreen() {
             }
             contentContainerStyle={[
               styles.listContent,
-              { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
+              { paddingBottom: bottomInset },
             ]}
           />
         )}
@@ -205,6 +206,7 @@ export default function SearchScreen() {
           onClose={() => setFilterSheetVisible(false)}
           onApply={handleApplyFilters}
         />
+        </ResponsiveScreen>
       </SafeAreaContainer>
     </AppScreen>
   );

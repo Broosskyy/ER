@@ -2,6 +2,15 @@ import { Linking, Platform, Share } from 'react-native';
 
 import type { EventDisplayModel } from '@/features/events';
 import { formatEventDateTime } from '@/features/events';
+import { isSafeExternalHttpUrl } from '@/platform/linking/external-url';
+
+function getEventShareUrl(eventId: string): string | undefined {
+  if (Platform.OS !== 'web' || typeof window === 'undefined') {
+    return undefined;
+  }
+
+  return `${window.location.origin}/event/${eventId}`;
+}
 
 export async function shareEvent(event: EventDisplayModel): Promise<void> {
   const message = [
@@ -10,18 +19,31 @@ export async function shareEvent(event: EventDisplayModel): Promise<void> {
     `${event.venue}, ${event.city}`,
   ].join('\n');
 
-  await Share.share({ message });
+  const url = getEventShareUrl(event.id);
+
+  await Share.share(url ? { message, url } : { message });
 }
 
 export async function openEventTicketUrl(url: string): Promise<boolean> {
+  if (!isSafeExternalHttpUrl(url)) {
+    return false;
+  }
+
+  const normalized = url.trim();
+
   try {
-    const canOpen = await Linking.canOpenURL(url);
+    const canOpen = await Linking.canOpenURL(normalized);
+
+    if (!canOpen && Platform.OS === 'ios') {
+      await Linking.openURL(normalized);
+      return true;
+    }
 
     if (!canOpen) {
       return false;
     }
 
-    await Linking.openURL(url);
+    await Linking.openURL(normalized);
     return true;
   } catch {
     return false;

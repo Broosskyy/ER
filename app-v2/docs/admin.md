@@ -1,5 +1,7 @@
 # Admin Area
 
+> See also: [admin-web.md](./admin-web.md) (Sprint 12.6C browser admin access) and [security.md](./security.md).
+
 Route prefix: `/admin` (not linked from public app navigation)
 
 ## Access

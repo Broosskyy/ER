@@ -1,11 +1,9 @@
 import { useRouter } from 'expo-router';
 import { useCallback, useMemo } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { IconButton } from '@/components/buttons/IconButton';
-import { AppScreen } from '@/components/layout/AppScreen';
-import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
+import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
 import {
@@ -23,14 +21,16 @@ import {
   SectionHeader,
   getFeaturedCardWidth,
 } from '@/features/home/components';
-import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
+import { useScreenBottomInset } from '@/platform/screen-insets';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 const HOME_SECTIONS: CollectionType[] = ['highlights', 'tonight', 'weekend', 'upcoming', 'techno', 'house'];
 
 export default function HomeScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.home, '/');
   const router = useRouter();
-  const insets = useSafeAreaInsets();
-  const tabBarHeight = getBottomTabBarHeight(insets);
+  const bottomInset = useScreenBottomInset();
   const featuredCardWidth = getFeaturedCardWidth();
   const featuredSnapInterval = featuredCardWidth + spacing.md;
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
@@ -52,24 +52,25 @@ export default function HomeScreen() {
 
   return (
     <AppScreen>
-      <SafeAreaContainer edges={['top']}>
-        <HomeHeader />
-        <View style={styles.controlsRow}>
-          <LocationSelector />
-          <IconButton
-            icon="options-outline"
-            accessibilityLabel="Filters"
-            onPress={() => router.navigate('/(tabs)/search')}
-          />
-        </View>
+      <SafeAreaContainer edges={['top']} style={styles.safeArea}>
+        <ResponsiveScreen>
+          <HomeHeader />
+          <View style={styles.controlsRow}>
+            <LocationSelector />
+            <IconButton
+              icon="options-outline"
+              accessibilityLabel="Filters"
+              onPress={() => router.navigate('/(tabs)/search')}
+            />
+          </View>
 
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={[
-            styles.scrollContent,
-            { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
-          ]}
-        >
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={[
+              styles.scrollContent,
+              { paddingBottom: bottomInset },
+            ]}
+          >
           {sectionData.map((section, index) => (
             <View key={section.type}>
               <SectionHeader
@@ -114,13 +115,17 @@ export default function HomeScreen() {
               )}
             </View>
           ))}
-        </ScrollView>
+          </ScrollView>
+        </ResponsiveScreen>
       </SafeAreaContainer>
     </AppScreen>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   controlsRow: {
     flexDirection: 'row',
     alignItems: 'center',

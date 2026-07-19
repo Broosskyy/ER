@@ -2,17 +2,16 @@
 
 **Discover. Connect. Rave.**
 
-Premium mobile-first event discovery platform — technical rebuild in progress.
+Premium event discovery platform for electronic music — Android, iOS-compatible (Expo), and Web/PWA.
 
-## Repository Structure
+## Platforms
 
-```
-├── app-v2/          # New Expo app (active development)
-├── reference/       # Exported reference material from old project
-├── docs/
-│   └── rebuild/     # Bootstrap reports
-└── migration_export.zip  # Original export archive (preserved)
-```
+| Platform | Status |
+|---|---|
+| Android | supported |
+| iOS | Expo-compatible; EAS/TestFlight prepared (Sprint 12.7A) |
+| Web | supported (static export) |
+| PWA | installable online-first foundation (Sprint 12.6D) |
 
 ## Quick Start
 
@@ -22,14 +21,84 @@ npm install
 npm start
 ```
 
+Web development:
+
+```bash
+npm run web
+```
+
+Web production build:
+
+```bash
+npm run build:web
+npm run validate:build-output
+```
+
+Release validation:
+
+```bash
+npm run release:check
+```
+
+## Environment
+
+Copy `.env.example` to `.env` and set:
+
+- `EXPO_PUBLIC_USE_SUPABASE`
+- `EXPO_PUBLIC_SUPABASE_URL`
+- `EXPO_PUBLIC_SUPABASE_ANON_KEY`
+
+Optional:
+
+- `EXPO_PUBLIC_WEB_BASE_URL`
+- `EXPO_PUBLIC_WEB_NOINDEX=true` (preview/staging)
+- `EXPO_PUBLIC_SUPPORT_URL`, `EXPO_PUBLIC_PRIVACY_URL`, `EXPO_PUBLIC_TERMS_URL` (after domain setup)
+
+Never put service role keys in client env vars.
+
 ## Documentation
 
 - [Architecture](app-v2/docs/ARCHITECTURE.md)
+- [Web Foundation](app-v2/docs/web-foundation.md)
+- [PWA](app-v2/docs/pwa.md)
+- [Web Deployment](app-v2/docs/web-deployment.md)
+- [Release Checklist](app-v2/docs/release-checklist.md)
+- [Admin Web Access](app-v2/docs/admin-web.md)
+- [iOS Build & TestFlight](app-v2/docs/ios-build.md)
+- [Domain Strategy](app-v2/docs/domain.md)
+- [Email Infrastructure](app-v2/docs/email.md)
+- [Business Setup](app-v2/docs/business-setup.md)
+- [Brand Guidelines](app-v2/docs/brand.md)
+- [Privacy Architecture](app-v2/docs/privacy.md)
+- [Terms of Service (structure)](app-v2/docs/terms.md)
+- [Legal Documents](app-v2/docs/legal.md)
+- [Data Retention](app-v2/docs/data-retention.md)
+- [Security & Privacy Review](app-v2/docs/security-privacy.md)
+- [Analytics](app-v2/docs/analytics.md)
+- [SEO](app-v2/docs/seo.md)
+- [Search Console](app-v2/docs/search-console.md)
+- [Performance](app-v2/docs/performance.md)
+- [Web Manifest](app-v2/docs/web-manifest.md)
+- [Release Management](app-v2/docs/release.md)
+- [Store Listings & Assets](app-v2/docs/store.md)
+- [Beta Program](app-v2/docs/beta.md)
+- [Launch Checklist](app-v2/docs/launch-checklist.md)
+- [Compliance & Governance](app-v2/docs/compliance.md)
+- [Operations](app-v2/docs/operations.md)
+- [Go-Live](app-v2/docs/go-live.md)
+- [Security](app-v2/docs/security.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
-- [Mockup Mapping](app-v2/docs/MOCKUP_MAPPING.md)
-- [Mockup Extraction Report](docs/rebuild/MOCKUP_EXTRACTION_REPORT.md)
 
-## Reference Material
+## Sprint status
 
-See [reference/README.md](reference/README.md) — not for direct import into app code.
+- 12.6A Web Foundation — complete
+- 12.6B Notification Center — complete
+- 12.6C Admin Web Access — complete
+- 12.6D PWA & Release Hardening — complete
+- 12.7A iOS Foundation & TestFlight — complete
+- 12.7B Domain, Email & Brand Foundation — complete
+- 12.7C Legal, Privacy & Consent — complete
+- 12.7D Analytics, Search Console & SEO — complete
+- 12.7E Store Preparation & Public Beta — complete
+- 12.7F Release Compliance & Governance — complete

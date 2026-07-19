@@ -80,21 +80,28 @@ const ROLE_PERMISSIONS: Record<AdminRole, AdminPermission[]> = {
   ],
 };
 
-export function resolveAdminRole(session: AuthSession | null): AdminRole {
-  if (!session) return 'viewer';
-  if (session.user.email === 'admin@eternalrave.app') return 'owner';
+export function resolveAdminRole(session: AuthSession | null): AdminRole | null {
+  if (!session) {
+    return null;
+  }
+
   const role = session.role;
   if (role && (ADMIN_ROLES as readonly string[]).includes(role)) {
     return role as AdminRole;
   }
-  return 'admin';
+
+  return null;
 }
 
-export function hasPermission(role: AdminRole, permission: AdminPermission): boolean {
+export function hasPermission(role: AdminRole | null, permission: AdminPermission): boolean {
+  if (!role) {
+    return false;
+  }
+
   return ROLE_PERMISSIONS[role].includes(permission);
 }
 
-export function assertPermission(role: AdminRole, permission: AdminPermission): void {
+export function assertPermission(role: AdminRole | null, permission: AdminPermission): void {
   if (!hasPermission(role, permission)) {
     throw new ImportPermissionError();
   }

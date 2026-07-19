@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { Alert, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, AppText } from '@/components';
+import { AppScreen, AppText, ResponsiveScreen } from '@/components';
 import { colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
@@ -28,6 +28,9 @@ import {
   toEventDisplayModel,
 } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { buildEventJsonLd } from '@/platform/seo/structured-data';
+import { useWebSeo } from '@/platform/seo/use-web-seo';
 
 const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
 
@@ -45,6 +48,27 @@ export default function EventDetailScreen() {
     return found ? toEventDisplayModel(found) : undefined;
   }, [eventId]);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
+
+  useWebSeo({
+    title: event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail,
+    description: event?.description?.slice(0, 160),
+    path: eventId ? `/event/${eventId}` : undefined,
+    ogType: 'article',
+    jsonLd:
+      event && eventId
+        ? buildEventJsonLd({
+            id: event.id,
+            title: event.title,
+            description: event.description,
+            startDate: event.startDateTime,
+            endDate: event.endDateTime,
+            venueName: event.venue,
+            city: event.city,
+            ticketUrl: event.ticketUrl,
+          })
+        : null,
+    jsonLdId: 'event-json-ld',
+  });
 
   const hasTicketAction = Boolean(event?.ticketUrl);
   const scrollBottomPadding = useMemo(() => {
@@ -105,15 +129,16 @@ export default function EventDetailScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[styles.scrollContent, { paddingBottom: scrollBottomPadding }]}
       >
-        <EventDetailHero
-          event={event}
-          isFavorite={isHydrated && isFavorite(event.id)}
-          onBack={() => router.back()}
-          onShare={handleShare}
-          onToggleFavorite={() => toggleFavorite(event.id)}
-        />
+        <ResponsiveScreen style={styles.detailFrame}>
+          <EventDetailHero
+            event={event}
+            isFavorite={isHydrated && isFavorite(event.id)}
+            onBack={() => router.back()}
+            onShare={handleShare}
+            onToggleFavorite={() => toggleFavorite(event.id)}
+          />
 
-        <View style={styles.content}>
+          <View style={styles.content}>
           <AppText style={styles.title}>{event.title}</AppText>
 
           <EventInfoRow
@@ -161,7 +186,8 @@ export default function EventDetailScreen() {
           {event.sourceLabel ? (
             <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceLabel} />
           ) : null}
-        </View>
+          </View>
+        </ResponsiveScreen>
       </ScrollView>
 
       <BottomTicketCTA ticketUrl={event.ticketUrl} onPressTickets={handleOpenTickets} />
@@ -172,6 +198,10 @@ export default function EventDetailScreen() {
 const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 0,
+    width: '100%',
+  },
+  detailFrame: {
+    flex: 0,
   },
   content: {
     paddingHorizontal: spacingRoles.screenHorizontal,

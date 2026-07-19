@@ -1,11 +1,9 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
-import { BackHandler, FlatList, ListRenderItem, StyleSheet } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { BackHandler, FlatList, ListRenderItem, Platform, StyleSheet } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { EmptyState } from '@/components/feedback/EmptyState';
-import { AppScreen, SafeAreaContainer } from '@/components';
-import { spacingRoles } from '@/design/spacing';
+import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { CollectionHeader } from '@/features/collections/components/CollectionHeader';
 import {
   getCollectionConfig,
@@ -21,7 +19,7 @@ import {
   applyEventFilters,
   countActiveFilters,
 } from '@/features/search/utils/filter-events';
-import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
+import { useScreenBottomInset } from '@/platform/screen-insets';
 
 export interface CollectionScreenProps {
   type: CollectionType;
@@ -53,13 +51,12 @@ function createCollectionFilters(): EventFilters {
 }
 
 export function CollectionScreen({ type }: CollectionScreenProps) {
-  const insets = useSafeAreaInsets();
   const config = getCollectionConfig(type);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
   const [filters, setFilters] = useState<EventFilters>(createCollectionFilters);
   const [filterSheetVisible, setFilterSheetVisible] = useState(false);
 
-  const tabBarHeight = getBottomTabBarHeight(insets);
+  const bottomInset = useScreenBottomInset();
 
   const baseEvents = useMemo(() => getCollectionEvents(type), [type]);
 
@@ -72,7 +69,7 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
   const activeFilterCount = countActiveFilters(filters);
 
   useEffect(() => {
-    if (!filterSheetVisible) {
+    if (!filterSheetVisible || Platform.OS !== 'android') {
       return;
     }
 
@@ -110,7 +107,8 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
-        <CollectionHeader
+        <ResponsiveScreen>
+          <CollectionHeader
           title={config.title}
           subtitle={config.subtitle}
           count={filteredEvents.length}
@@ -136,7 +134,7 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={[
               styles.listContent,
-              { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
+              { paddingBottom: bottomInset },
             ]}
           />
         )}
@@ -148,6 +146,7 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
           onClose={() => setFilterSheetVisible(false)}
           onApply={handleApplyFilters}
         />
+        </ResponsiveScreen>
       </SafeAreaContainer>
     </AppScreen>
   );

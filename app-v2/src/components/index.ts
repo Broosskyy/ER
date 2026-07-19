@@ -1,4 +1,5 @@
 export { AppScreen } from './layout/AppScreen';
+export { ResponsiveScreen } from './layout/ResponsiveScreen';
 export { ScreenContent } from './layout/ScreenContent';
 export { SafeAreaContainer } from './layout/SafeAreaContainer';
 export { AppText } from './layout/AppText';

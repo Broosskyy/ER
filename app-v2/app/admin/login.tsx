@@ -1,4 +1,4 @@
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 
@@ -11,21 +11,46 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
+import { isSafeAdminReturnRoute } from '@/features/admin/admin-route-utils';
+import { AdminForbiddenState } from '@/features/admin/components/AdminForbidden';
+import { AdminLoadingState } from '@/features/admin/components/AdminStates';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function AdminLoginScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.adminLogin);
   const router = useRouter();
-  const { signIn } = useAdminAuth();
-  const [email, setEmail] = useState('admin@eternalrave.app');
-  const [password, setPassword] = useState('admin-local-dev');
+  const params = useLocalSearchParams<{ returnTo?: string }>();
+  const { signIn, isAuthenticated, hasAdminAccess, isRoleLoading, clearAuthError } = useAdminAuth();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const returnTo = typeof params.returnTo === 'string' ? params.returnTo : undefined;
+  const safeReturnTo = isSafeAdminReturnRoute(returnTo) ? returnTo : '/admin';
+
+  if (isAuthenticated && isRoleLoading) {
+    return <AdminLoadingState label="Loading permissions…" />;
+  }
+
+  if (isAuthenticated && !hasAdminAccess) {
+    return <AdminForbiddenState />;
+  }
+
   const handleLogin = async () => {
+    if (submitting) {
+      return;
+    }
+
     setSubmitting(true);
     setError(null);
+    clearAuthError();
+
     try {
       await signIn(email.trim(), password);
-      router.replace('/admin');
+      router.replace(safeReturnTo as '/admin');
     } catch (cause) {
       setError(getErrorMessage(cause));
     } finally {
@@ -36,34 +61,68 @@ export default function AdminLoginScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <AppText style={styles.title}>Eternal Rave Admin</AppText>
-        <AppText style={styles.subtitle}>Sign in to manage events and content.</AppText>
+        <AppText accessibilityRole="header" style={styles.title}>
+          Eternal Rave Admin
+        </AppText>
+        <AppText style={styles.subtitle}>Sign in to manage events and imports.</AppText>
         <View style={styles.form}>
-          <AppText style={styles.label}>Email</AppText>
+          <AppText nativeID="admin-login-email-label" style={styles.label}>
+            Email
+          </AppText>
           <TextInput
             value={email}
             onChangeText={setEmail}
             autoCapitalize="none"
+            autoComplete="email"
             keyboardType="email-address"
+            textContentType="emailAddress"
+            accessibilityLabel="Email"
+            accessibilityLabelledBy="admin-login-email-label"
             style={styles.input}
+            placeholder="admin@example.com"
             placeholderTextColor={colorRoles.emptyStateDescription}
+            editable={!submitting}
           />
-          <AppText style={styles.label}>Password</AppText>
+          <AppText nativeID="admin-login-password-label" style={styles.label}>
+            Password
+          </AppText>
           <TextInput
             value={password}
             onChangeText={setPassword}
-            secureTextEntry
+            secureTextEntry={!showPassword}
+            textContentType="password"
+            accessibilityLabel="Password"
+            accessibilityLabelledBy="admin-login-password-label"
             style={styles.input}
+            placeholder="Password"
             placeholderTextColor={colorRoles.emptyStateDescription}
+            editable={!submitting}
+            onSubmitEditing={() => {
+              void handleLogin();
+            }}
           />
-          {error ? <AppText style={styles.error}>{error}</AppText> : null}
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={showPassword ? 'Hide password' : 'Show password'}
+            onPress={() => setShowPassword((current) => !current)}
+            style={styles.togglePassword}
+          >
+            <AppText style={styles.togglePasswordText}>
+              {showPassword ? 'Hide password' : 'Show password'}
+            </AppText>
+          </Pressable>
+          {error ? (
+            <AppText accessibilityRole="alert" style={styles.error}>
+              {error}
+            </AppText>
+          ) : null}
           <PrimaryButton
             label={submitting ? 'Signing in…' : 'Sign in'}
             onPress={handleLogin}
-            disabled={submitting}
+            disabled={submitting || email.trim().length === 0 || password.length === 0}
           />
         </View>
-        <Pressable onPress={() => router.back()} style={styles.backLink}>
+        <Pressable onPress={() => router.replace('/')} style={styles.backLink} accessibilityRole="button">
           <AppText style={styles.backText}>Back to app</AppText>
         </Pressable>
       </SafeAreaContainer>
@@ -77,6 +136,9 @@ const styles = StyleSheet.create({
     padding: spacingRoles.screenHorizontal,
     justifyContent: 'center',
     gap: spacing.md,
+    maxWidth: 480,
+    width: '100%',
+    alignSelf: 'center',
   },
   title: {
     ...textRoles.screenTitle,
@@ -102,6 +164,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     marginBottom: spacing.sm,
+    minHeight: 44,
+  },
+  togglePassword: {
+    alignSelf: 'flex-start',
+    minHeight: 44,
+    justifyContent: 'center',
+  },
+  togglePasswordText: {
+    ...textRoles.metadata,
+    color: colors.primary,
   },
   error: {
     ...textRoles.metadata,
@@ -110,6 +182,8 @@ const styles = StyleSheet.create({
   backLink: {
     alignSelf: 'center',
     marginTop: spacing.lg,
+    minHeight: 44,
+    justifyContent: 'center',
   },
   backText: {
     ...textRoles.metadata,

@@ -1,20 +1,21 @@
 import { useRouter } from 'expo-router';
 import { useCallback } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, SafeAreaContainer } from '@/components';
-import { spacingRoles } from '@/design/spacing';
+import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import type { EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { SavedEmptyState, SavedEventRow, SavedHeader } from '@/features/saved';
-import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
+import { useScreenBottomInset } from '@/platform/screen-insets';
+import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
+import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function SavedScreen() {
+  useWebDocumentTitle(WEB_PAGE_TITLES.saved);
   const router = useRouter();
-  const insets = useSafeAreaInsets();
+  const bottomInset = useScreenBottomInset();
+
   const { favoriteEvents, isFavorite, toggleFavorite, isHydrated } = useFavorites();
-  const tabBarHeight = getBottomTabBarHeight(insets);
 
   const handleExploreEvents = useCallback(() => {
     router.navigate('/(tabs)');
@@ -36,27 +37,29 @@ export default function SavedScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
-        <SavedHeader count={isHydrated ? favoriteEvents.length : 0} />
+        <ResponsiveScreen>
+          <SavedHeader count={isHydrated ? favoriteEvents.length : 0} />
 
-        {!isHydrated ? (
-          <View style={[styles.emptyWrap, { paddingBottom: tabBarHeight }]} />
-        ) : favoriteEvents.length === 0 ? (
-          <View style={[styles.emptyWrap, { paddingBottom: tabBarHeight }]}>
-            <SavedEmptyState onExploreEvents={handleExploreEvents} />
-          </View>
-        ) : (
-          <FlatList
-            data={favoriteEvents}
-            keyExtractor={keyExtractor}
-            renderItem={renderItem}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={[
-              styles.listContent,
-              { paddingBottom: tabBarHeight + spacingRoles.listBottomInset },
-            ]}
-            extraData={favoriteEvents.length}
-          />
-        )}
+          {!isHydrated ? (
+            <View style={[styles.emptyWrap, { paddingBottom: bottomInset }]} />
+          ) : favoriteEvents.length === 0 ? (
+            <View style={[styles.emptyWrap, { paddingBottom: bottomInset }]}>
+              <SavedEmptyState onExploreEvents={handleExploreEvents} />
+            </View>
+          ) : (
+            <FlatList
+              data={favoriteEvents}
+              keyExtractor={keyExtractor}
+              renderItem={renderItem}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={[
+                styles.listContent,
+                { paddingBottom: bottomInset },
+              ]}
+              extraData={favoriteEvents.length}
+            />
+          )}
+        </ResponsiveScreen>
       </SafeAreaContainer>
     </AppScreen>
   );

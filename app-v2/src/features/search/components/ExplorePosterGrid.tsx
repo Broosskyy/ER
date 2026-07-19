@@ -7,9 +7,9 @@ import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import type { EventDisplayModel } from '@/features/events';
+import { getContentMaxWidth, useResponsiveLayout } from '@/platform/responsive';
 
 const POSTER_ASPECT_RATIO = 3 / 4;
-const GRID_COLUMNS = 2;
 const GRID_GAP = spacing.sm;
 
 export interface ExplorePosterCardProps {
@@ -48,11 +48,15 @@ export interface ExplorePosterGridProps {
 
 export function ExplorePosterGrid({ events }: ExplorePosterGridProps) {
   const { width: screenWidth } = useWindowDimensions();
+  const { exploreGridColumns } = useResponsiveLayout();
+  const contentMaxWidth = getContentMaxWidth(screenWidth) ?? screenWidth;
+  const gridWidth = Math.min(screenWidth, contentMaxWidth);
   const horizontalPadding = spacing.md * 2;
-  const cardWidth = (screenWidth - horizontalPadding - GRID_GAP) / GRID_COLUMNS;
+  const cardWidth =
+    (gridWidth - horizontalPadding - GRID_GAP * (exploreGridColumns - 1)) / exploreGridColumns;
 
   return (
-    <View style={styles.grid}>
+    <View style={[styles.grid, { maxWidth: contentMaxWidth, alignSelf: 'center', width: '100%' }]}>
       {events.map((event) => (
         <ExplorePosterCard key={event.id} event={event} width={cardWidth} />
       ))}
