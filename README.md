@@ -69,6 +69,11 @@ Never put service role keys in client env vars.
 - [Email Infrastructure](app-v2/docs/email.md)
 - [Business Setup](app-v2/docs/business-setup.md)
 - [Brand Guidelines](app-v2/docs/brand.md)
+- [Privacy Architecture](app-v2/docs/privacy.md)
+- [Terms of Service (structure)](app-v2/docs/terms.md)
+- [Legal Documents](app-v2/docs/legal.md)
+- [Data Retention](app-v2/docs/data-retention.md)
+- [Security & Privacy Review](app-v2/docs/security-privacy.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
 
@@ -80,3 +85,4 @@ Never put service role keys in client env vars.
 - 12.6D PWA & Release Hardening — complete
 - 12.7A iOS Foundation & TestFlight — complete
 - 12.7B Domain, Email & Brand Foundation — complete
+- 12.7C Legal, Privacy & Consent — complete
