@@ -52,6 +52,7 @@ Optional:
 
 - `EXPO_PUBLIC_WEB_BASE_URL`
 - `EXPO_PUBLIC_WEB_NOINDEX=true` (preview/staging)
+- `EXPO_PUBLIC_SUPPORT_URL`, `EXPO_PUBLIC_PRIVACY_URL`, `EXPO_PUBLIC_TERMS_URL` (after domain setup)
 
 Never put service role keys in client env vars.
 
@@ -64,6 +65,10 @@ Never put service role keys in client env vars.
 - [Release Checklist](app-v2/docs/release-checklist.md)
 - [Admin Web Access](app-v2/docs/admin-web.md)
 - [iOS Build & TestFlight](app-v2/docs/ios-build.md)
+- [Domain Strategy](app-v2/docs/domain.md)
+- [Email Infrastructure](app-v2/docs/email.md)
+- [Business Setup](app-v2/docs/business-setup.md)
+- [Brand Guidelines](app-v2/docs/brand.md)
 - [Design System](app-v2/docs/DESIGN_SYSTEM.md)
 - [Build Status](app-v2/docs/BUILD_STATUS.md)
 
@@ -74,3 +79,4 @@ Never put service role keys in client env vars.
 - 12.6C Admin Web Access — complete
 - 12.6D PWA & Release Hardening — complete
 - 12.7A iOS Foundation & TestFlight — complete
+- 12.7B Domain, Email & Brand Foundation — complete
