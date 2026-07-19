@@ -87,6 +87,10 @@ EXPO_PUBLIC_USE_SUPABASE=false
 | `npx expo-doctor` | 19/20 (CNG warning) |
 | `npm test` | 35/35 |
 
+## APK
+
+**Download:** https://github.com/Broosskyy/ER/releases/download/v1-android-0.2.0-sprint11-backend/eternal-rave-0.2.0-sprint11-backend-admin-preview.apk
+
 ## Open TODOs (Sprint 12)
 
 - Seed migration (genres, cities, Köln venues)
