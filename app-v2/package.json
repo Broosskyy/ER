@@ -47,6 +47,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:migrations": "tsx scripts/validate-migrations.ts",
+    "validate:staging:local": "bash scripts/staging/apply-migrations-local.sh && bash scripts/staging/validate-schema-local.sh && bash scripts/staging/validate-rls-local.sh",
+    "validate:staging:remote": "bash scripts/staging/validate-remote.sh",
+    "validate:staging:rls-remote": "tsx scripts/staging/validate-rls-remote.ts",
     "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
   },
   "private": true
