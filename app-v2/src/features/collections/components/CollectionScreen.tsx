@@ -1,5 +1,5 @@
-import { memo, useCallback, useMemo, useState } from 'react';
-import { FlatList, ListRenderItem, StyleSheet } from 'react-native';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { BackHandler, FlatList, ListRenderItem, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
@@ -12,12 +12,15 @@ import {
   getCollectionEvents,
   type CollectionType,
 } from '@/features/collections/event-collections';
-import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
+import { toEventDisplayModel, type EventDisplayModel } from '@/features/events';
 import { useFavorites } from '@/features/favorites';
 import { EventCard } from '@/features/home/components';
 import { FilterSheet } from '@/features/search/components/FilterSheet';
 import { DEFAULT_EVENT_FILTERS, type EventFilters } from '@/features/search/constants';
-import { applyEventFilters } from '@/features/search/utils/filter-events';
+import {
+  applyEventFilters,
+  countActiveFilters,
+} from '@/features/search/utils/filter-events';
 import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 export interface CollectionScreenProps {
@@ -42,14 +45,18 @@ const CollectionEventRow = memo(function CollectionEventRow({
   );
 });
 
+function createCollectionFilters(): EventFilters {
+  return {
+    ...DEFAULT_EVENT_FILTERS,
+    dateRange: 'all-dates',
+  };
+}
+
 export function CollectionScreen({ type }: CollectionScreenProps) {
   const insets = useSafeAreaInsets();
   const config = getCollectionConfig(type);
   const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
-  const [filters, setFilters] = useState<EventFilters>({
-    ...DEFAULT_EVENT_FILTERS,
-    dateRange: 'all-dates',
-  });
+  const [filters, setFilters] = useState<EventFilters>(createCollectionFilters);
   const [filterSheetVisible, setFilterSheetVisible] = useState(false);
 
   const tabBarHeight = getBottomTabBarHeight(insets);
@@ -62,13 +69,20 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
     }).map(toEventDisplayModel);
   }, [baseEvents, filters]);
 
-  const activeFilterCount = useMemo(() => {
-    let count = 0;
-    if (filters.genreId !== 'all') count += 1;
-    if (filters.city !== DEFAULT_EVENT_FILTERS.city) count += 1;
-    if (filters.sortBy !== DEFAULT_EVENT_FILTERS.sortBy) count += 1;
-    return count;
-  }, [filters]);
+  const activeFilterCount = countActiveFilters(filters);
+
+  useEffect(() => {
+    if (!filterSheetVisible) {
+      return;
+    }
+
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+      setFilterSheetVisible(false);
+      return true;
+    });
+
+    return () => subscription.remove();
+  }, [filterSheetVisible]);
 
   const renderItem: ListRenderItem<EventDisplayModel> = useCallback(
     ({ item }) => (
@@ -87,15 +101,10 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
       dateRange: 'all-dates',
       query: '',
     });
-    setFilterSheetVisible(false);
   }, []);
 
   const handleResetFilters = useCallback(() => {
-    setFilters({
-      ...DEFAULT_EVENT_FILTERS,
-      dateRange: 'all-dates',
-    });
-    setFilterSheetVisible(false);
+    setFilters(createCollectionFilters());
   }, []);
 
   return (
@@ -134,12 +143,10 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
 
         <FilterSheet
           visible={filterSheetVisible}
-          initialFilters={filters}
+          appliedFilters={filters}
           mode="collection"
-          availableCities={[...new Set(eventRepository.getPublishedEvents().map((event) => event.city))]}
           onClose={() => setFilterSheetVisible(false)}
           onApply={handleApplyFilters}
-          onReset={handleResetFilters}
         />
       </SafeAreaContainer>
     </AppScreen>

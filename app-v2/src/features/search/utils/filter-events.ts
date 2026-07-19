@@ -4,14 +4,19 @@ import {
   isThisWeekEvent,
   isUpcomingEvent,
 } from '@/features/events/formatting/date-time';
+import {
+  getDateLabel,
+  getGenreLabel,
+  getSortLabel,
+} from '@/features/search/config/filter-config';
 
 import {
-  type DateRangeFilter,
+  DEFAULT_EVENT_FILTERS,
   type EventFilters,
   type SortByFilter,
   buildEventSearchIndex,
-  getSearchGenreLabel,
-  type SearchGenreChipId,
+  type DateRangeFilter,
+  type GenreFilterId,
 } from '../constants';
 
 function normalizeQuery(query: string): string {
@@ -33,13 +38,21 @@ export function matchesSearchQuery(event: Event, query: string): boolean {
   return terms.every((term) => haystack.includes(term));
 }
 
-export function matchesSearchGenre(event: Event, genreId: SearchGenreChipId): boolean {
-  if (genreId === 'all') {
+export function matchesSearchGenres(event: Event, genres: GenreFilterId[]): boolean {
+  if (genres.length === 0) {
     return true;
   }
 
-  const genreLabel = getSearchGenreLabel(genreId).toLowerCase();
-  return event.genres.some((genre) => genre.toLowerCase() === genreLabel);
+  const selectedLabels = genres.map((genreId) => getGenreLabel(genreId).toLowerCase());
+  return event.genres.some((genre) => selectedLabels.includes(genre.toLowerCase()));
+}
+
+/** @deprecated Use matchesSearchGenres */
+export function matchesSearchGenre(event: Event, genreId: string): boolean {
+  if (genreId === 'all') {
+    return true;
+  }
+  return matchesSearchGenres(event, [genreId as GenreFilterId]);
 }
 
 function isSameDay(isoDateTime: string, referenceDate: Date): boolean {
@@ -56,7 +69,7 @@ export function matchesDateRange(
   dateRange: DateRangeFilter,
   referenceDate: Date = EVENT_REFERENCE_DATE,
 ): boolean {
-  if (dateRange === 'explore' || dateRange === 'all-dates') {
+  if (dateRange === 'all-dates') {
     return true;
   }
 
@@ -72,7 +85,7 @@ export function matchesDateRange(
 }
 
 export function matchesCity(event: Event, city: string): boolean {
-  if (!city || city === 'all') {
+  if (!city) {
     return true;
   }
 
@@ -82,12 +95,8 @@ export function matchesCity(event: Event, city: string): boolean {
 export function sortEvents(events: Event[], sortBy: SortByFilter): Event[] {
   const sorted = [...events];
 
-  if (sortBy === 'name') {
+  if (sortBy === 'alphabetical') {
     return sorted.sort((left, right) => left.title.localeCompare(right.title, 'de'));
-  }
-
-  if (sortBy === 'date') {
-    return sorted.sort((left, right) => left.startDateTime.localeCompare(right.startDateTime));
   }
 
   return sorted.sort((left, right) => left.startDateTime.localeCompare(right.startDateTime));
@@ -105,7 +114,7 @@ export function applyEventFilters(
   const filtered = events.filter(
     (event) =>
       matchesSearchQuery(event, filters.query) &&
-      matchesSearchGenre(event, filters.genreId) &&
+      matchesSearchGenres(event, filters.genres) &&
       matchesCity(event, filters.city) &&
       (options.preserveCollectionScope || matchesDateRange(event, filters.dateRange)),
   );
@@ -113,59 +122,49 @@ export function applyEventFilters(
   return sortEvents(filtered, filters.sortBy);
 }
 
-/** @deprecated Use applyEventFilters with EventFilters */
-export function filterSearchEvents(
-  events: Event[],
-  query: string,
-  genreId: SearchGenreChipId,
-  dateRange: DateRangeFilter,
-): Event[] {
-  return applyEventFilters(events, {
-    query,
-    genreId,
-    city: 'Köln',
-    sortBy: 'recommended',
-    dateRange,
-  });
+export function hasActiveFilters(filters: EventFilters): boolean {
+  return countActiveFilters(filters) > 0 || filters.query.trim().length > 0;
 }
 
-/** @deprecated Use applyEventFilters with EventFilters */
-export function filterExploreEvents(
-  events: Event[],
-  genreId: SearchGenreChipId,
-  dateRange: DateRangeFilter,
-): Event[] {
-  return applyEventFilters(events, {
-    query: '',
-    genreId,
-    city: 'Köln',
-    sortBy: 'recommended',
-    dateRange,
-  });
+export function isExploreMode(filters: EventFilters): boolean {
+  return filters.query.trim().length === 0 && countActiveFilters(filters) === 0;
 }
 
 export function countActiveFilters(filters: EventFilters): number {
   let count = 0;
 
-  if (filters.query.trim().length > 0) count += 1;
-  if (filters.genreId !== 'all') count += 1;
-  if (filters.dateRange !== 'explore' && filters.dateRange !== 'all-dates') count += 1;
-  if (filters.city !== 'Köln') count += 1;
-  if (filters.sortBy !== 'recommended') count += 1;
+  if (filters.dateRange !== DEFAULT_EVENT_FILTERS.dateRange) count += 1;
+  if (filters.genres.length > 0) count += 1;
+  if (filters.city !== DEFAULT_EVENT_FILTERS.city) count += 1;
+  if (filters.sortBy !== DEFAULT_EVENT_FILTERS.sortBy) count += 1;
 
   return count;
 }
 
-export function summarizeActiveFilters(filters: EventFilters): string {
+export function getActiveFilterSummaries(filters: EventFilters): string[] {
   const parts: string[] = [];
 
-  if (filters.dateRange === 'today') parts.push('Today');
-  if (filters.dateRange === 'this-weekend') parts.push('This Weekend');
-  if (filters.dateRange === 'upcoming') parts.push('Upcoming');
-  if (filters.genreId !== 'all') parts.push(getSearchGenreLabel(filters.genreId));
-  if (filters.city !== 'Köln') parts.push(filters.city);
-  if (filters.sortBy === 'name') parts.push('A–Z');
-  if (filters.sortBy === 'date') parts.push('Date');
+  if (filters.dateRange !== DEFAULT_EVENT_FILTERS.dateRange) {
+    parts.push(getDateLabel(filters.dateRange));
+  }
 
-  return parts.join(' · ');
+  if (filters.genres.length === 1) {
+    parts.push(getGenreLabel(filters.genres[0]!));
+  } else if (filters.genres.length > 1) {
+    parts.push(`${filters.genres.length} Genres`);
+  }
+
+  if (filters.city !== DEFAULT_EVENT_FILTERS.city) {
+    parts.push(filters.city);
+  }
+
+  if (filters.sortBy !== DEFAULT_EVENT_FILTERS.sortBy) {
+    parts.push(getSortLabel(filters.sortBy));
+  }
+
+  return parts;
+}
+
+export function summarizeActiveFilters(filters: EventFilters): string {
+  return getActiveFilterSummaries(filters).join(' · ');
 }

@@ -6,67 +6,47 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
 import { ExplorePosterGrid } from '@/features/search/components/ExplorePosterGrid';
-import type { DateRangeFilter, SearchGenreChipId } from '@/features/search/constants';
+import { getDefaultCityValue } from '@/features/search/config/filter-config';
+import type { GenreFilterId } from '@/features/search/config/filter-config.types';
+import type { DateRangeFilter } from '@/features/search/constants';
 import { applyEventFilters } from '@/features/search/utils/filter-events';
 
 export interface ExploreSectionConfig {
   id: string;
   title: string;
   dateRange: DateRangeFilter;
-  genreId?: SearchGenreChipId;
+  genres?: GenreFilterId[];
   limit?: number;
 }
 
 const DEFAULT_SECTIONS: ExploreSectionConfig[] = [
-  { id: 'trending', title: 'Trending in Köln', dateRange: 'explore', limit: 4 },
+  { id: 'trending', title: 'Trending in Köln', dateRange: 'all-dates', limit: 4 },
   { id: 'tonight', title: 'Tonight', dateRange: 'today', limit: 4 },
   { id: 'weekend', title: 'This Weekend', dateRange: 'this-weekend', limit: 4 },
-  { id: 'techno', title: 'Techno', dateRange: 'explore', genreId: 'techno', limit: 4 },
-  { id: 'hard-techno', title: 'Hard Techno', dateRange: 'explore', genreId: 'hard-techno', limit: 4 },
+  { id: 'techno', title: 'Techno', dateRange: 'all-dates', genres: ['techno'], limit: 4 },
+  { id: 'hard-techno', title: 'Hard Techno', dateRange: 'all-dates', genres: ['hard-techno'], limit: 4 },
 ];
 
-export interface ExploreFeedProps {
-  dateRange: DateRangeFilter;
-  genreId: SearchGenreChipId;
-}
-
 function getSectionEvents(section: ExploreSectionConfig): EventDisplayModel[] {
-  const genreId = section.genreId ?? 'all';
   const events = applyEventFilters(eventRepository.getPublishedEvents(), {
     query: '',
     dateRange: section.dateRange,
-    genreId,
-    city: 'Köln',
+    genres: section.genres ?? [],
+    city: getDefaultCityValue(),
     sortBy: 'recommended',
   });
   const limited = section.limit ? events.slice(0, section.limit) : events;
   return limited.map(toEventDisplayModel);
 }
 
-export function ExploreFeed({ dateRange, genreId }: ExploreFeedProps) {
+export function ExploreFeed() {
   const sections = useMemo(() => {
-    if (dateRange !== 'explore' || genreId !== 'all') {
-      const events = applyEventFilters(eventRepository.getPublishedEvents(), {
-        query: '',
-        dateRange,
-        genreId,
-        city: 'Köln',
-        sortBy: 'recommended',
-      }).map(toEventDisplayModel);
-
-      if (events.length === 0) {
-        return [];
-      }
-
-      return [{ id: 'filtered', title: 'Events', events }];
-    }
-
     return DEFAULT_SECTIONS.map((section) => ({
       id: section.id,
       title: section.title,
       events: getSectionEvents(section),
     })).filter((section) => section.events.length > 0);
-  }, [dateRange, genreId]);
+  }, []);
 
   if (sections.length === 0) {
     return null;

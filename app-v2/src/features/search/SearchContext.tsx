@@ -1,22 +1,15 @@
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
 
 import {
-  DEFAULT_SEARCH_FILTERS,
+  DEFAULT_EVENT_FILTERS,
   type DateRangeFilter,
   type EventFilters,
-  type SearchFiltersState,
-  type SearchGenreChipId,
-  type SortByFilter,
 } from './constants';
 
-interface SearchContextValue extends SearchFiltersState {
+interface SearchContextValue {
   filters: EventFilters;
   setQuery: (query: string) => void;
   setDateRange: (dateRange: DateRangeFilter) => void;
-  setTimeFilter: (timeFilter: DateRangeFilter) => void;
-  setGenreId: (genreId: SearchGenreChipId) => void;
-  setCity: (city: string) => void;
-  setSortBy: (sortBy: SortByFilter) => void;
   applyFilters: (filters: EventFilters) => void;
   clearFilters: () => void;
   shouldAutoFocus: boolean;
@@ -31,7 +24,7 @@ export interface SearchProviderProps {
 }
 
 export function SearchProvider({ children }: SearchProviderProps) {
-  const [filters, setFilters] = useState<EventFilters>(DEFAULT_SEARCH_FILTERS);
+  const [filters, setFilters] = useState<EventFilters>(DEFAULT_EVENT_FILTERS);
   const [shouldAutoFocus, setShouldAutoFocus] = useState(false);
 
   const setQuery = useCallback((query: string) => {
@@ -42,26 +35,12 @@ export function SearchProvider({ children }: SearchProviderProps) {
     setFilters((current) => ({ ...current, dateRange }));
   }, []);
 
-  const setTimeFilter = setDateRange;
-
-  const setGenreId = useCallback((genreId: SearchGenreChipId) => {
-    setFilters((current) => ({ ...current, genreId }));
-  }, []);
-
-  const setCity = useCallback((city: string) => {
-    setFilters((current) => ({ ...current, city }));
-  }, []);
-
-  const setSortBy = useCallback((sortBy: SortByFilter) => {
-    setFilters((current) => ({ ...current, sortBy }));
-  }, []);
-
   const applyFilters = useCallback((next: EventFilters) => {
     setFilters(next);
   }, []);
 
   const clearFilters = useCallback(() => {
-    setFilters(DEFAULT_SEARCH_FILTERS);
+    setFilters(DEFAULT_EVENT_FILTERS);
   }, []);
 
   const requestSearchFocus = useCallback(() => {
@@ -74,16 +53,9 @@ export function SearchProvider({ children }: SearchProviderProps) {
 
   const value = useMemo<SearchContextValue>(
     () => ({
-      ...filters,
-      query: filters.query,
-      timeFilter: filters.dateRange,
       filters,
       setQuery,
       setDateRange,
-      setTimeFilter,
-      setGenreId,
-      setCity,
-      setSortBy,
       applyFilters,
       clearFilters,
       shouldAutoFocus,
@@ -94,10 +66,6 @@ export function SearchProvider({ children }: SearchProviderProps) {
       filters,
       setQuery,
       setDateRange,
-      setTimeFilter,
-      setGenreId,
-      setCity,
-      setSortBy,
       applyFilters,
       clearFilters,
       shouldAutoFocus,

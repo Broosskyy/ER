@@ -5,29 +5,33 @@ import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 
-export interface SearchResultsMetaProps {
-  count: number;
-  summary?: string;
-  onClear?: () => void;
+export interface FilterSummaryBarProps {
+  summaries: string[];
+  onClearAll?: () => void;
 }
 
-export function SearchResultsMeta({ count, summary, onClear }: SearchResultsMetaProps) {
+export function FilterSummaryBar({ summaries, onClearAll }: FilterSummaryBarProps) {
+  if (summaries.length === 0) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.textWrap}>
-        <AppText style={styles.count}>
-          {count} {count === 1 ? 'result' : 'results'}
-        </AppText>
-        {summary ? <AppText style={styles.summary}>{summary}</AppText> : null}
+      <View style={styles.chips}>
+        {summaries.map((summary) => (
+          <View key={summary} style={styles.chip}>
+            <AppText style={styles.chipText}>{summary}</AppText>
+          </View>
+        ))}
       </View>
-      {onClear ? (
+      {onClearAll ? (
         <Pressable
           accessibilityRole="button"
-          onPress={onClear}
+          onPress={onClearAll}
           hitSlop={8}
           style={({ pressed }) => pressed && styles.pressed}
         >
-          <AppText style={styles.clear}>Clear All</AppText>
+          <AppText style={styles.clearAll}>Clear All</AppText>
         </Pressable>
       ) : null}
     </View>
@@ -43,20 +47,26 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.sm,
     gap: spacing.sm,
   },
-  textWrap: {
+  chips: {
     flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: spacing.xs,
   },
-  count: {
+  chip: {
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
+    borderRadius: 999,
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  chipText: {
     ...textRoles.metadata,
     color: colorRoles.emptyStateDescription,
-    fontWeight: '600',
+    fontWeight: '500',
   },
-  summary: {
-    ...textRoles.metadata,
-    color: colorRoles.emptyStateDescription,
-  },
-  clear: {
+  clearAll: {
     ...textRoles.metadata,
     color: colors.primary,
     fontWeight: '600',
