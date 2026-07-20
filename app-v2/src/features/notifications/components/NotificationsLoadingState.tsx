@@ -4,12 +4,15 @@ import { AppText } from '@/components/layout/AppText';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export function NotificationsLoadingState() {
+  const { t } = useAppTranslation();
+
   return (
     <View style={styles.container} testID="notifications-loading-state">
       <ActivityIndicator size="large" color={colors.primary} />
-      <AppText style={styles.label}>Aktivitäten werden geladen…</AppText>
+      <AppText style={styles.label}>{t('activity.loading')}</AppText>
     </View>
   );
 }

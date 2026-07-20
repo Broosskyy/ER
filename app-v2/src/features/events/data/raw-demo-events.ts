@@ -248,7 +248,7 @@ export const PIPELINE_TEST_RAW_EVENTS: RawEvent[] = [
     rawArtists: ['Cancelled Act'],
     rawDescription: 'Cancelled event should never be published.',
     importedAt: IMPORTED_AT,
-    metadata: { forceStatus: 'cancelled', publishInApp: false },
+    metadata: { forceStatus: 'archived', publishInApp: false },
   },
 ];
 

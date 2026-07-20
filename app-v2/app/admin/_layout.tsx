@@ -1,7 +1,7 @@
 import { Redirect, Slot, useSegments } from 'expo-router';
 import { Platform } from 'react-native';
 
-import { AdminAuthProvider, useAdminAuth } from '@/features/admin/AdminAuthContext';
+import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { useAdminGuard } from '@/features/admin/admin-guard';
 import { buildAdminLoginHref } from '@/features/admin/admin-route-utils';
 import { AdminForbiddenState } from '@/features/admin/components/AdminForbidden';
@@ -36,7 +36,7 @@ function AdminLayoutContent() {
 
   if (guard.state === 'unauthenticated') {
     const returnTo = `/${segments.join('/')}`;
-    return <Redirect href={buildAdminLoginHref(returnTo) as '/admin/login'} />;
+    return <Redirect href={buildAdminLoginHref(returnTo) as '/login'} />;
   }
 
   if (guard.state === 'forbidden' || guard.state === 'route-forbidden') {
@@ -60,9 +60,5 @@ function AdminLayoutContent() {
 }
 
 export default function AdminLayout() {
-  return (
-    <AdminAuthProvider>
-      <AdminLayoutContent />
-    </AdminAuthProvider>
-  );
+  return <AdminLayoutContent />;
 }

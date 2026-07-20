@@ -127,7 +127,7 @@ describe('notification generation', () => {
     const cancelled = createEvent({
       id: 'saved-1',
       sourceEventId: 'saved-1',
-      status: 'cancelled',
+      status: 'archived',
       updatedAt: '2026-05-24T13:00:00.000Z',
     });
 

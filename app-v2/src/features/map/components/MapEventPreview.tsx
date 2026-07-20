@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
 
 import { FavoriteButton } from '@/components/buttons/FavoriteButton';
+import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
@@ -31,10 +32,35 @@ export function MapEventPreview({
 
   return (
     <View style={[styles.container, { bottom: bottomInset }]}>
-      <Pressable
-        accessibilityRole="button"
+      <InteractiveCard
+        accessibilityLabel={event.title}
         onPress={() => router.push(`/event/${event.id}`)}
-        style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+        style={styles.card}
+        pressableStyle={styles.pressable}
+        pressedStyle={styles.pressed}
+        actionsPlacement="trailing"
+        actions={
+          <>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Close preview"
+              hitSlop={8}
+              onPress={(pressEvent) => {
+                pressEvent.stopPropagation();
+                onClose();
+              }}
+              style={({ pressed }) => [styles.closeButton, pressed && styles.actionPressed]}
+            >
+              <Ionicons name="close" size={componentSize.iconSm} color={colors.textSecondary} />
+            </Pressable>
+            <FavoriteButton
+              active={isFavorite}
+              onPress={onToggleFavorite}
+              accessibilityLabel={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+            />
+          </>
+        }
+        actionsStyle={styles.actions}
       >
         <Image source={event.image} style={styles.image} resizeMode="cover" />
         <View style={styles.content}>
@@ -48,22 +74,7 @@ export function MapEventPreview({
             {event.venue}, {event.city}
           </AppText>
         </View>
-        <View style={styles.actions}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Close preview"
-            hitSlop={8}
-            onPress={(pressEvent) => {
-              pressEvent.stopPropagation();
-              onClose();
-            }}
-            style={({ pressed }) => [styles.closeButton, pressed && styles.pressed]}
-          >
-            <Ionicons name="close" size={componentSize.iconSm} color={colors.textSecondary} />
-          </Pressable>
-          <FavoriteButton active={isFavorite} onPress={onToggleFavorite} />
-        </View>
-      </Pressable>
+      </InteractiveCard>
     </View>
   );
 }
@@ -76,14 +87,16 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   card: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.md,
-    padding: spacing.md,
     borderRadius: radiusRoles.card,
     backgroundColor: colorRoles.cardBackground,
     borderWidth: 1,
     borderColor: colorRoles.cardBorder,
+  },
+  pressable: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
+    padding: spacing.md,
   },
   pressed: {
     opacity: 0.94,
@@ -114,6 +127,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
+    padding: spacing.md,
     gap: spacing.sm,
   },
   closeButton: {
@@ -121,5 +135,8 @@ const styles = StyleSheet.create({
     height: 28,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  actionPressed: {
+    opacity: 0.85,
   },
 });

@@ -1,7 +1,8 @@
 import { useRouter } from 'expo-router';
-import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { FavoriteButton } from '@/components/buttons/FavoriteButton';
+import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
@@ -20,10 +21,24 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
   const router = useRouter();
 
   return (
-    <Pressable
-      accessibilityRole="button"
+    <InteractiveCard
+      accessibilityLabel={event.title}
       onPress={() => router.push(`/event/${event.id}`)}
-      style={({ pressed }) => [styles.card, pressed && styles.pressed]}
+      style={styles.card}
+      pressableStyle={styles.pressable}
+      pressedStyle={styles.pressed}
+      actionsPlacement="trailing"
+      actions={
+        <>
+          <AppText style={styles.time}>{event.startTime}</AppText>
+          <FavoriteButton
+            active={isFavorite}
+            onPress={onToggleFavorite}
+            accessibilityLabel={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          />
+        </>
+      }
+      actionsStyle={styles.trailing}
     >
       <View style={styles.thumbnailWrap}>
         <Image source={event.image} style={styles.thumbnail} resizeMode="cover" />
@@ -47,12 +62,7 @@ export function EventCard({ event, isFavorite, onToggleFavorite }: EventCardProp
           ))}
         </View>
       </View>
-
-      <View style={styles.trailing} onStartShouldSetResponder={() => true}>
-        <AppText style={styles.time}>{event.startTime}</AppText>
-        <FavoriteButton active={isFavorite} onPress={onToggleFavorite} />
-      </View>
-    </Pressable>
+    </InteractiveCard>
   );
 }
 
@@ -60,16 +70,19 @@ const THUMB_WIDTH = componentSize.eventListThumbnailWidth;
 
 const styles = StyleSheet.create({
   card: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.md,
     minHeight: componentSize.eventListRowMinHeight,
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingVertical: spacing.lg,
     backgroundColor: colorRoles.cardBackground,
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderColor: colorRoles.cardBorder,
+  },
+  pressable: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingVertical: spacing.lg,
+    minHeight: componentSize.eventListRowMinHeight,
   },
   pressed: {
     opacity: 0.94,
@@ -130,7 +143,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignSelf: 'stretch',
     minHeight: THUMB_WIDTH / componentSize.eventListThumbnailAspectRatio,
-    paddingVertical: spacing.xs,
+    paddingVertical: spacing.lg,
+    paddingRight: spacingRoles.screenHorizontal,
     gap: spacing.sm,
   },
   time: {

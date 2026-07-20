@@ -1,13 +1,9 @@
-/** Admin / database event lifecycle statuses */
-export const ADMIN_EVENT_STATUSES = [
-  'draft',
-  'review',
-  'published',
-  'archived',
-  'deleted',
-] as const;
+import { EVENT_STATUSES, type EventStatus } from '@/features/events/types/event-status';
 
-export type AdminEventStatus = (typeof ADMIN_EVENT_STATUSES)[number];
+/** Admin / database event lifecycle statuses (aligned with domain `EventStatus`). */
+export const ADMIN_EVENT_STATUSES = EVENT_STATUSES;
+
+export type AdminEventStatus = EventStatus;
 
 export interface GenreRecord {
   id: string;
@@ -87,8 +83,17 @@ export interface AdminEventRecord {
   startDate: string;
   endDate?: string;
   ticketUrl?: string;
+  websiteUrl?: string;
+  instagramUrl?: string;
+  facebookUrl?: string;
   imageUrl?: string;
+  flyerUrl?: string;
+  /** Suggested venue name when no confirmed `venueId` exists. */
+  venueName?: string;
+  /** Optional city label for suggested venues. */
+  venueCity?: string;
   status: AdminEventStatus;
+  createdBy?: string;
   createdAt: string;
   updatedAt: string;
 }

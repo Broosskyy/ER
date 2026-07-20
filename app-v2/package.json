@@ -10,15 +10,20 @@
     "expo-build-properties": "~1.0.10",
     "expo-constants": "~57.0.6",
     "expo-font": "~57.0.1",
+    "expo-image-picker": "~57.0.5",
     "expo-linking": "~57.0.3",
+    "expo-localization": "^57.0.1",
+    "expo-location": "~57.0.5",
     "expo-navigation-bar": "~57.0.2",
     "expo-router": "~57.0.7",
     "expo-splash-screen": "~57.0.4",
     "expo-status-bar": "~57.0.1",
     "fast-xml-parser": "^5.10.1",
+    "i18next": "25.10.10",
     "ical.js": "^2.2.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-i18next": "16.0.1",
     "react-native": "0.86.0",
     "react-native-maps": "1.27.2",
     "react-native-reanimated": "4.5.0",
@@ -67,6 +72,11 @@
     "seed:staging:remote": "tsx scripts/staging/apply-staging-seed-remote.ts",
     "test:staging:connection": "bash scripts/staging/test-connection.sh",
     "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
+  },
+  "overrides": {
+    "react-i18next": {
+      "typescript": "$typescript"
+    }
   },
   "private": true
 }

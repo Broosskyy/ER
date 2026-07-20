@@ -40,11 +40,11 @@ export interface PipelineReport {
 
 function isForcedStatus(value: unknown): value is EventStatus {
   return (
-    value === 'imported' ||
-    value === 'needs_review' ||
+    value === 'draft' ||
+    value === 'review' ||
     value === 'published' ||
     value === 'rejected' ||
-    value === 'cancelled'
+    value === 'archived'
   );
 }
 

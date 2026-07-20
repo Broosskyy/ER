@@ -23,14 +23,14 @@ export function decideEventStatus(input: {
 
   if (input.normalizationErrors.length > 0) {
     return {
-      status: 'needs_review',
+      status: 'review',
       reason: `Normalization errors: ${input.normalizationErrors.join(', ')}`,
     };
   }
 
   if (!input.validation.valid) {
     return {
-      status: 'needs_review',
+      status: 'review',
       reason: `Validation errors: ${input.validation.errors.join(', ')}`,
     };
   }
@@ -44,14 +44,14 @@ export function decideEventStatus(input: {
 
   if (input.deduplicationVerdict === 'possible_duplicate') {
     return {
-      status: 'needs_review',
+      status: 'review',
       reason: 'Possible duplicate',
     };
   }
 
   if (input.publishInApp === false) {
     return {
-      status: 'needs_review',
+      status: 'review',
       reason: 'Excluded from app publish set (pipeline test fixture)',
     };
   }

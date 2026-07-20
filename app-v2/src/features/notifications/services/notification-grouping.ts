@@ -4,14 +4,14 @@ export type NotificationTimeGroup = 'today' | 'this_week' | 'earlier';
 
 export interface NotificationSection {
   key: NotificationTimeGroup;
-  title: string;
+  titleKey: string;
   data: Notification[];
 }
 
-const GROUP_TITLES: Record<NotificationTimeGroup, string> = {
-  today: 'Heute',
-  this_week: 'Diese Woche',
-  earlier: 'Früher',
+const GROUP_TITLE_KEYS: Record<NotificationTimeGroup, string> = {
+  today: 'activity.groups.today',
+  this_week: 'activity.groups.thisWeek',
+  earlier: 'activity.groups.earlier',
 };
 
 function startOfDay(date: Date): Date {
@@ -87,7 +87,7 @@ export function groupNotificationsByTime(
     .filter((key) => grouped[key].length > 0)
     .map((key) => ({
       key,
-      title: GROUP_TITLES[key],
+      titleKey: GROUP_TITLE_KEYS[key],
       data: grouped[key],
     }));
 }

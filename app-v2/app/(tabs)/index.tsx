@@ -2,7 +2,6 @@ import { useRouter } from 'expo-router';
 import { useCallback, useMemo } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
-import { IconButton } from '@/components/buttons/IconButton';
 import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { layout } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
@@ -55,13 +54,8 @@ export default function HomeScreen() {
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
         <ResponsiveScreen>
           <HomeHeader />
-          <View style={styles.controlsRow}>
+          <View style={styles.locationRow}>
             <LocationSelector />
-            <IconButton
-              icon="options-outline"
-              accessibilityLabel="Filters"
-              onPress={() => router.navigate('/(tabs)/search')}
-            />
           </View>
 
           <ScrollView
@@ -126,13 +120,9 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
-  controlsRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  locationRow: {
     paddingHorizontal: spacingRoles.screenHorizontal,
     marginBottom: spacing.sm,
-    gap: spacing.sm,
   },
   scrollContent: {
     flexGrow: 0,

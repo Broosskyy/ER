@@ -17,6 +17,7 @@ import type {
   VenueRecord,
 } from '@/data/types/records';
 import type {
+  ContributorEventListParams,
   ArtistDatasource,
   CityDatasource,
   CollectionDatasource,
@@ -34,33 +35,11 @@ import {
 import { mapSourceRecordToImportSource } from '@/data/mappers/import-mapper';
 
 function mapPipelineStatusToAdmin(status: EventStatus): AdminEventStatus {
-  switch (status) {
-    case 'published':
-      return 'published';
-    case 'needs_review':
-      return 'review';
-    case 'cancelled':
-      return 'archived';
-    case 'rejected':
-      return 'deleted';
-    default:
-      return 'draft';
-  }
+  return status;
 }
 
 function mapAdminStatusToPipeline(status: AdminEventStatus): EventStatus {
-  switch (status) {
-    case 'published':
-      return 'published';
-    case 'review':
-      return 'needs_review';
-    case 'archived':
-      return 'cancelled';
-    case 'deleted':
-      return 'rejected';
-    default:
-      return 'imported';
-  }
+  return status;
 }
 
 function eventToAdminRecord(event: Event): AdminEventRecord {
@@ -228,6 +207,16 @@ export function getLocalStore(): LocalStore {
   return sharedLocalStore;
 }
 
+function sortContributorEvents(items: AdminEventRecord[]): AdminEventRecord[] {
+  return [...items].sort((left, right) => {
+    const updatedCompare = right.updatedAt.localeCompare(left.updatedAt);
+    if (updatedCompare !== 0) {
+      return updatedCompare;
+    }
+    return right.createdAt.localeCompare(left.createdAt);
+  });
+}
+
 export function createLocalEventDatasource(store = getLocalStore()): EventDatasource {
   return {
     async getPublishedEvents() {
@@ -238,6 +227,19 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
     },
     async getAllEvents() {
       return [...store.adminEvents];
+    },
+    async listEventsByCreatedBy(userId, params?: ContributorEventListParams) {
+      let items = store.adminEvents.filter((event) => event.createdBy === userId);
+      if (params?.status) {
+        items = items.filter((event) => event.status === params.status);
+      }
+      return sortContributorEvents(items);
+    },
+    async getContributorEventById(eventId, userId) {
+      const event = store.adminEvents.find(
+        (entry) => entry.id === eventId && entry.createdBy === userId,
+      );
+      return event ?? null;
     },
     async listEvents(params) {
       let items = [...store.adminEvents];
@@ -290,7 +292,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
     async deleteEvent(id) {
       store.events = store.events.filter((event) => event.id !== id);
       store.adminEvents = store.adminEvents.map((event) =>
-        event.id === id ? { ...event, status: 'deleted', updatedAt: new Date().toISOString() } : event,
+        event.id === id ? { ...event, status: 'archived', updatedAt: new Date().toISOString() } : event,
       );
     },
   };
@@ -365,7 +367,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
   const stats: StatsDatasource = {
     async getDashboardStats(): Promise<DashboardStats> {
       return {
-        events: store.adminEvents.filter((event) => event.status !== 'deleted').length,
+        events: store.adminEvents.filter((event) => event.status !== 'archived').length,
         cities: store.cities.filter((city) => city.active).length,
         genres: store.genres.filter((genre) => genre.active).length,
         venues: store.venues.length,

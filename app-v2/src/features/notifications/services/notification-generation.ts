@@ -88,7 +88,7 @@ function isStartingSoonEvent(
 ): boolean {
   const eventDate = parseIsoDateTime(event.startDateTime);
 
-  if (!eventDate || event.status === 'cancelled') {
+  if (!eventDate || event.status === 'archived') {
     return false;
   }
 
@@ -131,7 +131,7 @@ function detectSavedEventChanges(
   const created: Notification[] = [];
   const imageUrl = event.imageUrl;
 
-  if (event.status === 'cancelled' && previous.status !== 'cancelled') {
+  if (event.status === 'archived' && previous.status !== 'archived') {
     const deduplicationKey = buildDeduplicationKey({
       eventId: event.id,
       type: 'saved_event_cancelled',
@@ -174,7 +174,7 @@ function detectSavedEventChanges(
     });
   }
 
-  if (hasFieldChange(previous, current, 'status') && event.status !== 'cancelled') {
+  if (hasFieldChange(previous, current, 'status') && event.status !== 'archived') {
     changes.push({
       field: 'status',
       previousValue: previous.status,

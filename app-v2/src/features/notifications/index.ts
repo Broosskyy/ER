@@ -11,5 +11,5 @@ export {
   generateNotifications,
   STARTING_SOON_WINDOW_HOURS,
 } from './services/notification-generation';
-export { getEventDetailRoute, getNotificationsRoute } from './services/notification-navigation';
+export { getEventDetailRoute, getActivityRoute, getNotificationsRoute } from './services/notification-navigation';
 export { formatRelativeNotificationTime } from './services/notification-time';

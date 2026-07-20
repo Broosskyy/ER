@@ -21,8 +21,8 @@ describe('admin route utils', () => {
   });
 
   it('builds login href with encoded return route', () => {
-    expect(buildAdminLoginHref('/admin/events')).toBe('/admin/login?returnTo=%2Fadmin%2Fevents');
-    expect(buildAdminLoginHref('https://evil.test')).toBe('/admin/login');
+    expect(buildAdminLoginHref('/admin/events')).toBe('/login?returnTo=%2Fadmin%2Fevents');
+    expect(buildAdminLoginHref('https://evil.test')).toBe('/login?returnTo=%2Fadmin');
   });
 
   it('resolves nested admin routes', () => {

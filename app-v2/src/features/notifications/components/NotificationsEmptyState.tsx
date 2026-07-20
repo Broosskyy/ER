@@ -4,14 +4,17 @@ import { StyleSheet, View } from 'react-native';
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { colorRoles } from '@/design/colors';
 import { spacing } from '@/design/spacing';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export function NotificationsEmptyState() {
+  const { t } = useAppTranslation();
+
   return (
     <View style={styles.container} testID="notifications-empty-state">
       <Ionicons name="notifications-off-outline" size={48} color={colorRoles.emptyStateIcon} />
       <EmptyState
-        title="Noch keine Aktivitäten"
-        description="Hier erscheinen Updates zu neuen Events, deinen gespeicherten Events und Ticket-Infos."
+        title={t('activity.emptyTitle')}
+        description={t('activity.emptyDescription')}
       />
     </View>
   );

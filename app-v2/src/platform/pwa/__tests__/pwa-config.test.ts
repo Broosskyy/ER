@@ -15,7 +15,7 @@ describe('PWA config', () => {
 
   it('defines route titles for key screens', () => {
     expect(WEB_PAGE_TITLES.home).toContain('Eternal Rave');
-    expect(WEB_PAGE_TITLES.notifications).toContain('Notifications');
+    expect(WEB_PAGE_TITLES.notifications).toContain('Aktivitäten');
     expect(WEB_PAGE_TITLES.adminLogin).toContain('Admin');
   });
 });

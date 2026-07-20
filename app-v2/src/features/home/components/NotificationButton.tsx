@@ -1,38 +1,45 @@
-import { useRouter } from 'expo-router';
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { IconButton } from '@/components/buttons/IconButton';
 import { AppText } from '@/components/layout/AppText';
 import { colors } from '@/design/colors';
 import { fontSize } from '@/design/typography';
-import { getNotificationsRoute, useNotifications } from '@/features/notifications';
+import { ActivityPanel } from '@/features/activity';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { useNotifications } from '@/features/notifications';
 
 export function NotificationButton() {
-  const router = useRouter();
+  const [panelVisible, setPanelVisible] = useState(false);
+  const { t } = useAppTranslation();
   const { badgeLabel, unreadCount } = useNotifications();
 
   const badgeAccessibilityLabel =
     unreadCount > 0
-      ? `${unreadCount} ungelesene Benachrichtigungen`
-      : 'Keine ungelesenen Benachrichtigungen';
+      ? t('home.header.unreadActivityA11y', { count: unreadCount })
+      : t('home.header.noUnreadActivityA11y');
 
   return (
-    <View style={styles.wrap}>
-      <IconButton
-        icon="notifications-outline"
-        accessibilityLabel="Benachrichtigungen öffnen"
-        onPress={() => router.push(getNotificationsRoute())}
-      />
-      {badgeLabel ? (
-        <View
-          style={styles.badge}
-          accessibilityLabel={badgeAccessibilityLabel}
-          accessibilityRole="text"
-        >
-          <AppText style={styles.badgeText}>{badgeLabel}</AppText>
-        </View>
-      ) : null}
-    </View>
+    <>
+      <View style={styles.wrap} testID="home-activity-button">
+        <IconButton
+          icon="notifications-outline"
+          accessibilityLabel={t('home.header.activityA11y')}
+          onPress={() => setPanelVisible(true)}
+        />
+        {badgeLabel ? (
+          <View
+            style={styles.badge}
+            accessibilityLabel={badgeAccessibilityLabel}
+            accessibilityRole="text"
+          >
+            <AppText style={styles.badgeText}>{badgeLabel}</AppText>
+          </View>
+        ) : null}
+      </View>
+
+      <ActivityPanel visible={panelVisible} onClose={() => setPanelVisible(false)} />
+    </>
   );
 }
 

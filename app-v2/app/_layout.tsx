@@ -7,7 +7,10 @@ import 'react-native-reanimated';
 
 import { colors } from '@/design/colors';
 import { RepositoryProvider } from '@/data/repositories/RepositoryProvider';
+import { AuthProvider } from '@/features/auth';
+import { I18nProvider } from '@/features/i18n';
 import { FavoritesProvider } from '@/features/favorites';
+import { UserLocationProvider } from '@/features/location/UserLocationProvider';
 import { NotificationsProvider } from '@/features/notifications';
 import { useAndroidSystemUi } from '@/platform/android-system-ui';
 import { PwaProvider } from '@/platform/pwa/PwaProvider';
@@ -21,8 +24,11 @@ export default function RootLayout() {
   useAndroidSystemUi();
 
   return (
+    <I18nProvider>
+    <AuthProvider>
     <RepositoryProvider>
       <FavoritesProvider>
+        <UserLocationProvider>
         <NotificationsProvider>
           <PwaProvider>
             <AnalyticsProvider>
@@ -34,16 +40,27 @@ export default function RootLayout() {
                 contentStyle: { backgroundColor: colors.background },
               }}
             >
+              <Stack.Screen name="login" />
+              <Stack.Screen name="register" />
+              <Stack.Screen name="forgot-password" />
+              <Stack.Screen name="reset-password" />
+              <Stack.Screen name="auth/callback" />
+              <Stack.Screen name="create" />
               <Stack.Screen name="(tabs)" />
               <Stack.Screen name="notifications" />
+              <Stack.Screen name="activity" />
               <Stack.Screen name="event/[id]" />
+              <Stack.Screen name="profile/events" />
               <Stack.Screen name="collection/[type]" />
               <Stack.Screen name="admin" />
             </Stack>
             </AnalyticsProvider>
           </PwaProvider>
         </NotificationsProvider>
+        </UserLocationProvider>
       </FavoritesProvider>
     </RepositoryProvider>
+    </AuthProvider>
+    </I18nProvider>
   );
 }

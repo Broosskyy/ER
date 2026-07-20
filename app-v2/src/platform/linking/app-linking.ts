@@ -4,6 +4,9 @@ export const IOS_LINKING_PATHS = {
   event: (id: string) => `/event/${id}`,
   collection: (type: string) => `/collection/${type}`,
   notifications: '/notifications',
+  activity: '/activity',
+  create: '/create',
+  authCallback: '/auth/callback',
   home: '/',
 } as const;
 

@@ -1,3 +1,5 @@
+import { buildLoginHref, isSafeReturnRoute } from '@/features/auth/auth-route-utils';
+
 const ADMIN_PREFIX = '/admin';
 
 export function isSafeAdminReturnRoute(path: string | null | undefined): path is string {
@@ -22,10 +24,10 @@ export function isSafeAdminReturnRoute(path: string | null | undefined): path is
 
 export function buildAdminLoginHref(returnTo?: string | null): string {
   if (isSafeAdminReturnRoute(returnTo)) {
-    return `/admin/login?returnTo=${encodeURIComponent(returnTo)}`;
+    return buildLoginHref(returnTo);
   }
 
-  return '/admin/login';
+  return buildLoginHref('/admin');
 }
 
 export type AdminRouteKey =

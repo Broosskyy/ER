@@ -20,6 +20,7 @@ import type {
   VenueRecord,
 } from '@/data/types/records';
 import type { DatasourceBundle } from '@/data/datasources/types';
+import type { ContributorEventListParams } from '@/data/datasources/types';
 import { createLocalDatasourceBundle } from '@/data/datasources/local/local-datasource';
 import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabase/supabase-import-datasource';
 import { getSupabaseClient } from '@/services/supabase/client';
@@ -122,6 +123,16 @@ function createSupabaseTableDatasource<T extends { id: string; active?: boolean 
   };
 }
 
+function sortContributorEvents(items: AdminEventRecord[]): AdminEventRecord[] {
+  return [...items].sort((left, right) => {
+    const updatedCompare = right.updatedAt.localeCompare(left.updatedAt);
+    if (updatedCompare !== 0) {
+      return updatedCompare;
+    }
+    return right.createdAt.localeCompare(left.createdAt);
+  });
+}
+
 export function createSupabaseDatasourceBundle(): DatasourceBundle {
   const supabase = getSupabaseClient();
   const eventsTable = () => supabase.from('events') as SupabaseTable;
@@ -148,11 +159,35 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
         return data ? mapSupabaseEventRow(data as never) : null;
       },
       async getAllEvents() {
-        const { data, error } = await eventsTable().select('*').neq('status', 'deleted');
+        const { data, error } = await eventsTable().select('*');
         if (error) {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
         }
         return (data ?? []).map((row: unknown) => mapEventRowToAdminRecord(row as never));
+      },
+      async listEventsByCreatedBy(userId, params?: ContributorEventListParams) {
+        let query = eventsTable().select('*').eq('created_by', userId);
+        if (params?.status) {
+          query = query.eq('status', params.status);
+        }
+        const { data, error } = await query.order('updated_at', { ascending: false });
+        if (error) {
+          throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+        }
+        return sortContributorEvents(
+          (data ?? []).map((row: unknown) => mapEventRowToAdminRecord(row as never)),
+        );
+      },
+      async getContributorEventById(eventId, userId) {
+        const { data, error } = await eventsTable()
+          .select('*')
+          .eq('id', eventId)
+          .eq('created_by', userId)
+          .maybeSingle();
+        if (error) {
+          throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+        }
+        return data ? mapEventRowToAdminRecord(data as never) : null;
       },
       async listEvents(params) {
         const { data, error } = await eventsTable().select('*');
@@ -181,7 +216,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
       },
       async deleteEvent(id) {
         const { error } = await eventsTable()
-          .update({ status: 'deleted', updated_at: new Date().toISOString() })
+          .update({ status: 'archived', updated_at: new Date().toISOString() })
           .eq('id', id);
         if (error) {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
@@ -197,7 +232,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     stats: {
       async getDashboardStats(): Promise<DashboardStats> {
         const [events, cities, genres, venues, collections] = await Promise.all([
-          eventsTable().select('id', { count: 'exact', head: true }).neq('status', 'deleted'),
+          eventsTable().select('id', { count: 'exact', head: true }).neq('status', 'archived'),
           (supabase.from('cities') as SupabaseTable)
             .select('id', { count: 'exact', head: true })
             .eq('active', true),

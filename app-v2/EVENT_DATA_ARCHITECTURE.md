@@ -1,5 +1,7 @@
 # Event Data Architecture
 
+> **Hinweis (ER-005.4):** Für Ist-vs.-Ziel-Architektur, Schema-Gaps und Migrationsstrategie siehe `app-v2/docs/PLATFORM_ARCHITECTURE_FOUNDATION.md`. Dieses Dokument beschreibt primär die **Pipeline-/Demo-Schicht**; Teile der Status-Beschreibung können gegenüber der DB veraltet sein.
+
 **Sprint 7 — Eternal Rave app-v2**
 
 ## Overview

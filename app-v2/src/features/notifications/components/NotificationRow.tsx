@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
 
+import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { AppText } from '@/components/layout/AppText';
 import { colors, colorRoles } from '@/design/colors';
 import { radii } from '@/design/radii';
@@ -24,15 +25,31 @@ export function NotificationRow({ notification, onPress, onDelete }: Notificatio
   const imageUrl = notification.metadata.imageUrl;
 
   return (
-    <Pressable
-      accessibilityRole="button"
+    <InteractiveCard
       accessibilityLabel={`${notification.title}. ${notification.message}. ${unread ? 'Ungelesen' : 'Gelesen'}`}
       onPress={() => onPress(notification)}
-      style={({ pressed, hovered }) => [
-        styles.container,
-        unread && styles.unreadContainer,
-        (pressed || hovered) && styles.pressed,
-      ]}
+      style={[styles.container, unread && styles.unreadContainer]}
+      pressableStyle={styles.pressable}
+      pressedStyle={styles.pressed}
+      actionsPlacement="trailing"
+      actions={
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Benachrichtigung löschen"
+          hitSlop={8}
+          onPress={(event) => {
+            event.stopPropagation();
+            onDelete(notification);
+          }}
+          style={({ pressed, hovered }) => [
+            styles.deleteButton,
+            (pressed || hovered) && styles.pressed,
+          ]}
+        >
+          <Ionicons name="close" size={16} color={colorRoles.emptyStateDescription} />
+        </Pressable>
+      }
+      actionsStyle={styles.deleteWrap}
     >
       <View style={styles.leading}>
         {imageUrl ? (
@@ -62,35 +79,25 @@ export function NotificationRow({ notification, onPress, onDelete }: Notificatio
           {notification.message}
         </AppText>
       </View>
-
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel="Benachrichtigung löschen"
-        hitSlop={8}
-        onPress={() => onDelete(notification)}
-        style={({ pressed, hovered }) => [
-          styles.deleteButton,
-          (pressed || hovered) && styles.pressed,
-        ]}
-      >
-        <Ionicons name="close" size={16} color={colorRoles.emptyStateDescription} />
-      </Pressable>
-    </Pressable>
+    </InteractiveCard>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: spacing.md,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: colors.border,
   },
   unreadContainer: {
     backgroundColor: colors.surface,
+  },
+  pressable: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: spacing.md,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    flex: 1,
   },
   pressed: {
     opacity: 0.88,
@@ -126,6 +133,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     gap: spacing.xs,
+    minWidth: 0,
   },
   titleRow: {
     flexDirection: 'row',
@@ -151,6 +159,11 @@ const styles = StyleSheet.create({
   message: {
     ...textRoles.body,
     color: colors.textPrimary,
+  },
+  deleteWrap: {
+    justifyContent: 'flex-start',
+    paddingTop: spacing.md,
+    paddingRight: spacing.lg,
   },
   deleteButton: {
     padding: spacing.xs,

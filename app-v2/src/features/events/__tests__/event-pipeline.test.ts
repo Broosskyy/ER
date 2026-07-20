@@ -45,7 +45,7 @@ describe('validateEvent', () => {
       artists: [],
       source: 'demo',
       sourceEventId: 'x',
-      status: 'imported',
+      status: 'draft',
       createdAt: '2026-01-01T00:00:00.000Z',
       updatedAt: '2026-01-01T00:00:00.000Z',
     });
@@ -73,7 +73,7 @@ describe('validateEvent', () => {
       ticketUrl: 'not-a-url',
       latitude: 120,
       longitude: 13,
-      status: 'imported',
+      status: 'draft',
       createdAt: '2026-01-01T00:00:00.000Z',
       updatedAt: '2026-01-01T00:00:00.000Z',
     };
@@ -96,7 +96,7 @@ describe('deduplicateEvents', () => {
     expect(confirmed?.deduplicationVerdict).toBe('confirmed_duplicate');
     expect(confirmed?.status).toBe('rejected');
     expect(possible?.deduplicationVerdict).toBe('possible_duplicate');
-    expect(possible?.status).toBe('needs_review');
+    expect(possible?.status).toBe('review');
   });
 
   it('classifies same source keys as confirmed duplicates', () => {

@@ -10,6 +10,8 @@ export { IconButton } from './buttons/IconButton';
 export { FavoriteButton } from './buttons/FavoriteButton';
 
 export { SurfaceCard } from './cards/SurfaceCard';
+export { InteractiveCard } from './cards/InteractiveCard';
+export type { InteractiveCardProps } from './cards/InteractiveCard';
 
 export { ImagePlaceholder } from './feedback/ImagePlaceholder';
 export { EmptyState } from './feedback/EmptyState';

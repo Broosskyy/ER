@@ -101,6 +101,17 @@ const config: ExpoConfig = {
     ],
     'expo-font',
     [
+      'expo-location',
+      {
+        locationWhenInUsePermission:
+          'Eternal Rave uses your location to show your current city in the app header.',
+        locationAlwaysAndWhenInUsePermission:
+          'Eternal Rave uses your location to show your current city in the app header.',
+        isAndroidBackgroundLocationEnabled: false,
+        isAndroidForegroundServiceEnabled: false,
+      },
+    ],
+    [
       'expo-navigation-bar',
       {
         hidden: false,

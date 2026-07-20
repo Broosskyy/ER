@@ -183,6 +183,22 @@ Full definitions: `src/platform/analytics/analytics-events.ts`
 
 ---
 
+## 10. Future event catalog (ER-005.4 — not wired)
+
+Planned analytics events for upcoming platform capabilities. **Do not implement without consent review.**
+
+| Event | Purpose | Data fields |
+|-------|---------|-------------|
+| `contributor_draft_saved` | Contributor funnel | none (aggregate) |
+| `contributor_event_submitted` | Submission completion | none |
+| `ticket_cta_clicked` | Ticket intent | `event_id` |
+| `organizer_profile_viewed` | Organizer discovery | `organizer_id` |
+| `content_engagement` | Community actions | `content_type`, `action` (no PII) |
+
+See `app-v2/docs/PLATFORM_ARCHITECTURE_FOUNDATION.md` §3.8 for strategy.
+
+---
+
 ## Related docs
 
 - [Privacy architecture](privacy.md)

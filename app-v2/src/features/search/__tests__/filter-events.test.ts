@@ -17,7 +17,7 @@ const sampleEvents: Event[] = [
     slug: 'event-1',
     title: 'VOID: Techno Saturday',
     description: 'Demo',
-    startDateTime: '2026-05-24T23:00:00.000Z',
+    startDateTime: '2026-05-24T20:00:00.000Z',
     timezone: 'Europe/Berlin',
     venue: 'Bootshaus',
     city: 'Köln',

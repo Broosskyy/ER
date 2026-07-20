@@ -6,39 +6,66 @@ import { AppText } from '@/components/layout/AppText';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+
+export type ActivityPresentation = 'screen' | 'panel';
 
 export interface NotificationsHeaderProps {
   unreadCount: number;
   onMarkAllAsRead?: () => void;
+  onClose?: () => void;
+  presentation?: ActivityPresentation;
 }
 
-export function NotificationsHeader({ unreadCount, onMarkAllAsRead }: NotificationsHeaderProps) {
+export function NotificationsHeader({
+  unreadCount,
+  onMarkAllAsRead,
+  onClose,
+  presentation = 'screen',
+}: NotificationsHeaderProps) {
   const router = useRouter();
+  const { t } = useAppTranslation();
   const showMarkAll = unreadCount > 0 && onMarkAllAsRead;
+  const isPanel = presentation === 'panel';
+
+  const handleNavigateBack = () => {
+    if (onClose) {
+      onClose();
+      return;
+    }
+
+    router.back();
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
-        <IconButton icon="arrow-back" accessibilityLabel="Zurück" onPress={() => router.back()} />
+        <IconButton
+          icon={isPanel ? 'close' : 'arrow-back'}
+          accessibilityLabel={
+            isPanel ? t('activity.closeA11y') : t('common.actions.back')
+          }
+          onPress={handleNavigateBack}
+        />
         {showMarkAll ? (
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Alle als gelesen markieren"
+            accessibilityLabel={t('activity.markAllRead')}
             onPress={onMarkAllAsRead}
             style={({ pressed, hovered }) => [
               styles.markAllButton,
               (pressed || hovered) && styles.pressed,
             ]}
           >
-            <AppText style={styles.markAllText}>Alle als gelesen markieren</AppText>
+            <AppText style={styles.markAllText}>{t('activity.markAllRead')}</AppText>
           </Pressable>
         ) : (
           <View style={styles.spacer} />
         )}
       </View>
-      <AppText style={styles.title}>Aktivitäten</AppText>
+      <AppText style={styles.title}>{t('activity.title')}</AppText>
       <AppText style={styles.subtitle}>
-        {unreadCount > 0 ? `${unreadCount} ungelesen` : 'Alles gelesen'}
+        {unreadCount > 0 ? t('activity.unread', { count: unreadCount }) : t('activity.allRead')}
       </AppText>
     </View>
   );

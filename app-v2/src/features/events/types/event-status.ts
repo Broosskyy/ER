@@ -1,9 +1,10 @@
+/** Canonical event lifecycle statuses (DB, domain, services). */
 export const EVENT_STATUSES = [
-  'imported',
-  'needs_review',
+  'draft',
+  'review',
   'published',
   'rejected',
-  'cancelled',
+  'archived',
 ] as const;
 
 export type EventStatus = (typeof EVENT_STATUSES)[number];

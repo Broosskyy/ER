@@ -123,7 +123,7 @@ export function normalizeRawEvent(raw: RawEvent, nowIso: string = new Date().toI
     source: normalizeRequiredString(raw.source),
     sourceEventId: normalizeRequiredString(raw.sourceEventId),
     sourceUrl: normalizeOptionalUrl(raw.rawSourceUrl),
-    status: 'imported',
+    status: 'draft',
     createdAt: raw.importedAt || nowIso,
     updatedAt: nowIso,
   };

@@ -27,7 +27,7 @@ import {
 import { FilterChip } from '@/features/home/components/FilterChip';
 import { filterConfig } from '@/features/search/config/filter-config';
 
-const STATUSES: AdminEventStatus[] = ['draft', 'review', 'published', 'archived', 'deleted'];
+const STATUSES: AdminEventStatus[] = ['draft', 'review', 'published', 'rejected', 'archived'];
 const ADMIN_EVENTS_LIST_ROUTE = '/admin/events' as const;
 
 function getSaveSuccessMessage(status: AdminEventStatus): string {
@@ -40,8 +40,8 @@ function getSaveSuccessMessage(status: AdminEventStatus): string {
       return 'Event archived.';
     case 'review':
       return 'Event submitted for review.';
-    case 'deleted':
-      return 'Event deleted.';
+    case 'rejected':
+      return 'Event rejected.';
     default:
       return 'Event saved successfully.';
   }
@@ -159,7 +159,7 @@ export default function AdminEventEditorScreen() {
     setSuccess(null);
     try {
       await adminEventRepository.delete(record.id);
-      navigateToEventList(getSaveSuccessMessage('deleted'));
+      navigateToEventList(getSaveSuccessMessage('archived'));
     } catch (cause) {
       setError(getErrorMessage(cause));
     } finally {

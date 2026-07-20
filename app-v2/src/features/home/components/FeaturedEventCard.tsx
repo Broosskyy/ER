@@ -1,8 +1,9 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { FavoriteButton } from '@/components/buttons/FavoriteButton';
+import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
@@ -27,19 +28,25 @@ export function FeaturedEventCard({
   const router = useRouter();
 
   return (
-    <Pressable
-      accessibilityRole="button"
+    <InteractiveCard
+      accessibilityLabel={event.title}
       onPress={() => router.push(`/event/${event.id}`)}
-      style={({ pressed }) => [styles.card, { width }, pressed && styles.pressed]}
+      style={[styles.card, { width }]}
+      pressedStyle={styles.pressed}
+      actions={
+        <FavoriteButton
+          active={isFavorite}
+          onPress={onToggleFavorite}
+          accessibilityLabel={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        />
+      }
+      actionsStyle={styles.favoriteWrap}
     >
       <View style={styles.imageWrap}>
         <Image source={event.image} style={styles.image} resizeMode="cover" />
         <View style={styles.imageOverlay} />
         <View style={styles.dateBadge}>
           <AppText style={styles.dateBadgeText}>{event.date}</AppText>
-        </View>
-        <View style={styles.favoriteWrap} onStartShouldSetResponder={() => true}>
-          <FavoriteButton active={isFavorite} onPress={onToggleFavorite} />
         </View>
         <View style={styles.metaOverlay}>
           <AppText style={styles.category}>{event.genres[0]?.toUpperCase()}</AppText>
@@ -61,7 +68,7 @@ export function FeaturedEventCard({
           </View>
         </View>
       </View>
-    </Pressable>
+    </InteractiveCard>
   );
 }
 
@@ -108,6 +115,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: spacing.xs,
     right: spacing.xs,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-start',
   },
   metaOverlay: {
     position: 'absolute',

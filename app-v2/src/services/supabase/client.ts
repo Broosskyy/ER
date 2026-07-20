@@ -2,6 +2,7 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 import { env, isSupabaseConfigured } from '@/core/config/env';
 import { AppError } from '@/core/errors/app-error';
+import { isWebRuntime } from '@/platform/runtime-platform';
 
 export type Database = Record<string, unknown>;
 
@@ -19,7 +20,7 @@ export function getSupabaseClient(): SupabaseClient<Database> {
     auth: {
       persistSession: true,
       autoRefreshToken: true,
-      detectSessionInUrl: false,
+      detectSessionInUrl: isWebRuntime(),
     },
   });
 

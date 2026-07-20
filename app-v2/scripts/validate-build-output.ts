@@ -37,6 +37,10 @@ function main(): void {
     'pwa/icon-192.png',
     'pwa/icon-512.png',
     'notifications.html',
+    'login.html',
+    'register.html',
+    'create.html',
+    'activity.html',
     'admin/login.html',
   ];
 

@@ -3,6 +3,7 @@ import type { Event } from '@/features/events/types/event';
 import type {
   AdminEventListParams,
   AdminEventRecord,
+  AdminEventStatus,
   ArtistRecord,
   CityRecord,
   CollectionRecord,
@@ -30,11 +31,20 @@ export type {
   ImportSourceDatasource,
 } from './import-types';
 
+export interface ContributorEventListParams {
+  status?: AdminEventStatus;
+}
+
 export interface EventDatasource {
   getPublishedEvents(): Promise<Event[]>;
   getEventById(id: string): Promise<Event | null>;
   getAllEvents(): Promise<AdminEventRecord[]>;
   listEvents(params: AdminEventListParams): Promise<PaginatedResult<AdminEventRecord>>;
+  listEventsByCreatedBy(
+    userId: string,
+    params?: ContributorEventListParams,
+  ): Promise<AdminEventRecord[]>;
+  getContributorEventById(eventId: string, userId: string): Promise<AdminEventRecord | null>;
   saveEvent(event: AdminEventRecord): Promise<AdminEventRecord>;
   deleteEvent(id: string): Promise<void>;
 }
