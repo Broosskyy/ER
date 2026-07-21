@@ -11,14 +11,31 @@ export interface FormFieldProps {
   helper?: string;
   error?: string;
   nativeId?: string;
+  required?: boolean;
+  optionalLabel?: string;
   children: ReactNode;
 }
 
-export function FormField({ label, helper, error, nativeId, children }: FormFieldProps) {
+export function FormField({
+  label,
+  helper,
+  error,
+  nativeId,
+  required,
+  optionalLabel,
+  children,
+}: FormFieldProps) {
+  const labelText =
+    required === true
+      ? `${label} *`
+      : optionalLabel
+        ? `${label} (${optionalLabel})`
+        : label;
+
   return (
     <View style={styles.container}>
       <AppText nativeID={nativeId} style={styles.label}>
-        {label}
+        {labelText}
       </AppText>
       {children}
       {helper ? <AppText style={styles.helper}>{helper}</AppText> : null}

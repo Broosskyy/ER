@@ -4,7 +4,7 @@ Zentrale Aufgabenliste für die Entwicklung von Eternal Rave.
 
 **Regel:** Dieses Backlog ist die einzige Quelle für Entwicklungsaufgaben. Neue Aufgaben werden ausschließlich hier ergänzt.
 
-**Stand:** 20. Juli 2026
+**Stand:** 21. Juli 2026
 
 ---
 
@@ -524,6 +524,37 @@ Definition of Done:
 
 ---
 
+## ER-005.5
+Titel: Core Workflow Reliability & Product Consistency
+
+Status:
+- Done (Juli 2026)
+
+Priorität: Hoch
+
+Beschreibung:
+Contributor-Event-Erstellung und Standort-Flow zuverlässig und konsistent machen, bevor ER-006 (Platform Operations). Keine neuen Plattform-Features; Fokus auf Persistenz, Fehlerbehandlung, i18n-Basis und UX-Klarheit.
+
+Abhängigkeiten:
+- ER-005.4 (Platform Architecture Foundation)
+
+Betroffene Module:
+- `src/features/create/` (Contributor Event Form, Success Screen)
+- `src/data/datasources/local/` (AsyncStorage-Persistenz)
+- `src/features/location/` (GPS, Geocoding, Discovery City)
+- `src/features/my-events/`
+- `supabase/migrations/20260731000000_contributor_event_image_update.sql`
+- `app-v2/docs/ER-005.5_COMPLETION_REPORT.md`
+
+Definition of Done:
+- Event-Draft-Persistenz (lokal + Supabase city_id-Auflösung)
+- Success-UX mit klaren Aktionen nach Speichern
+- Location: Timeouts, Secure Context, manueller Discovery-City-Fallback
+- Tests grün (349/349); Completion Report dokumentiert
+- ER-005.4-Architektur unverändert
+
+---
+
 # Vor Release / Später ergänzen
 
 | Thema | Status |
@@ -535,6 +566,7 @@ Definition of Done:
 | Home-Header Standort & Auth-abhängige Aktionen | Erledigt (ER-005.2) |
 | Auth Callback & E-Mail-Bestätigung | Erledigt (ER-005.3) |
 | Platform Architecture Foundation | Erledigt (ER-005.4) |
+| Core Workflow Reliability | Erledigt (ER-005.5) |
 | Admin-Moderation & Publishing | Offen (ER-006) |
 | Autosave | Offen |
 | Benutzername / Anzeigename | Offen |

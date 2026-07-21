@@ -158,21 +158,21 @@ describe('contributor event service', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
-  it('does not persist local preview URIs as image URLs', async () => {
-    const saved = await contributorEventService.createEvent({
-      form: {
-        ...baseForm,
-        coverImage: {
-          remoteUrl: '',
-          localUri: 'file:///tmp/cover.jpg',
-          mimeType: 'image/jpeg',
+  it('rejects local preview URIs without Supabase instead of silently dropping them', async () => {
+    await expect(
+      contributorEventService.createEvent({
+        form: {
+          ...baseForm,
+          coverImage: {
+            remoteUrl: '',
+            localUri: 'file:///tmp/cover.jpg',
+            mimeType: 'image/jpeg',
+          },
         },
-      },
-      userId: 'local-user',
-      linkLabels,
-    });
-
-    expect(saved.imageUrl).toBeUndefined();
+        userId: 'local-user',
+        linkLabels,
+      }),
+    ).rejects.toMatchObject({ code: 'VALIDATION' });
   });
 
   it('rejects submit when event is no longer a draft', async () => {

@@ -1,5 +1,5 @@
 import { useRouter } from 'expo-router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 import { IconButton } from '@/components/buttons/IconButton';
@@ -8,11 +8,12 @@ import { AppText } from '@/components/layout/AppText';
 import { colors } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { getErrorMessage, AppError } from '@/core/errors/app-error';
+import { AppError, getErrorMessage } from '@/core/errors/app-error';
 import { buildLoginHref } from '@/features/auth/auth-route-utils';
 import { useAuth } from '@/features/auth/AuthContext';
 import { EventDraftForm } from '@/features/create/components/EventDraftForm';
 import {
+  buildContributorEventSuccessHref,
   CONTRIBUTOR_EVENT_CREATE_ROUTE,
   getContributorEventEditRoute,
   getContributorEventPreviewRoute,
@@ -38,6 +39,23 @@ export interface ContributorEventFormScreenProps {
   eventId?: string;
 }
 
+function translateContributorError(
+  cause: unknown,
+  t: (key: EventDraftValidationKey | 'create.event.errors.generic') => string,
+): string {
+  if (cause instanceof AppError) {
+    if (typeof cause.cause === 'string' && cause.cause.startsWith('create.event.errors.')) {
+      return t(cause.cause as EventDraftValidationKey);
+    }
+
+    if (cause.cause && typeof cause.cause === 'object' && !Array.isArray(cause.cause)) {
+      return t('create.event.errors.generic');
+    }
+  }
+
+  return getErrorMessage(cause) || t('create.event.errors.generic');
+}
+
 export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFormScreenProps) {
   useWebPageTitle(mode === 'create' ? 'webTitles.createEvent' : 'webTitles.editEvent');
   const router = useRouter();
@@ -49,7 +67,11 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [loadingDraft, setLoadingDraft] = useState(mode === 'edit');
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [imageErrors, setImageErrors] = useState<Partial<Record<EventImageField, string>>>({});
+  const [savedDraftId, setSavedDraftId] = useState<string | undefined>(mode === 'edit' ? eventId : undefined);
+  const [saveSuccess, setSaveSuccess] = useState(false);
+  const submitLockRef = useRef(false);
 
   const loginReturnPath =
     mode === 'edit' && eventId ? getContributorEventEditRoute(eventId) : CONTRIBUTOR_EVENT_CREATE_ROUTE;
@@ -76,22 +98,39 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
     }
 
     let cancelled = false;
-    void contributorEventService.getEvent(eventId, user.id).then((record) => {
-      if (cancelled) {
-        return;
-      }
-      if (!record || record.status !== 'draft') {
-        router.replace('/create');
-        return;
-      }
-      resetForm(mapAdminRecordToEventDraftForm(record, linkLabels));
-      setLoadingDraft(false);
-    });
+    setLoadingDraft(true);
+    setLoadError(null);
+
+    void contributorEventService
+      .getEvent(eventId, user.id)
+      .then((record) => {
+        if (cancelled) {
+          return;
+        }
+
+        if (!record || record.status !== 'draft') {
+          router.replace('/create');
+          return;
+        }
+
+        resetForm(mapAdminRecordToEventDraftForm(record, linkLabels));
+        setSavedDraftId(record.id);
+      })
+      .catch((cause) => {
+        if (!cancelled) {
+          setLoadError(translateContributorError(cause, t));
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setLoadingDraft(false);
+        }
+      });
 
     return () => {
       cancelled = true;
     };
-  }, [eventId, linkLabels, mode, resetForm, router, user?.id]);
+  }, [eventId, linkLabels, mode, resetForm, router, t, user?.id]);
 
   const translateError = useCallback(
     (key?: EventDraftValidationKey) => (key ? t(key) : undefined),
@@ -103,24 +142,28 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
       throw new AppError('Authentication required.');
     }
 
-    if (mode === 'edit' && eventId) {
+    const activeEventId = mode === 'edit' ? eventId : savedDraftId;
+
+    if (activeEventId) {
       return updateContributorEvent({
-        eventId,
+        eventId: activeEventId,
         form,
         userId: user.id,
         linkLabels,
       });
     }
 
-    return createContributorEvent({
+    const created = await createContributorEvent({
       form,
       userId: user.id,
       linkLabels,
     });
-  }, [eventId, form, linkLabels, mode, user]);
+    setSavedDraftId(created.id);
+    return created;
+  }, [eventId, form, linkLabels, mode, savedDraftId, user]);
 
-  const handleSaveDraft = async () => {
-    if (!user || submitting) {
+  const runPersist = async (onSuccess: (savedId: string) => void) => {
+    if (!user || submitting || submitLockRef.current) {
       return;
     }
 
@@ -129,44 +172,37 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
       return;
     }
 
+    submitLockRef.current = true;
     setSubmitting(true);
     setSubmitError(null);
+    setSaveSuccess(false);
 
     try {
       const saved = await persistDraft();
+      setSaveSuccess(true);
+      onSuccess(saved.id);
+    } catch (cause) {
+      setSubmitError(translateContributorError(cause, t));
+    } finally {
+      setSubmitting(false);
+      submitLockRef.current = false;
+    }
+  };
+
+  const handleSaveDraft = () =>
+    void runPersist((savedId) => {
       if (mode === 'create') {
-        router.replace(getContributorEventEditRoute(saved.id));
+        router.replace(buildContributorEventSuccessHref(savedId) as '/create/event/success');
         return;
       }
-    } catch (cause) {
-      setSubmitError(getErrorMessage(cause) || t('create.event.errors.generic'));
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
-  const handlePreview = async () => {
-    if (!user || submitting) {
-      return;
-    }
+      router.replace(buildContributorEventSuccessHref(savedId) as '/create/event/success');
+    });
 
-    const errors = validate();
-    if (Object.keys(errors).length > 0) {
-      return;
-    }
-
-    setSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const saved = await persistDraft();
-      router.push(getContributorEventPreviewRoute(saved.id));
-    } catch (cause) {
-      setSubmitError(getErrorMessage(cause) || t('create.event.errors.generic'));
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const handlePreview = () =>
+    void runPersist((savedId) => {
+      router.push(getContributorEventPreviewRoute(savedId));
+    });
 
   if (authLoading || optionsLoading || loadingDraft) {
     return (
@@ -174,6 +210,16 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
         <SafeAreaContainer style={styles.loadingContainer}>
           <ActivityIndicator color={colors.primary} />
           <AppText style={styles.loadingText}>{t('common.labels.loading')}</AppText>
+        </SafeAreaContainer>
+      </AppScreen>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <AppScreen>
+        <SafeAreaContainer style={styles.loadingContainer}>
+          <AppText style={styles.errorText}>{loadError}</AppText>
         </SafeAreaContainer>
       </AppScreen>
     );
@@ -194,6 +240,9 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
               onPress={() => router.back()}
             />
           </View>
+          {saveSuccess && mode === 'edit' ? (
+            <AppText style={styles.successBanner}>{t('create.event.success.message')}</AppText>
+          ) : null}
           <EventDraftForm
             mode={mode}
             form={form}
@@ -210,8 +259,8 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
             onImageError={(field, message) =>
               setImageErrors((current) => ({ ...current, [field]: message }))
             }
-            onSubmit={() => void handleSaveDraft()}
-            onPreview={() => void handlePreview()}
+            onSubmit={handleSaveDraft}
+            onPreview={handlePreview}
             translateError={translateError}
           />
         </ResponsiveScreen>
@@ -229,10 +278,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: spacing.md,
+    paddingHorizontal: spacingRoles.screenHorizontal,
   },
   loadingText: {
     ...textRoles.metadata,
     color: colors.textSecondary,
+  },
+  errorText: {
+    ...textRoles.body,
+    color: colors.live,
+    textAlign: 'center',
+  },
+  successBanner: {
+    ...textRoles.metadata,
+    color: colors.primary,
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    marginBottom: spacing.sm,
   },
   header: {
     paddingHorizontal: spacingRoles.screenHorizontal,

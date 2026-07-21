@@ -3,6 +3,7 @@ import * as Location from 'expo-location';
 
 import type { UserLocationRecord } from '@/features/location/types/user-location';
 import type { UserLocationErrorCode } from '@/features/location/types/user-location';
+import { withTimeout } from '@/features/location/utils/with-timeout';
 
 export class UserLocationRequestError extends Error {
   readonly code: UserLocationErrorCode;
@@ -14,6 +15,10 @@ export class UserLocationRequestError extends Error {
   }
 }
 
+const GPS_TIMEOUT_MS = 15_000;
+const GEOCODE_TIMEOUT_MS = 10_000;
+const NOMINATIM_RETRY_DELAY_MS = 1_100;
+
 interface ReverseGeocodeResult {
   city?: string;
   region?: string;
@@ -21,11 +26,20 @@ interface ReverseGeocodeResult {
   countryCode?: string;
 }
 
+function assertSecureWebContext(): void {
+  if (Platform.OS === 'web' && typeof window !== 'undefined' && !window.isSecureContext) {
+    throw new UserLocationRequestError('unavailable');
+  }
+}
+
 async function reverseGeocodeNative(
   latitude: number,
   longitude: number,
 ): Promise<ReverseGeocodeResult> {
-  const results = await Location.reverseGeocodeAsync({ latitude, longitude });
+  const results = await withTimeout(
+    Location.reverseGeocodeAsync({ latitude, longitude }),
+    GEOCODE_TIMEOUT_MS,
+  );
   const first = results[0];
 
   if (!first) {
@@ -40,7 +54,7 @@ async function reverseGeocodeNative(
   };
 }
 
-async function reverseGeocodeWeb(
+async function fetchNominatim(
   latitude: number,
   longitude: number,
   locale: string,
@@ -52,15 +66,22 @@ async function reverseGeocodeWeb(
   url.searchParams.set('lon', String(longitude));
   url.searchParams.set('accept-language', language);
 
-  const response = await fetch(url.toString(), {
-    headers: {
-      Accept: 'application/json',
-      'User-Agent': 'EternalRave/0.2.0 (location-picker)',
-    },
-  });
+  const response = await withTimeout(
+    fetch(url.toString(), {
+      headers: {
+        Accept: 'application/json',
+        'User-Agent': 'EternalRave/0.2.0 (location-picker)',
+      },
+    }),
+    GEOCODE_TIMEOUT_MS,
+  );
+
+  if (response.status === 429) {
+    throw new UserLocationRequestError('network');
+  }
 
   if (!response.ok) {
-    throw new UserLocationRequestError('resolve_failed');
+    throw new UserLocationRequestError('network');
   }
 
   const data = (await response.json()) as {
@@ -91,6 +112,26 @@ async function reverseGeocodeWeb(
   };
 }
 
+async function reverseGeocodeWeb(
+  latitude: number,
+  longitude: number,
+  locale: string,
+): Promise<ReverseGeocodeResult> {
+  try {
+    return await fetchNominatim(latitude, longitude, locale);
+  } catch (cause) {
+    if (cause instanceof UserLocationRequestError) {
+      if (cause.code === 'network') {
+        await new Promise((resolve) => setTimeout(resolve, NOMINATIM_RETRY_DELAY_MS));
+        return fetchNominatim(latitude, longitude, locale);
+      }
+      throw cause;
+    }
+
+    throw new UserLocationRequestError('network');
+  }
+}
+
 async function reverseGeocodeCoordinates(
   latitude: number,
   longitude: number,
@@ -103,10 +144,28 @@ async function reverseGeocodeCoordinates(
   return reverseGeocodeNative(latitude, longitude);
 }
 
+function buildRecordFromPosition(
+  position: Location.LocationObject,
+  geocoded: ReverseGeocodeResult,
+): UserLocationRecord {
+  return {
+    latitude: position.coords.latitude,
+    longitude: position.coords.longitude,
+    city: geocoded.city,
+    region: geocoded.region,
+    country: geocoded.country,
+    countryCode: geocoded.countryCode,
+    updatedAt: new Date().toISOString(),
+    source: 'device',
+  };
+}
+
 export async function requestCurrentUserLocation(locale: string): Promise<UserLocationRecord> {
   if (Platform.OS === 'web' && typeof navigator === 'undefined') {
     throw new UserLocationRequestError('unavailable');
   }
+
+  assertSecureWebContext();
 
   const servicesEnabled = await Location.hasServicesEnabledAsync();
   if (!servicesEnabled) {
@@ -123,14 +182,17 @@ export async function requestCurrentUserLocation(locale: string): Promise<UserLo
 
   let position: Location.LocationObject;
   try {
-    position = await Location.getCurrentPositionAsync({
-      accuracy: Location.Accuracy.Balanced,
-    });
+    position = await withTimeout(
+      Location.getCurrentPositionAsync({
+        accuracy: Location.Accuracy.Balanced,
+      }),
+      GPS_TIMEOUT_MS,
+    );
   } catch {
     throw new UserLocationRequestError('unavailable');
   }
 
-  let geocoded: ReverseGeocodeResult;
+  let geocoded: ReverseGeocodeResult = {};
   try {
     geocoded = await reverseGeocodeCoordinates(
       position.coords.latitude,
@@ -138,23 +200,32 @@ export async function requestCurrentUserLocation(locale: string): Promise<UserLo
       locale,
     );
   } catch (cause) {
+    if (cause instanceof UserLocationRequestError && cause.code === 'network') {
+      return buildRecordFromPosition(position, {});
+    }
     if (cause instanceof UserLocationRequestError) {
       throw cause;
     }
-    throw new UserLocationRequestError('resolve_failed');
+    // Geocode failed but GPS succeeded — keep coordinates without place names.
   }
 
-  if (!geocoded.city && !geocoded.region && !geocoded.country) {
-    throw new UserLocationRequestError('resolve_failed');
-  }
+  return buildRecordFromPosition(position, geocoded);
+}
 
+export function buildManualDiscoveryLocation(input: {
+  cityId: string;
+  cityLabel: string;
+  country?: string;
+  latitude: number;
+  longitude: number;
+}): UserLocationRecord {
   return {
-    latitude: position.coords.latitude,
-    longitude: position.coords.longitude,
-    city: geocoded.city,
-    region: geocoded.region,
-    country: geocoded.country,
-    countryCode: geocoded.countryCode,
+    latitude: input.latitude,
+    longitude: input.longitude,
+    city: input.cityLabel,
+    country: input.country ?? 'Germany',
     updatedAt: new Date().toISOString(),
+    source: 'manual',
+    discoveryCityId: input.cityId,
   };
 }

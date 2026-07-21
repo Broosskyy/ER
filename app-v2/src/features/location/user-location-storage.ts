@@ -10,20 +10,27 @@ function isValidRecord(value: unknown): value is UserLocationRecord {
   }
 
   const record = value as UserLocationRecord;
-  return (
+  const latitudeValid =
     typeof record.latitude === 'number' &&
+    Number.isFinite(record.latitude) &&
+    record.latitude >= -90 &&
+    record.latitude <= 90;
+  const longitudeValid =
     typeof record.longitude === 'number' &&
-    typeof record.updatedAt === 'string'
-  );
+    Number.isFinite(record.longitude) &&
+    record.longitude >= -180 &&
+    record.longitude <= 180;
+
+  return latitudeValid && longitudeValid && typeof record.updatedAt === 'string';
 }
 
 export async function loadStoredUserLocation(): Promise<UserLocationRecord | null> {
-  const raw = await AsyncStorage.getItem(USER_LOCATION_STORAGE_KEY);
-  if (!raw) {
-    return null;
-  }
-
   try {
+    const raw = await AsyncStorage.getItem(USER_LOCATION_STORAGE_KEY);
+    if (!raw) {
+      return null;
+    }
+
     const parsed: unknown = JSON.parse(raw);
     return isValidRecord(parsed) ? parsed : null;
   } catch {
@@ -32,7 +39,11 @@ export async function loadStoredUserLocation(): Promise<UserLocationRecord | nul
 }
 
 export async function saveStoredUserLocation(record: UserLocationRecord): Promise<void> {
-  await AsyncStorage.setItem(USER_LOCATION_STORAGE_KEY, JSON.stringify(record));
+  try {
+    await AsyncStorage.setItem(USER_LOCATION_STORAGE_KEY, JSON.stringify(record));
+  } catch {
+    // Caller treats persistence as best-effort.
+  }
 }
 
 export async function clearStoredUserLocation(): Promise<void> {

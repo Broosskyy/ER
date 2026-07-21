@@ -59,12 +59,16 @@ export const de = {
       loading: 'Standort wird ermittelt …',
       useCurrent: 'Aktuellen Standort verwenden',
       modalTitle: 'Standort',
-      modalDescription: 'Wähle deinen Standort für Eternal Rave.',
+      modalDescription:
+        'Wähle deinen Gerätestandort oder eine Discovery-Stadt für Eternal Rave.',
+      deviceSection: 'Aktueller Gerätestandort',
+      discoveryCitySection: 'Discovery-Stadt',
       permissionDenied:
-        'Der Standortzugriff wurde nicht erlaubt. Du kannst Eternal Rave weiterhin ohne Standort verwenden.',
+        'Der Standortzugriff wurde nicht erlaubt. Du kannst eine Stadt manuell wählen oder ohne GPS fortfahren.',
       permissionBlocked:
         'Der Standortzugriff ist blockiert. Du kannst ihn in den Geräteeinstellungen erlauben und es erneut versuchen.',
       unavailable: 'Standort ist auf diesem Gerät derzeit nicht verfügbar.',
+      network: 'Netzwerkfehler bei der Standortermittlung. Bitte versuche es erneut.',
       error: 'Standort konnte nicht ermittelt werden. Bitte versuche es erneut.',
       a11y: 'Standort: {{location}}. Tippen zum Ändern.',
     },
@@ -244,7 +248,7 @@ export const de = {
       },
     },
     placeholders: {
-      event: 'Event-Erstellung folgt in einem nächsten Schritt.',
+      event: 'Erstelle und verwalte deine Community-Events.',
       organizer: 'Veranstalterregistrierung ist in Vorbereitung.',
       venue: 'Venue-Erstellung ist in Vorbereitung.',
       artist: 'Artist-Erstellung ist in Vorbereitung.',
@@ -271,6 +275,7 @@ export const de = {
           facebook: 'Facebook',
           coverImage: 'Coverbild',
           flyerImage: 'Flyer',
+          optional: 'optional',
         },
         helpers: {
           title: 'Der Name, unter dem dein Event angezeigt wird.',
@@ -329,8 +334,10 @@ export const de = {
         eventName: 'Event',
         status: 'Status',
         statusDraft: 'Entwurf',
-        editDraft: 'Entwurf bearbeiten',
+        editDraft: 'Weiter bearbeiten',
+        openDraft: 'Entwurf öffnen',
         preview: 'Vorschau & einreichen',
+        submitForReview: 'Zur Prüfung einreichen',
         backToCreate: 'Zurück zum Create Hub',
         createAnother: 'Weiteres Event erstellen',
       },
@@ -359,6 +366,8 @@ export const de = {
         imageTypeInvalid: 'Bitte wähle ein JPEG-, PNG- oder WebP-Bild.',
         imageTooLarge: 'Das Bild ist zu groß (max. 5 MB).',
         imageUploadFailed: 'Das Bild konnte nicht hochgeladen werden.',
+        imageRequiresSupabase:
+          'Bilder können nur mit Cloud-Backend gespeichert werden. Entferne Bilder oder aktiviere Supabase.',
         submitFailed: 'Das Event konnte nicht eingereicht werden.',
         notFound: 'Event nicht gefunden.',
         notEditable: 'Nur Entwürfe können bearbeitet werden.',

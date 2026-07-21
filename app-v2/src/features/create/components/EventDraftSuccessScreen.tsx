@@ -89,7 +89,11 @@ export function EventDraftSuccessScreen() {
               <AppText style={styles.summaryValue}>{t('create.event.success.statusDraft')}</AppText>
             </View>
             <PrimaryButton
-              label={t('create.event.success.editDraft')}
+              label={t('create.event.success.openDraft')}
+              onPress={() => router.replace(getContributorEventEditRoute(draft.id))}
+            />
+            <SecondaryButton
+              label={t('create.event.success.continueEditing')}
               onPress={() => router.replace(getContributorEventEditRoute(draft.id))}
             />
             <SecondaryButton
@@ -97,12 +101,16 @@ export function EventDraftSuccessScreen() {
               onPress={() => router.push(getContributorEventPreviewRoute(draft.id))}
             />
             <SecondaryButton
-              label={t('create.event.success.backToCreate')}
-              onPress={() => router.replace('/create')}
+              label={t('create.event.success.submitForReview')}
+              onPress={() => router.push(getContributorEventPreviewRoute(draft.id))}
             />
             <SecondaryButton
               label={t('create.event.success.createAnother')}
               onPress={() => router.replace('/create/event')}
+            />
+            <SecondaryButton
+              label={t('create.event.success.backToCreate')}
+              onPress={() => router.replace('/create')}
             />
           </View>
         </ResponsiveScreen>

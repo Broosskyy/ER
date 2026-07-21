@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet } from 'react-native';
 
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
@@ -9,13 +9,16 @@ import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { LocationPickerModal } from '@/features/location/components/LocationPickerModal';
+import { getManualDiscoveryCityOptions } from '@/features/location/discovery-city-options';
 import { useUserLocation } from '@/features/location/UserLocationProvider';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export function LocationSelector() {
   const { t } = useAppTranslation();
-  const { displayLabel, loading, errorCode, requestCurrentLocation } = useUserLocation();
+  const { displayLabel, loading, errorCode, location, requestCurrentLocation, selectDiscoveryCity } =
+    useUserLocation();
   const [modalVisible, setModalVisible] = useState(false);
+  const discoveryCities = getManualDiscoveryCityOptions();
 
   const handleOpen = () => {
     if (loading) {
@@ -26,6 +29,14 @@ export function LocationSelector() {
 
   const handleUseCurrentLocation = () => {
     void requestCurrentLocation().then((success) => {
+      if (success) {
+        setModalVisible(false);
+      }
+    });
+  };
+
+  const handleSelectDiscoveryCity = (city: (typeof discoveryCities)[number]) => {
+    void selectDiscoveryCity(city).then((success) => {
       if (success) {
         setModalVisible(false);
       }
@@ -58,8 +69,11 @@ export function LocationSelector() {
         visible={modalVisible}
         loading={loading}
         errorCode={errorCode}
+        discoveryCities={discoveryCities}
+        selectedDiscoveryCityId={location?.discoveryCityId}
         onClose={() => setModalVisible(false)}
         onUseCurrentLocation={handleUseCurrentLocation}
+        onSelectDiscoveryCity={handleSelectDiscoveryCity}
       />
     </>
   );

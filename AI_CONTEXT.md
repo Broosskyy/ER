@@ -24,7 +24,7 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
 - **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
 - **Tests:** Vitest; `npm run release:check` laut Statusbericht PASS
-- **Offene Kernarbeit:** `BACKLOG.md` — nächster Fokus ER-006 (Admin Moderation & Publishing); Platform Foundation dokumentiert in ER-005.4
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-005.5 Done; ER-006 (Admin Moderation) als nächster Platform-Operations-Schritt
 
 ---
 

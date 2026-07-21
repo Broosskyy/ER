@@ -1,4 +1,5 @@
 import { featureFlags } from '@/core/config/feature-flags';
+import { ensureLocalContributorEventsHydrated } from '@/data/datasources/local/local-datasource';
 import type { EventRepository } from '@/data/repositories/repositories';
 import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
 
@@ -25,6 +26,7 @@ async function runBootstrap(): Promise<void> {
     return;
   }
 
+  await ensureLocalContributorEventsHydrated();
   const report = runDefaultEventPipeline();
   repository.initializeSync(report.publishedEvents);
 }

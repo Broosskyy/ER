@@ -70,9 +70,13 @@ describe('requestCurrentUserLocation', () => {
     });
   });
 
-  it('throws a friendly resolve error when reverse geocoding has no place', async () => {
+  it('keeps coordinates when reverse geocoding has no place names', async () => {
     mockReverseGeocode.mockResolvedValue([{}]);
 
-    await expect(requestCurrentUserLocation('en')).rejects.toBeInstanceOf(UserLocationRequestError);
+    const result = await requestCurrentUserLocation('en');
+    expect(result.latitude).toBe(50.9375);
+    expect(result.longitude).toBe(6.9603);
+    expect(result.source).toBe('device');
+    expect(result.city).toBeUndefined();
   });
 });
