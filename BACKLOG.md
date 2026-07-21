@@ -231,7 +231,7 @@ Verbesserungen nach der Closed Beta.
 Titel: Admin Moderation & Contributor Publishing
 
 Status:
-- Todo
+- Done
 
 Priorität: Hoch
 

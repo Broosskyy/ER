@@ -10,6 +10,7 @@ import {
 describe('admin route utils', () => {
   it('accepts safe internal admin return routes', () => {
     expect(isSafeAdminReturnRoute('/admin/events')).toBe(true);
+    expect(isSafeAdminReturnRoute('/admin/events/review')).toBe(true);
     expect(isSafeAdminReturnRoute('/admin/imports/review/abc')).toBe(true);
   });
 
@@ -28,6 +29,8 @@ describe('admin route utils', () => {
   it('resolves nested admin routes', () => {
     expect(resolveAdminRouteKey(['admin', 'imports', 'jobs', 'job-1'])).toBe('job-detail');
     expect(resolveAdminRouteKey(['admin', 'imports', 'review'])).toBe('review');
+    expect(resolveAdminRouteKey(['admin', 'events', 'review'])).toBe('events-review');
+    expect(resolveAdminRouteKey(['admin', 'events', 'review', 'evt-1'])).toBe('events-review-detail');
     expect(resolveAdminRouteKey(['admin', 'events'])).toBe('events');
   });
 });

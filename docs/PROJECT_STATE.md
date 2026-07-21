@@ -118,7 +118,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 - **Status:** Implementiert, **nur Web** (`Platform.OS !== 'web'` → `AdminWebOnlyState`)
 - **Ort:** Routen unter `app-v2/app/admin/*` in derselben Expo-App (keine separate Admin-App)
-- **Screens:** Login, Dashboard, Events CRUD, Import (Sources, Jobs, Review)
+- **Screens:** Login, Dashboard, Events CRUD, Contributor Submissions (`/admin/events/review`), Import (Sources, Jobs, Review)
 - **Dokumentation:** `app-v2/docs/admin-web.md`
 
 ## iOS
@@ -514,7 +514,7 @@ Aus dokumentiertem Projektstand (`PROJECT_STATUS_REPORT_AFTER_LAST_11_SPRINTS.md
 | Home-Header Standort & Auth-abhängige Aktionen | Erledigt (ER-005.2) |
 | Auth Callback, Deep Linking & E-Mail-Bestätigung | Erledigt (ER-005.3) |
 | Platform Architecture Foundation | Erledigt (ER-005.4) |
-| Admin-Moderation & Publishing | Offen (ER-006) |
+| Admin-Moderation & Publishing | Done (ER-006) |
 | Autosave für Event-Entwürfe | Offen |
 | Benutzername / Anzeigename | Offen (Plan: `app-v2/docs/auth-username-plan.md`) |
 | Kompletter UX-Polish / Microinteractions | Offen |

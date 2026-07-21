@@ -13,6 +13,7 @@ import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { AdminEventRecord, AdminEventStatus } from '@/data/types/records';
 import {
+  adminEventModerationService,
   adminEventRepository,
   cityRepository,
   collectionRepository,
@@ -24,6 +25,9 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
+import { isContributorSubmission } from '@/features/admin/constants/admin-event-status';
+import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { FilterChip } from '@/features/home/components/FilterChip';
 import { filterConfig } from '@/features/search/config/filter-config';
 
@@ -64,7 +68,10 @@ function createEmptyEvent(id: string): AdminEventRecord {
 export default function AdminEventEditorScreen() {
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();
+  const { session, role } = useAdminAuth();
   const isNew = id === 'new';
+  const canPublish = canPublishEvents(role);
+  const canModerate = canModerateContributorEvents(role);
   const [record, setRecord] = useState<AdminEventRecord | null>(null);
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
@@ -138,6 +145,10 @@ export default function AdminEventEditorScreen() {
     setSuccess(null);
     try {
       const nextStatus = status ?? record.status;
+      if (nextStatus === 'published' && !canPublish) {
+        throw new Error('Your role cannot publish events.');
+      }
+
       const payload = {
         ...record,
         status: nextStatus,
@@ -151,6 +162,48 @@ export default function AdminEventEditorScreen() {
       setSaving(false);
     }
   };
+
+  const publishContributorSubmission = async () => {
+    if (!session || !record) {
+      return;
+    }
+
+    setSaving(true);
+    setError(null);
+    setSuccess(null);
+    try {
+      await adminEventModerationService.publishContributorEvent(session, record.id);
+      navigateToEventList('Event published successfully.');
+    } catch (cause) {
+      setError(getErrorMessage(cause));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const rejectContributorSubmission = async () => {
+    if (!session || !record) {
+      return;
+    }
+
+    setSaving(true);
+    setError(null);
+    setSuccess(null);
+    try {
+      await adminEventModerationService.rejectContributorEvent(session, record.id);
+      navigateToEventList('Event rejected.');
+    } catch (cause) {
+      setError(getErrorMessage(cause));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const isContributorReview =
+    record?.status === 'review' && isContributorSubmission(record);
+  const editableStatuses = isContributorReview
+    ? (['review'] as AdminEventStatus[])
+    : STATUSES.filter((status) => status !== 'published' || canPublish);
 
   const remove = async () => {
     if (!record) return;
@@ -246,8 +299,14 @@ export default function AdminEventEditorScreen() {
           </View>
 
           <AppText style={styles.section}>Status</AppText>
+          {isContributorReview ? (
+            <AppText style={styles.moderationHint}>
+              Contributor submission in review. Use moderation actions below or open the review
+              queue for full context.
+            </AppText>
+          ) : null}
           <View style={styles.chips}>
-            {STATUSES.map((status) => (
+            {editableStatuses.map((status) => (
               <FilterChip
                 key={status}
                 label={status}
@@ -263,11 +322,36 @@ export default function AdminEventEditorScreen() {
           <PrimaryButton
             label={saving ? 'Saving…' : 'Save'}
             onPress={() => save()}
-            disabled={saving}
+            disabled={saving || isContributorReview}
           />
-          <SecondaryButton label="Save as Draft" onPress={() => save('draft')} disabled={saving} />
-          <SecondaryButton label="Publish" onPress={() => save('published')} disabled={saving} />
-          <SecondaryButton label="Archive" onPress={() => save('archived')} disabled={saving} />
+          {!isContributorReview ? (
+            <SecondaryButton label="Save as Draft" onPress={() => save('draft')} disabled={saving} />
+          ) : null}
+          {isContributorReview && canModerate ? (
+            <>
+              <PrimaryButton
+                label={saving ? 'Publishing…' : 'Publish submission'}
+                onPress={publishContributorSubmission}
+                disabled={saving}
+              />
+              <SecondaryButton
+                label={saving ? 'Rejecting…' : 'Reject submission'}
+                onPress={rejectContributorSubmission}
+                disabled={saving}
+              />
+              <SecondaryButton
+                label="Open review detail"
+                onPress={() => router.push(`/admin/events/review/${record.id}`)}
+                disabled={saving}
+              />
+            </>
+          ) : null}
+          {!isContributorReview && canPublish ? (
+            <SecondaryButton label="Publish" onPress={() => save('published')} disabled={saving} />
+          ) : null}
+          {!isContributorReview ? (
+            <SecondaryButton label="Archive" onPress={() => save('archived')} disabled={saving} />
+          ) : null}
           {!isNew ? (
             <SecondaryButton label="Delete" onPress={remove} disabled={saving} />
           ) : null}
@@ -312,6 +396,10 @@ const styles = StyleSheet.create({
   },
   multiline: { minHeight: 100, textAlignVertical: 'top' },
   section: { ...textRoles.metadata, fontWeight: '600' },
+  moderationHint: {
+    ...textRoles.metadata,
+    color: colorRoles.emptyStateDescription,
+  },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
   error: { ...textRoles.metadata, color: colors.live },
   success: { ...textRoles.metadata, color: colors.primary },

@@ -25,6 +25,8 @@ import {
   ImportAdminRepositoryImpl,
   ImportAuditLogRepositoryImpl,
 } from '@/data/repositories/import-admin-repository';
+import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
+import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { ImportAuditService } from '@/features/import/admin/import-audit-service';
 import { ImportOperationsService } from '@/features/import/admin/import-operations-service';
 import { ImportReviewService } from '@/features/import/admin/import-review-service';
@@ -74,6 +76,12 @@ export const importReviewService = new ImportReviewService(
   importAdminRepository,
   adminEventRepository,
   importAuditService,
+);
+
+export const eventModerationAuditService = new EventModerationAuditService();
+export const adminEventModerationService = new AdminEventModerationService(
+  adminEventRepository,
+  eventModerationAuditService,
 );
 
 export { importAdapterRegistry };
