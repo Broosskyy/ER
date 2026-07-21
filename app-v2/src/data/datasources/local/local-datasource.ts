@@ -32,6 +32,10 @@ import {
   createLocalImportSourceDatasource,
   type LocalImportStore,
 } from '@/data/datasources/local/local-import-datasource';
+import {
+  loadPersistedContributorEvents,
+  savePersistedContributorEvents,
+} from '@/data/datasources/local/local-contributor-event-storage';
 import { mapSourceRecordToImportSource } from '@/data/mappers/import-mapper';
 
 function mapPipelineStatusToAdmin(status: EventStatus): AdminEventStatus {
@@ -201,10 +205,49 @@ export class LocalStore {
 }
 
 let sharedLocalStore: LocalStore | undefined;
+let contributorHydrationPromise: Promise<void> | undefined;
 
 export function getLocalStore(): LocalStore {
   sharedLocalStore ??= new LocalStore();
   return sharedLocalStore;
+}
+
+export async function hydrateLocalContributorEvents(store = getLocalStore()): Promise<void> {
+  const persisted = await loadPersistedContributorEvents();
+  if (persisted.length === 0) {
+    return;
+  }
+
+  const existingIds = new Set(store.adminEvents.map((event) => event.id));
+  for (const record of persisted) {
+    if (existingIds.has(record.id)) {
+      const index = store.adminEvents.findIndex((event) => event.id === record.id);
+      if (index >= 0) {
+        store.adminEvents[index] = record;
+      }
+      continue;
+    }
+
+    store.adminEvents.push(record);
+    const pipelineEvent = adminRecordToEvent(record);
+    if (!store.events.some((event) => event.id === record.id)) {
+      store.events.push(pipelineEvent);
+    }
+  }
+}
+
+export async function ensureLocalContributorEventsHydrated(store = getLocalStore()): Promise<void> {
+  contributorHydrationPromise ??= hydrateLocalContributorEvents(store);
+  await contributorHydrationPromise;
+}
+
+async function persistContributorEventsIfNeeded(store: LocalStore): Promise<void> {
+  await savePersistedContributorEvents(store.adminEvents);
+}
+
+export function resetLocalContributorHydrationForTesting(): void {
+  contributorHydrationPromise = undefined;
+  sharedLocalStore = undefined;
 }
 
 function sortContributorEvents(items: AdminEventRecord[]): AdminEventRecord[] {
@@ -229,6 +272,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       return [...store.adminEvents];
     },
     async listEventsByCreatedBy(userId, params?: ContributorEventListParams) {
+      await ensureLocalContributorEventsHydrated(store);
       let items = store.adminEvents.filter((event) => event.createdBy === userId);
       if (params?.status) {
         items = items.filter((event) => event.status === params.status);
@@ -236,6 +280,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       return sortContributorEvents(items);
     },
     async getContributorEventById(eventId, userId) {
+      await ensureLocalContributorEventsHydrated(store);
       const event = store.adminEvents.find(
         (entry) => entry.id === eventId && entry.createdBy === userId,
       );
@@ -272,6 +317,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       } satisfies PaginatedResult<AdminEventRecord>;
     },
     async saveEvent(record) {
+      await ensureLocalContributorEventsHydrated(store);
       const existing = store.events.find((event) => event.id === record.id);
       const mapped = adminRecordToEvent(record, existing);
       const adminRecord = { ...record, updatedAt: new Date().toISOString() };
@@ -287,6 +333,10 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       } else {
         store.adminEvents.push(adminRecord);
       }
+
+      if (adminRecord.createdBy) {
+        await persistContributorEventsIfNeeded(store);
+      }
       return adminRecord;
     },
     async deleteEvent(id) {
@@ -294,6 +344,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       store.adminEvents = store.adminEvents.map((event) =>
         event.id === id ? { ...event, status: 'archived', updatedAt: new Date().toISOString() } : event,
       );
+      await persistContributorEventsIfNeeded(store);
     },
   };
 }

@@ -54,6 +54,7 @@ export function useEventDraftFormLabels(mode: 'create' | 'edit'): {
         description: t('create.event.form.placeholders.description'),
       },
       venueFreeTextHint: t('create.event.form.helpers.venueFreeText'),
+      optionalFieldLabel: t('create.event.form.labels.optional'),
       submit: t('create.event.form.actions.saveDraft'),
       submitting: t('create.event.form.actions.saving'),
       preview: t('create.event.form.actions.preview'),

@@ -1,4 +1,4 @@
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
@@ -90,6 +90,16 @@ export function MyEventsScreen() {
       cancelled = true;
     };
   }, [loadEvents, user?.id]);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (!user?.id) {
+        return;
+      }
+
+      void loadEvents();
+    }, [loadEvents, user?.id]),
+  );
 
   const filteredEvents = useMemo(
     () => filterMyEventsByStatus(events, filter),

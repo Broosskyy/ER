@@ -61,12 +61,18 @@ export const en: TranslationTree = {
       loading: 'Getting location…',
       useCurrent: 'Use current location',
       modalTitle: 'Location',
-      modalDescription: 'Choose your location for Eternal Rave.',
+      modalDescription: 'Choose your device location or pick a discovery city for Eternal Rave.',
+      deviceSection: 'Current device location',
+      discoveryCitySection: 'Discovery city',
       permissionDenied:
-        'Location access was not allowed. You can continue using Eternal Rave without location.',
+        'Location access was not allowed. You can pick a city manually or continue without GPS.',
       permissionBlocked:
         'Location access is blocked. You can allow it in your device settings and try again.',
       unavailable: 'Location is not available on this device right now.',
+      timeout: 'Location request timed out. Try again or pick a discovery city manually.',
+      insecureContext:
+        'Location requires a secure connection (HTTPS). Pick a discovery city manually or open the app over HTTPS.',
+      network: 'Network error while resolving your location. Please try again.',
       error: 'Could not determine your location. Please try again.',
       a11y: 'Location: {{location}}. Tap to change.',
     },
@@ -244,8 +250,8 @@ export const en: TranslationTree = {
         description: 'Register to start contributing.',
       },
     },
-    placeholders: {
-      event: 'Event creation will be available in a next step.',
+      placeholders: {
+      event: 'Create and manage your community events.',
       organizer: 'Organizer registration is in preparation.',
       venue: 'Venue creation is in preparation.',
       artist: 'Artist creation is in preparation.',
@@ -272,6 +278,7 @@ export const en: TranslationTree = {
           facebook: 'Facebook',
           coverImage: 'Cover image',
           flyerImage: 'Flyer',
+          optional: 'optional',
         },
         helpers: {
           title: 'The name shown for your event.',
@@ -330,8 +337,12 @@ export const en: TranslationTree = {
         eventName: 'Event',
         status: 'Status',
         statusDraft: 'Draft',
-        editDraft: 'Edit draft',
+        editDraft: 'Continue editing',
+        openDraft: 'Open draft',
         preview: 'Preview & submit',
+        submitForReview: 'Submit for review',
+        submitting: 'Submitting for review…',
+        loadError: 'The draft could not be loaded. Please try again.',
         backToCreate: 'Back to Create Hub',
         createAnother: 'Create another event',
       },
@@ -359,6 +370,8 @@ export const en: TranslationTree = {
         imageTypeInvalid: 'Please choose a JPEG, PNG, or WebP image.',
         imageTooLarge: 'The image is too large (max 5 MB).',
         imageUploadFailed: 'The image could not be uploaded.',
+        imageRequiresSupabase:
+          'Images can only be saved when connected to the cloud backend. Remove images or enable Supabase.',
         submitFailed: 'The event could not be submitted.',
         notFound: 'Event not found.',
         notEditable: 'Only drafts can be edited.',

@@ -8,15 +8,20 @@ import { colors, colorRoles } from '@/design/colors';
 import { radiusRoles } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { FilterChip } from '@/features/home/components/FilterChip';
 import type { UserLocationErrorCode } from '@/features/location/types/user-location';
+import type { ManualDiscoveryCityOption } from '@/features/location/UserLocationProvider';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export interface LocationPickerModalProps {
   visible: boolean;
   loading: boolean;
   errorCode: UserLocationErrorCode | null;
+  discoveryCities: ManualDiscoveryCityOption[];
+  selectedDiscoveryCityId?: string;
   onClose: () => void;
   onUseCurrentLocation: () => void;
+  onSelectDiscoveryCity: (city: ManualDiscoveryCityOption) => void;
 }
 
 function resolveErrorMessage(
@@ -39,6 +44,18 @@ function resolveErrorMessage(
     return t('home.location.unavailable');
   }
 
+  if (errorCode === 'timeout') {
+    return t('home.location.timeout');
+  }
+
+  if (errorCode === 'insecure_context') {
+    return t('home.location.insecureContext');
+  }
+
+  if (errorCode === 'network') {
+    return t('home.location.network');
+  }
+
   return t('home.location.error');
 }
 
@@ -46,8 +63,11 @@ export function LocationPickerModal({
   visible,
   loading,
   errorCode,
+  discoveryCities,
+  selectedDiscoveryCityId,
   onClose,
   onUseCurrentLocation,
+  onSelectDiscoveryCity,
 }: LocationPickerModalProps) {
   const insets = useSafeAreaInsets();
   const { t } = useAppTranslation();
@@ -68,20 +88,32 @@ export function LocationPickerModal({
           </AppText>
           <AppText style={styles.description}>{t('home.location.modalDescription')}</AppText>
 
+          <AppText style={styles.sectionLabel}>{t('home.location.deviceSection')}</AppText>
+          <PrimaryButton
+            label={loading ? t('home.location.loading') : t('home.location.useCurrent')}
+            onPress={onUseCurrentLocation}
+            disabled={loading}
+          />
+
+          <AppText style={styles.sectionLabel}>{t('home.location.discoveryCitySection')}</AppText>
+          <View style={styles.cityChips}>
+            {discoveryCities.map((city) => (
+              <FilterChip
+                key={city.id}
+                label={city.label}
+                selected={selectedDiscoveryCityId === city.id}
+                onPress={() => onSelectDiscoveryCity(city)}
+              />
+            ))}
+          </View>
+
           {errorMessage ? (
             <AppText accessibilityRole="alert" style={styles.error}>
               {errorMessage}
             </AppText>
           ) : null}
 
-          <View style={styles.actions}>
-            <PrimaryButton
-              label={loading ? t('home.location.loading') : t('home.location.useCurrent')}
-              onPress={onUseCurrentLocation}
-              disabled={loading}
-            />
-            <SecondaryButton label={t('common.actions.close')} onPress={onClose} disabled={loading} />
-          </View>
+          <SecondaryButton label={t('common.actions.close')} onPress={onClose} disabled={loading} />
         </View>
       </View>
     </Modal>
@@ -114,12 +146,18 @@ const styles = StyleSheet.create({
     ...textRoles.body,
     color: colorRoles.emptyStateDescription,
   },
+  sectionLabel: {
+    ...textRoles.metadata,
+    fontWeight: '600',
+    color: colors.textPrimary,
+  },
+  cityChips: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: spacing.xs,
+  },
   error: {
     ...textRoles.metadata,
     color: colors.live,
-  },
-  actions: {
-    gap: spacing.sm,
-    marginTop: spacing.sm,
   },
 });

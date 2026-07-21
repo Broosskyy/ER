@@ -5,7 +5,7 @@
  * No checkout, inventory, or orders in the current platform phase.
  */
 
-export type TicketingMode = 'none' | 'external_url' | 'native';
+export type TicketingMode = 'none' | 'free_rsvp' | 'external_url' | 'native';
 
 /** Current production state: external URL on the event row. */
 export interface ExternalTicketLink {

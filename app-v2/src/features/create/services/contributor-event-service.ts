@@ -1,4 +1,5 @@
 import { AppError } from '@/core/errors/app-error';
+import { featureFlags } from '@/core/config/feature-flags';
 import { getDatasourceBundle } from '@/data/datasources/supabase/supabase-datasource';
 import type { AdminEventRecord, AdminEventStatus } from '@/data/types/records';
 import { canContributorTransition } from '@/features/create/constants/contributor-event-status';
@@ -10,12 +11,14 @@ import {
 import { contributorImageUploadService } from '@/features/create/services/contributor-image-upload-service';
 import type { EventDraftFormValues } from '@/features/create/types/event-draft-form';
 import { isPersistableImageUrl } from '@/features/create/utils/event-image-url';
+import { resolveContributorCityId } from '@/features/create/utils/resolve-contributor-city-id';
 import { hasEventDraftErrors, validateEventDraftForm } from '@/features/create/validation/event-draft-validation';
 
 export interface ContributorEventMutationInput {
   form: EventDraftFormValues;
   userId: string;
   linkLabels: EventDraftLinkLabels;
+  eventId?: string;
 }
 
 export interface ContributorEventUpdateInput extends ContributorEventMutationInput {
@@ -99,6 +102,24 @@ async function resolveFormImages(
   return nextForm;
 }
 
+async function finalizeContributorRecord(record: AdminEventRecord): Promise<AdminEventRecord> {
+  const cityId = await resolveContributorCityId(record.cityId);
+  return cityId ? { ...record, cityId } : record;
+}
+
+function assertImagesPersistableWhenRequired(form: EventDraftFormValues): void {
+  const hasLocalOnlyImages =
+    (form.coverImage?.localUri && !isPersistableImageUrl(form.coverImage.remoteUrl)) ||
+    (form.flyerImage?.localUri && !isPersistableImageUrl(form.flyerImage.remoteUrl));
+
+  if (hasLocalOnlyImages && !featureFlags.useSupabase) {
+    throw new AppError('Images cannot be persisted without Supabase.', {
+      code: 'VALIDATION',
+      cause: 'create.event.errors.imageRequiresSupabase',
+    });
+  }
+}
+
 export class ContributorEventService {
   async getEvent(eventId: string, userId: string): Promise<AdminEventRecord | null> {
     return getDatasourceBundle().events.getContributorEventById(eventId, userId);
@@ -114,15 +135,32 @@ export class ContributorEventService {
 
   async createEvent(input: ContributorEventMutationInput): Promise<AdminEventRecord> {
     assertValidForm(input.form);
+    assertImagesPersistableWhenRequired(input.form);
 
-    const draftId = `draft-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    if (input.eventId) {
+      const owned = await this.getEvent(input.eventId, input.userId);
+      if (owned) {
+        return this.updateEvent({ ...input, eventId: input.eventId });
+      }
+
+      const foreignEvent = (await getDatasourceBundle().events.getAllEvents()).find(
+        (event) => event.id === input.eventId,
+      );
+      if (foreignEvent && foreignEvent.createdBy !== input.userId) {
+        throw new AppError('Event not found.', { code: 'NOT_FOUND' });
+      }
+    }
+
+    const draftId = input.eventId ?? `draft-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     const formWithImages = await resolveFormImages(input.form, input.userId, draftId);
 
-    const record = mapEventDraftFormToAdminRecord(formWithImages, {
-      userId: input.userId,
-      linkLabels: input.linkLabels,
-      eventId: draftId,
-    });
+    const record = await finalizeContributorRecord(
+      mapEventDraftFormToAdminRecord(formWithImages, {
+        userId: input.userId,
+        linkLabels: input.linkLabels,
+        eventId: draftId,
+      }),
+    );
 
     if (record.status !== 'draft') {
       throw new AppError('Contributor events must start as draft.', { code: 'VALIDATION' });
@@ -133,6 +171,7 @@ export class ContributorEventService {
 
   async updateEvent(input: ContributorEventUpdateInput): Promise<AdminEventRecord> {
     assertValidForm(input.form);
+    assertImagesPersistableWhenRequired(input.form);
 
     const existing = assertOwnedEditableDraft(
       await this.getEvent(input.eventId, input.userId),
@@ -141,11 +180,13 @@ export class ContributorEventService {
 
     const formWithImages = await resolveFormImages(input.form, input.userId, input.eventId);
 
-    const record = mapEventDraftFormToAdminRecord(formWithImages, {
-      userId: input.userId,
-      linkLabels: input.linkLabels,
-      existing,
-    });
+    const record = await finalizeContributorRecord(
+      mapEventDraftFormToAdminRecord(formWithImages, {
+        userId: input.userId,
+        linkLabels: input.linkLabels,
+        existing,
+      }),
+    );
 
     return getDatasourceBundle().events.saveEvent(record);
   }

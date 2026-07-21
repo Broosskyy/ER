@@ -35,6 +35,7 @@ export interface EventDraftFormLabels {
     description: string;
   };
   venueFreeTextHint: string;
+  optionalFieldLabel: string;
   submit: string;
   submitting: string;
   preview: string;
@@ -94,6 +95,7 @@ export function EventDraftForm({
         helper={labels.helpers.title}
         error={translateError(fieldErrors.title)}
         nativeId="event-draft-title-label"
+        required
       >
         <TextInput
           value={form.title}
@@ -111,6 +113,7 @@ export function EventDraftForm({
             label={labels.fields.startDate}
             helper={labels.helpers.startDate}
             error={translateError(fieldErrors.startDate)}
+            required
           >
             <TextInput
               value={form.startDate}
@@ -127,6 +130,7 @@ export function EventDraftForm({
             label={labels.fields.startTime}
             helper={labels.helpers.startTime}
             error={translateError(fieldErrors.startTime)}
+            required
           >
             <TextInput
               value={form.startTime}
@@ -146,6 +150,7 @@ export function EventDraftForm({
             label={labels.fields.endDate}
             helper={labels.helpers.endDate}
             error={translateError(fieldErrors.endDate)}
+            optionalLabel={labels.optionalFieldLabel}
           >
             <TextInput
               value={form.endDate}
@@ -162,6 +167,7 @@ export function EventDraftForm({
             label={labels.fields.endTime}
             helper={labels.helpers.endTime}
             error={translateError(fieldErrors.endTime)}
+            optionalLabel={labels.optionalFieldLabel}
           >
             <TextInput
               value={form.endTime}
@@ -179,6 +185,7 @@ export function EventDraftForm({
         label={labels.fields.venueText}
         helper={labels.helpers.venueText}
         error={translateError(fieldErrors.venueText)}
+        required
         venues={venues}
         venueId={form.venueId}
         venueText={form.venueText}
@@ -192,6 +199,7 @@ export function EventDraftForm({
         label={labels.fields.genreId}
         helper={labels.helpers.genreId}
         error={translateError(fieldErrors.genreId)}
+        required
         options={genreOptions}
         value={form.genreId}
         onChange={(genreId) => onFieldChange('genreId', genreId)}
@@ -213,6 +221,7 @@ export function EventDraftForm({
         label={labels.fields.description}
         helper={labels.helpers.description}
         error={translateError(fieldErrors.description)}
+        required
       >
         <TextInput
           value={form.description}
@@ -229,6 +238,7 @@ export function EventDraftForm({
         label={labels.fields.ticketUrl}
         helper={labels.helpers.ticketUrl}
         error={translateError(fieldErrors.ticketUrl)}
+        optionalLabel={labels.optionalFieldLabel}
       >
         <TextInput
           value={form.ticketUrl}

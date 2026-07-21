@@ -12,6 +12,7 @@ export interface VenueAutocompleteProps {
   label: string;
   helper?: string;
   error?: string;
+  required?: boolean;
   venues: VenueRecord[];
   venueId: string;
   venueText: string;
@@ -25,6 +26,7 @@ export function VenueAutocomplete({
   label,
   helper,
   error,
+  required,
   venues,
   venueId,
   venueText,
@@ -62,7 +64,7 @@ export function VenueAutocomplete({
   };
 
   return (
-    <FormField label={label} helper={helper} error={error}>
+    <FormField label={label} helper={helper} error={error} required={required}>
       <TextInput
         value={displayValue}
         onChangeText={handleChangeText}
