@@ -26,7 +26,7 @@ Die aktive App (`app-v2/`, Version `0.2.0`) ist eine Expo/React-Native-Plattform
 |---------|----------------------|
 | Auth | Consumer-Login, Registrierung, E-Mail-Bestätigung, Passwort-Reset |
 | Events | Pipeline, Anzeige, Detail, Collections, Contributor-Einreichung |
-| Moderation | Admin-Review, Import-Review; Consumer-Publish-Workflow teilweise offen |
+| Moderation | Admin-Review, Import-Review; Contributor-Publish-Workflow über Admin-Moderation (ER-006) |
 | Venues | Strukturiertes Venue-Modell (Referenz + Freitext-Vorschlag) |
 | Karten | Tab vorhanden, Karten-UI noch Platzhalter |
 | Suche | Filter, Explore, Textsuche auf Events |

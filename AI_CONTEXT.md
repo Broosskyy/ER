@@ -19,12 +19,12 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **Daten:** Standard ist lokaler Mock (`EXPO_PUBLIC_USE_SUPABASE=false`); Supabase-Anbindung implementiert, Remote-Staging laut Projektstatus nicht befüllt
 - **Consumer-App:** Home, Search, Saved, Profile, Event-Detail funktionsfähig; Map-Tab = Platzhalter; Create Hub, **Meine Events**, Activity-Panel (nur eingeloggt im Home-Header, ER-005.2)
 - **Standort:** Foreground-Location via `expo-location`; lokal in AsyncStorage (`app.userLocation`); nur nach Nutzeraktion; keine Event-Filterung (ER-005.2)
-- **Admin:** Web-only unter `/admin` — Events-CRUD, Import (Sources, Jobs, Review)
+- **Admin:** Web-only unter `/admin` — Events-CRUD, Contributor-Moderation (`/admin/events/review`), Import (Sources, Jobs, Review)
 - **Auth:** Globaler `AuthProvider`; Login/Register; E-Mail-Bestätigung mit `/auth/callback`, Resend, Passwort-Reset (ER-005.3)
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
 - **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
 - **Tests:** Vitest; `npm run release:check` laut Statusbericht PASS
-- **Offene Kernarbeit:** `BACKLOG.md` — ER-005.5 Done; ER-006 (Admin Moderation) als nächster Platform-Operations-Schritt
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-005.5 Done, ER-006 Done; nächster strategischer Fokus ER-007 (CMS Artists); Platform Foundation in ER-005.4
 
 ---
 
@@ -131,7 +131,7 @@ Source → Adapter → Orchestrator → import_records
 - **Adapter:** `json_ld`, `rss`, `atom`, `ical`, `csv`, `api_json` (`register-adapters.ts`)
 - **Services:** `ImportOrchestrator`, `ImportOperationsService`, `ImportReviewService`
 - **Trigger-Typen im Modell:** `manual`, `scheduled`, `webhook` — nur `manual` im Code umgesetzt
-- **Publish:** Approve legt Event als `draft` an; Consumer: Draft → `review` via Submit; Withdraw `review` → `draft`; Admin veröffentlicht (`published`, ER-006)
+- **Publish:** Approve legt Event als `draft` an; Consumer: Draft → `review` via Submit; Withdraw `review` → `draft`; Admin moderiert via `/admin/events/review` (`review` → `published` / `rejected`, ER-006 Done)
 - **Consumer Event Flow:** Create Hub → `/create/event` → Edit → Preview → Submit (`draft` → `review`) → **Meine Events** (`/profile/events`); Social Links in eigenen Spalten; Venue via `venue_id` oder strukturierter Vorschlag (`venue_name`/`venue_city`)
 
 ---
@@ -173,12 +173,20 @@ Langfristige Zielarchitektur und Migrationsstrategie: `app-v2/docs/PLATFORM_ARCH
 
 ## Arbeitsweise
 
-Vor jeder Änderung:
+Vor jeder Änderung — **Pflichtlektüre** (als Anforderungen behandeln, nicht als optionale Referenz):
 
-1. Repository analysieren (`docs/PROJECT_STATE.md`, betroffene Module lesen)
-2. Bestehenden Code suchen (Grep, vorhandene Services/Repositories nutzen)
-3. Auswirkungen prüfen (RLS, Rollen, Tests, Docs)
-4. Plan erstellen; Risiken nennen (`CLAUDE.md`)
-5. Erst nach Freigabe implementieren
+1. `AI_CONTEXT.md` — Architektur, Verbote, Ist-Stand
+2. `docs/PROJECT_STATE.md` — Detail-Iststand, RLS, Module
+3. `BACKLOG.md` — aktives Epic, Definition of Done, Abhängigkeiten
+4. `docs/ARCHITECTURE_ROADMAP.md` — Langfristvision, Phasen-Grenzen
+5. `app-v2/docs/PLATFORM_ARCHITECTURE_FOUNDATION.md` — Ist vs. Ziel, Migrationsstrategie
+6. `app-v2/docs/ER-005.4_COMPLETION_REPORT.md` — Foundation-Scope und bekannte Gaps
+7. Relevantes Epic-Completion-Report (z. B. `ER-006_COMPLETION_REPORT.md`) bei Folgearbeit
 
-Nach größeren Änderungen prüfen: `AI_CONTEXT.md`, `docs/PROJECT_STATE.md`, `BACKLOG.md`, `README.md`, relevante `docs/`.
+Dann:
+
+1. Betroffene Module im Code analysieren (Grep, bestehende Services/Repositories)
+2. Auswirkungen prüfen (RLS, Rollen, Tests, Docs)
+3. Plan erstellen; Risiken nennen (`CLAUDE.md`)
+4. Nur im Epic-Scope implementieren; ER-005.4-Architektur nicht durch Shortcuts ersetzen
+5. Nach größeren Änderungen prüfen: `AI_CONTEXT.md`, `docs/PROJECT_STATE.md`, `BACKLOG.md`, relevante Epic-Reports

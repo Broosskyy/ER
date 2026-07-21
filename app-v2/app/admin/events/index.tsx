@@ -18,24 +18,29 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { AdminEventRecord, AdminEventStatus } from '@/data/types/records';
-import { adminEventRepository } from '@/data/repositories/registry';
+import { adminEventModerationService, adminEventRepository } from '@/data/repositories/registry';
 import {
   AdminEmptyState,
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { isContributorSubmission } from '@/features/admin/constants/admin-event-status';
+import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 
 const STATUS_FILTERS: Array<AdminEventStatus | 'all'> = [
   'all',
   'draft',
   'review',
   'published',
+  'rejected',
   'archived',
 ];
 
 export default function AdminEventsScreen() {
   const router = useRouter();
+  const { session } = useAdminAuth();
   const [events, setEvents] = useState<AdminEventRecord[]>([]);
+  const [reviewCount, setReviewCount] = useState(0);
   const [query, setQuery] = useState('');
   const [status, setStatus] = useState<AdminEventStatus | 'all'>('all');
   const [loading, setLoading] = useState(true);
@@ -53,12 +58,18 @@ export default function AdminEventsScreen() {
         pageSize: 50,
       });
       setEvents(result.items);
+      if (session) {
+        const reviewQueue = await adminEventModerationService.listReviewQueue(session);
+        setReviewCount(reviewQueue.length);
+      } else {
+        setReviewCount(0);
+      }
     } catch (cause) {
       setError(getErrorMessage(cause));
     } finally {
       setLoading(false);
     }
-  }, [query, status]);
+  }, [query, status, session]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -83,6 +94,16 @@ export default function AdminEventsScreen() {
           <AppText style={styles.title}>Events</AppText>
           <PrimaryButton label="New" onPress={() => router.push('/admin/events/new')} />
         </View>
+        {reviewCount > 0 ? (
+          <Pressable
+            style={styles.reviewBanner}
+            onPress={() => router.push('/admin/events/review')}
+          >
+            <AppText style={styles.reviewBannerText}>
+              {reviewCount} contributor submission{reviewCount === 1 ? '' : 's'} awaiting review
+            </AppText>
+          </Pressable>
+        ) : null}
         <TextInput
           value={query}
           onChangeText={setQuery}
@@ -119,7 +140,9 @@ export default function AdminEventsScreen() {
               <View style={styles.rowText}>
                 <AppText style={styles.rowTitle}>{item.title}</AppText>
                 <AppText style={styles.rowMeta}>
-                  {item.status} · {new Date(item.startDate).toLocaleDateString('de-DE')}
+                  {item.status}
+                  {isContributorSubmission(item) ? ' · contributor' : ''} ·{' '}
+                  {new Date(item.startDate).toLocaleDateString('de-DE')}
                 </AppText>
               </View>
             </Pressable>
@@ -173,6 +196,20 @@ const styles = StyleSheet.create({
     ...textRoles.metadata,
     color: colors.textPrimary,
     textTransform: 'capitalize',
+  },
+  reviewBanner: {
+    marginHorizontal: spacingRoles.screenHorizontal,
+    marginBottom: spacing.sm,
+    backgroundColor: colors.surface,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: colors.primary,
+    padding: spacing.md,
+  },
+  reviewBannerText: {
+    ...textRoles.metadata,
+    color: colors.primary,
+    fontWeight: '600',
   },
   list: {
     paddingHorizontal: spacingRoles.screenHorizontal,

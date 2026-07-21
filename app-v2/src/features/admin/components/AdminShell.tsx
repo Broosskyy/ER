@@ -19,6 +19,7 @@ import { fontSize, textRoles } from '@/design/typography';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import {
   canReviewImports,
+  canViewContributorReviewQueue,
   canViewEvents,
   canViewImportJobs,
   canViewImports,
@@ -51,7 +52,15 @@ function useAdminNavItems() {
         label: 'Events',
         icon: 'calendar-outline',
         visible: canViewEvents(role),
-        isActive: (pathname) => pathname.startsWith('/admin/events'),
+        isActive: (pathname) =>
+          pathname.startsWith('/admin/events') && !pathname.startsWith('/admin/events/review'),
+      },
+      {
+        href: '/admin/events/review',
+        label: 'Submissions',
+        icon: 'people-outline',
+        visible: canViewContributorReviewQueue(role),
+        isActive: (pathname) => pathname.startsWith('/admin/events/review'),
       },
       {
         href: '/admin/imports',

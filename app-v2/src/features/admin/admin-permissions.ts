@@ -32,6 +32,14 @@ export function canPublishEvents(role: AdminRole | null): boolean {
   return role === 'admin' || role === 'owner';
 }
 
+export function canModerateContributorEvents(role: AdminRole | null): boolean {
+  return canPublishEvents(role);
+}
+
+export function canViewContributorReviewQueue(role: AdminRole | null): boolean {
+  return canViewEvents(role);
+}
+
 export function canViewImports(role: AdminRole | null): boolean {
   return canAccessAdmin(role);
 }
@@ -86,6 +94,9 @@ export function canAccessAdminRoute(
     case 'events':
     case 'event-detail':
       return canViewEvents(role);
+    case 'events-review':
+    case 'events-review-detail':
+      return canViewContributorReviewQueue(role);
     case 'imports':
       return canViewImports(role);
     case 'sources':
