@@ -1,3 +1,7 @@
+import {
+  buildLocalArtistsFromEventNames,
+  createLocalArtistDatasource,
+} from '@/data/datasources/local/local-artist-datasource';
 import type { Event } from '@/features/events/types/event';
 import type { EventStatus } from '@/features/events/types/event-status';
 import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
@@ -170,15 +174,11 @@ function buildLocalVenues(events: Event[]): VenueRecord[] {
 }
 
 function buildLocalArtists(events: Event[]): ArtistRecord[] {
-  const seen = new Map<string, ArtistRecord>();
+  const names: string[] = [];
   for (const event of events) {
-    for (const artist of event.artists) {
-      if (!seen.has(artist)) {
-        seen.set(artist, { id: `artist-${seen.size + 1}`, name: artist });
-      }
-    }
+    names.push(...event.artists);
   }
-  return Array.from(seen.values());
+  return buildLocalArtistsFromEventNames(names);
 }
 
 export class LocalStore {
@@ -397,7 +397,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
       store.venues = items;
     },
   );
-  const artists: ArtistDatasource = createCrudDatasource(
+  const artists: ArtistDatasource = createLocalArtistDatasource(
     () => store.artists,
     (items) => {
       store.artists = items;
@@ -422,6 +422,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
         cities: store.cities.filter((city) => city.active).length,
         genres: store.genres.filter((genre) => genre.active).length,
         venues: store.venues.length,
+        artists: store.artists.filter((artist) => artist.status !== 'archived').length,
         collections: store.collections.filter((collection) => collection.active).length,
       };
     },

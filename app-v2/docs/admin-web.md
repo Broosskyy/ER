@@ -31,6 +31,8 @@ Public tabs and native navigation are unchanged. Admin routes are not linked fro
 | `/admin/imports/jobs/[id]` | Job detail | `canViewImportJobs` |
 | `/admin/imports/review` | Review queue | `canReviewImports` |
 | `/admin/imports/review/[id]` | Review detail | `canReviewImports` |
+| `/admin/artists` | Artist list | `canViewArtists` |
+| `/admin/artists/[id]` | Artist detail/editor | `canViewArtists` (Save: `canEditArtists`; Publish/Archive/Verify: `canPublishArtists` / `canVerifyArtists`) |
 
 `/admin/settings` is intentionally not enabled (no production-ready settings screen exists).
 
@@ -83,19 +85,22 @@ Central helpers live in `src/features/admin/admin-permissions.ts`:
 - `canReviewImports()`
 - `canResolveImportRecords()`
 - `canManageAdminSettings()`
+- `canViewArtists()`
+- `canEditArtists()` / `canCreateArtists()` / `canDeleteArtists()`
+- `canPublishArtists()` / `canArchiveArtists()` / `canVerifyArtists()`
 
 Import-specific service permissions remain in `src/features/import/admin/admin-roles.ts`.
 
 ## Role matrix
 
-| Role | Admin access | Dashboard | View events | Edit events | Publish events | View imports | Manage sources | View jobs | Review queue | Resolve review | Settings |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| viewer | yes | yes | yes | no | no | yes | no | yes | yes | no | no |
-| editor | yes | yes | yes | yes | no | yes | no | yes | yes | no | no |
-| reviewer | yes | yes | yes | no | no | yes | no | yes | yes | yes | no |
-| source_manager | yes | yes | yes | no | no | yes | yes | yes | yes | no | no |
-| admin | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
-| owner | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Role | Admin access | Dashboard | View events | Edit events | Publish events | View artists | Edit artists | Publish artists | View imports | Manage sources | View jobs | Review queue | Resolve review | Settings |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| viewer | yes | yes | yes | no | no | yes | no | no | yes | no | yes | yes | no | no |
+| editor | yes | yes | yes | yes | no | yes | yes | no | yes | no | yes | yes | no | no |
+| reviewer | yes | yes | yes | no | no | yes | no | no | yes | no | yes | yes | yes | no |
+| source_manager | yes | yes | yes | no | no | yes | no | no | yes | yes | yes | yes | no | no |
+| admin | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| owner | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
 
 Contributor submission moderation (`/admin/events/review`) requires `canModerateContributorEvents` (`admin` / `owner`). The event editor enforces `canEditEvents` for Save/Delete and blocks CMS edits on contributor events in `review`.
 

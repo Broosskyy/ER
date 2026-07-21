@@ -19,6 +19,7 @@ import { fontSize, textRoles } from '@/design/typography';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import {
   canReviewImports,
+  canViewArtists,
   canViewContributorReviewQueue,
   canViewEvents,
   canViewImportJobs,
@@ -61,6 +62,13 @@ function useAdminNavItems() {
         icon: 'people-outline',
         visible: canViewContributorReviewQueue(role),
         isActive: (pathname) => pathname.startsWith('/admin/events/review'),
+      },
+      {
+        href: '/admin/artists',
+        label: 'Artists',
+        icon: 'musical-notes-outline',
+        visible: canViewArtists(role),
+        isActive: (pathname) => pathname.startsWith('/admin/artists'),
       },
       {
         href: '/admin/imports',

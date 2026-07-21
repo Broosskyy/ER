@@ -5,6 +5,7 @@ import type {
   AdminEventRecord,
   AdminEventStatus,
   ArtistRecord,
+  ArtistListParams,
   CityRecord,
   CollectionRecord,
   DashboardStats,
@@ -68,6 +69,12 @@ export interface VenueDatasource {
 
 export interface ArtistDatasource {
   getAll(): Promise<ArtistRecord[]>;
+  getPublished(): Promise<ArtistRecord[]>;
+  getById(id: string): Promise<ArtistRecord | null>;
+  getPublishedById(id: string): Promise<ArtistRecord | null>;
+  getBySlug(slug: string): Promise<ArtistRecord | null>;
+  getPublishedBySlug(slug: string): Promise<ArtistRecord | null>;
+  list(params: ArtistListParams): Promise<PaginatedResult<ArtistRecord>>;
   save(artist: ArtistRecord): Promise<ArtistRecord>;
 }
 

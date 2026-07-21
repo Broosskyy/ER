@@ -23,6 +23,7 @@ import type { DatasourceBundle } from '@/data/datasources/types';
 import type { ContributorEventListParams } from '@/data/datasources/types';
 import { createLocalDatasourceBundle } from '@/data/datasources/local/local-datasource';
 import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabase/supabase-import-datasource';
+import { createSupabaseArtistDatasource } from '@/data/datasources/supabase/supabase-artist-datasource';
 import { getSupabaseClient } from '@/services/supabase/client';
 
 function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResult<T> {
@@ -226,12 +227,12 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     genres: createSupabaseTableDatasource<GenreRecord>('genres'),
     cities: createSupabaseTableDatasource<CityRecord>('cities'),
     venues: createSupabaseTableDatasource<VenueRecord>('venues'),
-    artists: createSupabaseTableDatasource<ArtistRecord>('artists'),
+    artists: createSupabaseArtistDatasource(),
     collections: createSupabaseTableDatasource<CollectionRecord>('collections'),
     sources: createSupabaseTableDatasource<SourceRecord>('sources'),
     stats: {
       async getDashboardStats(): Promise<DashboardStats> {
-        const [events, cities, genres, venues, collections] = await Promise.all([
+        const [events, cities, genres, venues, artists, collections] = await Promise.all([
           eventsTable().select('id', { count: 'exact', head: true }).neq('status', 'archived'),
           (supabase.from('cities') as SupabaseTable)
             .select('id', { count: 'exact', head: true })
@@ -240,6 +241,9 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
             .select('id', { count: 'exact', head: true })
             .eq('active', true),
           (supabase.from('venues') as SupabaseTable).select('id', { count: 'exact', head: true }),
+          (supabase.from('artists') as SupabaseTable)
+            .select('id', { count: 'exact', head: true })
+            .neq('status', 'archived'),
           (supabase.from('collections') as SupabaseTable)
             .select('id', { count: 'exact', head: true })
             .eq('active', true),
@@ -249,6 +253,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
           cities: cities.count ?? 0,
           genres: genres.count ?? 0,
           venues: venues.count ?? 0,
+          artists: artists.count ?? 0,
           collections: collections.count ?? 0,
         };
       },

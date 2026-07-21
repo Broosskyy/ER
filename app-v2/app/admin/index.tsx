@@ -14,7 +14,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
-import { canViewEvents, canViewImports } from '@/features/admin/admin-permissions';
+import { canViewArtists, canViewEvents, canViewImports } from '@/features/admin/admin-permissions';
 import { useAdminRole } from '@/features/import/admin/use-admin-role';
 import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
 import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
@@ -68,10 +68,14 @@ export default function AdminDashboardScreen() {
         <StatCard label="Cities" value={stats.cities} />
         <StatCard label="Genres" value={stats.genres} />
         <StatCard label="Venues" value={stats.venues} />
+        <StatCard label="Artists" value={stats.artists} />
         <StatCard label="Collections" value={stats.collections} />
       </View>
       {canViewEvents(role) ? (
         <PrimaryButton label="Manage Events" onPress={() => router.push('/admin/events')} />
+      ) : null}
+      {canViewArtists(role) ? (
+        <PrimaryButton label="Manage Artists" onPress={() => router.push('/admin/artists' as '/admin')} />
       ) : null}
       {canViewImports(role) ? (
         <PrimaryButton label="Import Operations" onPress={() => router.push('/admin/imports')} />

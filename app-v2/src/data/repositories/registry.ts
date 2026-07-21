@@ -1,6 +1,7 @@
 import { bindEventRepository, bootstrapApp } from '@/core/bootstrap/app-bootstrap';
 import { NotificationRepository } from '@/data/repositories/notification-repository';
 import {
+  AdminArtistRepository,
   AdminEventRepository,
   ArtistRepository,
   CityRepository,
@@ -25,6 +26,7 @@ import {
   ImportAdminRepositoryImpl,
   ImportAuditLogRepositoryImpl,
 } from '@/data/repositories/import-admin-repository';
+import { ArtistService } from '@/features/artists/services/artist-service';
 import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
 import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { ImportAuditService } from '@/features/import/admin/import-audit-service';
@@ -43,6 +45,8 @@ export const genreRepository = new GenreRepository();
 export const cityRepository = new CityRepository();
 export const venueRepository = new VenueRepository();
 export const artistRepository = new ArtistRepository();
+export const adminArtistRepository = new AdminArtistRepository();
+export const artistService = new ArtistService(artistRepository, adminArtistRepository);
 export const collectionRepository = new CollectionRepository();
 export const sourceRepository = new SourceRepository();
 export const statsRepository = new StatsRepository();
