@@ -157,6 +157,11 @@ export const de = {
     savedEvents: 'Gespeicherte Events',
     favoritesNote:
       'Favoriten werden lokal auf diesem Gerät gespeichert. Sie werden noch nicht in die Cloud synchronisiert.',
+    admin: {
+      title: 'Admin-CMS',
+      description: 'Events, Venues, Artists und Imports verwalten.',
+      open: 'Admin öffnen',
+    },
     myEvents: {
       title: 'Meine Events',
       linkTitle: 'Meine Events',
