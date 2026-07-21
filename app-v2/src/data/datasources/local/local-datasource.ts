@@ -344,6 +344,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       store.adminEvents = store.adminEvents.map((event) =>
         event.id === id ? { ...event, status: 'archived', updatedAt: new Date().toISOString() } : event,
       );
+      await persistContributorEventsIfNeeded(store);
     },
   };
 }

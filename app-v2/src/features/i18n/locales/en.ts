@@ -69,6 +69,9 @@ export const en: TranslationTree = {
       permissionBlocked:
         'Location access is blocked. You can allow it in your device settings and try again.',
       unavailable: 'Location is not available on this device right now.',
+      timeout: 'Location request timed out. Try again or pick a discovery city manually.',
+      insecureContext:
+        'Location requires a secure connection (HTTPS). Pick a discovery city manually or open the app over HTTPS.',
       network: 'Network error while resolving your location. Please try again.',
       error: 'Could not determine your location. Please try again.',
       a11y: 'Location: {{location}}. Tap to change.',
@@ -338,6 +341,8 @@ export const en: TranslationTree = {
         openDraft: 'Open draft',
         preview: 'Preview & submit',
         submitForReview: 'Submit for review',
+        submitting: 'Submitting for review…',
+        loadError: 'The draft could not be loaded. Please try again.',
         backToCreate: 'Back to Create Hub',
         createAnother: 'Create another event',
       },

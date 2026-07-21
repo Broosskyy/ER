@@ -127,6 +127,23 @@ describe('contributor event service', () => {
     ).rejects.toBeInstanceOf(AppError);
   });
 
+  it('rejects createEvent when eventId belongs to another user', async () => {
+    const foreign = await contributorEventService.createEvent({
+      form: baseForm,
+      userId: 'other-user',
+      linkLabels,
+    });
+
+    await expect(
+      contributorEventService.createEvent({
+        form: { ...baseForm, title: 'Hijacked' },
+        userId: 'local-user',
+        linkLabels,
+        eventId: foreign.id,
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
   it('submits an owned draft for review', async () => {
     const saved = await contributorEventService.createEvent({
       form: baseForm,

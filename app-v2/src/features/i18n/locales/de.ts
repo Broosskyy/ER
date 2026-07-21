@@ -68,6 +68,10 @@ export const de = {
       permissionBlocked:
         'Der Standortzugriff ist blockiert. Du kannst ihn in den Geräteeinstellungen erlauben und es erneut versuchen.',
       unavailable: 'Standort ist auf diesem Gerät derzeit nicht verfügbar.',
+      timeout:
+        'Die Standortanfrage hat zu lange gedauert. Versuche es erneut oder wähle manuell eine Discovery-Stadt.',
+      insecureContext:
+        'Standort erfordert eine sichere Verbindung (HTTPS). Wähle manuell eine Discovery-Stadt oder öffne die App über HTTPS.',
       network: 'Netzwerkfehler bei der Standortermittlung. Bitte versuche es erneut.',
       error: 'Standort konnte nicht ermittelt werden. Bitte versuche es erneut.',
       a11y: 'Standort: {{location}}. Tippen zum Ändern.',
@@ -338,6 +342,8 @@ export const de = {
         openDraft: 'Entwurf öffnen',
         preview: 'Vorschau & einreichen',
         submitForReview: 'Zur Prüfung einreichen',
+        submitting: 'Wird eingereicht …',
+        loadError: 'Der Entwurf konnte nicht geladen werden. Bitte versuche es erneut.',
         backToCreate: 'Zurück zum Create Hub',
         createAnother: 'Weiteres Event erstellen',
       },

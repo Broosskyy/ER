@@ -15,15 +15,26 @@ export interface GenrePickerProps {
   label: string;
   helper?: string;
   error?: string;
+  required?: boolean;
   options: GenrePickerOption[];
   value: string;
   onChange: (genreId: string) => void;
 }
 
-export function GenrePicker({ label, helper, error, options, value, onChange }: GenrePickerProps) {
+export function GenrePicker({
+  label,
+  helper,
+  error,
+  required,
+  options,
+  value,
+  onChange,
+}: GenrePickerProps) {
+  const labelText = required ? `${label} *` : label;
+
   return (
     <View style={styles.container}>
-      <AppText style={styles.label}>{label}</AppText>
+      <AppText style={styles.label}>{labelText}</AppText>
       <View style={styles.chips}>
         {options.map((option) => (
           <FilterChip

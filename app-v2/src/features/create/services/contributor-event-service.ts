@@ -137,6 +137,20 @@ export class ContributorEventService {
     assertValidForm(input.form);
     assertImagesPersistableWhenRequired(input.form);
 
+    if (input.eventId) {
+      const owned = await this.getEvent(input.eventId, input.userId);
+      if (owned) {
+        return this.updateEvent({ ...input, eventId: input.eventId });
+      }
+
+      const foreignEvent = (await getDatasourceBundle().events.getAllEvents()).find(
+        (event) => event.id === input.eventId,
+      );
+      if (foreignEvent && foreignEvent.createdBy !== input.userId) {
+        throw new AppError('Event not found.', { code: 'NOT_FOUND' });
+      }
+    }
+
     const draftId = input.eventId ?? `draft-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     const formWithImages = await resolveFormImages(input.form, input.userId, draftId);
 

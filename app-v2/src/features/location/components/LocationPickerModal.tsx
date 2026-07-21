@@ -44,6 +44,14 @@ function resolveErrorMessage(
     return t('home.location.unavailable');
   }
 
+  if (errorCode === 'timeout') {
+    return t('home.location.timeout');
+  }
+
+  if (errorCode === 'insecure_context') {
+    return t('home.location.insecureContext');
+  }
+
   if (errorCode === 'network') {
     return t('home.location.network');
   }

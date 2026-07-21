@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { getLocalStore, resetLocalContributorHydrationForTesting } from '@/data/datasources/local/local-datasource';
+import { getDatasourceBundle } from '@/data/datasources/supabase/supabase-datasource';
 import {
   loadPersistedContributorEvents,
   savePersistedContributorEvents,
@@ -83,5 +84,23 @@ describe('contributor draft persistence across reload', () => {
 
     expect(second.id).toBe(first.id);
     expect(second.title).toBe('Updated title');
+  });
+
+  it('persists archived status after deleteEvent', async () => {
+    const saved = await contributorEventService.createEvent({
+      form: baseForm,
+      userId: 'local-user',
+      linkLabels,
+    });
+
+    await getDatasourceBundle().events.deleteEvent(saved.id);
+
+    const persisted = await loadPersistedContributorEvents();
+    const archived = persisted.find((event) => event.id === saved.id);
+    expect(archived?.status).toBe('archived');
+
+    resetLocalContributorHydrationForTesting();
+    const reloaded = await contributorEventService.getEvent(saved.id, 'local-user');
+    expect(reloaded?.status).toBe('archived');
   });
 });

@@ -18,5 +18,7 @@ export type UserLocationErrorCode =
   | 'permission_denied'
   | 'permission_blocked'
   | 'unavailable'
+  | 'timeout'
+  | 'insecure_context'
   | 'resolve_failed'
   | 'network';

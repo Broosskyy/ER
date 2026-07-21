@@ -185,6 +185,7 @@ export function EventDraftForm({
         label={labels.fields.venueText}
         helper={labels.helpers.venueText}
         error={translateError(fieldErrors.venueText)}
+        required
         venues={venues}
         venueId={form.venueId}
         venueText={form.venueText}
@@ -198,6 +199,7 @@ export function EventDraftForm({
         label={labels.fields.genreId}
         helper={labels.helpers.genreId}
         error={translateError(fieldErrors.genreId)}
+        required
         options={genreOptions}
         value={form.genreId}
         onChange={(genreId) => onFieldChange('genreId', genreId)}

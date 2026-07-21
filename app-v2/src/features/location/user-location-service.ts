@@ -3,7 +3,7 @@ import * as Location from 'expo-location';
 
 import type { UserLocationRecord } from '@/features/location/types/user-location';
 import type { UserLocationErrorCode } from '@/features/location/types/user-location';
-import { withTimeout } from '@/features/location/utils/with-timeout';
+import { TimeoutError, withTimeout } from '@/features/location/utils/with-timeout';
 
 export class UserLocationRequestError extends Error {
   readonly code: UserLocationErrorCode;
@@ -28,7 +28,7 @@ interface ReverseGeocodeResult {
 
 function assertSecureWebContext(): void {
   if (Platform.OS === 'web' && typeof window !== 'undefined' && !window.isSecureContext) {
-    throw new UserLocationRequestError('unavailable');
+    throw new UserLocationRequestError('insecure_context');
   }
 }
 
@@ -188,7 +188,10 @@ export async function requestCurrentUserLocation(locale: string): Promise<UserLo
       }),
       GPS_TIMEOUT_MS,
     );
-  } catch {
+  } catch (cause) {
+    if (cause instanceof TimeoutError) {
+      throw new UserLocationRequestError('timeout');
+    }
     throw new UserLocationRequestError('unavailable');
   }
 
