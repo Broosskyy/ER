@@ -22,6 +22,7 @@ import {
   canViewArtists,
   canViewContributorReviewQueue,
   canViewEvents,
+  canViewVenues,
   canViewImportJobs,
   canViewImports,
   canViewSources,
@@ -69,6 +70,13 @@ function useAdminNavItems() {
         icon: 'musical-notes-outline',
         visible: canViewArtists(role),
         isActive: (pathname) => pathname.startsWith('/admin/artists'),
+      },
+      {
+        href: '/admin/venues',
+        label: 'Venues',
+        icon: 'business-outline',
+        visible: canViewVenues(role),
+        isActive: (pathname) => pathname.startsWith('/admin/venues'),
       },
       {
         href: '/admin/imports',

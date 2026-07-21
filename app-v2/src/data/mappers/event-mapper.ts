@@ -45,6 +45,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
   genreName?: string;
   artists?: string[];
   lineup?: string[];
+  country?: string;
   latitude?: number;
   longitude?: number;
   address?: string;
@@ -65,7 +66,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
     }),
     address: relations?.address,
     city: relations?.cityName ?? row.venue_city?.trim() ?? 'Köln',
-    country: 'Germany',
+    country: relations?.country ?? 'Germany',
     latitude: relations?.latitude,
     longitude: relations?.longitude,
     genres: relations?.genreName ? [relations.genreName] : [],

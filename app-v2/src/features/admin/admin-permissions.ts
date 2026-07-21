@@ -112,6 +112,26 @@ export function canDeleteArtists(role: AdminRole | null): boolean {
   return canEditArtists(role);
 }
 
+export function canViewVenues(role: AdminRole | null): boolean {
+  return canAccessAdmin(role);
+}
+
+export function canEditVenues(role: AdminRole | null): boolean {
+  return canEditEvents(role);
+}
+
+export function canCreateVenues(role: AdminRole | null): boolean {
+  return canEditVenues(role);
+}
+
+export function canDeleteVenues(role: AdminRole | null): boolean {
+  return canEditVenues(role);
+}
+
+export function canViewVenueAdmin(role: AdminRole | null): boolean {
+  return canViewVenues(role);
+}
+
 export function canManageAdminSettings(role: AdminRole | null): boolean {
   if (!role) {
     return false;
@@ -136,6 +156,9 @@ export function canAccessAdminRoute(
     case 'artists':
     case 'artist-detail':
       return canViewArtists(role);
+    case 'venues':
+    case 'venue-detail':
+      return canViewVenues(role);
     case 'imports':
       return canViewImports(role);
     case 'sources':

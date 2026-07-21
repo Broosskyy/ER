@@ -13,6 +13,7 @@ import type {
   PaginatedResult,
   SourceRecord,
   VenueRecord,
+  VenueListParams,
 } from '../types/records';
 import type {
   ImportJobDatasource,
@@ -64,7 +65,13 @@ export interface CityDatasource {
 
 export interface VenueDatasource {
   getAll(): Promise<VenueRecord[]>;
+  getById(id: string): Promise<VenueRecord | null>;
+  getBySlug(slug: string): Promise<VenueRecord | null>;
+  list(params: VenueListParams): Promise<PaginatedResult<VenueRecord>>;
   save(venue: VenueRecord): Promise<VenueRecord>;
+  delete(id: string): Promise<void>;
+  countEventsForVenue(venueId: string): Promise<number>;
+  listEventIdsForVenue(venueId: string): Promise<string[]>;
 }
 
 export interface ArtistDatasource {

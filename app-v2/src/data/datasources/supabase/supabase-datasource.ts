@@ -24,6 +24,7 @@ import type { ContributorEventListParams } from '@/data/datasources/types';
 import { createLocalDatasourceBundle } from '@/data/datasources/local/local-datasource';
 import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabase/supabase-import-datasource';
 import { createSupabaseArtistDatasource } from '@/data/datasources/supabase/supabase-artist-datasource';
+import { createSupabaseVenueDatasource } from '@/data/datasources/supabase/supabase-venue-datasource';
 import { createSupabaseEventLineupDatasource } from '@/data/datasources/supabase/supabase-event-lineup-datasource';
 import { lineupToArtistNames } from '@/data/mappers/event-lineup-mapper';
 import type { Event } from '@/features/events/types/event';
@@ -43,10 +44,14 @@ function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResul
 type SupabaseTable = ReturnType<ReturnType<typeof getSupabaseClient>['from']>;
 
 const PUBLISHED_EVENT_SELECT =
-  '*, venues(name, latitude, longitude, address), cities(name), genres(name), artists(name)';
+  '*, venues(name, city, country, street, house_number, latitude, longitude, address), cities(name), genres(name), artists(name)';
 
 interface SupabaseVenueRelation {
   name?: string;
+  city?: string | null;
+  country?: string | null;
+  street?: string | null;
+  house_number?: string | null;
   latitude?: number | null;
   longitude?: number | null;
   address?: string | null;
@@ -83,13 +88,14 @@ function mapSupabaseEventRow(
 
   return mapEventRowToDomain(row as never, {
     venueName: venue?.name,
-    cityName: city?.name,
+    cityName: venue?.city ?? city?.name,
     genreName: genre?.name,
     artists: artistNames,
     lineup: artistNames,
     latitude: venue?.latitude ?? undefined,
     longitude: venue?.longitude ?? undefined,
-    address: venue?.address ?? undefined,
+    address: venue?.address ?? venue?.street ?? undefined,
+    country: venue?.country,
   });
 }
 
@@ -254,7 +260,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     },
     genres: createSupabaseTableDatasource<GenreRecord>('genres'),
     cities: createSupabaseTableDatasource<CityRecord>('cities'),
-    venues: createSupabaseTableDatasource<VenueRecord>('venues'),
+    venues: createSupabaseVenueDatasource(),
     artists: createSupabaseArtistDatasource(),
     eventLineups,
     collections: createSupabaseTableDatasource<CollectionRecord>('collections'),

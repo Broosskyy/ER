@@ -11,7 +11,7 @@ import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
-import type { AdminEventRecord, AdminEventStatus } from '@/data/types/records';
+import type { AdminEventRecord, AdminEventStatus, VenueRecord } from '@/data/types/records';
 import {
   adminEventModerationService,
   adminEventRepository,
@@ -31,6 +31,7 @@ import {
   EventLineupEditor,
   type EventLineupDraftEntry,
 } from '@/features/admin/components/EventLineupEditor';
+import { VenuePicker } from '@/features/admin/components/VenuePicker';
 import { canEditEventLineup, canEditEvents, canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
 import {
   assertValidAdminEditorialTransition,
@@ -86,6 +87,7 @@ export default function AdminEventEditorScreen() {
   const [record, setRecord] = useState<AdminEventRecord | null>(null);
   const [lineup, setLineup] = useState<EventLineupDraftEntry[]>([]);
   const [artistOptions, setArtistOptions] = useState<Awaited<ReturnType<typeof adminArtistRepository.getAll>>>([]);
+  const [venueOptions, setVenueOptions] = useState<VenueRecord[]>([]);
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -110,7 +112,7 @@ export default function AdminEventEditorScreen() {
       setGenreOptions(genres.map((g) => ({ id: g.id, label: g.name })));
       setCityOptions(cities.map((c) => ({ id: c.id, label: c.name })));
       setArtistOptions(artists);
-      void venues;
+      setVenueOptions(venues);
       void sources;
       void collections;
       setOptionsLoaded(true);
@@ -362,6 +364,13 @@ export default function AdminEventEditorScreen() {
               />
             ))}
           </View>
+
+          <VenuePicker
+            venues={venueOptions}
+            selectedVenueId={record.venueId}
+            editable={fieldsEditable}
+            onChange={(venueId) => updateField('venueId', venueId)}
+          />
 
           <EventLineupEditor
             lineup={lineup}

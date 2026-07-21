@@ -13,6 +13,7 @@ import type {
   PaginatedResult,
   SourceRecord,
   VenueRecord,
+  VenueListParams,
 } from '@/data/types/records';
 import type { EventLineupInput } from '@/features/events/domain/event-lineup';
 import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
@@ -290,6 +291,48 @@ export class CityRepository {
 export class VenueRepository {
   getAll(): Promise<VenueRecord[]> {
     return getDatasourceBundle().venues.getAll();
+  }
+
+  getById(id: string): Promise<VenueRecord | null> {
+    return getDatasourceBundle().venues.getById(id);
+  }
+
+  getBySlug(slug: string): Promise<VenueRecord | null> {
+    return getDatasourceBundle().venues.getBySlug(slug);
+  }
+}
+
+export class AdminVenueRepository {
+  list(params: VenueListParams): Promise<PaginatedResult<VenueRecord>> {
+    return getDatasourceBundle().venues.list(params);
+  }
+
+  getById(id: string): Promise<VenueRecord | null> {
+    return getDatasourceBundle().venues.getById(id);
+  }
+
+  getBySlug(slug: string): Promise<VenueRecord | null> {
+    return getDatasourceBundle().venues.getBySlug(slug);
+  }
+
+  getAll(): Promise<VenueRecord[]> {
+    return getDatasourceBundle().venues.getAll();
+  }
+
+  save(record: VenueRecord): Promise<VenueRecord> {
+    return getDatasourceBundle().venues.save(record);
+  }
+
+  delete(id: string): Promise<void> {
+    return getDatasourceBundle().venues.delete(id);
+  }
+
+  countEventsForVenue(venueId: string): Promise<number> {
+    return getDatasourceBundle().venues.countEventsForVenue(venueId);
+  }
+
+  listEventIdsForVenue(venueId: string): Promise<string[]> {
+    return getDatasourceBundle().venues.listEventIdsForVenue(venueId);
   }
 }
 

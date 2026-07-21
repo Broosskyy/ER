@@ -33,6 +33,8 @@ Public tabs and native navigation are unchanged. Admin routes are not linked fro
 | `/admin/imports/review/[id]` | Review detail | `canReviewImports` |
 | `/admin/artists` | Artist list | `canViewArtists` |
 | `/admin/artists/[id]` | Artist detail/editor | `canViewArtists` (Save: `canEditArtists`; Publish/Archive/Verify: `canPublishArtists` / `canVerifyArtists`) |
+| `/admin/venues` | Venue list | `canViewVenues` |
+| `/admin/venues/[id]` | Venue detail/editor | `canViewVenues` (Save: `canEditVenues`; Delete: `canDeleteVenues`) |
 
 `/admin/settings` is intentionally not enabled (no production-ready settings screen exists).
 
@@ -89,6 +91,7 @@ Central helpers live in `src/features/admin/admin-permissions.ts`:
 - `canViewArtists()`
 - `canEditArtists()` / `canCreateArtists()` / `canDeleteArtists()`
 - `canPublishArtists()` / `canArchiveArtists()` / `canVerifyArtists()`
+- `canViewVenues()` / `canEditVenues()` / `canCreateVenues()` / `canDeleteVenues()`
 
 Import-specific service permissions remain in `src/features/import/admin/admin-roles.ts`.
 
@@ -110,6 +113,13 @@ Contributor submission moderation (`/admin/events/review`) requires `canModerate
 - Canonical lineup is stored in `event_artists` (`billing_role`, `sort_order`).
 - Legacy `events.artist_id` is deprecated and synced from the first headliner (or first artist) on lineup save.
 - Import approve persists all matched artist IDs in source order (first → headliner, rest → support).
+
+### Venues (ER-009)
+
+- Canonical location entity in `venues` with `events.venue_id` FK.
+- Admin CMS at `/admin/venues` for list, create, edit, and safe delete.
+- Public reads only for venues referenced by published events.
+- Event editor uses `VenuePicker` for canonical assignment.
 
 ## Guards
 

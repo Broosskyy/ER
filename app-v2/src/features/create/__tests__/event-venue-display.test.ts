@@ -6,9 +6,13 @@ import { resolveEventVenueDisplay } from '@/features/create/utils/event-venue-di
 const venues: VenueRecord[] = [
   {
     id: 'venue-1',
+    slug: 'gewoelbe',
     name: 'Gewölbe',
-    cityId: 'koeln',
+    city: 'Köln',
+    country: 'Germany',
     address: 'Street 1',
+    createdAt: '2026-01-01T00:00:00.000Z',
+    updatedAt: '2026-01-01T00:00:00.000Z',
   },
 ];
 
