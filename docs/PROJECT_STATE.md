@@ -78,7 +78,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 | Pfad | Beschreibung |
 |------|--------------|
-| `app-v2/supabase/migrations/` | 12 SQL-Migrationen (Schema, RLS, Grants, Contributor) |
+| `app-v2/supabase/migrations/` | 14 SQL-Migrationen (Schema, RLS, Grants, Contributor, ER-006 Hardening) |
 | `app-v2/scripts/staging/` | Staging-Validierung, Seed-SQL, Remote-Seed-Skript |
 | `app-v2/src/data/datasources/supabase/` | Supabase-Datasource-Implementierungen |
 | `app-v2/src/services/supabase/` | Supabase-Client und Auth-Service |
@@ -148,7 +148,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 ## Supabase
 
-- **Konfiguration:** `app-v2/supabase/migrations/` (12 Dateien)
+- **Konfiguration:** `app-v2/supabase/migrations/` (14 Dateien)
 - **Client:** `app-v2/src/services/supabase/client.ts`
 - **Env-Variablen:** `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY`, `EXPO_PUBLIC_USE_SUPABASE` (`.env.example`)
 - **Staging-Tools:** `scripts/staging/` inkl. `seed-staging-app-data.sql`, `apply-staging-seed-remote.ts` (`npm run seed:staging:remote`)
@@ -244,7 +244,9 @@ Row Level Security ist auf allen `public`-Tabellen aktiviert (Initial-Schema + I
 | Policy | Tabelle | Zugriff |
 |--------|---------|---------|
 | `admin_read_events` | `events` | SELECT |
-| `admin_manage_events` | `events` | ALL |
+| `admin_insert_events` | `events` | INSERT (`editor`, `admin`, `owner`) |
+| `admin_update_events` | `events` | UPDATE (`editor`, `admin`, `owner`; Publish/Reject nur `admin`/`owner` via Trigger) |
+| `admin_delete_events` | `events` | DELETE (`editor`, `admin`, `owner`) |
 | `admin_manage_genres` | `genres` | ALL |
 | `admin_manage_cities` | `cities` | ALL |
 | `admin_manage_venues` | `venues` | ALL |
@@ -360,6 +362,12 @@ Chronologische Liste (`app-v2/supabase/migrations/`):
 | `20260724000000_anon_authenticated_grants.sql` | `GRANT SELECT` für `anon`/`authenticated` |
 | `20260725000000_admin_events_rls.sql` | Admin-only Schreibzugriff auf Events/Referenzdaten, Storage-Upload-Policy |
 | `20260726000000_authenticated_write_grants.sql` | `GRANT INSERT/UPDATE/DELETE` für `authenticated` |
+| `20260727000000_contributor_event_drafts.sql` | Contributor-Drafts (`created_by`, Owner-CRUD für `draft`) |
+| `20260728000000_contributor_event_submission.sql` | Einreichung `draft` → `review` durch Owner |
+| `20260729000000_unify_event_statuses.sql` | Status vereinheitlicht (`rejected`, `archived`) |
+| `20260730000000_contributor_my_events.sql` | Social Links, Venue-Vorschlag, Owner-Read, Withdraw |
+| `20260731000000_contributor_event_image_update.sql` | Contributor Storage UPDATE für Event-Bilder |
+| `20260732000000_er006_platform_hardening.sql` | Event-Schreib-RLS an App-Publish-Regeln angeglichen; Contributor-Review-Schutz |
 
 **Hinweis:** Referenz-Seed-Daten liegen in `app-v2/scripts/staging/seed-staging-app-data.sql`, nicht als Supabase-Migration.
 
@@ -515,7 +523,7 @@ Aus dokumentiertem Projektstand (`PROJECT_STATUS_REPORT_AFTER_LAST_11_SPRINTS.md
 | Auth Callback, Deep Linking & E-Mail-Bestätigung | Erledigt (ER-005.3) |
 | Platform Architecture Foundation | Erledigt (ER-005.4) |
 | Core Workflow Reliability | Erledigt (ER-005.5) |
-| Admin-Moderation & Publishing | Done (ER-006) |
+| Admin-Moderation & Publishing | Done (ER-006 + Platform Hardening) |
 | Autosave für Event-Entwürfe | Offen |
 | Benutzername / Anzeigename | Offen (Plan: `app-v2/docs/auth-username-plan.md`) |
 | Kompletter UX-Polish / Microinteractions | Offen |

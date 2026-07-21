@@ -24,6 +24,10 @@ export function canEditEvents(role: AdminRole | null): boolean {
   return role === 'editor' || role === 'admin' || role === 'owner';
 }
 
+export function canDeleteEvents(role: AdminRole | null): boolean {
+  return canEditEvents(role);
+}
+
 export function canPublishEvents(role: AdminRole | null): boolean {
   if (!role) {
     return false;

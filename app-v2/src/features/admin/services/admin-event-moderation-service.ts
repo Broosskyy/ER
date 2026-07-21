@@ -113,7 +113,7 @@ export class AdminEventModerationService {
       updatedAt: new Date().toISOString(),
     };
 
-    const saved = await this.eventRepository.save(record);
+    const saved = await this.eventRepository.save(record, { source: 'moderation' });
     await this.auditService.logPublished(this.actorId(session), saved.id, saved.title);
     return saved;
   }
@@ -136,7 +136,7 @@ export class AdminEventModerationService {
       updatedAt: new Date().toISOString(),
     };
 
-    const saved = await this.eventRepository.save(record);
+    const saved = await this.eventRepository.save(record, { source: 'moderation' });
     await this.auditService.logRejected(
       this.actorId(session),
       saved.id,

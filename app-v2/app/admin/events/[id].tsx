@@ -25,8 +25,11 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
-import { canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
-import { isContributorSubmission } from '@/features/admin/constants/admin-event-status';
+import { canEditEvents, canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
+import {
+  assertValidAdminEditorialTransition,
+  isContributorReviewEvent,
+} from '@/features/admin/constants/admin-event-status';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { FilterChip } from '@/features/home/components/FilterChip';
 import { filterConfig } from '@/features/search/config/filter-config';
@@ -71,6 +74,7 @@ export default function AdminEventEditorScreen() {
   const { session, role } = useAdminAuth();
   const isNew = id === 'new';
   const canPublish = canPublishEvents(role);
+  const canEdit = canEditEvents(role);
   const canModerate = canModerateContributorEvents(role);
   const [record, setRecord] = useState<AdminEventRecord | null>(null);
   const [loading, setLoading] = useState(!isNew);
@@ -140,13 +144,29 @@ export default function AdminEventEditorScreen() {
 
   const save = async (status?: AdminEventStatus) => {
     if (!record) return;
+    if (!canEdit) {
+      setError('Your role cannot edit events.');
+      return;
+    }
+
     setSaving(true);
     setError(null);
     setSuccess(null);
     try {
       const nextStatus = status ?? record.status;
+      if (isContributorReviewEvent(record)) {
+        throw new Error('Contributor submissions in review must be moderated through the review workflow.');
+      }
+
       if (nextStatus === 'published' && !canPublish) {
         throw new Error('Your role cannot publish events.');
+      }
+
+      if (!isNew && record.id) {
+        const existing = await adminEventRepository.getById(record.id);
+        if (existing && nextStatus !== existing.status) {
+          assertValidAdminEditorialTransition(existing.status, nextStatus);
+        }
       }
 
       const payload = {
@@ -199,14 +219,23 @@ export default function AdminEventEditorScreen() {
     }
   };
 
-  const isContributorReview =
-    record?.status === 'review' && isContributorSubmission(record);
+  const isContributorReview = record ? isContributorReviewEvent(record) : false;
+  const fieldsEditable = canEdit && !isContributorReview;
   const editableStatuses = isContributorReview
     ? (['review'] as AdminEventStatus[])
     : STATUSES.filter((status) => status !== 'published' || canPublish);
 
   const remove = async () => {
     if (!record) return;
+    if (!canEdit) {
+      setError('Your role cannot delete events.');
+      return;
+    }
+    if (isContributorReviewEvent(record)) {
+      setError('Contributor submissions in review cannot be deleted outside moderation.');
+      return;
+    }
+
     setSaving(true);
     setError(null);
     setSuccess(null);
@@ -237,11 +266,18 @@ export default function AdminEventEditorScreen() {
             <AppText style={styles.title}>{isNew ? 'New Event' : 'Edit Event'}</AppText>
           </View>
 
+          {!canEdit ? (
+            <AppText style={styles.readOnlyNotice}>
+              Your role has view-only access. Event changes are disabled.
+            </AppText>
+          ) : null}
+
           <Field label="Title">
             <TextInput
               value={record.title}
               onChangeText={(value) => updateField('title', value)}
               style={styles.input}
+              editable={fieldsEditable}
             />
           </Field>
           <Field label="Description">
@@ -250,6 +286,7 @@ export default function AdminEventEditorScreen() {
               onChangeText={(value) => updateField('description', value)}
               multiline
               style={[styles.input, styles.multiline]}
+              editable={fieldsEditable}
             />
           </Field>
           <Field label="Start date (ISO)">
@@ -257,6 +294,7 @@ export default function AdminEventEditorScreen() {
               value={record.startDate}
               onChangeText={(value) => updateField('startDate', value)}
               style={styles.input}
+              editable={fieldsEditable}
             />
           </Field>
           <Field label="Ticket URL">
@@ -264,6 +302,7 @@ export default function AdminEventEditorScreen() {
               value={record.ticketUrl ?? ''}
               onChangeText={(value) => updateField('ticketUrl', value)}
               style={styles.input}
+              editable={fieldsEditable}
             />
           </Field>
           <Field label="Image URL">
@@ -271,6 +310,7 @@ export default function AdminEventEditorScreen() {
               value={record.imageUrl ?? ''}
               onChangeText={(value) => updateField('imageUrl', value)}
               style={styles.input}
+              editable={fieldsEditable}
             />
           </Field>
 
@@ -281,7 +321,7 @@ export default function AdminEventEditorScreen() {
                 key={option.id}
                 label={option.label}
                 selected={record.genreId === option.id}
-                onPress={() => updateField('genreId', option.id)}
+                onPress={() => fieldsEditable && updateField('genreId', option.id)}
               />
             ))}
           </View>
@@ -293,7 +333,7 @@ export default function AdminEventEditorScreen() {
                 key={option.id}
                 label={option.label}
                 selected={record.cityId === option.id}
-                onPress={() => updateField('cityId', option.id)}
+                onPress={() => fieldsEditable && updateField('cityId', option.id)}
               />
             ))}
           </View>
@@ -311,7 +351,7 @@ export default function AdminEventEditorScreen() {
                 key={status}
                 label={status}
                 selected={record.status === status}
-                onPress={() => updateField('status', status)}
+                onPress={() => fieldsEditable && updateField('status', status)}
               />
             ))}
           </View>
@@ -319,12 +359,14 @@ export default function AdminEventEditorScreen() {
           {error ? <AppText style={styles.error}>{error}</AppText> : null}
           {success ? <AppText style={styles.success}>{success}</AppText> : null}
 
-          <PrimaryButton
-            label={saving ? 'Saving…' : 'Save'}
-            onPress={() => save()}
-            disabled={saving || isContributorReview}
-          />
-          {!isContributorReview ? (
+          {canEdit ? (
+            <PrimaryButton
+              label={saving ? 'Saving…' : 'Save'}
+              onPress={() => save()}
+              disabled={saving || isContributorReview}
+            />
+          ) : null}
+          {canEdit && !isContributorReview ? (
             <SecondaryButton label="Save as Draft" onPress={() => save('draft')} disabled={saving} />
           ) : null}
           {isContributorReview && canModerate ? (
@@ -346,13 +388,13 @@ export default function AdminEventEditorScreen() {
               />
             </>
           ) : null}
-          {!isContributorReview && canPublish ? (
+          {!isContributorReview && canEdit && canPublish ? (
             <SecondaryButton label="Publish" onPress={() => save('published')} disabled={saving} />
           ) : null}
-          {!isContributorReview ? (
+          {canEdit && !isContributorReview ? (
             <SecondaryButton label="Archive" onPress={() => save('archived')} disabled={saving} />
           ) : null}
-          {!isNew ? (
+          {canEdit && !isNew && !isContributorReview ? (
             <SecondaryButton label="Delete" onPress={remove} disabled={saving} />
           ) : null}
         </ScrollView>
@@ -397,6 +439,10 @@ const styles = StyleSheet.create({
   multiline: { minHeight: 100, textAlignVertical: 'top' },
   section: { ...textRoles.metadata, fontWeight: '600' },
   moderationHint: {
+    ...textRoles.metadata,
+    color: colorRoles.emptyStateDescription,
+  },
+  readOnlyNotice: {
     ...textRoles.metadata,
     color: colorRoles.emptyStateDescription,
   },

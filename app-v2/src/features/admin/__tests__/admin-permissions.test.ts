@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   canAccessAdmin,
+  canDeleteEvents,
   canEditEvents,
   canManageSources,
   canModerateContributorEvents,
@@ -43,6 +44,7 @@ describe('admin permissions matrix', () => {
     expect(canAccessAdmin(role)).toBe(true);
     expect(canViewEvents(role)).toBe(true);
     expect(canEditEvents(role)).toBe(false);
+    expect(canDeleteEvents(role)).toBe(false);
     expect(canPublishEvents(role)).toBe(false);
     expect(canViewSources(role)).toBe(true);
     expect(canManageSources(role)).toBe(false);

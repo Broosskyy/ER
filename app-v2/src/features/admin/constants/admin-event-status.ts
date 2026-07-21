@@ -39,3 +39,23 @@ export function canAdminEditorialTransition(
 export function isContributorSubmission(record: { createdBy?: string }): boolean {
   return Boolean(record.createdBy?.trim());
 }
+
+export function isContributorReviewEvent(record: {
+  status: AdminEventStatus;
+  createdBy?: string;
+}): boolean {
+  return record.status === 'review' && isContributorSubmission(record);
+}
+
+export function assertValidAdminEditorialTransition(
+  from: AdminEventStatus,
+  to: AdminEventStatus,
+): void {
+  if (from === to) {
+    return;
+  }
+
+  if (!canAdminEditorialTransition(from, to)) {
+    throw new Error(`Invalid status transition from ${from} to ${to}.`);
+  }
+}

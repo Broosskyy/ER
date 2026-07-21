@@ -336,4 +336,39 @@ describe('contributor event service', () => {
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
+
+  it('rejects withdraw after event was published by moderation', async () => {
+    const saved = await contributorEventService.createEvent({
+      form: baseForm,
+      userId: 'local-user',
+      linkLabels,
+    });
+    const submitted = await contributorEventService.submitForReview({
+      eventId: saved.id,
+      userId: 'local-user',
+    });
+
+    const store = getLocalStore();
+    const published = {
+      ...submitted,
+      status: 'published' as const,
+      updatedAt: new Date().toISOString(),
+    };
+    const adminIndex = store.adminEvents.findIndex((event) => event.id === submitted.id);
+    store.adminEvents[adminIndex] = published;
+    const eventIndex = store.events.findIndex((event) => event.id === submitted.id);
+    if (eventIndex >= 0) {
+      store.events[eventIndex] = {
+        ...store.events[eventIndex],
+        status: 'published',
+      };
+    }
+
+    await expect(
+      contributorEventService.withdrawFromReview({
+        eventId: submitted.id,
+        userId: 'local-user',
+      }),
+    ).rejects.toThrow(/no longer in review/i);
+  });
 });

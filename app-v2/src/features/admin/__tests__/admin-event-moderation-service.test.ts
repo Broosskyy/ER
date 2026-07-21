@@ -125,4 +125,17 @@ describe('admin event moderation service', () => {
       moderationService.publishContributorEvent(adminSession, draft.id),
     ).rejects.toThrow(/only events in review/i);
   });
+
+  it('rejects publish when contributor withdrew before moderation save', async () => {
+    const eventId = await createReviewEvent();
+
+    await contributorEventService.withdrawFromReview({
+      eventId,
+      userId: 'contributor-1',
+    });
+
+    await expect(
+      moderationService.publishContributorEvent(adminSession, eventId),
+    ).rejects.toThrow(/only events in review|no longer in review/i);
+  });
 });
