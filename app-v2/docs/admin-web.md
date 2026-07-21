@@ -21,7 +21,7 @@ Public tabs and native navigation are unchanged. Admin routes are not linked fro
 | `/admin/login` | Login | public |
 | `/admin` | Dashboard | `canViewDashboard` |
 | `/admin/events` | Event list | `canViewEvents` |
-| `/admin/events/[id]` | Event detail/editor | `canViewEvents` (Save/Delete: `canEditEvents`; Publish/Reject: `canModerateContributorEvents`) |
+| `/admin/events/[id]` | Event detail/editor | `canViewEvents` (Save/Delete: `canEditEvents`; Lineup: `canEditEventLineup`; Publish/Reject: `canModerateContributorEvents`) |
 | `/admin/events/review` | Contributor submission queue | `canViewContributorReviewQueue` |
 | `/admin/events/review/[id]` | Submission review detail | `canViewContributorReviewQueue` (Publish/Reject: `canModerateContributorEvents`) |
 | `/admin/imports` | Import dashboard | `canViewImports` |
@@ -74,6 +74,7 @@ Central helpers live in `src/features/admin/admin-permissions.ts`:
 - `canViewDashboard()`
 - `canViewEvents()`
 - `canEditEvents()`
+- `canEditEventLineup()` (ER-008: multi-artist lineup editor)
 - `canDeleteEvents()` (alias of `canEditEvents`)
 - `canPublishEvents()`
 - `canModerateContributorEvents()` (alias of `canPublishEvents`)
@@ -102,7 +103,13 @@ Import-specific service permissions remain in `src/features/import/admin/admin-r
 | admin | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
 | owner | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
 
-Contributor submission moderation (`/admin/events/review`) requires `canModerateContributorEvents` (`admin` / `owner`). The event editor enforces `canEditEvents` for Save/Delete and blocks CMS edits on contributor events in `review`.
+Contributor submission moderation (`/admin/events/review`) requires `canModerateContributorEvents` (`admin` / `owner`). The event editor enforces `canEditEvents` for Save/Delete, `canEditEventLineup` for lineup changes, and blocks CMS edits on contributor events in `review`.
+
+### Event lineup (ER-008)
+
+- Canonical lineup is stored in `event_artists` (`billing_role`, `sort_order`).
+- Legacy `events.artist_id` is deprecated and synced from the first headliner (or first artist) on lineup save.
+- Import approve persists all matched artist IDs in source order (first → headliner, rest → support).
 
 ## Guards
 

@@ -100,6 +100,9 @@ function createTestStack() {
     adminRepository,
     eventRepository,
     auditService,
+    {
+      replaceFromMatchedArtistIds: async () => [],
+    },
   );
 
   return {

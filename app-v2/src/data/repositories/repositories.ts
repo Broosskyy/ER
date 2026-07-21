@@ -14,6 +14,8 @@ import type {
   SourceRecord,
   VenueRecord,
 } from '@/data/types/records';
+import type { EventLineupInput } from '@/features/events/domain/event-lineup';
+import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
 import { getDatasourceBundle } from '@/data/datasources/supabase/supabase-datasource';
 import type { Event } from '@/features/events/types/event';
 import { isFeaturedEventId } from '@/features/events/data/home-config';
@@ -324,6 +326,24 @@ export class AdminArtistRepository {
 
   save(record: ArtistRecord): Promise<ArtistRecord> {
     return getDatasourceBundle().artists.save(record);
+  }
+}
+
+export class EventLineupRepository {
+  getLineupForEvent(eventId: string): Promise<EventLineupArtist[]> {
+    return getDatasourceBundle().eventLineups.getLineupForEvent(eventId);
+  }
+
+  getLineupsForEvents(eventIds: string[]): Promise<Map<string, EventLineupArtist[]>> {
+    return getDatasourceBundle().eventLineups.getLineupsForEvents(eventIds);
+  }
+
+  replaceEventLineup(eventId: string, lineup: EventLineupInput[]): Promise<EventLineupArtist[]> {
+    return getDatasourceBundle().eventLineups.replaceEventLineup(eventId, lineup);
+  }
+
+  deleteLineupForEvent(eventId: string): Promise<void> {
+    return getDatasourceBundle().eventLineups.deleteLineupForEvent(eventId);
   }
 }
 

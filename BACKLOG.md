@@ -311,11 +311,43 @@ Definition of Done:
 - RLS: öffentlich nur `published`; Schreiben rollenbasiert
 - Tests und `docs/ER-007_ARTIST_DOMAIN_FOUNDATION_COMPLETION_REPORT.md`
 
-Nächster Fokus: **ER-008 Multi-Artist Event Lineup** (`event_artists` Junction)
+Nächster Fokus: **ER-009 Venue Admin CMS** (renumbered; lineup delivered in ER-008)
 
 ---
 
 ## ER-008
+Titel: Multi-Artist Lineup Foundation
+
+Status:
+- Done
+
+Priorität: Mittel
+
+Beschreibung:
+Kanonical ordered many-to-many Event↔Artist-Beziehung über `event_artists`, Admin-Lineup-Editor, Import-Mehrfachzuordnung, RLS, Backfill aus `events.artist_id`, Legacy-Sync der deprecated `artist_id`.
+
+Abhängigkeiten:
+- ER-007 (Artist Domain Foundation)
+
+Betroffene Module:
+- `app-v2/supabase/migrations/20260734000000_er008_multi_artist_lineup_foundation.sql`
+- `app-v2/src/features/events/domain/event-lineup*.ts`
+- `app-v2/src/features/events/services/event-lineup-service.ts`
+- `app-v2/src/data/datasources/*/local-event-lineup-datasource.ts`, `supabase-event-lineup-datasource.ts`
+- `app-v2/app/admin/events/[id].tsx`, `EventLineupEditor.tsx`
+- `app-v2/src/features/import/admin/import-review-service.ts`
+
+Definition of Done:
+- `event_artists` junction mit Billing-Rollen und sort_order
+- Backfill + RLS + Contributor-Review-Schutz
+- Admin Lineup Editor (multi-select, reorder, roles)
+- Import approve persistiert alle `matchedArtistIds`
+- `events.artist_id` als deprecated compatibility field synchronisiert
+- Tests und `docs/ER-008_MULTI_ARTIST_LINEUP_FOUNDATION_COMPLETION_REPORT.md`
+
+---
+
+## ER-009
 Titel: CMS Venues
 
 Status:

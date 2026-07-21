@@ -103,6 +103,9 @@ function createStack(fixtureBody: string, adapterKey = 'rss') {
     bundle.importAdmin,
     eventRepo,
     audit,
+    {
+      replaceFromMatchedArtistIds: async () => [],
+    },
   );
   return { bundle, ops, review, events, orchestrator };
 }

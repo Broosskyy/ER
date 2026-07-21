@@ -165,6 +165,19 @@ export default function ReviewDetailScreen() {
   }
 
   const candidate = getEffectiveCandidate(record);
+  const rawArtistNames = candidate.artistNames ?? [];
+  const matchedArtistIds = [
+    ...new Set(
+      (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds ?? []).filter(Boolean),
+    ),
+  ];
+  const duplicateMatchedArtistIds = matchedArtistIds.filter(
+    (artistId, index) => matchedArtistIds.indexOf(artistId) !== index,
+  );
+  const unmatchedArtistNames =
+    rawArtistNames.length > matchedArtistIds.length
+      ? rawArtistNames.slice(matchedArtistIds.length)
+      : [];
 
   return (
     <AppScreen>
@@ -209,9 +222,42 @@ export default function ReviewDetailScreen() {
             <AppText style={styles.sectionTitle}>Matching</AppText>
             <AppText style={styles.meta}>City: {record.matchedCityId ?? '—'}</AppText>
             <AppText style={styles.meta}>Venue: {record.matchedVenueId ?? '—'}</AppText>
-            <AppText style={styles.meta}>
-              Artists: {record.matchedArtistIds?.join(', ') || '—'}
-            </AppText>
+            <AppText style={styles.label}>Imported artist names</AppText>
+            {rawArtistNames.length > 0 ? (
+              rawArtistNames.map((name, index) => (
+                <AppText key={`${name}-${index}`} style={styles.meta}>
+                  {index + 1}. {name}
+                </AppText>
+              ))
+            ) : (
+              <AppText style={styles.meta}>—</AppText>
+            )}
+            <AppText style={styles.label}>Matched canonical artists</AppText>
+            {matchedArtistIds.length > 0 ? (
+              matchedArtistIds.map((artistId, index) => (
+                <AppText key={`${artistId}-${index}`} style={styles.meta}>
+                  {index + 1}. {artistId}
+                  {index === 0 ? ' (headliner on approve)' : ' (support on approve)'}
+                </AppText>
+              ))
+            ) : (
+              <AppText style={styles.meta}>—</AppText>
+            )}
+            {unmatchedArtistNames.length > 0 ? (
+              <>
+                <AppText style={styles.label}>Unmatched names</AppText>
+                {unmatchedArtistNames.map((name, index) => (
+                  <AppText key={`unmatched-${name}-${index}`} style={styles.warning}>
+                    {name}
+                  </AppText>
+                ))}
+              </>
+            ) : null}
+            {duplicateMatchedArtistIds.length > 0 ? (
+              <AppText style={styles.warning}>
+                Duplicate matched artist IDs were removed: {duplicateMatchedArtistIds.join(', ')}
+              </AppText>
+            ) : null}
             <AppText style={styles.meta}>
               Genres: {record.matchedGenreIds?.join(', ') || '—'}
             </AppText>

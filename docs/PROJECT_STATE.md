@@ -1,6 +1,6 @@
 # Projektübersicht
 
-**Stand:** 20. Juli 2026  
+**Stand:** 21. Juli 2026  
 **Quelle:** Analyse des Repository-Inhalts (`C:/ER`)
 
 ## Projektname
@@ -34,7 +34,7 @@ Feature-Module unter `app-v2/src/features/`:
 | `home` | Home-Screen, Event-Karten, Collections-Ausschnitte, Standort-Header |
 | `location` | Nutzerstandort (Foreground, lokal persistiert, kein Supabase) |
 | `search` | Suche, Filter, Explore-Feed |
-| `events` | Event-Pipeline, Repository, Display-Modelle |
+| `events` | Event-Pipeline, Repository, Lineup (`event_artists`, ER-008), Display-Modelle |
 | `event-detail` | Event-Detail-Screen |
 | `collections` | Kuratierte Event-Sammlungen |
 | `saved` | Gespeicherte Events (Favoriten) |
@@ -79,7 +79,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 | Pfad | Beschreibung |
 |------|--------------|
-| `app-v2/supabase/migrations/` | 15 SQL-Migrationen (Schema, RLS, Grants, Contributor, ER-006 Hardening, ER-007 Artists) |
+| `app-v2/supabase/migrations/` | 16 SQL-Migrationen (Schema, RLS, Grants, Contributor, ER-006 Hardening, ER-007 Artists, ER-008 `event_artists`) |
 | `app-v2/scripts/staging/` | Staging-Validierung, Seed-SQL, Remote-Seed-Skript |
 | `app-v2/src/data/datasources/supabase/` | Supabase-Datasource-Implementierungen |
 | `app-v2/src/services/supabase/` | Supabase-Client und Auth-Service |
@@ -119,7 +119,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 - **Status:** Implementiert, **nur Web** (`Platform.OS !== 'web'` → `AdminWebOnlyState`)
 - **Ort:** Routen unter `app-v2/app/admin/*` in derselben Expo-App (keine separate Admin-App)
-- **Screens:** Login, Dashboard, Events CRUD, Artists CRUD (`/admin/artists`), Contributor Submissions (`/admin/events/review`), Import (Sources, Jobs, Review)
+- **Screens:** Login, Dashboard, Events CRUD (inkl. Multi-Artist-Lineup-Editor, ER-008), Artists CRUD (`/admin/artists`), Contributor Submissions (`/admin/events/review`), Import (Sources, Jobs, Review)
 - **Dokumentation:** `app-v2/docs/admin-web.md`
 
 ## iOS
