@@ -24,7 +24,7 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
 - **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
 - **Tests:** Vitest; `npm run release:check` laut Statusbericht PASS
-- **Offene Kernarbeit:** `BACKLOG.md` — nächster Fokus ER-006 (Admin Moderation & Publishing); Platform Foundation dokumentiert in ER-005.4
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-006 Done; nächster strategischer Fokus ER-007 (CMS Artists); Platform Foundation in ER-005.4
 
 ---
 
@@ -131,7 +131,7 @@ Source → Adapter → Orchestrator → import_records
 - **Adapter:** `json_ld`, `rss`, `atom`, `ical`, `csv`, `api_json` (`register-adapters.ts`)
 - **Services:** `ImportOrchestrator`, `ImportOperationsService`, `ImportReviewService`
 - **Trigger-Typen im Modell:** `manual`, `scheduled`, `webhook` — nur `manual` im Code umgesetzt
-- **Publish:** Approve legt Event als `draft` an; Consumer: Draft → `review` via Submit; Withdraw `review` → `draft`; Admin veröffentlicht (`published`, ER-006)
+- **Publish:** Approve legt Event als `draft` an; Consumer: Draft → `review` via Submit; Withdraw `review` → `draft`; Admin moderiert via `/admin/events/review` (`review` → `published` / `rejected`, ER-006 Done)
 - **Consumer Event Flow:** Create Hub → `/create/event` → Edit → Preview → Submit (`draft` → `review`) → **Meine Events** (`/profile/events`); Social Links in eigenen Spalten; Venue via `venue_id` oder strukturierter Vorschlag (`venue_name`/`venue_city`)
 
 ---

@@ -514,7 +514,7 @@ Aus dokumentiertem Projektstand (`PROJECT_STATUS_REPORT_AFTER_LAST_11_SPRINTS.md
 | Home-Header Standort & Auth-abhängige Aktionen | Erledigt (ER-005.2) |
 | Auth Callback, Deep Linking & E-Mail-Bestätigung | Erledigt (ER-005.3) |
 | Platform Architecture Foundation | Erledigt (ER-005.4) |
-| Admin-Moderation & Publishing | Offen (ER-006) |
+| Admin-Moderation & Publishing | Done (ER-006) |
 | Autosave für Event-Entwürfe | Offen |
 | Benutzername / Anzeigename | Offen (Plan: `app-v2/docs/auth-username-plan.md`) |
 | Kompletter UX-Polish / Microinteractions | Offen |

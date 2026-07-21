@@ -4,8 +4,10 @@ import {
   canAccessAdmin,
   canEditEvents,
   canManageSources,
+  canModerateContributorEvents,
   canPublishEvents,
   canReviewImports,
+  canViewContributorReviewQueue,
   canViewEvents,
   canViewImportJobs,
   canViewSources,
@@ -71,6 +73,9 @@ describe('admin permissions matrix', () => {
   it('admin and owner can publish events', () => {
     expect(canPublishEvents('admin')).toBe(true);
     expect(canPublishEvents('owner')).toBe(true);
+    expect(canModerateContributorEvents('admin')).toBe(true);
+    expect(canModerateContributorEvents('editor')).toBe(false);
+    expect(canViewContributorReviewQueue('viewer')).toBe(true);
   });
 
   it('denies all permissions for null role', () => {
