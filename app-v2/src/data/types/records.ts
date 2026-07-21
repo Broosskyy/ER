@@ -29,13 +29,36 @@ export interface CityRecord {
 
 export interface VenueRecord {
   id: string;
+  slug: string;
   name: string;
-  address?: string;
-  cityId: string;
+  street?: string;
+  houseNumber?: string;
+  postalCode?: string;
+  city: string;
+  state?: string;
+  country: string;
   latitude?: number;
   longitude?: number;
   website?: string;
+  capacity?: number;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+  /** @deprecated Legacy combined address; use street/houseNumber. */
+  address?: string;
+  /** @deprecated Legacy cities FK; canonical city is `city`. */
+  cityId?: string;
+  /** @deprecated Social link retained for compatibility. */
   instagram?: string;
+}
+
+export interface VenueListParams {
+  query?: string;
+  city?: string;
+  country?: string;
+  sortBy?: 'name' | 'updated' | 'city';
+  page?: number;
+  pageSize?: number;
 }
 
 export interface ArtistRecord {

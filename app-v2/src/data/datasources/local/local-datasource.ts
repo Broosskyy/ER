@@ -42,6 +42,10 @@ import {
   createLocalArtistDatasource,
 } from '@/data/datasources/local/local-artist-datasource';
 import {
+  buildLocalVenuesFromEvents,
+  createLocalVenueDatasource,
+} from '@/data/datasources/local/local-venue-datasource';
+import {
   loadPersistedContributorEvents,
   savePersistedContributorEvents,
 } from '@/data/datasources/local/local-contributor-event-storage';
@@ -53,6 +57,21 @@ function mapPipelineStatusToAdmin(status: EventStatus): AdminEventStatus {
 
 function mapAdminStatusToPipeline(status: AdminEventStatus): EventStatus {
   return status;
+}
+
+function syncAdminEventVenueIds(
+  adminEvents: AdminEventRecord[],
+  events: Event[],
+  venues: VenueRecord[],
+): void {
+  const venueByName = new Map(venues.map((venue) => [venue.name.toLowerCase(), venue.id]));
+  adminEvents.forEach((adminEvent, index) => {
+    const event = events[index];
+    if (!event) {
+      return;
+    }
+    adminEvent.venueId = venueByName.get(event.venue.toLowerCase());
+  });
 }
 
 function eventToAdminRecord(event: Event): AdminEventRecord {
@@ -74,9 +93,14 @@ function eventToAdminRecord(event: Event): AdminEventRecord {
   };
 }
 
-function adminRecordToEvent(record: AdminEventRecord, existing?: Event): Event {
+function adminRecordToEvent(
+  record: AdminEventRecord,
+  existing?: Event,
+  venues: VenueRecord[] = [],
+): Event {
   const genre = filterConfig.genreOptions.find((g) => g.id === record.genreId);
   const city = filterConfig.cityOptions.find((c) => c.id === record.cityId);
+  const venue = venues.find((entry) => entry.id === record.venueId);
 
   return {
     id: record.id,
@@ -88,12 +112,12 @@ function adminRecordToEvent(record: AdminEventRecord, existing?: Event): Event {
     startDateTime: record.startDate,
     endDateTime: record.endDate,
     timezone: existing?.timezone ?? 'Europe/Berlin',
-    venue: existing?.venue ?? 'TBA',
-    address: existing?.address,
-    city: city?.value ?? existing?.city ?? 'Köln',
-    country: existing?.country ?? 'Germany',
-    latitude: existing?.latitude,
-    longitude: existing?.longitude,
+    venue: venue?.name ?? existing?.venue ?? record.venueName ?? 'TBA',
+    address: venue?.street ?? venue?.address ?? existing?.address,
+    city: venue?.city ?? city?.value ?? existing?.city ?? record.venueCity ?? 'Köln',
+    country: venue?.country ?? existing?.country ?? 'Germany',
+    latitude: venue?.latitude ?? existing?.latitude,
+    longitude: venue?.longitude ?? existing?.longitude,
     genres: genre ? [genre.label] : existing?.genres ?? [],
     artists: existing?.artists ?? [],
     lineup: existing?.lineup,
@@ -162,20 +186,7 @@ function buildLocalSources(): SourceRecord[] {
 }
 
 function buildLocalVenues(events: Event[]): VenueRecord[] {
-  const seen = new Map<string, VenueRecord>();
-  for (const event of events) {
-    if (!seen.has(event.venue)) {
-      seen.set(event.venue, {
-        id: `venue-${seen.size + 1}`,
-        name: event.venue,
-        address: event.address,
-        cityId: filterConfig.defaultCityId,
-        latitude: event.latitude,
-        longitude: event.longitude,
-      });
-    }
-  }
-  return Array.from(seen.values());
+  return buildLocalVenuesFromEvents(events, 'Köln', 'Germany');
 }
 
 function buildLocalArtists(events: Event[]): ArtistRecord[] {
@@ -246,6 +257,7 @@ export class LocalStore {
     this.genres = buildLocalGenres();
     this.cities = buildLocalCities();
     this.venues = buildLocalVenues(this.events);
+    syncAdminEventVenueIds(this.adminEvents, this.events, this.venues);
     this.artists = buildLocalArtists(this.events);
     this.eventArtists = buildLocalEventArtistsFromEvents(this.events, this.artists);
     syncAdminEventPrimaryArtists(this.adminEvents, this.eventArtists);
@@ -279,7 +291,7 @@ export async function hydrateLocalContributorEvents(store = getLocalStore()): Pr
     }
 
     store.adminEvents.push(record);
-    const pipelineEvent = adminRecordToEvent(record);
+    const pipelineEvent = adminRecordToEvent(record, undefined, store.venues);
     if (!store.events.some((event) => event.id === record.id)) {
       store.events.push(pipelineEvent);
     }
@@ -369,7 +381,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
     async saveEvent(record) {
       await ensureLocalContributorEventsHydrated(store);
       const existing = store.events.find((event) => event.id === record.id);
-      const mapped = adminRecordToEvent(record, existing);
+      const mapped = adminRecordToEvent(record, existing, store.venues);
       const adminRecord = { ...record, updatedAt: new Date().toISOString() };
       const eventIndex = store.events.findIndex((event) => event.id === record.id);
       const adminIndex = store.adminEvents.findIndex((event) => event.id === record.id);
@@ -442,11 +454,12 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
       store.cities = items;
     },
   );
-  const venues: VenueDatasource = createCrudDatasource(
+  const venues: VenueDatasource = createLocalVenueDatasource(
     () => store.venues,
     (items) => {
       store.venues = items;
     },
+    () => store.adminEvents,
   );
   const artists: ArtistDatasource = createLocalArtistDatasource(
     () => store.artists,

@@ -90,6 +90,9 @@ export function VenueAutocomplete({
               ]}
             >
               <AppText style={styles.suggestionText}>{venue.name}</AppText>
+              <AppText style={styles.suggestionMeta}>
+                {[venue.city, venue.country].filter(Boolean).join(', ')}
+              </AppText>
             </Pressable>
           ))}
         </View>
@@ -133,6 +136,10 @@ const styles = StyleSheet.create({
   suggestionText: {
     ...textRoles.body,
     color: colors.textPrimary,
+  },
+  suggestionMeta: {
+    ...textRoles.metadata,
+    color: colors.textSecondary,
   },
   freeTextHint: {
     ...textRoles.metadata,

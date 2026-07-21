@@ -19,6 +19,8 @@ const requiredChecks = [
   'enforce_admin_artist_sensitive_rules',
   'anon_read_published_event_lineups',
   'enforce_event_artists_mutation_rules',
+  'anon_read_public_event_venues',
+  'admin_read_venues',
   'completed_with_warnings',
   'fetched_count',
   'validation_errors',

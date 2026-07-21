@@ -3,6 +3,7 @@ import { NotificationRepository } from '@/data/repositories/notification-reposit
 import {
   AdminArtistRepository,
   AdminEventRepository,
+  AdminVenueRepository,
   ArtistRepository,
   CityRepository,
   CollectionRepository,
@@ -29,6 +30,7 @@ import {
 } from '@/data/repositories/import-admin-repository';
 import { EventLineupService } from '@/features/events/services/event-lineup-service';
 import { ArtistService } from '@/features/artists/services/artist-service';
+import { VenueService } from '@/features/venues/services/venue-service';
 import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
 import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { ImportAuditService } from '@/features/import/admin/import-audit-service';
@@ -46,6 +48,8 @@ export const adminEventRepository = new AdminEventRepository();
 export const genreRepository = new GenreRepository();
 export const cityRepository = new CityRepository();
 export const venueRepository = new VenueRepository();
+export const adminVenueRepository = new AdminVenueRepository();
+export const venueService = new VenueService(adminVenueRepository);
 export const artistRepository = new ArtistRepository();
 export const adminArtistRepository = new AdminArtistRepository();
 export const artistService = new ArtistService(artistRepository, adminArtistRepository);

@@ -348,10 +348,43 @@ Definition of Done:
 ---
 
 ## ER-009
-Titel: CMS Venues
+Titel: Venue Admin CMS
 
 Status:
-- Todo
+- Done
+
+Priorität: Mittel
+
+Beschreibung:
+Kanonical Venue-Domain mit erweitertem Datenmodell, Admin-CMS, Service-Layer, Event-Editor-Venue-Picker, Import-Review-Anreicherung, RLS (öffentlich nur über published Events), Duplicate-Detection und Delete-Schutz.
+
+Abhängigkeiten:
+- ER-008 (Multi-Artist Lineup Foundation)
+
+Betroffene Module:
+- `app-v2/supabase/migrations/20260735000000_er009_venue_admin_foundation.sql`
+- `app-v2/src/features/venues/`
+- `app-v2/app/admin/venues/`
+- `app-v2/src/features/admin/components/VenuePicker.tsx`
+- `app-v2/app/admin/events/[id].tsx`
+
+Definition of Done:
+- Extended `venues` schema + slug + backfill
+- `VenueService` + `AdminVenueRepository`
+- Admin Venue CRUD (`/admin/venues`, `/admin/venues/[id]`)
+- Event editor canonical venue picker
+- Import review venue resolution display
+- Tests und `docs/ER-009_VENUE_ADMIN_CMS_COMPLETION_REPORT.md`
+
+Nächster Fokus: **ER-010** (siehe Architektur-Roadmap / Produkt-Backlog)
+
+---
+
+## ER-010
+Titel: CMS Venues (superseded — delivered in ER-009)
+
+Status:
+- Cancelled / superseded by ER-009
 
 Priorität: Mittel
 

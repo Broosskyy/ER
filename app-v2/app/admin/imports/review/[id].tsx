@@ -12,7 +12,7 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { ImportRecord } from '@/features/import/models/types';
-import { importReviewService } from '@/data/repositories/registry';
+import { importReviewService, venueRepository } from '@/data/repositories/registry';
 import {
   AdminErrorState,
   AdminLoadingState,
@@ -33,6 +33,7 @@ export default function ReviewDetailScreen() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [showRaw, setShowRaw] = useState(false);
+  const [matchedVenueName, setMatchedVenueName] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -42,6 +43,14 @@ export default function ReviewDetailScreen() {
       if (loaded) {
         setRecord(loaded);
         setTitle(getEffectiveCandidate(loaded).title);
+        const matchedVenueId =
+          loaded.reviewerEdits?.matchedVenueId ?? loaded.matchedVenueId ?? undefined;
+        if (matchedVenueId) {
+          const venue = await venueRepository.getById(matchedVenueId);
+          setMatchedVenueName(venue ? `${venue.name} (${venue.city}, ${venue.country})` : null);
+        } else {
+          setMatchedVenueName(null);
+        }
       }
     } catch (cause) {
       setError(getErrorMessage(cause));
@@ -221,7 +230,12 @@ export default function ReviewDetailScreen() {
           <View style={styles.card}>
             <AppText style={styles.sectionTitle}>Matching</AppText>
             <AppText style={styles.meta}>City: {record.matchedCityId ?? '—'}</AppText>
-            <AppText style={styles.meta}>Venue: {record.matchedVenueId ?? '—'}</AppText>
+            <AppText style={styles.label}>Imported venue</AppText>
+            <AppText style={styles.meta}>{candidate.venueName ?? '—'}</AppText>
+            <AppText style={styles.label}>Matched canonical venue</AppText>
+            <AppText style={styles.meta}>
+              {matchedVenueName ?? record.matchedVenueId ?? 'Unmatched'}
+            </AppText>
             <AppText style={styles.label}>Imported artist names</AppText>
             {rawArtistNames.length > 0 ? (
               rawArtistNames.map((name, index) => (

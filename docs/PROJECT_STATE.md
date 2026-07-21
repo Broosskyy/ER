@@ -79,7 +79,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 | Pfad | Beschreibung |
 |------|--------------|
-| `app-v2/supabase/migrations/` | 16 SQL-Migrationen (Schema, RLS, Grants, Contributor, ER-006 Hardening, ER-007 Artists, ER-008 `event_artists`) |
+| `app-v2/supabase/migrations/` | 17 SQL-Migrationen (… ER-008 `event_artists`, ER-009 Venue CMS) |
 | `app-v2/scripts/staging/` | Staging-Validierung, Seed-SQL, Remote-Seed-Skript |
 | `app-v2/src/data/datasources/supabase/` | Supabase-Datasource-Implementierungen |
 | `app-v2/src/services/supabase/` | Supabase-Client und Auth-Service |
@@ -119,7 +119,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 - **Status:** Implementiert, **nur Web** (`Platform.OS !== 'web'` → `AdminWebOnlyState`)
 - **Ort:** Routen unter `app-v2/app/admin/*` in derselben Expo-App (keine separate Admin-App)
-- **Screens:** Login, Dashboard, Events CRUD (inkl. Multi-Artist-Lineup-Editor, ER-008), Artists CRUD (`/admin/artists`), Contributor Submissions (`/admin/events/review`), Import (Sources, Jobs, Review)
+- **Screens:** Login, Dashboard, Events CRUD (inkl. Lineup + Venue-Picker), Venues CRUD (`/admin/venues`, ER-009), Artists CRUD, Contributor Submissions, Import
 - **Dokumentation:** `app-v2/docs/admin-web.md`
 
 ## iOS
