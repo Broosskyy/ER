@@ -285,28 +285,33 @@ Definition of Done:
 ---
 
 ## ER-007
-Titel: CMS Artists
+Titel: Artist Domain Foundation
 
 Status:
-- Todo
+- Done
 
 Priorität: Mittel
 
 Beschreibung:
-Admin-Oberfläche und Repositories für Künstler-Verwaltung (`artists`-Tabelle). Aktuell keine dedizierten Admin-Screens für Artists; RLS erlaubt Admin-Volzugriff via `admin_manage_artists`.
+Artists als kanonische, wiederverwendbare Plattform-Entitäten mit Admin-CMS, Service-Layer, erweitertem Datenmodell und rollenbasierter RLS. Keine Event-Lineup-Migration in diesem Epic.
 
 Abhängigkeiten:
-- ER-003
+- ER-006 (Platform Hardening)
 
 Betroffene Module:
-- `app-v2/app/admin/` (neue Routen)
-- `app-v2/src/data/repositories/`
-- `app-v2/src/data/datasources/supabase/`
+- `app-v2/app/admin/artists/`
+- `app-v2/src/features/artists/`
+- `app-v2/src/data/repositories/`, `datasources/`, `mappers/`
+- `app-v2/supabase/migrations/20260733000000_er007_artist_domain_foundation.sql`
 
 Definition of Done:
-- CRUD für Artists im Admin-Bereich
-- Repository-Pattern wie bei Events
-- RLS und Grants unverändert korrekt (Admin-only Schreiben)
+- Admin Artist CRUD (`/admin/artists`, `/admin/artists/[id]`)
+- `ArtistService` + `AdminArtistRepository` + public `ArtistRepository`
+- Lifecycle (`draft`/`published`/`archived`) und Verification getrennt
+- RLS: öffentlich nur `published`; Schreiben rollenbasiert
+- Tests und `docs/ER-007_ARTIST_DOMAIN_FOUNDATION_COMPLETION_REPORT.md`
+
+Nächster Fokus: **ER-008 Multi-Artist Event Lineup** (`event_artists` Junction)
 
 ---
 

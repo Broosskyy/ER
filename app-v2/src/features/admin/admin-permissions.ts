@@ -80,6 +80,34 @@ export function canViewLogs(role: AdminRole | null): boolean {
   return hasPermission(role, 'logs:read');
 }
 
+export function canViewArtists(role: AdminRole | null): boolean {
+  return canAccessAdmin(role);
+}
+
+export function canEditArtists(role: AdminRole | null): boolean {
+  return canEditEvents(role);
+}
+
+export function canCreateArtists(role: AdminRole | null): boolean {
+  return canEditArtists(role);
+}
+
+export function canArchiveArtists(role: AdminRole | null): boolean {
+  return canPublishEvents(role);
+}
+
+export function canPublishArtists(role: AdminRole | null): boolean {
+  return canPublishEvents(role);
+}
+
+export function canVerifyArtists(role: AdminRole | null): boolean {
+  return canPublishEvents(role);
+}
+
+export function canDeleteArtists(role: AdminRole | null): boolean {
+  return canEditArtists(role);
+}
+
 export function canManageAdminSettings(role: AdminRole | null): boolean {
   if (!role) {
     return false;
@@ -101,6 +129,9 @@ export function canAccessAdminRoute(
     case 'events-review':
     case 'events-review-detail':
       return canViewContributorReviewQueue(role);
+    case 'artists':
+    case 'artist-detail':
+      return canViewArtists(role);
     case 'imports':
       return canViewImports(role);
     case 'sources':

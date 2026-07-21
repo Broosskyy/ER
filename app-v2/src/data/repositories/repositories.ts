@@ -5,6 +5,7 @@ import type {
   AdminEventListParams,
   AdminEventRecord,
   ArtistRecord,
+  ArtistListParams,
   CityRecord,
   CollectionRecord,
   DashboardStats,
@@ -291,8 +292,38 @@ export class VenueRepository {
 }
 
 export class ArtistRepository {
+  getPublished(): Promise<ArtistRecord[]> {
+    return getDatasourceBundle().artists.getPublished();
+  }
+
+  getPublishedById(id: string): Promise<ArtistRecord | null> {
+    return getDatasourceBundle().artists.getPublishedById(id);
+  }
+
+  getPublishedBySlug(slug: string): Promise<ArtistRecord | null> {
+    return getDatasourceBundle().artists.getPublishedBySlug(slug);
+  }
+
   getAll(): Promise<ArtistRecord[]> {
     return getDatasourceBundle().artists.getAll();
+  }
+}
+
+export class AdminArtistRepository {
+  list(params: ArtistListParams): Promise<PaginatedResult<ArtistRecord>> {
+    return getDatasourceBundle().artists.list(params);
+  }
+
+  getById(id: string): Promise<ArtistRecord | null> {
+    return getDatasourceBundle().artists.getById(id);
+  }
+
+  getAll(): Promise<ArtistRecord[]> {
+    return getDatasourceBundle().artists.getAll();
+  }
+
+  save(record: ArtistRecord): Promise<ArtistRecord> {
+    return getDatasourceBundle().artists.save(record);
   }
 }
 

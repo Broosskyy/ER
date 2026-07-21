@@ -1,4 +1,8 @@
 import { EVENT_STATUSES, type EventStatus } from '@/features/events/types/event-status';
+import type {
+  ArtistLifecycleStatus,
+  ArtistVerificationStatus,
+} from '@/features/artists/types/artist-status';
 
 /** Admin / database event lifecycle statuses (aligned with domain `EventStatus`). */
 export const ADMIN_EVENT_STATUSES = EVENT_STATUSES;
@@ -37,9 +41,29 @@ export interface VenueRecord {
 export interface ArtistRecord {
   id: string;
   name: string;
-  spotify?: string;
-  instagram?: string;
+  slug: string;
+  bio?: string;
+  imageUrl?: string;
+  genreIds: string[];
+  country?: string;
+  city?: string;
   website?: string;
+  instagram?: string;
+  facebook?: string;
+  soundcloud?: string;
+  spotify?: string;
+  status: ArtistLifecycleStatus;
+  verificationStatus: ArtistVerificationStatus;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ArtistListParams {
+  query?: string;
+  status?: ArtistLifecycleStatus | 'all';
+  sortBy?: 'name' | 'updated';
+  page?: number;
+  pageSize?: number;
 }
 
 export interface CollectionRecord {
@@ -118,5 +142,6 @@ export interface DashboardStats {
   cities: number;
   genres: number;
   venues: number;
+  artists: number;
   collections: number;
 }

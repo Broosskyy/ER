@@ -21,7 +21,7 @@ export async function loadMatchingCatalog(): Promise<MatchingCatalog> {
   const [cities, venues, artists, genres, publishedEvents] = await Promise.all([
     bundle.cities.getActive(),
     bundle.venues.getAll(),
-    bundle.artists.getAll(),
+    bundle.artists.getPublished(),
     bundle.genres.getActive(),
     bundle.events.getPublishedEvents(),
   ]);

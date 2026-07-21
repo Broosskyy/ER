@@ -19,12 +19,12 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **Daten:** Standard ist lokaler Mock (`EXPO_PUBLIC_USE_SUPABASE=false`); Supabase-Anbindung implementiert, Remote-Staging laut Projektstatus nicht befüllt
 - **Consumer-App:** Home, Search, Saved, Profile, Event-Detail funktionsfähig; Map-Tab = Platzhalter; Create Hub, **Meine Events**, Activity-Panel (nur eingeloggt im Home-Header, ER-005.2)
 - **Standort:** Foreground-Location via `expo-location`; lokal in AsyncStorage (`app.userLocation`); nur nach Nutzeraktion; keine Event-Filterung (ER-005.2)
-- **Admin:** Web-only unter `/admin` — Events-CRUD, Contributor-Moderation (`/admin/events/review`), Import (Sources, Jobs, Review)
+- **Admin:** Web-only unter `/admin` — Events-CRUD, Contributor-Moderation (`/admin/events/review`), **Artist-CMS** (`/admin/artists`, ER-007), Import (Sources, Jobs, Review)
 - **Auth:** Globaler `AuthProvider`; Login/Register; E-Mail-Bestätigung mit `/auth/callback`, Resend, Passwort-Reset (ER-005.3)
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
 - **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
 - **Tests:** Vitest; `npm run release:check` laut Statusbericht PASS
-- **Offene Kernarbeit:** `BACKLOG.md` — ER-005.5 Done, ER-006 Done (inkl. Platform Hardening); nächster strategischer Fokus ER-007 (CMS Artists); Platform Foundation in ER-005.4
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-007 Done (Artist Domain Foundation); nächster strategischer Fokus ER-008 (Multi-Artist Lineup); Platform Foundation in ER-005.4
 
 ---
 
@@ -84,8 +84,9 @@ Screens (app/)
 | `my-events` | Eigene Events listen, filtern, zurückziehen |
 | `auth` | Globaler Auth-Context |
 | `i18n` | Internationalisierung (de/en) |
-| `admin` | Admin-Shell, Guards, Permissions |
+| `admin` | Admin-Shell, Guards, Permissions, Artist-CMS |
 | `import` | Adapter, Matching, Review, Operations |
+| `artists` | Artist-Domain, Validation, Service (ER-007) |
 
 Querschnitt: `src/data/` (Repositories, Datasources, Mapper), `src/services/supabase/` (Client, Auth).
 
@@ -107,7 +108,7 @@ Querschnitt: `src/data/` (Repositories, Datasources, Mapper), `src/services/supa
 
 ## Datenbank
 
-**Ort:** `app-v2/supabase/migrations/` (14 Migrationen, chronologisch `20260719`–`20260732`)
+**Ort:** `app-v2/supabase/migrations/` (15 Migrationen, chronologisch `20260719`–`20260733`)
 
 **Tabellen:** `events`, `genres`, `cities`, `venues`, `artists`, `collections`, `sources`, `import_jobs`, `import_records`, `import_logs`, `import_audit_logs`
 
@@ -115,7 +116,7 @@ Querschnitt: `src/data/` (Repositories, Datasources, Mapper), `src/services/supa
 **Views / Trigger:** keine  
 **Storage-Buckets:** `events`, `artists`, `venues`, `collections` (öffentlich lesbar)
 
-**RLS:** Aktiv auf allen Tabellen. Anonym: nur `published` Events + aktive Referenzdaten. Admin: `is_admin()` für Schreibzugriff. Grants: `SELECT` für `anon`/`authenticated`; `INSERT/UPDATE/DELETE` für `authenticated` (Migration `20260726000000`).
+**RLS:** Aktiv auf allen Tabellen. Anonym: nur `published` Events + `published` Artists + aktive Referenzdaten. Admin: `is_admin()` für CMS-Lesen; rollenbasierte Schreib-Policies (Events ER-006, Artists ER-007).
 
 **Seed:** `app-v2/scripts/staging/seed-staging-app-data.sql` (keine Supabase-Migration).
 

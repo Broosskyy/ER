@@ -46,8 +46,9 @@ Feature-Module unter `app-v2/src/features/`:
 | `my-events` | Eigene Events listen, filtern, zurückziehen |
 | `auth` | Globaler Auth-Context und Routen-Hilfen |
 | `i18n` | Internationalisierung (de/en) |
-| `admin` | Admin-Web-Shell, Guards, Berechtigungen |
+| `admin` | Admin-Web-Shell, Guards, Berechtigungen, Artist-CMS |
 | `import` | Import-Engine (Adapter, Matching, Review, Operations) |
+| `artists` | Artist-Domain, Validation, Service, Admin-CMS (ER-007) |
 
 Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src/services/supabase/` (Client, Auth)
 
@@ -78,7 +79,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 | Pfad | Beschreibung |
 |------|--------------|
-| `app-v2/supabase/migrations/` | 14 SQL-Migrationen (Schema, RLS, Grants, Contributor, ER-006 Hardening) |
+| `app-v2/supabase/migrations/` | 15 SQL-Migrationen (Schema, RLS, Grants, Contributor, ER-006 Hardening, ER-007 Artists) |
 | `app-v2/scripts/staging/` | Staging-Validierung, Seed-SQL, Remote-Seed-Skript |
 | `app-v2/src/data/datasources/supabase/` | Supabase-Datasource-Implementierungen |
 | `app-v2/src/services/supabase/` | Supabase-Client und Auth-Service |
@@ -118,7 +119,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 - **Status:** Implementiert, **nur Web** (`Platform.OS !== 'web'` → `AdminWebOnlyState`)
 - **Ort:** Routen unter `app-v2/app/admin/*` in derselben Expo-App (keine separate Admin-App)
-- **Screens:** Login, Dashboard, Events CRUD, Contributor Submissions (`/admin/events/review`), Import (Sources, Jobs, Review)
+- **Screens:** Login, Dashboard, Events CRUD, Artists CRUD (`/admin/artists`), Contributor Submissions (`/admin/events/review`), Import (Sources, Jobs, Review)
 - **Dokumentation:** `app-v2/docs/admin-web.md`
 
 ## iOS
@@ -237,7 +238,7 @@ Row Level Security ist auf allen `public`-Tabellen aktiviert (Initial-Schema + I
 | `anon_read_active_cities` | `cities` | SELECT, `active = true` |
 | `anon_read_active_collections` | `collections` | SELECT, `active = true` |
 | `anon_read_venues` | `venues` | SELECT |
-| `anon_read_artists` | `artists` | SELECT |
+| `anon_read_published_artists` | `artists` | SELECT, nur `status = 'published'` |
 
 ### Admin (`is_admin()`)
 
@@ -250,7 +251,10 @@ Row Level Security ist auf allen `public`-Tabellen aktiviert (Initial-Schema + I
 | `admin_manage_genres` | `genres` | ALL |
 | `admin_manage_cities` | `cities` | ALL |
 | `admin_manage_venues` | `venues` | ALL |
-| `admin_manage_artists` | `artists` | ALL |
+| `admin_read_artists` | `artists` | SELECT |
+| `admin_insert_artists` | `artists` | INSERT (`editor`+; publish on create nur `admin`/`owner`) |
+| `admin_update_artists` | `artists` | UPDATE (`editor`+; lifecycle/verify via Trigger) |
+| `admin_delete_artists` | `artists` | DELETE (`editor`+) |
 | `admin_manage_collections` | `collections` | ALL |
 | `admin_read_sources` | `sources` | SELECT |
 | `admin_manage_sources` | `sources` | ALL |
@@ -301,7 +305,7 @@ Row Level Security ist auf allen `public`-Tabellen aktiviert (Initial-Schema + I
 | `genres` | Musik-Genres |
 | `cities` | Städte |
 | `venues` | Veranstaltungsorte |
-| `artists` | Künstler |
+| `artists` | Künstler (ER-007: slug, lifecycle, verification, genres[], social links) |
 | `collections` | Kuratierte Sammlungen |
 | `sources` | Event-Quellen |
 | `events` | Events (`status`: draft, review, published, rejected, archived; Social: `website_url`, `instagram_url`, `facebook_url`; Venue-Vorschlag: `venue_name`, `venue_city`) |
