@@ -1,4 +1,5 @@
 import { MemoryCache } from '@/core/cache/memory-cache';
+import { AppError } from '@/core/errors/app-error';
 import { withRetry } from '@/core/errors/with-retry';
 import type {
   AdminEventListParams,
@@ -25,6 +26,15 @@ import {
 import type { EventWithCoordinates } from '@/features/events/types/event';
 import { isPublishedStatus } from '@/features/events/types/event-status';
 import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
+import {
+  assertValidAdminEditorialTransition,
+  canAdminModerateTransition,
+  isContributorReviewEvent,
+} from '@/features/admin/constants/admin-event-status';
+
+export interface AdminEventSaveContext {
+  source?: 'cms' | 'moderation';
+}
 
 export interface EventSearchFilters {
   query?: string;
@@ -206,11 +216,52 @@ export class AdminEventRepository {
     return events.find((event) => event.id === id) ?? null;
   }
 
-  async save(record: AdminEventRecord): Promise<AdminEventRecord> {
+  async save(
+    record: AdminEventRecord,
+    context: AdminEventSaveContext = { source: 'cms' },
+  ): Promise<AdminEventRecord> {
+    const existing = record.id ? await this.getById(record.id) : null;
+
+    if (context.source === 'moderation') {
+      const fresh = existing ?? (await this.getById(record.id));
+      if (!fresh || fresh.status !== 'review') {
+        throw new AppError('Event is no longer in review. Refresh and try again.', {
+          code: 'VALIDATION',
+        });
+      }
+
+      if (!canAdminModerateTransition(fresh.status, record.status)) {
+        throw new AppError('Event cannot be moderated from its current status.', {
+          code: 'VALIDATION',
+        });
+      }
+    } else if (existing && isContributorReviewEvent(existing)) {
+      throw new AppError(
+        'Contributor submissions in review must be moderated through the review workflow.',
+        { code: 'VALIDATION' },
+      );
+    } else if (existing && record.status !== existing.status) {
+      try {
+        assertValidAdminEditorialTransition(existing.status, record.status);
+      } catch (cause) {
+        throw new AppError(cause instanceof Error ? cause.message : 'Invalid status transition.', {
+          code: 'VALIDATION',
+        });
+      }
+    }
+
     return getDatasourceBundle().events.saveEvent(record);
   }
 
   async delete(id: string): Promise<void> {
+    const existing = await this.getById(id);
+    if (existing && isContributorReviewEvent(existing)) {
+      throw new AppError(
+        'Contributor submissions in review cannot be deleted or archived outside moderation.',
+        { code: 'VALIDATION' },
+      );
+    }
+
     return getDatasourceBundle().events.deleteEvent(id);
   }
 }

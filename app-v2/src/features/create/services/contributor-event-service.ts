@@ -211,17 +211,23 @@ export class ContributorEventService {
   }
 
   async withdrawFromReview(input: ContributorEventWithdrawInput): Promise<AdminEventRecord> {
-    const existing = assertOwnedReviewEvent(
-      await this.getEvent(input.eventId, input.userId),
-      input.userId,
-    );
+    const fresh = await this.getEvent(input.eventId, input.userId);
+    if (!fresh || fresh.createdBy !== input.userId) {
+      throw new AppError('Event not found.', { code: 'NOT_FOUND' });
+    }
 
-    if (!canContributorTransition(existing.status, 'draft')) {
+    if (fresh.status !== 'review') {
+      throw new AppError('Event is no longer in review. Refresh and try again.', {
+        code: 'VALIDATION',
+      });
+    }
+
+    if (!canContributorTransition(fresh.status, 'draft')) {
       throw new AppError('Event cannot be withdrawn from review.', { code: 'VALIDATION' });
     }
 
     const record: AdminEventRecord = {
-      ...existing,
+      ...fresh,
       status: 'draft',
       updatedAt: new Date().toISOString(),
     };

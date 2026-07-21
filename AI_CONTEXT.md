@@ -24,7 +24,7 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
 - **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
 - **Tests:** Vitest; `npm run release:check` laut Statusbericht PASS
-- **Offene Kernarbeit:** `BACKLOG.md` — ER-005.5 Done, ER-006 Done; nächster strategischer Fokus ER-007 (CMS Artists); Platform Foundation in ER-005.4
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-005.5 Done, ER-006 Done (inkl. Platform Hardening); nächster strategischer Fokus ER-007 (CMS Artists); Platform Foundation in ER-005.4
 
 ---
 
@@ -107,7 +107,7 @@ Querschnitt: `src/data/` (Repositories, Datasources, Mapper), `src/services/supa
 
 ## Datenbank
 
-**Ort:** `app-v2/supabase/migrations/` (12 Migrationen, chronologisch `20260719`–`20260730`)
+**Ort:** `app-v2/supabase/migrations/` (14 Migrationen, chronologisch `20260719`–`20260732`)
 
 **Tabellen:** `events`, `genres`, `cities`, `venues`, `artists`, `collections`, `sources`, `import_jobs`, `import_records`, `import_logs`, `import_audit_logs`
 

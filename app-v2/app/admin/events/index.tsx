@@ -25,6 +25,7 @@ import {
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
 import { isContributorSubmission } from '@/features/admin/constants/admin-event-status';
+import { canEditEvents } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 
 const STATUS_FILTERS: Array<AdminEventStatus | 'all'> = [
@@ -38,7 +39,7 @@ const STATUS_FILTERS: Array<AdminEventStatus | 'all'> = [
 
 export default function AdminEventsScreen() {
   const router = useRouter();
-  const { session } = useAdminAuth();
+  const { session, role } = useAdminAuth();
   const [events, setEvents] = useState<AdminEventRecord[]>([]);
   const [reviewCount, setReviewCount] = useState(0);
   const [query, setQuery] = useState('');
@@ -92,7 +93,9 @@ export default function AdminEventsScreen() {
         <View style={styles.header}>
           <SecondaryButton label="Back" onPress={() => router.back()} />
           <AppText style={styles.title}>Events</AppText>
-          <PrimaryButton label="New" onPress={() => router.push('/admin/events/new')} />
+          {canEditEvents(role) ? (
+            <PrimaryButton label="New" onPress={() => router.push('/admin/events/new')} />
+          ) : null}
         </View>
         {reviewCount > 0 ? (
           <Pressable

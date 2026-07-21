@@ -567,7 +567,7 @@ Definition of Done:
 | Auth Callback & E-Mail-Bestätigung | Erledigt (ER-005.3) |
 | Platform Architecture Foundation | Erledigt (ER-005.4) |
 | Core Workflow Reliability | Erledigt (ER-005.5) |
-| Admin-Moderation & Publishing | Offen (ER-006) |
+| Admin-Moderation & Publishing | Erledigt (ER-006 + Platform Hardening) |
 | Autosave | Offen |
 | Benutzername / Anzeigename | Offen |
 | Kompletter UX-Polish / Microinteractions | Offen |

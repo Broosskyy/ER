@@ -21,7 +21,9 @@ Public tabs and native navigation are unchanged. Admin routes are not linked fro
 | `/admin/login` | Login | public |
 | `/admin` | Dashboard | `canViewDashboard` |
 | `/admin/events` | Event list | `canViewEvents` |
-| `/admin/events/[id]` | Event detail/editor | `canViewEvents` |
+| `/admin/events/[id]` | Event detail/editor | `canViewEvents` (Save/Delete: `canEditEvents`; Publish/Reject: `canModerateContributorEvents`) |
+| `/admin/events/review` | Contributor submission queue | `canViewContributorReviewQueue` |
+| `/admin/events/review/[id]` | Submission review detail | `canViewContributorReviewQueue` (Publish/Reject: `canModerateContributorEvents`) |
 | `/admin/imports` | Import dashboard | `canViewImports` |
 | `/admin/imports/sources` | Sources list | `canViewSources` |
 | `/admin/imports/sources/[id]` | Source detail | `canViewSources` |
@@ -70,7 +72,10 @@ Central helpers live in `src/features/admin/admin-permissions.ts`:
 - `canViewDashboard()`
 - `canViewEvents()`
 - `canEditEvents()`
+- `canDeleteEvents()` (alias of `canEditEvents`)
 - `canPublishEvents()`
+- `canModerateContributorEvents()` (alias of `canPublishEvents`)
+- `canViewContributorReviewQueue()`
 - `canViewImports()`
 - `canViewSources()`
 - `canManageSources()`
@@ -91,6 +96,8 @@ Import-specific service permissions remain in `src/features/import/admin/admin-r
 | source_manager | yes | yes | yes | no | no | yes | yes | yes | yes | no | no |
 | admin | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
 | owner | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+
+Contributor submission moderation (`/admin/events/review`) requires `canModerateContributorEvents` (`admin` / `owner`). The event editor enforces `canEditEvents` for Save/Delete and blocks CMS edits on contributor events in `review`.
 
 ## Guards
 
@@ -136,6 +143,8 @@ On Android/iOS, admin routes show a web-only message. Admin is not part of botto
 Frontend guards improve UX only. Supabase RLS remains authoritative.
 
 Sprint 12.6C adds migration `20260725000000_admin_events_rls.sql` to restrict event/reference write access to `is_admin()`.
+
+ER-006 Platform Hardening (`20260732000000_er006_platform_hardening.sql`) replaces broad `admin_manage_events` with role-scoped policies and a `BEFORE UPDATE` trigger so publish/reject and contributor-review transitions require `admin` or `owner` at the database layer (matching `canPublishEvents` / `canModerateContributorEvents`).
 
 Import tables were already admin-gated in Sprint 12.
 

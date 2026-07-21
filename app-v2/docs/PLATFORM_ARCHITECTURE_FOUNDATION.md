@@ -261,18 +261,18 @@ Erweiterung des bestehenden `ANALYTICS_EVENT_CATALOG` — dokumentiert in `docs/
 
 ---
 
-## 8. Suggested Next Epic: ER-006
+## 8. ER-006 — Admin Moderation & Contributor Publishing
 
-**Titel:** Admin Moderation & Contributor Publishing
+**Status:** Done (Juli 2026), inkl. Platform Hardening (`20260732000000_er006_platform_hardening.sql`)
 
-**Warum jetzt:** Contributor-Flow (`draft` → `review`) ist implementiert; Admin-seitiges **Publish** (`review` → `published` / `rejected`) fehlt als durchgängiger Workflow. Blockiert Go-Live mit echten Community-Einreichungen.
+Contributor-Flow (`draft` → `review`) und Admin-Moderation (`review` → `published` / `rejected`) sind implementiert. Platform Hardening schließt RLS-/App-Permission-Lücken (Publish nur `admin`/`owner` in DB, Contributor-Review-Schutz, CMS-Editorial-Transitions).
 
-**Scope:**
-- Admin-UI für Contributor-Events in `review`
-- Publish / Reject mit Audit
-- Keine neuen Domänen (Organizer, Ticketing, Community)
+**Scope (abgeschlossen):**
+- Admin-UI für Contributor-Events in `review` (`/admin/events/review`)
+- Publish / Reject mit Audit (in-memory)
+- RLS-Trigger und Repository-Validierung für Statusübergänge
 
-**Out of Scope:** ER-006 CMS-Erweiterungen aus altem Backlog (Bulk, Bild-Upload) können als ER-006.1 folgen.
+**Out of Scope:** ER-006.1 CMS-Erweiterungen (Bulk, Bild-Upload); persistenter Moderation-Audit; Contributor-Benachrichtigungen.
 
 ---
 
