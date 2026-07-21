@@ -24,6 +24,9 @@ import type { ContributorEventListParams } from '@/data/datasources/types';
 import { createLocalDatasourceBundle } from '@/data/datasources/local/local-datasource';
 import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabase/supabase-import-datasource';
 import { createSupabaseArtistDatasource } from '@/data/datasources/supabase/supabase-artist-datasource';
+import { createSupabaseEventLineupDatasource } from '@/data/datasources/supabase/supabase-event-lineup-datasource';
+import { lineupToArtistNames } from '@/data/mappers/event-lineup-mapper';
+import type { Event } from '@/features/events/types/event';
 import { getSupabaseClient } from '@/services/supabase/client';
 
 function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResult<T> {
@@ -63,17 +66,27 @@ function firstRelation<T>(value: T | T[] | null | undefined): T | undefined {
   return value ?? undefined;
 }
 
-function mapSupabaseEventRow(row: SupabaseEventRowWithRelations & Record<string, unknown>) {
+function mapSupabaseEventRow(
+  row: SupabaseEventRowWithRelations & Record<string, unknown>,
+  lineupArtists?: string[],
+) {
   const venue = firstRelation(row.venues);
   const city = firstRelation(row.cities);
   const genre = firstRelation(row.genres);
   const artist = firstRelation(row.artists);
+  const artistNames =
+    lineupArtists && lineupArtists.length > 0
+      ? lineupArtists
+      : artist?.name
+        ? [artist.name]
+        : [];
 
   return mapEventRowToDomain(row as never, {
     venueName: venue?.name,
     cityName: city?.name,
     genreName: genre?.name,
-    artists: artist?.name ? [artist.name] : [],
+    artists: artistNames,
+    lineup: artistNames,
     latitude: venue?.latitude ?? undefined,
     longitude: venue?.longitude ?? undefined,
     address: venue?.address ?? undefined,
@@ -137,6 +150,17 @@ function sortContributorEvents(items: AdminEventRecord[]): AdminEventRecord[] {
 export function createSupabaseDatasourceBundle(): DatasourceBundle {
   const supabase = getSupabaseClient();
   const eventsTable = () => supabase.from('events') as SupabaseTable;
+  const eventLineups = createSupabaseEventLineupDatasource();
+
+  async function mapPublishedRows(rows: unknown[]): Promise<Event[]> {
+    const eventIds = rows.map((row) => (row as { id: string }).id);
+    const lineups = await eventLineups.getLineupsForEvents(eventIds);
+    return rows.map((row) => {
+      const eventId = (row as { id: string }).id;
+      const lineup = lineups.get(eventId) ?? [];
+      return mapSupabaseEventRow(row as never, lineupToArtistNames(lineup));
+    });
+  }
 
   return {
     events: {
@@ -147,7 +171,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
         if (error) {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
         }
-        return (data ?? []).map((row: unknown) => mapSupabaseEventRow(row as never));
+        return mapPublishedRows(data ?? []);
       },
       async getEventById(id) {
         const { data, error } = await eventsTable()
@@ -157,7 +181,11 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
         if (error) {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
         }
-        return data ? mapSupabaseEventRow(data as never) : null;
+        if (!data) {
+          return null;
+        }
+        const lineup = await eventLineups.getLineupForEvent(id);
+        return mapSupabaseEventRow(data as never, lineupToArtistNames(lineup));
       },
       async getAllEvents() {
         const { data, error } = await eventsTable().select('*');
@@ -228,6 +256,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     cities: createSupabaseTableDatasource<CityRecord>('cities'),
     venues: createSupabaseTableDatasource<VenueRecord>('venues'),
     artists: createSupabaseArtistDatasource(),
+    eventLineups,
     collections: createSupabaseTableDatasource<CollectionRecord>('collections'),
     sources: createSupabaseTableDatasource<SourceRecord>('sources'),
     stats: {

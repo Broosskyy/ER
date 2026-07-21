@@ -95,12 +95,23 @@ export interface StatsDatasource {
   getDashboardStats(): Promise<DashboardStats>;
 }
 
+import type { EventLineupInput } from '@/features/events/domain/event-lineup';
+import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
+
+export interface EventLineupDatasource {
+  getLineupForEvent(eventId: string): Promise<EventLineupArtist[]>;
+  getLineupsForEvents(eventIds: string[]): Promise<Map<string, EventLineupArtist[]>>;
+  replaceEventLineup(eventId: string, lineup: EventLineupInput[]): Promise<EventLineupArtist[]>;
+  deleteLineupForEvent(eventId: string): Promise<void>;
+}
+
 export interface DatasourceBundle {
   events: EventDatasource;
   genres: GenreDatasource;
   cities: CityDatasource;
   venues: VenueDatasource;
   artists: ArtistDatasource;
+  eventLineups: EventLineupDatasource;
   collections: CollectionDatasource;
   sources: SourceDatasource;
   stats: StatsDatasource;

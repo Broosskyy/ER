@@ -44,6 +44,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
   cityName?: string;
   genreName?: string;
   artists?: string[];
+  lineup?: string[];
   latitude?: number;
   longitude?: number;
   address?: string;
@@ -69,6 +70,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
     longitude: relations?.longitude,
     genres: relations?.genreName ? [relations.genreName] : [],
     artists: relations?.artists ?? [],
+    lineup: relations?.lineup ?? relations?.artists,
     ticketUrl: row.ticket_url ?? undefined,
     source: row.source_id ?? 'supabase',
     sourceEventId: row.id,

@@ -6,6 +6,7 @@ import {
   ArtistRepository,
   CityRepository,
   CollectionRepository,
+  EventLineupRepository,
   EventRepository,
   GenreRepository,
   SourceRepository,
@@ -26,6 +27,7 @@ import {
   ImportAdminRepositoryImpl,
   ImportAuditLogRepositoryImpl,
 } from '@/data/repositories/import-admin-repository';
+import { EventLineupService } from '@/features/events/services/event-lineup-service';
 import { ArtistService } from '@/features/artists/services/artist-service';
 import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
 import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
@@ -47,6 +49,12 @@ export const venueRepository = new VenueRepository();
 export const artistRepository = new ArtistRepository();
 export const adminArtistRepository = new AdminArtistRepository();
 export const artistService = new ArtistService(artistRepository, adminArtistRepository);
+export const eventLineupRepository = new EventLineupRepository();
+export const eventLineupService = new EventLineupService(
+  eventLineupRepository,
+  () => adminArtistRepository.getAll(),
+  async (id) => adminEventRepository.getById(id),
+);
 export const collectionRepository = new CollectionRepository();
 export const sourceRepository = new SourceRepository();
 export const statsRepository = new StatsRepository();
@@ -80,6 +88,7 @@ export const importReviewService = new ImportReviewService(
   importAdminRepository,
   adminEventRepository,
   importAuditService,
+  eventLineupService,
 );
 
 export const eventModerationAuditService = new EventModerationAuditService();

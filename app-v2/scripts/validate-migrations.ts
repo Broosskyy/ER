@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const migrationsDir = path.resolve(__dirname, '../supabase/migrations');
 
-const requiredTables = ['import_jobs', 'import_records', 'import_logs'];
+const requiredTables = ['import_jobs', 'import_records', 'import_logs', 'event_artists'];
 const requiredChecks = [
   'is_admin()',
   'admin_manage_import_jobs',
@@ -17,6 +17,8 @@ const requiredChecks = [
   'admin_read_artists',
   'admin_insert_artists',
   'enforce_admin_artist_sensitive_rules',
+  'anon_read_published_event_lineups',
+  'enforce_event_artists_mutation_rules',
   'completed_with_warnings',
   'fetched_count',
   'validation_errors',

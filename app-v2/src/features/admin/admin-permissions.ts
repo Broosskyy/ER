@@ -104,6 +104,10 @@ export function canVerifyArtists(role: AdminRole | null): boolean {
   return canPublishEvents(role);
 }
 
+export function canEditEventLineup(role: AdminRole | null): boolean {
+  return canEditEvents(role);
+}
+
 export function canDeleteArtists(role: AdminRole | null): boolean {
   return canEditArtists(role);
 }

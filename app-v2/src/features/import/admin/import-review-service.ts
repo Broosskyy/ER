@@ -41,7 +41,7 @@ function buildAdminEventFromRecord(record: ImportRecord): AdminEventRecord {
     description: candidate.description ?? '',
     cityId: record.reviewerEdits?.matchedCityId ?? record.matchedCityId,
     venueId: record.reviewerEdits?.matchedVenueId ?? record.matchedVenueId,
-    artistId: (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds)?.[0],
+    artistId: undefined,
     genreId: (record.reviewerEdits?.matchedGenreIds ?? record.matchedGenreIds)?.[0],
     sourceId: record.sourceId,
     startDate: candidate.startDate,
@@ -63,6 +63,13 @@ export class ImportReviewService {
     private readonly adminRepository: ImportAdminRepository,
     private readonly eventRepository: AdminEventRepository,
     private readonly auditService: ImportAuditService,
+    private readonly lineupService: {
+      replaceFromMatchedArtistIds(
+        role: AdminRole,
+        eventId: string,
+        matchedArtistIds: string[],
+      ): Promise<unknown>;
+    },
     private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
   ) {}
 
@@ -170,9 +177,23 @@ export class ImportReviewService {
     }
 
     const event = buildAdminEventFromRecord(record);
+    const matchedArtistIds = [
+      ...new Set(
+        (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds ?? []).filter(Boolean),
+      ),
+    ];
     let savedEvent: AdminEventRecord;
     try {
       savedEvent = await this.eventRepository.save(event);
+      const role = this.role(session);
+      if (role && matchedArtistIds.length > 0) {
+        await this.lineupService.replaceFromMatchedArtistIds(
+          role,
+          savedEvent.id,
+          matchedArtistIds,
+        );
+        savedEvent = (await this.eventRepository.getById(savedEvent.id)) ?? savedEvent;
+      }
     } catch (error: unknown) {
       throw new ImportError(
         'Event could not be created.',

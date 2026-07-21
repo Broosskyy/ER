@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
@@ -15,8 +15,10 @@ import type { AdminEventRecord, AdminEventStatus } from '@/data/types/records';
 import {
   adminEventModerationService,
   adminEventRepository,
+  adminArtistRepository,
   cityRepository,
   collectionRepository,
+  eventLineupService,
   genreRepository,
   sourceRepository,
   venueRepository,
@@ -25,7 +27,11 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
-import { canEditEvents, canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
+import {
+  EventLineupEditor,
+  type EventLineupDraftEntry,
+} from '@/features/admin/components/EventLineupEditor';
+import { canEditEventLineup, canEditEvents, canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
 import {
   assertValidAdminEditorialTransition,
   isContributorReviewEvent,
@@ -76,7 +82,10 @@ export default function AdminEventEditorScreen() {
   const canPublish = canPublishEvents(role);
   const canEdit = canEditEvents(role);
   const canModerate = canModerateContributorEvents(role);
+  const canEditLineup = canEditEventLineup(role);
   const [record, setRecord] = useState<AdminEventRecord | null>(null);
+  const [lineup, setLineup] = useState<EventLineupDraftEntry[]>([]);
+  const [artistOptions, setArtistOptions] = useState<Awaited<ReturnType<typeof adminArtistRepository.getAll>>>([]);
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -84,28 +93,31 @@ export default function AdminEventEditorScreen() {
   const [optionsLoaded, setOptionsLoaded] = useState(false);
   const [genreOptions, setGenreOptions] = useState<{ id: string; label: string }[]>([]);
   const [cityOptions, setCityOptions] = useState<{ id: string; label: string }[]>([]);
-  const draftEventIdRef = useRef(`event-${Date.now()}`);
+  const [draftEventId] = useState(() => `event-${Date.now()}`);
 
   const load = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
-      const [genres, cities, venues, sources, collections] = await Promise.all([
+      const [genres, cities, venues, sources, collections, artists] = await Promise.all([
         genreRepository.getActive(),
         cityRepository.getActive(),
         venueRepository.getAll(),
         sourceRepository.getAll(),
         collectionRepository.getActive(),
+        adminArtistRepository.getAll(),
       ]);
       setGenreOptions(genres.map((g) => ({ id: g.id, label: g.name })));
       setCityOptions(cities.map((c) => ({ id: c.id, label: c.name })));
+      setArtistOptions(artists);
       void venues;
       void sources;
       void collections;
       setOptionsLoaded(true);
 
       if (isNew) {
-        setRecord((current) => current ?? createEmptyEvent(draftEventIdRef.current));
+        setRecord((current) => current ?? createEmptyEvent(draftEventId));
+        setLineup([]);
       } else {
         const existing = await adminEventRepository.getById(id);
         if (!existing) {
@@ -113,13 +125,23 @@ export default function AdminEventEditorScreen() {
           return;
         }
         setRecord((current) => (current?.id === existing.id ? current : existing));
+        const loadedLineup = await eventLineupService.getLineupForAdmin(role, id);
+        setLineup(
+          loadedLineup.map((entry) => ({
+            artistId: entry.artist.id,
+            artistName: entry.artist.name,
+            artistStatus: entry.artist.status,
+            verificationStatus: entry.artist.verificationStatus,
+            billingRole: entry.billingRole,
+          })),
+        );
       }
     } catch (cause) {
       setError(getErrorMessage(cause));
     } finally {
       setLoading(false);
     }
-  }, [id, isNew]);
+  }, [id, isNew, role]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -174,7 +196,10 @@ export default function AdminEventEditorScreen() {
         status: nextStatus,
         updatedAt: new Date().toISOString(),
       };
-      await adminEventRepository.save(payload);
+      const saved = await adminEventRepository.save(payload);
+      if (canEditLineup) {
+        await eventLineupService.replaceEventLineup(role, saved.id, lineup);
+      }
       navigateToEventList(getSaveSuccessMessage(nextStatus));
     } catch (cause) {
       setError(getErrorMessage(cause));
@@ -337,6 +362,13 @@ export default function AdminEventEditorScreen() {
               />
             ))}
           </View>
+
+          <EventLineupEditor
+            lineup={lineup}
+            availableArtists={artistOptions}
+            editable={fieldsEditable && canEditLineup}
+            onChange={setLineup}
+          />
 
           <AppText style={styles.section}>Status</AppText>
           {isContributorReview ? (

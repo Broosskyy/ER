@@ -1,7 +1,8 @@
 import {
-  buildLocalArtistsFromEventNames,
-  createLocalArtistDatasource,
-} from '@/data/datasources/local/local-artist-datasource';
+  createLocalEventLineupDatasource,
+} from '@/data/datasources/local/local-event-lineup-datasource';
+import { derivePrimaryArtistId } from '@/features/events/domain/event-lineup-primary';
+import type { EventArtistRecord } from '@/features/events/domain/event-lineup';
 import type { Event } from '@/features/events/types/event';
 import type { EventStatus } from '@/features/events/types/event-status';
 import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
@@ -36,6 +37,10 @@ import {
   createLocalImportSourceDatasource,
   type LocalImportStore,
 } from '@/data/datasources/local/local-import-datasource';
+import {
+  buildLocalArtistsFromEventNames,
+  createLocalArtistDatasource,
+} from '@/data/datasources/local/local-artist-datasource';
 import {
   loadPersistedContributorEvents,
   savePersistedContributorEvents,
@@ -181,6 +186,48 @@ function buildLocalArtists(events: Event[]): ArtistRecord[] {
   return buildLocalArtistsFromEventNames(names);
 }
 
+function buildLocalEventArtistsFromEvents(
+  events: Event[],
+  artists: ArtistRecord[],
+): EventArtistRecord[] {
+  const artistByName = new Map(artists.map((artist) => [artist.name.toLowerCase(), artist.id]));
+  const now = new Date().toISOString();
+  const rows: EventArtistRecord[] = [];
+
+  for (const event of events) {
+    event.artists.forEach((name, index) => {
+      const artistId = artistByName.get(name.toLowerCase());
+      if (!artistId) {
+        return;
+      }
+
+      rows.push({
+        id: `ea-${event.id}-${artistId}-${index}`,
+        eventId: event.id,
+        artistId,
+        billingRole: index === 0 ? 'headliner' : 'support',
+        sortOrder: index,
+        createdAt: now,
+        updatedAt: now,
+      });
+    });
+  }
+
+  return rows;
+}
+
+function syncAdminEventPrimaryArtists(
+  adminEvents: AdminEventRecord[],
+  eventArtists: EventArtistRecord[],
+): void {
+  for (const adminEvent of adminEvents) {
+    const primary = eventArtists
+      .filter((row) => row.eventId === adminEvent.id)
+      .sort((left, right) => left.sortOrder - right.sortOrder)[0];
+    adminEvent.artistId = primary?.artistId;
+  }
+}
+
 export class LocalStore {
   events: Event[];
   adminEvents: AdminEventRecord[];
@@ -188,6 +235,7 @@ export class LocalStore {
   cities: CityRecord[];
   venues: VenueRecord[];
   artists: ArtistRecord[];
+  eventArtists: EventArtistRecord[];
   collections: CollectionRecord[];
   sources: SourceRecord[];
 
@@ -199,6 +247,8 @@ export class LocalStore {
     this.cities = buildLocalCities();
     this.venues = buildLocalVenues(this.events);
     this.artists = buildLocalArtists(this.events);
+    this.eventArtists = buildLocalEventArtistsFromEvents(this.events, this.artists);
+    syncAdminEventPrimaryArtists(this.adminEvents, this.eventArtists);
     this.collections = buildLocalCollections();
     this.sources = buildLocalSources();
   }
@@ -344,6 +394,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       store.adminEvents = store.adminEvents.map((event) =>
         event.id === id ? { ...event, status: 'archived', updatedAt: new Date().toISOString() } : event,
       );
+      store.eventArtists = store.eventArtists.filter((row) => row.eventId !== id);
       await persistContributorEventsIfNeeded(store);
     },
   };
@@ -403,6 +454,51 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
       store.artists = items;
     },
   );
+
+  async function updateEventPrimaryArtist(eventId: string, artistId: string | null): Promise<void> {
+    const adminIndex = store.adminEvents.findIndex((event) => event.id === eventId);
+    const currentAdminEvent = adminIndex >= 0 ? store.adminEvents[adminIndex] : undefined;
+    if (currentAdminEvent) {
+      store.adminEvents[adminIndex] = {
+        ...currentAdminEvent,
+        artistId: artistId ?? undefined,
+        updatedAt: new Date().toISOString(),
+      };
+    }
+
+    const names = store.eventArtists
+      .filter((row) => row.eventId === eventId)
+      .sort((left, right) => left.sortOrder - right.sortOrder)
+      .map((row) => store.artists.find((artist) => artist.id === row.artistId)?.name)
+      .filter((name): name is string => Boolean(name));
+
+    const eventIndex = store.events.findIndex((event) => event.id === eventId);
+    const currentEvent = eventIndex >= 0 ? store.events[eventIndex] : undefined;
+    if (currentEvent) {
+      store.events[eventIndex] = {
+        ...currentEvent,
+        artists: names,
+        lineup: names,
+      };
+    }
+  }
+
+  const eventLineups = createLocalEventLineupDatasource(
+    () => store.eventArtists,
+    (items) => {
+      store.eventArtists = items;
+    },
+    () => store.artists,
+    updateEventPrimaryArtist,
+  );
+
+  const originalReplaceLineup = eventLineups.replaceEventLineup.bind(eventLineups);
+  eventLineups.replaceEventLineup = async (eventId, lineup) => {
+    const saved = await originalReplaceLineup(eventId, lineup);
+    await updateEventPrimaryArtist(eventId, derivePrimaryArtistId(lineup));
+    return saved;
+  };
+
   const collections: CollectionDatasource = createCrudDatasource(
     () => store.collections,
     (items) => {
@@ -454,6 +550,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     cities,
     venues,
     artists,
+    eventLineups,
     collections,
     sources,
     stats,
