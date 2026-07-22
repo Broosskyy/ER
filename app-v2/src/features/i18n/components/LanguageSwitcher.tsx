@@ -41,7 +41,13 @@ export function LanguageSwitcher() {
                 (pressed || hovered) && styles.optionPressed,
               ]}
             >
-              <AppText style={[styles.optionLabel, selected && styles.optionLabelSelected]}>
+              <AppText
+                style={
+                  selected
+                    ? { ...styles.optionLabel, ...styles.optionLabelSelected }
+                    : styles.optionLabel
+                }
+              >
                 {t(option.labelKey)}
               </AppText>
             </Pressable>

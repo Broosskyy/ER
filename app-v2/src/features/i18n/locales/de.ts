@@ -190,6 +190,8 @@ export const de = {
         noReviewDescription: 'Sobald du ein Event einreichst, erscheint es hier.',
         noPublishedTitle: 'Keine veröffentlichten Events',
         noPublishedDescription: 'Veröffentlichte Events erscheinen hier, sobald sie freigegeben wurden.',
+        noRejectedTitle: 'Keine abgelehnten Events',
+        noRejectedDescription: 'Abgelehnte Events erscheinen hier nach der Moderation.',
       },
     },
   },
@@ -407,4 +409,10 @@ export const de = {
   },
 } as const;
 
-export type TranslationTree = typeof de;
+type RecursiveString<T> = T extends string
+  ? string
+  : T extends object
+    ? { [K in keyof T]: RecursiveString<T[K]> }
+    : never;
+
+export type TranslationTree = RecursiveString<typeof de>;

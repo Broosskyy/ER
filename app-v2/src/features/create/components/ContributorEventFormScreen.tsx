@@ -66,7 +66,7 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
   const { formLabels, imageLabels } = useEventDraftFormLabels(mode);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [loadingDraft, setLoadingDraft] = useState(mode === 'edit');
+  const [loadingDraft, setLoadingDraft] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [imageErrors, setImageErrors] = useState<Partial<Record<EventImageField, string>>>({});
   const [savedDraftId, setSavedDraftId] = useState<string | undefined>(mode === 'edit' ? eventId : undefined);
@@ -91,19 +91,21 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
     [t],
   );
 
+  const shouldLoadDraft = mode === 'edit' && Boolean(eventId) && Boolean(user?.id);
+  const userId = user?.id;
+
   useEffect(() => {
-    if (mode !== 'edit' || !eventId || !user?.id) {
-      setLoadingDraft(false);
+    if (!shouldLoadDraft || !eventId || !userId) {
       return;
     }
 
     let cancelled = false;
-    setLoadingDraft(true);
-    setLoadError(null);
+    void (async () => {
+      setLoadingDraft(true);
+      setLoadError(null);
 
-    void contributorEventService
-      .getEvent(eventId, user.id)
-      .then((record) => {
+      try {
+        const record = await contributorEventService.getEvent(eventId, userId);
         if (cancelled) {
           return;
         }
@@ -115,22 +117,21 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
 
         resetForm(mapAdminRecordToEventDraftForm(record, linkLabels));
         setSavedDraftId(record.id);
-      })
-      .catch((cause) => {
+      } catch (cause) {
         if (!cancelled) {
           setLoadError(translateContributorError(cause, t));
         }
-      })
-      .finally(() => {
+      } finally {
         if (!cancelled) {
           setLoadingDraft(false);
         }
-      });
+      }
+    })();
 
     return () => {
       cancelled = true;
     };
-  }, [eventId, linkLabels, mode, resetForm, router, t, user?.id]);
+  }, [eventId, linkLabels, mode, resetForm, router, shouldLoadDraft, t, userId]);
 
   const translateError = useCallback(
     (key?: EventDraftValidationKey) => (key ? t(key) : undefined),
@@ -204,7 +205,7 @@ export function ContributorEventFormScreen({ mode, eventId }: ContributorEventFo
       router.push(getContributorEventPreviewRoute(savedId));
     });
 
-  if (authLoading || optionsLoading || loadingDraft) {
+  if (authLoading || optionsLoading || (shouldLoadDraft && loadingDraft)) {
     return (
       <AppScreen>
         <SafeAreaContainer style={styles.loadingContainer}>

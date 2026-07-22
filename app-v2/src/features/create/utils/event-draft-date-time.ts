@@ -10,6 +10,9 @@ export function isValidDateInput(value: string): boolean {
   }
 
   const [year, month, day] = value.split('-').map(Number);
+  if (year === undefined || month === undefined || day === undefined) {
+    return false;
+  }
   const parsed = new Date(year, month - 1, day);
   return (
     parsed.getFullYear() === year && parsed.getMonth() === month - 1 && parsed.getDate() === day

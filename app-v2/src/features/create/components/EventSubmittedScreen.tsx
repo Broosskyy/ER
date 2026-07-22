@@ -32,14 +32,15 @@ export function EventSubmittedScreen() {
     }
   }, [authLoading, isAuthenticated, router]);
 
+  const shouldLoadRecord = Boolean(user?.id) && Boolean(eventId);
+
   useEffect(() => {
-    if (!user?.id || !eventId) {
-      setLoading(false);
+    if (!shouldLoadRecord) {
       return;
     }
 
     let cancelled = false;
-    void contributorEventService.getEvent(eventId, user.id).then((loaded) => {
+    void contributorEventService.getEvent(eventId!, user!.id).then((loaded) => {
       if (!cancelled) {
         setRecord(loaded?.status === 'review' ? loaded : null);
         setLoading(false);
@@ -49,13 +50,13 @@ export function EventSubmittedScreen() {
     return () => {
       cancelled = true;
     };
-  }, [eventId, user?.id]);
+  }, [shouldLoadRecord, eventId, user]);
 
   if (!eventId) {
     return <Redirect href="/create" />;
   }
 
-  if (authLoading || loading) {
+  if (authLoading || (shouldLoadRecord && loading)) {
     return (
       <AppScreen>
         <SafeAreaContainer style={styles.loadingContainer}>

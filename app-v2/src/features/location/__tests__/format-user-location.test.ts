@@ -30,7 +30,7 @@ describe('formatUserLocationLabel', () => {
 
   it('returns null when no displayable place is available', () => {
     expect(formatUserLocationLabel(null, 'en')).toBeNull();
-    expect(formatUserLocationLabel({ latitude: 0, longitude: 0, updatedAt: '' }, 'en')).toBeNull();
+    expect(formatUserLocationLabel({}, 'en')).toBeNull();
   });
 });
 

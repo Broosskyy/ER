@@ -3,6 +3,7 @@ export type AppErrorCode =
   | 'OFFLINE'
   | 'NOT_FOUND'
   | 'UNAUTHORIZED'
+  | 'FORBIDDEN'
   | 'VALIDATION'
   | 'UNKNOWN';
 

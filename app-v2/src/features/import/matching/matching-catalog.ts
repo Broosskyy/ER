@@ -35,7 +35,9 @@ export async function loadMatchingCatalog(): Promise<MatchingCatalog> {
       name: city.name,
       slug: city.slug,
     })),
-    venues: venues.map((venue) => ({
+    venues: venues
+      .filter((venue): venue is VenueRecord & { cityId: string } => Boolean(venue.cityId))
+      .map((venue) => ({
       id: venue.id,
       name: venue.name,
       address: venue.address,

@@ -31,7 +31,7 @@ describe('my events filters', () => {
   ];
 
   it('exposes the default filter options', () => {
-    expect(MY_EVENTS_FILTER_OPTIONS).toEqual(['all', 'draft', 'review', 'published']);
+    expect(MY_EVENTS_FILTER_OPTIONS).toEqual(['all', 'draft', 'review', 'published', 'rejected']);
   });
 
   it('returns all events for the all filter', () => {

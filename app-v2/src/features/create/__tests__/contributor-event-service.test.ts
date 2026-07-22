@@ -358,8 +358,9 @@ describe('contributor event service', () => {
     store.adminEvents[adminIndex] = published;
     const eventIndex = store.events.findIndex((event) => event.id === submitted.id);
     if (eventIndex >= 0) {
+      const existing = store.events[eventIndex]!;
       store.events[eventIndex] = {
-        ...store.events[eventIndex],
+        ...existing,
         status: 'published',
       };
     }

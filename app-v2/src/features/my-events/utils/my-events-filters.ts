@@ -7,6 +7,7 @@ export const MY_EVENTS_FILTER_OPTIONS: MyEventsFilter[] = [
   'draft',
   'review',
   'published',
+  'rejected',
 ];
 
 export function filterMyEventsByStatus<T extends { status: AdminEventStatus }>(

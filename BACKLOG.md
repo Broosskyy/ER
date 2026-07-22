@@ -376,7 +376,28 @@ Definition of Done:
 - Import review venue resolution display
 - Tests und `docs/ER-009_VENUE_ADMIN_CMS_COMPLETION_REPORT.md`
 
-Nächster Fokus: **ER-011+** (siehe Architektur-Roadmap / Produkt-Backlog)
+Nächster Fokus: **ER-012+** (siehe Architektur-Roadmap / Produkt-Backlog)
+
+---
+
+## ER-011 (Closed Beta Production Hardening)
+
+Status:
+- Done (`feature/er-011-closed-beta-production-hardening`, `docs/ER-011_CLOSED_BETA_PRODUCTION_HARDENING_COMPLETION_REPORT.md`)
+
+Priorität: Hoch
+
+Beschreibung:
+Production hardening for Closed Beta: typecheck/release pipeline, Supabase reference mappers, RLS role alignment, contributor/admin polish, hide unfinished UI, documentation sync.
+
+Definition of Done:
+- `npm run release:check` PASS
+- Typecheck 0 errors (was 276)
+- Reference-table Supabase mappers (genres, cities, collections, sources)
+- RLS migration aligning viewer/editor/reviewer/source_manager permissions
+- Map tab hidden; create hub shows only event + account
+- My Events rejected filter
+- 449 tests pass; 19 migrations validated
 
 ---
 

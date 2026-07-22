@@ -11,7 +11,7 @@ import { fontSize, textRoles } from '@/design/typography';
 type TabIconName = keyof typeof Ionicons.glyphMap;
 
 interface WebNavItem {
-  href: '/' | '/search' | '/map' | '/saved' | '/profile';
+  href: '/' | '/search' | '/saved' | '/profile';
   label: string;
   icon: TabIconName;
   iconFocused: TabIconName;
@@ -32,13 +32,6 @@ const NAV_ITEMS: WebNavItem[] = [
     icon: 'calendar-outline',
     iconFocused: 'calendar',
     isActive: (pathname) => pathname.startsWith('/search'),
-  },
-  {
-    href: '/map',
-    label: 'Map',
-    icon: 'map-outline',
-    iconFocused: 'map',
-    isActive: (pathname) => pathname.startsWith('/map'),
   },
   {
     href: '/saved',

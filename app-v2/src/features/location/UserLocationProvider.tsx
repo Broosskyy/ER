@@ -24,7 +24,7 @@ import type {
   UserLocationRecord,
   UserLocationUiStatus,
 } from '@/features/location/types/user-location';
-import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { useAppLocale, useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export interface ManualDiscoveryCityOption {
   id: string;
@@ -63,7 +63,8 @@ async function persistLocation(record: UserLocationRecord): Promise<void> {
 }
 
 export function UserLocationProvider({ children }: { children: ReactNode }) {
-  const { t, locale } = useAppTranslation();
+  const { t } = useAppTranslation();
+  const locale = useAppLocale();
   const [location, setLocation] = useState<UserLocationRecord | null>(null);
   const [status, setStatus] = useState<UserLocationUiStatus>('initial');
   const [errorCode, setErrorCode] = useState<UserLocationErrorCode | null>(null);

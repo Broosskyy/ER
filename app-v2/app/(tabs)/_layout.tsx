@@ -73,8 +73,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="map"
         options={{
-          title: 'Map',
-          tabBarIcon: ({ focused }) => tabIcon(focused ? 'map' : 'map-outline', focused),
+          href: null,
         }}
       />
       <Tabs.Screen

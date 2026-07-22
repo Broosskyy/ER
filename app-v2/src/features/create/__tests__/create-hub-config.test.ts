@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   CREATE_HUB_RETURN_ROUTE,
   CREATE_OPTIONS,
+  getVisibleCreateOptions,
   getCreateOptionTargetHref,
   shouldPromptCreateAuth,
 } from '@/features/create/create-hub-config';
@@ -17,6 +18,10 @@ describe('create hub config', () => {
       'artist',
       'account',
     ]);
+  });
+
+  it('shows only closed-beta-ready options in the create hub', () => {
+    expect(getVisibleCreateOptions().map((option) => option.id)).toEqual(['event', 'account']);
   });
 
   it('prompts auth for contribution options when logged out', () => {

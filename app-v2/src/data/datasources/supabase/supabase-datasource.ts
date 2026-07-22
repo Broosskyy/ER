@@ -11,12 +11,8 @@ import type {
   AdminEventListParams,
   AdminEventRecord,
   ArtistRecord,
-  CityRecord,
-  CollectionRecord,
   DashboardStats,
-  GenreRecord,
   PaginatedResult,
-  SourceRecord,
   VenueRecord,
 } from '@/data/types/records';
 import type { DatasourceBundle } from '@/data/datasources/types';
@@ -26,6 +22,12 @@ import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabas
 import { createSupabaseArtistDatasource } from '@/data/datasources/supabase/supabase-artist-datasource';
 import { createSupabaseVenueDatasource } from '@/data/datasources/supabase/supabase-venue-datasource';
 import { createSupabaseOrganizerDatasource } from '@/data/datasources/supabase/supabase-organizer-datasource';
+import {
+  createSupabaseCityDatasource,
+  createSupabaseCollectionDatasource,
+  createSupabaseGenreDatasource,
+  createSupabaseSourceDatasource,
+} from '@/data/datasources/supabase/supabase-reference-datasource';
 import { createSupabaseEventLineupDatasource } from '@/data/datasources/supabase/supabase-event-lineup-datasource';
 import { lineupToArtistNames } from '@/data/mappers/event-lineup-mapper';
 import type { Event } from '@/features/events/types/event';
@@ -99,52 +101,8 @@ function mapSupabaseEventRow(
     latitude: venue?.latitude ?? undefined,
     longitude: venue?.longitude ?? undefined,
     address: venue?.address ?? venue?.street ?? undefined,
-    country: venue?.country,
+    country: venue?.country ?? undefined,
   });
-}
-
-function createSupabaseTableDatasource<T extends { id: string; active?: boolean }>(
-  table: string,
-) {
-  const supabase = getSupabaseClient();
-  return {
-    async getAll() {
-      const { data, error } = await (supabase.from(table) as SupabaseTable).select('*');
-      if (error) {
-        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
-      }
-      return (data ?? []) as T[];
-    },
-    async getActive() {
-      const { data, error } = await (supabase.from(table) as SupabaseTable)
-        .select('*')
-        .eq('active', true);
-      if (error) {
-        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
-      }
-      return (data ?? []) as T[];
-    },
-    async getById(id: string) {
-      const { data, error } = await (supabase.from(table) as SupabaseTable)
-        .select('*')
-        .eq('id', id)
-        .maybeSingle();
-      if (error) {
-        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
-      }
-      return (data as T | null) ?? null;
-    },
-    async save(item: T) {
-      const { data, error } = await (supabase.from(table) as SupabaseTable)
-        .upsert(item as Record<string, unknown>)
-        .select('*')
-        .single();
-      if (error) {
-        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
-      }
-      return data as T;
-    },
-  };
 }
 
 function sortContributorEvents(items: AdminEventRecord[]): AdminEventRecord[] {
@@ -262,14 +220,14 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
         }
       },
     },
-    genres: createSupabaseTableDatasource<GenreRecord>('genres'),
-    cities: createSupabaseTableDatasource<CityRecord>('cities'),
+    genres: createSupabaseGenreDatasource(),
+    cities: createSupabaseCityDatasource(),
     venues: createSupabaseVenueDatasource(),
     organizers: createSupabaseOrganizerDatasource(),
     artists: createSupabaseArtistDatasource(),
     eventLineups,
-    collections: createSupabaseTableDatasource<CollectionRecord>('collections'),
-    sources: createSupabaseTableDatasource<SourceRecord>('sources'),
+    collections: createSupabaseCollectionDatasource(),
+    sources: createSupabaseSourceDatasource(),
     stats: {
       async getDashboardStats(): Promise<DashboardStats> {
         const [events, cities, genres, venues, artists, organizers, collections] = await Promise.all([

@@ -44,9 +44,11 @@ export function EventDraftSuccessScreen() {
     }
   }, [authLoading, isAuthenticated, router]);
 
-  const loadDraft = useCallback(async () => {
-    if (!user?.id || !eventId) {
-      setLoading(false);
+  const shouldLoadDraft = Boolean(user?.id) && Boolean(eventId);
+  const userId = user?.id;
+
+  const reloadDraft = useCallback(async () => {
+    if (!userId || !eventId) {
       return;
     }
 
@@ -54,7 +56,7 @@ export function EventDraftSuccessScreen() {
     setLoadError(null);
 
     try {
-      const record = await contributorEventService.getEvent(eventId, user.id);
+      const record = await contributorEventService.getEvent(eventId, userId);
       setDraft(record?.status === 'draft' ? record : null);
     } catch (cause) {
       setLoadError(getErrorMessage(cause) || t('create.event.success.loadError'));
@@ -62,11 +64,39 @@ export function EventDraftSuccessScreen() {
     } finally {
       setLoading(false);
     }
-  }, [eventId, t, user?.id]);
+  }, [eventId, t, userId]);
 
   useEffect(() => {
-    void loadDraft();
-  }, [loadDraft]);
+    if (!shouldLoadDraft || !userId || !eventId) {
+      return;
+    }
+
+    let cancelled = false;
+    void (async () => {
+      setLoading(true);
+      setLoadError(null);
+
+      try {
+        const record = await contributorEventService.getEvent(eventId, userId);
+        if (!cancelled) {
+          setDraft(record?.status === 'draft' ? record : null);
+        }
+      } catch (cause) {
+        if (!cancelled) {
+          setLoadError(getErrorMessage(cause) || t('create.event.success.loadError'));
+          setDraft(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [eventId, shouldLoadDraft, t, userId]);
 
   const handleSubmitForReview = async () => {
     if (!user?.id || !draft || submitting) {
@@ -90,7 +120,7 @@ export function EventDraftSuccessScreen() {
     return <Redirect href="/create" />;
   }
 
-  if (authLoading || loading) {
+  if (authLoading || (shouldLoadDraft && loading)) {
     return (
       <AppScreen>
         <SafeAreaContainer style={styles.loadingContainer}>
@@ -113,7 +143,7 @@ export function EventDraftSuccessScreen() {
               <AppText accessibilityRole="alert" style={styles.errorText}>
                 {loadError ?? t('create.event.success.loadError')}
               </AppText>
-              <PrimaryButton label={t('common.actions.retry')} onPress={() => void loadDraft()} />
+              <PrimaryButton label={t('common.actions.retry')} onPress={() => void reloadDraft()} />
               <SecondaryButton
                 label={t('create.event.success.backToCreate')}
                 onPress={() => router.replace('/create')}
