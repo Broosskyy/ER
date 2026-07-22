@@ -156,6 +156,11 @@ export const en: TranslationTree = {
     savedEvents: 'Saved events',
     favoritesNote:
       'Favorites are stored locally on this device. They are not synced to the cloud yet.',
+    admin: {
+      title: 'Admin CMS',
+      description: 'Manage events, venues, artists, and imports.',
+      open: 'Open admin',
+    },
     myEvents: {
       title: 'My events',
       linkTitle: 'My events',
