@@ -18,9 +18,10 @@ function mapGenreAliases(genre: GenreRecord): string[] {
 
 export async function loadMatchingCatalog(): Promise<MatchingCatalog> {
   const bundle = getDatasourceBundle();
-  const [cities, venues, artists, genres, publishedEvents] = await Promise.all([
+  const [cities, venues, organizers, artists, genres, publishedEvents] = await Promise.all([
     bundle.cities.getActive(),
     bundle.venues.getAll(),
+    bundle.organizers.getAll(),
     bundle.artists.getPublished(),
     bundle.genres.getActive(),
     bundle.events.getPublishedEvents(),
@@ -42,6 +43,18 @@ export async function loadMatchingCatalog(): Promise<MatchingCatalog> {
       cityName: cityById.get(venue.cityId)?.name,
       latitude: venue.latitude,
       longitude: venue.longitude,
+    })),
+    organizers: organizers.map((organizer) => ({
+      id: organizer.id,
+      name: organizer.name,
+      city: organizer.city,
+      country: organizer.country,
+      website: organizer.website,
+      email: organizer.email,
+      instagram: organizer.instagram,
+      facebook: organizer.facebook,
+      soundcloud: organizer.soundcloud,
+      residentAdvisor: organizer.residentAdvisor,
     })),
     artists: artists.map((artist) => ({
       id: artist.id,
@@ -88,6 +101,15 @@ export function createTestMatchingCatalog(overrides: Partial<MatchingCatalog> = 
         cityName: 'Köln',
         latitude: 50.965,
         longitude: 7.005,
+      },
+    ],
+    organizers: overrides.organizers ?? [
+      {
+        id: 'organizer-1',
+        name: 'Rave Rebels',
+        city: 'Köln',
+        country: 'Germany',
+        website: 'https://raverebels.example',
       },
     ],
     artists: overrides.artists ?? [

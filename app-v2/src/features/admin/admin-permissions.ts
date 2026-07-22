@@ -132,6 +132,26 @@ export function canViewVenueAdmin(role: AdminRole | null): boolean {
   return canViewVenues(role);
 }
 
+export function canViewOrganizers(role: AdminRole | null): boolean {
+  return canAccessAdmin(role);
+}
+
+export function canEditOrganizers(role: AdminRole | null): boolean {
+  return canEditEvents(role);
+}
+
+export function canCreateOrganizers(role: AdminRole | null): boolean {
+  return canEditOrganizers(role);
+}
+
+export function canDeleteOrganizers(role: AdminRole | null): boolean {
+  return canEditOrganizers(role);
+}
+
+export function canViewOrganizerAdmin(role: AdminRole | null): boolean {
+  return canViewOrganizers(role);
+}
+
 export function canManageAdminSettings(role: AdminRole | null): boolean {
   if (!role) {
     return false;
@@ -159,6 +179,9 @@ export function canAccessAdminRoute(
     case 'venues':
     case 'venue-detail':
       return canViewVenues(role);
+    case 'organizers':
+    case 'organizer-detail':
+      return canViewOrganizers(role);
     case 'imports':
       return canViewImports(role);
     case 'sources':

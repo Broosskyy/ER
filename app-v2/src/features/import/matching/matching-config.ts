@@ -12,6 +12,7 @@ export const matchingConfig = {
   minCityConfidence: 70,
   minArtistConfidence: 75,
   minGenreConfidence: 70,
+  minOrganizerConfidence: 80,
 } as const;
 
 export const CITY_ALIASES: Record<string, string[]> = {

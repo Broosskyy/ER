@@ -12,7 +12,7 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { ImportRecord } from '@/features/import/models/types';
-import { importReviewService, venueRepository } from '@/data/repositories/registry';
+import { importReviewService, venueRepository, organizerRepository } from '@/data/repositories/registry';
 import {
   AdminErrorState,
   AdminLoadingState,
@@ -34,6 +34,7 @@ export default function ReviewDetailScreen() {
   const [success, setSuccess] = useState<string | null>(null);
   const [showRaw, setShowRaw] = useState(false);
   const [matchedVenueName, setMatchedVenueName] = useState<string | null>(null);
+  const [matchedOrganizerName, setMatchedOrganizerName] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -50,6 +51,18 @@ export default function ReviewDetailScreen() {
           setMatchedVenueName(venue ? `${venue.name} (${venue.city}, ${venue.country})` : null);
         } else {
           setMatchedVenueName(null);
+        }
+        const matchedOrganizerId =
+          loaded.reviewerEdits?.matchedOrganizerId ?? loaded.matchedOrganizerId ?? undefined;
+        if (matchedOrganizerId) {
+          const organizer = await organizerRepository.getById(matchedOrganizerId);
+          setMatchedOrganizerName(
+            organizer
+              ? `${organizer.name}${organizer.city ? ` (${organizer.city}${organizer.country ? `, ${organizer.country}` : ''})` : ''}`
+              : null,
+          );
+        } else {
+          setMatchedOrganizerName(null);
         }
       }
     } catch (cause) {
@@ -235,6 +248,12 @@ export default function ReviewDetailScreen() {
             <AppText style={styles.label}>Matched canonical venue</AppText>
             <AppText style={styles.meta}>
               {matchedVenueName ?? record.matchedVenueId ?? 'Unmatched'}
+            </AppText>
+            <AppText style={styles.label}>Imported organizer</AppText>
+            <AppText style={styles.meta}>{candidate.organizerName ?? '—'}</AppText>
+            <AppText style={styles.label}>Matched canonical organizer</AppText>
+            <AppText style={styles.meta}>
+              {matchedOrganizerName ?? record.matchedOrganizerId ?? 'Unmatched'}
             </AppText>
             <AppText style={styles.label}>Imported artist names</AppText>
             {rawArtistNames.length > 0 ? (

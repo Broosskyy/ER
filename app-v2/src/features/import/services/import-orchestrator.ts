@@ -209,6 +209,7 @@ export class ImportOrchestrator {
           validationWarnings: record.validationWarnings,
           matchedCityId: record.matchResult?.matchedCityId,
           matchedVenueId: record.matchResult?.matchedVenueId,
+          matchedOrganizerId: record.matchResult?.matchedOrganizerId,
           matchedArtistIds: record.matchResult?.matchedArtistIds,
           matchedGenreIds: record.matchResult?.matchedGenreIds,
           duplicateEventId: record.matchResult?.duplicateEventId,

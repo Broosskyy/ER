@@ -61,6 +61,35 @@ export interface VenueListParams {
   pageSize?: number;
 }
 
+export interface OrganizerRecord {
+  id: string;
+  slug: string;
+  name: string;
+  description?: string;
+  website?: string;
+  email?: string;
+  phone?: string;
+  instagram?: string;
+  facebook?: string;
+  soundcloud?: string;
+  residentAdvisor?: string;
+  logoUrl?: string;
+  city?: string;
+  country?: string;
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface OrganizerListParams {
+  query?: string;
+  city?: string;
+  country?: string;
+  sortBy?: 'name' | 'updated' | 'city';
+  page?: number;
+  pageSize?: number;
+}
+
 export interface ArtistRecord {
   id: string;
   name: string;
@@ -139,6 +168,9 @@ export interface AdminEventRecord {
   venueName?: string;
   /** Optional city label for suggested venues. */
   venueCity?: string;
+  organizerId?: string;
+  /** @deprecated Legacy free-text organizer; canonical source is `organizerId`. */
+  organizerName?: string;
   status: AdminEventStatus;
   createdBy?: string;
   createdAt: string;
@@ -166,5 +198,6 @@ export interface DashboardStats {
   genres: number;
   venues: number;
   artists: number;
+  organizers: number;
   collections: number;
 }

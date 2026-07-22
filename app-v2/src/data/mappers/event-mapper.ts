@@ -15,6 +15,8 @@ interface EventRow {
   description: string;
   genre_id: string | null;
   venue_id: string | null;
+  organizer_id: string | null;
+  organizer: string | null;
   city_id: string | null;
   artist_id: string | null;
   source_id: string | null;
@@ -45,6 +47,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
   genreName?: string;
   artists?: string[];
   lineup?: string[];
+  organizerName?: string;
   country?: string;
   latitude?: number;
   longitude?: number;
@@ -72,6 +75,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
     genres: relations?.genreName ? [relations.genreName] : [],
     artists: relations?.artists ?? [],
     lineup: relations?.lineup ?? relations?.artists,
+    organizer: relations?.organizerName ?? row.organizer ?? undefined,
     ticketUrl: row.ticket_url ?? undefined,
     source: row.source_id ?? 'supabase',
     sourceEventId: row.id,
@@ -103,6 +107,8 @@ export function mapEventRowToAdminRecord(row: EventRow): AdminEventRecord {
     flyerUrl: row.flyer_url ?? undefined,
     venueName: row.venue_name ?? undefined,
     venueCity: row.venue_city ?? undefined,
+    organizerId: row.organizer_id ?? undefined,
+    organizerName: row.organizer ?? undefined,
     status: row.status,
     createdBy: row.created_by ?? undefined,
     createdAt: row.created_at,
@@ -132,6 +138,8 @@ export function mapAdminRecordToEventRow(record: AdminEventRecord): EventRow {
     flyer_url: record.flyerUrl ?? null,
     venue_name: record.venueName ?? null,
     venue_city: record.venueCity ?? null,
+    organizer_id: record.organizerId ?? null,
+    organizer: record.organizerName ?? null,
     status: record.status,
     created_by: record.createdBy ?? null,
     created_at: record.createdAt,

@@ -19,12 +19,12 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **Daten:** Standard ist lokaler Mock (`EXPO_PUBLIC_USE_SUPABASE=false`); Supabase-Anbindung implementiert, Remote-Staging laut Projektstatus nicht befüllt
 - **Consumer-App:** Home, Search, Saved, Profile, Event-Detail funktionsfähig; Map-Tab = Platzhalter; Create Hub, **Meine Events**, Activity-Panel (nur eingeloggt im Home-Header, ER-005.2)
 - **Standort:** Foreground-Location via `expo-location`; lokal in AsyncStorage (`app.userLocation`); nur nach Nutzeraktion; keine Event-Filterung (ER-005.2)
-- **Admin:** Web-only unter `/admin` — Events-CRUD inkl. Multi-Artist-Lineup-Editor (ER-008) und Venue-Picker (ER-009), **Venue-CMS** (`/admin/venues`, ER-009), Contributor-Moderation, **Artist-CMS** (ER-007), Import
+- **Admin:** Web-only unter `/admin` — Events-CRUD inkl. Multi-Artist-Lineup-Editor (ER-008), Venue-Picker (ER-009), **Venue-CMS** (`/admin/venues`, ER-009), **Organizer-CMS** (`/admin/organizers`, ER-010), Contributor-Moderation, **Artist-CMS** (ER-007), Import
 - **Auth:** Globaler `AuthProvider`; Login/Register; E-Mail-Bestätigung mit `/auth/callback`, Resend, Passwort-Reset (ER-005.3)
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
 - **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
 - **Tests:** Vitest; `npm run release:check` laut Statusbericht PASS
-- **Offene Kernarbeit:** `BACKLOG.md` — ER-009 Done (Venue Admin CMS); nächster strategischer Fokus ER-010
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-010 Done (Organizer Domain & Admin CMS); nächster strategischer Fokus siehe Backlog
 
 ---
 

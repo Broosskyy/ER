@@ -4,6 +4,7 @@ import {
   AdminArtistRepository,
   AdminEventRepository,
   AdminVenueRepository,
+  AdminOrganizerRepository,
   ArtistRepository,
   CityRepository,
   CollectionRepository,
@@ -13,6 +14,7 @@ import {
   SourceRepository,
   StatsRepository,
   VenueRepository,
+  OrganizerRepository,
 } from '@/data/repositories/repositories';
 import {
   ImportJobRepositoryImpl,
@@ -31,6 +33,7 @@ import {
 import { EventLineupService } from '@/features/events/services/event-lineup-service';
 import { ArtistService } from '@/features/artists/services/artist-service';
 import { VenueService } from '@/features/venues/services/venue-service';
+import { OrganizerService } from '@/features/organizers/services/organizer-service';
 import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
 import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { ImportAuditService } from '@/features/import/admin/import-audit-service';
@@ -50,6 +53,9 @@ export const cityRepository = new CityRepository();
 export const venueRepository = new VenueRepository();
 export const adminVenueRepository = new AdminVenueRepository();
 export const venueService = new VenueService(adminVenueRepository);
+export const organizerRepository = new OrganizerRepository();
+export const adminOrganizerRepository = new AdminOrganizerRepository();
+export const organizerService = new OrganizerService(adminOrganizerRepository);
 export const artistRepository = new ArtistRepository();
 export const adminArtistRepository = new AdminArtistRepository();
 export const artistService = new ArtistService(artistRepository, adminArtistRepository);

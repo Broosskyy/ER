@@ -5,6 +5,7 @@ import { genreMatchingService } from '@/features/import/matching/genre-matching-
 import type { MatchResult, MatchingCatalog } from '@/features/import/matching/match-result';
 import { createEmptyMatchResult } from '@/features/import/matching/match-result';
 import { venueMatchingService } from '@/features/import/matching/venue-matching-service';
+import { organizerMatchingService } from '@/features/import/matching/organizer-matching-service';
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
 
 export interface MatchLogEntry {
@@ -47,6 +48,20 @@ export class ImportMatchingService {
     } else if (venue.warning) {
       result.warnings.push(venue.warning);
       logs.push({ level: 'warning', code: 'VENUE_MATCH_FAILED', message: venue.warning });
+    }
+
+    const organizer = organizerMatchingService.match(candidate, catalog);
+    if (organizer.organizerId && organizer.matchType === 'matched') {
+      result.matchedOrganizerId = organizer.organizerId;
+      result.details.organizerConfidence = organizer.confidenceScore;
+      logs.push({
+        level: 'info',
+        code: 'ORGANIZER_MATCHED',
+        message: `Organizer matched with confidence ${organizer.confidenceScore}.`,
+      });
+    } else if (organizer.warning) {
+      result.warnings.push(organizer.warning);
+      logs.push({ level: 'warning', code: 'ORGANIZER_MATCH_FAILED', message: organizer.warning });
     }
 
     const artists = artistMatchingService.match(candidate, catalog);
@@ -103,6 +118,7 @@ export class ImportMatchingService {
     const confidenceParts = [
       result.details.cityConfidence,
       result.details.venueConfidence,
+      result.details.organizerConfidence,
       ...result.details.artistConfidences,
       ...result.details.genreConfidences,
     ].filter((value): value is number => value !== undefined && value > 0);

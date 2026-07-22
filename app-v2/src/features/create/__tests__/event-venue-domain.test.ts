@@ -38,6 +38,8 @@ describe('mapEventRowToDomain venue suggestion', () => {
         description: 'Desc',
         genre_id: null,
         venue_id: null,
+        organizer_id: null,
+        organizer: null,
         city_id: null,
         artist_id: null,
         source_id: null,

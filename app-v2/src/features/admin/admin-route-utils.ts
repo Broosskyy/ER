@@ -40,6 +40,8 @@ export type AdminRouteKey =
   | 'artist-detail'
   | 'venues'
   | 'venue-detail'
+  | 'organizers'
+  | 'organizer-detail'
   | 'imports'
   | 'sources'
   | 'source-detail'
@@ -78,6 +80,14 @@ export function resolveAdminRouteKey(segments: string[]): AdminRouteKey {
 
   if (path.startsWith('admin/venues')) {
     return 'venues';
+  }
+
+  if (path.startsWith('admin/organizers/') && segments.length >= 3) {
+    return 'organizer-detail';
+  }
+
+  if (path.startsWith('admin/organizers')) {
+    return 'organizers';
   }
 
   if (path.startsWith('admin/events/') && segments.length >= 3) {
