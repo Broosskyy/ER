@@ -1,6 +1,6 @@
 # Projektübersicht
 
-**Stand:** 21. Juli 2026  
+**Stand:** 22. Juli 2026  
 **Quelle:** Analyse des Repository-Inhalts (`C:/ER`)
 
 ## Projektname
@@ -39,7 +39,7 @@ Feature-Module unter `app-v2/src/features/`:
 | `collections` | Kuratierte Event-Sammlungen |
 | `saved` | Gespeicherte Events (Favoriten) |
 | `favorites` | Lokaler Favoriten-State (AsyncStorage) |
-| `map` | Karten-Feature (`MapUnavailableState` auf Tab-Route) |
+| `map` | Karten-Feature (Tab für Closed Beta ausgeblendet; Route bleibt intern) |
 | `notifications` | Lokales Notification Center (kein Push) |
 | `activity` | Activity-Panel und Deep-Link-Screen |
 | `create` | Create Hub, Event-Einreichung (Draft → Review), „Meine Events“ |
@@ -79,7 +79,7 @@ Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src
 
 | Pfad | Beschreibung |
 |------|--------------|
-| `app-v2/supabase/migrations/` | 17 SQL-Migrationen (… ER-008 `event_artists`, ER-009 Venue CMS) |
+| `app-v2/supabase/migrations/` | 19 SQL-Migrationen (… ER-011 Closed Beta Hardening) |
 | `app-v2/scripts/staging/` | Staging-Validierung, Seed-SQL, Remote-Seed-Skript |
 | `app-v2/src/data/datasources/supabase/` | Supabase-Datasource-Implementierungen |
 | `app-v2/src/services/supabase/` | Supabase-Client und Auth-Service |
@@ -372,6 +372,11 @@ Chronologische Liste (`app-v2/supabase/migrations/`):
 | `20260730000000_contributor_my_events.sql` | Social Links, Venue-Vorschlag, Owner-Read, Withdraw |
 | `20260731000000_contributor_event_image_update.sql` | Contributor Storage UPDATE für Event-Bilder |
 | `20260732000000_er006_platform_hardening.sql` | Event-Schreib-RLS an App-Publish-Regeln angeglichen; Contributor-Review-Schutz |
+| `20260733000000_er007_artist_domain_foundation.sql` | Artist-Domain, scoped RLS |
+| `20260734000000_er008_multi_artist_lineup_foundation.sql` | `event_artists` Junction, Lineup-RLS |
+| `20260735000000_er009_venue_admin_foundation.sql` | Venue CMS schema + scoped RLS |
+| `20260736000000_er010_organizer_domain_foundation.sql` | Organizer domain + CMS |
+| `20260737000000_er011_closed_beta_production_hardening.sql` | Reference/import RLS role alignment; viewer read-only at DB layer |
 
 **Hinweis:** Referenz-Seed-Daten liegen in `app-v2/scripts/staging/seed-staging-app-data.sql`, nicht als Supabase-Migration.
 

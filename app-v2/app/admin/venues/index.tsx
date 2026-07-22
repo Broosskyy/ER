@@ -161,6 +161,6 @@ const styles = StyleSheet.create({
   },
   error: {
     ...textRoles.body,
-    color: colorRoles.error,
+    color: colors.live,
   },
 });

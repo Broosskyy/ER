@@ -59,37 +59,52 @@ export function MyEventsScreen() {
     }
   }, [authLoading, isAuthenticated, router]);
 
+  const userId = user?.id;
+
   const loadEvents = useCallback(async () => {
-    if (!user?.id) {
+    if (!userId) {
       return;
     }
 
     setError(null);
     try {
-      const loaded = await contributorEventService.getMyEvents(user.id);
+      const loaded = await contributorEventService.getMyEvents(userId);
       setEvents(loaded);
     } catch (cause) {
       setError(getErrorMessage(cause) || t('profile.myEvents.error'));
     }
-  }, [t, user?.id]);
+  }, [t, userId]);
+
+  const shouldLoadEvents = Boolean(userId);
 
   useEffect(() => {
-    if (!user?.id) {
-      setLoading(false);
+    if (!shouldLoadEvents) {
       return;
     }
 
     let cancelled = false;
-    void loadEvents().finally(() => {
-      if (!cancelled) {
-        setLoading(false);
+    void (async () => {
+      setError(null);
+      try {
+        const loaded = await contributorEventService.getMyEvents(userId!);
+        if (!cancelled) {
+          setEvents(loaded);
+        }
+      } catch (cause) {
+        if (!cancelled) {
+          setError(getErrorMessage(cause) || t('profile.myEvents.error'));
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
-    });
+    })();
 
     return () => {
       cancelled = true;
     };
-  }, [loadEvents, user?.id]);
+  }, [shouldLoadEvents, t, userId]);
 
   useFocusEffect(
     useCallback(() => {
@@ -150,6 +165,9 @@ export function MyEventsScreen() {
     if (filter === 'published') {
       return t('profile.myEvents.empty.noPublishedTitle');
     }
+    if (filter === 'rejected') {
+      return t('profile.myEvents.empty.noRejectedTitle');
+    }
     return t('profile.myEvents.empty.title');
   }, [filter, t]);
 
@@ -163,10 +181,13 @@ export function MyEventsScreen() {
     if (filter === 'published') {
       return t('profile.myEvents.empty.noPublishedDescription');
     }
+    if (filter === 'rejected') {
+      return t('profile.myEvents.empty.noRejectedDescription');
+    }
     return t('profile.myEvents.empty.description');
   }, [filter, t]);
 
-  if (authLoading || loading || optionsLoading) {
+  if (authLoading || (shouldLoadEvents && loading) || optionsLoading) {
     return (
       <AppScreen>
         <SafeAreaContainer style={styles.centered}>

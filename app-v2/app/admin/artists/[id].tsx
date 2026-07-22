@@ -56,13 +56,16 @@ export default function AdminArtistEditorScreen() {
   const canPublish = canPublishArtists(role);
   const canArchive = canArchiveArtists(role);
   const canVerify = canVerifyArtists(role);
-  const [record, setRecord] = useState<ArtistRecord | null>(isNew ? createEmptyArtist(`artist-${Date.now()}`) : null);
+  const [draftArtistId] = useState(() => `artist-${Date.now()}`);
+  const [record, setRecord] = useState<ArtistRecord | null>(
+    isNew ? createEmptyArtist(draftArtistId) : null,
+  );
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [genreOptions, setGenreOptions] = useState<{ id: string; label: string }[]>([]);
-  const draftArtistIdRef = useRef(`artist-${Date.now()}`);
+  const draftArtistIdRef = useRef(draftArtistId);
 
   const load = useCallback(async () => {
     setLoading(true);

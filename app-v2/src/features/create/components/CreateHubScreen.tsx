@@ -12,7 +12,7 @@ import { useAuth } from '@/features/auth/AuthContext';
 import { CreateAuthPrompt } from '@/features/create/components/CreateAuthPrompt';
 import { CreateOptionCard } from '@/features/create/components/CreateOptionCard';
 import {
-  CREATE_OPTIONS,
+  getVisibleCreateOptions,
   getCreateOptionTargetHref,
   shouldPromptCreateAuth,
   type CreateOptionId,
@@ -66,7 +66,7 @@ export function CreateHubScreen() {
           <ScrollView contentContainerStyle={styles.list} showsVerticalScrollIndicator={false}>
             {authPromptOptionId ? <CreateAuthPrompt onDismiss={() => setAuthPromptOptionId(null)} /> : null}
 
-            {CREATE_OPTIONS.map((option) => (
+            {getVisibleCreateOptions().map((option) => (
               <CreateOptionCard
                 key={option.id}
                 icon={option.icon}

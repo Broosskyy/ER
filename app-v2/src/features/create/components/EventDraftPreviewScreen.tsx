@@ -51,14 +51,15 @@ export function EventDraftPreviewScreen() {
     }
   }, [authLoading, eventId, isAuthenticated, router]);
 
+  const shouldLoadRecord = Boolean(user?.id) && Boolean(eventId);
+
   useEffect(() => {
-    if (!user?.id || !eventId) {
-      setLoading(false);
+    if (!shouldLoadRecord) {
       return;
     }
 
     let cancelled = false;
-    void contributorEventService.getEvent(eventId, user.id).then((loaded) => {
+    void contributorEventService.getEvent(eventId!, user!.id).then((loaded) => {
       if (!cancelled) {
         setRecord(loaded && (loaded.status === 'draft' || loaded.status === 'review') ? loaded : null);
         setLoading(false);
@@ -68,7 +69,7 @@ export function EventDraftPreviewScreen() {
     return () => {
       cancelled = true;
     };
-  }, [eventId, user?.id]);
+  }, [shouldLoadRecord, eventId, user]);
 
   const linkLabels = useMemo(
     () => ({
@@ -144,7 +145,7 @@ export function EventDraftPreviewScreen() {
     return <Redirect href="/create" />;
   }
 
-  if (authLoading || loading || optionsLoading) {
+  if (authLoading || (shouldLoadRecord && loading) || optionsLoading) {
     return (
       <AppScreen>
         <SafeAreaContainer style={styles.loadingContainer}>

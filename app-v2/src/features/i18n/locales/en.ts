@@ -184,6 +184,8 @@ export const en: TranslationTree = {
         noReviewDescription: 'Events you submit for review will appear here.',
         noPublishedTitle: 'No published events',
         noPublishedDescription: 'Published events will appear here once they are approved.',
+        noRejectedTitle: 'No rejected events',
+        noRejectedDescription: 'Rejected events will appear here after moderation.',
       },
     },
   },

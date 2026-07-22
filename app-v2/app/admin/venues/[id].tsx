@@ -40,8 +40,9 @@ export default function AdminVenueEditorScreen() {
   const isNew = id === 'new';
   const canEdit = canEditVenues(role);
   const canDelete = canDeleteVenues(role);
+  const [draftVenueId] = useState(() => `venue-${Date.now()}`);
   const [record, setRecord] = useState<VenueRecord | null>(
-    isNew ? createEmptyVenue(`venue-${Date.now()}`) : null,
+    isNew ? createEmptyVenue(draftVenueId) : null,
   );
   const [eventCount, setEventCount] = useState(0);
   const [loading, setLoading] = useState(!isNew);
@@ -295,6 +296,6 @@ const styles = StyleSheet.create({
   notes: { minHeight: 96, textAlignVertical: 'top' },
   actions: { gap: spacing.sm, marginTop: spacing.lg },
   hint: { ...textRoles.metadata, color: colorRoles.emptyStateDescription },
-  error: { ...textRoles.body, color: colorRoles.error },
-  success: { ...textRoles.body, color: colorRoles.success },
+  error: { ...textRoles.body, color: colors.live },
+  success: { ...textRoles.body, color: colors.success },
 });

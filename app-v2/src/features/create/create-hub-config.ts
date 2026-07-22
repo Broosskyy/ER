@@ -62,6 +62,16 @@ export function getCreateOptionTargetHref(
   return getCreateContributionRoute(optionId);
 }
 
+export const CREATE_HUB_VISIBLE_OPTION_IDS = ['event', 'account'] as const;
+
+export type CreateHubVisibleOptionId = (typeof CREATE_HUB_VISIBLE_OPTION_IDS)[number];
+
+export function getVisibleCreateOptions(): readonly CreateOption[] {
+  return CREATE_OPTIONS.filter((option) =>
+    (CREATE_HUB_VISIBLE_OPTION_IDS as readonly string[]).includes(option.id),
+  );
+}
+
 export function shouldPromptCreateAuth(
   optionId: CreateOptionId,
   isAuthenticated: boolean,

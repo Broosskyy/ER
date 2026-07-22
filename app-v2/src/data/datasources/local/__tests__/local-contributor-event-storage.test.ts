@@ -27,6 +27,7 @@ const sampleDraft: AdminEventRecord = {
   title: 'Persisted Rave',
   description: 'Test',
   status: 'draft',
+  startDate: '2026-07-21',
   createdBy: 'user-1',
   createdAt: '2026-07-21T10:00:00.000Z',
   updatedAt: '2026-07-21T10:00:00.000Z',

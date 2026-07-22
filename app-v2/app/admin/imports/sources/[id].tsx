@@ -38,7 +38,7 @@ export default function ImportSourceDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const isNew = id === 'new';
   const { session, can } = useAdminRole();
-  const [source, setSource] = useState<ImportSource>(createEmptySource());
+  const [source, setSource] = useState<ImportSource>(() => createEmptySource());
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [testing, setTesting] = useState(false);
