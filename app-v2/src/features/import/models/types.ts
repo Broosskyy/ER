@@ -72,6 +72,7 @@ export interface ReviewerEdits {
   minimumAge?: number;
   matchedCityId?: string;
   matchedVenueId?: string;
+  matchedOrganizerId?: string;
   matchedArtistIds?: string[];
   matchedGenreIds?: string[];
 }
@@ -88,6 +89,7 @@ export interface ImportRecord {
   validationWarnings?: ValidationIssue[];
   matchedCityId?: string;
   matchedVenueId?: string;
+  matchedOrganizerId?: string;
   matchedArtistIds?: string[];
   matchedGenreIds?: string[];
   duplicateEventId?: string;
@@ -176,6 +178,7 @@ export interface CreateImportRecordInput {
   validationWarnings?: ValidationIssue[];
   matchedCityId?: string;
   matchedVenueId?: string;
+  matchedOrganizerId?: string;
   matchedArtistIds?: string[];
   matchedGenreIds?: string[];
   duplicateEventId?: string;

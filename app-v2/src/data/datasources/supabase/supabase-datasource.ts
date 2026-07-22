@@ -25,6 +25,7 @@ import { createLocalDatasourceBundle } from '@/data/datasources/local/local-data
 import { createSupabaseImportDatasourceBundle } from '@/data/datasources/supabase/supabase-import-datasource';
 import { createSupabaseArtistDatasource } from '@/data/datasources/supabase/supabase-artist-datasource';
 import { createSupabaseVenueDatasource } from '@/data/datasources/supabase/supabase-venue-datasource';
+import { createSupabaseOrganizerDatasource } from '@/data/datasources/supabase/supabase-organizer-datasource';
 import { createSupabaseEventLineupDatasource } from '@/data/datasources/supabase/supabase-event-lineup-datasource';
 import { lineupToArtistNames } from '@/data/mappers/event-lineup-mapper';
 import type { Event } from '@/features/events/types/event';
@@ -44,7 +45,7 @@ function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResul
 type SupabaseTable = ReturnType<ReturnType<typeof getSupabaseClient>['from']>;
 
 const PUBLISHED_EVENT_SELECT =
-  '*, venues(name, city, country, street, house_number, latitude, longitude, address), cities(name), genres(name), artists(name)';
+  '*, venues(name, city, country, street, house_number, latitude, longitude, address), organizers(name), cities(name), genres(name), artists(name)';
 
 interface SupabaseVenueRelation {
   name?: string;
@@ -59,6 +60,7 @@ interface SupabaseVenueRelation {
 
 interface SupabaseEventRowWithRelations {
   venues?: SupabaseVenueRelation | SupabaseVenueRelation[] | null;
+  organizers?: { name?: string } | { name?: string }[] | null;
   cities?: { name?: string } | { name?: string }[] | null;
   genres?: { name?: string } | { name?: string }[] | null;
   artists?: { name?: string } | { name?: string }[] | null;
@@ -76,6 +78,7 @@ function mapSupabaseEventRow(
   lineupArtists?: string[],
 ) {
   const venue = firstRelation(row.venues);
+  const organizer = firstRelation(row.organizers);
   const city = firstRelation(row.cities);
   const genre = firstRelation(row.genres);
   const artist = firstRelation(row.artists);
@@ -92,6 +95,7 @@ function mapSupabaseEventRow(
     genreName: genre?.name,
     artists: artistNames,
     lineup: artistNames,
+    organizerName: organizer?.name,
     latitude: venue?.latitude ?? undefined,
     longitude: venue?.longitude ?? undefined,
     address: venue?.address ?? venue?.street ?? undefined,
@@ -261,13 +265,14 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     genres: createSupabaseTableDatasource<GenreRecord>('genres'),
     cities: createSupabaseTableDatasource<CityRecord>('cities'),
     venues: createSupabaseVenueDatasource(),
+    organizers: createSupabaseOrganizerDatasource(),
     artists: createSupabaseArtistDatasource(),
     eventLineups,
     collections: createSupabaseTableDatasource<CollectionRecord>('collections'),
     sources: createSupabaseTableDatasource<SourceRecord>('sources'),
     stats: {
       async getDashboardStats(): Promise<DashboardStats> {
-        const [events, cities, genres, venues, artists, collections] = await Promise.all([
+        const [events, cities, genres, venues, artists, organizers, collections] = await Promise.all([
           eventsTable().select('id', { count: 'exact', head: true }).neq('status', 'archived'),
           (supabase.from('cities') as SupabaseTable)
             .select('id', { count: 'exact', head: true })
@@ -279,6 +284,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
           (supabase.from('artists') as SupabaseTable)
             .select('id', { count: 'exact', head: true })
             .neq('status', 'archived'),
+          (supabase.from('organizers') as SupabaseTable).select('id', { count: 'exact', head: true }),
           (supabase.from('collections') as SupabaseTable)
             .select('id', { count: 'exact', head: true })
             .eq('active', true),
@@ -289,6 +295,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
           genres: genres.count ?? 0,
           venues: venues.count ?? 0,
           artists: artists.count ?? 0,
+          organizers: organizers.count ?? 0,
           collections: collections.count ?? 0,
         };
       },

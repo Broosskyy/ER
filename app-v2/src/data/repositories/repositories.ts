@@ -14,6 +14,8 @@ import type {
   SourceRecord,
   VenueRecord,
   VenueListParams,
+  OrganizerRecord,
+  OrganizerListParams,
 } from '@/data/types/records';
 import type { EventLineupInput } from '@/features/events/domain/event-lineup';
 import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
@@ -333,6 +335,54 @@ export class AdminVenueRepository {
 
   listEventIdsForVenue(venueId: string): Promise<string[]> {
     return getDatasourceBundle().venues.listEventIdsForVenue(venueId);
+  }
+}
+
+export class OrganizerRepository {
+  getAll(): Promise<OrganizerRecord[]> {
+    return getDatasourceBundle().organizers.getAll();
+  }
+
+  getById(id: string): Promise<OrganizerRecord | null> {
+    return getDatasourceBundle().organizers.getById(id);
+  }
+
+  getBySlug(slug: string): Promise<OrganizerRecord | null> {
+    return getDatasourceBundle().organizers.getBySlug(slug);
+  }
+}
+
+export class AdminOrganizerRepository {
+  list(params: OrganizerListParams): Promise<PaginatedResult<OrganizerRecord>> {
+    return getDatasourceBundle().organizers.list(params);
+  }
+
+  getById(id: string): Promise<OrganizerRecord | null> {
+    return getDatasourceBundle().organizers.getById(id);
+  }
+
+  getBySlug(slug: string): Promise<OrganizerRecord | null> {
+    return getDatasourceBundle().organizers.getBySlug(slug);
+  }
+
+  getAll(): Promise<OrganizerRecord[]> {
+    return getDatasourceBundle().organizers.getAll();
+  }
+
+  save(record: OrganizerRecord): Promise<OrganizerRecord> {
+    return getDatasourceBundle().organizers.save(record);
+  }
+
+  delete(id: string): Promise<void> {
+    return getDatasourceBundle().organizers.delete(id);
+  }
+
+  countEventsForOrganizer(organizerId: string): Promise<number> {
+    return getDatasourceBundle().organizers.countEventsForOrganizer(organizerId);
+  }
+
+  listEventIdsForOrganizer(organizerId: string): Promise<string[]> {
+    return getDatasourceBundle().organizers.listEventIdsForOrganizer(organizerId);
   }
 }
 

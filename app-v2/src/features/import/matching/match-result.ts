@@ -1,6 +1,7 @@
 export interface MatchResult {
   matchedCityId?: string;
   matchedVenueId?: string;
+  matchedOrganizerId?: string;
   matchedArtistIds: string[];
   matchedGenreIds: string[];
   duplicateEventId?: string;
@@ -10,6 +11,7 @@ export interface MatchResult {
   details: {
     cityConfidence?: number;
     venueConfidence?: number;
+    organizerConfidence?: number;
     artistConfidences: number[];
     genreConfidences: number[];
   };
@@ -48,6 +50,18 @@ export interface MatchingCatalog {
     cityName?: string;
     latitude?: number;
     longitude?: number;
+  }>;
+  organizers: Array<{
+    id: string;
+    name: string;
+    city?: string;
+    country?: string;
+    website?: string;
+    email?: string;
+    instagram?: string;
+    facebook?: string;
+    soundcloud?: string;
+    residentAdvisor?: string;
   }>;
   artists: Array<EntityMatchCandidate & { aliases?: string[] }>;
   genres: Array<EntityMatchCandidate & { aliases?: string[] }>;

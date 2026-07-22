@@ -11,7 +11,7 @@ import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
-import type { AdminEventRecord, AdminEventStatus, VenueRecord } from '@/data/types/records';
+import type { AdminEventRecord, AdminEventStatus, VenueRecord, OrganizerRecord } from '@/data/types/records';
 import {
   adminEventModerationService,
   adminEventRepository,
@@ -20,6 +20,7 @@ import {
   collectionRepository,
   eventLineupService,
   genreRepository,
+  organizerRepository,
   sourceRepository,
   venueRepository,
 } from '@/data/repositories/registry';
@@ -32,6 +33,7 @@ import {
   type EventLineupDraftEntry,
 } from '@/features/admin/components/EventLineupEditor';
 import { VenuePicker } from '@/features/admin/components/VenuePicker';
+import { OrganizerPicker } from '@/features/admin/components/OrganizerPicker';
 import { canEditEventLineup, canEditEvents, canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
 import {
   assertValidAdminEditorialTransition,
@@ -88,6 +90,7 @@ export default function AdminEventEditorScreen() {
   const [lineup, setLineup] = useState<EventLineupDraftEntry[]>([]);
   const [artistOptions, setArtistOptions] = useState<Awaited<ReturnType<typeof adminArtistRepository.getAll>>>([]);
   const [venueOptions, setVenueOptions] = useState<VenueRecord[]>([]);
+  const [organizerOptions, setOrganizerOptions] = useState<OrganizerRecord[]>([]);
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -101,10 +104,11 @@ export default function AdminEventEditorScreen() {
     setLoading(true);
     setError(null);
     try {
-      const [genres, cities, venues, sources, collections, artists] = await Promise.all([
+      const [genres, cities, venues, organizers, sources, collections, artists] = await Promise.all([
         genreRepository.getActive(),
         cityRepository.getActive(),
         venueRepository.getAll(),
+        organizerRepository.getAll(),
         sourceRepository.getAll(),
         collectionRepository.getActive(),
         adminArtistRepository.getAll(),
@@ -113,6 +117,7 @@ export default function AdminEventEditorScreen() {
       setCityOptions(cities.map((c) => ({ id: c.id, label: c.name })));
       setArtistOptions(artists);
       setVenueOptions(venues);
+      setOrganizerOptions(organizers);
       void sources;
       void collections;
       setOptionsLoaded(true);
@@ -370,6 +375,13 @@ export default function AdminEventEditorScreen() {
             selectedVenueId={record.venueId}
             editable={fieldsEditable}
             onChange={(venueId) => updateField('venueId', venueId)}
+          />
+
+          <OrganizerPicker
+            organizers={organizerOptions}
+            selectedOrganizerId={record.organizerId}
+            editable={fieldsEditable}
+            onChange={(organizerId) => updateField('organizerId', organizerId)}
           />
 
           <EventLineupEditor

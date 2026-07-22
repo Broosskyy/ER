@@ -72,6 +72,7 @@ interface ImportRecordRow {
   validation_warnings: ValidationIssue[] | null;
   matched_city_id: string | null;
   matched_venue_id: string | null;
+  matched_organizer_id: string | null;
   matched_artist_ids: string[] | null;
   matched_genre_ids: string[] | null;
   duplicate_event_id: string | null;
@@ -217,6 +218,7 @@ export function mapImportRecordRowToDomain(row: ImportRecordRow): ImportRecord {
     validationWarnings: row.validation_warnings ?? undefined,
     matchedCityId: row.matched_city_id ?? undefined,
     matchedVenueId: row.matched_venue_id ?? undefined,
+    matchedOrganizerId: row.matched_organizer_id ?? undefined,
     matchedArtistIds: row.matched_artist_ids ?? undefined,
     matchedGenreIds: row.matched_genre_ids ?? undefined,
     duplicateEventId: row.duplicate_event_id ?? undefined,
@@ -248,6 +250,7 @@ export function mapImportRecordToRow(record: ImportRecord): Record<string, unkno
     validation_warnings: record.validationWarnings ?? null,
     matched_city_id: record.matchedCityId ?? null,
     matched_venue_id: record.matchedVenueId ?? null,
+    matched_organizer_id: record.matchedOrganizerId ?? null,
     matched_artist_ids: record.matchedArtistIds ?? [],
     matched_genre_ids: record.matchedGenreIds ?? [],
     duplicate_event_id: record.duplicateEventId ?? null,

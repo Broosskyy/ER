@@ -376,12 +376,42 @@ Definition of Done:
 - Import review venue resolution display
 - Tests und `docs/ER-009_VENUE_ADMIN_CMS_COMPLETION_REPORT.md`
 
-Nächster Fokus: **ER-010** (siehe Architektur-Roadmap / Produkt-Backlog)
+Nächster Fokus: **ER-011+** (siehe Architektur-Roadmap / Produkt-Backlog)
 
 ---
 
-## ER-010
-Titel: CMS Venues (superseded — delivered in ER-009)
+## ER-010 (Organizer Domain & Admin CMS)
+
+Status:
+- Done (`feature/er-010-organizer-domain-admin-cms`, `docs/ER-010_ORGANIZER_DOMAIN_ADMIN_CMS_COMPLETION_REPORT.md`)
+
+Priorität: Hoch
+
+Beschreibung:
+Canonical Organizer domain, admin CMS, event editor assignment, import matching, RLS. Single `events.organizer_id` FK; legacy `events.organizer` text retained.
+
+Definition of Done:
+- `organizers` table + migration
+- `OrganizerService` + Admin CMS
+- Event editor organizer picker
+- Import `matchedOrganizerId` + review UI
+- Tests und Completion Report
+
+---
+
+## ER-010 (Website SEO — separate backlog item)
+
+Status:
+- Todo
+
+Priorität: Hoch
+
+Beschreibung:
+SEO für den öffentlichen Web-Export absichern und mit echten Event-Inhalten verbinden.
+
+---
+
+## ER-010-VENUES (superseded — delivered in ER-009)
 
 Status:
 - Cancelled / superseded by ER-009

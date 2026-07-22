@@ -128,6 +128,7 @@ export function createLocalImportRecordDatasource(store: LocalImportStore): Impo
         validationWarnings: input.validationWarnings,
         matchedCityId: input.matchedCityId,
         matchedVenueId: input.matchedVenueId,
+        matchedOrganizerId: input.matchedOrganizerId,
         matchedArtistIds: input.matchedArtistIds,
         matchedGenreIds: input.matchedGenreIds,
         duplicateEventId: input.duplicateEventId,

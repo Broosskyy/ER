@@ -35,12 +35,16 @@ function createEventId(): string {
 function buildAdminEventFromRecord(record: ImportRecord): AdminEventRecord {
   const candidate = getEffectiveCandidate(record);
   const now = new Date().toISOString();
+  const organizerId =
+    record.reviewerEdits?.matchedOrganizerId ?? record.matchedOrganizerId;
   return {
     id: createEventId(),
     title: candidate.title,
     description: candidate.description ?? '',
     cityId: record.reviewerEdits?.matchedCityId ?? record.matchedCityId,
     venueId: record.reviewerEdits?.matchedVenueId ?? record.matchedVenueId,
+    organizerId,
+    organizerName: candidate.organizerName,
     artistId: undefined,
     genreId: (record.reviewerEdits?.matchedGenreIds ?? record.matchedGenreIds)?.[0],
     sourceId: record.sourceId,

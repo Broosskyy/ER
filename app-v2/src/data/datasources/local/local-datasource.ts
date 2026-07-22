@@ -20,6 +20,7 @@ import type {
   PaginatedResult,
   SourceRecord,
   VenueRecord,
+  OrganizerRecord,
 } from '@/data/types/records';
 import type {
   ContributorEventListParams,
@@ -31,6 +32,7 @@ import type {
   SourceDatasource,
   StatsDatasource,
   VenueDatasource,
+  OrganizerDatasource,
 } from '@/data/datasources/types';
 import {
   createLocalImportDatasourceBundle,
@@ -45,6 +47,10 @@ import {
   buildLocalVenuesFromEvents,
   createLocalVenueDatasource,
 } from '@/data/datasources/local/local-venue-datasource';
+import {
+  buildLocalOrganizersFromEvents,
+  createLocalOrganizerDatasource,
+} from '@/data/datasources/local/local-organizer-datasource';
 import {
   loadPersistedContributorEvents,
   savePersistedContributorEvents,
@@ -74,6 +80,24 @@ function syncAdminEventVenueIds(
   });
 }
 
+function syncAdminEventOrganizerIds(
+  adminEvents: AdminEventRecord[],
+  events: Event[],
+  organizers: OrganizerRecord[],
+): void {
+  const organizerByName = new Map(
+    organizers.map((organizer) => [organizer.name.toLowerCase(), organizer.id]),
+  );
+  adminEvents.forEach((adminEvent, index) => {
+    const event = events[index];
+    if (!event?.organizer) {
+      return;
+    }
+    adminEvent.organizerId = organizerByName.get(event.organizer.toLowerCase());
+    adminEvent.organizerName = event.organizer;
+  });
+}
+
 function eventToAdminRecord(event: Event): AdminEventRecord {
   return {
     id: event.id,
@@ -87,6 +111,7 @@ function eventToAdminRecord(event: Event): AdminEventRecord {
     endDate: event.endDateTime,
     ticketUrl: event.ticketUrl,
     imageUrl: event.imageUrl,
+    organizerName: event.organizer,
     status: mapPipelineStatusToAdmin(event.status),
     createdAt: event.createdAt,
     updatedAt: event.updatedAt,
@@ -97,10 +122,12 @@ function adminRecordToEvent(
   record: AdminEventRecord,
   existing?: Event,
   venues: VenueRecord[] = [],
+  organizers: OrganizerRecord[] = [],
 ): Event {
   const genre = filterConfig.genreOptions.find((g) => g.id === record.genreId);
   const city = filterConfig.cityOptions.find((c) => c.id === record.cityId);
   const venue = venues.find((entry) => entry.id === record.venueId);
+  const organizer = organizers.find((entry) => entry.id === record.organizerId);
 
   return {
     id: record.id,
@@ -121,7 +148,7 @@ function adminRecordToEvent(
     genres: genre ? [genre.label] : existing?.genres ?? [],
     artists: existing?.artists ?? [],
     lineup: existing?.lineup,
-    organizer: existing?.organizer,
+    organizer: organizer?.name ?? record.organizerName ?? existing?.organizer,
     ageRestriction: existing?.ageRestriction,
     priceText: existing?.priceText,
     ticketUrl: record.ticketUrl,
@@ -245,6 +272,7 @@ export class LocalStore {
   genres: GenreRecord[];
   cities: CityRecord[];
   venues: VenueRecord[];
+  organizers: OrganizerRecord[];
   artists: ArtistRecord[];
   eventArtists: EventArtistRecord[];
   collections: CollectionRecord[];
@@ -258,6 +286,8 @@ export class LocalStore {
     this.cities = buildLocalCities();
     this.venues = buildLocalVenues(this.events);
     syncAdminEventVenueIds(this.adminEvents, this.events, this.venues);
+    this.organizers = buildLocalOrganizersFromEvents(this.events);
+    syncAdminEventOrganizerIds(this.adminEvents, this.events, this.organizers);
     this.artists = buildLocalArtists(this.events);
     this.eventArtists = buildLocalEventArtistsFromEvents(this.events, this.artists);
     syncAdminEventPrimaryArtists(this.adminEvents, this.eventArtists);
@@ -291,7 +321,7 @@ export async function hydrateLocalContributorEvents(store = getLocalStore()): Pr
     }
 
     store.adminEvents.push(record);
-    const pipelineEvent = adminRecordToEvent(record, undefined, store.venues);
+    const pipelineEvent = adminRecordToEvent(record, undefined, store.venues, store.organizers);
     if (!store.events.some((event) => event.id === record.id)) {
       store.events.push(pipelineEvent);
     }
@@ -381,8 +411,13 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
     async saveEvent(record) {
       await ensureLocalContributorEventsHydrated(store);
       const existing = store.events.find((event) => event.id === record.id);
-      const mapped = adminRecordToEvent(record, existing, store.venues);
-      const adminRecord = { ...record, updatedAt: new Date().toISOString() };
+      const organizer = store.organizers.find((entry) => entry.id === record.organizerId);
+      const adminRecord = {
+        ...record,
+        organizerName: organizer?.name ?? record.organizerName,
+        updatedAt: new Date().toISOString(),
+      };
+      const mapped = adminRecordToEvent(adminRecord, existing, store.venues, store.organizers);
       const eventIndex = store.events.findIndex((event) => event.id === record.id);
       const adminIndex = store.adminEvents.findIndex((event) => event.id === record.id);
       if (eventIndex >= 0) {
@@ -461,6 +496,13 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     },
     () => store.adminEvents,
   );
+  const organizers: OrganizerDatasource = createLocalOrganizerDatasource(
+    () => store.organizers,
+    (items) => {
+      store.organizers = items;
+    },
+    () => store.adminEvents,
+  );
   const artists: ArtistDatasource = createLocalArtistDatasource(
     () => store.artists,
     (items) => {
@@ -532,6 +574,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
         genres: store.genres.filter((genre) => genre.active).length,
         venues: store.venues.length,
         artists: store.artists.filter((artist) => artist.status !== 'archived').length,
+        organizers: store.organizers.length,
         collections: store.collections.filter((collection) => collection.active).length,
       };
     },
@@ -562,6 +605,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     genres,
     cities,
     venues,
+    organizers,
     artists,
     eventLineups,
     collections,

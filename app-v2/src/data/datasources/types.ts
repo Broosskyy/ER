@@ -14,6 +14,8 @@ import type {
   SourceRecord,
   VenueRecord,
   VenueListParams,
+  OrganizerRecord,
+  OrganizerListParams,
 } from '../types/records';
 import type {
   ImportJobDatasource,
@@ -74,6 +76,17 @@ export interface VenueDatasource {
   listEventIdsForVenue(venueId: string): Promise<string[]>;
 }
 
+export interface OrganizerDatasource {
+  getAll(): Promise<OrganizerRecord[]>;
+  getById(id: string): Promise<OrganizerRecord | null>;
+  getBySlug(slug: string): Promise<OrganizerRecord | null>;
+  list(params: OrganizerListParams): Promise<PaginatedResult<OrganizerRecord>>;
+  save(organizer: OrganizerRecord): Promise<OrganizerRecord>;
+  delete(id: string): Promise<void>;
+  countEventsForOrganizer(organizerId: string): Promise<number>;
+  listEventIdsForOrganizer(organizerId: string): Promise<string[]>;
+}
+
 export interface ArtistDatasource {
   getAll(): Promise<ArtistRecord[]>;
   getPublished(): Promise<ArtistRecord[]>;
@@ -117,6 +130,7 @@ export interface DatasourceBundle {
   genres: GenreDatasource;
   cities: CityDatasource;
   venues: VenueDatasource;
+  organizers: OrganizerDatasource;
   artists: ArtistDatasource;
   eventLineups: EventLineupDatasource;
   collections: CollectionDatasource;

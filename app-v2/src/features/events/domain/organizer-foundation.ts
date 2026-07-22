@@ -1,8 +1,9 @@
 /**
- * Organizer domain foundation (ER-005.4) — planning types only.
+ * Organizer domain foundation (ER-005.4 / ER-010).
  *
- * Organizers are not yet persisted. Pipeline/import use free-text `organizer`.
- * Future: dedicated `organizers` table + membership + team roles.
+ * Canonical organizers are persisted in `organizers` with `events.organizer_id`.
+ * Legacy free-text `events.organizer` remains for unresolved import/display fallback.
+ * Team membership and ownership remain deferred.
  */
 
 export type OrganizerVerificationStatus = 'unverified' | 'pending' | 'verified';
