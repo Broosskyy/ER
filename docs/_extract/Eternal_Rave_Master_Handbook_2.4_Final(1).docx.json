@@ -1,0 +1,5792 @@
+[
+{
+"text": "Eternal Rave Master Handbook",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Master Edition 0.1Diese Ausgabe fasst die Inhalte der Versionen 1.0 bis 4.0 zusammen, entfernt Dopplungen und bildet die Grundlage für das zukünftige Master-Handbook.",
+"style": null,
+"bold": true
+},
+{
+"text": "Leitbild",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eternal Rave ist eine Community- und Social-Plattform für die elektronische Musikszene. Events stehen im Mittelpunkt, werden jedoch durch Artists, Venues, Festivals, Organizer, Creator und eine aktive Community ergänzt.",
+"style": null,
+"bold": false
+},
+{
+"text": "Vision & Mission",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Digitale Heimat der elektronischen Musikszene",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Menschen durch Musik verbinden",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community, Discovery, Vertrauen und Erlebnis als vier Säulen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Qualität vor Quantität",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Produktstrategie",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Guest Mode als Standard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optionaler Login",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Eine Plattform für Mobile und Web",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Modulare Erweiterbarkeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Skalierbare Architektur",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kernobjekte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "User",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Festival",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Profile",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Freunde",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Folgen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Feed",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beiträge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kommentare",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Likes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Fotos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Videos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Gruppen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Erinnerungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Discovery",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Suche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Karte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Empfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Trending",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Events in der Nähe",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Lieblingsartists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "KI-Empfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rollenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Gast",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "User",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Premium",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue Manager",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Moderator",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Administrator",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Owner",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technik",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "API-First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cloud Deployment",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CI/CD",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Monitoring",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Backups",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Caching",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisierte Datenimporte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "KI-Matching",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dublettenerkennung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Business",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Premium",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partnerschaften",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator Economy",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ticketing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Analytics",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Internationale Expansion",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sicherheit",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Privacy by Design",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DSGVO",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verschlüsselung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rechtekonzept",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Missbrauchserkennung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Roadmap",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Phase 1 – Fundament",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Phase 2 – Community",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Phase 3 – Premium & Creator",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Phase 4 – Ticketing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Phase 5 – Internationale Plattform",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nächste Schritte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Alle Kapitel ausführlich ausarbeiten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datenmodelle ergänzen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UX-Flows dokumentieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Architekturdiagramme erstellen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Business- und Betriebsprozesse beschreiben",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 0 – Die Geschichte von Eternal Rave",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Eternal Rave wurde mit der Überzeugung entwickelt, dass die elektronische Musikszene eine zentrale digitale Heimat verdient. Heute sind Informationen über Events, Artists, Clubs und Festivals über zahlreiche Plattformen verteilt. Eternal Rave bündelt diese Informationen in einem gemeinsamen Ökosystem.",
+"style": null,
+"bold": false
+},
+{
+"text": "Warum existiert Eternal Rave?",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Die Szene digital verbinden.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Discovery vereinfachen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vertrauenswürdige Daten bereitstellen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community über einzelne Events hinaus ermöglichen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Eine Plattform schaffen, die mit der Szene wächst.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 1 – Vision & Mission",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Vision",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eternal Rave wird die führende Community- und Social-Plattform für elektronische Musik. Nicht die Plattform mit den meisten Funktionen, sondern die Plattform mit dem größten Vertrauen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Mission",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Menschen durch elektronische Musik verbinden und das Entdecken, Erleben und Teilen von Musik einfacher, persönlicher und nachhaltiger machen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Unsere Grundprinzipien",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Community First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Quality over Quantity",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Trust by Design",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Privacy by Design",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automation by Default",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mobile First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Data First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Skalierbarkeit von Beginn an",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 2 – Langfristige Plattformstrategie",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Eternal Rave entwickelt sich von einer Eventplattform zu einem vollständigen Ökosystem für Besucher, Artists, Venues, Festivals, Veranstalter und Creator.",
+"style": null,
+"bold": false
+},
+{
+"text": "Bereich",
+"style": null,
+"bold": false
+},
+{
+"text": "Kurzfristig",
+"style": null,
+"bold": false
+},
+{
+"text": "Langfristig",
+"style": null,
+"bold": false
+},
+{
+"text": "Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Events entdecken",
+"style": null,
+"bold": false
+},
+{
+"text": "Personalisierte Erlebnisplattform",
+"style": null,
+"bold": false
+},
+{
+"text": "Community",
+"style": null,
+"bold": false
+},
+{
+"text": "Profile",
+"style": null,
+"bold": false
+},
+{
+"text": "Feed, Gruppen, Erinnerungen",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticketing",
+"style": null,
+"bold": false
+},
+{
+"text": "Planung",
+"style": null,
+"bold": false
+},
+{
+"text": "QR, Check-in, Transfers",
+"style": null,
+"bold": false
+},
+{
+"text": "AI",
+"style": null,
+"bold": false
+},
+{
+"text": "Importe",
+"style": null,
+"bold": false
+},
+{
+"text": "Empfehlungen & Automatisierung",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 3 – Community",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die Community ist das Herzstück von Eternal Rave. Events bringen Menschen zusammen, die Community sorgt dafür, dass Verbindungen auch zwischen den Veranstaltungen bestehen bleiben.",
+"style": null,
+"bold": false
+},
+{
+"text": "Ziele",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Menschen miteinander vernetzen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Erinnerungen an Events festhalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Lokale Communities fördern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vertrauen durch echte Profile schaffen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community-Funktionen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Persönliche Profile",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Freundesliste",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Folgen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Aktivitätsfeed",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kommentare",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Likes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Fotos & Videos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Gruppen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Geteilte Eventplanung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vertrauen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Verifizierte Profile",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Melde- und Moderationssystem",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Transparente Bewertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Schutz vor Spam und Fake-Accounts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zukunft",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Jahresrückblicke",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event-Statistiken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Badges",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community Challenges",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 4 – Events",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Events bilden den Mittelpunkt der Plattform. Jedes Event ist mit Artists, Venues, Organizern und Community-Inhalten verbunden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Eventinformationen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Titel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datum",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Line-up",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Genres",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tickets",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Öffnungszeiten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Social Links",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nach dem Event",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Fotos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Videos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bewertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Erinnerungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Empfehlungen ähnlicher Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 5 – Artists",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Artists sind ein zentraler Bestandteil der Plattform. Jeder Artist erhält ein eigenes Profil mit Biografie, Genres, Social Links, Discografie, kommenden Events und vergangenen Auftritten.",
+"style": null,
+"bold": false
+},
+{
+"text": "Profilinhalte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Biografie",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Genres",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Social Media",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Spotify/SoundCloud",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bilder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verifizierungsstatus",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Follower",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kommentare",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bewertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Lieblingsartist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Benachrichtigungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zukunft",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Release-Kalender",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Merchandise",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Exklusive Inhalte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Management-Zugänge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 6 – Venues",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Venues bilden die physische Heimat der Events. Jedes Venue besitzt ein dauerhaftes Profil.",
+"style": null,
+"bold": false
+},
+{
+"text": "Informationen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Adresse",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Karte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapazität",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Genres",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bilder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kontakt",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Bewertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beliebtheit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vergangene Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bevorstehende Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Langfristige Ziele",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Virtuelle Rundgänge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sitzpläne",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Barrierefreiheit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue-Analytics",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook umfasst nun die Vision, Produktstrategie, Community, Events, Artists und Venues. Als Nächstes folgen Festivals, Organizer, Creator, Datenmodell, UX, Architektur und Business, bevor das Dokument in die erste vollständige Master Edition überführt wird.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 7 – Festivals",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Festivals unterscheiden sich von einzelnen Events durch ihre Dauer, Komplexität und die Vielzahl an Artists, Bühnen und Besuchern. Eternal Rave behandelt Festivals als eigenständige Entitäten.",
+"style": null,
+"bold": false
+},
+{
+"text": "Festivalprofil",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standort",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Camping",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Stages",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Line-up",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Timetable",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Anreise",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tickets",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Festivalbewertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Fotos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Aftermovies",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Besucherlisten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Erinnerungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Langfristige Vision",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Interaktive Festivalpläne",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Live-Updates",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cashless-Integration",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Wetterinformationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 8 – Organizer",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Organizer verwalten Veranstaltungen und repräsentieren Unternehmen, Kollektive oder Marken.",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer-Profil",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Logo",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Team",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Social Links",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kontakt",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verifizierungsstatus",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Werkzeuge",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eventverwaltung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Statistiken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Einladungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Teamrollen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Analytics",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zukunft",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "CRM",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Marketing-Automatisierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ticket-Auswertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partnerbereich",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 0.5",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook deckt jetzt Vision, Strategie, Community, Events, Artists, Venues, Festivals und Organizer ab. Der nächste Ausbau konzentriert sich auf Creator, Bewertungen, Trust-System, Datenmodell und technische Architektur.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 9 – Creator",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Creator sind Multiplikatoren der Community. Sie erstellen Inhalte, dokumentieren Events und fördern die Sichtbarkeit von Artists, Venues und Festivals.",
+"style": null,
+"bold": false
+},
+{
+"text": "Creator-Profil",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Biografie",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Social Links",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Portfolio",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verifizierungsstatus",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kooperationspartner",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Content",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Fotos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Videos",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Stories",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Guides",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Playlists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Eventberichte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator Economy",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Partnerprogramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Affiliate-Links",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Premium-Inhalte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Brand-Kooperationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Statistiken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 10 – Bewertungen & Trust-System",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Vertrauen ist eine der vier Grundsäulen von Eternal Rave. Bewertungen sollen ehrlich, transparent und nachvollziehbar sein.",
+"style": null,
+"bold": false
+},
+{
+"text": "Bewertungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venues",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Festivals",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Trust-Mechanismen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Verifizierte Nutzer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "KI-gestützte Spam-Erkennung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Melde- und Moderationssystem",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Reputationspunkte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit-Logs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Langfristige Vision",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Community Reputation Score",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Qualitätssiegel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verifizierte Creator",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verifizierte Veranstalter",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 0.6",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook beschreibt jetzt bereits die Produktvision, Plattformstrategie und die wichtigsten Domänenobjekte (Events, Artists, Venues, Festivals, Organizer und Creator). Zusätzlich ist das Trust-Konzept definiert. Die nächsten Kapitel widmen sich dem Datenmodell, Rollen- und Berechtigungssystem, UX, technischer Architektur, AI, Ticketing sowie Business.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 11 – Datenmodell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Datenmodell bildet das Fundament der Plattform. Alle Kernobjekte sind eigenständige Entitäten und über definierte Beziehungen miteinander verbunden.",
+"style": null,
+"bold": false
+},
+{
+"text": "User",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "besucht Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "folgt Artists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "schreibt Bewertungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "tritt bei Events auf",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "gehört zu Genres",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "hostet Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Festival",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "besteht aus mehreren Events oder Stages",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "erstellt Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "verwaltet Venues",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "erstellt Inhalte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "verknüpft Medien",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "verbindet alle Kernobjekte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 12 – Rollen & Berechtigungen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Jede Rolle besitzt klar definierte Rechte. Rechte werden nach dem Prinzip der geringstmöglichen Berechtigung vergeben.",
+"style": null,
+"bold": false
+},
+{
+"text": "Rolle",
+"style": null,
+"bold": false
+},
+{
+"text": "Hauptrechte",
+"style": null,
+"bold": false
+},
+{
+"text": "Gast",
+"style": null,
+"bold": false
+},
+{
+"text": "Events ansehen, Suche nutzen",
+"style": null,
+"bold": false
+},
+{
+"text": "User",
+"style": null,
+"bold": false
+},
+{
+"text": "Profile, Favoriten, Bewertungen",
+"style": null,
+"bold": false
+},
+{
+"text": "Creator",
+"style": null,
+"bold": false
+},
+{
+"text": "Content veröffentlichen",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "Artistprofil verwalten",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer",
+"style": null,
+"bold": false
+},
+{
+"text": "Events und Team verwalten",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue Manager",
+"style": null,
+"bold": false
+},
+{
+"text": "Venueprofil verwalten",
+"style": null,
+"bold": false
+},
+{
+"text": "Moderator",
+"style": null,
+"bold": false
+},
+{
+"text": "Moderation und Meldungen",
+"style": null,
+"bold": false
+},
+{
+"text": "Administrator",
+"style": null,
+"bold": false
+},
+{
+"text": "Systemverwaltung",
+"style": null,
+"bold": false
+},
+{
+"text": "Owner",
+"style": null,
+"bold": false
+},
+{
+"text": "Strategische Vollrechte",
+"style": null,
+"bold": false
+},
+{
+"text": "Zwischenstand 0.7",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook umfasst nun die Produktvision, die wichtigsten Domänenobjekte, Community, Trust, das grundlegende Datenmodell und das Rollenmodell. Die nächsten Ausbaustufen konzentrieren sich auf UX & Navigation, Design System, technische Architektur, APIs, KI, Ticketing, Premium und Analytics.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 15 – Technische Architektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die technische Architektur von Eternal Rave basiert auf einem modularen, API-First-Ansatz. Alle Funktionen sollen unabhängig entwickelt, getestet und skaliert werden können.",
+"style": null,
+"bold": false
+},
+{
+"text": "Architekturprinzipien",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "API-First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Modulare Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cloud-native Deployment",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Horizontale Skalierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Monitoring & Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Backend",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "REST-/GraphQL-APIs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Authentifizierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Caching",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Job-Queue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dateispeicher",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Benachrichtigungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Frontend",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Responsive Web-App",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mobile Apps",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Offline-Unterstützung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Performance-Optimierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 16 – APIs & Integrationen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Eternal Rave integriert externe Datenquellen und stellt gleichzeitig eigene APIs für Partner und zukünftige Erweiterungen bereit.",
+"style": null,
+"bold": false
+},
+{
+"text": "Externe Integrationen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Spotify",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SoundCloud",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Instagram",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Google Maps",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ticketanbieter",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kalender-Export",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Eigene APIs",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Events API",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artists API",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue API",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community API",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Analytics API",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 0.9",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook deckt nun Vision, Produktstrategie, Community, Datenmodell, UX, Design sowie die grundlegende technische Architektur und Integrationen ab. Die nächsten Kapitel widmen sich KI & Automatisierung, Ticketing, Premium, Analytics, Business, Infrastruktur und Betrieb.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 17 – KI & Automatisierung",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Künstliche Intelligenz unterstützt Nutzer, Organisatoren und Moderatoren, ohne Entscheidungen vollständig zu automatisieren. Sie dient als Assistenzsystem und verbessert Qualität, Geschwindigkeit und Personalisierung.",
+"style": null,
+"bold": false
+},
+{
+"text": "Anwendungsbereiche",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Personalisierte Eventempfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist- und Genre-Empfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Intelligente Suche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Spam- und Betrugserkennung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Dublettenerkennung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Interne Automatisierung",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Datenimporte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Qualitätssicherung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Inhaltsklassifizierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Benachrichtigungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Moderationsvorschläge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Grundprinzipien",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Transparenz",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datenschutz",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Menschliche Kontrolle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nachvollziehbarkeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 18 – Ticketing & Premium",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ticketing und Premium erweitern das Plattformerlebnis und schaffen nachhaltige Einnahmequellen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticketing",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Ticketlinks",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "QR-Code Check-in",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Transfer von Tickets",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Wartelisten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kalenderintegration",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Premium",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Erweiterte Filter",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Exklusive Statistiken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Früher Zugang zu Funktionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Werbefreies Erlebnis",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Personalisierte KI-Empfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Monetarisierung",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Premium-Abonnements",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partnerprogramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator Economy",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Provisionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.0",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook beschreibt nun die strategische Vision, die fachlichen Domänen, UX, Design, Architektur, Integrationen sowie die Konzepte für KI, Ticketing und Premium. Im nächsten Ausbauschritt folgen Analytics, Infrastruktur, Betrieb, Governance, Entwicklungsrichtlinien und eine langfristige Produkt-Roadmap.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 19 – Analytics & Business Intelligence",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Analytics unterstützt datenbasierte Produktentscheidungen und liefert Artists, Organizern und Venues aussagekräftige Kennzahlen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Produkt-Analytics",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Nutzerwachstum",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Retention",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Conversion",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Feature-Nutzung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Performance",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community-Analytics",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Aktive Mitglieder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beiträge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kommentare",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Engagement",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Follower-Wachstum",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Business-Dashboards",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Ticket-Performance",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Premium-Umsätze",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partnerberichte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "KPIs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Exportfunktionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 20 – Infrastruktur & Betrieb",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ein stabiler Betrieb ist Voraussetzung für eine international skalierende Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Cloud-Betrieb",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Containerisierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisches Deployment",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CDN",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Backups",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Disaster Recovery",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Observability",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Monitoring",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tracing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Alarmierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Status-Dashboard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Betriebsprozesse",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Incident Management",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Release Management",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Support",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Wartungsfenster",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.1",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook umfasst nun Produktstrategie, Domänenmodell, UX, Design, Architektur, Integrationen, KI, Ticketing, Premium sowie Analytics und Betrieb. Als nächste Ausbaustufen folgen Sicherheit & Compliance (vertieft), Business & Monetarisierung, Governance, Entwicklungsrichtlinien, Roadmap und Architekturdiagramme.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 21 – Sicherheit & Compliance",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Sicherheit ist ein zentraler Bestandteil der Plattform. Sie schützt Benutzer, Daten und Geschäftsprozesse und wird bereits bei der Architektur berücksichtigt.",
+"style": null,
+"bold": false
+},
+{
+"text": "Security by Design",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Zero-Trust-Ansatz",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verschlüsselung ruhender und übertragener Daten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mehrstufige Authentifizierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Secrets Management",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Regelmäßige Sicherheitsprüfungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Compliance",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "DSGVO",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Einwilligungsmanagement",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datenminimierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Aufbewahrungsfristen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Auditierbarkeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Missbrauchsschutz",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Rate Limiting",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bot-Erkennung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Spam-Filter",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Account-Schutz",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Moderationswerkzeuge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 22 – Business & Monetarisierung",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Geschäftsmodell kombiniert wiederkehrende Umsätze mit Partnerschaften und Mehrwertdiensten, ohne den Community-Gedanken zu beeinträchtigen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Einnahmequellen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Premium-Abonnements",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ticket-Provisionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "B2B-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partnerschaften",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator Economy",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "B2B-Angebote",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Organizer-Dashboard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue Analytics",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Marketing-Tools",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Zugänge",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "White-Label-Optionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Wachstumsstrategie",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Lokaler Start",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Internationale Expansion",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Strategische Partnerschaften",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community-getriebenes Wachstum",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.2",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook deckt nun Produktvision, Community, UX, Architektur, Betrieb, Sicherheit und das Geschäftsmodell ab. Die verbleibenden Kapitel konzentrieren sich auf Governance, Entwicklungsrichtlinien, Produkt-Roadmap, Diagramme und den Anhang.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 23 – Governance & Decision Log",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die langfristige Entwicklung von Eternal Rave erfordert klare Entscheidungsprozesse. Governance definiert Verantwortlichkeiten, Priorisierung und Dokumentation aller produktrelevanten Entscheidungen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Produkt-Governance",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Produktvision als Leitlinie",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Priorisierung nach Nutzermehrwert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentierte Architekturentscheidungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Regelmäßige Produkt-Reviews",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Transparente Entscheidungsprozesse",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Decision Log",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Datum der Entscheidung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verantwortliche Personen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Begründung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Alternativen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Auswirkungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Status und Revisionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 24 – Entwicklungsrichtlinien & Qualitätsmanagement",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ein einheitlicher Entwicklungsprozess erhöht Qualität, Wartbarkeit und Geschwindigkeit der Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Coding Standards",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Clean Code",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Code Reviews",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentierte APIs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Namenskonventionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Modulare Architektur",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Qualitätssicherung",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Unit-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Integrationstests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "End-to-End-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CI/CD-Pipelines",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisierte Releases",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentation",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Architekturdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Dokumentation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR (Architecture Decision Records)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Release Notes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Entwicklerhandbuch",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.3",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook deckt nun Vision, Produktstrategie, Domänenmodell, UX, Design, Architektur, Betrieb, Sicherheit, Business, Governance und Entwicklungsprozesse ab. Die verbleibenden Kapitel konzentrieren sich auf die langfristige Produkt-Roadmap, Referenzarchitekturen, Diagramme, Glossar und Anhänge.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 25 – Langfristige Produkt-Roadmap",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die Roadmap beschreibt die strategische Entwicklung der Plattform über mehrere Jahre. Sie dient als Orientierung und wird regelmäßig anhand der Produktvision überprüft.",
+"style": null,
+"bold": false
+},
+{
+"text": "Phase 1 – Fundament",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Community, Events, Profile, Discovery und Datenqualität etablieren.",
+"style": null,
+"bold": false
+},
+{
+"text": "Phase 2 – Plattform",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Creator, Trust, Ticketing und Premium ausbauen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Phase 3 – Intelligenz",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "KI, Automatisierung und Analytics vertiefen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Phase 4 – Ökosystem",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Partner-APIs, B2B-Produkte und internationale Expansion.",
+"style": null,
+"bold": false
+},
+{
+"text": "Phase 5 – Plattform für die Szene",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Offenes Ökosystem mit nachhaltigem Wachstum.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 26 – Referenzarchitektur & Anhänge",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel beschreibt die ergänzenden Artefakte, die parallel zum Handbook gepflegt werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Diagramme",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Entity-Relationship-Diagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Systemarchitektur",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datenflussdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deployment-Diagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Landschaft",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Referenzdokumente",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Glossar",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Architecture Decision Records (ADR)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Betriebshandbuch",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Release-Checklisten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.4",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook deckt nun Vision, Strategie, Community, Domänenmodell, UX, Design, Architektur, Betrieb, Sicherheit, Business, Governance sowie die langfristige Roadmap ab. Als nächste Ausbaustufen folgen detaillierte Diagramme, Datenmodelle und technische Referenzdokumente.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 27 – Referenzarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel beschreibt die Zielarchitektur der Plattform und dient als technische Referenz für Entwicklung und Betrieb.",
+"style": null,
+"bold": false
+},
+{
+"text": "27.1 Systemlandschaft",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Web-App (React/Next.js)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mobile Apps (Flutter oder React Native)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API Gateway",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Authentifizierungsservice",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community-Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event-Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist-, Venue- und Festival-Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Media-Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Notification-Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Analytics-Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "27.2 Architekturprinzipien",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domain Driven Design (DDD)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event-Driven Communication",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Stateless Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Horizontal skalierbar",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Security by Design",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Observability by Default",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 28 – Technische Referenzmodelle",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die folgenden Modelle dienen als Vorlage für die eigentliche technische Dokumentation.",
+"style": null,
+"bold": false
+},
+{
+"text": "Entity-Relationship-Modell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "User ↔ Event (Teilnahme)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist ↔ Event (Line-up)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue ↔ Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Festival ↔ Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer ↔ Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator ↔ Content",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Content ↔ Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Review ↔ User",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Standards",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "REST als Standard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GraphQL für komplexe Abfragen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT/OAuth2",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Versionierung (/v1)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI-Dokumentation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rate Limiting",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotente Endpunkte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.5",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook entwickelt sich nun von einer Produktbeschreibung zu einem vollständigen Engineering-Handbuch. Die nächsten Kapitel behandeln konkrete Datenbankschemata, OpenAPI-Verträge, UML-Sequenzdiagramme, User-Flows und Deployment-Konzepte.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 29 – Logisches Datenbankschema",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel definiert die zentralen Domänen und ihre Beziehungen als Grundlage für das physische Datenbankschema.",
+"style": null,
+"bold": false
+},
+{
+"text": "Identity",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "User",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Role",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Permission",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Session",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OAuthAccount",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Device",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Profile",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Friendship",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Follow",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Group",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Post",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Comment",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Reaction",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Notification",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Events",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventSeries",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ticket",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Attendance",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Wishlist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Review",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Music",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Artist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Genre",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Label",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Release",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Track",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Playlist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Locations",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Venue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Festival",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Stage",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Media",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "MediaAsset",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Gallery",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CreatorContent",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Administration",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "AuditLog",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Report",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ModerationCase",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tag",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ImportJob",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 30 – Kernbeziehungen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ein User besitzt genau ein Profil.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein User kann vielen Artists folgen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Event findet in genau einem Venue statt.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Festival umfasst mehrere Events oder Stages.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Organizer verwaltet mehrere Events.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Artist kann bei vielen Events auftreten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Creator erstellt viele Medieninhalte.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Bewertungen sind immer einem User und einer Zielentität zugeordnet.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "MediaAssets können Events, Artists oder Venues zugeordnet werden.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "AuditLogs dokumentieren sicherheitsrelevante Änderungen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.6",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Engineering-Handbook enthält nun neben Produkt- und Architekturkapiteln ein logisches Datenmodell als Grundlage für das spätere relationale Datenbankschema. Im nächsten Schritt folgen konkrete Tabellen, Attribute, Schlüssel und OpenAPI-Endpunkte.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 31 – Diagrammatische Architekturübersicht",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel ersetzt die bisherigen Diagramm-Platzhalter durch konkrete, eingebettete Architektur- und Prozessdiagramme. Die Modelle dienen als gemeinsame Sprache für Produkt, Engineering, Betrieb, Security und externe Partner.",
+"style": null,
+"bold": false
+},
+{
+"text": "Die Diagramme sind bewusst technologieoffen genug, um langfristig stabil zu bleiben, aber konkret genug, um daraus technische Backlogs, Schnittstellenverträge und Betriebsverantwortlichkeiten abzuleiten.",
+"style": null,
+"bold": false
+},
+{
+"text": "31.1 Systemkontext",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Der Systemkontext zeigt Eternal Rave als zentrale Plattform zwischen Community, Szeneakteuren und externen Partnerdiensten.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 31-1: Systemkontext von Eternal Rave",
+"style": null,
+"bold": false
+},
+{
+"text": "31.2 Containerarchitektur",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Die Containeransicht gliedert die Plattform in Clients, Gateway, fachliche Services und gemeinsame Infrastruktur. Sie ist die Grundlage für Deployment, Ownership und Skalierung.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 31-2: C4-Containerarchitektur",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 32 – Datenmodell und Beziehungen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Kern-ER-Modell visualisiert die wichtigsten fachlichen Beziehungen. Es ist noch kein vollständiges physisches Datenbankschema, definiert jedoch die zentralen Kardinalitäten.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 32-1: Kern-ER-Diagramm",
+"style": null,
+"bold": false
+},
+{
+"text": "32.1 Modellierungsregeln",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Primärschlüssel werden als UUIDs geführt.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Fremdschlüssel werden explizit und indexiert gespeichert.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "n:m-Beziehungen erhalten eigene Join-Tabellen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zeitabhängige Beziehungen enthalten Gültigkeitszeiträume.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Löschungen erfolgen bei Community-Daten grundsätzlich als Soft Delete.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Auditierbare Änderungen erhalten Version und Änderungsmetadaten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 33 – Zentrale Sequenzdiagramme",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme dokumentieren die Interaktion zwischen Benutzeroberfläche, Gateway, Services und Datenhaltung. Sie reduzieren Missverständnisse bei API- und Fehlerfall-Design.",
+"style": null,
+"bold": false
+},
+{
+"text": "33.1 Event erstellen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Abbildung 33-1: Ablauf zur Erstellung eines Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Der Event-Service ist fachlich verantwortlich. Das Gateway übernimmt Authentifizierung, Ratenbegrenzung und Routing. Nach erfolgreicher Transaktion wird der Suchindex asynchron aktualisiert.",
+"style": null,
+"bold": false
+},
+{
+"text": "33.2 Login mit OAuth2",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Abbildung 33-2: OAuth2-Login und Token-Ausgabe",
+"style": null,
+"bold": false
+},
+{
+"text": "Access Tokens bleiben kurzlebig. Refresh Tokens werden geschützt gespeichert, rotieren bei Verwendung und können pro Gerät widerrufen werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 34 – Datenimport und Datenqualität",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Externe Daten sind für Discovery und Aktualität entscheidend, dürfen aber nicht ungeprüft in das Kernsystem übernommen werden. Die Pipeline trennt Rohdaten, Normalisierung, Dublettenerkennung und Freigabe.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 34-1: Import- und Qualitätssicherungsprozess",
+"style": null,
+"bold": false
+},
+{
+"text": "34.1 Qualitätskriterien",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Pflichtfelder und Datentypen sind valide.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zeit- und Ortsangaben sind plausibel.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist-, Venue- und Organizer-Zuordnungen sind eindeutig.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dublettenscore liegt unter dem Freigabeschwellwert.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Quellenherkunft und Importzeitpunkt sind nachvollziehbar.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unsichere Datensätze werden nicht automatisch veröffentlicht.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 35 – Deployment- und Betriebsarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die Zielarchitektur trennt Edge-Schutz, Lastverteilung, Compute, persistente Daten und Observability. Services laufen containerisiert und können unabhängig skaliert werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 35-1: Referenz-Deployment",
+"style": null,
+"bold": false
+},
+{
+"text": "35.1 Betriebsanforderungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Mehrere Availability Zones für kritische Komponenten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Skalierung nach Last und Queue-Tiefe.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Blue-Green- oder Rolling-Deployments ohne geplante Downtime.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verschlüsselte Backups mit regelmäßigen Wiederherstellungstests.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zentrale Logs, Metriken und verteiltes Tracing.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Definierte SLOs für Verfügbarkeit, Latenz und Fehlerquote.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 36 – Moderations- und Trust-Prozesse",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Moderation kombiniert automatische Triage mit menschlicher Entscheidung. Automatisierung priorisiert Fälle, ersetzt jedoch keine verantwortliche Entscheidung bei schwerwiegenden Maßnahmen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 36-1: Moderations- und Meldeprozess",
+"style": null,
+"bold": false
+},
+{
+"text": "36.1 Entscheidungsprinzipien",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Verhältnismäßigkeit der Maßnahme.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nachvollziehbare Begründung.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Trennung zwischen Inhalt, Account und Systemmissbrauch.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Eskalation bei Gefahr, Betrug oder wiederholten Verstößen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Widerspruchsmöglichkeit für betroffene Nutzer.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit-Log für alle Moderationsentscheidungen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 37 – KI-Empfehlungsarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Empfehlungssystem verbindet Interaktionsdaten, Inhaltsmerkmale und Kontext. Das Ranking bleibt erklärbar und darf sensible Merkmale nicht zur Benachteiligung verwenden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 37-1: Datenfluss des Empfehlungssystems",
+"style": null,
+"bold": false
+},
+{
+"text": "37.1 Ranking-Signale",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Signal",
+"style": null,
+"bold": false
+},
+{
+"text": "Beispiel",
+"style": null,
+"bold": false
+},
+{
+"text": "Schutzmaßnahme",
+"style": null,
+"bold": false
+},
+{
+"text": "Interesse",
+"style": null,
+"bold": false
+},
+{
+"text": "Gefolgte Artists und Genres",
+"style": null,
+"bold": false
+},
+{
+"text": "Begrenzte Gewichtung",
+"style": null,
+"bold": false
+},
+{
+"text": "Nähe",
+"style": null,
+"bold": false
+},
+{
+"text": "Entfernung zum Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "Nur grober Standort",
+"style": null,
+"bold": false
+},
+{
+"text": "Aktualität",
+"style": null,
+"bold": false
+},
+{
+"text": "Beginn in den nächsten Tagen",
+"style": null,
+"bold": false
+},
+{
+"text": "Keine dauerhafte Bevorzugung",
+"style": null,
+"bold": false
+},
+{
+"text": "Qualität",
+"style": null,
+"bold": false
+},
+{
+"text": "Verifizierte Daten und Trust",
+"style": null,
+"bold": false
+},
+{
+"text": "Transparente Kriterien",
+"style": null,
+"bold": false
+},
+{
+"text": "Diversität",
+"style": null,
+"bold": false
+},
+{
+"text": "Neue Artists und lokale Szenen",
+"style": null,
+"bold": false
+},
+{
+"text": "Exploration im Ranking",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 38 – API-Landschaft und Integrationsgrenzen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die API-Landschaft folgt einem API-First-Ansatz. Öffentliche und interne Schnittstellen werden versioniert, dokumentiert und über ein zentrales Gateway abgesichert.",
+"style": null,
+"bold": false
+},
+{
+"text": "Abbildung 38-1: API-Landschaft",
+"style": null,
+"bold": false
+},
+{
+"text": "38.1 API-Governance",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "OpenAPI ist die verbindliche Spezifikation für REST-Endpunkte.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Breaking Changes erfordern eine neue Major-Version.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotency Keys werden für kritische Schreiboperationen unterstützt.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Webhooks sind signiert und wiederholbar.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Fehler verwenden ein einheitliches Problem-Details-Format.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Berechtigungen werden je Scope und Ressource geprüft.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 39 – Diagramm-Governance und Pflege",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Diagramme sind Architekturartefakte und müssen wie Code gepflegt werden. Jede Abbildung besitzt einen fachlichen Owner, einen Gültigkeitsbereich und ein Aktualisierungsdatum.",
+"style": null,
+"bold": false
+},
+{
+"text": "39.1 Pflegeprozess",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Diagrammänderungen werden im Pull Request gemeinsam mit der Implementierung geprüft.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Abweichungen zwischen Dokumentation und produktiver Architektur werden als technische Schuld erfasst.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Veraltete Diagramme werden klar markiert oder entfernt.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Architekturentscheidungen werden mit ADRs verknüpft.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mindestens quartalsweise erfolgt ein Architektur-Review.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Externe Versionen dürfen keine Secrets oder internen Netzwerkdetails enthalten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.7 – Diagramm Edition",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Eternal Rave Master Handbook enthält nun erstmals echte, eingebettete Diagramme statt reiner Platzhalter. Dokumentiert sind Systemkontext, Containerarchitektur, Kern-ER-Modell, Login- und Event-Sequenzen, Datenimport, Deployment, Moderation, KI-Empfehlungen und API-Landschaft. Damit dient das Handbook nicht mehr nur als Produktbeschreibung, sondern als gemeinsame visuelle Referenz für Produktentwicklung, Engineering, Betrieb und Governance.",
+"style": null,
+"bold": false
+},
+{
+"text": "Die nächste Ausbaustufe sollte das physische Datenbankschema mit Tabellen, Feldern, Constraints und Indizes sowie konkrete OpenAPI-Verträge und zusätzliche Fehlerfall-Sequenzdiagramme enthalten.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 40 – Datenbank- & API-Handbook (Beginn)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel markiert den Übergang von der Architektur zur konkreten technischen Spezifikation. Für jede Kernentität werden Zweck, Primärschlüssel, Beziehungen, empfohlene Indizes und die wichtigsten API-Endpunkte beschrieben.",
+"style": null,
+"bold": false
+},
+{
+"text": "User",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Wichtige Felder",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "id (UUID, PK)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "username",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "display_name",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "email",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "verified",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "created_at",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "updated_at",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beziehungen",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "Profile (1:1)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Attendance (1:n)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Review (1:n)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Follow (n:m)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "GET /users/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH /users/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /users/{id}/followers",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Wichtige Felder",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "id (UUID, PK)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "title",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "starts_at",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "venue_id",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "organizer_id",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "status",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beziehungen",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "Venue (n:1)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist (n:m)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Attendance (1:n)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Review (1:n)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "GET /events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH /events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Wichtige Felder",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "id (UUID, PK)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "name",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "slug",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "verified",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "genre",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beziehungen",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "Events (n:m)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Followers (n:m)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "GET /artists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /artists/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Wichtige Felder",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "id (UUID, PK)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "name",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "address",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "capacity",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Beziehungen",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "Events (1:n)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading3",
+"bold": false
+},
+{
+"text": "GET /venues",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /venues",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 41 – Standards für alle Entitäten",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "UUIDs als Primärschlüssel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "created_at, updated_at und optional deleted_at für jede Tabelle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optimistische Versionskontrolle über version-Feld bei kritischen Objekten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Soft Deletes für Community-Inhalte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI als verbindliche API-Dokumentation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Fehlerformat nach RFC 9457 (Problem Details)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 1.8",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Mit Version 1.8 beginnt die eigentliche technische Spezifikation. Die nächsten Ausbaustufen beschreiben jede Entität vollständig – inklusive Datenbanktabellen, Constraints, Indizes, Beispiel-JSON, OpenAPI-Verträgen und Migrationsstrategien.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 42 – Physisches Datenbankschema",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel beschreibt konkrete Tabellenstrukturen als Grundlage für die Implementierung.",
+"style": null,
+"bold": false
+},
+{
+"text": "users",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Constraint",
+"style": null,
+"bold": false
+},
+{
+"text": "id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "PK",
+"style": null,
+"bold": false
+},
+{
+"text": "username",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(50)",
+"style": null,
+"bold": false
+},
+{
+"text": "UNIQUE",
+"style": null,
+"bold": false
+},
+{
+"text": "email",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "UNIQUE",
+"style": null,
+"bold": false
+},
+{
+"text": "display_name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(100)",
+"style": null,
+"bold": false
+},
+{
+"text": "verified",
+"style": null,
+"bold": false
+},
+{
+"text": "BOOLEAN",
+"style": null,
+"bold": false
+},
+{
+"text": "DEFAULT FALSE",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "NOT NULL",
+"style": null,
+"bold": false
+},
+{
+"text": "updated_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "NOT NULL",
+"style": null,
+"bold": false
+},
+{
+"text": "events",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Constraint",
+"style": null,
+"bold": false
+},
+{
+"text": "id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "PK",
+"style": null,
+"bold": false
+},
+{
+"text": "title",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "NOT NULL",
+"style": null,
+"bold": false
+},
+{
+"text": "venue_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "FK",
+"style": null,
+"bold": false
+},
+{
+"text": "organizer_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "FK",
+"style": null,
+"bold": false
+},
+{
+"text": "starts_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "NOT NULL",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(20)",
+"style": null,
+"bold": false
+},
+{
+"text": "INDEX",
+"style": null,
+"bold": false
+},
+{
+"text": "attendance",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Constraint",
+"style": null,
+"bold": false
+},
+{
+"text": "user_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "FK",
+"style": null,
+"bold": false
+},
+{
+"text": "event_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "FK",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(20)",
+"style": null,
+"bold": false
+},
+{
+"text": "checked_in_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 43 – OpenAPI-Konventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle APIs werden unter /v1 versioniert.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Problem Details (RFC 9457) für Fehler.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cursor-basierte Pagination.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT Bearer Authentication.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Filter, Sortierung und Paging einheitlich.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI dient als Single Source of Truth.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 44 – Roadmap der technischen Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die nächsten Ausbaustufen dokumentieren sämtliche Kernentitäten vollständig: Profile, Follow, Post, Comment, Reaction, Festival, Organizer, Creator, Ticket, Notification, Chat, Playlist, MediaAsset, AuditLog und weitere.",
+"style": null,
+"bold": false
+},
+{
+"text": "Zwischenstand 1.9",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook enthält jetzt Produktvision, Architektur, Diagramme sowie den Beginn einer konkreten Datenbank- und API-Spezifikation. Der nächste Meilenstein ist eine vollständige Referenzdokumentation aller Tabellen und Schnittstellen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 45 – Vollständige REST-Konventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "HTTP-Methoden",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "GET liest Ressourcen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST erstellt Ressourcen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PUT ersetzt Ressourcen vollständig.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH aktualisiert Teilbereiche.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DELETE verwendet Soft Deletes, sofern fachlich sinnvoll.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Namenskonventionen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Pluralisierte Ressourcen (/events).",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kebab-Case für Pfade.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CamelCase im JSON.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ISO-8601 für Zeitstempel.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UUIDs als Primärschlüssel.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Fehlerbehandlung",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "RFC-9457 Problem Details.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Korrelations-ID in jeder Antwort.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsfehler feldgenau.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nachvollziehbare Error Codes.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 46 – Nichtfunktionale Anforderungen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Anforderung",
+"style": null,
+"bold": false
+},
+{
+"text": "Ziel",
+"style": null,
+"bold": false
+},
+{
+"text": "Verfügbarkeit",
+"style": null,
+"bold": false
+},
+{
+"text": "99,9 %",
+"style": null,
+"bold": false
+},
+{
+"text": "API-Antwort",
+"style": null,
+"bold": false
+},
+{
+"text": "<300 ms im Normalfall",
+"style": null,
+"bold": false
+},
+{
+"text": "Suche",
+"style": null,
+"bold": false
+},
+{
+"text": "<1 s",
+"style": null,
+"bold": false
+},
+{
+"text": "Deployment",
+"style": null,
+"bold": false
+},
+{
+"text": "ohne Downtime",
+"style": null,
+"bold": false
+},
+{
+"text": "Backups",
+"style": null,
+"bold": false
+},
+{
+"text": "täglich",
+"style": null,
+"bold": false
+},
+{
+"text": "Recovery",
+"style": null,
+"bold": false
+},
+{
+"text": "RPO <24 h, RTO <4 h",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 47 – Coding Guidelines",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Clean Architecture.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Driven Design.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SOLID-Prinzipien.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testgetriebene Entwicklung für Kernlogik.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Code Reviews verpflichtend.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentation jeder öffentlichen API.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Qualitätsprüfungen in CI/CD.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 2.0",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook entwickelt sich zu einer vollständigen technischen Referenz mit Architektur, Datenmodell, API-Standards, Qualitätsanforderungen und Entwicklungsrichtlinien. Der nächste Ausbau umfasst sämtliche Entitäten inklusive vollständiger Tabellen, OpenAPI-Verträge, Beispiel-Requests/-Responses und ADRs.",
+"style": null,
+"bold": true
+},
+{
+"text": "Kapitel 48 – Physisches Datenbankschema: User",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel konkretisiert das logische Datenmodell in ein physisches Datenbankschema.",
+"style": null,
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Bemerkung",
+"style": null,
+"bold": false
+},
+{
+"text": "id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "username",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(50)",
+"style": null,
+"bold": false
+},
+{
+"text": "UNIQUE",
+"style": null,
+"bold": false
+},
+{
+"text": "email",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "UNIQUE",
+"style": null,
+"bold": false
+},
+{
+"text": "display_name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(120)",
+"style": null,
+"bold": false
+},
+{
+"text": "Index",
+"style": null,
+"bold": false
+},
+{
+"text": "verified",
+"style": null,
+"bold": false
+},
+{
+"text": "BOOLEAN",
+"style": null,
+"bold": false
+},
+{
+"text": "Default FALSE",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Index",
+"style": null,
+"bold": false
+},
+{
+"text": "updated_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 49 – OpenAPI-Richtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle REST-Endpunkte werden mit OpenAPI 3.1 dokumentiert.",
+"style": null,
+"bold": false
+},
+{
+"text": "Versionierte APIs (/v1).",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Problem-Details für Fehlerantworten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OAuth2/JWT als Standard.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Pagination für Listen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Filter, Sortierung und Cursor-basierte Navigation.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotency-Key für kritische Schreiboperationen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 50 – ADR-Katalog",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "ADR-001: API-First.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR-002: PostgreSQL als Hauptdatenbank.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR-003: UUID statt Auto-Increment.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR-004: Event Driven Architecture.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR-005: Soft Deletes für Community-Daten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR-006: OpenAPI als verbindlicher Vertrag.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 2.1",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook enthält nun Produktstrategie, Architektur, Diagramme, Datenmodell, REST-Konventionen, Coding Guidelines, physische Datenbankschemata sowie erste OpenAPI- und ADR-Standards. Als nächstes folgen vollständige Tabellendefinitionen für sämtliche Kernobjekte und vollständige API-Spezifikationen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 51 – Physisches Datenbankschema: Event",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Event ist die zentrale Entität der Plattform und verbindet Venue, Organizer, Artists sowie Community.",
+"style": null,
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "title",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "Titel",
+"style": null,
+"bold": false
+},
+{
+"text": "slug",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "UNIQUE",
+"style": null,
+"bold": false
+},
+{
+"text": "venue_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "FK Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "organizer_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "FK Organizer",
+"style": null,
+"bold": false
+},
+{
+"text": "starts_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Beginn",
+"style": null,
+"bold": false
+},
+{
+"text": "ends_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Ende",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(20)",
+"style": null,
+"bold": false
+},
+{
+"text": "Draft/Published",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "updated_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 52 – REST API: Events",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "GET /v1/events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /v1/events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /v1/events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH /v1/events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DELETE /v1/events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /v1/events/{id}/artists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /v1/events/{id}/reviews",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /v1/events/{id}/attendance",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 53 – Performance & Skalierung",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Cursor-basierte Pagination.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Redis für Hot-Data-Caching.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Elasticsearch/OpenSearch für Discovery.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Asynchrone Jobs für Benachrichtigungen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CDN für Medien.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Read Replicas für Reporting.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partitionierung historischer Eventdaten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 2.2",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Master-Handbook enthält nun Vision, Architektur, Diagramme, Datenmodelle, physische Datenbankschemata, REST-Konventionen sowie erste technische Referenzimplementierungen. Der nächste Ausbau umfasst vollständige SQL-DDLs für alle Kernentitäten, OpenAPI-Beispiele, JSON-Schemas und vollständige Sequenzdiagramme.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 54 – Physisches Datenbankschema: User",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die User-Tabelle bildet die Identitätsbasis der Plattform. Alle personenbezogenen Daten werden getrennt von Profilinformationen verwaltet.",
+"style": null,
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "username",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(50)",
+"style": null,
+"bold": false
+},
+{
+"text": "Eindeutig",
+"style": null,
+"bold": false
+},
+{
+"text": "email",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "Eindeutig",
+"style": null,
+"bold": false
+},
+{
+"text": "password_hash",
+"style": null,
+"bold": false
+},
+{
+"text": "TEXT",
+"style": null,
+"bold": false
+},
+{
+"text": "Argon2",
+"style": null,
+"bold": false
+},
+{
+"text": "verified",
+"style": null,
+"bold": false
+},
+{
+"text": "BOOLEAN",
+"style": null,
+"bold": false
+},
+{
+"text": "Verifizierung",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(20)",
+"style": null,
+"bold": false
+},
+{
+"text": "Aktiv/Suspendiert",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Erstellt",
+"style": null,
+"bold": false
+},
+{
+"text": "updated_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Geändert",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 55 – Index- und Constraint-Strategie",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "UUID als Primärschlüssel.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UNIQUE auf username und email.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Foreign Keys mit ON UPDATE CASCADE.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Soft Deletes über deleted_at.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zusätzliche Indizes auf Suche, Datum und Geokoordinaten.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Partielle Indizes für veröffentlichte Events.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 56 – OpenAPI-Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle REST-Endpunkte werden mit OpenAPI 3.1 dokumentiert.",
+"style": null,
+"bold": false
+},
+{
+"text": "Einheitliche Error-Responses (Problem Details RFC7807).",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT Bearer Authentication.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Versionierung über /v1.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cursor Pagination.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotency-Key für kritische POST-Endpunkte.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rate-Limit Header.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 2.3",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Engineering-Handbook enthält nun Produkt-, Architektur-, Datenmodell-, Diagramm-, Datenbank- und API-Spezifikationen. Als nächster Schritt folgen vollständige SQL-DDLs, Migrationen, JSON-Schemas, Event-Sourcing-Konzepte sowie komplette OpenAPI-Beispiele für sämtliche Kernobjekte.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 57 – SQL-DDL Referenz: users",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Referenzdefinition der Benutzertabelle.",
+"style": null,
+"bold": false
+},
+{
+"text": "CREATE TABLE users (  id UUID PRIMARY KEY,  username VARCHAR(50) UNIQUE NOT NULL,  email VARCHAR(255) UNIQUE NOT NULL,  password_hash TEXT NOT NULL,  verified BOOLEAN DEFAULT FALSE,  status VARCHAR(20) NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  deleted_at TIMESTAMP NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 58 – SQL-DDL Referenz: events",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE events (  id UUID PRIMARY KEY,  title VARCHAR(255) NOT NULL,  venue_id UUID REFERENCES venues(id),  organizer_id UUID REFERENCES organizers(id),  starts_at TIMESTAMP NOT NULL,  ends_at TIMESTAMP,  status VARCHAR(20),  created_at TIMESTAMP NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 59 – Beispiel OpenAPI",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "GET /v1/events/{id}200 OK{  \"id\":\"uuid\",  \"title\":\"Eternal Festival\",  \"venue\":{\"id\":\"...\",\"name\":\"Club\"},  \"artists\":[],  \"starts_at\":\"2027-05-01T20:00:00Z\"}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 60 – CI/CD Referenzarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Pull Request mit Pflicht-Review",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Unit- und Integrationstests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Container Build",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sicherheits-Scan",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deployment in Staging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Smoke Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Blue/Green Deployment in Produktion",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisches Rollback bei Fehlern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 61 – Monitoring & Observability",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "OpenTelemetry Tracing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Prometheus Metriken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Grafana Dashboards",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zentrales Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SLO/SLA Überwachung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Alerting und Incident Response",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zwischenstand 2.4",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Handbook umfasst nun Vision, Produktstrategie, Domänenmodell, Diagramme, Datenbankschemata, SQL-DDLs, API-Standards, CI/CD sowie Monitoring. Der nächste Meilenstein ist eine vollständige Referenz jeder Kernentität mit mehreren Seiten technischer Spezifikation.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 62 – Gesamtplattform auf einen Blick",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel fasst die fachliche Gesamtarchitektur von Eternal Rave zusammen und dient als Abschluss des Produkt-Handbooks.",
+"style": null,
+"bold": false
+},
+{
+"text": "Community als Mittelpunkt der Plattform",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Events als zentrale Domäne",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artists, Venues, Festivals und Organizer als Kernobjekte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Creator als Multiplikatoren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Discovery, Trust und Experience als Produktprinzipien",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 63 – Empfohlene Diagramme",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "C4 Level 1 – System Context",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "C4 Level 2 – Container",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Map",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "User Journey",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event Lifecycle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Moderationsprozess",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deployment-Übersicht",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Roadmap-Zeitstrahl",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 64 – Dokumentenlandschaft",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Mit Abschluss der Version 2.4 wird die Dokumentation in zwei Hauptwerke aufgeteilt.",
+"style": null,
+"bold": false
+},
+{
+"text": "Dokument",
+"style": null,
+"bold": false
+},
+{
+"text": "Zweck",
+"style": null,
+"bold": false
+},
+{
+"text": "Status",
+"style": null,
+"bold": false
+},
+{
+"text": "Master Handbook 2.4",
+"style": null,
+"bold": false
+},
+{
+"text": "Vision, Produkt, Business, Architekturüberblick",
+"style": null,
+"bold": false
+},
+{
+"text": "Abgeschlossen",
+"style": null,
+"bold": false
+},
+{
+"text": "Engineering Handbook 3.0",
+"style": null,
+"bold": false
+},
+{
+"text": "Implementierungs- und Engineering-Referenz",
+"style": null,
+"bold": false
+},
+{
+"text": "Startet als Nachfolger",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 65 – Abschluss der Master Edition 2.4",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die Master Edition 2.4 bildet den vollständigen fachlichen und strategischen Rahmen für Eternal Rave. Sie beschreibt Vision, Domänen, Community, Architektur, Governance sowie den Einstieg in Datenbank- und API-Konzepte. Alle zukünftigen technischen Detailausarbeitungen erfolgen im separaten Engineering Handbook 3.0.",
+"style": null,
+"bold": false
+}
+]

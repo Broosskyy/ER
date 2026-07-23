@@ -27,6 +27,7 @@ import {
   canViewImportJobs,
   canViewImports,
   canViewSources,
+  canViewConnectors,
 } from '@/features/admin/admin-permissions';
 import { breakpoints } from '@/platform/responsive-layout';
 
@@ -87,18 +88,25 @@ function useAdminNavItems() {
         isActive: (pathname) => pathname.startsWith('/admin/organizers'),
       },
       {
+        href: '/admin/sources',
+        label: 'Sources',
+        icon: 'link-outline',
+        visible: canViewSources(role),
+        isActive: (pathname) => pathname.startsWith('/admin/sources'),
+      },
+      {
+        href: '/admin/connectors',
+        label: 'Connectors',
+        icon: 'git-network-outline',
+        visible: canViewConnectors(role),
+        isActive: (pathname) => pathname.startsWith('/admin/connectors'),
+      },
+      {
         href: '/admin/imports',
         label: 'Imports',
         icon: 'cloud-download-outline',
         visible: canViewImports(role),
         isActive: (pathname) => pathname === '/admin/imports',
-      },
-      {
-        href: '/admin/imports/sources',
-        label: 'Sources',
-        icon: 'link-outline',
-        visible: canViewSources(role),
-        isActive: (pathname) => pathname.startsWith('/admin/imports/sources'),
       },
       {
         href: '/admin/imports/jobs',

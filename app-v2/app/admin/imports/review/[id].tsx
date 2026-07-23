@@ -12,7 +12,7 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { ImportRecord } from '@/features/import/models/types';
-import { importReviewService, venueRepository, organizerRepository } from '@/data/repositories/registry';
+import { importReviewService, sourceRepository, venueRepository, organizerRepository } from '@/data/repositories/registry';
 import {
   AdminErrorState,
   AdminLoadingState,
@@ -21,6 +21,8 @@ import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
 import { REJECT_REASON_LABELS } from '@/features/import/admin/reject-reasons';
 import { useAdminRole } from '@/features/import/admin/use-admin-role';
 import type { RejectReason } from '@/features/import/models/statuses';
+import type { SourceRecord } from '@/data/types/records';
+import { formatSourceStatus, formatSourceTypeLabel } from '@/features/sources/admin/source-labels';
 
 export default function ReviewDetailScreen() {
   const router = useRouter();
@@ -35,6 +37,7 @@ export default function ReviewDetailScreen() {
   const [showRaw, setShowRaw] = useState(false);
   const [matchedVenueName, setMatchedVenueName] = useState<string | null>(null);
   const [matchedOrganizerName, setMatchedOrganizerName] = useState<string | null>(null);
+  const [source, setSource] = useState<SourceRecord | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -64,6 +67,9 @@ export default function ReviewDetailScreen() {
         } else {
           setMatchedOrganizerName(null);
         }
+
+        const linkedSource = await sourceRepository.getById(loaded.sourceId);
+        setSource(linkedSource);
       }
     } catch (cause) {
       setError(getErrorMessage(cause));
@@ -212,6 +218,29 @@ export default function ReviewDetailScreen() {
 
           {error ? <AppText style={styles.error}>{error}</AppText> : null}
           {success ? <AppText style={styles.success}>{success}</AppText> : null}
+
+          <View style={styles.card}>
+            <AppText style={styles.sectionTitle}>Source Provenance</AppText>
+            <AppText style={styles.meta}>
+              Source: {record.sourceName ?? source?.displayName ?? record.sourceId}
+            </AppText>
+            <AppText style={styles.meta}>
+              Type: {formatSourceTypeLabel(record.sourceType ?? source?.sourceType ?? 'unknown')}
+            </AppText>
+            <AppText style={styles.meta}>
+              Original URL: {record.originalUrl ?? record.sourceUrl ?? '—'}
+            </AppText>
+            <AppText style={styles.meta}>
+              Retrieved:{' '}
+              {record.retrievedAt ? new Date(record.retrievedAt).toLocaleString() : '—'}
+            </AppText>
+            <AppText style={styles.meta}>
+              Current source status:{' '}
+              {source
+                ? formatSourceStatus(source.enabled, source.archived)
+                : 'Unknown'}
+            </AppText>
+          </View>
 
           <View style={styles.card}>
             <AppText style={styles.sectionTitle}>Status: {record.status}</AppText>

@@ -19,24 +19,24 @@ import type {
 } from '@/features/import/models/statuses';
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
 import type { SourceRecord } from '@/data/types/records';
+import {
+  mapImportSourceToSourceRecord,
+  mapSourceRecordToImportSource,
+  mapSourceRecordToRow,
+  mapSourceRowToRecord,
+  type SourceRow,
+} from '@/data/mappers/source-mapper';
 
-interface SourceRow {
-  id: string;
-  name: string;
-  type: string;
-  website: string | null;
-  source_url: string | null;
-  source_config: ImportSourceConfig | null;
-  default_timezone: string | null;
-  trust_score: number;
-  active: boolean;
-  adapter_key: string | null;
-  review_required: boolean;
-  last_import_at: string | null;
-  last_job_status: ImportJobStatus | null;
-  next_scheduled_at: string | null;
-  created_at: string;
-  updated_at: string;
+interface SourceRowLegacy extends SourceRow {}
+
+export { mapSourceRecordToImportSource };
+
+export function mapSourceRowToImportSource(row: SourceRowLegacy): ImportSource {
+  return mapSourceRecordToImportSource(mapSourceRowToRecord(row));
+}
+
+export function mapImportSourceToSourceRow(source: ImportSource): Record<string, unknown> {
+  return mapSourceRecordToRow(mapImportSourceToSourceRecord(source)) as unknown as Record<string, unknown>;
 }
 
 interface ImportJobRow {
@@ -66,6 +66,9 @@ interface ImportRecordRow {
   source_id: string;
   external_id: string;
   source_url: string | null;
+  source_type: string | null;
+  original_url: string | null;
+  retrieved_at: string | null;
   raw_payload: Record<string, unknown>;
   normalized_payload: Record<string, unknown> | null;
   validation_errors: ValidationIssue[] | null;
@@ -98,63 +101,6 @@ interface ImportLogRow {
   code: string;
   message: string;
   created_at: string;
-}
-
-export function mapSourceRecordToImportSource(record: SourceRecord): ImportSource {
-  return {
-    id: record.id,
-    name: record.name,
-    type: record.type,
-    website: record.website,
-    sourceUrl: record.sourceUrl,
-    sourceConfig: record.sourceConfig,
-    defaultTimezone: record.defaultTimezone,
-    trustScore: record.trustScore,
-    active: record.active,
-    adapterKey: record.adapterKey,
-    reviewRequired: record.reviewRequired,
-    lastImportAt: record.lastImportAt,
-    lastJobStatus: record.lastJobStatus,
-    nextScheduledAt: record.nextScheduledAt,
-  };
-}
-
-export function mapSourceRowToImportSource(row: SourceRow): ImportSource {
-  return {
-    id: row.id,
-    name: row.name,
-    type: row.type,
-    website: row.website ?? undefined,
-    sourceUrl: row.source_url ?? undefined,
-    sourceConfig: row.source_config ?? undefined,
-    defaultTimezone: row.default_timezone ?? undefined,
-    trustScore: Number(row.trust_score),
-    active: row.active,
-    adapterKey: row.adapter_key ?? undefined,
-    reviewRequired: row.review_required,
-    lastImportAt: row.last_import_at ?? undefined,
-    lastJobStatus: row.last_job_status ?? undefined,
-    nextScheduledAt: row.next_scheduled_at ?? undefined,
-  };
-}
-
-export function mapImportSourceToSourceRow(source: ImportSource): Record<string, unknown> {
-  return {
-    id: source.id,
-    name: source.name,
-    type: source.type,
-    website: source.website ?? null,
-    source_url: source.sourceUrl ?? null,
-    source_config: source.sourceConfig ?? {},
-    default_timezone: source.defaultTimezone ?? null,
-    trust_score: source.trustScore,
-    active: source.active,
-    adapter_key: source.adapterKey ?? null,
-    review_required: source.reviewRequired ?? true,
-    last_import_at: source.lastImportAt ?? null,
-    last_job_status: source.lastJobStatus ?? null,
-    next_scheduled_at: source.nextScheduledAt ?? null,
-  };
 }
 
 export function mapImportJobRowToDomain(row: ImportJobRow): ImportJob {
@@ -212,6 +158,9 @@ export function mapImportRecordRowToDomain(row: ImportRecordRow): ImportRecord {
     sourceId: row.source_id,
     externalId: row.external_id,
     sourceUrl: row.source_url ?? undefined,
+    sourceType: row.source_type ?? undefined,
+    originalUrl: row.original_url ?? row.source_url ?? undefined,
+    retrievedAt: row.retrieved_at ?? undefined,
     rawPayload: row.raw_payload,
     normalizedPayload: row.normalized_payload ?? undefined,
     validationErrors: row.validation_errors ?? undefined,
@@ -244,6 +193,9 @@ export function mapImportRecordToRow(record: ImportRecord): Record<string, unkno
     source_id: record.sourceId,
     external_id: record.externalId,
     source_url: record.sourceUrl ?? null,
+    source_type: record.sourceType ?? null,
+    original_url: record.originalUrl ?? record.sourceUrl ?? null,
+    retrieved_at: record.retrievedAt ?? null,
     raw_payload: record.rawPayload,
     normalized_payload: record.normalizedPayload ?? null,
     validation_errors: record.validationErrors ?? null,
@@ -313,6 +265,9 @@ export function mapImportRecordToSummary(
     venueName: candidate.venueName,
     cityName: candidate.cityName,
     sourceName,
+    sourceType: record.sourceType,
+    originalUrl: record.originalUrl ?? record.sourceUrl,
+    retrievedAt: record.retrievedAt,
     matchConfidence,
     duplicateScore: record.duplicateScore,
     warningCount: record.validationWarnings?.length ?? 0,

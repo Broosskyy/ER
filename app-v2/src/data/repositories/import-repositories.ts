@@ -12,6 +12,10 @@ export interface ImportSourceRepository {
   getAll(): Promise<ImportSource[]>;
   getActive(): Promise<ImportSource[]>;
   getById(id: string): Promise<ImportSource | null>;
+  /**
+   * Persistence-only. Prefer SourceService for writes so validation runs once.
+   * @deprecated Use SourceService.saveFromImportSource for mutations.
+   */
   save(source: ImportSource): Promise<ImportSource>;
 }
 

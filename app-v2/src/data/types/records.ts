@@ -128,21 +128,50 @@ export interface CollectionRecord {
   sortOrder: number;
 }
 
+export interface SourceListParams {
+  query?: string;
+  sourceType?: import('@/features/sources/domain/source-types').SourceType;
+  parserType?: import('@/features/sources/domain/source-types').ParserType;
+  acquisitionStrategy?: import('@/features/sources/domain/source-types').AcquisitionStrategy;
+  enabled?: boolean;
+  archived?: boolean;
+  requiresAuthentication?: boolean;
+  minTrustScore?: number;
+  maxTrustScore?: number;
+  minPriority?: number;
+  maxPriority?: number;
+  sortBy?: 'priority' | 'displayName' | 'trustScore' | 'sourceType' | 'created' | 'updated';
+  page?: number;
+  pageSize?: number;
+}
+
 export interface SourceRecord {
   id: string;
-  name: string;
-  type: string;
-  website?: string;
-  sourceUrl?: string;
+  slug: string;
+  displayName: string;
+  description?: string;
+  sourceType: import('@/features/sources/domain/source-types').SourceType;
+  baseUrl?: string;
+  parserType: import('@/features/sources/domain/source-types').ParserType;
+  acquisitionStrategy: import('@/features/sources/domain/source-types').AcquisitionStrategy;
+  pollingStrategy?: import('@/features/sources/domain/source-types').PollingStrategy;
+  pollingIntervalMinutes?: number;
+  rateLimitPerHour?: number;
+  priority: number;
+  trustScore: number;
+  requiresAuthentication: boolean;
+  enabled: boolean;
+  archived: boolean;
+  notes?: string;
   sourceConfig?: import('@/features/import/models/source-config').ImportSourceConfig;
   defaultTimezone?: string;
-  trustScore: number;
-  active: boolean;
-  adapterKey?: string;
   reviewRequired?: boolean;
+  website?: string;
   lastImportAt?: string;
   lastJobStatus?: import('@/features/import/models/statuses').ImportJobStatus;
   nextScheduledAt?: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface AdminEventRecord {

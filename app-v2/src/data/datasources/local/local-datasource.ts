@@ -52,6 +52,10 @@ import {
   createLocalOrganizerDatasource,
 } from '@/data/datasources/local/local-organizer-datasource';
 import {
+  buildLocalSeedSources,
+  createLocalSourceDatasource,
+} from '@/data/datasources/local/local-source-datasource';
+import {
   loadPersistedContributorEvents,
   savePersistedContributorEvents,
 } from '@/data/datasources/local/local-contributor-event-storage';
@@ -192,24 +196,7 @@ function buildLocalCollections(): CollectionRecord[] {
 }
 
 function buildLocalSources(): SourceRecord[] {
-  return [
-    {
-      id: 'demo',
-      name: 'Demo Source',
-      type: 'manual',
-      trustScore: 1,
-      active: true,
-      adapterKey: 'demo',
-    },
-    {
-      id: 'admin',
-      name: 'Admin',
-      type: 'manual',
-      trustScore: 1,
-      active: true,
-      adapterKey: 'manual',
-    },
-  ];
+  return buildLocalSeedSources();
 }
 
 function buildLocalVenues(events: Event[]): VenueRecord[] {
@@ -560,7 +547,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
       store.collections = items;
     },
   );
-  const sources: SourceDatasource = createCrudDatasource(
+  const sources: SourceDatasource = createLocalSourceDatasource(
     () => store.sources,
     (items) => {
       store.sources = items;

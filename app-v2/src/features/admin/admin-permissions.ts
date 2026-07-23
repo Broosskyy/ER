@@ -56,6 +56,14 @@ export function canManageSources(role: AdminRole | null): boolean {
   return hasPermission(role, 'sources:write');
 }
 
+export function canViewConnectors(role: AdminRole | null): boolean {
+  return canViewSources(role);
+}
+
+export function canManageConnectors(role: AdminRole | null): boolean {
+  return canManageSources(role);
+}
+
 export function canViewImportJobs(role: AdminRole | null): boolean {
   return hasPermission(role, 'jobs:read');
 }
@@ -187,6 +195,9 @@ export function canAccessAdminRoute(
     case 'sources':
     case 'source-detail':
       return canViewSources(role);
+    case 'connectors':
+    case 'connector-detail':
+      return canViewConnectors(role);
     case 'jobs':
     case 'job-detail':
       return canViewImportJobs(role);

@@ -32,6 +32,10 @@ describe('admin route utils', () => {
     expect(resolveAdminRouteKey(['admin', 'events', 'review'])).toBe('events-review');
     expect(resolveAdminRouteKey(['admin', 'events', 'review', 'evt-1'])).toBe('events-review-detail');
     expect(resolveAdminRouteKey(['admin', 'events'])).toBe('events');
+    expect(resolveAdminRouteKey(['admin', 'sources', 'src-1'])).toBe('source-detail');
+    expect(resolveAdminRouteKey(['admin', 'sources'])).toBe('sources');
+    expect(resolveAdminRouteKey(['admin', 'connectors', 'mock'])).toBe('connector-detail');
+    expect(resolveAdminRouteKey(['admin', 'connectors'])).toBe('connectors');
   });
 });
 

@@ -1,0 +1,8617 @@
+[
+{
+"text": "Eternal Rave Engineering Handbook",
+"style": "Title",
+"bold": false
+},
+{
+"text": "Master Edition 3.0",
+"style": null,
+"bold": true
+},
+{
+"text": "Technische Referenz für Architektur, Backend, Frontend, Datenbank, Infrastruktur und Engineering.",
+"style": null,
+"bold": false
+},
+{
+"text": "Vorwort",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Dokument ersetzt nicht das Master Handbook 2.4, sondern ergänzt es. Während das Master Handbook die Produktvision und fachliche Plattform beschreibt, definiert das Engineering Handbook die technische Umsetzung und dient als Referenz für Entwickler, Architekten und KI-gestützte Coding-Tools.",
+"style": null,
+"bold": false
+},
+{
+"text": "Leitprinzipien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "API-First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Driven Design (DDD)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Clean Architecture",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cloud Native",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Security by Design",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Observability by Default",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automation First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Infrastructure as Code",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Struktur des Engineering Handbook",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Band",
+"style": null,
+"bold": false
+},
+{
+"text": "Inhalt",
+"style": null,
+"bold": false
+},
+{
+"text": "1",
+"style": null,
+"bold": false
+},
+{
+"text": "Software Architecture",
+"style": null,
+"bold": false
+},
+{
+"text": "2",
+"style": null,
+"bold": false
+},
+{
+"text": "Domain & Database",
+"style": null,
+"bold": false
+},
+{
+"text": "3",
+"style": null,
+"bold": false
+},
+{
+"text": "Backend & APIs",
+"style": null,
+"bold": false
+},
+{
+"text": "4",
+"style": null,
+"bold": false
+},
+{
+"text": "Frontend & UX Engineering",
+"style": null,
+"bold": false
+},
+{
+"text": "5",
+"style": null,
+"bold": false
+},
+{
+"text": "Infrastructure & DevOps",
+"style": null,
+"bold": false
+},
+{
+"text": "6",
+"style": null,
+"bold": false
+},
+{
+"text": "Security & Compliance",
+"style": null,
+"bold": false
+},
+{
+"text": "7",
+"style": null,
+"bold": false
+},
+{
+"text": "Quality Engineering & Testing",
+"style": null,
+"bold": false
+},
+{
+"text": "8",
+"style": null,
+"bold": false
+},
+{
+"text": "Operations & Monitoring",
+"style": null,
+"bold": false
+},
+{
+"text": "9",
+"style": null,
+"bold": false
+},
+{
+"text": "Anhänge, ADRs und Referenzen",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 1 – Zielarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Eternal Rave wird als modular aufgebaute Plattform mit klar abgegrenzten Domänen entwickelt. Alle Services kommunizieren über definierte APIs oder asynchrone Events. Jede Domäne besitzt ihre eigene Datenverantwortung und kann unabhängig entwickelt, getestet und skaliert werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 2 – Technische Ziele",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Skalierbarkeit für Millionen von Nutzern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Hohe Wartbarkeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Klare Modulgrenzen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisierte Deployments",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Hohe Testabdeckung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nachvollziehbare Architekturentscheidungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Roadmap Version 3.x",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Version 3.1: Domain-Driven DesignVersion 3.2: Datenbank & SQL-DDLsVersion 3.3: REST/OpenAPIVersion 3.4: FrontendVersion 3.5: InfrastrukturVersion 3.6: SecurityVersion 3.7: DevOps & Betrieb",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 3 – Domain-Driven Design (DDD)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die Plattform wird in klar voneinander getrennte fachliche Domänen (Bounded Contexts) aufgeteilt. Jede Domäne besitzt ihre eigenen Modelle, Services und Daten und kann unabhängig entwickelt werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Bounded Context",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortung",
+"style": null,
+"bold": false
+},
+{
+"text": "Identity",
+"style": null,
+"bold": false
+},
+{
+"text": "Benutzer, Authentifizierung, Rollen",
+"style": null,
+"bold": false
+},
+{
+"text": "Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Events und Event-Lifecycle",
+"style": null,
+"bold": false
+},
+{
+"text": "Artists",
+"style": null,
+"bold": false
+},
+{
+"text": "Künstlerprofile",
+"style": null,
+"bold": false
+},
+{
+"text": "Venues",
+"style": null,
+"bold": false
+},
+{
+"text": "Locations und Clubs",
+"style": null,
+"bold": false
+},
+{
+"text": "Festivals",
+"style": null,
+"bold": false
+},
+{
+"text": "Festivalverwaltung",
+"style": null,
+"bold": false
+},
+{
+"text": "Community",
+"style": null,
+"bold": false
+},
+{
+"text": "Posts, Kommentare, Likes",
+"style": null,
+"bold": false
+},
+{
+"text": "Discovery",
+"style": null,
+"bold": false
+},
+{
+"text": "Suche und Empfehlungen",
+"style": null,
+"bold": false
+},
+{
+"text": "Trust",
+"style": null,
+"bold": false
+},
+{
+"text": "Moderation, Verifizierung, Meldungen",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 4 – Architekturprinzipien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Single Responsibility Principle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Loose Coupling",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "High Cohesion",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dependency Injection",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-First",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event-driven Communication",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Backward Compatibility",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Stateless Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 5 – Microservice-Landschaft",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die Plattform kann zunächst als modularer Monolith starten. Mit wachsender Last können Domänen schrittweise in eigenständige Microservices überführt werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "API Gateway",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Identity Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Artist Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Festival Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Search Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Notification Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Media Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 6 – Technologiestack",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Bereich",
+"style": null,
+"bold": false
+},
+{
+"text": "Empfohlene Technologien",
+"style": null,
+"bold": false
+},
+{
+"text": "Backend",
+"style": null,
+"bold": false
+},
+{
+"text": "Java / Spring Boot",
+"style": null,
+"bold": false
+},
+{
+"text": "Frontend",
+"style": null,
+"bold": false
+},
+{
+"text": "React + TypeScript",
+"style": null,
+"bold": false
+},
+{
+"text": "Mobile",
+"style": null,
+"bold": false
+},
+{
+"text": "Flutter",
+"style": null,
+"bold": false
+},
+{
+"text": "Datenbank",
+"style": null,
+"bold": false
+},
+{
+"text": "PostgreSQL",
+"style": null,
+"bold": false
+},
+{
+"text": "Cache",
+"style": null,
+"bold": false
+},
+{
+"text": "Redis",
+"style": null,
+"bold": false
+},
+{
+"text": "Suche",
+"style": null,
+"bold": false
+},
+{
+"text": "OpenSearch",
+"style": null,
+"bold": false
+},
+{
+"text": "Messaging",
+"style": null,
+"bold": false
+},
+{
+"text": "Kafka oder RabbitMQ",
+"style": null,
+"bold": false
+},
+{
+"text": "Container",
+"style": null,
+"bold": false
+},
+{
+"text": "Docker",
+"style": null,
+"bold": false
+},
+{
+"text": "Orchestrierung",
+"style": null,
+"bold": false
+},
+{
+"text": "Kubernetes",
+"style": null,
+"bold": false
+},
+{
+"text": "CI/CD",
+"style": null,
+"bold": false
+},
+{
+"text": "GitHub Actions",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 7 – Domänenmodell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle Kernobjekte der Plattform werden als eigenständige Aggregate modelliert. Beziehungen erfolgen über stabile IDs und klar definierte Schnittstellen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Entität",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "Beziehungen",
+"style": null,
+"bold": false
+},
+{
+"text": "User",
+"style": null,
+"bold": false
+},
+{
+"text": "user_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Events, Posts, Tickets",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "artist_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "venue_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Festival",
+"style": null,
+"bold": false
+},
+{
+"text": "festival_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer",
+"style": null,
+"bold": false
+},
+{
+"text": "organizer_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "event_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue, Artists, Festival",
+"style": null,
+"bold": false
+},
+{
+"text": "Creator",
+"style": null,
+"bold": false
+},
+{
+"text": "creator_id",
+"style": null,
+"bold": false
+},
+{
+"text": "Content",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket",
+"style": null,
+"bold": false
+},
+{
+"text": "ticket_id",
+"style": null,
+"bold": false
+},
+{
+"text": "User, Event",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 8 – Datenbankrichtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "UUIDs als Primärschlüssel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zeitstempel für Erstellung und Änderungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Soft Deletes für fachlich relevante Daten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optimistische Sperrung mittels Versionsfeld",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Indizes für häufige Suchfelder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Referenzielle Integrität über Foreign Keys",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 9 – API-Konventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "REST-konforme Ressourcen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON als Standardformat",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Versionierung über /api/v1/",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1 als Referenz",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardisierte Fehlerobjekte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT-basierte Authentifizierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 10 – Qualitätsziele",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Jede Funktion der Plattform soll nachvollziehbar testbar, wartbar und skalierbar sein.",
+"style": null,
+"bold": false
+},
+{
+"text": "Unit-Tests für Business-Logik",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Integrations-Tests für APIs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "End-to-End-Tests für Kernprozesse",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Codeanalyse",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Security-Scans in der CI/CD-Pipeline",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Code Reviews als Pflichtbestandteil jedes Pull Requests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 11 – Entity-Spezifikation: User",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Der User ist das zentrale Aggregate der Plattform. Er besitzt Identität, Profileinstellungen, Rollen und Beziehungen zu allen sozialen und transaktionalen Domänen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "user_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "username",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(50)",
+"style": null,
+"bold": false
+},
+{
+"text": "Eindeutiger Benutzername",
+"style": null,
+"bold": false
+},
+{
+"text": "display_name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(120)",
+"style": null,
+"bold": false
+},
+{
+"text": "Anzeigename",
+"style": null,
+"bold": false
+},
+{
+"text": "email",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "Verifizierte E-Mail",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "ENUM",
+"style": null,
+"bold": false
+},
+{
+"text": "ACTIVE, SUSPENDED, DELETED",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Erstellt am",
+"style": null,
+"bold": false
+},
+{
+"text": "updated_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Zuletzt geändert",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 12 – Entity-Spezifikation: Event",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ein Event bildet das Herzstück der Plattform und verbindet Venue, Artists, Organizer sowie Tickets.",
+"style": null,
+"bold": false
+},
+{
+"text": "Statusmodell: Draft → Published → Running → Finished → Archived",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unterstützung für wiederkehrende Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zeit- und Zeitzonenverwaltung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mehrere Artists pro Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verknüpfung mit Festival und Venue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 13 – API-Designrichtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Pluralisierte Ressourcen (/events, /artists, /venues)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "HTTP-Methoden gemäß REST",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotente PUT-Operationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH für Teilaktualisierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Cursor-basierte Pagination",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Filter, Sortierung und Volltextsuche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 14 – Sicherheitsarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "OAuth2/OpenID Connect",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT Access- und Refresh-Tokens",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rollen- und Rechteverwaltung (RBAC)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rate Limiting",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verschlüsselung sensibler Daten im Ruhezustand und bei der Übertragung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 15 – Architekturentscheidungen (ADR)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle wesentlichen Architekturentscheidungen werden als Architecture Decision Records dokumentiert.",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR",
+"style": null,
+"bold": false
+},
+{
+"text": "Thema",
+"style": null,
+"bold": false
+},
+{
+"text": "Status",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-001",
+"style": null,
+"bold": false
+},
+{
+"text": "PostgreSQL als Primärdatenbank",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-002",
+"style": null,
+"bold": false
+},
+{
+"text": "REST API als Primärschnittstelle",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-003",
+"style": null,
+"bold": false
+},
+{
+"text": "Modularer Monolith als Startarchitektur",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-004",
+"style": null,
+"bold": false
+},
+{
+"text": "Kubernetes als Zielplattform",
+"style": null,
+"bold": false
+},
+{
+"text": "Proposed",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 16 – SQL-DDL-Konventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle Datenbankschemata folgen einheitlichen Konventionen, um Konsistenz und Wartbarkeit sicherzustellen.",
+"style": null,
+"bold": false
+},
+{
+"text": "snake_case für Tabellen- und Spaltennamen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UUID als Primärschlüssel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "NOT NULL standardmäßig für Pflichtfelder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CHECK-Constraints für Statuswerte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Foreign Keys mit referenzieller Integrität",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Indizes für Such- und Join-Spalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 17 – OpenAPI-Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1 als verbindliche Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Jeder Endpoint dokumentiert Request, Response und Fehlercodes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Schema-Wiederverwendung über Components",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Versionierung über /api/v1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OAuth2 Security Schemes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 18 – Sequenzdiagramme (fachliche Beschreibung)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Für alle geschäftskritischen Abläufe werden Sequenzdiagramme gepflegt.",
+"style": null,
+"bold": false
+},
+{
+"text": "Prozess",
+"style": null,
+"bold": false
+},
+{
+"text": "Beteiligte",
+"style": null,
+"bold": false
+},
+{
+"text": "Benutzerregistrierung",
+"style": null,
+"bold": false
+},
+{
+"text": "Client → Identity → Datenbank → Mail",
+"style": null,
+"bold": false
+},
+{
+"text": "Event erstellen",
+"style": null,
+"bold": false
+},
+{
+"text": "Client → Event API → Event Service → Datenbank",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticketkauf",
+"style": null,
+"bold": false
+},
+{
+"text": "Client → Ticket Service → Payment → Datenbank",
+"style": null,
+"bold": false
+},
+{
+"text": "Eventsuche",
+"style": null,
+"bold": false
+},
+{
+"text": "Client → Search API → OpenSearch",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 19 – Logging & Observability",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Strukturiertes JSON-Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Korrelations-IDs über alle Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenTelemetry Tracing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Prometheus-Metriken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Grafana-Dashboards",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Alarmierung über definierte SLOs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 20 – Ausblick",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die folgenden Versionen erweitern dieses Handbuch um vollständige SQL-DDLs, UML- und ER-Diagramme, OpenAPI-Spezifikationen, Infrastrukturdiagramme, Deployment-Blueprints sowie detaillierte Implementierungsrichtlinien für alle Kernmodule der Eternal-Rave-Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 21 – SQL-DDL: users",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE users (  user_id UUID PRIMARY KEY,  username VARCHAR(50) UNIQUE NOT NULL,  email VARCHAR(255) UNIQUE NOT NULL,  display_name VARCHAR(120),  status VARCHAR(20) NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  version INTEGER NOT NULL DEFAULT 1);",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 22 – SQL-DDL: events",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE events (  event_id UUID PRIMARY KEY,  venue_id UUID NOT NULL,  organizer_id UUID,  title VARCHAR(255) NOT NULL,  starts_at TIMESTAMP NOT NULL,  ends_at TIMESTAMP NOT NULL,  status VARCHAR(20) NOT NULL,  created_at TIMESTAMP NOT NULL);",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 23 – OpenAPI-Beispiel",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "GET /api/v1/events/{eventId}",
+"style": null,
+"bold": false
+},
+{
+"text": "200 OK → Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "400 Bad Request",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "401 Unauthorized",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "404 Not Found",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "500 Internal Server Error",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 24 – JSON-Schema-Richtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "camelCase für JSON-Felder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UUID als String",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ISO-8601 für Datum/Uhrzeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "RFC7807 für Fehlerobjekte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nullable Felder explizit kennzeichnen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 25 – PlantUML-Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlUser --> EventEvent --> VenueEvent --> Artist@enduml",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 26 – C4-Modell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Level 1: System Context",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level 2: Container",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level 3: Component",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level 4: Code (optional)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 27 – Performance Engineering",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Antwortzeit Ziel <200 ms (API)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Redis für häufig gelesene Daten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenSearch für Volltextsuche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Asynchrone Verarbeitung über Message Broker",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Horizontal skalierbare Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 28 – Nächste Ausbaustufe",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ab Version 3.6 werden alle Kernmodule (User, Artist, Venue, Festival, Organizer, Ticket, Community, Discovery und Trust) vollständig mit Datenmodell, SQL-DDL, OpenAPI, Zustandsmodell, Sequenzdiagrammen und Implementierungsrichtlinien beschrieben.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 29 – Modulreferenz: User",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel definiert das User-Modul als technische Referenzimplementierung für weitere Domänen.",
+"style": null,
+"bold": false
+},
+{
+"text": "29.1 Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Registrierung und Anmeldung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Profilverwaltung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rollen und Berechtigungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datenschutzeinstellungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verknüpfung mit Events, Tickets und Community",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "29.2 REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/users/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Benutzer abrufen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/users",
+"style": null,
+"bold": false
+},
+{
+"text": "Benutzer anlegen",
+"style": null,
+"bold": false
+},
+{
+"text": "PATCH",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/users/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Benutzer aktualisieren",
+"style": null,
+"bold": false
+},
+{
+"text": "DELETE",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/users/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Benutzer deaktivieren",
+"style": null,
+"bold": false
+},
+{
+"text": "29.3 Zustandsmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "REGISTERED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EMAIL_VERIFIED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ACTIVE",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SUSPENDED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DELETED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 30 – Modulreferenz: Event",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Event-Modul bildet den Kern der Plattform und orchestriert Artists, Venues, Festivals und Organizer.",
+"style": null,
+"bold": false
+},
+{
+"text": "Event anlegen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event veröffentlichen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event aktualisieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event absagen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event archivieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 31 – Fehlerbehandlung",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "RFC 7807 Problem Details",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Eindeutige Fehlercodes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Korrelation über Request-ID",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine sensiblen Informationen in Fehlermeldungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 32 – Teststrategie",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Unit-Tests für Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Repository-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Integrationstests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Contract-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "End-to-End-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Lasttests vor Releases",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 33 – Standardstruktur für Domänenmodule",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle fachlichen Module werden nach derselben Struktur dokumentiert. Dadurch bleiben Implementierung, Wartung und Erweiterung konsistent.",
+"style": null,
+"bold": false
+},
+{
+"text": "1. Fachliche Verantwortung",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "2. Aggregate und Entities",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "3. Datenbankmodell",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "4. SQL-DDLs",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "5. REST-Endpunkte",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "6. OpenAPI-Spezifikation",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "7. JSON-Schemas",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "8. Zustandsmodell",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "9. Sequenzdiagramme",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "10. Sicherheitsregeln",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "11. Testfälle",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "12. Architekturentscheidungen (ADR)",
+"style": "ListNumber",
+"bold": false
+},
+{
+"text": "Kapitel 34 – Modulreferenz: Artist",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Verwaltet Künstlerprofile, Genres, Social Links und Verknüpfungen zu Events.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 35 – Modulreferenz: Venue",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Verwaltet Veranstaltungsorte inklusive Kapazitäten, Adresse und Ausstattung.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 36 – Modulreferenz: Festival",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Bündelt mehrere Events unter einem Festival.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 37 – Modulreferenz: Organizer",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Verantwortlich für Planung und Verwaltung von Veranstaltungen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 38 – Modulreferenz: Ticket",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Reservierung, Kauf, Validierung und Rückerstattung von Tickets.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 39 – Modulreferenz: Community",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Beiträge, Kommentare, Likes, Follows und Benachrichtigungen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 40 – Modulreferenz: Discovery",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Suche, Empfehlungen, Trends und personalisierte Feeds.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eigene Datenhoheit innerhalb des Bounded Contexts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-API und Domain-Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenspezifische Validierungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren von Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Artefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassendiagramm",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 41 – Implementierungsfahrplan",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die folgenden Versionen des Engineering Handbook vertiefen jedes Modul vollständig. Ziel ist eine vollständige Referenzdokumentation, aus der Backend-, Frontend- und Infrastrukturkomponenten unmittelbar umgesetzt werden können.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 42 – User-Modul: Aggregate und Domänenmodell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das User-Modul bildet die Identitäts- und Profilverwaltung der Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Aggregate",
+"style": null,
+"bold": false
+},
+{
+"text": "Entities",
+"style": null,
+"bold": false
+},
+{
+"text": "Value Objects",
+"style": null,
+"bold": false
+},
+{
+"text": "User",
+"style": null,
+"bold": false
+},
+{
+"text": "UserProfile, UserRole",
+"style": null,
+"bold": false
+},
+{
+"text": "Email, Username",
+"style": null,
+"bold": false
+},
+{
+"text": "Privacy",
+"style": null,
+"bold": false
+},
+{
+"text": "PrivacySettings",
+"style": null,
+"bold": false
+},
+{
+"text": "Visibility",
+"style": null,
+"bold": false
+},
+{
+"text": "Authentication",
+"style": null,
+"bold": false
+},
+{
+"text": "Credential",
+"style": null,
+"bold": false
+},
+{
+"text": "PasswordPolicy",
+"style": null,
+"bold": false
+},
+{
+"text": "Preferences",
+"style": null,
+"bold": false
+},
+{
+"text": "NotificationSettings",
+"style": null,
+"bold": false
+},
+{
+"text": "Locale, Timezone",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 43 – User-Modul: Validierungsregeln",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Benutzername weltweit eindeutig",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "E-Mail eindeutig und verifiziert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Passwort gemäß definierter Sicherheitsrichtlinie",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Display Name darf Sonderzeichen nur eingeschränkt enthalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Soft Delete statt physischer Löschung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 44 – User-Modul: Rollenmodell (RBAC)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Rolle",
+"style": null,
+"bold": false
+},
+{
+"text": "Berechtigungen",
+"style": null,
+"bold": false
+},
+{
+"text": "Guest",
+"style": null,
+"bold": false
+},
+{
+"text": "Öffentliche Inhalte lesen",
+"style": null,
+"bold": false
+},
+{
+"text": "User",
+"style": null,
+"bold": false
+},
+{
+"text": "Events, Community, Tickets",
+"style": null,
+"bold": false
+},
+{
+"text": "Creator",
+"style": null,
+"bold": false
+},
+{
+"text": "Zusätzliche Creator-Funktionen",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer",
+"style": null,
+"bold": false
+},
+{
+"text": "Events verwalten",
+"style": null,
+"bold": false
+},
+{
+"text": "Moderator",
+"style": null,
+"bold": false
+},
+{
+"text": "Moderation",
+"style": null,
+"bold": false
+},
+{
+"text": "Administrator",
+"style": null,
+"bold": false
+},
+{
+"text": "Vollzugriff",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 45 – User-Modul: Beispiel-OpenAPI",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "GET /api/v1/users/{userId}Response:{  \"userId\":\"uuid\",  \"username\":\"raver01\",  \"displayName\":\"Raver\",  \"status\":\"ACTIVE\"}",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 46 – User-Modul: Testfälle",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Registrierung mit gültigen Daten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Registrierung mit doppelter E-Mail",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Login mit ungültigem Passwort",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Änderung des Anzeigenamens",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sperrung und Reaktivierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Berechtigungsprüfung pro Rolle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 47 – Event-Modul: Aggregate und Domänenmodell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Event-Modul verwaltet den vollständigen Lebenszyklus von Veranstaltungen und koordiniert Beziehungen zu Venues, Artists, Festivals, Organizern und Tickets.",
+"style": null,
+"bold": false
+},
+{
+"text": "Aggregate",
+"style": null,
+"bold": false
+},
+{
+"text": "Entities",
+"style": null,
+"bold": false
+},
+{
+"text": "Value Objects",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "Event, EventSchedule",
+"style": null,
+"bold": false
+},
+{
+"text": "TimeRange",
+"style": null,
+"bold": false
+},
+{
+"text": "Lineup",
+"style": null,
+"bold": false
+},
+{
+"text": "ArtistAssignment",
+"style": null,
+"bold": false
+},
+{
+"text": "PerformanceSlot",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "VenueReference",
+"style": null,
+"bold": false
+},
+{
+"text": "Address",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticketing",
+"style": null,
+"bold": false
+},
+{
+"text": "TicketCategory",
+"style": null,
+"bold": false
+},
+{
+"text": "Price",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 48 – Event-Modul: SQL-DDL (Beispiel)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE events (  event_id UUID PRIMARY KEY,  venue_id UUID NOT NULL,  organizer_id UUID NOT NULL,  title VARCHAR(255) NOT NULL,  description TEXT,  starts_at TIMESTAMP NOT NULL,  ends_at TIMESTAMP NOT NULL,  status VARCHAR(20) NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL);",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 49 – Event-Modul: REST/OpenAPI",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Zweck",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events",
+"style": null,
+"bold": false
+},
+{
+"text": "Events suchen",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Event lesen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events",
+"style": null,
+"bold": false
+},
+{
+"text": "Event erstellen",
+"style": null,
+"bold": false
+},
+{
+"text": "PATCH",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Event aktualisieren",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events/{id}/publish",
+"style": null,
+"bold": false
+},
+{
+"text": "Event veröffentlichen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events/{id}/cancel",
+"style": null,
+"bold": false
+},
+{
+"text": "Event absagen",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 50 – Event-Zustandsmodell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Draft → Published",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Published → Running",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Running → Finished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Published → Cancelled",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Finished → Archived",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 51 – Event-Validierungsregeln",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Titel ist Pflichtfeld",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Endzeit muss nach der Startzeit liegen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue muss vorhanden sein",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mindestens ein Organizer",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine Veröffentlichung ohne Pflichtdaten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 52 – Event-Testfälle",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Event erfolgreich erstellen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Veröffentlichung ohne Venue verhindern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zeitkonflikte erkennen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event absagen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Archivierung nach Abschluss",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Suche nach Datum, Artist und Venue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 53 – Modulreferenz: Artist",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Artist'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Künstlerprofil verwalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Genres & Tags",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Social Links",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verknüpfung zu Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 54 – Modulreferenz: Venue",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Venue'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Standort",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapazität",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ausstattung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Öffnungszeiten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 55 – Modulreferenz: Festival",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Festival'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Mehrtägige Veranstaltungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event-Zuordnung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Stages",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Line-ups",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 56 – Modulreferenz: Organizer",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Organizer'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Veranstaltungen planen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Teams verwalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Freigaben",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Abrechnung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 57 – Modulreferenz: Ticket",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Ticket'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Ticketkategorien",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kontingente",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Refunds",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 58 – Modulreferenz: Community",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Community'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Posts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kommentare",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Likes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Moderation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 59 – Modulreferenz: Discovery",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Technische Spezifikation des Moduls 'Discovery'. Dieses Modul besitzt einen eigenen Bounded Context und eine klar definierte API.",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlichkeiten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Suche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Empfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Trends",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Personalisierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Standardartefakte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Domänenmodell",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-/OpenAPI-Spezifikation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testfälle",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 60 – Modulübergreifende Architektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "API Gateway als Einstiegspunkt",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT-basierte Authentifizierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Asynchrone Kommunikation über Event Bus",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenTelemetry für Tracing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zentrale Observability",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Lose Kopplung zwischen Domänen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 61 – Weiteres Vorgehen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die folgenden Ausgaben vertiefen jedes Modul mit vollständigen SQL-DDLs, OpenAPI-3.1-Spezifikationen, JSON-Schemas, PlantUML-Diagrammen, Architekturentscheidungen und Implementierungsbeispielen. Ziel ist eine vollständige Engineering-Referenz für die Umsetzung der Eternal-Rave-Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 62 – Ticket-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel dient als Referenz dafür, wie alle weiteren Module detailliert dokumentiert werden.",
+"style": null,
+"bold": false
+},
+{
+"text": "62.1 Relationales Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "ticket_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "event_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Referenz auf Event",
+"style": null,
+"bold": false
+},
+{
+"text": "user_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticketinhaber",
+"style": null,
+"bold": false
+},
+{
+"text": "category",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(50)",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticketkategorie",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(20)",
+"style": null,
+"bold": false
+},
+{
+"text": "RESERVED/PAID/CANCELLED/CHECKED_IN",
+"style": null,
+"bold": false
+},
+{
+"text": "price",
+"style": null,
+"bold": false
+},
+{
+"text": "DECIMAL(10,2)",
+"style": null,
+"bold": false
+},
+{
+"text": "Verkaufspreis",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at",
+"style": null,
+"bold": false
+},
+{
+"text": "TIMESTAMP",
+"style": null,
+"bold": false
+},
+{
+"text": "Erstellt am",
+"style": null,
+"bold": false
+},
+{
+"text": "62.2 SQL-Indizes",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "PRIMARY KEY(ticket_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "INDEX(event_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "INDEX(user_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "INDEX(status)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UNIQUE(event_id, user_id, category) sofern fachlich erforderlich",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "62.3 REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Zweck",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/tickets",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket reservieren",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/tickets/{id}/pay",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket bezahlen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/tickets/{id}/check-in",
+"style": null,
+"bold": false
+},
+{
+"text": "Check-in",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/tickets/{id}/refund",
+"style": null,
+"bold": false
+},
+{
+"text": "Rückerstattung",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/events/{id}/tickets",
+"style": null,
+"bold": false
+},
+{
+"text": "Tickets eines Events",
+"style": null,
+"bold": false
+},
+{
+"text": "62.4 Zustandsmaschine",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "RESERVED → PAID",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PAID → CHECKED_IN",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PAID → REFUNDED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "RESERVED → CANCELLED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "62.5 Sicherheitsregeln",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Nur Besitzer oder berechtigte Organisatoren dürfen Tickets lesen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Check-in nur für berechtigte Rollen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Jeder Statuswechsel wird auditierbar protokolliert.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "62.6 Testfälle",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Reservierung erfolgreich",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Doppelte Reservierung verhindern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Check-in nur einmal zulassen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Refund nach Veranstaltungsregeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ungültige Statuswechsel ablehnen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 63 – Ausbauplan",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die gleiche Detailtiefe wird in den folgenden Versionen für Artist, Venue, Festival, Organizer, Community und Discovery übernommen. So entsteht schrittweise eine vollständige technische Referenz mit implementierungsnahen Spezifikationen für jede Domäne.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 64 – Artist-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel beschreibt das Artist-Modul als implementierungsnahe Referenz.",
+"style": null,
+"bold": false
+},
+{
+"text": "Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "artist_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(200)",
+"style": null,
+"bold": false
+},
+{
+"text": "Künstlername",
+"style": null,
+"bold": false
+},
+{
+"text": "genre",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(100)",
+"style": null,
+"bold": false
+},
+{
+"text": "Hauptgenre",
+"style": null,
+"bold": false
+},
+{
+"text": "verified",
+"style": null,
+"bold": false
+},
+{
+"text": "BOOLEAN",
+"style": null,
+"bold": false
+},
+{
+"text": "Verifizierter Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "country",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(100)",
+"style": null,
+"bold": false
+},
+{
+"text": "Herkunftsland",
+"style": null,
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Zweck",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/artists",
+"style": null,
+"bold": false
+},
+{
+"text": "Artists suchen",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/artists/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist abrufen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/artists",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist anlegen",
+"style": null,
+"bold": false
+},
+{
+"text": "PATCH",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/artists/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist aktualisieren",
+"style": null,
+"bold": false
+},
+{
+"text": "Zustände",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "DRAFT → VERIFIED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "VERIFIED → ARCHIVED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Anforderungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Optimistic Locking",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Diagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unit-, Integrations- und E2E-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 65 – Venue-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Dieses Kapitel beschreibt das Venue-Modul als implementierungsnahe Referenz.",
+"style": null,
+"bold": false
+},
+{
+"text": "Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "venue_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "Location",
+"style": null,
+"bold": false
+},
+{
+"text": "capacity",
+"style": null,
+"bold": false
+},
+{
+"text": "INTEGER",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapazität",
+"style": null,
+"bold": false
+},
+{
+"text": "city",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(120)",
+"style": null,
+"bold": false
+},
+{
+"text": "Ort",
+"style": null,
+"bold": false
+},
+{
+"text": "country",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(120)",
+"style": null,
+"bold": false
+},
+{
+"text": "Land",
+"style": null,
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Zweck",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/venues",
+"style": null,
+"bold": false
+},
+{
+"text": "Venues suchen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/venues",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue anlegen",
+"style": null,
+"bold": false
+},
+{
+"text": "PATCH",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/venues/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue aktualisieren",
+"style": null,
+"bold": false
+},
+{
+"text": "Zustände",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "ACTIVE",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "RENOVATION",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CLOSED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ARCHIVED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Technische Anforderungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Optimistic Locking",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON Schema",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Diagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unit-, Integrations- und E2E-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 66 – Nächste Ausbaustufen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Als Nächstes folgen Festival-, Organizer-, Community- und Discovery-Module im gleichen Detailgrad. Anschließend werden bereichsübergreifende Themen wie Event Bus, Berechtigungsmodell, Caching, Messaging, Kubernetes, Observability, CI/CD und Disaster Recovery vollständig spezifiziert.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 67 – Festival-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Implementierungsreferenz für das Modul Festival.",
+"style": null,
+"bold": false
+},
+{
+"text": "Relationales Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "festival_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "Festivalname",
+"style": null,
+"bold": false
+},
+{
+"text": "start_date",
+"style": null,
+"bold": false
+},
+{
+"text": "DATE",
+"style": null,
+"bold": false
+},
+{
+"text": "Beginn",
+"style": null,
+"bold": false
+},
+{
+"text": "end_date",
+"style": null,
+"bold": false
+},
+{
+"text": "DATE",
+"style": null,
+"bold": false
+},
+{
+"text": "Ende",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(20)",
+"style": null,
+"bold": false
+},
+{
+"text": "Status",
+"style": null,
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/festivals",
+"style": null,
+"bold": false
+},
+{
+"text": "Festivals suchen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/festivals",
+"style": null,
+"bold": false
+},
+{
+"text": "Festival erstellen",
+"style": null,
+"bold": false
+},
+{
+"text": "PATCH",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/festivals/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Festival aktualisieren",
+"style": null,
+"bold": false
+},
+{
+"text": "Zustandsmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "PLANNED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PUBLISHED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "RUNNING",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "FINISHED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ARCHIVED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Qualitätsanforderungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1 vollständig dokumentiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema für Requests und Responses",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unit-, Integrations- und E2E-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 68 – Organizer-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Implementierungsreferenz für das Modul Organizer.",
+"style": null,
+"bold": false
+},
+{
+"text": "Relationales Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Feld",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "organizer_id",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "name",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(255)",
+"style": null,
+"bold": false
+},
+{
+"text": "Organisation",
+"style": null,
+"bold": false
+},
+{
+"text": "verified",
+"style": null,
+"bold": false
+},
+{
+"text": "BOOLEAN",
+"style": null,
+"bold": false
+},
+{
+"text": "Verifiziert",
+"style": null,
+"bold": false
+},
+{
+"text": "country",
+"style": null,
+"bold": false
+},
+{
+"text": "VARCHAR(120)",
+"style": null,
+"bold": false
+},
+{
+"text": "Land",
+"style": null,
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Methode",
+"style": null,
+"bold": false
+},
+{
+"text": "Pfad",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "GET",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/organizers",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer suchen",
+"style": null,
+"bold": false
+},
+{
+"text": "POST",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/organizers",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer erstellen",
+"style": null,
+"bold": false
+},
+{
+"text": "PATCH",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1/organizers/{id}",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer aktualisieren",
+"style": null,
+"bold": false
+},
+{
+"text": "Zustandsmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "NEW",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "VERIFIED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SUSPENDED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ARCHIVED",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Qualitätsanforderungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1 vollständig dokumentiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schema für Requests und Responses",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML Klassen- und Sequenzdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unit-, Integrations- und E2E-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 69 – Plattformweite Architekturbausteine",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "API Gateway",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Identity Provider",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Event Bus",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Caching mit Redis",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenSearch",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Object Storage für Medien",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kubernetes als Zielplattform",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CI/CD mit automatisierten Deployments",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenTelemetry, Prometheus und Grafana",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 70 – Ausblick",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Als Nächstes folgen Community- und Discovery-Module sowie bereichsübergreifende Spezifikationen für Messaging, Benachrichtigungen, Berechtigungen, Integrationen, Backup, Disaster Recovery und Betriebsprozesse.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 71 – Community-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Das Community-Modul bildet die soziale Interaktion innerhalb der Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kernfunktionen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Posts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kommentare",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Likes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Folgen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Meldungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Moderation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-Endpunkte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "GET /api/v1/posts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/posts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/posts/{id}/like",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/posts/{id}/report",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "PostCreated",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CommentAdded",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PostLiked",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PostReported",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 72 – Discovery-Modul: Vollständige Spezifikation",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Discovery stellt Suche, Empfehlungen und personalisierte Inhalte bereit.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kernkomponenten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "OpenSearch-Indexe",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Autocomplete",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Geo-Suche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Personalisierte Empfehlungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Trending Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ähnliche Artists",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 73 – C4-Architektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Level 1: Nutzer, externe Dienste und Eternal Rave",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level 2: Web, Mobile, API Gateway, Backend, Datenbanken",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level 3: Komponenten je Domänenservice",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Level 4: Code-Diagramme für komplexe Module",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 74 – ADR-Katalog",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "ADR",
+"style": null,
+"bold": false
+},
+{
+"text": "Entscheidung",
+"style": null,
+"bold": false
+},
+{
+"text": "Status",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-005",
+"style": null,
+"bold": false
+},
+{
+"text": "Redis als zentraler Cache",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-006",
+"style": null,
+"bold": false
+},
+{
+"text": "OpenSearch für Discovery",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-007",
+"style": null,
+"bold": false
+},
+{
+"text": "Event Bus für asynchrone Prozesse",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "ADR-008",
+"style": null,
+"bold": false
+},
+{
+"text": "OpenTelemetry als Observability-Standard",
+"style": null,
+"bold": false
+},
+{
+"text": "Accepted",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 75 – Kubernetes-Referenzarchitektur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ingress Controller",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API Gateway",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Backend Deployments",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Worker Deployments",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Horizontal Pod Autoscaler",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PostgreSQL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Redis",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenSearch",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Object Storage",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Monitoring Stack (Prometheus, Grafana, Loki)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 76 – CI/CD-Blueprint",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Pull Request mit Pflicht-Reviews",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Unit-, Integrations- und Sicherheitstests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Container Build",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SBOM-Generierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deployment nach Staging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Blue/Green- oder Canary-Deployment",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatischer Rollback bei Fehlern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 77 – OpenAPI-3.1-Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle Services folgen einer einheitlichen OpenAPI-3.1-Spezifikation.",
+"style": null,
+"bold": false
+},
+{
+"text": "Versionierung über /api/v1",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Problem Details (RFC 9457) für Fehlerantworten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT Bearer Authentication",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Pagination, Filterung und Sortierung als Standard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotency-Key für kritische POST-Endpunkte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 78 – SQL-Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "UUID als Primärschlüssel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "created_at, updated_at und version in allen Aggregaten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Foreign Keys mit ON DELETE-Regeln je Domäne",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Soft Deletes nur bei fachlichem Bedarf",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "B-Tree-Indizes für häufige Suchfelder",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GIN-Indizes für Volltextsuche",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 79 – Event Bus",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Domänenereignisse werden asynchron publiziert und konsumiert.",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "Producer",
+"style": null,
+"bold": false
+},
+{
+"text": "Consumer",
+"style": null,
+"bold": false
+},
+{
+"text": "EventPublished",
+"style": null,
+"bold": false
+},
+{
+"text": "Event Service",
+"style": null,
+"bold": false
+},
+{
+"text": "Discovery, Notification",
+"style": null,
+"bold": false
+},
+{
+"text": "TicketPurchased",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket Service",
+"style": null,
+"bold": false
+},
+{
+"text": "Analytics, Notification",
+"style": null,
+"bold": false
+},
+{
+"text": "ArtistVerified",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist Service",
+"style": null,
+"bold": false
+},
+{
+"text": "Discovery",
+"style": null,
+"bold": false
+},
+{
+"text": "PostCreated",
+"style": null,
+"bold": false
+},
+{
+"text": "Community Service",
+"style": null,
+"bold": false
+},
+{
+"text": "Moderation, Feed",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 80 – Sicherheitsrichtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "OWASP ASVS als Referenz",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Least-Privilege-Prinzip",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Verschlüsselung sensibler Daten im Ruhezustand und während der Übertragung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit-Trail für sicherheitsrelevante Aktionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rate Limiting und API-Throttling",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Security-Header und Content Security Policy",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 81 – Betriebs- und Monitoringkonzept",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Health-, Readiness- und Liveness-Probes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SLI/SLO-Definitionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zentrales Log-Management",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Distributed Tracing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Alarmierung nach Schweregrad",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Runbooks für kritische Incidents",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 82 – OpenAPI-Blueprint: Event Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Referenzstruktur für eine vollständige OpenAPI-3.1-Spezifikation des Event Service.",
+"style": null,
+"bold": false
+},
+{
+"text": "GET /api/v1/events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /api/v1/events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH /api/v1/events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DELETE /api/v1/events/{id}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/events/{id}/publish",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 83 – JSON-Schema-Konventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "UUID-Format für IDs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "RFC3339 für Datum/Zeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Enum-Typen für Statuswerte",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine zusätzlichen Properties ohne Freigabe",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Versionierte Schemas für Breaking Changes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 84 – Datenbank-Migrationsstrategie",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Flyway oder Liquibase als Standard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vorwärtskompatible Migrationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rollback-Skripte für kritische Änderungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Migrationen Bestandteil jeder CI/CD-Pipeline",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Schema-Validierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 85 – Deployment-Blueprint",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Helm Charts pro Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Separate Namespaces je Umgebung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Secrets über External Secrets oder Vault",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Horizontal Pod Autoscaler",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rolling Updates als Standard",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Blue/Green für kritische Releases",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 86 – Disaster Recovery",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "RPO und RTO je Domäne definieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tägliche Datenbanksicherungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Regelmäßige Restore-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Geo-redundante Speicherung wichtiger Daten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentierte Notfallprozesse",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 87 – Engineering-Roadmap",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die nächsten Versionen konzentrieren sich auf vollständige Implementierungsartefakte für jede Domäne: vollständige OpenAPI-Dokumente, SQL-DDLs, JSON-Schemas, PlantUML-Quelltexte, ADRs, Testkataloge sowie Referenzimplementierungen für Backend-Services.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 88 – Referenzstruktur eines Microservices",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle Backend-Services folgen einer einheitlichen Projektstruktur.",
+"style": null,
+"bold": false
+},
+{
+"text": "api/ (REST-Controller, DTOs, OpenAPI)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "application/ (Use Cases)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "domain/ (Aggregate, Entities, Value Objects)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "infrastructure/ (Persistence, Messaging, Integrationen)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "config/ (Konfiguration)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "test/ (Unit-, Integrations- und E2E-Tests)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 89 – Coding Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Java 21 LTS",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Spring Boot 3.x",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Hexagonale Architektur",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Constructor Injection",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine Businesslogik in Controllern",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Klare Trennung von Domain und Infrastruktur",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Checkstyle und SpotBugs in der Pipeline",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 90 – API-Governance",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Thema",
+"style": null,
+"bold": false
+},
+{
+"text": "Standard",
+"style": null,
+"bold": false
+},
+{
+"text": "Verpflichtend",
+"style": null,
+"bold": false
+},
+{
+"text": "Versionierung",
+"style": null,
+"bold": false
+},
+{
+"text": "/api/v1",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Authentifizierung",
+"style": null,
+"bold": false
+},
+{
+"text": "JWT/OAuth2",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Fehlerformat",
+"style": null,
+"bold": false
+},
+{
+"text": "RFC 9457",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Pagination",
+"style": null,
+"bold": false
+},
+{
+"text": "cursor oder page/size",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Idempotenz",
+"style": null,
+"bold": false
+},
+{
+"text": "Idempotency-Key",
+"style": null,
+"bold": false
+},
+{
+"text": "Bei kritischen POSTs",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 91 – Testpyramide",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Unit-Tests für Domainlogik",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Integrations-Tests für Datenbank und Messaging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API-Tests gegen OpenAPI",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "End-to-End-Tests für kritische Geschäftsprozesse",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Performance- und Lasttests vor Releases",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 92 – Release-Management",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Semantic Versioning",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Release Notes automatisch generieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Feature Flags für neue Funktionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Canary Releases für risikoreiche Änderungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rollback-Strategie dokumentiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 93 – Nächste Ausbaustufe",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "In den folgenden Versionen werden die Module Event, Ticket, Artist, Venue, Festival, Organizer, Community und Discovery mit vollständigen OpenAPI-3.1-Dokumenten, SQL-DDLs, JSON-Schemas, PlantUML-Quelltexten und Referenzimplementierungen vervollständigt.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 94 – Referenzprojektstruktur (Java/Spring Boot)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Empfohlene Verzeichnisstruktur für jeden Microservice.",
+"style": null,
+"bold": false
+},
+{
+"text": "src/main/java/.../api",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "src/main/java/.../application",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "src/main/java/.../domain",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "src/main/java/.../infrastructure",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "src/main/resources/db/migration",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "src/test/java",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "src/test/resources",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 95 – OpenAPI-Datei (Referenzaufbau)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Mindestbestandteile jeder OpenAPI-3.1-Spezifikation:",
+"style": null,
+"bold": false
+},
+{
+"text": "info (Titel, Version, Kontakt)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "servers",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "securitySchemes",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "paths",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "components/schemas",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "responses",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "examples",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "tags",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 96 – SQL-DDL-Richtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Objekt",
+"style": null,
+"bold": false
+},
+{
+"text": "Standard",
+"style": null,
+"bold": false
+},
+{
+"text": "Begründung",
+"style": null,
+"bold": false
+},
+{
+"text": "Primärschlüssel",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Globale Eindeutigkeit",
+"style": null,
+"bold": false
+},
+{
+"text": "Zeitstempel",
+"style": null,
+"bold": false
+},
+{
+"text": "created_at / updated_at",
+"style": null,
+"bold": false
+},
+{
+"text": "Nachvollziehbarkeit",
+"style": null,
+"bold": false
+},
+{
+"text": "Optimistic Locking",
+"style": null,
+"bold": false
+},
+{
+"text": "version",
+"style": null,
+"bold": false
+},
+{
+"text": "Konfliktvermeidung",
+"style": null,
+"bold": false
+},
+{
+"text": "Indizes",
+"style": null,
+"bold": false
+},
+{
+"text": "Such- und FK-Spalten",
+"style": null,
+"bold": false
+},
+{
+"text": "Performance",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 97 – PlantUML-Standards",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Klassen-, Sequenz-, Aktivitäts- und Zustandsdiagramme",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Diagramm pro Aggregate Root",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Sequenzdiagramm pro Haupt-Use-Case",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "C4-Diagramme ergänzend für Architekturübersichten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 98 – Qualitäts-Gates",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Build erfolgreich",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": ">=80 % Testabdeckung für Kernlogik (projektabhängig anpassbar)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine kritischen Sicherheitsbefunde",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine Blocker im statischen Code-Scan",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Erfolgreiche Datenbankmigration",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Freigabe durch Code-Review",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 99 – Roadmap Version 5.x",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Version 5.x konzentriert sich auf vollständige Referenzartefakte je Domäne: vollständige OpenAPI-YAMLs, SQL-DDLs, JSON-Schemas, PlantUML-Quelltexte, ADRs, Kubernetes-Manifestbeispiele sowie Referenzimplementierungen für zentrale Geschäftsprozesse.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 100 – Domänenglossar",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Ein zentrales Glossar stellt sicher, dass alle Teams dieselben fachlichen Begriffe verwenden.",
+"style": null,
+"bold": false
+},
+{
+"text": "Begriff",
+"style": null,
+"bold": false
+},
+{
+"text": "Definition",
+"style": null,
+"bold": false
+},
+{
+"text": "Domäne",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "Durchführbare Veranstaltung",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "Festival",
+"style": null,
+"bold": false
+},
+{
+"text": "Sammlung mehrerer Events",
+"style": null,
+"bold": false
+},
+{
+"text": "Festival",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "Veranstaltungsort",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer",
+"style": null,
+"bold": false
+},
+{
+"text": "Verantwortlicher Veranstalter",
+"style": null,
+"bold": false
+},
+{
+"text": "Organizer",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket",
+"style": null,
+"bold": false
+},
+{
+"text": "Zugangsberechtigung",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "Auftretender Künstler",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 101 – Domänenereigniskatalog",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "UserRegistered",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UserVerified",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ArtistVerified",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "VenueApproved",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "FestivalPublished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventPublished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketReserved",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketPurchased",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketRefunded",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PostCreated",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CommentAdded",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "NotificationSent",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 102 – Namenskonventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "REST-Pfade in Kleinbuchstaben und Pluralform",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Events im Past-Tense (z. B. TicketPurchased)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tabellen im snake_case",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Java-Klassen im PascalCase",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Felder im camelCase",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Umgebungsvariablen in UPPER_SNAKE_CASE",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 103 – ADR-Vorlage",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kontext",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Problemstellung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Entscheidung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Konsequenzen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Alternativen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Status",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Datum",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 104 – Pull-Request-Checkliste",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Architektur eingehalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tests erfolgreich",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI aktualisiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-Migration geprüft",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Dokumentation ergänzt",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sicherheitsaspekte bewertet",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Code Review abgeschlossen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 105 – Ausblick Version 5.2",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die nächste Ausbaustufe erweitert das Handbuch um vollständige Referenzvorlagen für OpenAPI-YAMLs, SQL-DDLs, JSON-Schemas, PlantUML-Quelltexte, Kubernetes-Manifeste und exemplarische Backend-Implementierungen einzelner Geschäftsprozesse.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 106 – OpenAPI-YAML-Referenzstruktur",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Empfohlene Verzeichnisstruktur für versionierte OpenAPI-Definitionen.",
+"style": null,
+"bold": false
+},
+{
+"text": "openapi.yaml als Einstiegspunkt",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "paths/ je Ressource",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "components/schemas/",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "components/responses/",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "components/parameters/",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "components/securitySchemes/",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "examples/ für Request- und Response-Beispiele",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 107 – SQL-DDL-Referenzvorlage",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Jede Domäne erhält eine vollständige DDL inklusive Constraints, Indizes und Migrationen.",
+"style": null,
+"bold": false
+},
+{
+"text": "CREATE TABLE event (  event_id UUID PRIMARY KEY,  organizer_id UUID NOT NULL,  title VARCHAR(255) NOT NULL,  status VARCHAR(32) NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 108 – JSON-Schema-Blueprint",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "$schema nach JSON Schema 2020-12",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "$id für Versionierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "required-Felder explizit definieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "additionalProperties standardmäßig false",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Enum-Typen zentral wiederverwenden",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 109 – PlantUML-Konventionen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlclass Eventclass OrganizerOrganizer --> Event : creates@enduml",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 110 – Referenz-Implementierungsprozess",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Domänenmodell definieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL erstellen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Migration schreiben",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI spezifizieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DTOs und Validierung implementieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Use Cases entwickeln",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Tests erstellen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deployment automatisieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 111 – Zielbild Version 6.0",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Version 6.0 soll für jede Kern-Domäne vollständige Referenzartefakte inklusive Datenmodell, OpenAPI, SQL, JSON-Schemas, UML, ADRs und exemplarischer Implementierungen bereitstellen. Damit entsteht ein konsistentes Engineering-Handbuch als Grundlage für Entwicklung, Betrieb und zukünftige Erweiterungen der Eternal-Rave-Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 112 – API-Versionierungsstrategie",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Semantic Versioning für APIs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Nicht-brechende Änderungen innerhalb einer Hauptversion",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deprecation-Header und Sunset-Header",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Paralleler Betrieb mehrerer API-Versionen während Migrationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 113 – Referenz: Event OpenAPI-Endpunkt",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Beispiel für die vollständige Dokumentation eines Endpunkts.",
+"style": null,
+"bold": false
+},
+{
+"text": "GET /api/v1/events/{eventId}200 OK- eventId (UUID)- title (string)- status (enum)- venueId (UUID)- organizerId (UUID)404 Problem Details (RFC 9457)",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 114 – Referenz: SQL-Migrationsrichtlinien",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Eine Migration pro fachlicher Änderung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine nachträglichen Änderungen veröffentlichter Migrationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vor jeder Migration Datenbanksicherung prüfen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatische Validierung in CI",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 115 – Referenz: Kubernetes-Deployment",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Deployment je Microservice",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Service und Ingress getrennt verwalten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ConfigMaps für Konfiguration",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Secrets über Vault/External Secrets",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ressourcenlimits verpflichtend",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PodDisruptionBudgets für kritische Dienste",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 116 – Engineering-KPIs",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kennzahl",
+"style": null,
+"bold": false
+},
+{
+"text": "Ziel",
+"style": null,
+"bold": false
+},
+{
+"text": "Deployment-Erfolgsrate",
+"style": null,
+"bold": false
+},
+{
+"text": ">99 %",
+"style": null,
+"bold": false
+},
+{
+"text": "Build-Dauer",
+"style": null,
+"bold": false
+},
+{
+"text": "<10 Minuten",
+"style": null,
+"bold": false
+},
+{
+"text": "MTTR",
+"style": null,
+"bold": false
+},
+{
+"text": "<60 Minuten",
+"style": null,
+"bold": false
+},
+{
+"text": "API-Verfügbarkeit",
+"style": null,
+"bold": false
+},
+{
+"text": ">99,9 %",
+"style": null,
+"bold": false
+},
+{
+"text": "Kritische Sicherheitslücken",
+"style": null,
+"bold": false
+},
+{
+"text": "0",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 117 – Ausblick Version 5.3",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Als Nächstes werden vollständige Referenzartefakte für einzelne Domänen (z. B. Event oder Ticket) mit vollständigen OpenAPI-YAMLs, SQL-DDLs, JSON-Schemas und PlantUML-Quelltexten ergänzt, sodass daraus eine direkt umsetzbare technische Spezifikation entsteht.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 118 – Vollständige OpenAPI-Referenz: Event Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Nachfolgend eine Referenzstruktur einer OpenAPI-3.1-YAML für den Event Service.",
+"style": null,
+"bold": false
+},
+{
+"text": "openapi: 3.1.0info:  title: Eternal Rave Event API  version: 1.0.0paths:  /api/v1/events:    get:      summary: List events    post:      summary: Create event  /api/v1/events/{eventId}:    get:      summary: Get event    patch:      summary: Update event    delete:      summary: Delete event",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 119 – Referenz-DDL: Event",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE event ( event_id UUID PRIMARY KEY, organizer_id UUID NOT NULL, venue_id UUID NOT NULL, title VARCHAR(255) NOT NULL, description TEXT, status VARCHAR(32) NOT NULL, start_time TIMESTAMP NOT NULL, end_time TIMESTAMP NOT NULL, created_at TIMESTAMP NOT NULL, updated_at TIMESTAMP NOT NULL, version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 120 – JSON-Schema: EventResponse",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "{  \"type\":\"object\",  \"required\":[\"eventId\",\"title\",\"status\"],  \"properties\":{    \"eventId\":{\"type\":\"string\",\"format\":\"uuid\"},    \"title\":{\"type\":\"string\"},    \"status\":{\"type\":\"string\"}  },  \"additionalProperties\":false}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 121 – PlantUML: Event-Domäne",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlclass Organizerclass Venueclass EventOrganizer --> EventVenue --> Event@enduml",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 122 – Referenz-Implementierung",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Für jede Domäne soll künftig eine vollständige Referenzimplementierung bereitgestellt werden. Diese umfasst:",
+"style": null,
+"bold": false
+},
+{
+"text": "Aggregate Root",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Value Objects",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Repository-Interface",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Application Service",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "REST-Controller",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DTOs",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mapper",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Flyway-Migration",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI-Datei",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Unit- und Integrationstests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 123 – Vollständige OpenAPI-Referenz: Ticket Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Referenz für eine vollständige OpenAPI-3.1-Spezifikation des Ticket-Service.",
+"style": null,
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/tickets:    get: {}    post: {}  /api/v1/tickets/{ticketId}:    get: {}    patch: {}  /api/v1/tickets/{ticketId}/pay:    post: {}  /api/v1/tickets/{ticketId}/refund:    post: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 124 – Referenz-DDL: Ticket",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE ticket (  ticket_id UUID PRIMARY KEY,  event_id UUID NOT NULL,  user_id UUID NOT NULL,  category VARCHAR(64) NOT NULL,  status VARCHAR(32) NOT NULL,  price DECIMAL(10,2) NOT NULL,  currency CHAR(3) NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 125 – JSON-Schema: TicketResponse",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "{  \"type\":\"object\",  \"required\":[\"ticketId\",\"eventId\",\"status\"],  \"properties\":{    \"ticketId\":{\"type\":\"string\",\"format\":\"uuid\"},    \"eventId\":{\"type\":\"string\",\"format\":\"uuid\"},    \"status\":{\"type\":\"string\"},    \"price\":{\"type\":\"number\"}  },  \"additionalProperties\":false}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 126 – PlantUML: Ticket-Domäne",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlclass Userclass Ticketclass EventUser --> TicketEvent --> Ticket@enduml",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 127 – Referenz-Checkliste je Domäne",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Domänenmodell abgeschlossen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI 3.1 vollständig",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDLs und Migrationen erstellt",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas validiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PlantUML-Diagramme vorhanden",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Repository- und Service-Schicht implementiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Testabdeckung dokumentiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ADR aktualisiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 128 – Vollständige OpenAPI-Referenz: Artist Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Referenzstruktur für die OpenAPI-3.1-Spezifikation des Artist-Service.",
+"style": null,
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/artists:    get: {}    post: {}  /api/v1/artists/{artistId}:    get: {}    patch: {}    delete: {}  /api/v1/artists/{artistId}/verify:    post: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 129 – Referenz-DDL: Artist",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE artist (  artist_id UUID PRIMARY KEY,  stage_name VARCHAR(255) NOT NULL,  legal_name VARCHAR(255),  country VARCHAR(100),  verified BOOLEAN NOT NULL DEFAULT FALSE,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 130 – JSON-Schema: ArtistResponse",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "{ \"type\":\"object\", \"required\":[\"artistId\",\"stageName\",\"verified\"], \"properties\":{   \"artistId\":{\"type\":\"string\",\"format\":\"uuid\"},   \"stageName\":{\"type\":\"string\"},   \"verified\":{\"type\":\"boolean\"} }, \"additionalProperties\":false}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 131 – PlantUML: Artist-Domäne",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlclass Artistclass EventArtist --> Event : performs at@enduml",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 132 – Architektur-Checkliste",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Bounded Context definiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Aggregate Root dokumentiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenAPI veröffentlicht",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SQL-DDL versioniert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JSON-Schemas validiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events beschrieben",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Monitoring und Metriken definiert",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Sicherheitsprüfung abgeschlossen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 133 – Vollständige OpenAPI-Referenz: Venue Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/venues:    get: {}    post: {}  /api/v1/venues/{venueId}:    get: {}    patch: {}    delete: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 134 – Referenz-DDL: Venue",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE venue ( venue_id UUID PRIMARY KEY, name VARCHAR(255) NOT NULL, city VARCHAR(120) NOT NULL, country VARCHAR(120) NOT NULL, capacity INTEGER, verified BOOLEAN NOT NULL DEFAULT FALSE, created_at TIMESTAMP NOT NULL, updated_at TIMESTAMP NOT NULL, version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 135 – OpenAPI-Referenz: Festival Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/festivals:    get: {}    post: {}  /api/v1/festivals/{festivalId}:    get: {}    patch: {}  /api/v1/festivals/{festivalId}/publish:    post: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 136 – Referenz-DDL: Festival",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE festival ( festival_id UUID PRIMARY KEY, organizer_id UUID NOT NULL, name VARCHAR(255) NOT NULL, start_date DATE NOT NULL, end_date DATE NOT NULL, status VARCHAR(32) NOT NULL, created_at TIMESTAMP NOT NULL, updated_at TIMESTAMP NOT NULL, version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 137 – Integrationsmatrix",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Überblick über zentrale Service-Interaktionen.",
+"style": null,
+"bold": false
+},
+{
+"text": "Quelle",
+"style": null,
+"bold": false
+},
+{
+"text": "Ziel",
+"style": null,
+"bold": false
+},
+{
+"text": "Ereignis/API",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "Discovery",
+"style": null,
+"bold": false
+},
+{
+"text": "EventPublished",
+"style": null,
+"bold": false
+},
+{
+"text": "Festival",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "FestivalCreated",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket",
+"style": null,
+"bold": false
+},
+{
+"text": "Notification",
+"style": null,
+"bold": false
+},
+{
+"text": "TicketPurchased",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "ArtistAssigned",
+"style": null,
+"bold": false
+},
+{
+"text": "Venue",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "VenueUpdated",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 138 – Nächste Ausbaustufe",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Organizer-Service vollständig spezifizieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Community-Service vollständig spezifizieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Discovery-Service vollständig spezifizieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domänenübergreifende Sequenzdiagramme ergänzen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Referenzcode für zentrale Use Cases erstellen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 139 – Vollständige OpenAPI-Referenz: Organizer Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/organizers:    get: {}    post: {}  /api/v1/organizers/{organizerId}:    get: {}    patch: {}  /api/v1/organizers/{organizerId}/verify:    post: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 140 – Referenz-DDL: Organizer",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE organizer (  organizer_id UUID PRIMARY KEY,  name VARCHAR(255) NOT NULL,  email VARCHAR(255),  verified BOOLEAN NOT NULL DEFAULT FALSE,  country VARCHAR(120),  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 141 – OpenAPI-Referenz: Community Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/posts:    get: {}    post: {}  /api/v1/posts/{postId}:    get: {}    patch: {}    delete: {}  /api/v1/posts/{postId}/comments:    post: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 142 – Referenz-DDL: Community",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE post (  post_id UUID PRIMARY KEY,  author_id UUID NOT NULL,  content TEXT NOT NULL,  visibility VARCHAR(32) NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL,  version BIGINT NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 143 – Sequenzdiagramm: Ticketkauf",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlUser -> API : Buy TicketAPI -> TicketService : reserve()TicketService -> PaymentService : pay()PaymentService --> TicketService : successTicketService -> NotificationService : TicketPurchased@enduml",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 144 – Nächste Schritte",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Discovery-Service vollständig spezifizieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Benachrichtigungsservice dokumentieren",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Authentifizierungs- und Autorisierungskonzept vertiefen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Komplette C4- und Sequenzdiagrammsammlung erstellen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Referenzimplementierungen für End-to-End-Use-Cases ergänzen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 145 – Vollständige OpenAPI-Referenz: Discovery Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "openapi: 3.1.0paths:  /api/v1/discovery/search:    get: {}  /api/v1/discovery/recommendations:    get: {}  /api/v1/discovery/trending:    get: {}  /api/v1/discovery/similar/{artistId}:    get: {}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 146 – Referenz-DDL: Discovery Index",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "CREATE TABLE discovery_document (  document_id UUID PRIMARY KEY,  entity_type VARCHAR(32) NOT NULL,  entity_id UUID NOT NULL,  title VARCHAR(255) NOT NULL,  searchable_text TEXT NOT NULL,  geo_location POINT,  indexed_at TIMESTAMP NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 147 – Notification Service",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "E-Mail-Benachrichtigungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Push Notifications",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "In-App-Benachrichtigungen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Webhook-Auslieferung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Retry-Mechanismus mit Dead Letter Queue",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Template-Verwaltung und Lokalisierung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 148 – Authentifizierung & Autorisierung",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "OAuth2 / OpenID Connect",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "JWT Access- und Refresh-Tokens",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Role-Based Access Control (RBAC)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optional Attribute-Based Access Control (ABAC)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Mehrfaktor-Authentifizierung für privilegierte Konten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Auditierung sicherheitsrelevanter Aktionen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 149 – End-to-End-Sequenz: Event veröffentlichen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "@startumlOrganizer -> API : Publish EventAPI -> EventService : publish()EventService -> DiscoveryService : EventPublishedEventService -> NotificationService : notifyFollowers()DiscoveryService --> SearchIndex : update@enduml",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 150 – Zielbild Version 6.0",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Mit Abschluss der Version 6.0 soll jede Kern-Domäne über vollständige OpenAPI-3.1-Spezifikationen, SQL-DDLs, JSON-Schemas, PlantUML-Quelltexte, Referenzimplementierungen, Architekturdiagramme, ADRs sowie Betriebs- und Sicherheitskonzepte verfügen. Das Handbuch dient dann als durchgängige technische Referenz für Entwicklung, Test, Deployment und Betrieb der Eternal-Rave-Plattform.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 151 – Vollständige OpenAPI-YAML: Event Service (Auszug)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "openapi: 3.1.0info:  title: Eternal Rave Event API  version: 1.0.0components:  securitySchemes:    bearerAuth:      type: http      scheme: bearer      bearerFormat: JWTsecurity:  - bearerAuth: []paths:  /api/v1/events:    get:      tags: [Events]      summary: List events      responses:        '200':          description: Success",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 152 – SQL-DDL: Event-Relationen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "ALTER TABLE eventADD CONSTRAINT fk_event_organizerFOREIGN KEY (organizer_id)REFERENCES organizer(organizer_id);CREATE INDEX idx_event_start_timeON event(start_time);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 153 – JSON-Schema: EventCreateRequest",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "{ \"type\":\"object\", \"required\":[\"title\",\"venueId\",\"startTime\",\"endTime\"], \"properties\":{   \"title\":{\"type\":\"string\",\"minLength\":3},   \"venueId\":{\"type\":\"string\",\"format\":\"uuid\"},   \"startTime\":{\"type\":\"string\",\"format\":\"date-time\"},   \"endTime\":{\"type\":\"string\",\"format\":\"date-time\"} }, \"additionalProperties\":false}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 154 – Referenz-Use-Case: Event veröffentlichen",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Validierung der Eingabedaten",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Prüfung der Organizer-Berechtigung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Persistieren des Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Publizieren des Domain Events EventPublished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Aktualisierung des Discovery-Index",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Benachrichtigung der Follower",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 155 – Version 6.0 Roadmap",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Die folgenden Kapitel werden vollständige OpenAPI-Spezifikationen, SQL-DDLs, JSON-Schemas, PlantUML-Quelltexte und Referenzcode für alle verbleibenden Kernmodule enthalten. Ziel ist ein vollständig implementierungsnahes Engineering-Handbuch für Eternal Rave.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 156 – API-Katalog",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Alle öffentlichen und internen APIs werden zentral katalogisiert.",
+"style": null,
+"bold": false
+},
+{
+"text": "Service",
+"style": null,
+"bold": false
+},
+{
+"text": "Version",
+"style": null,
+"bold": false
+},
+{
+"text": "Authentifizierung",
+"style": null,
+"bold": false
+},
+{
+"text": "Status",
+"style": null,
+"bold": false
+},
+{
+"text": "Event",
+"style": null,
+"bold": false
+},
+{
+"text": "v1",
+"style": null,
+"bold": false
+},
+{
+"text": "JWT",
+"style": null,
+"bold": false
+},
+{
+"text": "Produktiv",
+"style": null,
+"bold": false
+},
+{
+"text": "Ticket",
+"style": null,
+"bold": false
+},
+{
+"text": "v1",
+"style": null,
+"bold": false
+},
+{
+"text": "JWT",
+"style": null,
+"bold": false
+},
+{
+"text": "Produktiv",
+"style": null,
+"bold": false
+},
+{
+"text": "Artist",
+"style": null,
+"bold": false
+},
+{
+"text": "v1",
+"style": null,
+"bold": false
+},
+{
+"text": "JWT",
+"style": null,
+"bold": false
+},
+{
+"text": "Geplant",
+"style": null,
+"bold": false
+},
+{
+"text": "Discovery",
+"style": null,
+"bold": false
+},
+{
+"text": "v1",
+"style": null,
+"bold": false
+},
+{
+"text": "JWT",
+"style": null,
+"bold": false
+},
+{
+"text": "Geplant",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 157 – Domain-Event-Katalog",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "EventPublished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventCancelled",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketPurchased",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketRefunded",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ArtistVerified",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "FestivalPublished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UserFollowedArtist",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 158 – Infrastruktur-Blueprint",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kubernetes als Orchestrierungsplattform",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Helm-Charts pro Microservice",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Terraform für Cloud-Ressourcen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ingress + API Gateway",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Managed PostgreSQL",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Redis für Caching",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Objektspeicher für Medien",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenTelemetry für Telemetrie",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 159 – Betriebsmodell",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Blue/Green-Deployments",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Canary Releases",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisierte Rollbacks",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "SLO-/SLI-Überwachung",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "24/7 Alerting",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Disaster-Recovery-Tests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 160 – Architektur-Zielbild 6.x",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Mit der 6.x-Reihe wird das Handbuch zu einer vollständigen Enterprise-Architecture-Spezifikation. Es dient als Referenz für Architektur, Implementierung, Qualitätssicherung, Deployment und Betrieb sämtlicher Eternal-Rave-Microservices und schafft eine einheitliche Grundlage für Entwicklungsteams und langfristige Wartung.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 161 – Datenkatalog",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Jede Domäne erhält ein normiertes Datenblatt mit Entitäten, Attributen, Ownership, Lebenszyklus und Datenschutzklassifizierung.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 162 – API Governance",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Semantic Versioning",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Deprecation Policy",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Backward Compatibility",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Contract Testing",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Consumer Driven Contracts",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "API Review Board",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 163 – Security Architecture",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Zero Trust",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Secrets Management",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Key Rotation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OIDC Federation",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Least Privilege",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Teil VII – Vertikale Referenzspezifikation: Event-Domäne",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kapitel 164 – Domänenverantwortung",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Der Event-Service verwaltet den vollständigen Lebenszyklus von Veranstaltungen – von der Erstellung über Veröffentlichung und Aktualisierung bis zur Archivierung. Er stellt die fachliche Quelle ('System of Record') für Eventdaten dar.",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 165 – Aggregate und Value Objects",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Aggregate Root: Event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Value Objects: EventSchedule, EventLocation, TicketPolicy, Visibility",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Entities: EventImage, EventTag",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 166 – Zustandsmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "DRAFT  |REVIEW  |PUBLISHED  |SOLD_OUT  |FINISHED  |ARCHIVED",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 167 – Domänenereignisse",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "EventCreated",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventUpdated",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventPublished",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventCancelled",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventSoldOut",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventArchived",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 168 – Qualitätsanforderungen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "99.9 % API-Verfügbarkeit",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "<250 ms P95 für Lesezugriffe",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Idempotente Schreiboperationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optimistic Locking",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vollständiges Audit Logging",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "OpenTelemetry Traces für alle Requests",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Teil VII – Event-Domäne (Fortsetzung)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kapitel 169 – Fachliches Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Event (Aggregate Root)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Venue (Referenz)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer (Referenz)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketCategory",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventImage",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventTag",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventSchedule",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Visibility",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 170 – Geschäftsregeln",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Ein Event muss genau einen Organizer besitzen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein Event benötigt mindestens einen Veranstaltungsort oder ein Online-Format.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Startzeit muss vor Endzeit liegen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Ein veröffentlichtes Event darf nicht ohne Versionserhöhung geändert werden.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Archivierte Events sind schreibgeschützt.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 171 – Vollständige Attributdefinition des Aggregats Event",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Attribut",
+"style": null,
+"bold": false
+},
+{
+"text": "Typ",
+"style": null,
+"bold": false
+},
+{
+"text": "Pflicht",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "eventId",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Eindeutige Kennung",
+"style": null,
+"bold": false
+},
+{
+"text": "title",
+"style": null,
+"bold": false
+},
+{
+"text": "String",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Veranstaltungstitel",
+"style": null,
+"bold": false
+},
+{
+"text": "description",
+"style": null,
+"bold": false
+},
+{
+"text": "Text",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Beschreibung",
+"style": null,
+"bold": false
+},
+{
+"text": "organizerId",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Veranstalter",
+"style": null,
+"bold": false
+},
+{
+"text": "venueId",
+"style": null,
+"bold": false
+},
+{
+"text": "UUID",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Location",
+"style": null,
+"bold": false
+},
+{
+"text": "startTime",
+"style": null,
+"bold": false
+},
+{
+"text": "DateTime",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Beginn",
+"style": null,
+"bold": false
+},
+{
+"text": "endTime",
+"style": null,
+"bold": false
+},
+{
+"text": "DateTime",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Ende",
+"style": null,
+"bold": false
+},
+{
+"text": "status",
+"style": null,
+"bold": false
+},
+{
+"text": "Enum",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Lebenszyklusstatus",
+"style": null,
+"bold": false
+},
+{
+"text": "visibility",
+"style": null,
+"bold": false
+},
+{
+"text": "Enum",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Sichtbarkeit",
+"style": null,
+"bold": false
+},
+{
+"text": "version",
+"style": null,
+"bold": false
+},
+{
+"text": "Long",
+"style": null,
+"bold": false
+},
+{
+"text": "Ja",
+"style": null,
+"bold": false
+},
+{
+"text": "Optimistic Locking",
+"style": null,
+"bold": false
+},
+{
+"text": "Kapitel 172 – Invarianten",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "UUIDs sind unveränderlich.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Zeitbereiche dürfen sich innerhalb eines Events nicht widersprechen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Titel darf innerhalb eines Organizers nicht doppelt aktiv sein.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Statusübergänge erfolgen ausschließlich über definierte Domänenoperationen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 173 – Nächster vertikaler Schritt",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Als Nächstes wird ausschließlich die Event-Domäne weiter vertieft: vollständige SQL-DDLs, Constraints, Indizes, Migrationen und danach die vollständige OpenAPI-3.1-Spezifikation. Erst nach Abschluss aller Event-Artefakte beginnt die Dokumentation der nächsten Domäne.",
+"style": null,
+"bold": false
+},
+{
+"text": "Teil VII – Event-Domäne (Fortsetzung)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kapitel 174 – Relationales Datenmodell",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Das Event-Aggregat wird relational normalisiert. Fremdschlüssel verweisen ausschließlich auf Aggregate anderer Domänen.",
+"style": null,
+"bold": false
+},
+{
+"text": "event",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "event_image",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "event_tag",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "event_schedule",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ticket_category",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 175 – SQL-DDL: Tabelle event",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "CREATE TABLE event (  event_id UUID PRIMARY KEY,  organizer_id UUID NOT NULL,  venue_id UUID NOT NULL,  title VARCHAR(255) NOT NULL,  description TEXT NOT NULL,  status VARCHAR(32) NOT NULL,  visibility VARCHAR(32) NOT NULL,  start_time TIMESTAMP NOT NULL,  end_time TIMESTAMP NOT NULL,  version BIGINT NOT NULL,  created_at TIMESTAMP NOT NULL,  updated_at TIMESTAMP NOT NULL);",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 176 – Constraints und Indizes",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "PRIMARY KEY(event_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "FOREIGN KEY(organizer_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "FOREIGN KEY(venue_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CHECK(start_time < end_time)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "INDEX(status)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "INDEX(start_time)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "INDEX(organizer_id)",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 177 – Migrationsstrategie",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Versionierte Migrationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Vorwärtskompatible Änderungen bevorzugen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Rollback-Skripte für kritische Migrationen",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Automatisierte Ausführung in CI/CD",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Validierung vor Produktivfreigabe",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 178 – Persistenzregeln",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Soft Delete für archivierte Events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Optimistic Locking über version",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Keine direkten Datenbankzugriffe außerhalb des Repository-Layers",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Transaktionen nur über Application Services",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Teil VII – Event-Domäne (Fortsetzung)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kapitel 179 – OpenAPI 3.1: Ressourcenübersicht",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "GET /api/v1/events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/events",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "GET /api/v1/events/{eventId}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PUT /api/v1/events/{eventId}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PATCH /api/v1/events/{eventId}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "DELETE /api/v1/events/{eventId}",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/events/{eventId}/publish",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/events/{eventId}/cancel",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "POST /api/v1/events/{eventId}/archive",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 180 – Query-Parameter",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "page",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "size",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "sort",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "status",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "organizerId",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "venueId",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "from",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "to",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "search",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 181 – Standardisierte Fehlerobjekte",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "{  \"timestamp\":\"2026-01-01T12:00:00Z\",  \"status\":400,  \"code\":\"EVENT_VALIDATION_FAILED\",  \"message\":\"Validation failed\",  \"traceId\":\"...\"}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 182 – HTTP-Statuscodes",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "200 OK",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "201 Created",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "204 No Content",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "400 Bad Request",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "401 Unauthorized",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "403 Forbidden",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "404 Not Found",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "409 Conflict",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "422 Unprocessable Entity",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "500 Internal Server Error",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 183 – OpenAPI-Konventionen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Alle Endpunkte verwenden JWT-basierte Authentifizierung, einheitliche Fehlerobjekte, RFC-3339-Zeitstempel, UUIDs als Ressourcenkennungen sowie paginierte Listenantworten. Änderungen an der API erfolgen rückwärtskompatibel innerhalb der Major-Version.",
+"style": null,
+"bold": false
+},
+{
+"text": "Teil VII – Event-Domäne (Fortsetzung)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kapitel 184 – JSON-Schema: EventCreateRequest",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "{  \"type\":\"object\",  \"required\":[\"title\",\"organizerId\",\"venueId\",\"startTime\",\"endTime\"],  \"properties\":{    \"title\":{\"type\":\"string\",\"minLength\":3,\"maxLength\":255},    \"description\":{\"type\":\"string\"},    \"organizerId\":{\"type\":\"string\",\"format\":\"uuid\"},    \"venueId\":{\"type\":\"string\",\"format\":\"uuid\"},    \"startTime\":{\"type\":\"string\",\"format\":\"date-time\"},    \"endTime\":{\"type\":\"string\",\"format\":\"date-time\"},    \"visibility\":{\"type\":\"string\",\"enum\":[\"PUBLIC\",\"PRIVATE\",\"UNLISTED\"]}  },  \"additionalProperties\":false}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 185 – JSON-Schema: EventResponse",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "{  \"type\":\"object\",  \"required\":[\"eventId\",\"title\",\"status\",\"version\"],  \"properties\":{    \"eventId\":{\"type\":\"string\",\"format\":\"uuid\"},    \"title\":{\"type\":\"string\"},    \"status\":{\"type\":\"string\"},    \"version\":{\"type\":\"integer\"}  },  \"additionalProperties\":false}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 186 – Validierungsregeln",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "startTime muss vor endTime liegen.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Titel ist obligatorisch und maximal 255 Zeichen lang.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Organizer und Venue müssen existieren.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Status wird serverseitig verwaltet.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UUID-Felder müssen RFC-4122-konform sein.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 187 – Beispiel-Payloads",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "POST /api/v1/events{  \"title\":\"Summer Rave\",  \"organizerId\":\"<uuid>\",  \"venueId\":\"<uuid>\",  \"startTime\":\"2026-08-01T18:00:00Z\",  \"endTime\":\"2026-08-02T04:00:00Z\",  \"visibility\":\"PUBLIC\"}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 188 – Vertikaler Fahrplan",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Im nächsten Abschnitt folgen Repository-Interfaces, Application Services, Domänenoperationen und Transaktionsgrenzen. Erst nach Abschluss der vollständigen Implementierungsreferenz des Event-Service wird zur nächsten Domäne gewechselt.",
+"style": null,
+"bold": false
+},
+{
+"text": "Teil VII – Event-Domäne (Fortsetzung)",
+"style": "Heading1",
+"bold": false
+},
+{
+"text": "Kapitel 189 – Repository-Interfaces",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "EventRepository",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventImageRepository",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "EventTagRepository",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "TicketCategoryRepository",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Repository-Methoden sind ausschließlich fachlich orientiert.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 190 – Repository-Verträge",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "interface EventRepository {  Event save(Event event);  Optional<Event> findById(UUID eventId);  Page<Event> search(EventCriteria criteria);  void delete(Event event);}",
+"style": "IntenseQuote",
+"bold": false
+},
+{
+"text": "Kapitel 191 – Application Services",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "CreateEventService",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "UpdateEventService",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "PublishEventService",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "CancelEventService",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "ArchiveEventService",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 192 – Transaktionsgrenzen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "Eine Geschäftsoperation entspricht genau einer Transaktion.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Domain Events werden nach erfolgreichem Commit veröffentlicht.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Externe Integrationen erfolgen asynchron über Events oder Outbox.",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "Kapitel 193 – Domänenoperationen",
+"style": "Heading2",
+"bold": false
+},
+{
+"text": "create()",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "updateDetails()",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "publish()",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "cancel()",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "archive()",
+"style": "ListBullet",
+"bold": false
+},
+{
+"text": "changeVisibility()",
+"style": "ListBullet",
+"bold": false
+}
+]

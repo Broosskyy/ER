@@ -14,6 +14,7 @@ import { ImportReviewService } from '@/features/import/admin/import-review-servi
 import { ImportPermissionError } from '@/features/import/errors/import-errors';
 import { ImportLoggingService } from '@/features/import/services/import-logging-service';
 import { ImportOrchestrator } from '@/features/import/services/import-orchestrator';
+import { createSourceServiceFromImportStore } from '@/features/sources/services/source-import-bridge';
 import { importFetchService } from '@/features/import/services/import-fetch-service';
 import type { ImportRecord, ImportSource } from '@/features/import/models/types';
 import type { AuthSession } from '@/services/supabase/auth-service';
@@ -83,8 +84,10 @@ function createStack(fixtureBody: string, adapterKey = 'rss') {
     logging,
   );
   const audit = new ImportAuditService(bundle.importAuditLogs);
+  const sourceService = createSourceServiceFromImportStore(bundle.store);
   const ops = new ImportOperationsService(
     bundle.importSources,
+    sourceService,
     bundle.importJobs,
     bundle.importAdmin,
     orchestrator,

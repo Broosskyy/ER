@@ -26,8 +26,8 @@ import {
   createSupabaseCityDatasource,
   createSupabaseCollectionDatasource,
   createSupabaseGenreDatasource,
-  createSupabaseSourceDatasource,
 } from '@/data/datasources/supabase/supabase-reference-datasource';
+import { createSupabaseSourceDatasource } from '@/data/datasources/supabase/supabase-source-datasource';
 import { createSupabaseEventLineupDatasource } from '@/data/datasources/supabase/supabase-event-lineup-datasource';
 import { lineupToArtistNames } from '@/data/mappers/event-lineup-mapper';
 import type { Event } from '@/features/events/types/event';

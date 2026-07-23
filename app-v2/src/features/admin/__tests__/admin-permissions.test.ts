@@ -12,6 +12,8 @@ import {
   canViewEvents,
   canViewImportJobs,
   canViewSources,
+  canViewConnectors,
+  canManageConnectors,
 } from '@/features/admin/admin-permissions';
 import { ADMIN_ROLES, hasPermission, resolveAdminRole } from '@/features/import/admin/admin-roles';
 import type { AuthSession } from '@/services/supabase/auth-service';
@@ -69,6 +71,8 @@ describe('admin permissions matrix', () => {
   it('source_manager can manage sources', () => {
     const role = 'source_manager' as const;
     expect(canManageSources(role)).toBe(true);
+    expect(canViewConnectors(role)).toBe(true);
+    expect(canManageConnectors(role)).toBe(true);
     expect(hasPermission(role, 'imports:start')).toBe(true);
   });
 
