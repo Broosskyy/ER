@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet } from 'react-native';
 
 import { AppText } from '@/components/layout/AppText';
-import { colorRoles } from '@/design/colors';
+import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     borderColor: colorRoles.chipSelectedBorder,
   },
   pressed: {
-    opacity: 0.88,
+    backgroundColor: colors.surfaceSubtle,
   },
   label: {
     ...textRoles.chip,

@@ -54,14 +54,14 @@ export function LocationSelector() {
         style={({ pressed }) => [styles.container, pressed && styles.pressed]}
         testID="home-location-selector"
       >
-        <Ionicons name="location" size={componentSize.iconSm} color={colors.primary} />
+        <Ionicons name="location-outline" size={componentSize.iconSm} color={colors.primary} />
         <AppText style={styles.label} numberOfLines={1}>
           {displayLabel}
         </AppText>
         {loading ? (
           <ActivityIndicator size="small" color={colors.primary} />
         ) : (
-          <Ionicons name="chevron-down" size={componentSize.iconSm} color={colors.textPrimary} />
+          <Ionicons name="chevron-down-outline" size={componentSize.iconSm} color={colors.textMuted} />
         )}
       </Pressable>
 

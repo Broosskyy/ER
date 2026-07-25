@@ -137,9 +137,10 @@ describe('light theme design direction', () => {
 });
 
 describe('dark theme evolution', () => {
-  it('uses softened dark surfaces from Evolution V2', () => {
-    expect(darkTheme.colors.background).toBe('#111214');
-    expect(darkTheme.colors.surface).toBe('#1A1C1F');
-    expect(darkTheme.colors.accent).toBe('#7C3AED');
+  it('uses layered premium dark surfaces from Sprint 2B', () => {
+    expect(darkTheme.colors.background).toBe('#101114');
+    expect(darkTheme.colors.surface).toBe('#17191D');
+    expect(darkTheme.colors.surfaceElevated).toBe('#1D2025');
+    expect(darkTheme.colors.accent).toBe('#8B7CF8');
   });
 });

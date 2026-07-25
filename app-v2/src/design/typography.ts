@@ -92,28 +92,30 @@ export const textRoles = {
   },
   sectionTitle: {
     fontSize: fontSize.xl,
-    fontWeight: fontWeight.semibold,
+    fontWeight: fontWeight.bold,
     color: colors.textPrimary,
     lineHeight: fontSize.xl * lineHeight.tight,
+    letterSpacing: -0.3,
   },
   cardTitle: {
     fontSize: fontSize.md,
-    fontWeight: fontWeight.semibold,
+    fontWeight: fontWeight.bold,
     color: colors.textPrimary,
     lineHeight: fontSize.md * lineHeight.tight,
+    letterSpacing: -0.2,
   },
   cardSubtitle: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
     color: colors.textSecondary,
-    lineHeight: fontSize.base * lineHeight.normal,
+    lineHeight: fontSize.base * lineHeight.relaxed,
   },
   body: textVariants.body,
   metadata: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textSecondary,
-    lineHeight: fontSize.base * lineHeight.normal,
+    color: colors.textMuted,
+    lineHeight: fontSize.base * lineHeight.relaxed,
   },
   label: textVariants.label,
   button: {
@@ -131,7 +133,7 @@ export const textRoles = {
   chipSelected: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.semibold,
-    color: colors.textOnPrimary,
+    color: colors.primary,
     lineHeight: fontSize.base * lineHeight.tight,
   },
   navLabel: {
@@ -160,9 +162,9 @@ export const textRoles = {
   },
   badge: {
     fontSize: fontSize.caption,
-    fontWeight: fontWeight.semibold,
-    color: colors.textSecondary,
-    lineHeight: fontSize.caption * lineHeight.tight,
+    fontWeight: fontWeight.medium,
+    color: colors.textMuted,
+    lineHeight: fontSize.caption * lineHeight.normal,
   },
 } as const satisfies Record<string, TextStyle>;
 
