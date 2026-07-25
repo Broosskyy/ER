@@ -17,6 +17,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canDeleteOrganizers, canEditOrganizers } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 
@@ -123,7 +124,7 @@ export default function AdminOrganizerEditorScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>{isNew ? 'Create Organizer' : 'Edit Organizer'}</AppText>

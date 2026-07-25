@@ -17,6 +17,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { useAdminRole } from '@/features/import/admin/use-admin-role';
 
 export default function ReviewQueueScreen() {
@@ -65,8 +66,10 @@ export default function ReviewQueueScreen() {
           <SecondaryButton label="Back" onPress={() => router.back()} />
           <AppText style={styles.title}>Review Queue</AppText>
         </View>
-        <FlatList
-          data={records}
+        <View style={adminPageLayoutStyles.listRegion}>
+          <FlatList
+            style={adminPageLayoutStyles.flexScroll}
+            data={records}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.list}
           ListEmptyComponent={
@@ -96,7 +99,8 @@ export default function ReviewQueueScreen() {
               ) : null}
             </Pressable>
           )}
-        />
+          />
+        </View>
       </SafeAreaContainer>
     </AppScreen>
   );

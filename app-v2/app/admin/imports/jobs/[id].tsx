@@ -16,6 +16,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { formatJobDuration } from '@/features/import/admin/import-utils';
 
 export default function ImportJobDetailScreen() {
@@ -67,7 +68,7 @@ export default function ImportJobDetailScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>Job Detail</AppText>

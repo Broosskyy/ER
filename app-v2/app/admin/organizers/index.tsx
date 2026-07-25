@@ -18,6 +18,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canCreateOrganizers } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 
@@ -92,8 +93,10 @@ export default function AdminOrganizersScreen() {
             description="Create an organizer or adjust your search."
           />
         ) : (
-          <FlatList
-            data={organizers}
+          <View style={adminPageLayoutStyles.listRegion}>
+            <FlatList
+              style={adminPageLayoutStyles.flexScroll}
+              data={organizers}
             keyExtractor={(item) => item.id}
             contentContainerStyle={styles.list}
             renderItem={({ item }) => (
@@ -112,7 +115,8 @@ export default function AdminOrganizersScreen() {
                 {item.website ? <AppText style={styles.meta}>{item.website}</AppText> : null}
               </Pressable>
             )}
-          />
+            />
+          </View>
         )}
       </SafeAreaContainer>
     </AppScreen>

@@ -30,6 +30,7 @@ import {
   canViewConnectors,
 } from '@/features/admin/admin-permissions';
 import { breakpoints } from '@/platform/responsive-layout';
+import { adminShellLayoutStyles } from '@/features/admin/admin-page-layout';
 
 interface AdminNavItem {
   href: string;
@@ -225,10 +226,10 @@ export function AdminShell({ children }: { children: ReactNode }) {
   );
 
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, adminShellLayoutStyles.root]}>
       {isDesktop ? sidebar : null}
 
-      <View style={styles.mainColumn}>
+      <View style={[styles.mainColumn, adminShellLayoutStyles.mainColumn]}>
         {!isDesktop ? (
           <View style={styles.topBar}>
             <Pressable
@@ -249,6 +250,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
         <View
           style={[
             styles.content,
+            adminShellLayoutStyles.content,
             isDesktop && styles.contentDesktop,
             isTablet && styles.contentTablet,
           ]}
@@ -340,6 +342,7 @@ const styles = StyleSheet.create({
   },
   mainColumn: {
     flex: 1,
+    minHeight: 0,
   },
   topBar: {
     flexDirection: 'row',

@@ -77,11 +77,17 @@ export default function Root({ children }: PropsWithChildren) {
             __html: `
               html, body, #root {
                 width: 100%;
+                height: 100%;
                 min-height: 100%;
               }
               body {
                 background-color: ${PWA_CONFIG.backgroundColor};
-                overflow: auto;
+                overflow: hidden;
+              }
+              #root {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
               }
             `,
           }}

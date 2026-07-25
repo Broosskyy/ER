@@ -17,6 +17,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import {
   canArchiveArtists,
   canEditArtists,
@@ -164,7 +165,7 @@ export default function AdminArtistEditorScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>{isNew ? 'New Artist' : record.name}</AppText>

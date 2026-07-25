@@ -16,6 +16,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canManageConnectors } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import {
@@ -96,7 +97,7 @@ export default function AdminConnectorDetailScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>{detail.displayName}</AppText>

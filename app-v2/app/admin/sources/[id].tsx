@@ -17,6 +17,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canManageSources } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { SOURCE_DEFAULT_TRUST_SCORE } from '@/features/sources/domain/source-types';
@@ -37,6 +38,7 @@ import { validateSourceInput } from '@/features/sources/domain/source-validation
 import { formatConnectorHealthStatus } from '@/features/connectors/admin/connector-labels';
 import type { ConnectorDescriptor } from '@/features/connectors/registry/connector-registry';
 import type { ConnectorSourceAssignmentView } from '@/features/connectors/services/connector-admin-service';
+import { SourceEndpointsSection } from '@/features/sources/admin/SourceEndpointsSection';
 
 function createEmptySource(id: string): SourceRecord {
   const now = new Date().toISOString();
@@ -307,7 +309,7 @@ export default function AdminSourceEditorScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>{isNew ? 'Create Source' : record.displayName}</AppText>
@@ -554,19 +556,6 @@ export default function AdminSourceEditorScreen() {
                   }
                 />
               ) : null}
-              <AppText style={styles.label}>Future endpoint placeholder</AppText>
-              <TextInput
-                value={endpointPlaceholder}
-                editable={canEdit}
-                onChangeText={setEndpointPlaceholder}
-                style={styles.input}
-                placeholder="Endpoint label or URL (future)"
-                placeholderTextColor={colorRoles.emptyStateDescription}
-                accessibilityLabel="Future endpoint placeholder"
-              />
-              {connectorAssignment ? (
-                <AppText style={styles.meta}>{connectorAssignment.futureEndpointNote}</AppText>
-              ) : null}
               {canEdit ? (
                 <SecondaryButton
                   label={assignmentSaving ? 'Saving assignment…' : 'Save connector assignment'}
@@ -574,6 +563,18 @@ export default function AdminSourceEditorScreen() {
                   disabled={assignmentSaving}
                 />
               ) : null}
+            </View>
+          ) : null}
+
+          {!isNew ? (
+            <View style={styles.endpointsSection}>
+              <SourceEndpointsSection
+                canEdit={canEdit}
+                connectorOptions={assignableConnectors.map((connector) => ({
+                  connectorKey: connector.connectorKey,
+                  displayName: connector.displayName,
+                }))}
+              />
             </View>
           ) : null}
 
@@ -653,7 +654,13 @@ const styles = StyleSheet.create({
   },
   sectionTitle: { ...textRoles.sectionTitle },
   meta: { ...textRoles.metadata, color: colorRoles.emptyStateDescription },
-  actions: { gap: spacing.sm, marginTop: spacing.lg },
+  endpointsSection: {
+    marginTop: spacing.xl,
+    paddingTop: spacing.lg,
+    borderTopWidth: 1,
+    borderTopColor: colors.border,
+  },
+  actions: { gap: spacing.sm, marginTop: spacing.xl, paddingTop: spacing.lg, borderTopWidth: 1, borderTopColor: colors.border },
   error: { ...textRoles.body, color: colors.live },
   success: { ...textRoles.body, color: colors.primary },
   fieldError: { ...textRoles.metadata, color: colors.live },

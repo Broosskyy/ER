@@ -20,6 +20,8 @@ export function AppScreen({ children, style, testID }: AppScreenProps) {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    minHeight: 0,
+    width: '100%',
     backgroundColor: colors.background,
   },
 });

@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
@@ -18,6 +18,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canManageSources } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import {
@@ -112,139 +113,140 @@ export default function AdminSourcesScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <View style={styles.header}>
-          <SecondaryButton label="Back" onPress={() => router.back()} />
-          <AppText style={styles.title}>Sources</AppText>
-          {canManageSources(role) ? (
-            <PrimaryButton
-              label="Create"
-              onPress={() => router.push('/admin/sources/new' as '/admin/events/new')}
-            />
-          ) : null}
-        </View>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
+          <View style={styles.header}>
+            <SecondaryButton label="Back" onPress={() => router.back()} />
+            <AppText style={styles.title}>Sources</AppText>
+            {canManageSources(role) ? (
+              <PrimaryButton
+                label="Create"
+                onPress={() => router.push('/admin/sources/new' as '/admin/events/new')}
+              />
+            ) : null}
+          </View>
 
-        <TextInput
-          value={query}
-          onChangeText={setQuery}
-          placeholder="Search name, slug, URL, type…"
-          placeholderTextColor={colorRoles.emptyStateDescription}
-          style={styles.search}
-          accessibilityLabel="Search sources"
-        />
-
-        <View style={styles.filterRow}>
-          {(['all', 'enabled', 'disabled', 'archived'] as StatusFilter[]).map((filter) => (
-            <SecondaryButton
-              key={filter}
-              label={filter}
-              onPress={() => setStatusFilter(filter)}
-              style={statusFilter === filter ? styles.chipActive : undefined}
-            />
-          ))}
-        </View>
-
-        <View style={styles.filterRow}>
-          <SecondaryButton
-            label={`Sort: ${sortBy}`}
-            onPress={() => {
-              const options: NonNullable<SourceListParams['sortBy']>[] = [
-                'priority',
-                'trustScore',
-                'displayName',
-                'sourceType',
-                'updated',
-                'created',
-              ];
-              const index = options.indexOf(sortBy);
-              const next = options[(index + 1) % options.length] ?? 'priority';
-              setSortBy(next);
-            }}
+          <TextInput
+            value={query}
+            onChangeText={setQuery}
+            placeholder="Search name, slug, URL, type…"
+            placeholderTextColor={colorRoles.emptyStateDescription}
+            style={styles.search}
+            accessibilityLabel="Search sources"
           />
-        </View>
 
-        <View style={styles.filterRow}>
-          {['all', ...SOURCE_TYPES.slice(0, 4)].map((type) => (
+          <View style={styles.filterRow}>
+            {(['all', 'enabled', 'disabled', 'archived'] as StatusFilter[]).map((filter) => (
+              <SecondaryButton
+                key={filter}
+                label={filter}
+                onPress={() => setStatusFilter(filter)}
+                style={statusFilter === filter ? styles.chipActive : undefined}
+              />
+            ))}
+          </View>
+
+          <View style={styles.filterRow}>
             <SecondaryButton
-              key={type}
-              label={type === 'all' ? 'All types' : formatSourceTypeLabel(type)}
-              onPress={() => setSourceTypeFilter(type)}
-              style={sourceTypeFilter === type ? styles.chipActive : undefined}
+              label={`Sort: ${sortBy}`}
+              onPress={() => {
+                const options: NonNullable<SourceListParams['sortBy']>[] = [
+                  'priority',
+                  'trustScore',
+                  'displayName',
+                  'sourceType',
+                  'updated',
+                  'created',
+                ];
+                const index = options.indexOf(sortBy);
+                const next = options[(index + 1) % options.length] ?? 'priority';
+                setSortBy(next);
+              }}
             />
-          ))}
-        </View>
+          </View>
 
-        <View style={styles.filterRow}>
-          {['all', ...PARSER_TYPES.slice(0, 4)].map((type) => (
-            <SecondaryButton
-              key={type}
-              label={type === 'all' ? 'All parsers' : formatParserTypeLabel(type)}
-              onPress={() => setParserFilter(type)}
-              style={parserFilter === type ? styles.chipActive : undefined}
+          <View style={styles.filterRow}>
+            {['all', ...SOURCE_TYPES.slice(0, 4)].map((type) => (
+              <SecondaryButton
+                key={type}
+                label={type === 'all' ? 'All types' : formatSourceTypeLabel(type)}
+                onPress={() => setSourceTypeFilter(type)}
+                style={sourceTypeFilter === type ? styles.chipActive : undefined}
+              />
+            ))}
+          </View>
+
+          <View style={styles.filterRow}>
+            {['all', ...PARSER_TYPES.slice(0, 4)].map((type) => (
+              <SecondaryButton
+                key={type}
+                label={type === 'all' ? 'All parsers' : formatParserTypeLabel(type)}
+                onPress={() => setParserFilter(type)}
+                style={parserFilter === type ? styles.chipActive : undefined}
+              />
+            ))}
+          </View>
+
+          <View style={styles.filterRow}>
+            {(['all', 'required', 'none'] as const).map((filter) => (
+              <SecondaryButton
+                key={filter}
+                label={filter === 'all' ? 'Any auth' : filter === 'required' ? 'Auth required' : 'No auth'}
+                onPress={() => setAuthFilter(filter)}
+                style={authFilter === filter ? styles.chipActive : undefined}
+              />
+            ))}
+          </View>
+
+          {error ? <AppText style={styles.error}>{error}</AppText> : null}
+
+          {sources.length === 0 ? (
+            <AdminEmptyState
+              title="No sources found"
+              description="Create a source or adjust your filters."
             />
-          ))}
-        </View>
-
-        <View style={styles.filterRow}>
-          {(['all', 'required', 'none'] as const).map((filter) => (
-            <SecondaryButton
-              key={filter}
-              label={filter === 'all' ? 'Any auth' : filter === 'required' ? 'Auth required' : 'No auth'}
-              onPress={() => setAuthFilter(filter)}
-              style={authFilter === filter ? styles.chipActive : undefined}
-            />
-          ))}
-        </View>
-
-        {error ? <AppText style={styles.error}>{error}</AppText> : null}
-
-        {sources.length === 0 ? (
-          <AdminEmptyState
-            title="No sources found"
-            description="Create a source or adjust your filters."
-          />
-        ) : (
-          <FlatList
-            data={sources}
-            keyExtractor={(item) => item.id}
-            contentContainerStyle={styles.list}
-            renderItem={({ item }) => (
-              <Pressable
-                onPress={() =>
-                  router.push(`/admin/sources/${item.id}` as `/admin/events/${string}`)
-                }
-                style={styles.card}
-                accessibilityRole="button"
-              >
-                <View style={styles.cardHeader}>
-                  <AppText style={styles.cardTitle}>{item.displayName}</AppText>
-                  <AppText style={styles.badge}>{formatSourceStatus(item.enabled, item.archived)}</AppText>
-                </View>
-                <AppText style={styles.meta}>
-                  {formatSourceTypeLabel(item.sourceType)} · {formatParserTypeLabel(item.parserType)} ·{' '}
-                  {formatAcquisitionStrategyLabel(item.acquisitionStrategy)}
-                </AppText>
-                <AppText style={styles.meta}>{item.baseUrl ?? 'No base URL'}</AppText>
-                <AppText style={styles.meta}>
-                  Priority {item.priority} · Trust {item.trustScore}
-                  {item.pollingStrategy ? ` · Poll ${item.pollingStrategy}` : ''}
-                </AppText>
-                <AppText style={styles.meta}>
-                  Updated {new Date(item.updatedAt).toLocaleString()}
-                </AppText>
-              </Pressable>
-            )}
-          />
-        )}
+          ) : (
+            <View style={styles.list}>
+              {sources.map((item) => (
+                <Pressable
+                  key={item.id}
+                  onPress={() =>
+                    router.push(`/admin/sources/${item.id}` as `/admin/events/${string}`)
+                  }
+                  style={styles.card}
+                  accessibilityRole="button"
+                >
+                  <View style={styles.cardHeader}>
+                    <AppText style={styles.cardTitle}>{item.displayName}</AppText>
+                    <AppText style={styles.badge}>{formatSourceStatus(item.enabled, item.archived)}</AppText>
+                  </View>
+                  <AppText style={styles.meta}>
+                    {formatSourceTypeLabel(item.sourceType)} · {formatParserTypeLabel(item.parserType)} ·{' '}
+                    {formatAcquisitionStrategyLabel(item.acquisitionStrategy)}
+                  </AppText>
+                  <AppText style={styles.meta}>{item.baseUrl ?? 'No base URL'}</AppText>
+                  <AppText style={styles.meta}>
+                    Priority {item.priority} · Trust {item.trustScore}
+                    {item.pollingStrategy ? ` · Poll ${item.pollingStrategy}` : ''}
+                  </AppText>
+                  <AppText style={styles.meta}>
+                    Updated {new Date(item.updatedAt).toLocaleString()}
+                  </AppText>
+                </Pressable>
+              ))}
+            </View>
+          )}
+        </ScrollView>
       </SafeAreaContainer>
     </AppScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  container: { flex: 1 },
+  content: {
     paddingHorizontal: spacingRoles.screenHorizontal,
     gap: spacing.md,
+    paddingBottom: spacing.xl,
   },
   header: {
     flexDirection: 'row',
@@ -274,7 +276,6 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: spacing.sm,
-    paddingBottom: spacing.xl,
   },
   card: {
     borderWidth: 1,

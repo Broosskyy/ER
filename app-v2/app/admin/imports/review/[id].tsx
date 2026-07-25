@@ -17,6 +17,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
 import { REJECT_REASON_LABELS } from '@/features/import/admin/reject-reasons';
 import { useAdminRole } from '@/features/import/admin/use-admin-role';
@@ -210,7 +211,7 @@ export default function ReviewDetailScreen() {
   return (
     <AppScreen>
       <SafeAreaContainer style={styles.container}>
-        <ScrollView contentContainerStyle={styles.content}>
+        <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>Review</AppText>
