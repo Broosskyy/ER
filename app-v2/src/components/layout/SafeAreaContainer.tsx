@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
 import { SafeAreaView, type Edge } from 'react-native-safe-area-context';
 
-import { colors } from '@/design/colors';
+import { useTheme } from '@/design/theme';
 
 export interface SafeAreaContainerProps {
   children: ReactNode;
@@ -17,8 +17,14 @@ export function SafeAreaContainer({
   edges = ['top', 'right', 'bottom', 'left'],
   testID,
 }: SafeAreaContainerProps) {
+  const { theme } = useTheme();
+
   return (
-    <SafeAreaView style={[styles.container, style]} edges={edges} testID={testID}>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: theme.colors.background }, style]}
+      edges={edges}
+      testID={testID}
+    >
       {children}
     </SafeAreaView>
   );
@@ -29,6 +35,5 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: 0,
     width: '100%',
-    backgroundColor: colors.background,
   },
 });
