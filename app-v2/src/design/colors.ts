@@ -1,109 +1,80 @@
 /**
- * Eternal Rave color tokens — V1 preliminary.
+ * Legacy color tokens — backward-compatible re-exports from the dark theme.
  *
- * Sources:
- * - reference/old-code/src/constants/theme.ts
- * - reference/docs/export-docs/02-ui-design/MOCKUP-SCREENS.md
- * - reference/mockups/screens/62_DesignSystem_Color_System.jpg
- * - V1 core screens 09–15, UI libraries 52–57
+ * New code should use `useTheme().theme.colors` from `@/design/theme`.
  */
+import { darkThemeColors } from '@/design/theme/palettes';
+
 export const colors = {
-  // Brand & primary actions
-  primary: '#7C3AED',
-  primaryHighlight: '#A855F7',
+  primary: darkThemeColors.accent,
+  primaryHighlight: darkThemeColors.accentPressed,
   primaryDeep: '#4C1D95',
-
-  // Surfaces
-  background: '#0B0B0F',
-  surface: '#15151B',
-  surfaceElevated: '#1F1F27',
-  mapSurface: '#12121A',
-
-  // Text
-  textPrimary: '#F5F5F5',
-  textSecondary: '#9CA3AF',
-  textOnPrimary: '#FFFFFF',
-
-  // Borders & dividers
-  border: '#2A2A35',
-  divider: '#2A2A35',
-
-  // Semantic status
-  live: '#EF4444',
-  success: '#22C55E',
-  warning: '#F59E0B',
-
-  // Utility
+  background: darkThemeColors.background,
+  surface: darkThemeColors.surface,
+  surfaceElevated: darkThemeColors.surfaceElevated,
+  mapSurface: darkThemeColors.mapSurface,
+  textPrimary: darkThemeColors.textPrimary,
+  textSecondary: darkThemeColors.textSecondary,
+  textOnPrimary: darkThemeColors.textOnAccent,
+  border: darkThemeColors.borderSubtle,
+  divider: darkThemeColors.borderSubtle,
+  live: darkThemeColors.destructive,
+  success: darkThemeColors.success,
+  warning: darkThemeColors.warning,
   white: '#FFFFFF',
   transparent: 'transparent',
 } as const;
 
-/**
- * Semantic color roles for recurring V1 UI patterns.
- * Values map to base tokens above — no new hues invented.
- */
 export const colorRoles = {
-  appBackground: colors.background,
-  screenBackground: colors.background,
-
-  headerBackground: colors.background,
-  headerTitle: colors.textPrimary,
-  headerIcon: colors.textPrimary,
-
-  bottomNavBackground: colors.surface,
-  bottomNavBorder: colors.border,
-  bottomNavActive: colors.primary,
-  bottomNavInactive: colors.textSecondary,
-
-  searchBackground: colors.surface,
-  searchBorder: colors.border,
-  searchPlaceholder: colors.textSecondary,
-  searchText: colors.textPrimary,
-
-  chipBackground: colors.surface,
-  chipBorder: colors.border,
-  chipText: colors.textSecondary,
-  chipSelectedBackground: colors.primary,
-  chipSelectedBorder: colors.primary,
-  chipSelectedText: colors.textOnPrimary,
-
-  cardBackground: colors.surface,
-  cardBorder: colors.border,
-
-  buttonPrimaryBackground: colors.primary,
-  buttonPrimaryText: colors.textOnPrimary,
-  buttonPrimaryPressed: colors.primaryHighlight,
+  appBackground: darkThemeColors.background,
+  screenBackground: darkThemeColors.background,
+  headerBackground: darkThemeColors.background,
+  headerTitle: darkThemeColors.textPrimary,
+  headerIcon: darkThemeColors.textPrimary,
+  bottomNavBackground: darkThemeColors.surface,
+  bottomNavBorder: darkThemeColors.borderSubtle,
+  bottomNavActive: darkThemeColors.accent,
+  bottomNavInactive: darkThemeColors.textSecondary,
+  searchBackground: darkThemeColors.surface,
+  searchBorder: darkThemeColors.borderSubtle,
+  searchPlaceholder: darkThemeColors.textSecondary,
+  searchText: darkThemeColors.textPrimary,
+  chipBackground: darkThemeColors.surface,
+  chipBorder: darkThemeColors.borderSubtle,
+  chipText: darkThemeColors.textSecondary,
+  chipSelectedBackground: darkThemeColors.accent,
+  chipSelectedBorder: darkThemeColors.accent,
+  chipSelectedText: darkThemeColors.textOnAccent,
+  cardBackground: darkThemeColors.surface,
+  cardBorder: darkThemeColors.borderSubtle,
+  buttonPrimaryBackground: darkThemeColors.accent,
+  buttonPrimaryText: darkThemeColors.textOnAccent,
+  buttonPrimaryPressed: darkThemeColors.accentPressed,
   buttonSecondaryBackground: colors.transparent,
-  buttonSecondaryBorder: colors.border,
-  buttonSecondaryText: colors.textPrimary,
-
-  badgeBackground: colors.surfaceElevated,
-  badgeText: colors.textSecondary,
-  tagBackground: colors.surfaceElevated,
-  tagText: colors.textSecondary,
-
-  favoriteActive: colors.live,
-  favoriteInactive: colors.textSecondary,
-
-  mapCluster: colors.primary,
-  mapUserLocation: '#3B82F6', // REVIEW: blue dot visible on 12_Map.jpg; exact hex unclear
-
-  overlayScrim: 'rgba(11, 11, 15, 0.72)', // REVIEW: approximate from 12_Map bottom sheet
+  buttonSecondaryBorder: darkThemeColors.borderSubtle,
+  buttonSecondaryText: darkThemeColors.textPrimary,
+  badgeBackground: darkThemeColors.surfaceElevated,
+  badgeText: darkThemeColors.textSecondary,
+  tagBackground: darkThemeColors.surfaceElevated,
+  tagText: darkThemeColors.textSecondary,
+  favoriteActive: darkThemeColors.destructive,
+  favoriteInactive: darkThemeColors.textSecondary,
+  mapCluster: darkThemeColors.accent,
+  mapUserLocation: darkThemeColors.info,
+  overlayScrim: darkThemeColors.overlay,
   imageOverlayGradientStart: 'rgba(11, 11, 15, 0)',
-  imageOverlayGradientEnd: 'rgba(11, 11, 15, 0.85)', // REVIEW: hero fade on 11_Event_Details.jpg
-
-  emptyStateIcon: colors.textSecondary,
-  emptyStateTitle: colors.textPrimary,
-  emptyStateDescription: colors.textSecondary,
-
-  skeletonBase: colors.surface,
-  skeletonHighlight: colors.surfaceElevated,
+  imageOverlayGradientEnd: 'rgba(11, 11, 15, 0.85)',
+  emptyStateIcon: darkThemeColors.textSecondary,
+  emptyStateTitle: darkThemeColors.textPrimary,
+  emptyStateDescription: darkThemeColors.textSecondary,
+  skeletonBase: darkThemeColors.skeletonBase,
+  skeletonHighlight: darkThemeColors.skeletonHighlight,
 } as const;
 
 export const opacity = {
   disabled: 0.5,
   pressed: 0.88,
-  overlay: 0.72, // REVIEW
+  overlay: 0.72,
 } as const;
 
 export type ColorToken = keyof typeof colors;

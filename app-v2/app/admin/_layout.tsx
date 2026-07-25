@@ -1,6 +1,7 @@
 import { Redirect, Slot, useSegments } from 'expo-router';
 import { Platform, View } from 'react-native';
 
+import { useTheme } from '@/design/theme';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { useAdminGuard } from '@/features/admin/admin-guard';
@@ -14,6 +15,7 @@ function AdminLayoutContent() {
   const segments = useSegments();
   const guard = useAdminGuard(segments);
   const { isAuthenticated, hasAdminAccess } = useAdminAuth();
+  const { theme } = useTheme();
 
   if (Platform.OS !== 'web') {
     return <AdminWebOnlyState />;
@@ -55,7 +57,12 @@ function AdminLayoutContent() {
 
   return (
     <AdminShell>
-      <View style={adminPageLayoutStyles.page}>
+      <View
+        style={[
+          adminPageLayoutStyles.page,
+          { backgroundColor: theme.colors.background },
+        ]}
+      >
         <Slot />
       </View>
     </AdminShell>
