@@ -83,6 +83,10 @@ export interface ImportRecord {
   sourceId: string;
   externalId: string;
   sourceUrl?: string;
+  sourceType?: string;
+  sourceName?: string;
+  originalUrl?: string;
+  retrievedAt?: string;
   rawPayload: Record<string, unknown>;
   normalizedPayload?: Record<string, unknown>;
   validationErrors?: ValidationIssue[];
@@ -117,6 +121,9 @@ export interface ImportRecordSummary {
   venueName?: string;
   cityName?: string;
   sourceName?: string;
+  sourceType?: string;
+  originalUrl?: string;
+  retrievedAt?: string;
   matchConfidence?: number;
   duplicateScore?: number;
   warningCount: number;
@@ -172,6 +179,10 @@ export interface CreateImportRecordInput {
   sourceId: string;
   externalId: string;
   sourceUrl?: string;
+  sourceType?: string;
+  sourceName?: string;
+  originalUrl?: string;
+  retrievedAt?: string;
   rawPayload: Record<string, unknown>;
   normalizedPayload?: Record<string, unknown>;
   validationErrors?: ValidationIssue[];

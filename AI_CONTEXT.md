@@ -19,12 +19,17 @@ Eternal Rave ist eine Event-Discovery-Plattform für elektronische Musik — mit
 - **Daten:** Standard ist lokaler Mock (`EXPO_PUBLIC_USE_SUPABASE=false`); Supabase-Anbindung implementiert, Remote-Staging laut Projektstatus nicht befüllt
 - **Consumer-App:** Home, Search, Saved, Profile, Event-Detail funktionsfähig; Map-Tab für Closed Beta ausgeblendet; Create Hub zeigt nur Event + Account; **Meine Events** inkl. rejected-Filter
 - **Standort:** Foreground-Location via `expo-location`; lokal in AsyncStorage (`app.userLocation`); nur nach Nutzeraktion; keine Event-Filterung (ER-005.2)
-- **Admin:** Web-only unter `/admin` — Events-CRUD inkl. Multi-Artist-Lineup-Editor (ER-008), Venue-Picker (ER-009), **Venue-CMS** (`/admin/venues`, ER-009), **Organizer-CMS** (`/admin/organizers`, ER-010), Contributor-Moderation, **Artist-CMS** (ER-007), Import
+- **Admin:** Web-only unter `/admin` — Events-CRUD inkl. Multi-Artist-Lineup-Editor (ER-008), Venue-Picker (ER-009), **Venue-CMS** (`/admin/venues`, ER-009), **Organizer-CMS** (`/admin/organizers`, ER-010), **Source-CMS** (`/admin/sources`, ER-012), **Connector-CMS** (`/admin/connectors`, ER-013), Contributor-Moderation, **Artist-CMS** (ER-007), Import
 - **Auth:** Globaler `AuthProvider`; Login/Register; E-Mail-Bestätigung mit `/auth/callback`, Resend, Passwort-Reset (ER-005.3)
 - **i18n:** Deutsch und Englisch (`src/features/i18n/`); Auth-Fehler über `error.code` (`email_not_confirmed`, `invalid_credentials`, …)
-- **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft` (nicht auto-published); kein Scheduler im Code
-- **Tests:** Vitest **449** Tests; `npm run typecheck` und `npm run release:check` **PASS** (ER-011)
-- **Offene Kernarbeit:** `BACKLOG.md` — ER-011 Closed Beta Hardening Done; ER-010 Organizer Done
+- **Source Foundation (ER-012):** Canonical Source registry at `/admin/sources`; metadata-only (no acquisition). Single write path via `SourceService` (ER-012.1). See `app-v2/docs/sources-domain.md`.
+- **Connector Framework (ER-013):** Provider-independent execution infrastructure in `features/connectors/`; registry, factory, immutable context, result, capabilities, errors. Admin CMS at `/admin/connectors`. Architecture frozen ER-014.1. See `app-v2/docs/connector-framework.md`.
+- **Endpoint Domain (ER-014 Part 1):** Reusable acquisition endpoint model in `features/endpoints/`; one Source → many Endpoints; runtime resolves `connectorKey` only. See `app-v2/docs/endpoints-domain.md`.
+- **Website Connector (ER-014 Part 2):** First production connector (`connectorKey: website`); `DefaultHttpClient` for GET transport; raw HTML → one `AcquisitionCandidate` per request. No parsing. See `app-v2/docs/website-connector.md`.
+- **Connector Execution Engine (ER-014 Part 3):** Canonical endpoint execution via `ConnectorExecutionEngine`; manual entry via `ConnectorExecutionService`. No scheduler, parsing, or publishing. See `app-v2/docs/connector-execution-engine.md`.
+- **Import:** Manuell startbar; Approve erzeugt Events mit Status `draft`; Import-Review zeigt Source-Provenance; legacy Import-Ops delegieren Source-Writes an `SourceService`; kein Scheduler im Code
+- **Tests:** Vitest **534** Tests; `npm run typecheck`, `npm run release:check` und `npm run validate:migrations` **PASS**
+- **Offene Kernarbeit:** `BACKLOG.md` — ER-015 Scheduler, parsing/normalization
 
 ---
 
@@ -86,6 +91,9 @@ Screens (app/)
 | `i18n` | Internationalisierung (de/en) |
 | `admin` | Admin-Shell, Guards, Permissions, Artist-CMS |
 | `import` | Adapter, Matching, Review, Operations |
+| `sources` | Source metadata registry (ER-012) |
+| `connectors` | Connector execution framework (ER-013) |
+| `endpoints` | Acquisition endpoint domain (ER-014) |
 | `artists` | Artist-Domain, Validation, Service (ER-007) |
 
 Querschnitt: `src/data/` (Repositories, Datasources, Mapper), `src/services/supabase/` (Client, Auth).

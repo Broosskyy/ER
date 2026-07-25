@@ -18,6 +18,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canCreateVenues } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { formatVenueAddressSummary } from '@/features/venues/domain/venue-duplicate';
@@ -90,8 +91,10 @@ export default function AdminVenuesScreen() {
             description="Create a venue or adjust your search."
           />
         ) : (
-          <FlatList
-            data={venues}
+          <View style={adminPageLayoutStyles.listRegion}>
+            <FlatList
+              style={adminPageLayoutStyles.flexScroll}
+              data={venues}
             keyExtractor={(item) => item.id}
             contentContainerStyle={styles.list}
             renderItem={({ item }) => (
@@ -109,7 +112,8 @@ export default function AdminVenuesScreen() {
                 ) : null}
               </Pressable>
             )}
-          />
+            />
+          </View>
         )}
       </SafeAreaContainer>
     </AppScreen>

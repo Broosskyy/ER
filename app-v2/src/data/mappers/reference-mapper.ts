@@ -2,10 +2,7 @@ import type {
   CityRecord,
   CollectionRecord,
   GenreRecord,
-  SourceRecord,
 } from '@/data/types/records';
-import type { ImportSourceConfig } from '@/features/import/models/source-config';
-import type { ImportJobStatus } from '@/features/import/models/statuses';
 
 export interface GenreRow {
   id: string;
@@ -33,23 +30,6 @@ export interface CollectionRow {
   cover: string | null;
   active: boolean;
   sort_order: number;
-}
-
-export interface SourceRow {
-  id: string;
-  name: string;
-  type: string;
-  website: string | null;
-  source_url: string | null;
-  source_config: ImportSourceConfig | null;
-  default_timezone: string | null;
-  trust_score: number;
-  active: boolean;
-  adapter_key: string | null;
-  review_required: boolean;
-  last_import_at: string | null;
-  last_job_status: ImportJobStatus | null;
-  next_scheduled_at: string | null;
 }
 
 export function mapGenreRowToRecord(row: GenreRow): GenreRecord {
@@ -120,40 +100,8 @@ export function mapCollectionRecordToRow(record: CollectionRecord): CollectionRo
   };
 }
 
-export function mapSourceRowToRecord(row: SourceRow): SourceRecord {
-  return {
-    id: row.id,
-    name: row.name,
-    type: row.type,
-    website: row.website ?? undefined,
-    sourceUrl: row.source_url ?? undefined,
-    sourceConfig: row.source_config ?? undefined,
-    defaultTimezone: row.default_timezone ?? undefined,
-    trustScore: Number(row.trust_score),
-    active: row.active,
-    adapterKey: row.adapter_key ?? undefined,
-    reviewRequired: row.review_required,
-    lastImportAt: row.last_import_at ?? undefined,
-    lastJobStatus: row.last_job_status ?? undefined,
-    nextScheduledAt: row.next_scheduled_at ?? undefined,
-  };
-}
-
-export function mapSourceRecordToRow(record: SourceRecord): SourceRow {
-  return {
-    id: record.id,
-    name: record.name,
-    type: record.type,
-    website: record.website ?? null,
-    source_url: record.sourceUrl ?? null,
-    source_config: record.sourceConfig ?? null,
-    default_timezone: record.defaultTimezone ?? null,
-    trust_score: record.trustScore,
-    active: record.active,
-    adapter_key: record.adapterKey ?? null,
-    review_required: record.reviewRequired ?? true,
-    last_import_at: record.lastImportAt ?? null,
-    last_job_status: record.lastJobStatus ?? null,
-    next_scheduled_at: record.nextScheduledAt ?? null,
-  };
-}
+export {
+  mapSourceRecordToRow,
+  mapSourceRowToRecord,
+  type SourceRow,
+} from '@/data/mappers/source-mapper';

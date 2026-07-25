@@ -3,13 +3,11 @@ import type {
   CityRecord,
   CollectionRecord,
   GenreRecord,
-  SourceRecord,
 } from '@/data/types/records';
 import type {
   CityDatasource,
   CollectionDatasource,
   GenreDatasource,
-  SourceDatasource,
 } from '@/data/datasources/types';
 import {
   mapCityRecordToRow,
@@ -18,12 +16,9 @@ import {
   mapCollectionRowToRecord,
   mapGenreRecordToRow,
   mapGenreRowToRecord,
-  mapSourceRecordToRow,
-  mapSourceRowToRecord,
   type CityRow,
   type CollectionRow,
   type GenreRow,
-  type SourceRow,
 } from '@/data/mappers/reference-mapper';
 import { getSupabaseClient } from '@/services/supabase/client';
 
@@ -99,13 +94,5 @@ export function createSupabaseCollectionDatasource(): CollectionDatasource {
     table: 'collections',
     mapRowToRecord: mapCollectionRowToRecord,
     mapRecordToRow: mapCollectionRecordToRow,
-  });
-}
-
-export function createSupabaseSourceDatasource(): SourceDatasource {
-  return createMappedSupabaseDatasource<SourceRow, SourceRecord>({
-    table: 'sources',
-    mapRowToRecord: mapSourceRowToRecord,
-    mapRecordToRow: mapSourceRecordToRow,
   });
 }

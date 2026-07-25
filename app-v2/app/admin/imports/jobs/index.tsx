@@ -17,6 +17,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { formatJobDuration, shortId } from '@/features/import/admin/import-utils';
 import { useAdminRole } from '@/features/import/admin/use-admin-role';
 
@@ -62,8 +63,10 @@ export default function ImportJobsScreen() {
           <SecondaryButton label="Back" onPress={() => router.back()} />
           <AppText style={styles.title}>Import Jobs</AppText>
         </View>
-        <FlatList
-          data={jobs}
+        <View style={adminPageLayoutStyles.listRegion}>
+          <FlatList
+            style={adminPageLayoutStyles.flexScroll}
+            data={jobs}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.list}
           ListEmptyComponent={
@@ -90,7 +93,8 @@ export default function ImportJobsScreen() {
               </AppText>
             </Pressable>
           )}
-        />
+          />
+        </View>
       </SafeAreaContainer>
     </AppScreen>
   );

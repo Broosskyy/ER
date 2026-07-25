@@ -8,6 +8,7 @@ import { ImportOperationsService } from '@/features/import/admin/import-operatio
 import { ImportReviewService } from '@/features/import/admin/import-review-service';
 import { ImportLoggingService } from '@/features/import/services/import-logging-service';
 import { ImportOrchestrator } from '@/features/import/services/import-orchestrator';
+import { createSourceServiceFromImportStore } from '@/features/sources/services/source-import-bridge';
 import type { ImportSource, ImportRecord } from '@/features/import/models/types';
 import type { AuthSession } from '@/services/supabase/auth-service';
 import type { AdminEventRecord } from '@/data/types/records';
@@ -71,8 +72,10 @@ function createTestStack() {
   );
 
   const auditService = new ImportAuditService(auditRepository);
+  const sourceService = createSourceServiceFromImportStore(bundle.store);
   const operationsService = new ImportOperationsService(
     sourceRepository,
+    sourceService,
     jobRepository,
     adminRepository,
     orchestrator,
@@ -120,15 +123,19 @@ function createTestStack() {
 }
 
 async function seedSource(stack: ReturnType<typeof createTestStack>): Promise<ImportSource> {
-  return stack.sourceRepository.save({
-    id: 'src-1',
-    name: 'Test RSS',
-    type: 'feed',
-    trustScore: 80,
-    active: true,
-    adapterKey: 'rss',
-    sourceConfig: { feed: { feedUrl: 'https://example.com/feed.xml' } },
-  });
+  return stack.operationsService.saveSource(
+    ownerSession,
+    {
+      id: 'src-1',
+      name: 'Test RSS',
+      type: 'feed',
+      trustScore: 80,
+      active: true,
+      adapterKey: 'rss',
+      sourceConfig: { feed: { feedUrl: 'https://example.com/feed.xml' } },
+    },
+    true,
+  );
 }
 
 describe('Import operations service', () => {

@@ -18,6 +18,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canCreateArtists } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import type { ArtistLifecycleStatus } from '@/features/artists/types/artist-status';
@@ -113,8 +114,10 @@ export default function AdminArtistsScreen() {
             description="Create the first canonical artist profile for Eternal Rave."
           />
         ) : (
-          <FlatList
-            data={artists}
+          <View style={adminPageLayoutStyles.listRegion}>
+            <FlatList
+              style={adminPageLayoutStyles.flexScroll}
+              data={artists}
             keyExtractor={(item) => item.id}
             contentContainerStyle={styles.list}
             renderItem={({ item }) => (
@@ -134,7 +137,8 @@ export default function AdminArtistsScreen() {
                 </AppText>
               </Pressable>
             )}
-          />
+            />
+          </View>
         )}
       </SafeAreaContainer>
     </AppScreen>

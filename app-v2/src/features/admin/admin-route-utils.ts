@@ -45,6 +45,8 @@ export type AdminRouteKey =
   | 'imports'
   | 'sources'
   | 'source-detail'
+  | 'connectors'
+  | 'connector-detail'
   | 'jobs'
   | 'job-detail'
   | 'review'
@@ -88,6 +90,22 @@ export function resolveAdminRouteKey(segments: string[]): AdminRouteKey {
 
   if (path.startsWith('admin/organizers')) {
     return 'organizers';
+  }
+
+  if (path.startsWith('admin/sources/') && segments.length >= 3) {
+    return 'source-detail';
+  }
+
+  if (path.startsWith('admin/sources')) {
+    return 'sources';
+  }
+
+  if (path.startsWith('admin/connectors/') && segments.length >= 3) {
+    return 'connector-detail';
+  }
+
+  if (path.startsWith('admin/connectors')) {
+    return 'connectors';
   }
 
   if (path.startsWith('admin/events/') && segments.length >= 3) {

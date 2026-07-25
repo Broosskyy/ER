@@ -48,6 +48,7 @@ Feature-Module unter `app-v2/src/features/`:
 | `i18n` | Internationalisierung (de/en) |
 | `admin` | Admin-Web-Shell, Guards, Berechtigungen, Artist-CMS |
 | `import` | Import-Engine (Adapter, Matching, Review, Operations) |
+| `sources` | Canonical Source-Registry für zukünftige Acquisition (ER-012) |
 | `artists` | Artist-Domain, Validation, Service, Admin-CMS (ER-007) |
 
 Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src/services/supabase/` (Client, Auth)

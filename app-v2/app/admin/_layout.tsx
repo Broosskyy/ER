@@ -1,7 +1,8 @@
 import { Redirect, Slot, useSegments } from 'expo-router';
-import { Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { useAdminGuard } from '@/features/admin/admin-guard';
 import { buildAdminLoginHref } from '@/features/admin/admin-route-utils';
 import { AdminForbiddenState } from '@/features/admin/components/AdminForbidden';
@@ -54,7 +55,9 @@ function AdminLayoutContent() {
 
   return (
     <AdminShell>
-      <Slot />
+      <View style={adminPageLayoutStyles.page}>
+        <Slot />
+      </View>
     </AdminShell>
   );
 }

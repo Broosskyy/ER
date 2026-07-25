@@ -59,4 +59,11 @@ export interface ImportSourceConfig {
   api?: ApiJsonSourceConfig;
   ical?: IcalSourceConfig;
   jsonLd?: JsonLdSourceConfig;
+  /** Connector assignment metadata (ER-013) — legacy single-connector assignment. */
+  connector?: import('@/features/connectors/domain/connector-config').ConnectorSourceAssignment;
+  /**
+   * Acquisition endpoints owned by this source (ER-014).
+   * One Source → many Endpoints. Persisted in source JSON until dedicated table exists.
+   */
+  endpoints?: import('@/features/endpoints/domain/endpoint-model').AcquisitionEndpoint[];
 }

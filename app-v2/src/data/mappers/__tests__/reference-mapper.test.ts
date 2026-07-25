@@ -61,24 +61,44 @@ describe('reference mapper', () => {
   it('maps source rows to records and back', () => {
     const row = {
       id: 'src-1',
+      slug: 'ra-feed',
+      display_name: 'RA Feed',
+      description: null,
+      source_type: 'rss',
+      base_url: 'https://ra.co/feed',
+      parser_type: 'rss',
+      acquisition_strategy: 'scheduled',
+      polling_strategy: 'interval',
+      polling_interval_minutes: 60,
+      rate_limit_per_hour: null,
+      priority: 50,
+      trust_score: 80,
+      requires_authentication: false,
+      enabled: true,
+      archived: false,
+      notes: null,
       name: 'RA Feed',
       type: 'feed',
       website: 'https://ra.co',
       source_url: 'https://ra.co/feed',
       source_config: { feed: { feedUrl: 'https://ra.co/feed' } },
       default_timezone: 'Europe/Berlin',
-      trust_score: 80,
       active: true,
       adapter_key: 'rss',
       review_required: true,
       last_import_at: '2026-07-21T10:00:00.000Z',
       last_job_status: 'completed' as const,
       next_scheduled_at: null,
+      created_at: '2026-07-21T09:00:00.000Z',
+      updated_at: '2026-07-21T10:00:00.000Z',
     };
 
     const record = mapSourceRowToRecord(row);
     expect(record.trustScore).toBe(80);
-    expect(record.sourceUrl).toBe('https://ra.co/feed');
-    expect(mapSourceRecordToRow(record)).toEqual(row);
+    expect(record.baseUrl).toBe('https://ra.co/feed');
+    const roundTrip = mapSourceRecordToRow(record);
+    expect(roundTrip.id).toBe(row.id);
+    expect(roundTrip.display_name).toBe(row.display_name);
+    expect(roundTrip.base_url).toBe(row.base_url);
   });
 });

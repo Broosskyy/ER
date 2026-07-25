@@ -27,8 +27,10 @@ import {
   canViewImportJobs,
   canViewImports,
   canViewSources,
+  canViewConnectors,
 } from '@/features/admin/admin-permissions';
 import { breakpoints } from '@/platform/responsive-layout';
+import { adminShellLayoutStyles } from '@/features/admin/admin-page-layout';
 
 interface AdminNavItem {
   href: string;
@@ -87,18 +89,25 @@ function useAdminNavItems() {
         isActive: (pathname) => pathname.startsWith('/admin/organizers'),
       },
       {
+        href: '/admin/sources',
+        label: 'Sources',
+        icon: 'link-outline',
+        visible: canViewSources(role),
+        isActive: (pathname) => pathname.startsWith('/admin/sources'),
+      },
+      {
+        href: '/admin/connectors',
+        label: 'Connectors',
+        icon: 'git-network-outline',
+        visible: canViewConnectors(role),
+        isActive: (pathname) => pathname.startsWith('/admin/connectors'),
+      },
+      {
         href: '/admin/imports',
         label: 'Imports',
         icon: 'cloud-download-outline',
         visible: canViewImports(role),
         isActive: (pathname) => pathname === '/admin/imports',
-      },
-      {
-        href: '/admin/imports/sources',
-        label: 'Sources',
-        icon: 'link-outline',
-        visible: canViewSources(role),
-        isActive: (pathname) => pathname.startsWith('/admin/imports/sources'),
       },
       {
         href: '/admin/imports/jobs',
@@ -217,10 +226,10 @@ export function AdminShell({ children }: { children: ReactNode }) {
   );
 
   return (
-    <View style={styles.root}>
+    <View style={[styles.root, adminShellLayoutStyles.root]}>
       {isDesktop ? sidebar : null}
 
-      <View style={styles.mainColumn}>
+      <View style={[styles.mainColumn, adminShellLayoutStyles.mainColumn]}>
         {!isDesktop ? (
           <View style={styles.topBar}>
             <Pressable
@@ -241,6 +250,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
         <View
           style={[
             styles.content,
+            adminShellLayoutStyles.content,
             isDesktop && styles.contentDesktop,
             isTablet && styles.contentTablet,
           ]}
@@ -332,6 +342,7 @@ const styles = StyleSheet.create({
   },
   mainColumn: {
     flex: 1,
+    minHeight: 0,
   },
   topBar: {
     flexDirection: 'row',

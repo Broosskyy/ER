@@ -18,6 +18,7 @@ import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import { canModerateContributorEvents } from '@/features/admin/admin-permissions';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 
@@ -72,8 +73,10 @@ export default function ContributorReviewQueueScreen() {
 
         {error ? <AppText style={styles.error}>{error}</AppText> : null}
 
-        <FlatList
-          data={events}
+        <View style={adminPageLayoutStyles.listRegion}>
+          <FlatList
+            style={adminPageLayoutStyles.flexScroll}
+            data={events}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.list}
           ListEmptyComponent={
@@ -99,7 +102,8 @@ export default function ContributorReviewQueueScreen() {
               </View>
             </Pressable>
           )}
-        />
+          />
+        </View>
 
         <PrimaryButton label="Refresh" onPress={load} />
       </SafeAreaContainer>

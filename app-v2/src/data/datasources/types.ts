@@ -12,6 +12,7 @@ import type {
   GenreRecord,
   PaginatedResult,
   SourceRecord,
+  SourceListParams,
   VenueRecord,
   VenueListParams,
   OrganizerRecord,
@@ -108,7 +109,12 @@ export interface SourceDatasource {
   getAll(): Promise<SourceRecord[]>;
   getActive(): Promise<SourceRecord[]>;
   getById(id: string): Promise<SourceRecord | null>;
+  getBySlug(slug: string): Promise<SourceRecord | null>;
+  list(params: SourceListParams): Promise<PaginatedResult<SourceRecord>>;
   save(source: SourceRecord): Promise<SourceRecord>;
+  archive(id: string): Promise<SourceRecord | null>;
+  restore(id: string): Promise<SourceRecord | null>;
+  countImportJobsForSource(sourceId: string): Promise<number>;
 }
 
 export interface StatsDatasource {

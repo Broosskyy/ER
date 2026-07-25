@@ -16,6 +16,7 @@ import type {
   VenueListParams,
   OrganizerRecord,
   OrganizerListParams,
+  SourceListParams,
 } from '@/data/types/records';
 import type { EventLineupInput } from '@/features/events/domain/event-lineup';
 import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
@@ -449,6 +450,40 @@ export class CollectionRepository {
   }
 }
 
+export class AdminSourceRepository {
+  list(params: SourceListParams): Promise<PaginatedResult<SourceRecord>> {
+    return getDatasourceBundle().sources.list(params);
+  }
+
+  getById(id: string): Promise<SourceRecord | null> {
+    return getDatasourceBundle().sources.getById(id);
+  }
+
+  getBySlug(slug: string): Promise<SourceRecord | null> {
+    return getDatasourceBundle().sources.getBySlug(slug);
+  }
+
+  getAll(): Promise<SourceRecord[]> {
+    return getDatasourceBundle().sources.getAll();
+  }
+
+  save(record: SourceRecord): Promise<SourceRecord> {
+    return getDatasourceBundle().sources.save(record);
+  }
+
+  archive(id: string): Promise<SourceRecord | null> {
+    return getDatasourceBundle().sources.archive(id);
+  }
+
+  restore(id: string): Promise<SourceRecord | null> {
+    return getDatasourceBundle().sources.restore(id);
+  }
+
+  countImportJobsForSource(sourceId: string): Promise<number> {
+    return getDatasourceBundle().sources.countImportJobsForSource(sourceId);
+  }
+}
+
 export class SourceRepository {
   getAll(): Promise<SourceRecord[]> {
     return getDatasourceBundle().sources.getAll();
@@ -460,6 +495,10 @@ export class SourceRepository {
 
   getById(id: string): Promise<SourceRecord | null> {
     return getDatasourceBundle().sources.getById(id);
+  }
+
+  getBySlug(slug: string): Promise<SourceRecord | null> {
+    return getDatasourceBundle().sources.getBySlug(slug);
   }
 
   save(source: SourceRecord): Promise<SourceRecord> {

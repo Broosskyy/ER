@@ -1,6 +1,6 @@
+import { AppError } from '@/core/errors/app-error';
 import type { ImportAdapterRegistry } from '@/features/import/adapters/import-adapter-registry';
 import {
-  ImportAdapterError,
   ImportError,
   ImportPermissionError,
 } from '@/features/import/errors/import-errors';
@@ -23,6 +23,8 @@ import {
   resolveAdminRole,
   type AdminRole,
 } from '@/features/import/admin/admin-roles';
+import { mapSourceRecordToImportSource } from '@/data/mappers/source-mapper';
+import type { SourceService } from '@/features/sources/services/source-service';
 import { ImportAuditService } from './import-audit-service';
 
 const ADAPTER_KEYS = ['json_ld', 'rss', 'atom', 'ical', 'csv', 'api_json'] as const;
@@ -67,9 +69,25 @@ export function validateSourceConfig(
   return errors;
 }
 
+function mapSourceServiceError(error: unknown): never {
+  if (error instanceof AppError) {
+    if (error.code === 'UNAUTHORIZED') {
+      throw new ImportPermissionError();
+    }
+    if (error.code === 'NOT_FOUND') {
+      throw new ImportError(error.message, 'IMPORT_SOURCE_NOT_FOUND');
+    }
+    if (error.code === 'VALIDATION') {
+      throw new ImportError(error.message, 'IMPORT_VALIDATION_BLOCKED');
+    }
+  }
+  throw error;
+}
+
 export class ImportOperationsService {
   constructor(
     private readonly sourceRepository: ImportSourceRepository,
+    private readonly sourceService: SourceService,
     private readonly jobRepository: ImportJobRepository,
     private readonly adminRepository: ImportAdminRepository,
     private readonly orchestrator: ImportOrchestrator,
@@ -105,17 +123,24 @@ export class ImportOperationsService {
     if (configErrors.length > 0) {
       throw new ImportError(configErrors.join(' '), 'IMPORT_ADAPTER_INVALID');
     }
-    const saved = await this.sourceRepository.save(source);
-    if (isNew) {
-      await this.auditService.logSourceCreated(this.actorId(session), saved.id, saved.name);
-    } else {
-      await this.auditService.logSourceUpdated(
-        this.actorId(session),
-        saved.id,
-        `Source "${saved.name}" updated.`,
-      );
+
+    const role = this.role(session);
+    try {
+      const record = await this.sourceService.saveFromImportSource(role, source, isNew);
+      const saved = mapSourceRecordToImportSource(record);
+      if (isNew) {
+        await this.auditService.logSourceCreated(this.actorId(session), saved.id, saved.name);
+      } else {
+        await this.auditService.logSourceUpdated(
+          this.actorId(session),
+          saved.id,
+          `Source "${saved.name}" updated.`,
+        );
+      }
+      return saved;
+    } catch (error) {
+      mapSourceServiceError(error);
     }
-    return saved;
   }
 
   async setSourceActive(
@@ -124,17 +149,19 @@ export class ImportOperationsService {
     active: boolean,
   ): Promise<ImportSource> {
     assertPermission(this.role(session), 'sources:write');
-    const source = await this.sourceRepository.getById(sourceId);
-    if (!source) {
-      throw new ImportError('Source not found.', 'IMPORT_SOURCE_NOT_FOUND');
+    const role = this.role(session);
+    try {
+      const record = await this.sourceService.setEnabled(role, sourceId, active);
+      const updated = mapSourceRecordToImportSource(record);
+      if (active) {
+        await this.auditService.logSourceActivated(this.actorId(session), sourceId);
+      } else {
+        await this.auditService.logSourceDeactivated(this.actorId(session), sourceId);
+      }
+      return updated;
+    } catch (error) {
+      mapSourceServiceError(error);
     }
-    const updated = await this.sourceRepository.save({ ...source, active });
-    if (active) {
-      await this.auditService.logSourceActivated(this.actorId(session), sourceId);
-    } else {
-      await this.auditService.logSourceDeactivated(this.actorId(session), sourceId);
-    }
-    return updated;
   }
 
   async testSource(session: AuthSession, sourceId: string): Promise<SourceTestResult> {
@@ -250,11 +277,14 @@ export class ImportOperationsService {
 
     const job = await this.orchestrator.run(sourceId, 'manual', this.actorId(session));
 
-    await this.sourceRepository.save({
-      ...source,
-      lastImportAt: job.finishedAt ?? new Date().toISOString(),
-      lastJobStatus: job.status,
-    });
+    try {
+      await this.sourceService.recordImportRun(this.role(session), sourceId, {
+        lastImportAt: job.finishedAt ?? new Date().toISOString(),
+        lastJobStatus: job.status,
+      });
+    } catch (error) {
+      mapSourceServiceError(error);
+    }
 
     await this.auditService.logImportStarted(this.actorId(session), sourceId, job.id);
     return job;

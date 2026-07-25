@@ -196,12 +196,19 @@ export class ImportOrchestrator {
       }
 
       await this.recordRepository.createMany(
-        matchedRecords.map((record) => ({
-          importJobId: runningJob.id,
-          sourceId: source.id,
-          externalId: record.externalId,
-          sourceUrl: record.sourceUrl,
-          rawPayload: record.rawPayload,
+        matchedRecords.map((record) => {
+          const retrievedAt = new Date().toISOString();
+          const originalUrl = record.sourceUrl ?? source.sourceUrl;
+          return {
+            importJobId: runningJob.id,
+            sourceId: source.id,
+            externalId: record.externalId,
+            sourceUrl: record.sourceUrl,
+            sourceType: source.type,
+            sourceName: source.name,
+            originalUrl,
+            retrievedAt,
+            rawPayload: record.rawPayload,
           normalizedPayload: record.normalizedCandidate
             ? (record.normalizedCandidate as unknown as Record<string, unknown>)
             : undefined,
@@ -216,7 +223,8 @@ export class ImportOrchestrator {
           duplicateScore: record.matchResult?.duplicateScore,
           matchingWarnings: record.matchResult?.warnings,
           status: record.status,
-        })),
+        };
+        }),
       );
 
       const metrics = computeMetrics(matchedRecords);

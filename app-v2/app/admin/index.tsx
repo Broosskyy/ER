@@ -10,6 +10,7 @@ import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { DashboardStats } from '@/data/types/records';
 import { statsRepository } from '@/data/repositories/registry';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
 import {
   AdminErrorState,
   AdminLoadingState,
@@ -61,7 +62,7 @@ export default function AdminDashboardScreen() {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.content}>
+    <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
       <AppText style={styles.title}>Dashboard</AppText>
       <View style={styles.grid}>
         <StatCard label="Events" value={stats.events} />
