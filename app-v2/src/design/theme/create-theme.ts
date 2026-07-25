@@ -23,7 +23,7 @@ function createLegacyColorRoles(colors: ThemeColors): LegacyColorRoles {
     bottomNavBackground: colors.surface,
     bottomNavBorder: colors.borderSubtle,
     bottomNavActive: colors.accent,
-    bottomNavInactive: colors.textSecondary,
+    bottomNavInactive: colors.textMuted,
     searchBackground: colors.surface,
     searchBorder: colors.borderSubtle,
     searchPlaceholder: colors.textSecondary,
@@ -31,9 +31,9 @@ function createLegacyColorRoles(colors: ThemeColors): LegacyColorRoles {
     chipBackground: colors.surface,
     chipBorder: colors.borderSubtle,
     chipText: colors.textSecondary,
-    chipSelectedBackground: colors.accent,
+    chipSelectedBackground: colors.accentMuted,
     chipSelectedBorder: colors.accent,
-    chipSelectedText: colors.textOnAccent,
+    chipSelectedText: colors.accent,
     cardBackground: colors.surface,
     cardBorder: colors.borderSubtle,
     buttonPrimaryBackground: colors.accent,
@@ -70,15 +70,17 @@ function createTypographyRoles(colors: ThemeColors): ThemeTextRoles {
   };
   const titleMedium = {
     fontSize: fontSize.xl,
-    fontWeight: fontWeight.semibold,
+    fontWeight: fontWeight.bold,
     color: colors.textPrimary,
     lineHeight: fontSize.xl * lineHeight.tight,
+    letterSpacing: -0.3,
   };
   const titleSmall = {
     fontSize: fontSize.md,
-    fontWeight: fontWeight.semibold,
+    fontWeight: fontWeight.bold,
     color: colors.textPrimary,
     lineHeight: fontSize.md * lineHeight.tight,
+    letterSpacing: -0.2,
   };
   const body = {
     fontSize: fontSize.md,
@@ -89,8 +91,8 @@ function createTypographyRoles(colors: ThemeColors): ThemeTextRoles {
   const bodyMuted = {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textSecondary,
-    lineHeight: fontSize.base * lineHeight.normal,
+    color: colors.textMuted,
+    lineHeight: fontSize.base * lineHeight.relaxed,
   };
 
   return {
@@ -141,13 +143,13 @@ function createTypographyRoles(colors: ThemeColors): ThemeTextRoles {
     chipSelected: {
       fontSize: fontSize.base,
       fontWeight: fontWeight.semibold,
-      color: colors.textOnAccent,
+      color: colors.accent,
       lineHeight: fontSize.base * lineHeight.tight,
     },
     navLabel: {
       fontSize: fontSize.xs,
       fontWeight: fontWeight.medium,
-      color: colors.textSecondary,
+      color: colors.textMuted,
       lineHeight: fontSize.xs * lineHeight.tight,
     },
     navLabelActive: {
@@ -158,9 +160,9 @@ function createTypographyRoles(colors: ThemeColors): ThemeTextRoles {
     },
     badge: {
       fontSize: fontSize.caption,
-      fontWeight: fontWeight.semibold,
-      color: colors.textSecondary,
-      lineHeight: fontSize.caption * lineHeight.tight,
+      fontWeight: fontWeight.medium,
+      color: colors.textMuted,
+      lineHeight: fontSize.caption * lineHeight.normal,
     },
     searchInput: {
       fontSize: fontSize.base,

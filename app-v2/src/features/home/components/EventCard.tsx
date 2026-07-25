@@ -6,7 +6,7 @@ import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
-import { radii, radiusRoles } from '@/design/radii';
+import { radiusRoles, borderWidth } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import type { EventDisplayModel } from '@/features/events';
@@ -71,21 +71,21 @@ const THUMB_WIDTH = componentSize.eventListThumbnailWidth;
 const styles = StyleSheet.create({
   card: {
     minHeight: componentSize.eventListRowMinHeight,
-    backgroundColor: colorRoles.cardBackground,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
+    backgroundColor: colors.background,
+    borderTopWidth: borderWidth.hairline,
+    borderBottomWidth: borderWidth.hairline,
     borderColor: colorRoles.cardBorder,
   },
   pressable: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: spacing.md,
+    gap: spacing.lg,
     paddingHorizontal: spacingRoles.screenHorizontal,
     paddingVertical: spacing.lg,
     minHeight: componentSize.eventListRowMinHeight,
   },
   pressed: {
-    opacity: 0.94,
+    backgroundColor: colors.surfaceSubtle,
   },
   thumbnailWrap: {
     width: THUMB_WIDTH,
@@ -102,21 +102,22 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: spacing.sm,
     left: spacing.sm,
-    backgroundColor: 'rgba(11, 11, 15, 0.72)',
-    borderRadius: radii.sm,
+    backgroundColor: colorRoles.overlayScrim,
+    borderRadius: radiusRoles.badge,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
   },
   dateText: {
     ...textRoles.badge,
     color: colors.textPrimary,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   content: {
     flex: 1,
     gap: spacing.sm,
     minWidth: 0,
     justifyContent: 'center',
+    paddingVertical: spacing.xs,
   },
   title: {
     ...textRoles.cardTitle,
@@ -131,7 +132,9 @@ const styles = StyleSheet.create({
   },
   tag: {
     backgroundColor: colorRoles.tagBackground,
-    borderRadius: radii.sm,
+    borderRadius: radiusRoles.badge,
+    borderWidth: borderWidth.hairline,
+    borderColor: colorRoles.cardBorder,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
   },
@@ -149,7 +152,7 @@ const styles = StyleSheet.create({
   },
   time: {
     ...textRoles.metadata,
-    color: colors.textPrimary,
+    color: colors.primary,
     fontWeight: '600',
   },
 });

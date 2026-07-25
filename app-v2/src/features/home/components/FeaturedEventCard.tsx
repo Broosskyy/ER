@@ -7,7 +7,7 @@ import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
-import { radii, radiusRoles } from '@/design/radii';
+import { radiusRoles, borderWidth } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import type { EventDisplayModel } from '@/features/events';
@@ -54,7 +54,7 @@ export function FeaturedEventCard({
             {event.title}
           </AppText>
           <View style={styles.venueRow}>
-            <Ionicons name="location" size={componentSize.iconSm} color={colors.primary} />
+            <Ionicons name="location-outline" size={componentSize.iconSm} color={colors.primary} />
             <AppText style={styles.venue} numberOfLines={1}>
               {event.venue}, {event.city}
             </AppText>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     borderColor: colorRoles.cardBorder,
   },
   pressed: {
-    opacity: 0.94,
+    opacity: 0.96,
   },
   imageWrap: {
     width: '100%',
@@ -95,21 +95,21 @@ const styles = StyleSheet.create({
   },
   imageOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(11, 11, 15, 0.28)',
+    backgroundColor: 'rgba(16, 17, 20, 0.24)',
   },
   dateBadge: {
     position: 'absolute',
     top: spacing.md,
     left: spacing.md,
     backgroundColor: colors.white,
-    borderRadius: radii.sm,
+    borderRadius: radiusRoles.badge,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
   },
   dateBadgeText: {
     ...textRoles.badge,
     color: colors.background,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   favoriteWrap: {
     position: 'absolute',
@@ -125,13 +125,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     padding: spacing.lg,
     gap: spacing.xs,
-    backgroundColor: 'rgba(11, 11, 15, 0.62)',
+    backgroundColor: 'rgba(16, 17, 20, 0.58)',
   },
   category: {
     ...textRoles.badge,
     color: colors.primary,
-    fontWeight: '700',
-    letterSpacing: 0.8,
+    fontWeight: '600',
+    letterSpacing: 0.6,
   },
   title: {
     ...textRoles.cardTitle,
@@ -154,7 +154,9 @@ const styles = StyleSheet.create({
   },
   tag: {
     backgroundColor: colorRoles.tagBackground,
-    borderRadius: radii.sm,
+    borderRadius: radiusRoles.badge,
+    borderWidth: borderWidth.hairline,
+    borderColor: colorRoles.cardBorder,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
   },

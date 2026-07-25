@@ -1,11 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { WebTopNav } from '@/components/navigation/WebTopNav';
 import { useTheme } from '@/design/theme';
 import { componentSize } from '@/design/layout';
+import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
 import { SearchProvider } from '@/features/search/SearchContext';
@@ -14,21 +15,27 @@ import { getBottomTabBarHeight, getBottomTabBarPadding } from '@/platform/tab-ba
 
 type TabIconName = keyof typeof Ionicons.glyphMap;
 
+const TAB_ICON_SIZE = componentSize.bottomNavIconSize - 1;
+const TAB_ICON_SIZE_ACTIVE = componentSize.bottomNavIconSizeActive - 1;
+
 export default function TabLayout() {
   const insets = useSafeAreaInsets();
   const { showWebTopNav } = useResponsiveLayout();
   const { theme } = useTheme();
   const bottomPadding = getBottomTabBarPadding(insets);
   const tabBarHeight = getBottomTabBarHeight(insets);
-  const { colorRoles } = theme;
+  const { colorRoles, colors } = theme;
 
   const tabIcon = (name: TabIconName, focused: boolean) => (
     <Ionicons
       name={name}
-      size={focused ? componentSize.bottomNavIconSizeActive : componentSize.bottomNavIconSize}
+      size={focused ? TAB_ICON_SIZE_ACTIVE : TAB_ICON_SIZE}
       color={focused ? colorRoles.bottomNavActive : colorRoles.bottomNavInactive}
     />
   );
+
+  const tabBarBackground =
+    Platform.OS === 'web' ? 'rgba(23, 25, 29, 0.82)' : colors.surface;
 
   return (
     <SearchProvider>
@@ -46,9 +53,10 @@ export default function TabLayout() {
                   {
                     height: tabBarHeight,
                     paddingBottom: bottomPadding,
-                    backgroundColor: colorRoles.bottomNavBackground,
+                    backgroundColor: tabBarBackground,
                     borderTopColor: colorRoles.bottomNavBorder,
                   },
+                  Platform.OS === 'web' ? styles.tabBarWeb : null,
                 ],
             tabBarLabelStyle: styles.tabBarLabel,
             tabBarItemStyle: styles.tabBarItem,
@@ -110,6 +118,14 @@ const styles = StyleSheet.create({
   tabBar: {
     paddingTop: spacing.sm,
     borderTopWidth: 1,
+    borderTopLeftRadius: radiusRoles.bottomNav,
+    borderTopRightRadius: radiusRoles.bottomNav,
+    overflow: 'hidden',
+  },
+  tabBarWeb: {
+    // @ts-expect-error web-only backdrop filter
+    backdropFilter: 'blur(20px)',
+    WebkitBackdropFilter: 'blur(20px)',
   },
   tabBarLabel: {
     fontSize: fontSize.xs,

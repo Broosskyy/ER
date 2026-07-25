@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   action: {
     ...textRoles.metadata,
     color: colors.primary,
-    fontWeight: '600',
+    fontWeight: '500',
   },
   pressed: {
     opacity: 0.8,
