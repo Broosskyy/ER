@@ -47,6 +47,24 @@ export const componentSize = {
 
   eventListThumbnailWidth: 108,
   eventListThumbnailAspectRatio: 4 / 3,
+  /** Mockup 09–14 discovery list cards use a square thumbnail. */
+  discoveryListThumbnailAspectRatio: 1,
+  /** Mockup 09 compact "Heute Abend" list thumbnail. */
+  discoveryCompactThumbnailSize: 64,
+  /** Mockups 15 and 38 public-profile avatar diameter. */
+  profileAvatarSize: 76,
+  /** Mockup 54 organizer-card logo diameter. */
+  organizerLogoSize: 60,
+  /** Mockup 39 team-member avatar diameter. */
+  teamMemberAvatarSize: 42,
+  /** Mockup 39 team-member row minimum height. */
+  teamMemberRowMinHeight: 56,
+  /** Mockup 16 ticket-list event image widths. */
+  ticketCardImageWidth: 148,
+  ticketCardMinHeight: 168,
+  ticketCardCompactImageWidth: 84,
+  /** Mockup 17 ticket-detail QR placeholder size. */
+  ticketQrCodeSize: 152,
   eventListRowMinHeight: 96,
   featuredHeroAspectRatio: 16 / 9,
   eventDetailHeroAspectRatio: 16 / 9,

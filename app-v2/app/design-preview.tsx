@@ -3,6 +3,11 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { Phase1APrimitivesPreview } from '@/components/preview/Phase1APrimitivesPreview';
+import { Phase1BFoundationPreview } from '@/components/preview/Phase1BFoundationPreview';
+import { Phase2AEventDiscoveryPreview } from '@/components/preview/Phase2AEventDiscoveryPreview';
+import { Phase2BTicketProfilePreview } from '@/components/preview/Phase2BTicketProfilePreview';
+import { Phase2DMapLocationPreview } from '@/components/preview/Phase2DMapLocationPreview';
+import { Phase2ESearchFilterPreview } from '@/components/preview/Phase2ESearchFilterPreview';
 import { AppScreen } from '@/components/layout/AppScreen';
 import { AppText } from '@/components/layout/AppText';
 import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
@@ -59,6 +64,40 @@ function ModeButton({
   );
 }
 
+function PreviewContents() {
+  const { theme } = useTheme();
+  const sections = [
+    'Phase 0 – Theme',
+    'Phase 1A – Core Primitives',
+    'Phase 1B – Foundations',
+    'Phase 2A – Discovery',
+    'Phase 2B – Ticket, Profile & Organizer',
+    'Phase 2D – Map & Location',
+    'Phase 2E – Search & Filter',
+  ];
+
+  return (
+    <View
+      accessibilityLabel="Vorschau-Inhaltsverzeichnis"
+      style={[
+        styles.contents,
+        {
+          backgroundColor: theme.colors.surfaceSubtle,
+          borderColor: theme.colors.borderSubtle,
+          borderRadius: theme.radiusRoles.card,
+        },
+      ]}
+    >
+      <AppText role="label">Inhalt</AppText>
+      {sections.map((section) => (
+        <AppText key={section} role="caption" color={theme.colors.textSecondary}>
+          {section}
+        </AppText>
+      ))}
+    </View>
+  );
+}
+
 export default function DesignPreviewScreen() {
   const { theme, mode, resolvedMode, setMode } = useTheme();
   const { colors } = theme;
@@ -79,6 +118,7 @@ export default function DesignPreviewScreen() {
             Internal acceptance page — Sprint 2A Phase 0. Resolved: {resolvedMode} (preference:{' '}
             {mode})
           </AppText>
+          <PreviewContents />
 
           <View style={styles.modeRow}>
             <ModeButton label="Light" active={mode === 'light'} onPress={setThemeMode('light')} />
@@ -197,6 +237,11 @@ export default function DesignPreviewScreen() {
           </View>
 
           <Phase1APrimitivesPreview />
+          <Phase1BFoundationPreview />
+          <Phase2AEventDiscoveryPreview />
+          <Phase2BTicketProfilePreview />
+          <Phase2DMapLocationPreview />
+          <Phase2ESearchFilterPreview />
         </ScrollView>
       </SafeAreaContainer>
     </AppScreen>
@@ -221,6 +266,11 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     borderWidth: 1,
     borderColor: 'transparent',
+  },
+  contents: {
+    gap: spacing.xs,
+    padding: spacing.lg,
+    borderWidth: 1,
   },
   section: {
     gap: spacing.md,

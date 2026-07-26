@@ -1,54 +1,81 @@
-import { Pressable, PressableProps, StyleSheet, ViewStyle } from 'react-native';
+import { ActivityIndicator, Pressable, PressableProps, StyleSheet, ViewStyle } from 'react-native';
 
 import { AppText } from '@/components/layout/AppText';
-import { colors } from '@/design/colors';
-import { layout } from '@/design/layout';
-import { radii } from '@/design/radii';
-import { spacing } from '@/design/spacing';
+import { useTheme } from '@/design/theme';
+
+import { filledButtonMetrics, resolveFilledButtonStyle } from './button-styles';
 
 export interface PrimaryButtonProps extends Omit<PressableProps, 'style'> {
   label: string;
   style?: ViewStyle;
   disabled?: boolean;
+  loading?: boolean;
 }
 
-export function PrimaryButton({ label, style, disabled = false, ...rest }: PrimaryButtonProps) {
+/** Consumer CTA — mockup 52 PrimaryButton. */
+export function PrimaryButton({
+  label,
+  style,
+  disabled = false,
+  loading = false,
+  ...rest
+}: PrimaryButtonProps) {
+  const { theme } = useTheme();
+  const isDisabled = disabled || loading;
+
   return (
     <Pressable
       accessibilityRole="button"
-      disabled={disabled}
-      style={({ pressed }) => [
-        styles.button,
-        pressed && !disabled && styles.pressed,
-        disabled && styles.disabled,
-        style,
-      ]}
+      accessibilityState={{ disabled: isDisabled, busy: loading }}
+      disabled={isDisabled}
+      style={({ pressed, hovered }) => {
+        const resolved = resolveFilledButtonStyle(theme, {
+          variant: 'primary',
+          pressed,
+          hovered: Boolean(hovered),
+          disabled: isDisabled,
+        });
+
+        return [
+          styles.button,
+          {
+            minHeight: filledButtonMetrics.minHeight,
+            borderRadius: theme.radiusRoles.button,
+            backgroundColor: resolved.backgroundColor,
+            opacity: resolved.opacity,
+          },
+          style,
+        ];
+      }}
       {...rest}
     >
-      <AppText variant="body" color={colors.white} style={styles.label}>
-        {label}
-      </AppText>
+      {({ pressed, hovered }) => {
+        const resolved = resolveFilledButtonStyle(theme, {
+          variant: 'primary',
+          pressed,
+          hovered: Boolean(hovered),
+          disabled: isDisabled,
+        });
+
+        if (loading) {
+          return <ActivityIndicator size="small" color={resolved.labelColor} />;
+        }
+
+        return (
+          <AppText role="button" color={resolved.labelColor}>
+            {label}
+          </AppText>
+        );
+      }}
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    minHeight: layout.minTouchTarget,
-    borderRadius: radii.md,
-    backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md,
-  },
-  pressed: {
-    backgroundColor: colors.primaryHighlight,
-  },
-  disabled: {
-    opacity: 0.5,
-  },
-  label: {
-    fontWeight: '600',
+    paddingHorizontal: filledButtonMetrics.paddingHorizontal,
+    paddingVertical: filledButtonMetrics.paddingVertical,
   },
 });

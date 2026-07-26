@@ -110,7 +110,7 @@ export function Phase1APrimitivesPreview() {
       subtitle="Mockup-aligned building blocks — each panel is a fixed Light or Dark theme"
     >
       <Section title="AppIcon · Spacer · Divider · Badge" subtitle="Light and Dark">
-        <Stack direction="horizontal" gap="md" align="stretch">
+        <Stack direction="horizontal" gap="md" align="stretch" style={{ flexWrap: 'wrap' }}>
           <PreviewThemeFrame mode="light" label="Light">
             <PrimitiveShowcase />
           </PreviewThemeFrame>
@@ -135,7 +135,7 @@ export function Phase1APrimitivesPreview() {
       </Section>
 
       <Section title="TextButton" subtitle="Primary · Secondary · Ghost — all interaction states">
-        <Stack direction="horizontal" gap="md" align="stretch">
+        <Stack direction="horizontal" gap="md" align="stretch" style={{ flexWrap: 'wrap' }}>
           <PreviewThemeFrame mode="light" label="Light">
             <TextButtonStateRow mode="light" />
           </PreviewThemeFrame>

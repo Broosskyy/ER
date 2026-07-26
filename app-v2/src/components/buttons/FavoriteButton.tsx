@@ -1,7 +1,7 @@
-import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet } from 'react-native';
 
-import { colorRoles } from '@/design/colors';
+import { AppIcon } from '@/components/primitives/AppIcon';
+import { useTheme } from '@/design/theme';
 import { componentSize } from '@/design/layout';
 
 export interface FavoriteButtonProps {
@@ -15,6 +15,8 @@ export function FavoriteButton({
   onPress,
   accessibilityLabel = 'Toggle favorite',
 }: FavoriteButtonProps) {
+  const { theme } = useTheme();
+
   return (
     <Pressable
       accessibilityRole="button"
@@ -27,10 +29,10 @@ export function FavoriteButton({
       }}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}
     >
-      <Ionicons
+      <AppIcon
         name={active ? 'heart' : 'heart-outline'}
-        size={componentSize.iconMd}
-        color={active ? colorRoles.favoriteActive : colorRoles.favoriteInactive}
+        size="md"
+        color={active ? theme.colors.accent : theme.colors.textSecondary}
       />
     </Pressable>
   );

@@ -28,6 +28,16 @@ describe('interactive card accessibility structure', () => {
       ),
     ).toBe(false);
   });
+
+  it('keeps discovery and organizer card actions as flat siblings', () => {
+    for (const actionCount of [1, 2]) {
+      expect(
+        hasNestedInteractiveAccessibilityRoles(
+          buildInteractiveCardAccessibilityTree({ hasActions: true, actionCount }),
+        ),
+      ).toBe(false);
+    }
+  });
 });
 
 describe('interactive card press behavior', () => {
