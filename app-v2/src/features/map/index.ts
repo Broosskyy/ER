@@ -9,7 +9,29 @@ export {
   MapEventPreview,
   MapHeaderOverlay,
   MapLoadingOverlay,
+  MapDiscoveryScreen,
+  MapFilterSheet,
 } from './components';
+export type {
+  MapBounds,
+  MapClub,
+  MapEvent,
+  MapFilter,
+  MapLayerType,
+  MapMarker,
+  MapRadiusKm,
+  MapSortOption,
+  MapViewport,
+  MarkerStatus,
+  MarkerType,
+} from './types/discovery-models';
+export {
+  DEFAULT_MAP_FILTER,
+  MAP_CLUSTERING_CONFIG,
+  MAP_LAZY_LOADING_CONFIG,
+  MAP_VIEWPORT_RENDERING_CONFIG,
+} from './types/discovery-models';
+export { MAP_RADIUS_OPTIONS, MAP_LAYER_OPTIONS, MAP_SORT_OPTIONS } from './config/map-discovery-config';
 export { eternalRaveMapStyle } from './map-style-dark';
 export {
   canMountNativeMapView,

@@ -23,6 +23,15 @@ async function runBootstrap(): Promise<void> {
 
   if (featureFlags.useSupabase) {
     await repository.initialize();
+    try {
+      const { isSupabaseConfigured } = await import('@/core/config/env');
+      if (isSupabaseConfigured()) {
+        const { multiSourceRepositories } = await import('@/data/repositories/registry');
+        repository.applyCanonicalAliases(await multiSourceRepositories.loadEventIdAliases());
+      }
+    } catch {
+      repository.applyCanonicalAliases(new Map());
+    }
     return;
   }
 

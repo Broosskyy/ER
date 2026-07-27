@@ -17,10 +17,12 @@ export {
   countActiveFilters,
   getActiveFilterSummaries,
   hasActiveFilters,
+  hasDiscoverySearchQuery,
   isExploreMode,
   summarizeActiveFilters,
 } from './utils/filter-events';
 export {
+  EventDiscoveryGrid,
   ExploreFeed,
   ExplorePosterGrid,
   FilterSheet,
@@ -30,3 +32,4 @@ export {
   SearchInput,
   SearchResultsMeta,
 } from './components';
+export type { SearchInputHandle } from './components';

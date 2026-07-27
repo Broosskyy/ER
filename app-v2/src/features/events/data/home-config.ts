@@ -8,7 +8,11 @@ export const HOME_FILTER_CHIPS = [
 
 export type HomeFilterChipId = (typeof HOME_FILTER_CHIPS)[number]['id'];
 
-export const FEATURED_EVENT_IDS = ['void-techno-saturday', 'klangkuenstler-berghain'] as const;
+export const FEATURED_EVENT_IDS = [
+  'void-techno-saturday',
+  'klangkuenstler-berghain',
+  'electric-avenue',
+] as const;
 
 export function isFeaturedEventId(eventId: string): boolean {
   return (FEATURED_EVENT_IDS as readonly string[]).includes(eventId);

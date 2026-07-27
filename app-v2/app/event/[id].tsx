@@ -1,42 +1,49 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useMemo } from 'react';
-import { Alert, ScrollView, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Alert, Linking, ScrollView, StyleSheet, View } from 'react-native';
 
-import { AppScreen, AppText, ResponsiveScreen } from '@/components';
-import { colors } from '@/design/colors';
-import { componentSize } from '@/design/layout';
+import { AppScreen, ResponsiveScreen } from '@/components';
+import { CategoryChip } from '@/components/discovery/CategoryChip';
+import { EventNoticeBanner } from '@/components/event-detail/EventNoticeBanner';
+import { EventHero } from '@/components/event-detail/EventHero';
+import { EventInfoSection } from '@/components/event-detail/EventInfoSection';
+import { EventTicketSection } from '@/components/event-detail/EventTicketSection';
+import { LineupSection } from '@/components/event-detail/LineupSection';
+import { OrganizerDetailCard } from '@/components/event-detail/OrganizerDetailCard';
+import { SimilarEventsSection } from '@/components/event-detail/SimilarEventsSection';
+import { VenueDetailCard } from '@/components/event-detail/VenueDetailCard';
+import { TextButton } from '@/components/buttons/TextButton';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { textRoles } from '@/design/typography';
 import {
-  BottomTicketCTA,
-  EventDetailHero,
-  EventGenreChips,
-  EventInfoRow,
   EventNotFoundState,
-  EventSection,
-  ExpandableDescription,
-  LineupList,
-  LocationSection,
   openEventInMaps,
   openEventTicketUrl,
   shareEvent,
 } from '@/features/event-detail';
 import {
-  eventRepository,
-  formatEventDateTime,
-  toEventDisplayModel,
-} from '@/features/events';
-import { useFavorites } from '@/features/favorites';
+  toEventHeroViewModel,
+  toEventInfoViewModel,
+  toEventNoticeViewModel,
+  toEventTicketSectionViewModel,
+  toLineupSectionViewModel,
+  toOrganizerDetailViewModel,
+  toSimilarEventCards,
+  toVenueDetailViewModel,
+} from '@/features/event-detail/utils/event-detail-view-model';
+import { eventRepository, toEventDisplayModel } from '@/features/events';
+import { getSourceDisplayLabel } from '@/features/events/data/demo-images';
+import { isTicketActionDisabled } from '@/features/events/status/event-status-resolver';
+import { useFavoriteToggle } from '@/features/favorites';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { useScreenBottomInset } from '@/platform/screen-insets';
 import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
 import { buildEventJsonLd } from '@/platform/seo/structured-data';
 import { useWebSeo } from '@/platform/seo/use-web-seo';
 
-const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
-
 export default function EventDetailScreen() {
   const router = useRouter();
-  const insets = useSafeAreaInsets();
+  const bottomInset = useScreenBottomInset();
+  const { t } = useAppTranslation();
   const { id } = useLocalSearchParams<{ id: string }>();
   const eventId = Array.isArray(id) ? id[0] : id;
   const event = useMemo(() => {
@@ -47,7 +54,30 @@ export default function EventDetailScreen() {
     const found = eventRepository.getEventById(eventId);
     return found ? toEventDisplayModel(found) : undefined;
   }, [eventId]);
-  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
+  const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle(
+    eventId ? `/event/${eventId}` : undefined,
+  );
+
+  const hero = useMemo(() => (event ? toEventHeroViewModel(event) : undefined), [event]);
+  const info = useMemo(() => (event ? toEventInfoViewModel(event) : undefined), [event]);
+  const lineup = useMemo(() => (event ? toLineupSectionViewModel(event) : undefined), [event]);
+  const venue = useMemo(() => (event ? toVenueDetailViewModel(event) : undefined), [event]);
+  const organizer = useMemo(() => (event ? toOrganizerDetailViewModel(event) : undefined), [event]);
+  const ticketSection = useMemo(
+    () => (event ? toEventTicketSectionViewModel(event) : undefined),
+    [event],
+  );
+  const notice = useMemo(() => (event ? toEventNoticeViewModel(event) : undefined), [event]);
+  const similarEvents = useMemo(() => {
+    if (!event) {
+      return [];
+    }
+
+    return toSimilarEventCards(
+      event,
+      eventRepository.getPublishedEvents().map(toEventDisplayModel),
+    );
+  }, [event]);
 
   useWebSeo({
     title: event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail,
@@ -70,14 +100,7 @@ export default function EventDetailScreen() {
     jsonLdId: 'event-json-ld',
   });
 
-  const hasTicketAction = Boolean(event?.ticketUrl);
-  const scrollBottomPadding = useMemo(() => {
-    if (hasTicketAction) {
-      return TICKET_CTA_HEIGHT + Math.max(insets.bottom, spacing.md);
-    }
-
-    return Math.max(insets.bottom, spacing.lg);
-  }, [hasTicketAction, insets.bottom]);
+  const scrollBottomPadding = bottomInset + spacing.lg;
 
   const handleShare = useCallback(async () => {
     if (!event) {
@@ -87,7 +110,7 @@ export default function EventDetailScreen() {
     try {
       await shareEvent(event);
     } catch {
-      // Share sheet dismissed or unavailable — no crash.
+      // Share dismissed.
     }
   }, [event]);
 
@@ -99,29 +122,72 @@ export default function EventDetailScreen() {
     const opened = await openEventInMaps(event);
 
     if (!opened) {
-      Alert.alert('Maps unavailable', 'Could not open maps for this location.');
+      Alert.alert(
+        t('eventDetail.maps.unavailableTitle'),
+        t('eventDetail.maps.unavailableMessage'),
+      );
     }
-  }, [event]);
+  }, [event, t]);
 
   const handleOpenTickets = useCallback(async () => {
-    if (!event?.ticketUrl) {
+    if (!event?.ticketUrl || isTicketActionDisabled(event)) {
       return;
     }
 
     const opened = await openEventTicketUrl(event.ticketUrl);
 
     if (!opened) {
-      Alert.alert('Tickets unavailable', 'Could not open the ticket link.');
+      Alert.alert(
+        t('eventDetail.tickets.unavailableTitle'),
+        t('eventDetail.tickets.unavailableMessage'),
+      );
     }
-  }, [event]);
+  }, [event, t]);
 
-  if (!event) {
+  const handleOpenSource = useCallback(async () => {
+    if (!event?.sourceUrl) {
+      return;
+    }
+
+    try {
+      await Linking.openURL(event.sourceUrl);
+    } catch {
+      Alert.alert(
+        t('eventDetail.source.unavailableTitle'),
+        t('eventDetail.source.unavailableMessage'),
+      );
+    }
+  }, [event, t]);
+
+  const handleReportEvent = useCallback(() => {
+    Alert.alert(t('eventDetail.report.title'), t('eventDetail.report.prompt'), [
+      { text: t('eventDetail.report.reasons.wrongDate') },
+      { text: t('eventDetail.report.reasons.notExists') },
+      { text: t('eventDetail.report.reasons.wrongLocation') },
+      { text: t('eventDetail.report.reasons.spam') },
+      { text: t('eventDetail.report.reasons.other') },
+      { text: t('common.actions.cancel'), style: 'cancel' },
+    ]);
+  }, [t]);
+
+  const handleGenrePress = useCallback(
+    (genre: string) => {
+      router.push(`/(tabs)/search?genre=${encodeURIComponent(genre.toLowerCase())}`);
+    },
+    [router],
+  );
+
+  if (!event || !hero || !info || !ticketSection || !venue) {
     return (
       <AppScreen>
         <EventNotFoundState onGoBack={() => router.back()} />
       </AppScreen>
     );
   }
+
+  const sourceLabel = getSourceDisplayLabel(event.source);
+  const hasMapsAction = Boolean(event.latitude && event.longitude) || Boolean(event.address);
+  const hasSourceAction = Boolean(event.sourceUrl);
 
   return (
     <AppScreen>
@@ -130,67 +196,71 @@ export default function EventDetailScreen() {
         contentContainerStyle={[styles.scrollContent, { paddingBottom: scrollBottomPadding }]}
       >
         <ResponsiveScreen style={styles.detailFrame}>
-          <EventDetailHero
-            event={event}
-            isFavorite={isHydrated && isFavorite(event.id)}
-            onBack={() => router.back()}
-            onShare={handleShare}
-            onToggleFavorite={() => toggleFavorite(event.id)}
+          <EventHero
+            event={hero}
+            saved={isHydrated && isFavorite(event.id)}
+            onBackPress={() => router.back()}
+            onSharePress={handleShare}
+            onSavePress={() => toggleFavorite(event.id)}
           />
 
           <View style={styles.content}>
-          <AppText style={styles.title}>{event.title}</AppText>
+            {notice ? <EventNoticeBanner notice={notice} /> : null}
 
-          <EventInfoRow
-            icon="calendar-outline"
-            label="Date & time"
-            value={formatEventDateTime(event)}
-          />
+            <View style={styles.genreRow}>
+              {event.genres.map((genre) => (
+                <CategoryChip
+                  key={genre}
+                  label={genre}
+                  onPress={() => handleGenrePress(genre)}
+                />
+              ))}
+            </View>
 
-          <EventInfoRow
-            icon="location-outline"
-            label="Venue"
-            value={`${event.venue}, ${event.city}`}
-          />
+            <EventInfoSection info={info} title={t('eventDetail.sections.details')} />
 
-          {event.priceText ? (
-            <EventInfoRow icon="pricetag-outline" label="Price" value={event.priceText} />
-          ) : null}
+            <EventTicketSection
+              section={ticketSection}
+              onCtaPress={ticketSection.mode === 'sold_out' ? undefined : handleOpenTickets}
+            />
 
-          <EventGenreChips genres={event.genres} />
+            {lineup ? <LineupSection lineup={lineup} /> : null}
 
-          {event.lineup && event.lineup.length > 0 ? (
-            <EventSection title="Line-up">
-              <LineupList artists={event.lineup} />
-            </EventSection>
-          ) : null}
+            <VenueDetailCard
+              venue={venue}
+              onDirectionsPress={hasMapsAction ? handleOpenMaps : undefined}
+            />
 
-          {event.description ? (
-            <EventSection title="About">
-              <ExpandableDescription text={event.description} />
-            </EventSection>
-          ) : null}
+            {organizer ? <OrganizerDetailCard detail={organizer} /> : null}
 
-          <EventSection title="Location">
-            <LocationSection event={event} onOpenMaps={handleOpenMaps} />
-          </EventSection>
+            {sourceLabel ? (
+              <View style={styles.sourceBlock}>
+                <TextButton
+                  label={
+                    hasSourceAction
+                      ? t('eventDetail.source.open', { source: sourceLabel })
+                      : `${t('eventDetail.sections.source')}: ${sourceLabel}`
+                  }
+                  onPress={hasSourceAction ? handleOpenSource : undefined}
+                  disabled={!hasSourceAction}
+                />
+              </View>
+            ) : null}
 
-          {event.ageRestriction ? (
-            <EventInfoRow icon="id-card-outline" label="Age" value={event.ageRestriction} />
-          ) : null}
+            <TextButton
+              label={t('eventDetail.report.action')}
+              onPress={handleReportEvent}
+              style={styles.reportAction}
+            />
 
-          {event.organizer ? (
-            <EventInfoRow icon="people-outline" label="Organizer" value={event.organizer} />
-          ) : null}
-
-          {event.sourceLabel ? (
-            <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceLabel} />
-          ) : null}
+            <SimilarEventsSection
+              similar={{ title: t('eventDetail.sections.similar'), events: similarEvents }}
+              layout="list"
+              onEventPress={(similarEventId) => router.push(`/event/${similarEventId}`)}
+            />
           </View>
         </ResponsiveScreen>
       </ScrollView>
-
-      <BottomTicketCTA ticketUrl={event.ticketUrl} onPressTickets={handleOpenTickets} />
     </AppScreen>
   );
 }
@@ -208,8 +278,16 @@ const styles = StyleSheet.create({
     paddingTop: spacing.lg,
     gap: spacing.lg,
   },
-  title: {
-    ...textRoles.screenTitle,
-    color: colors.textPrimary,
+  genreRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: spacing.sm,
+  },
+  sourceBlock: {
+    alignItems: 'flex-start',
+  },
+  reportAction: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 0,
   },
 });

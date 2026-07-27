@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { getLocalStore } from '@/data/datasources/local/local-datasource';
 import { AdminEventRepository } from '@/data/repositories/repositories';
 import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
+import { AdminModerationStateService } from '@/features/admin/services/admin-moderation-state-service';
 import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { contributorEventService } from '@/features/create/services/contributor-event-service';
 import type { EventDraftFormValues } from '@/features/create/types/event-draft-form';
@@ -55,12 +56,19 @@ describe('event moderation audit service', () => {
 describe('admin event moderation service', () => {
   let moderationService: AdminEventModerationService;
   let auditService: EventModerationAuditService;
+  let stateService: AdminModerationStateService;
 
   beforeEach(() => {
     const store = getLocalStore();
     store.adminEvents = store.adminEvents.filter((event) => !event.id.startsWith('draft-'));
     auditService = new EventModerationAuditService();
-    moderationService = new AdminEventModerationService(new AdminEventRepository(), auditService);
+    stateService = new AdminModerationStateService();
+    stateService.clear();
+    moderationService = new AdminEventModerationService(
+      new AdminEventRepository(),
+      auditService,
+      stateService,
+    );
   });
 
   async function createReviewEvent(): Promise<string> {
@@ -85,33 +93,56 @@ describe('admin event moderation service', () => {
     expect(queue.every((event) => Boolean(event.createdBy))).toBe(true);
   });
 
-  it('publishes a contributor submission and writes audit log', async () => {
+  it('approves without publishing immediately', async () => {
     const eventId = await createReviewEvent();
+    const approved = await moderationService.approveContributorEvent(adminSession, eventId);
+
+    expect(approved.status).toBe('review');
+    const state = await stateService.getState(eventId);
+    expect(state?.queueStatus).toBe('approved');
+    expect(auditService.listByEvent(eventId)[0]?.action).toBe('event_approved');
+  });
+
+  it('publishes only approved events', async () => {
+    const eventId = await createReviewEvent();
+    await moderationService.approveContributorEvent(adminSession, eventId);
     const published = await moderationService.publishContributorEvent(adminSession, eventId);
 
     expect(published.status).toBe('published');
-    expect(auditService.listByEvent(eventId)).toHaveLength(1);
-    expect(auditService.listByEvent(eventId)[0]?.action).toBe('event_published');
+    expect(auditService.listByEvent(eventId).some((entry) => entry.action === 'event_published')).toBe(
+      true,
+    );
+  });
+
+  it('requests changes and sets rejected status', async () => {
+    const eventId = await createReviewEvent();
+    const updated = await moderationService.requestChangesContributorEvent(adminSession, eventId, {
+      reasonCode: 'incomplete_data',
+      note: 'Line-up fehlt',
+    });
+
+    expect(updated.status).toBe('rejected');
+    const state = await stateService.getState(eventId);
+    expect(state?.queueStatus).toBe('needs_changes');
+    expect(auditService.listByEvent(eventId)[0]?.action).toBe('changes_requested');
   });
 
   it('rejects a contributor submission with optional note', async () => {
     const eventId = await createReviewEvent();
-    const rejected = await moderationService.rejectContributorEvent(
-      adminSession,
-      eventId,
-      'Incomplete lineup',
-    );
+    const rejected = await moderationService.rejectContributorEvent(adminSession, eventId, {
+      note: 'Incomplete lineup',
+    });
 
     expect(rejected.status).toBe('rejected');
-    expect(auditService.listByEvent(eventId)[0]?.note).toBe('Incomplete lineup');
+    expect(auditService.listByEvent(eventId)[0]?.action).toBe('event_rejected');
   });
 
   it('blocks editors from publishing contributor submissions', async () => {
     const eventId = await createReviewEvent();
 
     await expect(
-      moderationService.publishContributorEvent(editorSession, eventId),
-    ).rejects.toThrow(/cannot publish or reject/i);
+      moderationService.approveContributorEvent(editorSession, eventId),
+    ).rejects.toThrow(/nicht moderieren/i);
   });
 
   it('rejects moderation for non-review events', async () => {
@@ -122,8 +153,8 @@ describe('admin event moderation service', () => {
     });
 
     await expect(
-      moderationService.publishContributorEvent(adminSession, draft.id),
-    ).rejects.toThrow(/only events in review/i);
+      moderationService.approveContributorEvent(adminSession, draft.id),
+    ).rejects.toThrow(/in Prüfung/i);
   });
 
   it('rejects publish when contributor withdrew before moderation save', async () => {
@@ -135,7 +166,7 @@ describe('admin event moderation service', () => {
     });
 
     await expect(
-      moderationService.publishContributorEvent(adminSession, eventId),
-    ).rejects.toThrow(/only events in review|no longer in review/i);
+      moderationService.approveContributorEvent(adminSession, eventId),
+    ).rejects.toThrow(/in Prüfung/i);
   });
 });

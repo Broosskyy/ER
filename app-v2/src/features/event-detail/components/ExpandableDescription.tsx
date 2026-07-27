@@ -36,6 +36,7 @@ export function ExpandableDescription({
   return (
     <View style={styles.container}>
       <AppText
+        role="bodyMuted"
         style={styles.description}
         numberOfLines={isDescriptionExpanded ? undefined : collapsedLines}
         onTextLayout={handleTextLayout}
@@ -50,7 +51,7 @@ export function ExpandableDescription({
           hitSlop={12}
           style={({ pressed }) => [styles.toggleButton, pressed && styles.pressed]}
         >
-          <AppText style={styles.toggle}>
+          <AppText role="body" style={styles.toggle}>
             {isDescriptionExpanded ? 'Show less' : 'Show more'}
           </AppText>
         </Pressable>
@@ -64,8 +65,8 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   description: {
-    ...textRoles.body,
-    color: colors.textSecondary,
+    fontSize: textRoles.body.fontSize,
+    lineHeight: textRoles.body.lineHeight,
   },
   toggleButton: {
     alignSelf: 'flex-start',

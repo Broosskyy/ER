@@ -18,28 +18,28 @@ export const filterConfig: FilterConfig = {
   dateOptions: [
     {
       id: 'all-dates',
-      label: 'All Dates',
+      label: 'Alle Termine',
       value: 'all-dates',
       active: true,
       sortOrder: 0,
     },
     {
       id: 'today',
-      label: 'Today',
+      label: 'Heute',
       value: 'today',
       active: true,
       sortOrder: 1,
     },
     {
       id: 'this-weekend',
-      label: 'This Weekend',
+      label: 'Dieses Wochenende',
       value: 'this-weekend',
       active: true,
       sortOrder: 2,
     },
     {
       id: 'upcoming',
-      label: 'Upcoming',
+      label: 'Demnächst',
       value: 'upcoming',
       active: true,
       sortOrder: 3,

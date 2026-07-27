@@ -5,7 +5,15 @@ import { AppIcon } from '@/components/primitives/AppIcon';
 import { useTheme } from '@/design/theme';
 import { componentSize } from '@/design/layout';
 
-export type EventImageVariant = 'list' | 'featured' | 'compact';
+export type EventImageVariant =
+  | 'list'
+  | 'featured'
+  | 'featuredHome'
+  | 'compact'
+  | 'compactPremium'
+  | 'verticalPremium'
+  | 'hero'
+  | 'spotlight';
 
 export interface EventImageProps {
   source?: ImageSourcePropType;
@@ -65,10 +73,35 @@ function getVariantStyle(variant: EventImageVariant): ViewStyle {
         width: '100%',
         aspectRatio: componentSize.featuredHeroAspectRatio,
       };
+    case 'featuredHome':
+      return {
+        width: '100%',
+        aspectRatio: componentSize.featuredHomeAspectRatio,
+      };
+    case 'spotlight':
+      return {
+        width: '100%',
+        aspectRatio: componentSize.venueSpotlightAspectRatio,
+      };
+    case 'hero':
+      return {
+        width: '100%',
+        aspectRatio: componentSize.eventDetailHeroAspectRatio,
+      };
     case 'compact':
       return {
         width: componentSize.discoveryCompactThumbnailSize,
         height: componentSize.discoveryCompactThumbnailSize,
+      };
+    case 'compactPremium':
+      return {
+        width: componentSize.compactPremiumThumbnailSize,
+        height: componentSize.compactPremiumThumbnailSize,
+      };
+    case 'verticalPremium':
+      return {
+        width: '100%',
+        aspectRatio: componentSize.verticalPremiumAspectRatio,
       };
     case 'list':
     default:

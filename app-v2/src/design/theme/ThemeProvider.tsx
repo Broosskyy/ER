@@ -2,6 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -11,6 +12,7 @@ import { useColorScheme } from 'react-native';
 import { darkTheme } from './dark';
 import { lightTheme } from './light';
 import { getThemeForMode, resolveThemeMode } from './resolve';
+import { loadThemeModePreference, saveThemeModePreference } from './theme-storage';
 import { assertThemeContext } from './context';
 import type { ThemeContextValue, ThemeModePreference } from './types';
 
@@ -29,6 +31,20 @@ export function ThemeProvider({
   const systemScheme = useColorScheme();
   const [mode, setModeState] = useState<ThemeModePreference>(initialMode);
 
+  useEffect(() => {
+    let active = true;
+
+    void loadThemeModePreference().then((stored) => {
+      if (active && stored) {
+        setModeState(stored);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   const resolvedMode = useMemo(
     () =>
       resolveThemeMode(
@@ -45,6 +61,7 @@ export function ThemeProvider({
 
   const setMode = useCallback((nextMode: ThemeModePreference) => {
     setModeState(nextMode);
+    void saveThemeModePreference(nextMode);
   }, []);
 
   const value = useMemo<ThemeContextValue>(

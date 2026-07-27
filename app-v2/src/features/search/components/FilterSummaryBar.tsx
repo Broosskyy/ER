@@ -4,6 +4,7 @@ import { AppText } from '@/components/layout/AppText';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export interface FilterSummaryBarProps {
   summaries: string[];
@@ -11,6 +12,8 @@ export interface FilterSummaryBarProps {
 }
 
 export function FilterSummaryBar({ summaries, onClearAll }: FilterSummaryBarProps) {
+  const { t } = useAppTranslation();
+
   if (summaries.length === 0) {
     return null;
   }
@@ -31,7 +34,7 @@ export function FilterSummaryBar({ summaries, onClearAll }: FilterSummaryBarProp
           hitSlop={8}
           style={({ pressed }) => pressed && styles.pressed}
         >
-          <AppText style={styles.clearAll}>Clear All</AppText>
+          <AppText style={styles.clearAll}>{t('search.filters.clearAll')}</AppText>
         </Pressable>
       ) : null}
     </View>

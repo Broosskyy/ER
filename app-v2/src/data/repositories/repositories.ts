@@ -1,6 +1,7 @@
 import { MemoryCache } from '@/core/cache/memory-cache';
 import { AppError } from '@/core/errors/app-error';
 import { withRetry } from '@/core/errors/with-retry';
+import { getDatasourceBundle } from '@/data/datasources/supabase/supabase-datasource';
 import type {
   AdminEventListParams,
   AdminEventRecord,
@@ -18,11 +19,13 @@ import type {
   OrganizerListParams,
   SourceListParams,
 } from '@/data/types/records';
-import type { EventLineupInput } from '@/features/events/domain/event-lineup';
-import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
-import { getDatasourceBundle } from '@/data/datasources/supabase/supabase-datasource';
-import type { Event } from '@/features/events/types/event';
+import {
+  assertValidAdminEditorialTransition,
+  canAdminModerateTransition,
+  isContributorReviewEvent,
+} from '@/features/admin/constants/admin-event-status';
 import { isFeaturedEventId } from '@/features/events/data/home-config';
+import type { EventLineupInput , EventLineupArtist } from '@/features/events/domain/event-lineup';
 import { hasValidCoordinates } from '@/features/events/formatting/coordinates';
 import {
   EVENT_REFERENCE_DATE,
@@ -30,14 +33,9 @@ import {
   isThisWeekEvent,
   isUpcomingEvent,
 } from '@/features/events/formatting/date-time';
-import type { EventWithCoordinates } from '@/features/events/types/event';
-import { isPublishedStatus } from '@/features/events/types/event-status';
 import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
-import {
-  assertValidAdminEditorialTransition,
-  canAdminModerateTransition,
-  isContributorReviewEvent,
-} from '@/features/admin/constants/admin-event-status';
+import type { Event , EventWithCoordinates } from '@/features/events/types/event';
+import { isPublishedStatus } from '@/features/events/types/event-status';
 
 export interface AdminEventSaveContext {
   source?: 'cms' | 'moderation';
@@ -97,6 +95,7 @@ export class EventRepository {
   private eventsById = new Map<string, Event>();
   private initialized = false;
   private readonly cache = new MemoryCache<Event[]>();
+  private aliasMap = new Map<string, string>();
 
   async initialize(): Promise<void> {
     if (this.initialized) return;
@@ -118,7 +117,16 @@ export class EventRepository {
   }
 
   private setEvents(events: Event[]): void {
-    this.publishedEvents = [...events].sort((left, right) =>
+    const deduped = new Map<string, Event>();
+    for (const event of events) {
+      const canonicalId = this.resolveCanonicalId(event.id);
+      const normalized = canonicalId === event.id ? event : { ...event, id: canonicalId };
+      const existing = deduped.get(canonicalId);
+      if (!existing || event.id === canonicalId) {
+        deduped.set(canonicalId, normalized);
+      }
+    }
+    this.publishedEvents = [...deduped.values()].sort((left, right) =>
       left.startDateTime.localeCompare(right.startDateTime),
     );
     this.eventsById = new Map(this.publishedEvents.map((event) => [event.id, event]));
@@ -135,7 +143,19 @@ export class EventRepository {
     this.initialized = false;
     this.publishedEvents = [];
     this.eventsById = new Map();
+    this.aliasMap = new Map();
     this.cache.invalidate();
+  }
+
+  applyCanonicalAliases(aliases: Map<string, string>): void {
+    this.aliasMap = new Map(aliases);
+    if (this.initialized) {
+      this.setEvents(this.publishedEvents);
+    }
+  }
+
+  resolveCanonicalId(eventId: string): string {
+    return this.aliasMap.get(eventId) ?? eventId;
   }
 
   getPublishedEvents(): Event[] {
@@ -145,7 +165,8 @@ export class EventRepository {
 
   getEventById(id: string): Event | undefined {
     this.ensureReady();
-    return this.eventsById.get(id);
+    const canonicalId = this.resolveCanonicalId(id);
+    return this.eventsById.get(canonicalId);
   }
 
   getFeaturedEvents(): Event[] {

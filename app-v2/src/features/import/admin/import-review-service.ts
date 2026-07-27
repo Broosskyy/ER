@@ -11,7 +11,7 @@ import type { NormalizedEventCandidate } from '@/features/import/models/normaliz
 import type { RejectReason } from '@/features/import/models/statuses';
 import type { ImportRecord, ReviewerEdits } from '@/features/import/models/types';
 import { ImportCandidateValidator } from '@/features/import/validation/import-candidate-validator';
-import type { AdminEventRepository } from '@/data/repositories/repositories';
+import type { AdminEventRepository, EventRepository } from '@/data/repositories/repositories';
 import type { ImportAdminRepository } from '@/data/repositories/import-admin-repository';
 import type { ImportRecordRepository } from '@/data/repositories/import-repositories';
 import type { AuthSession } from '@/services/supabase/auth-service';
@@ -37,9 +37,14 @@ function buildAdminEventFromRecord(record: ImportRecord): AdminEventRecord {
   const now = new Date().toISOString();
   const organizerId =
     record.reviewerEdits?.matchedOrganizerId ?? record.matchedOrganizerId;
+  const normalized = record.normalizedPayload as Record<string, unknown> | undefined;
   return {
     id: createEventId(),
     title: candidate.title,
+    subtitle:
+      typeof normalized?.subtitle === 'string'
+        ? normalized.subtitle
+        : undefined,
     description: candidate.description ?? '',
     cityId: record.reviewerEdits?.matchedCityId ?? record.matchedCityId,
     venueId: record.reviewerEdits?.matchedVenueId ?? record.matchedVenueId,
@@ -52,7 +57,8 @@ function buildAdminEventFromRecord(record: ImportRecord): AdminEventRecord {
     endDate: candidate.endDate,
     ticketUrl: candidate.ticketUrl,
     imageUrl: candidate.imageUrl,
-    status: 'draft',
+    websiteUrl: candidate.eventUrl ?? record.originalUrl,
+    status: 'published',
     createdAt: now,
     updatedAt: now,
   };
@@ -65,7 +71,7 @@ export class ImportReviewService {
   constructor(
     private readonly recordRepository: ImportRecordRepository,
     private readonly adminRepository: ImportAdminRepository,
-    private readonly eventRepository: AdminEventRepository,
+    private readonly adminEventRepository: AdminEventRepository,
     private readonly auditService: ImportAuditService,
     private readonly lineupService: {
       replaceFromMatchedArtistIds(
@@ -74,6 +80,7 @@ export class ImportReviewService {
         matchedArtistIds: string[],
       ): Promise<unknown>;
     },
+    private readonly consumerEventRepository?: EventRepository,
     private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
   ) {}
 
@@ -188,7 +195,7 @@ export class ImportReviewService {
     ];
     let savedEvent: AdminEventRecord;
     try {
-      savedEvent = await this.eventRepository.save(event);
+      savedEvent = await this.adminEventRepository.save(event);
       const role = this.role(session);
       if (role && matchedArtistIds.length > 0) {
         await this.lineupService.replaceFromMatchedArtistIds(
@@ -196,7 +203,7 @@ export class ImportReviewService {
           savedEvent.id,
           matchedArtistIds,
         );
-        savedEvent = (await this.eventRepository.getById(savedEvent.id)) ?? savedEvent;
+        savedEvent = (await this.adminEventRepository.getById(savedEvent.id)) ?? savedEvent;
       }
     } catch (error: unknown) {
       throw new ImportError(
@@ -221,6 +228,9 @@ export class ImportReviewService {
     );
 
     await this.auditService.logRecordApproved(this.actorId(session), recordId, savedEvent.id);
+    if (this.consumerEventRepository) {
+      await this.consumerEventRepository.refresh();
+    }
     return { record: updated, event: savedEvent };
   }
 

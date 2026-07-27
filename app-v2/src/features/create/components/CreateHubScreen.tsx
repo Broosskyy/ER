@@ -1,9 +1,10 @@
 import { useRouter } from 'expo-router';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { IconButton } from '@/components/buttons/IconButton';
 import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
+import { EventDraftCard } from '@/components/organizer/DraftComponents';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
@@ -17,6 +18,8 @@ import {
   shouldPromptCreateAuth,
   type CreateOptionId,
 } from '@/features/create/create-hub-config';
+import { loadEventWizardDrafts } from '@/features/create/wizard/event-wizard-storage';
+import type { EventDraft } from '@/features/create/wizard/wizard-types';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 import { useWebPageTitle } from '@/features/i18n/useWebPageTitle';
 
@@ -26,6 +29,17 @@ export function CreateHubScreen() {
   const { t } = useAppTranslation();
   const { isAuthenticated } = useAuth();
   const [authPromptOptionId, setAuthPromptOptionId] = useState<CreateOptionId | null>(null);
+  const [drafts, setDrafts] = useState<EventDraft[]>([]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      return;
+    }
+
+    void loadEventWizardDrafts().then((loaded) => {
+      setDrafts(loaded.filter((draft) => draft.status === 'draft'));
+    });
+  }, [isAuthenticated]);
 
   const handleOptionPress = useCallback(
     (optionId: CreateOptionId) => {
@@ -75,6 +89,35 @@ export function CreateHubScreen() {
                 onPress={() => handleOptionPress(option.id)}
               />
             ))}
+
+            {isAuthenticated && drafts.length > 0 ? (
+              <View style={styles.draftsSection}>
+                <AppText accessibilityRole="header" style={styles.draftsTitle}>
+                  Entwürfe
+                </AppText>
+                {drafts.map((draft) => (
+                  <EventDraftCard
+                    key={draft.id}
+                    draft={{
+                      id: draft.id,
+                      title: draft.formData.core.title || 'Unbenanntes Event',
+                      status: 'draft',
+                      lastEditedLabel: new Date(draft.updatedAt).toLocaleString('de-DE'),
+                      currentStep: draft.completedSteps.length + 1,
+                      totalSteps: 12,
+                      accessibilityLabel: `Entwurf ${draft.formData.core.title || 'Unbenanntes Event'}`,
+                    }}
+                    onContinuePress={() =>
+                      router.push(
+                        draft.eventId
+                          ? (`/event/${draft.eventId}/edit` as '/create/event')
+                          : (`/create/event?draftId=${encodeURIComponent(draft.id)}` as '/create/event'),
+                      )
+                    }
+                  />
+                ))}
+              </View>
+            ) : null}
           </ScrollView>
         </ResponsiveScreen>
       </SafeAreaContainer>
@@ -109,5 +152,12 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacingRoles.screenHorizontal,
     paddingBottom: spacingRoles.listBottomInset,
+  },
+  draftsSection: {
+    gap: spacing.sm,
+    marginTop: spacing.md,
+  },
+  draftsTitle: {
+    ...textRoles.sectionTitle,
   },
 });

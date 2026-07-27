@@ -5,3 +5,5 @@ export { MapEmptyState, MapErrorState } from './MapEmptyState';
 export { MapEventPreview } from './MapEventPreview';
 export { MapHeaderOverlay } from './MapHeaderOverlay';
 export { MapLoadingOverlay } from './MapLoadingOverlay';
+export { MapDiscoveryScreen } from './MapDiscoveryScreen';
+export { MapFilterSheet } from './MapFilterSheet';

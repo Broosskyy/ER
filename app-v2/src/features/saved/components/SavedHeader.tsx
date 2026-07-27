@@ -1,9 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 
 import { AppText } from '@/components/layout/AppText';
-import { colors } from '@/design/colors';
 import { spacingRoles } from '@/design/spacing';
-import { textRoles } from '@/design/typography';
 
 export interface SavedHeaderProps {
   count: number;
@@ -11,19 +9,17 @@ export interface SavedHeaderProps {
 
 function formatSavedCount(count: number): string {
   if (count === 1) {
-    return '1 saved event';
+    return '1 gespeichertes Event';
   }
 
-  return `${count} saved events`;
+  return `${count} gespeicherte Events`;
 }
 
 export function SavedHeader({ count }: SavedHeaderProps) {
   return (
     <View style={styles.container}>
-      <AppText style={styles.title}>Saved</AppText>
-      {count > 0 ? (
-        <AppText style={styles.count}>{formatSavedCount(count)}</AppText>
-      ) : null}
+      <AppText role="titleLarge">Gespeichert</AppText>
+      {count > 0 ? <AppText role="bodyMuted">{formatSavedCount(count)}</AppText> : null}
     </View>
   );
 }
@@ -31,14 +27,8 @@ export function SavedHeader({ count }: SavedHeaderProps) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingTop: spacingRoles.sectionTitleGap,
     paddingBottom: spacingRoles.sectionTitleGap,
     gap: 4,
-  },
-  title: {
-    ...textRoles.screenTitle,
-  },
-  count: {
-    ...textRoles.metadata,
-    color: colors.textSecondary,
   },
 });

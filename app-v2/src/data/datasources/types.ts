@@ -52,6 +52,7 @@ export interface EventDatasource {
   getContributorEventById(eventId: string, userId: string): Promise<AdminEventRecord | null>;
   saveEvent(event: AdminEventRecord): Promise<AdminEventRecord>;
   deleteEvent(id: string): Promise<void>;
+  deleteContributorDraft(eventId: string, userId: string): Promise<void>;
 }
 
 export interface GenreDatasource {

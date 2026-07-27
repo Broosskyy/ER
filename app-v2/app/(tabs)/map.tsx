@@ -1,12 +1,5 @@
-import { AppScreen, ResponsiveScreen } from '@/components';
-import { MapUnavailableState } from '@/features/map/components/MapUnavailableState';
+import { MapDiscoveryScreen } from '@/features/map/components/MapDiscoveryScreen';
 
 export default function MapTabScreen() {
-  return (
-    <AppScreen>
-      <ResponsiveScreen>
-        <MapUnavailableState />
-      </ResponsiveScreen>
-    </AppScreen>
-  );
+  return <MapDiscoveryScreen variant="standalone" />;
 }

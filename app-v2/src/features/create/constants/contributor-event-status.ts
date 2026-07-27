@@ -7,7 +7,7 @@ export const CONTRIBUTOR_ALLOWED_TRANSITIONS: Readonly<
   draft: ['review'],
   review: ['draft'],
   published: [],
-  rejected: [],
+  rejected: ['review', 'draft'],
   archived: [],
 };
 

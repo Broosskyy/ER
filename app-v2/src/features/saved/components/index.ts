@@ -1,3 +1,3 @@
 export { SavedEmptyState } from './SavedEmptyState';
-export { SavedEventRow } from './SavedEventRow';
+export { SavedEventCard } from './SavedEventCard';
 export { SavedHeader } from './SavedHeader';

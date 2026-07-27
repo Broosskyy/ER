@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { WebTopNav } from '@/components/navigation/WebTopNav';
 import { useTheme } from '@/design/theme';
 import { componentSize } from '@/design/layout';
+import { layout } from '@/design/layout';
 import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
 import { SearchProvider } from '@/features/search/SearchContext';
@@ -138,12 +139,14 @@ const styles = StyleSheet.create({
   tabBar: {
     paddingTop: spacing.sm,
     borderTopWidth: 1,
+    minHeight: layout.bottomNavHeight,
   },
   tabBarLabel: {
     fontSize: fontSize.xs,
     fontWeight: '500',
     marginTop: spacing.xs,
-    marginBottom: 0,
+    marginBottom: spacing.xs,
+    lineHeight: 14,
   },
   tabBarItem: {
     paddingVertical: 0,

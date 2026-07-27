@@ -4,15 +4,15 @@ import { BackHandler, FlatList, ListRenderItem, Platform, StyleSheet } from 'rea
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
+import { spacingRoles } from '@/design/spacing';
 import { CollectionHeader } from '@/features/collections/components/CollectionHeader';
 import {
   getCollectionConfig,
   getCollectionEvents,
   type CollectionType,
 } from '@/features/collections/event-collections';
-import { toEventDisplayModel, type EventDisplayModel } from '@/features/events';
-import { useFavorites } from '@/features/favorites';
-import { EventCard } from '@/features/home/components';
+import { EventDiscoveryCard, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
+import { useFavoriteToggle } from '@/features/favorites';
 import { FilterSheet } from '@/features/search/components/FilterSheet';
 import { DEFAULT_EVENT_FILTERS, type EventFilters } from '@/features/search/constants';
 import {
@@ -35,10 +35,11 @@ const CollectionEventRow = memo(function CollectionEventRow({
   onToggleFavorite: (eventId: string) => void;
 }) {
   return (
-    <EventCard
+    <EventDiscoveryCard
       event={event}
-      isFavorite={isFavorite}
-      onToggleFavorite={() => onToggleFavorite(event.id)}
+      variant="compactPremium"
+      saved={isFavorite}
+      onFavoritePress={() => onToggleFavorite(event.id)}
     />
   );
 });
@@ -52,7 +53,7 @@ function createCollectionFilters(): EventFilters {
 
 export function CollectionScreen({ type }: CollectionScreenProps) {
   const config = getCollectionConfig(type);
-  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
+  const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle();
   const [filters, setFilters] = useState<EventFilters>(createCollectionFilters);
   const [filterSheetVisible, setFilterSheetVisible] = useState(false);
 
@@ -128,6 +129,7 @@ export function CollectionScreen({ type }: CollectionScreenProps) {
           />
         ) : (
           <FlatList
+            style={styles.list}
             data={filteredEvents}
             keyExtractor={(item) => item.id}
             renderItem={renderItem}
@@ -156,7 +158,12 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
+  list: {
+    flex: 1,
+  },
   listContent: {
-    flexGrow: 0,
+    flexGrow: 1,
+    gap: 12,
+    paddingHorizontal: spacingRoles.screenHorizontal,
   },
 });

@@ -29,6 +29,14 @@ export interface NormalizedEventCandidate {
   imageUrl?: string;
   minimumAge?: number;
   organizerName?: string;
+  subtitle?: string;
+  importId?: string;
+  originalLink?: string;
+  priceAmount?: number;
+  priceCurrency?: string;
+  imageUrls?: string[];
+  sourceId?: string;
+  sourceName?: string;
   rawSourceType: RawSourceType;
   sourceMetadata?: Record<string, unknown>;
 }

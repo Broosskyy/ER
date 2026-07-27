@@ -44,7 +44,7 @@ export function getExploreGridColumns(width: number): number {
     return 3;
   }
 
-  return 2;
+  return 3;
 }
 
 export function shouldShowWebTopNav(width: number, platformOs: string): boolean {

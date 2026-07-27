@@ -1,54 +1,48 @@
-import { StyleSheet, View } from 'react-native';
+import { useRouter } from 'expo-router';
+import { Pressable, StyleSheet, View } from 'react-native';
 
-import { AppText } from '@/components/layout/AppText';
-import { useAuth } from '@/features/auth';
+import { EternalRaveLogo } from '@/components/branding/EternalRaveLogo';
+import { AppIcon } from '@/components/primitives/AppIcon';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { fontSize, textRoles } from '@/design/typography';
-import { shouldShowNotificationButton } from '@/features/home/home-header-config';
-
-import { CreateHeaderButton } from './CreateHeaderButton';
-import { NotificationButton } from './NotificationButton';
 
 export function HomeHeader() {
-  const { isAuthenticated } = useAuth();
-  const showActivityButton = shouldShowNotificationButton(isAuthenticated);
+  const router = useRouter();
 
   return (
     <View style={styles.container} testID="home-header">
-      <View style={styles.sideSlot}>
-        <CreateHeaderButton />
-      </View>
-      <AppText style={styles.brand}>ETERNAL RΛVE</AppText>
-      <View style={[styles.sideSlot, styles.sideSlotRight]}>
-        {showActivityButton ? <NotificationButton /> : null}
-      </View>
+      <EternalRaveLogo style={styles.brand} />
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Aktivitäten öffnen"
+        onPress={() => router.push('/activity')}
+        style={styles.activityButton}
+        testID="home-activity-button"
+      >
+        <AppIcon name="notifications-outline" size="md" colorRole="muted" />
+      </Pressable>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    position: 'relative',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 56,
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    marginBottom: spacing.xs,
-  },
-  sideSlot: {
-    minWidth: 88,
-    alignItems: 'flex-start',
     justifyContent: 'center',
-  },
-  sideSlotRight: {
-    alignItems: 'flex-end',
+    minHeight: 64,
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingTop: spacing.sm,
+    marginBottom: spacing.sm,
   },
   brand: {
-    ...textRoles.sectionTitle,
-    fontSize: fontSize.md,
-    letterSpacing: 1.5,
-    textTransform: 'uppercase',
-    flex: 1,
-    textAlign: 'center',
+    flexShrink: 0,
+  },
+  activityButton: {
+    position: 'absolute',
+    right: spacingRoles.screenHorizontal,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 40,
+    height: 40,
   },
 });

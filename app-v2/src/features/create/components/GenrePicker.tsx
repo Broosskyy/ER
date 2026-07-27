@@ -19,6 +19,9 @@ export interface GenrePickerProps {
   options: GenrePickerOption[];
   value: string;
   onChange: (genreId: string) => void;
+  multiple?: boolean;
+  selectedIds?: string[];
+  onChangeMultiple?: (genreIds: string[]) => void;
 }
 
 export function GenrePicker({
@@ -29,8 +32,26 @@ export function GenrePicker({
   options,
   value,
   onChange,
+  multiple = false,
+  selectedIds = [],
+  onChangeMultiple,
 }: GenrePickerProps) {
   const labelText = required ? `${label} *` : label;
+
+  const handlePress = (optionId: string) => {
+    if (multiple && onChangeMultiple) {
+      const next = selectedIds.includes(optionId)
+        ? selectedIds.filter((id) => id !== optionId)
+        : [...selectedIds, optionId];
+      onChangeMultiple(next);
+      return;
+    }
+
+    onChange(optionId);
+  };
+
+  const isSelected = (optionId: string) =>
+    multiple ? selectedIds.includes(optionId) : value === optionId;
 
   return (
     <View style={styles.container}>
@@ -40,8 +61,8 @@ export function GenrePicker({
           <FilterChip
             key={option.id}
             label={option.label}
-            selected={value === option.id}
-            onPress={() => onChange(option.id)}
+            selected={isSelected(option.id)}
+            onPress={() => handlePress(option.id)}
           />
         ))}
       </View>

@@ -138,7 +138,7 @@ describe('getActiveFilterSummaries', () => {
         genres: ['techno'],
         sortBy: 'alphabetical',
       }),
-    ).toEqual(['Today', 'Techno', 'Alphabetical']);
+    ).toEqual(['Heute', 'Techno', 'Alphabetical']);
 
     expect(
       getActiveFilterSummaries({
@@ -150,9 +150,9 @@ describe('getActiveFilterSummaries', () => {
 });
 
 describe('isExploreMode', () => {
-  it('is true only without query and active filters', () => {
+  it('is true without a search query and false when searching', () => {
     expect(isExploreMode(DEFAULT_EVENT_FILTERS)).toBe(true);
     expect(isExploreMode({ ...DEFAULT_EVENT_FILTERS, query: 'techno' })).toBe(false);
-    expect(isExploreMode({ ...DEFAULT_EVENT_FILTERS, genres: ['techno'] })).toBe(false);
+    expect(isExploreMode({ ...DEFAULT_EVENT_FILTERS, genres: ['techno'] })).toBe(true);
   });
 });

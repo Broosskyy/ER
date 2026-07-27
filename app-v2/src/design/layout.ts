@@ -51,6 +51,8 @@ export const componentSize = {
   discoveryListThumbnailAspectRatio: 1,
   /** Mockup 09 compact "Heute Abend" list thumbnail. */
   discoveryCompactThumbnailSize: 64,
+  /** Home golden screen — larger tonight thumbnail for consumer list rows. */
+  homeTonightThumbnailSize: 72,
   /** Mockups 15 and 38 public-profile avatar diameter. */
   profileAvatarSize: 76,
   /** Mockup 54 organizer-card logo diameter. */
@@ -67,6 +69,14 @@ export const componentSize = {
   ticketQrCodeSize: 152,
   eventListRowMinHeight: 96,
   featuredHeroAspectRatio: 16 / 9,
+  /** Home featured hero — tall portrait image dominates the card. */
+  featuredHomeAspectRatio: 3 / 4,
+  /** Vertical premium discovery card — image-first emotional layout. */
+  verticalPremiumAspectRatio: 4 / 5,
+  /** Compact premium tonight card thumbnail. */
+  compactPremiumThumbnailSize: 80,
+  /** Home Top Clubs — compact image-forward venue rail, below event-card dominance. */
+  venueSpotlightAspectRatio: 4 / 5,
   eventDetailHeroAspectRatio: 16 / 9,
   mapPreviewAspectRatio: 16 / 9,
 

@@ -7,20 +7,23 @@ import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { AppScreen } from '@/components/layout/AppScreen';
 import { AppText } from '@/components/layout/AppText';
 import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
+import { getErrorMessage } from '@/core/errors/app-error';
+import { connectorAdminService, sourceService, adminMultiSourceService } from '@/data/repositories/registry';
+import type { SourceRecord } from '@/data/types/records';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { getErrorMessage } from '@/core/errors/app-error';
-import type { SourceRecord } from '@/data/types/records';
-import { connectorAdminService, sourceService } from '@/data/repositories/registry';
+import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
+import { canManageSources } from '@/features/admin/admin-permissions';
+import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import {
   AdminErrorState,
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
-import { adminPageLayoutStyles } from '@/features/admin/admin-page-layout';
-import { canManageSources } from '@/features/admin/admin-permissions';
-import { useAdminAuth } from '@/features/admin/AdminAuthContext';
-import { SOURCE_DEFAULT_TRUST_SCORE } from '@/features/sources/domain/source-types';
+import type { SourceDetailMultiSourceContext } from '@/features/admin/services/admin-multi-source-service';
+import { formatConnectorHealthStatus } from '@/features/connectors/admin/connector-labels';
+import type { ConnectorDescriptor } from '@/features/connectors/registry/connector-registry';
+import type { ConnectorSourceAssignmentView } from '@/features/connectors/services/connector-admin-service';
 import {
   formatAcquisitionStrategyLabel,
   formatParserTypeLabel,
@@ -28,17 +31,14 @@ import {
   formatSourceStatus,
   formatSourceTypeLabel,
 } from '@/features/sources/admin/source-labels';
-import {
+import { SourceEndpointsSection } from '@/features/sources/admin/SourceEndpointsSection';
+import { SOURCE_DEFAULT_TRUST_SCORE ,
   ACQUISITION_STRATEGIES,
   PARSER_TYPES,
   POLLING_STRATEGIES,
   SOURCE_TYPES,
 } from '@/features/sources/domain/source-types';
 import { validateSourceInput } from '@/features/sources/domain/source-validation';
-import { formatConnectorHealthStatus } from '@/features/connectors/admin/connector-labels';
-import type { ConnectorDescriptor } from '@/features/connectors/registry/connector-registry';
-import type { ConnectorSourceAssignmentView } from '@/features/connectors/services/connector-admin-service';
-import { SourceEndpointsSection } from '@/features/sources/admin/SourceEndpointsSection';
 
 function createEmptySource(id: string): SourceRecord {
   const now = new Date().toISOString();
@@ -85,6 +85,7 @@ export default function AdminSourceEditorScreen() {
   const [endpointPlaceholder, setEndpointPlaceholder] = useState('');
   const [assignmentSaving, setAssignmentSaving] = useState(false);
   const [assignmentSuccess, setAssignmentSuccess] = useState<string | null>(null);
+  const [multiSourceContext, setMultiSourceContext] = useState<SourceDetailMultiSourceContext | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -106,6 +107,7 @@ export default function AdminSourceEditorScreen() {
           setAssignableConnectors(connectors);
           setSelectedConnectorKey(assignment.connectorKey);
           setEndpointPlaceholder(assignment.endpointPlaceholder ?? '');
+          setMultiSourceContext(await adminMultiSourceService.loadSourceDetailContext(role ?? 'viewer', loaded.id));
         }
       }
     } catch (cause) {
@@ -312,11 +314,29 @@ export default function AdminSourceEditorScreen() {
         <ScrollView style={adminPageLayoutStyles.flexScroll} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <SecondaryButton label="Back" onPress={() => router.back()} />
-            <AppText style={styles.title}>{isNew ? 'Create Source' : record.displayName}</AppText>
+            <AppText role="screenTitle" style={styles.title}>{isNew ? 'Create Source' : record.displayName}</AppText>
           </View>
 
           {error ? <AppText style={styles.error} accessibilityLiveRegion="polite">{error}</AppText> : null}
           {success ? <AppText style={styles.success}>{success}</AppText> : null}
+
+          {!isNew ? (
+            <View style={styles.summaryCard}>
+              <AppText style={styles.sectionTitle}>Multi-Source Status</AppText>
+              <AppText style={styles.meta}>
+                References: {multiSourceContext?.sourceReferences.length ?? 0} · Provenance fields:{' '}
+                {multiSourceContext?.provenanceCount ?? 0}
+              </AppText>
+              <AppText style={styles.meta}>
+                Open conflicts: {multiSourceContext?.openConflicts.length ?? 0} · Duplicate decisions:{' '}
+                {multiSourceContext?.duplicateDecisions.length ?? 0}
+              </AppText>
+              <AppText style={styles.meta}>
+                Health: {multiSourceContext?.health.status ?? 'unknown'} ({multiSourceContext?.health.score ?? 0}) ·
+                Quality: {multiSourceContext?.quality.tier ?? 'unknown'} ({multiSourceContext?.quality.qualityScore ?? 0})
+              </AppText>
+            </View>
+          ) : null}
 
           {!isNew ? (
             <View style={styles.summaryCard}>
@@ -330,7 +350,7 @@ export default function AdminSourceEditorScreen() {
             </View>
           ) : null}
 
-          <AppText style={styles.label}>Display Name</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Display Name</AppText>
           <TextInput
             style={styles.input}
             value={record.displayName}
@@ -342,7 +362,7 @@ export default function AdminSourceEditorScreen() {
             <AppText style={styles.fieldError}>{fieldErrors.displayName}</AppText>
           ) : null}
 
-          <AppText style={styles.label}>Slug</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Slug</AppText>
           <TextInput
             style={styles.input}
             value={record.slug}
@@ -353,7 +373,7 @@ export default function AdminSourceEditorScreen() {
           />
           {fieldErrors.slug ? <AppText style={styles.fieldError}>{fieldErrors.slug}</AppText> : null}
 
-          <AppText style={styles.label}>Description</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Description</AppText>
           <TextInput
             style={[styles.input, styles.notes]}
             value={record.description ?? ''}
@@ -362,7 +382,7 @@ export default function AdminSourceEditorScreen() {
             onChangeText={(value) => updateField('description', value)}
           />
 
-          <AppText style={styles.label}>Base URL</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Base URL</AppText>
           <TextInput
             style={styles.input}
             value={record.baseUrl ?? ''}
@@ -372,7 +392,7 @@ export default function AdminSourceEditorScreen() {
           />
           {fieldErrors.baseUrl ? <AppText style={styles.fieldError}>{fieldErrors.baseUrl}</AppText> : null}
 
-          <AppText style={styles.label}>Source Type</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Source Type</AppText>
           <View style={styles.chips}>
             {SOURCE_TYPES.map((type) => (
               <SecondaryButton
@@ -384,7 +404,7 @@ export default function AdminSourceEditorScreen() {
             ))}
           </View>
 
-          <AppText style={styles.label}>Parser Type</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Parser Type</AppText>
           <View style={styles.chips}>
             {PARSER_TYPES.map((type) => (
               <SecondaryButton
@@ -396,7 +416,7 @@ export default function AdminSourceEditorScreen() {
             ))}
           </View>
 
-          <AppText style={styles.label}>Acquisition Strategy</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Acquisition Strategy</AppText>
           <View style={styles.chips}>
             {ACQUISITION_STRATEGIES.map((strategy) => (
               <SecondaryButton
@@ -408,7 +428,7 @@ export default function AdminSourceEditorScreen() {
             ))}
           </View>
 
-          <AppText style={styles.label}>Polling Strategy</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Polling Strategy</AppText>
           <View style={styles.chips}>
             {POLLING_STRATEGIES.map((strategy) => (
               <SecondaryButton
@@ -420,7 +440,7 @@ export default function AdminSourceEditorScreen() {
             ))}
           </View>
 
-          <AppText style={styles.label}>Polling Interval (minutes)</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Polling Interval (minutes)</AppText>
           <TextInput
             style={styles.input}
             value={record.pollingIntervalMinutes?.toString() ?? ''}
@@ -431,7 +451,7 @@ export default function AdminSourceEditorScreen() {
             }
           />
 
-          <AppText style={styles.label}>Rate Limit (per hour)</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Rate Limit (per hour)</AppText>
           <TextInput
             style={styles.input}
             value={record.rateLimitPerHour?.toString() ?? ''}
@@ -442,7 +462,7 @@ export default function AdminSourceEditorScreen() {
             }
           />
 
-          <AppText style={styles.label}>Priority (0–100)</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Priority (0–100)</AppText>
           <TextInput
             style={styles.input}
             value={String(record.priority)}
@@ -452,7 +472,7 @@ export default function AdminSourceEditorScreen() {
           />
           {fieldErrors.priority ? <AppText style={styles.fieldError}>{fieldErrors.priority}</AppText> : null}
 
-          <AppText style={styles.label}>Trust Score (0–100)</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Trust Score (0–100)</AppText>
           <TextInput
             style={styles.input}
             value={String(record.trustScore)}
@@ -464,7 +484,7 @@ export default function AdminSourceEditorScreen() {
             <AppText style={styles.fieldError}>{fieldErrors.trustScore}</AppText>
           ) : null}
 
-          <AppText style={styles.label}>Website</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Website</AppText>
           <TextInput
             style={styles.input}
             value={record.website ?? ''}
@@ -473,7 +493,7 @@ export default function AdminSourceEditorScreen() {
             onChangeText={(value) => updateField('website', value)}
           />
 
-          <AppText style={styles.label}>Notes</AppText>
+          <AppText role="sectionTitle" style={styles.label}>Notes</AppText>
           <TextInput
             style={[styles.input, styles.notes]}
             value={record.notes ?? ''}
@@ -630,8 +650,8 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     marginBottom: spacing.md,
   },
-  title: { ...textRoles.screenTitle, flex: 1 },
-  label: { ...textRoles.sectionTitle, marginTop: spacing.sm },
+  title: { flex: 1 },
+  label: { marginTop: spacing.sm },
   input: {
     borderWidth: 1,
     borderColor: colors.border,

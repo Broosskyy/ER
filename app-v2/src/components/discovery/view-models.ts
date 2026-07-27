@@ -106,3 +106,45 @@ export type EventStatus =
   | 'pending_review'
   | 'verified'
   | 'unverified';
+
+export interface EventDiscoveryTileViewModel {
+  id: string;
+  title: string;
+  image?: DiscoveryImageSource;
+  dateLabel: string;
+  timeLabel?: string;
+  venueLabel: string;
+  cityLabel: string;
+  status?: EventStatus;
+  ticketStatus?: EventTicketStatus;
+  accessibilityLabel: string;
+}
+
+export function toEventDiscoveryTileViewModel(
+  event: Pick<
+    EventCardViewModel,
+    | 'id'
+    | 'title'
+    | 'image'
+    | 'dateLabel'
+    | 'timeLabel'
+    | 'venueLabel'
+    | 'cityLabel'
+    | 'status'
+    | 'ticketStatus'
+    | 'accessibilityLabel'
+  >,
+): EventDiscoveryTileViewModel {
+  return {
+    id: event.id,
+    title: event.title,
+    image: event.image,
+    dateLabel: event.dateLabel,
+    timeLabel: event.timeLabel,
+    venueLabel: event.venueLabel,
+    cityLabel: event.cityLabel,
+    status: event.status,
+    ticketStatus: event.ticketStatus,
+    accessibilityLabel: event.accessibilityLabel,
+  };
+}

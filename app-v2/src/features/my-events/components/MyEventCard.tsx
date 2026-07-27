@@ -1,14 +1,16 @@
 import { useRouter } from 'expo-router';
-import { Image, StyleSheet, View } from 'react-native';
+import { Alert, Image, StyleSheet, View } from 'react-native';
 
+import { GhostButton } from '@/components/buttons/GhostButton';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { AppText } from '@/components/layout/AppText';
+import type { AdminEventRecord, VenueRecord } from '@/data/types/records';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import type { AdminEventRecord } from '@/data/types/records';
 import {
+  buildEventSubmissionStatusRoute,
   getContributorEventEditRoute,
   getContributorEventPreviewRoute,
 } from '@/features/create/constants/contributor-event-routes';
@@ -18,25 +20,51 @@ import {
 } from '@/features/create/utils/event-draft-date-time';
 import { isPersistableImageUrl } from '@/features/create/utils/event-image-url';
 import { resolveEventVenueDisplay } from '@/features/create/utils/event-venue-display';
-import { useEventStatusLabel } from '@/features/my-events/hooks/useEventStatusLabel';
+import type { EventSubmission } from '@/features/create/wizard/wizard-types';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
-import type { VenueRecord } from '@/data/types/records';
+import { AdminEventStatusBadge } from '@/features/my-events/components/AdminEventStatusBadge';
 
 export interface MyEventCardProps {
   event: AdminEventRecord;
   venues: VenueRecord[];
+  submission?: EventSubmission | null;
   onWithdraw?: (eventId: string) => void;
+  onDelete?: (eventId: string) => void;
+  onResubmit?: (eventId: string) => void;
   withdrawing?: boolean;
+  deleting?: boolean;
+  resubmitting?: boolean;
 }
 
-export function MyEventCard({ event, venues, onWithdraw, withdrawing }: MyEventCardProps) {
+export function MyEventCard({
+  event,
+  venues,
+  submission,
+  onWithdraw,
+  onDelete,
+  onResubmit,
+  withdrawing,
+  deleting,
+  resubmitting,
+}: MyEventCardProps) {
   const router = useRouter();
   const { t } = useAppTranslation();
-  const statusLabel = useEventStatusLabel(event.status);
   const venue = resolveEventVenueDisplay(event, venues);
   const coverUri = isPersistableImageUrl(event.imageUrl) ? event.imageUrl : undefined;
   const date = formatIsoToDateInput(event.startDate);
   const time = formatIsoToTimeInput(event.startDate);
+  const statusRoute = buildEventSubmissionStatusRoute(submission?.id ?? event.id);
+
+  const confirmDelete = () => {
+    Alert.alert(t('profile.myEvents.delete.confirmTitle'), t('profile.myEvents.delete.confirmDescription'), [
+      { text: t('common.actions.cancel'), style: 'cancel' },
+      {
+        text: t('profile.myEvents.delete.confirmAction'),
+        style: 'destructive',
+        onPress: () => onDelete?.(event.id),
+      },
+    ]);
+  };
 
   return (
     <View style={styles.card} accessibilityRole="summary">
@@ -55,9 +83,7 @@ export function MyEventCard({ event, venues, onWithdraw, withdrawing }: MyEventC
 
       <View style={styles.content}>
         <AppText style={styles.title}>{event.title}</AppText>
-        <View style={styles.statusChip} accessibilityLabel={`${t('events.status.label')}: ${statusLabel}`}>
-          <AppText style={styles.statusText}>{statusLabel}</AppText>
-        </View>
+        <AdminEventStatusBadge status={event.status} />
         <AppText style={styles.meta}>
           {date} · {time}
         </AppText>
@@ -82,12 +108,21 @@ export function MyEventCard({ event, venues, onWithdraw, withdrawing }: MyEventC
                 label={t('events.actions.preview')}
                 onPress={() => router.push(getContributorEventPreviewRoute(event.id))}
               />
+              <SecondaryButton
+                label={deleting ? t('profile.myEvents.delete.deleting') : t('profile.myEvents.delete.action')}
+                onPress={confirmDelete}
+                disabled={deleting}
+              />
             </>
           ) : null}
 
           {event.status === 'review' ? (
             <>
               <PrimaryButton
+                label={t('profile.myEvents.actions.viewStatus')}
+                onPress={() => router.push(statusRoute)}
+              />
+              <SecondaryButton
                 label={t('events.actions.preview')}
                 onPress={() => router.push(getContributorEventPreviewRoute(event.id))}
               />
@@ -99,15 +134,58 @@ export function MyEventCard({ event, venues, onWithdraw, withdrawing }: MyEventC
             </>
           ) : null}
 
-          {event.status === 'published' ? (
-            <PrimaryButton
-              label={t('events.actions.viewPublic')}
-              onPress={() => router.push(`/event/${event.id}`)}
-            />
+          {event.status === 'rejected' ? (
+            <>
+              <PrimaryButton
+                label={t('events.actions.edit')}
+                onPress={() => router.push(getContributorEventEditRoute(event.id))}
+              />
+              <SecondaryButton
+                label={resubmitting ? t('profile.myEvents.resubmit.submitting') : t('profile.myEvents.resubmit.action')}
+                onPress={() => onResubmit?.(event.id)}
+                disabled={resubmitting}
+              />
+              <SecondaryButton
+                label={t('profile.myEvents.actions.viewStatus')}
+                onPress={() => router.push(statusRoute)}
+              />
+            </>
           ) : null}
 
-          {event.status === 'rejected' ? (
-            <AppText style={styles.rejectedHint}>{t('profile.myEvents.rejectedHint')}</AppText>
+          {event.status === 'published' ? (
+            <>
+              <PrimaryButton
+                label={t('events.actions.viewPublic')}
+                onPress={() => router.push(`/event/${event.id}`)}
+              />
+              <SecondaryButton
+                label={t('profile.myEvents.actions.viewStatus')}
+                onPress={() => router.push(statusRoute)}
+              />
+              <GhostButton
+                label={t('profile.myEvents.actions.duplicateSoon')}
+                onPress={() => undefined}
+                disabled
+              />
+              <GhostButton
+                label={t('profile.myEvents.actions.archiveSoon')}
+                onPress={() => undefined}
+                disabled
+              />
+            </>
+          ) : null}
+
+          {event.status === 'archived' ? (
+            <>
+              <PrimaryButton
+                label={t('profile.myEvents.actions.viewStatus')}
+                onPress={() => router.push(statusRoute)}
+              />
+              <SecondaryButton
+                label={t('events.actions.preview')}
+                onPress={() => router.push(getContributorEventPreviewRoute(event.id))}
+              />
+            </>
           ) : null}
         </View>
       </View>
@@ -147,19 +225,6 @@ const styles = StyleSheet.create({
     ...textRoles.cardTitle,
     color: colors.textPrimary,
   },
-  statusChip: {
-    alignSelf: 'flex-start',
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: colors.border,
-    backgroundColor: colors.surface,
-  },
-  statusText: {
-    ...textRoles.metadata,
-    color: colors.textPrimary,
-  },
   meta: {
     ...textRoles.body,
     color: colors.textSecondary,
@@ -171,9 +236,5 @@ const styles = StyleSheet.create({
   actions: {
     gap: spacing.sm,
     marginTop: spacing.sm,
-  },
-  rejectedHint: {
-    ...textRoles.metadata,
-    color: colors.textSecondary,
   },
 });

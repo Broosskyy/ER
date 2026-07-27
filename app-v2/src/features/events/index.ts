@@ -14,6 +14,11 @@ export { normalizeRawEvent } from './pipeline/normalize';
 export { validateEvent } from './pipeline/validate';
 export { classifyDuplicate, deduplicateEvents } from './pipeline/deduplicate';
 export { toEventDisplayModel, hasMapCoordinates } from './formatting/display-event';
+export { toEventCardViewModel, toEventListItemViewModel } from './formatting/event-card-view-model';
+export { EventDiscoveryCard } from './components/EventDiscoveryCard';
+export type { EventDiscoveryCardProps } from './components/EventDiscoveryCard';
+export { EventDiscoveryListItem } from './components/EventDiscoveryListItem';
+export type { EventDiscoveryListItemProps } from './components/EventDiscoveryListItem';
 export {
   formatEventDateTime,
   formatEventTimeRange,
@@ -25,5 +30,12 @@ export {
   isThisMonthEvent,
 } from './formatting/date-time';
 export { getSourceDisplayLabel } from './data/demo-images';
+export {
+  resolveEventPresentation,
+  resolvePrimaryCardStatus,
+  resolvePrimaryTicketStatus,
+  resolveEventNoticeType,
+  isTicketActionDisabled,
+} from './status/event-status-resolver';
 export { HOME_FILTER_CHIPS, FEATURED_EVENT_IDS, isFeaturedEventId } from './data/home-config';
 export type { HomeFilterChipId } from './data/home-config';

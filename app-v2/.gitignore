@@ -4,6 +4,7 @@
 .expo/
 dist/
 web-build/
+.build/
 
 # Dependencies
 node_modules/

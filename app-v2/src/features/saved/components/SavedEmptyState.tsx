@@ -1,60 +1,21 @@
-import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, View } from 'react-native';
-
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
-import { AppText } from '@/components/layout/AppText';
-import { colorRoles } from '@/design/colors';
-import { componentSize } from '@/design/layout';
-import { spacing, spacingRoles } from '@/design/spacing';
-import { textRoles } from '@/design/typography';
+import { SavedEmptyState as SavedEmptyStatePresentation } from '@/components/saved/SavedEmptyState';
+import { resolveSavedEmptyCopy } from '@/components/saved/saved-styles';
+import type { SavedEmptyVariant } from '@/components/saved/view-models';
 
 export interface SavedEmptyStateProps {
+  variant?: SavedEmptyVariant;
   onExploreEvents: () => void;
 }
 
-export function SavedEmptyState({ onExploreEvents }: SavedEmptyStateProps) {
+export function SavedEmptyState({ variant = 'no_saved', onExploreEvents }: SavedEmptyStateProps) {
+  const copy = resolveSavedEmptyCopy(variant);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.iconWrap}>
-        <Ionicons
-          name="heart-outline"
-          size={componentSize.iconLg * 2}
-          color={colorRoles.emptyStateIcon}
-        />
-      </View>
-      <AppText style={styles.title}>No saved events yet</AppText>
-      <AppText style={styles.description}>
-        Save events you like and find them here later.
-      </AppText>
-      <PrimaryButton label="Explore events" onPress={onExploreEvents} style={styles.button} />
-    </View>
+    <SavedEmptyStatePresentation
+      empty={{ variant, title: copy.title, description: copy.description }}
+      primaryAction={<PrimaryButton label="Events entdecken" onPress={onExploreEvents} />}
+      testID="saved-empty-state"
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingVertical: spacing.xxl,
-    gap: spacing.sm,
-  },
-  iconWrap: {
-    marginBottom: spacing.sm,
-  },
-  title: {
-    ...textRoles.sectionTitle,
-    textAlign: 'center',
-    color: colorRoles.emptyStateTitle,
-  },
-  description: {
-    ...textRoles.metadata,
-    textAlign: 'center',
-    color: colorRoles.emptyStateDescription,
-    marginBottom: spacing.md,
-  },
-  button: {
-    minWidth: 200,
-  },
-});

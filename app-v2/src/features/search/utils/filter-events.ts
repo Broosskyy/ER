@@ -122,12 +122,16 @@ export function applyEventFilters(
   return sortEvents(filtered, filters.sortBy);
 }
 
+export function hasDiscoverySearchQuery(filters: EventFilters): boolean {
+  return filters.query.trim().length > 0;
+}
+
 export function hasActiveFilters(filters: EventFilters): boolean {
-  return countActiveFilters(filters) > 0 || filters.query.trim().length > 0;
+  return countActiveFilters(filters) > 0 || hasDiscoverySearchQuery(filters);
 }
 
 export function isExploreMode(filters: EventFilters): boolean {
-  return filters.query.trim().length === 0 && countActiveFilters(filters) === 0;
+  return filters.query.trim().length === 0;
 }
 
 export function countActiveFilters(filters: EventFilters): number {

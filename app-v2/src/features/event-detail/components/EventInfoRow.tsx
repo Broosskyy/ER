@@ -19,8 +19,8 @@ export function EventInfoRow({ icon, label, value }: EventInfoRowProps) {
     <View style={styles.row} accessibilityLabel={`${label}: ${value}`}>
       <Ionicons name={icon} size={componentSize.iconSm} color={colors.primary} />
       <View style={styles.textWrap}>
-        <AppText style={styles.label}>{label}</AppText>
-        <AppText style={styles.value}>{value}</AppText>
+        <AppText role="bodyMuted" style={styles.label}>{label}</AppText>
+        <AppText role="body" style={styles.value}>{value}</AppText>
       </View>
     </View>
   );
@@ -34,7 +34,7 @@ export interface EventSectionProps {
 export function EventSection({ title, children }: EventSectionProps) {
   return (
     <View style={styles.section}>
-      {title ? <AppText style={styles.title}>{title}</AppText> : null}
+      {title ? <AppText role="sectionTitle" style={styles.title}>{title}</AppText> : null}
       {children}
     </View>
   );
@@ -51,16 +51,15 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   label: {
-    ...textRoles.metadata,
-    color: colors.textSecondary,
+    fontSize: textRoles.metadata.fontSize,
   },
   value: {
-    ...textRoles.body,
+    fontSize: textRoles.body.fontSize,
   },
   section: {
     gap: spacing.md,
   },
   title: {
-    ...textRoles.sectionTitle,
+    fontSize: textRoles.sectionTitle.fontSize,
   },
 });

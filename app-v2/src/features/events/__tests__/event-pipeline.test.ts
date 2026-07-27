@@ -110,14 +110,19 @@ describe('deduplicateEvents', () => {
 });
 
 describe('published pipeline output', () => {
-  it('publishes only the five demo app events', () => {
+  it('publishes only the Köln demo app events', () => {
     const report = runDefaultEventPipeline('2026-05-01T10:00:00.000Z');
 
-    expect(report.publishedEventCount).toBe(5);
+    expect(report.publishedEventCount).toBe(10);
     expect(report.publishedEvents.map((event) => event.id)).toEqual([
       'void-techno-saturday',
       'klangkuenstler-berghain',
+      'electric-avenue',
       'fckng-serious',
+      'warehouse-pressure',
+      'subfloor-session',
+      'late-night-groove',
+      'minimal-drive',
       'watergate-nights',
       'sisyphos-open-air',
     ]);
@@ -128,7 +133,7 @@ describe('EventRepository', () => {
   const repository = EventRepository.createDefault();
 
   it('returns published events only', () => {
-    expect(repository.getPublishedEvents()).toHaveLength(5);
+    expect(repository.getPublishedEvents()).toHaveLength(10);
     expect(repository.getEventById('invalid-date-event')).toBeUndefined();
     expect(repository.getEventById('void-techno-saturday')?.title).toContain('VOID');
   });
@@ -147,7 +152,7 @@ describe('EventRepository', () => {
 
   it('returns map events with valid coordinates only', () => {
     const mapEvents = repository.getEventsForMap();
-    expect(mapEvents).toHaveLength(5);
+    expect(mapEvents).toHaveLength(10);
     mapEvents.forEach((event) => {
       expect(event.latitude).toBeGreaterThanOrEqual(-90);
       expect(event.longitude).toBeLessThanOrEqual(180);

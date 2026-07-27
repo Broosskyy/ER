@@ -22,11 +22,51 @@ export function MapFilterButton({ active = false, count, loading = false, disabl
   return <FilterChip label="Filter" icon="options-outline" count={count} selected={active} disabled={disabled || loading} onPress={onPress} />;
 }
 
-export function MapListToggle({ value, onChange }: { value: 'map' | 'list'; onChange?: (value: 'map' | 'list') => void }) {
+export function DiscoveryGridMapToggle({
+  value,
+  onChange,
+}: {
+  value: 'grid' | 'map';
+  onChange?: (value: 'grid' | 'map') => void;
+}) {
   const { theme } = useTheme();
-  return <View style={[styles.toggle, { borderColor: theme.colors.borderSubtle }]} accessibilityRole="tablist">
-    {(['map', 'list'] as const).map((item) => <Pressable key={item} accessibilityRole="tab" accessibilityState={{ selected: item === value }} accessibilityLabel={item === 'map' ? 'Kartenansicht' : 'Listenansicht'} onPress={() => onChange?.(item)} style={[styles.toggleItem, { backgroundColor: item === value ? theme.colors.accentMuted : theme.colors.transparent }]}><AppIcon name={item === 'map' ? 'map-outline' : 'list-outline'} size="sm" color={item === value ? theme.colors.accent : theme.colors.textSecondary} /></Pressable>)}
-  </View>;
+  return (
+    <View
+      style={[styles.toggle, { borderColor: theme.colors.borderSubtle }]}
+      accessibilityRole="tablist"
+    >
+      {(['grid', 'map'] as const).map((item) => (
+        <Pressable
+          key={item}
+          accessibilityRole="tab"
+          accessibilityState={{ selected: item === value }}
+          accessibilityLabel={item === 'grid' ? 'Explore-Grid' : 'Kartenansicht'}
+          onPress={() => onChange?.(item)}
+          style={[
+            styles.toggleItem,
+            { backgroundColor: item === value ? theme.colors.accentMuted : theme.colors.transparent },
+          ]}
+        >
+          <AppIcon
+            name={item === 'grid' ? 'grid-outline' : 'map-outline'}
+            size="sm"
+            color={item === value ? theme.colors.accent : theme.colors.textSecondary}
+          />
+        </Pressable>
+      ))}
+    </View>
+  );
+}
+
+/** @deprecated Use DiscoveryGridMapToggle */
+export function MapListToggle({ value, onChange }: { value: 'map' | 'list'; onChange?: (value: 'map' | 'list') => void }) {
+  const mapped: 'grid' | 'map' = value === 'map' ? 'map' : 'grid';
+  return (
+    <DiscoveryGridMapToggle
+      value={mapped}
+      onChange={(next) => onChange?.(next === 'map' ? 'map' : 'list')}
+    />
+  );
 }
 
 export function CitySelector({ cityLabel, selected = false, disabled = false, onPress }: { cityLabel: string; selected?: boolean; disabled?: boolean; onPress?: () => void }) {

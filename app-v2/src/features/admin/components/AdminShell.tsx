@@ -47,7 +47,7 @@ function useAdminNavItems() {
     () => [
       {
         href: '/admin',
-        label: 'Dashboard',
+        label: 'Übersicht',
         icon: 'grid-outline',
         visible: true,
         isActive: (pathname) => pathname === '/admin' || pathname === '/admin/index',
@@ -62,7 +62,7 @@ function useAdminNavItems() {
       },
       {
         href: '/admin/events/review',
-        label: 'Submissions',
+        label: 'Einreichungen',
         icon: 'people-outline',
         visible: canViewContributorReviewQueue(role),
         isActive: (pathname) => pathname.startsWith('/admin/events/review'),
@@ -83,14 +83,14 @@ function useAdminNavItems() {
       },
       {
         href: '/admin/organizers',
-        label: 'Organizers',
+        label: 'Veranstalter',
         icon: 'people-outline',
         visible: canViewOrganizers(role),
         isActive: (pathname) => pathname.startsWith('/admin/organizers'),
       },
       {
         href: '/admin/sources',
-        label: 'Sources',
+        label: 'Quellen',
         icon: 'link-outline',
         visible: canViewSources(role),
         isActive: (pathname) => pathname.startsWith('/admin/sources'),
@@ -104,21 +104,21 @@ function useAdminNavItems() {
       },
       {
         href: '/admin/imports',
-        label: 'Imports',
+        label: 'Importe',
         icon: 'cloud-download-outline',
         visible: canViewImports(role),
         isActive: (pathname) => pathname === '/admin/imports',
       },
       {
         href: '/admin/imports/jobs',
-        label: 'Jobs',
+        label: 'Aufträge',
         icon: 'time-outline',
         visible: canViewImportJobs(role),
         isActive: (pathname) => pathname.startsWith('/admin/imports/jobs'),
       },
       {
         href: '/admin/imports/review',
-        label: 'Review',
+        label: 'Import-Prüfung',
         icon: 'checkmark-done-outline',
         visible: canReviewImports(role),
         isActive: (pathname) => pathname.startsWith('/admin/imports/review'),
@@ -217,10 +217,10 @@ export function AdminShell({ children }: { children: ReactNode }) {
       <NavLinks pathname={pathname} items={navItems} onNavigate={closeDrawer} />
       <View style={styles.sidebarFooter}>
         <AppText style={styles.userEmail} numberOfLines={1}>
-          {user?.email ?? 'Signed in'}
+          {user?.email ?? 'Angemeldet'}
         </AppText>
         <AppText style={styles.userRole}>{role ?? 'unknown'}</AppText>
-        <SecondaryButton label="Logout" onPress={signOut} style={styles.logoutButton} />
+        <SecondaryButton label="Abmelden" onPress={signOut} style={styles.logoutButton} />
       </View>
     </View>
   );
@@ -234,14 +234,14 @@ export function AdminShell({ children }: { children: ReactNode }) {
           <View style={styles.topBar}>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Open admin navigation"
+              accessibilityLabel="Admin-Navigation öffnen"
               onPress={() => setDrawerOpen(true)}
               style={styles.menuButton}
             >
               <Ionicons name="menu" size={22} color={colors.textPrimary} />
             </Pressable>
             <AppText style={styles.topBarTitle}>Admin</AppText>
-            <Pressable accessibilityRole="button" accessibilityLabel="Logout" onPress={signOut}>
+            <Pressable accessibilityRole="button" accessibilityLabel="Abmelden" onPress={signOut}>
               <Ionicons name="log-out-outline" size={22} color={colors.textPrimary} />
             </Pressable>
           </View>
@@ -261,7 +261,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
 
       {!isDesktop ? (
         <Modal visible={drawerOpen} animationType="slide" transparent onRequestClose={closeDrawer}>
-          <Pressable style={styles.drawerBackdrop} onPress={closeDrawer} accessibilityLabel="Close navigation" />
+          <Pressable style={styles.drawerBackdrop} onPress={closeDrawer} accessibilityLabel="Navigation schließen" />
           <View style={styles.drawerPanel}>{sidebar}</View>
         </Modal>
       ) : null}

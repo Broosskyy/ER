@@ -48,7 +48,19 @@ function assertOwnedEditableDraft(record: AdminEventRecord | null, userId: strin
   }
 
   if (!isContributorEditableStatus(record.status)) {
-    throw new AppError('Only draft events can be edited.', { code: 'VALIDATION' });
+    throw new AppError('Only draft or rejected events can be edited.', { code: 'VALIDATION' });
+  }
+
+  return record;
+}
+
+function assertOwnedResubmittableEvent(record: AdminEventRecord | null, userId: string): AdminEventRecord {
+  if (!record || record.createdBy !== userId) {
+    throw new AppError('Event not found.', { code: 'NOT_FOUND' });
+  }
+
+  if (record.status !== 'rejected') {
+    throw new AppError('Only events requiring changes can be resubmitted.', { code: 'VALIDATION' });
   }
 
   return record;
@@ -229,6 +241,38 @@ export class ContributorEventService {
     const record: AdminEventRecord = {
       ...fresh,
       status: 'draft',
+      updatedAt: new Date().toISOString(),
+    };
+
+    return getDatasourceBundle().events.saveEvent(record);
+  }
+
+  async deleteDraft(input: ContributorEventSubmitInput): Promise<void> {
+    const existing = await this.getEvent(input.eventId, input.userId);
+    if (!existing || existing.createdBy !== input.userId) {
+      throw new AppError('Event not found.', { code: 'NOT_FOUND' });
+    }
+
+    if (existing.status !== 'draft') {
+      throw new AppError('Only draft events can be deleted.', { code: 'VALIDATION' });
+    }
+
+    await getDatasourceBundle().events.deleteContributorDraft(input.eventId, input.userId);
+  }
+
+  async resubmitForReview(input: ContributorEventSubmitInput): Promise<AdminEventRecord> {
+    const existing = assertOwnedResubmittableEvent(
+      await this.getEvent(input.eventId, input.userId),
+      input.userId,
+    );
+
+    if (!canContributorTransition(existing.status, 'review')) {
+      throw new AppError('Event cannot be resubmitted for review.', { code: 'VALIDATION' });
+    }
+
+    const record: AdminEventRecord = {
+      ...existing,
+      status: 'review',
       updatedAt: new Date().toISOString(),
     };
 

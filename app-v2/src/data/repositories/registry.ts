@@ -1,4 +1,14 @@
 import { bindEventRepository, bootstrapApp } from '@/core/bootstrap/app-bootstrap';
+import {
+  ImportAdminRepositoryImpl,
+  ImportAuditLogRepositoryImpl,
+} from '@/data/repositories/import-admin-repository';
+import {
+  ImportJobRepositoryImpl,
+  ImportLogRepositoryImpl,
+  ImportRecordRepositoryImpl,
+  ImportSourceRepositoryImpl,
+} from '@/data/repositories/import-repository-impl';
 import { NotificationRepository } from '@/data/repositories/notification-repository';
 import {
   AdminArtistRepository,
@@ -17,30 +27,31 @@ import {
   VenueRepository,
   OrganizerRepository,
 } from '@/data/repositories/repositories';
-import {
-  ImportJobRepositoryImpl,
-  ImportLogRepositoryImpl,
-  ImportRecordRepositoryImpl,
-  ImportSourceRepositoryImpl,
-} from '@/data/repositories/import-repository-impl';
+import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
+import { AdminModerationStateService } from '@/features/admin/services/admin-moderation-state-service';
+import { AdminMultiSourceService } from '@/features/admin/services/admin-multi-source-service';
+import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
+import { SupabaseMultiSourceRepositories } from '@/features/aggregation/repositories/multi-source-repositories';
+import { ImportAggregationService } from '@/features/aggregation/services/import-aggregation-service';
+import { ArtistService } from '@/features/artists/services/artist-service';
+import { EventLineupService } from '@/features/events/services/event-lineup-service';
 import { importAdapterRegistry } from '@/features/import/adapters/import-adapter-registry';
 import { registerImportAdapters } from '@/features/import/adapters/register-adapters';
+import { ImportAuditService } from '@/features/import/admin/import-audit-service';
 import { ImportLoggingService } from '@/features/import/services/import-logging-service';
 import { ImportOrchestrator } from '@/features/import/services/import-orchestrator';
-import {
-  ImportAdminRepositoryImpl,
-  ImportAuditLogRepositoryImpl,
-} from '@/data/repositories/import-admin-repository';
-import { EventLineupService } from '@/features/events/services/event-lineup-service';
-import { ArtistService } from '@/features/artists/services/artist-service';
-import { VenueService } from '@/features/venues/services/venue-service';
 import { OrganizerService } from '@/features/organizers/services/organizer-service';
 import { SourceService } from '@/features/sources/services/source-service';
-import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
-import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
-import { ImportAuditService } from '@/features/import/admin/import-audit-service';
+import { VenueService } from '@/features/venues/services/venue-service';
 import { ImportOperationsService } from '@/features/import/admin/import-operations-service';
 import { ImportReviewService } from '@/features/import/admin/import-review-service';
+import { DuplicateDecisionService } from '@/features/aggregation/services/duplicate-decision-service';
+import { MergeProvenanceService } from '@/features/aggregation/services/merge-provenance-service';
+import { ConflictResolutionService } from '@/features/aggregation/services/conflict-resolution-service';
+import { priorityBasedMergeStrategy } from '@/features/aggregation/merge/merge-strategy';
+import { eventQualityResolver } from '@/features/events/quality/event-quality-resolver';
+import { publishReadinessResolver } from '@/features/events/quality/publish-readiness-resolver';
+import { CanonicalEventIdResolver } from '@/features/events/services/canonical-event-id-resolver';
 import { registerConnectors } from '@/features/connectors/register-connectors';
 import { connectorRegistry } from '@/features/connectors/registry/connector-registry';
 import { ConnectorFactory } from '@/features/connectors/registry/connector-factory';
@@ -100,6 +111,54 @@ export const importOrchestrator = new ImportOrchestrator(
 export const importAuditLogRepository = new ImportAuditLogRepositoryImpl();
 export const importAdminRepository = new ImportAdminRepositoryImpl();
 export const importAuditService = new ImportAuditService(importAuditLogRepository);
+export const multiSourceRepositories = new SupabaseMultiSourceRepositories();
+export const duplicateDecisionService = new DuplicateDecisionService(
+  multiSourceRepositories.duplicateDecisions,
+  importAuditLogRepository,
+);
+export const mergeProvenanceService = new MergeProvenanceService(
+  adminEventRepository,
+  eventRepository,
+  multiSourceRepositories.sourceReferences,
+  multiSourceRepositories.fieldProvenance,
+  multiSourceRepositories.conflicts,
+  priorityBasedMergeStrategy,
+  eventQualityResolver,
+  publishReadinessResolver,
+  importAuditLogRepository,
+);
+export const conflictResolutionService = new ConflictResolutionService(
+  adminEventRepository,
+  eventRepository,
+  multiSourceRepositories.conflicts,
+  multiSourceRepositories.fieldProvenance,
+  eventQualityResolver,
+  publishReadinessResolver,
+  importAuditLogRepository,
+);
+export const canonicalEventIdResolver = new CanonicalEventIdResolver({
+  findCanonicalId: async (eventId) => {
+    const aliases = await multiSourceRepositories.loadEventIdAliases();
+    return aliases.get(eventId) ?? null;
+  },
+});
+export const adminMultiSourceService = new AdminMultiSourceService(
+  multiSourceRepositories.sourceReferences,
+  multiSourceRepositories.fieldProvenance,
+  multiSourceRepositories.conflicts,
+  multiSourceRepositories.duplicateDecisions,
+  duplicateDecisionService,
+  mergeProvenanceService,
+  conflictResolutionService,
+  sourceService,
+);
+export const importAggregationService = new ImportAggregationService(
+  importSourceRepository,
+  importJobRepository,
+  importRecordRepository,
+  importLoggingService,
+  adminEventRepository,
+);
 export const importOperationsService = new ImportOperationsService(
   importSourceRepository,
   sourceService,
@@ -108,6 +167,7 @@ export const importOperationsService = new ImportOperationsService(
   importOrchestrator,
   importAdapterRegistry,
   importAuditService,
+  importAggregationService,
 );
 export const importReviewService = new ImportReviewService(
   importRecordRepository,
@@ -115,12 +175,15 @@ export const importReviewService = new ImportReviewService(
   adminEventRepository,
   importAuditService,
   eventLineupService,
+  eventRepository,
 );
 
 export const eventModerationAuditService = new EventModerationAuditService();
+export const adminModerationStateService = new AdminModerationStateService();
 export const adminEventModerationService = new AdminEventModerationService(
   adminEventRepository,
   eventModerationAuditService,
+  adminModerationStateService,
 );
 
 export { importAdapterRegistry, connectorRegistry };

@@ -27,6 +27,12 @@ export interface RawCandidateInput {
   imageUrl?: unknown;
   minimumAge?: unknown;
   organizerName?: unknown;
+  subtitle?: unknown;
+  importId?: unknown;
+  originalLink?: unknown;
+  priceAmount?: unknown;
+  priceCurrency?: unknown;
+  imageUrls?: unknown;
   rawSourceType: RawSourceType;
   sourceMetadata?: Record<string, unknown>;
   baseUrl?: string;
@@ -93,6 +99,7 @@ export class EventNormalizer {
       externalId: normalizeText(input.externalId, FIELD_LIMITS.field) ?? input.externalId,
       sourceUrl: resolveUrl(input.sourceUrl, baseUrl),
       title,
+      subtitle: normalizeText(input.subtitle, FIELD_LIMITS.title),
       description: normalizeText(input.description, FIELD_LIMITS.description),
       startDate: start.isoDate,
       endDate,
@@ -107,10 +114,20 @@ export class EventNormalizer {
       artistNames: normalizeStringList(input.artistNames),
       genreNames: normalizeStringList(input.genreNames),
       ticketUrl: resolveUrl(String(input.ticketUrl ?? ''), baseUrl),
-      eventUrl: resolveUrl(String(input.eventUrl ?? ''), baseUrl),
+      eventUrl: resolveUrl(String(input.eventUrl ?? input.originalLink ?? ''), baseUrl),
       imageUrl: resolveUrl(String(input.imageUrl ?? ''), baseUrl),
+      imageUrls: normalizeStringList(input.imageUrls),
       minimumAge: parseMinimumAge(input.minimumAge),
       organizerName: normalizeText(input.organizerName),
+      importId: normalizeText(input.importId, FIELD_LIMITS.field) ?? normalizeText(input.externalId, FIELD_LIMITS.field),
+      originalLink: resolveUrl(String(input.originalLink ?? input.eventUrl ?? input.sourceUrl ?? ''), baseUrl),
+      priceAmount:
+        typeof input.priceAmount === 'number'
+          ? input.priceAmount
+          : Number.isFinite(Number(input.priceAmount))
+            ? Number(input.priceAmount)
+            : undefined,
+      priceCurrency: normalizeText(input.priceCurrency, 8),
       rawSourceType: input.rawSourceType,
       sourceMetadata: input.sourceMetadata,
     };

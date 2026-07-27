@@ -5,9 +5,13 @@ import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { Phase1APrimitivesPreview } from '@/components/preview/Phase1APrimitivesPreview';
 import { Phase1BFoundationPreview } from '@/components/preview/Phase1BFoundationPreview';
 import { Phase2AEventDiscoveryPreview } from '@/components/preview/Phase2AEventDiscoveryPreview';
+import { Phase2AExploreGridPreview } from '@/components/preview/Phase2AExploreGridPreview';
 import { Phase2BTicketProfilePreview } from '@/components/preview/Phase2BTicketProfilePreview';
 import { Phase2DMapLocationPreview } from '@/components/preview/Phase2DMapLocationPreview';
 import { Phase2ESearchFilterPreview } from '@/components/preview/Phase2ESearchFilterPreview';
+import { Phase2FEventDetailSavedPreview } from '@/components/preview/Phase2FEventDetailSavedPreview';
+import { Phase2GAuthOnboardingPreview } from '@/components/preview/Phase2GAuthOnboardingPreview';
+import { Phase2HOrganizerAdminPreview } from '@/components/preview/Phase2HOrganizerAdminPreview';
 import { AppScreen } from '@/components/layout/AppScreen';
 import { AppText } from '@/components/layout/AppText';
 import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
@@ -74,6 +78,9 @@ function PreviewContents() {
     'Phase 2B – Ticket, Profile & Organizer',
     'Phase 2D – Map & Location',
     'Phase 2E – Search & Filter',
+    'Phase 2F – Event Detail & Saved',
+    'Phase 2G – Onboarding, Auth & Permissions',
+    'Phase 2H – Organizer & Admin',
   ];
 
   return (
@@ -239,9 +246,13 @@ export default function DesignPreviewScreen() {
           <Phase1APrimitivesPreview />
           <Phase1BFoundationPreview />
           <Phase2AEventDiscoveryPreview />
+          <Phase2AExploreGridPreview />
           <Phase2BTicketProfilePreview />
           <Phase2DMapLocationPreview />
           <Phase2ESearchFilterPreview />
+          <Phase2FEventDetailSavedPreview />
+          <Phase2GAuthOnboardingPreview />
+          <Phase2HOrganizerAdminPreview />
         </ScrollView>
       </SafeAreaContainer>
     </AppScreen>

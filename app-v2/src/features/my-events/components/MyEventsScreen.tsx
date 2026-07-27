@@ -10,17 +10,17 @@ import {
   View,
 } from 'react-native';
 
+import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { IconButton } from '@/components/buttons/IconButton';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
-import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { EmptyState } from '@/components/feedback/EmptyState';
 import { AppText } from '@/components/layout/AppText';
+import { getErrorMessage } from '@/core/errors/app-error';
+import type { AdminEventRecord } from '@/data/types/records';
 import { colors } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
-import { getErrorMessage } from '@/core/errors/app-error';
-import type { AdminEventRecord } from '@/data/types/records';
 import { buildLoginHref } from '@/features/auth/auth-route-utils';
 import { useAuth } from '@/features/auth/AuthContext';
 import {
@@ -29,12 +29,15 @@ import {
 } from '@/features/create/constants/contributor-event-routes';
 import { useEventDraftReferenceData } from '@/features/create/hooks/useEventDraftReferenceData';
 import { contributorEventService } from '@/features/create/services/contributor-event-service';
+import { loadEventSubmissions } from '@/features/create/wizard/event-submission-service';
+import type { EventSubmission } from '@/features/create/wizard/wizard-types';
 import { FilterChip } from '@/features/home/components/FilterChip';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 import { useWebPageTitle } from '@/features/i18n/useWebPageTitle';
 import { MyEventCard } from '@/features/my-events/components/MyEventCard';
 import {
   filterMyEventsByStatus,
+  indexSubmissionsByEventId,
   MY_EVENTS_FILTER_OPTIONS,
   type MyEventsFilter,
 } from '@/features/my-events/utils/my-events-filters';
@@ -46,11 +49,14 @@ export function MyEventsScreen() {
   const { user, isAuthenticated, loading: authLoading } = useAuth();
   const { data: referenceData, loading: optionsLoading } = useEventDraftReferenceData();
   const [events, setEvents] = useState<AdminEventRecord[]>([]);
+  const [submissionsByEventId, setSubmissionsByEventId] = useState<Record<string, EventSubmission>>({});
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<MyEventsFilter>('all');
   const [withdrawingId, setWithdrawingId] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [resubmittingId, setResubmittingId] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -68,8 +74,12 @@ export function MyEventsScreen() {
 
     setError(null);
     try {
-      const loaded = await contributorEventService.getMyEvents(userId);
+      const [loaded, submissions] = await Promise.all([
+        contributorEventService.getMyEvents(userId),
+        loadEventSubmissions(),
+      ]);
       setEvents(loaded);
+      setSubmissionsByEventId(indexSubmissionsByEventId(submissions));
     } catch (cause) {
       setError(getErrorMessage(cause) || t('profile.myEvents.error'));
     }
@@ -86,9 +96,13 @@ export function MyEventsScreen() {
     void (async () => {
       setError(null);
       try {
-        const loaded = await contributorEventService.getMyEvents(userId!);
+        const [loaded, submissions] = await Promise.all([
+          contributorEventService.getMyEvents(userId!),
+          loadEventSubmissions(),
+        ]);
         if (!cancelled) {
           setEvents(loaded);
+          setSubmissionsByEventId(indexSubmissionsByEventId(submissions));
         }
       } catch (cause) {
         if (!cancelled) {
@@ -117,8 +131,8 @@ export function MyEventsScreen() {
   );
 
   const filteredEvents = useMemo(
-    () => filterMyEventsByStatus(events, filter),
-    [events, filter],
+    () => filterMyEventsByStatus(events, filter, submissionsByEventId),
+    [events, filter, submissionsByEventId],
   );
 
   const handleRefresh = async () => {
@@ -155,18 +169,64 @@ export function MyEventsScreen() {
     ]);
   };
 
+  const handleDelete = (eventId: string) => {
+    if (!user?.id || deletingId) {
+      return;
+    }
+
+    void (async () => {
+      setDeletingId(eventId);
+      setSuccessMessage(null);
+      try {
+        await contributorEventService.deleteDraft({ eventId, userId: user.id });
+        await loadEvents();
+        setSuccessMessage(t('profile.myEvents.delete.success'));
+      } catch (cause) {
+        setError(getErrorMessage(cause) || t('profile.myEvents.error'));
+      } finally {
+        setDeletingId(null);
+      }
+    })();
+  };
+
+  const handleResubmit = (eventId: string) => {
+    if (!user?.id || resubmittingId) {
+      return;
+    }
+
+    void (async () => {
+      setResubmittingId(eventId);
+      setSuccessMessage(null);
+      try {
+        await contributorEventService.resubmitForReview({ eventId, userId: user.id });
+        await loadEvents();
+        setSuccessMessage(t('profile.myEvents.resubmit.success'));
+      } catch (cause) {
+        setError(getErrorMessage(cause) || t('profile.myEvents.error'));
+      } finally {
+        setResubmittingId(null);
+      }
+    })();
+  };
+
   const emptyTitle = useMemo(() => {
     if (filter === 'draft') {
       return t('profile.myEvents.empty.noDraftsTitle');
     }
-    if (filter === 'review') {
+    if (filter === 'submitted') {
+      return t('profile.myEvents.empty.noSubmittedTitle');
+    }
+    if (filter === 'in_review') {
       return t('profile.myEvents.empty.noReviewTitle');
+    }
+    if (filter === 'needs_changes') {
+      return t('profile.myEvents.empty.noNeedsChangesTitle');
     }
     if (filter === 'published') {
       return t('profile.myEvents.empty.noPublishedTitle');
     }
-    if (filter === 'rejected') {
-      return t('profile.myEvents.empty.noRejectedTitle');
+    if (filter === 'archived') {
+      return t('profile.myEvents.empty.noArchivedTitle');
     }
     return t('profile.myEvents.empty.title');
   }, [filter, t]);
@@ -175,14 +235,20 @@ export function MyEventsScreen() {
     if (filter === 'draft') {
       return t('profile.myEvents.empty.noDraftsDescription');
     }
-    if (filter === 'review') {
+    if (filter === 'submitted') {
+      return t('profile.myEvents.empty.noSubmittedDescription');
+    }
+    if (filter === 'in_review') {
       return t('profile.myEvents.empty.noReviewDescription');
+    }
+    if (filter === 'needs_changes') {
+      return t('profile.myEvents.empty.noNeedsChangesDescription');
     }
     if (filter === 'published') {
       return t('profile.myEvents.empty.noPublishedDescription');
     }
-    if (filter === 'rejected') {
-      return t('profile.myEvents.empty.noRejectedDescription');
+    if (filter === 'archived') {
+      return t('profile.myEvents.empty.noArchivedDescription');
     }
     return t('profile.myEvents.empty.description');
   }, [filter, t]);
@@ -222,11 +288,7 @@ export function MyEventsScreen() {
             {MY_EVENTS_FILTER_OPTIONS.map((option) => (
               <FilterChip
                 key={option}
-                label={
-                  option === 'all'
-                    ? t('profile.myEvents.filters.all')
-                    : t(`profile.myEvents.filters.${option}`)
-                }
+                label={t(`profile.myEvents.filters.${option}`)}
                 selected={filter === option}
                 onPress={() => setFilter(option)}
               />
@@ -273,8 +335,13 @@ export function MyEventsScreen() {
               <MyEventCard
                 event={item}
                 venues={referenceData.venues}
+                submission={submissionsByEventId[item.id]}
                 onWithdraw={handleWithdraw}
+                onDelete={handleDelete}
+                onResubmit={handleResubmit}
                 withdrawing={withdrawingId === item.id}
+                deleting={deletingId === item.id}
+                resubmitting={resubmittingId === item.id}
               />
             )}
           />

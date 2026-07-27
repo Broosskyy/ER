@@ -1,4 +1,4 @@
-import { isFeaturedEventId } from '@/features/events/data/home-config';
+import { FEATURED_EVENT_IDS, isFeaturedEventId } from '@/features/events/data/home-config';
 import type { Event } from '@/features/events/types/event';
 import {
   getMoreUpcomingEvents,
@@ -40,40 +40,43 @@ function matchesGenreCollection(event: Event, genreId: SearchGenreChipId): boole
 export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = {
   highlights: {
     type: 'highlights',
-    title: 'Highlights',
-    subtitle: 'Featured events in Köln',
-    emptyTitle: 'No highlights',
-    emptyDescription: 'There are currently no featured events available.',
-    homePreviewLimit: 6,
+    title: 'Events in deiner Nähe',
+    subtitle: 'Ausgewählte Events in Köln',
+    emptyTitle: 'Keine Highlights',
+    emptyDescription: 'Derzeit sind keine ausgewählten Events verfügbar.',
+    homePreviewLimit: 3,
     showOnHome: true,
-    selectEvents: (events) => events.filter((event) => isFeaturedEventId(event.id)),
+    selectEvents: (events) =>
+      FEATURED_EVENT_IDS.map((id) => events.find((event) => event.id === id)).filter(
+        (event): event is Event => Boolean(event),
+      ),
   },
   tonight: {
     type: 'tonight',
-    title: 'Tonight',
-    subtitle: 'Events happening tonight in Köln',
-    emptyTitle: 'No events tonight',
-    emptyDescription: 'No events are currently available for tonight.',
-    homePreviewLimit: 3,
+    title: 'Heute Abend',
+    subtitle: 'Events heute Abend in Köln',
+    emptyTitle: 'Keine Events heute Abend',
+    emptyDescription: 'Derzeit sind keine Events für heute Abend verfügbar.',
+    homePreviewLimit: 6,
     showOnHome: true,
     selectEvents: (events) => getTonightEvents(events),
   },
   weekend: {
     type: 'weekend',
-    title: 'This Weekend',
-    subtitle: 'Events this weekend in Köln',
-    emptyTitle: 'No weekend events',
-    emptyDescription: 'There are currently no published events for this weekend.',
+    title: 'Dieses Wochenende',
+    subtitle: 'Events dieses Wochenende in Köln',
+    emptyTitle: 'Keine Events am Wochenende',
+    emptyDescription: 'Derzeit sind keine Events für dieses Wochenende verfügbar.',
     homePreviewLimit: 3,
     showOnHome: true,
     selectEvents: (events) => getWeekendEvents(events),
   },
   upcoming: {
     type: 'upcoming',
-    title: 'Upcoming',
-    subtitle: 'Upcoming events in Köln',
-    emptyTitle: 'No upcoming events',
-    emptyDescription: 'There are currently no upcoming published events.',
+    title: 'Demnächst',
+    subtitle: 'Kommende Events in Köln',
+    emptyTitle: 'Keine kommenden Events',
+    emptyDescription: 'Derzeit sind keine kommenden Events verfügbar.',
     homePreviewLimit: 3,
     showOnHome: true,
     selectEvents: (events) => getMoreUpcomingEvents(events),

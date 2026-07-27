@@ -19,7 +19,7 @@ export function LineupList({ artists }: LineupListProps) {
       {artists.map((artist, index) => (
         <View key={`${artist}-${index}`} style={styles.item}>
           <AppText style={styles.bullet}>•</AppText>
-          <AppText style={styles.artist}>{artist}</AppText>
+          <AppText role="body" style={styles.artist}>{artist}</AppText>
         </View>
       ))}
     </View>
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   artist: {
-    ...textRoles.body,
     flex: 1,
   },
 });

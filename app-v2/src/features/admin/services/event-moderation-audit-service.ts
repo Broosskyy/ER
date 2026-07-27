@@ -1,4 +1,9 @@
-export type EventModerationAuditAction = 'event_published' | 'event_rejected';
+export type EventModerationAuditAction =
+  | 'event_published'
+  | 'event_rejected'
+  | 'event_approved'
+  | 'changes_requested'
+  | 'marked_in_review';
 
 export interface EventModerationAuditEntry {
   id: string;
@@ -7,6 +12,7 @@ export interface EventModerationAuditEntry {
   action: EventModerationAuditAction;
   summary: string;
   note?: string;
+  reasonCode?: string;
   createdAt: string;
 }
 
@@ -16,6 +22,7 @@ export interface LogEventModerationInput {
   action: EventModerationAuditAction;
   summary: string;
   note?: string;
+  reasonCode?: string;
 }
 
 function createAuditId(): string {
@@ -33,6 +40,7 @@ export class EventModerationAuditService {
       action: input.action,
       summary: input.summary,
       note: input.note,
+      reasonCode: input.reasonCode,
       createdAt: new Date().toISOString(),
     };
 
@@ -45,7 +53,33 @@ export class EventModerationAuditService {
       actorId,
       eventId,
       action: 'event_published',
-      summary: `Contributor event "${title}" published.`,
+      summary: `Event „${title}“ veröffentlicht.`,
+    });
+  }
+
+  async logApproved(actorId: string, eventId: string, title: string): Promise<void> {
+    await this.log({
+      actorId,
+      eventId,
+      action: 'event_approved',
+      summary: `Event „${title}“ genehmigt.`,
+    });
+  }
+
+  async logChangesRequested(
+    actorId: string,
+    eventId: string,
+    title: string,
+    note?: string,
+    reasonCode?: string,
+  ): Promise<void> {
+    await this.log({
+      actorId,
+      eventId,
+      action: 'changes_requested',
+      summary: `Änderungen für „${title}“ angefordert.`,
+      note,
+      reasonCode,
     });
   }
 
@@ -54,13 +88,24 @@ export class EventModerationAuditService {
     eventId: string,
     title: string,
     note?: string,
+    reasonCode?: string,
   ): Promise<void> {
     await this.log({
       actorId,
       eventId,
       action: 'event_rejected',
-      summary: `Contributor event "${title}" rejected.`,
+      summary: `Event „${title}“ abgelehnt.`,
       note,
+      reasonCode,
+    });
+  }
+
+  async logMarkedInReview(actorId: string, eventId: string, title: string): Promise<void> {
+    await this.log({
+      actorId,
+      eventId,
+      action: 'marked_in_review',
+      summary: `Event „${title}“ wird geprüft.`,
     });
   }
 

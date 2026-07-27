@@ -42,6 +42,8 @@ export const de = {
     notifications: 'Aktivitäten — Eternal Rave',
     profile: 'Profil — Eternal Rave',
     myEvents: 'Meine Events — Eternal Rave',
+    organizerProfile: 'Organizer-Profil — Eternal Rave',
+    organizerProfileEdit: 'Organizer-Profil bearbeiten — Eternal Rave',
     authCallback: 'Anmeldung wird abgeschlossen — Eternal Rave',
     forgotPassword: 'Passwort zurücksetzen — Eternal Rave',
     resetPassword: 'Neues Passwort — Eternal Rave',
@@ -53,6 +55,13 @@ export const de = {
       activityA11y: 'Aktivitäten öffnen',
       unreadActivityA11y: '{{count}} ungelesene Benachrichtigungen',
       noUnreadActivityA11y: 'Keine ungelesenen Benachrichtigungen',
+    },
+    sections: {
+      all: 'Alle →',
+      topClubs: 'Top Clubs',
+    },
+    filter: {
+      a11y: 'Events-Filter öffnen',
     },
     location: {
       choose: 'Standort auswählen',
@@ -75,6 +84,70 @@ export const de = {
       network: 'Netzwerkfehler bei der Standortermittlung. Bitte versuche es erneut.',
       error: 'Standort konnte nicht ermittelt werden. Bitte versuche es erneut.',
       a11y: 'Standort: {{location}}. Tippen zum Ändern.',
+    },
+  },
+  search: {
+    title: 'Events',
+    empty: {
+      title: 'Keine passenden Events',
+      description: 'Passe deine Suche oder Filter an.',
+      clearAll: 'Alle Filter löschen',
+      adjustFilters: 'Filter anpassen',
+    },
+    results: {
+      clearAll: 'Alle löschen',
+      singular: 'Ergebnis',
+      plural: 'Ergebnisse',
+    },
+    filters: {
+      clearAll: 'Alle zurücksetzen',
+    },
+    explore: {
+      trending: 'Trending in Köln',
+      tonight: 'Heute Abend',
+      weekend: 'Dieses Wochenende',
+      newlyAdded: 'Neu hinzugefügt',
+      nearby: 'In deiner Nähe',
+      genres: 'Nach Genres',
+      topClubs: 'Top Clubs',
+    },
+  },
+  eventDetail: {
+    sections: {
+      details: 'Details',
+      description: 'Beschreibung',
+      source: 'Quelle',
+      similar: 'Ähnliche Events',
+    },
+    maps: {
+      unavailableTitle: 'Karten nicht verfügbar',
+      unavailableMessage: 'Für diesen Veranstaltungsort konnten keine Karten geöffnet werden.',
+      open: 'In Karten öffnen',
+    },
+    tickets: {
+      unavailableTitle: 'Tickets nicht verfügbar',
+      unavailableMessage: 'Der Ticketlink konnte nicht geöffnet werden.',
+    },
+    source: {
+      unavailableTitle: 'Quelle nicht verfügbar',
+      unavailableMessage: 'Die Quelle konnte nicht geöffnet werden.',
+      open: 'Quelle ansehen: {{source}}',
+    },
+    report: {
+      title: 'Event melden',
+      prompt: 'Wähle einen Grund für deinen Hinweis.',
+      action: 'Event melden',
+      reasons: {
+        wrongDate: 'Falsches Datum',
+        notExists: 'Event existiert nicht',
+        wrongLocation: 'Falsche Location',
+        spam: 'Spam',
+        other: 'Sonstiges',
+      },
+    },
+    notFound: {
+      title: 'Event nicht gefunden',
+      description: 'Dieses Event wurde entfernt oder der Link ist ungültig.',
     },
   },
   auth: {
@@ -148,6 +221,16 @@ export const de = {
   },
   profile: {
     title: 'Profil',
+    settings: {
+      openA11y: 'Einstellungen öffnen',
+      title: 'Einstellungen',
+      appearance: 'Darstellung',
+      theme: {
+        light: '☀️ Hell',
+        dark: '🌙 Dunkel',
+        system: '📱 System verwenden',
+      },
+    },
     account: {
       title: 'Konto',
       signedInAs: 'Angemeldet als',
@@ -171,10 +254,29 @@ export const de = {
       filters: {
         all: 'Alle',
         draft: 'Entwürfe',
-        review: 'In Prüfung',
+        submitted: 'Eingereicht',
+        in_review: 'In Prüfung',
+        needs_changes: 'Änderungen erforderlich',
         published: 'Veröffentlicht',
-        rejected: 'Abgelehnt',
         archived: 'Archiviert',
+      },
+      actions: {
+        viewStatus: 'Einreichungsstatus',
+        duplicateSoon: 'Duplizieren (bald)',
+        archiveSoon: 'Archivieren (bald)',
+      },
+      delete: {
+        action: 'Entwurf löschen',
+        deleting: 'Wird gelöscht…',
+        confirmTitle: 'Entwurf löschen?',
+        confirmDescription: 'Dieser Entwurf wird dauerhaft von diesem Gerät entfernt.',
+        confirmAction: 'Löschen',
+        success: 'Entwurf gelöscht.',
+      },
+      resubmit: {
+        action: 'Erneut einreichen',
+        submitting: 'Wird eingereicht…',
+        success: 'Event erneut zur Prüfung eingereicht.',
       },
       empty: {
         title: 'Noch keine Events',
@@ -182,11 +284,15 @@ export const de = {
         noDraftsTitle: 'Keine Entwürfe',
         noDraftsDescription: 'Du hast aktuell keine gespeicherten Entwürfe.',
         noReviewTitle: 'Keine Events in Prüfung',
-        noReviewDescription: 'Sobald du ein Event einreichst, erscheint es hier.',
+        noReviewDescription: 'Sobald ein Event geprüft wird, erscheint es hier.',
+        noSubmittedTitle: 'Keine eingereichten Events',
+        noSubmittedDescription: 'Eingereichte Events erscheinen hier nach der Einreichung.',
+        noNeedsChangesTitle: 'Keine Events mit Änderungswunsch',
+        noNeedsChangesDescription: 'Events mit erforderlichen Änderungen erscheinen hier.',
         noPublishedTitle: 'Keine veröffentlichten Events',
         noPublishedDescription: 'Veröffentlichte Events erscheinen hier, sobald sie freigegeben wurden.',
-        noRejectedTitle: 'Keine abgelehnten Events',
-        noRejectedDescription: 'Abgelehnte Events erscheinen hier nach der Moderation.',
+        noArchivedTitle: 'Keine archivierten Events',
+        noArchivedDescription: 'Archivierte Events erscheinen hier.',
       },
     },
   },
@@ -222,6 +328,104 @@ export const de = {
       instagram: 'Instagram',
       facebook: 'Facebook',
       ticket: 'Tickets',
+    },
+  },
+  organizerProfile: {
+    sectionTitle: 'Organizer-Profil',
+    sectionDescription: 'Verwalte Logo, Beschreibung, Kontakt und Social Links für dein Kollektiv.',
+    title: 'Organizer-Profil',
+    loading: 'Organizer-Profil wird geladen…',
+    unnamed: 'Unbenannt',
+    previewTitle: 'Profilvorschau',
+    bannerLabel: 'Organizer-Banner',
+    noBanner: 'Kein Banner hinterlegt',
+    actions: {
+      open: 'Organizer-Profil öffnen',
+      edit: 'Profil bearbeiten',
+      preview: 'Vorschau',
+      save: 'Speichern',
+    },
+    sections: {
+      basics: { title: 'Basisinformationen' },
+      media: { title: 'Branding' },
+      contact: {
+        title: 'Kontakt',
+        emptyEmail: 'Keine E-Mail hinterlegt',
+        emptyPhone: 'Keine Telefonnummer hinterlegt',
+      },
+      social: {
+        title: 'Social Links',
+        empty: 'Noch keine Social Links hinterlegt.',
+      },
+    },
+    fields: {
+      name: 'Name',
+      description: 'Beschreibung',
+      location: 'Standort',
+      website: 'Website',
+      logoUri: 'Logo-URL',
+      bannerUri: 'Banner-URL',
+      contactEmail: 'Kontakt-E-Mail',
+      contactPhone: 'Kontakt-Telefon',
+    },
+    edit: {
+      nameRequiredTitle: 'Name erforderlich',
+      nameRequiredMessage: 'Bitte gib einen Namen für dein Organizer-Profil ein.',
+      unsavedTitle: 'Ungespeicherte Änderungen',
+      unsavedMessage: 'Möchtest du deine Änderungen verwerfen?',
+      keepEditing: 'Weiter bearbeiten',
+      discard: 'Verwerfen',
+    },
+  },
+  submissionStatus: {
+    untitledEvent: 'Event',
+    meta: {
+      status: 'Status',
+      submittedAt: 'Eingereicht am',
+      updatedAt: 'Zuletzt aktualisiert',
+    },
+    history: {
+      title: 'Verlauf',
+    },
+    actions: {
+      myEvents: 'Zu Meine Events',
+      createEvent: 'Neues Event eintragen',
+      backToProfile: 'Zurück zum Profil',
+    },
+    banner: {
+      defaultMessage: 'Der Status deiner Einreichung wird hier angezeigt.',
+      draft: {
+        title: 'Entwurf',
+        message: 'Dieses Event ist noch ein Entwurf und wurde nicht eingereicht.',
+      },
+      pending: {
+        title: 'Eingereicht',
+        message: 'Dein Event wurde eingereicht und wartet auf die Prüfung.',
+      },
+      in_review: {
+        title: 'In Prüfung',
+        message: 'Dein Event wird derzeit von unserem Team geprüft.',
+      },
+      needs_changes: {
+        title: 'Änderungen erforderlich',
+        message: 'Bitte bearbeite dein Event und reiche es erneut ein.',
+      },
+      resubmitted: {
+        title: 'Erneut eingereicht',
+        message: 'Dein überarbeitetes Event wartet erneut auf die Prüfung.',
+      },
+      approved: {
+        title: 'Genehmigt',
+        message: 'Dein Event wurde genehmigt und wird veröffentlicht.',
+      },
+      published: {
+        title: 'Veröffentlicht',
+        message: 'Dein Event ist jetzt öffentlich sichtbar.',
+      },
+      archived: {
+        title: 'Archiviert',
+        message: 'Dieses Event wurde archiviert.',
+      },
     },
   },
   create: {

@@ -167,6 +167,8 @@ export interface SourceRecord {
   defaultTimezone?: string;
   reviewRequired?: boolean;
   website?: string;
+  countryCode?: string;
+  languageCode?: string;
   lastImportAt?: string;
   lastJobStatus?: import('@/features/import/models/statuses').ImportJobStatus;
   nextScheduledAt?: string;

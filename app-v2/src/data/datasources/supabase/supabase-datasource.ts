@@ -219,6 +219,16 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
           throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
         }
       },
+      async deleteContributorDraft(eventId, userId) {
+        const { error } = await eventsTable()
+          .delete()
+          .eq('id', eventId)
+          .eq('created_by', userId)
+          .eq('status', 'draft');
+        if (error) {
+          throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+        }
+      },
     },
     genres: createSupabaseGenreDatasource(),
     cities: createSupabaseCityDatasource(),

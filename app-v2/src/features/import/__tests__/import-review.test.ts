@@ -260,7 +260,7 @@ describe('Import review service', () => {
     );
     expect(approved.status).toBe('imported');
     expect(approved.resultingEventId).toBe(event.id);
-    expect(event.status).toBe('draft');
+    expect(event.status).toBe('published');
     expect(stack.savedEvents).toHaveLength(1);
   });
 

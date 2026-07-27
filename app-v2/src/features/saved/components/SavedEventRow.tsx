@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
+import { EventDiscoveryListItem } from '@/features/events';
 import type { EventDisplayModel } from '@/features/events';
-import { EventCard } from '@/features/home/components';
 
 export interface SavedEventRowProps {
   event: EventDisplayModel;
@@ -15,10 +15,10 @@ export const SavedEventRow = memo(function SavedEventRow({
   onToggleFavorite,
 }: SavedEventRowProps) {
   return (
-    <EventCard
+    <EventDiscoveryListItem
       event={event}
-      isFavorite={isFavorite}
-      onToggleFavorite={() => onToggleFavorite(event.id)}
+      saved={isFavorite}
+      onFavoritePress={() => onToggleFavorite(event.id)}
     />
   );
 });

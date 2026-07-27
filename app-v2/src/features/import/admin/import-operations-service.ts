@@ -25,6 +25,7 @@ import {
 } from '@/features/import/admin/admin-roles';
 import { mapSourceRecordToImportSource } from '@/data/mappers/source-mapper';
 import type { SourceService } from '@/features/sources/services/source-service';
+import { ImportAggregationService } from '@/features/aggregation/services/import-aggregation-service';
 import { ImportAuditService } from './import-audit-service';
 
 const ADAPTER_KEYS = ['json_ld', 'rss', 'atom', 'ical', 'csv', 'api_json'] as const;
@@ -93,6 +94,7 @@ export class ImportOperationsService {
     private readonly orchestrator: ImportOrchestrator,
     private readonly adapterRegistry: ImportAdapterRegistry,
     private readonly auditService: ImportAuditService,
+    private readonly aggregationService?: ImportAggregationService,
   ) {}
 
   private role(session: AuthSession | null): AdminRole | null {
@@ -275,7 +277,20 @@ export class ImportOperationsService {
       );
     }
 
-    const job = await this.orchestrator.run(sourceId, 'manual', this.actorId(session));
+    const role = this.role(session);
+    const sourceRecord = await this.sourceService.getByIdForAdmin(role, sourceId);
+    if (!sourceRecord) {
+      throw new ImportError('Source not found.', 'IMPORT_SOURCE_NOT_FOUND');
+    }
+
+    const job =
+      this.aggregationService && this.shouldUseAggregation(sourceRecord)
+        ? await this.aggregationService.runFromSourceRecord(
+            sourceRecord,
+            'manual',
+            this.actorId(session),
+          )
+        : await this.orchestrator.run(sourceId, 'manual', this.actorId(session));
 
     try {
       await this.sourceService.recordImportRun(this.role(session), sourceId, {
@@ -302,6 +317,18 @@ export class ImportOperationsService {
     } catch {
       return false;
     }
+  }
+
+  private shouldUseAggregation(
+    sourceRecord: Awaited<ReturnType<SourceService['getByIdForAdmin']>>,
+  ): boolean {
+    if (!sourceRecord) {
+      return false;
+    }
+    if (sourceRecord.sourceConfig?.reference?.connectorKey) {
+      return true;
+    }
+    return ['manual', 'website', 'ical', 'api', 'rss'].includes(sourceRecord.sourceType);
   }
 }
 

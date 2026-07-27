@@ -16,3 +16,6 @@ web-build/
 # IDE
 .vscode/
 !.vscode/extensions.json
+
+# Release binaries (too large for GitHub)
+releases/*.apk

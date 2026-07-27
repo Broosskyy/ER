@@ -14,7 +14,7 @@ import {
   resolveEndDateTime,
 } from '@/features/create/utils/event-draft-date-time';
 
-export const CONTRIBUTOR_EDITABLE_STATUSES = ['draft'] as const satisfies readonly (typeof ADMIN_EVENT_STATUSES)[number][];
+export const CONTRIBUTOR_EDITABLE_STATUSES = ['draft', 'rejected'] as const satisfies readonly (typeof ADMIN_EVENT_STATUSES)[number][];
 
 export type ContributorEditableStatus = (typeof CONTRIBUTOR_EDITABLE_STATUSES)[number];
 

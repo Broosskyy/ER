@@ -1,3 +1,4 @@
+import { AppError } from '@/core/errors/app-error';
 import {
   createLocalEventLineupDatasource,
 } from '@/data/datasources/local/local-event-lineup-datasource';
@@ -429,6 +430,22 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
         event.id === id ? { ...event, status: 'archived', updatedAt: new Date().toISOString() } : event,
       );
       store.eventArtists = store.eventArtists.filter((row) => row.eventId !== id);
+      await persistContributorEventsIfNeeded(store);
+    },
+    async deleteContributorDraft(eventId, userId) {
+      await ensureLocalContributorEventsHydrated(store);
+      const event = store.adminEvents.find(
+        (entry) => entry.id === eventId && entry.createdBy === userId,
+      );
+      if (!event) {
+        throw new AppError('Event not found.', { code: 'NOT_FOUND' });
+      }
+      if (event.status !== 'draft') {
+        throw new AppError('Only draft events can be deleted.', { code: 'VALIDATION' });
+      }
+      store.events = store.events.filter((entry) => entry.id !== eventId);
+      store.adminEvents = store.adminEvents.filter((entry) => entry.id !== eventId);
+      store.eventArtists = store.eventArtists.filter((row) => row.eventId !== eventId);
       await persistContributorEventsIfNeeded(store);
     },
   };

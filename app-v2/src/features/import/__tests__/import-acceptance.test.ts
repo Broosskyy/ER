@@ -167,7 +167,7 @@ describe('Sprint 12 Acceptance — Full E2E pipeline', () => {
     expect(record).toBeDefined();
   });
 
-  it('runs source test → import → review → edit → approve → draft event', async () => {
+  it('runs source test → import → review → edit → approve → published event', async () => {
     const edited = await stack.review.editRecord(owner, record.id, { title: 'Edited Title' }, record.updatedAt);
     expect(edited.reviewerEdits?.title).toBe('Edited Title');
     expect(edited.rawPayload).toEqual(record.rawPayload);
@@ -175,8 +175,7 @@ describe('Sprint 12 Acceptance — Full E2E pipeline', () => {
     const { record: approved, event } = await stack.review.approveRecord(owner, record.id, edited.updatedAt);
     expect(approved.status).toBe('imported');
     expect(approved.resultingEventId).toBe(event.id);
-    expect(event.status).toBe('draft');
-    expect(event.status).not.toBe('published');
+    expect(event.status).toBe('published');
 
     const audits = await stack.bundle.importAuditLogs.listByEntity('import_record', record.id);
     expect(audits.some((a) => a.action === 'record_approved')).toBe(true);
@@ -235,7 +234,7 @@ describe('Sprint 12 Acceptance — Duplicate workflow', () => {
       duplicateScore: 50,
     });
     const { event } = await stack.review.approveRecord(owner, record.id, record.updatedAt);
-    expect(event.status).toBe('draft');
+    expect(event.status).toBe('published');
   });
 
   it('dismiss duplicate allows review to continue', async () => {

@@ -59,6 +59,8 @@ export interface ImportSourceConfig {
   api?: ApiJsonSourceConfig;
   ical?: IcalSourceConfig;
   jsonLd?: JsonLdSourceConfig;
+  /** Bundled reference payloads for manual / fixture-driven imports. */
+  reference?: import('@/features/aggregation/connectors/types').ReferenceSourceConfig;
   /** Connector assignment metadata (ER-013) — legacy single-connector assignment. */
   connector?: import('@/features/connectors/domain/connector-config').ConnectorSourceAssignment;
   /**
@@ -66,4 +68,11 @@ export interface ImportSourceConfig {
    * One Source → many Endpoints. Persisted in source JSON until dedicated table exists.
    */
   endpoints?: import('@/features/endpoints/domain/endpoint-model').AcquisitionEndpoint[];
+  /** Regional defaults for normalization and filtering. */
+  regional?: {
+    countryCode?: string;
+    languageCode?: string;
+  };
+  /** Auth metadata only — no secrets stored in source config. */
+  auth?: import('@/features/aggregation/domain/source-auth-config').SourceAuthConfig;
 }

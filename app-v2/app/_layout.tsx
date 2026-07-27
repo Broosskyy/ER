@@ -2,6 +2,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import 'react-native-reanimated';
 
+import { ToastProvider } from '@/components/feedback/ToastProvider';
 import { RepositoryProvider } from '@/data/repositories/RepositoryProvider';
 import { ThemeProvider, ThemeSystemUi, useTheme } from '@/design/theme';
 import { AuthProvider } from '@/features/auth';
@@ -9,6 +10,7 @@ import { I18nProvider } from '@/features/i18n';
 import { FavoritesProvider } from '@/features/favorites';
 import { UserLocationProvider } from '@/features/location/UserLocationProvider';
 import { NotificationsProvider } from '@/features/notifications';
+import { UserProfileProvider } from '@/features/profile/UserProfileProvider';
 import { PwaProvider } from '@/platform/pwa/PwaProvider';
 import { AnalyticsProvider } from '@/platform/analytics/AnalyticsProvider';
 
@@ -37,6 +39,16 @@ function RootStack() {
       <Stack.Screen name="activity" />
       <Stack.Screen name="event/[id]" />
       <Stack.Screen name="profile/events" />
+      <Stack.Screen name="profile/organizer" />
+      <Stack.Screen name="profile/edit" />
+      <Stack.Screen name="settings/index" />
+      <Stack.Screen name="settings/account" />
+      <Stack.Screen name="settings/notifications" />
+      <Stack.Screen name="settings/appearance" />
+      <Stack.Screen name="settings/location" />
+      <Stack.Screen name="settings/privacy" />
+      <Stack.Screen name="settings/help" />
+      <Stack.Screen name="settings/about" />
       <Stack.Screen name="collection/[type]" />
       <Stack.Screen name="design-preview" />
       <Stack.Screen name="admin" />
@@ -52,15 +64,19 @@ export default function RootLayout() {
           <ThemeSystemUi />
           <RepositoryProvider>
             <FavoritesProvider>
-              <UserLocationProvider>
-                <NotificationsProvider>
-                  <PwaProvider>
-                    <AnalyticsProvider>
-                      <RootStack />
-                    </AnalyticsProvider>
-                  </PwaProvider>
-                </NotificationsProvider>
-              </UserLocationProvider>
+              <UserProfileProvider>
+                <UserLocationProvider>
+                  <NotificationsProvider>
+                    <PwaProvider>
+                      <AnalyticsProvider>
+                        <ToastProvider>
+                          <RootStack />
+                        </ToastProvider>
+                      </AnalyticsProvider>
+                    </PwaProvider>
+                  </NotificationsProvider>
+                </UserLocationProvider>
+              </UserProfileProvider>
             </FavoritesProvider>
           </RepositoryProvider>
         </ThemeProvider>
