@@ -31,6 +31,19 @@ interface EventRow {
   flyer_url: string | null;
   venue_name: string | null;
   venue_city: string | null;
+  timezone?: string | null;
+  doors_open_at?: string | null;
+  sales_start_at?: string | null;
+  sales_end_at?: string | null;
+  cancelled_at?: string | null;
+  postponed_at?: string | null;
+  published_at?: string | null;
+  first_published_at?: string | null;
+  last_seen_at?: string | null;
+  last_imported_at?: string | null;
+  canonical_event_id?: string | null;
+  duplicate_group_id?: string | null;
+  festival_edition_id?: string | null;
   status: AdminEventStatus;
   created_by: string | null;
   created_at: string;
@@ -52,6 +65,8 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
   latitude?: number;
   longitude?: number;
   address?: string;
+  venueType?: import('@/features/events/domain/festival-foundation').VenueType;
+  festivalId?: string;
 }): Event {
   return {
     id: row.id,
@@ -61,7 +76,21 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
     imageUrl: row.image_url ?? undefined,
     startDateTime: row.start_date,
     endDateTime: row.end_date ?? undefined,
-    timezone: 'Europe/Berlin',
+    timezone: row.timezone?.trim() || 'Europe/Berlin',
+    venueId: row.venue_id ?? undefined,
+    organizerId: row.organizer_id ?? undefined,
+    artistIds: row.artist_id ? [row.artist_id] : undefined,
+    genreIds: row.genre_id ? [row.genre_id] : undefined,
+    doorsOpenAt: row.doors_open_at ?? undefined,
+    salesStartAt: row.sales_start_at ?? undefined,
+    salesEndAt: row.sales_end_at ?? undefined,
+    cancelledAt: row.cancelled_at ?? undefined,
+    postponedAt: row.postponed_at ?? undefined,
+    publishedAt: row.published_at ?? undefined,
+    canonicalEventId: row.canonical_event_id ?? undefined,
+    festivalEditionId: row.festival_edition_id ?? undefined,
+    festivalId: relations?.festivalId,
+    venueType: relations?.venueType,
     venue: resolveDomainVenueLabel({
       joinedVenueName: relations?.venueName,
       venueName: row.venue_name,
@@ -109,6 +138,19 @@ export function mapEventRowToAdminRecord(row: EventRow): AdminEventRecord {
     venueCity: row.venue_city ?? undefined,
     organizerId: row.organizer_id ?? undefined,
     organizerName: row.organizer ?? undefined,
+    festivalEditionId: row.festival_edition_id ?? undefined,
+    timezone: row.timezone ?? undefined,
+    doorsOpenAt: row.doors_open_at ?? undefined,
+    salesStartAt: row.sales_start_at ?? undefined,
+    salesEndAt: row.sales_end_at ?? undefined,
+    cancelledAt: row.cancelled_at ?? undefined,
+    postponedAt: row.postponed_at ?? undefined,
+    publishedAt: row.published_at ?? undefined,
+    firstPublishedAt: row.first_published_at ?? undefined,
+    lastSeenAt: row.last_seen_at ?? undefined,
+    lastImportedAt: row.last_imported_at ?? undefined,
+    canonicalEventId: row.canonical_event_id ?? undefined,
+    duplicateGroupId: row.duplicate_group_id ?? undefined,
     status: row.status,
     createdBy: row.created_by ?? undefined,
     createdAt: row.created_at,
@@ -140,6 +182,19 @@ export function mapAdminRecordToEventRow(record: AdminEventRecord): EventRow {
     venue_city: record.venueCity ?? null,
     organizer_id: record.organizerId ?? null,
     organizer: record.organizerName ?? null,
+    timezone: record.timezone ?? null,
+    doors_open_at: record.doorsOpenAt ?? null,
+    sales_start_at: record.salesStartAt ?? null,
+    sales_end_at: record.salesEndAt ?? null,
+    cancelled_at: record.cancelledAt ?? null,
+    postponed_at: record.postponedAt ?? null,
+    published_at: record.publishedAt ?? null,
+    first_published_at: record.firstPublishedAt ?? null,
+    last_seen_at: record.lastSeenAt ?? null,
+    last_imported_at: record.lastImportedAt ?? null,
+    canonical_event_id: record.canonicalEventId ?? null,
+    duplicate_group_id: record.duplicateGroupId ?? null,
+    festival_edition_id: record.festivalEditionId ?? null,
     status: record.status,
     created_by: record.createdBy ?? null,
     created_at: record.createdAt,

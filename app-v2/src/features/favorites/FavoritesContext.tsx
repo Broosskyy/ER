@@ -29,17 +29,26 @@ interface FavoritesContextValue extends FavoritesStore {
 
 const FavoritesContext = createContext<FavoritesContextValue | null>(null);
 
+function toCanonicalEventId(eventId: EventId): EventId {
+  return eventRepository.resolveCanonicalId(eventId);
+}
+
 function sanitizeSavedRecords(records: readonly SavedEventRecord[]): SavedEventRecord[] {
   const seen = new Set<EventId>();
 
-  return records.filter((record) => {
-    if (!record.eventId || seen.has(record.eventId)) {
-      return false;
-    }
+  return records
+    .map((record) => ({
+      ...record,
+      eventId: toCanonicalEventId(record.eventId),
+    }))
+    .filter((record) => {
+      if (!record.eventId || seen.has(record.eventId)) {
+        return false;
+      }
 
-    seen.add(record.eventId);
-    return true;
-  });
+      seen.add(record.eventId);
+      return true;
+    });
 }
 
 function resolveFavoriteEvents(records: readonly SavedEventRecord[]): EventDisplayModel[] {
@@ -139,45 +148,48 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
   const favoriteIds = useMemo(() => new Set(savedRecords.map((record) => record.eventId)), [savedRecords]);
 
   const isFavorite = useCallback(
-    (eventId: EventId) => isHydrated && favoriteIds.has(eventId),
+    (eventId: EventId) => isHydrated && favoriteIds.has(toCanonicalEventId(eventId)),
     [favoriteIds, isHydrated],
   );
 
   const getSavedAt = useCallback(
-    (eventId: EventId) => savedRecords.find((record) => record.eventId === eventId)?.savedAt,
+    (eventId: EventId) => savedRecords.find((record) => record.eventId === toCanonicalEventId(eventId))?.savedAt,
     [savedRecords],
   );
 
   const addFavorite = useCallback((eventId: EventId, source: SavedEventSource = 'unknown') => {
-    if (!eventRepository.hasPublishedEvent(eventId)) {
+    const canonicalId = toCanonicalEventId(eventId);
+    if (!eventRepository.hasPublishedEvent(canonicalId)) {
       return;
     }
 
     setSavedRecords((current) => {
-      if (current.some((record) => record.eventId === eventId)) {
+      if (current.some((record) => record.eventId === canonicalId)) {
         return current;
       }
 
-      return [...current, createSavedEventRecord(eventId, source)];
+      return [...current, createSavedEventRecord(canonicalId, source)];
     });
   }, []);
 
   const removeFavorite = useCallback((eventId: EventId) => {
-    setSavedRecords((current) => current.filter((record) => record.eventId !== eventId));
+    const canonicalId = toCanonicalEventId(eventId);
+    setSavedRecords((current) => current.filter((record) => record.eventId !== canonicalId));
   }, []);
 
   const toggleFavorite = useCallback((eventId: EventId, source: SavedEventSource = 'unknown') => {
-    if (!eventRepository.hasPublishedEvent(eventId)) {
+    const canonicalId = toCanonicalEventId(eventId);
+    if (!eventRepository.hasPublishedEvent(canonicalId)) {
       return;
     }
 
     setSavedRecords((current) => {
-      const exists = current.some((record) => record.eventId === eventId);
+      const exists = current.some((record) => record.eventId === canonicalId);
       if (exists) {
-        return current.filter((record) => record.eventId !== eventId);
+        return current.filter((record) => record.eventId !== canonicalId);
       }
 
-      return [...current, createSavedEventRecord(eventId, source)];
+      return [...current, createSavedEventRecord(canonicalId, source)];
     });
   }, []);
 

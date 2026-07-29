@@ -39,6 +39,24 @@ export interface EventInfoViewModel {
 export interface LineupSectionViewModel {
   artists: LineupItemViewModel[];
   tba?: boolean;
+  placeholderMessage?: string;
+  accessibilityLabel: string;
+}
+
+export interface TimetableSlotViewModel {
+  id: string;
+  stageLabel: string;
+  artistName: string;
+  startLabel: string;
+  endLabel?: string;
+  artistId?: string;
+  profileNavigable?: boolean;
+  accessibilityLabel: string;
+}
+
+export interface TimetableSectionViewModel {
+  slots: TimetableSlotViewModel[];
+  placeholderMessage?: string;
   accessibilityLabel: string;
 }
 
@@ -50,12 +68,14 @@ export interface VenueDetailViewModel {
   image?: DiscoveryImageSource;
   verified?: boolean;
   descriptionLabel?: string;
+  profileNavigable?: boolean;
   accessibilityLabel: string;
 }
 
 export interface OrganizerDetailViewModel {
   organizer: OrganizerProfileViewModel;
   moreEventsLabel?: string;
+  profileNavigable?: boolean;
 }
 
 export type EventTicketMode = 'native' | 'external' | 'free_rsvp' | 'sold_out' | 'unavailable';

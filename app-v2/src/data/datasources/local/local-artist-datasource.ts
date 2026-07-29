@@ -73,5 +73,11 @@ export function createLocalArtistDatasource(
       setItems(items);
       return item;
     },
+    async countEventsForArtist() {
+      return 0;
+    },
+    async listEventIdsForArtist() {
+      return [];
+    },
   };
 }

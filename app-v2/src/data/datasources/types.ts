@@ -98,6 +98,8 @@ export interface ArtistDatasource {
   getPublishedBySlug(slug: string): Promise<ArtistRecord | null>;
   list(params: ArtistListParams): Promise<PaginatedResult<ArtistRecord>>;
   save(artist: ArtistRecord): Promise<ArtistRecord>;
+  countEventsForArtist(artistId: string): Promise<number>;
+  listEventIdsForArtist(artistId: string): Promise<string[]>;
 }
 
 export interface CollectionDatasource {

@@ -7,6 +7,7 @@ import { SavedFilterBar } from '@/components/saved/SavedFilterBar';
 import { Skeleton } from '@/components/feedback/Skeleton';
 import { useToast } from '@/components/feedback/ToastProvider';
 import type { SavedFilterViewModel } from '@/components/saved/view-models';
+import { spacing, spacingRoles } from '@/design/spacing';
 import { useFavoriteToggle } from '@/features/favorites';
 import {
   SavedEmptyState,
@@ -135,19 +136,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   filterBar: {
-    paddingHorizontal: 16,
+    marginBottom: spacing.xs,
   },
   stateWrap: {
     flex: 1,
-    gap: 12,
-    paddingHorizontal: 16,
+    gap: spacing.md,
+    paddingHorizontal: spacingRoles.screenHorizontal,
   },
   list: {
     flex: 1,
   },
   listContent: {
     flexGrow: 1,
-    gap: 12,
-    paddingTop: 8,
+    gap: spacing.md,
+    paddingTop: spacing.md,
+    paddingHorizontal: spacingRoles.screenHorizontal,
   },
 });

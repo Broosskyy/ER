@@ -1,4 +1,5 @@
 import type { EventStatus } from './event-status';
+import type { VenueType } from '@/features/events/domain/festival-foundation';
 
 export interface Event {
   id: string;
@@ -20,6 +21,25 @@ export interface Event {
   artists: string[];
   lineup?: string[];
   organizer?: string;
+  venueId?: string;
+  organizerId?: string;
+  artistIds?: string[];
+  genreIds?: string[];
+  doorsOpenAt?: string;
+  salesStartAt?: string;
+  salesEndAt?: string;
+  cancelledAt?: string;
+  postponedAt?: string;
+  publishedAt?: string;
+  ticketStatus?: 'not_configured' | 'external_link' | 'on_sale' | 'sold_out' | 'sales_ended';
+  canonicalEventId?: string;
+  festivalEditionId?: string;
+  festivalId?: string;
+  venueType?: VenueType;
+  lifecycleHints?: Array<'venue_changed' | 'time_changed' | 'date_changed'>;
+  previousVenue?: string;
+  previousStartDateTime?: string;
+  venueChangedAt?: string;
   ageRestriction?: string;
   priceText?: string;
   ticketUrl?: string;

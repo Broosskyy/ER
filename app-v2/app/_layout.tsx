@@ -38,6 +38,9 @@ function RootStack() {
       <Stack.Screen name="notifications" />
       <Stack.Screen name="activity" />
       <Stack.Screen name="event/[id]" />
+      <Stack.Screen name="organizer/[id]" />
+      <Stack.Screen name="venue/[id]" />
+      <Stack.Screen name="artist/[id]" />
       <Stack.Screen name="profile/events" />
       <Stack.Screen name="profile/organizer" />
       <Stack.Screen name="profile/edit" />

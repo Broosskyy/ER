@@ -1,11 +1,13 @@
 import type {
   EventHeroViewModel,
   EventInfoViewModel,
+  EventNoticeType,
   EventNoticeViewModel,
   EventTicketMode,
   EventTicketSectionViewModel,
   LineupSectionViewModel,
   OrganizerDetailViewModel,
+  TimetableSectionViewModel,
   VenueDetailViewModel,
 } from '@/components/event-detail/view-models';
 import { resolveEventNoticeTitle } from '@/components/event-detail/event-detail-styles';
@@ -18,10 +20,15 @@ import {
   resolveEventPresentation,
 } from '@/features/events/status/event-status-resolver';
 import { getSourceDisplayLabel } from '@/features/events/data/demo-images';
-
-function slugifyVenueId(name: string): string {
-  return name.toLowerCase().replace(/\s+/g, '-');
-}
+import type { ArtistRecord, OrganizerRecord, VenueRecord } from '@/data/types/records';
+import type { Event } from '@/features/events/types/event';
+import type { EventDetailEntities } from '@/features/event-detail/services/event-detail-entity-loader';
+import {
+  toLineupItemFromArtist,
+  toLineupItemFromName,
+  toOrganizerDetailFromRecord,
+  toVenueDetailFromRecord,
+} from '@/features/profiles/utils/profile-view-models';
 
 export function toEventHeroViewModel(event: EventDisplayModel): EventHeroViewModel {
   const presentation = resolveEventPresentation(event);
@@ -82,57 +89,148 @@ export function toEventInfoViewModel(event: EventDisplayModel): EventInfoViewMod
     });
   }
 
+  if (event.venueType) {
+    const environmentLabel =
+      event.venueType === 'open_air' || event.venueType === 'festival_ground'
+        ? 'Outdoor'
+        : event.venueType === 'hybrid'
+          ? 'Indoor / Outdoor'
+          : 'Indoor';
+    items.push({
+      id: 'environment',
+      icon: 'information-circle-outline',
+      label: 'Location',
+      value: environmentLabel,
+    });
+  }
+
+  if (event.festivalLabel) {
+    items.push({
+      id: 'festival',
+      icon: 'musical-notes-outline',
+      label: 'Festival',
+      value: event.festivalLabel,
+      secondaryValue: event.festivalEditionId,
+    });
+  }
+
+  if (event.organizer) {
+    items.push({
+      id: 'organizer',
+      icon: 'people-outline',
+      label: 'Veranstalter',
+      value: event.organizer,
+    });
+  }
+
   return {
     description: event.description,
     items,
   };
 }
 
-export function toLineupSectionViewModel(event: EventDisplayModel): LineupSectionViewModel | undefined {
-  const artists = event.lineup ?? event.artists;
+export function toLineupSectionViewModel(
+  event: EventDisplayModel,
+  entities?: Pick<EventDetailEntities, 'artistsById'>,
+): LineupSectionViewModel {
+  const names = event.lineup ?? event.artists;
 
-  if (!artists || artists.length === 0) {
-    return undefined;
+  if (!names || names.length === 0) {
+    return {
+      artists: [],
+      tba: true,
+      placeholderMessage: 'Line-up wird bald bekannt gegeben.',
+      accessibilityLabel: `Line-up für ${event.title}`,
+    };
   }
 
+  const seenArtistIds = new Set<string>();
+  const artists = names.flatMap((name, index) => {
+    const artistId = event.artistIds?.[index];
+    if (artistId) {
+      if (seenArtistIds.has(artistId)) {
+        return [];
+      }
+      seenArtistIds.add(artistId);
+      const record = entities?.artistsById.get(artistId);
+      if (record) {
+        return [toLineupItemFromArtist(record, index === 0)];
+      }
+    }
+    return [toLineupItemFromName(name, index === 0)];
+  });
+
   return {
-    artists: artists.map((name, index) => ({
-      name,
-      headliner: index === 0,
-      accessibilityLabel: name,
-    })),
+    artists,
     accessibilityLabel: `Line-up für ${event.title}`,
   };
 }
 
-export function toVenueDetailViewModel(event: EventDisplayModel): VenueDetailViewModel {
+export function toTimetableSectionViewModel(
+  event: EventDisplayModel,
+): TimetableSectionViewModel {
+  // Foundation only: real stage/slot data will be wired when festival timetable API exists.
+  return {
+    slots: [],
+    placeholderMessage: 'Timetable noch nicht veröffentlicht',
+    accessibilityLabel: `Timetable für ${event.title}`,
+  };
+}
+
+export function toVenueDetailViewModel(
+  event: EventDisplayModel,
+  entities?: Pick<EventDetailEntities, 'venue'>,
+): VenueDetailViewModel {
+  if (entities?.venue) {
+    return {
+      ...toVenueDetailFromRecord(entities.venue, event),
+      profileNavigable: true,
+    };
+  }
+
   const address = event.address ?? `${event.venue}, ${event.city}`;
 
   return {
-    id: slugifyVenueId(event.venue),
+    id: event.venueId ?? event.venue,
     name: event.venue,
     addressLabel: address,
     cityLabel: event.city,
     image: event.image,
     verified: false,
+    profileNavigable: false,
     accessibilityLabel: `${event.venue}, ${event.city}`,
   };
 }
 
-export function toOrganizerDetailViewModel(event: EventDisplayModel): OrganizerDetailViewModel | undefined {
+export function toOrganizerDetailViewModel(
+  event: EventDisplayModel,
+  entities?: Pick<EventDetailEntities, 'organizer'>,
+): OrganizerDetailViewModel | undefined {
+  if (!event.organizer && !entities?.organizer) {
+    return undefined;
+  }
+
+  if (entities?.organizer) {
+    return {
+      organizer: toOrganizerDetailFromRecord(entities.organizer, 0),
+      profileNavigable: true,
+    };
+  }
+
   if (!event.organizer) {
     return undefined;
   }
 
   return {
     organizer: {
-      id: slugifyVenueId(event.organizer),
+      id: event.organizer,
       name: event.organizer,
-      eventCountLabel: '1 Event',
+      eventCountLabel: '',
       followerCountLabel: '',
       verificationStatus: 'unverified',
       accessibilityLabel: `Veranstalter ${event.organizer}`,
     },
+    profileNavigable: false,
   };
 }
 
@@ -176,19 +274,29 @@ export function toEventTicketSectionViewModel(event: EventDisplayModel): EventTi
 }
 
 export function toEventNoticeViewModel(event: EventDisplayModel): EventNoticeViewModel | undefined {
-  const noticeType = resolveEventNoticeType(event);
+  const noticeType = resolveEventNoticeType(event) as EventNoticeType | undefined;
 
   if (!noticeType || noticeType === 'sold_out') {
     return undefined;
   }
 
+  let message: string | undefined;
+  if (noticeType === 'postponed') {
+    message = 'Das Datum kann sich noch ändern. Gespeicherte Events bleiben in deiner Übersicht.';
+  } else if (noticeType === 'venue_changed' && event.previousVenue) {
+    message = `Vorheriger Ort: ${event.previousVenue}`;
+  } else if (noticeType === 'time_changed' && event.previousStartDateTime) {
+    message = `Vorherige Zeit: ${formatEventDateTime({ ...event, startDateTime: event.previousStartDateTime })}`;
+  } else if (noticeType === 'venue_changed') {
+    message = 'Der Veranstaltungsort wurde aktualisiert.';
+  } else if (noticeType === 'time_changed') {
+    message = 'Die Startzeit wurde aktualisiert.';
+  }
+
   return {
     type: noticeType,
     title: resolveEventNoticeTitle(noticeType),
-    message:
-      noticeType === 'postponed'
-        ? 'Das Datum kann sich noch ändern. Gespeicherte Events bleiben in deiner Übersicht.'
-        : undefined,
+    message,
   };
 }
 

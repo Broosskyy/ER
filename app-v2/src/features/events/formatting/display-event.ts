@@ -1,6 +1,9 @@
 import { ImageSourcePropType } from 'react-native';
 
-import { getEventImageAsset, getSourceDisplayLabel } from '../data/demo-images';
+import { getSourceDisplayLabel, resolveEventImageSource } from '../data/demo-images';
+import { eventLifecycleResolver } from '../lifecycle/event-lifecycle-resolver';
+import { toEventLifecycleInput } from '../lifecycle/event-lifecycle-from-event';
+import type { LifecycleStatus } from '../lifecycle/lifecycle-types';
 import { hasValidCoordinates } from '../formatting/coordinates';
 import {
   EVENT_REFERENCE_DATE,
@@ -12,6 +15,7 @@ import {
   isThisWeekEvent,
   isUpcomingEvent,
 } from '../formatting/date-time';
+import type { VenueType } from '../domain/festival-foundation';
 import type { Event, EventWithCoordinates } from '../types/event';
 
 export interface EventDisplayModel {
@@ -43,6 +47,18 @@ export interface EventDisplayModel {
   latitude?: number;
   longitude?: number;
   status: Event['status'];
+  lifecycleStatus?: LifecycleStatus;
+  venueId?: string;
+  organizerId?: string;
+  artistIds?: string[];
+  festivalId?: string;
+  festivalEditionId?: string;
+  festivalLabel?: string;
+  venueType?: VenueType;
+  lifecycleNotices?: Array<'venue_changed' | 'time_changed' | 'date_changed'>;
+  previousVenue?: string;
+  previousStartDateTime?: string;
+  updatedAt?: string;
 }
 
 export function toEventDisplayModel(event: Event): EventDisplayModel {
@@ -51,7 +67,7 @@ export function toEventDisplayModel(event: Event): EventDisplayModel {
     slug: event.slug,
     title: event.title,
     description: event.description,
-    image: getEventImageAsset(event.id, event.imageAssetKey),
+    image: resolveEventImageSource(event),
     date: formatDateLabel(event.startDateTime, event.timezone),
     startTime: formatTimeInTimezone(event.startDateTime, event.timezone),
     endTime: event.endDateTime
@@ -77,7 +93,26 @@ export function toEventDisplayModel(event: Event): EventDisplayModel {
     latitude: event.latitude,
     longitude: event.longitude,
     status: event.status,
+    lifecycleStatus: eventLifecycleResolver.resolve(toEventLifecycleInput(event)).status,
+    venueId: event.venueId,
+    organizerId: event.organizerId,
+    artistIds: event.artistIds,
+    festivalId: event.festivalId,
+    festivalEditionId: event.festivalEditionId,
+    festivalLabel: event.festivalId ? resolveFestivalLabel(event) : undefined,
+    venueType: event.venueType,
+    lifecycleNotices: event.lifecycleHints,
+    previousVenue: event.previousVenue,
+    previousStartDateTime: event.previousStartDateTime,
+    updatedAt: event.updatedAt,
   };
+}
+
+function resolveFestivalLabel(event: Event): string | undefined {
+  if (event.festivalEditionId) {
+    return `Festival Edition`;
+  }
+  return 'Festival';
 }
 
 export function hasMapCoordinates(

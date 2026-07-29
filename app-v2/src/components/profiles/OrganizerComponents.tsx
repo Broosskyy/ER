@@ -36,37 +36,65 @@ export interface OrganizerProfileCardProps {
 
 export function OrganizerProfileCard({ organizer, followState, onFollowPress, onPress, style }: OrganizerProfileCardProps) {
   const { theme } = useTheme();
+
+  const header = (
+    <View style={styles.header}>
+      {organizer.logo ? (
+        <Image source={organizer.logo} style={[styles.logo, { borderColor: theme.colors.accent }]} />
+      ) : (
+        <View
+          style={[
+            styles.logo,
+            styles.logoFallback,
+            { borderColor: theme.colors.accent, backgroundColor: theme.colors.surfaceSubtle },
+          ]}
+        >
+          <AppIcon name="business-outline" color={theme.colors.accent} />
+        </View>
+      )}
+      <View style={styles.copy}>
+        <AppText role="cardTitle" numberOfLines={2}>
+          {organizer.name}
+        </AppText>
+        <VerificationBadge status={organizer.verificationStatus} />
+        {organizer.description ? (
+          <AppText role="bodyMuted" numberOfLines={2}>
+            {organizer.description}
+          </AppText>
+        ) : null}
+      </View>
+      {followState ? (
+        <View style={styles.followInline}>
+          <FollowButton state={followState} onPress={onFollowPress} />
+        </View>
+      ) : null}
+    </View>
+  );
+
   const content = (
     <CardFoundation padding="md" style={[styles.card, style]}>
-      <View style={styles.header}>
-        {organizer.logo ? <Image source={organizer.logo} style={[styles.logo, { borderColor: theme.colors.accent }]} /> : (
-          <View style={[styles.logo, styles.logoFallback, { borderColor: theme.colors.accent, backgroundColor: theme.colors.surfaceSubtle }]}>
-            <AppIcon name="business-outline" color={theme.colors.accent} />
-          </View>
-        )}
-        <View style={styles.copy}>
-          <AppText role="cardTitle">{organizer.name}</AppText>
-          <VerificationBadge status={organizer.verificationStatus} />
-          {organizer.description ? <AppText role="bodyMuted" numberOfLines={2}>{organizer.description}</AppText> : null}
-        </View>
+      {header}
+      <View style={styles.stats}>
+        {organizer.eventCountLabel ? <Stat value={organizer.eventCountLabel} label="Events" /> : null}
+        {organizer.followerCountLabel ? (
+          <Stat value={organizer.followerCountLabel} label="Follower" />
+        ) : null}
       </View>
-      <View style={styles.stats}><Stat value={organizer.eventCountLabel} label="Events" /><Stat value={organizer.followerCountLabel} label="Follower" /></View>
       {organizer.claimStatus ? <OrganizerClaimBadge status={organizer.claimStatus} /> : null}
-      {!onPress && followState ? <FollowButton state={followState} onPress={onFollowPress} /> : null}
     </CardFoundation>
   );
-  const followAction = followState ? <FollowButton state={followState} onPress={onFollowPress} /> : null;
 
   return onPress ? (
     <InteractiveCard
       onPress={onPress}
       accessibilityLabel={organizer.accessibilityLabel}
-      actions={followAction}
-      actionsStyle={styles.followAction}
+      actionsPlacement="trailing"
     >
       {content}
     </InteractiveCard>
-  ) : <View accessibilityLabel={organizer.accessibilityLabel}>{content}</View>;
+  ) : (
+    <View accessibilityLabel={organizer.accessibilityLabel}>{content}</View>
+  );
 }
 
 export interface TeamMemberRowProps {
@@ -114,14 +142,12 @@ const styles = StyleSheet.create({
     borderWidth: borderWidth.strong,
   },
   logoFallback: { alignItems: 'center', justifyContent: 'center' },
-  copy: { flex: 1, gap: spacing.xs },
-  stats: { flexDirection: 'row', gap: spacing.xxl },
-  followAction: {
-    top: spacing.md,
-    right: spacing.md,
-    bottom: undefined,
-    left: undefined,
+  copy: { flex: 1, gap: spacing.xs, minWidth: 0 },
+  followInline: {
+    flexShrink: 0,
+    alignSelf: 'flex-start',
   },
+  stats: { flexDirection: 'row', gap: spacing.xxl },
   member: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -35,30 +35,15 @@ describe('home screen composition (Sprint 2B.2)', () => {
     expect(homeHeaderSource).not.toContain('search-outline');
     expect(homeHeaderSource).not.toContain('CreateHeaderButton');
     expect(homeHeaderSource).toContain('EternalRaveLogo');
-    expect(homeScreenSource).toContain('getHomeFeaturedCardWidth');
-    expect(homeScreenSource).toContain('variant="featuredHome"');
-    expect(homeScreenSource).toContain('variant="compactPremium"');
-    expect(homeScreenSource).not.toContain('variant="verticalPremium"');
-    expect(homeScreenSource).toContain('VenueSpotlightCard');
-    expect(homeScreenSource).toContain('homeGoldenSpacing');
+    expect(homeScreenSource).toContain('HomeFeedContent');
+    expect(homeScreenSource).not.toContain('HomeSearchEntry');
+    expect(homeScreenSource).not.toContain('FilterChipRow');
+    expect(homeScreenSource).not.toContain('<SearchBar');
   });
 
-  it('uses library section headers on the home screen', () => {
-    expect(homeScreenSource).toContain('SearchSectionHeader');
-    expect(homeScreenSource).toContain("t('home.sections.all')");
-    expect(homeScreenSource).toContain("t('home.sections.topClubs')");
-    expect(homeScreenSource).toContain('EventDiscoveryCard');
-  });
-
-  it('keeps action links off Home rails and reserves Alle for vertical lists', () => {
-    expect(homeScreenSource).toContain("HOME_RAIL_SECTIONS.has(section.type) ? undefined");
-    expect(homeScreenSource).toContain("label={t('home.sections.all')}");
-    expect(homeScreenSource).not.toContain("t('home.sections.seeAll')");
-  });
-
-  it('uses a flex scroll container on home', () => {
-    expect(homeScreenSource).toContain('style={styles.scroll}');
-    expect(homeScreenSource).toContain('flex: 1');
+  it('delegates feed rendering to discovery-backed HomeFeedContent', () => {
+    expect(homeScreenSource).toContain('HomeFeedContent');
+    expect(homeScreenSource).not.toContain('getCollectionPreviewEvents');
   });
 
   it('keeps the location selector on the home screen', () => {

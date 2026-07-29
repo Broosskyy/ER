@@ -36,6 +36,7 @@ import {
 import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
 import type { Event , EventWithCoordinates } from '@/features/events/types/event';
 import { isPublishedStatus } from '@/features/events/types/event-status';
+import { buildEventSearchIndex } from '@/features/search/constants';
 
 export interface AdminEventSaveContext {
   source?: 'cms' | 'moderation';
@@ -55,9 +56,7 @@ function normalizeSearchTerm(value: string): string {
 }
 
 function buildSearchIndex(event: Event): string {
-  return [event.title, event.venue, event.city, ...event.genres, ...event.artists]
-    .join(' ')
-    .toLowerCase();
+  return buildEventSearchIndex(event);
 }
 
 function matchesQuery(event: Event, query: string | undefined): boolean {
@@ -423,6 +422,14 @@ export class ArtistRepository {
 
   getAll(): Promise<ArtistRecord[]> {
     return getDatasourceBundle().artists.getAll();
+  }
+
+  countEventsForArtist(artistId: string): Promise<number> {
+    return getDatasourceBundle().artists.countEventsForArtist(artistId);
+  }
+
+  listEventIdsForArtist(artistId: string): Promise<string[]> {
+    return getDatasourceBundle().artists.listEventIdsForArtist(artistId);
   }
 }
 

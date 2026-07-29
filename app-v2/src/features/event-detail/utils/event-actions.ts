@@ -4,24 +4,39 @@ import type { EventDisplayModel } from '@/features/events';
 import { formatEventDateTime } from '@/features/events';
 import { isSafeExternalHttpUrl } from '@/platform/linking/external-url';
 
-function getEventShareUrl(eventId: string): string | undefined {
-  if (Platform.OS !== 'web' || typeof window === 'undefined') {
-    return undefined;
+function buildShareMessage(event: EventDisplayModel): string {
+  return [event.title, formatEventDateTime(event), `${event.venue}, ${event.city}`].join('\n');
+}
+
+function buildShareUrl(eventId: string): string {
+  if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    return `${window.location.origin}/event/${eventId}`;
+  }
+  return `https://eternalrave.app/event/${eventId}`;
+}
+
+async function copyShareFallback(text: string): Promise<void> {
+  if (Platform.OS === 'web' && typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
   }
 
-  return `${window.location.origin}/event/${eventId}`;
+  await Share.share({ message: text });
 }
 
 export async function shareEvent(event: EventDisplayModel): Promise<void> {
-  const message = [
-    event.title,
-    formatEventDateTime(event),
-    `${event.venue}, ${event.city}`,
-  ].join('\n');
+  const message = buildShareMessage(event);
+  const url = buildShareUrl(event.id);
+  const payload = `${message}\n${url}`;
 
-  const url = getEventShareUrl(event.id);
-
-  await Share.share(url ? { message, url } : { message });
+  try {
+    const result = await Share.share({ message: payload, url });
+    if (result.action === Share.dismissedAction) {
+      return;
+    }
+  } catch {
+    await copyShareFallback(payload);
+  }
 }
 
 export async function openEventTicketUrl(url: string): Promise<boolean> {

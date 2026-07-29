@@ -1,8 +1,8 @@
-import { ScrollView, StyleSheet, ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, View, ViewStyle } from 'react-native';
 
-import { CategoryChip } from '@/components/discovery/CategoryChip';
-import { ActiveFilterBar } from '@/components/search/ActiveFilterBar';
-import { spacing } from '@/design/spacing';
+import { AppText } from '@/components/layout/AppText';
+import { spacing, spacingRoles } from '@/design/spacing';
+import { useTheme } from '@/design/theme';
 
 import type { ActiveFilterViewModel } from '@/components/search/view-models';
 import type { SavedFilterViewModel } from './view-models';
@@ -16,40 +16,65 @@ export interface SavedFilterBarProps {
   testID?: string;
 }
 
-/** Mockup 14 saved filter chips — reuses discovery and search chips. */
+/** Saved segment control — compact tabs, not oversized cards. */
 export function SavedFilterBar({
   filters,
-  activeFilters = [],
   onSelect,
-  onRemoveActive,
   style,
   testID,
 }: SavedFilterBarProps) {
+  const { theme } = useTheme();
+
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={[styles.content, style]}
+    <View
+      style={[styles.root, { borderBottomColor: theme.colors.borderSubtle }, style]}
+      accessibilityRole="tablist"
       testID={testID}
     >
-      {filters.map((filter) => (
-        <CategoryChip
-          key={filter.id}
-          label={filter.count !== undefined ? `${filter.label} (${filter.count})` : filter.label}
-          selected={filter.selected}
-          onPress={() => onSelect?.(filter.id)}
-        />
-      ))}
-      {activeFilters.length > 0 ? (
-        <ActiveFilterBar filters={activeFilters} onRemove={onRemoveActive} />
-      ) : null}
-    </ScrollView>
+      {filters.map((filter) => {
+        const selected = Boolean(filter.selected);
+        const label =
+          filter.count !== undefined ? `${filter.label} (${filter.count})` : filter.label;
+
+        return (
+          <Pressable
+            key={filter.id}
+            accessibilityRole="tab"
+            accessibilityLabel={label}
+            accessibilityState={{ selected }}
+            onPress={() => onSelect?.(filter.id)}
+            style={[
+              styles.tab,
+              { borderBottomColor: selected ? theme.colors.accent : 'transparent' },
+            ]}
+          >
+            <AppText
+              role="label"
+              numberOfLines={1}
+              color={selected ? theme.colors.accent : theme.colors.textSecondary}
+            >
+              {label}
+            </AppText>
+          </Pressable>
+        );
+      })}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  content: {
-    gap: spacing.sm,
-    paddingVertical: spacing.xs,
+  root: {
+    flexDirection: 'row',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    minHeight: 44,
+  },
+  tab: {
+    flex: 1,
+    minHeight: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: spacing.xs,
+    borderBottomWidth: 2,
   },
 });

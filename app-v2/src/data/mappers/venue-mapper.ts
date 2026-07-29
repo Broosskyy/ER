@@ -18,6 +18,8 @@ export interface VenueRow {
   address?: string | null;
   city_id?: string | null;
   instagram?: string | null;
+  venue_type?: string | null;
+  is_temporary?: boolean | null;
   created_at: string;
   updated_at: string;
 }
@@ -41,6 +43,8 @@ export function mapVenueRowToRecord(row: VenueRow): VenueRecord {
     address: row.address ?? undefined,
     cityId: row.city_id ?? undefined,
     instagram: row.instagram ?? undefined,
+    venueType: (row.venue_type as VenueRecord['venueType']) ?? undefined,
+    isTemporary: row.is_temporary ?? undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -66,6 +70,8 @@ export function mapVenueRecordToRow(record: VenueRecord): VenueRow {
     address: streetLine || record.address || null,
     city_id: record.cityId ?? null,
     instagram: record.instagram ?? null,
+    venue_type: record.venueType ?? null,
+    is_temporary: record.isTemporary ?? null,
     created_at: record.createdAt,
     updated_at: record.updatedAt,
   };

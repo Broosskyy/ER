@@ -89,5 +89,25 @@ export function createSupabaseArtistDatasource(): ArtistDatasource {
       }
       return mapArtistRowToRecord(data as ArtistRow);
     },
+    async countEventsForArtist(artistId) {
+      const { count, error } = await supabase
+        .from('event_artists')
+        .select('event_id', { count: 'exact', head: true })
+        .eq('artist_id', artistId);
+      if (error) {
+        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+      }
+      return count ?? 0;
+    },
+    async listEventIdsForArtist(artistId) {
+      const { data, error } = await supabase
+        .from('event_artists')
+        .select('event_id')
+        .eq('artist_id', artistId);
+      if (error) {
+        throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
+      }
+      return (data ?? []).map((row: { event_id: string }) => row.event_id);
+    },
   };
 }

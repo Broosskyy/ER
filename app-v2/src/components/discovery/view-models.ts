@@ -81,10 +81,12 @@ export interface OrganizerListItemViewModel {
 }
 
 export interface LineupItemViewModel {
+  id?: string;
   name: string;
   image?: DiscoveryImageSource;
   headliner?: boolean;
   subtitleLabel?: string;
+  profileNavigable?: boolean;
   accessibilityLabel: string;
 }
 
