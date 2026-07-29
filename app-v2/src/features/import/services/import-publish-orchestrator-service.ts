@@ -193,6 +193,14 @@ export class ImportPublishOrchestratorService {
             updatedAt: new Date().toISOString(),
           });
         }
+        if (this.reviewQueueService) {
+          await this.reviewQueueService.ensureQueuedForReview(
+            record,
+            currentSource,
+            evaluation ?? null,
+            jobId,
+          );
+        }
         queuedCount += 1;
         if (evaluation && this.reputationService) {
           currentSource = await this.reputationService.recordPublishDecision(
@@ -447,6 +455,14 @@ export class ImportPublishOrchestratorService {
             updatedAt: new Date().toISOString(),
           });
         }
+        if (this.reviewQueueService) {
+          await this.reviewQueueService.ensureQueuedForReview(
+            record,
+            currentSource,
+            evaluation ?? null,
+            options.jobId,
+          );
+        }
         queuedCount += 1;
         if (evaluation && this.reputationService) {
           await this.reputationService.recordPublishDecision(
@@ -531,5 +547,76 @@ export class ImportPublishOrchestratorService {
     }
 
     return { publishedCount, queuedCount, skippedCount, rejectedCount, heldCount };
+  }
+
+  async reconcileOrphanedJobRecords(jobId: string, source: SourceRecord): Promise<number> {
+    if (!this.reviewQueueService) {
+      return 0;
+    }
+
+    const records = await this.recordRepository.listByJobId(jobId);
+    let reconciled = 0;
+
+    for (const record of records) {
+      if (record.status !== 'needs_review' && record.status !== 'approved') {
+        continue;
+      }
+
+      const evaluation = await this.publishDecision.evaluate({ source, record });
+      const decision = evaluation
+        ? this.publishDecision.mapTrustDecision(evaluation.decision)
+        : await this.publishDecision.decide({ source, record });
+
+      if (decision !== 'queue_for_review') {
+        continue;
+      }
+
+      const result = await this.reviewQueueService.ensureQueuedForReview(
+        record,
+        source,
+        evaluation,
+        jobId,
+      );
+      if (result.action === 'created' || result.action === 'updated') {
+        reconciled += 1;
+      }
+    }
+
+    return reconciled;
+  }
+
+  async reconcileOrphanedRecords(source: SourceRecord, records: ImportRecord[]): Promise<number> {
+    if (!this.reviewQueueService) {
+      return 0;
+    }
+
+    let reconciled = 0;
+
+    for (const record of records) {
+      if (record.status !== 'needs_review' && record.status !== 'approved') {
+        continue;
+      }
+
+      const evaluation = await this.publishDecision.evaluate({ source, record });
+      const decision = evaluation
+        ? this.publishDecision.mapTrustDecision(evaluation.decision)
+        : await this.publishDecision.decide({ source, record });
+
+      if (decision !== 'queue_for_review') {
+        continue;
+      }
+
+      const result = await this.reviewQueueService.ensureQueuedForReview(
+        record,
+        source,
+        evaluation,
+        record.importJobId,
+      );
+      if (result.action === 'created' || result.action === 'updated') {
+        reconciled += 1;
+      }
+    }
+
+    return reconciled;
   }
 }

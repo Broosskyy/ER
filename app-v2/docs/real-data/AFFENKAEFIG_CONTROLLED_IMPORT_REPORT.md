@@ -84,7 +84,7 @@ All events: `publishDecision = queue_for_review` under `manual_review` policy.
 | `import_records` (source-affenkaefig) | **8** |
 | Status | `needs_review` |
 | Published events | **0** |
-| `import_review_queue` rows | 0 (records pending orchestrator review path) |
+| `import_review_queue` rows | **8** (after Sprint 28.3 backfill + fix) |
 | Source `enabled` | false |
 | `schedule_enabled` | false |
 | `publish_mode` | manual_review |
@@ -129,7 +129,7 @@ Import jobs from explicit re-run attempts reported `failed` with 0 fetch (likely
 |------|----------|
 | Cross-source duplicate candidates (Bootshaus overlap) | High — review before publish |
 | Venue/organizer alias gaps in staging catalog | Medium |
-| `import_review_queue` not populated | Medium — verify review UI path |
+| `import_review_queue` not populated | **Fixed in Sprint 28.3** — see `AFFENKAEFIG_MANUAL_REVIEW_REPORT.md` |
 | List page duplicate anchors (mitigated by dedupe) | Low |
 | Midnight `startDate` without doors time | Low |
 

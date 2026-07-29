@@ -347,6 +347,31 @@ export class ImportAggregationService {
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : 'Aggregation import failed.';
       await this.loggingService.error(runningJob.id, 'AGGREGATION_IMPORT_FAILED', message);
+
+      if (this.publishOrchestrator) {
+        try {
+          const reconciled = await this.publishOrchestrator.reconcileOrphanedJobRecords(
+            runningJob.id,
+            updatedSourceRecord,
+          );
+          if (reconciled > 0) {
+            await this.loggingService.info(
+              runningJob.id,
+              'REVIEW_QUEUE_ORPHAN_RECONCILED',
+              `Reconciled ${reconciled} orphaned review queue entries after import failure.`,
+            );
+          }
+        } catch (reconcileError: unknown) {
+          const reconcileMessage =
+            reconcileError instanceof Error ? reconcileError.message : 'Review queue reconcile failed.';
+          await this.loggingService.warning(
+            runningJob.id,
+            'REVIEW_QUEUE_ORPHAN_RECONCILE_FAILED',
+            reconcileMessage,
+          );
+        }
+      }
+
       const failedJob = await this.jobRepository.update({
         ...runningJob,
         status: 'failed',

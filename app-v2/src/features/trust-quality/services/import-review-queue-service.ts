@@ -430,6 +430,28 @@ export class ImportReviewQueueService {
 
 
 
+  async ensureQueuedForReview(
+    record: ImportRecord,
+    source: SourceRecord,
+    evaluation: TrustPublishEvaluation | null,
+    jobId?: string,
+    reason = 'import_record_requires_manual_review',
+  ): Promise<ImportReviewReconcileResult> {
+    const existing = await this.repository.findActiveBySourceAndExternalEventId(
+      source.id,
+      record.externalId,
+    );
+    if (existing) {
+      return { action: 'none', entry: existing };
+    }
+
+    if (evaluation) {
+      return this.reconcileFromEvaluation(record, source, evaluation, jobId);
+    }
+
+    return this.reconcilePublishFailure(record, source, null, reason, jobId);
+  }
+
   async reconcilePublishFailure(
 
     record: ImportRecord,
