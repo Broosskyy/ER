@@ -19,3 +19,7 @@ web-build/
 
 # Release binaries (too large for GitHub)
 releases/*.apk
+
+# Local audit scratch files (generated during release engineering)
+_inventory_*
+_gen_inventory.mjs

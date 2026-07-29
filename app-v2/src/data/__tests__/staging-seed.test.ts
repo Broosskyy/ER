@@ -4,6 +4,7 @@ import { mapEventRowToDomain } from '@/data/mappers/event-mapper';
 import { getCollectionConfig } from '@/features/collections/event-collection-config';
 import { isFeaturedEventId } from '@/features/events/data/home-config';
 import { getTonightEvents, getWeekendEvents } from '@/features/home/utils/home-sections';
+import { DEFAULT_EVENT_FILTERS } from '@/features/search/constants';
 import { applyEventFilters } from '@/features/search/utils/filter-events';
 import { EventRepository } from '@/data/repositories/repositories';
 
@@ -141,20 +142,16 @@ describe('staging seed event mapping', () => {
     ).toBe(true);
 
     const searchResults = applyEventFilters(published, {
+      ...DEFAULT_EVENT_FILTERS,
       query: 'Peachlychee',
-      genres: [],
       city: '',
-      dateRange: 'all-dates',
-      sortBy: 'recommended',
     });
     expect(searchResults).toHaveLength(1);
 
     const berlinResults = applyEventFilters(published, {
+      ...DEFAULT_EVENT_FILTERS,
       query: '',
-      genres: [],
       city: 'Berlin',
-      dateRange: 'all-dates',
-      sortBy: 'recommended',
     });
     expect(berlinResults).toHaveLength(1);
   });
