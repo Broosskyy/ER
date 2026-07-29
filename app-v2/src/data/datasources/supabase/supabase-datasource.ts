@@ -47,7 +47,7 @@ function paginate<T>(items: T[], page: number, pageSize: number): PaginatedResul
 type SupabaseTable = ReturnType<ReturnType<typeof getSupabaseClient>['from']>;
 
 const PUBLISHED_EVENT_SELECT =
-  '*, venues(name, city, country, street, house_number, latitude, longitude, address), organizers(name), cities(name), genres(name), artists(name)';
+  '*, venues(name, city, country, street, house_number, latitude, longitude, address, venue_type), organizers(name), cities(name), genres(name), artists(name), festival_editions(festival_id)';
 
 interface SupabaseVenueRelation {
   name?: string;
@@ -58,6 +58,11 @@ interface SupabaseVenueRelation {
   latitude?: number | null;
   longitude?: number | null;
   address?: string | null;
+  venue_type?: string | null;
+}
+
+interface SupabaseFestivalEditionRelation {
+  festival_id?: string | null;
 }
 
 interface SupabaseEventRowWithRelations {
@@ -84,6 +89,9 @@ function mapSupabaseEventRow(
   const city = firstRelation(row.cities);
   const genre = firstRelation(row.genres);
   const artist = firstRelation(row.artists);
+  const festivalEdition = firstRelation(
+    row.festival_editions as SupabaseFestivalEditionRelation | SupabaseFestivalEditionRelation[] | null,
+  );
   const artistNames =
     lineupArtists && lineupArtists.length > 0
       ? lineupArtists
@@ -102,6 +110,8 @@ function mapSupabaseEventRow(
     longitude: venue?.longitude ?? undefined,
     address: venue?.address ?? venue?.street ?? undefined,
     country: venue?.country ?? undefined,
+    venueType: (venue?.venue_type as import('@/features/events/domain/festival-foundation').VenueType | undefined) ?? undefined,
+    festivalId: festivalEdition?.festival_id ?? undefined,
   });
 }
 

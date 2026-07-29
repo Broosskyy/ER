@@ -4,14 +4,20 @@ import type { ReviewQueuedPayload } from '@/features/aggregation/pipeline/steps/
 
 export interface PublishedPipelinePayload extends ReviewQueuedPayload {
   pipelineStatus: AggregationPipelineStatus;
+  publishEligible: boolean;
 }
 
+/**
+ * Marks records as publish-eligible after review.
+ * Actual persistence to public.events is handled by ImportPublishOrchestratorService
+ * (auto-publish) or ImportReviewService.approveRecord() (manual review).
+ */
 export class PublishStep {
   readonly stepName = 'publish' as const;
 
   async execute(
     payloads: ReviewQueuedPayload[],
-    _context: PipelineRunContext,
+    context: PipelineRunContext,
   ): Promise<PipelineStepResult<PublishedPipelinePayload>> {
     const started = Date.now();
     const items: PublishedPipelinePayload[] = [];
@@ -19,18 +25,21 @@ export class PublishStep {
     const errors: string[] = [];
 
     for (const payload of payloads) {
-      if (payload.pipelineStatus === 'approved' && payload.autoPublishPrepared) {
+      const publishEligible =
+        payload.valid &&
+        !payload.isDuplicate &&
+        (payload.pipelineStatus === 'approved' ||
+          (payload.autoPublishPrepared && context.source.reviewRequired === false));
+
+      if (publishEligible) {
         warnings.push(
-          `Auto-publish prepared for ${payload.externalId}; explicit publish action still required.`,
+          `Record ${payload.externalId} is publish-eligible; persistence handled by publish orchestrator.`,
         );
       }
 
       items.push({
         ...payload,
-        pipelineStatus:
-          payload.pipelineStatus === 'approved' && payload.autoPublishPrepared
-            ? payload.pipelineStatus
-            : payload.pipelineStatus,
+        publishEligible,
       });
     }
 

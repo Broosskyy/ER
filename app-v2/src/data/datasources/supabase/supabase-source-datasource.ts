@@ -29,6 +29,7 @@ export function createSupabaseSourceDatasource(): SourceDatasource {
     displayName: 'display_name',
     trustScore: 'trust_score',
     sourceType: 'source_type',
+    status: 'source_lifecycle_status',
     created: 'created_at',
     updated: 'updated_at',
   } as const;

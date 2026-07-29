@@ -21,7 +21,8 @@ export type ImportErrorCode =
   | 'IMPORT_ACTIVE_JOB_EXISTS'
   | 'IMPORT_RECORD_NOT_REVIEWABLE'
   | 'IMPORT_EVENT_CREATE_FAILED'
-  | 'IMPORT_DUPLICATE_UNRESOLVED';
+  | 'IMPORT_DUPLICATE_UNRESOLVED'
+  | 'IMPORT_ENTITY_RESOLUTION_PERSIST_FAILED';
 
 export class ImportError extends Error {
   readonly code: ImportErrorCode;

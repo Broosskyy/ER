@@ -25,6 +25,15 @@ import {
 } from '@/features/import/models/types';
 import type { ImportLoggingService } from '@/features/import/services/import-logging-service';
 import type { AdminEventRepository } from '@/data/repositories/repositories';
+import type { ImportPublishOrchestratorService } from '@/features/import/services/import-publish-orchestrator-service';
+import type { ImportPublishBatchResult } from '@/features/import/services/import-publish-orchestrator-service';
+import type { MultiSourceMatchOrchestrator } from '@/features/multi-source-matching/services/multi-source-match-orchestrator';
+import type { EventLifecycleOrchestrator } from '@/features/event-lifecycle/services/event-lifecycle-orchestrator';
+import type { SourceReputationService } from '@/features/trust-quality/services/source-reputation-service';
+import {
+  buildImportRunReputationSummary,
+  classifyImportRunFailure,
+} from '@/features/trust-quality/services/import-run-reputation';
 
 function toImportRecordInput(
   envelope: PipelineRecordEnvelope,
@@ -69,9 +78,12 @@ function toImportRecordInput(
   };
 }
 
+export interface ExecuteImportJobOptions {
+  recordImportReputation?: boolean;
+}
+
 export class ImportAggregationService {
   private readonly pipeline: AggregationPipeline;
-  private readonly matchingService = new ImportMatchingService();
 
   constructor(
     private readonly sourceRepository: ImportSourceRepository,
@@ -79,8 +91,13 @@ export class ImportAggregationService {
     private readonly recordRepository: ImportRecordRepository,
     private readonly loggingService: ImportLoggingService,
     private readonly adminEventRepository: AdminEventRepository,
+    private readonly matchingService: ImportMatchingService = new ImportMatchingService(),
     private readonly aggregationLogService = new AggregationLogService(),
     private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
+    private readonly publishOrchestrator?: ImportPublishOrchestratorService,
+    private readonly matchOrchestrator?: MultiSourceMatchOrchestrator,
+    private readonly lifecycleOrchestrator?: EventLifecycleOrchestrator,
+    private readonly reputationService?: SourceReputationService,
   ) {
     this.pipeline = new AggregationPipeline({
       fetchProvider: createSourceConnectorFetchProvider(sourceConnectorRegistry),
@@ -93,17 +110,37 @@ export class ImportAggregationService {
     triggerType: ImportTriggerType,
     triggeredBy?: string,
   ): Promise<ImportJob> {
+    const job = await this.enqueueJob(sourceRecord, triggerType, triggeredBy);
+    return this.executeExistingJob(job, sourceRecord);
+  }
+
+  async enqueueJob(
+    sourceRecord: SourceRecord,
+    triggerType: ImportTriggerType,
+    triggeredBy?: string,
+  ): Promise<ImportJob> {
     const importSource = mapSourceRecordToImportSource(sourceRecord);
     if (!importSource.active) {
       throw new ImportError(`Source "${sourceRecord.id}" is inactive.`, 'IMPORT_SOURCE_INACTIVE');
     }
 
-    const job = await this.jobRepository.create({
+    return this.jobRepository.create({
       sourceId: sourceRecord.id,
       triggerType,
       status: 'pending',
       triggeredBy,
     });
+  }
+
+  async executeExistingJob(
+    job: ImportJob,
+    sourceRecord: SourceRecord,
+    options: ExecuteImportJobOptions = {},
+  ): Promise<ImportJob> {
+    const importSource = mapSourceRecordToImportSource(sourceRecord);
+    if (!importSource.active) {
+      throw new ImportError(`Source "${sourceRecord.id}" is inactive.`, 'IMPORT_SOURCE_INACTIVE');
+    }
 
     await this.loggingService.info(job.id, 'AGGREGATION_IMPORT_START', `Aggregation import started for ${sourceRecord.displayName}.`);
 
@@ -114,11 +151,14 @@ export class ImportAggregationService {
       updatedAt: new Date().toISOString(),
     });
 
+    let publishResult: ImportPublishBatchResult | undefined;
+    let updatedSourceRecord = sourceRecord;
+
     try {
-      const result = await this.pipeline.run(sourceRecord, importSource, triggerType, triggeredBy);
+      const result = await this.pipeline.run(sourceRecord, importSource, runningJob.triggerType, runningJob.triggeredBy);
       const catalog = await this.catalogLoader();
       const existingByExternalId = new Map(
-        (await this.getLatestRecordsForSource(sourceRecord.id)).map((record) => [
+        (await this.recordRepository.listLatestBySourceId(sourceRecord.id)).map((record) => [
           record.externalId,
           record,
         ]),
@@ -146,7 +186,7 @@ export class ImportAggregationService {
         const changeSet = importUpdateService.detectChanges(
           envelope.canonicalEvent,
           existingEvent,
-          { cancelled },
+          { cancelled, existingRecord },
         );
 
         const match = this.matchingService.match(
@@ -208,7 +248,38 @@ export class ImportAggregationService {
         );
       }
 
-      await this.recordRepository.createMany(recordInputs);
+      await this.recordRepository.upsertManyBySourceExternal(recordInputs);
+
+      if (this.matchOrchestrator) {
+        const createdRecords = await this.recordRepository.listByJobId(runningJob.id);
+        for (const record of createdRecords) {
+          const existingEvent = record.resultingEventId
+            ? await this.adminEventRepository.getById(record.resultingEventId)
+            : null;
+          await this.matchOrchestrator.processRecord(
+            record,
+            sourceRecord,
+            catalog,
+            runningJob.id,
+            existingEvent,
+          );
+        }
+      }
+
+      const previousRecords = [...existingByExternalId.values()];
+      let publishResultLocal: ImportPublishBatchResult = { publishedCount: 0, queuedCount: 0, skippedCount: 0, rejectedCount: 0, heldCount: 0 };
+      if (this.publishOrchestrator) {
+        publishResultLocal = await this.publishOrchestrator.processJobRecords(
+          runningJob.id,
+          sourceRecord,
+          previousRecords,
+          runningJob.triggeredBy,
+        );
+        publishResult = publishResultLocal;
+        if (publishResultLocal.publishedCount > 0) {
+          metrics.createdCount = Math.max(0, metrics.createdCount);
+        }
+      }
 
       const currentExternalIds = result.records.map((record) => record.externalId);
       const previousExternalIds = [...existingByExternalId.keys()];
@@ -226,11 +297,19 @@ export class ImportAggregationService {
         if (!existingEvent || existingEvent.status === 'archived') {
           continue;
         }
-        await this.adminEventRepository.save({
-          ...existingEvent,
-          status: 'archived',
-          updatedAt: new Date().toISOString(),
-        });
+        const archivedEvent = this.lifecycleOrchestrator
+          ? await this.lifecycleOrchestrator.processArchive({
+              before: existingEvent,
+              source: sourceRecord,
+              importJobId: runningJob.id,
+              importRecordId: existingRecord.id,
+            })
+          : {
+              ...existingEvent,
+              status: 'archived' as const,
+              updatedAt: new Date().toISOString(),
+            };
+        await this.adminEventRepository.save(archivedEvent);
         metrics.warningCount += 1;
         await this.loggingService.warning(
           runningJob.id,
@@ -242,38 +321,71 @@ export class ImportAggregationService {
       await this.loggingService.info(
         runningJob.id,
         'AGGREGATION_IMPORT_COMPLETE',
-        `Aggregation import completed with ${recordInputs.length} records in ${result.summary.durationMs}ms.`,
+        `Aggregation import completed with ${recordInputs.length} records (${publishResultLocal.publishedCount} published, ${publishResultLocal.queuedCount} queued) in ${result.summary.durationMs}ms.`,
       );
 
       const status =
         metrics.invalidCount > 0 || metrics.warningCount > 0 ? 'completed_with_warnings' : 'completed';
 
-      return await this.jobRepository.update({
+      const completedJob = await this.jobRepository.update({
         ...runningJob,
         status,
         metrics,
         finishedAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       });
+
+      if (options.recordImportReputation !== false) {
+        updatedSourceRecord = await this.recordImportRunReputationForJob(
+          updatedSourceRecord,
+          completedJob,
+          { publishResult },
+        );
+      }
+
+      return completedJob;
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : 'Aggregation import failed.';
       await this.loggingService.error(runningJob.id, 'AGGREGATION_IMPORT_FAILED', message);
-      return await this.jobRepository.update({
+      const failedJob = await this.jobRepository.update({
         ...runningJob,
         status: 'failed',
         errorSummary: message,
         finishedAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       });
+
+      if (options.recordImportReputation !== false) {
+        await this.recordImportRunReputationForJob(updatedSourceRecord, failedJob, {
+          failureCategory: classifyImportRunFailure(error),
+          errorMessage: message,
+        });
+      }
+
+      return failedJob;
     }
   }
 
-  private async getLatestRecordsForSource(sourceId: string) {
-    const jobs = await this.jobRepository.listBySourceId(sourceId);
-    const records: Awaited<ReturnType<ImportRecordRepository['listByJobId']>> = [];
-    for (const job of jobs.slice(-5)) {
-      records.push(...(await this.recordRepository.listByJobId(job.id)));
+  async recordImportRunReputationForJob(
+    sourceRecord: SourceRecord,
+    job: ImportJob,
+    extras: {
+      publishResult?: ImportPublishBatchResult;
+      failureCategory?: ReturnType<typeof classifyImportRunFailure>;
+      errorMessage?: string;
+    } = {},
+  ): Promise<SourceRecord> {
+    if (!this.reputationService) {
+      return sourceRecord;
     }
-    return records;
+
+    const summary = buildImportRunReputationSummary({
+      job,
+      publishResult: extras.publishResult,
+      failureCategory: extras.failureCategory,
+      errorMessage: extras.errorMessage,
+    });
+
+    return this.reputationService.recordImportRunOutcome(sourceRecord, summary);
   }
 }

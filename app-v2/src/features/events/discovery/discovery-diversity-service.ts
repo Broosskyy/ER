@@ -2,7 +2,9 @@ import type { RankedEvent } from '@/features/events/discovery/discovery-ranking-
 
 export interface DiverseRankedEvent extends RankedEvent {
   organizer?: string;
+  organizerId?: string;
   venue?: string;
+  venueId?: string;
   duplicateGroupId?: string;
   seriesId?: string;
   cancelled?: boolean;
@@ -28,11 +30,12 @@ export class DiscoveryDiversityService {
       if (event.duplicateGroupId && seenDuplicateGroups.has(event.duplicateGroupId)) continue;
       if (event.seriesId && (seriesCounts.get(event.seriesId) ?? 0) >= DISCOVERY_DIVERSITY_POLICY.maxSeriesEvents) continue;
 
-      if (event.organizer === consecutiveOrganizer) {
+      const organizerKey = event.organizerId ?? event.organizer;
+      if (organizerKey === consecutiveOrganizer) {
         if (consecutiveOrganizerCount >= DISCOVERY_DIVERSITY_POLICY.maxConsecutiveOrganizerEvents) continue;
         consecutiveOrganizerCount += 1;
       } else {
-        consecutiveOrganizer = event.organizer;
+        consecutiveOrganizer = organizerKey;
         consecutiveOrganizerCount = 1;
       }
 

@@ -99,6 +99,10 @@ function resolveJobStatus(metrics: ReturnType<typeof computeMetrics>): ImportJob
   return 'completed';
 }
 
+/**
+ * Legacy adapter-based import orchestrator.
+ * @deprecated Production imports use ImportAggregationService. Retained for adapter unit tests and compatibility.
+ */
 export class ImportOrchestrator {
   constructor(
     private readonly sourceRepository: ImportSourceRepository,

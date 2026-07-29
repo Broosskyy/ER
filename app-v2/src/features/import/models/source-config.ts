@@ -5,6 +5,8 @@ export interface FeedFieldMapping {
   imageField?: string;
   dateField?: string;
   externalIdField?: string;
+  locationField?: string;
+  eventDateField?: string;
 }
 
 export interface CsvFieldMapping {
@@ -30,6 +32,8 @@ export interface CsvSourceConfig {
   delimiter?: ',' | ';' | '\t';
   hasHeader?: boolean;
   dateFormat?: string;
+  encoding?: string;
+  maxSizeBytes?: number;
   fieldMapping: CsvFieldMapping;
 }
 
@@ -53,12 +57,30 @@ export interface JsonLdSourceConfig {
   pageUrl?: string;
 }
 
+export type { WebsiteConnectorConfig } from '@/features/aggregation/connectors/website/config';
+
+export interface SourceFieldDefaults {
+  cityName?: string;
+  cityId?: string;
+  venueName?: string;
+  venueId?: string;
+  organizerName?: string;
+  organizerId?: string;
+  countryCode?: string;
+  address?: string;
+  postalCode?: string;
+  venueAddress?: string;
+  /** When ticket URL is absent, copy from event/detail URL. */
+  ticketUrlFallback?: 'eventUrl';
+}
+
 export interface ImportSourceConfig {
   feed?: FeedSourceConfig;
   csv?: CsvSourceConfig;
   api?: ApiJsonSourceConfig;
   ical?: IcalSourceConfig;
   jsonLd?: JsonLdSourceConfig;
+  website?: import('@/features/aggregation/connectors/website/config').WebsiteConnectorConfig;
   /** Bundled reference payloads for manual / fixture-driven imports. */
   reference?: import('@/features/aggregation/connectors/types').ReferenceSourceConfig;
   /** Connector assignment metadata (ER-013) — legacy single-connector assignment. */
@@ -75,4 +97,10 @@ export interface ImportSourceConfig {
   };
   /** Auth metadata only — no secrets stored in source config. */
   auth?: import('@/features/aggregation/domain/source-auth-config').SourceAuthConfig;
+  /** Per-source connector framework overrides (retry / rate limit). */
+  connectorFramework?: import('@/features/aggregation/connectors/framework/config').SourceConnectorFrameworkOverrides;
+  /** Publish policy overrides (Sprint 13). */
+  publishPolicy?: import('@/features/import/domain/publish-mode').PublishPolicyConfig;
+  /** Normalization defaults for missing connector fields (Sprint 26.8). */
+  defaults?: SourceFieldDefaults;
 }

@@ -25,8 +25,11 @@ export interface ImportJobDatasource {
 export interface ImportRecordDatasource {
   create(input: CreateImportRecordInput): Promise<ImportRecord>;
   createMany(inputs: CreateImportRecordInput[]): Promise<ImportRecord[]>;
+  upsertManyBySourceExternal(inputs: CreateImportRecordInput[]): Promise<ImportRecord[]>;
   update(record: ImportRecord): Promise<ImportRecord>;
   getById(id: string): Promise<ImportRecord | null>;
+  findLatestBySourceAndExternalId(sourceId: string, externalId: string): Promise<ImportRecord | null>;
+  listLatestBySourceId(sourceId: string): Promise<ImportRecord[]>;
   listByJobId(importJobId: string): Promise<ImportRecord[]>;
 }
 

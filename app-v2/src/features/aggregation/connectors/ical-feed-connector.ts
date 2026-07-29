@@ -2,10 +2,12 @@ import ICAL from 'ical.js';
 
 import { ICAL_EVENT_FIXTURE } from '@/features/aggregation/fixtures/real-source-fixtures';
 import { importFetchService } from '@/features/import/services/import-fetch-service';
+import { BaseSourceConnector } from '@/features/aggregation/connectors/framework/base-source-connector';
+import { SOURCE_CONNECTOR_DEFINITIONS } from '@/features/aggregation/connectors/framework/connector-definitions';
 import type { AggregationSource } from '@/features/aggregation/domain/aggregation-source';
 import type { PipelineRunContext } from '@/features/aggregation/pipeline/types';
 import type { ImportSource } from '@/features/import/models/types';
-import type { RawImportedEvent, SourceConnector } from '@/features/aggregation/connectors/types';
+import type { RawImportedEvent } from '@/features/aggregation/connectors/types';
 
 function formatIcalDate(value: ICAL.Time): string {
   if (value.isDate) {
@@ -14,8 +16,9 @@ function formatIcalDate(value: ICAL.Time): string {
   return value.toJSDate().toISOString();
 }
 
-export class IcalFeedConnector implements SourceConnector {
+export class IcalFeedConnector extends BaseSourceConnector {
   readonly connectorKey = 'ical_feed' as const;
+  protected readonly definition = SOURCE_CONNECTOR_DEFINITIONS.ical_feed;
 
   async fetchRawEvents(
     _source: AggregationSource,

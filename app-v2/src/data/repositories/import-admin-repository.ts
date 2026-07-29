@@ -101,6 +101,10 @@ export function createImportRepositories(): ImportRepositories {
       update: (record) => bundle.importRecords.update(record),
       getById: (id) => bundle.importRecords.getById(id),
       listByJobId: (importJobId) => bundle.importRecords.listByJobId(importJobId),
+      findLatestBySourceAndExternalId: (sourceId, externalId) =>
+        bundle.importRecords.findLatestBySourceAndExternalId(sourceId, externalId),
+      listLatestBySourceId: (sourceId) => bundle.importRecords.listLatestBySourceId(sourceId),
+      upsertManyBySourceExternal: (inputs) => bundle.importRecords.upsertManyBySourceExternal(inputs),
     },
     logs: {
       create: (input) => bundle.importLogs.create(input),

@@ -9,6 +9,7 @@ export const SOURCE_REGISTRY_TYPES = [
   'artist_website',
   'ical_feed',
   'rss_feed',
+  'atom_feed',
   'open_data_api',
   'official_api',
   'partner_feed',
@@ -164,39 +165,57 @@ export function mapSourceRecordToRegistryEntry(record: SourceRecord): SourceRegi
 
   return {
     id: record.id,
-    stableKey: record.slug,
+    stableKey: record.stableKey ?? record.slug,
     name: record.displayName,
     displayName: record.displayName,
     sourceType,
-    connectorType: sourceConfig?.reference &&
-      typeof (sourceConfig.reference as { connectorKey?: unknown }).connectorKey === 'string'
-      ? String((sourceConfig.reference as { connectorKey: string }).connectorKey)
-      : record.parserType,
+    connectorType: record.connectorType ?? record.connectorKey ?? record.parserType,
     canonicalUrl: record.baseUrl ?? record.website,
     countryCode: record.countryCode ?? regional?.countryCode,
-    languageCodes: [record.languageCode ?? regional?.languageCode].filter(
-      (value): value is string => Boolean(value),
-    ),
+    region: record.region,
+    city: record.city,
+    category: record.category,
+    languageCodes:
+      record.languageCodes ??
+      [record.languageCode ?? regional?.languageCode].filter(
+        (value): value is string => Boolean(value),
+      ),
     timezone: record.defaultTimezone,
     trustLevel: record.trustScore,
     qualityTier: 'unknown',
     priority: record.priority,
-    status: record.archived ? 'retired' : record.enabled ? 'active' : 'disabled',
+    status: record.status === 'archived' || record.archived
+      ? 'retired'
+      : record.status === 'active' || record.enabled
+        ? 'active'
+        : record.status === 'error'
+          ? 'failing'
+          : record.status === 'maintenance'
+            ? 'paused'
+            : record.status === 'draft'
+              ? 'draft'
+              : 'disabled',
     enabled: record.enabled,
     syncStrategy: record.acquisitionStrategy,
     syncIntervalMinutes: record.pollingIntervalMinutes,
-    lastSuccessfulSyncAt: record.lastImportAt,
+    lastSuccessfulSyncAt: record.lastSuccessfulSyncAt ?? record.lastImportAt,
+    lastAttemptAt: record.lastAttemptAt,
     nextSyncAt: record.nextScheduledAt,
-    consecutiveFailureCount: 0,
-    totalImportCount: 0,
-    totalValidEventCount: 0,
-    totalRejectedEventCount: 0,
-    duplicateRate: 0,
-    updateRate: 0,
-    errorRate: 0,
+    consecutiveFailureCount: record.consecutiveFailureCount ?? 0,
+    totalImportCount: record.totalImportCount ?? 0,
+    totalValidEventCount: record.totalValidEventCount ?? 0,
+    totalRejectedEventCount: record.totalRejectedEventCount ?? 0,
+    duplicateRate: record.duplicateRate ?? 0,
+    updateRate: record.updateRate ?? 0,
+    errorRate: record.errorRate ?? 0,
     createdAt: record.createdAt,
     updatedAt: record.updatedAt,
-    metadata: {},
+    metadata: {
+      ...(record.metadata ?? {}),
+      publishMode: record.publishMode,
+      sourceRoles: record.sourceRoles,
+      lastError: record.lastError,
+    },
     connectorConfig: sourceConfig ?? {},
   };
 }

@@ -61,12 +61,24 @@ export class ImportRecordRepositoryImpl implements ImportRecordRepository {
     return getDatasourceBundle().importRecords.createMany(inputs);
   }
 
+  upsertManyBySourceExternal(inputs: CreateImportRecordInput[]): Promise<ImportRecord[]> {
+    return getDatasourceBundle().importRecords.upsertManyBySourceExternal(inputs);
+  }
+
   update(record: ImportRecord): Promise<ImportRecord> {
     return getDatasourceBundle().importRecords.update(record);
   }
 
   getById(id: string): Promise<ImportRecord | null> {
     return getDatasourceBundle().importRecords.getById(id);
+  }
+
+  findLatestBySourceAndExternalId(sourceId: string, externalId: string): Promise<ImportRecord | null> {
+    return getDatasourceBundle().importRecords.findLatestBySourceAndExternalId(sourceId, externalId);
+  }
+
+  listLatestBySourceId(sourceId: string): Promise<ImportRecord[]> {
+    return getDatasourceBundle().importRecords.listLatestBySourceId(sourceId);
   }
 
   listByJobId(importJobId: string): Promise<ImportRecord[]> {

@@ -49,6 +49,39 @@ export function createDomainEventId(prefix: string): string {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
+export function publishLifecycleDomainEvent(
+  bus: RealDataDomainEventBus,
+  input: {
+    type: Extract<
+      RealDataDomainEventType,
+      | 'event_created'
+      | 'event_updated'
+      | 'event_cancelled'
+      | 'event_postponed'
+      | 'lineup_changed'
+      | 'ticket_status_changed'
+    >;
+    canonicalEventId: string;
+    sourceId?: string;
+    payload: Record<string, unknown>;
+    occurredAt?: string;
+  },
+): RealDataDomainEvent {
+  const event: RealDataDomainEvent = {
+    id: createDomainEventId(input.type),
+    type: input.type,
+    canonicalEventId: input.canonicalEventId,
+    sourceId: input.sourceId,
+    occurredAt: input.occurredAt ?? new Date().toISOString(),
+    payload: {
+      ...input.payload,
+      occurredAt: input.occurredAt ?? new Date().toISOString(),
+    },
+  };
+  bus.publish(event);
+  return event;
+}
+
 export function publishEntityFollowDomainEvent(
   bus: RealDataDomainEventBus,
   input: {

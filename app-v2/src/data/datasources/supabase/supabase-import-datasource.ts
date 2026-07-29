@@ -25,6 +25,10 @@ import type {
   ImportRecordDatasource,
   ImportSourceDatasource,
 } from '@/data/datasources/import-types';
+import {
+  listLatestImportRecordsBySource,
+  upsertImportRecordsBySourceExternal,
+} from '@/data/datasources/import-record-upsert';
 import { getSupabaseClient } from '@/services/supabase/client';
 import {
   createSupabaseImportAdminDatasource,
@@ -109,7 +113,7 @@ export function createSupabaseImportRecordDatasource(): ImportRecordDatasource {
   const supabase = getSupabaseClient();
   const table = () => supabase.from('import_records') as SupabaseTable;
 
-  return {
+  const datasource: ImportRecordDatasource = {
     async create(input: CreateImportRecordInput) {
       const now = new Date().toISOString();
       const payload = {
@@ -174,6 +178,34 @@ export function createSupabaseImportRecordDatasource(): ImportRecordDatasource {
       if (error) throwRepositoryError(error);
       return (data ?? []).map((row: unknown) => mapImportRecordRowToDomain(row as ImportRecordRow));
     },
+    async findLatestBySourceAndExternalId(sourceId, externalId) {
+      const { data, error } = await table()
+        .select('*')
+        .eq('source_id', sourceId)
+        .eq('external_id', externalId)
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (error) throwRepositoryError(error);
+      return data ? mapImportRecordRowToDomain(data as ImportRecordRow) : null;
+    },
+    async listLatestBySourceId(sourceId) {
+      const { data, error } = await table()
+        .select('*')
+        .eq('source_id', sourceId)
+        .order('updated_at', { ascending: false });
+      if (error) throwRepositoryError(error);
+      return listLatestImportRecordsBySource(
+        (data ?? []).map((row: unknown) => mapImportRecordRowToDomain(row as ImportRecordRow)),
+      );
+    },
+    async upsertManyBySourceExternal(inputs) {
+      return upsertImportRecordsBySourceExternal(inputs, {
+        findLatest: (sourceId, externalId) => datasource.findLatestBySourceAndExternalId(sourceId, externalId),
+        create: (input) => datasource.create(input),
+        update: (record) => datasource.update(record),
+      });
+    },
     async update(record: ImportRecord) {
       const payload = mapImportRecordToRow({ ...record, updatedAt: new Date().toISOString() });
       const { data, error } = await table().update(payload).eq('id', record.id).select('*').single();
@@ -191,6 +223,8 @@ export function createSupabaseImportRecordDatasource(): ImportRecordDatasource {
       return (data ?? []).map((row: unknown) => mapImportRecordRowToDomain(row as ImportRecordRow));
     },
   };
+
+  return datasource;
 }
 
 export function createSupabaseImportLogDatasource(): ImportLogDatasource {

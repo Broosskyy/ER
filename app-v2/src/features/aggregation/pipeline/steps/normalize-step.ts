@@ -6,6 +6,7 @@ import type { PipelineRunContext, PipelineStepResult } from '@/features/aggregat
 import type { FetchedImportPayload } from '@/features/aggregation/pipeline/steps/fetch-step';
 import { eventNormalizer } from '@/features/import/normalization/event-normalizer';
 import type { RawCandidateInput } from '@/features/import/normalization/event-normalizer';
+import { applySourceFieldDefaults } from '@/features/import/normalization/source-field-defaults';
 
 export interface NormalizedImportPayload {
   externalId: string;
@@ -156,11 +157,15 @@ export class NormalizeStep {
         continue;
       }
 
+      const defaultedCandidate = context.source.fieldDefaults
+        ? applySourceFieldDefaults(candidate, context.source.fieldDefaults)
+        : candidate;
+
       const enriched = {
-        ...candidate,
+        ...defaultedCandidate,
         sourceId: context.source.id,
         sourceName: context.source.name,
-        countryCode: candidate.countryCode ?? context.source.countryCode,
+        countryCode: defaultedCandidate.countryCode ?? context.source.countryCode,
       };
 
       items.push({

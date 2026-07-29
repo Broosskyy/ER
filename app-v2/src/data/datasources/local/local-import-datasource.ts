@@ -26,6 +26,10 @@ import type {
 } from '@/data/datasources/import-admin-types';
 import { ImportConcurrencyError } from '@/features/import/errors/import-errors';
 import {
+  listLatestImportRecordsBySource,
+  upsertImportRecordsBySourceExternal,
+} from '@/data/datasources/import-record-upsert';
+import {
   getActiveJobForSourceLocal,
   getMonitoringStatsLocal,
   listJobsLocal,
@@ -113,7 +117,7 @@ export function createLocalImportJobDatasource(store: LocalImportStore): ImportJ
 }
 
 export function createLocalImportRecordDatasource(store: LocalImportStore): ImportRecordDatasource {
-  return {
+  const datasource: ImportRecordDatasource = {
     async create(input: CreateImportRecordInput) {
       const now = new Date().toISOString();
       const record: ImportRecord = {
@@ -148,6 +152,24 @@ export function createLocalImportRecordDatasource(store: LocalImportStore): Impo
       }
       return records;
     },
+    async findLatestBySourceAndExternalId(sourceId, externalId) {
+      const matches = store.records
+        .filter((record) => record.sourceId === sourceId && record.externalId === externalId)
+        .sort((left, right) => right.updatedAt.localeCompare(left.updatedAt));
+      return matches[0] ?? null;
+    },
+    async listLatestBySourceId(sourceId) {
+      return listLatestImportRecordsBySource(
+        store.records.filter((record) => record.sourceId === sourceId),
+      );
+    },
+    async upsertManyBySourceExternal(inputs) {
+      return upsertImportRecordsBySourceExternal(inputs, {
+        findLatest: (sourceId, externalId) => datasource.findLatestBySourceAndExternalId(sourceId, externalId),
+        create: (input) => datasource.create(input),
+        update: (record) => datasource.update(record),
+      });
+    },
     async update(record) {
       const index = store.records.findIndex((entry) => entry.id === record.id);
       if (index < 0) {
@@ -163,6 +185,8 @@ export function createLocalImportRecordDatasource(store: LocalImportStore): Impo
       return store.records.filter((record) => record.importJobId === importJobId);
     },
   };
+
+  return datasource;
 }
 
 export function createLocalImportLogDatasource(store: LocalImportStore): ImportLogDatasource {

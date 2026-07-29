@@ -283,14 +283,13 @@ export class ImportOperationsService {
       throw new ImportError('Source not found.', 'IMPORT_SOURCE_NOT_FOUND');
     }
 
-    const job =
-      this.aggregationService && this.shouldUseAggregation(sourceRecord)
-        ? await this.aggregationService.runFromSourceRecord(
-            sourceRecord,
-            'manual',
-            this.actorId(session),
-          )
-        : await this.orchestrator.run(sourceId, 'manual', this.actorId(session));
+    const job = this.aggregationService
+      ? await this.aggregationService.runFromSourceRecord(
+          sourceRecord,
+          'manual',
+          this.actorId(session),
+        )
+      : await this.orchestrator.run(sourceId, 'manual', this.actorId(session));
 
     try {
       await this.sourceService.recordImportRun(this.role(session), sourceId, {
@@ -319,6 +318,9 @@ export class ImportOperationsService {
     }
   }
 
+  /**
+   * @deprecated Legacy compatibility path. Production imports use ImportAggregationService.
+   */
   private shouldUseAggregation(
     sourceRecord: Awaited<ReturnType<SourceService['getByIdForAdmin']>>,
   ): boolean {

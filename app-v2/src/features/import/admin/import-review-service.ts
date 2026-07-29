@@ -1,4 +1,11 @@
 import type { AdminEventRecord } from '@/data/types/records';
+import type { AdminEventRepository, EventRepository } from '@/data/repositories/repositories';
+import { EntityResolutionWritebackService } from '@/features/entity-resolution/entity-resolution-writeback-service';
+import { touchesEntityResolutionEdits } from '@/features/entity-resolution/entity-resolution-writeback';
+import {
+  publishLifecycleDomainEvent,
+  type RealDataDomainEventBus,
+} from '@/features/events/domain/real-data-domain-events';
 import { matchingConfig } from '@/features/import/matching/matching-config';
 import { loadMatchingCatalog } from '@/features/import/matching/matching-catalog';
 import { ImportMatchingService } from '@/features/import/matching/import-matching-service';
@@ -11,7 +18,7 @@ import type { NormalizedEventCandidate } from '@/features/import/models/normaliz
 import type { RejectReason } from '@/features/import/models/statuses';
 import type { ImportRecord, ReviewerEdits } from '@/features/import/models/types';
 import { ImportCandidateValidator } from '@/features/import/validation/import-candidate-validator';
-import type { AdminEventRepository, EventRepository } from '@/data/repositories/repositories';
+import type { EventSourceReferenceRepository } from '@/features/aggregation/repositories/multi-source-repositories';
 import type { ImportAdminRepository } from '@/data/repositories/import-admin-repository';
 import type { ImportRecordRepository } from '@/data/repositories/import-repositories';
 import type { AuthSession } from '@/services/supabase/auth-service';
@@ -28,45 +35,10 @@ import {
 } from '@/features/import/admin/import-utils';
 import { ImportAuditService } from './import-audit-service';
 
-function createEventId(): string {
-  return `evt-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
-}
-
-function buildAdminEventFromRecord(record: ImportRecord): AdminEventRecord {
-  const candidate = getEffectiveCandidate(record);
-  const now = new Date().toISOString();
-  const organizerId =
-    record.reviewerEdits?.matchedOrganizerId ?? record.matchedOrganizerId;
-  const normalized = record.normalizedPayload as Record<string, unknown> | undefined;
-  return {
-    id: createEventId(),
-    title: candidate.title,
-    subtitle:
-      typeof normalized?.subtitle === 'string'
-        ? normalized.subtitle
-        : undefined,
-    description: candidate.description ?? '',
-    cityId: record.reviewerEdits?.matchedCityId ?? record.matchedCityId,
-    venueId: record.reviewerEdits?.matchedVenueId ?? record.matchedVenueId,
-    organizerId,
-    organizerName: candidate.organizerName,
-    artistId: undefined,
-    genreId: (record.reviewerEdits?.matchedGenreIds ?? record.matchedGenreIds)?.[0],
-    sourceId: record.sourceId,
-    startDate: candidate.startDate,
-    endDate: candidate.endDate,
-    ticketUrl: candidate.ticketUrl,
-    imageUrl: candidate.imageUrl,
-    websiteUrl: candidate.eventUrl ?? record.originalUrl,
-    status: 'published',
-    createdAt: now,
-    updatedAt: now,
-  };
-}
+import { buildAdminEventFromImportRecord } from '@/features/import/services/import-event-publish-service';
 
 export class ImportReviewService {
   private readonly validator = new ImportCandidateValidator();
-  private readonly matchingService = new ImportMatchingService();
 
   constructor(
     private readonly recordRepository: ImportRecordRepository,
@@ -81,7 +53,11 @@ export class ImportReviewService {
       ): Promise<unknown>;
     },
     private readonly consumerEventRepository?: EventRepository,
+    private readonly matchingService: ImportMatchingService = new ImportMatchingService(),
     private readonly catalogLoader: typeof loadMatchingCatalog = loadMatchingCatalog,
+    private readonly entityResolutionWritebackService?: EntityResolutionWritebackService,
+    private readonly domainEventBus?: RealDataDomainEventBus,
+    private readonly sourceReferences?: EventSourceReferenceRepository,
   ) {}
 
   private role(session: AuthSession | null): AdminRole | null {
@@ -90,6 +66,45 @@ export class ImportReviewService {
 
   private actorId(session: AuthSession): string {
     return session.user.id;
+  }
+
+  private async persistEntityResolutionWriteback(
+    session: AuthSession,
+    record: ImportRecord,
+    trigger: 'edit' | 'approve',
+    edits?: ReviewerEdits,
+  ): Promise<void> {
+    if (!this.entityResolutionWritebackService) {
+      return;
+    }
+
+    const candidate = getEffectiveCandidate(
+      edits ? { ...record, reviewerEdits: edits } : record,
+    );
+
+    try {
+      const result = await this.entityResolutionWritebackService.persist({
+        record,
+        candidate,
+        actorId: this.actorId(session),
+        trigger,
+        edits,
+      });
+
+      if (result.auditEntries.length > 0) {
+        await this.auditService.logEntityResolutionWriteback(
+          this.actorId(session),
+          record.id,
+          result.auditEntries,
+        );
+      }
+    } catch (error: unknown) {
+      throw new ImportError(
+        'Entity resolution decisions could not be persisted. Review was not completed.',
+        'IMPORT_ENTITY_RESOLUTION_PERSIST_FAILED',
+        error,
+      );
+    }
   }
 
   async getRecord(session: AuthSession | null, recordId: string): Promise<ImportRecord | null> {
@@ -120,6 +135,10 @@ export class ImportReviewService {
         validation.errors.map((e) => e.message).join(' '),
         'IMPORT_VALIDATION_BLOCKED',
       );
+    }
+
+    if (touchesEntityResolutionEdits(edits)) {
+      await this.persistEntityResolutionWriteback(session, record, 'edit', mergedEdits);
     }
 
     const updated = await this.adminRepository.updateIfUnchanged(
@@ -187,7 +206,9 @@ export class ImportReviewService {
       );
     }
 
-    const event = buildAdminEventFromRecord(record);
+    await this.persistEntityResolutionWriteback(session, record, 'approve');
+
+    const event = buildAdminEventFromImportRecord(record);
     const matchedArtistIds = [
       ...new Set(
         (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds ?? []).filter(Boolean),
@@ -196,6 +217,22 @@ export class ImportReviewService {
     let savedEvent: AdminEventRecord;
     try {
       savedEvent = await this.adminEventRepository.save(event);
+      if (this.sourceReferences) {
+        const now = new Date().toISOString();
+        await this.sourceReferences.upsert({
+          id: `ref-${savedEvent.id}-${record.sourceId}-${record.externalId}`,
+          canonicalEventId: savedEvent.id,
+          sourceId: record.sourceId,
+          externalEventId: record.externalId,
+          originalUrl: record.originalUrl ?? record.sourceUrl,
+          rawRecordId: record.id,
+          importJobId: record.importJobId,
+          firstSeenAt: record.retrievedAt ?? record.createdAt,
+          lastSeenAt: now,
+          active: true,
+          sourcePriority: 50,
+        });
+      }
       const role = this.role(session);
       if (role && matchedArtistIds.length > 0) {
         await this.lineupService.replaceFromMatchedArtistIds(
@@ -228,6 +265,18 @@ export class ImportReviewService {
     );
 
     await this.auditService.logRecordApproved(this.actorId(session), recordId, savedEvent.id);
+    if (this.domainEventBus) {
+      publishLifecycleDomainEvent(this.domainEventBus, {
+        type: 'event_created',
+        canonicalEventId: savedEvent.id,
+        sourceId: record.sourceId,
+        payload: {
+          importRecordId: recordId,
+          venueId: savedEvent.venueId,
+          organizerId: savedEvent.organizerId,
+        },
+      });
+    }
     if (this.consumerEventRepository) {
       await this.consumerEventRepository.refresh();
     }

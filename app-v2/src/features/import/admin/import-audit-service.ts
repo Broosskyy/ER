@@ -107,4 +107,20 @@ export class ImportAuditService {
       summary: `Marked as duplicate of event ${eventId}.`,
     });
   }
+
+  async logEntityResolutionWriteback(
+    actorId: string,
+    recordId: string,
+    entries: Array<{ action: string; summary: string }>,
+  ): Promise<void> {
+    for (const entry of entries) {
+      await this.log({
+        actorId,
+        action: entry.action,
+        entityType: 'import_record',
+        entityId: recordId,
+        summary: entry.summary,
+      });
+    }
+  }
 }

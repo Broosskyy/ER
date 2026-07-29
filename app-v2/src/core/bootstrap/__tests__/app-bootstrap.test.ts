@@ -13,8 +13,14 @@ const featureFlagsMock = vi.hoisted(() => ({
   useSupabase: false,
 }));
 
+const initializeEntityAliasStoreMock = vi.hoisted(() => vi.fn(async () => undefined));
+
 vi.mock('@/core/config/feature-flags', () => ({
   featureFlags: featureFlagsMock,
+}));
+
+vi.mock('@/features/entity-resolution/entity-alias-store-bootstrap', () => ({
+  initializeEntityAliasStore: initializeEntityAliasStoreMock,
 }));
 
 describe('app bootstrap', () => {
@@ -28,6 +34,7 @@ describe('app bootstrap', () => {
     initializeSpy = vi.spyOn(repository, 'initialize');
     initializeSyncSpy = vi.spyOn(repository, 'initializeSync');
     featureFlagsMock.useSupabase = false;
+    initializeEntityAliasStoreMock.mockClear();
     resetAppBootstrap();
   });
 
@@ -45,13 +52,13 @@ describe('app bootstrap', () => {
     );
   });
 
-  it('bootstraps successfully in local mode', async () => {
+  it('bootstraps successfully in local mode without demo fallback events', async () => {
     await bootstrapApp();
 
     expect(isAppBootstrapped()).toBe(true);
     expect(initializeSyncSpy).toHaveBeenCalledTimes(1);
     expect(initializeSpy).not.toHaveBeenCalled();
-    expect(repository.getPublishedEvents().length).toBeGreaterThan(0);
+    expect(repository.getPublishedEvents()).toEqual([]);
     expect(() => assertAppBootstrapped()).not.toThrow();
   });
 
@@ -67,6 +74,7 @@ describe('app bootstrap', () => {
     expect(isAppBootstrapped()).toBe(true);
     expect(initializeSpy).toHaveBeenCalledTimes(1);
     expect(initializeSyncSpy).not.toHaveBeenCalled();
+    expect(initializeEntityAliasStoreMock).toHaveBeenCalledTimes(1);
   });
 
   it('surfaces bootstrap failures without marking bootstrap complete', async () => {

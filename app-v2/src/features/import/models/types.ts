@@ -10,6 +10,8 @@ import type { ImportSourceConfig } from './source-config';
 import type { ValidationIssue } from '@/features/import/validation/validation-codes';
 import type { PaginatedResult } from '@/data/types/records';
 
+import type { SourceEntityRole } from '@/features/sources/domain/source-entity-roles';
+
 export interface ImportSource {
   id: string;
   name: string;
@@ -21,6 +23,7 @@ export interface ImportSource {
   trustScore: number;
   active: boolean;
   adapterKey?: string;
+  sourceRoles?: SourceEntityRole[];
   reviewRequired?: boolean;
   lastImportAt?: string;
   lastJobStatus?: ImportJobStatus;
@@ -75,6 +78,9 @@ export interface ReviewerEdits {
   matchedOrganizerId?: string;
   matchedArtistIds?: string[];
   matchedGenreIds?: string[];
+  keepSeparateVenue?: boolean;
+  keepSeparateOrganizer?: boolean;
+  keepSeparateArtistNames?: string[];
 }
 
 export interface ImportRecord {
@@ -98,6 +104,7 @@ export interface ImportRecord {
   matchedGenreIds?: string[];
   duplicateEventId?: string;
   duplicateScore?: number;
+  matchEvaluationId?: string;
   matchingWarnings?: string[];
   status: ImportRecordStatus;
   resultingEventId?: string;

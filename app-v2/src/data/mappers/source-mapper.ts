@@ -19,7 +19,14 @@ import {
   SOURCE_DEFAULT_TRUST_SCORE,
   SOURCE_TYPES,
 } from '@/features/sources/domain/source-types';
+import { parsePublishMode, resolveReviewRequiredFromPublishMode } from '@/features/import/domain/publish-mode';
+import { parseSourceEntityRoles } from '@/features/sources/domain/source-entity-roles';
 import { buildSourceSlugBase } from '@/features/sources/domain/source-slug';
+import type { ImportSchedulePolicy } from '@/features/import/scheduling/import-schedule-types';
+import {
+  SCHEDULE_INTERVAL_PRESETS,
+  type ScheduleIntervalPreset,
+} from '@/features/import/scheduling/schedule-interval-preset';
 import type { SourceInput } from '@/features/sources/domain/source-validation';
 
 export type SourceMutationPayload = SourceInput & {
@@ -57,8 +64,46 @@ export interface SourceRow {
   last_import_at: string | null;
   last_job_status: ImportJobStatus | null;
   next_scheduled_at: string | null;
+  consecutive_failure_count?: number | null;
+  total_import_count?: number | null;
+  total_valid_event_count?: number | null;
+  total_rejected_event_count?: number | null;
+  duplicate_rate?: number | null;
+  update_rate?: number | null;
+  error_rate?: number | null;
+  last_successful_sync_at?: string | null;
+  last_failed_import_at?: string | null;
+  stable_key?: string | null;
+  region?: string | null;
+  city?: string | null;
+  language_codes?: string[] | null;
+  source_lifecycle_status?: string | null;
+  connector_type?: string | null;
+  last_attempt_at?: string | null;
+  average_duration_ms?: number | null;
+  metadata?: Record<string, unknown> | null;
+  country_code?: string | null;
+  publish_mode?: string | null;
+  source_roles?: string[] | null;
+  last_error?: string | null;
+  schedule_enabled?: boolean | null;
+  schedule_policy?: string | null;
+  schedule_timezone?: string | null;
+  schedule_interval_preset?: string | null;
+  scheduler_maintenance_mode?: boolean | null;
+  last_scheduled_at?: string | null;
+  backoff_until?: string | null;
+  computed_trust_score?: number | null;
+  trust_score_updated_at?: string | null;
   created_at: string;
   updated_at: string;
+}
+
+export function resolveSourceReviewRequired(record: Pick<SourceRecord, 'publishMode' | 'reviewRequired'>): boolean {
+  if (record.publishMode) {
+    return resolveReviewRequiredFromPublishMode(record.publishMode);
+  }
+  return record.reviewRequired ?? true;
 }
 
 function parseSourceType(value: string): SourceType {
@@ -84,6 +129,22 @@ function parsePollingStrategy(value: string | null | undefined): PollingStrategy
     : undefined;
 }
 
+function parseSchedulePolicy(value: string | null | undefined): ImportSchedulePolicy | undefined {
+  if (value === 'interval' || value === 'cron' || value === 'manual_only' || value === 'paused') {
+    return value;
+  }
+  return undefined;
+}
+
+function parseScheduleIntervalPreset(value: string | null | undefined): ScheduleIntervalPreset | undefined {
+  if (!value) {
+    return undefined;
+  }
+  return (SCHEDULE_INTERVAL_PRESETS as readonly string[]).includes(value)
+    ? (value as ScheduleIntervalPreset)
+    : undefined;
+}
+
 export function mapSourceRowToRecord(row: SourceRow): SourceRecord {
   const displayName = row.display_name || row.name;
   const sourceType = parseSourceType(row.source_type || row.type);
@@ -91,13 +152,21 @@ export function mapSourceRowToRecord(row: SourceRow): SourceRecord {
   const baseUrl = row.base_url ?? row.source_url ?? undefined;
   const enabled = row.enabled ?? row.active;
   const archived = row.archived ?? false;
+  const metadata = (row.metadata ?? {}) as Record<string, unknown>;
 
   return {
     id: row.id,
     slug: row.slug || buildSourceSlugBase(displayName),
+    stableKey: row.stable_key ?? row.slug ?? undefined,
     displayName,
     description: row.description ?? undefined,
     sourceType,
+    category: typeof metadata.category === 'string' ? metadata.category as SourceRecord['category'] : undefined,
+    status: (row.source_lifecycle_status as SourceRecord['status']) ?? undefined,
+    connectorKey:
+      (row.source_config?.reference?.connectorKey as string | undefined) ??
+      (typeof metadata.connectorKey === 'string' ? metadata.connectorKey : undefined),
+    connectorType: row.connector_type ?? undefined,
     baseUrl,
     parserType,
     acquisitionStrategy: parseAcquisitionStrategy(row.acquisition_strategy),
@@ -112,11 +181,50 @@ export function mapSourceRowToRecord(row: SourceRow): SourceRecord {
     notes: row.notes ?? undefined,
     sourceConfig: row.source_config ?? undefined,
     defaultTimezone: row.default_timezone ?? undefined,
-    reviewRequired: row.review_required ?? true,
+    reviewRequired: row.publish_mode
+      ? resolveReviewRequiredFromPublishMode(parsePublishMode(row.publish_mode))
+      : (row.review_required ?? true),
+    publishMode: row.publish_mode ? parsePublishMode(row.publish_mode) : undefined,
+    sourceRoles: parseSourceEntityRoles(row.source_roles ?? metadata.sourceRoles),
+    lastError: row.last_error ?? undefined,
     website: row.website ?? undefined,
+    countryCode: row.country_code ?? (typeof metadata.countryCode === 'string' ? metadata.countryCode : undefined),
+    region: row.region ?? undefined,
+    stateCode: typeof metadata.stateCode === 'string' ? metadata.stateCode : undefined,
+    city: row.city ?? undefined,
+    languageCode: row.language_codes?.[0] ?? (typeof metadata.languageCode === 'string' ? metadata.languageCode : undefined),
+    languageCodes: row.language_codes ?? undefined,
+    genreNames: Array.isArray(metadata.genreNames) ? metadata.genreNames as string[] : undefined,
+    organizerId: typeof metadata.organizerId === 'string' ? metadata.organizerId : undefined,
+    organizerName: typeof metadata.organizerName === 'string' ? metadata.organizerName : undefined,
+    venueId: typeof metadata.venueId === 'string' ? metadata.venueId : undefined,
+    venueName: typeof metadata.venueName === 'string' ? metadata.venueName : undefined,
+    tags: Array.isArray(metadata.tags) ? metadata.tags as string[] : undefined,
+    autoEnabled: typeof metadata.autoEnabled === 'boolean' ? metadata.autoEnabled : undefined,
+    metadata,
     lastImportAt: row.last_import_at ?? undefined,
     lastJobStatus: row.last_job_status ?? undefined,
     nextScheduledAt: row.next_scheduled_at ?? undefined,
+    consecutiveFailureCount: Number(row.consecutive_failure_count ?? 0),
+    totalImportCount: Number(row.total_import_count ?? 0),
+    totalValidEventCount: Number(row.total_valid_event_count ?? 0),
+    totalRejectedEventCount: Number(row.total_rejected_event_count ?? 0),
+    duplicateRate: Number(row.duplicate_rate ?? 0),
+    updateRate: Number(row.update_rate ?? 0),
+    errorRate: Number(row.error_rate ?? 0),
+    lastSuccessfulSyncAt: row.last_successful_sync_at ?? undefined,
+    lastFailedImportAt: row.last_failed_import_at ?? undefined,
+    lastAttemptAt: row.last_attempt_at ?? undefined,
+    averageDurationMs: row.average_duration_ms ?? undefined,
+    scheduleEnabled: row.schedule_enabled ?? undefined,
+    schedulePolicy: parseSchedulePolicy(row.schedule_policy),
+    scheduleIntervalPreset: parseScheduleIntervalPreset(row.schedule_interval_preset),
+    scheduleTimezone: row.schedule_timezone ?? undefined,
+    schedulerMaintenanceMode: row.scheduler_maintenance_mode ?? undefined,
+    lastScheduledAt: row.last_scheduled_at ?? undefined,
+    backoffUntil: row.backoff_until ?? undefined,
+    computedTrustScore: row.computed_trust_score ?? undefined,
+    trustScoreUpdatedAt: row.trust_score_updated_at ?? undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -126,6 +234,21 @@ export function mapSourceRecordToRow(record: SourceRecord): SourceRow {
   const legacyActive = record.enabled && !record.archived;
   const legacyAdapterKey =
     record.parserType !== 'unknown' ? record.parserType : null;
+  const metadata: Record<string, unknown> = {
+    ...(record.metadata ?? {}),
+    category: record.category,
+    connectorKey: record.connectorKey,
+    stateCode: record.stateCode,
+    genreNames: record.genreNames,
+    organizerId: record.organizerId,
+    organizerName: record.organizerName,
+    venueId: record.venueId,
+    venueName: record.venueName,
+    tags: record.tags,
+    autoEnabled: record.autoEnabled,
+    countryCode: record.countryCode,
+    languageCode: record.languageCode,
+  };
 
   return {
     id: record.id,
@@ -153,12 +276,42 @@ export function mapSourceRecordToRow(record: SourceRecord): SourceRow {
     default_timezone: record.defaultTimezone ?? null,
     active: legacyActive,
     adapter_key: legacyAdapterKey,
-    review_required: record.reviewRequired ?? true,
+    review_required: resolveSourceReviewRequired(record),
+    publish_mode: record.publishMode ?? null,
     last_import_at: record.lastImportAt ?? null,
     last_job_status: record.lastJobStatus ?? null,
     next_scheduled_at: record.nextScheduledAt ?? null,
+    consecutive_failure_count: record.consecutiveFailureCount ?? null,
+    total_import_count: record.totalImportCount ?? null,
+    total_valid_event_count: record.totalValidEventCount ?? null,
+    total_rejected_event_count: record.totalRejectedEventCount ?? null,
+    duplicate_rate: record.duplicateRate ?? null,
+    update_rate: record.updateRate ?? null,
+    error_rate: record.errorRate ?? null,
+    last_successful_sync_at: record.lastSuccessfulSyncAt ?? null,
+    last_failed_import_at: record.lastFailedImportAt ?? null,
+    stable_key: record.stableKey ?? record.slug,
+    region: record.region ?? null,
+    city: record.city ?? null,
+    language_codes: record.languageCodes ?? (record.languageCode ? [record.languageCode] : null),
+    source_lifecycle_status: record.status ?? null,
+    connector_type: record.connectorType ?? record.connectorKey ?? null,
+    last_attempt_at: record.lastAttemptAt ?? null,
+    average_duration_ms: record.averageDurationMs ?? null,
+    metadata,
+    country_code: record.countryCode ?? null,
+    schedule_enabled: record.scheduleEnabled ?? null,
+    schedule_policy: record.schedulePolicy ?? null,
+    schedule_timezone: record.scheduleTimezone ?? null,
+    schedule_interval_preset: record.scheduleIntervalPreset ?? null,
+    scheduler_maintenance_mode: record.schedulerMaintenanceMode ?? null,
+    last_scheduled_at: record.lastScheduledAt ?? null,
+    backoff_until: record.backoffUntil ?? null,
+    computed_trust_score: record.computedTrustScore ?? null,
+    trust_score_updated_at: record.trustScoreUpdatedAt ?? null,
     created_at: record.createdAt,
     updated_at: record.updatedAt,
+    ...(record.sourceRoles?.length ? { source_roles: record.sourceRoles } : {}),
   };
 }
 
@@ -174,6 +327,7 @@ export function mapSourceRecordToImportSource(record: SourceRecord): ImportSourc
     trustScore: record.trustScore,
     active: record.enabled && !record.archived,
     adapterKey: record.parserType !== 'unknown' ? record.parserType : undefined,
+    sourceRoles: record.sourceRoles,
     reviewRequired: record.reviewRequired,
     lastImportAt: record.lastImportAt,
     lastJobStatus: record.lastJobStatus,

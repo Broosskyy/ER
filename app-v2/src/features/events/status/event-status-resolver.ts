@@ -125,7 +125,17 @@ function resolveConsumerStatuses(event: EventDisplayModel): ConsumerEventStatus[
     statuses.add(demoOverride);
   }
 
-  if (event.status === 'archived') {
+  if (event.lifecycleStatus === 'cancelled') {
+    statuses.add('cancelled');
+  }
+  if (event.lifecycleStatus === 'postponed') {
+    statuses.add('postponed');
+  }
+  if (event.lifecycleStatus === 'sold_out') {
+    statuses.add('sold_out');
+  }
+
+  if (event.status === 'archived' && !statuses.has('cancelled')) {
     statuses.add('cancelled');
   }
 
@@ -224,7 +234,15 @@ export function resolvePrimaryTicketStatus(event: EventDisplayModel): EventTicke
 
 export function resolveEventNoticeType(
   event: EventDisplayModel,
-): 'cancelled' | 'postponed' | 'sold_out' | undefined {
+): 'cancelled' | 'postponed' | 'sold_out' | 'venue_changed' | 'time_changed' | undefined {
+  if (event.lifecycleNotices?.includes('venue_changed')) {
+    return 'venue_changed';
+  }
+
+  if (event.lifecycleNotices?.includes('time_changed') || event.lifecycleNotices?.includes('date_changed')) {
+    return 'time_changed';
+  }
+
   const { consumerStatuses } = resolveEventPresentation(event);
 
   if (consumerStatuses.includes('cancelled')) {
@@ -233,6 +251,10 @@ export function resolveEventNoticeType(
 
   if (consumerStatuses.includes('postponed') || consumerStatuses.includes('date_changed')) {
     return 'postponed';
+  }
+
+  if (consumerStatuses.includes('venue_changed')) {
+    return 'venue_changed';
   }
 
   if (consumerStatuses.includes('sold_out')) {

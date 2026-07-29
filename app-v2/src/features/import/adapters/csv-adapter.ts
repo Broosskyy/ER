@@ -1,5 +1,4 @@
 import type { ImportSource } from '@/features/import/models/types';
-import type { CsvFieldMapping } from '@/features/import/models/source-config';
 import type {
   ImportAdapterContext,
   ImportAdapterRecordResult,
@@ -10,39 +9,8 @@ import {
   createSkippedRecord,
   processRawCandidate,
 } from '@/features/import/adapters/adapter-utils';
-import { mapCsvRow, parseCsv } from '@/features/import/adapters/parsers/csv-parser';
 import { importFetchService } from '@/features/import/services/import-fetch-service';
-import { sanitizeCsvFormula } from '@/features/import/normalization/text-normalizer';
-
-function mapCsvToCandidate(
-  row: Record<string, string>,
-  mapping: CsvFieldMapping,
-  index: number,
-) {
-  const get = (key?: string) => (key ? sanitizeCsvFormula(row[key] ?? '') : undefined);
-  const externalId = get(mapping.externalId) || `csv-row-${index + 1}`;
-
-  return {
-    externalId,
-    title: get(mapping.title),
-    description: get(mapping.description),
-    startDate: get(mapping.startDate),
-    endDate: get(mapping.endDate),
-    venueName: get(mapping.venueName),
-    venueAddress: get(mapping.venueAddress),
-    cityName: get(mapping.cityName),
-    countryCode: get(mapping.countryCode),
-    artistNames: get(mapping.artistNames),
-    genreNames: get(mapping.genreNames),
-    ticketUrl: get(mapping.ticketUrl),
-    eventUrl: get(mapping.eventUrl),
-    imageUrl: get(mapping.imageUrl),
-    minimumAge: get(mapping.minimumAge),
-    organizerName: get(mapping.organizerName),
-    rawSourceType: 'csv' as const,
-    sourceMetadata: row,
-  };
-}
+import { parseCsvSourceContent } from '@/features/import/parsers/csv-source-parser';
 
 export class CsvImportAdapter implements ImportSourceAdapter {
   readonly adapterKey = 'csv';
@@ -53,19 +21,24 @@ export class CsvImportAdapter implements ImportSourceAdapter {
       throw new Error('CSV source requires sourceConfig.csv.fieldMapping.');
     }
 
+    const inline = source.sourceConfig?.reference?.csv;
     const url = source.sourceUrl ?? source.website;
-    if (!url) {
-      throw new Error('CSV source requires sourceUrl.');
+    const content = inline
+      ? inline
+      : (
+          await importFetchService.fetch({
+            url: url!,
+            allowedContentTypes: ['text/csv', 'text/plain', 'application/csv'],
+          })
+        ).body;
+
+    if (!inline && !url) {
+      throw new Error('CSV source requires sourceUrl or reference.csv.');
     }
 
-    const response = await importFetchService.fetch({
-      url,
-      allowedContentTypes: ['text/csv', 'text/plain', 'application/csv'],
-    });
-
-    const { headers, rows } = parseCsv(response.body, {
-      delimiter: config.delimiter ?? ',',
-      hasHeader: config.hasHeader ?? true,
+    const rows = parseCsvSourceContent(content, config, {
+      encoding: config.encoding,
+      maxSizeBytes: config.maxSizeBytes,
     });
 
     const warnings: string[] = [];
@@ -73,16 +46,13 @@ export class CsvImportAdapter implements ImportSourceAdapter {
     let skippedCount = 0;
 
     rows.forEach((row, index) => {
-      const mapped = mapCsvRow(headers, row);
-      const candidate = mapCsvToCandidate(mapped, config.fieldMapping, index);
-
-      if (!candidate.title || !candidate.startDate) {
+      if (!row.title?.trim() || !row.startDate?.trim()) {
         skippedCount += 1;
         warnings.push(`Skipped CSV row ${index + 1} — missing title or startDate.`);
         records.push(
           createSkippedRecord(
-            candidate.externalId,
-            mapped,
+            row.externalId,
+            row.sourceMetadata,
             'Missing required CSV columns (title or startDate).',
           ),
         );
@@ -92,7 +62,24 @@ export class CsvImportAdapter implements ImportSourceAdapter {
       records.push(
         processRawCandidate(
           {
-            ...candidate,
+            externalId: row.externalId,
+            title: row.title,
+            description: row.description,
+            startDate: row.startDate,
+            endDate: row.endDate,
+            venueName: row.venueName,
+            venueAddress: row.venueAddress,
+            cityName: row.cityName,
+            countryCode: row.countryCode,
+            artistNames: row.artistNames,
+            genreNames: row.genreNames,
+            ticketUrl: row.ticketUrl,
+            eventUrl: row.eventUrl,
+            imageUrl: row.imageUrl,
+            minimumAge: row.minimumAge,
+            organizerName: row.organizerName,
+            rawSourceType: 'csv',
+            sourceMetadata: row.sourceMetadata,
             baseUrl: url,
           },
           source,

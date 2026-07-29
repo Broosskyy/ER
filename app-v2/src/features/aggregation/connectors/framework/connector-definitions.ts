@@ -1,0 +1,200 @@
+import { createSourceConnectorCapabilities } from '@/features/aggregation/connectors/framework/capabilities';
+import {
+  DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+  DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+} from '@/features/aggregation/connectors/framework/config';
+import type { SourceConnectorDefinition } from '@/features/aggregation/connectors/framework/descriptor';
+import { createSourceConnectorVersion } from '@/features/aggregation/connectors/framework/versioning';
+import type { SourceConnectorKey } from '@/features/aggregation/connectors/types';
+
+export const SOURCE_CONNECTOR_DEFINITIONS: Record<SourceConnectorKey, SourceConnectorDefinition> = {
+  manual_reference: {
+    connectorKey: 'manual_reference',
+    displayName: 'Manual Reference',
+    connectorType: 'manual',
+    dataFormat: 'inline_json',
+    authentication: 'none',
+    timeoutMs: 0,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsArtists: true,
+      supportsVenueCoordinates: true,
+      supportsGenres: true,
+      supportsTicketLinks: true,
+      supportsTimezone: true,
+    }),
+    retryConfig: { maxRetries: 0 },
+    rateLimitConfig: { requestsPerMinute: 1_000, burstLimit: 1_000, concurrentRequests: 10 },
+    limitations: ['No remote fetch — fixture or configured events only.'],
+  },
+  club_website: {
+    connectorKey: 'club_website',
+    displayName: 'Club Website',
+    connectorType: 'website',
+    dataFormat: 'json_ld',
+    authentication: 'none',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsArtists: true,
+      supportsVenueCoordinates: true,
+      supportsTicketLinks: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: {
+      ...DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+      requestsPerMinute: 30,
+      burstLimit: 5,
+      concurrentRequests: 1,
+    },
+    limitations: [
+      'Depends on schema.org JSON-LD Event blocks.',
+      'HTML structure changes can break extraction.',
+    ],
+  },
+  organizer_website: {
+    connectorKey: 'organizer_website',
+    displayName: 'Organizer Website',
+    connectorType: 'website',
+    dataFormat: 'json_ld',
+    authentication: 'none',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsArtists: true,
+      supportsVenueCoordinates: true,
+      supportsTicketLinks: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: {
+      ...DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+      requestsPerMinute: 30,
+      burstLimit: 5,
+      concurrentRequests: 1,
+    },
+    limitations: [
+      'Reuses club website JSON-LD parser with organizer metadata.',
+      'No dedicated organizer-specific HTML selectors yet.',
+    ],
+  },
+  ical_feed: {
+    connectorKey: 'ical_feed',
+    displayName: 'iCal Feed',
+    connectorType: 'feed',
+    dataFormat: 'ical',
+    authentication: 'optional',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({
+      connectorVersion: '1.0.0',
+      supportedApiVersions: ['RFC5545'],
+    }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsTicketLinks: true,
+      supportsTimezone: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+    limitations: [
+      'Limited metadata — no genres or images in standard VEVENT.',
+      'Location field used for both venue name and address.',
+    ],
+  },
+  open_data_api: {
+    connectorKey: 'open_data_api',
+    displayName: 'Open Data API',
+    connectorType: 'api',
+    dataFormat: 'json',
+    authentication: 'optional',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({
+      connectorVersion: '1.1.0',
+      supportedApiVersions: ['1', 'partner-v1'],
+    }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsPagination: true,
+      supportsDeltaImports: true,
+      supportsImages: true,
+      supportsArtists: true,
+      supportsVenueCoordinates: true,
+      supportsGenres: true,
+      supportsTicketLinks: true,
+      supportsTimezone: true,
+      supportsRateLimits: true,
+      supportsAuthentication: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+    limitations: [
+      'Field mapping required via sourceConfig.api.fieldMapping.',
+      'Pagination not yet executed automatically — metadata only.',
+    ],
+  },
+  rss_feed: {
+    connectorKey: 'rss_feed',
+    displayName: 'RSS Feed',
+    connectorType: 'feed',
+    dataFormat: 'rss',
+    authentication: 'none',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsTicketLinks: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+    limitations: [
+      'Event dates may be embedded in description if not in dedicated fields.',
+      'Field mapping configurable via sourceConfig.feed.',
+    ],
+  },
+  atom_feed: {
+    connectorKey: 'atom_feed',
+    displayName: 'Atom Feed',
+    connectorType: 'feed',
+    dataFormat: 'atom',
+    authentication: 'none',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsTicketLinks: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+    limitations: [
+      'Atom entries may require custom field mapping for event dates.',
+      'Field mapping configurable via sourceConfig.feed.',
+    ],
+  },
+  csv_import: {
+    connectorKey: 'csv_import',
+    displayName: 'CSV Import',
+    connectorType: 'file',
+    dataFormat: 'csv',
+    authentication: 'none',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsArtists: true,
+      supportsGenres: true,
+      supportsTicketLinks: true,
+      supportsVenueCoordinates: false,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+    limitations: [
+      'Requires sourceConfig.csv.fieldMapping.',
+      'Supports remote URLs and inline reference.csv payloads.',
+      'Default max file size 5 MB unless overridden.',
+    ],
+  },
+};
+
+export function getSourceConnectorDefinition(key: SourceConnectorKey): SourceConnectorDefinition {
+  return SOURCE_CONNECTOR_DEFINITIONS[key];
+}

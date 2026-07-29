@@ -11,6 +11,7 @@ import {
 import type { AdminRole } from '@/features/import/admin/admin-roles';
 import type { ImportSource } from '@/features/import/models/types';
 import type { ImportJobStatus } from '@/features/import/models/statuses';
+import type { SourceConnectorKey } from '@/features/aggregation/connectors/types';
 import {
   findStrongSourceDuplicate,
 } from '@/features/sources/domain/source-duplicate';
@@ -23,6 +24,24 @@ import { validateSourceInput, type SourceInput } from '@/features/sources/domain
 export interface SourceMutationInput extends SourceInput {
   id?: string;
   sourceConfig?: SourceRecord['sourceConfig'];
+  stableKey?: string;
+  category?: string;
+  status?: string;
+  connectorKey?: string;
+  connectorType?: string;
+  countryCode?: string;
+  region?: string;
+  stateCode?: string;
+  city?: string;
+  languageCodes?: string[];
+  genreNames?: string[];
+  organizerId?: string;
+  organizerName?: string;
+  venueId?: string;
+  venueName?: string;
+  tags?: string[];
+  autoEnabled?: boolean;
+  metadata?: Record<string, unknown>;
 }
 
 export interface SourceImportRunMetadata {
@@ -100,31 +119,14 @@ export class SourceService {
     const now = new Date().toISOString();
     const id = input.id ?? `src-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
-    return this.repository.save({
+    return this.repository.save(this.buildRecordFromMutation({
+      ...input,
       id,
       slug,
-      displayName: validated.displayName,
-      description: validated.description,
-      sourceType: validated.sourceType,
-      baseUrl: validated.baseUrl,
-      parserType: validated.parserType,
-      acquisitionStrategy: validated.acquisitionStrategy,
-      pollingStrategy: validated.pollingStrategy,
-      pollingIntervalMinutes: validated.pollingIntervalMinutes,
-      rateLimitPerHour: validated.rateLimitPerHour,
-      priority: validated.priority,
-      trustScore: validated.trustScore,
-      requiresAuthentication: validated.requiresAuthentication,
-      enabled: validated.enabled,
-      archived: validated.archived,
-      notes: validated.notes,
-      sourceConfig: input.sourceConfig,
-      defaultTimezone: validated.defaultTimezone,
-      reviewRequired: validated.reviewRequired,
-      website: validated.website,
-      createdAt: now,
-      updatedAt: now,
-    });
+      validated,
+      now,
+      isCreate: true,
+    }));
   }
 
   async update(
@@ -167,30 +169,15 @@ export class SourceService {
       throw new AppError('Archived sources cannot be enabled.', { code: 'VALIDATION' });
     }
 
-    return this.repository.save({
-      ...existing,
+    return this.repository.save(this.buildRecordFromMutation({
+      ...input,
+      id: existing.id,
       slug,
-      displayName: validated.displayName,
-      description: validated.description,
-      sourceType: validated.sourceType,
-      baseUrl: validated.baseUrl,
-      parserType: validated.parserType,
-      acquisitionStrategy: validated.acquisitionStrategy,
-      pollingStrategy: validated.pollingStrategy,
-      pollingIntervalMinutes: validated.pollingIntervalMinutes,
-      rateLimitPerHour: validated.rateLimitPerHour,
-      priority: validated.priority,
-      trustScore: validated.trustScore,
-      requiresAuthentication: validated.requiresAuthentication,
-      enabled: validated.archived ? false : validated.enabled,
-      archived: validated.archived,
-      notes: validated.notes,
-      sourceConfig: input.sourceConfig ?? existing.sourceConfig,
-      defaultTimezone: validated.defaultTimezone,
-      reviewRequired: validated.reviewRequired,
-      website: validated.website,
-      updatedAt: new Date().toISOString(),
-    });
+      validated,
+      now: new Date().toISOString(),
+      existing,
+      isCreate: false,
+    }));
   }
 
   async setEnabled(role: AdminRole | null, id: string, enabled: boolean): Promise<SourceRecord> {
@@ -302,5 +289,109 @@ export class SourceService {
       lastJobStatus: metadata.lastJobStatus,
       updatedAt: new Date().toISOString(),
     });
+  }
+
+  private buildRecordFromMutation(input: {
+    id: string;
+    slug: string;
+    validated: ReturnType<typeof validateSourceInput>;
+    now: string;
+    isCreate: boolean;
+    existing?: SourceRecord;
+    sourceConfig?: SourceRecord['sourceConfig'];
+    stableKey?: string;
+    category?: string;
+    status?: string;
+    connectorKey?: string;
+    connectorType?: string;
+    countryCode?: string;
+    region?: string;
+    stateCode?: string;
+    city?: string;
+    languageCode?: string;
+    languageCodes?: string[];
+    genreNames?: string[];
+    organizerId?: string;
+    organizerName?: string;
+    venueId?: string;
+    venueName?: string;
+    tags?: string[];
+    autoEnabled?: boolean;
+    metadata?: Record<string, unknown>;
+  }): SourceRecord {
+    const existing = input.existing;
+    const connectorKey =
+      input.connectorKey ??
+      input.sourceConfig?.reference?.connectorKey ??
+      existing?.connectorKey;
+
+    const sourceConfig = connectorKey
+      ? {
+          ...(input.sourceConfig ?? existing?.sourceConfig ?? {}),
+          reference: {
+            ...(input.sourceConfig?.reference ?? existing?.sourceConfig?.reference ?? {}),
+            connectorKey: connectorKey as SourceConnectorKey,
+          },
+        }
+      : input.sourceConfig ?? existing?.sourceConfig;
+
+    return {
+      id: input.id,
+      slug: input.slug,
+      stableKey: input.stableKey ?? existing?.stableKey ?? input.slug,
+      displayName: input.validated.displayName,
+      description: input.validated.description,
+      sourceType: input.validated.sourceType,
+      category: (input.category as SourceRecord['category']) ?? existing?.category,
+      status: (input.status as SourceRecord['status']) ?? existing?.status,
+      connectorKey,
+      connectorType: input.connectorType ?? existing?.connectorType,
+      baseUrl: input.validated.baseUrl,
+      parserType: input.validated.parserType,
+      acquisitionStrategy: input.validated.acquisitionStrategy,
+      pollingStrategy: input.validated.pollingStrategy,
+      pollingIntervalMinutes: input.validated.pollingIntervalMinutes,
+      rateLimitPerHour: input.validated.rateLimitPerHour,
+      priority: input.validated.priority,
+      trustScore: input.validated.trustScore,
+      requiresAuthentication: input.validated.requiresAuthentication,
+      enabled: input.validated.archived ? false : input.validated.enabled,
+      archived: input.validated.archived,
+      autoEnabled: input.autoEnabled ?? existing?.autoEnabled,
+      notes: input.validated.notes,
+      sourceConfig,
+      defaultTimezone: input.validated.defaultTimezone,
+      reviewRequired: input.validated.reviewRequired,
+      website: input.validated.website,
+      countryCode: input.countryCode ?? existing?.countryCode,
+      region: input.region ?? existing?.region,
+      stateCode: input.stateCode ?? existing?.stateCode,
+      city: input.city ?? existing?.city,
+      languageCode: input.languageCode ?? existing?.languageCode,
+      languageCodes: input.languageCodes ?? existing?.languageCodes,
+      genreNames: input.genreNames ?? existing?.genreNames,
+      organizerId: input.organizerId ?? existing?.organizerId,
+      organizerName: input.organizerName ?? existing?.organizerName,
+      venueId: input.venueId ?? existing?.venueId,
+      venueName: input.venueName ?? existing?.venueName,
+      tags: input.tags ?? existing?.tags,
+      metadata: input.metadata ?? existing?.metadata,
+      lastImportAt: existing?.lastImportAt,
+      lastJobStatus: existing?.lastJobStatus,
+      nextScheduledAt: existing?.nextScheduledAt,
+      lastAttemptAt: existing?.lastAttemptAt,
+      consecutiveFailureCount: existing?.consecutiveFailureCount,
+      totalImportCount: existing?.totalImportCount,
+      totalValidEventCount: existing?.totalValidEventCount,
+      totalRejectedEventCount: existing?.totalRejectedEventCount,
+      duplicateRate: existing?.duplicateRate,
+      updateRate: existing?.updateRate,
+      errorRate: existing?.errorRate,
+      averageDurationMs: existing?.averageDurationMs,
+      lastSuccessfulSyncAt: existing?.lastSuccessfulSyncAt,
+      lastFailedImportAt: existing?.lastFailedImportAt,
+      createdAt: input.isCreate ? input.now : existing?.createdAt ?? input.now,
+      updatedAt: input.now,
+    };
   }
 }

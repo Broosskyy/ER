@@ -1,6 +1,9 @@
 import type { SourceRecord } from '@/data/types/records';
+import { resolveSourceReviewRequired } from '@/data/mappers/source-mapper';
 import type { AcquisitionStrategy, ParserType, SourceType } from '@/features/sources/domain/source-types';
 import { createPreparedAuthConfig } from '@/features/aggregation/domain/source-auth-config';
+import type { SourceFieldDefaults } from '@/features/import/models/source-config';
+import { resolveSourceFieldDefaults } from '@/features/import/normalization/source-field-defaults';
 
 export const AGGREGATION_SOURCE_STATUSES = [
   'active',
@@ -40,8 +43,10 @@ export interface AggregationSource {
   requiresAuthentication: boolean;
   authPrepared: boolean;
   reviewRequired: boolean;
+  publishMode?: import('@/features/import/domain/publish-mode').PublishMode;
   trustScore: number;
   defaultTimezone?: string;
+  fieldDefaults?: SourceFieldDefaults;
 }
 
 export function resolveAggregationSourceStatus(source: SourceRecord): AggregationSourceStatus {
@@ -93,8 +98,10 @@ export function mapSourceRecordToAggregationSource(source: SourceRecord): Aggreg
     acquisitionStrategy: source.acquisitionStrategy,
     requiresAuthentication: source.requiresAuthentication,
     authPrepared: authConfig.prepared,
-    reviewRequired: source.reviewRequired ?? true,
+    reviewRequired: resolveSourceReviewRequired(source),
+    publishMode: source.publishMode,
     trustScore: source.trustScore,
     defaultTimezone: source.defaultTimezone,
+    fieldDefaults: resolveSourceFieldDefaults(source.sourceConfig, source),
   };
 }

@@ -9,6 +9,9 @@ export const SOURCE_CONNECTOR_KEYS = [
   'organizer_website',
   'ical_feed',
   'open_data_api',
+  'rss_feed',
+  'atom_feed',
+  'csv_import',
 ] as const;
 
 export type SourceConnectorKey = (typeof SOURCE_CONNECTOR_KEYS)[number];
@@ -51,6 +54,8 @@ export interface ReferenceSourceConfig {
   events?: RawImportedEvent[];
   html?: string;
   ical?: string;
+  feed?: string;
+  csv?: string;
   apiJson?: string | Record<string, unknown>;
 }
 

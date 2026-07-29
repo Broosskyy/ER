@@ -37,6 +37,25 @@ export interface SourceInput {
   website?: string;
   defaultTimezone?: string;
   reviewRequired?: boolean;
+  countryCode?: string;
+  region?: string;
+  stateCode?: string;
+  city?: string;
+  languageCode?: string;
+  languageCodes?: string[];
+  category?: string;
+  status?: string;
+  connectorKey?: string;
+  connectorType?: string;
+  genreNames?: string[];
+  organizerId?: string;
+  organizerName?: string;
+  venueId?: string;
+  venueName?: string;
+  tags?: string[];
+  autoEnabled?: boolean;
+  stableKey?: string;
+  metadata?: Record<string, unknown>;
 }
 
 export interface ValidatedSourceInput {

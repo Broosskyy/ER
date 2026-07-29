@@ -1,5 +1,9 @@
 import { mapSourceRecordToAggregationSource } from '@/features/aggregation/domain/aggregation-source';
-import { sourceConnectorRegistry, type SourceConnectorRegistry } from '@/features/aggregation/connectors/source-connector-registry';
+import {
+  sourceConnectorRegistry,
+  type SourceConnectorRegistry,
+} from '@/features/aggregation/connectors/source-connector-registry';
+import { resolveSourceConnectorKeyFromRecord } from '@/features/aggregation/connectors/source-connector-resolution';
 import { rawEventToFetchedPayload, type SourceConnectorKey } from '@/features/aggregation/connectors/types';
 import type { FetchProvider } from '@/features/aggregation/pipeline/steps/fetch-step';
 import type { ImportSource } from '@/features/import/models/types';
@@ -9,6 +13,8 @@ export function createSourceConnectorFetchProvider(
   registry: SourceConnectorRegistry,
   resolveConnectorKey?: (source: ImportSource) => SourceConnectorKey,
 ): FetchProvider {
+  const executor = registry.getExecutor();
+
   return {
     async fetch(source, importSource, context) {
       const connectorKey =
@@ -18,21 +24,18 @@ export function createSourceConnectorFetchProvider(
           parserType: source.parserType,
           sourceType: source.type,
           adapterKey: importSource.adapterKey,
+          sourceRoles: importSource.sourceRoles,
         });
 
       const connector = registry.get(connectorKey);
-      const events = await connector.fetchRawEvents(source, importSource, context);
-      return events.map(rawEventToFetchedPayload);
+      const result = await executor.execute(connector, source, importSource, context);
+      return result.events.map(rawEventToFetchedPayload);
     },
   };
 }
 
 export function resolveConnectorKeyFromSourceRecord(record: SourceRecord): SourceConnectorKey {
-  return sourceConnectorRegistry.resolveConnectorKey({
-    connectorKey: record.sourceConfig?.reference?.connectorKey,
-    parserType: record.parserType,
-    sourceType: record.sourceType,
-  });
+  return resolveSourceConnectorKeyFromRecord(record);
 }
 
 export function createAggregationSourceContext(record: SourceRecord) {

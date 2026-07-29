@@ -114,6 +114,36 @@ export { OrganizerWebsiteConnector } from './connectors/organizer-website-connec
 export { IcalFeedConnector } from './connectors/ical-feed-connector';
 export { OpenDataApiConnector } from './connectors/open-data-api-connector';
 
+export type {
+  SourceConnectorCapabilities,
+  SourceConnectorVersionInfo,
+  SourceConnectorHealthStatus,
+  SourceConnectorHealthSnapshot,
+  SourceConnectorErrorCode,
+  SourceConnectorErrorDetail,
+  SourceConnectorRetryConfig,
+  SourceConnectorRateLimitConfig,
+  SourceConnectorDiagnostics,
+  SourceConnectorMetrics,
+  SourceConnectorDescriptor,
+  RegisteredSourceConnector,
+  SourceConnectorExecutionResult,
+} from './connectors/framework';
+export {
+  SOURCE_CONNECTOR_REGISTRY_VERSION,
+  SOURCE_CONNECTOR_HEALTH_STATUSES,
+  SOURCE_CONNECTOR_ERROR_CODES,
+  SOURCE_CONNECTOR_DEFINITIONS,
+  SourceConnectorError,
+  SourceConnectorExecutor,
+  SourceConnectorRateLimiter,
+  BaseSourceConnector,
+  createSourceConnectorCapabilities,
+  createSourceConnectorVersion,
+  classifySourceConnectorError,
+  resolveSourceConnectorRetry,
+} from './connectors/framework';
+
 export { ImportAggregationService } from './services/import-aggregation-service';
 export {
   ImportUpdateService,

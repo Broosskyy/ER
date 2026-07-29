@@ -36,6 +36,11 @@ function createTestImportStack() {
       bundle.records.update(record),
     getById: (id: string) => bundle.records.getById(id),
     listByJobId: (importJobId: string) => bundle.records.listByJobId(importJobId),
+    findLatestBySourceAndExternalId: (sourceId: string, externalId: string) =>
+      bundle.records.findLatestBySourceAndExternalId(sourceId, externalId),
+    listLatestBySourceId: (sourceId: string) => bundle.records.listLatestBySourceId(sourceId),
+    upsertManyBySourceExternal: (inputs: Parameters<typeof bundle.records.upsertManyBySourceExternal>[0]) =>
+      bundle.records.upsertManyBySourceExternal(inputs),
   };
   const logRepository = {
     create: (input: Parameters<typeof bundle.logs.create>[0]) => bundle.logs.create(input),
