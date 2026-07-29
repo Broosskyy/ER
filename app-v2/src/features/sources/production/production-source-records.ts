@@ -5,11 +5,15 @@
 import type { ReferenceSourceConfig } from '@/features/aggregation/connectors/types';
 import type { SourceRecord } from '@/data/types/records';
 import type { WebsiteConnectorConfig } from '@/features/aggregation/connectors/website/config';
-import { AFFENKAEFIG_LIST_FIXTURE_HTML } from '@/features/sources/production/affenkaefig-fixture';
 import { BOOTSHAUS_LIST_FIXTURE_HTML } from '@/features/sources/production/bootshaus-fixture';
+import {
+  AFFENKAEFIG_SOURCE_ID,
+  createAffenkaefigSourceRecord,
+  createAffenkaefigLiveProductionSourceRecord,
+} from '@/features/sources/production/affenkaefig-source';
 
 export const PRODUCTION_BOOTSHAUS_SOURCE_ID = 'source-bootshaus-koeln';
-export const PRODUCTION_AFFENKAEFIG_SOURCE_ID = 'source-affenkaefig';
+export const PRODUCTION_AFFENKAEFIG_SOURCE_ID = AFFENKAEFIG_SOURCE_ID;
 
 export const BOOTSHAUS_WEBSITE_CONFIG: WebsiteConnectorConfig = {
   preferredStrategy: 'html_selector',
@@ -130,60 +134,16 @@ export function createBootshausLiveProductionSourceRecord(
 export function createAffenkaefigProductionSourceRecord(
   overrides: Partial<SourceRecord> = {},
 ): SourceRecord {
-  const now = new Date().toISOString();
-  return {
-    id: PRODUCTION_AFFENKAEFIG_SOURCE_ID,
-    slug: 'affenkaefig',
-    stableKey: 'affenkaefig-website-v1',
-    displayName: 'Affenkäfig',
-    description: 'Organizer and festival events by Affenkäfig.',
-    sourceType: 'website',
-    parserType: 'json-ld',
-    category: 'website',
-    status: 'active',
-    connectorKey: 'organizer_website',
-    connectorType: 'website',
-    acquisitionStrategy: 'manual',
-    pollingIntervalMinutes: 360,
-    priority: 72,
-    trustScore: 74,
-    requiresAuthentication: false,
+  return createAffenkaefigSourceRecord({
     enabled: true,
-    archived: false,
     reviewRequired: false,
     publishMode: 'auto_publish',
-    sourceRoles: ['organizer', 'festival'],
-    baseUrl: 'https://affenkaefig.de/events/',
-    website: 'https://affenkaefig.de/events/',
-    countryCode: 'DE',
-    region: 'Nordrhein-Westfalen',
-    city: 'Köln',
-    languageCode: 'de',
-    languageCodes: ['de'],
-    organizerName: 'Affenkäfig',
-    genreNames: ['Techno', 'House', 'Electronic'],
-    tags: ['organizer', 'festival', 'production-source'],
-    defaultTimezone: 'Europe/Berlin',
     sourceConfig: {
-      reference: {
-        connectorKey: 'organizer_website',
-        html: AFFENKAEFIG_LIST_FIXTURE_HTML,
-      },
-      website: {
-        preferredStrategy: 'json_ld',
-        limits: {
-          maxEventsPerRun: 50,
-          maxDetailPages: 0,
-          maxPaginationPages: 1,
-          maxPagesPerRun: 1,
-          timeoutMs: 30_000,
-        },
-      },
-      regional: { countryCode: 'DE', languageCode: 'de' },
+      ...createAffenkaefigSourceRecord().sourceConfig,
       publishPolicy: { mode: 'auto_publish', blockOnDuplicate: true },
     },
-    createdAt: now,
-    updatedAt: now,
     ...overrides,
-  };
+  });
 }
+
+export { createAffenkaefigLiveProductionSourceRecord };
