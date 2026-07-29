@@ -953,315 +953,164 @@ export class ImportReviewQueueService {
 
 
   async reconcileFromMatchEvaluation(
-
     record: ImportRecord,
-
     source: SourceRecord,
-
     evaluation: MultiSourceMatchEvaluation,
-
     jobId?: string,
-
     existingEvent?: AdminEventRecord | null,
-
   ): Promise<ImportReviewReconcileResult> {
-
     const now = new Date().toISOString();
-
     const existing = await this.repository.findActiveBySourceAndExternalEventId(
-
       source.id,
-
       record.externalId,
-
     );
 
-    if (isStablePublishedMatchReimport(record, evaluation, { existingEvent })) {
-
-      if (!existing) {
-
-        return { action: 'none', entry: null };
-
-      }
-
-
-
-      const closed = await closeStablePublishedReview(this.repository, existing, record, source, {
-
-        jobId,
-
-        decision: 'review_required',
-
-        qualityScore: evaluation.confidenceScore,
-
-        trustScore: existing.trustScore,
-
-        reasons: evaluation.reasons,
-
-        affectedFields: evaluation.fieldDifferences.map((difference) => difference.field),
-
-        ruleIds: [],
-
-        metadata: {
-
-          reviewType: 'multi_source_match',
-
-          canonicalEventId: evaluation.canonicalEventId,
-
-        },
-
-        resolvedBy: 'system:match-reconciliation',
-
-      });
-
-
-
-      return { action: 'closed', entry: closed };
-
-    }
-
-
-
     const publishedRecord =
-
       recordHasPublishedOutcome(record, existingEvent) &&
-
       evaluation.canonicalEventId === record.resultingEventId;
-
-    const shouldClose =
-
+    const shouldClosePublishedMatch =
       evaluation.decision === 'auto_link' ||
-
       (publishedRecord && evaluation.decision !== 'keep_separate');
 
+    if (existing && shouldClosePublishedMatch) {
+      const closed = await this.repository.upsert({
+        ...existing,
+        importRecordId: record.id,
+        importJobId: existing.importJobId ?? jobId ?? record.importJobId,
+        status: 'expired',
+        decision: 'auto_publish',
+        qualityScore: evaluation.confidenceScore,
+        trustScore: existing.trustScore,
+        reasons: evaluation.reasons,
+        affectedFields: evaluation.fieldDifferences.map((difference) => difference.field),
+        ruleIds: [],
+        metadata: {
+          ...(existing.metadata ?? {}),
+          reviewType: 'multi_source_match',
+          resolutionReason:
+            evaluation.decision === 'auto_link'
+              ? IMPORT_REVIEW_RESOLUTION_REASONS.matchResolvedAutoLink
+              : IMPORT_REVIEW_RESOLUTION_REASONS.matchResolvedOnPublishedRecord,
+          resolvedAt: now,
+          resolvedBy: 'system:match-reconciliation',
+          canonicalEventId: evaluation.canonicalEventId,
+          priorStatus: existing.status,
+          priorDecision: existing.decision,
+          priorQualityScore: existing.qualityScore,
+          priorReasons: existing.reasons,
+        },
+        updatedAt: now,
+      });
 
-
-    if (!existing || !shouldClose) {
-
-      return { action: 'none', entry: null };
-
+      return { action: 'closed', entry: closed };
     }
 
+    if (isStablePublishedMatchReimport(record, evaluation, { existingEvent })) {
+      if (!existing) {
+        return { action: 'none', entry: null };
+      }
 
-
-    const closed = await this.repository.upsert({
-
-      ...existing,
-
-      importRecordId: record.id,
-
-      importJobId: existing.importJobId ?? jobId ?? record.importJobId,
-
-      status: 'expired',
-
-      decision: 'auto_publish',
-
-      qualityScore: evaluation.confidenceScore,
-
-      trustScore: existing.trustScore,
-
-      reasons: evaluation.reasons,
-
-      affectedFields: evaluation.fieldDifferences.map((difference) => difference.field),
-
-      ruleIds: [],
-
-      metadata: {
-
-        ...(existing.metadata ?? {}),
-
-        reviewType: 'multi_source_match',
-
-        resolutionReason:
-
-          evaluation.decision === 'auto_link'
-
-            ? IMPORT_REVIEW_RESOLUTION_REASONS.matchResolvedAutoLink
-
-            : IMPORT_REVIEW_RESOLUTION_REASONS.matchResolvedOnPublishedRecord,
-
-        resolvedAt: now,
-
+      const closed = await closeStablePublishedReview(this.repository, existing, record, source, {
+        jobId,
+        decision: 'review_required',
+        qualityScore: evaluation.confidenceScore,
+        trustScore: existing.trustScore,
+        reasons: evaluation.reasons,
+        affectedFields: evaluation.fieldDifferences.map((difference) => difference.field),
+        ruleIds: [],
+        metadata: {
+          reviewType: 'multi_source_match',
+          canonicalEventId: evaluation.canonicalEventId,
+        },
         resolvedBy: 'system:match-reconciliation',
+      });
 
-        canonicalEventId: evaluation.canonicalEventId,
+      return { action: 'closed', entry: closed };
+    }
 
-        priorStatus: existing.status,
-
-        priorDecision: existing.decision,
-
-        priorQualityScore: existing.qualityScore,
-
-        priorReasons: existing.reasons,
-
-      },
-
-      updatedAt: now,
-
-    });
-
-
-
-    return { action: 'closed', entry: closed };
-
+    return { action: 'none', entry: null };
   }
 
 
 
   async reconcileFromLifecycleEvaluation(
-
     record: ImportRecord,
-
     source: SourceRecord,
-
     evaluation: EventLifecycleEvaluation,
-
     jobId?: string,
-
     existingEvent?: AdminEventRecord | null,
-
   ): Promise<ImportReviewReconcileResult> {
-
     const now = new Date().toISOString();
-
     const existing = await this.repository.findActiveBySourceAndExternalEventId(
-
       source.id,
-
       record.externalId,
-
     );
 
-    if (isStablePublishedLifecycleReimport(record, evaluation, { existingEvent })) {
-
-      if (!existing) {
-
-        return { action: 'none', entry: null };
-
-      }
-
-
-
-      const closed = await closeStablePublishedReview(this.repository, existing, record, source, {
-
-        jobId,
-
-        decision: 'review_required',
-
-        qualityScore: evaluation.confidenceScore,
-
-        trustScore: source.computedTrustScore ?? source.trustScore,
-
-        reasons: evaluation.reasons,
-
-        affectedFields: evaluation.changes.map((change) => change.fieldPath),
-
-        ruleIds: [],
-
-        metadata: {
-
-          reviewType: 'event_lifecycle',
-
-          lifecycleEventType: evaluation.lifecycleEventType,
-
-        },
-
-        resolvedBy: 'system:lifecycle-reconciliation',
-
-      });
-
-
-
-      return { action: 'closed', entry: closed };
-
-    }
-
-
-
     const publishSucceeded = recordHasPublishedOutcome(record, existingEvent);
-
-    const shouldClose =
-
+    const shouldCloseLifecycle =
       evaluation.decision === 'ignore' ||
-
       evaluation.decision === 'apply_immediately' ||
-
       (publishSucceeded &&
-
         existing?.metadata?.resolutionReason === IMPORT_REVIEW_RESOLUTION_REASONS.publishFailed);
 
+    if (existing && shouldCloseLifecycle) {
+      const closed = await this.repository.upsert({
+        ...existing,
+        importRecordId: record.id,
+        importJobId: existing.importJobId ?? jobId ?? record.importJobId,
+        status: 'expired',
+        decision: 'auto_publish',
+        qualityScore: evaluation.confidenceScore,
+        trustScore: source.computedTrustScore ?? source.trustScore,
+        reasons: evaluation.reasons,
+        affectedFields: evaluation.changes.map((change) => change.fieldPath),
+        ruleIds: [],
+        metadata: {
+          ...(existing.metadata ?? {}),
+          reviewType: 'event_lifecycle',
+          resolutionReason:
+            evaluation.decision === 'ignore'
+              ? IMPORT_REVIEW_RESOLUTION_REASONS.lifecycleResolvedIgnored
+              : IMPORT_REVIEW_RESOLUTION_REASONS.lifecycleResolvedOnPublishSuccess,
+          resolvedAt: now,
+          resolvedBy: 'system:lifecycle-reconciliation',
+          lifecycleEventType: evaluation.lifecycleEventType,
+          priorStatus: existing.status,
+          priorDecision: existing.decision,
+          priorQualityScore: existing.qualityScore,
+          priorReasons: existing.reasons,
+        },
+        updatedAt: now,
+      });
 
-
-    if (!existing || !shouldClose) {
-
-      return { action: 'none', entry: null };
-
+      return { action: 'closed', entry: closed };
     }
 
+    if (isStablePublishedLifecycleReimport(record, evaluation, { existingEvent })) {
+      if (!existing) {
+        return { action: 'none', entry: null };
+      }
 
-
-    const closed = await this.repository.upsert({
-
-      ...existing,
-
-      importRecordId: record.id,
-
-      importJobId: existing.importJobId ?? jobId ?? record.importJobId,
-
-      status: 'expired',
-
-      decision: 'auto_publish',
-
-      qualityScore: evaluation.confidenceScore,
-
-      trustScore: source.computedTrustScore ?? source.trustScore,
-
-      reasons: evaluation.reasons,
-
-      affectedFields: evaluation.changes.map((change) => change.fieldPath),
-
-      ruleIds: [],
-
-      metadata: {
-
-        ...(existing.metadata ?? {}),
-
-        reviewType: 'event_lifecycle',
-
-        resolutionReason:
-
-          evaluation.decision === 'ignore'
-
-            ? IMPORT_REVIEW_RESOLUTION_REASONS.lifecycleResolvedIgnored
-
-            : IMPORT_REVIEW_RESOLUTION_REASONS.lifecycleResolvedOnPublishSuccess,
-
-        resolvedAt: now,
-
+      const closed = await closeStablePublishedReview(this.repository, existing, record, source, {
+        jobId,
+        decision: 'review_required',
+        qualityScore: evaluation.confidenceScore,
+        trustScore: source.computedTrustScore ?? source.trustScore,
+        reasons: evaluation.reasons,
+        affectedFields: evaluation.changes.map((change) => change.fieldPath),
+        ruleIds: [],
+        metadata: {
+          reviewType: 'event_lifecycle',
+          lifecycleEventType: evaluation.lifecycleEventType,
+        },
         resolvedBy: 'system:lifecycle-reconciliation',
+      });
 
-        lifecycleEventType: evaluation.lifecycleEventType,
+      return { action: 'closed', entry: closed };
+    }
 
-        priorStatus: existing.status,
-
-        priorDecision: existing.decision,
-
-        priorQualityScore: existing.qualityScore,
-
-        priorReasons: existing.reasons,
-
-      },
-
-      updatedAt: now,
-
-    });
-
-
-
-    return { action: 'closed', entry: closed };
-
+    return { action: 'none', entry: null };
   }
-
 }
 
 

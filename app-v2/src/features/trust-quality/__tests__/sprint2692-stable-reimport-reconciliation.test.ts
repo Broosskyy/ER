@@ -357,7 +357,7 @@ describe('Sprint 26.9.2 stable published reimport reconciliation', () => {
       externalEventId: record.externalId,
       canonicalEventId: 'evt-venue',
       confidenceScore: 88,
-      confidenceTier: 'likely' as const,
+      confidenceTier: 'probable',
       decision: 'review_required' as const,
       reasons: ['Venue mismatch detected.'],
       fieldDifferences: [
