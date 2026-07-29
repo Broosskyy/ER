@@ -698,6 +698,8 @@ export const eventDetailPageWebsiteStrategy: WebsiteExtractionStrategy = {
 
     );
 
+    const uniqueLinks = Array.from(new Set(links));
+
     const events: RawWebsiteEvent[] = [];
 
     const warnings: string[] = [];
@@ -706,7 +708,7 @@ export const eventDetailPageWebsiteStrategy: WebsiteExtractionStrategy = {
 
 
 
-    for (const href of links) {
+    for (const href of uniqueLinks) {
 
       const detailUrl = resolveRelativeUrl(context.baseUrl, href);
 

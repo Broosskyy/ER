@@ -1,50 +1,28 @@
 # Affenkäfig Production Acceptance Report
 
-Sprint 28.1 update — controlled live readiness
+Sprint 28.2 update
 
-## Executive summary
+## Status
 
-The official live source **`affenkaefig.info`** is verified. Read-only parsing succeeds for 8 upcoming events. Source remains **disabled** — no import, publish, or scheduler activation in this sprint.
-
-## Source
-
-| Item | Status |
-|------|--------|
-| Official domain | ✅ `affenkaefig.info` |
-| Legacy domain | ❌ `affenkaefig.de` unconfigured |
-| Source enabled | ❌ false (intentional) |
+| Phase | Status |
+|-------|--------|
+| Live source verified | ✅ `affenkaefig.info` |
+| Controlled live import | ✅ 8 records |
+| Published to discovery | ❌ not in scope |
 | Scheduler | ❌ disabled |
-| Publish mode | `manual_review` |
+| Source enabled | ❌ false |
 
-## Connector
+## Import result
 
-| Item | Status |
-|------|--------|
-| List strategy | `event_detail_page` |
-| Detail JSON-LD | ✅ |
-| Live smoke test | ✅ 8 events |
-| Fixture CI tests | ✅ |
+- 8 unique events imported as `needs_review`
+- 5 duplicate candidates flagged for cross-source review
+- 0 published events
+- Bootshaus regression unaffected
 
-## Import / publish (live)
+## Next step
 
-| Metric | Result |
-|--------|--------|
-| Live imports | 0 (not in scope) |
-| Live publishes | 0 (not in scope) |
-
-## Next steps for go-live (separate sprint)
-
-1. Apply migration `20260761000000_sprint281_affenkaefig_live_domain.sql` on staging
-2. Controlled staging import (`manual_review`)
-3. Review queue + cross-source matching (esp. Bootshaus overlap)
-4. Sample publish + reimport idempotency
-5. Discovery/frontend acceptance
-6. Enable scheduler
+Manual review of import records and duplicate resolution before controlled publish sprint.
 
 ## Tag
 
-`affenkaefig-production-ready` — **not created** (controlled import not yet executed)
-
-## Verdict
-
-**READY FOR CONTROLLED LIVE IMPORT** (read-only verification complete; activation still pending)
+`affenkaefig-production-ready` — **not created**
