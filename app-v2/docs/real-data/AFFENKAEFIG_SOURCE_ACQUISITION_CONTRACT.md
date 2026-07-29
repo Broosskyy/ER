@@ -1,6 +1,6 @@
 # Affenkäfig Source Acquisition Contract
 
-Sprint 28 — Eternal Rave reference pipeline (second production source target)
+Sprint 28.1 — verified live domain
 
 ## Status
 
@@ -9,94 +9,107 @@ Sprint 28 — Eternal Rave reference pipeline (second production source target)
 | **Source ID** | `source-affenkaefig` |
 | **Stable key** | `affenkaefig-website-v1` |
 | **Connector** | `organizer_website` |
-| **Strategy** | `json_ld` (Schema.org `@graph`) |
-| **Activation** | **DISABLED** (Sprint 26.7 + Sprint 28) |
-| **Live domain** | **UNCONFIGURED** (2026-07-29) |
+| **List strategy** | `event_detail_page` |
+| **Detail strategy** | `json_ld` (Schema.org `Event` on `/event/{slug}/`) |
+| **Activation** | **DISABLED** |
+| **Official domain** | `https://affenkaefig.info` |
+| **Legacy domain** | `https://affenkaefig.de` (unconfigured — rejected) |
 
-## Official domain
+## Official URLs
 
-| Item | Value |
-|------|-------|
-| Domain | `https://affenkaefig.de` |
-| Event list URL (configured) | `https://affenkaefig.de/events/` |
-| Live response (2026-07-29) | HTTP 200, body: *„Diese Domain ist unkonfiguriert.“* |
+| Role | URL |
+|------|-----|
+| Event list (discovery) | `https://affenkaefig.info/tickets/` |
+| Event detail (canonical) | `https://affenkaefig.info/event/{slug}/` |
+| WooCommerce archive (partial) | `https://affenkaefig.info/produkt-kategorie/event-tickets/` |
+| WordPress REST (alternate) | `https://affenkaefig.info/wp-json/wp/v2/ecm_event` |
 
-No alternative official event API or structured feed was found in repository artifacts or live checks.
+Product URLs (`/produkt/...`) redirect to canonical `/event/...` pages.
 
-## URL patterns (intended, when live)
+## Platform stack
 
-| Pattern | Purpose |
-|---------|---------|
-| `https://affenkaefig.de/events/` | Event list (JSON-LD `@graph` expected per Sprint 13 design) |
-| `https://affenkaefig.de/events/{slug}` | Event detail canonical URL (external ID preference) |
+- WordPress + Kadence theme
+- WooCommerce ticket products
+- Custom post type `ecm_event`
+- Rank Math JSON-LD on event detail pages
 
 ## Pagination
 
-Not observed. Connector limits: `maxPagesPerRun: 1`, `maxDetailPages: 0` (list-only JSON-LD).
+Tickets page lists upcoming events inline (8 observed 2026-07-29). No pagination config required initially. Limits: `maxDetailPages: 50`.
 
-## Field availability (from fixture + JSON-LD parser contract)
+## Field availability (live verified)
 
-| Field | Availability | Notes |
-|-------|--------------|-------|
-| title | ✅ | `name` |
-| description | ✅ optional | |
-| startDateTime | ✅ | ISO 8601 with offset |
-| endDateTime | ✅ optional | Festival events |
-| doorsOpen | ❌ | Not in fixture |
-| timezone | ✅ | `Europe/Berlin` (source default) |
-| venueName | ✅ per event | Variable locations (not single club) |
-| venueAddress | ⚠️ partial | Locality/country in fixture |
+| Field | Availability | Source |
+|-------|--------------|--------|
+| title | ✅ | JSON-LD `name` |
+| description | ✅ partial | JSON-LD `description` |
+| startDateTime | ✅ | JSON-LD `startDate` (`Europe/Berlin` offset) |
+| endDateTime | ❌ usually | Not on sample events |
+| doorsOpen | ❌ | Not in JSON-LD |
+| timezone | ✅ | `Europe/Berlin` default |
+| venueName | ✅ per event | JSON-LD `location.name` |
+| venueAddress | ✅ partial | JSON-LD `location.address` |
 | city | ✅ | `addressLocality` |
-| organizerName | ✅ | Affenkäfig |
-| imageUrl | ❌ in fixture | Live TBD |
-| ticketUrl | ⚠️ | Falls back to `eventUrl` |
-| genres | ❌ | Source-level defaults only |
-| lineupRaw | ❌ | Not in current JSON-LD fixture |
+| organizerName | ✅ | Defaults + JSON-LD org on site |
+| imageUrl | ✅ | JSON-LD `image[]` (event flyers) |
+| ticketUrl | ✅ | Same as canonical event URL (`ticketUrlFallback: eventUrl`) |
+| genres | ❌ | Not in JSON-LD |
+| lineupRaw | ❌ | Not in JSON-LD (may exist in HTML later) |
 | timetableRaw | ❌ | Not available |
-| cancellationStatus | ❌ | Live TBD |
+| cancellationStatus | ⚠️ | `eventStatus` when present |
 
 ## Entity model
 
 | Role | Decision |
 |------|----------|
-| **Organizer** | Affenkäfig — canonical `organizer-affenkaefig` |
-| **Venue** | **Per-event** (Rheinpark, Warehouse Köln in fixtures). No fixed `defaultVenueId`. |
-| **Festival** | Some events typed `Festival` in JSON-LD |
+| **Organizer** | `organizer-affenkaefig` |
+| **Venue** | Per-event (Essigfabrik, Bootshaus, A8, Capitol, …). No `defaultVenueId`. |
 
 ## External event ID
 
-Priority (existing `parseJsonLdEvent`):
+Priority on detail JSON-LD:
 
-1. `@id`
-2. `url` (preferred for Affenkäfig fixture events)
-3. `name` (fallback)
-4. Generated id (last resort)
+1. `@id` (when event-specific)
+2. `url` — **primary** (`https://affenkaefig.info/event/{slug}/`)
+3. WordPress `ecm_event` post ID (REST only, not used in connector)
+4. Deterministic hash (last resort)
+
+Stable across title/description/image/ticket text changes because slug + URL are canonical.
 
 ## Idempotency key
 
-`sourceId` + `externalEventId` via standard import pipeline.
+`sourceId` + `externalEventId` (canonical event URL).
 
 ## Rate limit / retry
 
-Website connector defaults: 30s timeout, 1 page per run, standard retry/rate-limit from connector framework.
+Website connector: 30s timeout, max 50 detail pages per run, standard fetch retry.
 
 ## Update frequency (planned)
 
-`pollingIntervalMinutes: 360` when scheduler enabled post-go-live.
+`pollingIntervalMinutes: 360` when scheduler enabled post controlled import.
 
 ## Cancellation / delisting
 
-Handled by generic lifecycle engine — no Affenkäfig-specific logic. Removed listings must not auto-delete published events without lifecycle rules.
+Generic lifecycle engine. Events removed from tickets page must not auto-delete published records.
+
+## Image strategy
+
+- Use JSON-LD `image` when path contains event-specific uploads (e.g. `*_LineUP_*`, dated flyers).
+- Reject generic site logos (`affenkaefig-logo`, `party1.jpg` homepage assets) as event posters.
+- Homepage `og:image` is not used for events.
 
 ## Known risks
 
-1. **Domain unconfigured** — blocks all live acquisition (BLOCKING)
-2. Variable venues — entity resolution must not force Bootshaus-style single venue
-3. Fixture HTML in DB removed by Sprint 28 migration — prevents accidental fixture publish
-4. No live lineup/timetable evidence yet
+| Risk | Severity |
+|------|----------|
+| List page has no JSON-LD events — requires detail fetches | Low (implemented) |
+| `startDate` sometimes midnight without door time | Medium |
+| Variable venues — entity resolution per event | Medium |
+| Cross-source overlap with Bootshaus events | Medium |
+| `affenkaefig.de` still dead | Low (documented legacy) |
 
 ## References
 
 - `src/features/sources/production/affenkaefig-source.ts`
-- `supabase/migrations/20260760000000_sprint28_affenkaefig_production_connector.sql`
-- `docs/real-data/FIRST_REAL_SOURCE.md` (original rejection: redirect / no listing)
+- `supabase/migrations/20260761000000_sprint281_affenkaefig_live_domain.sql`
+- `docs/real-data/AFFENKAEFIG_SOURCE_RECOVERY_REPORT.md`
