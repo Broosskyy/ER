@@ -7,6 +7,7 @@ export { QuickFilterRow } from './QuickFilterRow';
 export { SearchEmptyState } from './SearchEmptyState';
 export { SearchInput } from './SearchInput';
 export type { SearchInputHandle, SearchInputProps } from './SearchInput';
+export { SearchExplorePanel } from './SearchExplorePanel';
 export { SearchResultsMeta } from './SearchResultsMeta';
 export {
   NoResultsState,

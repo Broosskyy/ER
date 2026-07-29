@@ -8,8 +8,12 @@ import { AppScreen } from '@/components/layout/AppScreen';
 import { AppText } from '@/components/layout/AppText';
 import { SafeAreaContainer } from '@/components/layout/SafeAreaContainer';
 import { getErrorMessage } from '@/core/errors/app-error';
-import { connectorAdminService, sourceService, adminMultiSourceService } from '@/data/repositories/registry';
+import { connectorAdminService, importOperationsService, sourceService, adminMultiSourceService, importSchedulerAdminService, trustQualityAdminService, multiSourceMatchAdminService } from '@/data/repositories/registry';
 import type { SourceRecord } from '@/data/types/records';
+import { formatScheduleIntervalPresetLabel, type ScheduleIntervalPreset } from '@/features/import/scheduling/schedule-interval-preset';
+import type { SourceSchedulerStatus } from '@/features/import/scheduling/import-scheduler-monitoring';
+import type { SourceTrustQualityStatus } from '@/features/trust-quality/services/trust-quality-admin-service';
+import type { SourceMatchingStatus } from '@/features/multi-source-matching/services/multi-source-match-admin-service';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
@@ -65,7 +69,7 @@ type ConfirmAction = 'archive' | 'restore' | 'enable' | 'disable';
 export default function AdminSourceEditorScreen() {
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { role } = useAdminAuth();
+  const { role, session } = useAdminAuth();
   const isNew = id === 'new';
   const canEdit = canManageSources(role);
   const [draftSourceId] = useState(() => `src-${Date.now()}`);
@@ -86,6 +90,10 @@ export default function AdminSourceEditorScreen() {
   const [assignmentSaving, setAssignmentSaving] = useState(false);
   const [assignmentSuccess, setAssignmentSuccess] = useState<string | null>(null);
   const [multiSourceContext, setMultiSourceContext] = useState<SourceDetailMultiSourceContext | null>(null);
+  const [schedulerStatus, setSchedulerStatus] = useState<SourceSchedulerStatus | null>(null);
+  const [trustQualityStatus, setTrustQualityStatus] = useState<SourceTrustQualityStatus | null>(null);
+  const [matchingStatus, setMatchingStatus] = useState<SourceMatchingStatus | null>(null);
+  const [importing, setImporting] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -108,6 +116,9 @@ export default function AdminSourceEditorScreen() {
           setSelectedConnectorKey(assignment.connectorKey);
           setEndpointPlaceholder(assignment.endpointPlaceholder ?? '');
           setMultiSourceContext(await adminMultiSourceService.loadSourceDetailContext(role ?? 'viewer', loaded.id));
+          setSchedulerStatus(await importSchedulerAdminService.getSourceSchedulerStatus(role, loaded.id));
+          setTrustQualityStatus(await trustQualityAdminService.getSourceStatus(loaded.id));
+          setMatchingStatus(await multiSourceMatchAdminService.getSourceStatus(loaded.id));
         }
       }
     } catch (cause) {
@@ -217,6 +228,24 @@ export default function AdminSourceEditorScreen() {
       setError(getErrorMessage(cause));
     } finally {
       setAssignmentSaving(false);
+    }
+  };
+
+  const handleStartImport = async () => {
+    if (!record || !session || isNew) {
+      return;
+    }
+    setImporting(true);
+    setError(null);
+    setSuccess(null);
+    try {
+      const job = await importOperationsService.startManualImport(session, record.id);
+      setSuccess(`Import started (${job.status}).`);
+      setImportJobCount(await sourceService.countImportJobs(role, record.id));
+    } catch (cause) {
+      setError(getErrorMessage(cause));
+    } finally {
+      setImporting(false);
     }
   };
 
@@ -340,6 +369,88 @@ export default function AdminSourceEditorScreen() {
 
           {!isNew ? (
             <View style={styles.summaryCard}>
+              <AppText style={styles.sectionTitle}>Trust & Quality</AppText>
+              <AppText style={styles.meta}>
+                Effective trust: {trustQualityStatus?.trustScore ?? record.computedTrustScore ?? record.trustScore}
+                {trustQualityStatus?.computedTrustScore !== undefined
+                  ? ` (computed: ${trustQualityStatus.computedTrustScore})`
+                  : ''}
+              </AppText>
+              <AppText style={styles.meta}>
+                Pending reviews: {trustQualityStatus?.pendingReviews ?? 0} · On hold:{' '}
+                {trustQualityStatus?.onHoldReviews ?? 0}
+              </AppText>
+              <AppText style={styles.meta}>
+                Reputation events: {trustQualityStatus?.recentReputationEvents ?? 0}
+                {trustQualityStatus?.trustScoreUpdatedAt
+                  ? ` · Updated: ${new Date(trustQualityStatus.trustScoreUpdatedAt).toLocaleString()}`
+                  : ''}
+              </AppText>
+            </View>
+          ) : null}
+
+          {!isNew ? (
+            <View style={styles.summaryCard}>
+              <AppText style={styles.sectionTitle}>Multi-Source Matching</AppText>
+              <AppText style={styles.meta}>
+                Recent evaluations: {matchingStatus?.recentEvaluations ?? 0} · Auto-linked:{' '}
+                {matchingStatus?.autoLinkedCount ?? 0}
+              </AppText>
+              <AppText style={styles.meta}>
+                Review required: {matchingStatus?.reviewRequiredCount ?? 0} · Pending merge candidates:{' '}
+                {matchingStatus?.pendingMergeCandidates ?? 0}
+              </AppText>
+            </View>
+          ) : null}
+
+          {!isNew ? (
+            <View style={styles.summaryCard}>
+              <AppText style={styles.sectionTitle}>Scheduler</AppText>
+              <AppText style={styles.meta}>
+                Enabled: {schedulerStatus?.scheduleEnabled ? 'yes' : 'no'} · Policy:{' '}
+                {schedulerStatus?.schedulePolicy ?? record.schedulePolicy ?? 'manual_only'}
+              </AppText>
+              <AppText style={styles.meta}>
+                Interval:{' '}
+                {formatScheduleIntervalPresetLabel(
+                  (schedulerStatus?.scheduleIntervalPreset ??
+                    record.scheduleIntervalPreset ??
+                    'manual') as ScheduleIntervalPreset,
+                )}
+              </AppText>
+              <AppText style={styles.meta}>
+                Next run:{' '}
+                {schedulerStatus?.nextScheduledAt
+                  ? new Date(schedulerStatus.nextScheduledAt).toLocaleString()
+                  : '—'}
+              </AppText>
+              <AppText style={styles.meta}>
+                Last run:{' '}
+                {schedulerStatus?.lastScheduledAt
+                  ? new Date(schedulerStatus.lastScheduledAt).toLocaleString()
+                  : '—'}
+              </AppText>
+              <AppText style={styles.meta}>
+                Last success:{' '}
+                {schedulerStatus?.lastSuccessfulImportAt
+                  ? new Date(schedulerStatus.lastSuccessfulImportAt).toLocaleString()
+                  : '—'}
+              </AppText>
+              {schedulerStatus?.lastSchedulerError ? (
+                <AppText style={styles.error}>
+                  Last error: {schedulerStatus.lastSchedulerError}
+                </AppText>
+              ) : null}
+              <AppText style={styles.meta}>
+                Running: {schedulerStatus?.currentlyRunning ? 'yes' : 'no'} · Queued jobs:{' '}
+                {schedulerStatus?.queuedJobs ?? 0} · Maintenance:{' '}
+                {schedulerStatus?.schedulerMaintenanceMode ? 'on' : 'off'}
+              </AppText>
+            </View>
+          ) : null}
+
+          {!isNew ? (
+            <View style={styles.summaryCard}>
               <AppText style={styles.sectionTitle}>Status</AppText>
               <AppText style={styles.meta}>
                 {formatSourceStatus(record.enabled, record.archived)} · {importJobCount} import job(s)
@@ -347,6 +458,17 @@ export default function AdminSourceEditorScreen() {
               <AppText style={styles.meta}>Slug: {record.slug}</AppText>
               <AppText style={styles.meta}>Created {new Date(record.createdAt).toLocaleString()}</AppText>
               <AppText style={styles.meta}>Updated {new Date(record.updatedAt).toLocaleString()}</AppText>
+              {record.publishMode ? (
+                <AppText style={styles.meta}>Publish mode: {record.publishMode}</AppText>
+              ) : null}
+              {record.sourceRoles && record.sourceRoles.length > 0 ? (
+                <AppText style={styles.meta}>Roles: {record.sourceRoles.join(', ')}</AppText>
+              ) : null}
+              <PrimaryButton
+                label={importing ? 'Starting import…' : 'Start production import'}
+                onPress={() => void handleStartImport()}
+                disabled={importing || !record.enabled || record.archived}
+              />
             </View>
           ) : null}
 

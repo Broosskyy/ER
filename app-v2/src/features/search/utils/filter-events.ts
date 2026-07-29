@@ -8,6 +8,12 @@ import {
   getDateLabel,
   getGenreLabel,
   getSortLabel,
+  getActiveDistanceOptions,
+  getActiveFestivalOptions,
+  getActiveOrganizerOptions,
+  getActivePriceOptions,
+  getActiveVenueEnvironmentOptions,
+  getActiveVenueOptions,
 } from '@/features/search/config/filter-config';
 
 import {
@@ -141,6 +147,13 @@ export function countActiveFilters(filters: EventFilters): number {
   if (filters.genres.length > 0) count += 1;
   if (filters.city !== DEFAULT_EVENT_FILTERS.city) count += 1;
   if (filters.sortBy !== DEFAULT_EVENT_FILTERS.sortBy) count += 1;
+  if (filters.distance !== DEFAULT_EVENT_FILTERS.distance) count += 1;
+  if (filters.price !== DEFAULT_EVENT_FILTERS.price) count += 1;
+  if (filters.venueEnvironment !== DEFAULT_EVENT_FILTERS.venueEnvironment) count += 1;
+  if (filters.venueId) count += 1;
+  if (filters.organizerId) count += 1;
+  if (filters.festivalId) count += 1;
+  if (filters.dateStartAt || filters.dateEndAt) count += 1;
 
   return count;
 }
@@ -164,6 +177,54 @@ export function getActiveFilterSummaries(filters: EventFilters): string[] {
 
   if (filters.sortBy !== DEFAULT_EVENT_FILTERS.sortBy) {
     parts.push(getSortLabel(filters.sortBy));
+  }
+
+  if (filters.distance !== DEFAULT_EVENT_FILTERS.distance) {
+    const distance = getActiveDistanceOptions().find((option) => option.id === filters.distance);
+    if (distance) {
+      parts.push(distance.label);
+    }
+  }
+
+  if (filters.price !== DEFAULT_EVENT_FILTERS.price) {
+    const price = getActivePriceOptions().find((option) => option.id === filters.price);
+    if (price) {
+      parts.push(price.label);
+    }
+  }
+
+  if (filters.venueEnvironment !== DEFAULT_EVENT_FILTERS.venueEnvironment) {
+    const environment = getActiveVenueEnvironmentOptions().find(
+      (option) => option.id === filters.venueEnvironment,
+    );
+    if (environment) {
+      parts.push(environment.label);
+    }
+  }
+
+  if (filters.venueId) {
+    const venue = getActiveVenueOptions().find((option) => option.id === filters.venueId);
+    if (venue) {
+      parts.push(venue.label);
+    }
+  }
+
+  if (filters.organizerId) {
+    const organizer = getActiveOrganizerOptions().find((option) => option.id === filters.organizerId);
+    if (organizer) {
+      parts.push(organizer.label);
+    }
+  }
+
+  if (filters.festivalId) {
+    const festival = getActiveFestivalOptions().find((option) => option.id === filters.festivalId);
+    if (festival) {
+      parts.push(festival.label);
+    }
+  }
+
+  if (filters.dateStartAt || filters.dateEndAt) {
+    parts.push('Zeitraum');
   }
 
   return parts;

@@ -41,7 +41,40 @@ export type GenreFilterId =
 
 export type CityFilterId = string;
 
-export type SortByFilterId = 'recommended' | 'date' | 'alphabetical';
+export type SortByFilterId =
+  | 'recommended'
+  | 'date'
+  | 'alphabetical'
+  | 'distance'
+  | 'newest'
+  | 'trending';
+
+export type DistanceFilterId = 'any' | '5' | '10' | '25' | '50' | '100';
+
+export type PriceFilterId = 'any' | 'free' | 'under-20' | 'under-50';
+
+export type VenueEnvironmentFilterId = 'any' | 'indoor' | 'outdoor';
+
+export interface DistanceOption extends FilterOptionBase {
+  id: DistanceFilterId;
+  radiusKm: number | null;
+}
+
+export interface PriceOption extends FilterOptionBase {
+  id: PriceFilterId;
+  freeOnly?: boolean;
+  maxPriceEur?: number;
+}
+
+export interface VenueEnvironmentOption extends FilterOptionBase {
+  id: VenueEnvironmentFilterId;
+  indoor?: boolean;
+  outdoor?: boolean;
+}
+
+export interface EntityFilterOption extends FilterOptionBase {
+  entityId: string | null;
+}
 
 export interface FilterConfig {
   defaultCityId: CityFilterId;
@@ -49,4 +82,10 @@ export interface FilterConfig {
   genreOptions: GenreOption[];
   cityOptions: CityOption[];
   sortOptions: SortOption[];
+  distanceOptions: DistanceOption[];
+  priceOptions: PriceOption[];
+  venueEnvironmentOptions: VenueEnvironmentOption[];
+  venueOptions: EntityFilterOption[];
+  organizerOptions: EntityFilterOption[];
+  festivalOptions: EntityFilterOption[];
 }

@@ -14,6 +14,8 @@ export interface SearchInputProps {
   placeholder?: string;
   testID?: string;
   autoFocus?: boolean;
+  onFocus?: () => void;
+  onBlur?: () => void;
 }
 
 export interface SearchInputHandle {
@@ -28,6 +30,8 @@ export const SearchInput = forwardRef<SearchInputHandle, SearchInputProps>(funct
     placeholder = 'Events, Künstler oder Locations suchen…',
     testID = 'events-search-input',
     autoFocus = false,
+    onFocus,
+    onBlur,
   },
   ref,
 ) {
@@ -84,6 +88,8 @@ export const SearchInput = forwardRef<SearchInputHandle, SearchInputProps>(funct
         testID={testID}
         value={value}
         onChangeText={onChangeText}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       {hasValue ? (
         <Pressable

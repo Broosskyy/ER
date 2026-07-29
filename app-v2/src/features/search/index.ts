@@ -31,5 +31,6 @@ export {
   SearchEmptyState,
   SearchInput,
   SearchResultsMeta,
+  SearchExplorePanel,
 } from './components';
 export type { SearchInputHandle } from './components';

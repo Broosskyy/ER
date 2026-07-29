@@ -36,6 +36,10 @@ export interface EventDiscoveryGridProps {
   onSwitchToMap?: () => void;
   bottomInset?: number;
   resetKey?: string;
+  hasMore?: boolean;
+  loadingMore?: boolean;
+  loading?: boolean;
+  onLoadMore?: () => void;
 }
 
 function GridRow({
@@ -83,17 +87,22 @@ function EventDiscoveryGridContent({
   onAdjustFilters,
   onSwitchToMap,
   bottomInset = 0,
+  hasMore: hasMoreProp,
+  loadingMore = false,
+  loading = false,
+  onLoadMore,
 }: EventDiscoveryGridProps) {
   const router = useRouter();
   const { theme } = useTheme();
   const { width } = useWindowDimensions();
   const columns = getExploreGridColumns(width);
+  const useApiPagination = Boolean(onLoadMore);
   const [visibleCount, setVisibleCount] = useState(DISCOVERY_GRID_PAGE_SIZE);
   const listRef = useRef<FlatList<DiscoveryGridRow>>(null);
 
   const visibleEvents = useMemo(
-    () => paginateDiscoveryEvents(events, visibleCount),
-    [events, visibleCount],
+    () => (useApiPagination ? events : paginateDiscoveryEvents(events, visibleCount)),
+    [events, useApiPagination, visibleCount],
   );
 
   const rows = useMemo(
@@ -101,7 +110,7 @@ function EventDiscoveryGridContent({
     [visibleEvents, columns],
   );
 
-  const hasMore = visibleCount < events.length;
+  const hasMore = useApiPagination ? (hasMoreProp ?? false) : visibleCount < events.length;
 
   const handleEventPress = useCallback(
     (eventId: string) => {
@@ -111,12 +120,17 @@ function EventDiscoveryGridContent({
   );
 
   const handleLoadMore = useCallback(() => {
+    if (useApiPagination) {
+      onLoadMore?.();
+      return;
+    }
+
     if (!hasMore) {
       return;
     }
 
     setVisibleCount((current) => getNextDiscoveryPageCount(current, events.length));
-  }, [events.length, hasMore]);
+  }, [events.length, hasMore, onLoadMore, useApiPagination]);
 
   const renderItem: ListRenderItem<DiscoveryGridRow> = useCallback(
     ({ item }) => (
@@ -131,7 +145,7 @@ function EventDiscoveryGridContent({
     [handleEventPress, isFavorite, onToggleFavorite],
   );
 
-  if (!isHydrated) {
+  if (!isHydrated || loading) {
     return (
       <View style={[styles.loadingWrap, { paddingBottom: bottomInset }]}>
         <Skeleton shape="card" height={120} />
@@ -167,7 +181,7 @@ function EventDiscoveryGridContent({
         { paddingBottom: bottomInset, paddingHorizontal: spacingRoles.screenHorizontal },
       ]}
       ListFooterComponent={
-        hasMore ? (
+        hasMore || loadingMore ? (
           <View style={styles.footer}>
             <ActivityIndicator color={theme.colors.accent} />
           </View>

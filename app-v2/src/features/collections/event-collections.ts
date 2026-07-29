@@ -1,3 +1,4 @@
+import { getDiscoverablePublishedEvents } from '@/features/events/discovery/discovery-feed-service';
 import { eventRepository } from '@/features/events/repository/event-repository';
 
 import {
@@ -13,12 +14,20 @@ export {
   isCollectionType,
 } from './event-collection-config';
 
+function getPublishedDiscoveryPool() {
+  const discoverable = getDiscoverablePublishedEvents();
+  if (discoverable.length > 0) {
+    return discoverable;
+  }
+  return eventRepository.getPublishedEvents();
+}
+
 export function getCollectionEvents(type: CollectionType) {
   const config = getCollectionConfig(type);
-  return config.selectEvents(eventRepository.getPublishedEvents());
+  return config.selectEvents(getPublishedDiscoveryPool());
 }
 
 export function getCollectionPreviewEvents(type: CollectionType) {
   const config = getCollectionConfig(type);
-  return config.selectEvents(eventRepository.getPublishedEvents()).slice(0, config.homePreviewLimit);
+  return config.selectEvents(getPublishedDiscoveryPool()).slice(0, config.homePreviewLimit);
 }

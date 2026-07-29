@@ -2,7 +2,6 @@ import { ScrollView, StyleProp, StyleSheet, View, ViewStyle } from 'react-native
 
 import { EventCard } from '@/components/discovery/EventCard';
 import { EventListItem } from '@/components/discovery/EventListItem';
-import { EmptyState } from '@/components/feedback/EmptyState';
 import { Skeleton } from '@/components/feedback/Skeleton';
 import { Section } from '@/components/layout/Section';
 import { TextButton } from '@/components/buttons/TextButton';
@@ -40,11 +39,7 @@ export function SimilarEventsSection({
   }
 
   if (similar.events.length === 0) {
-    return (
-      <Section title={similar.title ?? 'Ähnliche Events'} style={style} testID={testID}>
-        <EmptyState title="Keine ähnlichen Events" icon="calendar-outline" />
-      </Section>
-    );
+    return null;
   }
 
   return (

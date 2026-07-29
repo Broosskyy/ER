@@ -15,7 +15,7 @@ import {
 import { getHomeFeaturedCardWidth, HOME_FEATURED_PAIR_GAP } from '@/features/home/components/featured-card-layout';
 import { getDefaultCityValue } from '@/features/search/config/filter-config';
 import type { GenreFilterId } from '@/features/search/config/filter-config.types';
-import type { DateRangeFilter } from '@/features/search/constants';
+import { DEFAULT_EVENT_FILTERS, type DateRangeFilter } from '@/features/search/constants';
 import { applyEventFilters } from '@/features/search/utils/filter-events';
 import { HOME_CLUB_FIXTURES, getHomeClubSpotlightWidth } from '@/features/home/data/home-club-fixtures';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
@@ -45,11 +45,10 @@ export interface ExploreFeedProps {
 
 function getSectionEvents(section: ExploreSectionConfig): EventDisplayModel[] {
   const events = applyEventFilters(eventRepository.getPublishedEvents(), {
-    query: '',
+    ...DEFAULT_EVENT_FILTERS,
     dateRange: section.dateRange,
     genres: section.genres ?? [],
     city: getDefaultCityValue(),
-    sortBy: 'recommended',
   });
   const limited = section.limit ? events.slice(0, section.limit) : events;
   return limited.map(toEventDisplayModel);

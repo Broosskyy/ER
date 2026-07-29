@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { EventFilters } from '@/features/search/constants';
 import { useUserLocation } from '@/features/location/UserLocationProvider';
+import { useDiscoverySearch } from '@/features/search/hooks/use-discovery-search';
 
 import { DEFAULT_MAP_FILTER, type MapFilter, type MapLayerType, type MapMarkerSelection, type MapViewport } from '../types/discovery-models';
 import {
@@ -36,6 +37,7 @@ export function useMapDiscoveryController({
   simulateError = false,
 }: UseMapDiscoveryControllerOptions) {
   const { location, status, requestCurrentLocation } = useUserLocation();
+  const { events: discoveryEvents } = useDiscoverySearch(filters);
   const [mapFilter, setMapFilter] = useState<MapFilter>(DEFAULT_MAP_FILTER);
   const [layer, setLayer] = useState<MapLayerType>('standard');
   const [viewport, setViewport] = useState<MapViewport | null>(null);
@@ -56,8 +58,8 @@ export function useMapDiscoveryController({
   }, [location]);
 
   const mapEvents = useMemo(
-    () => buildMapEvents(filters, mapFilter, { featuredIds, origin }),
-    [filters, mapFilter, featuredIds, origin],
+    () => buildMapEvents(discoveryEvents, mapFilter, { featuredIds, origin }),
+    [discoveryEvents, mapFilter, featuredIds, origin],
   );
 
   const mapClubs = useMemo(

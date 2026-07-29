@@ -33,7 +33,15 @@ export function isSavedEventPast(event: EventDisplayModel): boolean {
 
 export function isSavedEventCancelled(event: EventDisplayModel): boolean {
   const notice = resolveEventNoticeType(event);
-  return notice === 'cancelled' || event.status === 'archived';
+  return (
+    notice === 'cancelled' ||
+    event.lifecycleStatus === 'cancelled' ||
+    event.status === 'archived'
+  );
+}
+
+export function isSavedEventPostponed(event: EventDisplayModel): boolean {
+  return event.lifecycleStatus === 'postponed' || resolveSavedConsumerStatus(event) === 'postponed';
 }
 
 export function formatSavedAtLabel(savedAt: string): string {

@@ -138,7 +138,7 @@ describe('getActiveFilterSummaries', () => {
         genres: ['techno'],
         sortBy: 'alphabetical',
       }),
-    ).toEqual(['Heute', 'Techno', 'Alphabetical']);
+    ).toEqual(['Heute', 'Techno', 'Alphabetisch']);
 
     expect(
       getActiveFilterSummaries({

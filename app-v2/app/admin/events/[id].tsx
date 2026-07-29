@@ -23,6 +23,7 @@ import {
   organizerRepository,
   sourceRepository,
   venueRepository,
+  eventLifecycleAdminService,
 } from '@/data/repositories/registry';
 import {
   AdminErrorState,
@@ -42,6 +43,7 @@ import {
 } from '@/features/admin/constants/admin-event-status';
 import { useAdminAuth } from '@/features/admin/AdminAuthContext';
 import { FilterChip } from '@/features/home/components/FilterChip';
+import type { EventLifecycleAdminStatus } from '@/features/event-lifecycle/services/event-lifecycle-admin-service';
 import { filterConfig } from '@/features/search/config/filter-config';
 
 const STATUSES: AdminEventStatus[] = ['draft', 'review', 'published', 'rejected', 'archived'];
@@ -100,6 +102,7 @@ export default function AdminEventEditorScreen() {
   const [genreOptions, setGenreOptions] = useState<{ id: string; label: string }[]>([]);
   const [cityOptions, setCityOptions] = useState<{ id: string; label: string }[]>([]);
   const [draftEventId] = useState(() => `event-${Date.now()}`);
+  const [lifecycleStatus, setLifecycleStatus] = useState<EventLifecycleAdminStatus | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -133,6 +136,7 @@ export default function AdminEventEditorScreen() {
           return;
         }
         setRecord((current) => (current?.id === existing.id ? current : existing));
+        setLifecycleStatus(await eventLifecycleAdminService.getEventStatus(existing));
         const loadedLineup = await eventLineupService.getLineupForAdmin(role, id);
         setLineup(
           loadedLineup.map((entry) => ({
@@ -298,6 +302,26 @@ export default function AdminEventEditorScreen() {
             <SecondaryButton label="Back" onPress={() => router.back()} />
             <AppText style={styles.title}>{isNew ? 'New Event' : 'Edit Event'}</AppText>
           </View>
+
+          {!isNew ? (
+            <View style={styles.lifecycleCard}>
+              <AppText style={styles.lifecycleTitle}>Lifecycle</AppText>
+              <AppText style={styles.lifecycleMeta}>
+                Status: {lifecycleStatus?.lifecycleStatus ?? 'unknown'} · History entries:{' '}
+                {lifecycleStatus?.historyCount ?? 0} · Field changes: {lifecycleStatus?.changeCount ?? 0}
+              </AppText>
+              <AppText style={styles.lifecycleMeta}>
+                Last change:{' '}
+                {lifecycleStatus?.lastChangeAt
+                  ? new Date(lifecycleStatus.lastChangeAt).toLocaleString()
+                  : '—'}
+                {lifecycleStatus?.lastSourceId ? ` · Source: ${lifecycleStatus.lastSourceId}` : ''}
+              </AppText>
+              <AppText style={styles.lifecycleMeta}>
+                Pending review decisions: {lifecycleStatus?.pendingReviewDecisions ?? 0}
+              </AppText>
+            </View>
+          ) : null}
 
           {!canEdit ? (
             <AppText style={styles.readOnlyNotice}>
@@ -503,4 +527,14 @@ const styles = StyleSheet.create({
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.xs },
   error: { ...textRoles.metadata, color: colors.live },
   success: { ...textRoles.metadata, color: colors.primary },
+  lifecycleCard: {
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 12,
+    padding: spacing.md,
+    gap: spacing.xs,
+    backgroundColor: colors.surface,
+  },
+  lifecycleTitle: { ...textRoles.metadata, fontWeight: '600' },
+  lifecycleMeta: { ...textRoles.metadata, color: colorRoles.emptyStateDescription },
 });
