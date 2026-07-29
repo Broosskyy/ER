@@ -26,7 +26,11 @@ import {
 
   type WebsiteExtractionStrategy,
 
+  type WebsiteStrategyContext,
+
 } from '@/features/aggregation/connectors/website/strategy-types';
+
+import { jsonLdWebsiteStrategy } from '@/features/aggregation/connectors/website/strategies';
 
 
 
@@ -370,6 +374,28 @@ function extractEventsFromFlatSelectors(
 
 
 
+async function extractDetailPageEventWithStrategy(
+  detailDocument: WebsiteDocument,
+  config: WebsiteConnectorConfig,
+  context: WebsiteStrategyContext,
+): Promise<RawWebsiteEvent | null> {
+  const detailStrategy = config.eventDetailPage?.detailStrategy;
+  if (detailStrategy === 'json_ld') {
+    const extraction = await jsonLdWebsiteStrategy.extract(detailDocument, config, context);
+    const event = extraction.events[0];
+    if (!event) {
+      return null;
+    }
+    return {
+      ...event,
+      sourceUrl: detailDocument.requestedUrl,
+      detailUrl: detailDocument.finalUrl,
+      externalId: event.externalId || detailDocument.finalUrl,
+    };
+  }
+  return extractDetailPageEvent(detailDocument);
+}
+
 function extractDetailPageEvent(detailDocument: WebsiteDocument): RawWebsiteEvent | null {
 
   const title =
@@ -696,7 +722,10 @@ export const eventDetailPageWebsiteStrategy: WebsiteExtractionStrategy = {
 
         const detailDocument = await context.fetchDetailPage(detailUrl);
 
-        const event = extractDetailPageEvent(detailDocument);
+        const event = await extractDetailPageEventWithStrategy(detailDocument, config, {
+          ...context,
+          baseUrl: detailDocument.finalUrl,
+        });
 
         if (!event) {
 

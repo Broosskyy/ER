@@ -8,6 +8,7 @@ import type { WebsiteConnectorConfig } from '@/features/aggregation/connectors/w
 import { BOOTSHAUS_LIST_FIXTURE_HTML } from '@/features/sources/production/bootshaus-fixture';
 import {
   AFFENKAEFIG_SOURCE_ID,
+  AFFENKAEFIG_FIXTURE_WEBSITE_CONFIG,
   createAffenkaefigSourceRecord,
   createAffenkaefigLiveProductionSourceRecord,
 } from '@/features/sources/production/affenkaefig-source';
@@ -140,6 +141,7 @@ export function createAffenkaefigProductionSourceRecord(
     publishMode: 'auto_publish',
     sourceConfig: {
       ...createAffenkaefigSourceRecord().sourceConfig,
+      website: AFFENKAEFIG_FIXTURE_WEBSITE_CONFIG,
       publishPolicy: { mode: 'auto_publish', blockOnDuplicate: true },
     },
     ...overrides,

@@ -11,19 +11,40 @@ export const AFFENKAEFIG_SOURCE_ID = 'source-affenkaefig';
 export const AFFENKAEFIG_SOURCE_SLUG = 'affenkaefig';
 export const AFFENKAEFIG_SOURCE_STABLE_KEY = 'affenkaefig-website-v1';
 export const AFFENKAEFIG_SOURCE_CONNECTOR_KEY = 'organizer_website' as const;
-export const AFFENKAEFIG_EVENTS_URL = 'https://affenkaefig.de/events/';
+export const AFFENKAEFIG_OFFICIAL_DOMAIN = 'https://affenkaefig.info';
+export const AFFENKAEFIG_LEGACY_DOMAIN = 'https://affenkaefig.de';
+export const AFFENKAEFIG_EVENTS_URL = `${AFFENKAEFIG_OFFICIAL_DOMAIN}/tickets/`;
 export const AFFENKAEFIG_ORGANIZER_ID = 'organizer-affenkaefig';
+export const AFFENKAEFIG_EVENT_LINK_PATTERN = '/event/';
 
 export const AFFENKAEFIG_WEBSITE_CONFIG: WebsiteConnectorConfig = {
-  preferredStrategy: 'json_ld',
+  preferredStrategy: 'event_detail_page',
   userAgent: 'EternalRave-SourceBot/1.0 (+https://eternalrave.app; event-import)',
   acceptLanguage: 'de-DE,de;q=0.9,en;q=0.8',
+  eventDetailPage: {
+    listPageUrl: AFFENKAEFIG_EVENTS_URL,
+    eventLinkSelector: 'a',
+    eventLinkAttribute: 'href',
+    linkIncludePattern: AFFENKAEFIG_EVENT_LINK_PATTERN,
+    allowedDomains: ['affenkaefig.info', 'www.affenkaefig.info'],
+    detailStrategy: 'json_ld',
+  },
   limits: {
     maxEventsPerRun: 50,
-    maxDetailPages: 0,
+    maxDetailPages: 50,
     maxPaginationPages: 1,
     maxPagesPerRun: 1,
     timeoutMs: 30_000,
+  },
+};
+
+/** Fixture-only config for offline JSON-LD list tests (Sprint 13 reference HTML). */
+export const AFFENKAEFIG_FIXTURE_WEBSITE_CONFIG: WebsiteConnectorConfig = {
+  ...AFFENKAEFIG_WEBSITE_CONFIG,
+  preferredStrategy: 'json_ld',
+  limits: {
+    ...AFFENKAEFIG_WEBSITE_CONFIG.limits,
+    maxDetailPages: 0,
   },
 };
 

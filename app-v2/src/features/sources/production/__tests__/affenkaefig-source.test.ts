@@ -9,14 +9,16 @@ import { websiteProcessor } from '@/features/aggregation/connectors/website/proc
 import { eventNormalizer } from '@/features/import/normalization/event-normalizer';
 import {
   AFFENKAEFIG_EVENTS_URL,
+  AFFENKAEFIG_FIXTURE_WEBSITE_CONFIG,
+  AFFENKAEFIG_OFFICIAL_DOMAIN,
   AFFENKAEFIG_ORGANIZER_ID,
   AFFENKAEFIG_SOURCE_CONNECTOR_KEY,
   AFFENKAEFIG_SOURCE_ID,
-  AFFENKAEFIG_WEBSITE_CONFIG,
   createAffenkaefigSourceRecord,
 } from '@/features/sources/production/affenkaefig-source';
 import { AFFENKAEFIG_LIST_FIXTURE_HTML } from '@/features/sources/production/affenkaefig-fixture';
 import type { PipelineRunContext } from '@/features/aggregation/pipeline/types';
+import { createAffenkaefigProductionSourceRecord } from '@/features/sources/production/production-source-records';
 
 const pipelineContext: PipelineRunContext = {
   runId: 'test-run',
@@ -25,7 +27,7 @@ const pipelineContext: PipelineRunContext = {
 };
 
 describe('Affenkäfig production source configuration', () => {
-  it('defines organizer/festival roles with json_ld strategy and disabled by default', () => {
+  it('defines organizer/festival roles with event_detail_page strategy and disabled by default', () => {
     const record = createAffenkaefigSourceRecord();
     expect(record.id).toBe(AFFENKAEFIG_SOURCE_ID);
     expect(record.connectorKey).toBe(AFFENKAEFIG_SOURCE_CONNECTOR_KEY);
@@ -33,9 +35,17 @@ describe('Affenkäfig production source configuration', () => {
     expect(record.enabled).toBe(false);
     expect(record.publishMode).toBe('manual_review');
     expect(record.reviewRequired).toBe(true);
-    expect(record.sourceConfig?.website?.preferredStrategy).toBe('json_ld');
+    expect(record.baseUrl).toBe(AFFENKAEFIG_EVENTS_URL);
+    expect(record.website).toBe(AFFENKAEFIG_EVENTS_URL);
+    expect(record.sourceConfig?.website?.preferredStrategy).toBe('event_detail_page');
+    expect(record.sourceConfig?.website?.eventDetailPage?.detailStrategy).toBe('json_ld');
+    expect(record.sourceConfig?.website?.eventDetailPage?.allowedDomains).toContain('affenkaefig.info');
     expect(record.organizerId).toBe(AFFENKAEFIG_ORGANIZER_ID);
     expect(record.sourceConfig?.defaults?.venueId).toBeUndefined();
+  });
+
+  it('points production list URL at affenkaefig.info tickets page', () => {
+    expect(AFFENKAEFIG_EVENTS_URL).toBe(`${AFFENKAEFIG_OFFICIAL_DOMAIN}/tickets/`);
   });
 
   it('uses fixture HTML only in test factory reference block', () => {
@@ -45,8 +55,8 @@ describe('Affenkäfig production source configuration', () => {
 });
 
 describe('Affenkäfig JSON-LD connector extraction', () => {
-  const record = createAffenkaefigSourceRecord();
-  const importSource = mapSourceRecordToImportSource(record);
+  const fixtureRecord = createAffenkaefigProductionSourceRecord();
+  const importSource = mapSourceRecordToImportSource(fixtureRecord);
   const baseDocument = {
     requestedUrl: AFFENKAEFIG_EVENTS_URL,
     finalUrl: AFFENKAEFIG_EVENTS_URL,
@@ -62,7 +72,7 @@ describe('Affenkäfig JSON-LD connector extraction', () => {
   };
 
   it('detects json_ld from @graph fixture', () => {
-    const report = detectWebsiteDocument(baseDocument);
+    const report = detectWebsiteDocument(baseDocument, AFFENKAEFIG_FIXTURE_WEBSITE_CONFIG);
     expect(report.recommendedStrategy).toBe('json_ld');
     expect(report.detectedFormats.some((signal) => signal.format === 'schema_org_event')).toBe(true);
   });
@@ -70,7 +80,7 @@ describe('Affenkäfig JSON-LD connector extraction', () => {
   it('extracts festival and music events with stable external IDs from URLs', async () => {
     const result = await jsonLdWebsiteStrategy.extract(
       baseDocument,
-      AFFENKAEFIG_WEBSITE_CONFIG,
+      AFFENKAEFIG_FIXTURE_WEBSITE_CONFIG,
       { baseUrl: AFFENKAEFIG_EVENTS_URL, connectorKey: AFFENKAEFIG_SOURCE_CONNECTOR_KEY },
     );
     expect(result.events.length).toBe(2);
@@ -110,7 +120,7 @@ describe('Affenkäfig JSON-LD connector extraction', () => {
 
   it('routes through organizer_website connector with fixture reference HTML', async () => {
     const connector = new OrganizerWebsiteConnector();
-    const aggregationSource = mapSourceRecordToAggregationSource(record);
+    const aggregationSource = mapSourceRecordToAggregationSource(fixtureRecord);
     const events = await connector.fetchRawEvents(aggregationSource, importSource, pipelineContext);
     expect(events.length).toBeGreaterThanOrEqual(2);
     expect(events.every((event) => event.sourceMetadata?.connector === AFFENKAEFIG_SOURCE_CONNECTOR_KEY)).toBe(
