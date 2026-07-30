@@ -206,3 +206,21 @@ export class DefaultHttpClient implements HttpClient {
     }
   }
 }
+
+const coreHttpClient = new DefaultHttpClient();
+
+/** Shared HTTP client for connectors and onboarding discovery (raw fetch compat). */
+export const defaultHttpClient = {
+  request: (options: HttpRequestOptions) => coreHttpClient.request(options),
+  fetch: (
+    url: string,
+    init?: {
+      headers?: Record<string, string>;
+      redirect?: RequestRedirect;
+    },
+  ) =>
+    globalThis.fetch(url, {
+      headers: init?.headers,
+      redirect: init?.redirect ?? 'follow',
+    }),
+};

@@ -81,7 +81,15 @@ T+7 days:  Retrospective
 - [x] Live onboarding validation (`_sprint331-onboarding-validation.ts`)
 - [x] Origin backfill complete (`event_origins` type)
 - [x] SSRF / redirect validation (no regression)
-- [ ] Tag `source-onboarding-foundation-ready` on release branch
+- [x] Tag `source-onboarding-foundation-ready`
+
+### Ticket platform imports (Sprint 33.3)
+
+- [x] `source-bootshaus-ticket-io` live import (17 events, 10 duplicate matches)
+- [x] `source-affenkaefig-ticket-kings` live import (5 events, 1 duplicate match)
+- [x] Idempotent re-import validated
+- [x] Scheduler interval configured (`every_6_hours`)
+- [ ] Admin review + publish for enrichment records → ticket origins
 
 ### Builds & quality
 

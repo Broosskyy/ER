@@ -218,6 +218,37 @@ See [security.md](security.md) § Incident Response.
 
 ---
 
+## 9. Ticket platform imports (Sprint 33.3)
+
+Production enrichment sources:
+
+| Source ID | Platform | Shop URL |
+|-----------|----------|----------|
+| `source-bootshaus-ticket-io` | ticket.io | `https://bootshaus-club.ticket.io/` |
+| `source-affenkaefig-ticket-kings` | Ticket Kings | `https://ticketkings.de/all-events/` |
+
+### Validation / manual import
+
+```bash
+cd app-v2
+npx tsx scripts/operations/_sprint333-ticket-platform-activation.ts
+```
+
+Validates source config, live fetch, import pipeline, and idempotent re-import. Output: `docs/real-data/_sprint333_ticket_platform_activation.json` (gitignored).
+
+### Scheduled imports
+
+Sources use `schedule_policy: interval`, `schedule_interval_preset: every_6_hours`. Trigger via existing ops scripts:
+
+```bash
+npx tsx scripts/operations/run-scheduler-tick.ts
+npx tsx scripts/operations/run-queue-worker.ts
+```
+
+Enrichment records land in `import_records` with `needs_review`. Publish via admin review to create ticket origins on canonical events.
+
+---
+
 ## Related documents
 
 - [Compliance](compliance.md)

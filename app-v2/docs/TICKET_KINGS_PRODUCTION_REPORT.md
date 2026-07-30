@@ -1,6 +1,6 @@
 # Ticket Kings Production Report — Sprint 32
 
-**Status:** Production enabled  
+**Status:** Production active (Sprint 33.3 live import validated 2026-07-30)  
 **Date:** 2026-07-30  
 **Source ID:** `source-affenkaefig-ticket-kings`  
 **Role:** Enrichment (`ticketing`) — not a primary event source

@@ -1,6 +1,6 @@
 # Ticket.io Production Report — Sprint 31
 
-**Status:** Production enabled  
+**Status:** Production active (Sprint 33.3 live import validated 2026-07-30)  
 **Date:** 2026-07-30  
 **Source ID:** `source-bootshaus-ticket-io`  
 **Role:** Enrichment (`ticketing`) — not a primary event source
