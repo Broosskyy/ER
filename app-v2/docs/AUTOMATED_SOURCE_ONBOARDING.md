@@ -30,7 +30,7 @@ URL submitted → normalize + SSRF check → onboarding job
 
 ## Persistence
 
-`source_onboarding_jobs` table (migration `20260765000000_sprint33_multi_origin_source_onboarding.sql`). Runtime repository is in-memory in development/tests; production jobs can be persisted via Supabase when wired.
+`source_onboarding_jobs` table (migration `20260765000000`). Production runtime uses `SupabaseSourceOnboardingRepository` when `VITEST !== 'true'`; in-memory only in unit tests. Apply migration `20260766000000` for RLS policies and service-role grants.
 
 ## Limits
 

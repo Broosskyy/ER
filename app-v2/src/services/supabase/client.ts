@@ -13,7 +13,12 @@ let useServiceRoleClient = false;
 const SERVICE_ROLE_PLACEHOLDER = /your-service-role-key|YOUR_SERVICE_ROLE/i;
 
 function resolveSupabaseUrl(): string {
-  return process.env.SUPABASE_URL ?? env.supabaseUrl ?? '';
+  return (
+    process.env.SUPABASE_URL ??
+    process.env.EXPO_PUBLIC_SUPABASE_URL ??
+    env.supabaseUrl ??
+    ''
+  );
 }
 
 export function resolveSupabaseServiceRoleKey(): string {

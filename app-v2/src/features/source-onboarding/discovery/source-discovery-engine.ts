@@ -1,6 +1,7 @@
 import { detectWebsiteDocument } from '@/features/aggregation/connectors/website/detection';
 import type { WebsiteDocument } from '@/features/aggregation/connectors/website/types';
 import { defaultHttpClient } from '@/features/endpoints/http/default-http-client';
+import { assertSafeImportUrl } from '@/features/import/services/import-fetch-service';
 
 import type { DiscoveryEvidence } from '@/features/source-onboarding/domain/types';
 import { detectPlatformFromHostname } from '@/features/source-onboarding/registry/platform-registry';
@@ -29,7 +30,7 @@ function pushStep(
 }
 
 export async function fetchDiscoveryDocument(url: string): Promise<WebsiteDocument> {
-  let currentUrl = url;
+  let currentUrl = assertSafeImportUrl(url).toString();
   const redirectChain: string[] = [];
 
   for (let attempt = 0; attempt <= SOURCE_DISCOVERY_MAX_REDIRECTS; attempt += 1) {
@@ -46,7 +47,7 @@ export async function fetchDiscoveryDocument(url: string): Promise<WebsiteDocume
       if (!location || attempt >= SOURCE_DISCOVERY_MAX_REDIRECTS) {
         throw new Error(`Too many redirects while probing ${url}.`);
       }
-      currentUrl = new URL(location, currentUrl).toString();
+      currentUrl = assertSafeImportUrl(new URL(location, currentUrl).toString()).toString();
       redirectChain.push(currentUrl);
       continue;
     }

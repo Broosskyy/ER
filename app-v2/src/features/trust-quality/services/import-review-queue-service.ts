@@ -362,7 +362,10 @@ export class ImportReviewQueueService {
 
         importRecordId: record.id,
 
-        importJobId: existing.importJobId,
+        importJobId:
+          record.id !== existing.importRecordId
+            ? (jobId ?? record.importJobId ?? existing.importJobId)
+            : (existing.importJobId ?? jobId ?? record.importJobId),
 
         status,
 

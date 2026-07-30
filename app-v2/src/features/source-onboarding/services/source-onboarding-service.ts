@@ -47,6 +47,11 @@ export class SourceOnboardingService {
       await this.existingHostnames(),
     );
 
+    const existingJob = await this.repository.findByNormalizedUrl(normalized.normalized);
+    if (existingJob && existingJob.status !== 'rejected') {
+      return { job: existingJob };
+    }
+
     const now = new Date().toISOString();
     let job: SourceOnboardingJob = {
       id: createJobId(),
@@ -136,5 +141,17 @@ export class SourceOnboardingService {
   async getJob(role: AdminRole | null, id: string): Promise<SourceOnboardingJob | null> {
     assertCanDiscover(role);
     return this.repository.getById(id);
+  }
+
+  async retry(role: AdminRole | null, id: string): Promise<SourceDiscoverResponse> {
+    assertCanDiscover(role);
+    const existing = await this.repository.getById(id);
+    if (!existing) {
+      throw new AppError('Onboarding job not found.', { code: 'NOT_FOUND' });
+    }
+    if (existing.status !== 'review_required' && existing.status !== 'rejected') {
+      throw new AppError(`Job cannot be retried from status ${existing.status}.`, { code: 'VALIDATION' });
+    }
+    return this.discoverFromUrl(role, { url: existing.submittedUrl });
   }
 }

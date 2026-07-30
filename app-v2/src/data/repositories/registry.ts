@@ -174,6 +174,7 @@ import { createEventOriginsBackfillHandler } from '@/features/operations/backfil
 import { EventOriginService } from '@/features/events/services/event-origin-service';
 import { EventDetailService } from '@/features/events/services/event-detail-service';
 import { InMemorySourceOnboardingRepository } from '@/features/source-onboarding/repositories/source-onboarding-repository';
+import { SupabaseSourceOnboardingRepository } from '@/features/source-onboarding/repositories/supabase-source-onboarding-repository';
 import { SourceOnboardingService } from '@/features/source-onboarding/services/source-onboarding-service';
 import { WorkerRecoveryService } from '@/features/operations/services/worker-recovery-service';
 import { ConnectorHealthPersistenceService } from '@/features/operations/services/connector-health-persistence-service';
@@ -332,7 +333,15 @@ export const eventDetailService = new EventDetailService(
   (id) => eventRepository.getEventById(id),
   eventOriginService,
 );
-const sourceOnboardingRepository = new InMemorySourceOnboardingRepository();
+const eventCanonicalIdentityService = new EventCanonicalIdentityService(
+  createEventFingerprintLookup(entityAliasStore),
+  multiSourceRepositories.sourceReferences,
+);
+const useInMemoryPersistence = process.env.VITEST === 'true';
+
+const sourceOnboardingRepository = useInMemoryPersistence
+  ? new InMemorySourceOnboardingRepository()
+  : new SupabaseSourceOnboardingRepository();
 export const sourceOnboardingService = new SourceOnboardingService(
   sourceOnboardingRepository,
   async () => {
@@ -348,11 +357,6 @@ export const sourceOnboardingService = new SourceOnboardingService(
       .filter((hostname): hostname is string => Boolean(hostname));
   },
 );
-const eventCanonicalIdentityService = new EventCanonicalIdentityService(
-  createEventFingerprintLookup(entityAliasStore),
-  multiSourceRepositories.sourceReferences,
-);
-const useInMemoryPersistence = process.env.VITEST === 'true';
 
 const eventBlockingKeyRepository = useInMemoryPersistence
   ? new InMemoryEventBlockingKeyRepository()
@@ -489,6 +493,7 @@ const platformOperationsStateRepository = useInMemoryPersistence
 const operationsBackfillJobRepository = useInMemoryPersistence
   ? new InMemoryOperationsBackfillJobRepository()
   : new SupabaseOperationsBackfillJobRepository();
+export { operationsBackfillJobRepository };
 const sourceIntelligenceSnapshotRepository = useInMemoryPersistence
   ? new InMemorySourceIntelligenceSnapshotRepository()
   : new SupabaseSourceIntelligenceSnapshotRepository();

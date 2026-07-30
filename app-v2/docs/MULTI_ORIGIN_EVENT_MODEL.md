@@ -30,7 +30,11 @@ Discovery event detail supports optional `includeOrigins=true` (additive respons
 
 ## Backfill
 
-Operations backfill type `event_origins` enriches existing `event_source_references` rows idempotently (`createEventOriginsBackfillHandler`).
+Operations backfill type `event_origins` enriches existing `event_source_references` rows idempotently.
+
+**Sprint 33.1 production run:** 44 → 62 source references with origin metadata; second pass idempotent.
+
+Scripts: `_sprint331-origin-backfill-dry-run.ts`, `_sprint331-origin-backfill-run.ts`
 
 ## Field ownership
 

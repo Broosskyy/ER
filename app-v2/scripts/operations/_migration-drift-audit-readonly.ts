@@ -109,6 +109,7 @@ const MIGRATION_MARKERS: Record<string, string[]> = {
   '20260756000000': ['platform_operations_state'],
   '20260757000000': ['sources', 'venues', 'organizers'],
   '20260765000000': ['source_onboarding_jobs', 'event_source_references'],
+  '20260766000000': ['source_onboarding_jobs', 'operations_backfill_jobs'],
 };
 
 async function main() {

@@ -13,7 +13,7 @@ All submitted URLs pass through `normalizeSubmittedSourceUrl()` which delegates 
 
 ## Redirect policy
 
-Discovery fetch (`fetchDiscoveryDocument`) uses manual redirect handling with `SOURCE_DISCOVERY_MAX_REDIRECTS` (5).
+Discovery fetch (`fetchDiscoveryDocument`) validates **each redirect target** with `assertSafeImportUrl()` (SSRF re-check per hop). Maximum redirects: 5.
 
 ## HTTPS preference
 
