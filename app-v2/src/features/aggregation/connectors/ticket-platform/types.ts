@@ -57,6 +57,8 @@ export interface ParsedTicketPlatformEvent {
   eventUrl: string;
   priceAmount?: number;
   priceCurrency?: string;
+  /** Night Manager checkout widget id (Ticket Kings detail pages). */
+  checkoutProviderId?: string;
   platform: TicketPlatformId;
   shopSlug: string;
 }

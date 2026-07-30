@@ -91,6 +91,9 @@ export async function fetchTicketPlatformEvents(input: {
         shopSlug: config.shopSlug,
         enrichmentSource: true,
         scopeStats,
+        ...(event.checkoutProviderId
+          ? { checkoutProviderId: event.checkoutProviderId }
+          : {}),
       },
     };
   });
