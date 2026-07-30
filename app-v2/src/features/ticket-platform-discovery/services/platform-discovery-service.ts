@@ -275,6 +275,7 @@ export class PlatformDiscoveryService {
       scheduleEnabled: true,
       schedulePolicy: 'interval',
       scheduleIntervalPreset: 'every_6_hours',
+      scheduleTimezone: 'Europe/Berlin',
       pollingIntervalMinutes: 360,
       reviewRequired: true,
       publishMode: 'manual_review',

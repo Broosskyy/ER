@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 
 import { SOURCE_CONNECTOR_KEYS } from '@/features/aggregation/connectors/types';
 import { canResolveSourceConnector } from '@/features/aggregation/connectors/source-connector-resolution';
-import { createBootshausTicketIoProductionSourceRecord } from '@/features/sources/production/ticket-io-source';
+import { createBootshausTicketIoProductionSourceRecord } from '@/features/sources/production/ticket-io-source.fixtures.server';
 
 const migrationPath = path.resolve(
   __dirname,

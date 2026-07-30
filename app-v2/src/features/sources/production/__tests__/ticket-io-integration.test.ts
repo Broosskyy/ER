@@ -21,7 +21,7 @@ import {
 import {
   createBootshausTicketIoProductionSourceRecord,
   TICKET_IO_BOOTSHAUS_SOURCE_ID,
-} from '@/features/sources/production/ticket-io-source';
+} from '@/features/sources/production/ticket-io-source.fixtures.server';
 import { canResolveSourceConnector } from '@/features/aggregation/connectors/source-connector-resolution';
 
 const migrationPath = join(

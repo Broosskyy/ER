@@ -7,7 +7,7 @@ import { normalizeTicketTimezone } from '@/features/aggregation/connectors/ticke
 import { fetchTicketPlatformEvents } from '@/features/aggregation/connectors/ticket-platform/ticket-platform-fetch';
 import { mapSourceRecordToAggregationSource } from '@/features/aggregation/domain/aggregation-source';
 import { mapSourceRecordToImportSource } from '@/data/mappers/source-mapper';
-import { createBootshausTicketIoProductionSourceRecord } from '@/features/sources/production/ticket-io-source';
+import { createBootshausTicketIoProductionSourceRecord } from '@/features/sources/production/ticket-io-source.fixtures.server';
 
 const FIXTURE_PATH = join(
   process.cwd(),

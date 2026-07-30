@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 
 import { canResolveSourceConnector } from '@/features/aggregation/connectors/source-connector-resolution';
 import { listTicketPlatformAdapters } from '@/features/aggregation/connectors/ticket-platform/adapter-registry';
-import { createAffenkaefigTicketKingsProductionSourceRecord } from '@/features/sources/production/ticket-kings-source';
+import { createAffenkaefigTicketKingsProductionSourceRecord } from '@/features/sources/production/ticket-kings-source.fixtures.server';
 
 const migrationPath = path.resolve(
   __dirname,

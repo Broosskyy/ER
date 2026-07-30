@@ -1,7 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 
 import type { SourceRecord } from '@/data/types/records';
-import { loadTicketKingsAffenkaefigFixtureHtml } from '@/features/sources/production/ticket-kings-source';
+import { loadTicketKingsAffenkaefigFixtureHtml } from '@/features/sources/production/ticket-kings-source.fixtures.server';
 import { extractTicketIoShopSlugsFromText } from '@/features/ticket-platform-discovery/discovery/ticket-io-shop-discovery';
 import { collectDiscoveryCorpusFromSources } from '@/features/ticket-platform-discovery/discovery/discovery-corpus';
 import { crawlTicketKingsPlatform } from '@/features/ticket-platform-discovery/discovery/ticket-kings-platform-crawler';

@@ -10,7 +10,7 @@ import { normalizeTicketTimezone } from '@/features/aggregation/connectors/ticke
 import { fetchTicketPlatformEvents } from '@/features/aggregation/connectors/ticket-platform/ticket-platform-fetch';
 import { mapSourceRecordToAggregationSource } from '@/features/aggregation/domain/aggregation-source';
 import { mapSourceRecordToImportSource } from '@/data/mappers/source-mapper';
-import { createAffenkaefigTicketKingsProductionSourceRecord } from '@/features/sources/production/ticket-kings-source';
+import { createAffenkaefigTicketKingsProductionSourceRecord } from '@/features/sources/production/ticket-kings-source.fixtures.server';
 
 const LIST_FIXTURE_PATH = join(
   process.cwd(),

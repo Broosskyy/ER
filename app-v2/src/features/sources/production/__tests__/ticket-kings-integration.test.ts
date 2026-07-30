@@ -22,7 +22,7 @@ import {
   createAffenkaefigTicketKingsProductionSourceRecord,
   loadTicketKingsAffenkaefigFixtureHtml,
   TICKET_KINGS_AFFENKAEFIG_SOURCE_ID,
-} from '@/features/sources/production/ticket-kings-source';
+} from '@/features/sources/production/ticket-kings-source.fixtures.server';
 import { parseTicketKingsShopHtml } from '@/features/aggregation/connectors/ticket-platform/adapters/ticket-kings-adapter';
 import { canResolveSourceConnector } from '@/features/aggregation/connectors/source-connector-resolution';
 
