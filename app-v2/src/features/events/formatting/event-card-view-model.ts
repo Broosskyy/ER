@@ -4,28 +4,11 @@ import type {
 } from '@/components/discovery/view-models';
 
 import type { EventDisplayModel } from './display-event';
-import { formatDateLabel, formatTimeInTimezone, parseIsoDateTime } from './date-time';
+import { formatWeekdayLabel } from './date-time';
 import {
   resolveEventPresentation,
   resolvePrimaryCardStatus,
 } from '../status/event-status-resolver';
-
-function formatWeekdayLabel(isoDateTime: string, timezone: string): string {
-  const date = parseIsoDateTime(isoDateTime);
-
-  if (!date) {
-    return '';
-  }
-
-  return new Intl.DateTimeFormat('de-DE', {
-    weekday: 'short',
-    timeZone: timezone,
-  })
-    .format(date)
-    .replace('.', '')
-    .toUpperCase()
-    .slice(0, 2);
-}
 
 /** Maps domain display events into discovery card view models for the component library. */
 export function toEventCardViewModel(event: EventDisplayModel): EventCardViewModel {

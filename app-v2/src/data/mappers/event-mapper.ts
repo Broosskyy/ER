@@ -1,3 +1,4 @@
+import { normalizeIanaTimezone } from '@/features/events/formatting/date-time';
 import type { Event } from '@/features/events/types/event';
 import type { EventStatus } from '@/features/events/types/event-status';
 import { resolveDomainVenueLabel } from '@/features/create/utils/event-venue-display';
@@ -76,7 +77,7 @@ export function mapEventRowToDomain(row: EventRow, relations?: {
     imageUrl: row.image_url ?? undefined,
     startDateTime: row.start_date,
     endDateTime: row.end_date ?? undefined,
-    timezone: row.timezone?.trim() || 'Europe/Berlin',
+    timezone: normalizeIanaTimezone(row.timezone),
     venueId: row.venue_id ?? undefined,
     organizerId: row.organizer_id ?? undefined,
     artistIds: row.artist_id ? [row.artist_id] : undefined,

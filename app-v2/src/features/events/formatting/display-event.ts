@@ -14,6 +14,7 @@ import {
   isThisMonthEvent,
   isThisWeekEvent,
   isUpcomingEvent,
+  normalizeIanaTimezone,
 } from '../formatting/date-time';
 import type { VenueType } from '../domain/festival-foundation';
 import type { Event, EventWithCoordinates } from '../types/event';
@@ -89,7 +90,7 @@ export function toEventDisplayModel(event: Event): EventDisplayModel {
     startsAt: event.startDateTime,
     startDateTime: event.startDateTime,
     endDateTime: event.endDateTime,
-    timezone: event.timezone,
+    timezone: normalizeIanaTimezone(event.timezone),
     latitude: event.latitude,
     longitude: event.longitude,
     status: event.status,
