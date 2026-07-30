@@ -20,7 +20,7 @@
 | Discoverable published events | **46** |
 | Discoverable with Ticket Kings ticket URL | **yes** |
 | Regression tests | **1234 / 1234** passed |
-| Commit | *(see Phase 9 — filled after commit)* |
+| Commit | `4ef3906` — `fix(events): publish and expose ticket platform imports end to end` |
 
 ---
 
@@ -173,9 +173,8 @@ Covers:
 
 ## Phase 9 — Commit
 
-```
-fix(events): publish and expose ticket platform imports end to end
-```
+**Hash:** `4ef39065068e819eb97ce87418ba882642809a3d`  
+**Message:** `fix(events): publish and expose ticket platform imports end to end`
 
 ---
 
