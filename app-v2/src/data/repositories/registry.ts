@@ -673,6 +673,8 @@ export const importReviewService = new ImportReviewService(
   entityResolutionWritebackService,
   realDataDomainEventBus,
   multiSourceRepositories.sourceReferences,
+  importEventPublishService,
+  (sourceId) => adminSourceRepository.getById(sourceId),
 );
 
 export const eventModerationAuditService = new EventModerationAuditService();

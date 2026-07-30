@@ -385,7 +385,7 @@ export class ImportEventPublishService {
 
 
 
-      if (this.canonicalIdentityService) {
+      if (this.canonicalIdentityService && !isEnrichment) {
 
         await this.canonicalIdentityService.registerIdentity(
 

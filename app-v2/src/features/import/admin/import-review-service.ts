@@ -1,4 +1,4 @@
-import type { AdminEventRecord } from '@/data/types/records';
+import type { AdminEventRecord, SourceRecord } from '@/data/types/records';
 import type { AdminEventRepository, EventRepository } from '@/data/repositories/repositories';
 import { EntityResolutionWritebackService } from '@/features/entity-resolution/entity-resolution-writeback-service';
 import { touchesEntityResolutionEdits } from '@/features/entity-resolution/entity-resolution-writeback';
@@ -31,11 +31,15 @@ import {
   canApproveRecord,
   getEffectiveCandidate,
   isReviewableStatus,
+  isTicketPlatformEnrichmentApproval,
   mergeReviewerEdits,
 } from '@/features/import/admin/import-utils';
 import { ImportAuditService } from './import-audit-service';
 
-import { buildAdminEventFromImportRecord } from '@/features/import/services/import-event-publish-service';
+import {
+  buildAdminEventFromImportRecord,
+  type ImportEventPublishService,
+} from '@/features/import/services/import-event-publish-service';
 
 export class ImportReviewService {
   private readonly validator = new ImportCandidateValidator();
@@ -58,6 +62,8 @@ export class ImportReviewService {
     private readonly entityResolutionWritebackService?: EntityResolutionWritebackService,
     private readonly domainEventBus?: RealDataDomainEventBus,
     private readonly sourceReferences?: EventSourceReferenceRepository,
+    private readonly publishService?: ImportEventPublishService,
+    private readonly loadSourceById?: (sourceId: string) => Promise<SourceRecord | null>,
   ) {}
 
   private role(session: AuthSession | null): AdminRole | null {
@@ -168,7 +174,11 @@ export class ImportReviewService {
     if (record.updatedAt !== expectedUpdatedAt) {
       throw new ImportConcurrencyError();
     }
-    if (!canApproveRecord(record)) {
+
+    const source = this.loadSourceById ? await this.loadSourceById(record.sourceId) : undefined;
+    const allowMatchedDuplicate = isTicketPlatformEnrichmentApproval(record, source?.sourceType);
+
+    if (!canApproveRecord(record, { allowMatchedDuplicate })) {
       if (
         record.duplicateScore !== undefined &&
         record.duplicateScore >= matchingConfig.duplicateThreshold &&
@@ -197,6 +207,7 @@ export class ImportReviewService {
       catalog,
     );
     if (
+      !allowMatchedDuplicate &&
       matchResult.duplicateScore >= matchingConfig.duplicateThreshold &&
       record.duplicateDecision !== 'dismissed'
     ) {
@@ -207,6 +218,61 @@ export class ImportReviewService {
     }
 
     await this.persistEntityResolutionWriteback(session, record, 'approve');
+
+    if (this.publishService && source) {
+      const previousRecords = await this.recordRepository.listLatestBySourceId(record.sourceId);
+      let publishResult;
+      try {
+        publishResult = await this.publishService.publishRecord(record, source, previousRecords, {
+          actorId: this.actorId(session),
+        });
+      } catch (error: unknown) {
+        throw new ImportError(
+          'Event could not be created.',
+          'IMPORT_EVENT_CREATE_FAILED',
+          error,
+        );
+      }
+
+      const matchedArtistIds = [
+        ...new Set(
+          (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds ?? []).filter(Boolean),
+        ),
+      ];
+      let savedEvent = publishResult.event;
+      const role = this.role(session);
+      if (role && matchedArtistIds.length > 0) {
+        await this.lineupService.replaceFromMatchedArtistIds(role, savedEvent.id, matchedArtistIds);
+        savedEvent = (await this.adminEventRepository.getById(savedEvent.id)) ?? savedEvent;
+      }
+
+      const now = new Date().toISOString();
+      const updated = await this.adminRepository.updateIfUnchanged(
+        {
+          ...publishResult.record,
+          reviewedBy: this.actorId(session),
+          reviewedAt: now,
+          validationWarnings: validation.warnings,
+        },
+        expectedUpdatedAt,
+      );
+
+      await this.auditService.logRecordApproved(this.actorId(session), recordId, savedEvent.id);
+      if (this.domainEventBus) {
+        publishLifecycleDomainEvent(this.domainEventBus, {
+          type: publishResult.created ? 'event_created' : 'event_updated',
+          canonicalEventId: savedEvent.id,
+          sourceId: record.sourceId,
+          payload: {
+            importRecordId: recordId,
+            venueId: savedEvent.venueId,
+            organizerId: savedEvent.organizerId,
+          },
+        });
+      }
+      await this.publishService.refreshConsumerFeed();
+      return { record: updated, event: savedEvent };
+    }
 
     const event = buildAdminEventFromImportRecord(record);
     const matchedArtistIds = [

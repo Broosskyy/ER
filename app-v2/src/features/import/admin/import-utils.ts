@@ -45,11 +45,19 @@ export function isReviewableStatus(status: ImportRecord['status']): boolean {
   return status === 'needs_review' || status === 'invalid';
 }
 
-export function canApproveRecord(record: ImportRecord): boolean {
+export function isTicketPlatformEnrichmentApproval(record: ImportRecord, sourceType?: string): boolean {
+  return sourceType === 'ticket_platform' && Boolean(record.duplicateEventId);
+}
+
+export function canApproveRecord(
+  record: ImportRecord,
+  options?: { allowMatchedDuplicate?: boolean },
+): boolean {
   if (record.status === 'rejected' || record.status === 'imported' || record.status === 'duplicate') {
     return false;
   }
   if (
+    !options?.allowMatchedDuplicate &&
     record.duplicateScore !== undefined &&
     record.duplicateScore >= matchingConfig.duplicateThreshold &&
     record.duplicateDecision !== 'dismissed'

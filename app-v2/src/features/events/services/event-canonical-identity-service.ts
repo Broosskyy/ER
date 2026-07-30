@@ -50,6 +50,10 @@ export class EventCanonicalIdentityService {
     sourceId?: string,
   ): Promise<void> {
     const { canonicalFingerprint } = buildEventIdentityFingerprint(candidate);
+    const existingCanonicalId = await this.lookup.findByFingerprint(canonicalFingerprint);
+    if (existingCanonicalId === canonicalEventId) {
+      return;
+    }
     await this.lookup.registerFingerprint(canonicalEventId, canonicalFingerprint, sourceId);
   }
 }
