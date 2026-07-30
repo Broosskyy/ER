@@ -31,6 +31,7 @@ import {
   formatParserTypeLabel,
   formatSourceTypeLabel,
 } from '@/features/sources/admin/source-labels';
+import { PlatformDiscoveryPanel } from '@/features/ticket-platform-discovery/admin/PlatformDiscoveryPanel';
 
 type StatusFilter = 'all' | 'enabled' | 'disabled' | 'archived';
 
@@ -124,6 +125,8 @@ export function AdminSourcesContent() {
               />
             ) : null}
           </View>
+
+          {canManageSources(role) ? <PlatformDiscoveryPanel role={role} /> : null}
 
           <TextInput
             value={query}

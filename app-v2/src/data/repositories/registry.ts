@@ -176,6 +176,10 @@ import { EventDetailService } from '@/features/events/services/event-detail-serv
 import { InMemorySourceOnboardingRepository } from '@/features/source-onboarding/repositories/source-onboarding-repository';
 import { SupabaseSourceOnboardingRepository } from '@/features/source-onboarding/repositories/supabase-source-onboarding-repository';
 import { SourceOnboardingService } from '@/features/source-onboarding/services/source-onboarding-service';
+import { collectDiscoveryCorpusFromSources } from '@/features/ticket-platform-discovery/discovery/discovery-corpus';
+import { InMemoryPlatformDiscoveryRepository } from '@/features/ticket-platform-discovery/repositories/platform-discovery-repository';
+import { SupabasePlatformDiscoveryRepository } from '@/features/ticket-platform-discovery/repositories/supabase-platform-discovery-repository';
+import { PlatformDiscoveryService } from '@/features/ticket-platform-discovery/services/platform-discovery-service';
 import { WorkerRecoveryService } from '@/features/operations/services/worker-recovery-service';
 import { ConnectorHealthPersistenceService } from '@/features/operations/services/connector-health-persistence-service';
 import {
@@ -366,6 +370,30 @@ export const sourceOnboardingService = new SourceOnboardingService(
         }
       }
       return entries;
+    });
+  },
+);
+
+const platformDiscoveryRepository = useInMemoryPersistence
+  ? new InMemoryPlatformDiscoveryRepository()
+  : new SupabasePlatformDiscoveryRepository();
+export const platformDiscoveryService = new PlatformDiscoveryService(
+  platformDiscoveryRepository,
+  async () => adminSourceRepository.getAll(),
+  async () => {
+    const sources = await adminSourceRepository.getAll();
+    return collectDiscoveryCorpusFromSources(sources);
+  },
+  async (record: SourceRecord) => {
+    const existing = await adminSourceRepository.getById(record.id);
+    const now = new Date().toISOString();
+    if (existing) {
+      return adminSourceRepository.save({ ...record, updatedAt: now });
+    }
+    return adminSourceRepository.save({
+      ...record,
+      createdAt: record.createdAt ?? now,
+      updatedAt: now,
     });
   },
 );
