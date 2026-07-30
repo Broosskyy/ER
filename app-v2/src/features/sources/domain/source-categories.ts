@@ -4,6 +4,7 @@
 export const SOURCE_CATEGORIES = [
   'website',
   'api',
+  'ticket_platform',
   'ticket_provider',
   'rss',
   'ical',
@@ -49,7 +50,10 @@ export function inferSourceCategory(input: {
     return 'api';
   }
   if (input.sourceType === 'ticket_platform') {
-    return 'ticket_provider';
+    return 'ticket_platform';
+  }
+  if (input.connectorKey === 'ticket_platform') {
+    return 'ticket_platform';
   }
   if (input.sourceType === 'social') {
     return 'social';

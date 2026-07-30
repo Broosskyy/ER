@@ -16,6 +16,7 @@ export const SOURCE_REGISTRY_TYPES = [
   'csv_import',
   'xml_feed',
   'social_reference',
+  'ticket_platform',
   'future_connector',
 ] as const;
 
