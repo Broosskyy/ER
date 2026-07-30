@@ -1,8 +1,11 @@
 # Sprint 33.1 — Production Activation Report
 
+> **Superseded by** [`SPRINT_33_2_PRODUCTION_ACTIVATION_REPORT.md`](SPRINT_33_2_PRODUCTION_ACTIVATION_REPORT.md) — **SOURCE ONBOARDING FOUNDATION PRODUCTION READY** (2026-07-30).
+
 **Date:** 2026-07-30  
 **Branch:** `feature/er-012-source-acquisition-foundation`  
-**Prior commit:** `b5ffe3b`
+**Prior commit:** `b5ffe3b`  
+**Prior verdict:** BLOCKED — PRODUCTION ACTIVATION INCOMPLETE (migration 660 pending)
 
 ## Repository Audit
 
@@ -17,7 +20,7 @@
 | Migration | Status |
 |-----------|--------|
 | `20260765000000` (source_onboarding_jobs) | Already applied (drift audit: Likely Applied) |
-| `20260766000000` (RLS, grants, event_origins backfill type) | **Requires `DATABASE_URL` apply** — run `npx tsx scripts/operations/_sprint331-apply-migration.ts` |
+| `20260766000000` (RLS, grants, event_origins backfill type) | ✅ Applied (Sprint 33.2) |
 
 ## Metrics (production)
 

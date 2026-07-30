@@ -15,8 +15,9 @@ import { runSourceDiscovery } from '@/features/source-onboarding/discovery/sourc
 import { runSourceOnboardingDryRun } from '@/features/source-onboarding/dry-run/source-onboarding-dry-run';
 import type { SourceOnboardingRepository } from '@/features/source-onboarding/repositories/source-onboarding-repository';
 import {
-  isDuplicateOnboardingHostname,
+  findDuplicateSourceIdByHostname,
   normalizeSubmittedSourceUrl,
+  type RegisteredSourceHostname,
 } from '@/features/source-onboarding/security/url-normalizer';
 
 function createJobId(): string {
@@ -32,7 +33,7 @@ function assertCanDiscover(role: AdminRole | null): void {
 export class SourceOnboardingService {
   constructor(
     private readonly repository: SourceOnboardingRepository,
-    private readonly existingHostnames: () => Promise<string[]>,
+    private readonly registeredSourceHostnames: () => Promise<RegisteredSourceHostname[]>,
   ) {}
 
   async discoverFromUrl(
@@ -42,9 +43,9 @@ export class SourceOnboardingService {
     assertCanDiscover(role);
 
     const normalized = normalizeSubmittedSourceUrl(request.url);
-    const duplicateHostname = isDuplicateOnboardingHostname(
+    const duplicateSourceId = findDuplicateSourceIdByHostname(
       normalized.hostname,
-      await this.existingHostnames(),
+      await this.registeredSourceHostnames(),
     );
 
     const existingJob = await this.repository.findByNormalizedUrl(normalized.normalized);
@@ -62,14 +63,14 @@ export class SourceOnboardingService {
       confidence: 0,
       createdAt: now,
       updatedAt: now,
-      duplicateSourceId: duplicateHostname,
+      duplicateSourceId,
     };
 
-    if (duplicateHostname) {
+    if (duplicateSourceId) {
       job = {
         ...job,
         status: 'review_required',
-        reviewNotes: `Hostname already registered: ${duplicateHostname}`,
+        reviewNotes: `Hostname already registered: ${duplicateSourceId}`,
         updatedAt: new Date().toISOString(),
       };
       await this.repository.save(job);

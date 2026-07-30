@@ -74,6 +74,15 @@ T+7 days:  Retrospective
 
 ## 3. Production checklist
 
+### Source onboarding (Sprint 33.2)
+
+- [x] Migration `20260765000000` + `20260766000000` applied
+- [x] `source_onboarding_jobs` persistent (service-role grants)
+- [x] Live onboarding validation (`_sprint331-onboarding-validation.ts`)
+- [x] Origin backfill complete (`event_origins` type)
+- [x] SSRF / redirect validation (no regression)
+- [ ] Tag `source-onboarding-foundation-ready` on release branch
+
 ### Builds & quality
 
 - [ ] Version bumped (if required)

@@ -346,15 +346,27 @@ export const sourceOnboardingService = new SourceOnboardingService(
   sourceOnboardingRepository,
   async () => {
     const sources = await adminSourceRepository.getAll();
-    return sources
-      .map((source) => {
+    return sources.flatMap((source) => {
+      const urls = [source.baseUrl, source.website, source.sourceUrl].filter(
+        (value): value is string => Boolean(value),
+      );
+      const seen = new Set<string>();
+      const entries: Array<{ hostname: string; sourceId: string }> = [];
+      for (const value of urls) {
         try {
-          return source.baseUrl ? new URL(source.baseUrl).hostname : undefined;
+          const hostname = new URL(value).hostname;
+          const key = hostname.toLowerCase().replace(/^www\./, '');
+          if (seen.has(key)) {
+            continue;
+          }
+          seen.add(key);
+          entries.push({ hostname, sourceId: source.id });
         } catch {
-          return undefined;
+          continue;
         }
-      })
-      .filter((hostname): hostname is string => Boolean(hostname));
+      }
+      return entries;
+    });
   },
 );
 

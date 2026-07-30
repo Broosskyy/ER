@@ -30,7 +30,9 @@ URL submitted → normalize + SSRF check → onboarding job
 
 ## Persistence
 
-`source_onboarding_jobs` table (migration `20260765000000`). Production runtime uses `SupabaseSourceOnboardingRepository` when `VITEST !== 'true'`; in-memory only in unit tests. Apply migration `20260766000000` for RLS policies and service-role grants.
+`source_onboarding_jobs` table (migration `20260765000000`). Production runtime uses `SupabaseSourceOnboardingRepository` when `VITEST !== 'true'`; in-memory only in unit tests. Migration `20260766000000` provides RLS policies and service-role grants (applied in production, Sprint 33.2).
+
+Duplicate hostnames resolve to `duplicate_source_id` = existing `sources.id` (FK-safe). Hostname matching uses `baseUrl`, `website`, and `sourceUrl`.
 
 ## Limits
 

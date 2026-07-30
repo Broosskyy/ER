@@ -31,11 +31,23 @@ async function main(): Promise<void> {
     });
     results.caseC_ssrf = { blocked: false };
   } catch (error) {
-    results.caseC_ssrf = {
-      blocked: true,
-      message: error instanceof Error ? error.message : String(error),
-    };
+  results.caseC_ssrf = {
+    blocked: true,
+    message: error instanceof Error ? error.message : String(error),
+  };
   }
+
+  const bootshausJob = (results.caseA_bootshaus as { job: { id: string } }).job;
+  results.caseD_retry = await sourceOnboardingService.retry(role, bootshausJob.id);
+
+  const { data: persistedJobs, error: listError } = await import('@/services/supabase/client').then(
+    ({ getSupabaseServiceClient }) =>
+      getSupabaseServiceClient().from('source_onboarding_jobs').select('id, status, normalized_url'),
+  );
+  if (listError) {
+    throw new Error(listError.message);
+  }
+  results.persistedJobs = persistedJobs ?? [];
 
   writeFileSync(OUT, `${JSON.stringify(results, null, 2)}\n`, 'utf8');
   console.log(JSON.stringify(results, null, 2));

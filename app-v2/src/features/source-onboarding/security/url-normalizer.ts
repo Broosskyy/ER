@@ -40,15 +40,30 @@ export function normalizeSubmittedSourceUrl(url: string): NormalizedSourceUrl {
   };
 }
 
+export interface RegisteredSourceHostname {
+  hostname: string;
+  sourceId: string;
+}
+
+function normalizeHostname(hostname: string): string {
+  return hostname.toLowerCase().replace(/^www\./, '');
+}
+
+export function findDuplicateSourceIdByHostname(
+  hostname: string,
+  registered: RegisteredSourceHostname[],
+): string | undefined {
+  const normalized = normalizeHostname(hostname);
+  return registered.find((entry) => normalizeHostname(entry.hostname) === normalized)?.sourceId;
+}
+
+/** @deprecated Use findDuplicateSourceIdByHostname for FK-safe duplicate_source_id persistence. */
 export function isDuplicateOnboardingHostname(
   hostname: string,
   existingHostnames: string[],
 ): string | undefined {
-  const normalized = hostname.toLowerCase().replace(/^www\./, '');
-  return existingHostnames.find((entry) => {
-    const candidate = entry.toLowerCase().replace(/^www\./, '');
-    return candidate === normalized;
-  });
+  const normalized = normalizeHostname(hostname);
+  return existingHostnames.find((entry) => normalizeHostname(entry) === normalized);
 }
 
 export const SOURCE_DISCOVERY_MAX_REDIRECTS = MAX_REDIRECTS;

@@ -65,7 +65,7 @@ function OnboardingJobSummary({ job }: { job: SourceOnboardingJob }) {
       {job.detectedSourceType ? <AppText>Source type: {job.detectedSourceType}</AppText> : null}
       <AppText>Confidence: {(job.confidence * 100).toFixed(0)}%</AppText>
       {job.duplicateSourceId ? (
-        <AppText style={styles.warning}>Duplicate hostname: {job.duplicateSourceId}</AppText>
+        <AppText style={styles.warning}>Duplicate source: {job.duplicateSourceId}</AppText>
       ) : null}
       {job.discoveryResult?.warnings.map((warning) => (
         <AppText key={warning} style={styles.warning}>

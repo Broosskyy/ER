@@ -181,12 +181,14 @@ describe('Sprint 33 source onboarding', () => {
 
   it('detects duplicate hostnames during discovery', async () => {
     const repository = new InMemorySourceOnboardingRepository();
-    const service = new SourceOnboardingService(repository, async () => ['ra.co']);
+    const service = new SourceOnboardingService(repository, async () => [
+      { hostname: 'ra.co', sourceId: 'source-ra' },
+    ]);
 
     const response = await service.discoverFromUrl('admin', {
       url: 'https://www.ra.co/events',
     });
     expect(response.job.status).toBe('review_required');
-    expect(response.job.duplicateSourceId).toBe('ra.co');
+    expect(response.job.duplicateSourceId).toBe('source-ra');
   });
 });

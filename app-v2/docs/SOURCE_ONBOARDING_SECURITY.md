@@ -30,7 +30,7 @@ HTTP URLs are normalized to HTTPS when safe.
 
 ## Duplicate sources
 
-Known hostnames (from existing `sources.baseUrl`) short-circuit to `review_required` without fetching.
+Known hostnames (from existing `sources.baseUrl`, `website`, `sourceUrl`) short-circuit to `review_required` without fetching. `duplicate_source_id` stores the matching `sources.id` (foreign key), not the hostname string.
 
 ## Known limits
 
