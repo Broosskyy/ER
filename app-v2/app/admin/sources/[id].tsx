@@ -36,6 +36,7 @@ import {
   formatSourceTypeLabel,
 } from '@/features/sources/admin/source-labels';
 import { SourceEndpointsSection } from '@/features/sources/admin/SourceEndpointsSection';
+import { SourceOnboardingWizard } from '@/features/source-onboarding/admin/SourceOnboardingWizard';
 import { SOURCE_DEFAULT_TRUST_SCORE ,
   ACQUISITION_STRATEGIES,
   PARSER_TYPES,
@@ -348,6 +349,8 @@ export default function AdminSourceEditorScreen() {
 
           {error ? <AppText style={styles.error} accessibilityLiveRegion="polite">{error}</AppText> : null}
           {success ? <AppText style={styles.success}>{success}</AppText> : null}
+
+          {isNew ? <SourceOnboardingWizard role={role} /> : null}
 
           {!isNew ? (
             <View style={styles.summaryCard}>

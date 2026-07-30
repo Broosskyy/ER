@@ -13,6 +13,7 @@ export interface SourceReference {
   sourceQuality?: number;
   rawRecordId?: string;
   importJobId?: string;
+  metadata?: Record<string, unknown>;
 }
 
 export interface EventIdentity {

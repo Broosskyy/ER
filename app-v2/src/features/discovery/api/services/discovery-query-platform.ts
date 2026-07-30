@@ -36,6 +36,7 @@ export interface DiscoveryQueryPlatformOptions {
   discoveryApi: DiscoveryApiService;
   entityReaders: DiscoveryEntityReaders;
   mapEventToDisplay: (event: Event) => EventDisplayModel;
+  loadEventOrigins?: (eventId: string) => Promise<DiscoveryEventDetailData['origins']>;
   createRequestId?: () => string;
 }
 
@@ -45,6 +46,17 @@ export interface DiscoveryEventsListData {
 
 export interface DiscoveryEventDetailData {
   event: EventDisplayModel;
+  origins?: Array<{
+    id: string;
+    sourceId: string;
+    platform?: string;
+    role: string;
+    ticketUrl?: string;
+    eventUrl?: string;
+    syncStatus: string;
+    isPrimary: boolean;
+    isActive: boolean;
+  }>;
 }
 
 export interface DiscoveryEntityDetailData<TEntity> {
@@ -95,6 +107,7 @@ export class DiscoveryQueryPlatform {
   async getEventDetail(
     id: string,
     version: DiscoveryApiVersion = DEFAULT_DISCOVERY_API_VERSION,
+    options: { includeOrigins?: boolean } = {},
   ): Promise<DiscoveryApiResponse<DiscoveryEventDetailData>> {
     const requestId = this.options.createRequestId?.() ?? createRequestId();
     const startedAt = Date.now();
@@ -108,12 +121,24 @@ export class DiscoveryQueryPlatform {
       });
     }
 
+    const origins =
+      options.includeOrigins && this.options.loadEventOrigins
+        ? await this.options.loadEventOrigins(eventId)
+        : undefined;
+
     return createDiscoveryApiResponse({
-      data: { event: this.options.mapEventToDisplay(event) },
+      data: {
+        event: this.options.mapEventToDisplay(event),
+        ...(origins ? { origins } : {}),
+      },
       version,
       requestId,
       performance: this.buildPerformance(startedAt, 1, 1, 'memory'),
-      cacheKey: buildDiscoveryCacheKey({ version, route: 'events.detail', params: { id: eventId } }),
+      cacheKey: buildDiscoveryCacheKey({
+        version,
+        route: 'events.detail',
+        params: { id: eventId, includeOrigins: options.includeOrigins === true },
+      }),
     });
   }
 

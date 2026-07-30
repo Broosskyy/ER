@@ -170,6 +170,11 @@ import {
   createProvenanceBackfillHandler,
   createSourceIntelligenceBackfillHandler,
 } from '@/features/operations/backfill/backfill-handlers';
+import { createEventOriginsBackfillHandler } from '@/features/operations/backfill/event-origins-backfill-handler';
+import { EventOriginService } from '@/features/events/services/event-origin-service';
+import { EventDetailService } from '@/features/events/services/event-detail-service';
+import { InMemorySourceOnboardingRepository } from '@/features/source-onboarding/repositories/source-onboarding-repository';
+import { SourceOnboardingService } from '@/features/source-onboarding/services/source-onboarding-service';
 import { WorkerRecoveryService } from '@/features/operations/services/worker-recovery-service';
 import { ConnectorHealthPersistenceService } from '@/features/operations/services/connector-health-persistence-service';
 import {
@@ -322,6 +327,27 @@ export const adminMultiSourceService = new AdminMultiSourceService(
   conflictResolutionService,
   sourceService,
 );
+export const eventOriginService = new EventOriginService(multiSourceRepositories.sourceReferences);
+export const eventDetailService = new EventDetailService(
+  (id) => eventRepository.getEventById(id),
+  eventOriginService,
+);
+const sourceOnboardingRepository = new InMemorySourceOnboardingRepository();
+export const sourceOnboardingService = new SourceOnboardingService(
+  sourceOnboardingRepository,
+  async () => {
+    const sources = await adminSourceRepository.getAll();
+    return sources
+      .map((source) => {
+        try {
+          return source.baseUrl ? new URL(source.baseUrl).hostname : undefined;
+        } catch {
+          return undefined;
+        }
+      })
+      .filter((hostname): hostname is string => Boolean(hostname));
+  },
+);
 const eventCanonicalIdentityService = new EventCanonicalIdentityService(
   createEventFingerprintLookup(entityAliasStore),
   multiSourceRepositories.sourceReferences,
@@ -419,6 +445,7 @@ export const importEventPublishService = new ImportEventPublishService(
   new EventFieldProvenanceWriter(multiSourceRepositories.fieldProvenance),
   eventCanonicalIdentityService,
   eventLifecycleOrchestrator,
+  eventOriginService,
 );
 export const importPublishOrchestratorService = new ImportPublishOrchestratorService(
   importRecordRepository,
@@ -571,6 +598,12 @@ export const backfillRunner = new BackfillRunner(operationsBackfillJobRepository
     multiSourceRepositories.sourceReferences,
     eventFieldProvenanceWriter,
   ),
+  createEventOriginsBackfillHandler(
+    adminEventRepository,
+    adminSourceRepository,
+    multiSourceRepositories.sourceReferences,
+    importRecordRepository,
+  ),
   createSourceIntelligenceBackfillHandler(sourceIntelligenceService),
 ]);
 export const importOperationsService = new ImportOperationsService(
@@ -645,6 +678,20 @@ export const { queryPlatform: discoveryQueryPlatform, httpAdapter: discoveryHttp
     eventRepository,
     venueRepository,
     organizerRepository,
+    loadEventOrigins: async (eventId) => {
+      const origins = await eventOriginService.listByEventId(eventId);
+      return origins.map((origin) => ({
+        id: origin.id,
+        sourceId: origin.sourceId,
+        platform: origin.platform,
+        role: origin.role,
+        ticketUrl: origin.ticketUrl,
+        eventUrl: origin.eventUrl,
+        syncStatus: origin.syncStatus,
+        isPrimary: origin.isPrimary,
+        isActive: origin.isActive,
+      }));
+    },
   });
 
 export async function initializeRepositories(): Promise<void> {

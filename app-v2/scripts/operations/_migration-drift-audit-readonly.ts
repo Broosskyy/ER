@@ -108,6 +108,7 @@ const MIGRATION_MARKERS: Record<string, string[]> = {
   '20260752000000': ['discovery_search_documents'],
   '20260756000000': ['platform_operations_state'],
   '20260757000000': ['sources', 'venues', 'organizers'],
+  '20260765000000': ['source_onboarding_jobs', 'event_source_references'],
 };
 
 async function main() {
@@ -121,7 +122,7 @@ async function main() {
     'festivals', 'festival_editions', 'import_job_queue', 'scheduler_runs',
     'platform_operations_state', 'connector_health_snapshots', 'event_match_evaluations',
     'event_lifecycle_events', 'discovery_search_documents', 'contributor_event_drafts',
-    'event_search_documents',
+    'event_search_documents', 'source_onboarding_jobs',
   ];
   for (const table of tables) {
     tableProbes[table] = await probeTable(table);

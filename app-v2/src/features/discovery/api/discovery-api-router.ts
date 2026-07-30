@@ -68,7 +68,9 @@ export class DiscoveryApiRouter {
       case 'events':
         return this.platform.queryEvents(routeRequest.query ?? { surface: 'events_list', sortBy: 'date' }, version);
       case 'events.detail':
-        return this.platform.getEventDetail(String(params.id), version);
+        return this.platform.getEventDetail(String(params.id), version, {
+          includeOrigins: params.includeOrigins === true || params.includeOrigins === 'true',
+        });
       case 'events.nearby':
         return this.platform.queryNearby(
           {

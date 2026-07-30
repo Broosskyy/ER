@@ -2,6 +2,7 @@ export const BACKFILL_TYPES = [
   'blocking_keys',
   'lifecycle_history',
   'provenance',
+  'event_origins',
   'source_intelligence',
 ] as const;
 

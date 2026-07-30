@@ -20,6 +20,7 @@ import { EventFieldProvenanceWriter } from '@/features/import/services/event-fie
 
 import { EventCanonicalIdentityService } from '@/features/events/services/event-canonical-identity-service';
 import type { EventLifecycleOrchestrator } from '@/features/event-lifecycle/services/event-lifecycle-orchestrator';
+import type { EventOriginService } from '@/features/events/services/event-origin-service';
 
 
 
@@ -140,6 +141,8 @@ export class ImportEventPublishService {
     private readonly canonicalIdentityService?: EventCanonicalIdentityService,
 
     private readonly lifecycleOrchestrator?: EventLifecycleOrchestrator,
+
+    private readonly eventOriginService?: EventOriginService,
 
   ) {}
 
@@ -324,33 +327,43 @@ export class ImportEventPublishService {
 
     if (!options.skipProvenance) {
 
-      await this.sourceReferences.upsert({
+      if (this.eventOriginService) {
+        await this.eventOriginService.upsertFromPublish({
+          canonicalEventId: savedEvent.canonicalEventId ?? savedEvent.id,
+          source,
+          record,
+          candidate: canonicalCandidate,
+          isPrimary: !isEnrichment,
+        });
+      } else {
+        await this.sourceReferences.upsert({
 
-        id: `ref-${savedEvent.id}-${source.id}-${record.externalId}`,
+          id: `ref-${savedEvent.id}-${source.id}-${record.externalId}`,
 
-        canonicalEventId: savedEvent.canonicalEventId ?? savedEvent.id,
+          canonicalEventId: savedEvent.canonicalEventId ?? savedEvent.id,
 
-        sourceId: source.id,
+          sourceId: source.id,
 
-        externalEventId: record.externalId,
+          externalEventId: record.externalId,
 
-        originalUrl: record.originalUrl ?? record.sourceUrl,
+          originalUrl: record.originalUrl ?? record.sourceUrl,
 
-        rawRecordId: record.id,
+          rawRecordId: record.id,
 
-        importJobId: record.importJobId,
+          importJobId: record.importJobId,
 
-        firstSeenAt: record.retrievedAt ?? record.createdAt,
+          firstSeenAt: record.retrievedAt ?? record.createdAt,
 
-        lastSeenAt: now,
+          lastSeenAt: now,
 
-        active: true,
+          active: true,
 
-        sourcePriority: source.priority,
+          sourcePriority: source.priority,
 
-        sourceQuality: source.trustScore,
+          sourceQuality: source.trustScore,
 
-      });
+        });
+      }
 
 
 

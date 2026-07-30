@@ -13,6 +13,19 @@ export interface DiscoveryPlatformDependencies {
   eventRepository: EventRepository;
   venueRepository: VenueRepository;
   organizerRepository: OrganizerRepository;
+  loadEventOrigins?: (eventId: string) => Promise<
+    Array<{
+      id: string;
+      sourceId: string;
+      platform?: string;
+      role: string;
+      ticketUrl?: string;
+      eventUrl?: string;
+      syncStatus: string;
+      isPrimary: boolean;
+      isActive: boolean;
+    }>
+  >;
 }
 
 export function bindDiscoveryPlatform(
@@ -29,6 +42,7 @@ export function bindDiscoveryPlatform(
       getPublishedEvents: () => getDiscoverablePublishedEvents(),
     }),
     mapEventToDisplay: (event: Event): EventDisplayModel => loadEventDisplayModel(event),
+    loadEventOrigins: deps.loadEventOrigins,
   });
 
   const httpAdapter = new DiscoveryHttpAdapter(queryPlatform);

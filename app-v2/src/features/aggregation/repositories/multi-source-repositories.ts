@@ -99,6 +99,7 @@ function pageBounds(page: number, pageSize: number): { page: number; pageSize: n
 }
 
 function referenceFromRow(row: Record<string, unknown>): SourceReference {
+  const metadata = row.metadata;
   return {
     sourceId: String(row.source_id),
     externalEventId: String(row.external_event_id),
@@ -112,6 +113,10 @@ function referenceFromRow(row: Record<string, unknown>): SourceReference {
     active: Boolean(row.active),
     sourcePriority: Number(row.source_priority),
     sourceQuality: row.source_quality_score === null ? undefined : Number(row.source_quality_score),
+    metadata:
+      metadata && typeof metadata === 'object' && !Array.isArray(metadata)
+        ? (metadata as Record<string, unknown>)
+        : undefined,
   };
 }
 
@@ -252,7 +257,7 @@ export class SupabaseMultiSourceRepositories {
       first_seen_at: reference.firstSeenAt, last_seen_at: reference.lastSeenAt,
       last_changed_at: reference.lastChangedAt ?? null, active: reference.active,
       source_priority: reference.sourcePriority, source_quality_score: reference.sourceQuality ?? null,
-      metadata: {},
+      metadata: reference.metadata ?? {},
     }, { onConflict: 'source_id,external_event_id' }).select('*').single();
     return referenceFromRow(resultOrThrow(result) as Record<string, unknown>);
   }
