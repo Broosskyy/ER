@@ -8,9 +8,20 @@ Branch: `feature/er-012-source-acquisition-foundation`
 
 First controlled live import from `https://affenkaefig.info/tickets/` completed with **8 unique import records** in `needs_review` status. **No events published.** Source and scheduler remain **disabled**.
 
-**Verdict for publish:** manual review and duplicate resolution required before any publish.
+**Verdict for publish:** 7/8 events published Sprint 28.4; 1 shared-event case deferred.
 
 ---
+
+## Sprint 28.4 update
+
+| Metric | Value |
+|--------|-------|
+| Published events | **7** |
+| Deferred | 1 (Bootshaus shared event) |
+| Source enabled | yes |
+| Scheduler | every_6_hours |
+
+See `AFFENKAEFIG_PRODUCTION_ENABLEMENT_REPORT.md`.
 
 ## Live Fetch
 

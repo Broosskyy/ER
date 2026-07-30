@@ -8,7 +8,9 @@ Branch: `feature/er-012-source-acquisition-foundation`
 
 The manual-review pipeline was validated end-to-end. Root cause of the empty `import_review_queue` after Sprint 28.2 import was identified and fixed. All 8 Affenkäfig import records now have active queue entries. Five duplicate candidates were analysed — all are **false positives** caused by same-day blocking-key collisions against unrelated Bootshaus events. No events were published. Source and scheduler remain disabled.
 
-**Verdict:** READY FOR CONTROLLED AFFENKÄFIG PUBLISH (manual review workflow only; actual publish belongs to next sprint).
+**Verdict:** AFFENKÄFIG PRODUCTION ENABLED (Sprint 28.4).
+
+Sprint 28.3 validated the manual-review pipeline. Sprint 28.4 executed controlled publish (7 events), source enablement, and scheduler activation.
 
 ---
 
