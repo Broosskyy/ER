@@ -154,6 +154,7 @@ function registryTypeForSource(record: SourceRecord): SourceRegistryType {
   if (record.sourceType === 'rss') return 'rss_feed';
   if (record.sourceType === 'api') return 'open_data_api';
   if (record.sourceType === 'website') return 'club_website';
+  if (record.sourceType === 'ticket_platform') return 'ticket_platform';
   return 'future_connector';
 }
 

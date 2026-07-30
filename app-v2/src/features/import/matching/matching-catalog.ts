@@ -78,6 +78,7 @@ function mapEventToDuplicateCandidate(event: Event): KnownEventForDuplicateCheck
     title: event.title,
     startDate: event.startDateTime,
     externalId: event.sourceEventId,
+    venueId: event.venueId,
     venueName: event.venue,
     cityName: event.city,
     latitude: event.latitude,

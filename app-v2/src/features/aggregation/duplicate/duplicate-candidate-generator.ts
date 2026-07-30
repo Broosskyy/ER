@@ -18,6 +18,7 @@ function eventBlockingKeys(event: CanonicalImportEvent): string[] {
   const fingerprint = buildEventIdentityFingerprint(event);
   const keys = [
     `url:${event.originalLink ?? event.eventUrl ?? ''}`,
+    `url:${event.ticketUrl ?? ''}`,
     `external:${event.sourceId}:${event.externalId}`,
     `day-city:${fingerprint.dateFingerprint}:${fingerprint.normalizedLocation ?? ''}`,
     `day-venue:${fingerprint.dateFingerprint}:${fingerprint.venueFingerprint ?? ''}`,

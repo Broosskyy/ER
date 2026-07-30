@@ -5,6 +5,7 @@ import { IcalFeedConnector } from '@/features/aggregation/connectors/ical-feed-c
 import { ManualReferenceConnector } from '@/features/aggregation/connectors/manual-reference-connector';
 import { OpenDataApiConnector } from '@/features/aggregation/connectors/open-data-api-connector';
 import { OrganizerWebsiteConnector } from '@/features/aggregation/connectors/organizer-website-connector';
+import { TicketPlatformConnector } from '@/features/aggregation/connectors/ticket-platform/ticket-platform-connector';
 import { resolveSourceConnectorKey } from '@/features/aggregation/connectors/source-connector-resolution';
 import type { RegisteredSourceConnector } from '@/features/aggregation/connectors/framework/base-source-connector';
 import {
@@ -240,6 +241,7 @@ export function createDefaultSourceConnectorRegistry(): SourceConnectorRegistry 
     new RssFeedConnector(),
     new AtomFeedConnector(),
     new CsvImportConnector(),
+    new TicketPlatformConnector(),
   ]);
 }
 

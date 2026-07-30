@@ -43,6 +43,14 @@ function toImportRecordInput(
   changeType?: 'created' | 'updated' | 'cancelled',
 ): CreateImportRecordInput {
   const candidate = envelope.canonicalEvent;
+  const envelopeDuplicateScore = envelope.duplicateScore ?? 0;
+  const matchDuplicateScore = matchResult?.duplicateScore ?? 0;
+  const duplicateScore = Math.max(envelopeDuplicateScore, matchDuplicateScore);
+  const duplicateEventId =
+    matchDuplicateScore >= envelopeDuplicateScore
+      ? matchResult?.duplicateEventId ?? envelope.duplicateEventId
+      : envelope.duplicateEventId ?? matchResult?.duplicateEventId;
+
   return {
     importJobId: jobId,
     sourceId: source.id,
@@ -61,8 +69,8 @@ function toImportRecordInput(
     matchedOrganizerId: matchResult?.matchedOrganizerId,
     matchedArtistIds: matchResult?.matchedArtistIds,
     matchedGenreIds: matchResult?.matchedGenreIds,
-    duplicateEventId: envelope.duplicateEventId ?? matchResult?.duplicateEventId,
-    duplicateScore: envelope.duplicateScore ?? matchResult?.duplicateScore,
+    duplicateEventId,
+    duplicateScore,
     matchingWarnings: matchResult?.warnings,
     status: mapPipelineStatusToImportRecordStatus(envelope.status),
     ...(changeType
@@ -210,6 +218,7 @@ export class ImportAggregationService {
             sourceId: envelope.canonicalEvent.sourceId,
             sourceName: envelope.canonicalEvent.sourceName,
             rawSourceType: envelope.canonicalEvent.rawSourceType,
+            sourceMetadata: envelope.canonicalEvent.sourceMetadata as Record<string, unknown> | undefined,
           },
           catalog,
         );

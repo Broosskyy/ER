@@ -263,11 +263,16 @@ export class ImportEventPublishService {
 
       : null;
 
-
+    const isEnrichment =
+      importUpdateService.isTicketPlatformEnrichmentSource(source.sourceType) && Boolean(existingEvent);
 
     const eventPayload = existingEvent
 
-      ? importUpdateService.buildUpdatedAdminEvent(existingEvent, canonicalCandidate, source.id)
+      ? isEnrichment
+
+        ? importUpdateService.buildEnrichmentAdminEvent(existingEvent, canonicalCandidate)
+
+        : importUpdateService.buildUpdatedAdminEvent(existingEvent, canonicalCandidate, source.id)
 
       : buildAdminEventFromImportRecord(record, existingEventId);
 
@@ -285,7 +290,7 @@ export class ImportEventPublishService {
     let savedEvent = await this.adminEventRepository.save({
       ...stampedEvent,
       status: 'published',
-      sourceId: source.id,
+      sourceId: isEnrichment ? (existingEvent?.sourceId ?? source.id) : source.id,
       updatedAt: now,
       createdAt: existingEvent?.createdAt ?? stampedEvent.createdAt,
     });
@@ -305,7 +310,7 @@ export class ImportEventPublishService {
           savedEvent = await this.adminEventRepository.save({
             ...lifecycleEvent,
             status: 'published',
-            sourceId: source.id,
+            sourceId: isEnrichment ? (existingEvent?.sourceId ?? source.id) : source.id,
             updatedAt: lifecycleEvent.updatedAt,
             createdAt: savedEvent.createdAt,
           });

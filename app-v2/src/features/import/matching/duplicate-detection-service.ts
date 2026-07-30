@@ -69,8 +69,10 @@ export class DuplicateDetectionService {
     const sameDay = sameCalendarDay(candidate.startDate, event.startDate);
     if (!sameDay) return 0;
 
+    const isEnrichmentSource = candidate.sourceMetadata?.enrichmentSource === true;
+    const minTitleScore = isEnrichmentSource ? 50 : 70;
     const titleScore = tokenSimilarity(candidate.title, event.title);
-    if (titleScore < 70) return 0;
+    if (titleScore < minTitleScore) return 0;
 
     let score = 0;
 
@@ -78,7 +80,7 @@ export class DuplicateDetectionService {
       matchedVenueId &&
       event.venueId &&
       matchedVenueId === event.venueId &&
-      titleScore >= 80
+      titleScore >= (isEnrichmentSource ? 50 : 80)
     ) {
       score = Math.max(score, matchingConfig.scores.titleDateVenue);
     }

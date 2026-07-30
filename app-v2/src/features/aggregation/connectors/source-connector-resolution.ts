@@ -78,6 +78,9 @@ export function resolveSourceConnectorKey(input: SourceConnectorResolutionInput)
   if (sourceType === 'website') {
     return resolveWebsiteConnectorKey(input.sourceRoles ?? []);
   }
+  if (sourceType === 'ticket_platform') {
+    return 'ticket_platform';
+  }
 
   throw new SourceConnectorError({
     code: 'configuration_invalid',

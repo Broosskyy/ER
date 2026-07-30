@@ -58,6 +58,7 @@ export interface JsonLdSourceConfig {
 }
 
 export type { WebsiteConnectorConfig } from '@/features/aggregation/connectors/website/config';
+export type { TicketPlatformSourceConfig } from '@/features/aggregation/connectors/ticket-platform/types';
 
 export interface SourceFieldDefaults {
   cityName?: string;
@@ -81,6 +82,7 @@ export interface ImportSourceConfig {
   ical?: IcalSourceConfig;
   jsonLd?: JsonLdSourceConfig;
   website?: import('@/features/aggregation/connectors/website/config').WebsiteConnectorConfig;
+  ticketPlatform?: import('@/features/aggregation/connectors/ticket-platform/types').TicketPlatformSourceConfig;
   /** Bundled reference payloads for manual / fixture-driven imports. */
   reference?: import('@/features/aggregation/connectors/types').ReferenceSourceConfig;
   /** Connector assignment metadata (ER-013) — legacy single-connector assignment. */

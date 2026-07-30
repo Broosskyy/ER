@@ -123,6 +123,23 @@ export class ImportUpdateService {
     };
   }
 
+  /** Fill-only update for ticket platform enrichment — never overwrites official source fields. */
+  buildEnrichmentAdminEvent(
+    existing: AdminEventRecord,
+    candidate: CanonicalImportEvent,
+  ): AdminEventRecord {
+    return {
+      ...existing,
+      ticketUrl: candidate.ticketUrl ?? existing.ticketUrl,
+      imageUrl: existing.imageUrl ? existing.imageUrl : candidate.imageUrl,
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
+  isTicketPlatformEnrichmentSource(sourceType?: string): boolean {
+    return sourceType === 'ticket_platform';
+  }
+
   findMissingExternalIds(
     previousExternalIds: string[],
     currentExternalIds: string[],

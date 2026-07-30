@@ -12,6 +12,7 @@ export const SOURCE_CONNECTOR_KEYS = [
   'rss_feed',
   'atom_feed',
   'csv_import',
+  'ticket_platform',
 ] as const;
 
 export type SourceConnectorKey = (typeof SOURCE_CONNECTOR_KEYS)[number];

@@ -193,6 +193,35 @@ export const SOURCE_CONNECTOR_DEFINITIONS: Record<SourceConnectorKey, SourceConn
       'Default max file size 5 MB unless overridden.',
     ],
   },
+  ticket_platform: {
+    connectorKey: 'ticket_platform',
+    displayName: 'Ticket Platform',
+    connectorType: 'ticket_platform',
+    dataFormat: 'html',
+    authentication: 'none',
+    timeoutMs: 60_000,
+    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    capabilities: createSourceConnectorCapabilities({
+      supportsImages: true,
+      supportsArtists: true,
+      supportsVenueCoordinates: true,
+      supportsTicketLinks: true,
+      supportsTimezone: true,
+      supportsGenres: true,
+    }),
+    retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
+    rateLimitConfig: {
+      ...DEFAULT_SOURCE_CONNECTOR_RATE_LIMIT_CONFIG,
+      requestsPerMinute: 15,
+      burstLimit: 3,
+      concurrentRequests: 1,
+    },
+    limitations: [
+      'Enrichment source — matches existing events before creating new ones.',
+      'Requires sourceConfig.ticketPlatform with platform and shopSlug.',
+      'Detail pages may return 403; list JSON-LD is primary extraction path.',
+    ],
+  },
 };
 
 export function getSourceConnectorDefinition(key: SourceConnectorKey): SourceConnectorDefinition {
