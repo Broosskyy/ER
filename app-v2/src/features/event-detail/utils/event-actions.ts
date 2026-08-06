@@ -5,7 +5,7 @@ import { formatEventDateTime } from '@/features/events';
 import { isSafeExternalHttpUrl } from '@/platform/linking/external-url';
 
 function buildShareMessage(event: EventDisplayModel): string {
-  return [event.title, formatEventDateTime(event), `${event.venue}, ${event.city}`].join('\n');
+  return [event.title, formatEventDateTime(event), event.locationLabelComma].join('\n');
 }
 
 function buildShareUrl(eventId: string): string {

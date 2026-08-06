@@ -85,6 +85,8 @@ export const IMPORT_REVIEW_RESOLUTION_REASONS = {
   lifecycleResolvedOnPublishSuccess: 'lifecycle_resolved_on_publish_success',
   lifecycleResolvedIgnored: 'lifecycle_resolved_ignored',
   stablePublishedRecordReimport: 'stable_published_record_reimport',
+  importedRecordPublished: 'imported_record_published',
+  testArtifactResolved: 'test_artifact_resolved',
 } as const;
 
 export type ImportReviewResolutionReason =

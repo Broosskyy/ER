@@ -35,7 +35,7 @@ export function ExplorePosterCard({ event, width }: ExplorePosterCardProps) {
           {event.title}
         </AppText>
         <AppText style={styles.venue} numberOfLines={1}>
-          {event.venue}
+          {event.venueLabel}
         </AppText>
       </View>
     </Pressable>

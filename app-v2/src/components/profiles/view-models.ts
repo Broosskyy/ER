@@ -1,7 +1,14 @@
 import type { ImageSourcePropType } from 'react-native';
 
 /** Presentation contracts for public-profile and organizer components. */
-export type VerificationStatus = 'verified' | 'pending' | 'unverified' | 'rejected';
+export type VerificationStatus =
+  | 'verified'
+  | 'pending'
+  | 'unverified'
+  | 'rejected'
+  | 'official_source'
+  | 'profile_not_claimed'
+  | 'organizer_confirmed';
 export type FollowState = 'follow' | 'following' | 'requested' | 'loading' | 'disabled';
 export type ProfileType = 'user' | 'organizer' | 'venue' | 'artist';
 export type OrganizerClaimStatus = 'unclaimed' | 'pending' | 'verified' | 'rejected';
@@ -18,6 +25,7 @@ export interface ProfileHeaderViewModel {
   type: ProfileType;
   name: string;
   avatar?: ImageSourcePropType;
+  coverImage?: ImageSourcePropType;
   handleOrTypeLabel: string;
   verificationStatus: VerificationStatus;
   bio?: string;

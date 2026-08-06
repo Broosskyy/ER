@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { TextButton } from '@/components/buttons/TextButton';
 import { EmptyState } from '@/components/feedback/EmptyState';
+import { Skeleton } from '@/components/feedback/Skeleton';
 import { SearchSectionHeader } from '@/components/search/SearchItems';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { EventDiscoveryCard } from '@/features/events';
@@ -44,7 +45,27 @@ export function HomeFeedSectionView({
   const { t } = useAppTranslation();
 
   if (state.loading) {
-    return null;
+    return (
+      <View style={styles.section}>
+        <Skeleton
+          shape="text"
+          width="40%"
+          height={24}
+          style={index === 0 ? styles.headerFirst : styles.header}
+        />
+        {HOME_FEED_RAIL_SECTIONS.has(definition.id) ? (
+          <View style={styles.featuredSkeletonRow}>
+            <Skeleton shape="card" height={220} style={styles.featuredSkeletonCard} />
+            <Skeleton shape="card" height={220} style={styles.featuredSkeletonCard} />
+          </View>
+        ) : (
+          <View style={styles.listSection}>
+            <Skeleton shape="card" height={120} />
+            <Skeleton shape="card" height={120} />
+          </View>
+        )}
+      </View>
+    );
   }
 
   if (state.error) {
@@ -147,5 +168,14 @@ const styles = StyleSheet.create({
   listSection: {
     gap: homeGoldenSpacing.tonightRowGap,
     paddingHorizontal: spacingRoles.screenHorizontal,
+  },
+  featuredSkeletonRow: {
+    flexDirection: 'row',
+    gap: spacing.md,
+    paddingHorizontal: spacingRoles.screenHorizontal,
+  },
+  featuredSkeletonCard: {
+    flex: 1,
+    minWidth: 140,
   },
 });

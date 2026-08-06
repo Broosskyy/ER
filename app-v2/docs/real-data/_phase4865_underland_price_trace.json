@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-08-06T01:06:48.363Z",
+  "phase": "4.8.6.5",
+  "productionMutationsInThisRun": 0,
+  "eventId": "evt-1785389049895-4mb7dub",
+  "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+  "page": {
+    "status": 200,
+    "finalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "title": "Underland Essigfabrik 05.09.2026 - TicketKings - Your Ticket Kingdom"
+  },
+  "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=40&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+  "checkoutEvidence": {
+    "releases": [
+      {
+        "name": "E-Ticket — Early Bird",
+        "ticketType": "E-Ticket",
+        "phaseName": "Early Bird",
+        "priceAmount": 15,
+        "priceCurrency": "EUR",
+        "priceText": "ab 15,00 €",
+        "soldOut": false,
+        "available": true,
+        "remainingQuantity": 10,
+        "availabilityText": "noch 10 verfügbar"
+      }
+    ],
+    "products": [
+      {
+        "rawProductName": "E-Ticket",
+        "rawPhaseName": "Early Bird",
+        "rawPriceText": "15,00 EUR",
+        "priceAmount": 15,
+        "priceCurrency": "EUR",
+        "availabilityText": "noch 10 verfügbar",
+        "remainingQuantity": 10,
+        "optionalState": "required",
+        "sectionHeading": "Tickets",
+        "classification": "admission_ticket",
+        "includedInEventSummary": true,
+        "structuralSignals": [
+          "admission_option",
+          "section:Tickets",
+          "quantity_stepper"
+        ],
+        "soldOut": false,
+        "available": true
+      },
+      {
+        "rawProductName": "Hardticket per Post",
+        "rawPriceText": "3,00 EUR",
+        "priceAmount": 3,
+        "priceCurrency": "EUR",
+        "optionalState": "optional",
+        "sectionHeading": "Zusatzoptionen",
+        "classification": "ticket_add_on",
+        "includedInEventSummary": false,
+        "exclusionReason": "optional_checkout_add_on",
+        "structuralSignals": [
+          "addon_checkbox",
+          "section:Zusatzoptionen",
+          "checkbox_optional"
+        ]
+      },
+      {
+        "rawProductName": "Ticket Flex Option",
+        "rawPriceText": "2,50 EUR · pro Ticket",
+        "priceAmount": 2.5,
+        "priceCurrency": "EUR",
+        "optionalState": "optional",
+        "sectionHeading": "Zusatzoptionen",
+        "classification": "insurance_or_flex",
+        "includedInEventSummary": false,
+        "exclusionReason": "optional_insurance_or_flex_add_on",
+        "structuralSignals": [
+          "addon_checkbox",
+          "section:Zusatzoptionen",
+          "checkbox_optional"
+        ]
+      },
+      {
+        "rawProductName": "Rabattcode einlösen",
+        "optionalState": "optional",
+        "sectionHeading": "Weitere Angaben",
+        "classification": "unknown_review_required",
+        "includedInEventSummary": false,
+        "exclusionReason": "optional_buyer_section_product_requires_review",
+        "structuralSignals": [
+          "buyer_optional",
+          "section:Weitere Angaben",
+          "checkbox_optional"
+        ]
+      }
+    ],
+    "excludedProducts": [
+      {
+        "rawProductName": "Hardticket per Post",
+        "rawPriceText": "3,00 EUR",
+        "priceAmount": 3,
+        "priceCurrency": "EUR",
+        "optionalState": "optional",
+        "sectionHeading": "Zusatzoptionen",
+        "classification": "ticket_add_on",
+        "includedInEventSummary": false,
+        "exclusionReason": "optional_checkout_add_on",
+        "structuralSignals": [
+          "addon_checkbox",
+          "section:Zusatzoptionen",
+          "checkbox_optional"
+        ]
+      },
+      {
+        "rawProductName": "Ticket Flex Option",
+        "rawPriceText": "2,50 EUR · pro Ticket",
+        "priceAmount": 2.5,
+        "priceCurrency": "EUR",
+        "optionalState": "optional",
+        "sectionHeading": "Zusatzoptionen",
+        "classification": "insurance_or_flex",
+        "includedInEventSummary": false,
+        "exclusionReason": "optional_insurance_or_flex_add_on",
+        "structuralSignals": [
+          "addon_checkbox",
+          "section:Zusatzoptionen",
+          "checkbox_optional"
+        ]
+      },
+      {
+        "rawProductName": "Rabattcode einlösen",
+        "optionalState": "optional",
+        "sectionHeading": "Weitere Angaben",
+        "classification": "unknown_review_required",
+        "includedInEventSummary": false,
+        "exclusionReason": "optional_buyer_section_product_requires_review",
+        "structuralSignals": [
+          "buyer_optional",
+          "section:Weitere Angaben",
+          "checkbox_optional"
+        ]
+      }
+    ],
+    "priceAmount": 15,
+    "maximumPrice": 15,
+    "priceCurrency": "EUR",
+    "priceText": "ab 15,00 €",
+    "availability": "available",
+    "reviewRequired": false,
+    "evidenceSource": "native_event_iframe"
+  },
+  "publicPriceVerifiable": true,
+  "publicTruth": {
+    "rawPriceText": "ab 15,00 €",
+    "minimumPrice": 15,
+    "maximumPrice": 15,
+    "currency": "EUR",
+    "availability": "available",
+    "admissionProducts": [
+      {
+        "name": "E-Ticket — Early Bird",
+        "ticketType": "E-Ticket",
+        "phaseName": "Early Bird",
+        "priceAmount": 15,
+        "priceCurrency": "EUR",
+        "priceText": "ab 15,00 €",
+        "soldOut": false,
+        "available": true,
+        "remainingQuantity": 10,
+        "availabilityText": "noch 10 verfügbar"
+      }
+    ],
+    "excludedAddOns": 3
+  },
+  "canonical": {
+    "priceText": "",
+    "ticketStatus": "external_link",
+    "ticketPhasesCount": 0,
+    "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+  },
+  "classification": "VALID_EVIDENCE_NOT_PERSISTED"
+}

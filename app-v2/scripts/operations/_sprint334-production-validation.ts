@@ -35,7 +35,7 @@ import {
 import {
   TICKET_KINGS_AFFENKAEFIG_SOURCE_ID,
 } from '@/features/sources/production/ticket-kings-source';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import type { SourceRecord } from '@/data/types/records';
 import type { PlatformDiscoveryCandidate } from '@/features/ticket-platform-discovery/domain/types';
 

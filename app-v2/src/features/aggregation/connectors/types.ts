@@ -45,6 +45,8 @@ export interface RawImportedEvent {
   imageUrls?: string[];
   priceAmount?: number;
   priceCurrency?: string;
+  priceText?: string;
+  minimumAge?: number;
   rawSourceType: RawSourceType;
   sourceMetadata?: Record<string, unknown>;
   cancelled?: boolean;

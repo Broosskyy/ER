@@ -6,7 +6,8 @@ import { AppText } from '@/components/layout/AppText';
 import { getErrorMessage } from '@/core/errors/app-error';
 import { sourceOnboardingService } from '@/data/repositories/registry';
 import type { SourceOnboardingJob } from '@/features/source-onboarding/domain/types';
-import { colors, colorRoles } from '@/design/colors';
+import { colorRoles } from '@/design/colors';
+import { darkColors } from '@/design/theme/palettes/darkColors';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import type { AdminRole } from '@/features/import/admin/admin-roles';
@@ -36,7 +37,7 @@ export function SourceOnboardingWizard({ role }: SourceOnboardingWizardProps) {
 
   return (
     <View style={styles.card}>
-      <AppText style={textRoles.headingSm}>Source Discovery</AppText>
+      <AppText style={textRoles.sectionTitle}>Source Discovery</AppText>
       <AppText style={styles.hint}>
         Enter a URL to analyze platform, event structure, and generate a declarative source configuration.
       </AppText>
@@ -44,12 +45,12 @@ export function SourceOnboardingWizard({ role }: SourceOnboardingWizardProps) {
         value={url}
         onChangeText={setUrl}
         placeholder="https://example.com/events"
-        placeholderTextColor={colorRoles.textMuted}
+        placeholderTextColor={colorRoles.searchPlaceholder}
         autoCapitalize="none"
         style={styles.input}
       />
       <PrimaryButton label={loading ? 'Analyzing…' : 'Discover Source'} onPress={() => void discover()} disabled={loading || !url.trim()} />
-      {loading ? <ActivityIndicator color={colors.accent} style={styles.spinner} /> : null}
+      {loading ? <ActivityIndicator color={darkColors.accent} style={styles.spinner} /> : null}
       {error ? <AppText style={styles.error}>{error}</AppText> : null}
       {job ? <OnboardingJobSummary job={job} /> : null}
     </View>
@@ -107,38 +108,38 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: colorRoles.border,
-    backgroundColor: colorRoles.surface,
+    borderColor: colorRoles.cardBorder,
+    backgroundColor: colorRoles.cardBackground,
   },
   hint: {
-    color: colorRoles.textMuted,
+    color: colorRoles.emptyStateDescription,
   },
   input: {
     borderWidth: 1,
-    borderColor: colorRoles.border,
+    borderColor: colorRoles.cardBorder,
     borderRadius: 8,
     padding: spacing.sm,
-    color: colorRoles.text,
-    backgroundColor: colorRoles.background,
+    color: colorRoles.searchText,
+    backgroundColor: colorRoles.appBackground,
   },
   spinner: {
     marginTop: spacing.xs,
   },
   error: {
-    color: colors.danger,
+    color: darkColors.destructive,
   },
   warning: {
-    color: colors.warning,
+    color: darkColors.warning,
   },
   success: {
-    color: colors.success,
+    color: darkColors.success,
   },
   summary: {
     gap: spacing.xs,
     marginTop: spacing.sm,
     paddingTop: spacing.sm,
     borderTopWidth: 1,
-    borderTopColor: colorRoles.border,
+    borderTopColor: colorRoles.cardBorder,
   },
   dryRun: {
     gap: spacing.xs,

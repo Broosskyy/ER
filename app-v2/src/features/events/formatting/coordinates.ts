@@ -1,3 +1,5 @@
+import { hasValidEventCoordinates } from '@/features/events/domain/event-field-value';
+
 export function parseCoordinate(value: string | number | undefined): number | undefined {
   if (value === undefined || value === null || value === '') {
     return undefined;
@@ -24,5 +26,5 @@ export function hasValidCoordinates(
   latitude: number | undefined,
   longitude: number | undefined,
 ): latitude is number {
-  return isValidLatitude(latitude) && isValidLongitude(longitude);
+  return hasValidEventCoordinates(latitude, longitude);
 }

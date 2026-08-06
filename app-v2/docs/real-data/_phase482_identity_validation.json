@@ -1,0 +1,928 @@
+{
+  "generatedAt": "2026-08-05T09:29:39.191Z",
+  "productionMutationsInThisRun": 0,
+  "eventCount": 43,
+  "uniqueEvents": 43,
+  "collisions": [],
+  "abortRequired": false,
+  "records": [
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+      "finalUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+      "httpStatus": 200,
+      "contentHash": "09988bb018c5f7ddeca36f83d3debf0fc35c7e347ea576c1c4c169a875a8ecd3",
+      "titleEvidence": "Bootshaus on a Ship Vol. III | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/wUc3uQrR/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339420043-obhyeev",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "LEVI",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+      "finalUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+      "httpStatus": 200,
+      "contentHash": "3f45609160995fdfcba14b8e9639d65550cf4be5486af0ba718a87110db85aaf",
+      "titleEvidence": "NIGHTSWITHUS presents LEVI | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-tickets.ticket.io/YvJnLSXd/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339383539-0lxvjlp",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+      "finalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+      "httpStatus": 200,
+      "contentHash": "f36a99dc7016f38e6df1c05959ce52cceaea310d341a29ff608c71f156ac8c65",
+      "titleEvidence": "Underland Essigfabrik 05.09.2026 – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-09-05T00:00:00+02:00",
+      "venueEvidence": "Essigfabrik /  Elektroküche",
+      "cityEvidence": "Köln",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [
+        "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+      ],
+      "matchingCanonicalEvent": "evt-1785389049895-4mb7dub",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+      "finalUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+      "httpStatus": 200,
+      "contentHash": "d29ee4c7e0dc54719ee8f56c52c0554e464dca178de9a04d7c1e29fb21bc9533",
+      "titleEvidence": "BC173 Airport Session pres. by Bootshaus | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/fjspvLe4/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339392687-tbdwup4",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+      "finalUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+      "httpStatus": 200,
+      "contentHash": "d3d9bd6ac2e94433d09b6c03223d9b4e51045b36f7f6468bf95aebbeb293a8d0",
+      "titleEvidence": "Sommerfest Elektroküche 08.08.2026 – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-08-08T17:00:00+02:00",
+      "venueEvidence": "Essigfabrik /  Elektroküche",
+      "cityEvidence": "Köln",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [
+        "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/"
+      ],
+      "matchingCanonicalEvent": "evt-1785389055557-ux20897",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "finalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "httpStatus": 200,
+      "contentHash": "54546a2b43843a0f54eeaa68d6b2f62cf833999e28dff0d407dae1a45ffd0df4",
+      "titleEvidence": "MDMA - Musik Die Mich Antreibt 10.10.26 - TicketKings - Your Ticket Kingdom",
+      "dateTimeEvidence": "2026-10-10T23:00:00+02:00",
+      "venueEvidence": "Essigfabrik",
+      "cityEvidence": "Köln",
+      "outboundTicketLinks": [
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/feed/",
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/?ical=1/"
+      ],
+      "matchingCanonicalEvent": "evt-1785443911160-owt97y3",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "Affenkäfig",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+      "finalUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+      "httpStatus": 200,
+      "contentHash": "2ab9f654b0f95eb7c978c112e87160f647605ac54205e8aece709250c923c848",
+      "titleEvidence": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/B3jK8aPC/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339005035-wam829k",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "PROTON Stuttgart",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "finalUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "httpStatus": 200,
+      "contentHash": "364a38c5a0729a9ffb188fbf332cda5dfa99dfc64cbde5c1cde6d4aa5f192bd7",
+      "titleEvidence": "M.D.M.A xxx PROTON xxx STUTTGART - TicketKings - Your Ticket Kingdom",
+      "dateTimeEvidence": "2026-10-24T23:00:00+02:00",
+      "venueEvidence": ": Proton Stuttgart",
+      "cityEvidence": "Stuttgart",
+      "outboundTicketLinks": [
+        "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/?ical=1/"
+      ],
+      "matchingCanonicalEvent": "evt-1785443914377-7g9l545",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026",
+      "finalUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026",
+      "httpStatus": 200,
+      "contentHash": "c8905816464feed57fb13af8fcd6e2ff9b40d911b3152f957643517251386f9a",
+      "titleEvidence": "Affenkäfig xxx A8 xxx – 02.10.2026 – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-10-02T00:00:00+02:00",
+      "venueEvidence": "A8 Stage Club",
+      "cityEvidence": "Saarbrücken",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785389056612-4cwtdmo",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub",
+      "finalUrl": "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub",
+      "httpStatus": 200,
+      "contentHash": "18ffe54c5b8b336ccaf53e811a798ef73608d4689f6c91dd8108ec434425d90e",
+      "titleEvidence": "SA * 22.08.2026 | KitKatClub | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339389636-v1tq3hw",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/9-10-26-chrome-cologne",
+      "finalUrl": "https://bootshaus.tv/events/9-10-26-chrome-cologne",
+      "httpStatus": 200,
+      "contentHash": "d0b68802612cb8cf3f6e768532bc1944e821e28ab9ad49f3a6ae51bd81828f6a",
+      "titleEvidence": "CHROME COLOGNE | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/Atz0dHLX/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339374416-shc7e7c",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+      "finalUrl": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+      "httpStatus": 200,
+      "contentHash": "7040118ff4847e38e3f4e4b7496d83e299992e42265291aabe636b1b7abd3346",
+      "titleEvidence": "122 pres. MARTEN LOU @ Palma de Mallorca (ES) | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339413919-ix5umo9",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+      "finalUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+      "httpStatus": 200,
+      "contentHash": "085dc695744cdc40872011d3b3141f04268d3e84af6b01adeeb0219a982c6d46",
+      "titleEvidence": "122 pres. NOTRE DAME @ Palma de Mallorca (ES) | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339377456-7miaf2o",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "finalUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "httpStatus": 200,
+      "contentHash": "609ff4202662cd37327b175d9bc7096997f54c28a482f513bf551058e469e138",
+      "titleEvidence": "Into The Madness Pre-Party Weekender w. RAN - D and more! | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://musical-madness.ticket.io/ebqBfbhC/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339386612-rjr91mv",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026",
+      "finalUrl": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026",
+      "httpStatus": 200,
+      "contentHash": "0ec6a0327ab3b634792e2cd934d5394ac12daa064dc4253b98e4363c60fc744c",
+      "titleEvidence": "Unreal Weekender Night II - September 2026 | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://unreal-bootshaus.ticket.io/Zt24QJcV/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339412398-hq6217j",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+      "finalUrl": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+      "httpStatus": 200,
+      "contentHash": "c63c0f3913f44b1a81164289ee5a645c5dfbd56c65af1d48bf2a41be52d7c536",
+      "titleEvidence": "Affenkäfig XXX CAPITOL XXX Hagen – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-10-17T00:00:00+02:00",
+      "venueEvidence": "Capitol",
+      "cityEvidence": "Hagen",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785389053437-3oxde27",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+      "finalUrl": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+      "httpStatus": 200,
+      "contentHash": "1fd0c100f84625237a7058a229c47ef7cdd1e8feb28db41d65ea6254a5c370a5",
+      "titleEvidence": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS! | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://musical-madness.ticket.io/eACzcM9S/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339395746-in3ijod",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/loonyland-pres-luca-dante-spadafora-2-engel-charlie",
+      "finalUrl": "https://bootshaus.tv/events/loonyland-pres-luca-dante-spadafora-2-engel-charlie",
+      "httpStatus": 200,
+      "contentHash": "7fbdac06dfae331afb31378dbb432aa5b8f4f71f5660e97f66d70f3beff022e1",
+      "titleEvidence": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/tA3dBrv7/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339382025-cazpz3d",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/neonsplash-paint-rave",
+      "finalUrl": "https://bootshaus.tv/events/neonsplash-paint-rave",
+      "httpStatus": 200,
+      "contentHash": "51a762adca78b58b76d46e4c23623591de66b8b5896d80e34766cc55906eb4db",
+      "titleEvidence": "NEONSPLASH Paint-Rave | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-2.ticket.io/fS7YrvGn/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339385102-xocczqs",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+      "finalUrl": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+      "httpStatus": 200,
+      "contentHash": "acccb010b3a4df8303113c0c5eb1bc84dc9e2902a3bb34474b7eb3e3fd4a2a69",
+      "titleEvidence": "122 pres. KAZ JAMES @ Palma de Mallorca (ES) | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339388133-sq2ykbm",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+      "finalUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+      "httpStatus": 200,
+      "contentHash": "aed0a68814d6494553ec81f9050c5cf6404d1b51741add7ecfaf2e98c3d99ac7",
+      "titleEvidence": "MI * 30.12.2026 | KitKatClub | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339403309-prk3iiz",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco",
+      "finalUrl": "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco",
+      "httpStatus": 200,
+      "contentHash": "fbc415af4c386fce8c7283569eb74adf6a8b1150a6e4309fa46d49f876392edd",
+      "titleEvidence": "Bootshaus pres. BC173 (let",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/BcDqml12/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339410908-9691748",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26",
+      "finalUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26",
+      "httpStatus": 200,
+      "contentHash": "11aae56970314424a400bfa8a83ed6b7cc67827204a9bee36dab3b4de0cd2379",
+      "titleEvidence": "MDMA - Musik Die Mich Antreibt 10.10.26 – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-10-10T00:00:00+02:00",
+      "venueEvidence": "Essigfabrik /  Elektroküche",
+      "cityEvidence": "Köln",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+      ],
+      "matchingCanonicalEvent": "evt-1785389052337-0gv1iz1",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "finalUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "httpStatus": 200,
+      "contentHash": "cdb6a4a6a9cd75a905c892608f306fb029dc0471df1233f5ae34a0e11f80b255",
+      "titleEvidence": "Bootshaus Sommerfest | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/vB0cAmWg/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339391167-tfaixrr",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus",
+      "finalUrl": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus",
+      "httpStatus": 200,
+      "contentHash": "b205c755c0c0de6474a4dc60059b8f699ef69e9110736f78ab987bfb37c5f899",
+      "titleEvidence": "CHRIS STUSSY pres. by BOOTSHAUS | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/By06xnf4/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339380511-rwjwfep",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/nibirii-pres-ely-oaks",
+      "finalUrl": "https://bootshaus.tv/events/nibirii-pres-ely-oaks",
+      "httpStatus": 200,
+      "contentHash": "bb720473d48a318e7005ee8e9f18de6d5a4439112528d5f7ecab291be6e0a51d",
+      "titleEvidence": "NIBIRII pres. ELY OAKS! | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785570943560-f5g5rj5",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne",
+      "finalUrl": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne",
+      "httpStatus": 200,
+      "contentHash": "ccf2127301d4be179ce7e74ef61e64d8cfec555beb0884cde8fca803508ec297",
+      "titleEvidence": "UNREAL x KUKO All Night Long World Tour (Cologne) | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://unreal-bootshaus.ticket.io/nUs0Ktl4/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339401841-by9uoyc",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026",
+      "finalUrl": "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026",
+      "httpStatus": 200,
+      "contentHash": "f2451d8fd8875300480fcf1b65e7828568d89514ccea9557feeda0f977488867",
+      "titleEvidence": "Bootshaus & Loonyland pres. NYE 2026 | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/S0cbXDda/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339404822-r8i4lyq",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026",
+      "finalUrl": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026",
+      "httpStatus": 200,
+      "contentHash": "61e7b83818e393b5b8adbfb773291af20a8241cbbc71e29237efd7c88b3c1ead",
+      "titleEvidence": "Bootshaus & Loonyland pres. Halloween 2026 | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/Hv4f09p8/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339400315-1mx4foh",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "finalUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "httpStatus": 200,
+      "contentHash": "b85ac7cf976028e994280dff045006a37dbc671bfa205195c128a625913a970e",
+      "titleEvidence": "R3HAB pres. by BOOTSHAUS | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/C7JPnatZ/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339421539-k3swcrl",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+      "finalUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+      "httpStatus": 200,
+      "contentHash": "658ecc5e0521b6afb45d1bfbdce9d43002c61c8615ff0e5aadc0eacff4c3b01f",
+      "titleEvidence": "122 pres. TRIPOLISM @ Palma de Mallorca (ES) | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339424521-tn10siz",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026",
+      "finalUrl": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026",
+      "httpStatus": 200,
+      "contentHash": "0596d0325f57809ca9531223c247a07b3498409f10ea1648aaaf120baa0f1299",
+      "titleEvidence": "Unreal Weekender Night I - September 2026 | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://unreal-bootshaus.ticket.io/U1dUL7lG/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339397255-frpjss3",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+      "finalUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+      "httpStatus": 200,
+      "contentHash": "48d4e30604640e2dc46e2f353cd2b93657f722639ba5990a8e6f269671a03ef1",
+      "titleEvidence": "122 pres. JUNO @ Palma de Mallorca (ES) | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339407876-uqm3mz0",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub",
+      "finalUrl": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub",
+      "httpStatus": 200,
+      "contentHash": "71315027ca74a358e332b3680feaeba45e549bfe8221bf541fd9a359e745644e",
+      "titleEvidence": "SA * 24.10.2026 | KitKatClub | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339372839-cwbr6ya",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026",
+      "finalUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026",
+      "httpStatus": 200,
+      "contentHash": "572c0f24e49d05c0d0677d0ac3035e477039bcbb9d49399e4074cdb7ef5635c6",
+      "titleEvidence": "14 Jahre Affenkäfig 19.09.2026 – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-09-19T00:00:00+02:00",
+      "venueEvidence": "Essigfabrik /  Elektroküche",
+      "cityEvidence": "Köln",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785389051072-mihh18f",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26",
+      "finalUrl": "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26",
+      "httpStatus": 200,
+      "contentHash": "acd5057a2f15da3f142192d4bb8e8edc1f4ec789a42d668fb01bf6444060704f",
+      "titleEvidence": "Bootshaus Sommerfest Closing | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/ycDXwvrm/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339394218-cbqw3kx",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/nibirii-festival-2026",
+      "finalUrl": "https://bootshaus.tv/events/nibirii-festival-2026",
+      "httpStatus": 200,
+      "contentHash": "8159ca9f07baf34c334693c3127a13941369517ea20d628a8d95200595726612",
+      "titleEvidence": "Nibirii Festival 2026 | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://nibirii-festival.ticket.io/uw3dsjtw/?_gl=1*1cby2pq*_ga*MzA3MDU1MDIyLjE3NjA2ODg3MzU.*_ga_0JWHZEF3RB*czE3NjMwMzAyNzckbzckZzAkdDE3NjMwMzAyNzckajYwJGwwJGgw/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339375946-dszejnk",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+      "finalUrl": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+      "httpStatus": 200,
+      "contentHash": "4df884d4c72f521a2424669e3698c877be852410031e4dc0be8e7b6ac30b80ed",
+      "titleEvidence": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES) | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339409363-puvo8be",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk",
+      "finalUrl": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk",
+      "httpStatus": 200,
+      "contentHash": "fc32cda4cd2d540936a7f0d7430dfe140f92ce772781d1a3aef667c69e1637f0",
+      "titleEvidence": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk | Bootshaus Club",
+      "outboundTicketLinks": [],
+      "matchingCanonicalEvent": "evt-1785339283846-89x0jcd",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+      "finalUrl": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+      "httpStatus": 200,
+      "contentHash": "1d9bd8e25dd222be7ef4d9816f1d0538a80584d869b2f28473613ea89a923b06",
+      "titleEvidence": "Blacklist Festival 2026 | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://blacklist-festival.ticket.io/BF2Qb7HL/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339398765-9lptzhg",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "source": "affenkaefig.info",
+      "publicEventUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+      "finalUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+      "httpStatus": 200,
+      "contentHash": "6eb77c426dd2159caf31946bc6115c7e5a8b7105b2429594606ff90528bc0ee9",
+      "titleEvidence": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION – Affenkaefig Veranstaltungen",
+      "dateTimeEvidence": "2026-08-15T00:00:00+02:00",
+      "venueEvidence": "Essigfabrik /  Elektroküche",
+      "cityEvidence": "Köln",
+      "organizerEvidence": "Affenkäfig",
+      "outboundTicketLinks": [
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+      ],
+      "matchingCanonicalEvent": "evt-1785389054496-ns9b6la",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more",
+      "finalUrl": "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more",
+      "httpStatus": 200,
+      "contentHash": "c6d12c5eeed5618335c2aefd218cdd6b56c0833904d26fb6f25e1a7d485491db",
+      "titleEvidence": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://polyamor.ticket.io/PDikPg1v/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339378982-kp48td0",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "source": "bootshaus.tv",
+      "publicEventUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+      "finalUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+      "httpStatus": 200,
+      "contentHash": "eada6ebcf513b439036796daf271bb9eab74d5d1534322fcb34b99dbaf45f68e",
+      "titleEvidence": "Bootshaus on a Ship Vol. IV | Bootshaus Club",
+      "outboundTicketLinks": [
+        "https://bootshaus-club.ticket.io/4zjKRnsa/"
+      ],
+      "matchingCanonicalEvent": "evt-1785339418526-dn9f7g0",
+      "identityConfidence": 0.88,
+      "identitySignals": [
+        "official_website_url",
+        "event_specific_url"
+      ],
+      "rejectedCanonicalAlternatives": [],
+      "reviewRequired": false
+    }
+  ]
+}

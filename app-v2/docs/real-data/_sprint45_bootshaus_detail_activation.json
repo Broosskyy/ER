@@ -1,0 +1,1053 @@
+{
+  "startedAt": "2026-08-01T13:04:19.944Z",
+  "phase": "4.5-bootshaus-detail-activation",
+  "sourceId": "source-bootshaus-koeln",
+  "probeOnly": false,
+  "before": {
+    "label": "before",
+    "capturedAt": "2026-08-01T13:04:20.290Z",
+    "canonicalPublishedCount": 114,
+    "originCount": 0,
+    "bootshausImportRecords": 38,
+    "bootshausSourceReferences": 38,
+    "duplicateImportRecords": 0,
+    "sampleDescriptions": []
+  },
+  "migration": {
+    "migrationFile": "20260801000000_sprint45_bootshaus_detail_extraction.sql",
+    "applied": true,
+    "maxDetailPages": 50,
+    "allowedDomains": [
+      "bootshaus.tv",
+      "www.bootshaus.tv"
+    ],
+    "ready": true,
+    "note": "Production source_config reflects Sprint 4.5 detail extraction."
+  },
+  "probe": {
+    "listEventsDiscovered": 38,
+    "detailUrlsDiscovered": 38,
+    "detailPagesFetched": 38,
+    "descriptionsExtracted": 37,
+    "failedDetailPages": 0,
+    "strategy": "html_selector",
+    "warnings": [
+      "Detail enrichment applied to 37 list events."
+    ]
+  },
+  "probeEvents": [
+    {
+      "title": "Bootshaus Sommerfest - Part 4",
+      "externalId": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+      "detailUrl": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+      "description": {
+        "length": 1045,
+        "meaningful": true,
+        "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "LOONYLAND AT NATURE ONE",
+      "externalId": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+      "detailUrl": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+      "description": {
+        "length": 150,
+        "meaningful": true,
+        "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "BLACKLIST AT NATURE ONE",
+      "externalId": "https://bootshaus.tv/events/blacklist-at-nature-one",
+      "detailUrl": "https://bootshaus.tv/events/blacklist-at-nature-one",
+      "description": {
+        "length": 180,
+        "meaningful": true,
+        "preview": "LINE-UP BLACKLIST:Alex Martin, Autodrive, Bass Army, Captain Bass, Danth, Elle Rich, Enaly, Felix Caso, Gourski, Lyne, MAE.LIE, Makla, Murdock, Ombro, RedHoodSq"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "PLAY! Open Air – Bootshaus Köln",
+      "externalId": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+      "detailUrl": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+      "description": {
+        "length": 1849,
+        "meaningful": true,
+        "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "externalId": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+      "detailUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+      "description": {
+        "length": 618,
+        "meaningful": true,
+        "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "NIGHTSWITHUS presents LEVI",
+      "externalId": "https://bootshaus.tv/events/nightswithus-presents-levi",
+      "detailUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+      "description": {
+        "length": 431,
+        "meaningful": true,
+        "preview": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨📍 Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00&nbsp;NIGHTSWITHUS returns with anot"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Bootshaus on a Ship Vol. III",
+      "externalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+      "detailUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+      "description": {
+        "length": 318,
+        "meaningful": true,
+        "preview": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session.&nbsp;LINEUP:BRANDON b2"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "externalId": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+      "detailUrl": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+      "description": {
+        "length": 545,
+        "meaningful": true,
+        "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Maxi Meraki brings warm, euphoric house between melodic, Afro and indie - backed s"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "NEONSPLASH Paint-Rave",
+      "externalId": "https://bootshaus.tv/events/neonsplash-paint-rave",
+      "detailUrl": "https://bootshaus.tv/events/neonsplash-paint-rave",
+      "description": {
+        "length": 753,
+        "meaningful": true,
+        "preview": "NEONSPLASH is BACK! Am 14.08. kehren wir zurück an den Ort, wo alles angefangen hat — Bootshaus Cologne. Paint Rave Energy in der BLCKBX!&nbsp;Melodic House, Bo"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "externalId": "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco",
+      "detailUrl": "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco",
+      "description": {
+        "length": 687,
+        "meaningful": true,
+        "preview": "✈️ LET'S GET LOCO!Get ready for the next Airport Session with DHALI, FAST BOY, LIONKAY and ONINE on 15 August.LINEUP:FAST BOYDHALILIONKAY&nbsp;ONINEPublic Trans"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "externalId": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "detailUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "description": {
+        "length": 555,
+        "meaningful": true,
+        "preview": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "externalId": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+      "detailUrl": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+      "description": {
+        "length": 617,
+        "meaningful": true,
+        "preview": "The event takes place at&nbsp;AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Kaz James, the man behind the global hit \"l Like The Way\" and a celebrated ho"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "externalId": "https://bootshaus.tv/events/loonyland-pres-luca-dante-spadafora-2-engel-charlie",
+      "detailUrl": "https://bootshaus.tv/events/loonyland-pres-luca-dante-spadafora-2-engel-charlie",
+      "description": {
+        "length": 548,
+        "meaningful": true,
+        "preview": "Let&rsquo;s go Loony... We&rsquo;re back on the MAINFLOOR.On August 21st, LOONYLAND returns to Bootshaus with LUCA DANTE SPADAFORA, 2 ENGEL & CHARLIE and more.M"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "externalId": "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub",
+      "detailUrl": "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub",
+      "description": {
+        "length": 7766,
+        "meaningful": true,
+        "preview": "Einlass ab 22:00 UhrVorverkauf 1 * Early Bird: 30 Euro &lt;zzgl. externe Gebühren&gt;Vorverkauf 2: 35 Euro &lt;zzgl. externe Gebühren&gt;Abendkasse: 40 Euro &lt"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "externalId": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+      "detailUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+      "description": {
+        "length": 625,
+        "meaningful": true,
+        "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Tripolism, three friends from Copenhagen, bring melodic house, indie dance and eup"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Nibirii Festival 2026",
+      "externalId": "https://bootshaus.tv/events/nibirii-festival-2026",
+      "detailUrl": "https://bootshaus.tv/events/nibirii-festival-2026",
+      "description": {
+        "length": 460,
+        "meaningful": true,
+        "preview": "NIBIRII FESTIVAL28 - 30 AUGUST 2026Nibirii Festival returns to the wonderful &bdquo;Dürener Badesee&ldquo; nearby Cologne for three unforgettable days of music,"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "externalId": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+      "detailUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+      "description": {
+        "length": 641,
+        "meaningful": true,
+        "preview": "The event takes place at&nbsp;AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Notre Dame, the Parisian producer behind a cinematic melodic house sound and "
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "externalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "detailUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "description": {
+        "length": 447,
+        "meaningful": true,
+        "preview": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Bootshaus Sommerfest",
+      "externalId": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "detailUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "description": {
+        "length": 12,
+        "meaningful": true,
+        "preview": "Doors: 22:00"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "externalId": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+      "detailUrl": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+      "description": {
+        "length": 586,
+        "meaningful": true,
+        "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Marten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "externalId": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk",
+      "detailUrl": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk",
+      "description": {
+        "length": 1640,
+        "meaningful": true,
+        "preview": "BLACKLIST & INURFASE pres.ZAAGSTEP by Dr Donk📍Bootshaus Cologne📅 11.09.2026⏰ 22:00 - 06:00🎟️ Pre-Register now:&nbsp;https://bit.ly/ZAAGSTEPFor years, electro"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Bootshaus on a Ship Vol. IV",
+      "externalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+      "detailUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+      "description": {
+        "length": 282,
+        "meaningful": true,
+        "preview": "Bootshaus returns to the water.On September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session.&nbsp;Lineup:NIKLAS "
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "externalId": "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more",
+      "detailUrl": "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more",
+      "description": {
+        "length": 300,
+        "meaningful": true,
+        "preview": "Cologne, are you ready? Polyamor is taking over Bootshaus with its biggest show yet. Get ready for pure Polyamor madness, top-notch production, and a stacked li"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "externalId": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+      "detailUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+      "description": {
+        "length": 587,
+        "meaningful": true,
+        "preview": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid acr"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Bootshaus Sommerfest Closing",
+      "externalId": "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26",
+      "detailUrl": "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26",
+      "description": {
+        "length": 763,
+        "meaningful": true,
+        "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;Every summer needs a proper goodbye.On September 19th, we&rsquo;re closing the season the on"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "externalId": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+      "detailUrl": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+      "description": {
+        "length": 791,
+        "meaningful": true,
+        "preview": "YOU HEARD IT RIGHT!&nbsp;The first time in Effenaar left us absolutely speechless and it had us all craving for more.&nbsp;So there was only one option: taking "
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Unreal Weekender Night I - September 2026",
+      "externalId": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026",
+      "detailUrl": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026",
+      "description": {
+        "length": 138,
+        "meaningful": true,
+        "preview": "Line-up A-Z:&nbsp;AFEM SYKO&nbsp;BIIANCO&nbsp;JOHANNES SCHUSTER&nbsp;KOTORRI&nbsp;MAD DOG&nbsp;NIKOLINA&nbsp;PIXIE DUST&nbsp;WILL ATKINSON"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Unreal Weekender Night II - September 2026",
+      "externalId": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026",
+      "detailUrl": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026",
+      "description": {
+        "length": 137,
+        "meaningful": true,
+        "preview": "Line-up A-Z:&nbsp;ANNIE&nbsp;DJ DRECKISCH&nbsp;DVAID&nbsp;GLANZ B2B ROSILICIOUS&nbsp;KARAH&nbsp;KUKO&nbsp;TASSERY&nbsp;TRIPTYKH B2B GOLPE"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "NIBIRII pres. ELY OAKS!",
+      "externalId": "https://bootshaus.tv/events/nibirii-pres-ely-oaks",
+      "detailUrl": "https://bootshaus.tv/events/nibirii-pres-ely-oaks",
+      "description": {
+        "length": 531,
+        "meaningful": true,
+        "preview": "NIBIRII pres. ELY OAKS!After a summer full of countless memories, it's time to head to our home ground&nbsp;once again! At BOOTSHAUS, we will welcome you to a n"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Blacklist Festival 2026",
+      "externalId": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+      "detailUrl": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+      "description": {
+        "length": 890,
+        "meaningful": true,
+        "preview": "THIS WAS BLACKLIST FESTIVAL 2025.10 YEARS WITH YOU – WE COULDN&rsquo;T BE MORE PROUD.2015–2025:A DECADE OF LOYALTY AND CONNECTION.NOW IT&rsquo;S TIME TO MOVE FO"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "CHROME COLOGNE",
+      "externalId": "https://bootshaus.tv/events/9-10-26-chrome-cologne",
+      "detailUrl": "https://bootshaus.tv/events/9-10-26-chrome-cologne",
+      "description": {
+        "length": 3842,
+        "meaningful": true,
+        "preview": "Let's get dirty again. 😈Chrome Cologne is a place for music, creativity, and freedom. At its core is an immersive hard techno experience where people come toge"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "externalId": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus",
+      "detailUrl": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus",
+      "description": {
+        "length": 514,
+        "meaningful": true,
+        "preview": "On 16th October, CHRIS STUSSY plays the Bootshaus MAINFLOOR for the first time.Known for flowing sets and an approach where the music comes first, he brings his"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "externalId": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+      "detailUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+      "description": {
+        "length": 770,
+        "meaningful": true,
+        "preview": "AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒🔥&nbsp;Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln.&nbsp;Das Bootshaus zählt zu de"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "externalId": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub",
+      "detailUrl": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub",
+      "description": {
+        "length": 3830,
+        "meaningful": true,
+        "preview": "SA * 24.10.2026 | KitKatClub&nbsp;Uhrzeit: 22:00 UhrEintritt: 35 EuroVeranstalterkontakt: kitkatclub@vault-events.deSTRICT SEXUAL FANTASY DRESSCODE | Einlass vo"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "externalId": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026",
+      "detailUrl": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026",
+      "description": {
+        "length": 549,
+        "meaningful": true,
+        "preview": "Loonyland returns to Bootshaus for its annual Halloween takeover.On October 31st, all three floors open from early night until morning, transforming the club in"
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "externalId": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne",
+      "detailUrl": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne",
+      "description": {
+        "length": 543,
+        "meaningful": true,
+        "preview": "CELEBRATING THE END OF THE TOUR&nbsp;After many months of preparation, we can finally announce that we&rsquo;re going once around the world and back - together."
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    },
+    {
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "externalId": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+      "detailUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+      "description": {
+        "length": 0,
+        "meaningful": false
+      },
+      "warnings": []
+    },
+    {
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "externalId": "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026",
+      "detailUrl": "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026",
+      "description": {
+        "length": 670,
+        "meaningful": true,
+        "preview": "Ring in the new year at Bootshaus.On December 31st, we open all floors for our annual New Year&rsquo;s Eve celebration, taking you from the final hours of 2026 "
+      },
+      "warnings": [
+        "detail_enrichment_applied"
+      ]
+    }
+  ],
+  "sampleValidation": [
+    {
+      "key": "play_open_air",
+      "label": "PLAY! Open Air",
+      "list": {
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "externalId": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+        "detailUrl": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+        "description": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 1849,
+        "meaningful": true,
+        "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+      },
+      "normalized": {
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "description": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        },
+        "externalId": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln"
+      },
+      "canonical": {
+        "id": "evt-1785339406307-kw5r61q",
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "description": {
+          "length": 0,
+          "meaningful": false
+        },
+        "venueName": "Bootshaus",
+        "ticketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+        "priceText": "Tickets ab 18,00 Euro"
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": true,
+        "proposedDescriptionPreview": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        }
+      }
+    },
+    {
+      "key": "sommerfest",
+      "label": "Bootshaus Sommerfest",
+      "list": {
+        "title": "Bootshaus Sommerfest - Part 4",
+        "externalId": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+        "detailUrl": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+        "description": {
+          "length": 1045,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 1045,
+        "meaningful": true,
+        "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+      },
+      "normalized": {
+        "title": "Bootshaus Sommerfest - Part 4",
+        "description": {
+          "length": 1045,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+        },
+        "externalId": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4"
+      },
+      "canonical": {
+        "id": "evt-1785339394218-cbqw3kx",
+        "title": "Bootshaus Sommerfest Closing",
+        "description": {
+          "length": 0,
+          "meaningful": false
+        },
+        "venueName": "Bootshaus",
+        "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+        "priceText": "Tickets ab 15,00 Euro"
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": true,
+        "proposedDescriptionPreview": {
+          "length": 1045,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+        }
+      }
+    },
+    {
+      "key": "club_event",
+      "label": "Normal club event (LOONYLAND)",
+      "list": {
+        "title": "LOONYLAND AT NATURE ONE",
+        "externalId": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+        "detailUrl": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+        "description": {
+          "length": 150,
+          "meaningful": true,
+          "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 150,
+        "meaningful": true,
+        "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+      },
+      "normalized": {
+        "title": "LOONYLAND AT NATURE ONE",
+        "description": {
+          "length": 150,
+          "meaningful": true,
+          "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+        },
+        "externalId": "https://bootshaus.tv/events/2026-loonyland-at-nature-one"
+      },
+      "canonical": {
+        "id": "evt-1785339400315-1mx4foh",
+        "title": "Bootshaus & Loonyland pres. Halloween 2026",
+        "description": {
+          "length": 0,
+          "meaningful": false
+        },
+        "venueName": "Bootshaus",
+        "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+        "priceText": "Tickets ab 29,00 Euro"
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": true,
+        "proposedDescriptionPreview": {
+          "length": 150,
+          "meaningful": true,
+          "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+        }
+      }
+    },
+    {
+      "key": "mallorca",
+      "label": "External location (Mallorca)",
+      "list": {
+        "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+        "externalId": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+        "detailUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+        "description": {
+          "length": 618,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 618,
+        "meaningful": true,
+        "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+      },
+      "normalized": {
+        "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+        "description": {
+          "length": 618,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+        },
+        "externalId": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es"
+      },
+      "canonical": {
+        "id": "evt-1785339377456-7miaf2o",
+        "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+        "description": {
+          "length": 0,
+          "meaningful": false
+        },
+        "venueName": null,
+        "ticketUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+        "priceText": null
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": true,
+        "proposedDescriptionPreview": {
+          "length": 618,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+        }
+      }
+    }
+  ],
+  "duplicateRisk": {
+    "probeExternalIds": 38,
+    "existingImportRecordMatches": 38,
+    "unmatchedExternalIds": 0,
+    "duplicateRisk": "low",
+    "expectedCanonicalMatches": 38
+  },
+  "probeGate": {
+    "clean": true,
+    "reasons": []
+  },
+  "importRun1": {
+    "label": "run-1",
+    "jobId": "f7e22a7b-3733-43ac-bcaf-6ab0dd7136a4",
+    "status": "completed",
+    "metrics": {
+      "fetchedCount": 38,
+      "parsedCount": 37,
+      "invalidCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "createdCount": 0,
+      "updatedCount": 37,
+      "duplicateCount": 1,
+      "unchangedCount": 1,
+      "missingCount": 0,
+      "pagesProcessed": 0
+    },
+    "dbRow": {
+      "id": "f7e22a7b-3733-43ac-bcaf-6ab0dd7136a4",
+      "status": "completed",
+      "fetched_count": 38,
+      "created_count": 0,
+      "updated_count": 37,
+      "duplicate_count": 1,
+      "unchanged_count": 1,
+      "warning_count": 0,
+      "error_count": 0
+    }
+  },
+  "postImport1": {
+    "after": {
+      "label": "after-import",
+      "capturedAt": "2026-08-01T13:06:58.811Z",
+      "canonicalPublishedCount": 114,
+      "originCount": 0,
+      "bootshausImportRecords": 38,
+      "bootshausSourceReferences": 38,
+      "duplicateImportRecords": 0,
+      "sampleDescriptions": []
+    },
+    "canonicalCountDelta": 0,
+    "originCountDelta": 0,
+    "descriptionsPopulatedInSamples": 0,
+    "ticketIoOriginsSample": [],
+    "noNewCanonicalEvents": true,
+    "noNewOrigins": true,
+    "duplicateImportRecords": 0
+  },
+  "importRun2": {
+    "label": "run-2-idempotency",
+    "jobId": "18990fb0-93a3-45db-9824-3f9d92b8f5e6",
+    "status": "completed",
+    "metrics": {
+      "fetchedCount": 38,
+      "parsedCount": 0,
+      "invalidCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "createdCount": 0,
+      "updatedCount": 0,
+      "duplicateCount": 38,
+      "unchangedCount": 38,
+      "missingCount": 0,
+      "pagesProcessed": 0
+    },
+    "dbRow": {
+      "id": "18990fb0-93a3-45db-9824-3f9d92b8f5e6",
+      "status": "completed",
+      "fetched_count": 38,
+      "created_count": 0,
+      "updated_count": 0,
+      "duplicate_count": 38,
+      "unchanged_count": 38,
+      "warning_count": 0,
+      "error_count": 0
+    }
+  },
+  "afterRun2": {
+    "label": "after-run-2",
+    "capturedAt": "2026-08-01T13:09:10.105Z",
+    "canonicalPublishedCount": 114,
+    "originCount": 0,
+    "bootshausImportRecords": 38,
+    "bootshausSourceReferences": 38,
+    "duplicateImportRecords": 0,
+    "sampleDescriptions": []
+  },
+  "idempotency": {
+    "run2CreatedCount": 0,
+    "run2UpdatedCount": 0,
+    "run2UnchangedCount": 38,
+    "canonicalCountStable": true,
+    "originCountStable": true
+  },
+  "sampleValidationAfter": [
+    {
+      "key": "play_open_air",
+      "label": "PLAY! Open Air",
+      "list": {
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "externalId": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+        "detailUrl": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+        "description": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 1849,
+        "meaningful": true,
+        "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+      },
+      "normalized": {
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "description": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        },
+        "externalId": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln"
+      },
+      "canonical": {
+        "id": "evt-1785339406307-kw5r61q",
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "description": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        },
+        "venueName": "Bootshaus",
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "priceText": "Tickets ab 18,00 Euro"
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": false,
+        "proposedDescriptionPreview": {
+          "length": 1849,
+          "meaningful": true,
+          "preview": "PLAY! Open Air – Drum & Bass trifft Kölner SommerKöln bekommt seinen Drum & Bass Sommer. Am Samstag, 01. August 2026 zieht das PLAY! Open Air in den Innenhof de"
+        }
+      }
+    },
+    {
+      "key": "sommerfest",
+      "label": "Bootshaus Sommerfest",
+      "list": {
+        "title": "Bootshaus Sommerfest - Part 4",
+        "externalId": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+        "detailUrl": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+        "description": {
+          "length": 1045,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 1045,
+        "meaningful": true,
+        "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+      },
+      "normalized": {
+        "title": "Bootshaus Sommerfest - Part 4",
+        "description": {
+          "length": 1045,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+        },
+        "externalId": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4"
+      },
+      "canonical": {
+        "id": "evt-1785339415449-xpazmaq",
+        "title": "Bootshaus Sommerfest - Part 4",
+        "description": {
+          "length": 1015,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens every floor, including "
+        },
+        "venueName": "Bootshaus",
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "priceText": "Tickets ab 16,90 Euro"
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": false,
+        "proposedDescriptionPreview": {
+          "length": 1045,
+          "meaningful": true,
+          "preview": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep&nbsp;One night. Four sounds. Full summer energy.On August 1st, Bootshaus opens&nbsp;every floor, "
+        }
+      }
+    },
+    {
+      "key": "club_event",
+      "label": "Normal club event (LOONYLAND)",
+      "list": {
+        "title": "LOONYLAND AT NATURE ONE",
+        "externalId": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+        "detailUrl": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+        "description": {
+          "length": 150,
+          "meaningful": true,
+          "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 150,
+        "meaningful": true,
+        "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+      },
+      "normalized": {
+        "title": "LOONYLAND AT NATURE ONE",
+        "description": {
+          "length": 150,
+          "meaningful": true,
+          "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+        },
+        "externalId": "https://bootshaus.tv/events/2026-loonyland-at-nature-one"
+      },
+      "canonical": {
+        "id": "evt-1785339404822-r8i4lyq",
+        "title": "Bootshaus & Loonyland pres. NYE 2026",
+        "description": {
+          "length": 670,
+          "meaningful": true,
+          "preview": "Ring in the new year at Bootshaus.On December 31st, we open all floors for our annual New Year&rsquo;s Eve celebration, taking you from the final hours of 2026 "
+        },
+        "venueName": "Bootshaus",
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "priceText": "Tickets ab 29,00 Euro"
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": false,
+        "proposedDescriptionPreview": {
+          "length": 150,
+          "meaningful": true,
+          "preview": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+        }
+      }
+    },
+    {
+      "key": "mallorca",
+      "label": "External location (Mallorca)",
+      "list": {
+        "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+        "externalId": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+        "detailUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+        "description": {
+          "length": 618,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+        },
+        "warnings": [
+          "detail_enrichment_applied"
+        ]
+      },
+      "detailDescription": {
+        "length": 618,
+        "meaningful": true,
+        "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+      },
+      "normalized": {
+        "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+        "description": {
+          "length": 618,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+        },
+        "externalId": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es"
+      },
+      "canonical": {
+        "id": "evt-1785339377456-7miaf2o",
+        "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+        "description": {
+          "length": 636,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Notre Dame, the Parisian producer behind a cinematic melodic house sound and an en"
+        },
+        "venueName": null,
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "priceText": null
+      },
+      "ticketIoOriginsBefore": [],
+      "proposedUpdate": {
+        "wouldChangeDescription": false,
+        "proposedDescriptionPreview": {
+          "length": 618,
+          "meaningful": true,
+          "preview": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in"
+        }
+      }
+    }
+  ],
+  "completedAt": "2026-08-01T13:09:15.400Z"
+}

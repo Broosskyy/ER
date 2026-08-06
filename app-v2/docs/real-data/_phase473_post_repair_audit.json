@@ -1,0 +1,287 @@
+{
+  "generatedAt": "2026-08-03T18:00:28.855Z",
+  "acceptance": {
+    "explicitEvidenceOnly": true,
+    "conflictingEvidenceReviewGated": true,
+    "badgesFromCanonicalOnly": true,
+    "globalFrozenUnchanged": true
+  },
+  "metrics": {
+    "eventsWithCanonicalAttributes": 19,
+    "eventsWithVisibleBadges": 19,
+    "floorCountCoverage": 5,
+    "stageCountCoverage": 0,
+    "openAirCoverage": 4,
+    "indoorOutdoorCoverage": 1,
+    "boatCoverage": 2,
+    "minimumAgeCoverage": 0,
+    "doorsTimeCoverage": 0,
+    "reviewRequiredEvents": 1
+  },
+  "representatives": {
+    "sommerfest": {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "canonicalAttributes": [
+        {
+          "type": "floor_count",
+          "label": "3 Floors",
+          "value": 3,
+          "domain": "structure",
+          "confidence": 0.85,
+          "provenance": {
+            "origin": "ticket_kings_html",
+            "context": "3 Floors",
+            "origins": [
+              "ticket_kings_html"
+            ],
+            "mergedAt": "2026-08-03T18:00:05.161Z",
+            "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+            "rawEvidence": "3 Floors",
+            "extractionStrategy": "legacy_sourced_event_attribute"
+          }
+        },
+        {
+          "type": "indoor",
+          "label": "Indoor / Outdoor",
+          "value": true,
+          "domain": "venue_environment",
+          "confidence": 0.9,
+          "provenance": {
+            "origin": "ticket_kings_html",
+            "context": "Indoor / Outdoor",
+            "origins": [
+              "ticket_kings_html"
+            ],
+            "mergedAt": "2026-08-03T18:00:05.161Z",
+            "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+            "rawEvidence": "Indoor / Outdoor",
+            "extractionStrategy": "legacy_sourced_event_attribute"
+          }
+        },
+        {
+          "type": "indoor_outdoor",
+          "label": "Indoor & Outdoor",
+          "value": "hybrid",
+          "domain": "venue_environment",
+          "confidence": 0.85,
+          "provenance": {
+            "origin": "sourceMetadata.venueEnvironment",
+            "origins": [
+              "sourceMetadata.venueEnvironment"
+            ],
+            "mergedAt": "2026-08-03T18:00:05.161Z",
+            "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+            "rawEvidence": "hybrid",
+            "extractionStrategy": "connector_metadata_venue_environment"
+          }
+        }
+      ],
+      "attributeBadges": [
+        {
+          "id": "attr-floor_count",
+          "type": "floor_count",
+          "label": "Multi Floor",
+          "domain": "structure"
+        },
+        {
+          "id": "attr-indoor",
+          "type": "indoor",
+          "label": "Indoor",
+          "domain": "venue_environment"
+        },
+        {
+          "id": "attr-indoor_outdoor",
+          "type": "indoor_outdoor",
+          "label": "Indoor & Outdoor",
+          "domain": "venue_environment"
+        }
+      ],
+      "heroBadges": [
+        {
+          "id": "attr-floor_count",
+          "type": "floor_count",
+          "label": "Multi Floor",
+          "domain": "structure"
+        },
+        {
+          "id": "attr-indoor",
+          "type": "indoor",
+          "label": "Indoor",
+          "domain": "venue_environment"
+        },
+        {
+          "id": "attr-indoor_outdoor",
+          "type": "indoor_outdoor",
+          "label": "Indoor & Outdoor",
+          "domain": "venue_environment"
+        }
+      ],
+      "reviewRequired": false,
+      "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "priceText": "ab 15,00 €",
+      "lineupFingerprint": {
+        "structuredCount": 14,
+        "legacyCount": 14,
+        "artistNamesHash": "58682b7b8b78c295"
+      }
+    },
+    "bootshausShip": {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "canonicalAttributes": [
+        {
+          "type": "accessibility",
+          "label": "Age 18+",
+          "value": "18+",
+          "domain": "visitor_info",
+          "confidence": 0.8,
+          "provenance": {
+            "origin": "website_description",
+            "context": "Age 18+",
+            "origins": [
+              "website_description"
+            ],
+            "mergedAt": "2026-08-03T18:00:04.863Z",
+            "sourceId": "source-bootshaus-koeln",
+            "sourceName": "Bootshaus Köln",
+            "rawEvidence": "Age 18+",
+            "extractionStrategy": "legacy_sourced_event_attribute"
+          }
+        },
+        {
+          "type": "boat",
+          "label": "Boat",
+          "value": true,
+          "domain": "venue_environment",
+          "confidence": 0.75,
+          "provenance": {
+            "origin": "title_or_description",
+            "origins": [
+              "title_or_description"
+            ],
+            "mergedAt": "2026-08-03T18:00:04.863Z",
+            "sourceId": "source-bootshaus-koeln",
+            "sourceName": "Bootshaus Köln",
+            "rawEvidence": "on a Ship",
+            "extractionStrategy": "generic_text_pattern"
+          }
+        }
+      ],
+      "attributeBadges": [
+        {
+          "id": "attr-boat",
+          "type": "boat",
+          "label": "Boat",
+          "domain": "venue_environment"
+        }
+      ],
+      "heroBadges": [
+        {
+          "id": "attr-boat",
+          "type": "boat",
+          "label": "Boat",
+          "domain": "venue_environment"
+        }
+      ],
+      "reviewRequired": false,
+      "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+      "priceText": "Tickets ab 32,00 Euro",
+      "lineupFingerprint": {
+        "structuredCount": 4,
+        "legacyCount": 8,
+        "artistNamesHash": "ed6dc90df8194386"
+      }
+    },
+    "kitKatConflict": {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "canonicalAttributes": [
+        {
+          "type": "accessibility",
+          "label": "Age 22+",
+          "value": "22+",
+          "domain": "visitor_info",
+          "confidence": 0.8,
+          "provenance": {
+            "origin": "website_description",
+            "context": "Age 22+",
+            "origins": [
+              "website_description"
+            ],
+            "mergedAt": "2026-08-03T18:00:01.730Z",
+            "sourceId": "source-bootshaus-koeln",
+            "sourceName": "Bootshaus Köln",
+            "rawEvidence": "Age 22+",
+            "extractionStrategy": "legacy_sourced_event_attribute"
+          }
+        },
+        {
+          "type": "live",
+          "label": "Live",
+          "value": true,
+          "domain": "event_type",
+          "confidence": 0.7,
+          "provenance": {
+            "origin": "website_description",
+            "context": "Live",
+            "origins": [
+              "website_description"
+            ],
+            "mergedAt": "2026-08-03T18:00:01.730Z",
+            "sourceId": "source-bootshaus-koeln",
+            "sourceName": "Bootshaus Köln",
+            "rawEvidence": "Live",
+            "extractionStrategy": "legacy_sourced_event_attribute"
+          }
+        },
+        {
+          "type": "outdoor",
+          "label": "Outdoor",
+          "value": true,
+          "domain": "venue_environment",
+          "confidence": 0.8,
+          "provenance": {
+            "origin": "website_description",
+            "context": "Outdoor",
+            "origins": [
+              "website_description"
+            ],
+            "mergedAt": "2026-08-03T18:00:01.730Z",
+            "sourceId": "source-bootshaus-koeln",
+            "sourceName": "Bootshaus Köln",
+            "rawEvidence": "Outdoor",
+            "extractionStrategy": "legacy_sourced_event_attribute"
+          },
+          "reviewRequired": true
+        }
+      ],
+      "attributeBadges": [
+        {
+          "id": "attr-live",
+          "type": "live",
+          "label": "Live",
+          "domain": "event_type"
+        }
+      ],
+      "heroBadges": [
+        {
+          "id": "attr-live",
+          "type": "live",
+          "label": "Live",
+          "domain": "event_type"
+        }
+      ],
+      "reviewRequired": true,
+      "ticketUrl": "https://www.vault-events.de/termine/kitkatclub-bootshaus/Veranstalterkontakt:",
+      "lineupFingerprint": {
+        "structuredCount": 0,
+        "legacyCount": 0,
+        "artistNamesHash": "e3b0c44298fc1c14"
+      }
+    }
+  }
+}

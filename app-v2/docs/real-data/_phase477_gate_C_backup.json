@@ -1,0 +1,60 @@
+{
+  "gate": "C",
+  "generatedAt": "2026-08-04T12:05:25.366Z",
+  "backup": [
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "status": "published",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "priceText": "ab 15,00 €",
+      "ticketStatus": "on_sale",
+      "lineup": {
+        "structuredEntries": [
+          {
+            "id": "ele-bf-55b1d7b3d346f7d289c0a2053a726eb0",
+            "billing_relation": "SOLO",
+            "event_lineup_entry_artists": [
+              {
+                "artists": {
+                  "name": "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+                  "lineup_legacy_artifact": false
+                },
+                "artist_id": "artist-title-underland-essigfabrik-05-09-2026-5-sep-22-00-6-sep-07-00-cest-t1ul0p"
+              }
+            ]
+          },
+          {
+            "id": "ele-bf-2ebc6360f59cddc374922546617b58a2",
+            "billing_relation": "SOLO",
+            "event_lineup_entry_artists": [
+              {
+                "artists": {
+                  "name": "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST",
+                  "lineup_legacy_artifact": false
+                },
+                "artist_id": "artist-title-m-d-m-a-xxx-proton-xxx-stuttgart-24-okt-23-00-25-okt-06-00-cest-ob61dw"
+              }
+            ]
+          }
+        ],
+        "legacyArtists": [
+          {
+            "artist_id": "artist-title-m-d-m-a-xxx-proton-xxx-stuttgart-24-okt-23-00-25-okt-06-00-cest-ob61dw",
+            "artists": {
+              "name": "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "artist_id": "artist-title-underland-essigfabrik-05-09-2026-5-sep-22-00-6-sep-07-00-cest-t1ul0p",
+            "artists": {
+              "name": "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+              "lineup_legacy_artifact": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

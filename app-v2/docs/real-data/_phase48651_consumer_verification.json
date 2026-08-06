@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-06T01:18:04.423Z",
+  "phase": "4.8.6.5.1",
+  "productionMutationsInThisRun": 0,
+  "checks": {
+    "ticketKingsCta": true,
+    "priceBadge": true,
+    "displayPriceText": true,
+    "oneAdmissionPhase": true,
+    "phaseName": true,
+    "phasePrice": true,
+    "noAddonPhases": true,
+    "canonicalPriceText": false
+  },
+  "passed": false,
+  "slots": {
+    "headerPrice": "ab 15,00 €",
+    "sectionStandalonePrice": "15,00 €",
+    "phasePrices": [
+      "ab 15,00 €"
+    ],
+    "phaseNames": [
+      "E-Ticket — Early Bird"
+    ],
+    "subtotal": "ab 15,00 €",
+    "total": "ab 15,00 €",
+    "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "ctaLabel": "Tickets ansehen",
+    "availabilityLabel": "Verfügbar"
+  },
+  "uiAudit": {
+    "eventId": "evt-1785389049895-4mb7dub",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "slots": {
+      "headerPrice": "ab 15,00 €",
+      "sectionStandalonePrice": "15,00 €",
+      "phasePrices": [
+        "ab 15,00 €"
+      ],
+      "phaseNames": [
+        "E-Ticket — Early Bird"
+      ],
+      "subtotal": "ab 15,00 €",
+      "total": "ab 15,00 €",
+      "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "ctaLabel": "Tickets ansehen",
+      "availabilityLabel": "Verfügbar"
+    },
+    "duplicateGroups": [
+      {
+        "value": "ab 15,00 €",
+        "surfaces": [
+          "header",
+          "phase_0",
+          "subtotal",
+          "total"
+        ]
+      }
+    ],
+    "redundantSubtotalTotal": true,
+    "proposedSlots": {
+      "headerPrice": "ab 15,00 €",
+      "availabilityLabel": "Verfügbar",
+      "ctaLabel": "Tickets ansehen",
+      "phasePrices": [
+        "ab 15,00 €"
+      ]
+    }
+  },
+  "projection": {
+    "displayPriceText": "ab 15,00 €",
+    "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "ticketProviderLabel": "Ticket Kings"
+  },
+  "note": "UI subtotal/total duplication is a separate Preview B scope — data layer has single admission phase only"
+}

@@ -1,6 +1,42 @@
 const JSON_LD_SCRIPT_PATTERN =
   /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
 
+function readJsonLdPerformerName(performer: unknown): string | undefined {
+  if (!performer) {
+    return undefined;
+  }
+  if (typeof performer === 'string') {
+    const name = performer.trim();
+    return name && !/^organization$/i.test(name) ? name : undefined;
+  }
+  if (typeof performer === 'object') {
+    const record = performer as Record<string, unknown>;
+    const typeValue = record['@type'];
+    const types = Array.isArray(typeValue)
+      ? typeValue.map(String)
+      : typeValue
+        ? [String(typeValue)]
+        : [];
+    if (types.some((type) => /organization/i.test(type))) {
+      return undefined;
+    }
+    const name = record.name ? String(record.name).trim() : '';
+    return name && !/^organization$/i.test(name) ? name : undefined;
+  }
+  return undefined;
+}
+
+function readJsonLdPerformerNames(performers: unknown): string[] | undefined {
+  if (!performers) {
+    return undefined;
+  }
+  const list = Array.isArray(performers) ? performers : [performers];
+  const names = list
+    .map((performer) => readJsonLdPerformerName(performer))
+    .filter((name): name is string => Boolean(name));
+  return names.length > 0 ? names : undefined;
+}
+
 export function extractJsonLdBlocks(html: string): unknown[] {
   const blocks: unknown[] = [];
   let match: RegExpExecArray | null;
@@ -87,11 +123,7 @@ export function parseJsonLdEvent(node: Record<string, unknown>, baseUrl?: string
   }
 
   const performers = node.performer;
-  const artistNames = Array.isArray(performers)
-    ? performers.map((p) => (typeof p === 'object' && p ? String((p as Record<string, unknown>).name ?? '') : String(p)))
-    : performers
-      ? [typeof performers === 'object' ? String((performers as Record<string, unknown>).name ?? '') : String(performers)]
-      : undefined;
+  const artistNames = readJsonLdPerformerNames(performers);
 
   const offers = node.offers as Record<string, unknown> | Record<string, unknown>[] | undefined;
   let ticketUrl: string | undefined;

@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-08-04T12:18:10.342Z",
+  "gate": "C",
+  "repairabilityItems": [
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "code": "lineup_projection_gap"
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "code": "lineup_projection_gap"
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "code": "lineup_projection_gap"
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "code": "incomplete_projection"
+    }
+  ],
+  "snapshots": [
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "garbageArtists": [],
+      "structuredCount": 0,
+      "legacyCount": 0,
+      "displayedArtistCount": 0,
+      "tkEvidence": "Line Up: Folgt noch (Ticket Kings source)",
+      "proposedAction": "Clear structured lineup (empty evidence); mark garbage artists legacy; upstream TK parser excludes tribe-related-events sidebar"
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "garbageArtists": [
+        "EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+      ],
+      "structuredCount": 1,
+      "legacyCount": 1,
+      "displayedArtistCount": 0,
+      "proposedAction": "Review artist identity — no unsafe merge"
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "garbageArtists": [
+        "MAXI MERAKI @ Palma de Mallorca (ES",
+        "MAXI MERAKIMCFLY​"
+      ],
+      "structuredCount": 2,
+      "legacyCount": 2,
+      "displayedArtistCount": 0,
+      "proposedAction": "Review artist identity — no unsafe merge"
+    }
+  ],
+  "mdma1010": {
+    "eventId": "evt-1785443911160-owt97y3",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "garbageArtists": [],
+    "structuredCount": 0,
+    "legacyCount": 0,
+    "displayedArtistCount": 0,
+    "tkEvidence": "Line Up: Folgt noch (Ticket Kings source)",
+    "proposedAction": "Clear structured lineup (empty evidence); mark garbage artists legacy; upstream TK parser excludes tribe-related-events sidebar"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-08-03T05:35:44.018Z",
+  "repairStable": {
+    "passes": 2,
+    "stable": true,
+    "finalMutations": 0
+  },
+  "legacyStillLinked": [],
+  "collapsedCatalogArtists": 23,
+  "billingTokensInCollapsedCatalog": 29
+}

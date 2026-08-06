@@ -14,6 +14,10 @@ export interface RankingContext {
   timestamp: string;
   city?: string;
   selectedGenres?: string[];
+  similarVenueId?: string;
+  similarOrganizerId?: string;
+  similarFestivalId?: string;
+  similarArtistIds?: string[];
 }
 
 export interface RankableEvent {
@@ -22,6 +26,10 @@ export interface RankableEvent {
   publishedAt?: string;
   city?: string;
   genres?: string[];
+  venueId?: string;
+  organizerId?: string;
+  festivalId?: string;
+  artistIds?: string[];
   eventQuality: number;
   sourceTrust: number;
   freshness: number;
@@ -45,8 +53,19 @@ export class DiscoveryRankingService {
       const timeRelevance = hoursUntilStart >= 0 ? Math.max(0, 25 - Math.min(25, hoursUntilStart / 24)) : -30;
       const cityMatch = context.city && context.city === event.city ? 8 : 0;
       const genreMatch = context.selectedGenres?.some((genre) => event.genres?.includes(genre)) ? 6 : 0;
+      const venueMatch =
+        context.similarVenueId && event.venueId === context.similarVenueId ? 12 : 0;
+      const organizerMatch =
+        context.similarOrganizerId && event.organizerId === context.similarOrganizerId ? 10 : 0;
+      const festivalMatch =
+        context.similarFestivalId && event.festivalId === context.similarFestivalId ? 8 : 0;
+      const artistOverlap =
+        context.similarArtistIds?.length && event.artistIds?.length
+          ? context.similarArtistIds.filter((id) => event.artistIds?.includes(id)).length * 5
+          : 0;
       const score = event.eventQuality * 0.35 + event.sourceTrust * 0.18 + event.freshness * 0.12 +
-        timeRelevance + cityMatch + genreMatch + (event.hasImage ? 4 : 0) + (event.hasTickets ? 3 : 0) +
+        timeRelevance + cityMatch + genreMatch + venueMatch + organizerMatch + festivalMatch + artistOverlap +
+        (event.hasImage ? 4 : 0) + (event.hasTickets ? 3 : 0) +
         (event.featured ? 5 : 0) - (event.conflictCount ?? 0) * 12 -
         (event.cancelled ? 40 : 0) - (event.duplicateConfidence ?? 0) * 10;
       return { ...event, score };

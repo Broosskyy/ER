@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createClient } from '@supabase/supabase-js';
 import { initializeEntityAliasStore } from '@/features/entity-resolution/entity-alias-store-bootstrap';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS_SOURCE = 'source-bootshaus-koeln';
 const OUT_JSON = join(process.cwd(), 'docs/real-data/_bootshaus_final_go_live_validation.json');

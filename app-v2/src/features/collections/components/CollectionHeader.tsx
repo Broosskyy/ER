@@ -7,6 +7,7 @@ import { AppText } from '@/components/layout/AppText';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
 
 export interface CollectionHeaderProps {
   title: string;
@@ -31,7 +32,7 @@ export function CollectionHeader({
         <IconButton
           icon="arrow-back"
           accessibilityLabel="Go back"
-          onPress={() => router.back()}
+          onPress={() => navigateBackSafely(router)}
         />
         {showFilter && onFilterPress ? (
           <IconButton icon="options-outline" accessibilityLabel="Filters" onPress={onFilterPress} />
@@ -62,7 +63,7 @@ export function CollectionUnknownState() {
       </AppText>
       <Pressable
         accessibilityRole="button"
-        onPress={() => router.back()}
+        onPress={() => navigateBackSafely(router)}
         style={({ pressed }) => [styles.backLink, pressed && styles.pressed]}
       >
         <AppText style={styles.backLinkText}>Go back</AppText>

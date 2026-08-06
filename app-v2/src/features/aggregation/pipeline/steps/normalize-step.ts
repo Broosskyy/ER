@@ -7,6 +7,8 @@ import type { FetchedImportPayload } from '@/features/aggregation/pipeline/steps
 import { eventNormalizer } from '@/features/import/normalization/event-normalizer';
 import type { RawCandidateInput } from '@/features/import/normalization/event-normalizer';
 import { applySourceFieldDefaults } from '@/features/import/normalization/source-field-defaults';
+import { stampHistoricalRepairMetadata } from '@/features/import/services/historical-data-repair';
+import { classifyElectronicMusicRelevance } from '@/features/aggregation/connectors/framework/electronic-music-relevance';
 
 export interface NormalizedImportPayload {
   externalId: string;
@@ -40,6 +42,9 @@ function toRawCandidateInput(payload: FetchedImportPayload): RawCandidateInput |
       eventUrl: candidate.eventUrl,
       imageUrl: candidate.imageUrl,
       minimumAge: candidate.minimumAge,
+      priceAmount: candidate.priceAmount,
+      priceCurrency: candidate.priceCurrency,
+      priceText: candidate.priceText,
       organizerName: candidate.organizerName,
       rawSourceType: candidate.rawSourceType,
       sourceMetadata: candidate.sourceMetadata,
@@ -76,6 +81,8 @@ function toRawCandidateInput(payload: FetchedImportPayload): RawCandidateInput |
       imageUrls: raw.imageUrls,
       priceAmount: raw.priceAmount,
       priceCurrency: raw.priceCurrency,
+      priceText: raw.priceText,
+      minimumAge: typeof raw.minimumAge === 'number' ? raw.minimumAge : undefined,
       organizerName: raw.organizerName,
       importId: raw.importId,
       originalLink: raw.originalLink,
@@ -166,6 +173,17 @@ export class NormalizeStep {
         sourceId: context.source.id,
         sourceName: context.source.name,
         countryCode: defaultedCandidate.countryCode ?? context.source.countryCode,
+        sourceMetadata: stampHistoricalRepairMetadata({
+          ...(defaultedCandidate.sourceMetadata as Record<string, unknown> | undefined),
+          electronicRelevance:
+            (defaultedCandidate.sourceMetadata as Record<string, unknown> | undefined)
+              ?.electronicRelevance ??
+            classifyElectronicMusicRelevance(defaultedCandidate, {
+              // Curated official websites retain their current scope policy while
+              // still rejecting explicit non-music classifications.
+              requireElectronicSignal: context.source.type === 'website' ? false : true,
+            }).relevance,
+        }),
       };
 
       items.push({

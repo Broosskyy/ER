@@ -3,6 +3,8 @@ import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonic
 import { normalizeMatchText } from '@/features/import/matching/matching-utils';
 import type { ImportRecord } from '@/features/import/models/types';
 import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
+import { repairVersionChanged } from '@/features/aggregation/connectors/ticket-platform/ticket-io-repair';
+import { historicalRepairVersionChanged } from '@/features/import/services/historical-data-repair';
 
 export function buildSourceExternalIdentity(sourceId: string, externalId: string): string {
   return `${sourceId}::${externalId.trim()}`;
@@ -65,6 +67,28 @@ export function candidatesEquivalent(
 }
 
 export function recordCandidateEquivalent(record: ImportRecord, candidate: CanonicalImportEvent): boolean {
+  const candidateRepair = candidate.sourceMetadata?.dataQualityRepairVersion;
+  const existingRepair =
+    (record.normalizedPayload as Record<string, unknown> | undefined)?.dataQualityRepairVersion ??
+    (record.rawPayload?.sourceMetadata as Record<string, unknown> | undefined)?.dataQualityRepairVersion;
+  if (repairVersionChanged(existingRepair, candidateRepair)) {
+    return false;
+  }
+
+  const candidateHash = candidate.sourceMetadata?.normalizedHash;
+  const existingHash =
+    (record.normalizedPayload as Record<string, unknown> | undefined)?.normalizedHash ??
+    (record.rawPayload?.sourceMetadata as Record<string, unknown> | undefined)?.normalizedHash;
+  if (
+    typeof candidateHash === 'string' &&
+    candidateHash.length > 0 &&
+    typeof existingHash === 'string' &&
+    existingHash.length > 0 &&
+    candidateHash === existingHash
+  ) {
+    return true;
+  }
+
   const existing = getEffectiveCandidate(record);
   return candidatesEquivalent(
     {

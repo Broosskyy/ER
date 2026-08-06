@@ -1,5 +1,7 @@
 # TicketKings — Acquisition Contract (Read-Only Analysis)
 
+> **⚠️ DEPRECATED (2026-07-30):** Ticket Kings is no longer a strategic data source for Eternal Rave. Affenkäfig events are fully covered via the official website source. This document is retained as historical technical reference. See [TICKET_KINGS_DEPRECATION_PLAN.md](./TICKET_KINGS_DEPRECATION_PLAN.md).
+
 **Sprint:** 30 — Analysis only, no implementation  
 **Analyzed:** 2026-07-30  
 **Domain:** `ticketkings.de` (not `ticket-king.de` — latter returns 500)

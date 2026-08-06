@@ -12,6 +12,7 @@ export interface FollowRecord {
 export interface FollowStorage {
   load(): Promise<FollowRecord[]>;
   save(records: FollowRecord[]): Promise<void>;
+  countFollowers?(entityType: FollowEntityType, entityId: string): Promise<number>;
 }
 
 const STORAGE_KEY = '@eternal_rave/follows_v1';
@@ -149,6 +150,18 @@ export class FollowService {
       return [...this.records];
     }
     return this.records.filter((record) => record.entityType === entityType);
+  }
+
+  async getFollowerCount(entityType: FollowEntityType, entityId: string): Promise<number> {
+    const canonicalEntityId = await this.resolveCanonicalEntityId(entityType, entityId);
+    if (this.storage.countFollowers) {
+      return this.storage.countFollowers(entityType, canonicalEntityId);
+    }
+    await this.hydrate();
+    return this.records.filter(
+      (record) =>
+        record.entityType === entityType && record.canonicalEntityId === canonicalEntityId,
+    ).length;
   }
 
   private dedupe(records: FollowRecord[]): FollowRecord[] {

@@ -30,6 +30,7 @@ import type { ImportPublishBatchResult } from '@/features/import/services/import
 import type { MultiSourceMatchOrchestrator } from '@/features/multi-source-matching/services/multi-source-match-orchestrator';
 import type { EventLifecycleOrchestrator } from '@/features/event-lifecycle/services/event-lifecycle-orchestrator';
 import type { SourceReputationService } from '@/features/trust-quality/services/source-reputation-service';
+import type { SourceOperationalMetricsService } from '@/features/sources/services/source-operational-metrics-service';
 import {
   buildImportRunReputationSummary,
   classifyImportRunFailure,
@@ -106,6 +107,7 @@ export class ImportAggregationService {
     private readonly matchOrchestrator?: MultiSourceMatchOrchestrator,
     private readonly lifecycleOrchestrator?: EventLifecycleOrchestrator,
     private readonly reputationService?: SourceReputationService,
+    private readonly sourceOperationalMetricsService?: SourceOperationalMetricsService,
   ) {
     this.pipeline = new AggregationPipeline({
       fetchProvider: createSourceConnectorFetchProvider(sourceConnectorRegistry),
@@ -237,6 +239,19 @@ export class ImportAggregationService {
           metrics.updatedCount += 1;
         } else if (changeSet.changeType === 'created') {
           metrics.createdCount += 1;
+        } else if (changeSet.changeType === 'unchanged') {
+          metrics.unchangedCount = (metrics.unchangedCount ?? 0) + 1;
+        }
+
+        const syncMeta = envelope.canonicalEvent?.sourceMetadata?.syncRun as
+          | { pagesProcessed?: number }
+          | undefined;
+        if (syncMeta?.pagesProcessed) {
+          metrics.pagesProcessed = Math.max(metrics.pagesProcessed ?? 0, syncMeta.pagesProcessed);
+        }
+        const connectorVersion = envelope.canonicalEvent?.sourceMetadata?.connectorVersion;
+        if (typeof connectorVersion === 'string') {
+          metrics.connectorVersion = connectorVersion;
         }
 
         recordInputs.push(
@@ -292,10 +307,10 @@ export class ImportAggregationService {
 
       const currentExternalIds = result.records.map((record) => record.externalId);
       const previousExternalIds = [...existingByExternalId.keys()];
-      const missingExternalIds = importUpdateService.findMissingExternalIds(
-        previousExternalIds,
-        currentExternalIds,
-      );
+      const missingExternalIds =
+        result.records.length > 0
+          ? importUpdateService.findMissingExternalIds(previousExternalIds, currentExternalIds)
+          : [];
 
       for (const externalId of missingExternalIds) {
         const existingRecord = existingByExternalId.get(externalId);
@@ -320,6 +335,7 @@ export class ImportAggregationService {
             };
         await this.adminEventRepository.save(archivedEvent);
         metrics.warningCount += 1;
+        metrics.missingCount = (metrics.missingCount ?? 0) + 1;
         await this.loggingService.warning(
           runningJob.id,
           'AGGREGATION_EVENT_ARCHIVED',
@@ -350,6 +366,14 @@ export class ImportAggregationService {
           completedJob,
           { publishResult },
         );
+      }
+
+      if (this.sourceOperationalMetricsService) {
+        const finalized = await this.sourceOperationalMetricsService.finalizeImportJob(
+          updatedSourceRecord,
+          completedJob,
+        );
+        updatedSourceRecord = finalized.source;
       }
 
       return completedJob;
@@ -394,6 +418,14 @@ export class ImportAggregationService {
           failureCategory: classifyImportRunFailure(error),
           errorMessage: message,
         });
+      }
+
+      if (this.sourceOperationalMetricsService) {
+        const finalized = await this.sourceOperationalMetricsService.finalizeImportJob(
+          updatedSourceRecord,
+          failedJob,
+        );
+        updatedSourceRecord = finalized.source;
       }
 
       return failedJob;

@@ -1,0 +1,2800 @@
+{
+  "generatedAt": "2026-08-04T05:17:36.442Z",
+  "complete": 46,
+  "incomplete": 62,
+  "total": 108,
+  "referenceEventId": "evt-1785339420043-obhyeev",
+  "events": [
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-875f8de33d3f8ff1606d887338ae355a",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Folgt"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "staging-seed-event-weekend-trance",
+      "title": "Trance Unity",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-e3ccb287d07ab2e056da12fb2336a811",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Ellen Allien"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "klangkuenstler-berghain",
+      "title": "Klangkuenstler at Halle",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-7ed742d292cec74bdc5044a3c45e6768",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Klangkuenstler"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-tonight-house",
+      "title": "Cologne House Flow",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-cee5f75607b90b99a151d906b8df63b6",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Peachlychee"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-tomorrow-techno",
+      "title": "Monday Pressure: Charlotte de Witte",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-4b49c0449f7b9090ecdcdd40cbec216c",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Charlotte de Witte"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-weekend-industrial",
+      "title": "Industrial Ritual",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-7aa96c4b842f4539d9ad07832bfcbefe",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "I Hate Models"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-psy",
+      "title": "Psy Garden Köln",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-d654bb399ae672ebcff16c4d0d582fa7",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DVS1"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-june",
+      "title": "Summer Techno Marathon",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-a840f18a85cb6b7a0490529748d549d0",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Amelie Lens"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-berlin-house",
+      "title": "Berlin House District",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-ae55e1158ad09f65c85edd4627c6ba74",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Peachlychee"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-multi-genre",
+      "title": "Techno x Hard Techno Fusion",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-8181c51afefe8eaf7bf1cf11f215bb02",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Daxson"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-b2b",
+      "title": "DVS1 b2b Ellen Allien",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-4207e85c8638ae367704cae8ba8abfa4",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DVS1"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-no-image",
+      "title": "No Image Session",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-b16104d41b186e3ec895da500a3f8327",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Peachlychee"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-no-ticket",
+      "title": "Guestlist Only",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-17a39264a41d124bbe044c303840ac1e",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Charlotte de Witte"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-free",
+      "title": "Open Decks Köln",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-152a9fc805428303539f54d603e758ef",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Peachlychee"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-soldout",
+      "title": "Sold Out Showcase",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-ffdcbf611e452c52c069afe3222c32ef",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "I Hate Models"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "staging-seed-event-late-july",
+      "title": "Late July Warehouse",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-9742519ae70e4bc53029f14256c86738",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "I Hate Models"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506433053-ezr3ujo",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506455240-97ea7l5",
+      "title": "Stereoact & Lena Marie Engel",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-a0e97a548af9a0fc0f522880c7090d65",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "STEREOACT"
+          ]
+        },
+        {
+          "id": "ele-bf-0e2f602fe9f8857237a08c53821da07e",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "LENA MARIE ENGEL live"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506441963-td8znfi",
+      "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506453153-zaynzo6",
+      "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-5b65cb48651ff56ccf8420a5ff2c9af1",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "POLTERGST - RAW ENERGY"
+          ]
+        },
+        {
+          "id": "ele-bf-a5633d0b0e7907e042c5ef446064ccb9",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TECHNO CLUB PRESENT"
+          ]
+        },
+        {
+          "id": "ele-bf-a6b8ecdcd7d6afcb318f7f5918180500",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "POLTE RGST - RAW ENERGY"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506402039-8mam28r",
+      "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506410605-aqbkr1h",
+      "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+      "structuredEntryCount": 4,
+      "compatibilityArtistCount": 4,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-34e50c88bd0833c3bfdceec8407b1303",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DICE"
+          ]
+        },
+        {
+          "id": "ele-bf-839ed7482395069b9e0ea631b65ffb0a",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "GEØRGE RADSPORT"
+          ]
+        },
+        {
+          "id": "ele-bf-1a7535264b298f891910336bb0c6a079",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "GUSTAV ØRGANO"
+          ]
+        },
+        {
+          "id": "ele-bf-b3052ffad22131097fb66a71113e48a5",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "EDNA"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-dd31d16d67baf17cc2e80d01e01b85d0",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MARTEN LOU @ Palma de Mallorca (ES"
+          ]
+        },
+        {
+          "id": "ele-bf-1f474c40141ebb6cd1a8f7e737ef239b",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MARTEN LOUNICOLE DA SILVA​"
+          ]
+        },
+        {
+          "id": "ele-bf-627fac9af49adb459377bb50bcf25745",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MARTEN LOUNI COLE DA SILVA​"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-0df9f036cbc39e6293d6b677d4ef111e",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "NOTRE DAME @ Palma de Mallorca (ES"
+          ]
+        },
+        {
+          "id": "ele-bf-ebb1ac8096ff32544c6d3da90e579852",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "NOTRE DAMEMEERA"
+          ]
+        },
+        {
+          "id": "ele-bf-74eef3a6daed1c3d378d8cefb7fca04b",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "NOTRE DAMEM EERA"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "structuredEntryCount": 8,
+      "compatibilityArtistCount": 8,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-114fbcd7a41e2316755da641d86dac58",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ"
+          ]
+        },
+        {
+          "id": "ele-bf-9630e332a848678d283737e9124cc852",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ROSILI CIOUS KARAH"
+          ]
+        },
+        {
+          "id": "ele-bf-64c037e6bf7fa97aee44a44cf133a599",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "KUKO TASSERY TRIPTYKH"
+          ]
+        },
+        {
+          "id": "ele-bf-ff0b4ce35c306cf126f88d8fe60cd643",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "GOLPE"
+          ]
+        },
+        {
+          "id": "ele-bf-43ace3119be3bfe164a3a68d4f2e8693",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ"
+          ]
+        },
+        {
+          "id": "ele-bf-fff057847ce43fd3a20102be617b588f",
+          "order": 5,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ROSILICIOUS KARAH KUKO"
+          ]
+        },
+        {
+          "id": "ele-bf-14e17a713fbc95bdb1ba8eab15028f1a",
+          "order": 6,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TASSERY TRIPTYKH"
+          ]
+        },
+        {
+          "id": "ele-bf-5f3cc9c42246d466bad0a01854d6678f",
+          "order": 7,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "structuredEntryCount": 4,
+      "compatibilityArtistCount": 8,
+      "billingRelations": [
+        "B2B",
+        "B2B",
+        "B2B",
+        "B2B"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-evt-1785339420043-obhyeev-0",
+          "order": 0,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "BRANDON",
+            "SAM COLLINS"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-1",
+          "order": 1,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "OLIVER MAGENTA",
+            "LOST IDENTITY"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-2",
+          "order": 2,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "DAVE REPLAY",
+            "EMIN"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-3",
+          "order": 3,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "ALUKES",
+            "MAKLA"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-c732e5c2f9059c48b0a168a3638c577d",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Folgt"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "structuredEntryCount": 1,
+      "compatibilityArtistCount": 1,
+      "billingRelations": [
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-ef2f9c0f278cf28c0f62775521f1f2f4",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "structuredEntryCount": 4,
+      "compatibilityArtistCount": 4,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-c483f64ed0c65cd7e3e9ffee733258fa",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "LUCA DANTE SPADAFORA"
+          ]
+        },
+        {
+          "id": "ele-bf-e38193593dfac76db956997c475f5c0f",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "2 ENGEL"
+          ]
+        },
+        {
+          "id": "ele-bf-5e2d6be6f704301905fc7c5d1ce89152",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "CHARLIE"
+          ]
+        },
+        {
+          "id": "ele-bf-c8e4430aa6f526a4be6b2d879e1cb756",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "LUCA DANTE SPADA FORA"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506384006-ve662md",
+      "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-f1398c82999a2bfbca89972dd6e0b0ba",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ALFRED HEINRICHS"
+          ]
+        },
+        {
+          "id": "ele-bf-d00285dd539cfc3e38b2438af78dfcbd",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ALFRED HEINR ICHS"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-24f771421e2bf6db0689e22df7880943",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "KAZ JAMES @ Palma de Mallorca (ES"
+          ]
+        },
+        {
+          "id": "ele-bf-0140f50acd325e89fc37329b18d2e165",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "KAZ JAMESALICIA HAHN​"
+          ]
+        },
+        {
+          "id": "ele-bf-f8403d882e1f7deaa6b65a67bb26fc08",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "KAZ JAMESA LICIA HAHN​"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506377307-shx3g9d",
+      "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-eec5478f9f2e448206210496d778cd6a",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "PER PLEKS"
+          ]
+        },
+        {
+          "id": "ele-bf-8f7194b52a44db9dcdad065c7de0bb2c",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DAVID STRASSER"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-9063bf4e62b3603434b35e132f0d15da",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "STEREOACT"
+          ]
+        },
+        {
+          "id": "ele-bf-bbd1b895ec93cc5191a57ba0ea20bc61",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "LENA MARIE ENGEL live"
+          ]
+        },
+        {
+          "id": "ele-bf-cb876135a7b6d4100439f4d461de2279",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "STERE OACT"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-9d010b05b9af8b20f3d37723a9479a66",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TIEFUNDTON - TAKTSTÖRER"
+          ]
+        },
+        {
+          "id": "ele-bf-5abf7905b7c6dea3078147baae7a19e3",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TIEFU NDTON - TAKTSTÖRER"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506363578-4wh50a1",
+      "title": "FATALITY pres. DEXPHASE",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506444104-084yf4g",
+      "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-d6016b3b5e9d129cd7278364e3e34c3f",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "2 YEARS STUTTGART HARDCORE SOUND"
+          ]
+        },
+        {
+          "id": "ele-bf-fadcfd86208685e033fca78c0b508539",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "2 YEARS STUTT GART HARDCORE SOUND"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "structuredEntryCount": 5,
+      "compatibilityArtistCount": 5,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-46d85a2e4d40a227bbcd207c1df146c9",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ÜBERREST"
+          ]
+        },
+        {
+          "id": "ele-bf-d9219d7f174ad84d06b981fda0f5af10",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MILA BLACK"
+          ]
+        },
+        {
+          "id": "ele-bf-7a3507239b35936f138eeb4668920a19",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "RAPHAEL DINCSOY"
+          ]
+        },
+        {
+          "id": "ele-bf-5ec65904bbfa294d93512c9ee0b11f30",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "SOURCE CODE"
+          ]
+        },
+        {
+          "id": "ele-bf-9b2fee1de707bc164649683a334b45cd",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "2ND FLOOR NKR"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-55b1d7b3d346f7d289c0a2053a726eb0",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST"
+          ]
+        },
+        {
+          "id": "ele-bf-2ebc6360f59cddc374922546617b58a2",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506368264-j5xf3dn",
+      "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-376db4d8f46fc22f2081873324f1d2e2",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "SALVATORE GANACCI"
+          ]
+        },
+        {
+          "id": "ele-bf-edbbdbce13274b1f1a23560ebd06f491",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "SALVA TORE GANACCI"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "structuredEntryCount": 5,
+      "compatibilityArtistCount": 5,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-fe2561567d6b4d9fc99aa4efe4518fc3",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "IN VERRUF"
+          ]
+        },
+        {
+          "id": "ele-bf-1483e0d20271335a87d9e5d286071cac",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DASSTUDACH"
+          ]
+        },
+        {
+          "id": "ele-bf-badcee9c9884db61b665ad4c64c54d48",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MOIA"
+          ]
+        },
+        {
+          "id": "ele-bf-39080d592b797526b99167616a7d489d",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "GAAAS"
+          ]
+        },
+        {
+          "id": "ele-bf-a8b54f3a97e1dd71e3c6079db8c733c6",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DASST UDACH"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506430597-ufglza0",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "structuredEntryCount": 5,
+      "compatibilityArtistCount": 5,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-83545bdf878307045295bf5fb3671c68",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "AFEM SYKO (All Night Long"
+          ]
+        },
+        {
+          "id": "ele-bf-b0da71aafc214477f296b3e45139ceb6",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "PETERBLUE"
+          ]
+        },
+        {
+          "id": "ele-bf-7abf73410acfb4cd7148dc4c9bf11a42",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Sibel"
+          ]
+        },
+        {
+          "id": "ele-bf-6e5ca5aca6a3d3892db7df2e573a572f",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "Selina"
+          ]
+        },
+        {
+          "id": "ele-bf-995891b92f2dae9d662f9146c66c1901",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "PETER BLUE"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-867b3e97e2c530e21de0e04eb06808fe",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "NYE 2026"
+          ]
+        },
+        {
+          "id": "ele-bf-4a3e0a283fb6874b03000e987fc216ff",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "s"
+          ]
+        },
+        {
+          "id": "ele-bf-496e01885a7c0a570ddfd3ddd652cdef",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "extended sets"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-77151989b768664c50fdc3ba140693eb",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "WESTBAM"
+          ]
+        },
+        {
+          "id": "ele-bf-d9ff5683046d37952c2ad8c4951e9b97",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "K-PAUL"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-dc34eb63ae3191ad0021af62f83bd14d",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "JUNO @ Palma de Mallorca (ES"
+          ]
+        },
+        {
+          "id": "ele-bf-4cb13f93efc96bcebd74cabfd23ee96a",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "JUNONICOLE DA SILVA​"
+          ]
+        },
+        {
+          "id": "ele-bf-8922466cc94d6197b15c722cd47a300c",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "JUNON ICOLE DA SILVA​"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "structuredEntryCount": 3,
+      "compatibilityArtistCount": 3,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-6b2e569e94c3f1cec7d855d14af16dfb",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "POWERLAURA"
+          ]
+        },
+        {
+          "id": "ele-bf-01d1fe5ad642f8791a71cebe226ed845",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "JUSTIN PRICE"
+          ]
+        },
+        {
+          "id": "ele-bf-f0eb01968cfc960427052c9857425280",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "POWER LAURA"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "structuredEntryCount": 15,
+      "compatibilityArtistCount": 15,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-bae7b52e5ff1b407177664eb450b2f2a",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "IMHAPPY"
+          ]
+        },
+        {
+          "id": "ele-bf-e123fec38f8089a353961c06b05f0f8b",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "KOPF & HÖRER"
+          ]
+        },
+        {
+          "id": "ele-bf-7a042e95261b31696ddb5d30e02ece76",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "PART TIME KILLER"
+          ]
+        },
+        {
+          "id": "ele-bf-d56cbef36509c1c3ab4879d3416655e4",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TIEFUNDTON"
+          ]
+        },
+        {
+          "id": "ele-bf-ff8063f1f8d66fb521c36b04bac5ad99",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "DYSTOPIA"
+          ]
+        },
+        {
+          "id": "ele-bf-881b2952b8bf4ab5cba2656ff4f7c251",
+          "order": 5,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "FLASH FORWARD"
+          ]
+        },
+        {
+          "id": "ele-bf-5ef8278f7292445c3af98a68daace28f",
+          "order": 6,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "SUPER DARIO"
+          ]
+        },
+        {
+          "id": "ele-bf-47a1939a737986cd122ee3bf279ce949",
+          "order": 7,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TOMMY LIBERA"
+          ]
+        },
+        {
+          "id": "ele-bf-0818e0eb1ed0c1d88d3f8299d1750521",
+          "order": 8,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TURBOTIMOS"
+          ]
+        },
+        {
+          "id": "ele-bf-a794d1af8c251ba966c6f334839d9097",
+          "order": 9,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "THE EVELOPER"
+          ]
+        },
+        {
+          "id": "ele-bf-be783e38c1ec2d330130105a1ca1ac82",
+          "order": 10,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "8288"
+          ]
+        },
+        {
+          "id": "ele-bf-1d56a1520a15ae24fe3dd78c37682a9c",
+          "order": 11,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "JULEZ BRIXTON"
+          ]
+        },
+        {
+          "id": "ele-bf-2bc89e5108ef5172fdd01c34811df494",
+          "order": 12,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "SEBI LIEMEN"
+          ]
+        },
+        {
+          "id": "ele-bf-c054982f6155efcfb62d54dd7da2aabc",
+          "order": 13,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TIEFU NDTON"
+          ]
+        },
+        {
+          "id": "ele-bf-882eede0064570e9de6b22c7840fb50b",
+          "order": 14,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TURBO TIMOS"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "structuredEntryCount": 2,
+      "compatibilityArtistCount": 2,
+      "billingRelations": [
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-b3ec7caea23b9460d9886de5aa42c644",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MAXI MERAKI @ Palma de Mallorca (ES"
+          ]
+        },
+        {
+          "id": "ele-bf-8f3060855d1bdb152c3c848e18659675",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MAXI MERAKIMCFLY​"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "structuredEntryCount": 9,
+      "compatibilityArtistCount": 18,
+      "billingRelations": [
+        "F2F",
+        "F2F",
+        "F2F",
+        "F2F",
+        "F2F",
+        "B2B",
+        "B2B",
+        "B2B",
+        "B2B"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-0",
+          "order": 0,
+          "billingRelation": "F2F",
+          "stage": null,
+          "artists": [
+            "DYSTOPIA",
+            "VALKYRIE"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-1",
+          "order": 1,
+          "billingRelation": "F2F",
+          "stage": null,
+          "artists": [
+            "IAN CRANK",
+            "EASYPYSI"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-2",
+          "order": 2,
+          "billingRelation": "F2F",
+          "stage": null,
+          "artists": [
+            "KARAMUSTAN",
+            "GREEKZ"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-3",
+          "order": 3,
+          "billingRelation": "F2F",
+          "stage": null,
+          "artists": [
+            "KEVIN LA NIQUE",
+            "THE RAFNIX"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-4",
+          "order": 4,
+          "billingRelation": "F2F",
+          "stage": null,
+          "artists": [
+            "NINA BENDER",
+            "LEE-ANN"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-5",
+          "order": 5,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "FLASH",
+            "FORWARD"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-6",
+          "order": 6,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "HELLMYER",
+            "STZ"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-7",
+          "order": 7,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "MAURO",
+            "I.D.A"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-8",
+          "order": 8,
+          "billingRelation": "B2B",
+          "stage": null,
+          "artists": [
+            "PLEA5URE",
+            "PUL5E"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "structuredEntryCount": 6,
+      "compatibilityArtistCount": 6,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-bf-5173d8e9e3503bcae6adf0e4e242574e",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            ".MAINFLOOR:CLEOPARD2000"
+          ]
+        },
+        {
+          "id": "ele-bf-26b8ff42fc8cfb1ec6a9221bf1c939a8",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ALBA"
+          ]
+        },
+        {
+          "id": "ele-bf-b5c538cbe8dec688bcc3a2fcabcfaf68",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "FRANCHDAVYBOI"
+          ]
+        },
+        {
+          "id": "ele-bf-69b6d8048e828f9baa9dd7e73ac81057",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE"
+          ]
+        },
+        {
+          "id": "ele-bf-0211ea3b7c9faf7848e7493e23061843",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ALBA FRANCHDAVYBOI"
+          ]
+        },
+        {
+          "id": "ele-bf-dcaf76638d9231f5f589e4d272189a49",
+          "order": 5,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+          ]
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "structuredEntryCount": 0,
+      "compatibilityArtistCount": 0,
+      "billingRelations": [],
+      "collapsedLegacy": false,
+      "complete": false,
+      "reason": "no_lineup",
+      "importEntryCount": 0,
+      "structuredEntries": []
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "structuredEntryCount": 14,
+      "compatibilityArtistCount": 14,
+      "billingRelations": [
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO",
+        "SOLO"
+      ],
+      "collapsedLegacy": false,
+      "complete": true,
+      "reason": "structured_lineup_present",
+      "importEntryCount": 0,
+      "structuredEntries": [
+        {
+          "id": "ele-evt-1785389055557-ux20897-0",
+          "order": 0,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ASL∅"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-1",
+          "order": 1,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ANNX"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-2",
+          "order": 2,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "BLACK ZUSHI"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-3",
+          "order": 3,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "BOUNCE MC"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-4",
+          "order": 4,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "HOTBOI2300"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-5",
+          "order": 5,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "HYPNOTIZED"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-6",
+          "order": 6,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "ICJ"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-7",
+          "order": 7,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "MAURO"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-8",
+          "order": 8,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "STIMULATE"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-9",
+          "order": 9,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "THE M∅VEMENT"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-10",
+          "order": 10,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TOMMY LIBERA"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-11",
+          "order": 11,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "TURBO TIMOS"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-12",
+          "order": 12,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "JULEZ BRIXTON"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389055557-ux20897-13",
+          "order": 13,
+          "billingRelation": "SOLO",
+          "stage": null,
+          "artists": [
+            "SEBI LIEMEN"
+          ]
+        }
+      ]
+    }
+  ]
+}

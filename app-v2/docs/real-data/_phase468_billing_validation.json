@@ -1,0 +1,324 @@
+[
+  {
+    "label": "Sommerfest Elektroküche",
+    "eventId": "evt-1785389055557-ux20897",
+    "pass": true,
+    "strictPass": true,
+    "allowBlocker": false,
+    "entryCount": 14,
+    "artistCount": 14,
+    "expectedEntries": 14,
+    "expectedArtists": 14,
+    "minEntries": 14,
+    "collapsedArtists": [],
+    "billingInNames": [],
+    "nonSoloRelations": [],
+    "expectedBillingPresent": true,
+    "entries": [
+      {
+        "billing": "SOLO",
+        "artists": [
+          "ASL∅"
+        ],
+        "label": "ASL∅"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "ANNX"
+        ],
+        "label": "ANNX"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "BLACK ZUSHI"
+        ],
+        "label": "BLACK ZUSHI"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "BOUNCE MC"
+        ],
+        "label": "BOUNCE MC"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "HOTBOI2300"
+        ],
+        "label": "HOTBOI2300"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "HYPNOTIZED"
+        ],
+        "label": "HYPNOTIZED"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "ICJ"
+        ],
+        "label": "ICJ"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "MAURO"
+        ],
+        "label": "MAURO"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "STIMULATE"
+        ],
+        "label": "STIMULATE"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "THE M∅VEMENT"
+        ],
+        "label": "THE M∅VEMENT"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "TOMMY LIBERA"
+        ],
+        "label": "TOMMY LIBERA"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "TURBO TIMOS"
+        ],
+        "label": "TURBO TIMOS"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "JULEZ BRIXTON"
+        ],
+        "label": "JULEZ BRIXTON"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "SEBI LIEMEN"
+        ],
+        "label": "SEBI LIEMEN"
+      }
+    ]
+  },
+  {
+    "label": "MDMA",
+    "eventId": "evt-1785389054496-ns9b6la",
+    "pass": true,
+    "strictPass": true,
+    "allowBlocker": false,
+    "entryCount": 9,
+    "artistCount": 18,
+    "expectedEntries": 9,
+    "expectedArtists": 18,
+    "minEntries": 9,
+    "collapsedArtists": [],
+    "billingInNames": [],
+    "nonSoloRelations": [
+      "F2F",
+      "F2F",
+      "F2F",
+      "F2F",
+      "F2F",
+      "B2B",
+      "B2B",
+      "B2B",
+      "B2B"
+    ],
+    "expectedBillingPresent": true,
+    "entries": [
+      {
+        "billing": "F2F",
+        "artists": [
+          "DYSTOPIA",
+          "VALKYRIE"
+        ],
+        "label": "DYSTOPIA f2f VALKYRIE"
+      },
+      {
+        "billing": "F2F",
+        "artists": [
+          "IAN CRANK",
+          "EASYPYSI"
+        ],
+        "label": "IAN CRANK f2f EASYPYSI"
+      },
+      {
+        "billing": "F2F",
+        "artists": [
+          "KARAMUSTA",
+          "GREEKZ"
+        ],
+        "label": "KARAMUSTA f2f GREEKZ"
+      },
+      {
+        "billing": "F2F",
+        "artists": [
+          "KEVIN LA NIQUE",
+          "THE RAFNIX"
+        ],
+        "label": "KEVIN LA NIQUE f2f THE RAFNIX"
+      },
+      {
+        "billing": "F2F",
+        "artists": [
+          "NINA BENDER",
+          "LEE-ANN"
+        ],
+        "label": "NINA BENDER f2f LEE-ANN"
+      },
+      {
+        "billing": "B2B",
+        "artists": [
+          "FLASH",
+          "FORWARD"
+        ],
+        "label": "FLASH b2b FORWARD"
+      },
+      {
+        "billing": "B2B",
+        "artists": [
+          "HELLMYER",
+          "STZ"
+        ],
+        "label": "HELLMYER b2b STZ"
+      },
+      {
+        "billing": "B2B",
+        "artists": [
+          "MAURO",
+          "I.D.A"
+        ],
+        "label": "MAURO b2b I.D.A"
+      },
+      {
+        "billing": "B2B",
+        "artists": [
+          "PLEA5URE",
+          "PUL5E"
+        ],
+        "label": "PLEA5URE b2b PUL5E"
+      }
+    ]
+  },
+  {
+    "label": "LEVI",
+    "eventId": "evt-1785339383539-0lxvjlp",
+    "pass": true,
+    "strictPass": true,
+    "allowBlocker": false,
+    "entryCount": 1,
+    "artistCount": 1,
+    "expectedEntries": 1,
+    "expectedArtists": 1,
+    "minEntries": 1,
+    "collapsedArtists": [],
+    "billingInNames": [],
+    "nonSoloRelations": [],
+    "expectedBillingPresent": true,
+    "entries": [
+      {
+        "billing": "SOLO",
+        "artists": [
+          "LEVI"
+        ],
+        "label": "LEVI"
+      }
+    ]
+  },
+  {
+    "label": "Bootshaus on a Ship Vol. III",
+    "eventId": "evt-1785339420043-obhyeev",
+    "pass": true,
+    "strictPass": true,
+    "allowBlocker": true,
+    "entryCount": 5,
+    "artistCount": 5,
+    "minEntries": 5,
+    "collapsedArtists": [],
+    "billingInNames": [],
+    "nonSoloRelations": [],
+    "expectedBillingPresent": true,
+    "entries": [
+      {
+        "billing": "SOLO",
+        "artists": [
+          "BRANDON"
+        ],
+        "label": "BRANDON"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "SAM COLLINSOLIVER MAGENTA"
+        ],
+        "label": "SAM COLLINSOLIVER MAGENTA"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "LOST IDENTITYDAVE REPLAY"
+        ],
+        "label": "LOST IDENTITYDAVE REPLAY"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "EMINALUKES"
+        ],
+        "label": "EMINALUKES"
+      },
+      {
+        "billing": "SOLO",
+        "artists": [
+          "MAKLA"
+        ],
+        "label": "MAKLA"
+      }
+    ]
+  },
+  {
+    "label": "Vision Ekstase Open Air",
+    "eventId": "evt-1785506404218-hgmd9nz",
+    "pass": false,
+    "strictPass": false,
+    "allowBlocker": true,
+    "entryCount": 0,
+    "artistCount": 0,
+    "minEntries": 1,
+    "collapsedArtists": [],
+    "billingInNames": [],
+    "nonSoloRelations": [],
+    "expectedBillingPresent": true,
+    "entries": []
+  },
+  {
+    "label": "PURE TECHNO",
+    "eventId": "evt-1785506448834-4c5s8xl",
+    "pass": false,
+    "strictPass": false,
+    "allowBlocker": true,
+    "entryCount": 0,
+    "artistCount": 0,
+    "minEntries": 1,
+    "collapsedArtists": [],
+    "billingInNames": [],
+    "nonSoloRelations": [],
+    "expectedBillingPresent": true,
+    "entries": []
+  }
+]

@@ -34,7 +34,7 @@ function event(overrides: Partial<Event> = {}): Event {
     slug: 'event-upcoming',
     title: 'Upcoming Event',
     description: 'Description',
-    startDateTime: '2026-08-01T20:00:00.000Z',
+    startDateTime: '2027-08-01T20:00:00.000Z',
     timezone: 'Europe/Berlin',
     venue: 'Bootshaus',
     city: 'Köln',

@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-08-04T12:18:09.877Z",
+  "gate": "B",
+  "auditedHosts": [
+    "bootshaus-club",
+    "blacklist-festival",
+    "polyamor",
+    "bootshaus-tickets"
+  ],
+  "results": [
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+      "shopSlug": "bootshaus-club",
+      "discovery": {
+        "hitCount": 0,
+        "listRowCount": 15,
+        "detailAltchaBlocked": true
+      },
+      "failure": {
+        "failure": "EVENT_NOT_PRESENT_ON_ACCESSIBLE_LIST",
+        "codePath": "ticket-io-list-enrichment.ts:parseTicketIoListRowContexts|parseTicketIoCardRowContexts"
+      },
+      "repairable": false,
+      "proposedMutation": null,
+      "blocker": {
+        "failure": "EVENT_NOT_PRESENT_ON_ACCESSIBLE_LIST",
+        "codePath": "ticket-io-list-enrichment.ts:parseTicketIoListRowContexts|parseTicketIoCardRowContexts"
+      }
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "ticketUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+      "shopSlug": "blacklist-festival",
+      "discovery": {
+        "hitCount": 0,
+        "listRowCount": 0,
+        "detailAltchaBlocked": true
+      },
+      "failure": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      },
+      "repairable": false,
+      "proposedMutation": null,
+      "blocker": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      }
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "ticketUrl": "https://polyamor.ticket.io/PDikPg1v/",
+      "shopSlug": "polyamor",
+      "discovery": {
+        "hitCount": 0,
+        "listRowCount": 0,
+        "detailAltchaBlocked": true
+      },
+      "failure": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      },
+      "repairable": false,
+      "proposedMutation": null,
+      "blocker": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      }
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+      "shopSlug": "bootshaus-tickets",
+      "dbTicketStatus": "external_link",
+      "discovery": {
+        "hitCount": 0,
+        "listRowCount": 0,
+        "detailAltchaBlocked": true
+      },
+      "failure": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      },
+      "repairable": false,
+      "proposedMutation": null,
+      "blocker": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      }
+    }
+  ],
+  "leviRequired": {
+    "eventId": "evt-1785339383539-0lxvjlp",
+    "url": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+    "result": {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+      "shopSlug": "bootshaus-tickets",
+      "dbTicketStatus": "external_link",
+      "discovery": {
+        "hitCount": 0,
+        "listRowCount": 0,
+        "detailAltchaBlocked": true
+      },
+      "failure": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      },
+      "repairable": false,
+      "proposedMutation": null,
+      "blocker": {
+        "failure": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE",
+        "codePath": "ticket-io-field-quality.ts:isTicketIoPowChallengePage"
+      }
+    },
+    "firstFailingStage": "DETAIL_EXTERNALLY_BLOCKED_LIST_HAS_NO_PRICE"
+  }
+}

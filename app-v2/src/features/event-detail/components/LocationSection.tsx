@@ -15,9 +15,9 @@ export interface LocationSectionProps {
 export function LocationSection({ event, onOpenMaps }: LocationSectionProps) {
   return (
     <View style={styles.card}>
-      <AppText style={styles.venue}>{event.venue}</AppText>
+      <AppText style={styles.venue}>{event.venueLabel}</AppText>
       {event.address ? <AppText style={styles.address}>{event.address}</AppText> : null}
-      <AppText style={styles.city}>{event.city}</AppText>
+      <AppText style={styles.city}>{event.cityLabel}</AppText>
 
       {event.address ? (
         <Pressable

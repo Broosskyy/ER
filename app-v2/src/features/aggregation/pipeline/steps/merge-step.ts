@@ -29,6 +29,10 @@ export class MergeStep {
     const warnings: string[] = [];
     const errors: string[] = [];
     const retrievedAt = new Date().toISOString();
+    const mergeScores = {
+      sourceQualityScore: context.sourceReliability?.sourceQualityScore,
+      sourceHealthScore: context.sourceReliability?.sourceHealthScore,
+    };
 
     for (const payload of payloads) {
       if (!payload.valid) {
@@ -36,6 +40,7 @@ export class MergeStep {
           sourcePriority: context.source.priority,
           sourceTrustScore: context.source.trustScore,
           retrievedAt,
+          ...mergeScores,
         });
         items.push({
           externalId: payload.externalId,
@@ -56,6 +61,7 @@ export class MergeStep {
         sourcePriority: context.source.priority,
         sourceTrustScore: context.source.trustScore,
         retrievedAt,
+        ...mergeScores,
       });
 
       const existing = decision.mergeGroupId
@@ -66,6 +72,7 @@ export class MergeStep {
         sourcePriority: context.source.priority,
         sourceTrustScore: context.source.trustScore,
         retrievedAt,
+        ...mergeScores,
       });
 
       if (decision.shouldMerge && decision.reason === 'lower_priority_contribution') {

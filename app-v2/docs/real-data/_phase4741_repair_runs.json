@@ -1,0 +1,116 @@
+{
+  "runs": [
+    {
+      "command": "repair-bc173",
+      "generatedAt": "2026-08-03T19:41:11.294Z",
+      "applied": true,
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "slug": "BcDqml12",
+      "evidence": {
+        "surface": "list_overview_row",
+        "priceText": "ab 23,00 €",
+        "priceAmount": 23,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 23,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "before": {
+        "ticketStatus": "external_link"
+      },
+      "after": {
+        "priceText": "ab 23,00 €",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "admission-list-evidence",
+            "kind": "regular",
+            "name": "Admission",
+            "note": "surface:list_overview_row",
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 0,
+            "priceLabel": "ab 23,00 €",
+            "priceAmount": 23,
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "pass2Idempotent": false,
+      "pass2Mutations": {
+        "ticketPhases": [
+          {
+            "id": "admission-list-evidence",
+            "name": "Admission",
+            "sortOrder": 0,
+            "kind": "regular",
+            "priceAmount": 23,
+            "priceCurrency": "EUR",
+            "priceLabel": "ab 23,00 €",
+            "soldOut": false,
+            "available": true,
+            "note": "surface:list_overview_row"
+          }
+        ]
+      },
+      "forbiddenDomainsUnchanged": true,
+      "lineupUnchanged": true
+    },
+    {
+      "command": "repair-bc173",
+      "generatedAt": "2026-08-03T19:41:29.894Z",
+      "applied": true,
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "slug": "BcDqml12",
+      "evidence": {
+        "surface": "list_overview_row",
+        "priceText": "ab 23,00 €",
+        "priceAmount": 23,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 23,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "before": {
+        "priceText": "ab 23,00 €",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "admission-list-evidence",
+            "kind": "regular",
+            "name": "Admission",
+            "note": "surface:list_overview_row",
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 0,
+            "priceLabel": "ab 23,00 €",
+            "priceAmount": 23,
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "after": {
+        "priceText": "ab 23,00 €",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "admission-list-evidence",
+            "kind": "regular",
+            "name": "Admission",
+            "note": "surface:list_overview_row",
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 0,
+            "priceLabel": "ab 23,00 €",
+            "priceAmount": 23,
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "pass2Idempotent": true,
+      "pass2Mutations": null,
+      "forbiddenDomainsUnchanged": true,
+      "lineupUnchanged": true
+    }
+  ]
+}

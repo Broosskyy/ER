@@ -1,6 +1,7 @@
 import type { AggregationSource } from '@/features/aggregation/domain/aggregation-source';
 import type { AggregationPipelineStepName } from '@/features/aggregation/domain/import-pipeline-status';
 import type { ImportTriggerType } from '@/features/import/models/statuses';
+import type { SourceMergeReliabilityContext } from '@/features/sources/domain/source-reliability-merge-context';
 
 export interface PipelineRunContext {
   runId: string;
@@ -8,6 +9,7 @@ export interface PipelineRunContext {
   triggerType: ImportTriggerType;
   triggeredBy?: string;
   startedAt: string;
+  sourceReliability?: SourceMergeReliabilityContext;
 }
 
 export interface PipelineStepResult<T> {

@@ -1,0 +1,21 @@
+{
+  "version": "phase4771-v1",
+  "repairableNowRequires": [
+    "valid canonical evidence already exists",
+    "expected consumer value is known",
+    "first failure is persistence, canonical read, API, ViewModel, UI or cache",
+    "safe mutation possible without new evidence"
+  ],
+  "neverRepairableFromEmptyConsumer": [
+    "incomplete_projection on empty venue_label without canonical venue",
+    "lineup_projection_gap when garbage artists are quality-filtered",
+    "missing_ticket_badge when availability is unknown"
+  ],
+  "cohorts": {
+    "palma_mallorca": "requires_review",
+    "kitkat_external": "requires_review",
+    "ship_event": "requires_review",
+    "external_bootshaus_promoted": "blocked_by_missing_public_evidence",
+    "festival_external": "requires_review"
+  }
+}

@@ -12,12 +12,14 @@ export interface UseEntityFollowInput {
 export interface UseEntityFollowResult {
   followState: FollowState;
   isFollowing: boolean;
+  followerCount: number | null;
   toggle: () => Promise<void>;
   error: string | null;
 }
 
 export function useEntityFollow({ entityType, entityId }: UseEntityFollowInput): UseEntityFollowResult {
   const [isFollowing, setIsFollowing] = useState(false);
+  const [followerCount, setFollowerCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(Boolean(entityId));
   const [error, setError] = useState<string | null>(null);
   const togglingRef = useRef(false);
@@ -28,6 +30,7 @@ export function useEntityFollow({ entityType, entityId }: UseEntityFollowInput):
     async function loadStatus() {
       if (!entityId) {
         setIsFollowing(false);
+        setFollowerCount(null);
         setLoading(false);
         return;
       }
@@ -36,9 +39,13 @@ export function useEntityFollow({ entityType, entityId }: UseEntityFollowInput):
       setError(null);
       try {
         await followService.hydrate();
-        const following = await followService.isFollowing(entityType, entityId);
+        const [following, count] = await Promise.all([
+          followService.isFollowing(entityType, entityId),
+          followService.getFollowerCount(entityType, entityId),
+        ]);
         if (!cancelled) {
           setIsFollowing(following);
+          setFollowerCount(count);
         }
       } catch (cause) {
         if (!cancelled) {
@@ -72,9 +79,11 @@ export function useEntityFollow({ entityType, entityId }: UseEntityFollowInput):
       if (currentlyFollowing) {
         await followService.unfollow(entityType, entityId);
         setIsFollowing(false);
+        setFollowerCount((current) => (current == null ? current : Math.max(0, current - 1)));
       } else {
         await followService.follow(entityType, entityId);
         setIsFollowing(true);
+        setFollowerCount((current) => (current == null ? 1 : current + 1));
       }
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'Follow-Aktion fehlgeschlagen.');
@@ -95,6 +104,7 @@ export function useEntityFollow({ entityType, entityId }: UseEntityFollowInput):
   return {
     followState,
     isFollowing,
+    followerCount,
     toggle,
     error,
   };

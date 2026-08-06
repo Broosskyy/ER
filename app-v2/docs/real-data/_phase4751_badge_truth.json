@@ -1,0 +1,1050 @@
+{
+  "generatedAt": "2026-08-04T14:32:25.618Z",
+  "issueCount": 10,
+  "events": [
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "badge": {
+        "attributeBadges": [
+          "Festival"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "badge": {
+        "attributeBadges": [
+          "Festival"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "badge": {
+        "attributeBadges": [
+          "Live"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "badge": {
+        "ticketBadge": "sold_out",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506433053-ezr3ujo",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506441963-td8znfi",
+      "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506402039-8mam28r",
+      "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506363578-4wh50a1",
+      "title": "FATALITY pres. DEXPHASE",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506444104-084yf4g",
+      "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506430597-ufglza0",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [
+          "Live"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [
+          "Live"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [
+          "Showcase"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Multi Floor"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Multi Floor"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Multi Floor"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Multi Floor"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "badge": {
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": [
+        {
+          "domain": "badge",
+          "code": "missing_availability_evidence",
+          "message": "No explicit availability evidence — badge correctly absent",
+          "rootCauseStage": "Source",
+          "repairability": "blocked_by_missing_public_evidence"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Open Air",
+          "Outdoor"
+        ],
+        "attributeBadgeCount": 2
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Open Air",
+          "Outdoor"
+        ],
+        "attributeBadgeCount": 2
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Open Air",
+          "Outdoor"
+        ],
+        "attributeBadgeCount": 2
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Weekender"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [
+          "Boat"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506384006-ve662md",
+      "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506377307-shx3g9d",
+      "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506368264-j5xf3dn",
+      "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506455240-97ea7l5",
+      "title": "Stereoact & Lena Marie Engel",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506453153-zaynzo6",
+      "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506410605-aqbkr1h",
+      "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Open Air",
+          "Outdoor"
+        ],
+        "attributeBadgeCount": 2
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "badge": {
+        "ticketBadge": "sold_out",
+        "attributeBadges": [
+          "Boat"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Weekender"
+        ],
+        "attributeBadgeCount": 1
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "badge": {
+        "ticketBadge": "on_sale",
+        "attributeBadges": [
+          "Multi Floor",
+          "Indoor",
+          "Indoor & Outdoor"
+        ],
+        "attributeBadgeCount": 3
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "badge": {
+        "ticketBadge": "available",
+        "attributeBadges": [],
+        "attributeBadgeCount": 0
+      },
+      "issues": []
+    }
+  ]
+}

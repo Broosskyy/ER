@@ -1,7 +1,6 @@
 import { memo, useMemo, useState } from 'react';
 import {
   Image,
-  Pressable,
   StyleSheet,
   View,
   type StyleProp,
@@ -9,6 +8,7 @@ import {
 } from 'react-native';
 
 import { FavoriteButton } from '@/components/buttons/FavoriteButton';
+import { InteractiveCard } from '@/components/cards/InteractiveCard';
 import { Badge } from '@/components/feedback/Badge';
 import { AppText } from '@/components/layout/AppText';
 import { AppIcon } from '@/components/primitives/AppIcon';
@@ -77,68 +77,88 @@ export const EventDiscoveryTile = memo(function EventDiscoveryTile({
         ? discoveryTileMetrics.tallAspectRatio
         : discoveryTileMetrics.standardAspectRatio;
 
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={event.accessibilityLabel}
-      onPress={onPress}
-      style={({ pressed }) => [styles.pressable, pressed && styles.pressed, style]}
-      testID={testID ?? `discovery-tile-${event.id}`}
-    >
-      <View style={[styles.frame, { aspectRatio, backgroundColor: theme.colors.surfaceElevated }]}>
-        {event.image && !imageError ? (
-          <Image
-            source={event.image}
-            style={styles.image}
-            resizeMode="cover"
-            onError={() => setImageError(true)}
-          />
-        ) : (
-          <View style={[styles.fallback, { backgroundColor: theme.colors.surfaceSubtle }]}>
-            <AppIcon name="image-outline" size="md" colorRole="muted" />
-          </View>
-        )}
-
-        <View style={styles.scrim} pointerEvents="none" />
-
-        <View style={styles.overlayTop} pointerEvents="box-none">
-          <View style={[styles.datePill, { backgroundColor: theme.colors.overlay }]}>
-            <AppText role="badge" color={theme.colors.textOnPrimary}>
-              {event.dateLabel}
-            </AppText>
-          </View>
-          {badge ? (
-            <Badge label={badge.label} status={badge.status} style={styles.statusBadge} />
-          ) : null}
+  const frame = (
+    <View style={[styles.frame, { aspectRatio, backgroundColor: theme.colors.surfaceElevated }]}>
+      {event.image && !imageError ? (
+        <Image
+          source={event.image}
+          style={styles.image}
+          resizeMode="cover"
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <View style={[styles.fallback, { backgroundColor: theme.colors.surfaceSubtle }]}>
+          <AppIcon name="image-outline" size="md" colorRole="muted" />
         </View>
+      )}
 
-        {onFavoritePress ? (
-          <View style={styles.favoriteWrap} pointerEvents="box-none">
-            <FavoriteButton
-              active={saved}
-              onPress={onFavoritePress}
-              accessibilityLabel={saved ? 'Aus Gespeichert entfernen' : 'Event speichern'}
-            />
-          </View>
-        ) : null}
+      <View style={styles.scrim} pointerEvents="none" />
 
-        {showMeta ? (
-          <View style={styles.overlayBottom} pointerEvents="none">
-            <AppText role="cardTitle" color={theme.colors.textOnPrimary} numberOfLines={2}>
-              {event.title}
-            </AppText>
-            <AppText role="caption" color={theme.colors.textOnPrimary} numberOfLines={1}>
-              {event.venueLabel} · {event.cityLabel}
-            </AppText>
-            {event.timeLabel ? (
-              <AppText role="caption" color={theme.colors.textOnPrimary}>
-                {event.timeLabel}
-              </AppText>
-            ) : null}
-          </View>
+      <View style={styles.overlayTop} pointerEvents="none">
+        <View style={[styles.datePill, { backgroundColor: theme.colors.overlay }]}>
+          <AppText role="badge" color={theme.colors.textOnPrimary}>
+            {event.dateLabel}
+          </AppText>
+        </View>
+        {badge ? (
+          <Badge label={badge.label} status={badge.status} style={styles.statusBadge} />
         ) : null}
       </View>
-    </Pressable>
+
+      {showMeta ? (
+        <View style={styles.overlayBottom} pointerEvents="none">
+          <AppText role="cardTitle" color={theme.colors.textOnPrimary} numberOfLines={2}>
+            {event.title}
+          </AppText>
+          <AppText role="caption" color={theme.colors.textOnPrimary} numberOfLines={1}>
+            {event.venueLabel} · {event.cityLabel}
+          </AppText>
+          {event.timeLabel ? (
+            <AppText role="caption" color={theme.colors.textOnPrimary}>
+              {event.timeLabel}
+            </AppText>
+          ) : null}
+          {event.ticketLabel ? (
+            <AppText role="caption" color={theme.colors.textOnPrimary}>
+              {event.ticketLabel}
+            </AppText>
+          ) : null}
+        </View>
+      ) : null}
+    </View>
+  );
+
+  const favoriteAction = onFavoritePress ? (
+    <View style={styles.favoriteWrap} pointerEvents="box-none">
+      <FavoriteButton
+        active={saved}
+        onPress={onFavoritePress}
+        accessibilityLabel={saved ? 'Aus Gespeichert entfernen' : 'Event speichern'}
+      />
+    </View>
+  ) : null;
+
+  if (!onPress) {
+    return (
+      <View style={style} testID={testID ?? `discovery-tile-${event.id}`}>
+        {frame}
+        {favoriteAction}
+      </View>
+    );
+  }
+
+  return (
+    <InteractiveCard
+      onPress={onPress}
+      accessibilityLabel={event.accessibilityLabel}
+      actions={favoriteAction}
+      style={style}
+      pressableStyle={styles.pressable}
+      pressedStyle={styles.pressed}
+      testID={testID ?? `discovery-tile-${event.id}`}
+    >
+      {frame}
+    </InteractiveCard>
   );
 });
 

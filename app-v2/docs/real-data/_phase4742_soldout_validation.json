@@ -1,0 +1,16 @@
+{
+  "command": "repair-soldout",
+  "generatedAt": "2026-08-03T20:28:19.449Z",
+  "mutations": 0,
+  "pass2Idempotent": true,
+  "events": [
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "skipped": true
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "skipped": true
+    }
+  ]
+}

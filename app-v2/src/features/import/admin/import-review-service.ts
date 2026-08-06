@@ -31,6 +31,7 @@ import {
   canApproveRecord,
   getEffectiveCandidate,
   isReviewableStatus,
+  isEnrichmentDuplicateApproval,
   isTicketPlatformEnrichmentApproval,
   mergeReviewerEdits,
 } from '@/features/import/admin/import-utils';
@@ -176,7 +177,9 @@ export class ImportReviewService {
     }
 
     const source = this.loadSourceById ? await this.loadSourceById(record.sourceId) : undefined;
-    const allowMatchedDuplicate = isTicketPlatformEnrichmentApproval(record, source?.sourceType);
+    const allowMatchedDuplicate = source
+      ? isEnrichmentDuplicateApproval(record, source)
+      : isTicketPlatformEnrichmentApproval(record, undefined);
 
     if (!canApproveRecord(record, { allowMatchedDuplicate })) {
       if (
@@ -234,17 +237,7 @@ export class ImportReviewService {
         );
       }
 
-      const matchedArtistIds = [
-        ...new Set(
-          (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds ?? []).filter(Boolean),
-        ),
-      ];
       let savedEvent = publishResult.event;
-      const role = this.role(session);
-      if (role && matchedArtistIds.length > 0) {
-        await this.lineupService.replaceFromMatchedArtistIds(role, savedEvent.id, matchedArtistIds);
-        savedEvent = (await this.adminEventRepository.getById(savedEvent.id)) ?? savedEvent;
-      }
 
       const now = new Date().toISOString();
       const updated = await this.adminRepository.updateIfUnchanged(
@@ -275,11 +268,6 @@ export class ImportReviewService {
     }
 
     const event = buildAdminEventFromImportRecord(record);
-    const matchedArtistIds = [
-      ...new Set(
-        (record.reviewerEdits?.matchedArtistIds ?? record.matchedArtistIds ?? []).filter(Boolean),
-      ),
-    ];
     let savedEvent: AdminEventRecord;
     try {
       savedEvent = await this.adminEventRepository.save(event);
@@ -298,15 +286,6 @@ export class ImportReviewService {
           active: true,
           sourcePriority: 50,
         });
-      }
-      const role = this.role(session);
-      if (role && matchedArtistIds.length > 0) {
-        await this.lineupService.replaceFromMatchedArtistIds(
-          role,
-          savedEvent.id,
-          matchedArtistIds,
-        );
-        savedEvent = (await this.adminEventRepository.getById(savedEvent.id)) ?? savedEvent;
       }
     } catch (error: unknown) {
       throw new ImportError(

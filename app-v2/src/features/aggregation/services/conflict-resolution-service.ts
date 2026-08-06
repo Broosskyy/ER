@@ -9,6 +9,7 @@ import type {
 import type { EventQualityResolver } from '@/features/events/quality/event-quality-resolver';
 import type { PublishReadinessResolver } from '@/features/events/quality/publish-readiness-resolver';
 import type { Event } from '@/features/events/types/event';
+import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
 
 export type ConflictResolutionDecision =
   | 'source_value'
@@ -176,7 +177,7 @@ export class ConflictResolutionService {
       summary: `${request.decision} on ${conflict.field}`,
     });
 
-    await this.eventRepository.refresh();
+    await invalidateConsumerEventCaches(this.eventRepository);
     return this.buildResult(resolvedConflict, provenance, savedRecord);
   }
 
@@ -199,7 +200,7 @@ export class ConflictResolutionService {
       resolution: undefined,
       resolvedAt: undefined,
     };
-    await this.eventRepository.refresh();
+    await invalidateConsumerEventCaches(this.eventRepository);
     return this.buildResult(reopened);
   }
 

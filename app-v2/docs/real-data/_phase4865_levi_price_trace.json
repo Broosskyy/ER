@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-08-06T01:06:48.523Z",
+  "phase": "4.8.6.5",
+  "productionMutationsInThisRun": 0,
+  "eventId": "evt-1785339383539-0lxvjlp",
+  "title": "NIGHTSWITHUS presents LEVI",
+  "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+  "compositeIdentity": "ticket_io:bootshaus-tickets.ticket.io:YvJnLSXd",
+  "listAccessible": false,
+  "detailAccessible": false,
+  "detailAltchaBlocked": true,
+  "discovery": {
+    "shopSlug": "bootshaus-tickets",
+    "listUrl": "https://bootshaus-tickets.ticket.io/",
+    "eventSlug": "YvJnLSXd",
+    "eventUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+    "listAccessible": false,
+    "detailAccessible": false,
+    "detailAltchaBlocked": true,
+    "listRowCount": 0,
+    "hits": [],
+    "embeddedJsonScriptCount": 0,
+    "listJsonLdOfferCount": 0,
+    "registeredStrategy": {
+      "shopSlug": "bootshaus-tickets",
+      "strategy": "list_card_html",
+      "listPageAccessible": true,
+      "detailPageAccessible": false,
+      "notes": "Checkout-style ticket-option-choice layout; legacy event-row parser misses prices"
+    }
+  },
+  "publicTruth": null,
+  "earliestMissingCause": "PUBLIC_PRICE_NOT_AVAILABLE",
+  "canonical": {
+    "ticketStatus": "external_link",
+    "ticketPhasesCount": 0,
+    "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/"
+  },
+  "classification": "PUBLIC_PRICE_NOT_AVAILABLE"
+}

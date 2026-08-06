@@ -6,7 +6,6 @@ export function collectDiscoveryCorpusFromSources(sources: SourceRecord[]): stri
     const parts = [
       source.baseUrl,
       source.website,
-      source.sourceUrl,
       source.description,
       source.displayName,
       JSON.stringify(source.metadata ?? {}),

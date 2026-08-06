@@ -1,0 +1,501 @@
+{
+  "generatedAt": "2026-08-05T10:05:18.435Z",
+  "productionMutationsInThisRun": 0,
+  "count": 54,
+  "summary": {
+    "REAL_PRODUCTION_FIX": 0,
+    "FORMATTING_ONLY": 45,
+    "PUBLIC_SOURCE_HAS_NO_FIELD": 0,
+    "DIFFERENT_EVENT_CONTEXT": 0,
+    "IMPORTER_UNSUPPORTED": 0,
+    "REVIEW_REQUIRED": 9
+  },
+  "items": [
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Bootshaus on a Ship Vol. III",
+      "proposedValue": "Bootshaus on a Ship Vol. III | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session. LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+      "proposedValue": "Bootshaus returns to the water. On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session. LINEUP: BRANDON b2b SAM COLLINS OLIVER MAGENTA b2b LOST IDENTITY DAVE REPLAY b2b EMIN ALUKES b2b MAKLA ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "LEVI",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "NIGHTSWITHUS presents LEVI",
+      "proposedValue": "NIGHTSWITHUS presents LEVI | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "LEVI",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨ Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00 NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne. Don't miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+      "proposedValue": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨ 📍 Place: Bootshaus Cologne 📅 Date: Friday, August 7, 2026 ⏱️ Start: 22:00 NIGHTSWITHUS returns with another unforgettable night with LEVI! This time bringing him to the legendary Bootshaus Cologne. Don't miss your chance to be part of one of the most anticipated events of the summer. Secure your tickets now! See you on August 7, 2026, at Bootshaus Cologne. NIGHTSWITHUS 🌙"
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland",
+      "field": "dateTime",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Date/time instant may differ; requires timezone and public page confirmation.",
+      "currentCanonical": "2026-09-04T20:00:00+00:00",
+      "proposedValue": "2026-09-05T00:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "BC173 Airport Session pres. by Bootshaus",
+      "proposedValue": "BC173 Airport Session pres. by Bootshaus | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+      "proposedValue": "Lineup and event details will be announced soon. Public Transport Info: Public transport tickets included for an easy ride in and out. The travel pass is valid across the entire VRS network for both inbound and return journeys. Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket. Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure. ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years"
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche",
+      "field": "dateTime",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Same event instant; only ISO timezone/format representation differs.",
+      "currentCanonical": "2026-08-08T15:00:00+00:00",
+      "proposedValue": "2026-08-08T17:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "Affenkäfig",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "proposedValue": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "Affenkäfig",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒 Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln. Das Bootshaus zählt zu den besten Clubs der Welt – Perfektion in Sound, Licht und Atmosphäre ohne Kompromisse. Der perfekte Anlass für eine wilde Nacht. 🎟️ Early Bird Tickets sind jetzt verfügbar – nur für kurze Zeit. Das Line Up hauen wir euch bald um die Ohren. Sichert euch so lange die vergünstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒🔥 Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln. Das Bootshaus zählt zu den besten Clubs der Welt – Perfektion in Sound, Licht und Atmosphäre ohne Kompromisse. Der perfekte Anlass für eine wilde Nacht. 🎟️ Early Bird Tickets sind jetzt verfügbar – nur für kurze Zeit. Das Line Up hauen wir euch bald um die Ohren. Sichert euch so lange die vergünstigten Tickets im Shop. ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "field": "dateTime",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Same event instant; only ISO timezone/format representation differs.",
+      "currentCanonical": "2026-10-01T22:00:00+00:00",
+      "proposedValue": "2026-10-02T00:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "field": "city",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Venue/location change from JSON-LD needs human verification against multi-source roles.",
+      "currentCanonical": "Köln",
+      "proposedValue": "Saarbrücken"
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "SA * 22.08.2026 | KitKatClub",
+      "proposedValue": "SA * 22.08.2026 | KitKatClub | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "field": "description",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Legacy HTML entity encoding in production; unified/public text is a decode/normalization candidate, not a proven semantic correction.",
+      "currentCanonical": "Einlass ab 22:00 UhrVorverkauf 1 * Early Bird: 30 Euro Vorverkauf 2: 35 Euro Abendkasse: 40 Euro Infos: https://www.vault-events.de/termine/kitkatclub-bootshaus/Veranstalterkontakt: kitkatclub@vault-events.deSTRICT SEXUAL FANTASY DRESSCODE | Einlass vorbehalten!BUNT - SCHRILL - EXTRAVAGANT - VERRÜCKT - FANTASIEVOLLE ACCESSOIRES ausdrücklich herzlich willkommen! Darüber hinaus passend: Fetisch - Lack - Leder - Latex - Gummi - Plastik - Metall - Nylon - Gothic - Kostüm - Uniform - Drag - Burlesque - Straps - Heels - Strass - Barock - Rock - Kilt - Punk - Bodypainting - extravagant elegante Abendgarderobe - fantasievolle Accessoires - Style - Kink - Frech - Pornös - Glamour – Make-Up - Glitter - Glitzer - Bunt - Schrill - Extravagant - Verrückt | BEEINDRUCKT MIT KREATIVITÄT + ORIGINALITÄT! ABSOLUTE NO GOs: normale Straßenkleidung – Straßenanzüge – Jeans – Sportkleidung – normale (schwarze) Stoffhosen – Camouflage – Baumwollunterwäsche – nicht zum hedonistischen Gesamteindruck positiv beitragende ausgelatschte alte Sneaker/Turnschuhe/Chucks.Eine wichtige GRUNDREGEL als Orientierungshilfe: sofern Du mit Deinem Outfit durch die Innenstadt schlendern kannst, ohne dass sich jemand nach Dir umdreht, liegst Du mit an Sicherheit grenzender Wahrscheinlichkeit falsch! Und wer sich hinsichtlich der \"passenden Schale\" unsicher ist, empfehlen wir zur Überwindung unserer strikten Einlasskontrolle das Mitführen einer optionalen \"zweiten Hülle\".MÄNNNLICHE GÄSTE verbessern Ihre Chance auf Einlass erheblich per gerne bunt hedonistischer Kreativität statt Einbringung der faden Standardkombination \"schwarze Hose/Short + schwarzes Top bzw. schwarzer Harness\".Detailinfos + Shoppingempfehlungen: www.vault-events.de/faq/sexual-fantasy-dresscode/Verkleide Dich nicht, sondern erfinde Dich neu!****************************************** Umkleidebereich + anmietbare Schließfächer + bewachte Garderobe | ausschließlich BarzahlungGarderobe: 3 Euro (Jacken/Mäntel), 5 Euro (Gepäckstücke) // Schließfächer Medium (40 cm x 29 cm x 22 cm): 7 Euro // Schließfächer Large (40 cm x 29 cm x 32 cm): 10 Euro******************************************STRIKTES HANDYVERBOT im gesamten Veranstaltungsbereich. Wer versucht, ebensolche einzuschmuggeln, darf 100%ig sicher DRAUSSEN weiterfeiern&hellip;.!******************************************PLAY AREA SPIELREGELN: Es gelten die vor allen Spielbereichen sowie in der Umkleide/Garderobe auf großflächigen Bannern ausgehängten &bdquo;PLAY AREA SPIELREGELN&ldquo;. Übergriffige Gäste werden aus dem Verkehr gezogen + erhalten Hausverbot. Darüber hinaus der wichtige Hinweis, dass Euch während der gesamten Veranstaltung vor allen Spielbereichen und im Garderobenzelt unsere 15köpfige Kitty-Crew als hilfsbereite Ansprechpartner*innen für Anliegen aller Art zur Verfügung stehen * deutlich erkennbar am &bdquo;KKC@Bootshaus Crew&ldquo; Badge + Neon-Leuchtarmband.****************************************** DJ LineUp:Clark Kent Lucien Foort Don Basti AL:PAY STYLE: mainly energetic Techno + uplifting TechHouse ****************************************** ELEMENTS:* LOONYLAND &bdquo;Crazy Rabbit Hole&ldquo; Deco ** &ldquo;KitKatClub&rdquo; Artwork by Victor Calma ** Surreal &ldquo;Ziegfeld Follies&rdquo; Projections ** Currywurst + Pommes + Pizza Deluxe** Complimentary Massagen ** S/M-Fetisch-Spielmöbel ** Frische Früchte Service ** Blacklite Bodypainting ** Kinky Candy Crew ** VAULT Polaroids ** Raucherbereich ** Love Lounges * // Kitty Sommernachtstraum //Sobald dieser Sommertag genussvoll in die Dunkelheit hineingleitet, öffnet sich das BOOTSHAUS für eine der spektakulären Eventnächte des Jahres * dem Kitty Sommernachtstraum. Landolf, Alexa, Basti und die gesamte Kitty-Crew laden zu einer rauschhaften Reise voller Fantasie, Sinnlichkeit und schillernder Eskapaden, gemäß dem Motto: &bdquo;Verkleide Dich nicht, sondern erfinde Dich neu.&ldquo; Erwartet wird eine Nacht voller gewagter Inspirationen, surrealer Kreaturen und extravagant inszenierter Charaktere. Zwischen psychedelischen Fantasiewelten, leuchtenden Farben und elektrisierender Atmosphäre verwandelt sich das BOOTSHAUS in ein hedonistisches Wunderland der besonderen Art. Der Zugang zu dieser besonderen Nacht basiert auf drei einfachen Prinzipien: Offenheit, Toleranz und Lust auf kreative Selbstinszenierung. Willkommen ist prinzipiell ALLES, das die Elemente &bdquo;fantasievoll&ldquo; und &bdquo;sinnlich&ldquo; unverkennbar berücksichtigt – von glamourös bis avantgardistisch, von verspielt bis exzentrisch. Die Nacht ist geprägt durch die ikonische Schwarzlichtoptik des Berliner Künstlers Vigor Calma, einer spektakulären LOONYLAND &bdquo;Crazy Rabbit Hole&ldquo; D&eacute;cor, Surreal &ldquo;Ziegfeld Follies&rdquo; Projektionen, Schwarzlicht-Bodypainting, Massageservice, Spielinstallationen für Erwachsene, Kinky Candy Crew, Frische-Früchte-Service, den heiß begehrten VAULT Polaroids und vielen weiteren liebevoll inszenierten Details Das Outdoor-Atrium mit Barservice, Raucher-Lounge, Currywurst + Pizza Deluxe sowie surrealen Walking Acts lädt ein zum Verweilen unter freiem Himmel.Ein herausragendes Element des KitKatClub @ Bootshaus ist der atemberaubend energetische Dancefloor – ekstatisch hypnotisch, mitreißend. Den unverwechselbaren Kitty-Groove kredenzen eine Zusammenstellung internationaler Szenegrößen und regional gefeierter Klangkünstler*innen. Am 22. August zuallererst die niederländische DJ-Größe Lucien Foort, u.a. prägender Resident der legendären Wasteland Amsterdam. Neben ihm an den Decks Don Basti, aufstrebender Shootingstar aus dem Berliner KitKatClub. Und erstmals im offiziellen Kitty-Cologne-Line-Up unser Geheimtipp DJ AL:PAY aus dem BOOTSHAUS. Komplettiert wird die Nacht durch DJ Clark Kent, KitKatClub-Legende und Meister hypnotischer, sinnlicher Beats, der europaweit praktisch jeden hedonistisch orientierten Dancefloor in Ekstase versetzt hat. Somit ist gewährleistet, dass sich der Dancefloor in ein unentwirrbar verschlungenes Energiebündel unter Hochspannung transformiert!Das BOOTSHAUS selbst zählt seit Jahren zu den renommiertesten Clubs der internationalen elektronischen Musikszene. Vom Fachmagazin &bdquo;DJ Mag&ldquo; regelmäßig als bester Technoclub Deutschlands ausgezeichnet, zieht die Location Feiernde aus aller Welt an. Wo einst Schiffsschrauben gefertigt wurden, brilliert heute ein unverwechselbar einzigartiger Klang- und Erlebniskosmos aus Sound, Licht und Energie. Denn hier geben sich von Wochenende zu Wochenende die internationalen DJ-Superstars die Klinke in die Hand.* * * * * * * * * * * * *KitKatClub Cologne ist seit 2003 eine authentische Adaption des 1994 gegründeten und in Berlin ansässigen KitKatClub. Unangefochten einer der fantasievollsten Undergroundclubs weltweit, definiert sich der KitKatClub als avantgardistischer Nachtclub, der die Traditionen der &bdquo;verruchten&ldquo; Berliner Clubs der &bdquo;Goldenen Zwanziger&ldquo; aufgreift. Somit fusioniert der KitKatClub multimediale und künstlerische Elemente zum innovativen Konzept im Sinne des avantgardistischen Zeitgeistes. LIVE THE HEDONISTIC SPIRIT!▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "Einlass ab 22:00 Uhr Vorverkauf 1 * Early Bird: 30 Euro Vorverkauf 2: 35 Euro Abendkasse: 40 Euro Infos: https://www.vault-events.de/termine/kitkatclub-bootshaus/ Veranstalterkontakt: [email protected] STRICT SEXUAL FANTASY DRESSCODE | Einlass vorbehalten! BUNT - SCHRILL - EXTRAVAGANT - VERRÜCKT - FANTASIEVOLLE ACCESSOIRES ausdrücklich herzlich willkommen! Darüber hinaus passend: Fetisch - Lack - Leder - Latex - Gummi - Plastik - Metall - Nylon - Gothic - Kostüm - Uniform - Drag - Burlesque - Straps - Heels - Strass - Barock - Rock - Kilt - Punk - Bodypainting - extravagant elegante Abendgarderobe - fantasievolle Accessoires - Style - Kink - Frech - Pornös - Glamour – Make-Up - Glitter - Glitzer - Bunt - Schrill - Extravagant - Verrückt | BEEINDRUCKT MIT KREATIVITÄT + ORIGINALITÄT! ABSOLUTE NO GOs: normale Straßenkleidung – Straßenanzüge – Jeans – Sportkleidung – normale (schwarze) Stoffhosen – Camouflage – Baumwollunterwäsche – nicht zum hedonistischen Gesamteindruck positiv beitragende ausgelatschte alte Sneaker/Turnschuhe/Chucks. Eine wichtige GRUNDREGEL als Orientierungshilfe: sofern Du mit Deinem Outfit durch die Innenstadt schlendern kannst, ohne dass sich jemand nach Dir umdreht, liegst Du mit an Sicherheit grenzender Wahrscheinlichkeit falsch! Und wer sich hinsichtlich der \"passenden Schale\" unsicher ist, empfehlen wir zur Überwindung unserer strikten Einlasskontrolle das Mitführen einer optionalen \"zweiten Hülle\". MÄNNNLICHE GÄSTE verbessern Ihre Chance auf Einlass erheblich per gerne bunt hedonistischer Kreativität statt Einbringung der faden Standardkombination \"schwarze Hose/Short + schwarzes Top bzw. schwarzer Harness\". Detailinfos + Shoppingempfehlungen: www.vault-events.de/faq/sexual-fantasy-dresscode/ Verkleide Dich nicht, sondern erfinde Dich neu! ****************************************** Umkleidebereich + anmietbare Schließfächer + bewachte Garderobe | ausschließlich Barzahlung Garderobe: 3 Euro (Jacken/Mäntel), 5 Euro (Gepäckstücke) // Schließfächer Medium (40 cm x 29 cm x 22 cm): 7 Euro // Schließfächer Large (40 cm x 29 cm x 32 cm): 10 Euro ****************************************** STRIKTES HANDYVERBOT im gesamten Veranstaltungsbereich. Wer versucht, ebensolche einzuschmuggeln, darf 100%ig sicher DRAUSSEN weiterfeiern….! ****************************************** PLAY AREA SPIELREGELN: Es gelten die vor allen Spielbereichen sowie in der Umkleide/Garderobe auf großflächigen Bannern ausgehängten „PLAY AREA SPIELREGELN“. Übergriffige Gäste werden aus dem Verkehr gezogen + erhalten Hausverbot. Darüber hinaus der wichtige Hinweis, dass Euch während der gesamten Veranstaltung vor allen Spielbereichen und im Garderobenzelt unsere 15köpfige Kitty-Crew als hilfsbereite Ansprechpartner*innen für Anliegen aller Art zur Verfügung stehen * deutlich erkennbar am „KKC@Bootshaus Crew“ Badge + Neon-Leuchtarmband. ****************************************** DJ LineUp: Clark Kent Lucien Foort Don Basti AL:PAY STYLE: mainly energetic Techno + uplifting TechHouse ****************************************** ELEMENTS: * LOONYLAND „Crazy Rabbit Hole“ Deco * * “KitKatClub” Artwork by Victor Calma * * Surreal “Ziegfeld Follies” Projections * * Currywurst + Pommes + Pizza Deluxe* * Complimentary Massagen * * S/M-Fetisch-Spielmöbel * * Frische Früchte Service * * Blacklite Bodypainting * * Kinky Candy Crew * * VAULT Polaroids * * Raucherbereich * * Love Lounges * // Kitty Sommernachtstraum // Sobald dieser Sommertag genussvoll in die Dunkelheit hineingleitet, öffnet sich das BOOTSHAUS für eine der spektakulären Eventnächte des Jahres * dem Kitty Sommernachtstraum . Landolf, Alexa, Basti und die gesamte Kitty-Crew laden zu einer rauschhaften Reise voller Fantasie, Sinnlichkeit und schillernder Eskapaden, gemäß dem Motto: „Verkleide Dich nicht, sondern erfinde Dich neu.“ Erwartet wird eine Nacht voller gewagter Inspirationen, surrealer Kreaturen und extravagant inszenierter Charaktere. Zwischen psychedelischen Fantasiewelten, leuchtenden Farben und elektrisierender Atmosphäre verwandelt sich das BOOTSHAUS in ein hedonistisches Wunderland der besonderen Art. Der Zugang zu dieser besonderen Nacht basiert auf drei einfachen Prinzipien: Offenheit, Toleranz und Lust auf kreative Selbstinszenierung. Willkommen ist prinzipiell ALLES, das die Elemente „fantasievoll“ und „sinnlich“ unverkennbar berücksichtigt – von glamourös bis avantgardistisch, von verspielt bis exzentrisch. Die Nacht ist geprägt durch die ikonische Schwarzlichtoptik des Berliner Künstlers Vigor Calma, einer spektakulären LOONYLAND „Crazy Rabbit Hole“ D&eacute;cor, Surreal “Ziegfeld Follies” Projektionen, Schwarzlicht-Bodypainting, Massageservice, Spielinstallationen für Erwachsene, Kinky Candy Crew, Frische-Früchte-Service, den heiß begehrten VAULT Polaroids und vielen weiteren liebevoll inszenierten Details Das Outdoor-Atrium mit Barservice, Raucher-Lounge, Currywurst + Pizza Deluxe sowie surrealen Walking Acts lädt ein zum Verweilen unter freiem Himmel. Ein herausragendes Element des KitKatClub @ Bootshaus ist der atemberaubend energetische Dancefloor – ekstatisch hypnotisch, mitreißend. Den unverwechselbaren Kitty-Groove kredenzen eine Zusammenstellung internationaler Szenegrößen und regional gefeierter Klangkünstler*innen. Am 22. August zuallererst die niederländische DJ-Größe Lucien Foort, u.a. prägender Resident der legendären Wasteland Amsterdam. Neben ihm an den Decks Don Basti, aufstrebender Shootingstar aus dem Berliner KitKatClub. Und erstmals im offiziellen Kitty-Cologne-Line-Up unser Geheimtipp DJ AL:PAY aus dem BOOTSHAUS. Komplettiert wird die Nacht durch DJ Clark Kent, KitKatClub-Legende und Meister hypnotischer, sinnlicher Beats, der europaweit praktisch jeden hedonistisch orientierten Dancefloor in Ekstase versetzt hat. Somit ist gewährleistet, dass sich der Dancefloor in ein unentwirrbar verschlungenes Energiebündel unter Hochspannung transformiert! Das BOOTSHAUS selbst zählt seit Jahren zu den renommiertesten Clubs der internationalen elektronischen Musikszene. Vom Fachmagazin „DJ Mag“ regelmäßig als bester Technoclub Deutschlands ausgezeichnet, zieht die Location Feiernde aus aller Welt an. Wo einst Schiffsschrauben gefertigt wurden, brilliert heute ein unverwechselbar einzigartiger Klang- und Erlebniskosmos aus Sound, Licht und Energie. Denn hier geben sich von Wochenende zu Wochenende die internationalen DJ-Superstars die Klinke in die Hand. * * * * * * * * * * * * * KitKatClub Cologne ist seit 2003 eine authentische Adaption des 1994 gegründeten und in Berlin ansässigen KitKatClub. Unangefochten einer der fantasievollsten Undergroundclubs weltweit, definiert sich der KitKatClub als avantgardistischer Nachtclub, der die Traditionen der „verruchten“ Berliner Clubs der „Goldenen Zwanziger“ aufgreift. Somit fusioniert der KitKatClub multimediale und künstlerische Elemente zum innovativen Konzept im Sinne des avantgardistischen Zeitgeistes. LIVE THE HEDONISTIC SPIRIT! ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "CHROME COLOGNE",
+      "proposedValue": "CHROME COLOGNE | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Let's get dirty again. 😈Chrome Cologne is a place for music, creativity, and freedom. At its core is an immersive hard techno experience where people come together to dance, express themselves, and enjoy the moment.As a sex-positive event, Chrome Cologne also offers an optional playroom. Participation is entirely voluntary. No one is expected or pressured to take part. The dancefloor remains the heart of the event.Awareness Comes FirstCreating a respectful and as safe as possible environment for all guests is our highest priority.Our Awareness Team is present throughout the entire event and can be easily identified by their printed Awareness shirts and blue LED lights. In addition, there is an Awareness Point located at the entrance of the playroom, where a team member will always be available to assist you.If you feel uncomfortable, experience harassment, or need help for any reason, please speak to us at any time. If you notice someone who may need support, we appreciate you informing our team as well.In addition to the Awareness Team, you can also approach the bar staff, cloakroom staff, or security personnel.Playroom RulesThe playroom is a protected space for consensual encounters.The following rules apply without exception:Consent is key.Only a clear \"yes\" means yes.Always ask before observing, touching, or joining others.Respect personal boundaries without discussion.Treat all guests with respect and discretion.No drinks are allowed inside the playroom.Violations of these rules will be addressed consistently by our team.DresscodeChrome Cologne is built on individuality and artistic expression. The dress code is an integral part of the concept and will be checked at the entrance.Examples of welcome attire include:Fetish wearLatexLeatherRubberMetal elementsMasksKinky fashionCreative and unconventional looksBold and stylish outfitsThis list serves as guidance and is not exhaustive. What matters is not a single item of clothing, but the overall impression of your outfit and a visible engagement with the event's concept.The following are not permitted:Everyday clothingRegular jeansCargo pantsTank topsTracksuitsBasic rave outfits without creative expressionCotton underwearSimple skirts or basic fashion made from everyday standard materials without a creative connection to the conceptThe dress code does not mean that you must show skin or dress revealingly. Creativity, personality, and a willingness to be part of the overall concept are what matter most.Our experienced entrance and sorting team will evaluate each outfit individually within the overall context of the event. The decision of the staff is final and binding.Guests who do not meet the dress code requirements will not be admitted to the event.Changing facilities and a cloakroom are available on site. If you are unsure about your outfit, feel free to bring an alternative. You may also contact us up to 24 hours before the event at outfit@chromecologne.com.Phone-Free EventA strict no-phone policy applies throughout the entire event.Smartphones must be checked in at the cloakroom unless there is a medical necessity requiring access to the device. In such cases, stickers will be provided to cover the phone's cameras.Guests who violate the phone policy will be required to leave the event.Together We Create the SpaceChrome Cologne thrives on mutual respect, openness, and mindfulness. Look out for one another, support each other, and help create a space where everyone feels welcome, respected, and comfortable.LINEUP: OGUZ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "Let's get dirty again. 😈 Chrome Cologne is a place for music, creativity, and freedom. At its core is an immersive hard techno experience where people come together to dance, express themselves, and enjoy the moment. As a sex-positive event, Chrome Cologne also offers an optional playroom. Participation is entirely voluntary. No one is expected or pressured to take part. The dancefloor remains the heart of the event. Awareness Comes First Creating a respectful and as safe as possible environment for all guests is our highest priority. Our Awareness Team is present throughout the entire event and can be easily identified by their printed Awareness shirts and blue LED lights. In addition, there is an Awareness Point located at the entrance of the playroom, where a team member will always be available to assist you. If you feel uncomfortable, experience harassment, or need help for any reason, please speak to us at any time. If you notice someone who may need support, we appreciate you informing our team as well. In addition to the Awareness Team, you can also approach the bar staff, cloakroom staff, or security personnel. Playroom Rules The playroom is a protected space for consensual encounters. The following rules apply without exception: Consent is key. Only a clear \"yes\" means yes. Always ask before observing, touching, or joining others. Respect personal boundaries without discussion. Treat all guests with respect and discretion. No drinks are allowed inside the playroom. Violations of these rules will be addressed consistently by our team. Dresscode Chrome Cologne is built on individuality and artistic expression. The dress code is an integral part of the concept and will be checked at the entrance. Examples of welcome attire include: Fetish wear Latex Leather Rubber Metal elements Masks Kinky fashion Creative and unconventional looks Bold and stylish outfits This list serves as guidance and is not exhaustive. What matters is not a single item of clothing, but the overall impression of your outfit and a visible engagement with the event's concept. The following are not permitted: Everyday clothing Regular jeans Cargo pants Tank tops Tracksuits Basic rave outfits without creative expression Cotton underwear Simple skirts or basic fashion made from everyday standard materials without a creative connection to the concept The dress code does not mean that you must show skin or dress revealingly. Creativity, personality, and a willingness to be part of the overall concept are what matter most. Our experienced entrance and sorting team will evaluate each outfit individually within the overall context of the event. The decision of the staff is final and binding. Guests who do not meet the dress code requirements will not be admitted to the event. Changing facilities and a cloakroom are available on site. If you are unsure about your outfit, feel free to bring an alternative. You may also contact us up to 24 hours before the event at [email protected] . Phone-Free Event A strict no-phone policy applies throughout the entire event. Smartphones must be checked in at the cloakroom unless there is a medical necessity requiring access to the device. In such cases, stickers will be provided to cover the phone's cameras. Guests who violate the phone policy will be required to leave the event. Together We Create the Space Chrome Cologne thrives on mutual respect, openness, and mindfulness. Look out for one another, support each other, and help create a space where everyone feels welcome, respected, and comfortable. LINEUP: OGUZ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Marten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions of streams and backing from Drake's OVO and Atlantic Records, brings emotional, melodic Afro House shaped by his German roots and Parisian flair — already played by Keinemusik, Adriatique, BLOND:ISH and CamelPhat. Opening the night, Nicole Da Silva returns to AM&Oslash;K with her signature blend of Afro House and organic percussion — Today Is Life, and tonight proves it.23:45 - TILL LATE​Line-Up:MARTEN LOUNICOLE DA SILVA​",
+      "proposedValue": "The event takes place at AMØK CLUB Palma de Mallorca , not at Bootshaus! Marten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions of streams and backing from Drake's OVO and Atlantic Records, brings emotional, melodic Afro House shaped by his German roots and Parisian flair — already played by Keinemusik, Adriatique, BLOND:ISH and CamelPhat. Opening the night, Nicole Da Silva returns to AMØK with her signature blend of Afro House and organic percussion — Today Is Life, and tonight proves it. 23:45 - TILL LATE ​ Line-Up: MARTEN LOU NICOLE DA SILVA ​"
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Notre Dame, the Parisian producer behind a cinematic melodic house sound and an entire visual universe, brings his multimedia project PARANORMAL to AM&Oslash;K - fresh off collaborating with Bob Moses on \"On My Mind\" and delivering his own BBC Essential Mix. A true visionary. Opening the night is Meera, one of the most exciting new faces in Afro House, blending world influences with a dark, personal edge - her debut EP impressed Black Coffee and &ME, and her Tripolism collab earned a Pete Tong Essential New Tune.23:45 - TILL LATELine-Up:NOTRE DAMEMEERA",
+      "proposedValue": "The event takes place at AMØK CLUB Palma de Mallorca , not at Bootshaus! Notre Dame, the Parisian producer behind a cinematic melodic house sound and an entire visual universe, brings his multimedia project PARANORMAL to AMØK - fresh off collaborating with Bob Moses on \"On My Mind\" and delivering his own BBC Essential Mix. A true visionary. Opening the night is Meera, one of the most exciting new faces in Afro House, blending world influences with a dark, personal edge - her debut EP impressed Black Coffee and &ME, and her Tripolism collab earned a Pete Tong Essential New Tune. 23:45 - TILL LATE Line-Up: NOTRE DAME MEERA"
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort.Mainfloor:RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+      "proposedValue": "The road to Madness starts here. Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln. Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort. Mainfloor: RAN-D DEVIN WILD AVERSION KILI b2b COMPLEX ZELECTER RESTRICTLESS"
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "field": "dateTime",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Date/time instant may differ; requires timezone and public page confirmation.",
+      "currentCanonical": "2026-10-16T20:00:00+00:00",
+      "proposedValue": "2026-10-17T00:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "field": "city",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Venue/location change from JSON-LD needs human verification against multi-source roles.",
+      "currentCanonical": "Köln",
+      "proposedValue": "Hagen"
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Let&rsquo;s go Loony... We&rsquo;re back on the MAINFLOOR.On August 21st, LOONYLAND returns to Bootshaus with LUCA DANTE SPADAFORA, 2 ENGEL & CHARLIE and more.MAINFLOOR:LUCA DANTE SPADAFORA 2 ENGEL & CHARLIEOLIVER MAGENTADJ OLDEJEY AUX PLATINES▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "Let’s go Loony... We’re back on the MAINFLOOR. On August 21st, LOONYLAND returns to Bootshaus with LUCA DANTE SPADAFORA, 2 ENGEL & CHARLIE and more. MAINFLOOR: LUCA DANTE SPADAFORA 2 ENGEL & CHARLIE OLIVER MAGENTA DJ OLDE JEY AUX PLATINES ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "NEONSPLASH Paint-Rave",
+      "proposedValue": "NEONSPLASH Paint-Rave | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Kaz James, the man behind the global hit \"l Like The Way\" and a celebrated house innovator, brings over a decade as a Pacha Ibiza resident plus summer residencies in Mykonos and sets at Coachella and Burning Man - deep, raw grooves and a true headliner's pedigree. Opening the night is Mannheim's Alicia Hahn, who since 2021 has captivated crowds with ethereal melodies and driving grooves, having already shared stages with Adriatique, Mathame and Miss Monique at Amsterdam Dance Event.23:45 - TILL LATE​Line-Up:KAZ JAMESALICIA HAHN​",
+      "proposedValue": "The event takes place at AMØK CLUB Palma de Mallorca , not at Bootshaus! Kaz James, the man behind the global hit \"l Like The Way\" and a celebrated house innovator, brings over a decade as a Pacha Ibiza resident plus summer residencies in Mykonos and sets at Coachella and Burning Man - deep, raw grooves and a true headliner's pedigree. Opening the night is Mannheim's Alicia Hahn, who since 2021 has captivated crowds with ethereal melodies and driving grooves, having already shared stages with Adriatique, Mathame and Miss Monique at Amsterdam Dance Event. 23:45 - TILL LATE ​ Line-Up: KAZ JAMES ALICIA HAHN ​"
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "MI * 30.12.2026 | KitKatClub",
+      "proposedValue": "MI * 30.12.2026 | KitKatClub | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "field": "title",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Title body differs beyond og suffix stripping; needs human confirmation.",
+      "currentCanonical": "Bootshaus pres. BC173 (let's get loco)",
+      "proposedValue": "Bootshaus pres. BC173 (let"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "️ LET'S GET LOCO!Get ready for the next Airport Session with DHALI, FAST BOY, LIONKAY and ONINE on 15 August.LINEUP:FAST BOYDHALILIONKAY ONINEPublic Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only.Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsa",
+      "proposedValue": "✈️ LET'S GET LOCO! Get ready for the next Airport Session with DHALI, FAST BOY, LIONKAY and ONINE on 15 August. LINEUP: FAST BOY DHALI LIONKAY ONINE Public Transport Info: Public transport tickets included for an easy ride in and out. The travel pass is valid across the entire VRS network for both inbound and return journeys. Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket. Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure. ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 yearsa"
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "field": "dateTime",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Date/time instant may differ; requires timezone and public page confirmation.",
+      "currentCanonical": "2026-10-09T20:30:00+00:00",
+      "proposedValue": "2026-10-10T00:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Bootshaus Sommerfest",
+      "proposedValue": "Bootshaus Sommerfest | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "proposedValue": "CHRIS STUSSY pres. by BOOTSHAUS | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "On 16th October, CHRIS STUSSY plays the Bootshaus MAINFLOOR for the first time.Known for flowing sets and an approach where the music comes first, he brings his distinctive energy to Bootshaus.MAINFLOOR:CHRIS STUSSY▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "On 16th October, CHRIS STUSSY plays the Bootshaus MAINFLOOR for the first time. Known for flowing sets and an approach where the music comes first, he brings his distinctive energy to Bootshaus. MAINFLOOR: CHRIS STUSSY ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "NIBIRII pres. ELY OAKS!",
+      "proposedValue": "NIBIRII pres. ELY OAKS! | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "NIBIRII pres. ELY OAKS!After a summer full of countless memories, it's time to head to our home ground once again! At BOOTSHAUS, we will welcome you to a night filled with unleashed energy and pure music.Lineup:ELY OAKSmore TBA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "NIBIRII pres. ELY OAKS! After a summer full of countless memories, it's time to head to our home ground once again! At BOOTSHAUS, we will welcome you to a night filled with unleashed energy and pure music. Lineup: ELY OAKS more TBA ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Bootshaus & Loonyland pres. NYE 2026",
+      "proposedValue": "Bootshaus & Loonyland pres. NYE 2026 | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Ring in the new year at Bootshaus.On December 31st, we open all floors for our annual New Year&rsquo;s Eve celebration, taking you from the final hours of 2026 straight into the first morning of 2027.Expect a full-club experience across Mainfloor, Blckbx, and Dreherei, with carefully curated lineups, extended sets, and the signature Bootshaus atmosphere all night long.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "Ring in the new year at Bootshaus. On December 31st, we open all floors for our annual New Year’s Eve celebration, taking you from the final hours of 2026 straight into the first morning of 2027. Expect a full-club experience across Mainfloor, Blckbx, and Dreherei, with carefully curated lineups, extended sets, and the signature Bootshaus atmosphere all night long. ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Loonyland returns to Bootshaus for its annual Halloween takeover.On October 31st, all three floors open from early night until morning, transforming the club into a full Halloween experience.Dressing up is not mandatory, but always appreciated. ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "Loonyland returns to Bootshaus for its annual Halloween takeover. On October 31st, all three floors open from early night until morning, transforming the club into a full Halloween experience. Dressing up is not mandatory, but always appreciated. ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "R3HAB pres. by BOOTSHAUS",
+      "proposedValue": "R3HAB pres. by BOOTSHAUS | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "field": "description",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Legacy HTML entity encoding in production; unified/public text is a decode/normalization candidate, not a proven semantic correction.",
+      "currentCanonical": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Tripolism, three friends from Copenhagen, bring melodic house, indie dance and euphoric techno together - playful, driving, melancholic. Their track \"Dope Dance\" became one of Pete Tong's top 5 Essential New Tunes of the year, and 2025 saw them hit the Coachella lineup. Opening the night, the German B2B duo Jean Philippe & Mole deliver punchy, organic grooves between Afro House and melodic house, with chart hits like \"You Got The Love\" on MAJA Records and festival stages including MYLE.23:45 - TILL LATE​Line-Up:TRIPOLISMJEAN PHILIPPE & MOLE​",
+      "proposedValue": "The event takes place at AMØK CLUB Palma de Mallorca , not at Bootshaus! Tripolism, three friends from Copenhagen, bring melodic house, indie dance and euphoric techno together - playful, driving, melancholic. Their track \"Dope Dance\" became one of Pete Tong's top 5 Essential New Tunes of the year, and 2025 saw them hit the Coachella lineup. Opening the night, the German B2B duo Jean Philippe & Mole deliver punchy, organic grooves between Afro House and melodic house, with chart hits like \"You Got The Love\" on MAJA Records and festival stages including MYLE. 23:45 - TILL LATE ​ Line-Up: TRIPOLISM JEAN PHILIPPE & MOLE ​"
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "proposedValue": "122 pres. JUNO @ Palma de Mallorca (ES) | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in his Afro House smash \"Last Dance\" — #3 on the all-time Afro House chart, with support from Black Coffee, Keinemusik, Blond:ish and Diplo. One of the hottest names in deep & melodic house right now. Opening the night, Nicole Da Silva returns with her hypnotic blend of Afro House, tech house and organic percussion — the Bootshaus regular whose live vocals and Portuguese roots set the mood from the first track.23:45 - TILL LATE​Line-Up:JUNONICOLE DA SILVA​",
+      "proposedValue": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus! JUNO, the Hamburg talent with Vietnamese roots, ties global influences together in his Afro House smash \"Last Dance\" — #3 on the all-time Afro House chart, with support from Black Coffee, Keinemusik, Blond:ish and Diplo. One of the hottest names in deep & melodic house right now. Opening the night, Nicole Da Silva returns with her hypnotic blend of Afro House, tech house and organic percussion — the Bootshaus regular whose live vocals and Portuguese roots set the mood from the first track. 23:45 - TILL LATE ​ Line-Up: JUNO NICOLE DA SILVA ​"
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "SA * 24.10.2026 | KitKatClub",
+      "proposedValue": "SA * 24.10.2026 | KitKatClub | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "field": "description",
+      "classification": "REVIEW_REQUIRED",
+      "classificationReason": "Legacy HTML entity encoding in production; unified/public text is a decode/normalization candidate, not a proven semantic correction.",
+      "currentCanonical": "SA * 24.10.2026 | KitKatClub Uhrzeit: 22:00 UhrEintritt: 35 EuroVeranstalterkontakt: kitkatclub@vault-events.deSTRICT SEXUAL FANTASY DRESSCODE | Einlass vorbehalten! BUNT - SCHRILL - EXTRAVAGANT - VERRÜCKT - FANTASIEVOLLE ACCESSOIRES ausdrücklich herzlich willkommen! Darüber hinaus passend: Fetisch - Lack - Leder - Latex - Gummi - Plastik - Metall - Nylon - Gothic - Kostüm - Uniform - Drag - Burlesque - Straps - Heels - Strass - Barock - Rock - Kilt - Punk - Bodypainting - extravagant elegante Abendgarderobe - fantasievolle Accessoires - Style - Kink - Frech - Pornös - Glamour – Make-Up - Glitter - Glitzer - Bunt - Schrill - Extravagant - Verrückt | BEEINDRUCKT MIT KREATIVITÄT + ORIGINALITÄT! ABSOLUTE NO GOs: normale Straßenkleidung – Straßenanzüge – Jeans – Sportkleidung – normale (schwarze) Stoffhosen – Camouflage – Baumwollunterwäsche – nicht zum hedonistischen Gesamteindruck positiv beitragende ausgelatschte alte Sneaker/Turnschuhe/Chucks. Eine wichtige GRUNDREGEL als Orientierungshilfe: sofern Du mit Deinem Outfit durch die Innenstadt schlendern kannst, ohne dass sich jemand nach Dir umdreht, liegst Du mit an Sicherheit grenzender Wahrscheinlichkeit falsch! Und wer sich hinsichtlich der \"passenden Schale\" unsicher ist, empfehlen wir zur Überwindung unserer strikten Einlasskontrolle das Mitführen einer optionalen \"zweiten Hülle\".MÄNNNLICHE GÄSTE verbessern Ihre Chance auf Einlass erheblich per gerne bunt hedonistischer Kreativität statt Einbringung der faden Standardkombination \"schwarze Hose/Short + schwarzes Top bzw. schwarzer Harness\".Detailinfos + Shoppingadressen: www.vault-events.de/faq/sexual-fantasy-dresscode/Verkleide Dich nicht, sondern erfinde Dich neu!******************************************Umkleidebereich + anmietbare Schließfächer + bewachte Garderobe | ausschließlich BarzahlungGarderobe: 3 Euro (Jacken/Mäntel), 5 Euro (Gepäckstücke) // Schließfächer Medium (40 cm x 29 cm x 22 cm): 7 Euro // Schließfächer Large (40 cm x 29 cm x 32 cm): 10 Euro******************************************STRIKTES HANDYVERBOT im gesamten Veranstaltungsbereich. Wer versucht, ebensolche einzuschmuggeln, darf 100%ig sicher DRAUSSEN weiterfeiern&hellip;.!******************************************PLAY AREA SPIELREGELN: Es gelten die vor allen Spielbereichen sowie in der Umkleide/Garderobe auf großflächigen Bannern ausgehängten &bdquo;PLAY AREA SPIELREGELN&ldquo;. Übergriffige Gäste werden aus dem Verkehr gezogen + erhalten Hausverbot. Darüber hinaus der wichtige Hinweis, dass Euch während der gesamten Veranstaltung vor allen Spielbereichen und im Garderobenzelt unsere 15köpfige Kitty-Crew als hilfsbereite Ansprechpartner*innen für Anliegen aller Art zur Verfügung stehen * deutlich erkennbar am &bdquo;KKC@Bootshaus Crew&ldquo; Badge + Neon-Leuchtarmband. ******************************************DJ LineUp: to be announcedSTYLE: mainly energetic Techno + uplifting TechHouse ****************************************** KitKatClub Cologne ist eine authentische Adaption des 1994 gegründeten und in Berlin ansässigen KitKatClub. Unangefochten einer der fantasievollsten Undergroundclubs weltweit, definiert sich der KitKatClub als avantgardistischer Nachtclub, der die Traditionen der &bdquo;verruchten&ldquo; Berliner Clubs der &bdquo;Goldenen Zwanziger&ldquo; aufgreift. Somit fusioniert der KitKatClub multimediale und künstlerische Elemente zum innovativen Konzept im Sinne des avantgardistischen Zeitgeistes. LIVE THE HEDONISTIC SPIRIT!▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "SA * 24.10.2026 | KitKatClub Uhrzeit: 22:00 Uhr Eintritt: 35 Euro Veranstalterkontakt: [email protected] STRICT SEXUAL FANTASY DRESSCODE | Einlass vorbehalten! BUNT - SCHRILL - EXTRAVAGANT - VERRÜCKT - FANTASIEVOLLE ACCESSOIRES ausdrücklich herzlich willkommen! Darüber hinaus passend: Fetisch - Lack - Leder - Latex - Gummi - Plastik - Metall - Nylon - Gothic - Kostüm - Uniform - Drag - Burlesque - Straps - Heels - Strass - Barock - Rock - Kilt - Punk - Bodypainting - extravagant elegante Abendgarderobe - fantasievolle Accessoires - Style - Kink - Frech - Pornös - Glamour – Make-Up - Glitter - Glitzer - Bunt - Schrill - Extravagant - Verrückt | BEEINDRUCKT MIT KREATIVITÄT + ORIGINALITÄT! ABSOLUTE NO GOs: normale Straßenkleidung – Straßenanzüge – Jeans – Sportkleidung – normale (schwarze) Stoffhosen – Camouflage – Baumwollunterwäsche – nicht zum hedonistischen Gesamteindruck positiv beitragende ausgelatschte alte Sneaker/Turnschuhe/Chucks. Eine wichtige GRUNDREGEL als Orientierungshilfe: sofern Du mit Deinem Outfit durch die Innenstadt schlendern kannst, ohne dass sich jemand nach Dir umdreht, liegst Du mit an Sicherheit grenzender Wahrscheinlichkeit falsch! Und wer sich hinsichtlich der \"passenden Schale\" unsicher ist, empfehlen wir zur Überwindung unserer strikten Einlasskontrolle das Mitführen einer optionalen \"zweiten Hülle\". MÄNNNLICHE GÄSTE verbessern Ihre Chance auf Einlass erheblich per gerne bunt hedonistischer Kreativität statt Einbringung der faden Standardkombination \"schwarze Hose/Short + schwarzes Top bzw. schwarzer Harness\". Detailinfos + Shoppingadressen: www.vault-events.de/faq/sexual-fantasy-dresscode/ Verkleide Dich nicht, sondern erfinde Dich neu! ****************************************** Umkleidebereich + anmietbare Schließfächer + bewachte Garderobe | ausschließlich Barzahlung Garderobe: 3 Euro (Jacken/Mäntel), 5 Euro (Gepäckstücke) // Schließfächer Medium (40 cm x 29 cm x 22 cm): 7 Euro // Schließfächer Large (40 cm x 29 cm x 32 cm): 10 Euro ****************************************** STRIKTES HANDYVERBOT im gesamten Veranstaltungsbereich. Wer versucht, ebensolche einzuschmuggeln, darf 100%ig sicher DRAUSSEN weiterfeiern….! ****************************************** PLAY AREA SPIELREGELN: Es gelten die vor allen Spielbereichen sowie in der Umkleide/Garderobe auf großflächigen Bannern ausgehängten „PLAY AREA SPIELREGELN“. Übergriffige Gäste werden aus dem Verkehr gezogen + erhalten Hausverbot. Darüber hinaus der wichtige Hinweis, dass Euch während der gesamten Veranstaltung vor allen Spielbereichen und im Garderobenzelt unsere 15köpfige Kitty-Crew als hilfsbereite Ansprechpartner*innen für Anliegen aller Art zur Verfügung stehen * deutlich erkennbar am „KKC@Bootshaus Crew“ Badge + Neon-Leuchtarmband. ****************************************** DJ LineUp: to be announced STYLE: mainly energetic Techno + uplifting TechHouse ****************************************** KitKatClub Cologne ist eine authentische Adaption des 1994 gegründeten und in Berlin ansässigen KitKatClub. Unangefochten einer der fantasievollsten Undergroundclubs weltweit, definiert sich der KitKatClub als avantgardistischer Nachtclub, der die Traditionen der „verruchten“ Berliner Clubs der „Goldenen Zwanziger“ aufgreift. Somit fusioniert der KitKatClub multimediale und künstlerische Elemente zum innovativen Konzept im Sinne des avantgardistischen Zeitgeistes. LIVE THE HEDONISTIC SPIRIT! ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "field": "dateTime",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Same event instant; only ISO timezone/format representation differs.",
+      "currentCanonical": "2026-09-18T22:00:00+00:00",
+      "proposedValue": "2026-09-19T00:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Bootshaus Sommerfest Closing",
+      "proposedValue": "Bootshaus Sommerfest Closing | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Nibirii Festival 2026",
+      "proposedValue": "Nibirii Festival 2026 | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "NIBIRII FESTIVAL28 - 30 AUGUST 2026Nibirii Festival returns to the wonderful &bdquo;Dürener Badesee&ldquo; nearby Cologne for three unforgettable days of music, nature and unity. After parts of the 2025 edition were completely sold out, make sure to grab your tickets early before it&rsquo;s too late! Expect one of Germany&rsquo;s strongest electronic line-ups once – spanning Techno, Hardtechno, Psytrance, Groove, Bounce, Drum & Bass in all its forms.-",
+      "proposedValue": "NIBIRII FESTIVAL 28 - 30 AUGUST 2026 Nibirii Festival returns to the wonderful „Dürener Badesee“ nearby Cologne for three unforgettable days of music, nature and unity. After parts of the 2025 edition were completely sold out, make sure to grab your tickets early before it’s too late! Expect one of Germany’s strongest electronic line-ups once – spanning Techno, Hardtechno, Psytrance, Groove, Bounce, Drum & Bass in all its forms. -"
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "The event takes place at AM&Oslash;K CLUB Palma de Mallorca, not at Bootshaus!Maxi Meraki brings warm, euphoric house between melodic, Afro and indie - backed since 2019 by Solomun, Adriatique, Black Coffee and the Keinemusik crew, with remixes for Rüfüs Du Sol and Mahmut Orhan and his own movement, Radiate. Undeniable floor material, guaranteed. Opening is McFly, the Afro House riser and Bootshaus familiar face, weaving hypnotic grooves and floating piano lines fresh off his Cercle Records debut.23:45 - TILL LATE​Line-Up:MAXI MERAKIMCFLY​",
+      "proposedValue": "The event takes place at AMØK CLUB Palma de Mallorca , not at Bootshaus! Maxi Meraki brings warm, euphoric house between melodic, Afro and indie - backed since 2019 by Solomun, Adriatique, Black Coffee and the Keinemusik crew, with remixes for Rüfüs Du Sol and Mahmut Orhan and his own movement, Radiate. Undeniable floor material, guaranteed. Opening is McFly, the Afro House riser and Bootshaus familiar face, weaving hypnotic grooves and floating piano lines fresh off his Cercle Records debut. 23:45 - TILL LATE ​ Line-Up: MAXI MERAKI MCFLY ​"
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "BLACKLIST & INURFASE pres.ZAAGSTEP by Dr Donk📍Bootshaus Cologne📅 11.09.2026⏰ 22:00 - 06:00🎟️ Pre-Register now: https://bit.ly/ZAAGSTEPFor years, electronic music has been built on genres.Zaag. Uptempo. Hard Dance. Dubstep. Drum & Bass. Bass Music.But what happens when the boundaries between them disappear?On September 11th, BLACKLIST and INURFASE invite you to witness the official launch of ZAAGSTEP - the sound created by Dr Donk that combines the high BPM intensity of Uptempo and Zaag with the energy, and influence of Bass Music.A never-seen-before crossover between Dubstep, Zaag, Drum & Bass, Uptempo and everything in between. WELCOME TO ZAAGSTEP 😈To celebrate his upcoming album release, Dr Donk presents the world's first full-scale ZAAGSTEP showcase at Bootshaus Cologne, featuring artists who have helped shape the sound and artists who represent the different worlds colliding within it.FULL LINE-UP A-ZDr Donk pres. ZAAGSTEP (Album Showcase), Dr Donk b2b Yoshiko, GPF, Invaderz, Lekkerfaces, Madcore, Must Die!, Revenge Of The Nerds (Albino b2b Dr Donk b2b Ricky West), TMPRHIGHLIGHTS⚡ Official ZAAGSTEP Album Showcase by Dr Donk⚡ Exclusive unreleased album material⚡ First-ever ZAAGSTEP event worldwide⚡ Dubstep &times; Drum & Bass &times; Zaag &times; Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "proposedValue": "BLACKLIST & INURFASE pres. ZAAGSTEP by Dr Donk 📍Bootshaus Cologne 📅 11.09.2026 ⏰ 22:00 - 06:00 🎟️ Pre-Register now: https://bit.ly/ZAAGSTEP For years, electronic music has been built on genres. Zaag. Uptempo. Hard Dance. Dubstep. Drum & Bass. Bass Music. But what happens when the boundaries between them disappear? On September 11th, BLACKLIST and INURFASE invite you to witness the official launch of ZAAGSTEP - the sound created by Dr Donk that combines the high BPM intensity of Uptempo and Zaag with the energy, and influence of Bass Music. A never-seen-before crossover between Dubstep, Zaag, Drum & Bass, Uptempo and everything in between. WELCOME TO ZAAGSTEP 😈 To celebrate his upcoming album release, Dr Donk presents the world's first full-scale ZAAGSTEP showcase at Bootshaus Cologne, featuring artists who have helped shape the sound and artists who represent the different worlds colliding within it. FULL LINE-UP A-Z Dr Donk pres. ZAAGSTEP (Album Showcase), Dr Donk b2b Yoshiko, GPF, Invaderz, Lekkerfaces, Madcore, Must Die!, Revenge Of The Nerds (Albino b2b Dr Donk b2b Ricky West), TMPR HIGHLIGHTS ⚡ Official ZAAGSTEP Album Showcase by Dr Donk ⚡ Exclusive unreleased album material ⚡ First-ever ZAAGSTEP event worldwide ⚡ Dubstep &times; Drum & Bass &times; Zaag &times; Uptempo crossover concept ⚡ Hosted by BLACKLIST & INURFASE ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Blacklist Festival 2026",
+      "proposedValue": "Blacklist Festival 2026 | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "THIS WAS BLACKLIST FESTIVAL 2025.10 YEARS WITH YOU – WE COULDN&rsquo;T BE MORE PROUD.2015–2025:A DECADE OF LOYALTY AND CONNECTION.NOW IT&rsquo;S TIME TO MOVE FORWARD.THIS IS NOT THE END – IT&rsquo;S THE BEGINNING OF SOMETHING NEW.2 DAYSOCTOBER 9–10, 2026Friday, October 9 | 18:00 – 06:00Saturday, October 10 | 18:00 – 06:00THE SECOND WAVE IS OUT NOW!HERE ARE ALL ARTISTS (A–Z):A.M.C | AKIRAH | AUTODRIVE | AUTOPSKI | BLANKE PRESENTS: FALLOUT | BURR OAK | DJ MII | ECRAZE B2B BIZO | ELLIE RICH | EPTIC | ESKEI83 | FLUX PAVILION | FORMULA | GLADDE PALING | GOURSKI | HAMMERHEAD | K MOTIONZ | KANINE | KARA B2B YOUPHORIA | KOVEN | KREWELLA | MACHINYST | MADCORE B2B ELLIE RICH | MEFJUS | NOIZBOIZ | PRIMATE | RICKY WEST | RIOT | SAMPLIFIRE | SKIYE | STOOG3S | THE RESISTANCE | UPGRADE | VDV B2B MISCALL | ZOMBOY | [IVY] | [SAFYRE] | &AElig;ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10, 2026",
+      "proposedValue": "THIS WAS BLACKLIST FESTIVAL 2025. 10 YEARS WITH YOU – WE COULDN’T BE MORE PROUD. 2015–2025: A DECADE OF LOYALTY AND CONNECTION. NOW IT’S TIME TO MOVE FORWARD. THIS IS NOT THE END – IT’S THE BEGINNING OF SOMETHING NEW. 2 DAYS OCTOBER 9–10, 2026 Friday, October 9 | 18:00 – 06:00 Saturday, October 10 | 18:00 – 06:00 THE SECOND WAVE IS OUT NOW! HERE ARE ALL ARTISTS (A–Z): A.M.C | AKIRAH | AUTODRIVE | AUTOPSKI | BLANKE PRESENTS: FALLOUT | BURR OAK | DJ MII | ECRAZE B2B BIZO | ELLIE RICH | EPTIC | ESKEI83 | FLUX PAVILION | FORMULA | GLADDE PALING | GOURSKI | HAMMERHEAD | K MOTIONZ | KANINE | KARA B2B YOUPHORIA | KOVEN | KREWELLA | MACHINYST | MADCORE B2B ELLIE RICH | MEFJUS | NOIZBOIZ | PRIMATE | RICKY WEST | RIOT | SAMPLIFIRE | SKIYE | STOOG3S | THE RESISTANCE | UPGRADE | VDV B2B MISCALL | ZOMBOY | [IVY] | [SAFYRE] | ÆON:MODE ....MORE TBA SAVE THE DATE: OCTOBER 09-10, 2026"
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "field": "dateTime",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Same event instant; only ISO timezone/format representation differs.",
+      "currentCanonical": "2026-08-14T22:00:00+00:00",
+      "proposedValue": "2026-08-15T00:00:00+02:00"
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "field": "title",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Only og:title branding suffix differs (e.g. \"| Bootshaus Club\"); consumer title unchanged.",
+      "currentCanonical": "Bootshaus on a Ship Vol. IV",
+      "proposedValue": "Bootshaus on a Ship Vol. IV | Bootshaus Club"
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "field": "description",
+      "classification": "FORMATTING_ONLY",
+      "classificationReason": "Whitespace, HTML entity, or punctuation normalization only; semantic content unchanged.",
+      "currentCanonical": "Bootshaus returns to the water.On September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session. Lineup:NIKLAS DEEFABIAN FARELLOLIVER MAGENTATEKNOCLASHDANTH▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+      "proposedValue": "Bootshaus returns to the water. On September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session. Lineup: NIKLAS DEE FABIAN FARELL OLIVER MAGENTA TEKNOCLASH DANTH ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years"
+    }
+  ]
+}

@@ -10,14 +10,18 @@ import {
 } from 'react';
 
 import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
+import type { Event } from '@/features/events/types/event';
 import type { SavedEvent, SavedEventRecord, SavedEventSource } from '@/features/saved/types/saved-event';
 
 import {
   createSavedEventRecord,
+  hasSavedEventsMigrationFlag,
   loadSavedEventRecords,
+  markSavedEventsMigrationComplete,
   saveSavedEventRecords,
 } from './saved-event-storage';
-import { loadFavoriteIdsFromStorage } from './favorites-storage';
+import { FAVORITES_STORAGE_KEY, loadFavoriteIdsFromStorage } from './favorites-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { EventId, FavoritesStore } from './types';
 
 interface FavoritesContextValue extends FavoritesStore {
@@ -58,6 +62,29 @@ function resolveFavoriteEvents(records: readonly SavedEventRecord[]): EventDispl
     .map(toEventDisplayModel);
 }
 
+function buildUnavailableEventDisplayModel(eventId: string, savedAt: string): EventDisplayModel {
+  const unavailableEvent: Event = {
+    id: eventId,
+    slug: eventId,
+    title: 'Event nicht mehr verfügbar',
+    description: '',
+    startDateTime: savedAt,
+    timezone: 'Europe/Berlin',
+    venue: 'Unbekannt',
+    city: '—',
+    country: 'DE',
+    genres: [],
+    artists: [],
+    source: 'demo',
+    sourceEventId: eventId,
+    status: 'archived',
+    createdAt: savedAt,
+    updatedAt: savedAt,
+  };
+
+  return toEventDisplayModel(unavailableEvent);
+}
+
 function resolveSavedEvents(records: readonly SavedEventRecord[]): SavedEvent[] {
   return records.map((record) => {
     const event = eventRepository.getEventById(record.eventId);
@@ -66,25 +93,7 @@ function resolveSavedEvents(records: readonly SavedEventRecord[]): SavedEvent[] 
       return {
         ...record,
         unavailable: true,
-        event: {
-          id: record.eventId,
-          slug: record.eventId,
-          title: 'Event nicht mehr verfügbar',
-          description: '',
-          image: 0,
-          date: '—',
-          startTime: '—',
-          venue: 'Unbekannt',
-          city: '—',
-          genres: [],
-          artists: [],
-          source: 'demo',
-          sourceLabel: 'Demo',
-          startsAt: record.savedAt,
-          startDateTime: record.savedAt,
-          timezone: 'Europe/Berlin',
-          status: 'archived',
-        },
+        event: buildUnavailableEventDisplayModel(record.eventId, record.savedAt),
       };
     }
 
@@ -109,10 +118,16 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
 
     async function hydrateFavorites() {
       let records = await loadSavedEventRecords();
+      const migrated = await hasSavedEventsMigrationFlag();
 
-      if (records.length === 0) {
+      if (records.length === 0 && !migrated) {
         const legacyIds = await loadFavoriteIdsFromStorage();
-        records = legacyIds.map((eventId) => createSavedEventRecord(eventId, 'unknown'));
+        if (legacyIds.length > 0) {
+          records = legacyIds.map((eventId) => createSavedEventRecord(eventId, 'unknown'));
+          await saveSavedEventRecords(records);
+          await AsyncStorage.removeItem(FAVORITES_STORAGE_KEY);
+          await markSavedEventsMigrationComplete();
+        }
       }
 
       const validRecords = sanitizeSavedRecords(records);
@@ -179,14 +194,15 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
 
   const toggleFavorite = useCallback((eventId: EventId, source: SavedEventSource = 'unknown') => {
     const canonicalId = toCanonicalEventId(eventId);
-    if (!eventRepository.hasPublishedEvent(canonicalId)) {
-      return;
-    }
 
     setSavedRecords((current) => {
       const exists = current.some((record) => record.eventId === canonicalId);
       if (exists) {
         return current.filter((record) => record.eventId !== canonicalId);
+      }
+
+      if (!eventRepository.hasPublishedEvent(canonicalId)) {
+        return current;
       }
 
       return [...current, createSavedEventRecord(canonicalId, source)];

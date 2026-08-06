@@ -26,6 +26,10 @@ export interface SearchResultGroupProps {
   onOrganizerPress?: (id: string) => void;
   onVenuePress?: (id: string) => void;
   onClubPress?: (id: string) => void;
+  /** When provided, only matching ids render as press targets. */
+  isOrganizerPressable?: (id: string) => boolean;
+  isVenuePressable?: (id: string) => boolean;
+  isClubPressable?: (id: string) => boolean;
   children?: ReactNode;
   style?: ViewStyle;
   testID?: string;
@@ -46,6 +50,9 @@ export function SearchResultGroup({
   onOrganizerPress,
   onVenuePress,
   onClubPress,
+  isOrganizerPressable,
+  isVenuePressable,
+  isClubPressable,
   children,
   style,
   testID,
@@ -65,7 +72,7 @@ export function SearchResultGroup({
               <EventListItem
                 key={event.id}
                 event={event}
-                onPress={() => onEventPress?.(event.id)}
+                onPress={onEventPress ? () => onEventPress(event.id) : undefined}
               />
             ))
           : null}
@@ -74,18 +81,38 @@ export function SearchResultGroup({
               <OrganizerRow
                 key={organizer.id}
                 organizer={organizer}
-                onPress={() => onOrganizerPress?.(organizer.id)}
+                onPress={
+                  onOrganizerPress && (isOrganizerPressable?.(organizer.id) ?? true)
+                    ? () => onOrganizerPress(organizer.id)
+                    : undefined
+                }
               />
             ))
           : null}
         {group.kind === 'venues'
           ? venues.map((venue) => (
-              <VenueRow key={venue.id} venue={venue} onPress={() => onVenuePress?.(venue.id)} />
+              <VenueRow
+                key={venue.id}
+                venue={venue}
+                onPress={
+                  onVenuePress && (isVenuePressable?.(venue.id) ?? true)
+                    ? () => onVenuePress(venue.id)
+                    : undefined
+                }
+              />
             ))
           : null}
         {group.kind === 'clubs'
           ? clubs.map((club) => (
-              <VenueRow key={club.id} venue={club} onPress={() => onClubPress?.(club.id)} />
+              <VenueRow
+                key={club.id}
+                venue={club}
+                onPress={
+                  onClubPress && (isClubPressable?.(club.id) ?? true)
+                    ? () => onClubPress(club.id)
+                    : undefined
+                }
+              />
             ))
           : null}
       </Stack>

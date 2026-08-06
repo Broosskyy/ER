@@ -1,5 +1,7 @@
+import { isSemanticallyFreeEvent } from '@/features/events/domain/event-price-availability-semantics';
 import type { Event } from '@/features/events/types/event';
 import type { VenueType } from '@/features/events/domain/festival-foundation';
+import { discoveryCitiesMatch } from '@/features/location/normalize-discovery-city';
 import { calculateDistanceKm } from '@/features/location/utils/geo-distance';
 
 import type {
@@ -17,14 +19,10 @@ const INDOOR_VENUE_TYPES = new Set<VenueType>(['club', 'warehouse', 'hybrid']);
 const OUTDOOR_VENUE_TYPES = new Set<VenueType>(['open_air', 'festival_ground', 'temporary']);
 
 function isFreeEvent(event: Event): boolean {
-  const price = event.priceText?.toLowerCase() ?? '';
-  return (
-    price.includes('free') ||
-    price.includes('kostenlos') ||
-    price.includes('gratis') ||
-    price === '0' ||
-    price === '0 €'
-  );
+  return isSemanticallyFreeEvent({
+    priceText: event.priceText,
+    ticketAvailability: event.ticketStatus,
+  });
 }
 
 function matchesVenueEnvironment(
@@ -81,7 +79,7 @@ function createEntityPredicates(entities?: DiscoveryEntityFilter): DiscoveryFilt
   if (entities.city) {
     predicates.push({
       id: 'city',
-      applies: (event) => event.city.toLowerCase() === entities.city!.toLowerCase(),
+      applies: (event) => discoveryCitiesMatch(entities.city!, event.city),
     });
   }
   if (entities.venueId) {

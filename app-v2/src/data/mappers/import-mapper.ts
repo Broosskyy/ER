@@ -56,6 +56,10 @@ interface ImportJobRow {
   created_count: number;
   updated_count: number;
   duplicate_count: number;
+  unchanged_count?: number;
+  missing_count?: number;
+  pages_processed?: number;
+  connector_version?: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -122,6 +126,10 @@ export function mapImportJobRowToDomain(row: ImportJobRow): ImportJob {
       createdCount: row.created_count ?? 0,
       updatedCount: row.updated_count ?? 0,
       duplicateCount: row.duplicate_count ?? 0,
+      unchangedCount: row.unchanged_count ?? 0,
+      missingCount: row.missing_count ?? 0,
+      pagesProcessed: row.pages_processed ?? 0,
+      connectorVersion: row.connector_version ?? undefined,
     },
     createdAt: row.created_at,
     updatedAt: row.updated_at,
@@ -146,6 +154,10 @@ export function mapImportJobToRow(job: ImportJob): Record<string, unknown> {
     created_count: job.metrics.createdCount,
     updated_count: job.metrics.updatedCount,
     duplicate_count: job.metrics.duplicateCount,
+    unchanged_count: job.metrics.unchangedCount ?? 0,
+    missing_count: job.metrics.missingCount ?? 0,
+    pages_processed: job.metrics.pagesProcessed ?? 0,
+    connector_version: job.metrics.connectorVersion ?? null,
     created_at: job.createdAt,
     updated_at: job.updatedAt,
   };

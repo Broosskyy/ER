@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-08-05T16:00:06.252Z",
+  "migrationFile": "20260803140000_phase473_canonical_event_attributes.sql",
+  "migrationApplied": true,
+  "publishedEventCount": 93,
+  "rowsWithAttributeData": 19,
+  "rowsChangedByMigration": 0,
+  "noImplicitBackfill": false,
+  "columns": {},
+  "venueEnvironmentConstraint": "",
+  "indexesPresent": false,
+  "indexes": [
+    {
+      "name": "events_event_attributes_gin_idx",
+      "present": false
+    },
+    {
+      "name": "events_floor_count_idx",
+      "present": false
+    },
+    {
+      "name": "events_venue_environment_idx",
+      "present": false
+    }
+  ],
+  "serviceRole": {
+    "selectNewColumns": true,
+    "publishedEventsReadable": true,
+    "sampleCount": 93
+  },
+  "rls": {
+    "serviceRolePublishedRead": true,
+    "note": "service_role bypasses RLS; published event reads verified via ops client"
+  },
+  "applicationTypes": {
+    "mapperRoundTripOk": true,
+    "eventRowFields": [
+      "event_attributes",
+      "floor_count",
+      "stage_count",
+      "venue_environment",
+      "last_entry_at",
+      "dress_code",
+      "accessibility_notes"
+    ]
+  },
+  "pass": false,
+  "blockers": [
+    "DATABASE_URL / SUPABASE_DB_URL not set — skipped information_schema validation"
+  ]
+}

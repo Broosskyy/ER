@@ -15,7 +15,7 @@ import { createBootshausLiveProductionSourceRecord } from '@/features/sources/pr
 import {
   getSupabaseServiceClient,
   resolveSupabaseServiceRoleKey,
-} from '@/services/supabase/client';
+} from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS_ID = 'source-bootshaus-koeln';
 const OUT = join(process.cwd(), 'docs/real-data/_bootshaus_go_live_run.json');

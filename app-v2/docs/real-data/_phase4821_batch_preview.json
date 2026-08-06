@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-08-05T10:05:18.433Z",
+  "productionMutationsInThisRun": 0,
+  "execute": false,
+  "totalProposedChanges": 3,
+  "affectedEvents": 2,
+  "affectedEventIds": [
+    "evt-1785339391167-tfaixrr",
+    "evt-1785339421539-k3swcrl"
+  ],
+  "affectedFields": [
+    "flyer",
+    "description"
+  ],
+  "expectedConsumerVisibleImprovements": [
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "field": "flyer",
+      "risk": "MEDIUM",
+      "consumerImpact": "Hero image / flyer on event detail and discovery cards updates.",
+      "before": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png",
+      "after": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "field": "flyer",
+      "risk": "MEDIUM",
+      "consumerImpact": "Hero image / flyer on event detail and discovery cards updates.",
+      "before": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+      "after": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "field": "description",
+      "risk": "HIGH",
+      "consumerImpact": "Replaces wrong or stale description visible on event detail.",
+      "before": "UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten...",
+      "after": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA"
+    }
+  ],
+  "frozenDomains": [
+    "price",
+    "ticket_phases",
+    "availability",
+    "sold_out",
+    "checkout_url",
+    "lineup",
+    "ticket_platform_canonical_selection"
+  ],
+  "rollbackStrategy": [
+    "Snapshot affected event rows before any future apply",
+    "Per-field restore from snapshot on rollback",
+    "No cache invalidation in this review phase",
+    "HIGH risk items require explicit manual approval before apply"
+  ],
+  "highRiskCount": 1,
+  "highRiskItems": [
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "eventTitle": "Bootshaus Sommerfest",
+      "field": "description",
+      "currentProductionValue": "UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten...",
+      "proposedValue": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "publicSourceEvidence": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep  Lineup TBA",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Elevated from shadow field comparison — canonical stale vs public truth but omitted from Phase 4.8.2 preview.",
+      "whyUnifiedCorrect": "Unified importer matches live public official page body.",
+      "consumerImpact": "Replaces wrong or stale description visible on event detail.",
+      "confidence": 0.9,
+      "risk": "HIGH",
+      "rollbackImpact": "Restore description from pre-batch snapshot."
+    }
+  ],
+  "proposals": [
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "eventTitle": "Bootshaus Sommerfest",
+      "field": "flyer",
+      "currentProductionValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png",
+      "proposedValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "publicSourceEvidence": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Official og:image differs from current canonical flyer URL.",
+      "whyUnifiedCorrect": "Unified official-website importer extracts value directly from live public page evidence.",
+      "consumerImpact": "Hero image / flyer on event detail and discovery cards updates.",
+      "confidence": 0.85,
+      "risk": "MEDIUM",
+      "rollbackImpact": "Restore prior image_url from pre-batch snapshot."
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "eventTitle": "R3HAB pres. by BOOTSHAUS",
+      "field": "flyer",
+      "currentProductionValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+      "proposedValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "publicSourceEvidence": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Official og:image differs from current canonical flyer URL.",
+      "whyUnifiedCorrect": "Unified official-website importer extracts value directly from live public page evidence.",
+      "consumerImpact": "Hero image / flyer on event detail and discovery cards updates.",
+      "confidence": 0.85,
+      "risk": "MEDIUM",
+      "rollbackImpact": "Restore prior image_url from pre-batch snapshot."
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "eventTitle": "Bootshaus Sommerfest",
+      "field": "description",
+      "currentProductionValue": "UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten...",
+      "proposedValue": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "publicSourceEvidence": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep  Lineup TBA",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Elevated from shadow field comparison — canonical stale vs public truth but omitted from Phase 4.8.2 preview.",
+      "whyUnifiedCorrect": "Unified importer matches live public official page body.",
+      "consumerImpact": "Replaces wrong or stale description visible on event detail.",
+      "confidence": 0.9,
+      "risk": "HIGH",
+      "rollbackImpact": "Restore description from pre-batch snapshot."
+    }
+  ]
+}

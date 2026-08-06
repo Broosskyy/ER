@@ -1,0 +1,2560 @@
+{
+  "generatedAt": "2026-08-02T08:54:30.377Z",
+  "mode": "read_only",
+  "affectedSources": [
+    {
+      "id": "source-ticket-kings-org-underland",
+      "displayName": "Ticket Kings — Underland",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+      "displayName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-ticket-io-lehmannclub",
+      "displayName": "lehmannclub",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-bootshaus-koeln",
+      "displayName": "Bootshaus Köln",
+      "sourceType": "website",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-bootshaus-ticket-io",
+      "displayName": "Bootshaus Ticket.io",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-ticket-io-technodampfer",
+      "displayName": "technodampfer",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-ticket-kings-org-elektrokuche",
+      "displayName": "Ticket Kings — Elektroküche",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-affenkaefig",
+      "displayName": "Affenkäfig",
+      "sourceType": "website",
+      "connectorKey": "json-ld"
+    },
+    {
+      "id": "source-ticket-io-area51events",
+      "displayName": "area51events",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-ticket-io-hmg-concerts",
+      "displayName": "hmg-concerts",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-ticket-io-protontheclub",
+      "displayName": "protontheclub",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    },
+    {
+      "id": "source-affenkaefig-ticket-kings",
+      "displayName": "Affenkäfig Ticket Kings",
+      "sourceType": "ticket_platform",
+      "connectorKey": "html"
+    }
+  ],
+  "totals": {
+    "affectedSources": 12,
+    "affectedEvents": 99,
+    "expectedUpdates": 99,
+    "expectedUnchanged": 0,
+    "expectedBlocked": 0,
+    "recoverableTicketOffers": 0,
+    "recoverableLineups": 42,
+    "recoverableDescriptions": 30
+  },
+  "recommendedReimportBatch": [
+    "source-bootshaus-koeln",
+    "source-affenkaefig",
+    "source-musik-die-mich-antreibt",
+    "ticket_platform active shops (Ticket.io)",
+    "ticket_platform enrichment (Ticket.io)",
+    "ticket_king affected shops"
+  ],
+  "migrationPrerequisites": [
+    "Deploy 20260802100000_phase462_publish_fields_and_ticket_phases.sql",
+    "Deploy 20260801120000_phase46_entity_follows.sql only when follow UX approved",
+    "Verify validate:build-output passes after web bundle split",
+    "Enable genericSourceFieldTrustMerge in target environment"
+  ],
+  "goNoGo": {
+    "migration": "no_go",
+    "reimport": "no_go"
+  },
+  "events": [
+    {
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506368264-j5xf3dn",
+      "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "sourceId": "source-ticket-io-area51events",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "sourceId": "source-ticket-io-area51events",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "sourceId": "source-ticket-io-area51events",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506433053-ezr3ujo",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506386354-myueqgl",
+      "title": "LeShuuk & Friends - 360Grad Edition",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506437334-89zanzg",
+      "title": "TECHNO DAMPFER Hamburg w/ Moonbootica",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506441963-td8znfi",
+      "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506444104-084yf4g",
+      "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506455240-97ea7l5",
+      "title": "Stereoact & Lena Marie Engel",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339423010-ojty5td",
+      "title": "BLACKLIST AT NATURE ONE",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506453153-zaynzo6",
+      "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339417014-efv9q5w",
+      "title": "LOONYLAND AT NATURE ONE",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "sourceId": "source-bootshaus-ticket-io",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506402039-8mam28r",
+      "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506410605-aqbkr1h",
+      "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506399922-djrhhqv",
+      "title": "LEHMANN Clubnacht w/ Len Faki, Fjaak, Beste Hira, Raphael Dincsoy, Tamara Wirth",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339415449-xpazmaq",
+      "title": "Bootshaus Sommerfest - Part 4",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "sourceId": "source-ticket-io-area51events",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506384006-ve662md",
+      "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "sourceId": "source-affenkaefig-ticket-kings",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 3,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "sourceId": "source-affenkaefig-ticket-kings",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339406307-kw5r61q",
+      "title": "PLAY! Open Air – Bootshaus Köln",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506377307-shx3g9d",
+      "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506363578-4wh50a1",
+      "title": "FATALITY pres. DEXPHASE",
+      "sourceId": "source-ticket-io-protontheclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 5,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "sourceId": "source-bootshaus-ticket-io",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "sourceId": "source-ticket-io-lehmannclub",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785506430597-ufglza0",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+      "sourceId": "source-ticket-io-technodampfer",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "description",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 5,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "sourceId": "source-affenkaefig",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 4,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress",
+        "genres"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "priceText",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 1,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": true
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "sourceId": "source-bootshaus-koeln",
+      "missingFields": [
+        "coordinates",
+        "ageRestriction",
+        "venueAddress",
+        "venuePostalCode",
+        "venueCountryCode",
+        "doorsOpenAt",
+        "genres",
+        "ticketPhases"
+      ],
+      "recoverableAfterMapper": [
+        "coordinates",
+        "venueAddress"
+      ],
+      "duplicateRisk": false,
+      "canonicalMatchStatus": "linked",
+      "originCount": 2,
+      "manualLockConflicts": [],
+      "needsHistoricalRepair": false
+    }
+  ]
+}

@@ -11,7 +11,7 @@ import {
   importRecordRepository,
   importReviewQueueService,
 } from '@/data/repositories/registry';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import {
   detectSemanticChangeSet,
   isStablePublishedMatchReimport,

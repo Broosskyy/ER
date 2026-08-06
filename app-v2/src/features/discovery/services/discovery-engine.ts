@@ -52,12 +52,12 @@ function toRankableEvent(
   now: Date,
   canonicalId: (event: Event) => string,
   sourceTrust: number,
+  surface: DiscoveryQuery['surface'],
 ): RankableEvent | null {
   const lifecycleInput = toEventLifecycleInput(event);
   const lifecycle = eventLifecycleResolver.resolve(lifecycleInput, now);
-  const eligibility = discoveryEligibilityResolver.resolve(event, now);
 
-  if (!eligibility.eventsEligible) {
+  if (!discoveryEligibilityResolver.isEligibleForSurface(event, surface, now)) {
     return null;
   }
   if (lifecycle.status === 'cancelled' || lifecycle.status === 'ended' || lifecycle.status === 'archived') {
@@ -73,6 +73,10 @@ function toRankableEvent(
     publishedAt: event.publishedAt ?? event.createdAt,
     city: event.city,
     genres: event.genres,
+    venueId: event.venueId,
+    organizerId: event.organizerId,
+    festivalId: event.festivalId,
+    artistIds: event.artistIds,
     eventQuality: event.imageUrl ? 70 : 50,
     sourceTrust,
     freshness: isRecentlyAdded({ publishedAt: event.publishedAt ?? event.createdAt }, now) ? 80 : 40,
@@ -169,6 +173,7 @@ export class DiscoveryEngine {
           now,
           canonicalId,
           resolveEventDiscoveryTrust({ event, trustBySourceId }),
+          query.surface,
         );
         return rankableEvent ? { event, rankableEvent } : null;
       })
@@ -181,6 +186,10 @@ export class DiscoveryEngine {
         timestamp: now.toISOString(),
         city: query.location?.city ?? query.entities?.city,
         selectedGenres: query.entities?.genres,
+        similarVenueId: query.similarTo?.venueId,
+        similarOrganizerId: query.similarTo?.organizerId,
+        similarFestivalId: query.similarTo?.festivalId,
+        similarArtistIds: query.similarTo?.artistIds,
       },
     );
 

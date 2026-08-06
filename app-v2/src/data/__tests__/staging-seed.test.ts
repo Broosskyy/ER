@@ -152,6 +152,7 @@ describe('staging seed event mapping', () => {
       ...DEFAULT_EVENT_FILTERS,
       query: '',
       city: 'Berlin',
+      locationScope: 'city',
     });
     expect(berlinResults).toHaveLength(1);
   });

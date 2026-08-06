@@ -1,0 +1,198 @@
+{
+  "runs": [
+    {
+      "gate": "0",
+      "command": "repair-staging",
+      "pass": 1,
+      "generatedAt": "2026-08-04T12:04:06.782Z",
+      "mutations": 15,
+      "events": [
+        {
+          "eventId": "staging-seed-event-weekend-trance",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "klangkuenstler-berghain",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-tonight-house",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-tomorrow-techno",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-weekend-industrial",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-upcoming-psy",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-upcoming-june",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-berlin-house",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-multi-genre",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-b2b",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-no-image",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-no-ticket",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-free",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-soldout",
+          "action": "archived",
+          "pass": 1
+        },
+        {
+          "eventId": "staging-seed-event-late-july",
+          "action": "archived",
+          "pass": 1
+        }
+      ]
+    },
+    {
+      "gate": "0",
+      "command": "repair-staging",
+      "pass": 2,
+      "generatedAt": "2026-08-04T12:04:17.375Z",
+      "mutations": 0,
+      "events": []
+    },
+    {
+      "gate": "A",
+      "command": "repair-ticket-destinations",
+      "pass": 1,
+      "generatedAt": "2026-08-04T12:04:47.396Z",
+      "mutations": 6,
+      "events": [
+        {
+          "eventId": "evt-1785339424521-tn10siz",
+          "clearedTicketUrl": true,
+          "websiteUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es"
+        },
+        {
+          "eventId": "evt-1785339413919-ix5umo9",
+          "clearedTicketUrl": true,
+          "websiteUrl": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es"
+        },
+        {
+          "eventId": "evt-1785339377456-7miaf2o",
+          "clearedTicketUrl": true,
+          "websiteUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es"
+        },
+        {
+          "eventId": "evt-1785339409363-puvo8be",
+          "clearedTicketUrl": true,
+          "websiteUrl": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es"
+        },
+        {
+          "eventId": "evt-1785339388133-sq2ykbm",
+          "clearedTicketUrl": true,
+          "websiteUrl": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es"
+        },
+        {
+          "eventId": "evt-1785339407876-uqm3mz0",
+          "clearedTicketUrl": true,
+          "websiteUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es"
+        }
+      ]
+    },
+    {
+      "gate": "A",
+      "command": "repair-ticket-destinations",
+      "pass": 2,
+      "generatedAt": "2026-08-04T12:04:48.993Z",
+      "mutations": 0,
+      "events": []
+    },
+    {
+      "gate": "C",
+      "command": "repair-mdma-artists",
+      "pass": 1,
+      "generatedAt": "2026-08-04T12:05:39.430Z",
+      "mutations": 3,
+      "events": [
+        {
+          "eventId": "evt-1785443911160-owt97y3",
+          "clearedLineup": true,
+          "provenance": "ticket_kings_related_events_sidebar_contamination",
+          "garbageNames": [
+            "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+            "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+          ],
+          "markedArtifacts": [
+            "artist-title-underland-essigfabrik-05-09-2026-5-sep-22-00-6-sep-07-00-cest-t1ul0p",
+            "artist-title-m-d-m-a-xxx-proton-xxx-stuttgart-24-okt-23-00-25-okt-06-00-cest-ob61dw"
+          ],
+          "skippedInUseElsewhere": [],
+          "skippedMarking": []
+        }
+      ]
+    },
+    {
+      "gate": "C",
+      "command": "repair-mdma-artists",
+      "pass": 2,
+      "generatedAt": "2026-08-04T12:05:46.335Z",
+      "mutations": 0,
+      "events": [
+        {
+          "eventId": "evt-1785443911160-owt97y3",
+          "skipped": "lineup_already_empty"
+        }
+      ]
+    },
+    {
+      "gate": "D",
+      "command": "repair-projections",
+      "pass": 1,
+      "generatedAt": "2026-08-04T12:17:43.338Z",
+      "mutations": 1,
+      "events": [
+        {
+          "eventId": "evt-1785389049895-4mb7dub",
+          "title": "Underland Essigfabrik 05.09.2026",
+          "issues": [
+            "cache_freshness"
+          ],
+          "note": "Event-specific ticket URL in DB; invalidate consumer cache if stale bundle served generic destination",
+          "proposedAction": "invalidateConsumerEventCaches only"
+        }
+      ]
+    }
+  ]
+}

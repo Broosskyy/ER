@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-08-05T23:34:27.804Z",
+  "phase": "4.8.6.2",
+  "productionMutationsInThisRun": 0,
+  "totalAudited": 71,
+  "linkageGaps": 14,
+  "batchACount": 0,
+  "readinessVerdict": "AWAITING_TICKETIO_ENRICHMENT_BATCH_APPROVAL",
+  "genericLinkageFixApplied": true,
+  "websiteImporterUnchanged": true,
+  "schedulingUnchanged": true
+}

@@ -19,9 +19,10 @@ function isUserProfile(value: unknown): value is UserProfile {
   return typeof profile.id === 'string' && typeof profile.displayName === 'string';
 }
 
-export async function loadUserProfile(): Promise<UserProfile> {
+export async function loadUserProfile(userId?: string): Promise<UserProfile> {
   try {
-    const raw = await AsyncStorage.getItem(USER_PROFILE_STORAGE_KEY);
+    const key = userId ? `${USER_PROFILE_STORAGE_KEY}_${userId}` : USER_PROFILE_STORAGE_KEY;
+    const raw = await AsyncStorage.getItem(key);
     if (!raw) {
       return DEFAULT_USER_PROFILE;
     }
@@ -33,9 +34,10 @@ export async function loadUserProfile(): Promise<UserProfile> {
   }
 }
 
-export async function saveUserProfile(profile: UserProfile): Promise<void> {
+export async function saveUserProfile(profile: UserProfile, userId?: string): Promise<void> {
   try {
-    await AsyncStorage.setItem(USER_PROFILE_STORAGE_KEY, JSON.stringify(profile));
+    const key = userId ? `${USER_PROFILE_STORAGE_KEY}_${profile.id}` : USER_PROFILE_STORAGE_KEY;
+    await AsyncStorage.setItem(key, JSON.stringify(profile));
   } catch {
     // Non-fatal.
   }

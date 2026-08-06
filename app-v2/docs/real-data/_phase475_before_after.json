@@ -1,0 +1,4233 @@
+{
+  "before": {
+    "generatedAt": "2026-08-04T05:17:54.988Z",
+    "publishedEvents": 108,
+    "lineupComplete": 46,
+    "lineupIncomplete": 62,
+    "flyerCandidates": 93,
+    "autoPublishEligible": 0,
+    "meetsReference": 22
+  },
+  "after": {
+    "generatedAt": "2026-08-04T05:18:00.000Z",
+    "lineupComplete": 46,
+    "lineupIncomplete": 62,
+    "meetsReference": 22,
+    "repairMutationsPass1": 0,
+    "idempotent": true
+  },
+  "quality": {
+    "generatedAt": "2026-08-04T05:17:54.986Z",
+    "referenceEventId": "evt-1785339420043-obhyeev",
+    "referenceScore": 110,
+    "meetsReferenceCount": 22,
+    "traces": [
+      {
+        "eventId": "evt-1785506448834-4c5s8xl",
+        "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 17,60 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 17,60 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506424190-nk60eqi",
+        "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 39,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 39,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506415247-c9ykti2",
+        "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 8,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 8,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389056612-4cwtdmo",
+        "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+        "qualityScore": 90,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506450927-qr2is1j",
+        "title": "DISKO TOTAL - Season Opening",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 7,60 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 7,60 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-weekend-trance",
+        "title": "Trance Unity",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "klangkuenstler-berghain",
+        "title": "Klangkuenstler at Halle",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-tonight-house",
+        "title": "Cologne House Flow",
+        "qualityScore": 40,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_ticket_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": false,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-tomorrow-techno",
+        "title": "Monday Pressure: Charlotte de Witte",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-weekend-industrial",
+        "title": "Industrial Ritual",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-upcoming-psy",
+        "title": "Psy Garden Köln",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-upcoming-june",
+        "title": "Summer Techno Marathon",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-berlin-house",
+        "title": "Berlin House District",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-multi-genre",
+        "title": "Techno x Hard Techno Fusion",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-b2b",
+        "title": "DVS1 b2b Ellen Allien",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-no-image",
+        "title": "No Image Session",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-no-ticket",
+        "title": "Guestlist Only",
+        "qualityScore": 40,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_ticket_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": false,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-free",
+        "title": "Open Decks Köln",
+        "qualityScore": 40,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_ticket_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": false,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-soldout",
+        "title": "Sold Out Showcase",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "staging-seed-event-late-july",
+        "title": "Late July Warehouse",
+        "qualityScore": 50,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "gallery_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": false,
+            "detail": {
+              "count": 0
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339389636-v1tq3hw",
+        "title": "SA * 22.08.2026 | KitKatClub",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506370530-bfvzuo6",
+        "title": "KNOCKOUT by PLEA5UREPUL5E",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 10,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 10,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506366010-1npnra9",
+        "title": "100% SCHRANZ pres. NIKOLINA",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 29,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 29,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506439487-2hr731q",
+        "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 42,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 42,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506419485-ty33rrb",
+        "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 8,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 8,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506435192-azaw5p4",
+        "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 0,00 €",
+              "availability": "sold_out"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 0,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506433053-ezr3ujo",
+        "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 39,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 39,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506417389-t2f9fu4",
+        "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 12,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 12,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506446703-7r57ode",
+        "title": "WESTBAM - SAVE THE RAVE 2026",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 22,95 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 22,95 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506463791-14vrmd5",
+        "title": "ELECTRIC KINGDOM",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 28,10 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 28,10 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506457386-elpnk6o",
+        "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 36,75 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 36,75 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506459510-zx4rw9y",
+        "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 36,75 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 36,75 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339374416-shc7e7c",
+        "title": "CHROME COLOGNE",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506455240-97ea7l5",
+        "title": "Stereoact & Lena Marie Engel",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 37,85 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 37,85 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506441963-td8znfi",
+        "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 39,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 39,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506461636-oeo9yp4",
+        "title": "WESTBAM - SAVE THE RAVE 2027",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 18,40 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 18,40 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506453153-zaynzo6",
+        "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 3
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 19,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 19,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506402039-8mam28r",
+        "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506406388-usnae2d",
+        "title": "WHNZMMR SESSION",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506410605-aqbkr1h",
+        "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 4
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785443904478-dg3lk70",
+        "title": "DEBORAH DE LUCA pres by Bootshaus",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 19,90 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 19,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339413919-ix5umo9",
+        "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+        "qualityScore": 65,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339377456-7miaf2o",
+        "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+        "qualityScore": 65,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 23,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 23,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389049895-4mb7dub",
+        "title": "Underland Essigfabrik 05.09.2026",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 23,90 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 23,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339412398-hq6217j",
+        "title": "Unreal Weekender Night II - September 2026",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 8
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "45,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 45,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339420043-obhyeev",
+        "title": "Bootshaus on a Ship Vol. III",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 8
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 32,00 Euro",
+              "availability": "sold_out"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 32,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389053437-3oxde27",
+        "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 39,99 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 39,99 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339395746-in3ijod",
+        "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339382025-cazpz3d",
+        "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 4
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 23,90 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 23,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506384006-ve662md",
+        "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 15,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 15,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339385102-xocczqs",
+        "title": "NEONSPLASH Paint-Rave",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339403309-prk3iiz",
+        "title": "MI * 30.12.2026 | KitKatClub",
+        "qualityScore": 45,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506485508-ill0alw",
+        "title": "Forced to Mode",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 48,45 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 48,45 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339388133-sq2ykbm",
+        "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+        "qualityScore": 65,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339410908-9691748",
+        "title": "Bootshaus pres. BC173 (let's get loco)",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "23,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 23,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506426366-bujnxz7",
+        "title": "TECHNO DAMPFER Köln w/ Saltysis",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 39,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 39,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506428527-m5ugmjh",
+        "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 69,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 69,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389052337-0gv1iz1",
+        "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 34,90 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 34,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506377307-shx3g9d",
+        "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 12,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 12,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506476910-vh78c7a",
+        "title": "ELECTRIC KINGDOM",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 24,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 24,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506466137-qve932v",
+        "title": "STEREOACT & LENA MARIE ENGEL live",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 33,45 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 33,45 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506472665-1b5azyj",
+        "title": "NEELIX",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 28,20 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 28,20 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506483348-x67wunx",
+        "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 21,50 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 21,50 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506363578-4wh50a1",
+        "title": "FATALITY pres. DEXPHASE",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 12,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 12,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506474828-u0zw9zf",
+        "title": "HBz - Live 2027",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 23,25 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 23,25 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506481191-qaben7r",
+        "title": "WESTBAM - SAVE THE RAVE 2027",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 18,40 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 18,40 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506412720-onckj88",
+        "title": "Trancemaster Krause (All Night Long)",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506479046-0iqt1i1",
+        "title": "Gestört aber GeiL - Das OpenAir 2027",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 29,99 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 29,99 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506444104-084yf4g",
+        "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 38,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 38,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506397824-yhn81xp",
+        "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 1
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 19,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 19,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506408508-ema5ssy",
+        "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 5
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785443911160-owt97y3",
+        "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "15,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 15,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339391167-tfaixrr",
+        "title": "Bootshaus Sommerfest",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 11,90 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 11,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506368264-j5xf3dn",
+        "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 24,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 24,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506421633-m1ktkpf",
+        "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 8,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 8,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785443908695-6n8vfff",
+        "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 30,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 30,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506391332-nkworm2",
+        "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 5
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339380511-rwjwfep",
+        "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506430597-ufglza0",
+        "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 49,90 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 49,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506468322-oxv0sw4",
+        "title": "Gestört aber GeiL - Das OpenAir 2026",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 25,65 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 25,65 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506393455-qkc3qd0",
+        "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 4
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506404218-hgmd9nz",
+        "title": "Vision Ekstase Open Air",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 15,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 15,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339005035-wam829k",
+        "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 19,90 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 19,90 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785570943560-f5g5rj5",
+        "title": "NIBIRII pres. ELY OAKS!",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339401841-by9uoyc",
+        "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339404822-r8i4lyq",
+        "title": "Bootshaus & Loonyland pres. NYE 2026",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 3
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 29,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 29,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785506470445-pdpd3u6",
+        "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 25,45 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 25,45 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339400315-1mx4foh",
+        "title": "Bootshaus & Loonyland pres. Halloween 2026",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 29,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 29,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339421539-k3swcrl",
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339407876-uqm3mz0",
+        "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+        "qualityScore": 65,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339392687-tbdwup4",
+        "title": "BC173 Airport Session pres. by Bootshaus",
+        "qualityScore": 45,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339397255-frpjss3",
+        "title": "Unreal Weekender Night I - September 2026",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "45,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 45,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339424521-tn10siz",
+        "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+        "qualityScore": 35,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339372839-cwbr6ya",
+        "title": "SA * 24.10.2026 | KitKatClub",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785672261305-bgdu8dk",
+        "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 3
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "ab 10,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 10,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389051072-mihh18f",
+        "title": "14 Jahre Affenkäfig 19.09.2026",
+        "qualityScore": 90,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 15
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339394218-cbqw3kx",
+        "title": "Bootshaus Sommerfest Closing",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 15,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 15,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339375946-dszejnk",
+        "title": "Nibirii Festival 2026",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 26,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 26,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339409363-puvo8be",
+        "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+        "qualityScore": 65,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339283846-89x0jcd",
+        "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339398765-9lptzhg",
+        "title": "Blacklist Festival 2026",
+        "qualityScore": 45,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389054496-ns9b6la",
+        "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 18
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "20,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 20,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339378982-kp48td0",
+        "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+        "qualityScore": 75,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 2
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "unknown"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339418526-dn9f7g0",
+        "title": "Bootshaus on a Ship Vol. IV",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "Tickets ab 32,00 Euro",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 32,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "title": "NIGHTSWITHUS presents LEVI",
+        "qualityScore": 60,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {}
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785443914377-7g9l545",
+        "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+        "qualityScore": 80,
+        "referenceScore": 110,
+        "meetsReference": false,
+        "firstFailureStage": "canonical_lineup_reader",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": false,
+            "detail": {
+              "state": "empty",
+              "artistCount": 0
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "15,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 15,00 €"
+            }
+          }
+        ]
+      },
+      {
+        "eventId": "evt-1785389055557-ux20897",
+        "title": "Sommerfest Elektroküche 08.08.2026",
+        "qualityScore": 110,
+        "referenceScore": 110,
+        "meetsReference": true,
+        "firstFailureStage": "api_projection",
+        "stages": [
+          {
+            "stage": "canonical_lineup_reader",
+            "ok": true,
+            "detail": {
+              "state": "structured",
+              "artistCount": 14
+            }
+          },
+          {
+            "stage": "canonical_ticket_reader",
+            "ok": true,
+            "detail": {
+              "priceText": "15,00 €",
+              "availability": "available"
+            }
+          },
+          {
+            "stage": "gallery_projection",
+            "ok": true,
+            "detail": {
+              "count": 1
+            }
+          },
+          {
+            "stage": "api_projection",
+            "ok": false,
+            "detail": {
+              "displayPriceText": "ab 15,00 €"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

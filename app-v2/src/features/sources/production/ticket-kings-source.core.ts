@@ -62,7 +62,7 @@ export function createAffenkaefigTicketKingsProductionSourceRecord(
         shopSlug: 'ticketkings',
         listUrl: TICKET_KINGS_EVENTS_LIST_URL,
         timezone: 'Europe/Berlin',
-        limits: { maxEventsPerRun: 50, requestsPerMinute: 15 },
+        limits: { maxEventsPerRun: 50, requestsPerMinute: 15, maxDetailPages: 15 },
         scope: {
           allowedVenues: ['essigfabrik', 'elektroküche', 'elektrokueche', 'artheater'],
           allowedOrganizers: [
@@ -76,7 +76,7 @@ export function createAffenkaefigTicketKingsProductionSourceRecord(
           ],
         },
       },
-      publishPolicy: { mode: 'manual_review', blockOnDuplicate: false },
+      publishPolicy: { mode: 'manual_review', behavior: 'enrichment', blockOnDuplicate: false },
       defaults: {
         cityName: 'Köln',
         cityId: 'koeln',

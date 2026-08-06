@@ -4,6 +4,10 @@
  */
 import './bootstrap-ops-supabase';
 
+import { assertLegacyRepairScriptAllowed } from '@/features/operations/repair/legacy-repair-script-guard';
+
+assertLegacyRepairScriptAllowed('scripts/operations/_bootshaus-trust-reevaluation-repair.ts');
+
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
@@ -13,7 +17,7 @@ import {
   importRecordRepository,
 } from '@/data/repositories/registry';
 import { initializeEntityAliasStore } from '@/features/entity-resolution/entity-alias-store-bootstrap';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import { importRecordQualityEvaluator } from '@/features/trust-quality/services/import-record-quality-evaluator';
 import { trustPublishDecisionEngine } from '@/features/trust-quality/services/trust-publish-decision-engine';
 import type { TrustQualityRule } from '@/features/trust-quality/domain/trust-quality-types';

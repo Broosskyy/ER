@@ -5,6 +5,10 @@ import type { HomeFeedSectionDefinition } from './home-feed-types';
 
 export type { HomeFeedSectionDefinition } from './home-feed-types';
 
+/** Single source of truth for Home preview counts (configurable 5–6). */
+export const DEFAULT_HOME_LIST_PREVIEW_LIMIT = 6;
+export const DEFAULT_HOME_RAIL_PREVIEW_LIMIT = 6;
+
 /**
  * Home hierarchy:
  * - Large hero rails: trending, featured, highlights (never stacked back-to-back)
@@ -17,7 +21,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'trending',
     title: 'Trending',
     layout: 'rail',
-    previewLimit: 3,
+    previewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     collectionType: 'highlights',
     showOnHome: true,
     emptyTitle: 'Keine Trending-Events',
@@ -28,7 +32,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'today',
     title: 'Heute',
     layout: 'list',
-    previewLimit: 6,
+    previewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     collectionType: 'tonight',
     showOnHome: true,
     emptyTitle: 'Keine Events heute',
@@ -39,7 +43,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'upcoming-highlights',
     title: 'Featured',
     layout: 'rail',
-    previewLimit: 3,
+    previewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     collectionType: 'highlights',
     showOnHome: true,
     emptyTitle: 'Keine Featured-Events',
@@ -50,7 +54,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'this-week',
     title: 'Diese Woche',
     layout: 'list',
-    previewLimit: 6,
+    previewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     collectionType: 'upcoming',
     showOnHome: true,
     emptyTitle: 'Keine Events diese Woche',
@@ -61,7 +65,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'weekend',
     title: 'Dieses Wochenende',
     layout: 'list',
-    previewLimit: 6,
+    previewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     collectionType: 'weekend',
     showOnHome: true,
     emptyTitle: 'Keine Events am Wochenende',
@@ -72,7 +76,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'upcoming-highlights',
     title: 'Kommende Highlights',
     layout: 'rail',
-    previewLimit: 3,
+    previewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     collectionType: 'upcoming',
     showOnHome: true,
     emptyTitle: 'Keine Highlights',
@@ -83,7 +87,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'next-week',
     title: 'Nächste Woche',
     layout: 'list',
-    previewLimit: 6,
+    previewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     collectionType: 'upcoming',
     showOnHome: true,
     emptyTitle: 'Keine Events nächste Woche',
@@ -94,7 +98,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'newly-added',
     title: 'Neu hinzugefügt',
     layout: 'list',
-    previewLimit: 4,
+    previewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     collectionType: 'upcoming',
     showOnHome: true,
     emptyTitle: 'Keine neuen Events',
@@ -105,7 +109,7 @@ export const HOME_FEED_SECTIONS: HomeFeedSectionDefinition[] = [
     preset: 'nearby',
     title: 'In deiner Nähe',
     layout: 'list',
-    previewLimit: 6,
+    previewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     requiresLocation: true,
     showOnHome: true,
     emptyTitle: 'Keine Events in der Nähe',

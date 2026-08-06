@@ -1,0 +1,704 @@
+{
+  "startedAt": "2026-08-02T14:58:10.281Z",
+  "phase": "report",
+  "errors": [],
+  "preflight": {
+    "targetHost": "gnkjzinwvmrxcadwebhv.supabase.co",
+    "serviceRoleConfigured": true,
+    "fieldTrustMerge": true,
+    "publishMapperAvailable": true,
+    "preflightArtifactExists": true,
+    "columnProbes": {
+      "venue_address": true,
+      "ticket_phases": true,
+      "genre_labels": true,
+      "ticket_status": true
+    },
+    "activeImportJobs": [],
+    "activeQueueEntries": [],
+    "preflightSummary": {
+      "generatedAt": "2026-08-02T08:54:30.377Z",
+      "totals": {
+        "affectedSources": 12,
+        "affectedEvents": 99,
+        "expectedUpdates": 99,
+        "expectedUnchanged": 0,
+        "expectedBlocked": 0,
+        "recoverableTicketOffers": 0,
+        "recoverableLineups": 42,
+        "recoverableDescriptions": 30
+      }
+    },
+    "connectorFingerprints": [
+      {
+        "id": "source-bootshaus-koeln",
+        "adapterKey": "html",
+        "maxDetailPages": 50
+      },
+      {
+        "id": "source-affenkaefig",
+        "adapterKey": "json-ld",
+        "maxDetailPages": 50
+      },
+      {
+        "id": "source-ticket-kings-org-elektrokuche",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-kings-org-underland",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-io-technodampfer",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-io-lehmannclub",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-bootshaus-ticket-io",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-io-area51events",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-io-hmg-concerts",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-ticket-io-protontheclub",
+        "adapterKey": "html"
+      },
+      {
+        "id": "source-affenkaefig-ticket-kings",
+        "adapterKey": "html"
+      }
+    ]
+  },
+  "completedAt": "2026-08-02T15:28:45.716Z",
+  "metrics": {
+    "before": {
+      "publishedEvents": 108,
+      "archivedEvents": 14,
+      "activeOrigins": 0,
+      "importRecords": 162,
+      "eventArtistRows": 81,
+      "eventsWithLineup": 0,
+      "eventsWithMeaningfulDescription": 108,
+      "eventsWithTicketPhases": 0,
+      "eventsWithPriceText": 64,
+      "eventsWithCoordinates": 17,
+      "eventsWithVenueAddress": 23,
+      "eventsWithGenreLabels": 5
+    },
+    "after": {
+      "publishedEvents": 108,
+      "archivedEvents": 14,
+      "activeOrigins": 0,
+      "importRecords": 162,
+      "eventArtistRows": 83,
+      "eventsWithLineup": 0,
+      "eventsWithMeaningfulDescription": 108,
+      "eventsWithTicketPhases": 0,
+      "eventsWithPriceText": 64,
+      "eventsWithCoordinates": 17,
+      "eventsWithVenueAddress": 27,
+      "eventsWithGenreLabels": 6
+    }
+  },
+  "sourceInventory": [
+    {
+      "id": "source-affenkaefig",
+      "displayName": "Affenkäfig",
+      "enabled": true,
+      "sourceType": "website",
+      "adapterKey": "json-ld",
+      "urls": {
+        "baseUrl": "https://affenkaefig.info/tickets/",
+        "website": "https://affenkaefig.info/tickets/"
+      },
+      "detailSupport": true,
+      "maxDetailPages": 50,
+      "publishMode": "manual_review",
+      "importRecordCount": 8,
+      "linkedCanonicalEvents": 7,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-affenkaefig-ticket-kings",
+      "displayName": "Affenkäfig Ticket Kings",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://ticketkings.de/all-events/",
+        "website": "https://ticketkings.de/all-events/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "manual_review",
+      "importRecordCount": 5,
+      "linkedCanonicalEvents": 5,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-io-area51events",
+      "displayName": "area51events",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://area51events.ticket.io/",
+        "website": "https://area51events.ticket.io/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "auto_publish",
+      "importRecordCount": 4,
+      "linkedCanonicalEvents": 4,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-bootshaus-koeln",
+      "displayName": "Bootshaus Köln",
+      "enabled": true,
+      "sourceType": "website",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://bootshaus.tv/events/",
+        "website": "https://bootshaus.tv/events/"
+      },
+      "detailSupport": true,
+      "maxDetailPages": 50,
+      "publishMode": "auto_publish",
+      "importRecordCount": 38,
+      "linkedCanonicalEvents": 38,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-bootshaus-ticket-io",
+      "displayName": "Bootshaus Ticket.io",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://bootshaus-club.ticket.io/",
+        "website": "https://bootshaus-club.ticket.io/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "manual_review",
+      "importRecordCount": 17,
+      "linkedCanonicalEvents": 17,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-io-hmg-concerts",
+      "displayName": "hmg-concerts",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://hmg-concerts.ticket.io/",
+        "website": "https://hmg-concerts.ticket.io/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "auto_publish",
+      "importRecordCount": 20,
+      "linkedCanonicalEvents": 19,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-io-lehmannclub",
+      "displayName": "lehmannclub",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://lehmannclub.ticket.io/",
+        "website": "https://lehmannclub.ticket.io/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "auto_publish",
+      "importRecordCount": 12,
+      "linkedCanonicalEvents": 11,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-io-protontheclub",
+      "displayName": "protontheclub",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://protontheclub.ticket.io/",
+        "website": "https://protontheclub.ticket.io/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "auto_publish",
+      "importRecordCount": 13,
+      "linkedCanonicalEvents": 13,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-io-technodampfer",
+      "displayName": "technodampfer",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://technodampfer.ticket.io/",
+        "website": "https://technodampfer.ticket.io/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "auto_publish",
+      "importRecordCount": 12,
+      "linkedCanonicalEvents": 10,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-kings-org-elektrokuche",
+      "displayName": "Ticket Kings — Elektroküche",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://ticketkings.de/all-events/",
+        "website": "https://ticketkings.de/all-events/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "manual_review",
+      "importRecordCount": 5,
+      "linkedCanonicalEvents": 4,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+      "displayName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://ticketkings.de/all-events/",
+        "website": "https://ticketkings.de/all-events/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "manual_review",
+      "importRecordCount": 5,
+      "linkedCanonicalEvents": 5,
+      "inReimportBatch": true
+    },
+    {
+      "id": "source-ticket-kings-org-underland",
+      "displayName": "Ticket Kings — Underland",
+      "enabled": true,
+      "sourceType": "ticket_platform",
+      "adapterKey": "html",
+      "urls": {
+        "baseUrl": "https://ticketkings.de/all-events/",
+        "website": "https://ticketkings.de/all-events/"
+      },
+      "detailSupport": false,
+      "maxDetailPages": 0,
+      "publishMode": "manual_review",
+      "importRecordCount": 5,
+      "linkedCanonicalEvents": 0,
+      "inReimportBatch": true
+    }
+  ],
+  "ticketDestinationAudit": {
+    "generatedAt": "2026-08-02T15:28:42.279Z",
+    "totals": {
+      "published": 108,
+      "eventSpecificTicketUrls": 86,
+      "genericTicketUrls": 19,
+      "missingTicketUrls": 3,
+      "bootshausTvRegressions": 5,
+      "actionableRegressions": 5
+    },
+    "regressions": [
+      {
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "title": "NIGHTSWITHUS presents LEVI",
+        "canonicalTicketUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+        "classification": "event_specific",
+        "score": 80,
+        "originTicketUrls": {
+          "source-bootshaus-koeln": "https://bootshaus.ticket.io/"
+        },
+        "recommendedUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+        "issue": "bootshaus_tv_instead_of_ticket_shop"
+      },
+      {
+        "eventId": "evt-1785339410908-9691748",
+        "title": "Bootshaus pres. BC173 (let's get loco)",
+        "canonicalTicketUrl": "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco",
+        "classification": "event_specific",
+        "score": 80,
+        "originTicketUrls": {
+          "source-bootshaus-koeln": "https://bootshaus.ticket.io/"
+        },
+        "recommendedUrl": "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco",
+        "issue": "bootshaus_tv_instead_of_ticket_shop"
+      },
+      {
+        "eventId": "evt-1785339395746-in3ijod",
+        "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+        "canonicalTicketUrl": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+        "classification": "event_specific",
+        "score": 80,
+        "originTicketUrls": {
+          "source-bootshaus-koeln": "https://bootshaus.ticket.io/"
+        },
+        "recommendedUrl": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+        "issue": "bootshaus_tv_instead_of_ticket_shop"
+      },
+      {
+        "eventId": "evt-1785339389636-v1tq3hw",
+        "title": "SA * 22.08.2026 | KitKatClub",
+        "canonicalTicketUrl": "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub",
+        "classification": "event_specific",
+        "score": 80,
+        "originTicketUrls": {
+          "source-bootshaus-koeln": "https://bootshaus.ticket.io/"
+        },
+        "recommendedUrl": "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub",
+        "issue": "bootshaus_tv_instead_of_ticket_shop"
+      },
+      {
+        "eventId": "evt-1785339403309-prk3iiz",
+        "title": "MI * 30.12.2026 | KitKatClub",
+        "canonicalTicketUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+        "classification": "event_specific",
+        "score": 80,
+        "originTicketUrls": {
+          "source-bootshaus-koeln": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub"
+        },
+        "recommendedUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+        "issue": "bootshaus_tv_instead_of_ticket_shop"
+      }
+    ]
+  },
+  "multiOriginValidation": {
+    "generatedAt": "2026-08-02T14:58:29.103Z",
+    "pairs": [
+      {
+        "label": "Bootshaus",
+        "sourceIds": [
+          "source-bootshaus-koeln",
+          "source-bootshaus-ticket-io"
+        ],
+        "canonicalEventsWithBothOrigins": 12,
+        "sampleMergedIds": [
+          "evt-1785339420043-obhyeev",
+          "evt-1785339005035-wam829k",
+          "evt-1785339418526-dn9f7g0",
+          "evt-1785339415449-xpazmaq",
+          "evt-1785339382025-cazpz3d"
+        ],
+        "potentialSplitDuplicates": [
+          {
+            "title": "r3hab pres. by bootshaus",
+            "sourceIds": [
+              "source-bootshaus-koeln",
+              "source-bootshaus-ticket-io"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Affenkäfig",
+        "sourceIds": [
+          "source-affenkaefig",
+          "source-affenkaefig-ticket-kings"
+        ],
+        "canonicalEventsWithBothOrigins": 1,
+        "sampleMergedIds": [
+          "evt-1785389055557-ux20897"
+        ],
+        "potentialSplitDuplicates": [
+          {
+            "title": "underland essigfabrik 05.09.2026",
+            "sourceIds": [
+              "source-affenkaefig",
+              "source-affenkaefig-ticket-kings"
+            ]
+          },
+          {
+            "title": "mdma – musik die mich antreibt 10.10.26",
+            "sourceIds": [
+              "source-affenkaefig",
+              "source-affenkaefig-ticket-kings"
+            ]
+          },
+          {
+            "title": "mdma- musik die mich antreibt xxx f2f & b2b xxx edition",
+            "sourceIds": [
+              "source-affenkaefig",
+              "source-affenkaefig-ticket-kings"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "regressionValidation": {
+    "generatedAt": "2026-08-02T15:28:43.428Z",
+    "traces": [
+      {
+        "label": "Bootshaus Sommerfest",
+        "status": "found",
+        "eventId": "evt-1785339394218-cbqw3kx",
+        "title": "Bootshaus Sommerfest Closing",
+        "fields": {
+          "descriptionLen": 758,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+          "ticketClass": "event_specific",
+          "priceText": "Tickets ab 15,00 Euro",
+          "venueName": "Bootshaus",
+          "organizerName": "Bootshaus",
+          "address": "Auenweg 173, 51063 Köln",
+          "coordinates": true,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": true,
+          "eventSpecificTicket": true,
+          "hasAddress": true,
+          "venueOrganizerSeparated": false
+        }
+      },
+      {
+        "label": "PLAY! Open Air",
+        "status": "not_found"
+      },
+      {
+        "label": "LEVI",
+        "status": "found",
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "title": "NIGHTSWITHUS presents LEVI",
+        "fields": {
+          "descriptionLen": 417,
+          "lineupCount": 0,
+          "genreLabels": [
+            "HOUSE"
+          ],
+          "ticketUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "ticketClass": "event_specific",
+          "venueName": "Bootshaus",
+          "organizerName": "Bootshaus",
+          "address": "Auenweg 173, 51063 Köln",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": true,
+          "hasDescription": true,
+          "eventSpecificTicket": true,
+          "hasAddress": true,
+          "venueOrganizerSeparated": false
+        }
+      },
+      {
+        "label": "ELY OAKS",
+        "status": "found",
+        "eventId": "evt-1785570943560-f5g5rj5",
+        "title": "NIBIRII pres. ELY OAKS!",
+        "fields": {
+          "descriptionLen": 526,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "ticketClass": "shop_root",
+          "venueName": "Bootshaus",
+          "organizerName": "Bootshaus",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": true,
+          "eventSpecificTicket": false,
+          "hasAddress": false,
+          "venueOrganizerSeparated": false
+        }
+      },
+      {
+        "label": "Technodampfer",
+        "status": "not_found"
+      },
+      {
+        "label": "SHOCKONE",
+        "status": "not_found"
+      },
+      {
+        "label": "Musik die mich antreibt",
+        "status": "found",
+        "eventId": "evt-1785389054496-ns9b6la",
+        "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+        "fields": {
+          "descriptionLen": 0,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "ticketClass": "event_specific",
+          "venueName": "Essigfabrik / Elektroküche",
+          "organizerName": "Affenkäfig",
+          "address": "Siegburger Str. 110, 50679 Köln, Köln",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": false,
+          "eventSpecificTicket": true,
+          "hasAddress": true,
+          "venueOrganizerSeparated": true
+        }
+      },
+      {
+        "label": "Affenkäfig",
+        "status": "found",
+        "eventId": "evt-1785389056612-4cwtdmo",
+        "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+        "fields": {
+          "descriptionLen": 0,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+          "ticketClass": "event_specific",
+          "venueName": "A8 Stage Club",
+          "organizerName": "Affenkäfig",
+          "address": "An der Saarlandhalle 3, 66113, Saarbrücken",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": false,
+          "eventSpecificTicket": true,
+          "hasAddress": true,
+          "venueOrganizerSeparated": true
+        }
+      },
+      {
+        "label": "Proton",
+        "status": "found",
+        "eventId": "evt-1785443914377-7g9l545",
+        "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+        "fields": {
+          "descriptionLen": 538,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "ticketClass": "event_specific",
+          "venueName": "Proton Stuttgart",
+          "organizerName": "M.D.M.A Musik die mich Antreibt",
+          "address": "Königstraße 49, 70173, Stuttgart, Germany",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": true,
+          "eventSpecificTicket": true,
+          "hasAddress": true,
+          "venueOrganizerSeparated": true
+        }
+      },
+      {
+        "label": "Lehmann",
+        "status": "found",
+        "eventId": "evt-1785506408508-ema5ssy",
+        "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+        "fields": {
+          "descriptionLen": 0,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+          "ticketClass": "event_specific",
+          "priceText": "ab 20,00 €",
+          "venueName": "LEHMANN Club",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": false,
+          "eventSpecificTicket": true,
+          "hasAddress": false,
+          "venueOrganizerSeparated": true
+        }
+      },
+      {
+        "label": "Area51",
+        "status": "found",
+        "eventId": "evt-1785506421633-m1ktkpf",
+        "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+        "fields": {
+          "descriptionLen": 0,
+          "lineupCount": 0,
+          "genreLabels": [],
+          "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/",
+          "ticketClass": "event_specific",
+          "priceText": "ab 8,00 €",
+          "venueName": "Kultur-Schlachthof e.V.",
+          "organizerName": "Tim Hanck",
+          "coordinates": false,
+          "ticketPhases": 0
+        },
+        "checks": {
+          "organizationNotArtist": true,
+          "hasLineup": false,
+          "hasGenres": false,
+          "hasDescription": false,
+          "eventSpecificTicket": true,
+          "hasAddress": false,
+          "venueOrganizerSeparated": true
+        }
+      }
+    ],
+    "checklist": {
+      "organizationNotArtist": true,
+      "directTicketUrls": [
+        "ELY OAKS"
+      ],
+      "missingEvents": [
+        "PLAY! Open Air",
+        "Technodampfer",
+        "SHOCKONE"
+      ]
+    }
+  }
+}

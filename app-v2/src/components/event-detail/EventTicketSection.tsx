@@ -36,6 +36,14 @@ export function EventTicketSection({
     <Section title="Tickets" style={style} testID={testID}>
       <Stack gap="md">
         {section.noticeLabel ? <Banner title={section.noticeLabel} variant="warning" /> : null}
+        {section.priceLabel ? (
+          <AppText role="body">{section.priceLabel}</AppText>
+        ) : null}
+        {section.availabilityLabel ? (
+          <AppText role="caption" color={theme.colors.textSecondary}>
+            {section.availabilityLabel}
+          </AppText>
+        ) : null}
         {section.salesStartLabel ? (
           <AppText role="caption" color={theme.colors.textSecondary}>
             Verkaufsstart: {section.salesStartLabel}
@@ -57,7 +65,7 @@ export function EventTicketSection({
             onPress={onTicketTypePress ? () => onTicketTypePress(ticketType.id) : undefined}
           />
         ))}
-        {section.summary ? <TicketSummary summary={section.summary} /> : null}
+        {section.showSummary && section.summary ? <TicketSummary summary={section.summary} /> : null}
         <PrimaryButton
           label={section.ctaLabel}
           onPress={onCtaPress}

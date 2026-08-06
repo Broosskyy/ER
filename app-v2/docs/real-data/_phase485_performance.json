@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-05T19:38:51.570Z",
+  "phase": "4.8.5",
+  "productionMutationsInThisRun": 0,
+  "detailPagesProcessed": 4,
+  "htmlReuseCount": 4,
+  "extraHttpRequests": 0,
+  "unifiedExtractionsMs": 6,
+  "shadowArtifactBytes": 44298,
+  "duplicateDetailFetch": true,
+  "acceptableOverhead": true,
+  "autoDisableThreshold": {
+    "unifiedFailureRate": 0.25,
+    "extraHttpRequestRate": 0.01,
+    "durationIncreaseMs": 180000
+  }
+}

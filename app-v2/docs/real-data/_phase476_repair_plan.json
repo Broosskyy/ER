@@ -1,0 +1,878 @@
+{
+  "generatedAt": "2026-08-04T14:32:31.366Z",
+  "readOnly": true,
+  "items": [
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "ticketUrl",
+      "stage": "Persistence",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "ticketPhases",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "ticketPhases",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "lineup",
+      "stage": "Connector",
+      "strategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "ticketPhases",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "ticketPhases",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "lineup",
+      "stage": "Connector",
+      "strategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "ticketUrl",
+      "stage": "Persistence",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "ticketPhases",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "ticketUrl",
+      "stage": "Merge",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "ticketPhases",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "lineup",
+      "stage": "Connector",
+      "strategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "ticketUrl",
+      "stage": "Persistence",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "ticketUrl",
+      "stage": "Persistence",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "lineup",
+      "stage": "Connector",
+      "strategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "ticketUrl",
+      "stage": "Persistence",
+      "strategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "provider",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "price",
+      "stage": "Source",
+      "strategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain",
+      "blocked": true
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "availability",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "badges",
+      "stage": "Projection",
+      "strategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "venue",
+      "stage": "Merge",
+      "strategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "lineup",
+      "stage": "Source",
+      "strategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility",
+      "blocked": true
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "flyer",
+      "stage": "Persistence",
+      "strategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages",
+      "blocked": false
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domain": "consumerProjection",
+      "stage": "ViewModel",
+      "strategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts",
+      "blocked": false
+    }
+  ]
+}

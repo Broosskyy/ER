@@ -148,7 +148,12 @@ export class MultiSourceMatchScorer {
 
     const incomingArtists = incoming.artistNames ?? [];
     const candidateArtists = candidate.artistNames ?? [];
-    if (incomingArtists.length > 0 && candidateArtists.length > 0) {
+    const hasStrongSignal = signals.some((signal) =>
+      ['source_reference', 'fingerprint', 'external_id', 'ticket_url', 'event_url', 'venue', 'coordinates'].includes(
+        signal.type,
+      ),
+    );
+    if (hasStrongSignal && incomingArtists.length > 0 && candidateArtists.length > 0) {
       let bestArtistScore = 0;
       for (const artist of incomingArtists) {
         for (const candidateArtist of candidateArtists) {
@@ -159,9 +164,9 @@ export class MultiSourceMatchScorer {
         pushSignal(
           signals,
           'artist_overlap',
-          matchingConfig.scores.titleDateArtist,
-          0.75,
-          `Artist overlap score ${bestArtistScore}.`,
+          Math.min(40, bestArtistScore / 2),
+          0.25,
+          `Artist overlap support score ${bestArtistScore}.`,
         );
       }
     }

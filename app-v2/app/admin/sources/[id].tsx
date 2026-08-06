@@ -25,6 +25,7 @@ import {
   AdminLoadingState,
 } from '@/features/admin/components/AdminStates';
 import type { SourceDetailMultiSourceContext } from '@/features/admin/services/admin-multi-source-service';
+import { formatConnectorCapabilitySummaryDe, formatSourceReliabilitySummaryDe } from '@/features/admin/utils/admin-source-display';
 import { formatConnectorHealthStatus } from '@/features/connectors/admin/connector-labels';
 import type { ConnectorDescriptor } from '@/features/connectors/registry/connector-registry';
 import type { ConnectorSourceAssignmentView } from '@/features/connectors/services/connector-admin-service';
@@ -36,6 +37,7 @@ import {
   formatSourceTypeLabel,
 } from '@/features/sources/admin/source-labels';
 import { SourceEndpointsSection } from '@/features/sources/admin/SourceEndpointsSection';
+import { SourceEventsSection } from '@/features/sources/admin/SourceEventsSection';
 import { SourceOnboardingWizard } from '@/features/source-onboarding/admin/SourceOnboardingWizard';
 import { SOURCE_DEFAULT_TRUST_SCORE ,
   ACQUISITION_STRATEGIES,
@@ -367,6 +369,42 @@ export default function AdminSourceEditorScreen() {
                 Health: {multiSourceContext?.health.status ?? 'unknown'} ({multiSourceContext?.health.score ?? 0}) ·
                 Quality: {multiSourceContext?.quality.tier ?? 'unknown'} ({multiSourceContext?.quality.qualityScore ?? 0})
               </AppText>
+              {record ? (() => {
+                const capability = formatConnectorCapabilitySummaryDe(record);
+                return (
+                  <>
+                    <AppText style={styles.meta}>
+                      {capability.detailLevelLabel} · Connector: {capability.qualityLabel} ·{' '}
+                      {capability.descriptionCoverage}
+                    </AppText>
+                    {capability.lostFieldsLabel ? (
+                      <AppText style={styles.meta}>{capability.lostFieldsLabel}</AppText>
+                    ) : null}
+                    {record ? (() => {
+                      const reliability = formatSourceReliabilitySummaryDe(record);
+                      return (
+                        <>
+                          <AppText style={styles.meta}>{reliability.healthLabel}</AppText>
+                          {reliability.coverageLines.length > 0 ? (
+                            <AppText style={styles.meta}>
+                              Coverage: {reliability.coverageLines.join(' · ')}
+                            </AppText>
+                          ) : null}
+                          {reliability.blockedFieldsLabel ? (
+                            <AppText style={styles.meta}>{reliability.blockedFieldsLabel}</AppText>
+                          ) : null}
+                          {reliability.regressionLabel ? (
+                            <AppText style={styles.meta}>{reliability.regressionLabel}</AppText>
+                          ) : null}
+                          <AppText style={styles.meta}>
+                            Letzter erfolgreicher Import: {reliability.lastImportLabel}
+                          </AppText>
+                        </>
+                      );
+                    })() : null}
+                  </>
+                );
+              })() : null}
             </View>
           ) : null}
 
@@ -450,6 +488,10 @@ export default function AdminSourceEditorScreen() {
                 {schedulerStatus?.schedulerMaintenanceMode ? 'on' : 'off'}
               </AppText>
             </View>
+          ) : null}
+
+          {!isNew ? (
+            <SourceEventsSection sourceId={record.id} sourceName={record.displayName} />
           ) : null}
 
           {!isNew ? (

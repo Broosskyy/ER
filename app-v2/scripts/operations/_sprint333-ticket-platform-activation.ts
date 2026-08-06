@@ -21,7 +21,7 @@ import {
   TICKET_KINGS_AFFENKAEFIG_SOURCE_ID,
   createAffenkaefigTicketKingsLiveProductionSourceRecord,
 } from '@/features/sources/production/ticket-kings-source';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import type { SourceRecord } from '@/data/types/records';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '../../docs/real-data/_sprint333_ticket_platform_activation.json');

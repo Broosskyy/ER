@@ -31,6 +31,9 @@ export const GENRE_SYNONYMS: Record<string, string[]> = {
   industrial: ['industrial'],
   'drum-and-bass': ['drum and bass', 'drum & bass', 'dnb', 'drum-and-bass'],
   'tech-house': ['tech house', 'tech-house', 'techhouse'],
+  'melodic-techno': ['melodic techno', 'melodic-techno'],
+  'deep-house': ['deep house', 'deep-house'],
+  hardstyle: ['hardstyle', 'hard style'],
 };
 
 export const ARTIST_ALIASES: Record<string, string[]> = {

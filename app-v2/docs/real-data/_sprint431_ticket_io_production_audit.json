@@ -1,0 +1,373 @@
+{
+  "generatedAt": "2026-07-31T21:01:45.147Z",
+  "supabaseUrlHost": "gnkjzinwvmrxcadwebhv.supabase.co",
+  "migration700": {
+    "exists": true
+  },
+  "perSource": [
+    {
+      "sourceId": "source-ticket-io-protontheclub",
+      "originCount": 12,
+      "canonicalCount": 12,
+      "metrics": {
+        "total": 12,
+        "published": 8,
+        "realDescription": 0,
+        "naDescription": 12,
+        "emptyDescription": 8,
+        "withPriceText": 8,
+        "withLineup": 0,
+        "withGenre": 0,
+        "withTicketUrl": 12,
+        "withImage": 12
+      },
+      "samples": [
+        {
+          "id": "evt-1785506388701-qd8n1fh",
+          "title": "DNB CONNECTION pres. SHOCKONE",
+          "description": "",
+          "priceText": "Tickets ab 12,00 Euro",
+          "ticketUrl": "https://proton-the-club.ticket.io/hyHJr2xd/",
+          "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/hyHJr2xd/img/holder-1080.jpg?610680f5",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "sourceId": "source-ticket-io-lehmannclub",
+      "originCount": 11,
+      "canonicalCount": 11,
+      "metrics": {
+        "total": 11,
+        "published": 11,
+        "realDescription": 0,
+        "naDescription": 11,
+        "emptyDescription": 11,
+        "withPriceText": 11,
+        "withLineup": 0,
+        "withGenre": 0,
+        "withTicketUrl": 11,
+        "withImage": 11
+      },
+      "samples": []
+    },
+    {
+      "sourceId": "source-ticket-io-area51events",
+      "originCount": 4,
+      "canonicalCount": 4,
+      "metrics": {
+        "total": 4,
+        "published": 4,
+        "realDescription": 0,
+        "naDescription": 4,
+        "emptyDescription": 4,
+        "withPriceText": 4,
+        "withLineup": 0,
+        "withGenre": 0,
+        "withTicketUrl": 4,
+        "withImage": 4
+      },
+      "samples": [
+        {
+          "id": "evt-1785506415247-c9ykti2",
+          "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+          "description": "",
+          "priceText": "Tickets ab 8,00 Euro",
+          "ticketUrl": "https://area51events.ticket.io/Z5ZN42qw/",
+          "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/Z5ZN42qw/img/holder-1080.jpg?c14dab2a",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506417389-t2f9fu4",
+          "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+          "description": "",
+          "priceText": "Tickets ab 12,00 Euro",
+          "ticketUrl": "https://area51events.ticket.io/aLr3YQLG/",
+          "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/aLr3YQLG/img/holder-1080.jpg?29fd5deb",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506419485-ty33rrb",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+          "description": "",
+          "priceText": "Tickets ab 8,00 Euro",
+          "ticketUrl": "https://area51events.ticket.io/pK21qzGB/",
+          "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/pK21qzGB/img/holder-1080.jpg?29fd5deb",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506421633-m1ktkpf",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+          "description": "",
+          "priceText": "Tickets ab 8,00 Euro",
+          "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/",
+          "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/YSQcd9gq/img/holder-1080.jpg?c14dab2a",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "sourceId": "source-ticket-io-technodampfer",
+      "originCount": 10,
+      "canonicalCount": 10,
+      "metrics": {
+        "total": 10,
+        "published": 10,
+        "realDescription": 0,
+        "naDescription": 10,
+        "emptyDescription": 10,
+        "withPriceText": 10,
+        "withLineup": 0,
+        "withGenre": 0,
+        "withTicketUrl": 10,
+        "withImage": 10
+      },
+      "samples": [
+        {
+          "id": "evt-1785506424190-nk60eqi",
+          "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+          "description": "",
+          "priceText": "Tickets ab 39,90 Euro",
+          "ticketUrl": "https://technodampfer.ticket.io/QC7jvv0A/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/QC7jvv0A/img/holder-1080.jpg?15cf89fa",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506426366-bujnxz7",
+          "title": "TECHNO DAMPFER Köln w/ Saltysis",
+          "description": "",
+          "priceText": "Tickets ab 39,90 Euro",
+          "ticketUrl": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/pmsUCbbF/img/holder-1080.jpg?16dfb887",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506428527-m5ugmjh",
+          "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+          "description": "",
+          "priceText": "Tickets ab 49,90 Euro",
+          "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506430597-ufglza0",
+          "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+          "description": "",
+          "priceText": "Tickets ab 49,90 Euro",
+          "ticketUrl": "https://technodampfer.ticket.io/kVMC3cKZ/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/kVMC3cKZ/img/holder-1080.jpg?d6693622",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506433053-ezr3ujo",
+          "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+          "description": "",
+          "priceText": "Tickets ab 39,90 Euro",
+          "ticketUrl": "https://technodampfer.ticket.io/yuLuqTQR/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/yuLuqTQR/img/holder-1080.jpg?16dfb887",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "originCount": 19,
+      "canonicalCount": 19,
+      "metrics": {
+        "total": 19,
+        "published": 19,
+        "realDescription": 0,
+        "naDescription": 19,
+        "emptyDescription": 19,
+        "withPriceText": 19,
+        "withLineup": 0,
+        "withGenre": 0,
+        "withTicketUrl": 19,
+        "withImage": 19
+      },
+      "samples": [
+        {
+          "id": "evt-1785506446703-7r57ode",
+          "title": "WESTBAM - SAVE THE RAVE 2026",
+          "description": "",
+          "priceText": "Tickets ab 22,95 Euro",
+          "ticketUrl": "https://hmg-concerts.ticket.io/H21zDjkW/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/H21zDjkW/img/holder-1080.jpg?504274cb",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506448834-4c5s8xl",
+          "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+          "description": "",
+          "priceText": "Tickets ab 14,85 Euro",
+          "ticketUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/0orkxNqw/img/holder-1080.jpg?d59e32a4",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506453153-zaynzo6",
+          "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+          "description": "",
+          "priceText": "Tickets ab 19,90 Euro",
+          "ticketUrl": "https://hmg-concerts.ticket.io/m4ppRcZr/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/m4ppRcZr/img/holder-1080.jpg?47ec33bb",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506461636-oeo9yp4",
+          "title": "WESTBAM - SAVE THE RAVE 2027",
+          "description": "",
+          "priceText": "Tickets ab 18,40 Euro",
+          "ticketUrl": "https://hmg-concerts.ticket.io/YM0Ek3Ql/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/YM0Ek3Ql/img/holder-1080.jpg?51122e2e",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        },
+        {
+          "id": "evt-1785506470445-pdpd3u6",
+          "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+          "description": "",
+          "priceText": "Tickets ab 25,45 Euro",
+          "ticketUrl": "https://hmg-concerts.ticket.io/ujyn909p/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ujyn909p/img/holder-1080.jpg?de9cff59",
+          "lineupCount": 0,
+          "genreId": null,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "sourceId": "source-bootshaus-ticket-io",
+      "originCount": 17,
+      "canonicalCount": 17,
+      "metrics": {
+        "total": 17,
+        "published": 17,
+        "realDescription": 0,
+        "naDescription": 17,
+        "emptyDescription": 17,
+        "withPriceText": 17,
+        "withLineup": 0,
+        "withGenre": 0,
+        "withTicketUrl": 17,
+        "withImage": 17
+      },
+      "samples": []
+    }
+  ],
+  "liveProbes": [
+    {
+      "shopSlug": "proton-the-club",
+      "listUrl": "https://proton-the-club.ticket.io/",
+      "listStatus": 200,
+      "listBlockedByPow": false,
+      "listEventCount": 8,
+      "sampleEvent": {
+        "title": "DNB CONNECTION pres. SHOCKONE",
+        "priceText": "Tickets ab 12,00 Euro",
+        "artistNames": [
+          "SHOCKONE"
+        ],
+        "genreNames": [
+          "DRUM",
+          "BASS"
+        ],
+        "ticketUrl": "https://proton-the-club.ticket.io/hyHJr2xd/"
+      },
+      "detail": {
+        "url": "https://proton-the-club.ticket.io/hyHJr2xd/",
+        "status": 200,
+        "blockedByPow": true,
+        "title": "Security check..."
+      }
+    },
+    {
+      "shopSlug": "technodampfer",
+      "listUrl": "https://technodampfer.ticket.io/",
+      "listStatus": 200,
+      "listBlockedByPow": false,
+      "listEventCount": 12,
+      "sampleEvent": {
+        "title": "TECHNO DAMPFER Hamburg w/ Moonbootica",
+        "priceText": "Tickets ab 46,90 Euro",
+        "artistNames": [
+          "Moonbootica"
+        ],
+        "ticketUrl": "https://technodampfer.ticket.io/fb9gcaBr/"
+      }
+    },
+    {
+      "shopSlug": "lehmannclub",
+      "listUrl": "https://lehmannclub.ticket.io/",
+      "listStatus": 200,
+      "listBlockedByPow": false,
+      "listEventCount": 12,
+      "sampleEvent": {
+        "title": "NAZZ-T 2 YEARS ANNIVERSARY x ATELIER UNDERGROUND",
+        "priceText": "Tickets ab 15,00 Euro",
+        "artistNames": [
+          "ATELIER UNDERGROUND"
+        ],
+        "ticketUrl": "https://lehmannclub.ticket.io/esEMziRs/"
+      }
+    },
+    {
+      "shopSlug": "area51events",
+      "listUrl": "https://area51events.ticket.io/",
+      "listStatus": 200,
+      "listBlockedByPow": false,
+      "listEventCount": 4,
+      "sampleEvent": {
+        "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+        "priceText": "Tickets ab 8,00 Euro",
+        "artistNames": [
+          "R25 Düsseldorf"
+        ],
+        "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/"
+      }
+    }
+  ],
+  "capabilityMatrix": {
+    "listPage": {
+      "description": "Usually N/A in JSON-LD — must sanitize",
+      "priceText": "Available via tio-overview-tickets-from row",
+      "genres": "Available on some shops in info row",
+      "titleArtists": "Available via pres./w/ parsing",
+      "image": "Available in JSON-LD",
+      "ticketUrl": "Available in JSON-LD offers.url"
+    },
+    "detailPage": {
+      "fullLineup": "Blocked by Altcha for bot user-agent",
+      "fullDescription": "Blocked by Altcha for bot user-agent",
+      "ticketPhases": "Blocked by Altcha for bot user-agent"
+    }
+  }
+}

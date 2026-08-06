@@ -17,6 +17,7 @@ import type { FollowEntityType } from '@/features/follows/follow-service';
 
 import { filterProfileEvents } from './entity-profile-events-filter';
 import { resolveCanonicalEntityId } from './canonical-entity-id-resolver';
+import { isInternalEntityId } from '@/features/events/discovery/internal-event-eligibility';
 
 export interface LoadedEntityProfile<TRecord> {
   canonicalId: string;
@@ -74,6 +75,9 @@ async function resolveArtistRecord(
 export async function loadOrganizerProfile(
   rawId: string,
 ): Promise<LoadedEntityProfile<OrganizerRecord> | null> {
+  if (isInternalEntityId(rawId)) {
+    return null;
+  }
   const { canonicalId, record } = await resolveOrganizerRecord(rawId);
   if (!record) {
     return null;
@@ -88,6 +92,9 @@ export async function loadOrganizerProfile(
 export async function loadVenueProfile(
   rawId: string,
 ): Promise<LoadedEntityProfile<VenueRecord> | null> {
+  if (isInternalEntityId(rawId)) {
+    return null;
+  }
   const { canonicalId, record } = await resolveVenueRecord(rawId);
   if (record) {
     const eventIds = await adminVenueRepository.listEventIdsForVenue(record.id);
@@ -132,6 +139,9 @@ export async function loadVenueProfile(
 export async function loadArtistProfile(
   rawId: string,
 ): Promise<LoadedEntityProfile<ArtistRecord> | null> {
+  if (isInternalEntityId(rawId)) {
+    return null;
+  }
   const { canonicalId, record } = await resolveArtistRecord(rawId);
   if (!record) {
     return null;

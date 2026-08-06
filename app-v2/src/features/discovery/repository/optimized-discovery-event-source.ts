@@ -1,4 +1,5 @@
 import type { Event } from '@/features/events/types/event';
+import { discoveryCitiesMatch } from '@/features/location/normalize-discovery-city';
 
 import type { DiscoverySourceQuery } from '../query/discovery-query-planner';
 import type { DiscoveryEventSource } from './discovery-event-source';
@@ -17,7 +18,7 @@ function matchesPushdown(event: Event, query: DiscoverySourceQuery): boolean {
   if (query.festivalId && event.festivalId !== query.festivalId) {
     return false;
   }
-  if (query.city && event.city.toLowerCase() !== query.city.toLowerCase()) {
+  if (query.city && !discoveryCitiesMatch(query.city, event.city)) {
     return false;
   }
   if (query.startDateGte) {

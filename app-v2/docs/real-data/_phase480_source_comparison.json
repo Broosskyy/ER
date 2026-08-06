@@ -1,0 +1,1564 @@
+{
+  "generatedAt": "2026-08-04T19:26:39.619Z",
+  "productionMutationsInThisRun": 0,
+  "events": [
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "label": "Bootshaus on a Ship Vol. III",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii/",
+          "jsonLd": {
+            "title": "Bootshaus on a Ship Vol. III | Bootshaus Club",
+            "description": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session.&nbsp;LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "parser": "ticket_io",
+          "finalUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/"
+        },
+        "canonical": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+          "priceText": "Tickets ab 32,00 Euro",
+          "ticketStatus": "sold_out",
+          "venueName": "KD Anleger Nr. 2",
+          "structuredLineupCount": 4
+        },
+        "api": {
+          "id": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+          "genres": [],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "Bootshaus on a Ship Vol. III | Bootshaus Club",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "start": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "incorrect",
+          "groundTruth": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session.&nbsp;LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "lineup": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "artists": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "identical",
+          "groundTruth": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "provider": {
+          "classification": "identical",
+          "groundTruth": "ticket.io",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketPhases": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "prices": {
+          "classification": "third_party_behaviour",
+          "groundTruth": "Ausverkauft",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "availability": {
+          "classification": "third_party_behaviour",
+          "groundTruth": "sold_out",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "soldOut": {
+          "classification": "third_party_behaviour",
+          "groundTruth": true,
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "badges": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete."
+      ]
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/nightswithus-presents-levi/",
+          "jsonLd": {
+            "title": "NIGHTSWITHUS presents LEVI | Bootshaus Club",
+            "description": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨📍 Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00&nbsp;NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne.&nbsp;Don&#39;t miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "parser": "ticket_io",
+          "finalUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/"
+        },
+        "canonical": {
+          "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "websiteUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "ticketStatus": "external_link",
+          "venueName": "Bootshaus",
+          "genreLabels": [
+            "HOUSE"
+          ],
+          "structuredLineupCount": 0
+        },
+        "api": {
+          "id": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "websiteUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "genres": [
+            "HOUSE"
+          ],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "NIGHTSWITHUS presents LEVI | Bootshaus Club",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "start": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "incorrect",
+          "groundTruth": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨📍 Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00&nbsp;NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne.&nbsp;Don&#39;t miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "lineup": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "artists": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "identical",
+          "groundTruth": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "provider": {
+          "classification": "identical",
+          "groundTruth": "ticket.io",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketPhases": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "prices": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "availability": {
+          "classification": "third_party_behaviour",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "soldOut": {
+          "classification": "third_party_behaviour",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "badges": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete.",
+        "LEVI: bootshaus-tickets shop list returns 0 rows; price not publicly extractable without bypassing bot protection."
+      ]
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+          "fetchStatus": 200,
+          "finalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "jsonLd": {
+            "title": "Underland Essigfabrik 05.09.2026",
+            "description": "",
+            "startDate": "2026-09-05T00:00:00+02:00",
+            "venueName": "Essigfabrik /  Elektroküche",
+            "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+            "cityName": "Köln",
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "eventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+            "sourceMetadata": {
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Underland Essigfabrik 05.09.2026",
+              "startDate": "2026-09-05T00:00:00+02:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+              "description": "",
+              "image": [
+                "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Essigfabrik /  Elektroküche",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Siegburger Str. 110, 50679 Köln",
+                  "addressLocality": "Köln"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2026-07-01T21:34:01+02:00"
+              }
+            },
+            "baseUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "parser": "ticket_io",
+          "finalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+        },
+        "canonical": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "websiteUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+          "priceText": "Tickets ab 23,90 Euro",
+          "ticketStatus": "external_link",
+          "venueName": "Essigfabrik / Elektroküche",
+          "structuredLineupCount": 0
+        },
+        "api": {
+          "id": "evt-1785389049895-4mb7dub",
+          "title": "Underland Essigfabrik 05.09.2026",
+          "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "websiteUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+          "genres": [],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "Underland Essigfabrik 05.09.2026",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "incorrect",
+          "groundTruth": "2026-09-05T00:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "start": {
+          "classification": "incorrect",
+          "groundTruth": "2026-09-05T00:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "identical",
+          "groundTruth": "Essigfabrik /  Elektroküche",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "identical",
+          "groundTruth": "Siegburger Str. 110, 50679 Köln, Köln",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "identical",
+          "groundTruth": "",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "lineup": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "artists": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "browser_behaviour",
+          "groundTruth": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "earliestStage": "Browser",
+          "rootCause": "Browser"
+        },
+        "provider": {
+          "classification": "identical",
+          "groundTruth": "ticket.io",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketPhases": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "prices": {
+          "classification": "third_party_behaviour",
+          "groundTruth": "ab 23,90 €",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "availability": {
+          "classification": "third_party_behaviour",
+          "groundTruth": "available",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "soldOut": {
+          "classification": "third_party_behaviour",
+          "groundTruth": false,
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "badges": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete.",
+        "Underland ticket redirect observed: requested https://bootshaus-club.ticket.io/C7JPnatZ/ → final https://bootshaus-club.ticket.io/C7JPnatZ/"
+      ]
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "label": "BC173",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/",
+          "jsonLd": {
+            "title": "BC173 Airport Session pres. by Bootshaus  | Bootshaus Club",
+            "description": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/fjspvLe4/",
+          "parser": "ticket_io",
+          "finalUrl": "https://bootshaus-club.ticket.io/fjspvLe4/"
+        },
+        "canonical": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+          "websiteUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+          "venueName": "Bootshaus",
+          "structuredLineupCount": 0
+        },
+        "api": {
+          "id": "evt-1785339392687-tbdwup4",
+          "title": "BC173 Airport Session pres. by Bootshaus",
+          "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+          "websiteUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+          "genres": [],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "BC173 Airport Session pres. by Bootshaus  | Bootshaus Club",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "start": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "identical",
+          "groundTruth": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "lineup": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "artists": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "identical",
+          "groundTruth": "https://bootshaus-club.ticket.io/fjspvLe4/",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "provider": {
+          "classification": "identical",
+          "groundTruth": "ticket.io",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketPhases": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "prices": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "availability": {
+          "classification": "third_party_behaviour",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "soldOut": {
+          "classification": "third_party_behaviour",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "badges": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete."
+      ]
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+          "fetchStatus": 200,
+          "finalUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+          "jsonLd": {
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "description": "",
+            "startDate": "2026-08-08T17:00:00+02:00",
+            "venueName": "Essigfabrik /  Elektroküche",
+            "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+            "cityName": "Köln",
+            "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+            "eventUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+            "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+            "sourceMetadata": {
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Sommerfest Elektroküche 08.08.2026",
+              "startDate": "2026-08-08T17:00:00+02:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "url": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+              "description": "",
+              "image": [
+                "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg"
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Essigfabrik /  Elektroküche",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Siegburger Str. 110, 50679 Köln",
+                  "addressLocality": "Köln"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2026-06-20T12:34:23+02:00"
+              }
+            },
+            "baseUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+          "parser": "ticket_kings",
+          "finalUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/"
+        },
+        "canonical": {
+          "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "websiteUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+          "priceText": "ab 15,00 €",
+          "ticketStatus": "on_sale",
+          "venueName": "Essigfabrik",
+          "genreLabels": [
+            "Techno",
+            "Bounce",
+            "Hardtechno"
+          ],
+          "structuredLineupCount": 14
+        },
+        "api": {
+          "id": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "websiteUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+          "genres": [
+            "Techno",
+            "Bounce",
+            "Hardtechno"
+          ],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "Sommerfest Elektroküche 08.08.2026",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "incorrect",
+          "groundTruth": "2026-08-08T17:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "start": {
+          "classification": "incorrect",
+          "groundTruth": "2026-08-08T17:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "identical",
+          "groundTruth": "Essigfabrik /  Elektroküche",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "identical",
+          "groundTruth": "Siegburger Str. 110, 50679 Köln, Köln",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "missing_public_evidence",
+          "groundTruth": [],
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "missing_public_evidence",
+          "groundTruth": "",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "lineup": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "artists": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "merge_gap",
+          "groundTruth": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+          "earliestStage": "Canonical Merge",
+          "rootCause": "Canonical Merge"
+        },
+        "provider": {
+          "classification": "incorrect",
+          "groundTruth": "ticket_kings",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "ticketPhases": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "prices": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "availability": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "soldOut": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "badges": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": [
+        "Sommerfest canonical ticketUrl may differ from affenkaefig official page slug (20-06 vs 08-08) — verify merge winner."
+      ]
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "fetchStatus": 200,
+          "finalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "jsonLd": {
+            "title": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+            "description": "&lt;p&gt;MDMA - Musik Die Mich Antreibt 10.10.2026 Datum:    10.10.2026 Location: Essigfabrik&amp; Elektroküche Line Up:  Folgt noch (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-30&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=30&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; function nmMinFrameHeight(){ if(window.matchMedia){return...&lt;/p&gt;\\n",
+            "startDate": "2026-10-10T23:00:00+02:00",
+            "endDate": "2026-10-11T06:00:00+02:00",
+            "venueName": "Essigfabrik",
+            "venueAddress": "Siegburger Str. 110, 50679, Köln",
+            "cityName": "Köln",
+            "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+            "organizerName": "M.D.M.A Musik die mich Antreibt",
+            "sourceMetadata": {
+              "@context": "http://schema.org",
+              "@type": "Event",
+              "name": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+              "description": "&lt;p&gt;MDMA - Musik Die Mich Antreibt 10.10.2026 Datum:    10.10.2026 Location: Essigfabrik&amp; Elektroküche Line Up:  Folgt noch (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-30&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=30&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; function nmMinFrameHeight(){ if(window.matchMedia){return...&lt;/p&gt;\\n",
+              "image": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+              "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "startDate": "2026-10-10T23:00:00+02:00",
+              "endDate": "2026-10-11T06:00:00+02:00",
+              "location": {
+                "@type": "Place",
+                "name": "Essigfabrik",
+                "description": "",
+                "url": "https://ticketkings.de/veranstaltungsort/essigfabrik/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Siegburger Str. 110",
+                  "addressLocality": "Köln",
+                  "postalCode": "50679"
+                },
+                "telephone": "",
+                "sameAs": "https://essig-fabrik.de/"
+              },
+              "organizer": {
+                "@type": "Person",
+                "name": "M.D.M.A Musik die mich Antreibt",
+                "description": "",
+                "url": "https://linkstack.webtropolis.de/@mdma",
+                "telephone": "",
+                "email": "&#115;u&#112;&#112;&#111;&#114;&#116;&#64;ti&#99;&#107;&#101;&#116;ki&#110;&#103;s.&#100;&#101;",
+                "sameAs": "https://linkstack.webtropolis.de/@mdma"
+              },
+              "performer": "Organization"
+            },
+            "baseUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "parser": "ticket_kings",
+          "finalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+        },
+        "canonical": {
+          "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "priceText": "ab 15,00 €",
+          "ticketStatus": "on_sale",
+          "venueName": "Essigfabrik",
+          "structuredLineupCount": 0
+        },
+        "api": {
+          "id": "evt-1785443911160-owt97y3",
+          "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+          "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "genres": [],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "incorrect",
+          "groundTruth": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "incorrect",
+          "groundTruth": "2026-10-10T23:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "start": {
+          "classification": "incorrect",
+          "groundTruth": "2026-10-10T23:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "identical",
+          "groundTruth": "Essigfabrik",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "identical",
+          "groundTruth": "Siegburger Str. 110, 50679, Köln",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "identical",
+          "groundTruth": [],
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "incorrect",
+          "groundTruth": "&lt;p&gt;MDMA - Musik Die Mich Antreibt 10.10.2026 Datum:    10.10.2026 Location: Essigfabrik&amp; Elektroküche Line Up:  Folgt noch (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-30&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=30&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; function nmMinFrameHeight(){ if(window.matchMedia){return...&lt;/p&gt;\\n",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "lineup": {
+          "classification": "filtered",
+          "groundTruth": [
+            "Location : Essigfabrik& Elektroküche",
+            "Line Up: Folgt noch"
+          ],
+          "earliestStage": "Canonical Reader",
+          "rootCause": "Evidence Extraction"
+        },
+        "artists": {
+          "classification": "connector_gap",
+          "groundTruth": [
+            "Location : Essigfabrik& Elektroküche",
+            "Line Up: Folgt noch"
+          ],
+          "earliestStage": "Evidence Extraction",
+          "rootCause": "Connector"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "merge_gap",
+          "groundTruth": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "earliestStage": "Canonical Merge",
+          "rootCause": "Canonical Merge"
+        },
+        "provider": {
+          "classification": "incorrect",
+          "groundTruth": "ticket_kings",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "ticketPhases": {
+          "classification": "incorrect",
+          "groundTruth": [
+            {
+              "rawProductName": "E-Ticket",
+              "rawPhaseName": "Early Bird",
+              "rawPriceText": "15,00 EUR",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "availabilityText": "noch 34 verfügbar",
+              "remainingQuantity": 34,
+              "optionalState": "required",
+              "sectionHeading": "Tickets",
+              "classification": "admission_ticket",
+              "includedInEventSummary": true,
+              "structuralSignals": [
+                "admission_option",
+                "section:Tickets",
+                "quantity_stepper"
+              ],
+              "soldOut": false,
+              "available": true
+            },
+            {
+              "rawProductName": "Ticket Flex Option",
+              "rawPriceText": "2,50 EUR &middot; pro Ticket",
+              "priceAmount": 2.5,
+              "priceCurrency": "EUR",
+              "optionalState": "optional",
+              "sectionHeading": "Zusatzoptionen",
+              "classification": "insurance_or_flex",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_insurance_or_flex_add_on",
+              "structuralSignals": [
+                "addon_checkbox",
+                "section:Zusatzoptionen",
+                "checkbox_optional"
+              ]
+            },
+            {
+              "rawProductName": "Rabattcode einlösen",
+              "optionalState": "optional",
+              "sectionHeading": "Weitere Angaben",
+              "classification": "unknown_review_required",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_buyer_section_product_requires_review",
+              "structuralSignals": [
+                "buyer_optional",
+                "section:Weitere Angaben",
+                "checkbox_optional"
+              ]
+            }
+          ],
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "prices": {
+          "classification": "identical",
+          "groundTruth": "ab 15,00 €",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "availability": {
+          "classification": "identical",
+          "groundTruth": "available",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "soldOut": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "badges": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": []
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/",
+          "jsonLd": {
+            "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club",
+            "description": "AFFENK&Auml;FIG RULES! BOOTSHAUS &ndash; FULL HOUSE! 🐒🔥&nbsp;Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus K&ouml;ln.&nbsp;Das Bootshaus z&auml;hlt zu den besten Clubs der Welt &ndash; Perfektion in Sound, Licht und Atmosph&auml;re ohne Kompromisse. Der perfekte Anlass f&uuml;r eine wilde Nacht.&nbsp;🎟️ Early Bird Tickets sind jetzt verf&uuml;gbar &ndash; nur f&uuml;r kurze Zeit.&nbsp;Das Line Up hauen wir euch bald um die Ohren.&nbsp;Sichert euch so lange die verg&uuml;nstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "parser": "ticket_io",
+          "finalUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/"
+        },
+        "canonical": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "websiteUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+          "priceText": "Tickets ab 19,90 Euro",
+          "ticketStatus": "external_link",
+          "venueName": "Bootshaus",
+          "structuredLineupCount": 0
+        },
+        "api": {
+          "id": "evt-1785339005035-wam829k",
+          "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+          "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "websiteUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+          "genres": [],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "start": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "incorrect",
+          "groundTruth": "AFFENK&Auml;FIG RULES! BOOTSHAUS &ndash; FULL HOUSE! 🐒🔥&nbsp;Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus K&ouml;ln.&nbsp;Das Bootshaus z&auml;hlt zu den besten Clubs der Welt &ndash; Perfektion in Sound, Licht und Atmosph&auml;re ohne Kompromisse. Der perfekte Anlass f&uuml;r eine wilde Nacht.&nbsp;🎟️ Early Bird Tickets sind jetzt verf&uuml;gbar &ndash; nur f&uuml;r kurze Zeit.&nbsp;Das Line Up hauen wir euch bald um die Ohren.&nbsp;Sichert euch so lange die verg&uuml;nstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "lineup": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "artists": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "identical",
+          "groundTruth": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "provider": {
+          "classification": "identical",
+          "groundTruth": "ticket.io",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketPhases": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "prices": {
+          "classification": "third_party_behaviour",
+          "groundTruth": "ab 19,90 €",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "availability": {
+          "classification": "third_party_behaviour",
+          "groundTruth": "available",
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "soldOut": {
+          "classification": "third_party_behaviour",
+          "groundTruth": false,
+          "earliestStage": "Third-party platform",
+          "rootCause": "Third-party platform"
+        },
+        "badges": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete."
+      ]
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "layers": {
+        "officialWebsite": {
+          "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "fetchStatus": 200,
+          "finalUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "jsonLd": {
+            "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+            "description": "&lt;p&gt;Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-31&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=31&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...&lt;/p&gt;\\n",
+            "startDate": "2026-10-24T23:00:00+02:00",
+            "endDate": "2026-10-25T06:00:00+01:00",
+            "venueName": ": Proton Stuttgart",
+            "venueAddress": "Königstraße 49, 70173, Stuttgart, Germany",
+            "cityName": "Stuttgart",
+            "eventUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+            "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+            "organizerName": "M.D.M.A Musik die mich Antreibt",
+            "sourceMetadata": {
+              "@context": "http://schema.org",
+              "@type": "Event",
+              "name": "M.D.M.A xxx PROTON xxx STUTTGART",
+              "description": "&lt;p&gt;Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-31&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=31&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...&lt;/p&gt;\\n",
+              "image": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+              "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "startDate": "2026-10-24T23:00:00+02:00",
+              "endDate": "2026-10-25T06:00:00+01:00",
+              "location": {
+                "@type": "Place",
+                "name": ": Proton Stuttgart",
+                "description": "",
+                "url": "https://ticketkings.de/veranstaltungsort/proton-stuttgart/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Königstraße 49",
+                  "addressLocality": "Stuttgart",
+                  "postalCode": "70173",
+                  "addressCountry": "Germany"
+                },
+                "telephone": "",
+                "sameAs": ""
+              },
+              "organizer": {
+                "@type": "Person",
+                "name": "M.D.M.A Musik die mich Antreibt",
+                "description": "",
+                "url": "https://linkstack.webtropolis.de/@mdma",
+                "telephone": "",
+                "email": "&#115;up&#112;o&#114;t&#64;ti&#99;&#107;&#101;&#116;&#107;i&#110;gs&#46;&#100;&#101;",
+                "sameAs": "https://linkstack.webtropolis.de/@mdma"
+              },
+              "performer": "Organization"
+            },
+            "baseUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "parser": "ticket_kings",
+          "finalUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/"
+        },
+        "canonical": {
+          "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "websiteUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "priceText": "ab 15,00 €",
+          "ticketStatus": "on_sale",
+          "venueName": "Proton Stuttgart",
+          "structuredLineupCount": 0
+        },
+        "api": {
+          "id": "evt-1785443914377-7g9l545",
+          "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+          "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "websiteUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "genres": [],
+          "artists": []
+        }
+      },
+      "fields": {
+        "title": {
+          "classification": "identical",
+          "groundTruth": "M.D.M.A xxx PROTON xxx STUTTGART",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "subtitle": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "date": {
+          "classification": "incorrect",
+          "groundTruth": "2026-10-24T23:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "start": {
+          "classification": "incorrect",
+          "groundTruth": "2026-10-24T23:00:00+02:00",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "doors": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "venue": {
+          "classification": "identical",
+          "groundTruth": ": Proton Stuttgart",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "address": {
+          "classification": "identical",
+          "groundTruth": "Königstraße 49, 70173, Stuttgart, Germany",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "coordinates": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "genres": {
+          "classification": "identical",
+          "groundTruth": [],
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "description": {
+          "classification": "incorrect",
+          "groundTruth": "&lt;p&gt;Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-31&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=31&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...&lt;/p&gt;\\n",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "lineup": {
+          "classification": "filtered",
+          "groundTruth": [
+            "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+            "if(!frame){return",
+            "var successPath=\\'/order_success/\\'",
+            "var pendingFrameShrinkTimer=0",
+            "var pendingFrameShrinkHeight=0"
+          ],
+          "earliestStage": "Canonical Reader",
+          "rootCause": "Evidence Extraction"
+        },
+        "artists": {
+          "classification": "connector_gap",
+          "groundTruth": [
+            "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+            "if(!frame){return",
+            "var successPath=\\'/order_success/\\'",
+            "var pendingFrameShrinkTimer=0",
+            "var pendingFrameShrinkHeight=0"
+          ],
+          "earliestStage": "Evidence Extraction",
+          "rootCause": "Connector"
+        },
+        "flyer": {
+          "classification": "identical",
+          "groundTruth": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "gallery": {
+          "classification": "identical",
+          "groundTruth": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "ticketUrl": {
+          "classification": "merge_gap",
+          "groundTruth": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "earliestStage": "Canonical Merge",
+          "rootCause": "Canonical Merge"
+        },
+        "provider": {
+          "classification": "incorrect",
+          "groundTruth": "ticket_kings",
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "ticketPhases": {
+          "classification": "incorrect",
+          "groundTruth": [
+            {
+              "rawProductName": "Standard",
+              "rawPhaseName": "Early Bird",
+              "rawPriceText": "15,00 EUR",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "availabilityText": "noch 100 verfügbar",
+              "remainingQuantity": 100,
+              "optionalState": "required",
+              "sectionHeading": "Tickets",
+              "classification": "admission_ticket",
+              "includedInEventSummary": true,
+              "structuralSignals": [
+                "admission_option",
+                "section:Tickets",
+                "quantity_stepper"
+              ],
+              "soldOut": false,
+              "available": true
+            },
+            {
+              "rawProductName": "Ticket Flex Option",
+              "rawPriceText": "2,50 EUR &middot; pro Ticket",
+              "priceAmount": 2.5,
+              "priceCurrency": "EUR",
+              "optionalState": "optional",
+              "sectionHeading": "Zusatzoptionen",
+              "classification": "insurance_or_flex",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_insurance_or_flex_add_on",
+              "structuralSignals": [
+                "addon_checkbox",
+                "section:Zusatzoptionen",
+                "checkbox_optional"
+              ]
+            },
+            {
+              "rawProductName": "Rabattcode einlösen",
+              "optionalState": "optional",
+              "sectionHeading": "Weitere Angaben",
+              "classification": "unknown_review_required",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_buyer_section_product_requires_review",
+              "structuralSignals": [
+                "buyer_optional",
+                "section:Weitere Angaben",
+                "checkbox_optional"
+              ]
+            }
+          ],
+          "earliestStage": "Projection",
+          "rootCause": "Projection"
+        },
+        "prices": {
+          "classification": "identical",
+          "groundTruth": "ab 15,00 €",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "availability": {
+          "classification": "identical",
+          "groundTruth": "available",
+          "earliestStage": "Observed Consumer Result",
+          "rootCause": "Public Source"
+        },
+        "soldOut": {
+          "classification": "missing_public_evidence",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        },
+        "badges": {
+          "classification": "identical",
+          "earliestStage": "Public Source",
+          "rootCause": "Public Source"
+        }
+      },
+      "observationNotes": []
+    }
+  ]
+}

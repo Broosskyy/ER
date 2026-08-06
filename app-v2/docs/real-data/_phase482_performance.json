@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-05T09:29:46.086Z",
+  "productionMutationsInThisRun": 0,
+  "requests": 0,
+  "requestsBySource": {},
+  "durationMs": 0,
+  "errors": 0,
+  "retries": 0,
+  "redirects": 0,
+  "rateLimitResponses": 0,
+  "blockResponses": 0,
+  "evidenceStorageBytes": 0,
+  "matchingDurationMs": 0
+}

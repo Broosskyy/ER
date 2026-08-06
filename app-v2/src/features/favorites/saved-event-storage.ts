@@ -5,6 +5,7 @@ import type { SavedEventRecord, SavedEventSource } from '@/features/saved/types/
 import type { EventId } from './types';
 
 export const SAVED_EVENTS_STORAGE_KEY = '@eternal_rave/saved_events_v2';
+export const SAVED_EVENTS_MIGRATED_FLAG_KEY = '@eternal_rave/saved_events_migrated_v2';
 
 function isSavedEventRecord(value: unknown): value is SavedEventRecord {
   if (!value || typeof value !== 'object') {
@@ -36,6 +37,24 @@ export async function loadSavedEventRecords(): Promise<SavedEventRecord[]> {
 export async function saveSavedEventRecords(records: readonly SavedEventRecord[]): Promise<void> {
   try {
     await AsyncStorage.setItem(SAVED_EVENTS_STORAGE_KEY, JSON.stringify(records));
+    await AsyncStorage.setItem(SAVED_EVENTS_MIGRATED_FLAG_KEY, 'true');
+  } catch {
+    // Non-fatal.
+  }
+}
+
+export async function hasSavedEventsMigrationFlag(): Promise<boolean> {
+  try {
+    const flag = await AsyncStorage.getItem(SAVED_EVENTS_MIGRATED_FLAG_KEY);
+    return flag === 'true';
+  } catch {
+    return false;
+  }
+}
+
+export async function markSavedEventsMigrationComplete(): Promise<void> {
+  try {
+    await AsyncStorage.setItem(SAVED_EVENTS_MIGRATED_FLAG_KEY, 'true');
   } catch {
     // Non-fatal.
   }

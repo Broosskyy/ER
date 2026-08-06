@@ -1,0 +1,202 @@
+[
+  {
+    "sourceId": "source-affenkaefig",
+    "displayName": "Affenkäfig",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-ticket-io-lehmannclub",
+    "displayName": "lehmannclub",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-ticket-io-technodampfer",
+    "displayName": "technodampfer",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-bootshaus-ticket-io",
+    "displayName": "Bootshaus Ticket.io",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-bootshaus-koeln",
+    "displayName": "Bootshaus Köln",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-ticket-io-protontheclub",
+    "displayName": "protontheclub",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-affenkaefig-ticket-kings",
+    "displayName": "Affenkäfig Ticket Kings",
+    "enabled": true,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  },
+  {
+    "sourceId": "source-ticket-io-bootshaus-club",
+    "displayName": "Ticket.io — bootshaus-club",
+    "enabled": false,
+    "attributeSurfaces": [
+      "title",
+      "description",
+      "faq",
+      "timetable",
+      "admission",
+      "venue_info",
+      "json_ld",
+      "ticket_release_text"
+    ],
+    "canonicalAttributeColumns": [
+      "age_restriction",
+      "doors_open_at"
+    ],
+    "metadataOnlyAttributes": [
+      "floor_count",
+      "event_attributes",
+      "venue_environment"
+    ],
+    "badgeProjection": "ticket_status_only_no_editorial"
+  }
+]

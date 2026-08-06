@@ -7,7 +7,8 @@ import './load-ops-env';
 import {
   assertOpsSupabaseConfigured,
   configureSupabaseClientForOperations,
-} from '@/services/supabase/client';
+} from '@/services/supabase/client-service-role';
+import { resetSupabaseClient } from '@/services/supabase/client';
 
 if (process.env.EXPO_PUBLIC_SUPABASE_SERVICE_ROLE_KEY) {
   throw new Error(
@@ -15,5 +16,8 @@ if (process.env.EXPO_PUBLIC_SUPABASE_SERVICE_ROLE_KEY) {
   );
 }
 
+process.env.ER_OPS_SCRIPT = '1';
+process.env.EXPO_PUBLIC_USE_SUPABASE = 'true';
 assertOpsSupabaseConfigured();
 configureSupabaseClientForOperations();
+resetSupabaseClient();

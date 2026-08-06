@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-08-06T01:06:48.524Z",
+  "phase": "4.8.6.5",
+  "productionMutationsInThisRun": 0,
+  "previews": [
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "priceText",
+      "proposed": "ab 15,00 €",
+      "reason": "Persist verified Ticket Kings/Nacht-Manager admission minimum",
+      "requiresApproval": true
+    }
+  ],
+  "note": "Preview only — no apply command in this phase"
+}

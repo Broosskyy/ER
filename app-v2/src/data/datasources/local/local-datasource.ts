@@ -1,7 +1,7 @@
 import { AppError } from '@/core/errors/app-error';
-import {
-  createLocalEventLineupDatasource,
-} from '@/data/datasources/local/local-event-lineup-datasource';
+import type { ResolvedCanonicalLineupEntry } from '@/features/aggregation/domain/canonical-lineup-entry';
+import { createLocalEventLineupDatasource } from '@/data/datasources/local/local-event-lineup-datasource';
+import { createLocalEventLineupEntryDatasource } from '@/data/datasources/local/local-event-lineup-entry-datasource';
 import { derivePrimaryArtistId } from '@/features/events/domain/event-lineup-primary';
 import type { EventArtistRecord } from '@/features/events/domain/event-lineup';
 import type { Event } from '@/features/events/types/event';
@@ -263,6 +263,7 @@ export class LocalStore {
   organizers: OrganizerRecord[];
   artists: ArtistRecord[];
   eventArtists: EventArtistRecord[];
+  eventLineupEntryStore: Map<string, ResolvedCanonicalLineupEntry[]>;
   collections: CollectionRecord[];
   sources: SourceRecord[];
 
@@ -278,6 +279,7 @@ export class LocalStore {
     syncAdminEventOrganizerIds(this.adminEvents, this.events, this.organizers);
     this.artists = buildLocalArtists(this.events);
     this.eventArtists = buildLocalEventArtistsFromEvents(this.events, this.artists);
+    this.eventLineupEntryStore = new Map();
     syncAdminEventPrimaryArtists(this.adminEvents, this.eventArtists);
     this.collections = buildLocalCollections();
     this.sources = buildLocalSources();
@@ -430,6 +432,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
         event.id === id ? { ...event, status: 'archived', updatedAt: new Date().toISOString() } : event,
       );
       store.eventArtists = store.eventArtists.filter((row) => row.eventId !== id);
+      store.eventLineupEntryStore.delete(id);
       await persistContributorEventsIfNeeded(store);
     },
     async deleteContributorDraft(eventId, userId) {
@@ -446,6 +449,7 @@ export function createLocalEventDatasource(store = getLocalStore()): EventDataso
       store.events = store.events.filter((entry) => entry.id !== eventId);
       store.adminEvents = store.adminEvents.filter((entry) => entry.id !== eventId);
       store.eventArtists = store.eventArtists.filter((row) => row.eventId !== eventId);
+      store.eventLineupEntryStore.delete(eventId);
       await persistContributorEventsIfNeeded(store);
     },
   };
@@ -558,6 +562,13 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     return saved;
   };
 
+  const eventLineupEntries = createLocalEventLineupEntryDatasource(
+    () => store.eventLineupEntryStore,
+    (entries) => {
+      store.eventLineupEntryStore = entries;
+    },
+  );
+
   const collections: CollectionDatasource = createCrudDatasource(
     () => store.collections,
     (items) => {
@@ -612,6 +623,7 @@ export function createLocalDatasourceBundle(store = getLocalStore()) {
     organizers,
     artists,
     eventLineups,
+    eventLineupEntries,
     collections,
     sources,
     stats,

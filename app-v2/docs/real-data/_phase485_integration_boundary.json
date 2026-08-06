@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-08-05T19:38:46.220Z",
+  "phase": "4.8.5",
+  "executionMode": "unified_website_integrated_shadow",
+  "productionMutationsInThisRun": 0,
+  "integrationPoint": "list-detail-enrichment.ts → maybeRunIntegratedShadowExtraction",
+  "processorEntry": "website/processor.ts → enrichWebsiteListEventsWithDetailPages",
+  "legacyPublishPath": "unchanged",
+  "unifiedPublishPath": "disabled",
+  "duplicateFetch": false
+}

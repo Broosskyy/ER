@@ -1,3 +1,5 @@
+import { randomUUID } from 'node:crypto';
+
 import { AppError } from '@/core/errors/app-error';
 import type { EventLineupInput } from '@/features/events/domain/event-lineup';
 import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
@@ -99,7 +101,7 @@ export function createSupabaseEventLineupDatasource() {
       const now = new Date().toISOString();
       const payload = lineup.map((entry, index) =>
         mapEventArtistRecordToRow({
-          id: `ea-${eventId}-${entry.artistId}-${index}`,
+          id: `ea-${randomUUID()}`,
           eventId,
           artistId: entry.artistId,
           billingRole: entry.billingRole,

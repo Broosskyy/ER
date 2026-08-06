@@ -4,6 +4,7 @@ import { Image, Pressable, StyleSheet, View } from 'react-native';
 
 import { FavoriteButton } from '@/components/buttons/FavoriteButton';
 import { InteractiveCard } from '@/components/cards/InteractiveCard';
+import { TicketPriceLabel } from '@/components/discovery/TicketPriceLabel';
 import { AppText } from '@/components/layout/AppText';
 import { colorRoles, colors } from '@/design/colors';
 import { componentSize } from '@/design/layout';
@@ -12,6 +13,7 @@ import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import type { EventDisplayModel } from '@/features/events';
 import { formatEventDateTime } from '@/features/events';
+import { resolvePublicTicketPresentation } from '@/features/events/formatting/ticket-presentation';
 
 export interface MapEventPreviewProps {
   event: EventDisplayModel;
@@ -29,6 +31,7 @@ export function MapEventPreview({
   bottomInset,
 }: MapEventPreviewProps) {
   const router = useRouter();
+  const ticket = resolvePublicTicketPresentation(event);
 
   return (
     <View style={[styles.container, { bottom: bottomInset }]}>
@@ -71,8 +74,11 @@ export function MapEventPreview({
             {formatEventDateTime(event)}
           </AppText>
           <AppText style={styles.venue} numberOfLines={1}>
-            {event.venue}, {event.city}
+            {event.locationLabelComma}
           </AppText>
+          {ticket.ticketLabel ? (
+            <TicketPriceLabel label={ticket.ticketLabel} colorToken={ticket.colorToken} />
+          ) : null}
         </View>
       </InteractiveCard>
     </View>

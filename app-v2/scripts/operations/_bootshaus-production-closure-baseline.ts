@@ -6,7 +6,7 @@ import './bootstrap-ops-supabase';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS = 'source-bootshaus-koeln';
 const CANONICAL_VENUE = 'venue-bootshaus-koeln';

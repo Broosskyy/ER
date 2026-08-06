@@ -291,15 +291,6 @@ export class ImportOperationsService {
         )
       : await this.orchestrator.run(sourceId, 'manual', this.actorId(session));
 
-    try {
-      await this.sourceService.recordImportRun(this.role(session), sourceId, {
-        lastImportAt: job.finishedAt ?? new Date().toISOString(),
-        lastJobStatus: job.status,
-      });
-    } catch (error) {
-      mapSourceServiceError(error);
-    }
-
     await this.auditService.logImportStarted(this.actorId(session), sourceId, job.id);
     return job;
   }

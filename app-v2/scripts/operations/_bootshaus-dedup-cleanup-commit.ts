@@ -8,7 +8,7 @@ import './bootstrap-ops-supabase';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS_SOURCE = 'source-bootshaus-koeln';
 const PRODUCTION_VENUE_ID = 'venue-bootshaus-koeln';

@@ -36,6 +36,17 @@ export class ImportPublishOrchestratorService {
     private readonly adminEventRepository?: AdminEventRepository,
   ) {}
 
+  private async maybeRepairLineupProjection(
+    record: ImportRecord,
+    eventId: string | undefined,
+  ): Promise<boolean> {
+    if (!eventId || !this.publishService) {
+      return false;
+    }
+    const lineupResult = await this.publishService.repairLineupProjectionIfNeeded(record, eventId);
+    return lineupResult.wroteLineup;
+  }
+
   async processJobRecords(
     jobId: string,
     source: SourceRecord,
@@ -79,6 +90,9 @@ export class ImportPublishOrchestratorService {
             status: 'imported',
             updatedAt: new Date().toISOString(),
           });
+        }
+        if (record.resultingEventId) {
+          await this.maybeRepairLineupProjection(record, record.resultingEventId);
         }
         continue;
       }
@@ -137,6 +151,9 @@ export class ImportPublishOrchestratorService {
             evaluation.decision,
             { importRecordId: record.id, jobId },
           );
+        }
+        if (record.resultingEventId) {
+          await this.maybeRepairLineupProjection(record, record.resultingEventId);
         }
         continue;
       }
@@ -407,6 +424,9 @@ export class ImportPublishOrchestratorService {
           options.jobId,
         );
         skippedCount += 1;
+        if (record.resultingEventId) {
+          await this.maybeRepairLineupProjection(record, record.resultingEventId);
+        }
         continue;
       }
 
@@ -443,6 +463,9 @@ export class ImportPublishOrchestratorService {
             evaluation.decision,
             { importRecordId: record.id, jobId: options.jobId, reevaluation: true },
           );
+        }
+        if (record.resultingEventId) {
+          await this.maybeRepairLineupProjection(record, record.resultingEventId);
         }
         continue;
       }

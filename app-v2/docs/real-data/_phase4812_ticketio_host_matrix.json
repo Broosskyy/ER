@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-08-04T20:28:51.463Z",
+  "productionMutationsInThisRun": 0,
+  "hosts": {
+    "bootshaus-club": {
+      "sampleSize": 16,
+      "identitySuccess": 16,
+      "listRowPrice": 15,
+      "availability": 15,
+      "soldOut": 1,
+      "detailBlocked": 16,
+      "notOnList": 1
+    },
+    "bootshaus-tickets": {
+      "sampleSize": 1,
+      "identitySuccess": 1,
+      "listRowPrice": 0,
+      "availability": 0,
+      "soldOut": 0,
+      "detailBlocked": 1,
+      "notOnList": 1
+    },
+    "hmg-concerts": {
+      "sampleSize": 19,
+      "identitySuccess": 19,
+      "listRowPrice": 19,
+      "availability": 19,
+      "soldOut": 0,
+      "detailBlocked": 19,
+      "notOnList": 0
+    },
+    "technodampfer": {
+      "sampleSize": 9,
+      "identitySuccess": 9,
+      "listRowPrice": 9,
+      "availability": 9,
+      "soldOut": 1,
+      "detailBlocked": 9,
+      "notOnList": 0
+    },
+    "area51events": {
+      "sampleSize": 4,
+      "identitySuccess": 4,
+      "listRowPrice": 4,
+      "availability": 4,
+      "soldOut": 0,
+      "detailBlocked": 4,
+      "notOnList": 0
+    },
+    "proton-the-club": {
+      "sampleSize": 7,
+      "identitySuccess": 7,
+      "listRowPrice": 7,
+      "availability": 7,
+      "soldOut": 0,
+      "detailBlocked": 7,
+      "notOnList": 0
+    },
+    "lehmannclub": {
+      "sampleSize": 9,
+      "identitySuccess": 9,
+      "listRowPrice": 9,
+      "availability": 9,
+      "soldOut": 0,
+      "detailBlocked": 9,
+      "notOnList": 0
+    },
+    "unreal-bootshaus": {
+      "sampleSize": 2,
+      "identitySuccess": 2,
+      "listRowPrice": 2,
+      "availability": 2,
+      "soldOut": 0,
+      "detailBlocked": 2,
+      "notOnList": 0
+    },
+    "blacklist-festival": {
+      "sampleSize": 1,
+      "identitySuccess": 1,
+      "listRowPrice": 0,
+      "availability": 0,
+      "soldOut": 0,
+      "detailBlocked": 1,
+      "notOnList": 1
+    },
+    "polyamor": {
+      "sampleSize": 1,
+      "identitySuccess": 1,
+      "listRowPrice": 0,
+      "availability": 0,
+      "soldOut": 0,
+      "detailBlocked": 1,
+      "notOnList": 1
+    }
+  }
+}

@@ -8,6 +8,15 @@ import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
 import { recordCandidateEquivalent } from '@/features/import/services/import-record-identity';
 import type { MultiSourceMatchEvaluation } from '@/features/multi-source-matching/domain/matching-types';
 import type { TrustPublishEvaluation } from '@/features/trust-quality/domain/trust-quality-types';
+import {
+  candidateCanRepairEvent,
+  eventNeedsTicketIoFieldRepair,
+} from '@/features/aggregation/connectors/ticket-platform/ticket-io-repair';
+import {
+  candidateCanHistoricalRepair,
+  eventNeedsHistoricalRepair,
+} from '@/features/import/services/historical-data-repair';
+import { eventNeedsTicketDestinationRepair } from '@/features/events/domain/ticket-url-quality';
 
 const BENIGN_TRUST_REVIEW_REASON_FRAGMENTS = [
   'duplicate',
@@ -93,6 +102,15 @@ export function isSemanticPayloadUnchanged(
   return recordCandidateEquivalent(record, candidate);
 }
 
+function ticketDestinationCandidatesFromRecord(record: ImportRecord): Array<string | undefined> {
+  const candidate = getEffectiveCandidate(record) as CanonicalImportEvent;
+  const metadata = candidate.sourceMetadata as Record<string, unknown> | undefined;
+  return [
+    candidate.ticketUrl,
+    typeof metadata?.ticketUrl === 'string' ? metadata.ticketUrl : undefined,
+  ];
+}
+
 export function isStablePublishedTrustReimport(
   record: ImportRecord,
   evaluation: TrustPublishEvaluation,
@@ -103,6 +121,26 @@ export function isStablePublishedTrustReimport(
   }
 
   if (!recordHasPublishedOutcome(record, options.existingEvent)) {
+    return false;
+  }
+
+  if (
+    options.existingEvent &&
+    (eventNeedsTicketIoFieldRepair(
+      options.existingEvent,
+      (getEffectiveCandidate(record).sourceMetadata ?? {}) as Record<string, unknown>,
+    ) ||
+      eventNeedsHistoricalRepair(options.existingEvent) ||
+      candidateCanRepairEvent(getEffectiveCandidate(record) as CanonicalImportEvent, options.existingEvent) ||
+      candidateCanHistoricalRepair(
+        getEffectiveCandidate(record) as CanonicalImportEvent,
+        options.existingEvent,
+      ) ||
+      eventNeedsTicketDestinationRepair(
+        options.existingEvent.ticketUrl,
+        ticketDestinationCandidatesFromRecord(record),
+      ))
+  ) {
     return false;
   }
 

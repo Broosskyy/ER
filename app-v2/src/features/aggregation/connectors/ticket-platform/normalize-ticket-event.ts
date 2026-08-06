@@ -1,6 +1,26 @@
+import { createHash } from 'node:crypto';
+
 import { normalizeIanaTimezone } from '@/features/events/formatting/date-time';
 
 import type { ParsedTicketPlatformEvent } from './types';
+import { TICKET_IO_DATA_QUALITY_REPAIR_VERSION } from './ticket-io-repair';
+
+const TICKET_EVENT_HASH_FIELDS = [
+  'title',
+  'description',
+  'startDate',
+  'endDate',
+  'venueName',
+  'venueAddress',
+  'cityName',
+  'ticketUrl',
+  'imageUrl',
+  'priceAmount',
+  'priceCurrency',
+  'priceText',
+  'availability',
+  'cancelled',
+] as const;
 
 export function resolveTicketShopBaseUrl(shopSlug: string): string {
   const slug = shopSlug.trim().replace(/^https?:\/\//, '').split('/')[0] ?? shopSlug;
@@ -38,8 +58,21 @@ export function normalizeTicketTimezone(
   return normalizeIanaTimezone(fallback, fallback);
 }
 
+export function buildNormalizedTicketEventHash(
+  event: Pick<ParsedTicketPlatformEvent, (typeof TICKET_EVENT_HASH_FIELDS)[number]>,
+): string {
+  const payload = TICKET_EVENT_HASH_FIELDS.map((field) => {
+    const value = event[field];
+    if (value === undefined || value === null) {
+      return '';
+    }
+    return String(value);
+  }).join('|');
+  return createHash('sha256').update(payload).digest('hex').slice(0, 32);
+}
+
 export function toNormalizedTicketFields(event: ParsedTicketPlatformEvent) {
-  return {
+  const fields = {
     externalId: event.externalId,
     title: event.title,
     description: event.description,
@@ -60,5 +93,12 @@ export function toNormalizedTicketFields(event: ParsedTicketPlatformEvent) {
     eventUrl: event.eventUrl,
     priceAmount: event.priceAmount,
     priceCurrency: event.priceCurrency,
+    priceText: event.priceText,
+    availability: event.availability,
+    cancelled: event.cancelled,
+  };
+  return {
+    ...fields,
+    normalizedHash: event.normalizedHash ?? buildNormalizedTicketEventHash(event),
   };
 }

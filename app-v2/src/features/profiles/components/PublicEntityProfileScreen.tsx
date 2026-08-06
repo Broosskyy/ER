@@ -1,5 +1,5 @@
 import { useRouter, type Href } from 'expo-router';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { AppScreen, ResponsiveScreen } from '@/components';
@@ -7,7 +7,7 @@ import { Skeleton } from '@/components/feedback/Skeleton';
 import { TextButton } from '@/components/buttons/TextButton';
 import { FollowButton } from '@/components/profiles/FollowButton';
 import { ProfileHeader } from '@/components/profiles/ProfileHeader';
-import { ProfileTabs } from '@/components/profiles/ProfileTabs';
+import { ProfileTabs, type ProfileTab } from '@/components/profiles/ProfileTabs';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { useScreenBottomInset } from '@/platform/screen-insets';
 import type { FollowEntityType } from '@/features/follows/follow-service';
@@ -18,9 +18,16 @@ import {
 } from '@/features/profiles/routes/entity-profile-routes';
 
 import { EntityNotFoundState } from './EntityNotFoundState';
+import { EntityProfileAboutSection } from './EntityProfileAboutSection';
 import { EntityProfileEventsSection } from './EntityProfileEventsSection';
+import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
+
 import { useEntityFollow } from '../hooks/useEntityFollow';
 import { useEntityProfile } from '../hooks/useEntityProfile';
+import {
+  buildEntityProfileAboutContent,
+  hasEntityProfileAboutContent,
+} from '../utils/entity-profile-about';
 
 const ENTITY_LABELS: Record<FollowEntityType, string> = {
   organizer: 'Veranstalter',
@@ -45,14 +52,69 @@ export function PublicEntityProfileScreen({
 }: PublicEntityProfileScreenProps) {
   const router = useRouter();
   const bottomInset = useScreenBottomInset();
-  const { state, canonicalId, header, events, error, retry } = useEntityProfile(
+  const [selectedTab, setSelectedTab] = useState<ProfileTab>('events');
+  const { state, canonicalId, header, record, events, error, retry } = useEntityProfile(
     entityType,
     entityId,
   );
-  const { followState, toggle, error: followError } = useEntityFollow({
+  const { followState, followerCount, toggle, error: followError } = useEntityFollow({
     entityType,
     entityId: canonicalId ?? entityId,
   });
+
+  const genreLabelsFromHeader = useMemo(() => {
+    if (!header || header.type !== 'artist') {
+      return [];
+    }
+    const prefix = 'Artist · ';
+    const label = header.handleOrTypeLabel;
+    if (!label.startsWith(prefix)) {
+      return [];
+    }
+    return label
+      .slice(prefix.length)
+      .split(',')
+      .map((genre) => genre.trim())
+      .filter(Boolean);
+  }, [header]);
+
+  const aboutContent = useMemo(() => {
+    if (!record) {
+      return null;
+    }
+    return buildEntityProfileAboutContent(entityType, record, genreLabelsFromHeader);
+  }, [entityType, genreLabelsFromHeader, record]);
+
+  const showAboutTab = aboutContent ? hasEntityProfileAboutContent(aboutContent) : false;
+  const profileTabs: ProfileTab[] = showAboutTab ? ['events', 'about'] : ['events'];
+  const activeTab: ProfileTab =
+    showAboutTab && selectedTab === 'about' ? 'about' : 'events';
+
+  const profileHeader = useMemo(() => {
+    if (!header) {
+      return null;
+    }
+    let merged = header;
+    if (followerCount != null) {
+      const stats = header.stats?.filter((stat) => stat.id !== 'followers') ?? [];
+      merged = {
+        ...header,
+        stats: [
+          { id: 'followers' as const, valueLabel: String(followerCount), label: 'Follower' },
+          ...stats,
+        ],
+      };
+    }
+    if (showAboutTab) {
+      merged = {
+        ...merged,
+        bio: undefined,
+        locationLabel: undefined,
+        websiteLabel: undefined,
+      };
+    }
+    return merged;
+  }, [followerCount, header, showAboutTab]);
 
   useEffect(() => {
     if (!entityId || !canonicalId || canonicalId === entityId) {
@@ -78,19 +140,19 @@ export function PublicEntityProfileScreen({
       <AppScreen>
         <EntityNotFoundState
           entityLabel={ENTITY_LABELS[entityType]}
-          onGoBack={() => router.back()}
+          onGoBack={() => navigateBackSafely(router)}
         />
       </AppScreen>
     );
   }
 
-  if (state === 'error' || !header || !events) {
+  if (state === 'error' || !header || !events || !profileHeader) {
     return (
       <AppScreen>
         <View style={styles.error}>
           <EntityNotFoundState
             entityLabel={ENTITY_LABELS[entityType]}
-            onGoBack={() => router.back()}
+            onGoBack={() => navigateBackSafely(router)}
           />
           <TextButton label="Erneut versuchen" onPress={retry} />
           {error ? <TextButton label={error} disabled /> : null}
@@ -107,9 +169,13 @@ export function PublicEntityProfileScreen({
       >
         <ResponsiveScreen style={styles.frame}>
           <View style={styles.content}>
-            <TextButton label="Zurück" onPress={() => router.back()} style={styles.back} />
+            <TextButton
+              label="Zurück"
+              onPress={() => navigateBackSafely(router)}
+              style={styles.back}
+            />
             <ProfileHeader
-              profile={header}
+              profile={profileHeader}
               followAction={
                 <FollowButton state={followState} onPress={() => void toggle()} />
               }
@@ -117,11 +183,20 @@ export function PublicEntityProfileScreen({
             {followError ? (
               <TextButton label={followError} disabled style={styles.followError} />
             ) : null}
-            <ProfileTabs tabs={['events', 'about']} selectedTab="events" />
-            <EntityProfileEventsSection
-              events={events}
-              onEventPress={(eventId) => router.push(`/event/${eventId}`)}
+            <ProfileTabs
+              tabs={profileTabs}
+              selectedTab={activeTab}
+              onTabPress={setSelectedTab}
             />
+            {activeTab === 'events' ? (
+              <EntityProfileEventsSection
+                events={events}
+                onEventPress={(eventId) => router.push(`/event/${eventId}`)}
+              />
+            ) : null}
+            {activeTab === 'about' && aboutContent ? (
+              <EntityProfileAboutSection content={aboutContent} />
+            ) : null}
           </View>
         </ResponsiveScreen>
       </ScrollView>

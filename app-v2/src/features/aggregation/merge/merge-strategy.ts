@@ -1,5 +1,9 @@
 import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 import type { FieldProvenance } from '@/features/aggregation/merge/event-conflict';
+import { mergeCanonicalLineupEntries } from '@/features/aggregation/domain/lineup-entry-merge';
+import { flattenCanonicalLineupArtistNames } from '@/features/aggregation/domain/canonical-lineup-entry';
+import { pickBetterArtistNames } from '@/features/events/domain/lineup-artist-quality';
+import { resolveBetterTicketUrl } from '@/features/events/domain/ticket-url-quality';
 
 export interface SourceContribution {
   sourceId: string;
@@ -173,6 +177,37 @@ export class PriorityBasedMergeStrategy implements MergeStrategy {
     ): T | undefined => {
       const override = context.manualOverrides?.[field] as T | undefined;
       if (override !== undefined) return override;
+      if (field === 'ticketUrl') {
+        const resolution = resolveBetterTicketUrl(
+          typeof current === 'string' ? current : undefined,
+          typeof incoming === 'string' ? incoming : undefined,
+        );
+        if (resolution.reason === 'preserve_existing_on_tie') {
+          return pickPreferredValue(
+            current,
+            incoming,
+            primaryPriority,
+            effectiveFieldPriority(field, context),
+          );
+        }
+        return (resolution.selected as T | undefined) ?? current;
+      }
+      if (field === 'artistNames') {
+        return pickBetterArtistNames(
+          current as string[] | undefined,
+          incoming as string[] | undefined,
+        ) as T | undefined;
+      }
+      if (field === 'lineupEntries') {
+        return mergeCanonicalLineupEntries(
+          (current as CanonicalImportEvent['lineupEntries']) ?? [],
+          (incoming as CanonicalImportEvent['lineupEntries']) ?? [],
+          {
+            existingConfidence: 0.5,
+            incomingConfidence: 0.75,
+          },
+        ) as T | undefined;
+      }
       return pickPreferredValue(
         current,
         incoming,
@@ -180,6 +215,16 @@ export class PriorityBasedMergeStrategy implements MergeStrategy {
         effectiveFieldPriority(field, context),
       );
     };
+    const mergedLineupEntries = selectField(
+      'lineupEntries',
+      existing.canonicalEvent.lineupEntries,
+      event.lineupEntries,
+    );
+    const mergedArtistNames =
+      mergedLineupEntries && mergedLineupEntries.length > 0
+        ? flattenCanonicalLineupArtistNames(mergedLineupEntries)
+        : selectField('artistNames', existing.canonicalEvent.artistNames, event.artistNames);
+
     const mergedEvent: CanonicalImportEvent = {
       ...base,
       description: selectField('description', existing.canonicalEvent.description, event.description),
@@ -189,7 +234,8 @@ export class PriorityBasedMergeStrategy implements MergeStrategy {
       venueAddress: selectField('venueAddress', existing.canonicalEvent.venueAddress, event.venueAddress),
       latitude: selectField('latitude', existing.canonicalEvent.latitude, event.latitude),
       longitude: selectField('longitude', existing.canonicalEvent.longitude, event.longitude),
-      artistNames: selectField('artistNames', existing.canonicalEvent.artistNames, event.artistNames),
+      artistNames: mergedArtistNames,
+      lineupEntries: mergedLineupEntries,
     };
 
     const changeHistory = [...existing.changeHistory];

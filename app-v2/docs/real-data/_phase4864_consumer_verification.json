@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-08-06T00:05:21.650Z",
+  "phase": "4.8.6.4",
+  "productionMutationsInThisRun": 0,
+  "localUrls": {
+    "r3hab": "/event/evt-1785339421539-k3swcrl",
+    "underland": "/event/evt-1785389049895-4mb7dub",
+    "sommerfest": "/event/evt-1785339391167-tfaixrr"
+  },
+  "humanChecklist": [
+    "Open each local Event Detail URL in web/mobile",
+    "Confirm ticket button destination and displayed price",
+    "Confirm venue label and lineup section"
+  ],
+  "r3hab": {
+    "eventId": "evt-1785339421539-k3swcrl",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "checks": {
+      "septemberDescription": true,
+      "noFooterContamination": true,
+      "ticketIoCta": true,
+      "price2390": true,
+      "venueBootshaus": true,
+      "lineupFiveArtists": true
+    },
+    "projection": {
+      "sanitizedDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+      "shortDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+      "displayPriceText": "ab 23,90 €",
+      "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "ticketProviderLabel": "Ticket.io",
+      "ticketAvailability": "external_link",
+      "isSoldOut": false,
+      "venueLabel": "Bootshaus",
+      "cityLabel": "Köln",
+      "locationLabelComma": "Bootshaus, Köln",
+      "locationLabelDot": "Bootshaus · Köln",
+      "hasCoordinates": false,
+      "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "galleryImageUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+      ],
+      "genres": [
+        "BASSHOUSE",
+        "ELECTRO",
+        "House",
+        "PROGRESSIVE HOUSE",
+        "EDM",
+        "DANCE"
+      ],
+      "knownArtistNames": [
+        "R3HAB",
+        "LA FUENTE",
+        "OLIVER MAGENTA",
+        "RELOVA",
+        "DAVE REPLAY"
+      ],
+      "lineupEntries": [],
+      "lineupCompleteness": "full",
+      "lineupSectionTitle": "LINE-UP",
+      "hasKnownLineup": true,
+      "qualityState": "complete",
+      "sourceAttributionLabel": "Bootshaus"
+    },
+    "passed": true,
+    "displayModel": {
+      "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "displayPriceText": "ab 23,90 €",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "ticketProviderLabel": "Ticket.io"
+    }
+  },
+  "underland": {
+    "eventId": "evt-1785389049895-4mb7dub",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "checks": {
+      "ticketKingsCta": true,
+      "noR3habTicketIo": true,
+      "noBorrowedPrice": true,
+      "venueEssigfabrik": true,
+      "providerTicketKings": true
+    },
+    "projection": {
+      "displayPriceText": "",
+      "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "ticketProviderLabel": "Ticket Kings",
+      "ticketAvailability": "external_link",
+      "isSoldOut": false,
+      "venueLabel": "Essigfabrik / Elektroküche",
+      "cityLabel": "Köln",
+      "locationLabelComma": "Essigfabrik / Elektroküche, Köln",
+      "locationLabelDot": "Essigfabrik / Elektroküche · Köln",
+      "latitude": 50.9517133,
+      "longitude": 6.9819222,
+      "hasCoordinates": true,
+      "heroImageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+      "galleryImageUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+      ],
+      "genres": [],
+      "knownArtistNames": [],
+      "lineupEntries": [],
+      "lineupCompleteness": "none",
+      "lineupSectionTitle": "LINE-UP",
+      "hasKnownLineup": false,
+      "qualityState": "partial",
+      "sourceAttributionLabel": "Affenkäfig"
+    },
+    "passed": true,
+    "displayModel": {
+      "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "displayPriceText": "",
+      "venue": "Essigfabrik / Elektroküche",
+      "city": "Köln",
+      "ticketProviderLabel": "Ticket Kings"
+    }
+  },
+  "sommerfest": {
+    "eventId": "evt-1785339391167-tfaixrr",
+    "title": "Bootshaus Sommerfest",
+    "checks": {
+      "venueBootshaus": true,
+      "addressAuenweg": true,
+      "noEssigfabrikVenue": true,
+      "ticketIoCta": true,
+      "price1190": true,
+      "noUnderlandUrl": true
+    },
+    "projection": {
+      "sanitizedDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "shortDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "displayPriceText": "ab 11,90 €",
+      "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "ticketProviderLabel": "Ticket.io",
+      "ticketAvailability": "external_link",
+      "isSoldOut": false,
+      "venueLabel": "Bootshaus",
+      "cityLabel": "Köln",
+      "locationLabelComma": "Bootshaus, Köln",
+      "locationLabelDot": "Bootshaus · Köln",
+      "latitude": 50.9517133,
+      "longitude": 6.9819222,
+      "hasCoordinates": true,
+      "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "galleryImageUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+      ],
+      "genres": [
+        "DUBSTEP",
+        "ELECTRO",
+        "Hard Techno",
+        "Techno",
+        "EDM"
+      ],
+      "knownArtistNames": [],
+      "lineupEntries": [],
+      "lineupCompleteness": "none",
+      "lineupSectionTitle": "LINE-UP",
+      "hasKnownLineup": false,
+      "qualityState": "complete",
+      "sourceAttributionLabel": "Bootshaus"
+    },
+    "passed": true,
+    "displayModel": {
+      "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "displayPriceText": "ab 11,90 €",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "ticketProviderLabel": "Ticket.io"
+    }
+  },
+  "pass": true
+}

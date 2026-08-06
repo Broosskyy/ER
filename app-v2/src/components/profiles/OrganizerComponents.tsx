@@ -63,11 +63,6 @@ export function OrganizerProfileCard({ organizer, followState, onFollowPress, on
           </AppText>
         ) : null}
       </View>
-      {followState ? (
-        <View style={styles.followInline}>
-          <FollowButton state={followState} onPress={onFollowPress} />
-        </View>
-      ) : null}
     </View>
   );
 
@@ -84,16 +79,31 @@ export function OrganizerProfileCard({ organizer, followState, onFollowPress, on
     </CardFoundation>
   );
 
-  return onPress ? (
+  const followAction =
+    followState != null ? (
+      <View style={styles.followInline}>
+        <FollowButton state={followState} onPress={onFollowPress} />
+      </View>
+    ) : null;
+
+  if (!onPress) {
+    return (
+      <View accessibilityLabel={organizer.accessibilityLabel} style={styles.staticRow}>
+        <View style={styles.staticContent}>{content}</View>
+        {followAction}
+      </View>
+    );
+  }
+
+  return (
     <InteractiveCard
       onPress={onPress}
       accessibilityLabel={organizer.accessibilityLabel}
+      actions={followAction}
       actionsPlacement="trailing"
     >
       {content}
     </InteractiveCard>
-  ) : (
-    <View accessibilityLabel={organizer.accessibilityLabel}>{content}</View>
   );
 }
 
@@ -146,6 +156,15 @@ const styles = StyleSheet.create({
   followInline: {
     flexShrink: 0,
     alignSelf: 'flex-start',
+  },
+  staticRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: spacing.sm,
+  },
+  staticContent: {
+    flex: 1,
+    minWidth: 0,
   },
   stats: { flexDirection: 'row', gap: spacing.xxl },
   member: {

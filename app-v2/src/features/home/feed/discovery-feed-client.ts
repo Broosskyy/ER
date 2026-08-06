@@ -59,7 +59,7 @@ async function executeSectionQuery(
         ...baseParams,
         latitude: location.latitude,
         longitude: location.longitude,
-        radiusKm: 50,
+        radiusKm: location.radiusKm ?? 50,
       });
       break;
     case 'newly-added':
@@ -109,6 +109,7 @@ function buildRequestKey(
       city: location.city,
       latitude: location.latitude,
       longitude: location.longitude,
+      radiusKm: location.radiusKm,
       cursor: cursor?.encoded,
       limit: section.previewLimit,
       genre: section.genreLabel,

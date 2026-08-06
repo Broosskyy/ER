@@ -39,6 +39,10 @@ export interface ImportJobMetrics {
   createdCount: number;
   updatedCount: number;
   duplicateCount: number;
+  unchangedCount?: number;
+  missingCount?: number;
+  pagesProcessed?: number;
+  connectorVersion?: string;
 }
 
 export interface ImportJob {
@@ -57,6 +61,7 @@ export interface ImportJob {
 
 export interface ReviewerEdits {
   title?: string;
+  subtitle?: string;
   description?: string;
   startDate?: string;
   endDate?: string;

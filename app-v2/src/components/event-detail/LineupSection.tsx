@@ -1,6 +1,7 @@
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { ArtistLineupCard } from '@/components/discovery/ArtistLineupCard';
+import { BillingLineupCard } from '@/components/event-detail/BillingLineupCard';
 import { AppText } from '@/components/layout/AppText';
 import { Section } from '@/components/layout/Section';
 import { Stack } from '@/components/layout/Stack';
@@ -22,7 +23,7 @@ export interface LineupSectionProps {
 /** Line-up block with artist cards or high-quality placeholder. */
 export function LineupSection({
   lineup,
-  title = 'LINE-UP',
+  title = lineup.sectionTitle ?? 'LINE-UP',
   onArtistPress,
   style,
   testID,
@@ -41,6 +42,24 @@ export function LineupSection({
             </AppText>
           </View>
         </CardFoundation>
+      ) : lineup.billingRows && lineup.billingRows.length > 0 ? (
+        <Stack gap="sm">
+          {lineup.billingRows.map((row) =>
+            row.billingRelation === 'SOLO' || row.artists.length <= 1 ? (
+              <ArtistLineupCard
+                key={row.id}
+                artist={row.artists[0]!}
+                onPress={
+                  row.artists[0]?.profileNavigable && row.artists[0]?.id && onArtistPress
+                    ? () => onArtistPress(row.artists[0]!.id!)
+                    : undefined
+                }
+              />
+            ) : (
+              <BillingLineupCard key={row.id} row={row} onArtistPress={onArtistPress} />
+            ),
+          )}
+        </Stack>
       ) : (
         <Stack gap="sm">
           {lineup.artists.map((artist) => (

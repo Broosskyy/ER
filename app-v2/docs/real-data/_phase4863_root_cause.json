@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-08-06T01:50:00.000Z",
+  "phase": "4.8.6.3",
+  "productionMutationsInThisRun": 0,
+  "whyCanonicalSaysEssigfabrik": "Stale wrong source references linked Underland Essigfabrik Ticket Kings imports to this canonical Event before Ticket.io enrichment; venueName Essigfabrik persisted and was not corrected when Ticket.io later imported venueName Bootshaus",
+  "earliestCause": "wrong_source_reference_linkage",
+  "firstEssigfabrikStage": "event_source_references (2026-07-30) — Underland Ticket Kings URL linked to Bootshaus Sommerfest canonical ID",
+  "notCausedBy": [
+    "phase_4.8.6_website_controlled_publish (venue forbidden)",
+    "official_website_importer (VENUE_NOT_PUBLISHED_ON_PAGE)",
+    "current_ticket_io_list_evidence (today says Bootshaus)",
+    "manual_repair_in_phase_486"
+  ],
+  "internalContradiction": {
+    "venueName": "Essigfabrik",
+    "venueAddress": "Auenweg 173, 51063 Köln",
+    "ticketIoImportVenueName": "Bootshaus",
+    "note": "Canonical label Essigfabrik contradicts both Ticket.io import payload and address Auenweg 173 (Bootshaus club)"
+  },
+  "publicTruthVenue": "Bootshaus",
+  "publicTruthAddress": "Auenweg 173, 51063 Köln",
+  "classification": "canonical_venue_name_wrong_stale_essigfabrik_from_wrong_ticket_kings_linkage"
+}

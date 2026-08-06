@@ -1,6 +1,10 @@
 import { FEATURED_EVENT_IDS, isFeaturedEventId } from '@/features/events/data/home-config';
 import type { Event } from '@/features/events/types/event';
 import {
+  DEFAULT_HOME_LIST_PREVIEW_LIMIT,
+  DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
+} from '@/features/home/feed/home-feed-section-config';
+import {
   getMoreUpcomingEvents,
   getTonightEvents,
   getWeekendEvents,
@@ -44,7 +48,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Ausgewählte Events in Köln',
     emptyTitle: 'Keine Highlights',
     emptyDescription: 'Derzeit sind keine ausgewählten Events verfügbar.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: true,
     selectEvents: (events) =>
       FEATURED_EVENT_IDS.map((id) => events.find((event) => event.id === id)).filter(
@@ -57,7 +61,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Events heute Abend in Köln',
     emptyTitle: 'Keine Events heute Abend',
     emptyDescription: 'Derzeit sind keine Events für heute Abend verfügbar.',
-    homePreviewLimit: 6,
+    homePreviewLimit: DEFAULT_HOME_LIST_PREVIEW_LIMIT,
     showOnHome: true,
     selectEvents: (events) => getTonightEvents(events),
   },
@@ -67,7 +71,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Events dieses Wochenende in Köln',
     emptyTitle: 'Keine Events am Wochenende',
     emptyDescription: 'Derzeit sind keine Events für dieses Wochenende verfügbar.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: true,
     selectEvents: (events) => getWeekendEvents(events),
   },
@@ -77,7 +81,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Kommende Events in Köln',
     emptyTitle: 'Keine kommenden Events',
     emptyDescription: 'Derzeit sind keine kommenden Events verfügbar.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: true,
     selectEvents: (events) => getMoreUpcomingEvents(events),
   },
@@ -87,7 +91,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Techno events in Köln',
     emptyTitle: 'No techno events',
     emptyDescription: 'There are currently no published techno events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: true,
     selectEvents: (events) => events.filter((event) => matchesGenreCollection(event, 'techno')),
   },
@@ -97,7 +101,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Hard techno events in Köln',
     emptyTitle: 'No hard techno events',
     emptyDescription: 'There are currently no published hard techno events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: false,
     selectEvents: (events) =>
       events.filter((event) => matchesGenreCollection(event, 'hard-techno')),
@@ -108,7 +112,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'House events in Köln',
     emptyTitle: 'No house events',
     emptyDescription: 'There are currently no published house events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: true,
     selectEvents: (events) => events.filter((event) => matchesGenreCollection(event, 'house')),
   },
@@ -118,7 +122,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Trance events in Köln',
     emptyTitle: 'No trance events',
     emptyDescription: 'There are currently no published trance events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: false,
     selectEvents: (events) => events.filter((event) => matchesGenreCollection(event, 'trance')),
   },
@@ -128,7 +132,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Psy events in Köln',
     emptyTitle: 'No psy events',
     emptyDescription: 'There are currently no published psy events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: false,
     selectEvents: (events) => events.filter((event) => matchesGenreCollection(event, 'psy')),
   },
@@ -138,7 +142,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Industrial events in Köln',
     emptyTitle: 'No industrial events',
     emptyDescription: 'There are currently no published industrial events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: false,
     selectEvents: (events) =>
       events.filter((event) => matchesGenreCollection(event, 'industrial')),
@@ -149,7 +153,7 @@ export const EVENT_COLLECTIONS: Record<CollectionType, EventCollectionConfig> = 
     subtitle: 'Drum & bass events in Köln',
     emptyTitle: 'No drum & bass events',
     emptyDescription: 'There are currently no published drum & bass events.',
-    homePreviewLimit: 3,
+    homePreviewLimit: DEFAULT_HOME_RAIL_PREVIEW_LIMIT,
     showOnHome: false,
     selectEvents: (events) =>
       events.filter((event) => matchesGenreCollection(event, 'drum-and-bass')),

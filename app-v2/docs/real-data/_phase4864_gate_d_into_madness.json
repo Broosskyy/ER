@@ -1,0 +1,741 @@
+{
+  "generatedAt": "2026-08-05T23:58:12.192Z",
+  "phase": "4.8.6.4",
+  "eventId": "evt-1785339386612-rjr91mv",
+  "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+  "startDate": "2026-08-15T21:00:00+00:00",
+  "venueName": "Essigfabrik",
+  "venueAddress": "Auenweg 173, 51063 Köln",
+  "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+  "websiteUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+  "sourceReferenceHistory": [
+    {
+      "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+      "externalEventId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "canonicalEventId": "evt-1785339386612-rjr91mv",
+      "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "rawRecordId": "7689483f-43e9-4971-8934-57210f8db390",
+      "importJobId": "48642057-5018-459d-bb06-daaf9fd11b98",
+      "firstSeenAt": "2026-07-30T19:09:40.959+00:00",
+      "lastSeenAt": "2026-08-02T21:26:54.39+00:00",
+      "active": false,
+      "sourcePriority": 60,
+      "sourceQuality": 65,
+      "metadata": {
+        "role": "ticketing",
+        "syncRun": {
+          "pagesProcessed": 6,
+          "paginationDetected": true
+        },
+        "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "platform": "ticket_king",
+        "shopSlug": "ticketkings",
+        "connector": "ticket_platform",
+        "isPrimary": false,
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "scopeStats": {
+          "accepted": 5,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 5,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "canonicalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "lineupEntries": [
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 0,
+            "confidence": 0.95,
+            "displayName": "DYSTOPIA F2F VALKYRIE",
+            "normalizedName": "dystopia f2f valkyrie"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 1,
+            "confidence": 0.95,
+            "displayName": "IAN CRANK F2F EASYPYSI",
+            "normalizedName": "ian crank f2f easypysi"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 2,
+            "confidence": 0.95,
+            "displayName": "KARAMUSTA F2F GREEKZ",
+            "normalizedName": "karamusta f2f greekz"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 3,
+            "confidence": 0.95,
+            "displayName": "KEVIN LA NIQUE F2F THE RAFNIX",
+            "normalizedName": "kevin la nique f2f the rafnix"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 4,
+            "confidence": 0.95,
+            "displayName": "NINA BENDER F2F LEE-ANN",
+            "normalizedName": "nina bender f2f lee-ann"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 5,
+            "confidence": 0.95,
+            "displayName": "FLASH B2B FORWARD",
+            "normalizedName": "flash b2b forward"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 6,
+            "confidence": 0.95,
+            "displayName": "HELLMYER B2B STZ",
+            "normalizedName": "hellmyer b2b stz"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 7,
+            "confidence": 0.95,
+            "displayName": "MAURO B2B I.D.A",
+            "normalizedName": "mauro b2b i.d.a"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 8,
+            "confidence": 0.95,
+            "displayName": "PLEA5URE B2B PUL5E",
+            "normalizedName": "plea5ure b2b pul5e"
+          }
+        ],
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "e075ec259ca5c99646dec1e58c469c45",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "maxDetailPages": 15,
+          "shopPagesFetched": 5,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 0,
+          "detailUrlsDiscovered": 0,
+          "detailUrlsPowBlocked": 0
+        },
+        "enrichmentSource": true,
+        "checkoutProviderId": "24",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      }
+    },
+    {
+      "sourceId": "source-affenkaefig-ticket-kings",
+      "externalEventId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "canonicalEventId": "evt-1785339386612-rjr91mv",
+      "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "rawRecordId": "bb203ffc-2ef0-4371-b3ad-e71b2d82a984",
+      "importJobId": "db556f2b-141c-4970-8c6e-93b5cbaf36a7",
+      "firstSeenAt": "2026-07-30T13:23:48.139+00:00",
+      "lastSeenAt": "2026-08-02T21:25:51.833+00:00",
+      "active": false,
+      "sourcePriority": 64,
+      "sourceQuality": 68,
+      "metadata": {
+        "role": "ticketing",
+        "syncRun": {
+          "pagesProcessed": 6,
+          "paginationDetected": true
+        },
+        "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "platform": "ticket_king",
+        "shopSlug": "ticketkings",
+        "connector": "ticket_platform",
+        "isPrimary": false,
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "scopeStats": {
+          "accepted": 5,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 5,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "canonicalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "defaultCityId": "koeln",
+        "lineupEntries": [
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 0,
+            "confidence": 0.95,
+            "displayName": "DYSTOPIA F2F VALKYRIE",
+            "normalizedName": "dystopia f2f valkyrie"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 1,
+            "confidence": 0.95,
+            "displayName": "IAN CRANK F2F EASYPYSI",
+            "normalizedName": "ian crank f2f easypysi"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 2,
+            "confidence": 0.95,
+            "displayName": "KARAMUSTA F2F GREEKZ",
+            "normalizedName": "karamusta f2f greekz"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 3,
+            "confidence": 0.95,
+            "displayName": "KEVIN LA NIQUE F2F THE RAFNIX",
+            "normalizedName": "kevin la nique f2f the rafnix"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 4,
+            "confidence": 0.95,
+            "displayName": "NINA BENDER F2F LEE-ANN",
+            "normalizedName": "nina bender f2f lee-ann"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 5,
+            "confidence": 0.95,
+            "displayName": "FLASH B2B FORWARD",
+            "normalizedName": "flash b2b forward"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 6,
+            "confidence": 0.95,
+            "displayName": "HELLMYER B2B STZ",
+            "normalizedName": "hellmyer b2b stz"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 7,
+            "confidence": 0.95,
+            "displayName": "MAURO B2B I.D.A",
+            "normalizedName": "mauro b2b i.d.a"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 8,
+            "confidence": 0.95,
+            "displayName": "PLEA5URE B2B PUL5E",
+            "normalizedName": "plea5ure b2b pul5e"
+          }
+        ],
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "e075ec259ca5c99646dec1e58c469c45",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "maxDetailPages": 15,
+          "shopPagesFetched": 5,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 0,
+          "detailUrlsDiscovered": 0,
+          "detailUrlsPowBlocked": 0
+        },
+        "enrichmentSource": true,
+        "checkoutProviderId": "24",
+        "defaultOrganizerId": "organizer-affenkaefig",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      }
+    },
+    {
+      "sourceId": "source-ticket-kings-org-elektrokuche",
+      "externalEventId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "canonicalEventId": "evt-1785339386612-rjr91mv",
+      "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "rawRecordId": "dfb5321d-9bd4-474c-9ee2-2a4565fc89bb",
+      "importJobId": "eff5a712-5bfb-464a-845c-c339440c3511",
+      "firstSeenAt": "2026-07-30T19:08:13.829+00:00",
+      "lastSeenAt": "2026-08-02T19:38:44.023+00:00",
+      "active": false,
+      "sourcePriority": 60,
+      "sourceQuality": 65,
+      "metadata": {
+        "role": "ticketing",
+        "syncRun": {
+          "pagesProcessed": 6,
+          "paginationDetected": true
+        },
+        "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "platform": "ticket_king",
+        "shopSlug": "ticketkings",
+        "connector": "ticket_platform",
+        "isPrimary": false,
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "scopeStats": {
+          "accepted": 5,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 5,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "canonicalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "lineupEntries": [
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 0,
+            "confidence": 0.95,
+            "displayName": "DYSTOPIA F2F VALKYRIE",
+            "normalizedName": "dystopia f2f valkyrie"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 1,
+            "confidence": 0.95,
+            "displayName": "IAN CRANK F2F EASYPYSI",
+            "normalizedName": "ian crank f2f easypysi"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 2,
+            "confidence": 0.95,
+            "displayName": "KARAMUSTA F2F GREEKZ",
+            "normalizedName": "karamusta f2f greekz"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 3,
+            "confidence": 0.95,
+            "displayName": "KEVIN LA NIQUE F2F THE RAFNIX",
+            "normalizedName": "kevin la nique f2f the rafnix"
+          },
+          {
+            "role": "f2f",
+            "isB2b": false,
+            "isF2f": true,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 4,
+            "confidence": 0.95,
+            "displayName": "NINA BENDER F2F LEE-ANN",
+            "normalizedName": "nina bender f2f lee-ann"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 5,
+            "confidence": 0.95,
+            "displayName": "FLASH B2B FORWARD",
+            "normalizedName": "flash b2b forward"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 6,
+            "confidence": 0.95,
+            "displayName": "HELLMYER B2B STZ",
+            "normalizedName": "hellmyer b2b stz"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 7,
+            "confidence": 0.95,
+            "displayName": "MAURO B2B I.D.A",
+            "normalizedName": "mauro b2b i.d.a"
+          },
+          {
+            "role": "b2b",
+            "isB2b": true,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 8,
+            "confidence": 0.95,
+            "displayName": "PLEA5URE B2B PUL5E",
+            "normalizedName": "plea5ure b2b pul5e"
+          }
+        ],
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "e075ec259ca5c99646dec1e58c469c45",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 5
+        },
+        "enrichmentSource": true,
+        "checkoutProviderId": "24",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      }
+    },
+    {
+      "sourceId": "source-bootshaus-koeln",
+      "externalEventId": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "canonicalEventId": "evt-1785339386612-rjr91mv",
+      "originalUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "rawRecordId": "658c7b44-24a3-4e50-a937-5075cc92e906",
+      "importJobId": "b806a457-189f-4580-8580-592b1c39fd61",
+      "firstSeenAt": "2026-07-28T21:49:28.619+00:00",
+      "lastSeenAt": "2026-08-02T21:20:14.025+00:00",
+      "active": true,
+      "sourcePriority": 78,
+      "sourceQuality": 76,
+      "metadata": {
+        "role": "official",
+        "eventUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+        "platform": "club_website",
+        "warnings": [
+          "detail_enrichment_applied",
+          "textual_lineup_from_description",
+          "textual_running_order_from_description",
+          "textual_attributes_from_description",
+          "textual_lineup_from_description",
+          "textual_running_order_from_description",
+          "textual_attributes_from_description"
+        ],
+        "connector": "club_website",
+        "isPrimary": true,
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "sourceType": "website",
+        "syncStatus": "active",
+        "canonicalUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+        "runningOrder": [
+          {
+            "role": "running_order",
+            "source": "website_description",
+            "sortOrder": 0,
+            "confidence": 0.7,
+            "displayName": "Kili b2b Complex",
+            "normalizedName": "kili b2b complex"
+          }
+        ],
+        "defaultCityId": "staging-seed-city-koeln",
+        "fieldEvidence": [
+          {
+            "field": "title",
+            "rawValue": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+            "strategy": "html_selector",
+            "sourceUrl": "https://bootshaus.tv/events/",
+            "confidence": 0.8,
+            "extractedAt": "2026-08-02T21:18:30.284Z",
+            "selectorOrPath": ".upcoming-title"
+          },
+          {
+            "field": "rawStartDate",
+            "rawValue": "2026-08-15T23:00:00",
+            "strategy": "html_selector",
+            "sourceUrl": "https://bootshaus.tv/events/",
+            "confidence": 0.8,
+            "extractedAt": "2026-08-02T21:18:30.284Z",
+            "selectorOrPath": ".date-day"
+          },
+          {
+            "field": "artists",
+            "rawValue": "Kili b2b Complex, RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+            "strategy": "html_selector",
+            "sourceUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+            "confidence": 0.75,
+            "extractedAt": "2026-08-02T21:18:31.102Z"
+          },
+          {
+            "field": "artists",
+            "rawValue": "Kili b2b Complex, RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+            "strategy": "html_selector",
+            "sourceUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+            "confidence": 0.75,
+            "extractedAt": "2026-08-02T21:18:34.154Z"
+          }
+        ],
+        "defaultVenueId": "venue-bootshaus-koeln",
+        "eventGeography": {
+          "city": "source_default",
+          "venue": "source_default",
+          "address": "source_default",
+          "country": "explicit"
+        },
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [
+          {
+            "key": "outdoor",
+            "label": "Outdoor",
+            "source": "website_description",
+            "confidence": 0.8
+          }
+        ],
+        "venueEnvironment": "outdoor",
+        "textualEnrichment": {
+          "attributes": [
+            {
+              "key": "outdoor",
+              "label": "Outdoor",
+              "source": "website_description",
+              "confidence": 0.8
+            }
+          ],
+          "runningOrder": [
+            {
+              "role": "running_order",
+              "source": "website_description",
+              "sortOrder": 0,
+              "confidence": 0.7,
+              "displayName": "Kili b2b Complex",
+              "normalizedName": "kili b2b complex"
+            }
+          ],
+          "venueEnvironment": "outdoor",
+          "outboundTicketLinks": []
+        },
+        "defaultOrganizerId": "organizer-bootshaus",
+        "extractionStrategy": "html_selector",
+        "electronicRelevance": "relevant",
+        "outboundTicketLinks": [],
+        "extractionConfidence": 0.75,
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      }
+    },
+    {
+      "sourceId": "source-bootshaus-ticket-io",
+      "externalEventId": "https://bootshaus-club.ticket.io/BcDqml12/",
+      "canonicalEventId": "evt-1785339386612-rjr91mv",
+      "originalUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+      "rawRecordId": "29205f77-50a7-424c-88ba-5a4eaa894e82",
+      "importJobId": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+      "firstSeenAt": "2026-07-30T13:22:51.882+00:00",
+      "lastSeenAt": "2026-08-02T21:24:51.618+00:00",
+      "active": true,
+      "sourcePriority": 65,
+      "sourceQuality": 70,
+      "metadata": {
+        "role": "ticketing",
+        "soldOut": false,
+        "syncRun": {
+          "pagesProcessed": 1,
+          "paginationDetected": false
+        },
+        "eventUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "platform": "ticket_io",
+        "shopSlug": "bootshaus-club",
+        "connector": "ticket_platform",
+        "eventSlug": "BcDqml12",
+        "isPrimary": false,
+        "priceText": "ab 23,00 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "scopeStats": {
+          "accepted": 15,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 15,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "availability": "instock",
+        "canonicalUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "defaultCityId": "koeln",
+        "defaultVenueId": "venue-bootshaus-koeln",
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "540e24aba1603713950a0e78132e2bf3",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": true,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "skippedReason": "pow_blocked",
+          "maxDetailPages": 15,
+          "shopPagesFetched": 0,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 15,
+          "detailUrlsDiscovered": 15,
+          "detailUrlsPowBlocked": 15
+        },
+        "enrichmentSource": true,
+        "defaultOrganizerId": "organizer-bootshaus",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      }
+    }
+  ],
+  "venueDiagnostic": {
+    "consistent": false,
+    "issue": "venue_name_address_mismatch",
+    "reason": "Essigfabrik label with Bootshaus Auenweg 173 address"
+  },
+  "collisions": [
+    {
+      "compositeKey": "ticket_io:bootshaus-club.ticket.io:BcDqml12",
+      "platform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "externalId": "BcDqml12",
+      "eventIds": [
+        "evt-1785339386612-rjr91mv",
+        "evt-1785339410908-9691748"
+      ],
+      "titles": [
+        "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "Bootshaus pres. BC173 (let's get loco)"
+      ],
+      "collisionType": "exact_duplicate"
+    }
+  ],
+  "classification": "MULTIPLE_CONTAMINATED_FIELDS",
+  "correctionPreview": {
+    "proposedVenueName": "Bootshaus",
+    "reason": "Essigfabrik label contradicts Auenweg 173 address — requires explicit approval",
+    "mutate": false
+  },
+  "productionMutationsInThisRun": 0
+}

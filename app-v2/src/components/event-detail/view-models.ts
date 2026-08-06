@@ -3,11 +3,14 @@ import type { LineupItemViewModel } from '@/components/discovery/view-models';
 import type { OrganizerProfileViewModel } from '@/components/profiles/view-models';
 import type { TicketSummaryViewModel, TicketTypeViewModel } from '@/components/ticketing/view-models';
 import type { EventCardViewModel, EventStatus, EventTicketStatus } from '@/components/discovery/view-models';
+import type { SemanticColorToken } from '@/design/ticket-semantics';
+import type { EventAttributeBadge } from '@/features/events/domain/canonical-event-attribute-types';
 
 export interface EventHeroViewModel {
   id: string;
   title: string;
   image?: DiscoveryImageSource;
+  galleryImageUrls?: string[];
   dateLabel: string;
   weekdayLabel?: string;
   timeLabel?: string;
@@ -15,8 +18,10 @@ export interface EventHeroViewModel {
   venueLabel: string;
   cityLabel: string;
   genreLabels: string[];
+  attributeBadges?: EventAttributeBadge[];
   categoryLabel?: string;
   ticketLabel?: string;
+  ticketColorToken?: SemanticColorToken;
   ticketStatus?: EventTicketStatus;
   status?: EventStatus;
   accessibilityLabel: string;
@@ -38,8 +43,18 @@ export interface EventInfoViewModel {
 
 export interface LineupSectionViewModel {
   artists: LineupItemViewModel[];
+  billingRows?: LineupBillingRowViewModel[];
   tba?: boolean;
   placeholderMessage?: string;
+  accessibilityLabel: string;
+  sectionTitle?: string;
+  lineupCompleteness?: 'full' | 'partial' | 'none';
+}
+
+export interface LineupBillingRowViewModel {
+  id: string;
+  billingRelation: import('@/features/aggregation/domain/canonical-lineup-entry').BillingRelation;
+  artists: LineupItemViewModel[];
   accessibilityLabel: string;
 }
 
@@ -63,7 +78,7 @@ export interface TimetableSectionViewModel {
 export interface VenueDetailViewModel {
   id: string;
   name: string;
-  addressLabel: string;
+  addressLabel?: string;
   cityLabel: string;
   image?: DiscoveryImageSource;
   verified?: boolean;
@@ -84,7 +99,10 @@ export interface EventTicketSectionViewModel {
   mode: EventTicketMode;
   ticketTypes: TicketTypeViewModel[];
   summary?: TicketSummaryViewModel;
+  showSummary?: boolean;
   ctaLabel: string;
+  priceLabel?: string;
+  availabilityLabel?: string;
   externalUrlLabel?: string;
   salesStartLabel?: string;
   salesEndLabel?: string;

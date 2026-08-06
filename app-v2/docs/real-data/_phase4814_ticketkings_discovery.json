@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-08-04T21:06:36.984Z",
+  "productionMutationsInThisRun": 0,
+  "totalDiscovered": 5,
+  "dbLinkedOverlap": 4,
+  "newStagingDiscoveries": 1,
+  "listPageCount": 5,
+  "sitemapCount": 0,
+  "stale404Urls": [],
+  "duplicateSlugCases": [
+    {
+      "eventUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "slug": "sommerfest-elektrokueche-20-06-2026",
+      "discoverySource": "list_page"
+    }
+  ],
+  "extractionFailures": [],
+  "sample": [
+    {
+      "eventUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "slug": "sommerfest-elektrokueche-20-06-2026",
+      "discoverySource": "list_page"
+    },
+    {
+      "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F &#038; B2B xxx EDITION",
+      "slug": "mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+      "discoverySource": "list_page"
+    },
+    {
+      "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "slug": "underland-essigfabrik-05-09-2026",
+      "discoverySource": "list_page"
+    },
+    {
+      "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "title": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+      "slug": "mdma-musik-die-mich-antreibt-10-10-26",
+      "discoverySource": "list_page"
+    },
+    {
+      "eventUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "slug": "m-d-m-a-xxx-proton-xxx-stuttgart",
+      "discoverySource": "list_page"
+    }
+  ],
+  "newDiscoveriesSample": [
+    {
+      "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "slug": "underland-essigfabrik-05-09-2026",
+      "discoverySource": "list_page"
+    }
+  ]
+}

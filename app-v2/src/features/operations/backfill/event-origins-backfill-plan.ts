@@ -3,6 +3,7 @@ import type { EventSourceReferenceRepository } from '@/features/aggregation/repo
 import { buildEventOriginFromPublish } from '@/features/events/services/event-origin-service';
 import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
 import type { ImportRecord } from '@/features/import/models/types';
+import type { RawSourceType } from '@/features/import/models/normalized-event-candidate';
 import type { ImportRecordRepository } from '@/data/repositories/import-repositories';
 
 export const PRODUCTION_ORIGIN_SOURCE_IDS = [
@@ -128,6 +129,10 @@ export async function buildOriginBackfillPlan(input: {
           importRecordsExamined += 1;
         }
 
+        const rawSourceType: RawSourceType = record
+          ? getEffectiveCandidate(record).rawSourceType
+          : 'unknown';
+
         const origin = buildEventOriginFromPublish({
           canonicalEventId,
           source: refSource,
@@ -150,6 +155,7 @@ export async function buildOriginBackfillPlan(input: {
                 sourceId: refSource.id,
                 sourceName: refSource.displayName,
                 externalId: reference.externalEventId,
+                rawSourceType,
               }
             : {
                 title: event.title,
@@ -166,6 +172,7 @@ export async function buildOriginBackfillPlan(input: {
                 sourceId: refSource.id,
                 sourceName: refSource.displayName,
                 externalId: reference.externalEventId,
+                rawSourceType,
               },
           isPrimary: reference.sourceId === event.sourceId,
         });

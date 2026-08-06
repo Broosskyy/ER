@@ -1,9 +1,10 @@
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle, Pressable } from 'react-native';
 
 import { FavoriteButton } from '@/components/buttons/FavoriteButton';
 import { IconButton } from '@/components/buttons/IconButton';
 import { EventImage } from '@/components/discovery/EventImage';
 import { EventStatusBadge, TicketStatusBadge } from '@/components/discovery/EventStatusBadge';
+import { TicketPriceLabel } from '@/components/discovery/TicketPriceLabel';
 import { AppText } from '@/components/layout/AppText';
 import { AppIcon } from '@/components/primitives/AppIcon';
 import { spacing } from '@/design/spacing';
@@ -14,6 +15,8 @@ import type { EventHeroViewModel } from './view-models';
 export interface EventHeroProps {
   event: EventHeroViewModel;
   saved?: boolean;
+  showGenreLabels?: boolean;
+  onImagePress?: () => void;
   onBackPress?: () => void;
   onSharePress?: () => void;
   onSavePress?: () => void;
@@ -26,6 +29,8 @@ export interface EventHeroProps {
 export function EventHero({
   event,
   saved = false,
+  showGenreLabels = true,
+  onImagePress,
   onBackPress,
   onSharePress,
   onSavePress,
@@ -38,13 +43,20 @@ export function EventHero({
   return (
     <View style={[styles.root, style]} testID={testID}>
       <View style={styles.heroFrame}>
-        <EventImage
-          source={event.image}
-          variant="hero"
-          overlay={
-            <View style={[styles.overlay, { backgroundColor: theme.colors.overlay }]} />
-          }
-        />
+        <Pressable
+          onPress={onImagePress}
+          disabled={!onImagePress}
+          accessibilityRole={onImagePress ? 'button' : undefined}
+          accessibilityLabel={onImagePress ? 'Flyer in Vollbild öffnen' : undefined}
+        >
+          <EventImage
+            source={event.image}
+            variant="hero"
+            overlay={
+              <View style={[styles.overlay, { backgroundColor: theme.colors.overlay }]} />
+            }
+          />
+        </Pressable>
         <View style={styles.topActions}>
           {onBackPress ? (
             <IconButton icon="arrow-back" accessibilityLabel="Zurück" onPress={onBackPress} />
@@ -95,28 +107,51 @@ export function EventHero({
           </AppText>
         </View>
         <View style={styles.metaRow}>
-          <View style={styles.genreRow}>
-            {event.genreLabels.slice(0, 3).map((genre) => (
-              <View
-                key={genre}
-                style={[
-                  styles.genreTag,
-                  {
-                    backgroundColor: theme.colors.accentMuted,
-                    borderRadius: theme.radiusRoles.badge,
-                  },
-                ]}
-              >
-                <AppText role="badge" color={theme.colors.accent}>
-                  {genre}
-                </AppText>
-              </View>
-            ))}
-          </View>
+          {showGenreLabels && event.attributeBadges && event.attributeBadges.length > 0 ? (
+            <View style={styles.genreRow}>
+              {event.attributeBadges.map((badge) => (
+                <View
+                  key={badge.id}
+                  style={[
+                    styles.genreTag,
+                    {
+                      backgroundColor: theme.colors.accentMuted,
+                      borderRadius: theme.radiusRoles.badge,
+                    },
+                  ]}
+                >
+                  <AppText role="badge" color={theme.colors.textSecondary}>
+                    {badge.label}
+                  </AppText>
+                </View>
+              ))}
+            </View>
+          ) : null}
+          {showGenreLabels && event.genreLabels.length > 0 ? (
+            <View style={styles.genreRow}>
+              {event.genreLabels.slice(0, 3).map((genre) => (
+                <View
+                  key={genre}
+                  style={[
+                    styles.genreTag,
+                    {
+                      backgroundColor: theme.colors.accentMuted,
+                      borderRadius: theme.radiusRoles.badge,
+                    },
+                  ]}
+                >
+                  <AppText role="badge" color={theme.colors.accent}>
+                    {genre}
+                  </AppText>
+                </View>
+              ))}
+            </View>
+          ) : null}
           {event.ticketLabel ? (
-            <AppText role="bodyStrong" color={theme.colors.success}>
-              {event.ticketLabel}
-            </AppText>
+            <TicketPriceLabel
+              label={event.ticketLabel}
+              colorToken={event.ticketColorToken}
+            />
           ) : null}
         </View>
         <View style={styles.statusRow}>

@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-03T20:28:19.357Z",
+  "command": "repair-soldout",
+  "publishedEvents": 108,
+  "unrealWeekenderCandidates": [
+    "evt-1785339412398-hq6217j",
+    "evt-1785339397255-frpjss3"
+  ],
+  "soldoutCandidates": [
+    "evt-1785339420043-obhyeev",
+    "evt-1785506435192-azaw5p4"
+  ],
+  "availabilityCandidates": 51
+}

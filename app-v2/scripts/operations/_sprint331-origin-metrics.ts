@@ -6,7 +6,7 @@ import './bootstrap-ops-supabase';
 import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '../../docs/real-data/_sprint331_origin_metrics.json');
 

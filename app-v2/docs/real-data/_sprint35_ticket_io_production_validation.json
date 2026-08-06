@@ -1,0 +1,594 @@
+{
+  "sprint": "35",
+  "phase": "ticket-io-production",
+  "command": "npx tsx scripts/operations/_sprint35-ticket-io-production-validation.ts",
+  "startedAt": "2026-07-31T10:45:46.428Z",
+  "errors": [],
+  "warnings": [
+    "auto_publish shop did not create new canonical events — may have matched existing events."
+  ],
+  "canonicalEventsBefore": 69,
+  "probe": {
+    "shopSlug": "bootshaus-club",
+    "listUrl": "https://bootshaus-club.ticket.io/",
+    "valid": true,
+    "eventCount": 17,
+    "paginationDetected": false,
+    "requiredFieldsValid": true,
+    "preview": [
+      {
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "startDate": "2026-08-01T14:00:00+02:00",
+        "ticketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+        "venueName": "Bootshaus",
+        "availability": "InStock"
+      },
+      {
+        "title": "Bootshaus Sommerfest - Part 4!",
+        "startDate": "2026-08-01T22:00:00+02:00",
+        "ticketUrl": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+        "venueName": "Bootshaus",
+        "availability": "InStock"
+      },
+      {
+        "title": "Bootshaus on a Ship Vol. III",
+        "startDate": "2026-08-09T14:00:00+02:00",
+        "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "venueName": "KD Anleger Nr. 2",
+        "availability": "InStock"
+      },
+      {
+        "title": "BC173 Airport Session pres. by Bootshaus III",
+        "startDate": "2026-08-15T16:00:00+02:00",
+        "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "venueName": "Moxy Köln/Bonn Flughafen",
+        "availability": "InStock"
+      },
+      {
+        "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+        "startDate": "2026-08-21T22:00:00+02:00",
+        "ticketUrl": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+        "venueName": "Bootshaus",
+        "availability": "InStock"
+      }
+    ],
+    "warnings": [],
+    "scopeStats": {
+      "discovered": 17,
+      "accepted": 17,
+      "rejected": 0,
+      "rejectionReasons": {}
+    }
+  },
+  "ticketIoShopUsed": {
+    "bootshaus": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/"
+    },
+    "autoPublish": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "sourceId": "source-ticket-io-bootshaus-club",
+      "publishPolicy": {
+        "publishMode": "auto_publish",
+        "behavior": "auto_publish",
+        "reviewRequired": false,
+        "blockOnDuplicate": true
+      }
+    }
+  },
+  "bootshausSourceBefore": {
+    "publishMode": "manual_review",
+    "behavior": "enrichment",
+    "reviewRequired": true,
+    "blockOnDuplicate": false,
+    "shopSlug": "bootshaus-club",
+    "connectorVersion": "1.1.0"
+  },
+  "connectorFetch": {
+    "eventCount": 17,
+    "sample": [
+      {
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "externalId": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+        "normalizedHash": "251377159e19de21ea52c03540df858b",
+        "connectorVersion": "1.1.0"
+      },
+      {
+        "title": "Bootshaus Sommerfest - Part 4!",
+        "externalId": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+        "normalizedHash": "c377cae113fc39838f6c0d8f29db0312",
+        "connectorVersion": "1.1.0"
+      },
+      {
+        "title": "Bootshaus on a Ship Vol. III",
+        "externalId": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "normalizedHash": "8014b3f279ebb93e8d4fd28cf9f8c1b9",
+        "connectorVersion": "1.1.0"
+      }
+    ],
+    "allHaveHash": true
+  },
+  "firstSynchronization": {
+    "sourceId": "source-bootshaus-ticket-io",
+    "jobId": "f54cf8d4-521d-430c-8066-812b3fce7d64",
+    "status": "completed",
+    "metrics": {
+      "fetchedCount": 17,
+      "parsedCount": 3,
+      "invalidCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "createdCount": 0,
+      "updatedCount": 15,
+      "duplicateCount": 14,
+      "unchangedCount": 2,
+      "missingCount": 0,
+      "pagesProcessed": 1,
+      "connectorVersion": "1.1.0"
+    },
+    "dbRow": {
+      "id": "f54cf8d4-521d-430c-8066-812b3fce7d64",
+      "status": "completed",
+      "fetched_count": 17,
+      "parsed_count": 3,
+      "created_count": 0,
+      "updated_count": 15,
+      "duplicate_count": 14,
+      "unchanged_count": 2,
+      "missing_count": 0,
+      "pages_processed": 1,
+      "connector_version": "1.1.0",
+      "warning_count": 0,
+      "error_count": 0,
+      "created_at": "2026-07-31T10:45:47.842+00:00"
+    },
+    "importRecordsSample": [
+      {
+        "id": "afabfdfb-0983-46ac-887c-2bab72b3824d",
+        "externalId": "https://bootshaus-club.ticket.io/By06xnf4/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785389053437-3oxde27",
+        "resultingEventId": "evt-1785389053437-3oxde27",
+        "normalizedHash": "98b5ada299dbb1ac087d7b2a3e9ce65e"
+      },
+      {
+        "id": "e6037007-0859-472b-99a1-090c8dfa02f9",
+        "externalId": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339400315-1mx4foh",
+        "resultingEventId": "evt-1785339400315-1mx4foh",
+        "normalizedHash": "fb8480da555cc1e09e1b5b9e9a53b2b6"
+      },
+      {
+        "id": "a6ab08d6-3eb9-4370-8d2b-a32aa1d836a5",
+        "externalId": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339005035-wam829k",
+        "resultingEventId": "evt-1785339005035-wam829k",
+        "normalizedHash": "440198f65aeab4c286f8e56457027ce0"
+      },
+      {
+        "id": "5cdf0e42-b54a-49c6-a479-cb9a96fe5165",
+        "externalId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339418526-dn9f7g0",
+        "resultingEventId": "evt-1785339418526-dn9f7g0",
+        "normalizedHash": "66dcb5b4cd9eab6fa9cceece3cf3bc7f"
+      },
+      {
+        "id": "a9a6261c-9c27-43a6-a01b-bd97558295b6",
+        "externalId": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339382025-cazpz3d",
+        "resultingEventId": "evt-1785339382025-cazpz3d",
+        "normalizedHash": "7943a3e91648e203a9edb77bf73e8181"
+      },
+      {
+        "id": "14d27b75-51f8-496d-9242-4c9389969c87",
+        "externalId": "https://bootshaus-club.ticket.io/S0cbXDda/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339404822-r8i4lyq",
+        "resultingEventId": "evt-1785339404822-r8i4lyq",
+        "normalizedHash": "65eb911f8b98d32f27f3262427a63aa3"
+      },
+      {
+        "id": "8695c4cc-ca1a-4d9d-8a57-088073a17266",
+        "externalId": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339415449-xpazmaq",
+        "resultingEventId": "evt-1785339415449-xpazmaq",
+        "normalizedHash": "c377cae113fc39838f6c0d8f29db0312"
+      },
+      {
+        "id": "48d211bd-bf2c-4b0d-9517-409f67800054",
+        "externalId": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "status": "imported",
+        "duplicateEventId": "evt-1785339420043-obhyeev",
+        "resultingEventId": "evt-1785339420043-obhyeev",
+        "normalizedHash": "8014b3f279ebb93e8d4fd28cf9f8c1b9"
+      }
+    ],
+    "originsAfter": 17
+  },
+  "secondSynchronization": {
+    "sourceId": "source-bootshaus-ticket-io",
+    "jobId": "1e629fd5-a6fa-4f60-89cc-ac00ffc3eec6",
+    "status": "completed",
+    "metrics": {
+      "fetchedCount": 17,
+      "parsedCount": 3,
+      "invalidCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "createdCount": 0,
+      "updatedCount": 15,
+      "duplicateCount": 14,
+      "unchangedCount": 2,
+      "missingCount": 0,
+      "pagesProcessed": 1,
+      "connectorVersion": "1.1.0"
+    },
+    "dbRow": {
+      "id": "1e629fd5-a6fa-4f60-89cc-ac00ffc3eec6",
+      "status": "completed",
+      "fetched_count": 17,
+      "parsed_count": 3,
+      "created_count": 0,
+      "updated_count": 15,
+      "duplicate_count": 14,
+      "unchanged_count": 2,
+      "missing_count": 0,
+      "pages_processed": 1,
+      "connector_version": "1.1.0",
+      "warning_count": 0,
+      "error_count": 0,
+      "created_at": "2026-07-31T10:46:39.027+00:00"
+    },
+    "unchangedReported": true,
+    "noNewCreates": true
+  },
+  "publishPolicy": {
+    "bootshausBefore": {
+      "publishMode": "manual_review",
+      "behavior": "enrichment",
+      "reviewRequired": true,
+      "blockOnDuplicate": false
+    },
+    "bootshausAfter": {
+      "publishMode": "manual_review",
+      "behavior": "enrichment",
+      "reviewRequired": true,
+      "blockOnDuplicate": false
+    },
+    "unchanged": true
+  },
+  "autoPublishValidation": {
+    "firstRun": {
+      "jobId": "5e7d5539-6366-4f44-8b0f-f38a352b2192",
+      "status": "completed",
+      "metrics": {
+        "fetchedCount": 17,
+        "parsedCount": 3,
+        "invalidCount": 0,
+        "warningCount": 0,
+        "errorCount": 0,
+        "createdCount": 17,
+        "updatedCount": 0,
+        "duplicateCount": 14,
+        "unchangedCount": 0,
+        "missingCount": 0,
+        "pagesProcessed": 1,
+        "connectorVersion": "1.1.0"
+      },
+      "dbRow": {
+        "id": "5e7d5539-6366-4f44-8b0f-f38a352b2192",
+        "status": "completed",
+        "fetched_count": 17,
+        "parsed_count": 3,
+        "created_count": 17,
+        "updated_count": 0,
+        "duplicate_count": 14,
+        "unchanged_count": 0,
+        "missing_count": 0,
+        "pages_processed": 1,
+        "connector_version": "1.1.0",
+        "warning_count": 0,
+        "error_count": 0,
+        "created_at": "2026-07-31T10:47:29.967+00:00"
+      }
+    },
+    "secondRun": {
+      "jobId": "47fbe4df-7872-47f0-8ad6-4555cde4cc09",
+      "status": "completed",
+      "metrics": {
+        "fetchedCount": 17,
+        "parsedCount": 3,
+        "invalidCount": 0,
+        "warningCount": 0,
+        "errorCount": 0,
+        "createdCount": 0,
+        "updatedCount": 0,
+        "duplicateCount": 14,
+        "unchangedCount": 17,
+        "missingCount": 0,
+        "pagesProcessed": 1,
+        "connectorVersion": "1.1.0"
+      },
+      "dbRow": {
+        "id": "47fbe4df-7872-47f0-8ad6-4555cde4cc09",
+        "status": "completed",
+        "fetched_count": 17,
+        "parsed_count": 3,
+        "created_count": 0,
+        "updated_count": 0,
+        "duplicate_count": 14,
+        "unchanged_count": 17,
+        "missing_count": 0,
+        "pages_processed": 1,
+        "connector_version": "1.1.0",
+        "warning_count": 0,
+        "error_count": 0,
+        "created_at": "2026-07-31T10:47:55.37+00:00"
+      },
+      "unchangedReported": true,
+      "noNewCreates": true
+    },
+    "canonicalEventsCreated": 0,
+    "importRecordsSample": [
+      {
+        "id": "57b5364b-0821-40cd-8067-133ad02235b8",
+        "externalId": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785339420043-obhyeev",
+        "resultingEventId": null,
+        "normalizedHash": "8014b3f279ebb93e8d4fd28cf9f8c1b9"
+      },
+      {
+        "id": "d7ad1e2d-2470-49ec-bac6-94ed90c1e057",
+        "externalId": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785443904478-dg3lk70",
+        "resultingEventId": null,
+        "normalizedHash": "f8b408e48aac418e5f3871f214765b5c"
+      },
+      {
+        "id": "002ab6b6-c81f-4e56-945a-d337e8a28528",
+        "externalId": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785339415449-xpazmaq",
+        "resultingEventId": null,
+        "normalizedHash": "c377cae113fc39838f6c0d8f29db0312"
+      },
+      {
+        "id": "d668a31b-00a4-49f7-a8d3-e332619858d8",
+        "externalId": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785339391167-tfaixrr",
+        "resultingEventId": null,
+        "normalizedHash": "a1b7b7ed2ae1dbd01e796d9710c547c9"
+      },
+      {
+        "id": "ea77eedd-9173-4ab6-abd7-543526ed4342",
+        "externalId": "https://bootshaus-club.ticket.io/S0cbXDda/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785339404822-r8i4lyq",
+        "resultingEventId": null,
+        "normalizedHash": "65eb911f8b98d32f27f3262427a63aa3"
+      },
+      {
+        "id": "b4ac626c-d647-406c-9863-3c1f0de491f0",
+        "externalId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785339418526-dn9f7g0",
+        "resultingEventId": null,
+        "normalizedHash": "66dcb5b4cd9eab6fa9cceece3cf3bc7f"
+      },
+      {
+        "id": "89de8774-5487-47ed-a680-aa6d23965643",
+        "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785339421539-k3swcrl",
+        "resultingEventId": null,
+        "normalizedHash": "c21229d8c1c900a87065040d2af16c0c"
+      },
+      {
+        "id": "e9439d6f-1edf-49a0-a064-27bbd146789a",
+        "externalId": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "status": "needs_review",
+        "duplicateEventId": "evt-1785443908695-6n8vfff",
+        "resultingEventId": null,
+        "normalizedHash": "e464e05f1d4b705ba84966e17733da52"
+      }
+    ],
+    "origins": 0,
+    "adminEvents": []
+  },
+  "canonicalEventsAfter": 69,
+  "duplicateCanonicalEventsCreated": 0,
+  "canonicalEvents": {
+    "bootshausTicketOrigins": 17,
+    "bootshausAdminSample": [
+      {
+        "id": "evt-1785339005035-wam829k",
+        "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+        "status": "published",
+        "start_date": "2026-10-23T21:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339375946-dszejnk",
+        "title": "Nibirii Festival 2026",
+        "status": "published",
+        "start_date": "2026-08-28T10:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339382025-cazpz3d",
+        "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+        "status": "published",
+        "start_date": "2026-08-21T20:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "status": "published",
+        "start_date": "2026-08-15T21:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339391167-tfaixrr",
+        "title": "Bootshaus Sommerfest",
+        "status": "published",
+        "start_date": "2026-09-05T20:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "source_id": "source-bootshaus-koeln"
+      }
+    ],
+    "bootshausWebsiteAdminSample": [
+      {
+        "id": "evt-1785339005035-wam829k",
+        "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+        "status": "published",
+        "start_date": "2026-10-23T21:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339375946-dszejnk",
+        "title": "Nibirii Festival 2026",
+        "status": "published",
+        "start_date": "2026-08-28T10:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339377456-7miaf2o",
+        "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+        "status": "published",
+        "start_date": "2026-08-31T21:45:00+00:00",
+        "ticket_url": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+        "source_id": "source-bootshaus-koeln"
+      }
+    ]
+  },
+  "adminVisibility": {
+    "bootshausTicketSourceEvents": 17,
+    "sample": [
+      {
+        "id": "evt-1785339005035-wam829k",
+        "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+        "status": "published",
+        "start_date": "2026-10-23T21:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339375946-dszejnk",
+        "title": "Nibirii Festival 2026",
+        "status": "published",
+        "start_date": "2026-08-28T10:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339382025-cazpz3d",
+        "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+        "status": "published",
+        "start_date": "2026-08-21T20:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "status": "published",
+        "start_date": "2026-08-15T21:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "source_id": "source-bootshaus-koeln"
+      },
+      {
+        "id": "evt-1785339391167-tfaixrr",
+        "title": "Bootshaus Sommerfest",
+        "status": "published",
+        "start_date": "2026-09-05T20:00:00+00:00",
+        "ticket_url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "source_id": "source-bootshaus-koeln"
+      }
+    ]
+  },
+  "publicApiVisibility": {
+    "discoverableCount": 46,
+    "ticketIoUrlCount": 17,
+    "sample": [
+      {
+        "id": "evt-1785339406307-kw5r61q",
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "ticketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+        "status": "published",
+        "city": "Köln"
+      },
+      {
+        "id": "evt-1785339415449-xpazmaq",
+        "title": "Bootshaus Sommerfest - Part 4",
+        "ticketUrl": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+        "status": "published",
+        "city": "Köln"
+      },
+      {
+        "id": "evt-1785339420043-obhyeev",
+        "title": "Bootshaus on a Ship Vol. III",
+        "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "status": "published",
+        "city": "Köln"
+      },
+      {
+        "id": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "status": "published",
+        "city": "Köln"
+      },
+      {
+        "id": "evt-1785339382025-cazpz3d",
+        "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+        "ticketUrl": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+        "status": "published",
+        "city": "Köln"
+      }
+    ]
+  },
+  "frontendVisibility": {
+    "note": "Frontend event page reads the same published/discoverable event repository.",
+    "eventPageResolvable": [
+      {
+        "id": "evt-1785339406307-kw5r61q",
+        "title": "PLAY! Open Air – Bootshaus Köln",
+        "hasTicketUrl": true,
+        "hasStartDate": false,
+        "origins": 2
+      },
+      {
+        "id": "evt-1785339415449-xpazmaq",
+        "title": "Bootshaus Sommerfest - Part 4",
+        "hasTicketUrl": true,
+        "hasStartDate": false,
+        "origins": 2
+      },
+      {
+        "id": "evt-1785339420043-obhyeev",
+        "title": "Bootshaus on a Ship Vol. III",
+        "hasTicketUrl": true,
+        "hasStartDate": false,
+        "origins": 2
+      }
+    ]
+  },
+  "passed": true,
+  "finishedAt": "2026-07-31T10:48:21.336Z"
+}

@@ -5,10 +5,12 @@ import { FavoriteButton } from '@/components/buttons/FavoriteButton';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { CategoryChip } from '@/components/discovery/CategoryChip';
+import { TicketPriceLabel } from '@/components/discovery/TicketPriceLabel';
 import { AppText } from '@/components/layout/AppText';
 import { BottomSheet } from '@/components/overlay/BottomSheet';
 import { spacing } from '@/design/spacing';
 import { formatEventDateTime } from '@/features/events';
+import { resolvePublicTicketPresentation } from '@/features/events/formatting/ticket-presentation';
 
 import type { MapEvent } from '../types/discovery-models';
 
@@ -38,6 +40,8 @@ export function MapEventPreviewBottomSheet({
       message: `${event.title} · ${formatEventDateTime(event.event)}`,
     });
   };
+
+  const ticket = resolvePublicTicketPresentation(event.event);
 
   return (
     <BottomSheet
@@ -70,6 +74,9 @@ export function MapEventPreviewBottomSheet({
           <AppText role="body">
             {event.venueLabel}, {event.cityLabel}
           </AppText>
+          {ticket.ticketLabel ? (
+            <TicketPriceLabel label={ticket.ticketLabel} colorToken={ticket.colorToken} />
+          ) : null}
         </View>
         <FavoriteButton
           active={isFavorite}

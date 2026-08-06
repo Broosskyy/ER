@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-08-04T21:06:35.964Z",
+  "productionMutationsInThisRun": 0,
+  "caseCount": 2,
+  "cases": [
+    {
+      "name": "underland_json_ld_offer",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "candidate": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "verified": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "tier": "stale_candidate",
+      "winner": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "staleCandidate": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "canWinConsumerField": false,
+      "diagnosticCode": "STALE_JSON_LD_OFFER",
+      "reason": "JSON-LD offer https://ticketkings.de/event/underland-essigfabrik-05-09-2026/ superseded by verified ticket URL https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "duplicatePrevention": "stale candidate merge penalty prevents duplicate canonical from JSON-LD offer alone"
+    },
+    {
+      "name": "sommerfest_stale_tk_slug",
+      "eventId": "evt-1785389055557-ux20897",
+      "candidate": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+      "verified": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "tier": "stale_candidate",
+      "winner": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "staleCandidate": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+      "canWinConsumerField": false,
+      "diagnosticCode": "STALE_JSON_LD_OFFER",
+      "reason": "JSON-LD offer https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/ superseded by verified ticket URL https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "duplicatePrevention": "stale candidate merge penalty prevents duplicate canonical from JSON-LD offer alone"
+    }
+  ]
+}

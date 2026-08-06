@@ -23,6 +23,7 @@ import { FEATURED_EVENT_IDS } from '@/features/events';
 import { useFavoriteToggle } from '@/features/favorites';
 import { LocationPickerModal } from '@/features/location/components/LocationPickerModal';
 import { getManualDiscoveryCityOptions } from '@/features/location/discovery-city-options';
+import { useHomeRadiusPreference } from '@/features/location/hooks/use-home-radius-preference';
 import { useUserLocation } from '@/features/location/UserLocationProvider';
 import { MAP_RADIUS_OPTIONS } from '@/features/map/config/map-discovery-config';
 import { SearchInput } from '@/features/search/components/SearchInput';
@@ -67,6 +68,7 @@ export function MapDiscoveryScreen({
     selectDiscoveryCity,
     requestCurrentLocation,
   } = useUserLocation();
+  const { radiusKm, options: radiusOptions, setRadiusKm } = useHomeRadiusPreference();
   const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle('/(tabs)/map');
   const [filterSheetVisible, setFilterSheetVisible] = useState(false);
   const [locationPickerVisible, setLocationPickerVisible] = useState(false);
@@ -256,6 +258,9 @@ export function MapDiscoveryScreen({
         errorCode={errorCode}
         discoveryCities={discoveryCities}
         selectedDiscoveryCityId={location?.discoveryCityId}
+        radiusKm={radiusKm}
+        radiusOptions={radiusOptions}
+        onRadiusChange={(next) => void setRadiusKm(next)}
         onClose={() => setLocationPickerVisible(false)}
         onUseCurrentLocation={() => {
           void requestCurrentLocation().then((success) => {

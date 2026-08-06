@@ -20,6 +20,7 @@ export interface Event {
   genres: string[];
   artists: string[];
   lineup?: string[];
+  lineupEntries?: import('@/features/events/domain/event-lineup-entry-projection').EventLineupEntryProjection[];
   organizer?: string;
   venueId?: string;
   organizerId?: string;
@@ -28,6 +29,7 @@ export interface Event {
   doorsOpenAt?: string;
   salesStartAt?: string;
   salesEndAt?: string;
+  websiteUrl?: string;
   cancelledAt?: string;
   postponedAt?: string;
   publishedAt?: string;
@@ -43,6 +45,15 @@ export interface Event {
   ageRestriction?: string;
   priceText?: string;
   ticketUrl?: string;
+  ticketPhases?: import('@/features/import/domain/canonical-ticket-phase').CanonicalTicketPhase[];
+  eventAttributes?: import('@/features/events/domain/canonical-event-attribute-types').CanonicalEventAttribute[];
+  floorCount?: number;
+  stageCount?: number;
+  venueEnvironment?: import('@/features/events/domain/canonical-event-attribute-types').VenueEnvironmentValue;
+  flyerUrl?: string;
+  lastEntryAt?: string;
+  dressCode?: string;
+  accessibilityNotes?: string;
   source: string;
   sourceEventId: string;
   sourceUrl?: string;

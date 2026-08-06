@@ -108,6 +108,7 @@ describe('Sprint 24 search experience', () => {
         query: 'techno',
         genres: ['techno'],
         distance: '25',
+        locationScope: 'nearby',
         price: 'free',
         venueEnvironment: 'indoor',
         sortBy: 'trending',

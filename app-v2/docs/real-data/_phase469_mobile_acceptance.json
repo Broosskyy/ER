@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-08-03T07:20:33.949Z",
+  "billingDisplay": "LineupSection renders billingRows from lineupEntries",
+  "representatives": [
+    {
+      "label": "Sommerfest Elektroküche",
+      "pass": true
+    },
+    {
+      "label": "LEVI",
+      "pass": true
+    },
+    {
+      "label": "MDMA",
+      "pass": true
+    },
+    {
+      "label": "Bootshaus on a Ship Vol. III",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-08-03T08:16:11.735Z",
+  "readOnly": true,
+  "writers": [
+    {
+      "id": "canonical_structured_writer",
+      "module": "events/services/canonical-structured-lineup-writer.writeCanonicalStructuredLineup",
+      "reads": [
+        "ResolvedCanonicalLineupEntry[]",
+        "existing structured",
+        "existing flat"
+      ],
+      "writes": [
+        "event_lineup_entries",
+        "event_lineup_entry_artists",
+        "event_artists"
+      ],
+      "authoritative": true,
+      "canDowngrade": false,
+      "oscillationRisk": "none"
+    },
+    {
+      "id": "structured_import_candidate",
+      "module": "import/services/import-publish-structured-lineup-writer",
+      "reads": [
+        "ImportRecord",
+        "existing structured",
+        "existing flat"
+      ],
+      "writes": [],
+      "authoritative": false,
+      "canDowngrade": false,
+      "oscillationRisk": "none"
+    },
+    {
+      "id": "title_inference_candidate",
+      "module": "import/services/title-inference-candidate",
+      "reads": [
+        "ImportRecord title"
+      ],
+      "writes": [],
+      "authoritative": false,
+      "canDowngrade": false,
+      "oscillationRisk": "low"
+    },
+    {
+      "id": "repair_lineup_projection",
+      "module": "import/services/import-event-publish-service.repairLineupProjection",
+      "reads": [
+        "ImportRecord"
+      ],
+      "writes": [],
+      "authoritative": false,
+      "canDowngrade": false,
+      "oscillationRisk": "none"
+    },
+    {
+      "id": "admin_structured_replace",
+      "module": "events/services/event-lineup-service.replaceStructuredLineup",
+      "reads": [
+        "admin draft entries"
+      ],
+      "writes": [],
+      "authoritative": false,
+      "canDowngrade": false,
+      "oscillationRisk": "none"
+    },
+    {
+      "id": "sql_backfill",
+      "module": "migrations/phase468 structured backfill",
+      "reads": [
+        "event_artists"
+      ],
+      "writes": [
+        "event_lineup_entries SOLO"
+      ],
+      "authoritative": false,
+      "canDowngrade": false,
+      "oscillationRisk": "low",
+      "auditOnly": true
+    }
+  ],
+  "metrics": {
+    "authoritativeWriters": 1,
+    "directStructuredWriters": 1,
+    "independentEventArtistsWriters": 0
+  }
+}

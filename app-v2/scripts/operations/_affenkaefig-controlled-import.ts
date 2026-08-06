@@ -6,7 +6,7 @@ import './bootstrap-ops-supabase';
 
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import { initializeEntityAliasStore, flushEntityAliasStore } from '@/features/entity-resolution/entity-alias-store-bootstrap';
 import { importAggregationService } from '@/data/repositories/registry';
 import { mapSourceRecordToRow } from '@/data/mappers/source-mapper';

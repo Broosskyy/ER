@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-08-06T00:05:22.018Z",
+  "phase": "4.8.6.4",
+  "gate": "B",
+  "eventId": "evt-1785339391167-tfaixrr",
+  "mutations": [],
+  "deactivateRefs": [],
+  "venueDiagnostic": {
+    "consistent": true,
+    "reason": "ok"
+  },
+  "candidateCount": 0,
+  "productionMutationsInThisRun": 0,
+  "approvalRequired": "apply-gate-b --approve with PHASE4864_APPLY_APPROVED=true"
+}

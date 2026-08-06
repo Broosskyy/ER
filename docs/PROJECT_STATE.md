@@ -51,6 +51,12 @@ Feature-Module unter `app-v2/src/features/`:
 | `sources` | Canonical Source-Registry für zukünftige Acquisition (ER-012) |
 | `artists` | Artist-Domain, Validation, Service, Admin-CMS (ER-007) |
 
+### Produktentscheidung — Ticket-Plattformen (2026-07-30)
+
+- **Ticket.io:** Priorisierte Ticketplattform für Discovery neuer Shops/Veranstalter (`app-v2/docs/TICKET_PLATFORM_DISCOVERY.md`)
+- **Ticket Kings:** Deprecated — kein strategischer Mehrwert gegenüber Affenkäfig-Website; Deprecation-Plan: `app-v2/docs/TICKET_KINGS_DEPRECATION_PLAN.md`
+- **Status:** Plan dokumentiert; Quellen noch nicht deaktiviert; keine Daten gelöscht
+
 Querschnitt: `app-v2/src/data/` (Repositories, Datasources, Mapper), `app-v2/src/services/supabase/` (Client, Auth)
 
 ---

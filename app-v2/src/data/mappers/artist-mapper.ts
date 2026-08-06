@@ -20,6 +20,7 @@ export interface ArtistRow {
   spotify?: string | null;
   status: ArtistLifecycleStatus;
   verification_status: ArtistVerificationStatus;
+  lineup_legacy_artifact?: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -41,6 +42,7 @@ export function mapArtistRowToRecord(row: ArtistRow): ArtistRecord {
     spotify: row.spotify ?? undefined,
     status: row.status,
     verificationStatus: row.verification_status,
+    lineupLegacyArtifact: row.lineup_legacy_artifact ?? false,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -63,6 +65,7 @@ export function mapArtistRecordToRow(record: ArtistRecord): ArtistRow {
     spotify: record.spotify ?? null,
     status: record.status,
     verification_status: record.verificationStatus,
+    lineup_legacy_artifact: record.lineupLegacyArtifact ?? false,
     created_at: record.createdAt,
     updated_at: record.updatedAt,
   };

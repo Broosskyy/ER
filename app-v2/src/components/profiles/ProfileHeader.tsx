@@ -5,6 +5,7 @@ import { AppText } from '@/components/layout/AppText';
 import { AppIcon } from '@/components/primitives/AppIcon';
 import { componentSize } from '@/design/layout';
 import { borderWidth } from '@/design/radii';
+import { radiusRoles } from '@/design/radii';
 import { spacing } from '@/design/spacing';
 import { useTheme } from '@/design/theme';
 
@@ -25,6 +26,9 @@ export function ProfileHeader({ profile, followAction, primaryAction, secondaryA
   const { theme } = useTheme();
   return (
     <View style={[styles.container, style]} accessibilityLabel={profile.accessibilityLabel}>
+      {profile.coverImage ? (
+        <Image source={profile.coverImage} style={styles.cover} resizeMode="cover" />
+      ) : null}
       <View style={styles.top}>
         {profile.avatar ? <Image source={profile.avatar} style={[styles.avatar, { borderColor: theme.colors.accent }]} /> : (
           <View style={[styles.avatar, styles.avatarFallback, { borderColor: theme.colors.accent, backgroundColor: theme.colors.surfaceSubtle }]}>
@@ -55,6 +59,11 @@ function InfoLine({ icon, label }: { icon: 'location-outline' | 'globe-outline';
 
 const styles = StyleSheet.create({
   container: { gap: spacing.md },
+  cover: {
+    width: '100%',
+    height: componentSize.profileAvatarSize * 2,
+    borderRadius: radiusRoles.card,
+  },
   top: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
   avatar: {
     width: componentSize.profileAvatarSize,

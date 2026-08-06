@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-08-05T23:45:40.952Z",
+  "phase": "4.8.6.2.1",
+  "productionMutationsInThisRun": 0,
+  "ticketIoCollisions": [
+    {
+      "compositeKey": "ticket_io:bootshaus-club.ticket.io:BcDqml12",
+      "platform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "externalId": "BcDqml12",
+      "eventIds": [
+        "evt-1785339386612-rjr91mv",
+        "evt-1785339410908-9691748"
+      ],
+      "titles": [
+        "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "Bootshaus pres. BC173 (let's get loco)"
+      ],
+      "collisionType": "exact_duplicate"
+    },
+    {
+      "compositeKey": "ticket_io:bootshaus-club.ticket.io:C7JPnatZ",
+      "platform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "externalId": "C7JPnatZ",
+      "eventIds": [
+        "evt-1785389049895-4mb7dub",
+        "evt-1785339421539-k3swcrl"
+      ],
+      "titles": [
+        "Underland Essigfabrik 05.09.2026",
+        "R3HAB pres. by BOOTSHAUS"
+      ],
+      "collisionType": "exact_duplicate"
+    }
+  ],
+  "ticketKingsCollisions": [],
+  "nachtManagerCollisions": [],
+  "crossHostSlugOnly": [],
+  "reviewRequiredIdentities": [
+    {
+      "compositeKey": "ticket_io:bootshaus-club.ticket.io:BcDqml12",
+      "platform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "externalId": "BcDqml12",
+      "eventIds": [
+        "evt-1785339386612-rjr91mv",
+        "evt-1785339410908-9691748"
+      ],
+      "titles": [
+        "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "Bootshaus pres. BC173 (let's get loco)"
+      ],
+      "collisionType": "exact_duplicate"
+    },
+    {
+      "compositeKey": "ticket_io:bootshaus-club.ticket.io:C7JPnatZ",
+      "platform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "externalId": "C7JPnatZ",
+      "eventIds": [
+        "evt-1785389049895-4mb7dub",
+        "evt-1785339421539-k3swcrl"
+      ],
+      "titles": [
+        "Underland Essigfabrik 05.09.2026",
+        "R3HAB pres. by BOOTSHAUS"
+      ],
+      "collisionType": "exact_duplicate"
+    }
+  ],
+  "staleAliases": []
+}

@@ -13,7 +13,7 @@ import {
   multiSourceRepositories,
 } from '@/data/repositories/registry';
 import { createEventOriginsBackfillHandler } from '@/features/operations/backfill/event-origins-backfill-handler';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const OUT = join(
   dirname(fileURLToPath(import.meta.url)),

@@ -1,4 +1,6 @@
 import type { MapPinStatus } from '@/components/map/view-models';
+import { isSemanticallyFreeEvent } from '@/features/events/domain/event-price-availability-semantics';
+import { resolvePublicTicketPresentation } from '@/features/events/formatting/ticket-presentation';
 import {
   EVENT_REFERENCE_DATE,
   hasMapCoordinates,
@@ -138,8 +140,13 @@ function passesMapFilter(
   origin?: { latitude: number; longitude: number },
 ): boolean {
   if (mapFilter.freeOnly) {
-    const price = event.priceText?.toLowerCase() ?? '';
-    if (!price.includes('free') && !price.includes('kostenlos')) {
+    if (
+      !isSemanticallyFreeEvent({
+        priceText: event.displayPriceText ?? event.priceText,
+        lifecycleStatus: event.lifecycleStatus,
+        ticketAvailability: event.ticketAvailability,
+      })
+    ) {
       return false;
     }
   }
@@ -222,12 +229,12 @@ export function buildMapEvents(
         image: event.image,
         dateLabel: event.date,
         timeLabel: event.startTime,
-        venueLabel: event.venue,
-        cityLabel: event.city,
+        venueLabel: event.venueLabel,
+        cityLabel: event.cityLabel,
         genreLabels: event.genres,
         distanceLabel: distanceKm !== undefined ? formatDistanceLabel(distanceKm) : undefined,
         distanceKm,
-        ticketLabel: event.priceText,
+        ticketLabel: resolvePublicTicketPresentation(event).ticketLabel,
         featured,
         event,
       } satisfies MapEvent;

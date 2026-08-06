@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-08-05T23:45:40.490Z",
+  "phase": "4.8.6.2.1",
+  "productionMutationsInThisRun": 0,
+  "earliestStage": "import-record matching / canonical identity resolution",
+  "responsibleModule": "import-event-publish-service + duplicate-detection-service",
+  "responsibleFunction": "resolveExistingEventId + ticketUrlsReferToSameEvent",
+  "responsibleDecision": "Ticket.io batch import on 2026-08-02 linked bootshaus-club.ticket.io/C7JPnatZ to Underland without composite-identity collision guard or public title/date/venue validation",
+  "missingGuard": "No enforcement that one active composite ticket-platform identity (platform+host+slug) may enrich only one unrelated canonical Event",
+  "phase4862ResolverWouldPrevent": "Future ambiguous enrichment writes (returns undefined on collision)",
+  "phase4862ResolverWouldRepeat": "Stale association creation if import path still lacks composite identity guard at publish time",
+  "genericCodeGuardsImplemented": [
+    "buildTicketPlatformCompositeIdentity",
+    "findCompositeIdentityCollisions",
+    "assertEnrichmentNotBlockedByCollision",
+    "evaluatePublicIdentityMatch",
+    "findSlugCollisions now keys by composite host+slug"
+  ],
+  "publicTruthSummary": {
+    "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+    "underlandOfficialCta": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "r3habOfficialCta": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+  }
+}

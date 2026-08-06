@@ -1,0 +1,267 @@
+{
+  "bootshaus": {
+    "before": {
+      "entries": [
+        {
+          "id": "ele-evt-1785339420043-obhyeev-0",
+          "order": 0,
+          "billingRelation": "B2B",
+          "artists": [
+            "BRANDON",
+            "SAM COLLINS"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-1",
+          "order": 1,
+          "billingRelation": "B2B",
+          "artists": [
+            "OLIVER MAGENTA",
+            "LOST IDENTITY"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-2",
+          "order": 2,
+          "billingRelation": "B2B",
+          "artists": [
+            "DAVE REPLAY",
+            "EMIN"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-3",
+          "order": 3,
+          "billingRelation": "B2B",
+          "artists": [
+            "ALUKES",
+            "MAKLA"
+          ]
+        }
+      ],
+      "flatArtists": [
+        "BRANDON",
+        "SAM COLLINSOLIVER MAGENTA",
+        "LOST IDENTITYDAVE REPLAY",
+        "EMINALUKES",
+        "MAKLA"
+      ]
+    },
+    "flyerEvidence": {
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+      "rawText": "BRANDON B2B SAM COLLINS\nOLIVER MAGENTA B2B LOST IDENTITY\nDAVE REPLAY B2B EMIN\nALUKES B2B MAKLA",
+      "contentHash": "63e128f596003b30",
+      "confidence": 0.92,
+      "autoPublishAllowed": false,
+      "reviewState": "accepted",
+      "engine": "phase464-flyer-lineup-v1",
+      "extractedAt": "2026-08-03T07:20:07.113Z"
+    },
+    "importRecordsUpdated": 2,
+    "after": {
+      "entries": [
+        {
+          "id": "ele-evt-1785339420043-obhyeev-0",
+          "order": 0,
+          "billingRelation": "B2B",
+          "artists": [
+            "BRANDON",
+            "SAM COLLINS"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-1",
+          "order": 1,
+          "billingRelation": "B2B",
+          "artists": [
+            "OLIVER MAGENTA",
+            "LOST IDENTITY"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-2",
+          "order": 2,
+          "billingRelation": "B2B",
+          "artists": [
+            "DAVE REPLAY",
+            "EMIN"
+          ]
+        },
+        {
+          "id": "ele-evt-1785339420043-obhyeev-3",
+          "order": 3,
+          "billingRelation": "B2B",
+          "artists": [
+            "ALUKES",
+            "MAKLA"
+          ]
+        }
+      ],
+      "flatArtists": [
+        "BRANDON",
+        "SAM COLLINS",
+        "OLIVER MAGENTA",
+        "LOST IDENTITY",
+        "DAVE REPLAY",
+        "EMIN",
+        "ALUKES",
+        "MAKLA"
+      ]
+    }
+  },
+  "mdma": {
+    "before": {
+      "entries": [
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-0",
+          "order": 0,
+          "billingRelation": "F2F",
+          "artists": [
+            "KARAMUSTAN",
+            "GREEKZ"
+          ]
+        }
+      ],
+      "flatArtists": [
+        "KARAMUSTAN",
+        "GREEKZ"
+      ]
+    },
+    "identityCorrection": {
+      "karamustanId": "artist-title-karamusta-pfmsk3",
+      "legacyMarked": [],
+      "aliasCreated": false
+    },
+    "flyerEvidence": {
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+      "rawText": "KARAMUSTAN F2F GREEKZ",
+      "contentHash": "7f1dfdc7fe654190",
+      "confidence": 0.92,
+      "autoPublishAllowed": false,
+      "reviewState": "pending",
+      "engine": "phase464-flyer-lineup-v1",
+      "extractedAt": "2026-08-03T07:20:06.840Z",
+      "sourceConflict": {
+        "textualSpelling": "KARAMUSTA",
+        "flyerSpelling": "KARAMUSTAN",
+        "reason": "official_flyer_minor_spelling_correction"
+      }
+    },
+    "artistNamesPatched": [
+      "DYSTOPIA F2F VALKYRIE",
+      "IAN CRANK F2F EASYPYSI",
+      "KARAMUSTAN F2F GREEKZ",
+      "KEVIN LA NIQUE F2F THE RAFNIX",
+      "NINA BENDER F2F LEE-ANN",
+      "FLASH B2B FORWARD",
+      "HELLMYER B2B STZ",
+      "MAURO B2B I.D.A",
+      "PLEA5URE B2B PUL5E"
+    ],
+    "after": {
+      "entries": [
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-0",
+          "order": 0,
+          "billingRelation": "F2F",
+          "artists": [
+            "DYSTOPIA",
+            "VALKYRIE"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-1",
+          "order": 1,
+          "billingRelation": "F2F",
+          "artists": [
+            "IAN CRANK",
+            "EASYPYSI"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-2",
+          "order": 2,
+          "billingRelation": "F2F",
+          "artists": [
+            "KARAMUSTAN",
+            "GREEKZ"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-3",
+          "order": 3,
+          "billingRelation": "F2F",
+          "artists": [
+            "KEVIN LA NIQUE",
+            "THE RAFNIX"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-4",
+          "order": 4,
+          "billingRelation": "F2F",
+          "artists": [
+            "NINA BENDER",
+            "LEE-ANN"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-5",
+          "order": 5,
+          "billingRelation": "B2B",
+          "artists": [
+            "FLASH",
+            "FORWARD"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-6",
+          "order": 6,
+          "billingRelation": "B2B",
+          "artists": [
+            "HELLMYER",
+            "STZ"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-7",
+          "order": 7,
+          "billingRelation": "B2B",
+          "artists": [
+            "MAURO",
+            "I.D.A"
+          ]
+        },
+        {
+          "id": "ele-evt-1785389054496-ns9b6la-8",
+          "order": 8,
+          "billingRelation": "B2B",
+          "artists": [
+            "PLEA5URE",
+            "PUL5E"
+          ]
+        }
+      ],
+      "flatArtists": [
+        "DYSTOPIA",
+        "VALKYRIE",
+        "IAN CRANK",
+        "EASYPYSI",
+        "KARAMUSTAN",
+        "GREEKZ",
+        "KEVIN LA NIQUE",
+        "THE RAFNIX",
+        "NINA BENDER",
+        "LEE-ANN",
+        "FLASH",
+        "FORWARD",
+        "HELLMYER",
+        "STZ",
+        "MAURO",
+        "I.D.A",
+        "PLEA5URE",
+        "PUL5E"
+      ]
+    }
+  }
+}

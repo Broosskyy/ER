@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-08-05T23:34:19.752Z",
+  "phase": "4.8.6.2",
+  "productionMutationsInThisRun": 0,
+  "eventId": "evt-1785339421539-k3swcrl",
+  "slug": "C7JPnatZ",
+  "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+  "publicEvidence": {
+    "rawPrice": "Tickets ab 23,90 Euro",
+    "normalizedPrice": "ab 23,90 €",
+    "amount": 23.9,
+    "currency": "EUR",
+    "availability": "instock",
+    "soldOut": false,
+    "listRowMatch": true
+  },
+  "connectorOutput": {
+    "priceText": "ab 23,90 €",
+    "priceAmount": 23.9,
+    "title": "R3HAB pres. by BOOTSHAUS"
+  },
+  "proposedCanonical": {
+    "priceText": "ab 23,90 €",
+    "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+  },
+  "audit": {
+    "eventId": "evt-1785339421539-k3swcrl",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "shopHost": "bootshaus-club.ticket.io",
+    "eventSlug": "C7JPnatZ",
+    "sourceReferences": [],
+    "ticketIoImportRecords": [],
+    "canonicalTicketStatus": "external_link",
+    "canonicalTicketPhasesCount": 0,
+    "publicListRowMatch": true,
+    "publicRawPrice": "Tickets ab 23,90 Euro",
+    "publicNormalizedPrice": "ab 23,90 €",
+    "publicAvailability": "instock",
+    "publicSoldOut": false,
+    "connectorPriceText": "ab 23,90 €",
+    "connectorPriceAmount": 23.9,
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "C7JPnatZ",
+      "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 23,90 €",
+          "priceAmount": 23.9,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 23,90 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 23.9,
+          "priceText": "ab 23,90 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":23.9,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://bootshaus-club.ticket.io/C7JPnatZ/\",\"validFrom\":\"2026-06-04T11:42:46+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 23,90 €",
+        "priceAmount": 23.9,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 23,90 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "rootCause": "REVIEW_REQUIRED",
+    "persistenceState": "review_required",
+    "responsibleModule": "ticket-io-enrichment-linkage/resolve-enrichment-target",
+    "responsibleTransition": "findSlugCollisions",
+    "repeatsWithoutFix": true,
+    "genericCodeChangeRequired": false,
+    "controlledEnrichmentSufficient": false,
+    "slugCollisionEventIds": [
+      "evt-1785389049895-4mb7dub",
+      "evt-1785339421539-k3swcrl"
+    ]
+  }
+}

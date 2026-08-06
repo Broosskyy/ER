@@ -8,6 +8,14 @@ import type { LineupItemViewModel } from '@/components/discovery/view-models';
 import type { Event } from '@/features/events/types/event';
 
 import { listArtistAliases } from '@/features/profiles/services/entity-profile-loader';
+import {
+  resolveOrganizerVerificationStatus,
+  resolveVenueVerificationStatus,
+} from '@/features/profiles/utils/entity-verification-status';
+import {
+  buildEntityHandleLabel,
+  resolveVenuePublicTypeLabel,
+} from '@/features/profiles/utils/entity-type-labels';
 
 function mapArtistVerification(status: ArtistRecord['verificationStatus']): VerificationStatus {
   if (status === 'verified') return 'verified';
@@ -36,14 +44,18 @@ export function toOrganizerProfileHeader(
   const avatar: ImageSourcePropType | undefined = record.logoUrl
     ? { uri: record.logoUrl }
     : undefined;
+  const coverImage: ImageSourcePropType | undefined = record.logoUrl
+    ? { uri: record.logoUrl }
+    : undefined;
 
   return {
     id: record.id,
     type: 'organizer',
     name: record.name,
     avatar,
-    handleOrTypeLabel: record.city ? `Veranstalter · ${record.city}` : 'Veranstalter',
-    verificationStatus: 'unverified',
+    coverImage,
+    handleOrTypeLabel: buildEntityHandleLabel('Veranstalter', record.city),
+    verificationStatus: resolveOrganizerVerificationStatus(record.id),
     bio: record.description,
     locationLabel: record.city && record.country ? `${record.city}, ${record.country}` : record.city,
     websiteLabel: record.website,
@@ -53,12 +65,13 @@ export function toOrganizerProfileHeader(
 }
 
 export function toVenueProfileHeader(record: VenueRecord, eventCount: number): ProfileHeaderViewModel {
+  const typeLabel = resolveVenuePublicTypeLabel(record.venueType);
   return {
     id: record.id,
     type: 'venue',
     name: record.name,
-    handleOrTypeLabel: record.city ? `Club · ${record.city}` : 'Venue',
-    verificationStatus: 'unverified',
+    handleOrTypeLabel: buildEntityHandleLabel(typeLabel, record.city),
+    verificationStatus: resolveVenueVerificationStatus(record.id),
     bio: record.notes,
     locationLabel: formatAddress(record),
     websiteLabel: record.website,
@@ -75,6 +88,9 @@ export function toArtistProfileHeader(
   const avatar: ImageSourcePropType | undefined = record.imageUrl
     ? { uri: record.imageUrl }
     : undefined;
+  const coverImage: ImageSourcePropType | undefined = record.imageUrl
+    ? { uri: record.imageUrl }
+    : undefined;
   const aliases = listArtistAliases(record.id).filter((alias: string) => alias !== record.name);
 
   return {
@@ -82,8 +98,11 @@ export function toArtistProfileHeader(
     type: 'artist',
     name: record.name,
     avatar,
+    coverImage,
     handleOrTypeLabel:
-      genreLabels.length > 0 ? `Artist · ${genreLabels.join(', ')}` : 'Artist',
+      genreLabels.length > 0
+        ? buildEntityHandleLabel(`Artist · ${genreLabels.join(', ')}`)
+        : buildEntityHandleLabel('Artist'),
     verificationStatus: mapArtistVerification(record.verificationStatus),
     bio: record.bio,
     locationLabel: record.city && record.country ? `${record.city}, ${record.country}` : record.city,
@@ -113,7 +132,7 @@ export function toOrganizerDetailFromRecord(
     description: record.description,
     eventCountLabel: eventCount > 0 ? `${eventCount} Events` : '',
     followerCountLabel: '',
-    verificationStatus: 'unverified',
+    verificationStatus: resolveOrganizerVerificationStatus(record.id),
     accessibilityLabel: `Veranstalter ${record.name}`,
   };
 }
@@ -122,14 +141,15 @@ export function toVenueDetailFromRecord(
   record: VenueRecord,
   event?: Pick<Event, 'address' | 'venue' | 'city'>,
 ): VenueDetailViewModel {
-  const address = formatAddress(record) ?? event?.address ?? `${record.name}, ${record.city}`;
+  const streetAddress = formatAddress(record);
+  const address = streetAddress ?? (event?.address?.trim() ? event.address.trim() : undefined);
 
   return {
     id: record.id,
     name: record.name,
     addressLabel: address,
     cityLabel: record.city,
-    verified: false,
+    verified: resolveVenueVerificationStatus(record.id) === 'official_source',
     descriptionLabel: record.notes,
     accessibilityLabel: `${record.name}, ${record.city}`,
   };

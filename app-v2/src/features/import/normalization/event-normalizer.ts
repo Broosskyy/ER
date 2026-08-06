@@ -4,6 +4,9 @@ import { parseImportDate } from '@/features/import/normalization/date-time-norma
 import { normalizeStringList, normalizeText } from '@/features/import/normalization/text-normalizer';
 import { resolveUrl } from '@/features/import/normalization/url-normalizer';
 import type { ValidationIssue } from '@/features/import/validation/validation-codes';
+import { isTicketIoPlaceholderDescription } from '@/features/aggregation/connectors/ticket-platform/ticket-io-field-quality';
+import { sanitizeLineupArtistNames } from '@/features/events/domain/lineup-artist-quality';
+import { normalizeCanonicalEventDescription } from '@/features/import/domain/canonical-description-normalizer';
 
 export interface RawCandidateInput {
   externalId: string;
@@ -32,6 +35,7 @@ export interface RawCandidateInput {
   originalLink?: unknown;
   priceAmount?: unknown;
   priceCurrency?: unknown;
+  priceText?: unknown;
   imageUrls?: unknown;
   rawSourceType: RawSourceType;
   sourceMetadata?: Record<string, unknown>;
@@ -95,12 +99,18 @@ export class EventNormalizer {
     const latitude = parseCoordinate(input.latitude);
     const longitude = parseCoordinate(input.longitude);
 
+    const rawDescription = normalizeCanonicalEventDescription(input.description, FIELD_LIMITS.description);
+    const description =
+      rawDescription && !isTicketIoPlaceholderDescription(rawDescription)
+        ? rawDescription
+        : undefined;
+
     const candidate: NormalizedEventCandidate = {
       externalId: normalizeText(input.externalId, FIELD_LIMITS.field) ?? input.externalId,
       sourceUrl: resolveUrl(input.sourceUrl, baseUrl),
       title,
       subtitle: normalizeText(input.subtitle, FIELD_LIMITS.title),
-      description: normalizeText(input.description, FIELD_LIMITS.description),
+      description,
       startDate: start.isoDate,
       endDate,
       timezone: start.timezone ?? input.timezone ?? input.defaultTimezone,
@@ -111,7 +121,7 @@ export class EventNormalizer {
       countryCode: normalizeCountryCode(input.countryCode),
       latitude,
       longitude,
-      artistNames: normalizeStringList(input.artistNames),
+      artistNames: sanitizeLineupArtistNames(normalizeStringList(input.artistNames)),
       genreNames: normalizeStringList(input.genreNames),
       ticketUrl: resolveUrl(String(input.ticketUrl ?? ''), baseUrl),
       eventUrl: resolveUrl(String(input.eventUrl ?? input.originalLink ?? ''), baseUrl),
@@ -128,6 +138,10 @@ export class EventNormalizer {
             ? Number(input.priceAmount)
             : undefined,
       priceCurrency: normalizeText(input.priceCurrency, 8),
+      priceText: normalizeText(
+        input.priceText ?? (input.sourceMetadata as Record<string, unknown> | undefined)?.priceText,
+        FIELD_LIMITS.field,
+      ),
       rawSourceType: input.rawSourceType,
       sourceMetadata: input.sourceMetadata,
     };

@@ -94,7 +94,7 @@ export function createAffenkaefigSourceRecord(
       },
       website: AFFENKAEFIG_WEBSITE_CONFIG,
       regional: { countryCode: 'DE', languageCode: 'de' },
-      publishPolicy: { mode: 'manual_review', blockOnDuplicate: true },
+      publishPolicy: { mode: 'manual_review', behavior: 'manual_review', blockOnDuplicate: true },
       defaults: {
         cityName: 'Köln',
         cityId: 'koeln',

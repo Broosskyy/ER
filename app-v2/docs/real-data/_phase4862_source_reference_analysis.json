@@ -1,0 +1,1189 @@
+{
+  "generatedAt": "2026-08-05T23:34:23.763Z",
+  "phase": "4.8.6.2",
+  "productionMutationsInThisRun": 0,
+  "events": [
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "ticketUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/0orkxNqw/",
+          "last_seen_at": "2026-08-01T07:51:22.364+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "ticketUrl": "https://technodampfer.ticket.io/QC7jvv0A/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/QC7jvv0A/",
+          "last_seen_at": "2026-07-31T21:16:09.608+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "ticketUrl": "https://area51events.ticket.io/Z5ZN42qw/",
+      "ownerSourceId": "source-ticket-io-area51events",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-area51events",
+          "external_event_id": "https://area51events.ticket.io/Z5ZN42qw/",
+          "last_seen_at": "2026-07-31T21:15:39.73+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "ticketUrl": "https://hmg-concerts.ticket.io/sdE6pxrp/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/sdE6pxrp/",
+          "last_seen_at": "2026-07-31T21:17:17.472+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "ticketUrl": "https://www.vault-events.de/termine/kitkatclub-bootshaus/Veranstalterkontakt:",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "ticketUrl": "https://proton-the-club.ticket.io/LPraAZaX/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/LPraAZaX/",
+          "last_seen_at": "2026-07-31T21:14:28.856+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "ticketUrl": "https://proton-the-club.ticket.io/ckmflhlc/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/ckmflhlc/",
+          "last_seen_at": "2026-07-31T21:14:39.758+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "last_seen_at": "2026-08-02T12:04:05.91+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "ticketUrl": "https://area51events.ticket.io/pK21qzGB/",
+      "ownerSourceId": "source-ticket-io-area51events",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-area51events",
+          "external_event_id": "https://area51events.ticket.io/pK21qzGB/",
+          "last_seen_at": "2026-07-31T21:15:45.666+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "ticketUrl": "https://technodampfer.ticket.io/yT7set9a/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/yT7set9a/",
+          "last_seen_at": "2026-07-31T20:56:48.453+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506433053-ezr3ujo",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+      "ticketUrl": "https://technodampfer.ticket.io/yuLuqTQR/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/yuLuqTQR/",
+          "last_seen_at": "2026-07-31T21:16:24.605+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "ticketUrl": "https://area51events.ticket.io/aLr3YQLG/",
+      "ownerSourceId": "source-ticket-io-area51events",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-area51events",
+          "external_event_id": "https://area51events.ticket.io/aLr3YQLG/",
+          "last_seen_at": "2026-07-31T21:15:48.666+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "ticketUrl": "https://hmg-concerts.ticket.io/H21zDjkW/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/H21zDjkW/",
+          "last_seen_at": "2026-07-31T21:17:07.728+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "ticketUrl": "https://hmg-concerts.ticket.io/VSQY1qVm/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/VSQY1qVm/",
+          "last_seen_at": "2026-07-31T21:17:10.164+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "ticketUrl": "https://hmg-concerts.ticket.io/Gjjw3kHu/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/Gjjw3kHu/",
+          "last_seen_at": "2026-07-31T21:17:22.562+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "ticketUrl": "https://hmg-concerts.ticket.io/b6T4NgwM/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/b6T4NgwM/",
+          "last_seen_at": "2026-07-31T21:17:24.986+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506455240-97ea7l5",
+      "title": "Stereoact & Lena Marie Engel",
+      "ticketUrl": "https://hmg-concerts.ticket.io/hU0Qr9Gh/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/hU0Qr9Gh/",
+          "last_seen_at": "2026-07-31T21:17:19.877+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506441963-td8znfi",
+      "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+      "ticketUrl": "https://technodampfer.ticket.io/fTQxM4u1/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/fTQxM4u1/",
+          "last_seen_at": "2026-07-31T21:16:12.791+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "ticketUrl": "https://hmg-concerts.ticket.io/YM0Ek3Ql/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/YM0Ek3Ql/",
+          "last_seen_at": "2026-07-31T21:17:27.41+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506453153-zaynzo6",
+      "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+      "ticketUrl": "https://hmg-concerts.ticket.io/m4ppRcZr/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/m4ppRcZr/",
+          "last_seen_at": "2026-07-31T21:17:02.042+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506402039-8mam28r",
+      "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+      "ticketUrl": "https://lehmannclub.ticket.io/x8fkbb2D/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/x8fkbb2D/",
+          "last_seen_at": "2026-07-31T21:15:09.817+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "ticketUrl": "https://lehmannclub.ticket.io/wZrRRkDh/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/wZrRRkDh/",
+          "last_seen_at": "2026-07-31T21:15:17.372+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506410605-aqbkr1h",
+      "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+      "ticketUrl": "https://lehmannclub.ticket.io/zmi7J0uP/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/zmi7J0uP/",
+          "last_seen_at": "2026-07-31T21:15:14.976+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+      "ownerSourceId": "source-bootshaus-ticket-io",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "last_seen_at": "2026-08-02T21:24:41.872+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": false
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 4,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/BcDqml12/",
+          "last_seen_at": "2026-08-02T21:24:51.618+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "ownerSourceId": "source-affenkaefig",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "last_seen_at": "2026-08-02T21:24:29.387+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "ticketUrl": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "last_seen_at": "2026-08-02T21:24:26.097+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+      "ownerSourceId": "source-affenkaefig",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/By06xnf4/",
+          "last_seen_at": "2026-08-02T21:24:22.938+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "ticketUrl": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+          "last_seen_at": "2026-08-02T21:25:03.9+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506384006-ve662md",
+      "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+      "ticketUrl": "https://proton-the-club.ticket.io/CDsHDp81/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/CDsHDp81/",
+          "last_seen_at": "2026-07-31T21:14:31.335+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "ticketUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "ticketUrl": "https://hmg-concerts.ticket.io/QA7zQqxb/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/QA7zQqxb/",
+          "last_seen_at": "2026-07-31T21:17:40.688+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "ticketUrl": "https://technodampfer.ticket.io/pmsUCbbF/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "last_seen_at": "2026-07-31T21:16:30.867+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/qqglRlFM/",
+          "last_seen_at": "2026-08-02T19:15:09.755+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "ticketUrl": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+      "ownerSourceId": "source-affenkaefig",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+          "last_seen_at": "2026-08-02T21:24:58.052+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506377307-shx3g9d",
+      "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+      "ticketUrl": "https://proton-the-club.ticket.io/quEhRw0W/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/quEhRw0W/",
+          "last_seen_at": "2026-07-31T21:14:45.297+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "ticketUrl": "https://hmg-concerts.ticket.io/e72nkwMH/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/e72nkwMH/",
+          "last_seen_at": "2026-07-31T21:16:59.54+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "ticketUrl": "https://hmg-concerts.ticket.io/vbuhTgdb/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/vbuhTgdb/",
+          "last_seen_at": "2026-07-31T21:16:54.185+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "last_seen_at": "2026-07-31T21:17:12.583+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "ticketUrl": "https://hmg-concerts.ticket.io/ncZqL20k/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/ncZqL20k/",
+          "last_seen_at": "2026-07-31T21:17:37.756+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506363578-4wh50a1",
+      "title": "FATALITY pres. DEXPHASE",
+      "ticketUrl": "https://proton-the-club.ticket.io/7CwUj7pf/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/7CwUj7pf/",
+          "last_seen_at": "2026-07-31T21:14:48.178+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "ticketUrl": "https://hmg-concerts.ticket.io/ERJ3EqKy/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/ERJ3EqKy/",
+          "last_seen_at": "2026-07-31T21:17:32.582+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "ticketUrl": "https://hmg-concerts.ticket.io/l1vdPLs9/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/l1vdPLs9/",
+          "last_seen_at": "2026-07-31T21:17:35.181+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "ticketUrl": "https://lehmannclub.ticket.io/uVeam2f6/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/uVeam2f6/",
+          "last_seen_at": "2026-07-31T21:15:22.311+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "ticketUrl": "https://hmg-concerts.ticket.io/p74KBjpL/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/p74KBjpL/",
+          "last_seen_at": "2026-07-31T21:16:56.997+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506444104-084yf4g",
+      "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+      "ticketUrl": "https://technodampfer.ticket.io/TFDZWEAD/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/TFDZWEAD/",
+          "last_seen_at": "2026-07-31T21:16:18.66+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "last_seen_at": "2026-07-31T21:15:30.406+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "ticketUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/VqX0G8j6/",
+          "last_seen_at": "2026-07-31T21:15:07.407+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 4,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "last_seen_at": "2026-08-02T21:24:45.033+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506368264-j5xf3dn",
+      "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+      "ticketUrl": "https://proton-the-club.ticket.io/XGRPf64b/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/XGRPf64b/",
+          "last_seen_at": "2026-07-31T21:14:36.98+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/",
+      "ownerSourceId": "source-ticket-io-area51events",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-area51events",
+          "external_event_id": "https://area51events.ticket.io/YSQcd9gq/",
+          "last_seen_at": "2026-07-31T21:15:42.673+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+      "ownerSourceId": "source-bootshaus-ticket-io",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "last_seen_at": "2026-08-02T21:25:00.958+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": false
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "ticketUrl": "https://lehmannclub.ticket.io/GNxTMCm6/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/GNxTMCm6/",
+          "last_seen_at": "2026-07-31T21:15:12.577+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506430597-ufglza0",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+      "ticketUrl": "https://technodampfer.ticket.io/kVMC3cKZ/",
+      "ownerSourceId": "source-ticket-io-technodampfer",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-technodampfer",
+          "external_event_id": "https://technodampfer.ticket.io/kVMC3cKZ/",
+          "last_seen_at": "2026-07-31T21:16:06.443+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "ticketUrl": "https://hmg-concerts.ticket.io/9ZwwhBzT/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/9ZwwhBzT/",
+          "last_seen_at": "2026-07-31T21:17:29.966+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "ticketUrl": "https://lehmannclub.ticket.io/94hBdSGj/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/94hBdSGj/",
+          "last_seen_at": "2026-07-31T21:15:27.864+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+      "ownerSourceId": "source-ticket-io-lehmannclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-lehmannclub",
+          "external_event_id": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "last_seen_at": "2026-07-31T21:15:04.812+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "last_seen_at": "2026-08-02T21:24:32.333+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/S0cbXDda/",
+          "last_seen_at": "2026-08-02T21:25:07.106+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "ticketUrl": "https://hmg-concerts.ticket.io/ujyn909p/",
+      "ownerSourceId": "source-ticket-io-hmg-concerts",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-hmg-concerts",
+          "external_event_id": "https://hmg-concerts.ticket.io/ujyn909p/",
+          "last_seen_at": "2026-07-31T21:17:04.874+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+          "last_seen_at": "2026-08-02T21:24:35.579+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "ticketUrl": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+      "ownerSourceId": "source-ticket-io-protontheclub",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 0,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-ticket-io-protontheclub",
+          "external_event_id": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "last_seen_at": "2026-08-02T12:04:21.573+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+          "last_seen_at": "2026-08-02T21:24:54.818+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+          "last_seen_at": "2026-08-02T21:24:38.715+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "ticketUrl": "https://bit.ly/ZAAGSTEPFor",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "ticketUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "ticketUrl": "https://polyamor.ticket.io/PDikPg1v/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 1,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [
+        {
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+          "last_seen_at": "2026-08-02T21:24:48.487+00:00",
+          "active": true
+        }
+      ],
+      "ownershipPreserved": true
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+      "ownerSourceId": "source-bootshaus-koeln",
+      "ticketIoReferenceCount": 0,
+      "websiteReferenceCount": 1,
+      "ticketIoReferences": [],
+      "ownershipPreserved": true
+    }
+  ],
+  "missingTicketIoReference": 11
+}

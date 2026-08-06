@@ -15,6 +15,7 @@ import type { AdminEventRecord, SourceRecord } from '@/data/types/records';
 import type { EventModerationAuditEntry } from '@/features/admin/services/event-moderation-audit-service';
 import type { EventModerationStateRecord, ModerationQueueStatus } from '@/features/admin/types/moderation-types';
 import { resolveModerationQueueStatus } from '@/features/admin/utils/moderation-status';
+import { formatSourceImportSummaryDe } from '@/features/admin/utils/admin-source-display';
 import { formatSourceTypeLabel } from '@/features/sources/admin/source-labels';
 
 const QUEUE_STATUS_LABELS: Record<ModerationQueueStatus, string> = {
@@ -217,6 +218,8 @@ export function mapSourceRecordToViewModel(source: SourceRecord): EventSourceVie
         ? 'error'
         : 'active';
 
+  const importSummary = formatSourceImportSummaryDe(source);
+
   return {
     id: source.id,
     name: source.displayName,
@@ -230,12 +233,12 @@ export function mapSourceRecordToViewModel(source: SourceRecord): EventSourceVie
             : 'manual',
     sourceTypeLabel: formatSourceTypeLabel(source.sourceType),
     urlLabel: source.baseUrl ?? undefined,
-    lastImportLabel: source.lastImportAt
-      ? new Date(source.lastImportAt).toLocaleString('de-DE')
-      : 'Noch kein Import',
+    lastImportLabel: importSummary.lastImportLabel,
     status,
-    eventCountLabel: undefined,
-    healthLabel: source.lastJobStatus ? `Letzter Job: ${source.lastJobStatus}` : undefined,
+    eventCountLabel: importSummary.eventCountLabel,
+    healthLabel: importSummary.healthLabel ?? importSummary.lastJobStatusLabel
+      ? `Letzter Lauf: ${importSummary.lastJobStatusLabel}`
+      : undefined,
     icon: 'server-outline',
     accessibilityLabel: `Quelle ${source.displayName}`,
   };

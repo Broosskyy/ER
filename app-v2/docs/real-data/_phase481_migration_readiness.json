@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-04T20:04:50.437Z",
+  "productionMutationsInThisRun": 0,
+  "phase": "4.8.1.1",
+  "productionShadowApproved": false,
+  "reason": "Phase 4.8.1.1 acceptance gates — see _phase4811_readiness_by_importer.json",
+  "gates": {
+    "completeMatrix": true,
+    "zeroUnexplainedBothWrong": true,
+    "zeroSchemaViolations": true,
+    "zeroContamination": true,
+    "idempotent": true
+  },
+  "byImporter": {
+    "bootshaus-website": "READY_FOR_MORE_STAGING",
+    "official-website": "READY_FOR_MORE_STAGING",
+    "ticket-io": "READY_FOR_MORE_STAGING",
+    "ticket-kings": "READY_FOR_MORE_STAGING",
+    "nacht-manager": "READY_FOR_MORE_STAGING"
+  }
+}

@@ -59,7 +59,10 @@ export class VenueIdentityResolver {
     }
 
     const defaultVenueId = readCandidateMetadataString(input.candidate, 'defaultVenueId');
-    if (defaultVenueId) {
+    const externalLocationFromTitle =
+      input.candidate.sourceMetadata &&
+      (input.candidate.sourceMetadata as Record<string, unknown>).externalLocationFromTitle === true;
+    if (defaultVenueId && !externalLocationFromTitle) {
       const inCatalog = input.catalog.venues.some((venue) => venue.id === defaultVenueId);
       if (inCatalog) {
         return {

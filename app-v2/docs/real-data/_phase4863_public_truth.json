@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-08-05T23:49:16.681Z",
+  "phase": "4.8.6.3",
+  "productionMutationsInThisRun": 0,
+  "eventId": "evt-1785339391167-tfaixrr",
+  "discoveryBestHit": {
+    "surface": "list_overview_row",
+    "priceText": "ab 11,90 €",
+    "priceAmount": 11.9,
+    "soldOut": false,
+    "rawSnippet": "Tickets ab 11,90 Euro",
+    "strategyVersion": "phase4721-v1"
+  },
+  "evidence": [
+    {
+      "source": "bootshaus_official_page",
+      "url": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "httpStatus": 200,
+      "venueText": null,
+      "address": "Auenweg 173",
+      "city": "Köln",
+      "confidence": "low",
+      "note": "No explicit venue field on official page (phase 4.8.4/4.8.5 VENUE_NOT_PUBLISHED_ON_PAGE)",
+      "contentHash": "df0b1b4149fd9e00"
+    },
+    {
+      "source": "ticket_io_list_row",
+      "url": "https://bootshaus-club.ticket.io/",
+      "httpStatus": 200,
+      "venueText": "Bootshaus",
+      "address": "Auenweg 173, 51063, Köln, Deutschland",
+      "city": "Köln",
+      "listRowTitle": "Bootshaus Sommerfest",
+      "confidence": "high",
+      "contentHash": "099974d2cd3a61e4"
+    },
+    {
+      "source": "ticket_io_json_ld",
+      "url": "https://bootshaus-club.ticket.io/",
+      "matches": [
+        {
+          "eventName": "Bootshaus Sommerfest",
+          "venueName": "Bootshaus",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Auenweg 173",
+            "addressLocality": "Köln",
+            "addressRegion": null,
+            "postalCode": "51063",
+            "addressCountry": "Deutschland"
+          },
+          "url": "https://bootshaus-club.ticket.io/vB0cAmWg/"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "source": "ticket_io_connector_parsed",
+      "venueName": "Bootshaus",
+      "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+      "cityName": "Köln",
+      "latitude": 50.9517133,
+      "longitude": 6.9819222,
+      "title": "Bootshaus Sommerfest",
+      "startDate": "2026-09-05T22:00:00+02:00",
+      "confidence": "high"
+    },
+    {
+      "source": "ticket_io_event_page",
+      "url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "httpStatus": 200,
+      "altchaBlocked": true,
+      "confidence": "none",
+      "note": "Detail page ALTCHA-blocked; list evidence used"
+    }
+  ],
+  "inferredTrueVenue": "Bootshaus",
+  "addressContradiction": null
+}

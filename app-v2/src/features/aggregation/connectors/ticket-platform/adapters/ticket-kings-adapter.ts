@@ -3,9 +3,22 @@ import {
   extractJsonLdBlocks,
   parseJsonLdEvent,
 } from '@/features/import/adapters/parsers/json-ld-parser';
+import { sanitizeLineupArtistNames } from '@/features/events/domain/lineup-artist-quality';
+import {
+  buildDetailSnapshot,
+} from '@/features/aggregation/domain/detail-snapshot';
 
 import { filterElectronicMusicEvents } from '../electronic-music-scope-filter';
 import { buildCanonicalTicketUrl } from '../normalize-ticket-event';
+import { formatGermanTicketPrice } from '../format-ticket-price';
+import {
+  extractNativeEventCheckoutUrl,
+  parseTicketKingsCheckoutHtml,
+} from '../ticket-kings-public-checkout';
+import {
+  parseTicketKingsDetailHtml,
+  TICKET_KINGS_DETAIL_PARSER_VERSION,
+} from '../ticket-kings-detail-parser';
 import type {
   ParsedTicketPlatformEvent,
   TicketPlatformScopeStats,
@@ -70,21 +83,59 @@ function extractCheckoutProviderId(html: string, eventUrl: string): string | und
   return match?.[1];
 }
 
-function parseDetailMeta(html: string): {
-  priceAmount?: number;
-  priceCurrency?: string;
-  checkoutProviderId?: string;
-} {
-  const priceMatch = html.match(/Eintritt:\s*([\d.,]+)\s*€/i);
-  const priceAmount = priceMatch?.[1]
-    ? Number(priceMatch[1].replace(',', '.'))
-    : undefined;
+function mergeTicketKingsCheckoutEvidence(
+  event: ParsedTicketPlatformEvent,
+  detailHtml?: string,
+  checkoutHtml?: string,
+): ParsedTicketPlatformEvent {
+  const checkoutEvidence = checkoutHtml
+    ? parseTicketKingsCheckoutHtml(checkoutHtml)
+    : detailHtml
+      ? parseTicketKingsCheckoutHtml(detailHtml)
+      : undefined;
+
+  if (!checkoutEvidence) {
+    if (event.priceAmount !== undefined && !event.priceText) {
+      event.priceText = formatGermanTicketPrice(event.priceAmount, event.priceCurrency ?? 'EUR');
+    }
+    return event;
+  }
+
+  const priceAmount = checkoutEvidence.priceAmount ?? event.priceAmount;
+  const priceText =
+    checkoutEvidence.priceText ??
+    (priceAmount !== undefined
+      ? formatGermanTicketPrice(priceAmount, checkoutEvidence.priceCurrency ?? event.priceCurrency ?? 'EUR')
+      : event.priceText);
+
+  const ticketOffers =
+    checkoutEvidence.releases.length > 0
+      ? checkoutEvidence.releases.map((release, index) => ({
+          name: release.name,
+          priceAmount: release.priceAmount,
+          priceCurrency: release.priceCurrency ?? 'EUR',
+          priceText: release.priceText,
+          soldOut: release.soldOut,
+          sortOrder: index,
+        }))
+      : event.ticketOffers;
 
   return {
-    priceAmount: Number.isFinite(priceAmount) ? priceAmount : undefined,
-    priceCurrency: priceMatch ? 'EUR' : undefined,
-    checkoutProviderId: extractCheckoutProviderId(html, ''),
+    ...event,
+    priceAmount,
+    priceCurrency: checkoutEvidence.priceCurrency ?? event.priceCurrency,
+    priceText,
+    soldOut: checkoutEvidence.soldOut ?? event.soldOut,
+    ticketOffers,
   };
+}
+
+function mergeGenreNames(...groups: Array<string[] | undefined>): string[] | undefined {
+  const merged = groups
+    .flatMap((group) => group ?? [])
+    .map((genre) => genre.trim())
+    .filter(Boolean);
+  return merged.length > 0 ? [...new Set(merged)] : undefined;
 }
 
 function mapJsonLdToTicketKingsEvent(
@@ -106,14 +157,47 @@ function mapJsonLdToTicketKingsEvent(
     String(fields.eventUrl ?? parsed.externalId),
   );
   const offer = parseOfferPrice((node as Record<string, unknown>).offers);
-  const detailMeta = detailHtml ? parseDetailMeta(detailHtml) : {};
-  const checkoutProviderId =
-    detailMeta.checkoutProviderId ?? extractCheckoutProviderId(detailHtml ?? '', eventUrl);
 
-  return {
+  const detailRaw = detailHtml ? parseTicketKingsDetailHtml(detailHtml) : undefined;
+
+  const jsonLdArtists = sanitizeLineupArtistNames(
+    Array.isArray(fields.artistNames)
+      ? fields.artistNames.map(String).filter(Boolean)
+      : undefined,
+  );
+
+  const detailArtists = sanitizeLineupArtistNames(detailRaw?.artistNames);
+
+  const artistNames =
+    detailArtists && detailArtists.length > 0
+      ? detailArtists
+      : jsonLdArtists;
+
+  const genreNames = mergeGenreNames(
+    Array.isArray(fields.genreNames)
+      ? fields.genreNames.map(String).filter(Boolean)
+      : undefined,
+    detailRaw?.genreNames,
+  );
+
+  const checkoutProviderId =
+    detailRaw?.checkoutProviderId ??
+    extractCheckoutProviderId(detailHtml ?? '', eventUrl);
+
+  const priceAmount =
+    offer.priceAmount ?? detailRaw?.priceAmount;
+  const priceCurrency =
+    detailRaw?.priceCurrency ?? offer.priceCurrency ?? 'EUR';
+  const priceText =
+    priceAmount !== undefined ? formatGermanTicketPrice(priceAmount, priceCurrency) : undefined;
+
+  return mergeTicketKingsCheckoutEvidence(
+    {
     externalId: eventUrl,
     title,
-    description: stripHtml(fields.description ? String(fields.description) : undefined),
+    description:
+      detailRaw?.description ??
+      stripHtml(fields.description ? String(fields.description) : undefined),
     startDate,
     endDate: fields.endDate ? String(fields.endDate) : undefined,
     timezone: config.timezone ?? 'Europe/Berlin',
@@ -124,18 +208,26 @@ function mapJsonLdToTicketKingsEvent(
     latitude: fields.latitude !== undefined ? Number(fields.latitude) : undefined,
     longitude: fields.longitude !== undefined ? Number(fields.longitude) : undefined,
     organizerName: fields.organizerName ? String(fields.organizerName) : undefined,
-    artistNames: Array.isArray(fields.artistNames)
-      ? fields.artistNames.map(String).filter(Boolean)
-      : undefined,
+    artistNames,
+    genreNames,
     imageUrl: fields.imageUrl ? String(fields.imageUrl) : undefined,
     ticketUrl: eventUrl,
     eventUrl,
-    priceAmount: offer.priceAmount ?? detailMeta.priceAmount,
-    priceCurrency: offer.priceCurrency ?? detailMeta.priceCurrency ?? 'EUR',
+    priceAmount,
+    priceCurrency,
+    priceText,
     platform: 'ticket_king',
     shopSlug: config.shopSlug,
     checkoutProviderId,
-  };
+    lineupEntries: detailRaw?.lineupEntries,
+    minimumAge: detailRaw?.minimumAge,
+    doorsOpenAt: detailRaw?.doorsOpenAt,
+    floorCount: detailRaw?.floorCount,
+    venueEnvironment: detailRaw?.venueEnvironment,
+    eventAttributes: detailRaw?.eventAttributes,
+    },
+    detailHtml,
+  );
 }
 
 function parseListEventsFromHtml(
@@ -191,17 +283,28 @@ export function parseTicketKingsEventDetailHtml(
 export function parseTicketKingsShopHtml(
   html: string,
   config: TicketPlatformSourceConfig,
+  detailHtmlByUrl: Record<string, string> = {},
+  checkoutHtmlByUrl: Record<string, string> = {},
 ): TicketKingsParseResult {
   const baseUrl = resolveTicketKingsBaseUrl(config);
   const discovered = new Map<string, ParsedTicketPlatformEvent>();
 
   for (const block of extractJsonLdBlocks(html)) {
     for (const node of collectJsonLdNodes(block)) {
-      const event = mapJsonLdToTicketKingsEvent(node, config, baseUrl);
+      const provisionalUrl = buildCanonicalTicketUrl(
+        baseUrl,
+        String((node as Record<string, unknown>).url ?? ''),
+      );
+      const detailHtml = detailHtmlByUrl[provisionalUrl];
+      const checkoutHtml = checkoutHtmlByUrl[provisionalUrl];
+      const event = mapJsonLdToTicketKingsEvent(node, config, baseUrl, detailHtml);
       if (!event) {
         continue;
       }
-      discovered.set(event.externalId, event);
+      discovered.set(
+        event.externalId,
+        mergeTicketKingsCheckoutEvidence(event, detailHtml, checkoutHtml),
+      );
     }
   }
 
@@ -223,4 +326,40 @@ export function parseTicketKingsShopHtml(
   const { events, stats } = filterElectronicMusicEvents(limited, config.scope);
 
   return { events, scopeStats: stats };
+}
+
+export function buildTicketKingsDetailSnapshot(
+  eventUrl: string,
+  detailHtml?: string,
+  blocked?: boolean,
+): ReturnType<typeof buildDetailSnapshot> {
+  if (!detailHtml || blocked) {
+    return buildDetailSnapshot({
+      externalEventId: eventUrl,
+      url: eventUrl,
+      parserVersion: TICKET_KINGS_DETAIL_PARSER_VERSION,
+      httpOutcome: blocked ? 'blocked' : 'failed',
+      blockedReason: blocked ? 'detail_fetch_blocked' : 'detail_fetch_failed',
+    });
+  }
+
+  const parsed = parseTicketKingsDetailHtml(detailHtml);
+  return buildDetailSnapshot({
+    externalEventId: eventUrl,
+    url: eventUrl,
+    parserVersion: TICKET_KINGS_DETAIL_PARSER_VERSION,
+    httpOutcome: 'success',
+    fieldCoverage: parsed.fieldCoverage,
+    normalizedPayload: {
+      description: parsed.description,
+      artistNames: parsed.artistNames,
+      lineupEntries: parsed.lineupEntries,
+      genreNames: parsed.genreNames,
+      eventAttributes: parsed.eventAttributes,
+      floorCount: parsed.floorCount,
+      minimumAge: parsed.minimumAge,
+      doorsOpenAt: parsed.doorsOpenAt,
+      priceAmount: parsed.priceAmount,
+    },
+  });
 }

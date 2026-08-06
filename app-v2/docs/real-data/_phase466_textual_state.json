@@ -1,0 +1,298 @@
+{
+  "startedAt": "2026-08-02T20:49:05.056Z",
+  "audit": {
+    "generatedAt": "2026-08-02T21:29:28.931Z",
+    "classCounts": {
+      "E_textual_exists_but_inaccessible": 63,
+      "B_partial_textual_improvement_possible": 28,
+      "D_source_has_no_additional_info": 15,
+      "C_only_flyer_remains": 2
+    },
+    "metrics": {
+      "publishedEvents": 108,
+      "completeLineups": 81,
+      "descriptions": 50,
+      "genres": 10,
+      "addresses": 36,
+      "coordinates": 18
+    }
+  },
+  "backup": {
+    "generatedAt": "2026-08-02T20:52:31.076Z",
+    "eventCount": 70
+  },
+  "pass1": {
+    "completedAt": "2026-08-02T21:18:12.047Z",
+    "results": [
+      {
+        "sourceId": "source-bootshaus-koeln",
+        "jobId": "c88c6cc1-bbc4-41ef-b7e9-1e1a8a226f1f",
+        "metrics": {
+          "fetchedCount": 34,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 11,
+          "duplicateCount": 31,
+          "unchangedCount": 23,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-affenkaefig",
+        "jobId": "723cfc57-1ff6-471a-bab8-a4f69f6d29b7",
+        "metrics": {
+          "fetchedCount": 8,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 5,
+          "duplicateCount": 5,
+          "unchangedCount": 3,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 7
+      },
+      {
+        "sourceId": "source-bootshaus-ticket-io",
+        "jobId": "c81d614d-70de-4fc1-b47d-0075c31d21cd",
+        "metrics": {
+          "fetchedCount": 15,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 13,
+          "duplicateCount": 12,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 15
+      },
+      {
+        "sourceId": "source-affenkaefig-ticket-kings",
+        "jobId": "533b17c8-32a0-4b00-a904-1ed26386a9a6",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 3,
+          "duplicateCount": 3,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 5
+      },
+      {
+        "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+        "jobId": "ec54cba0-c8de-4e0e-bf62-e774532aeef8",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 3,
+          "duplicateCount": 3,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 5
+      },
+      {
+        "sourceId": "source-ticket-io-lehmannclub",
+        "jobId": "408cdaa6-e82a-4663-9224-92f47d12d958",
+        "status": "aborted",
+        "reason": "zero_events_parsed",
+        "metrics": {
+          "fetchedCount": 10,
+          "parsedCount": 0,
+          "invalidCount": 1,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 1,
+          "duplicateCount": 9,
+          "unchangedCount": 9,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        }
+      },
+      {
+        "sourceId": "source-ticket-io-technodampfer",
+        "jobId": "37ca3ac5-e067-4ed2-9d10-a0c86bfb81a9",
+        "metrics": {
+          "fetchedCount": 11,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 2,
+          "duplicateCount": 9,
+          "unchangedCount": 9,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      }
+    ]
+  },
+  "pass2": {
+    "completedAt": "2026-08-02T21:29:09.715Z",
+    "results": [
+      {
+        "sourceId": "source-bootshaus-koeln",
+        "jobId": "b806a457-189f-4580-8580-592b1c39fd61",
+        "metrics": {
+          "fetchedCount": 34,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 11,
+          "duplicateCount": 31,
+          "unchangedCount": 23,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-affenkaefig",
+        "jobId": "ffd76e54-c117-4890-af98-0f4b5760126f",
+        "metrics": {
+          "fetchedCount": 8,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 5,
+          "duplicateCount": 5,
+          "unchangedCount": 3,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 7
+      },
+      {
+        "sourceId": "source-bootshaus-ticket-io",
+        "jobId": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+        "metrics": {
+          "fetchedCount": 15,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 13,
+          "duplicateCount": 12,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 15
+      },
+      {
+        "sourceId": "source-affenkaefig-ticket-kings",
+        "jobId": "db556f2b-141c-4970-8c6e-93b5cbaf36a7",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 3,
+          "duplicateCount": 3,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 5
+      },
+      {
+        "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+        "jobId": "48642057-5018-459d-bb06-daaf9fd11b98",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 3,
+          "duplicateCount": 3,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 5
+      },
+      {
+        "sourceId": "source-ticket-io-lehmannclub",
+        "jobId": "a06c3b9b-fdd6-415a-a049-7516231a2d48",
+        "status": "aborted",
+        "reason": "zero_events_parsed",
+        "metrics": {
+          "fetchedCount": 10,
+          "parsedCount": 0,
+          "invalidCount": 1,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 1,
+          "duplicateCount": 9,
+          "unchangedCount": 9,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        }
+      },
+      {
+        "sourceId": "source-ticket-io-technodampfer",
+        "jobId": "3dc10509-3d28-4ab5-9c51-bf6bf9dcdc7a",
+        "metrics": {
+          "fetchedCount": 11,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 2,
+          "duplicateCount": 9,
+          "unchangedCount": 9,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      }
+    ]
+  }
+}

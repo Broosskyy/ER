@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-08-04T14:32:31.741Z",
+  "phase": "4.7.7.1-taxonomy-correction",
+  "previousRepairableNow": 99,
+  "correctedRepairableNow": 0,
+  "rootCauseOfFalsePositives": {
+    "incomplete_projection_93": "Audit checked non-existent canonical.title field on projection model — always falsy",
+    "fix": "Removed bogus title_projection_gap; venue gaps only when canonical venue evidence trace fails"
+  },
+  "venueLabelCases": {
+    "originalIncompleteProjection": 93,
+    "correctedCanonicalVenueEvidenceGap": 7,
+    "noLongerFlagged": 86,
+    "note": "86 events had valid venue_name projecting to venueLabel; only 7 lacked truthful canonical venue evidence",
+    "byCorrectedClass": {
+      "requires_review": 6,
+      "blocked_by_missing_public_evidence": 1
+    },
+    "cohorts": {
+      "palma_mallorca": 6,
+      "kitkat_external": 0,
+      "other_blocked": 1
+    }
+  },
+  "lineupReviewCases": [
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "previousCode": "lineup_projection_gap",
+      "correctedCode": "garbage_lineup_filtered",
+      "correctedClass": "requires_review"
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "previousCode": "lineup_projection_gap",
+      "correctedCode": "garbage_lineup_filtered",
+      "correctedClass": "requires_review"
+    }
+  ],
+  "badgeBlockedCases": [
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "previousCode": "missing_ticket_badge",
+      "correctedCode": "missing_availability_evidence",
+      "correctedClass": "blocked_by_missing_public_evidence"
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "previousCode": "missing_ticket_badge",
+      "correctedCode": "missing_availability_evidence",
+      "correctedClass": "blocked_by_missing_public_evidence"
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "previousCode": "missing_ticket_badge",
+      "correctedCode": "missing_availability_evidence",
+      "correctedClass": "blocked_by_missing_public_evidence"
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGEMANN & many more",
+      "previousCode": "missing_ticket_badge",
+      "correctedCode": "missing_availability_evidence",
+      "correctedClass": "blocked_by_missing_public_evidence"
+    }
+  ],
+  "currentTotals": {
+    "repairable_now": 0,
+    "requires_external_source": 23,
+    "requires_OCR": 130,
+    "requires_connector": 75,
+    "requires_review": 31,
+    "blocked_by_missing_public_evidence": 74
+  }
+}

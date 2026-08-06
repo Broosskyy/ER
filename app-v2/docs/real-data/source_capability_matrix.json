@@ -1,0 +1,1670 @@
+[
+  {
+    "sourceId": "source-bootshaus-koeln",
+    "displayName": "Bootshaus Köln",
+    "connectorKey": "club_website",
+    "originType": "website",
+    "detailLevel": 2,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "detail",
+        "notes": "Often from detail ticket links"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "priceText",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "list",
+        "notes": "Source defaults when missing on list"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "image",
+      "detailUrl"
+    ],
+    "detailFields": [
+      "description",
+      "genres",
+      "ticketLinks",
+      "organizer",
+      "artists"
+    ],
+    "lostFields": []
+  },
+  {
+    "sourceId": "source-bootshaus-ticket-io",
+    "displayName": "Bootshaus Ticket.io",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-affenkaefig",
+    "displayName": "Affenkäfig",
+    "connectorKey": "club_website",
+    "originType": "website",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "detail",
+        "notes": "Often from detail ticket links"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "priceText",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "list",
+        "notes": "Source defaults when missing on list"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "image",
+      "detailUrl"
+    ],
+    "detailFields": [
+      "description",
+      "genres",
+      "ticketLinks",
+      "organizer",
+      "artists"
+    ],
+    "lostFields": []
+  },
+  {
+    "sourceId": "source-ticket-io-protontheclub",
+    "displayName": "protontheclub",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-lehmannclub",
+    "displayName": "lehmannclub",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-area51events",
+    "displayName": "area51events",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-technodampfer",
+    "displayName": "technodampfer",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-hmg-concerts",
+    "displayName": "hmg-concerts",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-ticket-kings-org-underland",
+    "displayName": "Ticket Kings — Underland",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 1,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "lineup",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "description",
+      "lineup",
+      "ticketPhases"
+    ]
+  },
+  {
+    "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+    "displayName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  },
+  {
+    "sourceId": "source-affenkaefig-ticket-kings",
+    "displayName": "Affenkäfig Ticket Kings",
+    "connectorKey": "ticket_platform",
+    "originType": "ticket_platform",
+    "detailLevel": 3,
+    "expectedFields": [
+      "title",
+      "venueName",
+      "description",
+      "lineup",
+      "genres",
+      "ticketUrl",
+      "priceText",
+      "images",
+      "venueAddress"
+    ],
+    "fieldReliability": [
+      {
+        "field": "title",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "description",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "lineup",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "detail"
+      },
+      {
+        "field": "ticketUrl",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "eventUrl",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "genres",
+        "status": "partial",
+        "confidence": 2,
+        "sourceLayer": "list",
+        "notes": "Overview text only"
+      },
+      {
+        "field": "priceText",
+        "status": "supported",
+        "confidence": 5,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "ticketStatus",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "ticketPhases",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "venueName",
+        "status": "supported",
+        "confidence": 4,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "venueAddress",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "structured"
+      },
+      {
+        "field": "coordinates",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "doorsOpenAt",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "minimumAge",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "attributes",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "images",
+        "status": "supported",
+        "confidence": 3,
+        "sourceLayer": "list"
+      },
+      {
+        "field": "timetable",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "faq",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      },
+      {
+        "field": "organizerName",
+        "status": "unsupported",
+        "confidence": 1,
+        "sourceLayer": "none"
+      }
+    ],
+    "listFields": [
+      "title",
+      "startDate",
+      "venue",
+      "priceText",
+      "ticketUrl",
+      "image"
+    ],
+    "detailFields": [
+      "description",
+      "lineup",
+      "ticketPhases",
+      "availability"
+    ],
+    "lostFields": [
+      "genres"
+    ]
+  }
+]

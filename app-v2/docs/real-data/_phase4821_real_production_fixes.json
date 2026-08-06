@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-08-05T10:05:18.434Z",
+  "productionMutationsInThisRun": 0,
+  "count": 3,
+  "items": [
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "eventTitle": "Bootshaus Sommerfest",
+      "field": "flyer",
+      "currentProductionValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png",
+      "proposedValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "publicSourceEvidence": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Official og:image differs from current canonical flyer URL.",
+      "whyUnifiedCorrect": "Unified official-website importer extracts value directly from live public page evidence.",
+      "consumerImpact": "Hero image / flyer on event detail and discovery cards updates.",
+      "confidence": 0.85,
+      "risk": "MEDIUM",
+      "rollbackImpact": "Restore prior image_url from pre-batch snapshot."
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "eventTitle": "R3HAB pres. by BOOTSHAUS",
+      "field": "flyer",
+      "currentProductionValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+      "proposedValue": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "publicSourceEvidence": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Official og:image differs from current canonical flyer URL.",
+      "whyUnifiedCorrect": "Unified official-website importer extracts value directly from live public page evidence.",
+      "consumerImpact": "Hero image / flyer on event detail and discovery cards updates.",
+      "confidence": 0.85,
+      "risk": "MEDIUM",
+      "rollbackImpact": "Restore prior image_url from pre-batch snapshot."
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "eventTitle": "Bootshaus Sommerfest",
+      "field": "description",
+      "currentProductionValue": "UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten...",
+      "proposedValue": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "publicSourceEvidence": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep  Lineup TBA",
+      "sourceRole": "official_website_source",
+      "whyProductionWrong": "Elevated from shadow field comparison — canonical stale vs public truth but omitted from Phase 4.8.2 preview.",
+      "whyUnifiedCorrect": "Unified importer matches live public official page body.",
+      "consumerImpact": "Replaces wrong or stale description visible on event detail.",
+      "confidence": 0.9,
+      "risk": "HIGH",
+      "rollbackImpact": "Restore description from pre-batch snapshot."
+    }
+  ]
+}

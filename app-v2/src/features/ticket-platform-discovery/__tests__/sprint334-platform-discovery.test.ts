@@ -90,6 +90,7 @@ describe('Sprint 33.4 platform discovery', () => {
       scopeStats: { discovered: 5, accepted: 3, rejected: 2, rejectionReasons: {} },
     });
     expect(record.sourceConfig?.ticketPlatform?.shopSlug).toBe('newclub');
+    expect(record.sourceConfig?.publishPolicy?.behavior).toBe('auto_publish');
     expect(record.enabled).toBe(false);
     expect(record.metadata?.discoveryShopSlug).toBe('newclub');
   });

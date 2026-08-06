@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-08-04T21:06:43.712Z",
+  "productionMutationsInThisRun": 0,
+  "fixtureReplayDeterministic": true,
+  "fixtureHashRun1": "7ad0d2110a2228f945a6e4bd591c242ad7df8945b04fbf5aa51f51f7472d48f0",
+  "fixtureHashRun2": "7ad0d2110a2228f945a6e4bd591c242ad7df8945b04fbf5aa51f51f7472d48f0",
+  "sampleSize": 30,
+  "unexplainedNondeterminism": 0,
+  "liveDoubleRunNote": "Full live double-run uses captured fixtures for determinism proof; raw-evidence drift classified separately in audit-incorrect-fields",
+  "regressions": []
+}

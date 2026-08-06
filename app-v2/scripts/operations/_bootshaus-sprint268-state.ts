@@ -5,7 +5,7 @@ import './bootstrap-ops-supabase';
 
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS_ID = 'source-bootshaus-koeln';
 const OUT = join(process.cwd(), 'docs/real-data/_bootshaus_sprint268_state.json');

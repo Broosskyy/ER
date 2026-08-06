@@ -1,6 +1,11 @@
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
 import type { ImportRecord, ReviewerEdits } from '@/features/import/models/types';
+import type { SourceRecord } from '@/data/types/records';
 import { matchingConfig } from '@/features/import/matching/matching-config';
+import {
+  isEnrichmentPublishBehavior,
+  resolveSourcePublishBehavior,
+} from '@/features/import/domain/publish-behavior';
 
 export function getEffectiveCandidate(record: ImportRecord): NormalizedEventCandidate {
   const base = (record.normalizedPayload ?? {}) as Partial<NormalizedEventCandidate>;
@@ -24,7 +29,15 @@ export function getEffectiveCandidate(record: ImportRecord): NormalizedEventCand
     ticketUrl: edits.ticketUrl ?? base.ticketUrl,
     eventUrl: edits.eventUrl ?? base.eventUrl,
     imageUrl: edits.imageUrl ?? base.imageUrl,
+    priceAmount: base.priceAmount,
+    priceCurrency: base.priceCurrency,
+    priceText: base.priceText,
+    subtitle: edits.subtitle ?? base.subtitle,
+    originalLink: base.originalLink,
+    sourceId: base.sourceId,
+    sourceName: base.sourceName,
     minimumAge: edits.minimumAge ?? base.minimumAge,
+    doorsOpenAt: base.doorsOpenAt,
     organizerName: edits.organizerName ?? base.organizerName,
     rawSourceType: base.rawSourceType ?? 'unknown',
     sourceMetadata: base.sourceMetadata,
@@ -45,8 +58,25 @@ export function isReviewableStatus(status: ImportRecord['status']): boolean {
   return status === 'needs_review' || status === 'invalid';
 }
 
+export function isEnrichmentDuplicateApproval(
+  record: ImportRecord,
+  source?: Pick<SourceRecord, 'sourceType' | 'publishMode' | 'sourceConfig' | 'sourceRoles' | 'category'>,
+): boolean {
+  if (!source) {
+    return false;
+  }
+  return (
+    isEnrichmentPublishBehavior(resolveSourcePublishBehavior(source)) &&
+    Boolean(record.duplicateEventId)
+  );
+}
+
+/** @deprecated Use isEnrichmentDuplicateApproval with full source record. */
 export function isTicketPlatformEnrichmentApproval(record: ImportRecord, sourceType?: string): boolean {
-  return sourceType === 'ticket_platform' && Boolean(record.duplicateEventId);
+  if (sourceType !== 'ticket_platform') {
+    return false;
+  }
+  return Boolean(record.duplicateEventId);
 }
 
 export function canApproveRecord(

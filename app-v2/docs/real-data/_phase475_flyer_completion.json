@@ -1,0 +1,4016 @@
+{
+  "generatedAt": "2026-08-04T05:17:19.155Z",
+  "totalPublished": 108,
+  "ocrCandidates": 93,
+  "textExtracted": 19,
+  "pendingExternal": 76,
+  "autoPublishEligible": 0,
+  "reviewRequired": 108,
+  "events": [
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/0orkxNqw/img/holder-1080.jpg?d59e32a4",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/0orkxNqw/img/holder-1080.jpg?d59e32a4"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506448834-4c5s8xl",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/0orkxNqw/img/holder-1080.jpg?d59e32a4",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/QC7jvv0A/img/holder-1080.jpg?15cf89fa",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/QC7jvv0A/img/holder-1080.jpg?15cf89fa"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506424190-nk60eqi",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/QC7jvv0A/img/holder-1080.jpg?15cf89fa",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/Z5ZN42qw/img/holder-1080.jpg?c14dab2a",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/MXPHz0r8/events/Z5ZN42qw/img/holder-1080.jpg?c14dab2a"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506415247-c9ykti2",
+        "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/Z5ZN42qw/img/holder-1080.jpg?c14dab2a",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/05/flyer.png",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/05/flyer.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389056612-4cwtdmo",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/05/flyer.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/sdE6pxrp/img/holder-1080.jpg?7458c434",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/sdE6pxrp/img/holder-1080.jpg?7458c434"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506450927-qr2is1j",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/sdE6pxrp/img/holder-1080.jpg?7458c434",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-weekend-trance",
+      "title": "Trance Unity",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-weekend-trance",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "klangkuenstler-berghain",
+      "title": "Klangkuenstler at Halle",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "klangkuenstler-berghain",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-tonight-house",
+      "title": "Cologne House Flow",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-tonight-house",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-tomorrow-techno",
+      "title": "Monday Pressure: Charlotte de Witte",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "and venue name.",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-tomorrow-techno",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "and venue name.",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0.39,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_artist_hints_detected",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-weekend-industrial",
+      "title": "Industrial Ritual",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-weekend-industrial",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-psy",
+      "title": "Psy Garden Köln",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-upcoming-psy",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-june",
+      "title": "Summer Techno Marathon",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-upcoming-june",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-berlin-house",
+      "title": "Berlin House District",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-berlin-house",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-multi-genre",
+      "title": "Techno x Hard Techno Fusion",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-multi-genre",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-b2b",
+      "title": "DVS1 b2b Ellen Allien",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "FK points to DVS1.",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-b2b",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "FK points to DVS1.",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "FK points to DVS1.",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-no-image",
+      "title": "No Image Session",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-no-image",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-no-ticket",
+      "title": "Guestlist Only",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-no-ticket",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-free",
+      "title": "Open Decks Köln",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-free",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-soldout",
+      "title": "Sold Out Showcase",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-soldout",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "staging-seed-event-late-july",
+      "title": "Late July Warehouse",
+      "imageUrl": "",
+      "galleryUrls": [],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "no_text",
+        "source": "none",
+        "confidence": 0,
+        "reason": "no_artwork_url"
+      },
+      "evidence": {
+        "eventId": "staging-seed-event-late-july",
+        "imageUrl": "",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "no_text",
+          "source": "none",
+          "confidence": 0,
+          "reason": "no_artwork_url"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_extractable_text",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6966595680631080894216897_9199309476434186160221636.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6966595680631080894216897_9199309476434186160221636.jpeg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "Alexa\nSinnlichkeit und schillernder Eskapaden\ncor\nProjektionen\nSchwarzlicht-Bodypainting\nSpielinstallationen für Erwachsene\nKinky Candy Crew\nFrische-Früchte-Service\nsinnlicher Beats\nregelmäßig als bester Technoclub Deutschlands ausgezeichnet",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339389636-v1tq3hw",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6966595680631080894216897_9199309476434186160221636.jpeg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "Alexa\nSinnlichkeit und schillernder Eskapaden\ncor\nProjektionen\nSchwarzlicht-Bodypainting\nSpielinstallationen für Erwachsene\nKinky Candy Crew\nFrische-Früchte-Service\nsinnlicher Beats\nregelmäßig als bester Technoclub Deutschlands ausgezeichnet",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "Alexa",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Sinnlichkeit und schillernder Eskapaden",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Projektionen",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Schwarzlicht-Bodypainting",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Spielinstallationen für Erwachsene",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Kinky Candy Crew",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Frische-Früchte-Service",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 7,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/LPraAZaX/img/holder-1080.jpg?96916c2",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/LPraAZaX/img/holder-1080.jpg?96916c2"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506370530-bfvzuo6",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/LPraAZaX/img/holder-1080.jpg?96916c2",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/ckmflhlc/img/holder-1080.jpg?76bf8cd6",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/ckmflhlc/img/holder-1080.jpg?76bf8cd6"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506366010-1npnra9",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/ckmflhlc/img/holder-1080.jpg?76bf8cd6",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506439487-2hr731q",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/pK21qzGB/img/holder-1080.jpg?29fd5deb",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/MXPHz0r8/events/pK21qzGB/img/holder-1080.jpg?29fd5deb"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506419485-ty33rrb",
+        "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/pK21qzGB/img/holder-1080.jpg?29fd5deb",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/yT7set9a/img/holder-1080.jpg?b3b8980d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/yT7set9a/img/holder-1080.jpg?b3b8980d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506435192-azaw5p4",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/yT7set9a/img/holder-1080.jpg?b3b8980d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506433053-ezr3ujo",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/yuLuqTQR/img/holder-1080.jpg?16dfb887",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/yuLuqTQR/img/holder-1080.jpg?16dfb887"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506433053-ezr3ujo",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/yuLuqTQR/img/holder-1080.jpg?16dfb887",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/aLr3YQLG/img/holder-1080.jpg?29fd5deb",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/MXPHz0r8/events/aLr3YQLG/img/holder-1080.jpg?29fd5deb"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506417389-t2f9fu4",
+        "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/aLr3YQLG/img/holder-1080.jpg?29fd5deb",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/H21zDjkW/img/holder-1080.jpg?504274cb",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/H21zDjkW/img/holder-1080.jpg?504274cb"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506446703-7r57ode",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/H21zDjkW/img/holder-1080.jpg?504274cb",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/VSQY1qVm/img/holder-1080.jpg?25cb41c4",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/VSQY1qVm/img/holder-1080.jpg?25cb41c4"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506463791-14vrmd5",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/VSQY1qVm/img/holder-1080.jpg?25cb41c4",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/Gjjw3kHu/img/holder-1080.jpg?6c2da99c",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/Gjjw3kHu/img/holder-1080.jpg?6c2da99c"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506457386-elpnk6o",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/Gjjw3kHu/img/holder-1080.jpg?6c2da99c",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/b6T4NgwM/img/holder-1080.jpg?9ae6a38d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/b6T4NgwM/img/holder-1080.jpg?9ae6a38d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506459510-zx4rw9y",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/b6T4NgwM/img/holder-1080.jpg?9ae6a38d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7928634490493560351503764_7574647932272803674637142.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7928634490493560351503764_7574647932272803674637142.jpeg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "OGUZ",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339374416-shc7e7c",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7928634490493560351503764_7574647932272803674637142.jpeg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "OGUZ",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "OGUZ",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506455240-97ea7l5",
+      "title": "Stereoact & Lena Marie Engel",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/hU0Qr9Gh/img/holder-1080.jpg?25cb41c4",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/hU0Qr9Gh/img/holder-1080.jpg?25cb41c4"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506455240-97ea7l5",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/hU0Qr9Gh/img/holder-1080.jpg?25cb41c4",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506441963-td8znfi",
+      "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/fTQxM4u1/img/holder-1080.jpg?65b7d1f8",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/fTQxM4u1/img/holder-1080.jpg?65b7d1f8"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506441963-td8znfi",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/fTQxM4u1/img/holder-1080.jpg?65b7d1f8",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/YM0Ek3Ql/img/holder-1080.jpg?51122e2e",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/YM0Ek3Ql/img/holder-1080.jpg?51122e2e"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506461636-oeo9yp4",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/YM0Ek3Ql/img/holder-1080.jpg?51122e2e",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506453153-zaynzo6",
+      "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/m4ppRcZr/img/holder-1080.jpg?47ec33bb",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/m4ppRcZr/img/holder-1080.jpg?47ec33bb"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506453153-zaynzo6",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/m4ppRcZr/img/holder-1080.jpg?47ec33bb",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506402039-8mam28r",
+      "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/x8fkbb2D/img/holder-1080.jpg?4885bbd8",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/x8fkbb2D/img/holder-1080.jpg?4885bbd8"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506402039-8mam28r",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/x8fkbb2D/img/holder-1080.jpg?4885bbd8",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/wZrRRkDh/img/holder-1080.jpg?8bc7248d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/wZrRRkDh/img/holder-1080.jpg?8bc7248d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506406388-usnae2d",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/wZrRRkDh/img/holder-1080.jpg?8bc7248d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506410605-aqbkr1h",
+      "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/zmi7J0uP/img/holder-1080.jpg?4885bbd8",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/zmi7J0uP/img/holder-1080.jpg?4885bbd8"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506410605-aqbkr1h",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/zmi7J0uP/img/holder-1080.jpg?4885bbd8",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785443904478-dg3lk70",
+        "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9749110188710708985001871_2719362357331366064983352.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9749110188710708985001871_2719362357331366064983352.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "MARTEN LOUNICOLE DA SILVA​",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339413919-ix5umo9",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9749110188710708985001871_2719362357331366064983352.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "MARTEN LOUNICOLE DA SILVA​",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "MARTEN LOUNICOLE DA SILVA​",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8084315766856158722460498_0156517496564163162733169.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8084315766856158722460498_0156517496564163162733169.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "NOTRE DAMEMEERA",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339377456-7miaf2o",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8084315766856158722460498_0156517496564163162733169.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "NOTRE DAMEMEERA",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "NOTRE DAMEMEERA",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "vereint mit Ran-D\nKili\nComplex\nZelecter",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339386612-rjr91mv",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "vereint mit Ran-D\nKili\nComplex\nZelecter",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "Kili",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Complex",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Zelecter",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 3,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389049895-4mb7dub",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ\nROSILICIOUS KARAH KUKO TASSERY TRIPTYKH\nGOLPE",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339412398-hq6217j",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ\nROSILICIOUS KARAH KUKO TASSERY TRIPTYKH\nGOLPE",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "GOLPE",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 3,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "BRANDON\nEMINALUKES\nMAKLA",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339420043-obhyeev",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "BRANDON\nEMINALUKES\nMAKLA",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "BRANDON",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "EMINALUKES",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "MAKLA",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 3,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB-1030x1030.jpg",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB-1030x1030.jpg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389053437-3oxde27",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB-1030x1030.jpg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339395746-in3ijod",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6291070957076770600802974_2481970712023930093702944.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6291070957076770600802974_2481970712023930093702944.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339382025-cazpz3d",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6291070957076770600802974_2481970712023930093702944.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506384006-ve662md",
+      "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/CDsHDp81/img/holder-1080.jpg?2ee13131",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/CDsHDp81/img/holder-1080.jpg?2ee13131"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506384006-ve662md",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/CDsHDp81/img/holder-1080.jpg?2ee13131",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6476230997772328293706007_7744424095384944663913284.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6476230997772328293706007_7744424095384944663913284.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339385102-xocczqs",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6476230997772328293706007_7744424095384944663913284.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339403309-prk3iiz",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/QA7zQqxb/img/holder-1080.jpg?440c8c9f",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/QA7zQqxb/img/holder-1080.jpg?440c8c9f"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506485508-ill0alw",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/QA7zQqxb/img/holder-1080.jpg?440c8c9f",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4076694954445140762170081_9848048500353295527762084.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4076694954445140762170081_9848048500353295527762084.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "KAZ JAMESALICIA HAHN​",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339388133-sq2ykbm",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4076694954445140762170081_9848048500353295527762084.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "KAZ JAMESALICIA HAHN​",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "KAZ JAMESALICIA HAHN​",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6095179907596406189869658_1711451874088722577557114.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6095179907596406189869658_1711451874088722577557114.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339410908-9691748",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6095179907596406189869658_1711451874088722577557114.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/pmsUCbbF/img/holder-1080.jpg?16dfb887",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/pmsUCbbF/img/holder-1080.jpg?16dfb887"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506426366-bujnxz7",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/pmsUCbbF/img/holder-1080.jpg?16dfb887",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506428527-m5ugmjh",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389052337-0gv1iz1",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506377307-shx3g9d",
+      "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/quEhRw0W/img/holder-1080.jpg?4299ba0",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/quEhRw0W/img/holder-1080.jpg?4299ba0"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506377307-shx3g9d",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/quEhRw0W/img/holder-1080.jpg?4299ba0",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/e72nkwMH/img/holder-1080.jpg?c089480",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/e72nkwMH/img/holder-1080.jpg?c089480"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506476910-vh78c7a",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/e72nkwMH/img/holder-1080.jpg?c089480",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/vbuhTgdb/img/holder-1080.jpg?cf9c45da",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/vbuhTgdb/img/holder-1080.jpg?cf9c45da"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506466137-qve932v",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/vbuhTgdb/img/holder-1080.jpg?cf9c45da",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506472665-1b5azyj",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ncZqL20k/img/holder-1080.jpg?25e7d635",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/ncZqL20k/img/holder-1080.jpg?25e7d635"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506483348-x67wunx",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ncZqL20k/img/holder-1080.jpg?25e7d635",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506363578-4wh50a1",
+      "title": "FATALITY pres. DEXPHASE",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/7CwUj7pf/img/holder-1080.jpg?18c26f87",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/7CwUj7pf/img/holder-1080.jpg?18c26f87"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506363578-4wh50a1",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/7CwUj7pf/img/holder-1080.jpg?18c26f87",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ERJ3EqKy/img/holder-1080.jpg?fc995a72",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/ERJ3EqKy/img/holder-1080.jpg?fc995a72"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506474828-u0zw9zf",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ERJ3EqKy/img/holder-1080.jpg?fc995a72",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/l1vdPLs9/img/holder-1080.jpg?51122e2e",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/l1vdPLs9/img/holder-1080.jpg?51122e2e"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506481191-qaben7r",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/l1vdPLs9/img/holder-1080.jpg?51122e2e",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/uVeam2f6/img/holder-1080.jpg?e9ca4c33",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/uVeam2f6/img/holder-1080.jpg?e9ca4c33"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506412720-onckj88",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/uVeam2f6/img/holder-1080.jpg?e9ca4c33",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/p74KBjpL/img/holder-1080.jpg?502f2982",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/p74KBjpL/img/holder-1080.jpg?502f2982"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506479046-0iqt1i1",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/p74KBjpL/img/holder-1080.jpg?502f2982",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506444104-084yf4g",
+      "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/TFDZWEAD/img/holder-1080.jpg?42db0a17",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/TFDZWEAD/img/holder-1080.jpg?42db0a17"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506444104-084yf4g",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/TFDZWEAD/img/holder-1080.jpg?42db0a17",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506397824-yhn81xp",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/VqX0G8j6/img/holder-1080.jpg?8bc7248d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/VqX0G8j6/img/holder-1080.jpg?8bc7248d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506408508-ema5ssy",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/VqX0G8j6/img/holder-1080.jpg?8bc7248d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+      "galleryUrls": [
+        "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\")\nif(!frame){return\nvar successPath=\\'/order_success/\\'",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785443911160-owt97y3",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\")\nif(!frame){return\nvar successPath=\\'/order_success/\\'",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "ticket",
+            "value": "Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\")",
+            "confidence": 0.7,
+            "sourceLine": "Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\")"
+          },
+          {
+            "kind": "artist",
+            "value": "Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\")",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339391167-tfaixrr",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506368264-j5xf3dn",
+      "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/XGRPf64b/img/holder-1080.jpg?4299ba0",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/XGRPf64b/img/holder-1080.jpg?4299ba0"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506368264-j5xf3dn",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/XGRPf64b/img/holder-1080.jpg?4299ba0",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/YSQcd9gq/img/holder-1080.jpg?c14dab2a",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/MXPHz0r8/events/YSQcd9gq/img/holder-1080.jpg?c14dab2a"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506421633-m1ktkpf",
+        "imageUrl": "https://cdn.ticket.io/companies/MXPHz0r8/events/YSQcd9gq/img/holder-1080.jpg?c14dab2a",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785443908695-6n8vfff",
+        "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/GNxTMCm6/img/holder-1080.jpg?8bc7248d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/GNxTMCm6/img/holder-1080.jpg?8bc7248d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506391332-nkworm2",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/GNxTMCm6/img/holder-1080.jpg?8bc7248d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1208667081739855683831546_8054987023148389219298412.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1208667081739855683831546_8054987023148389219298412.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339380511-rwjwfep",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1208667081739855683831546_8054987023148389219298412.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506430597-ufglza0",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+      "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/kVMC3cKZ/img/holder-1080.jpg?d6693622",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/z358Ho3e/events/kVMC3cKZ/img/holder-1080.jpg?d6693622"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506430597-ufglza0",
+        "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/kVMC3cKZ/img/holder-1080.jpg?d6693622",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/9ZwwhBzT/img/holder-1080.jpg?25cb41c4",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/9ZwwhBzT/img/holder-1080.jpg?25cb41c4"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506468322-oxv0sw4",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/9ZwwhBzT/img/holder-1080.jpg?25cb41c4",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/94hBdSGj/img/holder-1080.jpg?8bc7248d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/94hBdSGj/img/holder-1080.jpg?8bc7248d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506393455-qkc3qd0",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/94hBdSGj/img/holder-1080.jpg?8bc7248d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506404218-hgmd9nz",
+        "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339005035-wam829k",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6852973411467408254591581_7087467815676477537922828.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6852973411467408254591581_7087467815676477537922828.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785570943560-f5g5rj5",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6852973411467408254591581_7087467815676477537922828.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5361694252623420484114372_5195305988417543031457747.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5361694252623420484114372_5195305988417543031457747.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339401841-by9uoyc",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5361694252623420484114372_5195305988417543031457747.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5616035275419772183451960_7561256723362226899913166.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5616035275419772183451960_7561256723362226899913166.jpeg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "s\nextended sets",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339404822-r8i4lyq",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5616035275419772183451960_7561256723362226899913166.jpeg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "s\nextended sets",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0.39,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_artist_hints_detected",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ujyn909p/img/holder-1080.jpg?de9cff59",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/Y0Evn4oh/events/ujyn909p/img/holder-1080.jpg?de9cff59"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785506470445-pdpd3u6",
+        "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ujyn909p/img/holder-1080.jpg?de9cff59",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4570697039360185939537632_9780776906963524975616115.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4570697039360185939537632_9780776906963524975616115.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339400315-1mx4foh",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4570697039360185939537632_9780776906963524975616115.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339421539-k3swcrl",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/3129736408770490976904536_4424795000671778212268540.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/3129736408770490976904536_4424795000671778212268540.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "JUNONICOLE DA SILVA​",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339407876-uqm3mz0",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/3129736408770490976904536_4424795000671778212268540.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "JUNONICOLE DA SILVA​",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "JUNONICOLE DA SILVA​",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339392687-tbdwup4",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339397255-frpjss3",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5917405727420453304224506_9628350533800786356032660.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5917405727420453304224506_9628350533800786356032660.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "the German",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339424521-tn10siz",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5917405727420453304224506_9628350533800786356032660.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "the German",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0.39,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_artist_hints_detected",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5661772516122494432347632_1676272899454372541097967.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5661772516122494432347632_1676272899454372541097967.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339372839-cwbr6ya",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5661772516122494432347632_1676272899454372541097967.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d",
+      "galleryUrls": [
+        "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785672261305-bgdu8dk",
+        "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB-1030x1030.jpg",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB-1030x1030.jpg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389051072-mihh18f",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB-1030x1030.jpg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9746907955985494674394802_6549575097625290545322522.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9746907955985494674394802_6549575097625290545322522.jpeg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "s dropping soon.",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339394218-cbqw3kx",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9746907955985494674394802_6549575097625290545322522.jpeg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "s dropping soon.",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0.39,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_artist_hints_detected",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8878668266985174021971742_3422450487817739934370999.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8878668266985174021971742_3422450487817739934370999.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "s once – spanning Techno\nHardtechno\nPsytrance\nGroove\nBounce",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339375946-dszejnk",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8878668266985174021971742_3422450487817739934370999.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "s once – spanning Techno\nHardtechno\nPsytrance\nGroove\nBounce",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "Hardtechno",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Psytrance",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Groove",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Bounce",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 4,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7929454786907684949010280_4905387408877834665437515.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7929454786907684949010280_4905387408877834665437515.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339409363-puvo8be",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7929454786907684949010280_4905387408877834665437515.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "Dr Donk\nYoshiko\nGPF\nInvaderz\nLekkerfaces\nMadcore\nMust Die!\nRevenge Of The Nerds (Albino\nRicky West)\nDrum & Bass &times\nZaag &times",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339283846-89x0jcd",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "Dr Donk\nYoshiko\nGPF\nInvaderz\nLekkerfaces\nMadcore\nMust Die!\nRevenge Of The Nerds (Albino\nRicky West)\nDrum & Bass &times\nZaag &times",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "Dr Donk",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Yoshiko",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Invaderz",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Lekkerfaces",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Madcore",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Must Die!",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Revenge Of The Nerds (Albino",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Ricky West)",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Drum & Bass &times",
+            "confidence": 0.45
+          },
+          {
+            "kind": "artist",
+            "value": "Zaag &times",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 10,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339398765-9lptzhg",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389054496-ns9b6la",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7576048672735569035384002_0115948890074001779127437.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7576048672735569035384002_0115948890074001779127437.png"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": ".MAINFLOOR:CLEOPARD2000\nLOWSATYS FYRE",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785339378982-kp48td0",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7576048672735569035384002_0115948890074001779127437.png",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": ".MAINFLOOR:CLEOPARD2000\nLOWSATYS FYRE",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "artist",
+            "value": "LOWSATYS FYRE",
+            "confidence": 0.45
+          }
+        ],
+        "artistCount": 1,
+        "billingRelations": [],
+        "overallConfidence": 0.615,
+        "reviewDecision": "review_required",
+        "rejectionReason": "confidence_below_auto_publish_threshold",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339418526-dn9f7g0",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+      "galleryUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+      "galleryUrls": [
+        "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg"
+      ],
+      "ocr": {
+        "providerId": "explicit_text_v1",
+        "providerVersion": "1.0.0",
+        "status": "text_extracted",
+        "source": "explicit_description",
+        "rawText": "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")\nif(!frame){return\nvar successPath=\\'/order_success/\\'\nvar pendingFrameShrinkTimer=0\nvar pendingFrameShrinkHeight=0",
+        "confidence": 0.78,
+        "reason": "description_lineup_section"
+      },
+      "evidence": {
+        "eventId": "evt-1785443914377-7g9l545",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+        "ocr": {
+          "providerId": "explicit_text_v1",
+          "providerVersion": "1.0.0",
+          "status": "text_extracted",
+          "source": "explicit_description",
+          "rawText": "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")\nif(!frame){return\nvar successPath=\\'/order_success/\\'\nvar pendingFrameShrinkTimer=0\nvar pendingFrameShrinkHeight=0",
+          "confidence": 0.78,
+          "reason": "description_lineup_section"
+        },
+        "hints": [
+          {
+            "kind": "ticket",
+            "value": "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+            "confidence": 0.7,
+            "sourceLine": "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")"
+          }
+        ],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0.39,
+        "reviewDecision": "review_required",
+        "rejectionReason": "no_artist_hints_detected",
+        "autoPublishAllowed": false
+      }
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+      "galleryUrls": [
+        "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg"
+      ],
+      "ocr": {
+        "providerId": "external_ocr_pending",
+        "providerVersion": "0.0.0",
+        "status": "pending_external",
+        "source": "external_ocr",
+        "confidence": 0,
+        "reason": "external_ocr_provider_not_configured"
+      },
+      "evidence": {
+        "eventId": "evt-1785389055557-ux20897",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+        "ocr": {
+          "providerId": "external_ocr_pending",
+          "providerVersion": "0.0.0",
+          "status": "pending_external",
+          "source": "external_ocr",
+          "confidence": 0,
+          "reason": "external_ocr_provider_not_configured"
+        },
+        "hints": [],
+        "artistCount": 0,
+        "billingRelations": [],
+        "overallConfidence": 0,
+        "reviewDecision": "review_required",
+        "rejectionReason": "awaiting_ocr_provider",
+        "autoPublishAllowed": false
+      }
+    }
+  ]
+}

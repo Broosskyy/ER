@@ -1,0 +1,183 @@
+{
+  "generatedAt": "2026-08-05T23:10:37.931Z",
+  "phase": "4.8.6",
+  "productionMutationsInThisRun": 0,
+  "snapshots": {
+    "evt-1785339421539-k3swcrl": {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+      "image_url": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "ticket_url": "https://bit.ly/Bootshaus-AppBootshaus",
+      "website_url": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "genre_labels": [
+        "BASSHOUSE",
+        "ELECTRO",
+        "HOUSE",
+        "PROGRESSIVE HOUSE",
+        "EDM",
+        "DANCE"
+      ],
+      "venue_name": "Bootshaus",
+      "price_text": "",
+      "source_id": "source-bootshaus-koeln",
+      "provenance": {
+        "undefined": {
+          "value": "Köln",
+          "selectedSourceId": "source-bootshaus-koeln",
+          "selectionReason": "import_publish",
+          "alternatives": [
+            {
+              "value": "Köln",
+              "sourceId": "source-bootshaus-koeln",
+              "confidence": 0.75,
+              "freshnessAt": "2026-08-02T20:54:33.797Z",
+              "originExternalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus"
+            }
+          ],
+          "lastChangedAt": "2026-08-02T20:54:33.797+00:00",
+          "confidence": 0.75,
+          "freshnessAt": "2026-08-02T20:54:33.797+00:00",
+          "originExternalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "selectedTier": "official_venue"
+        }
+      },
+      "lineup": [],
+      "updated_at": "2026-08-05T11:18:45.536+00:00",
+      "apiProjection": {
+        "sanitizedDescription": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music’s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+        "shortDescription": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music’s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsB",
+        "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+        "ticketProviderLabel": "Bootshaus",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Bootshaus",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Bootshaus, Köln",
+        "locationLabelDot": "Bootshaus · Köln",
+        "hasCoordinates": false,
+        "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+        "galleryImageUrls": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+        ],
+        "genres": [
+          "BASSHOUSE",
+          "ELECTRO",
+          "House",
+          "PROGRESSIVE HOUSE",
+          "EDM",
+          "DANCE"
+        ],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "complete",
+        "sourceAttributionLabel": "Bootshaus"
+      },
+      "galleryImageUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+      ]
+    },
+    "evt-1785339391167-tfaixrr": {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "image_url": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "ticket_url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "website_url": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "genre_labels": [
+        "DUBSTEP",
+        "ELECTRO",
+        "HARDTECHNO",
+        "TECHNO",
+        "EDM"
+      ],
+      "venue_name": "Essigfabrik",
+      "price_text": "Tickets ab 11,90 Euro",
+      "source_id": "source-bootshaus-koeln",
+      "provenance": {
+        "undefined": {
+          "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "selectedSourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+          "selectionReason": "import_publish",
+          "alternatives": [
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-ticket-kings-org-elektrokuche",
+              "freshnessAt": "2026-08-02T19:38:46.768Z",
+              "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-bootshaus-koeln",
+              "confidence": 0.75,
+              "freshnessAt": "2026-08-02T21:20:23.578Z",
+              "originExternalId": "https://bootshaus.tv/events/bootshaus-sommerfest"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-02T21:24:44.546Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/vB0cAmWg/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-affenkaefig-ticket-kings",
+              "freshnessAt": "2026-08-02T21:25:54.575Z",
+              "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+              "freshnessAt": "2026-08-02T21:26:57.160Z",
+              "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            }
+          ],
+          "lastChangedAt": "2026-08-02T21:26:57.16+00:00",
+          "freshnessAt": "2026-08-02T21:26:57.16+00:00",
+          "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "selectedTier": "ticket_platform"
+        }
+      },
+      "lineup": [],
+      "updated_at": "2026-08-05T11:18:45.714+00:00",
+      "apiProjection": {
+        "sanitizedDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "shortDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "displayPriceText": "ab 11,90 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Essigfabrik",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Essigfabrik, Köln",
+        "locationLabelDot": "Essigfabrik · Köln",
+        "hasCoordinates": false,
+        "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+        "galleryImageUrls": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+        ],
+        "genres": [
+          "DUBSTEP",
+          "ELECTRO",
+          "Hard Techno",
+          "Techno",
+          "EDM"
+        ],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "complete",
+        "sourceAttributionLabel": "Bootshaus"
+      },
+      "galleryImageUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+      ]
+    }
+  }
+}

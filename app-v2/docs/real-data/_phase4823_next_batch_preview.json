@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-05T16:33:19.817Z",
+  "phase": "4.8.2.3",
+  "productionMutationsInThisRun": 0,
+  "execute": false,
+  "limits": {
+    "maxEvents": 10,
+    "maxFieldChanges": 15,
+    "allowedRisk": [
+      "LOW",
+      "MEDIUM"
+    ]
+  },
+  "totalProposedChanges": 0,
+  "affectedEvents": 0,
+  "affectedEventIds": [],
+  "highRiskSeparatedForHumanReview": [],
+  "proposals": [],
+  "frozenDomainFingerprints": {},
+  "rollbackStrategy": [
+    "Snapshot affected event rows before any future apply",
+    "Per-field restore from snapshot on rollback",
+    "No importer schedule activation in preview phase"
+  ]
+}

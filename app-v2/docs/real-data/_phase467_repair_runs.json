@@ -1,0 +1,1816 @@
+{
+  "generatedAt": "2026-08-02T22:42:58.523Z",
+  "passes": [
+    {
+      "pass": 1,
+      "mutations": 5,
+      "completedAt": "2026-08-02T22:42:21.998Z",
+      "results": [
+        {
+          "pass": 1,
+          "eventId": "evt-1785339283846-89x0jcd",
+          "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+          "reason": "canonical_superset_of_import",
+          "before": [
+            "ZAAGSTEP by Dr Donk",
+            "A-ZDr Donk pres. ZAAGSTEP (Album Showcase)",
+            "Dr Donk",
+            "Yoshiko",
+            "GPF",
+            "Invaderz",
+            "Lekkerfaces",
+            "MADCORE",
+            "Must",
+            "Die!",
+            "Revenge Of The Nerds (Albino",
+            "Dr",
+            "Donk",
+            "Ricky West)",
+            "TMPRHIGHLIGHTS⚡ Official ZAAGSTEP Album Showcase by Dr Donk⚡ Exclusive unreleased album material⚡ First-ever ZAAGSTEP event worldwide⚡ Dubstep &times",
+            "Drum & Bass &times",
+            "Zaag &times",
+            "Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE"
+          ],
+          "after": [
+            "ZAAGSTEP by Dr Donk",
+            "A-ZDr Donk pres. ZAAGSTEP (Album Showcase)",
+            "Dr Donk",
+            "Yoshiko",
+            "GPF",
+            "Invaderz",
+            "Lekkerfaces",
+            "MADCORE",
+            "Must",
+            "Die!",
+            "Revenge Of The Nerds (Albino",
+            "Dr",
+            "Donk",
+            "Ricky West)",
+            "TMPRHIGHLIGHTS⚡ Official ZAAGSTEP Album Showcase by Dr Donk⚡ Exclusive unreleased album material⚡ First-ever ZAAGSTEP event worldwide⚡ Dubstep &times",
+            "Drum & Bass &times",
+            "Zaag &times",
+            "Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE",
+            "artist-title-must-die-dno20x"
+          ],
+          "wroteLineup": true
+        },
+        {
+          "pass": 1,
+          "eventId": "evt-1785339412398-hq6217j",
+          "title": "Unreal Weekender Night II - September 2026",
+          "reason": "canonical_superset_of_import",
+          "before": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH"
+          ],
+          "after": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "artist-title-rosilicious-karah-kuko-tassery-triptykh-vsrorz"
+          ],
+          "wroteLineup": true
+        },
+        {
+          "pass": 1,
+          "eventId": "evt-1785339398765-9lptzhg",
+          "title": "Blacklist Festival 2026",
+          "reason": "partial_canonical",
+          "before": [
+            "ECRAZE",
+            "BIZO",
+            "KARA",
+            "YOUPH ORIA",
+            "MADCORE",
+            "ELLIE RICH",
+            "VDV",
+            "MISCALL",
+            "(A–Z):A.M.C",
+            "AKIRAH",
+            "AUTODRIVE",
+            "AUTOPSKI",
+            "BLANKE PRESENTS: FALLOUT",
+            "BURR OAK",
+            "DJ MII",
+            "EPTIC",
+            "ESKEI83",
+            "FLUX PAVILION",
+            "FORMULA",
+            "GLADDE PALING",
+            "GOURSKI",
+            "HAMMERHEAD",
+            "K MOTIONZ",
+            "Ricky West)",
+            "KANINE",
+            "YOUPHORIA",
+            "KOVEN",
+            "KREWELLA",
+            "MACHINYST",
+            "MEFJUS",
+            "NOIZBOIZ",
+            "PRIMATE",
+            "RIOT",
+            "SAMPLIFIRE",
+            "SKIYE",
+            "STOOG3S",
+            "THE RESISTANCE",
+            "UPGRADE",
+            "ZOMBOY"
+          ],
+          "after": [
+            "ECRAZE",
+            "BIZO",
+            "KARA",
+            "YOUPH ORIA",
+            "MADCORE",
+            "ELLIE RICH",
+            "VDV",
+            "MISCALL",
+            "(A–Z):A.M.C",
+            "AKIRAH",
+            "AUTODRIVE",
+            "AUTOPSKI",
+            "BLANKE PRESENTS: FALLOUT",
+            "BURR OAK",
+            "DJ MII",
+            "EPTIC",
+            "ESKEI83",
+            "FLUX PAVILION",
+            "FORMULA",
+            "GLADDE PALING",
+            "GOURSKI",
+            "HAMMERHEAD",
+            "K MOTIONZ",
+            "Ricky West)",
+            "KANINE",
+            "YOUPHORIA",
+            "KOVEN",
+            "KREWELLA",
+            "MACHINYST",
+            "MEFJUS",
+            "NOIZBOIZ",
+            "PRIMATE",
+            "RIOT",
+            "SAMPLIFIRE",
+            "SKIYE",
+            "STOOG3S",
+            "THE RESISTANCE",
+            "UPGRADE",
+            "ZOMBOY",
+            "artist-title-ivy-qcg8af",
+            "artist-title-safyre-967fwx",
+            "artist-title-aelig-ptfp6w",
+            "artist-title-on-mode-more-tbasave-the-date-october-09-10-5w6c8y",
+            "artist-title-2026-auoq4c"
+          ],
+          "wroteLineup": true
+        },
+        {
+          "pass": 1,
+          "eventId": "evt-1785339378982-kp48td0",
+          "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+          "reason": "canonical_superset_of_import",
+          "before": [
+            ".MAINFLOOR:CLEOPARD2000",
+            "ALBA",
+            "FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE"
+          ],
+          "after": [
+            ".MAINFLOOR:CLEOPARD2000",
+            "ALBA",
+            "FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+            "artist-title-alba-franchdavyboi-wd6g2f",
+            "artist-title-trancemaster-krausemika-heggemannprada2000testpressblckbx-elotrancehitmilowsatys-fyre-14tlqn"
+          ],
+          "wroteLineup": true
+        },
+        {
+          "pass": 1,
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "reason": "canonical_superset_of_import",
+          "before": [
+            "BRANDON",
+            "SAM COLLINSOLIVER",
+            "MAGENTA",
+            "LOST IDENTITYDAVE",
+            "REPLAY",
+            "EMINALUKES",
+            "MAKLA"
+          ],
+          "after": [
+            "BRANDON",
+            "artist-title-sam-collinsoliver-magenta-fmf9uk",
+            "artist-title-lost-identitydave-replay-5n9q42",
+            "EMINALUKES",
+            "MAKLA",
+            "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+          ],
+          "wroteLineup": true
+        }
+      ]
+    },
+    {
+      "pass": 2,
+      "mutations": 0,
+      "completedAt": "2026-08-02T22:42:58.321Z",
+      "results": []
+    }
+  ],
+  "representativeRuns": [
+    {
+      "run": "representative_pass_1",
+      "mutations": 1,
+      "completedAt": "2026-08-03T05:31:11.215Z",
+      "results": [
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "603772ca-12ec-43c5-845f-bb0da74b1897",
+          "importSourceId": "source-ticket-kings-org-elektrokuche",
+          "before": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "330ec371-c461-4d6c-a873-ef98f772db1d",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "wroteLineup": true,
+          "mutated": true,
+          "repairReason": "collapsed_canonical_artists",
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "importSourceId": "source-affenkaefig",
+          "before": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim",
+              "artist-title-dystopia-f2f-valkyrie-tfb5lx",
+              "artist-title-ian-crank-f2f-easypysi-yr1uzw",
+              "artist-title-karamusta-f2f-greekz-8hxxms",
+              "artist-title-kevin-la-nique-f2f-the-rafnix-t54qwa",
+              "artist-title-nina-bender-f2f-lee-ann-srdddw",
+              "artist-title-flash-b2b-forward-srv05l",
+              "artist-title-hellmyer-b2b-stz-gjnvhy",
+              "artist-title-mauro-b2b-i-d-a-9n9cku",
+              "artist-title-plea5ure-b2b-pul5e-x75ds3"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E",
+              "DYSTOPIA F2F VALKYRIE",
+              "IAN CRANK F2F EASYPYSI",
+              "KARAMUSTA F2F GREEKZ",
+              "KEVIN LA NIQUE F2F THE RAFNIX",
+              "NINA BENDER F2F LEE-ANN",
+              "FLASH B2B FORWARD",
+              "HELLMYER B2B STZ",
+              "MAURO B2B I.D.A",
+              "PLEA5URE B2B PUL5E"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "b1f775e0-03b9-4dca-bd07-de3e47b2c0c8",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "representative_pass_2",
+      "mutations": 1,
+      "completedAt": "2026-08-03T05:31:25.390Z",
+      "results": [
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "603772ca-12ec-43c5-845f-bb0da74b1897",
+          "importSourceId": "source-ticket-kings-org-elektrokuche",
+          "before": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "330ec371-c461-4d6c-a873-ef98f772db1d",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "wroteLineup": true,
+          "mutated": true,
+          "repairReason": "invalid_canonical_artists",
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "importSourceId": "source-affenkaefig",
+          "before": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim",
+              "artist-title-dystopia-f2f-valkyrie-tfb5lx",
+              "artist-title-ian-crank-f2f-easypysi-yr1uzw",
+              "artist-title-karamusta-f2f-greekz-8hxxms",
+              "artist-title-kevin-la-nique-f2f-the-rafnix-t54qwa",
+              "artist-title-nina-bender-f2f-lee-ann-srdddw",
+              "artist-title-flash-b2b-forward-srv05l",
+              "artist-title-hellmyer-b2b-stz-gjnvhy",
+              "artist-title-mauro-b2b-i-d-a-9n9cku",
+              "artist-title-plea5ure-b2b-pul5e-x75ds3"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E",
+              "DYSTOPIA F2F VALKYRIE",
+              "IAN CRANK F2F EASYPYSI",
+              "KARAMUSTA F2F GREEKZ",
+              "KEVIN LA NIQUE F2F THE RAFNIX",
+              "NINA BENDER F2F LEE-ANN",
+              "FLASH B2B FORWARD",
+              "HELLMYER B2B STZ",
+              "MAURO B2B I.D.A",
+              "PLEA5URE B2B PUL5E"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "b1f775e0-03b9-4dca-bd07-de3e47b2c0c8",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "representative_pass_2",
+      "mutations": 1,
+      "completedAt": "2026-08-03T05:32:07.745Z",
+      "results": [
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "603772ca-12ec-43c5-845f-bb0da74b1897",
+          "importSourceId": "source-ticket-kings-org-elektrokuche",
+          "before": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "330ec371-c461-4d6c-a873-ef98f772db1d",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "wroteLineup": true,
+          "mutated": true,
+          "repairReason": "collapsed_canonical_artists",
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "importSourceId": "source-affenkaefig",
+          "before": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim",
+              "artist-title-dystopia-f2f-valkyrie-tfb5lx",
+              "artist-title-ian-crank-f2f-easypysi-yr1uzw",
+              "artist-title-karamusta-f2f-greekz-8hxxms",
+              "artist-title-kevin-la-nique-f2f-the-rafnix-t54qwa",
+              "artist-title-nina-bender-f2f-lee-ann-srdddw",
+              "artist-title-flash-b2b-forward-srv05l",
+              "artist-title-hellmyer-b2b-stz-gjnvhy",
+              "artist-title-mauro-b2b-i-d-a-9n9cku",
+              "artist-title-plea5ure-b2b-pul5e-x75ds3"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E",
+              "DYSTOPIA F2F VALKYRIE",
+              "IAN CRANK F2F EASYPYSI",
+              "KARAMUSTA F2F GREEKZ",
+              "KEVIN LA NIQUE F2F THE RAFNIX",
+              "NINA BENDER F2F LEE-ANN",
+              "FLASH B2B FORWARD",
+              "HELLMYER B2B STZ",
+              "MAURO B2B I.D.A",
+              "PLEA5URE B2B PUL5E"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "b1f775e0-03b9-4dca-bd07-de3e47b2c0c8",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "representative_pass_2",
+      "mutations": 1,
+      "completedAt": "2026-08-03T05:32:39.607Z",
+      "results": [
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "603772ca-12ec-43c5-845f-bb0da74b1897",
+          "importSourceId": "source-ticket-kings-org-elektrokuche",
+          "before": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "330ec371-c461-4d6c-a873-ef98f772db1d",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "wroteLineup": true,
+          "mutated": true,
+          "repairReason": "invalid_canonical_artists",
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "importSourceId": "source-affenkaefig",
+          "before": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim",
+              "artist-title-dystopia-f2f-valkyrie-tfb5lx",
+              "artist-title-ian-crank-f2f-easypysi-yr1uzw",
+              "artist-title-karamusta-f2f-greekz-8hxxms",
+              "artist-title-kevin-la-nique-f2f-the-rafnix-t54qwa",
+              "artist-title-nina-bender-f2f-lee-ann-srdddw",
+              "artist-title-flash-b2b-forward-srv05l",
+              "artist-title-hellmyer-b2b-stz-gjnvhy",
+              "artist-title-mauro-b2b-i-d-a-9n9cku",
+              "artist-title-plea5ure-b2b-pul5e-x75ds3"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E",
+              "DYSTOPIA F2F VALKYRIE",
+              "IAN CRANK F2F EASYPYSI",
+              "KARAMUSTA F2F GREEKZ",
+              "KEVIN LA NIQUE F2F THE RAFNIX",
+              "NINA BENDER F2F LEE-ANN",
+              "FLASH B2B FORWARD",
+              "HELLMYER B2B STZ",
+              "MAURO B2B I.D.A",
+              "PLEA5URE B2B PUL5E"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "b1f775e0-03b9-4dca-bd07-de3e47b2c0c8",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "representative_pass_1",
+      "mutations": 0,
+      "completedAt": "2026-08-03T05:35:20.925Z",
+      "results": [
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "603772ca-12ec-43c5-845f-bb0da74b1897",
+          "importSourceId": "source-ticket-kings-org-elektrokuche",
+          "before": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "330ec371-c461-4d6c-a873-ef98f772db1d",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "invalid_canonical_artists",
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "importSourceId": "source-affenkaefig",
+          "before": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_1",
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "b1f775e0-03b9-4dca-bd07-de3e47b2c0c8",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": "representative_pass_2",
+      "mutations": 0,
+      "completedAt": "2026-08-03T05:35:39.232Z",
+      "results": [
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "603772ca-12ec-43c5-845f-bb0da74b1897",
+          "importSourceId": "source-ticket-kings-org-elektrokuche",
+          "before": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-asl-0l5t3z",
+              "artist-title-annx-r2t7pu",
+              "artist-title-black-zushi-m6g7rf",
+              "artist-title-bounce-mc-flz1jf",
+              "artist-title-hotboi2300-senum1",
+              "artist-title-hypnotized-c8xlj1",
+              "artist-title-icj-lwn0df",
+              "artist-title-mauro-dac77k",
+              "artist-title-stimulate-9ugthz",
+              "artist-title-the-m-vement-87r7qz",
+              "artist-title-tommy-libera-oybnsr",
+              "artist-title-turbo-timos-omo2yw",
+              "artist-title-julez-brixton-5jzrl5",
+              "artist-title-sebi-liemen-svl15j"
+            ],
+            "artistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "330ec371-c461-4d6c-a873-ef98f772db1d",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-brandon-lxp143",
+              "artist-title-sam-collinsoliver-magenta-fmf9uk",
+              "artist-title-lost-identitydave-replay-5n9q42",
+              "artist-title-eminalukes-knn7qd",
+              "artist-title-makla-az92cb",
+              "artist-title-makla-einlass-ab-18-jahren-age-for-admission-18-years-0539om"
+            ],
+            "artistNames": [
+              "BRANDON",
+              "SAM COLLINSOLIVER MAGENTA",
+              "LOST IDENTITYDAVE REPLAY",
+              "EMINALUKES",
+              "MAKLA",
+              "MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "invalid_canonical_artists",
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "importSourceId": "source-affenkaefig",
+          "before": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-dystopia-s16ua2",
+              "artist-title-valkyrie-2ityi0",
+              "artist-title-ian-crank-922eh2",
+              "artist-title-easypysi-ptu3q8",
+              "artist-title-karamusta-pfmsk3",
+              "artist-title-greekz-lwnyow",
+              "artist-title-kevin-la-nique-9ssw17",
+              "artist-title-the-rafnix-usw8tk",
+              "artist-title-nina-bender-sgyvdv",
+              "artist-title-lee-ann-qhwfww",
+              "artist-title-flash-m8ck4x",
+              "artist-title-forward-ktc9l5",
+              "artist-title-hellmyer-2itf98",
+              "artist-title-stz-xipr2g",
+              "artist-title-mauro-dac77k",
+              "artist-title-i-d-a-5h8znf",
+              "artist-title-plea5ure-6okchm",
+              "artist-title-pul5e-qz1qim"
+            ],
+            "artistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTA",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          }
+        },
+        {
+          "run": "representative_pass_2",
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "wroteLineup": false,
+          "mutated": false,
+          "repairReason": "sufficient",
+          "importRecordId": "b1f775e0-03b9-4dca-bd07-de3e47b2c0c8",
+          "importSourceId": "source-bootshaus-koeln",
+          "before": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          },
+          "after": {
+            "artistIds": [
+              "artist-title-levi-c4xe5v"
+            ],
+            "artistNames": [
+              "LEVI"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lastRepresentativeRun": {
+    "run": "representative_pass_2",
+    "mutations": 0,
+    "completedAt": "2026-08-03T05:35:39.232Z"
+  }
+}

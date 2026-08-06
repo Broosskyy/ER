@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-08-04T14:32:31.741Z",
+  "taxonomyVersion": "phase4771-v1",
+  "repairableNow": 0,
+  "trueProjectionDefects": 0,
+  "cacheDefects": 0,
+  "canonicalEvidenceGaps": 17,
+  "blockerCounts": {
+    "repairable_now": 0,
+    "blocked_by_missing_public_evidence": 74,
+    "requires_external_source": 23,
+    "requires_connector": 75,
+    "requires_OCR": 130,
+    "requires_review": 31
+  },
+  "productionMutationsInThisRun": 0,
+  "phase47FormallyClosed": true
+}

@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-08-05T19:38:46.930Z",
+  "phase": "4.8.5",
+  "executionMode": "unified_website_integrated_shadow",
+  "productionMutationsInThisRun": 0,
+  "integrationBoundary": {
+    "module": "website/list-detail-enrichment.ts",
+    "hook": "maybeRunIntegratedShadowExtraction after detailDocument fetch",
+    "processor": "website/processor.ts",
+    "publishingPath": "legacy unchanged"
+  },
+  "runs": [
+    {
+      "sourceId": "source-bootshaus-koeln",
+      "legacyEventCount": 4,
+      "shadowEventCount": 4,
+      "fixtureFetchCount": 1,
+      "liveFetchCount": 4,
+      "performance": {
+        "detailPagesProcessed": 4,
+        "htmlReuseCount": 4,
+        "extraHttpRequests": 0,
+        "unifiedExtractionsMs": 15,
+        "unifiedFailures": 0,
+        "legacyFailures": 0,
+        "shadowArtifactBytes": 44296
+      }
+    },
+    {
+      "sourceId": "source-affenkaefig",
+      "legacyEventCount": 0,
+      "shadowEventCount": 0,
+      "fixtureFetchCount": 1,
+      "liveFetchCount": 0,
+      "performance": {
+        "detailPagesProcessed": 0,
+        "htmlReuseCount": 0,
+        "extraHttpRequests": 0,
+        "unifiedExtractionsMs": 0,
+        "unifiedFailures": 0,
+        "legacyFailures": 0,
+        "shadowArtifactBytes": 2
+      }
+    }
+  ]
+}

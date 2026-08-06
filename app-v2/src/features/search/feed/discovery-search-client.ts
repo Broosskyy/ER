@@ -33,6 +33,7 @@ function buildRequestKey(filters: EventFilters, location: DiscoverySearchLocatio
       ...filters,
       latitude: location.latitude,
       longitude: location.longitude,
+      locationScope: filters.locationScope,
       cursor: cursor?.encoded,
     },
   });
@@ -175,7 +176,6 @@ export async function loadDiscoverySearchSuggestions(
       text: normalized,
       limit: 5,
       locale: 'de',
-      city: location.city,
     });
 
     if (response.ok) {
@@ -206,6 +206,7 @@ function countAppliedFilters(filters: EventFilters): number {
   if (filters.dateRange !== 'all-dates') count += 1;
   if (filters.genres.length > 0) count += 1;
   if (filters.distance !== 'any') count += 1;
+  if (!filters.locationScope || filters.locationScope !== 'global' || filters.city.trim()) count += 1;
   if (filters.price !== 'any') count += 1;
   if (filters.venueEnvironment !== 'any') count += 1;
   if (filters.venueId) count += 1;

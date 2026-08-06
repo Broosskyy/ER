@@ -26,6 +26,7 @@ import {
 } from '@/features/admin/constants/admin-event-status';
 import { isFeaturedEventId } from '@/features/events/data/home-config';
 import type { EventLineupInput , EventLineupArtist } from '@/features/events/domain/event-lineup';
+import type { ResolvedCanonicalLineupEntry } from '@/features/aggregation/domain/canonical-lineup-entry';
 import { hasValidCoordinates } from '@/features/events/formatting/coordinates';
 import {
   EVENT_REFERENCE_DATE,
@@ -39,7 +40,7 @@ import { isPublishedStatus } from '@/features/events/types/event-status';
 import { buildEventSearchIndex } from '@/features/search/constants';
 
 export interface AdminEventSaveContext {
-  source?: 'cms' | 'moderation';
+  source?: 'cms' | 'moderation' | 'import';
 }
 
 export interface EventSearchFilters {
@@ -234,8 +235,19 @@ export class EventRepository {
 }
 
 export class AdminEventRepository {
+  private sourceEventIdResolver?: (sourceId: string) => Promise<Set<string>>;
+
+  bindSourceEventIdResolver(resolver: (sourceId: string) => Promise<Set<string>>): void {
+    this.sourceEventIdResolver = resolver;
+  }
+
   async list(params: AdminEventListParams): Promise<PaginatedResult<AdminEventRecord>> {
-    return getDatasourceBundle().events.listEvents(params);
+    let listParams = params;
+    if (params.sourceId && this.sourceEventIdResolver) {
+      const originEventIds = [...(await this.sourceEventIdResolver(params.sourceId))];
+      listParams = { ...params, originEventIds };
+    }
+    return getDatasourceBundle().events.listEvents(listParams);
   }
 
   async getById(id: string): Promise<AdminEventRecord | null> {
@@ -466,6 +478,23 @@ export class EventLineupRepository {
 
   deleteLineupForEvent(eventId: string): Promise<void> {
     return getDatasourceBundle().eventLineups.deleteLineupForEvent(eventId);
+  }
+}
+
+export class EventLineupEntryRepository {
+  getEntriesForEvent(eventId: string): Promise<ResolvedCanonicalLineupEntry[]> {
+    return getDatasourceBundle().eventLineupEntries.getEntriesForEvent(eventId);
+  }
+
+  getEntriesForEvents(eventIds: string[]): Promise<Map<string, ResolvedCanonicalLineupEntry[]>> {
+    return getDatasourceBundle().eventLineupEntries.getEntriesForEvents(eventIds);
+  }
+
+  replaceEventLineupEntries(
+    eventId: string,
+    entries: ResolvedCanonicalLineupEntry[],
+  ): Promise<ResolvedCanonicalLineupEntry[]> {
+    return getDatasourceBundle().eventLineupEntries.replaceEventLineupEntries(eventId, entries);
   }
 }
 

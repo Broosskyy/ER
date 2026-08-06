@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-08-03T08:00:40.751Z",
+  "invalidArtistCount": 0,
+  "invalidArtists": [],
+  "intoTheMadnessArtistCount": 0,
+  "mdmaOverlapCount": 0,
+  "mdmaStructuredEntries": 9,
+  "mdmaArtistCount": 18,
+  "mdmaOriginsOnMadnessActive": 0,
+  "kitkatInvalid": 0,
+  "acceptance": {
+    "intoTheMadnessNoMdmaOrigins": true,
+    "intoTheMadnessNoMdmaOverlap": true,
+    "mdmaStructuredEntriesOk": true,
+    "mdmaArtistCountOk": true,
+    "kitkatNoInvalidArtists": true,
+    "globalNoInvalidArtists": true
+  }
+}

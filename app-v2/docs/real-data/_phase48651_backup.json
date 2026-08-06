@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-08-06T01:17:53.804Z",
+  "phase": "4.8.6.5.1",
+  "productionMutationsInThisRun": 0,
+  "event": {
+    "id": "evt-1785389049895-4mb7dub",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "priceText": "",
+    "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "ticketStatus": "external_link"
+  },
+  "forbiddenFingerprint": {
+    "title": "Underland Essigfabrik 05.09.2026",
+    "descriptionHash": "12ae32cb1ec02d01",
+    "venueName": "Essigfabrik / Elektroküche",
+    "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+    "venueCity": "Köln",
+    "startDate": "2026-09-04T20:00:00+00:00",
+    "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "websiteUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+    "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+    "sourceId": "source-affenkaefig",
+    "organizerName": "Affenkäfig",
+    "genreLabelsHash": "74234e98afe7498f",
+    "latitude": 50.9517133,
+    "longitude": 6.9819222
+  }
+}

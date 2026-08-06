@@ -96,8 +96,31 @@ function extractFromMatchedTags(html: string, pattern: RegExp, attribute: string
   return results;
 }
 
+export function extractStructuredLineupSectionFromHtml(html: string): string | undefined {
+  const match = html.match(
+    /line[\s-]?up\s*:?\s*([\s\S]{0,3000}?)(?:▔{4,}|<\/(?:p|div|article|section)>|einlass\s+ab)/i,
+  );
+  if (!match?.[1]) {
+    return undefined;
+  }
+  const structured = htmlFragmentToStructuredText(match[1]).trim();
+  return structured.length > 0 ? structured : undefined;
+}
+
+export function htmlFragmentToStructuredText(fragment: string): string {
+  return fragment
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(?:p|li|div|tr|h[1-6])>/gi, '\n')
+    .replace(/<(?:p|li|div|tr|h[1-6])[^>]*>/gi, '\n')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/ *\n */g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function stripTags(value: string): string {
-  return value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  return htmlFragmentToStructuredText(value);
 }
 
 function escapeRegex(value: string): string {

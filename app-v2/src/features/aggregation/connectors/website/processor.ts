@@ -12,6 +12,8 @@ import {
 import { resolveWebsiteRunLimits } from '@/features/aggregation/connectors/website/limits';
 import { isAllowedDomain } from '@/features/aggregation/connectors/website/security';
 import { selectWebsiteStrategy } from '@/features/aggregation/connectors/website/strategy-selector';
+import { enrichWebsiteListEventsWithDetailPages } from '@/features/aggregation/connectors/website/list-detail-enrichment';
+import { enrichWebsiteEventsFromTextualSources } from '@/features/aggregation/connectors/website/website-textual-enrichment';
 import type {
   WebsiteDetectionReport,
   WebsiteExtractionResult,
@@ -19,17 +21,27 @@ import type {
 } from '@/features/aggregation/connectors/website/types';
 import type { RawImportedEvent } from '@/features/aggregation/connectors/types';
 import type { ImportSource } from '@/features/import/models/types';
+import {
+  beginIntegratedShadowSession,
+  endIntegratedShadowSession,
+  isIntegratedShadowEnabledForSource,
+  resolveIntegratedShadowConfig,
+  type IntegratedShadowConfigOverrides,
+  type IntegratedShadowSessionReport,
+} from '@/features/import/shadow/unified-website-integrated-shadow';
 
 export interface WebsiteProcessorInput {
   url: string;
   importSource: ImportSource;
   connectorKey: string;
   htmlOverride?: string;
+  integratedShadowOverrides?: IntegratedShadowConfigOverrides;
 }
 
 export interface WebsiteProcessorOutput {
   events: RawImportedEvent[];
   result: WebsiteExtractionResult;
+  integratedShadowReport?: IntegratedShadowSessionReport;
 }
 
 export class WebsiteProcessor {
@@ -48,6 +60,12 @@ export class WebsiteProcessor {
     const config = resolveWebsiteConnectorConfig(input.importSource.sourceConfig);
     const limits = resolveWebsiteRunLimits(config.limits);
     const fetchStartedAt = Date.now();
+    const sourceId = input.importSource.id;
+    const shadowConfig = resolveIntegratedShadowConfig(input.integratedShadowOverrides);
+    const shadowEnabled = isIntegratedShadowEnabledForSource(sourceId, input.integratedShadowOverrides);
+    if (shadowEnabled) {
+      beginIntegratedShadowSession(sourceId, input.importSource.name, shadowConfig);
+    }
 
     let document = await websiteFetchLayer.fetchDocument({
       url: input.url,
@@ -61,6 +79,9 @@ export class WebsiteProcessor {
     const strategy = selectWebsiteStrategy(document, config);
     const validation = strategy.validateConfiguration(config);
     if (!validation.valid) {
+      const integratedShadowReport = shadowEnabled
+        ? endIntegratedShadowSession() ?? undefined
+        : undefined;
       return {
         events: [],
         result: {
@@ -82,6 +103,7 @@ export class WebsiteProcessor {
             warnings: validation.issues.map((issue) => issue.message),
           },
         },
+        integratedShadowReport,
       };
     }
 
@@ -133,8 +155,36 @@ export class WebsiteProcessor {
     const limitedEvents = allEvents.slice(0, limits.maxEventsPerRun);
     const extractionDurationMs = Date.now() - extractionStartedAt;
 
+    let finalEvents = limitedEvents;
+    if (limits.maxDetailPages > 0 && strategy.key === 'html_selector') {
+      const enrichment = await enrichWebsiteListEventsWithDetailPages({
+        events: limitedEvents,
+        config,
+        limits,
+        baseUrl: input.url,
+        connectorKey: input.connectorKey,
+        fetchDetailPage,
+        detailPagesAlreadyFetched: detailPagesFetched,
+        integratedShadow: shadowEnabled
+          ? {
+              sourceId,
+              sourceName: input.importSource.name,
+              configOverrides: input.integratedShadowOverrides,
+            }
+          : undefined,
+      });
+      finalEvents = enrichment.events;
+      if (enrichment.diagnostics.enriched > 0) {
+        detection.warnings.push(
+          `Detail enrichment applied to ${enrichment.diagnostics.enriched} list events.`,
+        );
+      }
+    }
+
+    finalEvents = enrichWebsiteEventsFromTextualSources(finalEvents);
+
     const result: WebsiteExtractionResult = {
-      events: limitedEvents,
+      events: finalEvents,
       detection,
       diagnostics: {
         fetchDurationMs: detectionStartedAt - fetchStartedAt,
@@ -145,17 +195,20 @@ export class WebsiteProcessor {
         strategy: strategy.key,
         confidence: detection.detectedStrategies.find((entry) => entry.key === strategy.key)?.confidence ?? 0,
         candidateCount: allEvents.length,
-        validEventCount: limitedEvents.length,
-        skippedCount: allEvents.length - limitedEvents.length,
+        validEventCount: finalEvents.length,
+        skippedCount: allEvents.length - finalEvents.length,
         detailPagesFetched,
         paginationPagesFetched: paginationState.pagesFetched,
         warnings: detection.warnings,
       },
     };
 
+    const integratedShadowReport = shadowEnabled ? endIntegratedShadowSession() ?? undefined : undefined;
+
     return {
-      events: mapRawWebsiteEvents(limitedEvents, input.connectorKey, config.transforms),
+      events: mapRawWebsiteEvents(finalEvents, input.connectorKey, config.transforms),
       result,
+      integratedShadowReport,
     };
   }
 }

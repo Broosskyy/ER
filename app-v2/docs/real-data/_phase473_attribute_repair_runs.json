@@ -1,0 +1,3064 @@
+{
+  "runs": [
+    {
+      "at": "2026-08-03T18:00:27.689Z",
+      "pass": 1,
+      "mutations": 19,
+      "details": [
+        {
+          "eventId": "evt-1785506479046-0iqt1i1",
+          "title": "Gestört aber GeiL - Das OpenAir 2027",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:58.739Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:58.739Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506448834-4c5s8xl",
+          "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "2 Floors",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:59.013Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506421633-m1ktkpf",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "3 Floors",
+                "value": 3,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "3 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:00.164Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "3 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 3,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506419485-ty33rrb",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "2 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:00.237Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506404218-hgmd9nz",
+          "title": "Vision Ekstase Open Air",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "lehmannclub",
+                  "context": "Open Air",
+                  "origins": [
+                    "lehmannclub"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.008Z",
+                  "sourceId": "source-ticket-io-lehmannclub",
+                  "sourceName": "lehmannclub",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.008Z",
+                  "sourceId": "source-ticket-io-lehmannclub",
+                  "sourceName": "lehmannclub",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506415247-c9ykti2",
+          "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "2 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.603Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339389636-v1tq3hw",
+          "title": "SA * 22.08.2026 | KitKatClub",
+          "pass": 1,
+          "reviewRequired": true,
+          "conflicts": [
+            {
+              "type": "outdoor",
+              "values": [
+                "true",
+                "outdoor"
+              ]
+            }
+          ],
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 22+",
+                "value": "22+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 22+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 22+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Outdoor",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Outdoor",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                },
+                "reviewRequired": true
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "22+"
+          },
+          "badges": [
+            {
+              "id": "attr-live",
+              "type": "live",
+              "label": "Live",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506470445-pdpd3u6",
+          "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.753Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.753Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506468322-oxv0sw4",
+          "title": "Gestört aber GeiL - Das OpenAir 2026",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.871Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.871Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339424521-tn10siz",
+          "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "festival",
+                "label": "Festival",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Festival",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:03.349Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Festival",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-festival",
+              "type": "festival",
+              "label": "Festival",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339397255-frpjss3",
+          "title": "Unreal Weekender Night I - September 2026",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "weekender",
+                "label": "Weekender",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.110Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Weekender",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-weekender",
+              "type": "weekender",
+              "label": "Weekender",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339407876-uqm3mz0",
+          "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.168Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-live",
+              "type": "live",
+              "label": "Live",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339372839-cwbr6ya",
+          "title": "SA * 24.10.2026 | KitKatClub",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.400Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.400Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "badges": [
+            {
+              "id": "attr-live",
+              "type": "live",
+              "label": "Live",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339283846-89x0jcd",
+          "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.579Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "showcase",
+                "label": "Showcase",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.579Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "showcase",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "badges": [
+            {
+              "id": "attr-showcase",
+              "type": "showcase",
+              "label": "Showcase",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339412398-hq6217j",
+          "title": "Unreal Weekender Night II - September 2026",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "weekender",
+                "label": "Weekender",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.634Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Weekender",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-weekender",
+              "type": "weekender",
+              "label": "Weekender",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339398765-9lptzhg",
+          "title": "Blacklist Festival 2026",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "festival",
+                "label": "Festival",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Festival",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.748Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Festival",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-festival",
+              "type": "festival",
+              "label": "Festival",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.863Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "boat",
+                "label": "Boat",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.863Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "on a Ship",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "badges": [
+            {
+              "id": "attr-boat",
+              "type": "boat",
+              "label": "Boat",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339418526-dn9f7g0",
+          "title": "Bootshaus on a Ship Vol. IV",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "boat",
+                "label": "Boat",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.919Z",
+                  "sourceId": "source-bootshaus-ticket-io",
+                  "sourceName": "Bootshaus Ticket.io",
+                  "rawEvidence": "on a Ship",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-boat",
+              "type": "boat",
+              "label": "Boat",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "pass": 1,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": null,
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "3 Floors",
+                "value": 3,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "ticket_kings_html",
+                  "context": "3 Floors",
+                  "origins": [
+                    "ticket_kings_html"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "3 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "indoor",
+                "label": "Indoor / Outdoor",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.9,
+                "provenance": {
+                  "origin": "ticket_kings_html",
+                  "context": "Indoor / Outdoor",
+                  "origins": [
+                    "ticket_kings_html"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "Indoor / Outdoor",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "indoor_outdoor",
+                "label": "Indoor & Outdoor",
+                "value": "hybrid",
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "sourceMetadata.venueEnvironment",
+                  "origins": [
+                    "sourceMetadata.venueEnvironment"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "hybrid",
+                  "extractionStrategy": "connector_metadata_venue_environment"
+                }
+              }
+            ],
+            "floor_count": 3,
+            "stage_count": null,
+            "venue_environment": "hybrid",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            },
+            {
+              "id": "attr-indoor",
+              "type": "indoor",
+              "label": "Indoor",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-indoor_outdoor",
+              "type": "indoor_outdoor",
+              "label": "Indoor & Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": "2026-08-03T18:00:40.903Z",
+      "pass": 2,
+      "mutations": 19,
+      "details": [
+        {
+          "eventId": "evt-1785506479046-0iqt1i1",
+          "title": "Gestört aber GeiL - Das OpenAir 2027",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:58.739Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:58.739Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:58.739Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:58.739Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506448834-4c5s8xl",
+          "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "2 Floors",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:59.013Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "2 Floors",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T17:59:59.013Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506421633-m1ktkpf",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "3 Floors",
+                "value": 3,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "3 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:00.164Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "3 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 3,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "3 Floors",
+                "value": 3,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "3 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:00.164Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "3 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 3,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506419485-ty33rrb",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "2 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:00.237Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "2 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:00.237Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506404218-hgmd9nz",
+          "title": "Vision Ekstase Open Air",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "lehmannclub",
+                  "context": "Open Air",
+                  "origins": [
+                    "lehmannclub"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.008Z",
+                  "sourceId": "source-ticket-io-lehmannclub",
+                  "sourceName": "lehmannclub",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.008Z",
+                  "sourceId": "source-ticket-io-lehmannclub",
+                  "sourceName": "lehmannclub",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "lehmannclub",
+                  "context": "Open Air",
+                  "origins": [
+                    "lehmannclub"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.008Z",
+                  "sourceId": "source-ticket-io-lehmannclub",
+                  "sourceName": "lehmannclub",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.008Z",
+                  "sourceId": "source-ticket-io-lehmannclub",
+                  "sourceName": "lehmannclub",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506415247-c9ykti2",
+          "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "2 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.603Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "2 Floors",
+                "value": 2,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "area51events",
+                  "context": "2 Floors",
+                  "origins": [
+                    "area51events"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.603Z",
+                  "sourceId": "source-ticket-io-area51events",
+                  "sourceName": "area51events",
+                  "rawEvidence": "2 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": 2,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339389636-v1tq3hw",
+          "title": "SA * 22.08.2026 | KitKatClub",
+          "pass": 2,
+          "reviewRequired": true,
+          "conflicts": [
+            {
+              "type": "outdoor",
+              "values": [
+                "true",
+                "outdoor"
+              ]
+            }
+          ],
+          "before": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 22+",
+                "value": "22+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 22+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 22+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Outdoor",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Outdoor",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                },
+                "reviewRequired": true
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "22+"
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 22+",
+                "value": "22+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 22+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 22+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Outdoor",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:01.730Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Outdoor",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                },
+                "reviewRequired": true
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "22+"
+          },
+          "badges": [
+            {
+              "id": "attr-live",
+              "type": "live",
+              "label": "Live",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506470445-pdpd3u6",
+          "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.753Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.753Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.753Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.753Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785506468322-oxv0sw4",
+          "title": "Gestört aber GeiL - Das OpenAir 2026",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.871Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.871Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "open_air",
+                "label": "Open Air",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "hmg-concerts",
+                  "context": "Open Air",
+                  "origins": [
+                    "hmg-concerts"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.871Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "Open Air",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "outdoor",
+                "label": "Outdoor",
+                "value": "outdoor",
+                "domain": "venue_environment",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "description_text",
+                  "origins": [
+                    "description_text"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:02.871Z",
+                  "sourceId": "source-ticket-io-hmg-concerts",
+                  "sourceName": "hmg-concerts",
+                  "rawEvidence": "outdoor",
+                  "extractionStrategy": "textual_attribute_parser"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": "outdoor",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-open_air",
+              "type": "open_air",
+              "label": "Open Air",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-outdoor",
+              "type": "outdoor",
+              "label": "Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339424521-tn10siz",
+          "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "festival",
+                "label": "Festival",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Festival",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:03.349Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Festival",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "festival",
+                "label": "Festival",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Festival",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:03.349Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Festival",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-festival",
+              "type": "festival",
+              "label": "Festival",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339397255-frpjss3",
+          "title": "Unreal Weekender Night I - September 2026",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "weekender",
+                "label": "Weekender",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.110Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Weekender",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "weekender",
+                "label": "Weekender",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.110Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Weekender",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-weekender",
+              "type": "weekender",
+              "label": "Weekender",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339407876-uqm3mz0",
+          "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.168Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.168Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-live",
+              "type": "live",
+              "label": "Live",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339372839-cwbr6ya",
+          "title": "SA * 24.10.2026 | KitKatClub",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.400Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.400Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.400Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "live",
+                "label": "Live",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.7,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Live",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.400Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Live",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "badges": [
+            {
+              "id": "attr-live",
+              "type": "live",
+              "label": "Live",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339283846-89x0jcd",
+          "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.579Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "showcase",
+                "label": "Showcase",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.579Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "showcase",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.579Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "showcase",
+                "label": "Showcase",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.579Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "showcase",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "badges": [
+            {
+              "id": "attr-showcase",
+              "type": "showcase",
+              "label": "Showcase",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339412398-hq6217j",
+          "title": "Unreal Weekender Night II - September 2026",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "weekender",
+                "label": "Weekender",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.634Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Weekender",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "weekender",
+                "label": "Weekender",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.634Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Weekender",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-weekender",
+              "type": "weekender",
+              "label": "Weekender",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339398765-9lptzhg",
+          "title": "Blacklist Festival 2026",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "festival",
+                "label": "Festival",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Festival",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.748Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Festival",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "festival",
+                "label": "Festival",
+                "value": true,
+                "domain": "event_type",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Festival",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.748Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Festival",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-festival",
+              "type": "festival",
+              "label": "Festival",
+              "domain": "event_type"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.863Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "boat",
+                "label": "Boat",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.863Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "on a Ship",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "accessibility",
+                "label": "Age 18+",
+                "value": "18+",
+                "domain": "visitor_info",
+                "confidence": 0.8,
+                "provenance": {
+                  "origin": "website_description",
+                  "context": "Age 18+",
+                  "origins": [
+                    "website_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.863Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "Age 18+",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "boat",
+                "label": "Boat",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.863Z",
+                  "sourceId": "source-bootshaus-koeln",
+                  "sourceName": "Bootshaus Köln",
+                  "rawEvidence": "on a Ship",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": "18+"
+          },
+          "badges": [
+            {
+              "id": "attr-boat",
+              "type": "boat",
+              "label": "Boat",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785339418526-dn9f7g0",
+          "title": "Bootshaus on a Ship Vol. IV",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "boat",
+                "label": "Boat",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.919Z",
+                  "sourceId": "source-bootshaus-ticket-io",
+                  "sourceName": "Bootshaus Ticket.io",
+                  "rawEvidence": "on a Ship",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "boat",
+                "label": "Boat",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.75,
+                "provenance": {
+                  "origin": "title_or_description",
+                  "origins": [
+                    "title_or_description"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:04.919Z",
+                  "sourceId": "source-bootshaus-ticket-io",
+                  "sourceName": "Bootshaus Ticket.io",
+                  "rawEvidence": "on a Ship",
+                  "extractionStrategy": "generic_text_pattern"
+                }
+              }
+            ],
+            "floor_count": null,
+            "stage_count": null,
+            "venue_environment": null,
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-boat",
+              "type": "boat",
+              "label": "Boat",
+              "domain": "venue_environment"
+            }
+          ]
+        },
+        {
+          "eventId": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "pass": 2,
+          "reviewRequired": false,
+          "before": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "3 Floors",
+                "value": 3,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "ticket_kings_html",
+                  "context": "3 Floors",
+                  "origins": [
+                    "ticket_kings_html"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "3 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "indoor",
+                "label": "Indoor / Outdoor",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.9,
+                "provenance": {
+                  "origin": "ticket_kings_html",
+                  "context": "Indoor / Outdoor",
+                  "origins": [
+                    "ticket_kings_html"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "Indoor / Outdoor",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "indoor_outdoor",
+                "label": "Indoor & Outdoor",
+                "value": "hybrid",
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "sourceMetadata.venueEnvironment",
+                  "origins": [
+                    "sourceMetadata.venueEnvironment"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "hybrid",
+                  "extractionStrategy": "connector_metadata_venue_environment"
+                }
+              }
+            ],
+            "floor_count": 3,
+            "stage_count": null,
+            "venue_environment": "hybrid",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "after": {
+            "event_attributes": [
+              {
+                "type": "floor_count",
+                "label": "3 Floors",
+                "value": 3,
+                "domain": "structure",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "ticket_kings_html",
+                  "context": "3 Floors",
+                  "origins": [
+                    "ticket_kings_html"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "3 Floors",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "indoor",
+                "label": "Indoor / Outdoor",
+                "value": true,
+                "domain": "venue_environment",
+                "confidence": 0.9,
+                "provenance": {
+                  "origin": "ticket_kings_html",
+                  "context": "Indoor / Outdoor",
+                  "origins": [
+                    "ticket_kings_html"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "Indoor / Outdoor",
+                  "extractionStrategy": "legacy_sourced_event_attribute"
+                }
+              },
+              {
+                "type": "indoor_outdoor",
+                "label": "Indoor & Outdoor",
+                "value": "hybrid",
+                "domain": "venue_environment",
+                "confidence": 0.85,
+                "provenance": {
+                  "origin": "sourceMetadata.venueEnvironment",
+                  "origins": [
+                    "sourceMetadata.venueEnvironment"
+                  ],
+                  "mergedAt": "2026-08-03T18:00:05.161Z",
+                  "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+                  "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+                  "rawEvidence": "hybrid",
+                  "extractionStrategy": "connector_metadata_venue_environment"
+                }
+              }
+            ],
+            "floor_count": 3,
+            "stage_count": null,
+            "venue_environment": "hybrid",
+            "last_entry_at": null,
+            "dress_code": null,
+            "accessibility_notes": null
+          },
+          "badges": [
+            {
+              "id": "attr-floor_count",
+              "type": "floor_count",
+              "label": "Multi Floor",
+              "domain": "structure"
+            },
+            {
+              "id": "attr-indoor",
+              "type": "indoor",
+              "label": "Indoor",
+              "domain": "venue_environment"
+            },
+            {
+              "id": "attr-indoor_outdoor",
+              "type": "indoor_outdoor",
+              "label": "Indoor & Outdoor",
+              "domain": "venue_environment"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

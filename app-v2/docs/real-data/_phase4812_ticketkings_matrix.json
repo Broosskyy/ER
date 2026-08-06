@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-08-04T20:28:51.464Z",
+  "productionMutationsInThisRun": 0,
+  "sampleSize": 5,
+  "results": [
+    {
+      "eventIds": [
+        "evt-1785389055557-ux20897"
+      ],
+      "fields": [
+        "ticket_destination"
+      ],
+      "hasCheckoutRelation": false,
+      "httpStatus": 404
+    },
+    {
+      "eventIds": [
+        "evt-1785443911160-owt97y3"
+      ],
+      "fields": [
+        "ticket_destination",
+        "title",
+        "venue",
+        "date_time",
+        "description",
+        "artists",
+        "price",
+        "ticket_phases"
+      ],
+      "hasCheckoutRelation": true,
+      "httpStatus": 200
+    },
+    {
+      "eventIds": [
+        "evt-1785443914377-7g9l545"
+      ],
+      "fields": [
+        "ticket_destination",
+        "title",
+        "venue",
+        "date_time",
+        "description",
+        "artists",
+        "price",
+        "ticket_phases"
+      ],
+      "hasCheckoutRelation": true,
+      "httpStatus": 200
+    },
+    {
+      "eventIds": [
+        "evt-1785389054496-ns9b6la"
+      ],
+      "fields": [
+        "ticket_destination",
+        "title",
+        "venue",
+        "date_time",
+        "description",
+        "artists",
+        "price",
+        "ticket_phases"
+      ],
+      "hasCheckoutRelation": true,
+      "httpStatus": 200
+    },
+    {
+      "eventIds": [
+        "evt-1785389055557-ux20897"
+      ],
+      "fields": [
+        "ticket_destination",
+        "title",
+        "venue",
+        "date_time",
+        "description",
+        "genre",
+        "artists",
+        "price",
+        "ticket_phases"
+      ],
+      "hasCheckoutRelation": true,
+      "httpStatus": 200
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-import { InMemoryEntityAliasStore } from '@/features/entity-resolution/entity-alias-store';
+import { createEntityAliasStore } from '@/features/entity-resolution/create-entity-alias-store';
 
-/** Frontend profile runtime alias store (in-memory until persistence wiring lands). */
-export const entityAliasStore = new InMemoryEntityAliasStore();
+/**
+ * Consumer profile runtime uses the same singleton alias store as registry matching.
+ */
+export const entityAliasStore = createEntityAliasStore();

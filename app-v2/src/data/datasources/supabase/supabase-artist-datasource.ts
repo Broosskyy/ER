@@ -29,7 +29,10 @@ export function createSupabaseArtistDatasource(): ArtistDatasource {
       return fetchAllRows();
     },
     async getPublished() {
-      const { data, error } = await table().select('*').eq('status', 'published');
+      const { data, error } = await table()
+        .select('*')
+        .eq('status', 'published')
+        .eq('lineup_legacy_artifact', false);
       if (error) {
         throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
       }
@@ -47,6 +50,7 @@ export function createSupabaseArtistDatasource(): ArtistDatasource {
         .select('*')
         .eq('id', id)
         .eq('status', 'published')
+        .eq('lineup_legacy_artifact', false)
         .maybeSingle();
       if (error) {
         throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });
@@ -65,6 +69,7 @@ export function createSupabaseArtistDatasource(): ArtistDatasource {
         .select('*')
         .eq('slug', slug)
         .eq('status', 'published')
+        .eq('lineup_legacy_artifact', false)
         .maybeSingle();
       if (error) {
         throw new AppError(error.message, { code: 'NETWORK', retryable: true, cause: error });

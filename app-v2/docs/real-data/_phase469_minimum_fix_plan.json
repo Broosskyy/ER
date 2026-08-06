@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-08-03T09:43:55.307Z",
+  "readOnly": true,
+  "priorities": [
+    {
+      "priority": "P0",
+      "fixes": [
+        {
+          "id": "event_ownership_isolation",
+          "rootCauses": [
+            "A_WRONG_SOURCE_EVENT_MATCH",
+            "B_CROSS_EVENT_STATE_LEAKAGE"
+          ],
+          "affectedCount": 0,
+          "modules": [
+            "import/matching",
+            "import-event-publish-service",
+            "lineup-projection-integrity"
+          ],
+          "migrationRequired": false,
+          "productionRepairRequired": true,
+          "rollback": "restore import match + lineup from backup"
+        },
+        {
+          "id": "block_prose_artist_creation",
+          "rootCauses": [
+            "G_DESCRIPTION_AS_LINEUP",
+            "I_ARTIST_QUALITY_GATE_BYPASSED"
+          ],
+          "affectedCount": 1,
+          "modules": [
+            "lineup-text-parser",
+            "import-title-lineup-resolver",
+            "lineup-artist-quality"
+          ],
+          "migrationRequired": false,
+          "productionRepairRequired": true,
+          "rollback": "detach invalid event_artists links; mark legacy artifacts"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "fixes": [
+        {
+          "id": "single_structured_writer",
+          "rootCauses": [
+            "L_STRUCTURED_PERSISTENCE_SKIPPED",
+            "M_LEGACY_COMPATIBILITY_CORRUPTION"
+          ],
+          "affectedCount": 0,
+          "modules": [
+            "import-publish-lineup-writer",
+            "event-lineup-service"
+          ],
+          "migrationRequired": false,
+          "productionRepairRequired": true,
+          "rollback": "re-run structured writer from import evidence"
+        },
+        {
+          "id": "demote_title_inference",
+          "rootCauses": [
+            "H_TITLE_INFERENCE_PROMOTED"
+          ],
+          "affectedCount": 0,
+          "modules": [
+            "import-publish-lineup-writer",
+            "import-title-lineup-resolver"
+          ],
+          "migrationRequired": false,
+          "productionRepairRequired": true,
+          "rollback": "remove title-derived artists from affected events"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "fixes": [
+        {
+          "id": "sync_compatibility_projection",
+          "rootCauses": [
+            "M_LEGACY_COMPATIBILITY_CORRUPTION",
+            "N_API_PROJECTION_MIXED"
+          ],
+          "affectedCount": 0,
+          "modules": [
+            "structured-lineup-primary",
+            "supabase-datasource"
+          ],
+          "migrationRequired": false,
+          "productionRepairRequired": true,
+          "rollback": "re-derive event_artists from structured entries"
+        }
+      ]
+    },
+    {
+      "priority": "P3",
+      "fixes": [
+        {
+          "id": "flyer_reconciliation_when_blocked",
+          "rootCauses": [
+            "Q_FLYER_EVIDENCE_REQUIRED",
+            "C_DETAIL_SOURCE_INACCESSIBLE",
+            "E_HTML_STRUCTURE_LOST"
+          ],
+          "affectedCount": 38,
+          "modules": [
+            "flyer-evidence-metadata",
+            "import-structured-lineup-from-record"
+          ],
+          "migrationRequired": false,
+          "productionRepairRequired": true,
+          "rollback": "restore lineup backup; reject flyer evidence"
+        }
+      ]
+    }
+  ]
+}

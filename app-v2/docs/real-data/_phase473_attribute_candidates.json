@@ -1,0 +1,571 @@
+[
+  {
+    "eventId": "evt-1785506479046-0iqt1i1",
+    "title": "Gestört aber GeiL - Das OpenAir 2027",
+    "candidates": [
+      {
+        "type": "open_air",
+        "normalizedValue": true,
+        "label": "Open Air",
+        "domain": "venue_environment",
+        "rawEvidence": "Open Air",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "hmg-concerts",
+        "origin": "hmg-concerts",
+        "confidence": 0.85,
+        "context": "Open Air",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-hmg-concerts",
+          "sourceName": "hmg-concerts",
+          "origin": "hmg-concerts",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Open Air",
+          "context": "Open Air"
+        }
+      },
+      {
+        "type": "outdoor",
+        "normalizedValue": "outdoor",
+        "label": "Outdoor",
+        "domain": "venue_environment",
+        "rawEvidence": "outdoor",
+        "extractionStrategy": "textual_attribute_parser",
+        "source": "hmg-concerts",
+        "origin": "description_text",
+        "confidence": 0.8,
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-hmg-concerts",
+          "sourceName": "hmg-concerts",
+          "origin": "description_text",
+          "extractionStrategy": "textual_attribute_parser",
+          "rawEvidence": "outdoor"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506424190-nk60eqi",
+    "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506450927-qr2is1j",
+    "title": "DISKO TOTAL - Season Opening",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785389056612-4cwtdmo",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506448834-4c5s8xl",
+    "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+    "candidates": [
+      {
+        "type": "floor_count",
+        "normalizedValue": 2,
+        "label": "2 Floors",
+        "domain": "structure",
+        "rawEvidence": "2 Floors",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "hmg-concerts",
+        "origin": "hmg-concerts",
+        "confidence": 0.85,
+        "context": "2 Floors",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-hmg-concerts",
+          "sourceName": "hmg-concerts",
+          "origin": "hmg-concerts",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "2 Floors",
+          "context": "2 Floors"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506368264-j5xf3dn",
+    "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506370530-bfvzuo6",
+    "title": "KNOCKOUT by PLEA5UREPUL5E",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506366010-1npnra9",
+    "title": "100% SCHRANZ pres. NIKOLINA",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506439487-2hr731q",
+    "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506421633-m1ktkpf",
+    "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+    "candidates": [
+      {
+        "type": "floor_count",
+        "normalizedValue": 3,
+        "label": "3 Floors",
+        "domain": "structure",
+        "rawEvidence": "3 Floors",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "area51events",
+        "origin": "area51events",
+        "confidence": 0.85,
+        "context": "3 Floors",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-area51events",
+          "sourceName": "area51events",
+          "origin": "area51events",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "3 Floors",
+          "context": "3 Floors"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506419485-ty33rrb",
+    "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+    "candidates": [
+      {
+        "type": "floor_count",
+        "normalizedValue": 2,
+        "label": "2 Floors",
+        "domain": "structure",
+        "rawEvidence": "2 Floors",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "area51events",
+        "origin": "area51events",
+        "confidence": 0.85,
+        "context": "2 Floors",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-area51events",
+          "sourceName": "area51events",
+          "origin": "area51events",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "2 Floors",
+          "context": "2 Floors"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506435192-azaw5p4",
+    "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506433053-ezr3ujo",
+    "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506417389-t2f9fu4",
+    "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506446703-7r57ode",
+    "title": "WESTBAM - SAVE THE RAVE 2026",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506444104-084yf4g",
+    "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506463791-14vrmd5",
+    "title": "ELECTRIC KINGDOM",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506455240-97ea7l5",
+    "title": "Stereoact & Lena Marie Engel",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506441963-td8znfi",
+    "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506457386-elpnk6o",
+    "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506459510-zx4rw9y",
+    "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506461636-oeo9yp4",
+    "title": "WESTBAM - SAVE THE RAVE 2027",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339374416-shc7e7c",
+    "title": "CHROME COLOGNE",
+    "candidates": [
+      {
+        "type": "accessibility",
+        "normalizedValue": "18+",
+        "label": "Age 18+",
+        "domain": "visitor_info",
+        "rawEvidence": "Age 18+",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "Bootshaus Köln",
+        "origin": "website_description",
+        "confidence": 0.8,
+        "context": "Age 18+",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "website_description",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Age 18+",
+          "context": "Age 18+"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506404218-hgmd9nz",
+    "title": "Vision Ekstase Open Air",
+    "candidates": [
+      {
+        "type": "open_air",
+        "normalizedValue": true,
+        "label": "Open Air",
+        "domain": "venue_environment",
+        "rawEvidence": "Open Air",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "lehmannclub",
+        "origin": "lehmannclub",
+        "confidence": 0.85,
+        "context": "Open Air",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-lehmannclub",
+          "sourceName": "lehmannclub",
+          "origin": "lehmannclub",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Open Air",
+          "context": "Open Air"
+        }
+      },
+      {
+        "type": "outdoor",
+        "normalizedValue": "outdoor",
+        "label": "Outdoor",
+        "domain": "venue_environment",
+        "rawEvidence": "outdoor",
+        "extractionStrategy": "textual_attribute_parser",
+        "source": "lehmannclub",
+        "origin": "description_text",
+        "confidence": 0.8,
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-lehmannclub",
+          "sourceName": "lehmannclub",
+          "origin": "description_text",
+          "extractionStrategy": "textual_attribute_parser",
+          "rawEvidence": "outdoor"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506410605-aqbkr1h",
+    "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339413919-ix5umo9",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506453153-zaynzo6",
+    "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506402039-8mam28r",
+    "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785443904478-dg3lk70",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506406388-usnae2d",
+    "title": "WHNZMMR SESSION",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339377456-7miaf2o",
+    "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339386612-rjr91mv",
+    "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339409363-puvo8be",
+    "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506415247-c9ykti2",
+    "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+    "candidates": [
+      {
+        "type": "floor_count",
+        "normalizedValue": 2,
+        "label": "2 Floors",
+        "domain": "structure",
+        "rawEvidence": "2 Floors",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "area51events",
+        "origin": "area51events",
+        "confidence": 0.85,
+        "context": "2 Floors",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-ticket-io-area51events",
+          "sourceName": "area51events",
+          "origin": "area51events",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "2 Floors",
+          "context": "2 Floors"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785389049895-4mb7dub",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339389636-v1tq3hw",
+    "title": "SA * 22.08.2026 | KitKatClub",
+    "candidates": [
+      {
+        "type": "outdoor",
+        "normalizedValue": true,
+        "label": "Outdoor",
+        "domain": "venue_environment",
+        "rawEvidence": "Outdoor",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "Bootshaus Köln",
+        "origin": "website_description",
+        "confidence": 0.8,
+        "context": "Outdoor",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "website_description",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Outdoor",
+          "context": "Outdoor"
+        }
+      },
+      {
+        "type": "live",
+        "normalizedValue": true,
+        "label": "Live",
+        "domain": "event_type",
+        "rawEvidence": "Live",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "Bootshaus Köln",
+        "origin": "website_description",
+        "confidence": 0.7,
+        "context": "Live",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "website_description",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Live",
+          "context": "Live"
+        }
+      },
+      {
+        "type": "accessibility",
+        "normalizedValue": "22+",
+        "label": "Age 22+",
+        "domain": "visitor_info",
+        "rawEvidence": "Age 22+",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "Bootshaus Köln",
+        "origin": "website_description",
+        "confidence": 0.8,
+        "context": "Age 22+",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "website_description",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Age 22+",
+          "context": "Age 22+"
+        }
+      },
+      {
+        "type": "outdoor",
+        "normalizedValue": "outdoor",
+        "label": "Outdoor",
+        "domain": "venue_environment",
+        "rawEvidence": "outdoor",
+        "extractionStrategy": "connector_metadata_venue_environment",
+        "source": "Bootshaus Köln",
+        "origin": "sourceMetadata.venueEnvironment",
+        "confidence": 0.85,
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "sourceMetadata.venueEnvironment",
+          "extractionStrategy": "connector_metadata_venue_environment",
+          "rawEvidence": "outdoor"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785389053437-3oxde27",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339395746-in3ijod",
+    "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+    "candidates": [
+      {
+        "type": "accessibility",
+        "normalizedValue": "18+",
+        "label": "Age 18+",
+        "domain": "visitor_info",
+        "rawEvidence": "Age 18+",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "Bootshaus Köln",
+        "origin": "website_description",
+        "confidence": 0.8,
+        "context": "Age 18+",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "website_description",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Age 18+",
+          "context": "Age 18+"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785339382025-cazpz3d",
+    "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339388133-sq2ykbm",
+    "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506485508-ill0alw",
+    "title": "Forced to Mode",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339385102-xocczqs",
+    "title": "NEONSPLASH Paint-Rave",
+    "candidates": [
+      {
+        "type": "accessibility",
+        "normalizedValue": "18+",
+        "label": "Age 18+",
+        "domain": "visitor_info",
+        "rawEvidence": "Age 18+",
+        "extractionStrategy": "legacy_sourced_event_attribute",
+        "source": "Bootshaus Köln",
+        "origin": "website_description",
+        "confidence": 0.8,
+        "context": "Age 18+",
+        "explicit": true,
+        "provenance": {
+          "sourceId": "source-bootshaus-koeln",
+          "sourceName": "Bootshaus Köln",
+          "origin": "website_description",
+          "extractionStrategy": "legacy_sourced_event_attribute",
+          "rawEvidence": "Age 18+",
+          "context": "Age 18+"
+        }
+      }
+    ]
+  },
+  {
+    "eventId": "evt-1785506384006-ve662md",
+    "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785339403309-prk3iiz",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506428527-m5ugmjh",
+    "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506426366-bujnxz7",
+    "title": "TECHNO DAMPFER Köln w/ Saltysis",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785389052337-0gv1iz1",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506466137-qve932v",
+    "title": "STEREOACT & LENA MARIE ENGEL live",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506483348-x67wunx",
+    "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+    "candidates": []
+  },
+  {
+    "eventId": "evt-1785506363578-4wh50a1",
+    "title": "FATALITY pres. DEXPHASE",
+    "candidates": []
+  }
+]

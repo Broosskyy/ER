@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-08-05T23:34:27.801Z",
+  "phase": "4.8.6.2",
+  "productionMutationsInThisRun": 0,
+  "eventId": "evt-1785339421539-k3swcrl",
+  "pipeline": {
+    "publicList": {
+      "surface": "list_overview_row",
+      "priceText": "ab 23,90 €",
+      "priceAmount": 23.9,
+      "soldOut": false,
+      "rawSnippet": "Tickets ab 23,90 Euro",
+      "strategyVersion": "phase4721-v1"
+    },
+    "connectorOutput": {
+      "priceText": "ab 23,90 €"
+    },
+    "enrichmentLinkage": "simulated fill-only",
+    "canonicalWriterPatch": {
+      "priceText": "ab 23,90 €"
+    },
+    "projection": {
+      "sanitizedDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+      "shortDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+      "displayPriceText": "ab 23,90 €",
+      "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "ticketProviderLabel": "Ticket.io",
+      "ticketAvailability": "external_link",
+      "isSoldOut": false,
+      "venueLabel": "Bootshaus",
+      "cityLabel": "Köln",
+      "locationLabelComma": "Bootshaus, Köln",
+      "locationLabelDot": "Bootshaus · Köln",
+      "hasCoordinates": false,
+      "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "galleryImageUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+      ],
+      "genres": [
+        "BASSHOUSE",
+        "ELECTRO",
+        "House",
+        "PROGRESSIVE HOUSE",
+        "EDM",
+        "DANCE"
+      ],
+      "knownArtistNames": [],
+      "lineupEntries": [],
+      "lineupCompleteness": "none",
+      "lineupSectionTitle": "LINE-UP",
+      "hasKnownLineup": false,
+      "qualityState": "complete",
+      "sourceAttributionLabel": "Bootshaus"
+    }
+  },
+  "before": {
+    "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "title": "R3HAB pres. by BOOTSHAUS"
+  },
+  "after": {
+    "displayPriceText": "ab 23,90 €",
+    "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "title": "R3HAB pres. by BOOTSHAUS"
+  },
+  "forbiddenDomainUnchanged": {
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+    "websiteUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+    "venueName": "Bootshaus",
+    "genreLabels": [
+      "BASSHOUSE",
+      "ELECTRO",
+      "HOUSE",
+      "PROGRESSIVE HOUSE",
+      "EDM",
+      "DANCE"
+    ],
+    "organizerName": "Bootshaus",
+    "sourceId": "source-bootshaus-koeln",
+    "lineup": "frozen"
+  },
+  "websiteFieldsFrozen": true
+}

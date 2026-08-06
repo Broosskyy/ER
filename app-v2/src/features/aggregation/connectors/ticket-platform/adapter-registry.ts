@@ -1,8 +1,8 @@
-import type { TicketPlatformId } from '../types';
+import type { TicketPlatformId } from './types';
 import { parseTicketIoShopHtml } from './adapters/ticket-io-adapter';
 import { parseTicketKingsShopHtml } from './adapters/ticket-kings-adapter';
-import type { TicketPlatformScopeStats, TicketPlatformSourceConfig } from '../types';
-import type { ParsedTicketPlatformEvent } from '../types';
+import type { TicketPlatformScopeStats, TicketPlatformSourceConfig } from './types';
+import type { ParsedTicketPlatformEvent } from './types';
 
 export interface TicketPlatformParseResult {
   events: ParsedTicketPlatformEvent[];

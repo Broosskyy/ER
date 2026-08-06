@@ -1,0 +1,370 @@
+{
+  "generatedAt": "2026-08-04T19:45:44.838Z",
+  "productionMutationsInThisRun": 0,
+  "comparisons": [
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "label": "Bootshaus on a Ship Vol. III",
+      "fields": [
+        {
+          "field": "title",
+          "database": "Bootshaus on a Ship Vol. III",
+          "pilot": "Bootshaus on a Ship Vol. III | Bootshaus Club"
+        },
+        {
+          "field": "description",
+          "database": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session. LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+          "pilot": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session.&nbsp;LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+        },
+        {
+          "field": "venue",
+          "database": "KD Anleger Nr. 2"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://bootshaus-club.ticket.io/wUc3uQrR/"
+        },
+        {
+          "field": "price",
+          "database": "Tickets ab 32,00 Euro",
+          "pilot": "Ausverkauft"
+        },
+        {
+          "field": "availability",
+          "pilot": "sold_out"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres"
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer",
+          "pilot": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png"
+        }
+      ]
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "fields": [
+        {
+          "field": "title",
+          "database": "NIGHTSWITHUS presents LEVI",
+          "pilot": "NIGHTSWITHUS presents LEVI | Bootshaus Club"
+        },
+        {
+          "field": "description",
+          "database": "NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨ Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00 NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne. Don't miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+          "pilot": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨📍 Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00&nbsp;NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne.&nbsp;Don&#39;t miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙"
+        },
+        {
+          "field": "venue",
+          "database": "Bootshaus"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://bootshaus-tickets.ticket.io/YvJnLSXd/"
+        },
+        {
+          "field": "price"
+        },
+        {
+          "field": "availability"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres",
+          "database": [
+            "HOUSE"
+          ]
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer",
+          "pilot": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg"
+        }
+      ]
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "fields": [
+        {
+          "field": "title",
+          "database": "Underland Essigfabrik 05.09.2026"
+        },
+        {
+          "field": "description",
+          "database": ""
+        },
+        {
+          "field": "venue",
+          "database": "Essigfabrik / Elektroküche"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+        },
+        {
+          "field": "price",
+          "database": "Tickets ab 23,90 Euro",
+          "pilot": "ab 23,90 €"
+        },
+        {
+          "field": "availability",
+          "pilot": "available"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres"
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer"
+        }
+      ]
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "label": "BC173",
+      "fields": [
+        {
+          "field": "title",
+          "database": "BC173 Airport Session pres. by Bootshaus",
+          "pilot": "BC173 Airport Session pres. by Bootshaus  | Bootshaus Club"
+        },
+        {
+          "field": "description",
+          "database": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+          "pilot": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+        },
+        {
+          "field": "venue",
+          "database": "Bootshaus"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://bootshaus-club.ticket.io/fjspvLe4/"
+        },
+        {
+          "field": "price"
+        },
+        {
+          "field": "availability"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres"
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer",
+          "pilot": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png"
+        }
+      ]
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "fields": [
+        {
+          "field": "title",
+          "database": "Sommerfest Elektroküche 08.08.2026"
+        },
+        {
+          "field": "description",
+          "database": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher..."
+        },
+        {
+          "field": "venue",
+          "database": "Essigfabrik"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/"
+        },
+        {
+          "field": "price",
+          "database": "ab 15,00 €"
+        },
+        {
+          "field": "availability"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres",
+          "database": [
+            "Techno",
+            "Bounce",
+            "Hardtechno"
+          ]
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer"
+        }
+      ]
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA",
+      "fields": [
+        {
+          "field": "title",
+          "database": "MDMA – Musik Die Mich Antreibt 10.10.26"
+        },
+        {
+          "field": "description",
+          "database": "MDMA - Musik Die Mich Antreibt 10.10.2026 Datum: 10.10.2026 Location: Essigfabrik& Elektroküche Line Up: Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; function nmMinFrameHeight(){ if(window.matchMedia){return...",
+          "pilot": "MDMA - Musik Die Mich Antreibt 10.10.2026 Datum: 10.10.2026 Location: Essigfabrik& Elektroküche Line Up: Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; function nmMinFrameHeight(){ if(window.matchMedia){return... \\n"
+        },
+        {
+          "field": "venue",
+          "database": "Essigfabrik"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+        },
+        {
+          "field": "price",
+          "database": "ab 15,00 €",
+          "pilot": "ab 15,00 €"
+        },
+        {
+          "field": "availability"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres"
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer"
+        }
+      ]
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "fields": [
+        {
+          "field": "title",
+          "database": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+          "pilot": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club"
+        },
+        {
+          "field": "description",
+          "database": "AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒 Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln. Das Bootshaus zählt zu den besten Clubs der Welt – Perfektion in Sound, Licht und Atmosphäre ohne Kompromisse. Der perfekte Anlass für eine wilde Nacht. 🎟️ Early Bird Tickets sind jetzt verfügbar – nur für kurze Zeit. Das Line Up hauen wir euch bald um die Ohren. Sichert euch so lange die vergünstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "pilot": "AFFENK&Auml;FIG RULES! BOOTSHAUS &ndash; FULL HOUSE! 🐒🔥&nbsp;Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus K&ouml;ln.&nbsp;Das Bootshaus z&auml;hlt zu den besten Clubs der Welt &ndash; Perfektion in Sound, Licht und Atmosph&auml;re ohne Kompromisse. Der perfekte Anlass f&uuml;r eine wilde Nacht.&nbsp;🎟️ Early Bird Tickets sind jetzt verf&uuml;gbar &ndash; nur f&uuml;r kurze Zeit.&nbsp;Das Line Up hauen wir euch bald um die Ohren.&nbsp;Sichert euch so lange die verg&uuml;nstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+        },
+        {
+          "field": "venue",
+          "database": "Bootshaus"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://bootshaus-club.ticket.io/B3jK8aPC/"
+        },
+        {
+          "field": "price",
+          "database": "Tickets ab 19,90 Euro",
+          "pilot": "ab 19,90 €"
+        },
+        {
+          "field": "availability",
+          "pilot": "available"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres"
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer",
+          "pilot": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg"
+        }
+      ]
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "fields": [
+        {
+          "field": "title",
+          "database": "M.D.M.A xxx PROTON xxx STUTTGART"
+        },
+        {
+          "field": "description",
+          "database": "Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...",
+          "pilot": "Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var... \\n"
+        },
+        {
+          "field": "venue",
+          "database": "Proton Stuttgart"
+        },
+        {
+          "field": "ticketUrl",
+          "database": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/"
+        },
+        {
+          "field": "price",
+          "database": "ab 15,00 €",
+          "pilot": "ab 15,00 €"
+        },
+        {
+          "field": "availability"
+        },
+        {
+          "field": "soldOut"
+        },
+        {
+          "field": "genres"
+        },
+        {
+          "field": "lineup"
+        },
+        {
+          "field": "flyer"
+        }
+      ]
+    }
+  ]
+}

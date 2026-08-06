@@ -33,6 +33,7 @@
     "react-native-worklets": "0.10.0"
   },
   "devDependencies": {
+    "@types/node": "^26.1.2",
     "@types/pg": "^8.20.0",
     "@types/react": "~19.2.2",
     "eslint": "^9.39.2",
@@ -61,7 +62,10 @@
     "release:check": "npm run typecheck && npm run lint && npm test && npm run validate:pwa && npm run validate:ios && npm run generate:seo && npm run validate:seo && npm run build:web && npm run validate:build-output",
     "doctor": "expo-doctor",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "npm run typecheck:app && npm run typecheck:operations",
+    "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
+    "typecheck:operations": "tsc --noEmit -p tsconfig.operations.json",
+    "gen:supabase-types": "supabase gen types typescript --local > src/services/supabase/database.generated.ts",
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -72,7 +76,23 @@
     "validate:staging:seed": "tsx scripts/validate-staging-seed.ts",
     "seed:staging:remote": "tsx scripts/staging/apply-staging-seed-remote.ts",
     "test:staging:connection": "bash scripts/staging/test-connection.sh",
-    "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts"
+    "pipeline:report": "tsx src/features/events/dev/run-pipeline-report.ts",
+    "audit-ticketio": "tsx scripts/operations/_phase4721-ticketio-and-attribute-audit.ts audit-ticketio",
+    "audit-attributes": "tsx scripts/operations/_phase4721-ticketio-and-attribute-audit.ts audit-attributes",
+    "audit-affenkaefig-mdma": "tsx scripts/operations/_phase4721-ticketio-and-attribute-audit.ts audit-affenkaefig-mdma",
+    "audit-phase4721": "tsx scripts/operations/_phase4721-ticketio-and-attribute-audit.ts full",
+    "audit-phase4741": "tsx scripts/operations/_phase4741-ticketio-completion.ts full",
+    "audit-phase4742": "tsx scripts/operations/_phase4742-consumer-completion.ts audit",
+    "audit-phase473": "tsx scripts/operations/_phase473-event-attributes.ts full",
+    "audit-phase4862": "tsx scripts/operations/_phase4862-ticketio-enrichment-linkage.ts full",
+    "audit-phase48621": "tsx scripts/operations/_phase48621-ticket-identity-collision.ts full",
+    "audit-phase4863": "tsx scripts/operations/_phase4863-sommerfest-venue-truth.ts full",
+    "audit-phase4864": "tsx scripts/operations/_phase4864-identity-venue-ticket-corrections.ts report",
+    "audit-phase4864-preflight": "tsx scripts/operations/_phase4864-identity-venue-ticket-corrections.ts preflight",
+    "audit-phase4865": "tsx scripts/operations/_phase4865-ticket-price-presentation.ts full",
+    "audit-phase48651": "tsx scripts/operations/_phase48651-underland-price-persistence.ts report",
+    "apply-phase48651": "tsx scripts/operations/_phase48651-underland-price-persistence.ts apply --approve",
+    "audit-phase48652": "tsx scripts/operations/_phase48652-ticket-ui-deduplication.ts full"
   },
   "overrides": {
     "react-i18next": {

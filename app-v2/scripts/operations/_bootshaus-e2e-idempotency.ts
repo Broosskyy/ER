@@ -6,7 +6,7 @@ import './bootstrap-ops-supabase';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS = 'source-bootshaus-koeln';
 const OUT = join(process.cwd(), 'docs/real-data/_bootshaus_e2e_idempotency.json');

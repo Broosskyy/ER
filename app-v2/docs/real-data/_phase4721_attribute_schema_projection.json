@@ -1,0 +1,39 @@
+{
+  "canonicalColumns": {
+    "age_restriction": {
+      "exists": true,
+      "api": true,
+      "ui": "info_row"
+    },
+    "doors_open_at": {
+      "exists": true,
+      "api": true,
+      "ui": "info_row_optional"
+    },
+    "floor_count": {
+      "exists": false,
+      "proposal": "events.floor_count integer nullable"
+    },
+    "event_attributes": {
+      "exists": false,
+      "proposal": "events.event_attributes jsonb"
+    },
+    "venue_environment": {
+      "exists": false,
+      "proposal": "events.venue_environment text"
+    },
+    "badge_chips": {
+      "exists": false,
+      "proposal": "projection layer only"
+    }
+  },
+  "parserOutputFields": [
+    "sourceMetadata.eventAttributes",
+    "sourceMetadata.floorCount",
+    "sourceMetadata.venueEnvironment",
+    "minimumAge",
+    "doorsOpenAt"
+  ],
+  "mergeRules": "source_agnostic_field_trust",
+  "editorialBadgeInference": false
+}

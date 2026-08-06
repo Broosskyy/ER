@@ -7,7 +7,7 @@ import './bootstrap-ops-supabase';
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const migrationsDir = join(projectRoot, 'supabase/migrations');

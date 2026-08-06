@@ -1,0 +1,1333 @@
+[
+  {
+    "sourceId": "source-bootshaus-koeln",
+    "displayName": "Bootshaus Köln",
+    "totalEvents": 28,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 26,
+        "totalCount": 28,
+        "coveragePercent": 93
+      },
+      {
+        "field": "lineup",
+        "presentCount": 17,
+        "totalCount": 28,
+        "coveragePercent": 61
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 12,
+        "totalCount": 28,
+        "coveragePercent": 43
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 17,
+        "totalCount": 28,
+        "coveragePercent": 61
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 28,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 28,
+        "totalCount": 28,
+        "coveragePercent": 100
+      }
+    ]
+  },
+  {
+    "sourceId": "source-bootshaus-ticket-io",
+    "displayName": "Bootshaus Ticket.io",
+    "totalEvents": 17,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 4,
+        "totalCount": 17,
+        "coveragePercent": 24
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 16,
+        "totalCount": 17,
+        "coveragePercent": 94
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 17,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 17,
+        "totalCount": 17,
+        "coveragePercent": 100
+      }
+    ]
+  },
+  {
+    "sourceId": "source-affenkaefig",
+    "displayName": "Affenkäfig",
+    "totalEvents": 7,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 1,
+        "totalCount": 7,
+        "coveragePercent": 14
+      },
+      {
+        "field": "lineup",
+        "presentCount": 5,
+        "totalCount": 7,
+        "coveragePercent": 71
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 7,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 7,
+        "totalCount": 7,
+        "coveragePercent": 100
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-protontheclub",
+    "displayName": "protontheclub",
+    "totalEvents": 5,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 1,
+        "totalCount": 5,
+        "coveragePercent": 20
+      },
+      {
+        "field": "priceText",
+        "presentCount": 1,
+        "totalCount": 5,
+        "coveragePercent": 20
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-lehmannclub",
+    "displayName": "lehmannclub",
+    "totalEvents": 1,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 1,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 1,
+        "totalCount": 1,
+        "coveragePercent": 100
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-area51events",
+    "displayName": "area51events",
+    "totalEvents": 0,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-technodampfer",
+    "displayName": "technodampfer",
+    "totalEvents": 0,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-io-hmg-concerts",
+    "displayName": "hmg-concerts",
+    "totalEvents": 0,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-kings-org-underland",
+    "displayName": "Ticket Kings — Underland",
+    "totalEvents": 0,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "description",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "lineup",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "genres",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 0,
+        "totalCount": 0,
+        "coveragePercent": 0
+      }
+    ]
+  },
+  {
+    "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+    "displayName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+    "totalEvents": 5,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "lineup",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 1,
+        "totalCount": 5,
+        "coveragePercent": 20
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      }
+    ]
+  },
+  {
+    "sourceId": "source-affenkaefig-ticket-kings",
+    "displayName": "Affenkäfig Ticket Kings",
+    "totalEvents": 5,
+    "fields": [
+      {
+        "field": "title",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "description",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "lineup",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "ticketUrl",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "eventUrl",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "genres",
+        "presentCount": 1,
+        "totalCount": 5,
+        "coveragePercent": 20
+      },
+      {
+        "field": "priceText",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketStatus",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "ticketPhases",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "venueName",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "venueAddress",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "coordinates",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "doorsOpenAt",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "minimumAge",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "attributes",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "images",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      },
+      {
+        "field": "timetable",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "faq",
+        "presentCount": 0,
+        "totalCount": 5,
+        "coveragePercent": 0
+      },
+      {
+        "field": "organizerName",
+        "presentCount": 5,
+        "totalCount": 5,
+        "coveragePercent": 100
+      }
+    ]
+  }
+]

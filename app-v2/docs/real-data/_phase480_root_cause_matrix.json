@@ -1,0 +1,672 @@
+{
+  "generatedAt": "2026-08-04T19:26:39.621Z",
+  "issueCount": 73,
+  "byRootCause": {
+    "Public Source": 33,
+    "Projection": 19,
+    "Third-party platform": 13,
+    "Browser": 1,
+    "Canonical Merge": 3,
+    "Evidence Extraction": 2,
+    "Connector": 2
+  },
+  "issues": [
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "date",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "start",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "venue",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "address",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "coordinates",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "description",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "lineup",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "artists",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "prices",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "availability",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "soldOut",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "field": "badges",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "date",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "start",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "venue",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "address",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "genres",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "description",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "availability",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "field": "soldOut",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "date",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "start",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "coordinates",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "ticketUrl",
+      "classification": "browser_behaviour",
+      "earliestStage": "Browser",
+      "rootCause": "Browser",
+      "note": "Redirect/cache behaviour may differ between ops fetch and user browser session"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "prices",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "availability",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "field": "soldOut",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "field": "date",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "field": "start",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "field": "venue",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "field": "availability",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "field": "soldOut",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "date",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "start",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "genres",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "description",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "lineup",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "artists",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "ticketUrl",
+      "classification": "merge_gap",
+      "earliestStage": "Canonical Merge",
+      "rootCause": "Canonical Merge",
+      "note": "Ticket URL merge winner differs from public ticket platform"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "provider",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "ticketPhases",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "prices",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "availability",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "soldOut",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "field": "badges",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "title",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "date",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "start",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "description",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "lineup",
+      "classification": "filtered",
+      "earliestStage": "Canonical Reader",
+      "rootCause": "Evidence Extraction",
+      "note": "Public lineup exists; consumer empty due to filtering or legacy artifact handling"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "artists",
+      "classification": "connector_gap",
+      "earliestStage": "Evidence Extraction",
+      "rootCause": "Connector",
+      "note": "Public source exposes field; connector/import evidence missing"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "ticketUrl",
+      "classification": "merge_gap",
+      "earliestStage": "Canonical Merge",
+      "rootCause": "Canonical Merge",
+      "note": "Ticket URL merge winner differs from public ticket platform"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "provider",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "ticketPhases",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "field": "soldOut",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "date",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "start",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "venue",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "address",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "coordinates",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "description",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "prices",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "availability",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "field": "soldOut",
+      "classification": "third_party_behaviour",
+      "earliestStage": "Third-party platform",
+      "rootCause": "Third-party platform",
+      "note": "ALTCHA/POW blocks automated public observation — not an internal pipeline defect"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "date",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "start",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "description",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "lineup",
+      "classification": "filtered",
+      "earliestStage": "Canonical Reader",
+      "rootCause": "Evidence Extraction",
+      "note": "Public lineup exists; consumer empty due to filtering or legacy artifact handling"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "artists",
+      "classification": "connector_gap",
+      "earliestStage": "Evidence Extraction",
+      "rootCause": "Connector",
+      "note": "Public source exposes field; connector/import evidence missing"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "ticketUrl",
+      "classification": "merge_gap",
+      "earliestStage": "Canonical Merge",
+      "rootCause": "Canonical Merge",
+      "note": "Ticket URL merge winner differs from public ticket platform"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "provider",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "ticketPhases",
+      "classification": "incorrect",
+      "earliestStage": "Projection",
+      "rootCause": "Projection",
+      "note": "Normalized values differ between public truth and consumer"
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "field": "soldOut",
+      "classification": "missing_public_evidence",
+      "earliestStage": "Public Source",
+      "rootCause": "Public Source",
+      "note": "Consumer shows value but automated public fetch could not confirm (og/meta/json-ld gap)"
+    }
+  ]
+}

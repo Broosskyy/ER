@@ -1,0 +1,31 @@
+{
+  "productionMutationsInThisRun": 0,
+  "results": [
+    {
+      "host": "https://bootshaus.tv/events/test",
+      "adapterResult": {
+        "listPageUrl": "https://bootshaus.tv/",
+        "discoveredUrls": [
+          "https://bootshaus.tv/events/sample"
+        ],
+        "strategy": "bootshaus_upcoming_list",
+        "diagnostics": []
+      }
+    },
+    {
+      "host": "https://affenkaefig.info/event/test",
+      "adapterResult": {
+        "listPageUrl": "https://affenkaefig.info/tickets/",
+        "discoveredUrls": [],
+        "strategy": "affenkaefig_ticket_list",
+        "diagnostics": [
+          {
+            "code": "LIST_DISCOVERY_EMPTY",
+            "message": "No event URLs matched on list page https://affenkaefig.info/tickets/",
+            "surface": "list"
+          }
+        ]
+      }
+    }
+  ]
+}

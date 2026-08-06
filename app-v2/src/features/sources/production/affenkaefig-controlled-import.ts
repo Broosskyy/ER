@@ -12,7 +12,7 @@ import { importUpdateService } from '@/features/aggregation/services/import-upda
 import { createImportMatchingService } from '@/features/import/matching/create-import-matching-service';
 import { InMemoryEntityAliasStore } from '@/features/entity-resolution/entity-alias-store';
 import { loadMatchingCatalog } from '@/features/import/matching/matching-catalog';
-import type { MatchResult } from '@/features/import/matching/match-result';
+import { createEmptyMatchResult, type MatchResult } from '@/features/import/matching/match-result';
 import { PublishDecisionService } from '@/features/import/services/publish-decision-service';
 import { resolveConfidenceTier } from '@/features/multi-source-matching/domain/matching-config';
 import {
@@ -239,17 +239,7 @@ export async function simulateAffenkaefigControlledImport(input?: {
     if (importAction === 'duplicate') duplicates += 1;
 
     const candidate = envelope.canonicalEvent;
-    const emptyMatch = {
-      matchedCityId: undefined,
-      matchedVenueId: undefined,
-      matchedOrganizerId: undefined,
-      matchedArtistIds: undefined,
-      matchedGenreIds: undefined,
-      warnings: [] as string[],
-      duplicateEventId: undefined,
-      duplicateScore: undefined,
-      details: {},
-    } satisfies MatchResult;
+    const emptyMatch = createEmptyMatchResult();
 
     const match = candidate
       ? matchingService.match(

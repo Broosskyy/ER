@@ -5,14 +5,14 @@ import { join } from 'node:path';
 
 import {
   configureSupabaseClientForOperations,
-  getSupabaseClient,
+  getOpsSupabaseClient,
   getSupabaseServiceClient,
-  resetSupabaseClient,
-} from '@/services/supabase/client';
+  resetSupabaseServiceClient,
+} from '@/services/supabase/client-service-role';
 
 describe('supabase client auth config', () => {
   afterEach(() => {
-    resetSupabaseClient();
+    resetSupabaseServiceClient();
     delete process.env.SUPABASE_SERVICE_ROLE_KEY;
     delete process.env.SUPABASE_URL;
   });
@@ -22,12 +22,20 @@ describe('supabase client auth config', () => {
     expect(source).toContain('detectSessionInUrl: isWebRuntime()');
   });
 
-  it('routes operations scripts through the service-role client only', () => {
-    process.env.EXPO_PUBLIC_SUPABASE_URL = 'https://example.supabase.co';
+  it('keeps service-role symbols out of the public client module', () => {
+    const source = readFileSync(join(process.cwd(), 'src/services/supabase/client.ts'), 'utf8');
+    expect(source).not.toMatch(/SERVICE_ROLE/i);
+    expect(source).not.toContain('getSupabaseServiceClient');
+  });
+
+  it('creates an isolated service-role client for operations mode', () => {
+    process.env.SUPABASE_URL = 'https://example.supabase.co';
     process.env.SUPABASE_SERVICE_ROLE_KEY = 'service-role-secret';
 
     configureSupabaseClientForOperations();
 
-    expect(getSupabaseClient()).toBe(getSupabaseServiceClient());
+    const serviceClient = getSupabaseServiceClient();
+    expect(serviceClient).toBeDefined();
+    expect(getOpsSupabaseClient()).toBe(serviceClient);
   });
 });

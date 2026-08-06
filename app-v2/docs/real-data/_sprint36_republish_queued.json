@@ -1,0 +1,70 @@
+{
+  "sprint": 36,
+  "phase": "republish-queued",
+  "cancelledStuckJobs": 1,
+  "eventsBefore": {
+    "canonical": 69
+  },
+  "eventsAfter": {
+    "canonical": 125,
+    "ticketIoDiscoverable": 73
+  },
+  "canonicalEventsCreated": 56,
+  "republishResults": [
+    {
+      "sourceId": "source-ticket-io-bootshaus-club",
+      "shopSlug": "bootshaus-club",
+      "needsReviewBefore": 17,
+      "jobsReprocessed": 1,
+      "published": 0,
+      "stillQueued": 17,
+      "origins": 0
+    },
+    {
+      "sourceId": "source-ticket-io-protontheclub",
+      "shopSlug": "protontheclub",
+      "needsReviewBefore": 12,
+      "jobsReprocessed": 1,
+      "published": 12,
+      "stillQueued": 0,
+      "origins": 12
+    },
+    {
+      "sourceId": "source-ticket-io-lehmannclub",
+      "shopSlug": "lehmannclub",
+      "needsReviewBefore": 11,
+      "jobsReprocessed": 1,
+      "published": 11,
+      "stillQueued": 0,
+      "origins": 11
+    },
+    {
+      "sourceId": "source-ticket-io-area51events",
+      "shopSlug": "area51events",
+      "needsReviewBefore": 4,
+      "jobsReprocessed": 1,
+      "published": 4,
+      "stillQueued": 0,
+      "origins": 4
+    },
+    {
+      "sourceId": "source-ticket-io-technodampfer",
+      "shopSlug": "technodampfer",
+      "needsReviewBefore": 12,
+      "jobsReprocessed": 1,
+      "published": 10,
+      "stillQueued": 2,
+      "origins": 10
+    },
+    {
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "shopSlug": "hmg-concerts",
+      "needsReviewBefore": 19,
+      "jobsReprocessed": 1,
+      "published": 19,
+      "stillQueued": 0,
+      "origins": 19
+    }
+  ],
+  "finishedAt": "2026-07-31T14:01:28.036Z"
+}

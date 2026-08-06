@@ -40,6 +40,10 @@ import {
   type SortByFilter,
   type VenueEnvironmentFilter,
 } from '@/features/search/constants';
+import {
+  GLOBAL_CITY_FILTER_VALUE,
+  type LocationScope,
+} from '@/features/search/domain/location-scope';
 import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 export interface FilterSheetProps {
@@ -182,12 +186,30 @@ export function FilterSheet({
           <View style={styles.section}>
             <AppText style={styles.sectionTitle}>City</AppText>
             <View style={styles.chipWrap}>
+              <FilterChip
+                label="Alle Standorte"
+                selected={draft.locationScope === 'global' && !draft.city.trim()}
+                onPress={() =>
+                  setDraft((current) => ({
+                    ...current,
+                    city: GLOBAL_CITY_FILTER_VALUE,
+                    locationScope: 'global' as LocationScope,
+                    distance: 'any',
+                  }))
+                }
+              />
               {cityOptions.map((option) => (
                 <FilterChip
                   key={option.id}
                   label={option.label}
-                  selected={draft.city === option.value}
-                  onPress={() => setDraft((current) => ({ ...current, city: option.value }))}
+                  selected={draft.city === option.value && draft.locationScope === 'city'}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      city: option.value,
+                      locationScope: 'city' as LocationScope,
+                    }))
+                  }
                 />
               ))}
             </View>
@@ -205,6 +227,8 @@ export function FilterSheet({
                     setDraft((current) => ({
                       ...current,
                       distance: option.id as DistanceFilter,
+                      locationScope:
+                        option.id === 'any' ? ('global' as LocationScope) : ('nearby' as LocationScope),
                     }))
                   }
                 />

@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-08-05T19:26:26.856Z",
+  "phase": "4.8.4.1",
+  "importerVersion": "phase4841-unified-website-v1",
+  "productionMutationsInThisRun": 0,
+  "passCount": 2,
+  "failCount": 0,
+  "results": [
+    {
+      "eventKey": "bootshaus-sommerfest",
+      "rawBlockCount": 2,
+      "contentBlockCount": 2,
+      "removedBlocks": [],
+      "normalizedDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep\n\nLineup TBA",
+      "boilerplateStripped": false
+    },
+    {
+      "eventKey": "r3hab",
+      "rawBlockCount": 18,
+      "contentBlockCount": 8,
+      "removedBlocks": [
+        {
+          "text": "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔",
+          "reason": "decorative_divider"
+        },
+        {
+          "text": "Einlass ab 18 Jahren / Age for admission 18 years",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "Bootshaus / Auenweg 173 / 51063 Cologne",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "Bootshaus Mobile App:",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "https://bit.ly/Bootshaus-App",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "Bootshaus Merchandise",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "https://snash.com/kollektionen/bootshaus/",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔",
+          "reason": "after_footer_boundary"
+        },
+        {
+          "text": "www.bootshaus.tv",
+          "reason": "after_footer_boundary"
+        }
+      ],
+      "normalizedDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR.\n\nA special night with one of electronic music’s most established names.\n\nMAINFLOOR:\n\nR3HAB\n\nLA FUENTE\n\nOLIVER MAGENTA\n\nRELOVA\n\nDAVE REPLAY",
+      "boilerplateStripped": true
+    }
+  ],
+  "gaps": []
+}

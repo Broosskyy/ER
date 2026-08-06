@@ -68,7 +68,7 @@ export async function upsertImportRecordsBySourceExternal(
     if (
       existing.resultingEventId &&
       input.normalizedPayload &&
-      (recordCandidateEquivalent(existing, input.normalizedPayload as CanonicalImportEvent) ||
+      (recordCandidateEquivalent(existing, input.normalizedPayload as unknown as CanonicalImportEvent) ||
         detectSemanticChangeSet(
           {
             ...existing,

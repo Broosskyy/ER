@@ -8,9 +8,11 @@
 
 ## Purpose
 
-Introduce a **generic** acquisition layer for ticket platforms (ticket.io, TicketKings, Resident Advisor, Eventbrite, …) without building platform-specific connectors in Sprint 30.
+Introduce a **generic** acquisition layer for ticket platforms (ticket.io, Resident Advisor, Eventbrite, …) without building platform-specific connectors in Sprint 30.
 
-Club/organizer websites (Bootshaus, Affenkäfig) remain the primary official sources. Ticket platforms are **secondary enrichment sources** for ticket URLs, pricing, availability, and cross-source duplicate detection.
+> **2026-07-30:** Ticket Kings is **deprecated** as a strategic source ([deprecation plan](./TICKET_KINGS_DEPRECATION_PLAN.md)). **Ticket.io** is the prioritized ticket platform for discovering new organizers and shops.
+
+Club/organizer websites (Bootshaus, Affenkäfig) remain the primary official sources. Ticket platforms are **secondary enrichment sources** for ticket URLs, pricing, availability, and cross-source duplicate detection — with Ticket.io as the primary platform for net-new discovery.
 
 ---
 
@@ -71,8 +73,8 @@ Legacy category `ticket_provider` remains for backward compatibility.
 
 See platform-specific contracts:
 
-- `TICKET_IO_ACQUISITION_CONTRACT.md`
-- `TICKET_KING_ACQUISITION_CONTRACT.md`
+- `TICKET_IO_ACQUISITION_CONTRACT.md` — **active (priority platform)**
+- `TICKET_KING_ACQUISITION_CONTRACT.md` — **deprecated** (historical reference)
 
 ### Contract Phases
 
@@ -179,6 +181,7 @@ Sprint 30 changes:
 
 ## Related Documents
 
-- `TICKET_IO_ACQUISITION_CONTRACT.md`
-- `TICKET_KING_ACQUISITION_CONTRACT.md`
+- `TICKET_IO_ACQUISITION_CONTRACT.md` — active
+- `TICKET_KING_ACQUISITION_CONTRACT.md` — deprecated
+- `TICKET_KINGS_DEPRECATION_PLAN.md`
 - `SOURCE_REGISTRY_ROADMAP.md`

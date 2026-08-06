@@ -1,0 +1,418 @@
+{
+  "generatedAt": "2026-08-02T19:44:45.843Z",
+  "candidates": [
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/p74KBjpL/img/holder-1080.jpg?502f2982",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/sdE6pxrp/img/holder-1080.jpg?7458c434",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/0orkxNqw/img/holder-1080.jpg?d59e32a4",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "sourceIds": [
+        "source-ticket-io-protontheclub"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/LPraAZaX/img/holder-1080.jpg?96916c2",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/H21zDjkW/img/holder-1080.jpg?504274cb",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/VSQY1qVm/img/holder-1080.jpg?25cb41c4",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/Gjjw3kHu/img/holder-1080.jpg?6c2da99c",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/b6T4NgwM/img/holder-1080.jpg?9ae6a38d",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/YM0Ek3Ql/img/holder-1080.jpg?51122e2e",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "sourceIds": [
+        "source-ticket-io-lehmannclub"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "sourceIds": [
+        "source-ticket-io-lehmannclub"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/wZrRRkDh/img/holder-1080.jpg?8bc7248d",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7928634490493560351503764_7574647932272803674637142.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5661772516122494432347632_1676272899454372541097967.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7576048672735569035384002_0115948890074001779127437.png",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6966595680631080894216897_9199309476434186160221636.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "sourceIds": [
+        "source-affenkaefig",
+        "source-bootshaus-ticket-io"
+      ],
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/QA7zQqxb/img/holder-1080.jpg?440c8c9f",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6476230997772328293706007_7744424095384944663913284.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/e72nkwMH/img/holder-1080.jpg?c089480",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/9ZwwhBzT/img/holder-1080.jpg?25cb41c4",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/ERJ3EqKy/img/holder-1080.jpg?fc995a72",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "sourceIds": [
+        "source-ticket-io-hmg-concerts"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/l1vdPLs9/img/holder-1080.jpg?51122e2e",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "sourceIds": [
+        "source-ticket-io-lehmannclub"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/uVeam2f6/img/holder-1080.jpg?e9ca4c33",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "sourceIds": [
+        "source-bootshaus-ticket-io",
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9746907955985494674394802_6549575097625290545322522.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "sourceIds": [
+        "source-bootshaus-ticket-io"
+      ],
+      "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "sourceIds": [
+        "source-bootshaus-koeln",
+        "source-bootshaus-ticket-io"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "sourceIds": [
+        "source-bootshaus-koeln"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "sourceIds": [
+        "source-bootshaus-koeln",
+        "source-bootshaus-ticket-io"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "sourceIds": [
+        "source-bootshaus-koeln",
+        "source-bootshaus-ticket-io"
+      ],
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+      "textualLineupAvailable": false,
+      "likelyFlyerLineup": true,
+      "confidence": "medium",
+      "recommendedFollowUp": "manual_or_future_flyer_enrichment_phase"
+    }
+  ]
+}

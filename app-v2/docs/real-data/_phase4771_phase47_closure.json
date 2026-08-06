@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-04T14:32:31.741Z",
+  "repairableNow": 0,
+  "trueProjectionDefects": 0,
+  "canonicalEvidenceGaps": 17,
+  "cacheDefects": 0,
+  "stagingPublished": 0,
+  "shopRootPublished": 0,
+  "mdmaStructuredLineup": 0,
+  "productionMutationsInThisRun": 0,
+  "phase47CanClose": true,
+  "blockerCounts": {
+    "repairable_now": 0,
+    "requires_external_source": 23,
+    "requires_OCR": 130,
+    "requires_connector": 75,
+    "requires_review": 31,
+    "blocked_by_missing_public_evidence": 74
+  }
+}

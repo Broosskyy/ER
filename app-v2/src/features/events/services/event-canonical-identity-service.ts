@@ -1,5 +1,10 @@
 import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 import { buildEventIdentityFingerprint } from '@/features/aggregation/identity/event-identity';
+import {
+  isEventSpecificTicketIoUrl,
+  resolveEnrichmentTargetByTicketIoUrl,
+} from '@/features/import/ticket-io-enrichment-linkage/resolve-enrichment-target';
+import type { KnownEventForDuplicateCheck } from '@/features/import/matching/match-result';
 import type { EventSourceReferenceRepository } from '@/features/aggregation/repositories/multi-source-repositories';
 import type { EntityAliasStore } from '@/features/entity-resolution/types';
 
@@ -42,6 +47,16 @@ export class EventCanonicalIdentityService {
   ): Promise<string | undefined> {
     const reference = await this.sourceReferences.findByExternalEventId(sourceId, externalEventId);
     return reference?.canonicalEventId;
+  }
+
+  resolveByTicketIoEventUrl(
+    ticketUrl: string | undefined,
+    publishedEvents: KnownEventForDuplicateCheck[],
+  ): string | undefined {
+    if (!ticketUrl || !isEventSpecificTicketIoUrl(ticketUrl)) {
+      return undefined;
+    }
+    return resolveEnrichmentTargetByTicketIoUrl(ticketUrl, publishedEvents)?.id;
   }
 
   async registerIdentity(

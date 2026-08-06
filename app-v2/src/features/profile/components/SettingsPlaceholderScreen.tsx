@@ -4,6 +4,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { AppScreen, AppText, SafeAreaContainer } from '@/components';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
 import { spacing, spacingRoles } from '@/design/spacing';
+import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
 import { useScreenBottomInset } from '@/platform/screen-insets';
 
 export interface SettingsPlaceholderScreenProps {
@@ -21,7 +22,7 @@ export function SettingsPlaceholderScreen({ title, description }: SettingsPlaceh
         <ScrollView contentContainerStyle={[styles.content, { paddingBottom: bottomInset }]}>
           <AppText role="titleLarge">{title}</AppText>
           <AppText role="bodyMuted">{description}</AppText>
-          <SecondaryButton label="Zurück" onPress={() => router.back()} />
+          <SecondaryButton label="Zurück" onPress={() => navigateBackSafely(router, '/(tabs)/profile')} />
         </ScrollView>
       </SafeAreaContainer>
     </AppScreen>

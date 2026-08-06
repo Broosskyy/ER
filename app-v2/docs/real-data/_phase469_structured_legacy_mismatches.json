@@ -1,0 +1,388 @@
+{
+  "generatedAt": "2026-08-03T09:43:55.308Z",
+  "readOnly": true,
+  "mismatches": [
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 3,
+      "legacyCount": 3,
+      "apiLineupEntryCount": 2,
+      "apiArtistCount": 2,
+      "structuredArtists": [
+        "JUNO @ Palma de Mallorca (ES",
+        "JUNONICOLE DA SILVA​",
+        "JUNON ICOLE DA SILVA​"
+      ],
+      "legacyArtists": [
+        "JUNO @ Palma de Mallorca (ES",
+        "JUNONICOLE DA SILVA​",
+        "JUNON ICOLE DA SILVA​"
+      ],
+      "apiArtists": [
+        "JUNONICOLE DA SILVA​",
+        "JUNON ICOLE DA SILVA​"
+      ]
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 5,
+      "legacyCount": 5,
+      "apiLineupEntryCount": 4,
+      "apiArtistCount": 4,
+      "structuredArtists": [
+        "AFEM SYKO (All Night Long",
+        "PETERBLUE",
+        "Sibel",
+        "Selina",
+        "PETER BLUE"
+      ],
+      "legacyArtists": [
+        "AFEM SYKO (All Night Long",
+        "PETERBLUE",
+        "Sibel",
+        "Selina",
+        "PETER BLUE"
+      ],
+      "apiArtists": [
+        "PETERBLUE",
+        "Sibel",
+        "Selina",
+        "PETER BLUE"
+      ]
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "modelConsistency": "structured_wrong_legacy_correct",
+      "structuredEntryCount": 14,
+      "legacyCount": 14,
+      "apiLineupEntryCount": 14,
+      "apiArtistCount": 14,
+      "structuredArtists": [
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN",
+        "ASL∅",
+        "ANNX",
+        "BLACK ZUSHI",
+        "BOUNCE MC",
+        "HOTBOI2300",
+        "HYPNOTIZED",
+        "ICJ",
+        "MAURO",
+        "STIMULATE",
+        "THE M∅VEMENT",
+        "TOMMY LIBERA",
+        "TURBO TIMOS"
+      ],
+      "legacyArtists": [
+        "ASL∅",
+        "ANNX",
+        "BLACK ZUSHI",
+        "BOUNCE MC",
+        "HOTBOI2300",
+        "HYPNOTIZED",
+        "ICJ",
+        "MAURO",
+        "STIMULATE",
+        "THE M∅VEMENT",
+        "TOMMY LIBERA",
+        "TURBO TIMOS",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN"
+      ],
+      "apiArtists": [
+        "ASL∅",
+        "ANNX",
+        "BLACK ZUSHI",
+        "BOUNCE MC",
+        "HOTBOI2300",
+        "HYPNOTIZED",
+        "ICJ",
+        "MAURO",
+        "STIMULATE",
+        "THE M∅VEMENT",
+        "TOMMY LIBERA",
+        "TURBO TIMOS",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN"
+      ]
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "modelConsistency": "structured_present_api_omitted",
+      "structuredEntryCount": 2,
+      "legacyCount": 2,
+      "apiLineupEntryCount": 0,
+      "apiArtistCount": 0,
+      "structuredArtists": [
+        "MAXI MERAKI @ Palma de Mallorca (ES",
+        "MAXI MERAKIMCFLY​"
+      ],
+      "legacyArtists": [
+        "MAXI MERAKI @ Palma de Mallorca (ES",
+        "MAXI MERAKIMCFLY​"
+      ],
+      "apiArtists": []
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 2,
+      "legacyCount": 2,
+      "apiLineupEntryCount": 1,
+      "apiArtistCount": 1,
+      "structuredArtists": [
+        "2 YEARS STUTTGART HARDCORE SOUND",
+        "2 YEARS STUTT GART HARDCORE SOUND"
+      ],
+      "legacyArtists": [
+        "2 YEARS STUTTGART HARDCORE SOUND",
+        "2 YEARS STUTT GART HARDCORE SOUND"
+      ],
+      "apiArtists": [
+        "2 YEARS STUTT GART HARDCORE SOUND"
+      ]
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 3,
+      "legacyCount": 3,
+      "apiLineupEntryCount": 2,
+      "apiArtistCount": 2,
+      "structuredArtists": [
+        "KAZ JAMES @ Palma de Mallorca (ES",
+        "KAZ JAMESALICIA HAHN​",
+        "KAZ JAMESA LICIA HAHN​"
+      ],
+      "legacyArtists": [
+        "KAZ JAMES @ Palma de Mallorca (ES",
+        "KAZ JAMESALICIA HAHN​",
+        "KAZ JAMESA LICIA HAHN​"
+      ],
+      "apiArtists": [
+        "KAZ JAMESALICIA HAHN​",
+        "KAZ JAMESA LICIA HAHN​"
+      ]
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 3,
+      "legacyCount": 3,
+      "apiLineupEntryCount": 2,
+      "apiArtistCount": 2,
+      "structuredArtists": [
+        "NOTRE DAME @ Palma de Mallorca (ES",
+        "NOTRE DAMEMEERA",
+        "NOTRE DAMEM EERA"
+      ],
+      "legacyArtists": [
+        "NOTRE DAME @ Palma de Mallorca (ES",
+        "NOTRE DAMEMEERA",
+        "NOTRE DAMEM EERA"
+      ],
+      "apiArtists": [
+        "NOTRE DAMEMEERA",
+        "NOTRE DAMEM EERA"
+      ]
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 3,
+      "legacyCount": 3,
+      "apiLineupEntryCount": 2,
+      "apiArtistCount": 2,
+      "structuredArtists": [
+        "MARTEN LOU @ Palma de Mallorca (ES",
+        "MARTEN LOUNICOLE DA SILVA​",
+        "MARTEN LOUNI COLE DA SILVA​"
+      ],
+      "legacyArtists": [
+        "MARTEN LOU @ Palma de Mallorca (ES",
+        "MARTEN LOUNICOLE DA SILVA​",
+        "MARTEN LOUNI COLE DA SILVA​"
+      ],
+      "apiArtists": [
+        "MARTEN LOUNICOLE DA SILVA​",
+        "MARTEN LOUNI COLE DA SILVA​"
+      ]
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 6,
+      "legacyCount": 6,
+      "apiLineupEntryCount": 2,
+      "apiArtistCount": 2,
+      "structuredArtists": [
+        ".MAINFLOOR:CLEOPARD2000",
+        "ALBA",
+        "FRANCHDAVYBOI",
+        "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+        "ALBA FRANCHDAVYBOI",
+        "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+      ],
+      "legacyArtists": [
+        ".MAINFLOOR:CLEOPARD2000",
+        "ALBA",
+        "FRANCHDAVYBOI",
+        "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+        "ALBA FRANCHDAVYBOI",
+        "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+      ],
+      "apiArtists": [
+        ".MAINFLOOR:CLEOPARD2000",
+        "ALBA"
+      ]
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "modelConsistency": "structured_wrong_legacy_correct",
+      "structuredEntryCount": 15,
+      "legacyCount": 15,
+      "apiLineupEntryCount": 15,
+      "apiArtistCount": 15,
+      "structuredArtists": [
+        "THE EVELOPER",
+        "8288",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN",
+        "TIEFU NDTON",
+        "IMHAPPY",
+        "KOPF & HÖRER",
+        "PART TIME KILLER",
+        "TIEFUNDTON",
+        "DYSTOPIA",
+        "FLASH FORWARD",
+        "SUPER DARIO",
+        "TOMMY LIBERA",
+        "TURBOTIMOS",
+        "TURBO TIMOS"
+      ],
+      "legacyArtists": [
+        "IMHAPPY",
+        "KOPF & HÖRER",
+        "PART TIME KILLER",
+        "TIEFUNDTON",
+        "DYSTOPIA",
+        "FLASH FORWARD",
+        "SUPER DARIO",
+        "TOMMY LIBERA",
+        "TURBOTIMOS",
+        "THE EVELOPER",
+        "8288",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN",
+        "TIEFU NDTON",
+        "TURBO TIMOS"
+      ],
+      "apiArtists": [
+        "IMHAPPY",
+        "KOPF & HÖRER",
+        "PART TIME KILLER",
+        "TIEFUNDTON",
+        "DYSTOPIA",
+        "FLASH FORWARD",
+        "SUPER DARIO",
+        "TOMMY LIBERA",
+        "TURBOTIMOS",
+        "THE EVELOPER",
+        "8288",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN",
+        "TIEFU NDTON",
+        "TURBO TIMOS"
+      ]
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "modelConsistency": "structured_present_api_omitted",
+      "structuredEntryCount": 1,
+      "legacyCount": 1,
+      "apiLineupEntryCount": 0,
+      "apiArtistCount": 0,
+      "structuredArtists": [
+        "EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+      ],
+      "legacyArtists": [
+        "EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+      ],
+      "apiArtists": []
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "modelConsistency": "structured_present_api_omitted",
+      "structuredEntryCount": 2,
+      "legacyCount": 2,
+      "apiLineupEntryCount": 0,
+      "apiArtistCount": 0,
+      "structuredArtists": [
+        "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+        "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+      ],
+      "legacyArtists": [
+        "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+        "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+      ],
+      "apiArtists": []
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 2,
+      "legacyCount": 2,
+      "apiLineupEntryCount": 1,
+      "apiArtistCount": 1,
+      "structuredArtists": [
+        "TIEFUNDTON - TAKTSTÖRER",
+        "TIEFU NDTON - TAKTSTÖRER"
+      ],
+      "legacyArtists": [
+        "TIEFUNDTON - TAKTSTÖRER",
+        "TIEFU NDTON - TAKTSTÖRER"
+      ],
+      "apiArtists": [
+        "TIEFU NDTON - TAKTSTÖRER"
+      ]
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "modelConsistency": "api_correct_ui_unknown",
+      "structuredEntryCount": 3,
+      "legacyCount": 3,
+      "apiLineupEntryCount": 2,
+      "apiArtistCount": 2,
+      "structuredArtists": [
+        "STEREOACT",
+        "LENA MARIE ENGEL live",
+        "STERE OACT"
+      ],
+      "legacyArtists": [
+        "STEREOACT",
+        "LENA MARIE ENGEL live",
+        "STERE OACT"
+      ],
+      "apiArtists": [
+        "STEREOACT",
+        "STERE OACT"
+      ]
+    }
+  ]
+}

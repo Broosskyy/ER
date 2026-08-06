@@ -1,0 +1,494 @@
+{
+  "startedAt": "2026-08-02T18:19:52.569Z",
+  "completedAt": "2026-08-02T19:44:11.677Z",
+  "repair": {
+    "completedAt": "2026-08-02T18:33:18.284Z",
+    "results": [
+      {
+        "eventId": "evt-1785506479046-0iqt1i1",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506450927-qr2is1j",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785389056612-4cwtdmo",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506448834-4c5s8xl",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785389054496-ns9b6la",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "staging-seed-event-b2b",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506370530-bfvzuo6",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339410908-9691748",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506446703-7r57ode",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506463791-14vrmd5",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506457386-elpnk6o",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506459510-zx4rw9y",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506461636-oeo9yp4",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506404218-hgmd9nz",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506406388-usnae2d",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339418526-dn9f7g0",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339374416-shc7e7c",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339372839-cwbr6ya",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339377456-7miaf2o",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339378982-kp48td0",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339395746-in3ijod",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339389636-v1tq3hw",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339398765-9lptzhg",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339392687-tbdwup4",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506485508-ill0alw",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339403309-prk3iiz",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785389052337-0gv1iz1",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339388133-sq2ykbm",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339385102-xocczqs",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339412398-hq6217j",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785443911160-owt97y3",
+        "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "wroteLineup": true,
+        "artistCount": 2,
+        "createdArtistIds": 2,
+        "reason": "invalid_artists_present"
+      },
+      {
+        "eventId": "evt-1785443914377-7g9l545",
+        "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+        "wroteLineup": true,
+        "artistCount": 1,
+        "createdArtistIds": 1,
+        "reason": "invalid_artists_present"
+      },
+      {
+        "eventId": "evt-1785339409363-puvo8be",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506476910-vh78c7a",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506472665-1b5azyj",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506468322-oxv0sw4",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506474828-u0zw9zf",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506481191-qaben7r",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785506412720-onckj88",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339394218-cbqw3kx",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339424521-tn10siz",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "wroteLineup": true,
+        "artistCount": 9,
+        "createdArtistIds": 0,
+        "reason": "invalid_artists_present"
+      },
+      {
+        "eventId": "evt-1785443908695-6n8vfff",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339407876-uqm3mz0",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339401841-by9uoyc",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339283846-89x0jcd",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339420043-obhyeev",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339413919-ix5umo9",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339421539-k3swcrl",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785570943560-f5g5rj5",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339397255-frpjss3",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785339380511-rwjwfep",
+        "status": "skipped_no_repair_candidate"
+      },
+      {
+        "eventId": "evt-1785389051072-mihh18f",
+        "title": "14 Jahre Affenkäfig 19.09.2026",
+        "wroteLineup": true,
+        "artistCount": 14,
+        "createdArtistIds": 11,
+        "reason": "empty_canonical"
+      },
+      {
+        "eventId": "evt-1785339005035-wam829k",
+        "status": "skipped_no_repair_candidate"
+      }
+    ]
+  },
+  "pass2": {
+    "completedAt": "2026-08-02T19:43:35.703Z",
+    "results": [
+      {
+        "sourceId": "staging-seed-source-manual",
+        "jobId": "cc0368c7-08c5-4b2d-acc8-62a0251f1a4d",
+        "metrics": {
+          "fetchedCount": 1,
+          "parsedCount": 1,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 1,
+          "duplicateCount": 0,
+          "unchangedCount": 0,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-bootshaus-koeln",
+        "jobId": "151ffd82-aee4-4d49-9cba-c1299cdec6ce",
+        "metrics": {
+          "fetchedCount": 34,
+          "parsedCount": 10,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 11,
+          "duplicateCount": 24,
+          "unchangedCount": 23,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-affenkaefig",
+        "jobId": "c55a939f-df4c-4ec5-8a40-a2189679c7e8",
+        "metrics": {
+          "fetchedCount": 8,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 5,
+          "duplicateCount": 5,
+          "unchangedCount": 3,
+          "missingCount": 0,
+          "pagesProcessed": 0
+        },
+        "republishedRecords": 7
+      },
+      {
+        "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+        "jobId": "2a022bad-529d-47cc-99c9-45717b44a7af",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 3,
+          "duplicateCount": 3,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 5
+      },
+      {
+        "sourceId": "source-ticket-kings-org-elektrokuche",
+        "jobId": "eff5a712-5bfb-464a-845c-c339440c3511",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 4,
+          "duplicateCount": 3,
+          "unchangedCount": 1,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 4
+      },
+      {
+        "sourceId": "source-ticket-kings-org-underland",
+        "jobId": "d772c7ad-8e44-459d-8f58-d2e9493e0409",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 5,
+          "duplicateCount": 3,
+          "unchangedCount": 0,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-ticket-io-technodampfer",
+        "jobId": "82d756fc-6724-4c38-ad45-bb7ac24cf288",
+        "metrics": {
+          "fetchedCount": 11,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 2,
+          "duplicateCount": 9,
+          "unchangedCount": 9,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-ticket-io-lehmannclub",
+        "jobId": "b8ba255e-16a0-4b07-85f3-432b230fcae5",
+        "metrics": {
+          "fetchedCount": 10,
+          "parsedCount": 0,
+          "invalidCount": 1,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 1,
+          "duplicateCount": 9,
+          "unchangedCount": 9,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-bootshaus-ticket-io",
+        "jobId": "1f85a221-5428-4c6f-b6dd-7388bf5e79a6",
+        "metrics": {
+          "fetchedCount": 15,
+          "parsedCount": 3,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 13,
+          "duplicateCount": 12,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 15
+      },
+      {
+        "sourceId": "source-ticket-io-area51events",
+        "jobId": "cad478aa-7845-4934-8203-7a9b52d6ca03",
+        "metrics": {
+          "fetchedCount": 4,
+          "parsedCount": 0,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 0,
+          "duplicateCount": 4,
+          "unchangedCount": 4,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-ticket-io-hmg-concerts",
+        "jobId": "ce499cfa-357b-4db0-9c74-7d9e70f9a2b1",
+        "metrics": {
+          "fetchedCount": 20,
+          "parsedCount": 0,
+          "invalidCount": 1,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 1,
+          "duplicateCount": 19,
+          "unchangedCount": 19,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-ticket-io-protontheclub",
+        "jobId": "59aac3c1-e4ea-4052-bc61-09aa78778093",
+        "metrics": {
+          "fetchedCount": 7,
+          "parsedCount": 0,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 0,
+          "duplicateCount": 7,
+          "unchangedCount": 7,
+          "missingCount": 0,
+          "pagesProcessed": 1,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 0
+      },
+      {
+        "sourceId": "source-affenkaefig-ticket-kings",
+        "jobId": "bc500076-96ae-4544-9569-fa98aab5fb18",
+        "metrics": {
+          "fetchedCount": 5,
+          "parsedCount": 2,
+          "invalidCount": 0,
+          "warningCount": 0,
+          "errorCount": 0,
+          "createdCount": 0,
+          "updatedCount": 3,
+          "duplicateCount": 3,
+          "unchangedCount": 2,
+          "missingCount": 0,
+          "pagesProcessed": 6,
+          "connectorVersion": "1.2.0"
+        },
+        "republishedRecords": 5
+      }
+    ]
+  }
+}

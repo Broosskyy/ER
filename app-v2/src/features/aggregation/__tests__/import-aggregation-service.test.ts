@@ -151,6 +151,8 @@ describe('ImportAggregationService', () => {
               venueName: 'Warehouse',
               cityName: 'Berlin',
               countryCode: 'DE',
+              genreNames: ['Techno'],
+              artistNames: ['Archive DJ'],
             },
           ],
         },
@@ -158,7 +160,9 @@ describe('ImportAggregationService', () => {
     });
 
     const firstJob = await stack.aggregationService.runFromSourceRecord(sourceRecord, 'manual', 'owner');
-    const firstRecord = (await stack.bundle.importRecords.listByJobId(firstJob.id))[0]!;
+    const firstRecord = (await stack.bundle.importRecords.listByJobId(firstJob.id)).find(
+      (entry) => entry.status === 'needs_review',
+    )!;
     const { event } = await stack.reviewService.approveRecord(
       owner,
       firstRecord.id,

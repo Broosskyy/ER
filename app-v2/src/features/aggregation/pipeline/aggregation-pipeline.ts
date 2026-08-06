@@ -19,6 +19,7 @@ import type { ImportAdapterRegistry } from '@/features/import/adapters/import-ad
 import type { ImportSource } from '@/features/import/models/types';
 import type { ImportTriggerType } from '@/features/import/models/statuses';
 import { mapSourceRecordToImportSource } from '@/data/mappers/source-mapper';
+import { buildSourceMergeReliabilityContext } from '@/features/sources/domain/source-reliability-merge-context';
 
 export interface AggregationPipelineDependencies {
   fetchProvider: FetchProvider;
@@ -56,6 +57,7 @@ export class AggregationPipeline {
       triggerType,
       triggeredBy,
       startedAt,
+      sourceReliability: buildSourceMergeReliabilityContext(sourceRecord),
     };
 
     const runLog = await this.logService.startRun({

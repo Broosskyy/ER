@@ -1,4 +1,6 @@
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
+import type { CanonicalLineupEntry } from '@/features/aggregation/domain/canonical-lineup-entry';
+import { extractCanonicalLineupEntriesFromSourceMetadata } from '@/features/aggregation/domain/canonical-lineup-from-metadata';
 
 /** Canonical import event — single normalized shape for all external sources. */
 export interface CanonicalImportEvent {
@@ -23,6 +25,7 @@ export interface CanonicalImportEvent {
   longitude?: number;
   genreNames?: string[];
   artistNames?: string[];
+  lineupEntries?: CanonicalLineupEntry[];
   organizerName?: string;
   ticketUrl?: string;
   eventUrl?: string;
@@ -79,6 +82,10 @@ export function mapNormalizedCandidateToCanonical(
     longitude: candidate.longitude,
     genreNames: candidate.genreNames,
     artistNames: candidate.artistNames,
+    lineupEntries: extractCanonicalLineupEntriesFromSourceMetadata(
+      candidate.sourceMetadata,
+      candidate.artistNames,
+    ),
     organizerName: candidate.organizerName,
     ticketUrl: candidate.ticketUrl,
     eventUrl: candidate.eventUrl,

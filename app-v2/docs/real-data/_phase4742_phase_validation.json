@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-08-03T20:29:04.532Z",
+  "events": [
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "phaseCount": 0
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "phaseCount": 1,
+      "phases": [
+        {
+          "id": "admission-list-evidence",
+          "kind": "regular",
+          "name": "Admission",
+          "note": "surface:list_overview_row",
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 0,
+          "priceLabel": "ab 23,00 €",
+          "priceAmount": 23,
+          "priceCurrency": "EUR"
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "phaseCount": 0
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "phaseCount": 0
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "phaseCount": 0
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "phaseCount": 0
+    }
+  ]
+}

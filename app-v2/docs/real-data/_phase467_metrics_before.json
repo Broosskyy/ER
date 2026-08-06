@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-02T22:22:11.556Z",
+  "metrics": {
+    "publishedEvents": 108,
+    "completeLineups": 82,
+    "singleArtistEvents": 42,
+    "invalidArtistEntities": 0,
+    "averageArtistsPerEvent": 4.09,
+    "brokenBillingRelationships": 0,
+    "canonicalArtistCount": 319,
+    "collapsedCanonicalArtistEntities": 23
+  }
+}

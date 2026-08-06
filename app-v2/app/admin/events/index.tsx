@@ -1,5 +1,5 @@
-import { useRouter } from 'expo-router';
-import { useCallback, useEffect, useState } from 'react';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   FlatList,
   Pressable,
@@ -18,7 +18,8 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { AdminEventRecord, AdminEventStatus } from '@/data/types/records';
-import { adminEventModerationService, adminEventRepository } from '@/data/repositories/registry';
+import { adminEventModerationService, adminEventRepository, sourceService } from '@/data/repositories/registry';
+import type { SourceRecord } from '@/data/types/records';
 import {
   AdminEmptyState,
   AdminErrorState,
@@ -40,13 +41,25 @@ const STATUS_FILTERS: Array<AdminEventStatus | 'all'> = [
 
 export default function AdminEventsScreen() {
   const router = useRouter();
+  const { sourceId: sourceIdParam } = useLocalSearchParams<{ sourceId?: string }>();
   const { session, role } = useAdminAuth();
   const [events, setEvents] = useState<AdminEventRecord[]>([]);
+  const [sources, setSources] = useState<SourceRecord[]>([]);
+  const [total, setTotal] = useState(0);
   const [reviewCount, setReviewCount] = useState(0);
   const [query, setQuery] = useState('');
   const [status, setStatus] = useState<AdminEventStatus | 'all'>('all');
+  const urlSourceId =
+    typeof sourceIdParam === 'string' && sourceIdParam.length > 0 ? sourceIdParam : null;
+  const [pickedSourceId, setPickedSourceId] = useState<string | 'all'>('all');
+  const sourceId = urlSourceId ?? pickedSourceId;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const selectedSource = useMemo(
+    () => sources.find((source) => source.id === sourceId),
+    [sourceId, sources],
+  );
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -55,11 +68,19 @@ export default function AdminEventsScreen() {
       const result = await adminEventRepository.list({
         query,
         status,
+        sourceId: sourceId === 'all' ? undefined : sourceId,
         sortBy: 'updated',
         page: 1,
         pageSize: 50,
       });
       setEvents(result.items);
+      setTotal(result.total);
+      const sourceList = await sourceService.listForAdmin(role, {
+        page: 1,
+        pageSize: 100,
+        sortBy: 'displayName',
+      });
+      setSources(sourceList.items);
       if (session) {
         const reviewQueue = await adminEventModerationService.listReviewQueue(session);
         setReviewCount(reviewQueue.length);
@@ -71,7 +92,7 @@ export default function AdminEventsScreen() {
     } finally {
       setLoading(false);
     }
-  }, [query, status, session]);
+  }, [query, status, sourceId, session, role]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -126,6 +147,32 @@ export default function AdminEventsScreen() {
             </Pressable>
           ))}
         </View>
+        <View style={styles.filters}>
+          <Pressable
+            onPress={() => setPickedSourceId('all')}
+            style={[styles.filterChip, sourceId === 'all' && styles.filterChipActive]}
+          >
+            <AppText style={styles.filterText}>Alle Quellen</AppText>
+          </Pressable>
+          {sources
+            .filter((source) => source.id.includes('ticket-io'))
+            .map((source) => (
+              <Pressable
+                key={source.id}
+                onPress={() => setPickedSourceId(source.id)}
+                style={[styles.filterChip, sourceId === source.id && styles.filterChipActive]}
+              >
+                <AppText style={styles.filterText}>
+                  {source.sourceConfig?.ticketPlatform?.shopSlug ?? source.slug}
+                </AppText>
+              </Pressable>
+            ))}
+        </View>
+        {selectedSource ? (
+          <AppText style={styles.sourceHint}>
+            Gefiltert nach Origin: {selectedSource.displayName} ({total} Events)
+          </AppText>
+        ) : null}
         <View style={adminPageLayoutStyles.listRegion}>
           <FlatList
             style={adminPageLayoutStyles.flexScroll}
@@ -203,6 +250,12 @@ const styles = StyleSheet.create({
     ...textRoles.metadata,
     color: colors.textPrimary,
     textTransform: 'capitalize',
+  },
+  sourceHint: {
+    ...textRoles.metadata,
+    color: colorRoles.emptyStateDescription,
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    marginBottom: spacing.sm,
   },
   reviewBanner: {
     marginHorizontal: spacingRoles.screenHorizontal,

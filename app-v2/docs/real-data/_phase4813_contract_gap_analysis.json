@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-08-04T20:55:51.960Z",
+  "productionMutationsInThisRun": 0,
+  "contractCapabilitiesPresent": [
+    "fieldEvidenceCandidates",
+    "eventIdentityCandidates",
+    "relationshipCandidates",
+    "rawEvidenceReferences",
+    "reviewFindings",
+    "extractionDiagnostics",
+    "completeness",
+    "ticket_phases",
+    "checkout_url",
+    "availability",
+    "sold_out",
+    "lineupEntries",
+    "explicit/rejected evidence",
+    "sourceRole per field",
+    "inclusionReason/rejectionReason"
+  ],
+  "importerImplementationGaps": [
+    {
+      "capability": "HTML entity decode on description normalization",
+      "contractSupports": true,
+      "gapType": "importer_implementation",
+      "module": "official-website-pilot.ts"
+    },
+    {
+      "capability": "Canonical price label format (Tickets ab X Euro)",
+      "contractSupports": true,
+      "gapType": "importer_implementation",
+      "module": "ticket-io-pilot.ts + format-ticket-price.ts"
+    },
+    {
+      "capability": "Mark JSON-LD offer URL as stale candidate not consumer CTA",
+      "contractSupports": true,
+      "gapType": "importer_implementation",
+      "module": "official-website-pilot.ts:ticket_destination_candidate"
+    },
+    {
+      "capability": "Ticket Kings public event catalog discovery",
+      "contractSupports": true,
+      "gapType": "importer_implementation",
+      "module": "live-sample-builder.ts"
+    },
+    {
+      "capability": "Multi-source merge simulation at scale",
+      "contractSupports": true,
+      "gapType": "importer_implementation",
+      "module": "merge-simulation.ts"
+    }
+  ],
+  "contractExtensionRequired": [
+    {
+      "capability": "AI-assisted import scanner",
+      "contractSupports": false,
+      "gapType": "contract_extension_future",
+      "module": "not in scope Phase 4.8.1.3"
+    }
+  ]
+}

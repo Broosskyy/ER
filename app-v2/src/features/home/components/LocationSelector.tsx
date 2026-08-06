@@ -4,6 +4,7 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { CitySelector } from '@/components';
 import { LocationPickerModal } from '@/features/location/components/LocationPickerModal';
 import { getManualDiscoveryCityOptions } from '@/features/location/discovery-city-options';
+import { useHomeRadiusPreference } from '@/features/location/hooks/use-home-radius-preference';
 import { useUserLocation } from '@/features/location/UserLocationProvider';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 import { spacing } from '@/design/spacing';
@@ -12,15 +13,13 @@ import { useTheme } from '@/design/theme';
 export function LocationSelector() {
   const { t } = useAppTranslation();
   const { theme } = useTheme();
-  const { displayLabel, loading, errorCode, location, requestCurrentLocation, selectDiscoveryCity } =
+  const { displayLabel, loading, errorCode, location, requestCurrentLocation, selectDiscoveryCity, clearLocation } =
     useUserLocation();
+  const { radiusKm, options: radiusOptions, setRadiusKm } = useHomeRadiusPreference();
   const [modalVisible, setModalVisible] = useState(false);
   const discoveryCities = getManualDiscoveryCityOptions();
 
   const handleOpen = () => {
-    if (loading) {
-      return;
-    }
     setModalVisible(true);
   };
 
@@ -40,6 +39,12 @@ export function LocationSelector() {
     });
   };
 
+  const handleClearLocation = () => {
+    void clearLocation().then(() => {
+      setModalVisible(false);
+    });
+  };
+
   return (
     <>
       <View
@@ -48,7 +53,7 @@ export function LocationSelector() {
         accessibilityLabel={t('home.location.a11y', { location: displayLabel })}
         accessibilityState={{ busy: loading }}
       >
-        <CitySelector cityLabel={displayLabel} disabled={loading} onPress={handleOpen} />
+        <CitySelector cityLabel={displayLabel} onPress={handleOpen} />
         {loading ? (
           <ActivityIndicator size="small" color={theme.colors.accent} testID="home-location-loading" />
         ) : null}
@@ -60,9 +65,13 @@ export function LocationSelector() {
         errorCode={errorCode}
         discoveryCities={discoveryCities}
         selectedDiscoveryCityId={location?.discoveryCityId}
+        radiusKm={radiusKm}
+        radiusOptions={radiusOptions}
+        onRadiusChange={(next) => void setRadiusKm(next)}
         onClose={() => setModalVisible(false)}
         onUseCurrentLocation={handleUseCurrentLocation}
         onSelectDiscoveryCity={handleSelectDiscoveryCity}
+        onClearLocation={handleClearLocation}
       />
     </>
   );

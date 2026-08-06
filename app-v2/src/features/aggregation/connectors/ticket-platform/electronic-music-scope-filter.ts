@@ -1,141 +1,36 @@
+import {
+  classifyElectronicMusicRelevance,
+  type ElectronicRelevance,
+} from './electronic-music-relevance';
 import type { ParsedTicketPlatformEvent, TicketPlatformScopeConfig, TicketPlatformScopeStats } from './types';
 
-const ELECTRONIC_GENRE_KEYWORDS = [
-  'techno',
-  'house',
-  'hard techno',
-  'hardstyle',
-  'trance',
-  'goa',
-  'psytrance',
-  'psy',
-  'drum and bass',
-  'drum & bass',
-  'dnb',
-  'edm',
-  'electro',
-  'minimal',
-  'melodic techno',
-  'progressive',
-  'acid',
-  'hardcore',
-  'uptempo',
-  'electronic',
-  'rave',
-  'club night',
-  'open air',
-  'open-air',
-];
-
-const EXCLUDED_KEYWORDS = [
-  'comedy',
-  'komödie',
-  'theater',
-  'theatre',
-  'musical',
-  'sport',
-  'fußball',
-  'football',
-  'schlager',
-  'klassik',
-  'classical',
-  'oper',
-  'opera',
-  'firmenveranstaltung',
-  'corporate event',
-  'kinder',
-  'children',
-  'kabarett',
-];
-
-const DEFAULT_ALLOWED_VENUES = [
-  'bootshaus',
-  'affenkaefig',
-  'affenkäfig',
-  'essigfabrik',
-  'elektroküche',
-  'elektrokueche',
-  'artheater',
-  'berghain',
-  'tresor',
-  'about blank',
-  'renate',
-  'watergate',
-];
-
-const DEFAULT_ALLOWED_ORGANIZERS = [
-  'bootshaus',
-  'affenkaefig',
-  'affenkäfig',
-  'rheinaudio',
-  'mdma',
-  'loonyland',
-];
-
-function normalize(value: string | undefined): string {
-  return (value ?? '')
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim();
-}
-
-function containsKeyword(haystack: string, keywords: readonly string[]): boolean {
-  return keywords.some((keyword) => haystack.includes(keyword));
-}
+export { classifyElectronicMusicRelevance, type ElectronicRelevance } from './electronic-music-relevance';
 
 export function createEmptyScopeStats(): TicketPlatformScopeStats {
-  return { discovered: 0, accepted: 0, rejected: 0, rejectionReasons: {} };
+  return { discovered: 0, accepted: 0, rejected: 0, uncertain: 0, rejectionReasons: {} };
 }
 
-function recordRejection(stats: TicketPlatformScopeStats, reason: string): void {
+function recordBucket(stats: TicketPlatformScopeStats, relevance: ElectronicRelevance, reason?: string): void {
+  if (relevance === 'relevant') {
+    stats.accepted += 1;
+    return;
+  }
+  if (relevance === 'uncertain') {
+    stats.uncertain = (stats.uncertain ?? 0) + 1;
+    return;
+  }
   stats.rejected += 1;
-  stats.rejectionReasons[reason] = (stats.rejectionReasons[reason] ?? 0) + 1;
+  const bucket = reason ?? 'irrelevant';
+  stats.rejectionReasons[bucket] = (stats.rejectionReasons[bucket] ?? 0) + 1;
 }
 
+/** @deprecated Use classifyElectronicMusicRelevance — kept for backward-compatible tests. */
 export function isElectronicMusicEvent(
   event: ParsedTicketPlatformEvent,
   config: TicketPlatformScopeConfig = {},
 ): { accepted: boolean; reason?: string } {
-  const searchable = [
-    event.title,
-    event.description,
-    event.venueName,
-    event.organizerName,
-    ...(event.artistNames ?? []),
-    ...(event.genreNames ?? []),
-  ]
-    .filter(Boolean)
-    .map((value) => normalize(String(value)))
-    .join(' ');
-
-  if (containsKeyword(searchable, EXCLUDED_KEYWORDS)) {
-    return { accepted: false, reason: 'excluded_category' };
-  }
-
-  const allowedVenues = [...DEFAULT_ALLOWED_VENUES, ...(config.allowedVenues ?? [])].map(normalize);
-  const allowedOrganizers = [...DEFAULT_ALLOWED_ORGANIZERS, ...(config.allowedOrganizers ?? [])].map(normalize);
-
-  const venue = normalize(event.venueName);
-  const organizer = normalize(event.organizerName);
-
-  if (venue && allowedVenues.some((entry) => venue.includes(entry) || entry.includes(venue))) {
-    return { accepted: true };
-  }
-
-  if (organizer && allowedOrganizers.some((entry) => organizer.includes(entry) || entry.includes(organizer))) {
-    return { accepted: true };
-  }
-
-  if (containsKeyword(searchable, ELECTRONIC_GENRE_KEYWORDS)) {
-    return { accepted: true };
-  }
-
-  if (config.requireElectronicSignal === false) {
-    return { accepted: true };
-  }
-
-  return { accepted: false, reason: 'no_electronic_signal' };
+  const { relevance, reason } = classifyElectronicMusicRelevance(event, config);
+  return { accepted: relevance === 'relevant' || relevance === 'uncertain', reason };
 }
 
 export function filterElectronicMusicEvents(
@@ -144,17 +39,21 @@ export function filterElectronicMusicEvents(
 ): { events: ParsedTicketPlatformEvent[]; stats: TicketPlatformScopeStats } {
   const stats = createEmptyScopeStats();
   stats.discovered = events.length;
-  const accepted: ParsedTicketPlatformEvent[] = [];
+  const importable: ParsedTicketPlatformEvent[] = [];
 
   for (const event of events) {
-    const result = isElectronicMusicEvent(event, config);
-    if (result.accepted) {
-      accepted.push(event);
-      stats.accepted += 1;
-    } else {
-      recordRejection(stats, result.reason ?? 'rejected');
+    const { relevance, reason } = classifyElectronicMusicRelevance(event, config);
+    recordBucket(stats, relevance, reason);
+
+    if (relevance === 'irrelevant') {
+      continue;
     }
+
+    importable.push({
+      ...event,
+      electronicRelevance: relevance,
+    });
   }
 
-  return { events: accepted, stats };
+  return { events: importable, stats };
 }

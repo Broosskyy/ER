@@ -25,3 +25,11 @@ if (existsSync(envPath)) {
     }
   }
 }
+
+/**
+ * Ops scripts use shared datasources that call getSupabaseClient() (anon). Elevate to
+ * service-role credentials for Node-only operations after .env is loaded.
+ */
+if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+}

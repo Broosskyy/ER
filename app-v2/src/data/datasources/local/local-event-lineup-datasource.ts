@@ -8,8 +8,8 @@ import {
 } from '@/data/mappers/event-lineup-mapper';
 import { derivePrimaryArtistId } from '@/features/events/domain/event-lineup-primary';
 
-function createRelationshipId(eventId: string, artistId: string, index: number): string {
-  return `ea-${eventId}-${artistId}-${index}`;
+function createRelationshipId(_eventId: string, _artistId: string, index: number): string {
+  return `ea-local-${index}-${Date.now().toString(36)}`;
 }
 
 export function createLocalEventLineupDatasource(

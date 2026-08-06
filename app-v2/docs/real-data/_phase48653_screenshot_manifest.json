@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-08-06T10:47:15.908Z",
+  "directory": "docs/real-data/phase48653-screenshots",
+  "events": [
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785389049895-4mb7dub-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785389049895-4mb7dub-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785389055557-ux20897-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785389055557-ux20897-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785339383539-0lxvjlp-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785339383539-0lxvjlp-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785339410908-9691748-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785339410908-9691748-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785339421539-k3swcrl-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785339421539-k3swcrl-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785339391167-tfaixrr-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785339391167-tfaixrr-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "mobilePath": "docs/real-data/phase48653-screenshots/evt-1785389052337-0gv1iz1-mobile.png",
+      "webPath": "docs/real-data/phase48653-screenshots/evt-1785389052337-0gv1iz1-web.png",
+      "observedAt": "2026-08-06T10:47:15.908Z",
+      "browserVerified": false,
+      "screenshotGenerated": false,
+      "note": "Screenshot paths reserved; generation requires manual browser capture"
+    }
+  ]
+}

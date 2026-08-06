@@ -1,16 +1,18 @@
 # Ticket Platform Discovery Architecture
 
+> **Product strategy (2026-07-30):** Ticket.io is the **prioritized** ticket platform for discovering new organizers and events. Ticket Kings is **deprecated** — see [TICKET_KINGS_DEPRECATION_PLAN.md](./TICKET_KINGS_DEPRECATION_PLAN.md). Affenkäfig events are covered by the official website source; Ticket Kings added duplicate enrichment only.
+
 ## Goal
 
 Discover electronic music events on supported ticket platforms **without** hard-coding one shop per platform. New organizers/shops surface as reviewable source candidates; admins activate them into the existing import scheduler.
 
 ## Supported Discovery Modes
 
-| Platform | Mode | Entry point |
-|----------|------|-------------|
-| Ticket Kings | `platform_list` | `https://ticketkings.de/all-events/` |
-| Ticket Kings | `organizer` | Derived from platform crawl |
-| Ticket.io | `shop` | `{slug}.ticket.io` from corpus URL mining |
+| Platform | Status | Mode | Entry point |
+|----------|--------|------|-------------|
+| **Ticket.io** | **Active — priority** | `shop` | `{slug}.ticket.io` from corpus URL mining |
+| Ticket Kings | **Deprecated** | `platform_list` | `https://ticketkings.de/all-events/` |
+| Ticket Kings | **Deprecated** | `organizer` | Derived from platform crawl |
 
 ## Data Model
 
@@ -50,9 +52,9 @@ flowchart TD
 
 No public platform-wide event index. Each organizer operates an isolated white-label shop. Discovery is **corpus-driven**: only shops referenced in Eternal Rave data (sources, configs, URLs) are probed.
 
-### Ticket Kings
+### Ticket Kings (deprecated)
 
-Single WordPress operator with a public `/all-events/` listing. Pagination is HTML-based. This is the primary platform-wide discovery path for Ticket Kings.
+Single WordPress operator with a public `/all-events/` listing. **No longer pursued strategically** — overlaps with Affenkäfig website imports. Crawler and adapter remain for historical data only until sources are disabled per the deprecation plan.
 
 ## Admin Surface
 

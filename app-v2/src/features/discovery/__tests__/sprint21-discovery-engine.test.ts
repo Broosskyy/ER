@@ -103,12 +103,13 @@ describe('Sprint 21 discovery engine', () => {
   it('filters nearby events by radius', async () => {
     const engine = new DiscoveryEngine({
       eventSource: new StaticDiscoveryEventSource([
-        createEvent(),
+        createEvent({ imageUrl: 'https://example.com/flyer.jpg' }),
         createEvent({
           id: 'event-far',
           latitude: 52.52,
           longitude: 13.405,
           city: 'Berlin',
+          imageUrl: 'https://example.com/flyer-far.jpg',
         }),
       ]),
       clock,

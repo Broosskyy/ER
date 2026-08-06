@@ -77,11 +77,21 @@ export interface DiscoveryVenueEnvironmentFilter {
   outdoor?: boolean;
 }
 
+/** Ranking signals for similar-events — not hard entity filters. */
+export interface DiscoverySimilarToContext {
+  venueId?: string;
+  organizerId?: string;
+  festivalId?: string;
+  festivalEditionId?: string;
+  artistIds?: string[];
+}
+
 export interface DiscoveryQuery {
   surface: DiscoverySurface;
   search?: DiscoverySearchQuery;
   date?: DiscoveryDateFilter;
   entities?: DiscoveryEntityFilter;
+  similarTo?: DiscoverySimilarToContext;
   location?: DiscoveryLocationContext;
   price?: DiscoveryPriceFilter;
   venueEnvironment?: DiscoveryVenueEnvironmentFilter;

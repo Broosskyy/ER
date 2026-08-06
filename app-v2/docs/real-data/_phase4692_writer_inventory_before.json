@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-03T07:29:43.304Z",
+  "readOnly": true,
+  "writers": [
+    {
+      "id": "structured_import_writer",
+      "module": "import/services/import-publish-structured-lineup-writer",
+      "reads": [
+        "ImportRecord",
+        "existing structured",
+        "existing flat"
+      ],
+      "writes": [
+        "event_lineup_entries",
+        "event_lineup_entry_artists",
+        "event_artists"
+      ],
+      "authoritative": true,
+      "canDowngrade": false,
+      "oscillationRisk": "medium"
+    },
+    {
+      "id": "flat_import_fallback",
+      "module": "import/services/import-publish-lineup-writer",
+      "reads": [
+        "ImportRecord",
+        "prioritized artistNames"
+      ],
+      "writes": [
+        "event_artists"
+      ],
+      "authoritative": false,
+      "canDowngrade": true,
+      "oscillationRisk": "high"
+    },
+    {
+      "id": "repair_lineup_projection",
+      "module": "import/services/import-event-publish-service.repairLineupProjection",
+      "reads": [
+        "ImportRecord"
+      ],
+      "writes": [
+        "structured + flat"
+      ],
+      "authoritative": true,
+      "canDowngrade": true,
+      "oscillationRisk": "high"
+    },
+    {
+      "id": "admin_structured_replace",
+      "module": "events/services/event-lineup-service.replaceStructuredLineup",
+      "reads": [
+        "admin draft entries"
+      ],
+      "writes": [
+        "structured + flat"
+      ],
+      "authoritative": true,
+      "canDowngrade": false,
+      "oscillationRisk": "low"
+    },
+    {
+      "id": "sql_backfill",
+      "module": "migrations/phase468 structured backfill",
+      "reads": [
+        "event_artists"
+      ],
+      "writes": [
+        "event_lineup_entries SOLO"
+      ],
+      "authoritative": false,
+      "canDowngrade": false,
+      "oscillationRisk": "low"
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "generatedAt": "2026-08-02T22:22:11.556Z",
+  "pipelineStages": [
+    "description_parser",
+    "lineup_parser",
+    "tokenizer",
+    "billing_parser",
+    "artist_normalization",
+    "canonical_projection",
+    "consumer_projection"
+  ],
+  "segmentationAudit": [],
+  "invalidArtistCatalog": [
+    {
+      "artistId": "artist-title-kotorri-b2b-edna-ejbgxk",
+      "name": "KOTORRI B2B EDNA",
+      "expanded": [
+        "KOTORRI",
+        "EDNA"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-dystopia-f2f-valkyrie-tfb5lx",
+      "name": "DYSTOPIA F2F VALKYRIE",
+      "expanded": [
+        "DYSTOPIA",
+        "VALKYRIE"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-ian-crank-f2f-easypysi-yr1uzw",
+      "name": "IAN CRANK F2F EASYPYSI",
+      "expanded": [
+        "IAN CRANK",
+        "EASYPYSI"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-karamusta-f2f-greekz-8hxxms",
+      "name": "KARAMUSTA F2F GREEKZ",
+      "expanded": [
+        "KARAMUSTA",
+        "GREEKZ"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-kevin-la-nique-f2f-the-rafnix-t54qwa",
+      "name": "KEVIN LA NIQUE F2F THE RAFNIX",
+      "expanded": [
+        "KEVIN LA NIQUE",
+        "THE RAFNIX"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-nina-bender-f2f-lee-ann-srdddw",
+      "name": "NINA BENDER F2F LEE-ANN",
+      "expanded": [
+        "NINA BENDER",
+        "LEE-ANN"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-flash-b2b-forward-srv05l",
+      "name": "FLASH B2B FORWARD",
+      "expanded": [
+        "FLASH",
+        "FORWARD"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-hellmyer-b2b-stz-gjnvhy",
+      "name": "HELLMYER B2B STZ",
+      "expanded": [
+        "HELLMYER",
+        "STZ"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-mauro-b2b-i-d-a-9n9cku",
+      "name": "MAURO B2B I.D.A",
+      "expanded": [
+        "MAURO",
+        "I.D.A"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-plea5ure-b2b-pul5e-x75ds3",
+      "name": "PLEA5URE B2B PUL5E",
+      "expanded": [
+        "PLEA5URE",
+        "PUL5E"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-risko-b2b-remek666-l2h4rg",
+      "name": "RISKO B2B REMEK666",
+      "expanded": [
+        "RISKO",
+        "REMEK666"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-kili-b2b-complex-ao5v8e",
+      "name": "Kili b2b Complex",
+      "expanded": [
+        "Kili",
+        "Complex"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-ran-ddevin-wildaversionkili-b2b-complexzelecterrestrictless-k86tsu",
+      "name": "RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+      "expanded": [
+        "RAN-DDEVIN WILDAVERSIONKILI",
+        "COMPLEXZELECTERRESTRICTLESS"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-vdv-b2b-miscall-wutglv",
+      "name": "VDV B2B MISCALL",
+      "expanded": [
+        "VDV",
+        "MISCALL"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-dr-donk-b2b-yoshiko-ge5j8t",
+      "name": "Dr Donk b2b Yoshiko",
+      "expanded": [
+        "Dr Donk",
+        "Yoshiko"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-annie-dj-dreckisch-dvaid-glanz-b2b-rosilicious-karah-kuko-tassery-triptykh-b2b-golpe-l3xjqs",
+      "name": "ANNIE DJ DRECKISCH DVAID GLANZ B2B ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH B2B GOLPE",
+      "expanded": [
+        "ANNIE DJ DRECKISCH DVAID GLANZ",
+        "ROSILICIOUS KARAH KUKO",
+        "TASSERY TRIPTYKH",
+        "GOLPE"
+      ],
+      "billingTokenCount": 2
+    },
+    {
+      "artistId": "artist-title-kara-b2b-youphoria-r0p1u6",
+      "name": "KARA B2B YOUPHORIA",
+      "expanded": [
+        "KARA",
+        "YOUPHORIA"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-brandon-b2b-sam-collinsoliver-magenta-b2b-lost-identitydave-replay-b2b-eminalukes-b2b-makla-ow2yco",
+      "name": "BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA",
+      "expanded": [
+        "BRANDON",
+        "SAM COLLINSOLIVER",
+        "MAGENTA",
+        "LOST IDENTITYDAVE",
+        "REPLAY",
+        "EMINALUKES",
+        "MAKLA"
+      ],
+      "billingTokenCount": 4
+    },
+    {
+      "artistId": "artist-title-ecraze-b2b-bizo-e90xx8",
+      "name": "ECRAZE B2B BIZO",
+      "expanded": [
+        "ECRAZE",
+        "BIZO"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-madcore-b2b-ellie-rich-7fcqp8",
+      "name": "MADCORE B2B ELLIE RICH",
+      "expanded": [
+        "MADCORE",
+        "ELLIE RICH"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-albino-b2b-dr-donk-b2b-ricky-west-rhon48",
+      "name": "Albino b2b Dr Donk b2b Ricky West",
+      "expanded": [
+        "Albino",
+        "Dr",
+        "Donk",
+        "Ricky West"
+      ],
+      "billingTokenCount": 2
+    },
+    {
+      "artistId": "artist-title-the-german-b2b-duo-jean-philippe-1lcuhf",
+      "name": "the German B2B duo Jean Philippe",
+      "expanded": [
+        "the German",
+        "duo Jean Philippe"
+      ],
+      "billingTokenCount": 1
+    },
+    {
+      "artistId": "artist-title-cleopard2000-b2b-alba-franchdavyboi-b2b-trancemaster-krausemika-heggemannprada2000testpressblckbx-j0zgc8",
+      "name": "CLEOPARD2000 b2b ALBA FRANCHDAVYBOI b2b TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX",
+      "expanded": [
+        "CLEOPARD2000",
+        "ALBA",
+        "FRANCHDAVYBOI",
+        "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX"
+      ],
+      "billingTokenCount": 2
+    }
+  ],
+  "representatives": [
+    {
+      "label": "Sommerfest Elektroküche",
+      "found": true,
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "canonicalArtists": [
+        "ASL∅",
+        "ANNX",
+        "BLACK ZUSHI",
+        "BOUNCE MC",
+        "HOTBOI2300",
+        "HYPNOTIZED",
+        "ICJ",
+        "MAURO",
+        "STIMULATE",
+        "THE M∅VEMENT",
+        "TOMMY LIBERA",
+        "TURBO TIMOS",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN",
+        "HYPNO TIZED",
+        "STIMU LATE"
+      ],
+      "importArtists": [
+        "ASL∅",
+        "ANNX",
+        "BLACK ZUSHI",
+        "BOUNCE MC",
+        "HOTBOI2300",
+        "HYPNOTIZED",
+        "ICJ",
+        "MAURO",
+        "STIMULATE",
+        "THE M∅VEMENT",
+        "TOMMY LIBERA",
+        "TURBO TIMOS",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN"
+      ],
+      "shouldRepair": false
+    },
+    {
+      "label": "Bootshaus on a Ship Vol. III",
+      "found": true,
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "canonicalArtists": [
+        "BRANDON",
+        "SAM COLLINSOLIVER",
+        "MAGENTA",
+        "LOST IDENTITYDAVE",
+        "REPLAY",
+        "EMINALUKES",
+        "MAKLA"
+      ],
+      "importArtists": [
+        "BRANDON",
+        "SAM COLLINSOLIVER",
+        "MAGENTA",
+        "LOST IDENTITYDAVE",
+        "REPLAY",
+        "EMINALUKES",
+        "MAKLA"
+      ],
+      "shouldRepair": false
+    },
+    {
+      "label": "MDMA",
+      "found": true,
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "canonicalArtists": [
+        "DYSTOPIA",
+        "VALKYRIE",
+        "IAN CRANK",
+        "EASYPYSI",
+        "KARAM USTA",
+        "GREEKZ",
+        "KEVIN LA NIQUE",
+        "THE RAFNIX",
+        "NINA BENDER",
+        "LEE-ANN",
+        "FLASH",
+        "FORWARD",
+        "HELLMYER",
+        "STZ",
+        "MAURO",
+        "I.D.A",
+        "PLEA5URE",
+        "PUL5E"
+      ],
+      "importArtists": [],
+      "shouldRepair": false
+    },
+    {
+      "label": "LEVI",
+      "found": true,
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "canonicalArtists": [
+        "LEVI"
+      ],
+      "importArtists": [
+        "LEVI"
+      ],
+      "shouldRepair": false
+    }
+  ],
+  "metrics": {
+    "publishedEvents": 108,
+    "completeLineups": 82,
+    "singleArtistEvents": 42,
+    "invalidArtistEntities": 0,
+    "averageArtistsPerEvent": 4.09,
+    "brokenBillingRelationships": 0,
+    "canonicalArtistCount": 319,
+    "collapsedCanonicalArtistEntities": 23
+  },
+  "repairCandidates": 11
+}

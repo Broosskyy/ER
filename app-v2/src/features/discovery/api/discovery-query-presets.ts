@@ -159,6 +159,7 @@ export function buildSimilarEventsQuery(
     venueId?: string;
     organizerId?: string;
     festivalId?: string;
+    artistIds?: string[];
   },
   options: DiscoveryQueryPresetOptions = {},
 ): DiscoveryQuery {
@@ -171,10 +172,13 @@ export function buildSimilarEventsQuery(
     cursor: options.cursor,
     entities: {
       genres: event.genres.length > 0 ? [...event.genres] : undefined,
-      city: event.city,
+      city: event.city ?? options.city,
+    },
+    similarTo: {
       venueId: event.venueId,
       organizerId: event.organizerId,
       festivalId: event.festivalId,
+      artistIds: event.artistIds?.length ? [...event.artistIds] : undefined,
     },
   };
 }

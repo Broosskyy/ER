@@ -3,6 +3,8 @@ import type { EventSourceReferenceRepository } from '@/features/aggregation/repo
 import { buildEventOriginFromPublish } from '@/features/events/services/event-origin-service';
 import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
 import type { ImportRecordRepository } from '@/data/repositories/import-repositories';
+import type { ImportRecord } from '@/features/import/models/types';
+import type { RawSourceType } from '@/features/import/models/normalized-event-candidate';
 import type { BackfillHandler } from './backfill-runner';
 
 export function createEventOriginsBackfillHandler(
@@ -77,7 +79,11 @@ export function createEventOriginsBackfillHandler(
                   sourceId: refSource.id,
                   sourceName: refSource.displayName,
                   externalId: reference.externalEventId,
+                  rawSourceType: 'unknown' as const satisfies RawSourceType,
                 };
+            const rawSourceType: RawSourceType = record
+              ? getEffectiveCandidate(record).rawSourceType
+              : 'unknown';
 
             const origin = buildEventOriginFromPublish({
               canonicalEventId,
@@ -100,6 +106,7 @@ export function createEventOriginsBackfillHandler(
                 sourceId: refSource.id,
                 sourceName: refSource.displayName,
                 externalId: reference.externalEventId,
+                rawSourceType,
               },
               isPrimary: reference.sourceId === event.sourceId,
             });

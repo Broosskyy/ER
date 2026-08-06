@@ -1,0 +1,74 @@
+{
+  "productionMutationsInThisRun": 0,
+  "shadowApproved": false,
+  "shadowExecutionApproved": false,
+  "plan": {
+    "importer": "official-website",
+    "importerVersion": "phase4814-official-website",
+    "sourceIds": [
+      "official-website-1",
+      "official-website-3",
+      "official-website-5",
+      "official-website-7",
+      "official-website-9"
+    ],
+    "expectedEventCount": 43,
+    "supportedFields": [
+      "title",
+      "description",
+      "flyer",
+      "gallery",
+      "date_time",
+      "venue",
+      "location",
+      "city",
+      "coordinates"
+    ],
+    "intentionallyUnsupportedFields": [
+      "price",
+      "ticket_phases",
+      "availability",
+      "sold_out",
+      "checkout_url",
+      "lineup"
+    ],
+    "requestRateLimitPerMinute": 30,
+    "evidenceStoragePath": "docs/real-data/_shadow_evidence/",
+    "noWriteEnforcement": [
+      "stagingOnly: true on all pilot results",
+      "no opsClient().from(events).insert/update",
+      "no import_records mutations",
+      "no review queue writes",
+      "no scheduler changes"
+    ],
+    "monitoring": [
+      "contract schema validation per run",
+      "contamination detector per batch",
+      "identity cluster cardinality",
+      "HTTP 429/403 rate"
+    ],
+    "errorThresholdPercent": 5,
+    "falseMergeThreshold": 0,
+    "manualReviewOutputPath": "docs/real-data/_shadow_review_queue.json",
+    "durationHours": 72,
+    "stopConditions": [
+      "any_production_write_attempt",
+      "contract_schema_failure",
+      "unexplained_identity_collision",
+      "cross_event_contamination",
+      "unexpected_event_count_growth",
+      "importer_nondeterminism",
+      "rate_limit_block_escalation"
+    ],
+    "rollbackProcedure": [
+      "Abort shadow job immediately",
+      "Discard shadow evidence artifacts only",
+      "No canonical rollback required (read-only)",
+      "File incident report with diagnostics"
+    ]
+  },
+  "noWriteValidation": {
+    "ok": true,
+    "violations": []
+  }
+}

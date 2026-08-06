@@ -1,0 +1,993 @@
+{
+  "generatedAt": "2026-08-04T19:25:56.614Z",
+  "productionMutationsInThisRun": 0,
+  "events": [
+    {
+      "eventKey": "ship",
+      "eventId": "evt-1785339420043-obhyeev",
+      "label": "Bootshaus on a Ship Vol. III",
+      "observedAt": "2026-08-04T19:25:49.717Z",
+      "sources": {
+        "website": {
+          "url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii/",
+          "jsonLd": {
+            "title": "Bootshaus on a Ship Vol. III | Bootshaus Club",
+            "description": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session.&nbsp;LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "parser": "ticket_io",
+          "blockedByPow": true,
+          "priceText": "Ausverkauft",
+          "priceAmount": 0,
+          "soldOut": true,
+          "availability": "sold_out",
+          "detailAltchaBlocked": true,
+          "listRowCount": 15,
+          "availabilityReviewRequired": false
+        }
+      },
+      "groundTruth": {
+        "title": "Bootshaus on a Ship Vol. III | Bootshaus Club",
+        "description": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session.&nbsp;LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+        "flyer": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+        "gallery": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+        "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "provider": "ticket.io",
+        "prices": "Ausverkauft",
+        "availability": "sold_out",
+        "soldOut": true
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete."
+      ]
+    },
+    {
+      "eventKey": "levi",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "observedAt": "2026-08-04T19:25:50.296Z",
+      "sources": {
+        "website": {
+          "url": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/nightswithus-presents-levi/",
+          "jsonLd": {
+            "title": "NIGHTSWITHUS presents LEVI | Bootshaus Club",
+            "description": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨📍 Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00&nbsp;NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne.&nbsp;Don&#39;t miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "parser": "ticket_io",
+          "blockedByPow": true,
+          "detailAltchaBlocked": true,
+          "listRowCount": 0,
+          "availabilityReviewRequired": false
+        }
+      },
+      "groundTruth": {
+        "title": "NIGHTSWITHUS presents LEVI | Bootshaus Club",
+        "description": "✨ NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨📍 Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00&nbsp;NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne.&nbsp;Don&#39;t miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+        "flyer": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+        "gallery": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+        "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+        "provider": "ticket.io"
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete.",
+        "LEVI: bootshaus-tickets shop list returns 0 rows; price not publicly extractable without bypassing bot protection."
+      ]
+    },
+    {
+      "eventKey": "underland",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "observedAt": "2026-08-04T19:25:50.601Z",
+      "sources": {
+        "website": {
+          "url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+          "fetchStatus": 200,
+          "finalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "jsonLd": {
+            "title": "Underland Essigfabrik 05.09.2026",
+            "description": "",
+            "startDate": "2026-09-05T00:00:00+02:00",
+            "venueName": "Essigfabrik /  Elektroküche",
+            "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+            "cityName": "Köln",
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "eventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+            "sourceMetadata": {
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Underland Essigfabrik 05.09.2026",
+              "startDate": "2026-09-05T00:00:00+02:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+              "description": "",
+              "image": [
+                "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Essigfabrik /  Elektroküche",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Siegburger Str. 110, 50679 Köln",
+                  "addressLocality": "Köln"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2026-07-01T21:34:01+02:00"
+              }
+            },
+            "baseUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "parser": "ticket_io",
+          "blockedByPow": true,
+          "priceText": "ab 23,90 €",
+          "priceAmount": 23.9,
+          "soldOut": false,
+          "availability": "available",
+          "detailAltchaBlocked": true,
+          "listRowCount": 15,
+          "availabilityReviewRequired": false
+        }
+      },
+      "groundTruth": {
+        "title": "Underland Essigfabrik 05.09.2026",
+        "date": "2026-09-05T00:00:00+02:00",
+        "start": "2026-09-05T00:00:00+02:00",
+        "venue": "Essigfabrik /  Elektroküche",
+        "address": "Siegburger Str. 110, 50679 Köln, Köln",
+        "description": "",
+        "flyer": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+        "gallery": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "provider": "ticket.io",
+        "prices": "ab 23,90 €",
+        "availability": "available",
+        "soldOut": false
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete.",
+        "Underland ticket redirect observed: requested https://bootshaus-club.ticket.io/C7JPnatZ/ → final https://bootshaus-club.ticket.io/C7JPnatZ/"
+      ]
+    },
+    {
+      "eventKey": "bc173",
+      "eventId": "evt-1785339392687-tbdwup4",
+      "label": "BC173",
+      "observedAt": "2026-08-04T19:25:51.867Z",
+      "sources": {
+        "website": {
+          "url": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/",
+          "jsonLd": {
+            "title": "BC173 Airport Session pres. by Bootshaus  | Bootshaus Club",
+            "description": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/fjspvLe4/",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+          "parser": "ticket_io",
+          "blockedByPow": true,
+          "detailAltchaBlocked": true,
+          "listRowCount": 15,
+          "availabilityReviewRequired": false
+        }
+      },
+      "groundTruth": {
+        "title": "BC173 Airport Session pres. by Bootshaus  | Bootshaus Club",
+        "description": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+        "flyer": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+        "gallery": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+        "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+        "provider": "ticket.io"
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete."
+      ]
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "observedAt": "2026-08-04T19:25:52.191Z",
+      "sources": {
+        "website": {
+          "url": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+          "fetchStatus": 200,
+          "finalUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+          "jsonLd": {
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "description": "",
+            "startDate": "2026-08-08T17:00:00+02:00",
+            "venueName": "Essigfabrik /  Elektroküche",
+            "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+            "cityName": "Köln",
+            "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+            "eventUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+            "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+            "sourceMetadata": {
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Sommerfest Elektroküche 08.08.2026",
+              "startDate": "2026-08-08T17:00:00+02:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "url": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+              "description": "",
+              "image": [
+                "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg"
+              ],
+              "location": {
+                "@type": "Place",
+                "name": "Essigfabrik /  Elektroküche",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Siegburger Str. 110, 50679 Köln",
+                  "addressLocality": "Köln"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2026-06-20T12:34:23+02:00"
+              }
+            },
+            "baseUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+          "fetchStatus": 404,
+          "finalUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+          "parser": "ticket_kings",
+          "genreNames": [],
+          "fieldCoverage": []
+        }
+      },
+      "groundTruth": {
+        "title": "Sommerfest Elektroküche 08.08.2026",
+        "date": "2026-08-08T17:00:00+02:00",
+        "start": "2026-08-08T17:00:00+02:00",
+        "venue": "Essigfabrik /  Elektroküche",
+        "address": "Siegburger Str. 110, 50679 Köln, Köln",
+        "genres": [],
+        "description": "",
+        "flyer": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+        "gallery": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+        "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-08-08-2026/",
+        "provider": "ticket_kings"
+      },
+      "observationNotes": [
+        "Sommerfest canonical ticketUrl may differ from affenkaefig official page slug (20-06 vs 08-08) — verify merge winner."
+      ]
+    },
+    {
+      "eventKey": "mdma",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA",
+      "observedAt": "2026-08-04T19:25:53.767Z",
+      "sources": {
+        "website": {
+          "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "fetchStatus": 200,
+          "finalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "jsonLd": {
+            "title": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+            "description": "&lt;p&gt;MDMA - Musik Die Mich Antreibt 10.10.2026 Datum:    10.10.2026 Location: Essigfabrik&amp; Elektroküche Line Up:  Folgt noch (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-30&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=30&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; function nmMinFrameHeight(){ if(window.matchMedia){return...&lt;/p&gt;\\n",
+            "startDate": "2026-10-10T23:00:00+02:00",
+            "endDate": "2026-10-11T06:00:00+02:00",
+            "venueName": "Essigfabrik",
+            "venueAddress": "Siegburger Str. 110, 50679, Köln",
+            "cityName": "Köln",
+            "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+            "organizerName": "M.D.M.A Musik die mich Antreibt",
+            "sourceMetadata": {
+              "@context": "http://schema.org",
+              "@type": "Event",
+              "name": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+              "description": "&lt;p&gt;MDMA - Musik Die Mich Antreibt 10.10.2026 Datum:    10.10.2026 Location: Essigfabrik&amp; Elektroküche Line Up:  Folgt noch (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-30&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=30&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; function nmMinFrameHeight(){ if(window.matchMedia){return...&lt;/p&gt;\\n",
+              "image": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+              "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "startDate": "2026-10-10T23:00:00+02:00",
+              "endDate": "2026-10-11T06:00:00+02:00",
+              "location": {
+                "@type": "Place",
+                "name": "Essigfabrik",
+                "description": "",
+                "url": "https://ticketkings.de/veranstaltungsort/essigfabrik/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Siegburger Str. 110",
+                  "addressLocality": "Köln",
+                  "postalCode": "50679"
+                },
+                "telephone": "",
+                "sameAs": "https://essig-fabrik.de/"
+              },
+              "organizer": {
+                "@type": "Person",
+                "name": "M.D.M.A Musik die mich Antreibt",
+                "description": "",
+                "url": "https://linkstack.webtropolis.de/@mdma",
+                "telephone": "",
+                "email": "&#115;u&#112;&#112;&#111;&#114;&#116;&#64;ti&#99;&#107;&#101;&#116;ki&#110;&#103;s.&#100;&#101;",
+                "sameAs": "https://linkstack.webtropolis.de/@mdma"
+              },
+              "performer": "Organization"
+            },
+            "baseUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "fetchStatus": 200,
+          "finalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "parser": "ticket_kings",
+          "description": "MDMA - Musik Die Mich Antreibt 10.10.2026 Datum: 10.10.2026 Location: Essigfabrik& Elektroküche Line Up: Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; function nmMinFrameHeight(){ if(window.matchMedia){return... \\n",
+          "genreNames": [],
+          "artistNames": [
+            "Location : Essigfabrik& Elektroküche",
+            "Line Up: Folgt noch"
+          ],
+          "lineupEntries": [
+            "Location : Essigfabrik& Elektroküche",
+            "Line Up: Folgt noch"
+          ],
+          "priceAmount": 15,
+          "priceText": "ab 15,00 €",
+          "ticketPhases": [
+            {
+              "rawProductName": "E-Ticket",
+              "rawPhaseName": "Early Bird",
+              "rawPriceText": "15,00 EUR",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "availabilityText": "noch 34 verfügbar",
+              "remainingQuantity": 34,
+              "optionalState": "required",
+              "sectionHeading": "Tickets",
+              "classification": "admission_ticket",
+              "includedInEventSummary": true,
+              "structuralSignals": [
+                "admission_option",
+                "section:Tickets",
+                "quantity_stepper"
+              ],
+              "soldOut": false,
+              "available": true
+            },
+            {
+              "rawProductName": "Ticket Flex Option",
+              "rawPriceText": "2,50 EUR &middot; pro Ticket",
+              "priceAmount": 2.5,
+              "priceCurrency": "EUR",
+              "optionalState": "optional",
+              "sectionHeading": "Zusatzoptionen",
+              "classification": "insurance_or_flex",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_insurance_or_flex_add_on",
+              "structuralSignals": [
+                "addon_checkbox",
+                "section:Zusatzoptionen",
+                "checkbox_optional"
+              ]
+            },
+            {
+              "rawProductName": "Rabattcode einlösen",
+              "optionalState": "optional",
+              "sectionHeading": "Weitere Angaben",
+              "classification": "unknown_review_required",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_buyer_section_product_requires_review",
+              "structuralSignals": [
+                "buyer_optional",
+                "section:Weitere Angaben",
+                "checkbox_optional"
+              ]
+            }
+          ],
+          "availability": "available",
+          "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "checkout": {
+            "releases": [
+              {
+                "name": "E-Ticket — Early Bird",
+                "ticketType": "E-Ticket",
+                "phaseName": "Early Bird",
+                "priceAmount": 15,
+                "priceCurrency": "EUR",
+                "priceText": "ab 15,00 €",
+                "soldOut": false,
+                "available": true,
+                "remainingQuantity": 34,
+                "availabilityText": "noch 34 verfügbar"
+              }
+            ],
+            "products": [
+              {
+                "rawProductName": "E-Ticket",
+                "rawPhaseName": "Early Bird",
+                "rawPriceText": "15,00 EUR",
+                "priceAmount": 15,
+                "priceCurrency": "EUR",
+                "availabilityText": "noch 34 verfügbar",
+                "remainingQuantity": 34,
+                "optionalState": "required",
+                "sectionHeading": "Tickets",
+                "classification": "admission_ticket",
+                "includedInEventSummary": true,
+                "structuralSignals": [
+                  "admission_option",
+                  "section:Tickets",
+                  "quantity_stepper"
+                ],
+                "soldOut": false,
+                "available": true
+              },
+              {
+                "rawProductName": "Ticket Flex Option",
+                "rawPriceText": "2,50 EUR &middot; pro Ticket",
+                "priceAmount": 2.5,
+                "priceCurrency": "EUR",
+                "optionalState": "optional",
+                "sectionHeading": "Zusatzoptionen",
+                "classification": "insurance_or_flex",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_insurance_or_flex_add_on",
+                "structuralSignals": [
+                  "addon_checkbox",
+                  "section:Zusatzoptionen",
+                  "checkbox_optional"
+                ]
+              },
+              {
+                "rawProductName": "Rabattcode einlösen",
+                "optionalState": "optional",
+                "sectionHeading": "Weitere Angaben",
+                "classification": "unknown_review_required",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_buyer_section_product_requires_review",
+                "structuralSignals": [
+                  "buyer_optional",
+                  "section:Weitere Angaben",
+                  "checkbox_optional"
+                ]
+              }
+            ],
+            "excludedProducts": [
+              {
+                "rawProductName": "Ticket Flex Option",
+                "rawPriceText": "2,50 EUR &middot; pro Ticket",
+                "priceAmount": 2.5,
+                "priceCurrency": "EUR",
+                "optionalState": "optional",
+                "sectionHeading": "Zusatzoptionen",
+                "classification": "insurance_or_flex",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_insurance_or_flex_add_on",
+                "structuralSignals": [
+                  "addon_checkbox",
+                  "section:Zusatzoptionen",
+                  "checkbox_optional"
+                ]
+              },
+              {
+                "rawProductName": "Rabattcode einlösen",
+                "optionalState": "optional",
+                "sectionHeading": "Weitere Angaben",
+                "classification": "unknown_review_required",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_buyer_section_product_requires_review",
+                "structuralSignals": [
+                  "buyer_optional",
+                  "section:Weitere Angaben",
+                  "checkbox_optional"
+                ]
+              }
+            ],
+            "priceAmount": 15,
+            "maximumPrice": 15,
+            "priceCurrency": "EUR",
+            "priceText": "ab 15,00 €",
+            "availability": "available",
+            "reviewRequired": false,
+            "evidenceSource": "native_event_iframe",
+            "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F"
+          },
+          "fieldCoverage": [
+            "description",
+            "html_lineup",
+            "checkoutProviderId"
+          ]
+        }
+      },
+      "groundTruth": {
+        "title": "MDMA &#8211; Musik Die Mich Antreibt 10.10.26",
+        "date": "2026-10-10T23:00:00+02:00",
+        "start": "2026-10-10T23:00:00+02:00",
+        "venue": "Essigfabrik",
+        "address": "Siegburger Str. 110, 50679, Köln",
+        "genres": [],
+        "description": "&lt;p&gt;MDMA - Musik Die Mich Antreibt 10.10.2026 Datum:    10.10.2026 Location: Essigfabrik&amp; Elektroküche Line Up:  Folgt noch (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-30&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=30&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; function nmMinFrameHeight(){ if(window.matchMedia){return...&lt;/p&gt;\\n",
+        "lineup": [
+          "Location : Essigfabrik& Elektroküche",
+          "Line Up: Folgt noch"
+        ],
+        "artists": [
+          "Location : Essigfabrik& Elektroküche",
+          "Line Up: Folgt noch"
+        ],
+        "flyer": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+        "gallery": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "provider": "ticket_kings",
+        "ticketPhases": [
+          {
+            "rawProductName": "E-Ticket",
+            "rawPhaseName": "Early Bird",
+            "rawPriceText": "15,00 EUR",
+            "priceAmount": 15,
+            "priceCurrency": "EUR",
+            "availabilityText": "noch 34 verfügbar",
+            "remainingQuantity": 34,
+            "optionalState": "required",
+            "sectionHeading": "Tickets",
+            "classification": "admission_ticket",
+            "includedInEventSummary": true,
+            "structuralSignals": [
+              "admission_option",
+              "section:Tickets",
+              "quantity_stepper"
+            ],
+            "soldOut": false,
+            "available": true
+          },
+          {
+            "rawProductName": "Ticket Flex Option",
+            "rawPriceText": "2,50 EUR &middot; pro Ticket",
+            "priceAmount": 2.5,
+            "priceCurrency": "EUR",
+            "optionalState": "optional",
+            "sectionHeading": "Zusatzoptionen",
+            "classification": "insurance_or_flex",
+            "includedInEventSummary": false,
+            "exclusionReason": "optional_insurance_or_flex_add_on",
+            "structuralSignals": [
+              "addon_checkbox",
+              "section:Zusatzoptionen",
+              "checkbox_optional"
+            ]
+          },
+          {
+            "rawProductName": "Rabattcode einlösen",
+            "optionalState": "optional",
+            "sectionHeading": "Weitere Angaben",
+            "classification": "unknown_review_required",
+            "includedInEventSummary": false,
+            "exclusionReason": "optional_buyer_section_product_requires_review",
+            "structuralSignals": [
+              "buyer_optional",
+              "section:Weitere Angaben",
+              "checkbox_optional"
+            ]
+          }
+        ],
+        "prices": "ab 15,00 €",
+        "availability": "available"
+      },
+      "observationNotes": []
+    },
+    {
+      "eventKey": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "observedAt": "2026-08-04T19:25:55.009Z",
+      "sources": {
+        "website": {
+          "url": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/",
+          "jsonLd": {
+            "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club",
+            "description": "AFFENK&Auml;FIG RULES! BOOTSHAUS &ndash; FULL HOUSE! 🐒🔥&nbsp;Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus K&ouml;ln.&nbsp;Das Bootshaus z&auml;hlt zu den besten Clubs der Welt &ndash; Perfektion in Sound, Licht und Atmosph&auml;re ohne Kompromisse. Der perfekte Anlass f&uuml;r eine wilde Nacht.&nbsp;🎟️ Early Bird Tickets sind jetzt verf&uuml;gbar &ndash; nur f&uuml;r kurze Zeit.&nbsp;Das Line Up hauen wir euch bald um die Ohren.&nbsp;Sichert euch so lange die verg&uuml;nstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "fetchStatus": 200,
+          "finalUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "parser": "ticket_io",
+          "blockedByPow": true,
+          "priceText": "ab 19,90 €",
+          "priceAmount": 19.9,
+          "soldOut": false,
+          "availability": "available",
+          "detailAltchaBlocked": true,
+          "listRowCount": 15,
+          "availabilityReviewRequired": false
+        }
+      },
+      "groundTruth": {
+        "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN | Bootshaus Club",
+        "description": "AFFENK&Auml;FIG RULES! BOOTSHAUS &ndash; FULL HOUSE! 🐒🔥&nbsp;Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus K&ouml;ln.&nbsp;Das Bootshaus z&auml;hlt zu den besten Clubs der Welt &ndash; Perfektion in Sound, Licht und Atmosph&auml;re ohne Kompromisse. Der perfekte Anlass f&uuml;r eine wilde Nacht.&nbsp;🎟️ Early Bird Tickets sind jetzt verf&uuml;gbar &ndash; nur f&uuml;r kurze Zeit.&nbsp;Das Line Up hauen wir euch bald um die Ohren.&nbsp;Sichert euch so lange die verg&uuml;nstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+        "flyer": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+        "gallery": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+        "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "provider": "ticket.io",
+        "prices": "ab 19,90 €",
+        "availability": "available",
+        "soldOut": false
+      },
+      "observationNotes": [
+        "Ticket.io detail page blocked by ALTCHA/POW challenge — list/detail price evidence may be incomplete."
+      ]
+    },
+    {
+      "eventKey": "proton",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "observedAt": "2026-08-04T19:25:55.421Z",
+      "sources": {
+        "website": {
+          "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "fetchStatus": 200,
+          "finalUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "jsonLd": {
+            "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+            "description": "&lt;p&gt;Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-31&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=31&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...&lt;/p&gt;\\n",
+            "startDate": "2026-10-24T23:00:00+02:00",
+            "endDate": "2026-10-25T06:00:00+01:00",
+            "venueName": ": Proton Stuttgart",
+            "venueAddress": "Königstraße 49, 70173, Stuttgart, Germany",
+            "cityName": "Stuttgart",
+            "eventUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+            "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+            "organizerName": "M.D.M.A Musik die mich Antreibt",
+            "sourceMetadata": {
+              "@context": "http://schema.org",
+              "@type": "Event",
+              "name": "M.D.M.A xxx PROTON xxx STUTTGART",
+              "description": "&lt;p&gt;Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-31&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=31&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...&lt;/p&gt;\\n",
+              "image": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+              "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "startDate": "2026-10-24T23:00:00+02:00",
+              "endDate": "2026-10-25T06:00:00+01:00",
+              "location": {
+                "@type": "Place",
+                "name": ": Proton Stuttgart",
+                "description": "",
+                "url": "https://ticketkings.de/veranstaltungsort/proton-stuttgart/",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Königstraße 49",
+                  "addressLocality": "Stuttgart",
+                  "postalCode": "70173",
+                  "addressCountry": "Germany"
+                },
+                "telephone": "",
+                "sameAs": ""
+              },
+              "organizer": {
+                "@type": "Person",
+                "name": "M.D.M.A Musik die mich Antreibt",
+                "description": "",
+                "url": "https://linkstack.webtropolis.de/@mdma",
+                "telephone": "",
+                "email": "&#115;up&#112;o&#114;t&#64;ti&#99;&#107;&#101;&#116;&#107;i&#110;gs&#46;&#100;&#101;",
+                "sameAs": "https://linkstack.webtropolis.de/@mdma"
+              },
+              "performer": "Organization"
+            },
+            "baseUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/"
+          }
+        },
+        "ticketPlatform": {
+          "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "fetchStatus": 200,
+          "finalUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "parser": "ticket_kings",
+          "description": "Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var... \\n",
+          "genreNames": [],
+          "artistNames": [
+            "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+            "if(!frame){return",
+            "var successPath=\\'/order_success/\\'",
+            "var pendingFrameShrinkTimer=0",
+            "var pendingFrameShrinkHeight=0"
+          ],
+          "lineupEntries": [
+            "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+            "if(!frame){return",
+            "var successPath=\\'/order_success/\\'",
+            "var pendingFrameShrinkTimer=0",
+            "var pendingFrameShrinkHeight=0"
+          ],
+          "priceAmount": 15,
+          "priceText": "ab 15,00 €",
+          "ticketPhases": [
+            {
+              "rawProductName": "Standard",
+              "rawPhaseName": "Early Bird",
+              "rawPriceText": "15,00 EUR",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "availabilityText": "noch 100 verfügbar",
+              "remainingQuantity": 100,
+              "optionalState": "required",
+              "sectionHeading": "Tickets",
+              "classification": "admission_ticket",
+              "includedInEventSummary": true,
+              "structuralSignals": [
+                "admission_option",
+                "section:Tickets",
+                "quantity_stepper"
+              ],
+              "soldOut": false,
+              "available": true
+            },
+            {
+              "rawProductName": "Ticket Flex Option",
+              "rawPriceText": "2,50 EUR &middot; pro Ticket",
+              "priceAmount": 2.5,
+              "priceCurrency": "EUR",
+              "optionalState": "optional",
+              "sectionHeading": "Zusatzoptionen",
+              "classification": "insurance_or_flex",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_insurance_or_flex_add_on",
+              "structuralSignals": [
+                "addon_checkbox",
+                "section:Zusatzoptionen",
+                "checkbox_optional"
+              ]
+            },
+            {
+              "rawProductName": "Rabattcode einlösen",
+              "optionalState": "optional",
+              "sectionHeading": "Weitere Angaben",
+              "classification": "unknown_review_required",
+              "includedInEventSummary": false,
+              "exclusionReason": "optional_buyer_section_product_requires_review",
+              "structuralSignals": [
+                "buyer_optional",
+                "section:Weitere Angaben",
+                "checkbox_optional"
+              ]
+            }
+          ],
+          "availability": "available",
+          "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "checkout": {
+            "releases": [
+              {
+                "name": "Standard — Early Bird",
+                "ticketType": "Standard",
+                "phaseName": "Early Bird",
+                "priceAmount": 15,
+                "priceCurrency": "EUR",
+                "priceText": "ab 15,00 €",
+                "soldOut": false,
+                "available": true,
+                "remainingQuantity": 100,
+                "availabilityText": "noch 100 verfügbar"
+              }
+            ],
+            "products": [
+              {
+                "rawProductName": "Standard",
+                "rawPhaseName": "Early Bird",
+                "rawPriceText": "15,00 EUR",
+                "priceAmount": 15,
+                "priceCurrency": "EUR",
+                "availabilityText": "noch 100 verfügbar",
+                "remainingQuantity": 100,
+                "optionalState": "required",
+                "sectionHeading": "Tickets",
+                "classification": "admission_ticket",
+                "includedInEventSummary": true,
+                "structuralSignals": [
+                  "admission_option",
+                  "section:Tickets",
+                  "quantity_stepper"
+                ],
+                "soldOut": false,
+                "available": true
+              },
+              {
+                "rawProductName": "Ticket Flex Option",
+                "rawPriceText": "2,50 EUR &middot; pro Ticket",
+                "priceAmount": 2.5,
+                "priceCurrency": "EUR",
+                "optionalState": "optional",
+                "sectionHeading": "Zusatzoptionen",
+                "classification": "insurance_or_flex",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_insurance_or_flex_add_on",
+                "structuralSignals": [
+                  "addon_checkbox",
+                  "section:Zusatzoptionen",
+                  "checkbox_optional"
+                ]
+              },
+              {
+                "rawProductName": "Rabattcode einlösen",
+                "optionalState": "optional",
+                "sectionHeading": "Weitere Angaben",
+                "classification": "unknown_review_required",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_buyer_section_product_requires_review",
+                "structuralSignals": [
+                  "buyer_optional",
+                  "section:Weitere Angaben",
+                  "checkbox_optional"
+                ]
+              }
+            ],
+            "excludedProducts": [
+              {
+                "rawProductName": "Ticket Flex Option",
+                "rawPriceText": "2,50 EUR &middot; pro Ticket",
+                "priceAmount": 2.5,
+                "priceCurrency": "EUR",
+                "optionalState": "optional",
+                "sectionHeading": "Zusatzoptionen",
+                "classification": "insurance_or_flex",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_insurance_or_flex_add_on",
+                "structuralSignals": [
+                  "addon_checkbox",
+                  "section:Zusatzoptionen",
+                  "checkbox_optional"
+                ]
+              },
+              {
+                "rawProductName": "Rabattcode einlösen",
+                "optionalState": "optional",
+                "sectionHeading": "Weitere Angaben",
+                "classification": "unknown_review_required",
+                "includedInEventSummary": false,
+                "exclusionReason": "optional_buyer_section_product_requires_review",
+                "structuralSignals": [
+                  "buyer_optional",
+                  "section:Weitere Angaben",
+                  "checkbox_optional"
+                ]
+              }
+            ],
+            "priceAmount": 15,
+            "maximumPrice": 15,
+            "priceCurrency": "EUR",
+            "priceText": "ab 15,00 €",
+            "availability": "available",
+            "reviewRequired": false,
+            "evidenceSource": "native_event_iframe",
+            "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F"
+          },
+          "fieldCoverage": [
+            "description",
+            "description_lineup",
+            "checkoutProviderId"
+          ]
+        }
+      },
+      "groundTruth": {
+        "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+        "date": "2026-10-24T23:00:00+02:00",
+        "start": "2026-10-24T23:00:00+02:00",
+        "venue": ": Proton Stuttgart",
+        "address": "Königstraße 49, 70173, Stuttgart, Germany",
+        "genres": [],
+        "description": "&lt;p&gt;Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(&quot;nm-ticketshop-embed-31&quot;); if(!frame){return;} var nightmanagerOrigin=&quot;https://nacht-manager.de&quot;; var successPath=\\'/order_success/\\'; var widgetBaseSrc=&quot;https://nacht-manager.de/ticketing/native_event.php?id=31&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped&amp;return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F&quot;; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...&lt;/p&gt;\\n",
+        "lineup": [
+          "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+          "if(!frame){return",
+          "var successPath=\\'/order_success/\\'",
+          "var pendingFrameShrinkTimer=0",
+          "var pendingFrameShrinkHeight=0"
+        ],
+        "artists": [
+          "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+          "if(!frame){return",
+          "var successPath=\\'/order_success/\\'",
+          "var pendingFrameShrinkTimer=0",
+          "var pendingFrameShrinkHeight=0"
+        ],
+        "flyer": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+        "gallery": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+        "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "provider": "ticket_kings",
+        "ticketPhases": [
+          {
+            "rawProductName": "Standard",
+            "rawPhaseName": "Early Bird",
+            "rawPriceText": "15,00 EUR",
+            "priceAmount": 15,
+            "priceCurrency": "EUR",
+            "availabilityText": "noch 100 verfügbar",
+            "remainingQuantity": 100,
+            "optionalState": "required",
+            "sectionHeading": "Tickets",
+            "classification": "admission_ticket",
+            "includedInEventSummary": true,
+            "structuralSignals": [
+              "admission_option",
+              "section:Tickets",
+              "quantity_stepper"
+            ],
+            "soldOut": false,
+            "available": true
+          },
+          {
+            "rawProductName": "Ticket Flex Option",
+            "rawPriceText": "2,50 EUR &middot; pro Ticket",
+            "priceAmount": 2.5,
+            "priceCurrency": "EUR",
+            "optionalState": "optional",
+            "sectionHeading": "Zusatzoptionen",
+            "classification": "insurance_or_flex",
+            "includedInEventSummary": false,
+            "exclusionReason": "optional_insurance_or_flex_add_on",
+            "structuralSignals": [
+              "addon_checkbox",
+              "section:Zusatzoptionen",
+              "checkbox_optional"
+            ]
+          },
+          {
+            "rawProductName": "Rabattcode einlösen",
+            "optionalState": "optional",
+            "sectionHeading": "Weitere Angaben",
+            "classification": "unknown_review_required",
+            "includedInEventSummary": false,
+            "exclusionReason": "optional_buyer_section_product_requires_review",
+            "structuralSignals": [
+              "buyer_optional",
+              "section:Weitere Angaben",
+              "checkbox_optional"
+            ]
+          }
+        ],
+        "prices": "ab 15,00 €",
+        "availability": "available"
+      },
+      "observationNotes": []
+    }
+  ]
+}

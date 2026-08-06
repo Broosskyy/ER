@@ -4,7 +4,11 @@
  */
 import './bootstrap-ops-supabase';
 
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { assertLegacyRepairScriptAllowed } from '@/features/operations/repair/legacy-repair-script-guard';
+
+assertLegacyRepairScriptAllowed('scripts/operations/_bootshaus-canonical-entity-repair-apply.ts');
+
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS_SOURCE_ID = 'source-bootshaus-koeln';
 const PRODUCTION_VENUE_ID = 'venue-bootshaus-koeln';

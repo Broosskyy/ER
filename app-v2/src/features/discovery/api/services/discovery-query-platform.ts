@@ -6,6 +6,7 @@ import type { Event } from '@/features/events/types/event';
 import type { DiscoveryApiAppliedFilters, DiscoveryApiPagination, DiscoveryApiPerformanceMeta, DiscoveryApiResponse } from '../domain/discovery-api-envelope';
 import { createDiscoveryApiResponse } from '../domain/discovery-api-envelope';
 import { DiscoveryApiError } from '../domain/discovery-api-errors';
+import { isInternalPublicEvent } from '@/features/events/discovery/internal-event-eligibility';
 import type { DiscoveryApiVersion } from '../domain/discovery-api-version';
 import { DEFAULT_DISCOVERY_API_VERSION } from '../domain/discovery-api-version';
 import type { DiscoveryQuery, DiscoveryQueryResult } from '../../domain/discovery-query-types';
@@ -118,6 +119,13 @@ export class DiscoveryQueryPlatform {
       throw new DiscoveryApiError('Event not found.', {
         code: 'NOT_FOUND',
         details: [{ field: 'id', code: 'NOT_FOUND', message: `Event ${eventId} was not found.` }],
+      });
+    }
+
+    if (isInternalPublicEvent(event)) {
+      throw new DiscoveryApiError('Event not found.', {
+        code: 'NOT_FOUND',
+        details: [{ field: 'id', code: 'NOT_FOUND', message: `Event ${eventId} is not publicly available.` }],
       });
     }
 

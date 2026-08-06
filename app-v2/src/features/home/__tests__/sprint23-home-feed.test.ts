@@ -40,6 +40,7 @@ function createEvent(overrides: Partial<Event> = {}): Event {
     source: 'supabase',
     sourceEventId: 'event-1',
     status: 'published',
+    imageUrl: 'https://example.com/flyer.jpg',
     createdAt: '2026-05-01T00:00:00.000Z',
     updatedAt: '2026-05-01T00:00:00.000Z',
     publishedAt: '2026-05-01T00:00:00.000Z',

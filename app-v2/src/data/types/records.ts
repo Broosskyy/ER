@@ -108,6 +108,7 @@ export interface ArtistRecord {
   spotify?: string;
   status: ArtistLifecycleStatus;
   verificationStatus: ArtistVerificationStatus;
+  lineupLegacyArtifact?: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -291,6 +292,9 @@ export interface AdminEventRecord {
 export interface AdminEventListParams {
   query?: string;
   status?: AdminEventStatus | 'all';
+  sourceId?: string;
+  /** Resolved canonical event ids from active origins; set by repository layer. */
+  originEventIds?: string[];
   sortBy?: 'date' | 'title' | 'updated';
   page?: number;
   pageSize?: number;

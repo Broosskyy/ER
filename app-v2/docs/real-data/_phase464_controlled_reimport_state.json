@@ -1,0 +1,2024 @@
+{
+  "startedAt": "2026-08-02T19:08:37.430Z",
+  "preflight": {
+    "generatedAt": "2026-08-02T19:08:48.204Z",
+    "targetHost": "gnkjzinwvmrxcadwebhv.supabase.co",
+    "fieldTrustMerge": true,
+    "columnProbes": {
+      "venue_address": true,
+      "ticket_phases": true,
+      "genre_labels": true,
+      "ticket_status": true
+    },
+    "counts": {
+      "publishedEvents": 108,
+      "activeOrigins": 151,
+      "eventArtistRows": 154,
+      "savedRelationships": 0
+    },
+    "baselinePublished": 108,
+    "commit": "8cc4f36c06e1b955c2202a7b77037e50e0cd6469"
+  },
+  "sourceValidation": {
+    "generatedAt": "2026-08-02T19:08:50.766Z",
+    "audits": [
+      {
+        "sourceId": "staging-seed-source-manual",
+        "displayName": "Staging Manual Seed",
+        "sourceType": "manual",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 1,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-bootshaus-koeln",
+        "displayName": "Bootshaus Köln",
+        "sourceType": "website",
+        "connectorKey": "club_website",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 38,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-kings-org-elektrokuche",
+        "displayName": "Ticket Kings — Elektroküche",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 15,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 5,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-kings-org-underland",
+        "displayName": "Ticket Kings — Underland",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 5,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+        "displayName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 15,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 5,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-affenkaefig",
+        "displayName": "Affenkäfig",
+        "sourceType": "website",
+        "connectorKey": "organizer_website",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 8,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-io-lehmannclub",
+        "displayName": "lehmannclub",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 12,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-io-technodampfer",
+        "displayName": "technodampfer",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 12,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-bootshaus-ticket-io",
+        "displayName": "Bootshaus Ticket.io",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 17,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-io-area51events",
+        "displayName": "area51events",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 4,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-io-hmg-concerts",
+        "displayName": "hmg-concerts",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 20,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-ticket-io-protontheclub",
+        "displayName": "protontheclub",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 0,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 13,
+        "sampleDetailPagesFetched": 0,
+        "sampleDetailBlocked": false
+      },
+      {
+        "sourceId": "source-affenkaefig-ticket-kings",
+        "displayName": "Affenkäfig Ticket Kings",
+        "sourceType": "ticket_platform",
+        "connectorKey": "ticket_platform",
+        "maxDetailPages": 15,
+        "detailEnrichmentEnabled": true,
+        "importRecordCount": 5,
+        "sampleDetailPagesFetched": 5,
+        "sampleDetailBlocked": false
+      }
+    ],
+    "defects": [
+      "source-ticket-kings-org-underland: maxDetailPages=0",
+      "source-ticket-io-lehmannclub: maxDetailPages=0",
+      "source-ticket-io-technodampfer: maxDetailPages=0",
+      "source-bootshaus-ticket-io: maxDetailPages=0",
+      "source-ticket-io-area51events: maxDetailPages=0",
+      "source-ticket-io-hmg-concerts: maxDetailPages=0",
+      "source-ticket-io-protontheclub: maxDetailPages=0"
+    ]
+  },
+  "completedAt": "2026-08-02T19:44:52.009Z",
+  "gate": {
+    "patchedSources": [],
+    "at": "2026-08-02T19:08:50.881Z"
+  },
+  "backup": {
+    "generatedAt": "2026-08-02T19:09:24.159Z",
+    "eventCount": 108
+  },
+  "pass1": {
+    "completedAt": "2026-08-02T19:20:23.903Z",
+    "sourceCount": 13
+  },
+  "repair": {
+    "completedAt": "2026-08-02T19:25:51.073Z",
+    "repaired": 1,
+    "results": [
+      {
+        "eventId": "evt-1785506455240-97ea7l5",
+        "title": "Stereoact & Lena Marie Engel",
+        "reason": "import_richer_than_canonical",
+        "wroteLineup": false,
+        "artistCount": 2
+      }
+    ]
+  },
+  "flyerInventory": {
+    "count": 34
+  },
+  "multiOrigin": {
+    "generatedAt": "2026-08-02T19:44:50.260Z",
+    "tables": [
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339382025-cazpz3d",
+        "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+        "provenance": {
+          "title": {
+            "canonical": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Let&rsquo;s go Loony... We&rsquo;re back on the MAINFLOOR.On August 21st, LOONYLAND returns to Bootshaus with LUCA DANTE SPADAFORA, 2 ENGEL & CHARLIE and more.MAINFLOOR:LUCA DANTE SPADAFORA 2 ENGEL & CHARLIEOLIVER MAGENTADJ OLDEJEY AUX PLATINES▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Let&rsquo;s go Loony... We&rsquo;re back on the MAINFLOOR.On August 21st, LOONYLAND returns to Bootshaus with LUCA DANTE SPADAFORA, 2 ENGEL & CHARLIE and more.MAINFLOOR:LUCA DANTE SPADAFORA 2 ENGEL & CHARLIEOLIVER MAGENTADJ OLDEJEY AUX PLATINES▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://bootshaus-club.ticket.io/tA3dBrv7/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 23,90 Euro",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "ab 25,90 €"
+              }
+            ]
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6291070957076770600802974_2481970712023930093702944.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6291070957076770600802974_2481970712023930093702944.png"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/tA3dBrv7/img/holder-1080.jpg?9a491e61"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              },
+              {
+                "url": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 100,
+                  "normalized": "https://bootshaus-club.ticket.io/tA3dBrv7/",
+                  "host": "bootshaus-club",
+                  "reason": "ticket_io_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339395746-in3ijod",
+        "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+        "provenance": {
+          "title": {
+            "canonical": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "YOU HEARD IT RIGHT! The first time in Effenaar left us absolutely speechless and it had us all craving for more. So there was only one option: taking my band to Germany!🗓️ Sunday 20 September 2026🎟️ Tickets first fase: 3 June 2026📍 Bootshaus, CologneMake sure to pre-register:✔ 2 HOURS EARLIER ACCESS TO TICKETS ✔ highest chance to secure FASE 1 tickets ✔ exclusive giveaway: a backstage meet & greet before the show⚠️ Fase 1 tickets are limited!See you at BOOTSHAUS!▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "YOU HEARD IT RIGHT! The first time in Effenaar left us absolutely speechless and it had us all craving for more. So there was only one option: taking my band to Germany!🗓️ Sunday 20 September 2026🎟️ Tickets first fase: 3 June 2026📍 Bootshaus, CologneMake sure to pre-register:✔ 2 HOURS EARLIER ACCESS TO TICKETS ✔ highest chance to secure FASE 1 tickets ✔ exclusive giveaway: a backstage meet & greet before the show⚠️ Fase 1 tickets are limited!See you at BOOTSHAUS!▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339392687-tbdwup4",
+        "title": "BC173 Airport Session pres. by Bootshaus",
+        "provenance": {
+          "title": {
+            "canonical": "BC173 Airport Session pres. by Bootshaus",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "BC173 Airport Session pres. by Bootshaus"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Lineup and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0272063708591581094732201_5615608690761092455373615.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339417014-efv9q5w",
+        "title": "LOONYLAND AT NATURE ONE",
+        "provenance": {
+          "title": {
+            "canonical": "LOONYLAND AT NATURE ONE",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "LOONYLAND AT NATURE ONE"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "LINE-UP LOONYLAND:AXMO, Bovski, Ely Oaks, Harris & Ford, Le Shuuk, Liquidfive, Ma:rk, Maroox, Noel Holler, OBS, Oliver Magenta, Teknoclash, Toby Romeo"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9777896521001130090850689_1807099839606108015301432.jpeg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9777896521001130090850689_1807099839606108015301432.jpeg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785389049895-4mb7dub",
+        "title": "Underland Essigfabrik 05.09.2026",
+        "provenance": {
+          "title": {
+            "canonical": "Underland Essigfabrik 05.09.2026",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "R3HAB pres. by BOOTSHAUS"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 23,90 Euro",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "ab 23,90 €"
+              }
+            ]
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "classifications": [
+              {
+                "url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 100,
+                  "normalized": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                  "host": "bootshaus-club",
+                  "reason": "ticket_io_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339420043-obhyeev",
+        "title": "Bootshaus on a Ship Vol. III",
+        "provenance": {
+          "title": {
+            "canonical": "Bootshaus on a Ship Vol. III",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Bootshaus on a Ship Vol. III"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "Bootshaus on a Ship Vol. III"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session. LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session. LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://bootshaus-club.ticket.io/wUc3uQrR/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 32,00 Euro",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "ab 32,00 €"
+              }
+            ]
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/wUc3uQrR/img/holder-1080.jpg?525d5c96"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              },
+              {
+                "url": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 100,
+                  "normalized": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+                  "host": "bootshaus-club",
+                  "reason": "ticket_io_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339412398-hq6217j",
+        "title": "Unreal Weekender Night II - September 2026",
+        "provenance": {
+          "title": {
+            "canonical": "Unreal Weekender Night II - September 2026",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Unreal Weekender Night II - September 2026"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Line-up A-Z: ANNIE DJ DRECKISCH DVAID GLANZ B2B ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH B2B GOLPE",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Line-up A-Z: ANNIE DJ DRECKISCH DVAID GLANZ B2B ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH B2B GOLPE"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339005035-wam829k",
+        "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+        "provenance": {
+          "title": {
+            "canonical": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒 Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln. Das Bootshaus zählt zu den besten Clubs der Welt – Perfektion in Sound, Licht und Atmosphäre ohne Kompromisse. Der perfekte Anlass für eine wilde Nacht. 🎟️ Early Bird Tickets sind jetzt verfügbar – nur für kurze Zeit. Das Line Up hauen wir euch bald um die Ohren. Sichert euch so lange die vergünstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒 Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln. Das Bootshaus zählt zu den besten Clubs der Welt – Perfektion in Sound, Licht und Atmosphäre ohne Kompromisse. Der perfekte Anlass für eine wilde Nacht. 🎟️ Early Bird Tickets sind jetzt verfügbar – nur für kurze Zeit. Das Line Up hauen wir euch bald um die Ohren. Sichert euch so lange die vergünstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://bootshaus-club.ticket.io/B3jK8aPC/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 19,90 Euro",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "ab 19,90 €"
+              }
+            ]
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg"
+              },
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/B3jK8aPC/img/holder-1080.jpg?70c3a77a"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              },
+              {
+                "url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 100,
+                  "normalized": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+                  "host": "bootshaus-club",
+                  "reason": "ticket_io_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "title": "NIGHTSWITHUS presents LEVI",
+        "provenance": {
+          "title": {
+            "canonical": "NIGHTSWITHUS presents LEVI",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "NIGHTSWITHUS presents LEVI"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨ Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00 NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne. Don't miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨ Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00 NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne. Don't miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339421539-k3swcrl",
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "provenance": {
+          "title": {
+            "canonical": "R3HAB pres. by BOOTSHAUS",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "R3HAB pres. by BOOTSHAUS"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339410908-9691748",
+        "title": "Bootshaus pres. BC173 (let's get loco)",
+        "provenance": {
+          "title": {
+            "canonical": "Bootshaus pres. BC173 (let's get loco)",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Bootshaus pres. BC173 (let's get loco)"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "️ LET'S GET LOCO!Get ready for the next Airport Session with DHALI, FAST BOY, LIONKAY and ONINE on 15 August.LINEUP:FAST BOYDHALILIONKAY ONINEPublic Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only.Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsa",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "️ LET'S GET LOCO!Get ready for the next Airport Session with DHALI, FAST BOY, LIONKAY and ONINE on 15 August.LINEUP:FAST BOYDHALILIONKAY ONINEPublic Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only.Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsa"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6095179907596406189869658_1711451874088722577557114.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6095179907596406189869658_1711451874088722577557114.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339283846-89x0jcd",
+        "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+        "provenance": {
+          "title": {
+            "canonical": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "BLACKLIST & INURFASE pres.ZAAGSTEP by Dr Donk📍Bootshaus Cologne📅 11.09.2026⏰ 22:00 - 06:00🎟️ Pre-Register now: https://bit.ly/ZAAGSTEPFor years, electronic music has been built on genres.Zaag. Uptempo. Hard Dance. Dubstep. Drum & Bass. Bass Music.But what happens when the boundaries between them disappear?On September 11th, BLACKLIST and INURFASE invite you to witness the official launch of ZAAGSTEP - the sound created by Dr Donk that combines the high BPM intensity of Uptempo and Zaag with the energy, and influence of Bass Music.A never-seen-before crossover between Dubstep, Zaag, Drum & Bass, Uptempo and everything in between. WELCOME TO ZAAGSTEP 😈To celebrate his upcoming album release, Dr Donk presents the world's first full-scale ZAAGSTEP showcase at Bootshaus Cologne, featuring artists who have helped shape the sound and artists who represent the different worlds colliding within it.FULL LINE-UP A-ZDr Donk pres. ZAAGSTEP (Album Showcase), Dr Donk b2b Yoshiko, GPF, Invaderz, Lekkerfaces, Madcore, Must Die!, Revenge Of The Nerds (Albino b2b Dr Donk b2b Ricky West), TMPRHIGHLIGHTS⚡ Official ZAAGSTEP Album Showcase by Dr Donk⚡ Exclusive unreleased album material⚡ First-ever ZAAGSTEP event worldwide⚡ Dubstep &times; Drum & Bass &times; Zaag &times; Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "BLACKLIST & INURFASE pres.ZAAGSTEP by Dr Donk📍Bootshaus Cologne📅 11.09.2026⏰ 22:00 - 06:00🎟️ Pre-Register now: https://bit.ly/ZAAGSTEPFor years, electronic music has been built on genres.Zaag. Uptempo. Hard Dance. Dubstep. Drum & Bass. Bass Music.But what happens when the boundaries between them disappear?On September 11th, BLACKLIST and INURFASE invite you to witness the official launch of ZAAGSTEP - the sound created by Dr Donk that combines the high BPM intensity of Uptempo and Zaag with the energy, and influence of Bass Music.A never-seen-before crossover between Dubstep, Zaag, Drum & Bass, Uptempo and everything in between. WELCOME TO ZAAGSTEP 😈To celebrate his upcoming album release, Dr Donk presents the world's first full-scale ZAAGSTEP showcase at Bootshaus Cologne, featuring artists who have helped shape the sound and artists who represent the different worlds colliding within it.FULL LINE-UP A-ZDr Donk pres. ZAAGSTEP (Album Showcase), Dr Donk b2b Yoshiko, GPF, Invaderz, Lekkerfaces, Madcore, Must Die!, Revenge Of The Nerds (Albino b2b Dr Donk b2b Ricky West), TMPRHIGHLIGHTS⚡ Official ZAAGSTEP Album Showcase by Dr Donk⚡ Exclusive unreleased album material⚡ First-ever ZAAGSTEP event worldwide⚡ Dubstep &times; Drum & Bass &times; Zaag &times; Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339378982-kp48td0",
+        "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+        "provenance": {
+          "title": {
+            "canonical": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Cologne, are you ready? Polyamor is taking over Bootshaus with its biggest show yet. Get ready for pure Polyamor madness, top-notch production, and a stacked lineup.MAINFLOOR:CLEOPARD2000 b2b ALBA FRANCHDAVYBOI b2b TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "Cologne, are you ready? Polyamor is taking over Bootshaus with its biggest show yet. Get ready for pure Polyamor madness, top-notch production, and a stacked lineup.MAINFLOOR:CLEOPARD2000 b2b ALBA FRANCHDAVYBOI b2b TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.ticket.io/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.ticket.io/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7576048672735569035384002_0115948890074001779127437.png",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7576048672735569035384002_0115948890074001779127437.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.ticket.io/",
+            "classifications": [
+              {
+                "url": "https://bootshaus.ticket.io/",
+                "class": {
+                  "class": "shop_root",
+                  "score": 20,
+                  "normalized": "https://bootshaus.ticket.io/",
+                  "host": "bootshaus",
+                  "reason": "ticket_io_shop_root"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785339403309-prk3iiz",
+        "title": "MI * 30.12.2026 | KitKatClub",
+        "provenance": {
+          "title": {
+            "canonical": "MI * 30.12.2026 | KitKatClub",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "MI * 30.12.2026 | KitKatClub"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-koeln",
+                "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+            "classifications": [
+              {
+                "url": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+                "class": {
+                  "class": "event_info_page",
+                  "score": 12,
+                  "normalized": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+                  "host": "bootshaus.tv",
+                  "reason": "venue_event_info_page_not_ticket_checkout"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Bootshaus",
+        "eventId": "evt-1785389052337-0gv1iz1",
+        "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "provenance": {
+          "title": {
+            "canonical": "MDMA – Musik Die Mich Antreibt 10.10.26",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "CHROME @ Bootshaus"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://bootshaus-club.ticket.io/Atz0dHLX/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 34,90 Euro",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "ab 34,90 €"
+              }
+            ]
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-bootshaus-ticket-io",
+                "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/Atz0dHLX/img/holder-1080.jpg?c530b07a"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+            "classifications": [
+              {
+                "url": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 100,
+                  "normalized": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+                  "host": "bootshaus-club",
+                  "reason": "ticket_io_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389049895-4mb7dub",
+        "title": "Underland Essigfabrik 05.09.2026",
+        "provenance": {
+          "title": {
+            "canonical": "Underland Essigfabrik 05.09.2026",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "Underland Essigfabrik 05.09.2026"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 23,90 Euro",
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785443914377-7g9l545",
+        "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+        "provenance": {
+          "title": {
+            "canonical": "M.D.M.A xxx PROTON xxx STUTTGART",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "M.D.M.A xxx PROTON xxx STUTTGART"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var...",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; var pendingFrameShrinkTimer=0; var pendingFrameShrinkHeight=0; var..."
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389051072-mihh18f",
+        "title": "14 Jahre Affenkäfig 19.09.2026",
+        "provenance": {
+          "title": {
+            "canonical": "14 Jahre Affenkäfig 19.09.2026",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "14 Jahre Affenkäfig 19.09.2026"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Seit über 14 Jahren trifft sich nun das Rudel und durchstreift Monat für Monat den Großstadt-Dschungel Deutschlands! Wir erinnern uns gerne an die guten alten Zeiten zurück. Unzählige Momente haben wir mit euch verbracht und",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "Seit über 14 Jahren trifft sich nun das Rudel und durchstreift Monat für Monat den Großstadt-Dschungel Deutschlands! Wir erinnern uns gerne an die guten alten Zeiten zurück. Unzählige Momente haben wir mit euch verbracht und"
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB-1030x1030.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026",
+            "classifications": [
+              {
+                "url": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026",
+                  "host": "affenkaefig.info",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389052337-0gv1iz1",
+        "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "provenance": {
+          "title": {
+            "canonical": "MDMA – Musik Die Mich Antreibt 10.10.26",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "MDMA – Musik Die Mich Antreibt 10.10.26"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 34,90 Euro",
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/07/10.10.26_QUADA_EB_MDMA_WEB2-1-1030x1030.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389054496-ns9b6la",
+        "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+        "provenance": {
+          "title": {
+            "canonical": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389055557-ux20897",
+        "title": "Sommerfest Elektroküche 08.08.2026",
+        "provenance": {
+          "title": {
+            "canonical": "Sommerfest Elektroküche 08.08.2026",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "Sommerfest Elektroküche 08.08.2026"
+              },
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "Sommerfest Elektroküche 08.08.2026"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher...",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher..."
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/"
+              },
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "",
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg"
+              },
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/wp-content/uploads/2026/04/fb-format-2022-real-34.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              },
+              {
+                "url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389053437-3oxde27",
+        "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+        "provenance": {
+          "title": {
+            "canonical": "Affenkäfig XXX CAPITOL XXX Hagen",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "Affenkäfig XXX CAPITOL XXX Hagen"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/By06xnf4/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 39,99 Euro",
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB-1030x1030.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB-1030x1030.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+            "classifications": [
+              {
+                "url": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+                  "host": "affenkaefig.info",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785339391167-tfaixrr",
+        "title": "Bootshaus Sommerfest",
+        "provenance": {
+          "title": {
+            "canonical": "Bootshaus Sommerfest",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "Underland Essigfabrik 05.09.2026"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten...",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten..."
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 11,90 Euro",
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2694512391101819145051590_1417232076962524751040719.png",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/wp-content/uploads/2026/04/05.09.26_FB_EB_ULand_3-scaled.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "provenance": {
+          "title": {
+            "canonical": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort.Mainfloor:RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION Datum: 15.08.2026 Location: Essigfabrik& Elektroküche Line Up: DYSTOPIA F2F VALKYRIE IAN CRANK F2F EASYPYSI KARAMUSTA F2F GREEKZ KEVIN..."
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://bootshaus-club.ticket.io/BcDqml12/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": "Tickets ab 23,00 Euro",
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/wp-content/uploads/2026/04/15.08.2026_FB_LineuP_MDMA_WEB.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785443911160-owt97y3",
+        "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "provenance": {
+          "title": {
+            "canonical": "MDMA – Musik Die Mich Antreibt 10.10.26",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "MDMA – Musik Die Mich Antreibt 10.10.26"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "MDMA - Musik Die Mich Antreibt 10.10.2026 Datum: 10.10.2026 Location: Essigfabrik& Elektroküche Line Up: Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; function nmMinFrameHeight(){ if(window.matchMedia){return...",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "MDMA - Musik Die Mich Antreibt 10.10.2026 Datum: 10.10.2026 Location: Essigfabrik& Elektroküche Line Up: Folgt noch (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-30\"); if(!frame){return;} var nightmanagerOrigin=\"https://nacht-manager.de\"; var successPath=\\'/order_success/\\'; var widgetBaseSrc=\"https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F\"; function nmMinFrameHeight(){ if(window.matchMedia){return..."
+              }
+            ]
+          },
+          "ticketUrl": {
+            "canonical": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig-ticket-kings",
+                "value": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26",
+            "classifications": [
+              {
+                "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26",
+                  "host": "ticketkings.de",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "pair": "Affenkäfig",
+        "eventId": "evt-1785389056612-4cwtdmo",
+        "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+        "provenance": {
+          "title": {
+            "canonical": "Affenkäfig xxx A8 xxx – 02.10.2026",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "Affenkäfig xxx A8 xxx – 02.10.2026"
+              }
+            ]
+          },
+          "description": {
+            "canonical": "",
+            "candidates": []
+          },
+          "ticketUrl": {
+            "canonical": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/"
+              }
+            ]
+          },
+          "priceText": {
+            "canonical": null,
+            "candidates": []
+          },
+          "imageUrl": {
+            "canonical": "https://affenkaefig.info/wp-content/uploads/2026/05/flyer.png",
+            "candidates": [
+              {
+                "sourceId": "source-affenkaefig",
+                "value": "https://affenkaefig.info/wp-content/uploads/2026/05/flyer.png"
+              }
+            ]
+          },
+          "ticketUrlSelection": {
+            "best": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026",
+            "classifications": [
+              {
+                "url": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+                "class": {
+                  "class": "event_specific",
+                  "score": 80,
+                  "normalized": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026",
+                  "host": "affenkaefig.info",
+                  "reason": "official_event_page"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "representativeValidation": [
+    {
+      "label": "Sommerfest Elektroküche",
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "artistCount": 14,
+      "artistNames": [
+        "ASL∅",
+        "ANNX",
+        "BLACK ZUSHI",
+        "BOUNCE MC",
+        "HOTBOI2300",
+        "HYPNOTIZED",
+        "ICJ",
+        "MAURO",
+        "STIMULATE",
+        "THE M∅VEMENT",
+        "TOMMY LIBERA",
+        "TURBO TIMOS",
+        "JULEZ BRIXTON",
+        "SEBI LIEMEN"
+      ],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "MDMA",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "artistCount": 9,
+      "artistNames": [
+        "DYSTOPIA F2F VALKYRIE",
+        "IAN CRANK F2F EASYPYSI",
+        "KARAMUSTA F2F GREEKZ",
+        "KEVIN LA NIQUE F2F THE RAFNIX",
+        "NINA BENDER F2F LEE-ANN",
+        "FLASH B2B FORWARD",
+        "HELLMYER B2B STZ",
+        "MAURO B2B I.D.A",
+        "PLEA5URE B2B PUL5E"
+      ],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "Bootshaus on a Ship",
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "artistCount": 0,
+      "artistNames": [],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "Vision Ekstase",
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "artistCount": 0,
+      "artistNames": [],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "100% SCHRANZ",
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "artistCount": 1,
+      "artistNames": [
+        "NIKOLINA"
+      ],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "PURE TECHNO",
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "artistCount": 0,
+      "artistNames": [],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "Blacklist Festival",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "artistCount": 0,
+      "artistNames": [],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "Lehmann reference",
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "artistCount": 5,
+      "artistNames": [
+        "ÜBERREST",
+        "MILA BLACK",
+        "RAPHAEL DINCSOY",
+        "SOURCE CODE",
+        "2ND FLOOR NKR"
+      ],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    },
+    {
+      "label": "Single-DJ",
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "artistCount": 1,
+      "artistNames": [
+        "Pappenheimer"
+      ],
+      "invalidNames": [],
+      "hasOrganization": false,
+      "pass": true
+    }
+  ]
+}

@@ -29,7 +29,10 @@ import {
 } from '@/data/datasources/supabase/supabase-reference-datasource';
 import { createSupabaseSourceDatasource } from '@/data/datasources/supabase/supabase-source-datasource';
 import { createSupabaseEventLineupDatasource } from '@/data/datasources/supabase/supabase-event-lineup-datasource';
-import { lineupToArtistNames } from '@/data/mappers/event-lineup-mapper';
+import { createSupabaseEventLineupEntryDatasource } from '@/data/datasources/supabase/supabase-event-lineup-entry-datasource';
+import { readCanonicalLineup } from '@/features/events/domain/canonical-lineup-read';
+import type { ResolvedCanonicalLineupEntry } from '@/features/aggregation/domain/canonical-lineup-entry';
+import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
 import type { Event } from '@/features/events/types/event';
 import { getSupabaseClient } from '@/services/supabase/client';
 
@@ -82,36 +85,52 @@ function firstRelation<T>(value: T | T[] | null | undefined): T | undefined {
 
 function mapSupabaseEventRow(
   row: SupabaseEventRowWithRelations & Record<string, unknown>,
-  lineupArtists?: string[],
+  lineupArtists?: EventLineupArtist[],
+  lineupEntries?: ResolvedCanonicalLineupEntry[],
 ) {
   const venue = firstRelation(row.venues);
   const organizer = firstRelation(row.organizers);
   const city = firstRelation(row.cities);
   const genre = firstRelation(row.genres);
-  const artist = firstRelation(row.artists);
   const festivalEdition = firstRelation(
     row.festival_editions as SupabaseFestivalEditionRelation | SupabaseFestivalEditionRelation[] | null,
   );
-  const artistNames =
-    lineupArtists && lineupArtists.length > 0
-      ? lineupArtists
-      : artist?.name
-        ? [artist.name]
-        : [];
+
+  const rowVenueName = typeof row.venue_name === 'string' ? row.venue_name.trim() : '';
+  const rowVenueCity = typeof row.venue_city === 'string' ? row.venue_city.trim() : '';
+  const joinedVenueCity = venue?.city?.trim() ?? '';
+  const preferDenormalizedVenue =
+    Boolean(rowVenueName) &&
+    Boolean(rowVenueCity) &&
+    joinedVenueCity.length > 0 &&
+    rowVenueCity.toLowerCase() !== joinedVenueCity.toLowerCase();
+
+  const rowLatitude = typeof row.latitude === 'number' ? row.latitude : undefined;
+  const rowLongitude = typeof row.longitude === 'number' ? row.longitude : undefined;
+
+  const canonicalLineup = readCanonicalLineup({
+    structuredEntries: lineupEntries ?? [],
+    compatibilityLineup: lineupArtists,
+    eventTitle: typeof row.title === 'string' ? row.title : undefined,
+  });
 
   return mapEventRowToDomain(row as never, {
-    venueName: venue?.name,
-    cityName: venue?.city ?? city?.name,
+    venueName: preferDenormalizedVenue ? rowVenueName : venue?.name,
+    cityName: preferDenormalizedVenue ? rowVenueCity : venue?.city ?? city?.name ?? rowVenueCity,
     genreName: genre?.name,
-    artists: artistNames,
-    lineup: artistNames,
+    artists: canonicalLineup.artistNames,
+    lineup: canonicalLineup.artistNames,
+    lineupEntries: canonicalLineup.lineupEntries,
+    artistIds: canonicalLineup.artistIds.length > 0 ? canonicalLineup.artistIds : undefined,
     organizerName: organizer?.name,
-    latitude: venue?.latitude ?? undefined,
-    longitude: venue?.longitude ?? undefined,
+    latitude: rowLatitude ?? (preferDenormalizedVenue ? undefined : venue?.latitude ?? undefined),
+    longitude: rowLongitude ?? (preferDenormalizedVenue ? undefined : venue?.longitude ?? undefined),
     address: venue?.address ?? venue?.street ?? undefined,
     country: venue?.country ?? undefined,
     venueType: (venue?.venue_type as import('@/features/events/domain/festival-foundation').VenueType | undefined) ?? undefined,
     festivalId: festivalEdition?.festival_id ?? undefined,
+    denormalizedVenueName: rowVenueName || undefined,
+    denormalizedVenueCity: rowVenueCity || undefined,
   });
 }
 
@@ -129,14 +148,19 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
   const supabase = getSupabaseClient();
   const eventsTable = () => supabase.from('events') as SupabaseTable;
   const eventLineups = createSupabaseEventLineupDatasource();
+  const eventLineupEntries = createSupabaseEventLineupEntryDatasource();
 
   async function mapPublishedRows(rows: unknown[]): Promise<Event[]> {
     const eventIds = rows.map((row) => (row as { id: string }).id);
-    const lineups = await eventLineups.getLineupsForEvents(eventIds);
+    const [lineups, structuredLineups] = await Promise.all([
+      eventLineups.getLineupsForEvents(eventIds),
+      eventLineupEntries.getEntriesForEvents(eventIds),
+    ]);
     return rows.map((row) => {
       const eventId = (row as { id: string }).id;
       const lineup = lineups.get(eventId) ?? [];
-      return mapSupabaseEventRow(row as never, lineupToArtistNames(lineup));
+      const entries = structuredLineups.get(eventId) ?? [];
+      return mapSupabaseEventRow(row as never, lineup, entries);
     });
   }
 
@@ -162,8 +186,11 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
         if (!data) {
           return null;
         }
-        const lineup = await eventLineups.getLineupForEvent(id);
-        return mapSupabaseEventRow(data as never, lineupToArtistNames(lineup));
+        const [lineup, entries] = await Promise.all([
+          eventLineups.getLineupForEvent(id),
+          eventLineupEntries.getEntriesForEvent(id),
+        ]);
+        return mapSupabaseEventRow(data as never, lineup, entries);
       },
       async getAllEvents() {
         const { data, error } = await eventsTable().select('*');
@@ -246,6 +273,7 @@ export function createSupabaseDatasourceBundle(): DatasourceBundle {
     organizers: createSupabaseOrganizerDatasource(),
     artists: createSupabaseArtistDatasource(),
     eventLineups,
+    eventLineupEntries,
     collections: createSupabaseCollectionDatasource(),
     sources: createSupabaseSourceDatasource(),
     stats: {

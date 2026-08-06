@@ -13,48 +13,65 @@ import {
   type EventDisplayModel,
 } from '@/features/events';
 import { getHomeFeaturedCardWidth, HOME_FEATURED_PAIR_GAP } from '@/features/home/components/featured-card-layout';
+import { useUserLocation } from '@/features/location/UserLocationProvider';
 import { getDefaultCityValue } from '@/features/search/config/filter-config';
-import type { GenreFilterId } from '@/features/search/config/filter-config.types';
-import { DEFAULT_EVENT_FILTERS, type DateRangeFilter } from '@/features/search/constants';
+import {
+  buildSearchPreviewFilters,
+  SEARCH_PREVIEW_SECTIONS,
+  type SearchPreviewSectionConfig,
+} from '@/features/search/config/search-preview-config';
+import { DEFAULT_EVENT_FILTERS } from '@/features/search/constants';
 import { applyEventFilters } from '@/features/search/utils/filter-events';
 import { HOME_CLUB_FIXTURES, getHomeClubSpotlightWidth } from '@/features/home/data/home-club-fixtures';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
-export interface ExploreSectionConfig {
-  id: string;
-  titleKey: 'trending' | 'tonight' | 'weekend' | 'newlyAdded' | 'nearby' | 'genres';
-  dateRange: DateRangeFilter;
-  genres?: GenreFilterId[];
-  limit?: number;
-  layout: 'featuredRail' | 'compactList';
-}
+const PREVIEW_TITLE_KEYS: Record<SearchPreviewSectionConfig['titleKey'], string> = {
+  upcoming: 'search.explore.upcoming',
+  today: 'search.explore.tonight',
+  tomorrow: 'search.explore.tomorrow',
+  'this-weekend': 'search.explore.weekend',
+  'next-weekend': 'search.explore.nextWeekend',
+  trending: 'search.explore.trending',
+  nearby: 'search.explore.nearby',
+  'recently-added': 'search.explore.newlyAdded',
+};
 
-const DEFAULT_SECTIONS: ExploreSectionConfig[] = [
-  { id: 'trending', titleKey: 'trending', dateRange: 'all-dates', limit: 6, layout: 'featuredRail' },
-  { id: 'tonight', titleKey: 'tonight', dateRange: 'today', limit: 4, layout: 'compactList' },
-  { id: 'weekend', titleKey: 'weekend', dateRange: 'this-weekend', limit: 4, layout: 'compactList' },
-  { id: 'new', titleKey: 'newlyAdded', dateRange: 'all-dates', limit: 4, layout: 'compactList' },
-  { id: 'nearby', titleKey: 'nearby', dateRange: 'all-dates', limit: 4, layout: 'compactList' },
-  { id: 'genres', titleKey: 'genres', dateRange: 'all-dates', genres: ['techno'], limit: 4, layout: 'compactList' },
-];
+const PREVIEW_TITLE_DEFAULTS: Record<SearchPreviewSectionConfig['titleKey'], string> = {
+  upcoming: 'Demnächst',
+  today: 'Heute',
+  tomorrow: 'Morgen',
+  'this-weekend': 'Dieses Wochenende',
+  'next-weekend': 'Nächstes Wochenende',
+  trending: 'Trending',
+  nearby: 'In der Nähe',
+  'recently-added': 'Neu hinzugefügt',
+};
 
 export interface ExploreFeedProps {
   isFavorite?: (eventId: string) => boolean;
   onToggleFavorite?: (eventId: string) => void;
 }
 
-function getSectionEvents(section: ExploreSectionConfig): EventDisplayModel[] {
-  const events = applyEventFilters(eventRepository.getPublishedEvents(), {
+function getSectionEvents(
+  section: SearchPreviewSectionConfig,
+  location?: { latitude?: number; longitude?: number },
+): EventDisplayModel[] {
+  const baseFilters = {
     ...DEFAULT_EVENT_FILTERS,
-    dateRange: section.dateRange,
-    genres: section.genres ?? [],
     city: getDefaultCityValue(),
+  };
+  const sectionFilters = buildSearchPreviewFilters(section, baseFilters);
+  const events = applyEventFilters(eventRepository.getPublishedEvents(), sectionFilters, {
+    location:
+      section.titleKey === 'nearby' && location?.latitude && location?.longitude
+        ? { latitude: location.latitude, longitude: location.longitude }
+        : undefined,
   });
   const limited = section.limit ? events.slice(0, section.limit) : events;
   return limited.map(toEventDisplayModel);
 }
 
-function resolveCardVariant(event: EventDisplayModel, layout: ExploreSectionConfig['layout']) {
+function resolveCardVariant(event: EventDisplayModel, layout: SearchPreviewSectionConfig['layout']) {
   if (layout === 'featuredRail') {
     return isFeaturedEventId(event.id) ? 'featuredHome' : 'verticalPremium';
   }
@@ -65,17 +82,20 @@ function resolveCardVariant(event: EventDisplayModel, layout: ExploreSectionConf
 export function ExploreFeed({ isFavorite, onToggleFavorite }: ExploreFeedProps) {
   const router = useRouter();
   const { t } = useAppTranslation();
+  const { location } = useUserLocation();
   const clubCardWidth = getHomeClubSpotlightWidth();
   const featuredCardWidth = getHomeFeaturedCardWidth();
   const featuredSnapInterval = featuredCardWidth + HOME_FEATURED_PAIR_GAP;
 
   const sections = useMemo(() => {
-    return DEFAULT_SECTIONS.map((section) => ({
+    return SEARCH_PREVIEW_SECTIONS.map((section) => ({
       ...section,
-      title: t(`search.explore.${section.titleKey}`),
-      events: getSectionEvents(section),
+      title: t(PREVIEW_TITLE_KEYS[section.titleKey], {
+        defaultValue: PREVIEW_TITLE_DEFAULTS[section.titleKey],
+      }),
+      events: getSectionEvents(section, location ?? undefined),
     })).filter((section) => section.events.length > 0);
-  }, [t]);
+  }, [location, t]);
 
   if (sections.length === 0) {
     return null;

@@ -84,6 +84,10 @@ export class PublishDecisionService {
       return 'skip';
     }
 
+    if (this.hasUncertainElectronicRelevance(record)) {
+      return 'queue_for_review';
+    }
+
     if (policy.mode === 'manual_review') {
       return record.status === 'approved' ? 'publish' : 'queue_for_review';
     }
@@ -117,6 +121,14 @@ export class PublishDecisionService {
     }
 
     return record.status === 'approved' || record.status === 'needs_review' ? 'publish' : 'skip';
+  }
+
+  private hasUncertainElectronicRelevance(record: ImportRecord): boolean {
+    const payload = record.normalizedPayload as Record<string, unknown> | undefined;
+    const rawMetadata = (record.rawPayload?.sourceMetadata ?? payload?.sourceMetadata) as
+      | Record<string, unknown>
+      | undefined;
+    return rawMetadata?.electronicRelevance === 'uncertain';
   }
 
   mapTrustDecision(decision: TrustQualityDecision): PublishDecision {

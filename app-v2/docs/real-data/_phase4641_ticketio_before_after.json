@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-08-02T20:21:44.708Z",
+  "before": {
+    "ticketIoPublishedWithOrigin": 74,
+    "importRecordsWithPagesFetched": 0,
+    "eventsWithShopDetailFetch": 0,
+    "withDescription": 10,
+    "withPrice": 63,
+    "withGenres": 5,
+    "completeLineup": 5,
+    "partialLineup": 30,
+    "missingLineup": 24,
+    "invalidLineup": 4
+  },
+  "after": {
+    "ticketIoPublishedWithOrigin": 74,
+    "importRecordsWithPagesFetched": 0,
+    "eventsWithShopDetailFetch": 0,
+    "withDescription": 10,
+    "withPrice": 63,
+    "withGenres": 5,
+    "completeLineup": 5,
+    "partialLineup": 30,
+    "missingLineup": 28,
+    "invalidLineup": 0
+  },
+  "repair": {
+    "completedAt": "2026-08-02T20:17:25.272Z",
+    "configPatch": {
+      "patchedSources": [
+        "source-ticket-io-technodampfer",
+        "source-ticket-io-lehmannclub",
+        "source-bootshaus-ticket-io",
+        "source-ticket-io-area51events",
+        "source-ticket-io-hmg-concerts",
+        "source-ticket-io-protontheclub"
+      ]
+    },
+    "note": "Detail fetch attempted for all shops; 100% PoW-blocked. List-only reimport updated 17 Bootshaus records."
+  },
+  "lineupRepair": {
+    "completedAt": "2026-08-02T20:21:44.708Z",
+    "clearedInvalidLineups": 4,
+    "bootshausRepaired": 4
+  }
+}

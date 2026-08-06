@@ -1,0 +1,567 @@
+{
+  "generatedAt": "2026-08-05T23:49:17.444Z",
+  "phase": "4.8.6.3",
+  "productionMutationsInThisRun": 0,
+  "eventId": "evt-1785339391167-tfaixrr",
+  "pipeline": {
+    "officialPage": {
+      "url": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "venuePublished": false,
+      "diagnostic": "VENUE_NOT_PUBLISHED_ON_PAGE",
+      "artifact": [
+        {
+          "code": "LINEUP_TBA",
+          "message": "Explicit Lineup TBA line in official event body",
+          "surface": "lineup"
+        },
+        {
+          "code": "VENUE_NOT_PUBLISHED_ON_PAGE",
+          "message": "No explicit venue evidence on official event page",
+          "surface": "venue"
+        }
+      ]
+    },
+    "websiteImporter": {
+      "venueCandidate": null,
+      "note": "Unified website importer does not emit venue when not explicitly published"
+    },
+    "normalizedPayload": {
+      "venueName": "Bootshaus",
+      "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+      "cityName": "Köln",
+      "sourceId": "source-bootshaus-ticket-io",
+      "updatedAt": "2026-08-02T21:24:47.324+00:00"
+    },
+    "importRecord": {
+      "id": "4da3ec00-b1b8-4b31-8c1e-cde6db6c449e",
+      "sourceId": "source-bootshaus-ticket-io",
+      "status": "imported",
+      "updatedAt": "2026-08-02T21:24:47.324+00:00"
+    },
+    "merge": {
+      "note": "Phase 4.8.5 merge simulation shows no website venue candidate for Sommerfest; canonical venue retained from prior import"
+    },
+    "canonicalEvent": {
+      "venueName": "Essigfabrik",
+      "venueAddress": "Auenweg 173, 51063 Köln",
+      "latitude": 50.9517133,
+      "longitude": 6.9819222,
+      "sourceId": "source-bootshaus-koeln",
+      "updatedAt": "2026-08-05T11:18:45.714+00:00"
+    },
+    "api": {
+      "venueLabel": "Essigfabrik",
+      "cityLabel": "Köln",
+      "locationLabelComma": "Essigfabrik, Köln",
+      "hasCoordinates": true
+    },
+    "viewModel": {
+      "sanitizedDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "shortDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "displayPriceText": "ab 11,90 €",
+      "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "ticketProviderLabel": "Ticket.io",
+      "ticketAvailability": "external_link",
+      "isSoldOut": false,
+      "venueLabel": "Essigfabrik",
+      "cityLabel": "Köln",
+      "locationLabelComma": "Essigfabrik, Köln",
+      "locationLabelDot": "Essigfabrik · Köln",
+      "latitude": 50.9517133,
+      "longitude": 6.9819222,
+      "hasCoordinates": true,
+      "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "galleryImageUrls": [
+        "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+      ],
+      "genres": [
+        "DUBSTEP",
+        "ELECTRO",
+        "Hard Techno",
+        "Techno",
+        "EDM"
+      ],
+      "knownArtistNames": [],
+      "lineupEntries": [],
+      "lineupCompleteness": "none",
+      "lineupSectionTitle": "LINE-UP",
+      "hasKnownLineup": false,
+      "qualityState": "complete",
+      "sourceAttributionLabel": "Bootshaus"
+    },
+    "consumerApp": {
+      "locationLabelComma": "Essigfabrik, Köln",
+      "locationLabelDot": "Essigfabrik · Köln"
+    }
+  },
+  "firstEssigfabrikStage": "canonical_event (predates trace artifacts)",
+  "ticketIoImportAt": "2026-08-02T21:24:47.324+00:00",
+  "addressBootshausCoordsPresent": true,
+  "provenance": [],
+  "sourceReferences": [
+    {
+      "id": "ref-evt-1785339391167-tfaixrr-source-ticket-kings-org-elektrokuche-https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "canonical_event_id": "evt-1785339391167-tfaixrr",
+      "source_id": "source-ticket-kings-org-elektrokuche",
+      "external_event_id": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "original_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "raw_record_id": "ea923d8b-51c8-4751-8039-a5fce5b703c9",
+      "import_job_id": "eff5a712-5bfb-464a-845c-c339440c3511",
+      "first_seen_at": "2026-07-30T19:08:13.95+00:00",
+      "last_seen_at": "2026-08-02T19:38:47.339+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 60,
+      "source_quality_score": 65,
+      "source_health_score": null,
+      "metadata": {
+        "role": "ticketing",
+        "syncRun": {
+          "pagesProcessed": 6,
+          "paginationDetected": true
+        },
+        "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "platform": "ticket_king",
+        "shopSlug": "ticketkings",
+        "connector": "ticket_platform",
+        "isPrimary": false,
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "scopeStats": {
+          "accepted": 5,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 5,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "canonicalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "lineupEntries": [
+          {
+            "isB2b": false,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 0,
+            "confidence": 0.95,
+            "displayName": "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!",
+            "normalizedName": "wir haben für euch eine selektion an artists zusammengestellt, die wissen, wie man einen floor zum kochen bringt. hier ist das team, das euch ins underland entführt: sichert euch euer ticket ins underland! 🎟️ das hier ist der start von etwas großem, und ihr wollt von anfang an dabei sein! die nachfrage wird enorm sein, also zögert nicht. sichert euch eure tickets und seid teil dieser premiere. alle infos und tickets findet ihr auf ticketkings.de . seid schnell, bevor es zu spät ist! wir sehen uns im chaos! 🎉 packt eure tanzschuhe ein, bereitet euch auf eine nacht voller unvergesslicher momente vor und lasst uns gemeinsam das underland erobern. am samstag, 05. september 2026 , wird die essigfabrik zum epizentrum der harten sounds. affenkäfig lädt ein – seid ihr bereit für den abriss? wir können es kaum erwarten, mit euch die wände zum wackeln zu bringen! let’s go!"
+          }
+        ],
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "211feb8d106c04386b2d12d55bcfcfa8",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 5
+        },
+        "enrichmentSource": true,
+        "checkoutProviderId": "40",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    },
+    {
+      "id": "ref-evt-1785339391167-tfaixrr-source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt-https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "canonical_event_id": "evt-1785339391167-tfaixrr",
+      "source_id": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+      "external_event_id": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "original_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "raw_record_id": "f24d7b0f-bd44-4294-8230-f8758d7e1dfd",
+      "import_job_id": "48642057-5018-459d-bb06-daaf9fd11b98",
+      "first_seen_at": "2026-07-30T19:09:41.079+00:00",
+      "last_seen_at": "2026-08-02T21:26:57.639+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 60,
+      "source_quality_score": 65,
+      "source_health_score": null,
+      "metadata": {
+        "role": "ticketing",
+        "syncRun": {
+          "pagesProcessed": 6,
+          "paginationDetected": true
+        },
+        "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "platform": "ticket_king",
+        "shopSlug": "ticketkings",
+        "connector": "ticket_platform",
+        "isPrimary": false,
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "scopeStats": {
+          "accepted": 5,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 5,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "canonicalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "lineupEntries": [
+          {
+            "isB2b": false,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 0,
+            "confidence": 0.95,
+            "displayName": "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!",
+            "normalizedName": "wir haben für euch eine selektion an artists zusammengestellt, die wissen, wie man einen floor zum kochen bringt. hier ist das team, das euch ins underland entführt: sichert euch euer ticket ins underland! 🎟️ das hier ist der start von etwas großem, und ihr wollt von anfang an dabei sein! die nachfrage wird enorm sein, also zögert nicht. sichert euch eure tickets und seid teil dieser premiere. alle infos und tickets findet ihr auf ticketkings.de . seid schnell, bevor es zu spät ist! wir sehen uns im chaos! 🎉 packt eure tanzschuhe ein, bereitet euch auf eine nacht voller unvergesslicher momente vor und lasst uns gemeinsam das underland erobern. am samstag, 05. september 2026 , wird die essigfabrik zum epizentrum der harten sounds. affenkäfig lädt ein – seid ihr bereit für den abriss? wir können es kaum erwarten, mit euch die wände zum wackeln zu bringen! let’s go!"
+          }
+        ],
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "211feb8d106c04386b2d12d55bcfcfa8",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "maxDetailPages": 15,
+          "shopPagesFetched": 5,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 0,
+          "detailUrlsDiscovered": 0,
+          "detailUrlsPowBlocked": 0
+        },
+        "enrichmentSource": true,
+        "checkoutProviderId": "40",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    },
+    {
+      "id": "ref-evt-1785339391167-tfaixrr-source-bootshaus-ticket-io-https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "canonical_event_id": "evt-1785339391167-tfaixrr",
+      "source_id": "source-bootshaus-ticket-io",
+      "external_event_id": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "original_url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "raw_record_id": "4da3ec00-b1b8-4b31-8c1e-cde6db6c449e",
+      "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+      "first_seen_at": "2026-07-30T13:22:52.471+00:00",
+      "last_seen_at": "2026-08-02T21:24:45.033+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 65,
+      "source_quality_score": 70,
+      "source_health_score": null,
+      "metadata": {
+        "role": "ticketing",
+        "soldOut": false,
+        "syncRun": {
+          "pagesProcessed": 1,
+          "paginationDetected": false
+        },
+        "eventUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "platform": "ticket_io",
+        "shopSlug": "bootshaus-club",
+        "connector": "ticket_platform",
+        "eventSlug": "vB0cAmWg",
+        "isPrimary": false,
+        "priceText": "ab 11,90 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "scopeStats": {
+          "accepted": 15,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 15,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "availability": "instock",
+        "canonicalUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "defaultCityId": "koeln",
+        "defaultVenueId": "venue-bootshaus-koeln",
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "6771ec5cc4166c37d30a236ad4ee40be",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": true,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "skippedReason": "pow_blocked",
+          "maxDetailPages": 15,
+          "shopPagesFetched": 0,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 15,
+          "detailUrlsDiscovered": 15,
+          "detailUrlsPowBlocked": 15
+        },
+        "enrichmentSource": true,
+        "defaultOrganizerId": "organizer-bootshaus",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    },
+    {
+      "id": "ref-evt-1785339391167-tfaixrr-source-affenkaefig-ticket-kings-https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "canonical_event_id": "evt-1785339391167-tfaixrr",
+      "source_id": "source-affenkaefig-ticket-kings",
+      "external_event_id": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "original_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "raw_record_id": "07ec3aa3-f15c-49d5-aa9c-a22df1e99686",
+      "import_job_id": "db556f2b-141c-4970-8c6e-93b5cbaf36a7",
+      "first_seen_at": "2026-07-30T13:23:48.275+00:00",
+      "last_seen_at": "2026-08-02T21:25:55.013+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 64,
+      "source_quality_score": 68,
+      "source_health_score": null,
+      "metadata": {
+        "role": "ticketing",
+        "syncRun": {
+          "pagesProcessed": 6,
+          "paginationDetected": true
+        },
+        "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "platform": "ticket_king",
+        "shopSlug": "ticketkings",
+        "connector": "ticket_platform",
+        "isPrimary": false,
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "scopeStats": {
+          "accepted": 5,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 5,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "canonicalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "defaultCityId": "koeln",
+        "lineupEntries": [
+          {
+            "isB2b": false,
+            "isF2f": false,
+            "source": "ticket_kings_html",
+            "isLiveSet": false,
+            "sortOrder": 0,
+            "confidence": 0.95,
+            "displayName": "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!",
+            "normalizedName": "wir haben für euch eine selektion an artists zusammengestellt, die wissen, wie man einen floor zum kochen bringt. hier ist das team, das euch ins underland entführt: sichert euch euer ticket ins underland! 🎟️ das hier ist der start von etwas großem, und ihr wollt von anfang an dabei sein! die nachfrage wird enorm sein, also zögert nicht. sichert euch eure tickets und seid teil dieser premiere. alle infos und tickets findet ihr auf ticketkings.de . seid schnell, bevor es zu spät ist! wir sehen uns im chaos! 🎉 packt eure tanzschuhe ein, bereitet euch auf eine nacht voller unvergesslicher momente vor und lasst uns gemeinsam das underland erobern. am samstag, 05. september 2026 , wird die essigfabrik zum epizentrum der harten sounds. affenkäfig lädt ein – seid ihr bereit für den abriss? wir können es kaum erwarten, mit euch die wände zum wackeln zu bringen! let’s go!"
+          }
+        ],
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "211feb8d106c04386b2d12d55bcfcfa8",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "maxDetailPages": 15,
+          "shopPagesFetched": 5,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 0,
+          "detailUrlsDiscovered": 0,
+          "detailUrlsPowBlocked": 0
+        },
+        "enrichmentSource": true,
+        "checkoutProviderId": "40",
+        "defaultOrganizerId": "organizer-affenkaefig",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    },
+    {
+      "id": "ref-evt-1785339391167-tfaixrr-source-bootshaus-koeln-https://bootshaus.tv/events/bootshaus-sommerfest",
+      "canonical_event_id": "evt-1785339391167-tfaixrr",
+      "source_id": "source-bootshaus-koeln",
+      "external_event_id": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "original_url": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "raw_record_id": "3ffbc1a6-402e-4e65-a255-50be5036810c",
+      "import_job_id": "b806a457-189f-4580-8580-592b1c39fd61",
+      "first_seen_at": "2026-07-28T21:49:28.619+00:00",
+      "last_seen_at": "2026-08-02T21:20:24.007+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 78,
+      "source_quality_score": 76,
+      "source_health_score": null,
+      "metadata": {
+        "role": "official",
+        "eventUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+        "platform": "club_website",
+        "warnings": [
+          "detail_enrichment_applied"
+        ],
+        "connector": "club_website",
+        "isPrimary": true,
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "sourceType": "website",
+        "syncStatus": "active",
+        "canonicalUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+        "defaultCityId": "staging-seed-city-koeln",
+        "fieldEvidence": [
+          {
+            "field": "title",
+            "rawValue": "Bootshaus Sommerfest",
+            "strategy": "html_selector",
+            "sourceUrl": "https://bootshaus.tv/events/",
+            "confidence": 0.8,
+            "extractedAt": "2026-08-02T21:18:30.285Z",
+            "selectorOrPath": ".upcoming-title"
+          },
+          {
+            "field": "rawStartDate",
+            "rawValue": "2026-09-05T22:00:00",
+            "strategy": "html_selector",
+            "sourceUrl": "https://bootshaus.tv/events/",
+            "confidence": 0.8,
+            "extractedAt": "2026-08-02T21:18:30.285Z",
+            "selectorOrPath": ".date-day"
+          }
+        ],
+        "defaultVenueId": "venue-bootshaus-koeln",
+        "eventGeography": {
+          "city": "source_default",
+          "venue": "source_default",
+          "address": "source_default",
+          "country": "explicit"
+        },
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "eventAttributes": [],
+        "textualEnrichment": {
+          "attributes": [],
+          "outboundTicketLinks": []
+        },
+        "defaultOrganizerId": "organizer-bootshaus",
+        "extractionStrategy": "html_selector",
+        "electronicRelevance": "relevant",
+        "outboundTicketLinks": [],
+        "extractionConfidence": 0.75,
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    }
+  ],
+  "origins": [],
+  "rawPayloadVenueSnippet": {
+    "title": "Bootshaus Sommerfest",
+    "endDate": "2026-09-06T06:00:00+02:00",
+    "cityName": "Köln",
+    "eventUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/vB0cAmWg/img/holder-1080.jpg?5f6395b0",
+    "importId": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "latitude": 50.9517133,
+    "timezone": "Europe/Berlin",
+    "cancelled": false,
+    "longitude": 6.9819222,
+    "priceText": "ab 11,90 €",
+    "sourceUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "startDate": "2026-09-05T22:00:00+02:00",
+    "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "venueName": "Bootshaus",
+    "externalId": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "countryCode": "DE",
+    "priceAmount": 11.9,
+    "originalLink": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+    "organizerName": "Bootshaus Cologne GmbH",
+    "priceCurrency": "EUR",
+    "rawSourceType": "json_ld",
+    "sourceMetadata": {
+      "soldOut": false,
+      "syncRun": {
+        "pagesProcessed": 1,
+        "paginationDetected": false
+      },
+      "platform": "ticket_io",
+      "shopSlug": "bootshaus-club",
+      "connector": "ticket_platform",
+      "eventSlug": "vB0cAmWg",
+      "priceText": "ab 11,90 €",
+      "scopeStats": {
+        "accepted": 15,
+        "rejected": 0,
+        "uncertain": 0,
+        "discovered": 15,
+        "rejectionReasons": {}
+      },
+      "availability": "instock",
+      "normalizedHash": "6771ec5cc4166c37d30a236ad4ee40be",
+      "connectorVersion": "1.2.0",
+      "detailEnrichment": {
+        "blockedByPow": true,
+        "pagesFetched": 0,
+        "detailFetched": false,
+        "parserInvoked": false,
+        "skippedReason": "pow_blocked",
+        "maxDetailPages": 15,
+        "shopPagesFetched": 0,
+        "detailFetchErrors": 0,
+        "detailUrlsFetched": 0,
+        "detailUrlsAttempted": 15,
+        "detailUrlsDiscovered": 15,
+        "detailUrlsPowBlocked": 15
+      },
+      "enrichmentSource": true,
+      "electronicRelevance": "relevant",
+      "dataQualityRepairVersion": "4.3.1"
+    }
+  }
+}

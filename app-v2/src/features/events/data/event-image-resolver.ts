@@ -1,6 +1,13 @@
 import type { ImageSourcePropType } from 'react-native';
 
-import { getEventImageAsset } from './demo-image-assets';
+const OPS_STUB: ImageSourcePropType = { uri: 'ops-demo-stub' };
+
+function resolveDemoAsset(eventId: string, imageAssetKey?: string): ImageSourcePropType {
+  // Lazy require keeps Node ops scripts from loading binary demo assets at import time.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { getEventImageAsset } = require('./demo-image-assets') as typeof import('./demo-image-assets');
+  return getEventImageAsset(eventId, imageAssetKey);
+}
 
 export function resolveEventImageSource(input: {
   id: string;
@@ -12,5 +19,9 @@ export function resolveEventImageSource(input: {
     return { uri: remoteUrl };
   }
 
-  return getEventImageAsset(input.id, input.imageAssetKey);
+  if (process.env.ER_OPS_SCRIPT === '1') {
+    return OPS_STUB;
+  }
+
+  return resolveDemoAsset(input.id, input.imageAssetKey);
 }

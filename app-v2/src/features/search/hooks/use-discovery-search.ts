@@ -11,6 +11,7 @@ import type { DiscoverySearchLocationContext } from '../feed/search-feed-types';
 import { trackSearchTelemetry } from '../feed/search-telemetry';
 import { saveRecentSearch } from '../services/recent-search-storage';
 import type { EventFilters } from '@/features/search/constants';
+import { shouldApplyNearbyFilter } from '@/features/search/domain/location-scope';
 import { useDebouncedValue } from './use-debounced-value';
 
 export interface UseDiscoverySearchOptions {
@@ -53,12 +54,17 @@ export function useDiscoverySearch(
   const lastQueryRef = useRef(filters.query);
 
   const locationContext = useMemo<DiscoverySearchLocationContext>(
-    () => ({
-      city: location?.city ?? debouncedFilters.city,
-      latitude: location?.latitude,
-      longitude: location?.longitude,
-    }),
-    [debouncedFilters.city, location?.city, location?.latitude, location?.longitude],
+    () => {
+      if (!shouldApplyNearbyFilter(debouncedFilters)) {
+        return {};
+      }
+
+      return {
+        latitude: location?.latitude,
+        longitude: location?.longitude,
+      };
+    },
+    [debouncedFilters, location?.latitude, location?.longitude],
   );
 
   const filtersKey = useMemo(() => JSON.stringify(debouncedFilters), [debouncedFilters]);

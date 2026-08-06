@@ -1,0 +1,498 @@
+{
+  "generatedAt": "2026-08-03T09:11:56.679Z",
+  "readOnly": true,
+  "flaggedCount": 41,
+  "totalPublished": 108,
+  "flaggedEvents": [
+    {
+      "eventId": "staging-seed-event-tonight-house",
+      "title": "Cologne House Flow",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-tomorrow-techno",
+      "title": "Monday Pressure: Charlotte de Witte",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-weekend-industrial",
+      "title": "Industrial Ritual",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-weekend-trance",
+      "title": "Trance Unity",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-berlin-house",
+      "title": "Berlin House District",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "klangkuenstler-berghain",
+      "title": "Klangkuenstler at Halle",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-multi-genre",
+      "title": "Techno x Hard Techno Fusion",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-b2b",
+      "title": "DVS1 b2b Ellen Allien",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-psy",
+      "title": "Psy Garden Köln",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-no-image",
+      "title": "No Image Session",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-no-ticket",
+      "title": "Guestlist Only",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-free",
+      "title": "Open Decks Köln",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-june",
+      "title": "Summer Techno Marathon",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-soldout",
+      "title": "Sold Out Showcase",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "staging-seed-event-late-july",
+      "title": "Late July Warehouse",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": null,
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/nightswithus-presents-levi"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/neonsplash-paint-rave"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/neonsplash-paint-rave",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/15-8-26-bootshaus-pres-bc173-let-s-get-loco"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/sa-22-08-2026-kitkatclub"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/r3hab-pres-by-bootshaus"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/nibirii-pres-ely-oaks"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/nibirii-pres-ely-oaks",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "officialEventPages": [
+        "https://bootshaus.tv/events/10-2026-blacklist-festival-2026"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [
+        "https://bootshaus.ticket.io/"
+      ],
+      "chosenUrl": "https://bootshaus.ticket.io/",
+      "issue": "shop_root_in_source"
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/9-10-26-chrome-cologne"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/9-10-26-chrome-cologne",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne",
+      "issue": "missing_per_event_url"
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "canonicalTicketUrl": null,
+      "officialEventPages": [
+        "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub"
+      ],
+      "perEventTicketUrls": [],
+      "shopRootUrls": [],
+      "chosenUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub",
+      "issue": "missing_per_event_url"
+    }
+  ]
+}

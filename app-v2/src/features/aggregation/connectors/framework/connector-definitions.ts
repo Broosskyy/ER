@@ -200,7 +200,7 @@ export const SOURCE_CONNECTOR_DEFINITIONS: Record<SourceConnectorKey, SourceConn
     dataFormat: 'html',
     authentication: 'none',
     timeoutMs: 60_000,
-    version: createSourceConnectorVersion({ connectorVersion: '1.0.0' }),
+    version: createSourceConnectorVersion({ connectorVersion: '1.1.0' }),
     capabilities: createSourceConnectorCapabilities({
       supportsImages: true,
       supportsArtists: true,
@@ -208,6 +208,7 @@ export const SOURCE_CONNECTOR_DEFINITIONS: Record<SourceConnectorKey, SourceConn
       supportsTicketLinks: true,
       supportsTimezone: true,
       supportsGenres: true,
+      supportsRateLimits: true,
     }),
     retryConfig: DEFAULT_SOURCE_CONNECTOR_RETRY_CONFIG,
     rateLimitConfig: {
@@ -217,7 +218,7 @@ export const SOURCE_CONNECTOR_DEFINITIONS: Record<SourceConnectorKey, SourceConn
       concurrentRequests: 1,
     },
     limitations: [
-      'Enrichment source — matches existing events before creating new ones.',
+      'Multi-shop ticket.io connector — shop config lives in sourceConfig.ticketPlatform.',
       'Requires sourceConfig.ticketPlatform with platform and shopSlug.',
       'Detail pages may return 403; list JSON-LD is primary extraction path.',
     ],

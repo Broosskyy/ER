@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-08-03T19:41:32.693Z",
+  "readOnly": true,
+  "profiles": [
+    {
+      "host": "blacklist-festival.ticket.io",
+      "shopSlug": "blacklist-festival",
+      "publishedEventCount": 1,
+      "accessibleListSurface": false,
+      "eventUrlPattern": "https://blacklist-festival.ticket.io/{slug}/",
+      "priceStrategy": "list_overview_row",
+      "availabilityStrategy": "externally_blocked",
+      "detailBlocker": "altcha_pow_challenge",
+      "capabilityProfile": {
+        "listDiscovery": false,
+        "detailExtraction": false,
+        "priceFromList": true,
+        "availabilityFromList": false,
+        "phasesFromDetail": false
+      },
+      "reliabilityProfile": {
+        "shopSlug": "blacklist-festival",
+        "strategy": "list_overview_row",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      },
+      "activationRisk": "medium_unregistered_host_with_published_events",
+      "sourceActivation": false
+    },
+    {
+      "host": "polyamor.ticket.io",
+      "shopSlug": "polyamor",
+      "publishedEventCount": 1,
+      "accessibleListSurface": false,
+      "eventUrlPattern": "https://polyamor.ticket.io/{slug}/",
+      "priceStrategy": "list_overview_row",
+      "availabilityStrategy": "externally_blocked",
+      "detailBlocker": "altcha_pow_challenge",
+      "capabilityProfile": {
+        "listDiscovery": false,
+        "detailExtraction": false,
+        "priceFromList": true,
+        "availabilityFromList": false,
+        "phasesFromDetail": false
+      },
+      "reliabilityProfile": {
+        "shopSlug": "polyamor",
+        "strategy": "list_overview_row",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      },
+      "activationRisk": "medium_unregistered_host_with_published_events",
+      "sourceActivation": false
+    },
+    {
+      "host": "unreal-bootshaus.ticket.io",
+      "shopSlug": "unreal-bootshaus",
+      "publishedEventCount": 2,
+      "accessibleListSurface": true,
+      "eventUrlPattern": "https://unreal-bootshaus.ticket.io/{slug}/",
+      "priceStrategy": "list_overview_row",
+      "availabilityStrategy": "list_row_and_json_ld",
+      "detailBlocker": "altcha_pow_challenge",
+      "capabilityProfile": {
+        "listDiscovery": true,
+        "detailExtraction": false,
+        "priceFromList": true,
+        "availabilityFromList": true,
+        "phasesFromDetail": false
+      },
+      "reliabilityProfile": {
+        "shopSlug": "unreal-bootshaus",
+        "strategy": "list_overview_row",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      },
+      "activationRisk": "medium_unregistered_host_with_published_events",
+      "sourceActivation": false
+    },
+    {
+      "host": "bootshaus-tickets.ticket.io",
+      "shopSlug": "bootshaus-tickets",
+      "publishedEventCount": 1,
+      "accessibleListSurface": false,
+      "eventUrlPattern": "https://bootshaus-tickets.ticket.io/{slug}/",
+      "priceStrategy": "list_card_html",
+      "availabilityStrategy": "externally_blocked",
+      "detailBlocker": "altcha_pow_challenge",
+      "capabilityProfile": {
+        "listDiscovery": false,
+        "detailExtraction": false,
+        "priceFromList": true,
+        "availabilityFromList": false,
+        "phasesFromDetail": false
+      },
+      "reliabilityProfile": {
+        "shopSlug": "bootshaus-tickets",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Checkout-style ticket-option-choice layout; legacy event-row parser misses prices"
+      },
+      "activationRisk": "medium_unregistered_host_with_published_events",
+      "sourceActivation": false
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-08-05T23:10:37.932Z",
+  "phase": "4.8.6",
+  "fingerprints": {
+    "evt-1785339421539-k3swcrl": {
+      "hash": "cd48d1bb4d6ae6d0",
+      "fingerprint": {
+        "priceText": null,
+        "ticketStatus": "external_link",
+        "ticketPhases": null,
+        "venueName": "Bootshaus",
+        "venueId": "venue-bootshaus-koeln",
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "coordinates": null,
+        "organizerName": "Bootshaus",
+        "sourceId": "source-bootshaus-koeln",
+        "startDate": "2026-09-04T20:00:00+00:00",
+        "endDate": null,
+        "timezone": "Europe/Berlin",
+        "subtitle": null,
+        "ageRestriction": "ab 18 Jahren",
+        "ownership": null,
+        "lineup": [],
+        "origins": null
+      }
+    },
+    "evt-1785339391167-tfaixrr": {
+      "hash": "d27d5731287c23ac",
+      "fingerprint": {
+        "priceText": "Tickets ab 11,90 Euro",
+        "ticketStatus": "external_link",
+        "ticketPhases": null,
+        "venueName": "Essigfabrik",
+        "venueId": null,
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "coordinates": null,
+        "organizerName": "Bootshaus",
+        "sourceId": "source-bootshaus-koeln",
+        "startDate": "2026-09-05T20:00:00+00:00",
+        "endDate": "2026-09-06T05:00:00+00:00",
+        "timezone": "UTC+02:00",
+        "subtitle": null,
+        "ageRestriction": null,
+        "ownership": null,
+        "lineup": [],
+        "origins": null
+      }
+    }
+  }
+}

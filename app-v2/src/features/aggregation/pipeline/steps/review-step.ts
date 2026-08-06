@@ -28,6 +28,12 @@ export class ReviewStep {
       } else if (payload.isDuplicate) {
         pipelineStatus = 'duplicate';
         warnings.push(`Record ${payload.externalId} flagged as duplicate.`);
+      } else if (payload.mergedEvent.canonicalEvent.sourceMetadata?.electronicRelevance === 'irrelevant') {
+        pipelineStatus = 'rejected';
+        warnings.push(`Record ${payload.externalId} is outside electronic-music scope.`);
+      } else if (payload.mergedEvent.canonicalEvent.sourceMetadata?.electronicRelevance === 'uncertain') {
+        pipelineStatus = 'pending_review';
+        warnings.push(`Record ${payload.externalId} has uncertain electronic relevance — queued for review.`);
       } else if (context.source.reviewRequired) {
         pipelineStatus = 'pending_review';
       } else {

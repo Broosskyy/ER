@@ -1,0 +1,5251 @@
+{
+  "generatedAt": "2026-08-03T09:11:56.680Z",
+  "readOnly": true,
+  "events": [
+    {
+      "eventId": "staging-seed-event-tonight-house",
+      "title": "Cologne House Flow",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-tomorrow-techno",
+      "title": "Monday Pressure: Charlotte de Witte",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Charlotte de Witte"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Charlotte de Witte"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Charlotte de Witte"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-weekend-industrial",
+      "title": "Industrial Ritual",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-weekend-trance",
+      "title": "Trance Unity",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Ellen Allien"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Ellen Allien"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Ellen Allien"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-berlin-house",
+      "title": "Berlin House District",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "klangkuenstler-berghain",
+      "title": "Klangkuenstler at Halle",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Klangkuenstler"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Klangkuenstler"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Klangkuenstler"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-multi-genre",
+      "title": "Techno x Hard Techno Fusion",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Daxson"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Daxson"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Daxson"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-b2b",
+      "title": "DVS1 b2b Ellen Allien",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "DVS1"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "DVS1"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "DVS1"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-psy",
+      "title": "Psy Garden Köln",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "DVS1"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "DVS1"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "DVS1"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-no-image",
+      "title": "No Image Session",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-no-ticket",
+      "title": "Guestlist Only",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Charlotte de Witte"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Charlotte de Witte"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Charlotte de Witte"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-free",
+      "title": "Open Decks Köln",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Peachlychee"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-upcoming-june",
+      "title": "Summer Techno Marathon",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Amelie Lens"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Amelie Lens"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Amelie Lens"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-soldout",
+      "title": "Sold Out Showcase",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "staging-seed-event-late-july",
+      "title": "Late July Warehouse",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "I Hate Models"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "JUNONICOLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "JUNONICOLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "JUNO @ Palma de Mallorca (ES",
+            "JUNONICOLE DA SILVA​",
+            "JUNON ICOLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "JUNO @ Palma de Mallorca (ES",
+            "JUNONICOLE DA SILVA​",
+            "JUNON ICOLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "JUNONICOLE DA SILVA​",
+            "JUNON ICOLE DA SILVA​"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "LEVI"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "LEVI"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "LEVI"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506393455-qkc3qd0",
+      "title": "HALBWELT pres. AFEM SYKO (All Night Long) + PETERBLUE, Sibel, Selina",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 4,
+          "sample": [
+            "AFEM SYKO (All Night Long",
+            "PETERBLUE",
+            "Sibel"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 4,
+          "names": [
+            "AFEM SYKO (All Night Long",
+            "PETERBLUE",
+            "Sibel",
+            "Selina"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 5,
+          "names": [
+            "AFEM SYKO (All Night Long",
+            "PETERBLUE",
+            "Sibel",
+            "Selina",
+            "PETER BLUE"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 5,
+          "names": [
+            "AFEM SYKO (All Night Long",
+            "PETERBLUE",
+            "Sibel",
+            "Selina",
+            "PETER BLUE"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 4,
+          "names": [
+            "PETERBLUE",
+            "Sibel",
+            "Selina",
+            "PETER BLUE"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "structured_wrong_legacy_correct",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 14,
+          "sample": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 14,
+          "names": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 14,
+          "names": [
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN",
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 14,
+          "names": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 14,
+          "names": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785506368264-j5xf3dn",
+      "title": "GLOBAL PULSE pres. SALVATORE GANACCI",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "SALVATORE GANACCI"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "SALVATORE GANACCI"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "SALVATORE GANACCI",
+            "SALVA TORE GANACCI"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "SALVATORE GANACCI",
+            "SALVA TORE GANACCI"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "SALVATORE GANACCI",
+            "SALVA TORE GANACCI"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 4,
+          "sample": [
+            "IN VERRUF",
+            "DASSTUDACH",
+            "MOIA"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 4,
+          "names": [
+            "IN VERRUF",
+            "DASSTUDACH",
+            "MOIA",
+            "GAAAS"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 5,
+          "names": [
+            "IN VERRUF",
+            "DASSTUDACH",
+            "MOIA",
+            "GAAAS",
+            "DASST UDACH"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 5,
+          "names": [
+            "IN VERRUF",
+            "DASSTUDACH",
+            "MOIA",
+            "GAAAS",
+            "DASST UDACH"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 5,
+          "names": [
+            "IN VERRUF",
+            "DASSTUDACH",
+            "MOIA",
+            "GAAAS",
+            "DASST UDACH"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 8,
+          "names": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 4,
+          "names": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 8,
+          "names": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 4,
+          "names": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "firstExists": "raw_source",
+      "lostAt": "api_projection",
+      "changedAt": "structured_present_api_omitted",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "MAXI MERAKIMCFLY​"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "MAXI MERAKIMCFLY​"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "MAXI MERAKI @ Palma de Mallorca (ES",
+            "MAXI MERAKIMCFLY​"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "MAXI MERAKI @ Palma de Mallorca (ES",
+            "MAXI MERAKIMCFLY​"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "R_SOURCE_NO_LINEUP",
+      "firstFailureStage": "5_raw_source_payload"
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "2 YEARS STUTTGART HARDCORE SOUND"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "2 YEARS STUTTGART HARDCORE SOUND"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "2 YEARS STUTTGART HARDCORE SOUND",
+            "2 YEARS STUTT GART HARDCORE SOUND"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "2 YEARS STUTTGART HARDCORE SOUND",
+            "2 YEARS STUTT GART HARDCORE SOUND"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "2 YEARS STUTT GART HARDCORE SOUND"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 9,
+          "sample": [
+            "DYSTOPIA F2F VALKYRIE",
+            "IAN CRANK F2F EASYPYSI",
+            "KARAMUSTAN F2F GREEKZ"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 18,
+          "names": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 9,
+          "names": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 18,
+          "names": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 9,
+          "names": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "firstExists": "raw_source",
+      "lostAt": "normalization",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 3,
+          "sample": [
+            "FAST BOYDHALILIONKAY ONINEPublic Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start",
+            "and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only.Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsa",
+            "FAST BOYDHALILIONKAY ONINEPublic Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only.Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsa"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "BC173 (let's get loco"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "BC173 (let's get loco"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "BC173 (let's get loco"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Moonbootica"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Moonbootica"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Moonbootica"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Moonbootica"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Moonbootica"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "firstExists": "raw_source",
+      "lostAt": "structured_storage",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "Kili b2b Complex",
+            "RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 4,
+          "names": [
+            "Kili",
+            "Complex",
+            "RAN-DDEVIN WILDAVERSIONKILI",
+            "COMPLEXZELECTERRESTRICTLESS"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 5,
+          "sample": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 5,
+          "names": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY",
+            "SOURCE CODE",
+            "2ND FLOOR NKR"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 5,
+          "names": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY",
+            "SOURCE CODE",
+            "2ND FLOOR NKR"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 5,
+          "names": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY",
+            "SOURCE CODE",
+            "2ND FLOOR NKR"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 5,
+          "names": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY",
+            "SOURCE CODE",
+            "2ND FLOOR NKR"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "KAZ JAMESALICIA HAHN​"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "KAZ JAMESALICIA HAHN​"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "KAZ JAMES @ Palma de Mallorca (ES",
+            "KAZ JAMESALICIA HAHN​",
+            "KAZ JAMESA LICIA HAHN​"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "KAZ JAMES @ Palma de Mallorca (ES",
+            "KAZ JAMESALICIA HAHN​",
+            "KAZ JAMESA LICIA HAHN​"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "KAZ JAMESALICIA HAHN​",
+            "KAZ JAMESA LICIA HAHN​"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785339382025-cazpz3d",
+      "title": "LOONYLAND pres. LUCA DANTE SPADAFORA & 2 ENGEL & CHARLIE",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 4,
+          "names": [
+            "LUCA DANTE SPADAFORA",
+            "2 ENGEL",
+            "CHARLIE",
+            "LUCA DANTE SPADA FORA"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 4,
+          "names": [
+            "LUCA DANTE SPADAFORA",
+            "2 ENGEL",
+            "CHARLIE",
+            "LUCA DANTE SPADA FORA"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 4,
+          "names": [
+            "LUCA DANTE SPADAFORA",
+            "2 ENGEL",
+            "CHARLIE",
+            "LUCA DANTE SPADA FORA"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506406388-usnae2d",
+      "title": "WHNZMMR SESSION",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506424190-nk60eqi",
+      "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Pappenheimer"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Pappenheimer"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Pappenheimer"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Pappenheimer"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Pappenheimer"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "firstExists": "raw_source",
+      "lostAt": "structured_storage",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 56,
+          "sample": [
+            "Clark Kent Lucien Foort Don Basti AL:PAY STYLE: mainly energetic Techno + uplifting TechHouse ****************************************** ELEMENTS:* LOONYLAND &bdquo",
+            "Crazy Rabbit Hole&ldquo",
+            "Deco ** &ldquo"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 45,
+          "names": [
+            "Crazy Rabbit Hole&ldquo",
+            "Deco ** &ldquo",
+            "KitKatClub&rdquo",
+            "Artwork by Victor Calma ** Surreal &ldquo",
+            "Ziegfeld Follies&rdquo",
+            "öffnet sich das BOOTSHAUS für eine der spektakulären Eventnächte des Jahres * dem Kitty Sommernachtstraum. Landolf",
+            "Alexa",
+            "Basti und die gesamte Kitty-Crew laden zu einer rauschhaften Reise voller Fantasie",
+            "Sinnlichkeit und schillernder Eskapaden",
+            "gemäß dem Motto: &bdquo",
+            "Verkleide Dich nicht",
+            "sondern erfinde Dich neu.&ldquo",
+            "Erwartet wird eine Nacht voller gewagter Inspirationen",
+            "surrealer Kreaturen und extravagant inszenierter Charaktere. Zwischen psychedelischen Fantasiewelten",
+            "Toleranz und Lust auf kreative Selbstinszenierung. Willkommen ist prinzipiell ALLES",
+            "das die Elemente &bdquo",
+            "fantasievoll&ldquo",
+            "und &bdquo",
+            "sinnlich&ldquo",
+            "unverkennbar berücksichtigt – von glamourös bis avantgardistisch",
+            "einer spektakulären LOONYLAND &bdquo",
+            "D&eacute",
+            "cor",
+            "Surreal &ldquo",
+            "Projektionen",
+            "Schwarzlicht-Bodypainting",
+            "Massageservice",
+            "Spielinstallationen für Erwachsene",
+            "Kinky Candy Crew",
+            "Frische-Früchte-Service",
+            "den heiß begehrten VAULT Polaroids und vielen weiteren liebevoll inszenierten Details Das Outdoor-Atrium mit Barservice",
+            "Raucher-Lounge",
+            "u.a. prägender Resident der legendären Wasteland Amsterdam. Neben ihm an den Decks Don Basti",
+            "KitKatClub-Legende und Meister hypnotischer",
+            "sinnlicher Beats",
+            "der europaweit praktisch jeden hedonistisch orientierten Dancefloor in Ekstase versetzt hat. Somit ist gewährleistet",
+            "DJ Mag&ldquo",
+            "regelmäßig als bester Technoclub Deutschlands ausgezeichnet",
+            "zieht die Location Feiernde aus aller Welt an. Wo einst Schiffsschrauben gefertigt wurden",
+            "brilliert heute ein unverwechselbar einzigartiger Klang- und Erlebniskosmos aus Sound",
+            "definiert sich der KitKatClub als avantgardistischer Nachtclub",
+            "der die Traditionen der &bdquo",
+            "verruchten&ldquo",
+            "Berliner Clubs der &bdquo",
+            "Goldenen Zwanziger&ldquo"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506377307-shx3g9d",
+      "title": "100% SCHRANZ pres. PER PLEKS & DAVID STRASSER",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "PER PLEKS",
+            "DAVID STRASSER"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "PER PLEKS",
+            "DAVID STRASSER"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "PER PLEKS",
+            "DAVID STRASSER"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "PER PLEKS",
+            "DAVID STRASSER"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "PER PLEKS",
+            "DAVID STRASSER"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506402039-8mam28r",
+      "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "The Tunegirl"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "The Tunegirl"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "The Tunegirl"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "The Tunegirl"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "The Tunegirl"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "the German B2B duo Jean Philippe"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "the German",
+            "duo Jean Philippe"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 5,
+          "names": [
+            "TRIPOLISM @ Palma de Mallorca (ES",
+            ". Opening the night",
+            "the German",
+            "duo Jean Philippe & Mole deliver punchy",
+            "organic grooves between Afro House and melodic house"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 5,
+          "names": [
+            "TRIPOLISM @ Palma de Mallorca (ES",
+            ". Opening the night",
+            "the German",
+            "duo Jean Philippe & Mole deliver punchy",
+            "organic grooves between Afro House and melodic house"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "the German"
+          ]
+        }
+      ],
+      "rootCauseClass": "G_DESCRIPTION_AS_LINEUP",
+      "firstFailureStage": "6_connector_parser_description_fallback"
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506433053-ezr3ujo",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Lee Ann Roberts"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Lee Ann Roberts"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Lee Ann Roberts"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Lee Ann Roberts"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Lee Ann Roberts"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 7,
+          "sample": [
+            "s once – spanning Techno",
+            "Hardtechno",
+            "Psytrance"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 7,
+          "names": [
+            "s once – spanning Techno",
+            "Hardtechno",
+            "Psytrance",
+            "Groove",
+            "Bounce",
+            "Drum & Bass in all its forms.-",
+            "s once – spanning Techno, Hardtechno, Psytrance, Groove, Bounce, Drum & Bass in all its forms.-"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 9,
+          "names": [
+            "C'MON - Rewi, Sarazar",
+            "Friends",
+            "s once – spanning Techno",
+            "Hardtechno",
+            "Psytrance",
+            "Groove",
+            "Bounce",
+            "Drum & Bass in all its forms.-",
+            "s once – spanning Techno, Hardtechno, Psytrance, Groove, Bounce, Drum & Bass in all its forms.-"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 9,
+          "names": [
+            "C'MON - Rewi, Sarazar",
+            "Friends",
+            "s once – spanning Techno",
+            "Hardtechno",
+            "Psytrance",
+            "Groove",
+            "Bounce",
+            "Drum & Bass in all its forms.-",
+            "s once – spanning Techno, Hardtechno, Psytrance, Groove, Bounce, Drum & Bass in all its forms.-"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 7,
+          "names": [
+            "C'MON - Rewi, Sarazar",
+            "Friends",
+            "s once – spanning Techno",
+            "Hardtechno",
+            "Psytrance",
+            "Groove",
+            "Bounce"
+          ]
+        }
+      ],
+      "rootCauseClass": "G_DESCRIPTION_AS_LINEUP",
+      "firstFailureStage": "6_connector_parser_description_fallback"
+    },
+    {
+      "eventId": "evt-1785506363578-4wh50a1",
+      "title": "FATALITY pres. DEXPHASE",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "DEXPHASE"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "DEXPHASE"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "DEXPHASE"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "DEXPHASE"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "DEXPHASE"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506410605-aqbkr1h",
+      "title": "BOUNCE N SCHRANZ w/ DICE, GEØRGE RADSPORT, GUSTAV ØRGANO, KOTORRI B2B EDNA",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 5,
+          "sample": [
+            "DICE",
+            "GEØRGE RADSPORT",
+            "GUSTAV ØRGANO"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 6,
+          "names": [
+            "DICE",
+            "GEØRGE RADSPORT",
+            "GUSTAV ØRGANO",
+            "KOTORRI",
+            "EDNA",
+            "EDNA"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 4,
+          "names": [
+            "DICE",
+            "GEØRGE RADSPORT",
+            "GUSTAV ØRGANO",
+            "EDNA"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 4,
+          "names": [
+            "DICE",
+            "GEØRGE RADSPORT",
+            "GUSTAV ØRGANO",
+            "EDNA"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 4,
+          "names": [
+            "DICE",
+            "GEØRGE RADSPORT",
+            "GUSTAV ØRGANO",
+            "EDNA"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Saltysis"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Saltysis"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Saltysis"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Saltysis"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Saltysis"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "POWERLAURA",
+            "JUSTIN PRICE"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "POWERLAURA",
+            "JUSTIN PRICE"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "POWERLAURA",
+            "JUSTIN PRICE",
+            "POWER LAURA"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "POWERLAURA",
+            "JUSTIN PRICE",
+            "POWER LAURA"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 3,
+          "names": [
+            "POWERLAURA",
+            "JUSTIN PRICE",
+            "POWER LAURA"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "NOTRE DAMEMEERA"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "NOTRE DAMEMEERA"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "NOTRE DAME @ Palma de Mallorca (ES",
+            "NOTRE DAMEMEERA",
+            "NOTRE DAMEM EERA"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "NOTRE DAME @ Palma de Mallorca (ES",
+            "NOTRE DAMEMEERA",
+            "NOTRE DAMEM EERA"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "NOTRE DAMEMEERA",
+            "NOTRE DAMEM EERA"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "R_SOURCE_NO_LINEUP",
+      "firstFailureStage": "5_raw_source_payload"
+    },
+    {
+      "eventId": "evt-1785506441963-td8znfi",
+      "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "A.D.H.S"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "A.D.H.S"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "A.D.H.S"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "A.D.H.S"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "A.D.H.S"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506450927-qr2is1j",
+      "title": "DISKO TOTAL - Season Opening",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "firstExists": "raw_source",
+      "lostAt": "normalization",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "MARTEN LOUNICOLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "MARTEN LOUNICOLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "MARTEN LOU @ Palma de Mallorca (ES",
+            "MARTEN LOUNICOLE DA SILVA​",
+            "MARTEN LOUNI COLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "MARTEN LOU @ Palma de Mallorca (ES",
+            "MARTEN LOUNICOLE DA SILVA​",
+            "MARTEN LOUNI COLE DA SILVA​"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "MARTEN LOUNICOLE DA SILVA​",
+            "MARTEN LOUNI COLE DA SILVA​"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "both_wrong",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "Dr Donk b2b Yoshiko",
+            "Albino b2b Dr Donk b2b Ricky West"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 5,
+          "names": [
+            "Dr Donk",
+            "Yoshiko",
+            "Albino",
+            "Dr Donk",
+            "Ricky West"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 18,
+          "names": [
+            "Donk",
+            "Ricky West)",
+            "Drum & Bass &times",
+            "Zaag &times",
+            "Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE",
+            "Must Die!",
+            "ZAAGSTEP by Dr Donk",
+            "A-ZDr Donk pres. ZAAGSTEP (Album Showcase)",
+            "Dr Donk",
+            "Yoshiko",
+            "GPF",
+            "Invaderz",
+            "Lekkerfaces",
+            "MADCORE",
+            "Must",
+            "Die!",
+            "Revenge Of The Nerds (Albino",
+            "Dr"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 18,
+          "names": [
+            "ZAAGSTEP by Dr Donk",
+            "A-ZDr Donk pres. ZAAGSTEP (Album Showcase)",
+            "Dr Donk",
+            "Yoshiko",
+            "GPF",
+            "Invaderz",
+            "Lekkerfaces",
+            "MADCORE",
+            "Must",
+            "Die!",
+            "Revenge Of The Nerds (Albino",
+            "Dr",
+            "Donk",
+            "Ricky West)",
+            "Drum & Bass &times",
+            "Zaag &times",
+            "Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE",
+            "Must Die!"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 16,
+          "names": [
+            "ZAAGSTEP by Dr Donk",
+            "Dr Donk",
+            "Yoshiko",
+            "GPF",
+            "Invaderz",
+            "Lekkerfaces",
+            "MADCORE",
+            "Must",
+            "Die!",
+            "Revenge Of The Nerds (Albino",
+            "Dr",
+            "Donk",
+            "Ricky West)",
+            "Drum & Bass &times",
+            "Zaag &times",
+            "Must Die!"
+          ]
+        }
+      ],
+      "rootCauseClass": "G_DESCRIPTION_AS_LINEUP",
+      "firstFailureStage": "6_connector_parser_description_fallback"
+    },
+    {
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "NIKOLINA"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "NIKOLINA"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "NIKOLINA"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "NIKOLINA"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "NIKOLINA"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506412720-onckj88",
+      "title": "Trancemaster Krause (All Night Long)",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "WESTBAM",
+            "K-PAUL"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "WESTBAM",
+            "K-PAUL"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "WESTBAM",
+            "K-PAUL"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "WESTBAM",
+            "K-PAUL"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "WESTBAM",
+            "K-PAUL"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506370530-bfvzuo6",
+      "title": "KNOCKOUT by PLEA5UREPUL5E",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "firstExists": "raw_source",
+      "lostAt": "normalization",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "NIKLAS DEEFABIAN FARELLOLIVER MAGENTATEKNOCLASHDANTH▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Teenage Mutants"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Teenage Mutants"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Teenage Mutants"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Teenage Mutants"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Teenage Mutants"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "CLEOPARD2000 b2b ALBA FRANCHDAVYBOI b2b TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 3,
+          "names": [
+            "CLEOPARD2000",
+            "ALBA FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 6,
+          "names": [
+            ".MAINFLOOR:CLEOPARD2000",
+            "ALBA",
+            "FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+            "ALBA FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 6,
+          "names": [
+            ".MAINFLOOR:CLEOPARD2000",
+            "ALBA",
+            "FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+            "ALBA FRANCHDAVYBOI",
+            "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            ".MAINFLOOR:CLEOPARD2000",
+            "ALBA"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "structured_wrong_legacy_correct",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 14,
+          "sample": [
+            "IMHAPPY",
+            "KOPF & HÖRER",
+            "PART TIME KILLER"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 15,
+          "names": [
+            "IMHAPPY",
+            "KOPF & HÖRER",
+            "PART TIME KILLER",
+            "TIEFUNDTON",
+            "DYSTOPIA",
+            "FLASH FORWARD",
+            "RISKO",
+            "REMEK666",
+            "SUPER DARIO",
+            "TOMMY LIBERA",
+            "TURBOTIMOS",
+            "THE EVELOPER",
+            "8288",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 15,
+          "names": [
+            "THE EVELOPER",
+            "8288",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN",
+            "TIEFU NDTON",
+            "IMHAPPY",
+            "KOPF & HÖRER",
+            "PART TIME KILLER",
+            "TIEFUNDTON",
+            "DYSTOPIA",
+            "FLASH FORWARD",
+            "SUPER DARIO",
+            "TOMMY LIBERA",
+            "TURBOTIMOS",
+            "TURBO TIMOS"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 15,
+          "names": [
+            "IMHAPPY",
+            "KOPF & HÖRER",
+            "PART TIME KILLER",
+            "TIEFUNDTON",
+            "DYSTOPIA",
+            "FLASH FORWARD",
+            "SUPER DARIO",
+            "TOMMY LIBERA",
+            "TURBOTIMOS",
+            "THE EVELOPER",
+            "8288",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN",
+            "TIEFU NDTON",
+            "TURBO TIMOS"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 15,
+          "names": [
+            "IMHAPPY",
+            "KOPF & HÖRER",
+            "PART TIME KILLER",
+            "TIEFUNDTON",
+            "DYSTOPIA",
+            "FLASH FORWARD",
+            "SUPER DARIO",
+            "TOMMY LIBERA",
+            "TURBOTIMOS",
+            "THE EVELOPER",
+            "8288",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN",
+            "TIEFU NDTON",
+            "TURBO TIMOS"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "firstExists": "raw_source",
+      "lostAt": "normalization",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 3,
+          "sample": [
+            "and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start",
+            "and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "and event details will be announced soon.Public Transport Info:Public transport tickets included for an easy ride in and out.The travel pass is valid across the entire VRS network for both inbound and return journeys.Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket.Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506430597-ufglza0",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Klaudia Gawlas"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Klaudia Gawlas"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Klaudia Gawlas"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Klaudia Gawlas"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Klaudia Gawlas"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "firstExists": "raw_source",
+      "lostAt": "structured_storage",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "s dropping soon.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "s dropping soon."
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339395746-in3ijod",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "firstExists": null,
+      "lostAt": "api_projection",
+      "changedAt": "structured_present_api_omitted",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Felix Kröcher"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Felix Kröcher"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Felix Kröcher"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Felix Kröcher"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Felix Kröcher"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "firstExists": "raw_source",
+      "lostAt": "api_projection",
+      "changedAt": "structured_present_api_omitted",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "A-Z: AFEM SYKO BIIANCO JOHANNES SCHUSTER KOTORRI MAD DOG NIKOLINA PIXIE DUST WILL ATKINSON"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "A-Z: AFEM SYKO BIIANCO JOHANNES SCHUSTER KOTORRI MAD DOG NIKOLINA PIXIE DUST WILL ATKINSON"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "A-Z: AFEM SYKO BIIANCO JOHANNES SCHUSTER KOTORRI MAD DOG NIKOLINA PIXIE DUST WILL ATKINSON"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "A-Z: AFEM SYKO BIIANCO JOHANNES SCHUSTER KOTORRI MAD DOG NIKOLINA PIXIE DUST WILL ATKINSON"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "G_DESCRIPTION_AS_LINEUP",
+      "firstFailureStage": "6_connector_parser_description_fallback"
+    },
+    {
+      "eventId": "evt-1785506468322-oxv0sw4",
+      "title": "Gestört aber GeiL - Das OpenAir 2026",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "ANNIE DJ DRECKISCH DVAID GLANZ B2B ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH B2B GOLPE"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 3,
+          "names": [
+            "ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH",
+            "GOLPE"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 8,
+          "names": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 8,
+          "names": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 8,
+          "names": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506384006-ve662md",
+      "title": "GLOBAL PULSE pres. ALFRED HEINRICHS",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "ALFRED HEINRICHS"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "ALFRED HEINRICHS"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "ALFRED HEINRICHS",
+            "ALFRED HEINR ICHS"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "ALFRED HEINRICHS",
+            "ALFRED HEINR ICHS"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "ALFRED HEINRICHS",
+            "ALFRED HEINR ICHS"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Folgt"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "ELY OAKSmore TBA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "ELY OAKSmore TBA"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "ELY OAKS!"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "ELY OAKS!"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "ELY OAKS!"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 4,
+          "sample": [
+            "ECRAZE B2B BIZO",
+            "KARA B2B YOUPHORIA",
+            "MADCORE B2B ELLIE RICH"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 8,
+          "names": [
+            "ECRAZE",
+            "BIZO",
+            "KARA",
+            "YOUPHORIA",
+            "MADCORE",
+            "ELLIE RICH",
+            "VDV",
+            "MISCALL"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 44,
+          "names": [
+            "ECRAZE",
+            "BIZO",
+            "KARA",
+            "YOUPH ORIA",
+            "MADCORE",
+            "ELLIE RICH",
+            "VDV",
+            "MISCALL",
+            "(A–Z):A.M.C",
+            "AKIRAH",
+            "AUTODRIVE",
+            "AUTOPSKI",
+            "BLANKE PRESENTS: FALLOUT",
+            "BURR OAK",
+            "DJ MII",
+            "EPTIC",
+            "ESKEI83",
+            "FLUX PAVILION",
+            "FORMULA",
+            "GLADDE PALING",
+            "GOURSKI",
+            "HAMMERHEAD",
+            "K MOTIONZ",
+            "Ricky West)",
+            "KANINE",
+            "YOUPHORIA",
+            "KOVEN",
+            "KREWELLA",
+            "MACHINYST",
+            "MEFJUS",
+            "NOIZBOIZ",
+            "PRIMATE",
+            "RIOT",
+            "SAMPLIFIRE",
+            "SKIYE",
+            "STOOG3S",
+            "THE RESISTANCE",
+            "UPGRADE",
+            "ZOMBOY",
+            "[IVY]",
+            "[SAFYRE]",
+            "&AElig",
+            "ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10",
+            "2026"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 44,
+          "names": [
+            "ECRAZE",
+            "BIZO",
+            "KARA",
+            "YOUPH ORIA",
+            "MADCORE",
+            "ELLIE RICH",
+            "VDV",
+            "MISCALL",
+            "(A–Z):A.M.C",
+            "AKIRAH",
+            "AUTODRIVE",
+            "AUTOPSKI",
+            "BLANKE PRESENTS: FALLOUT",
+            "BURR OAK",
+            "DJ MII",
+            "EPTIC",
+            "ESKEI83",
+            "FLUX PAVILION",
+            "FORMULA",
+            "GLADDE PALING",
+            "GOURSKI",
+            "HAMMERHEAD",
+            "K MOTIONZ",
+            "Ricky West)",
+            "KANINE",
+            "YOUPHORIA",
+            "KOVEN",
+            "KREWELLA",
+            "MACHINYST",
+            "MEFJUS",
+            "NOIZBOIZ",
+            "PRIMATE",
+            "RIOT",
+            "SAMPLIFIRE",
+            "SKIYE",
+            "STOOG3S",
+            "THE RESISTANCE",
+            "UPGRADE",
+            "ZOMBOY",
+            "[IVY]",
+            "[SAFYRE]",
+            "&AElig",
+            "ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10",
+            "2026"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 43,
+          "names": [
+            "ECRAZE",
+            "BIZO",
+            "KARA",
+            "YOUPH ORIA",
+            "MADCORE",
+            "ELLIE RICH",
+            "VDV",
+            "MISCALL",
+            "(A–Z):A.M.C",
+            "AKIRAH",
+            "AUTODRIVE",
+            "AUTOPSKI",
+            "BLANKE PRESENTS: FALLOUT",
+            "BURR OAK",
+            "DJ MII",
+            "EPTIC",
+            "ESKEI83",
+            "FLUX PAVILION",
+            "FORMULA",
+            "GLADDE PALING",
+            "GOURSKI",
+            "HAMMERHEAD",
+            "K MOTIONZ",
+            "Ricky West)",
+            "KANINE",
+            "YOUPHORIA",
+            "KOVEN",
+            "KREWELLA",
+            "MACHINYST",
+            "MEFJUS",
+            "NOIZBOIZ",
+            "PRIMATE",
+            "RIOT",
+            "SAMPLIFIRE",
+            "SKIYE",
+            "STOOG3S",
+            "THE RESISTANCE",
+            "UPGRADE",
+            "ZOMBOY",
+            "[IVY]",
+            "[SAFYRE]",
+            "&AElig",
+            "2026"
+          ]
+        }
+      ],
+      "rootCauseClass": "G_DESCRIPTION_AS_LINEUP",
+      "firstFailureStage": "6_connector_parser_description_fallback"
+    },
+    {
+      "eventId": "evt-1785506457386-elpnk6o",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "firstExists": "raw_source",
+      "lostAt": "structured_storage",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "OGUZ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "OGUZ"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "R_SOURCE_NO_LINEUP",
+      "firstFailureStage": "5_raw_source_payload"
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "firstExists": "raw_source",
+      "lostAt": "api_projection",
+      "changedAt": "structured_present_api_omitted",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+            "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+            "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+            "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+            "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "G_DESCRIPTION_AS_LINEUP",
+      "firstFailureStage": "6_connector_parser_description_fallback"
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Folgt"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "R_SOURCE_NO_LINEUP",
+      "firstFailureStage": "5_raw_source_payload"
+    },
+    {
+      "eventId": "evt-1785506444104-084yf4g",
+      "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Anna Reusch"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Anna Reusch"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Anna Reusch"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Anna Reusch"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Anna Reusch"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "title": "NEELIX",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "firstExists": "raw_source",
+      "lostAt": "normalization",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "hauen wir euch bald um die Ohren. Sichert euch so lange die vergünstigten Tickets im Shop.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "firstExists": "raw_source",
+      "lostAt": "structured_storage",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 8,
+          "sample": [
+            "to be announcedSTYLE: mainly energetic Techno + uplifting TechHouse ****************************************** KitKatClub Cologne ist eine authentische Adaption des 1994 gegründeten und in Berlin ansässigen KitKatClub. Unangefochten einer der fantasievollsten Undergroundclubs weltweit",
+            "definiert sich der KitKatClub als avantgardistischer Nachtclub",
+            "der die Traditionen der &bdquo"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 5,
+          "names": [
+            "definiert sich der KitKatClub als avantgardistischer Nachtclub",
+            "der die Traditionen der &bdquo",
+            "verruchten&ldquo",
+            "Berliner Clubs der &bdquo",
+            "Goldenen Zwanziger&ldquo"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "firstExists": "raw_source",
+      "lostAt": "structured_storage",
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Zum Inhalt springen Home Events Service Erweitern Contact Support Suchen Menü ein-/ausklappen M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. 2026 Stuttgart aufgepasst M.D.M.A kommt am 24.10 ins Proton. Tickets jetzt im VVK sichern. LineUP: folgt"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 5,
+          "names": [
+            "folgt (function(){ var frame=document.getElementById(\"nm-ticketshop-embed-31\")",
+            "if(!frame){return",
+            "var successPath=\\'/order_success/\\'",
+            "var pendingFrameShrinkTimer=0",
+            "var pendingFrameShrinkHeight=0"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785339400315-1mx4foh",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "Halloween 2026"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "Halloween 2026"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "Halloween 2026"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "Halloween 2026"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "Halloween 2026"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506463791-14vrmd5",
+      "title": "ELECTRIC KINGDOM",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506455240-97ea7l5",
+      "title": "Stereoact & Lena Marie Engel",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "Stereoact",
+            "Lena Marie Engel"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "Stereoact",
+            "Lena Marie Engel"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506453153-zaynzo6",
+      "title": "POLTERGST - RAW ENERGY & TECHNO CLUB PRESENT",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "POLTERGST - RAW ENERGY",
+            "TECHNO CLUB PRESENT"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "POLTERGST - RAW ENERGY",
+            "TECHNO CLUB PRESENT"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "POLTERGST - RAW ENERGY",
+            "TECHNO CLUB PRESENT",
+            "POLTE RGST - RAW ENERGY"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "POLTERGST - RAW ENERGY",
+            "TECHNO CLUB PRESENT",
+            "POLTE RGST - RAW ENERGY"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 3,
+          "names": [
+            "POLTERGST - RAW ENERGY",
+            "TECHNO CLUB PRESENT",
+            "POLTE RGST - RAW ENERGY"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "AMPERE Düsseldorf"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "AMPERE Düsseldorf"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "AMPERE Düsseldorf"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "AMPERE Düsseldorf"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "AMPERE Düsseldorf"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506446703-7r57ode",
+      "title": "WESTBAM - SAVE THE RAVE 2026",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506476910-vh78c7a",
+      "title": "ELECTRIC KINGDOM",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506459510-zx4rw9y",
+      "title": "20 JAHRE REMODE - JUBILÄUMSTOURNEE",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "firstExists": null,
+      "lostAt": "api_projection",
+      "changedAt": "structured_present_api_omitted",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "KUKO All Night Long World Tour (Cologne"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "KUKO All Night Long World Tour (Cologne"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "R25 Düsseldorf"
+          ]
+        }
+      ],
+      "rootCauseClass": "H_TITLE_INFERENCE_PROMOTED",
+      "firstFailureStage": "18_title_inference_fallback"
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "R_SOURCE_NO_LINEUP",
+      "firstFailureStage": "5_raw_source_payload"
+    },
+    {
+      "eventId": "evt-1785339404822-r8i4lyq",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 4,
+          "sample": [
+            "s",
+            "extended sets",
+            "and the signature Bootshaus atmosphere all night long.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "s",
+            "extended sets"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "NYE 2026",
+            "s",
+            "extended sets"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "NYE 2026",
+            "s",
+            "extended sets"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 3,
+          "names": [
+            "NYE 2026",
+            "s",
+            "extended sets"
+          ]
+        }
+      ],
+      "rootCauseClass": null,
+      "firstFailureStage": "none"
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506474828-u0zw9zf",
+      "title": "HBz - Live 2027",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506481191-qaben7r",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506461636-oeo9yp4",
+      "title": "WESTBAM - SAVE THE RAVE 2027",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506483348-x67wunx",
+      "title": "Techno Club ft. TIEFUNDTON - TAKTSTÖRER",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 1,
+          "sample": [
+            "TIEFUNDTON - TAKTSTÖRER"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 1,
+          "names": [
+            "TIEFUNDTON - TAKTSTÖRER"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 2,
+          "names": [
+            "TIEFUNDTON - TAKTSTÖRER",
+            "TIEFU NDTON - TAKTSTÖRER"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 2,
+          "names": [
+            "TIEFUNDTON - TAKTSTÖRER",
+            "TIEFU NDTON - TAKTSTÖRER"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 1,
+          "names": [
+            "TIEFU NDTON - TAKTSTÖRER"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    },
+    {
+      "eventId": "evt-1785506479046-0iqt1i1",
+      "title": "Gestört aber GeiL - Das OpenAir 2027",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506485508-ill0alw",
+      "title": "Forced to Mode",
+      "firstExists": null,
+      "lostAt": null,
+      "changedAt": null,
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 0,
+          "sample": []
+        },
+        {
+          "stage": "normalized",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "structured_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "legacy_db",
+          "count": 0,
+          "names": []
+        },
+        {
+          "stage": "api",
+          "count": 0,
+          "names": []
+        }
+      ],
+      "rootCauseClass": "C_DETAIL_SOURCE_INACCESSIBLE",
+      "firstFailureStage": "4_detail_page_fetch"
+    },
+    {
+      "eventId": "evt-1785506466137-qve932v",
+      "title": "STEREOACT & LENA MARIE ENGEL live",
+      "firstExists": "raw_source",
+      "lostAt": null,
+      "changedAt": "api_correct_ui_unknown",
+      "stages": [
+        {
+          "stage": "raw_source",
+          "count": 2,
+          "sample": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live"
+          ]
+        },
+        {
+          "stage": "normalized",
+          "count": 2,
+          "names": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live"
+          ]
+        },
+        {
+          "stage": "structured_db",
+          "count": 3,
+          "names": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live",
+            "STERE OACT"
+          ]
+        },
+        {
+          "stage": "legacy_db",
+          "count": 3,
+          "names": [
+            "STEREOACT",
+            "LENA MARIE ENGEL live",
+            "STERE OACT"
+          ]
+        },
+        {
+          "stage": "api",
+          "count": 2,
+          "names": [
+            "STEREOACT",
+            "STERE OACT"
+          ]
+        }
+      ],
+      "rootCauseClass": "D_RAW_SOURCE_INSUFFICIENT",
+      "firstFailureStage": "7_normalized_candidate"
+    }
+  ]
+}

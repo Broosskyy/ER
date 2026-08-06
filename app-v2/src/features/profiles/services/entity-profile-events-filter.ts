@@ -1,4 +1,5 @@
 import { eventRepository } from '@/data/repositories/registry';
+import { isInternalPublicEvent } from '@/features/events/discovery/internal-event-eligibility';
 import { eventLifecycleResolver } from '@/features/events/lifecycle/event-lifecycle-resolver';
 import { toEventLifecycleInput } from '@/features/events/lifecycle/event-lifecycle-from-event';
 import type { Event } from '@/features/events/types/event';
@@ -21,6 +22,9 @@ export function dedupeProfileEvents(events: Event[]): Event[] {
 
 export function filterProfileEvents(events: Event[]): Event[] {
   return dedupeProfileEvents(events).filter((event) => {
+    if (isInternalPublicEvent(event)) {
+      return false;
+    }
     if (event.status === 'archived') {
       return false;
     }

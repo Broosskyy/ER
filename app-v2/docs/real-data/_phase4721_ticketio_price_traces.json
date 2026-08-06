@@ -1,0 +1,654 @@
+[
+  {
+    "eventId": "evt-1785506408508-ema5ssy",
+    "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+    "shopHost": "lehmannclub.ticket.io",
+    "ticketUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+    "eventSlug": "VqX0G8j6",
+    "discovery": {
+      "shopSlug": "lehmannclub",
+      "listUrl": "https://lehmannclub.ticket.io/",
+      "eventSlug": "VqX0G8j6",
+      "eventUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 10,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 20,00 €",
+          "priceAmount": 20,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 20,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 20,
+          "priceText": "ab 20,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":20,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://lehmannclub.ticket.io/VqX0G8j6/\",\"validFrom\":\"2026-07-28T22:16:55+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 20,00 €",
+        "priceAmount": 20,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 20,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "lehmannclub",
+        "strategy": "json_ld_list_offer",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      }
+    },
+    "importPriceText": "ab 20,00 €",
+    "dbPriceText": "ab 20,00 €",
+    "canonicalPriceText": "ab 20,00 €",
+    "uiPriceVisible": true,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785506391332-nkworm2",
+    "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+    "shopHost": "lehmannclub.ticket.io",
+    "ticketUrl": "https://lehmannclub.ticket.io/GNxTMCm6/",
+    "eventSlug": "GNxTMCm6",
+    "discovery": {
+      "shopSlug": "lehmannclub",
+      "listUrl": "https://lehmannclub.ticket.io/",
+      "eventSlug": "GNxTMCm6",
+      "eventUrl": "https://lehmannclub.ticket.io/GNxTMCm6/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 10,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 20,00 €",
+          "priceAmount": 20,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 20,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 20,
+          "priceText": "ab 20,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":20,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://lehmannclub.ticket.io/GNxTMCm6/\",\"validFrom\":\"2026-07-28T20:44:48+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 20,00 €",
+        "priceAmount": 20,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 20,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "lehmannclub",
+        "strategy": "json_ld_list_offer",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      }
+    },
+    "importPriceText": "ab 20,00 €",
+    "dbPriceText": "ab 20,00 €",
+    "canonicalPriceText": "ab 20,00 €",
+    "uiPriceVisible": true,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785339392687-tbdwup4",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "shopHost": "bootshaus-club.ticket.io",
+    "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+    "eventSlug": "fjspvLe4",
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "fjspvLe4",
+      "eventUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [],
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 0,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "uiPriceVisible": false,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "EVENT_NOT_PRESENT_ON_ACCESSIBLE_LIST",
+      "codePath": "ticket-io-list-enrichment.ts:parseTicketIoListRowContexts|parseTicketIoCardRowContexts"
+    }
+  },
+  {
+    "eventId": "evt-1785339410908-9691748",
+    "title": "Bootshaus pres. BC173 (let's get loco)",
+    "shopHost": "bootshaus-club.ticket.io",
+    "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+    "eventSlug": "BcDqml12",
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "BcDqml12",
+      "eventUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 23,00 €",
+          "priceAmount": 23,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 23,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 23,
+          "priceText": "ab 23,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":23,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://bootshaus-club.ticket.io/BcDqml12/\",\"validFrom\":\"2026-01-15T14:35:17+01:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 23,00 €",
+        "priceAmount": 23,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 23,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "uiPriceVisible": false,
+    "ticketStatus": "external_link",
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "LIST_PRICE_AVAILABLE_NOT_EXTRACTED",
+      "codePath": "ticket-io-adapter.ts:parseTicketIoShopHtml",
+      "rawEvidence": "Tickets ab 23,00 Euro"
+    }
+  },
+  {
+    "eventId": "evt-1785339420043-obhyeev",
+    "title": "Bootshaus on a Ship Vol. III",
+    "shopHost": "bootshaus-club.ticket.io",
+    "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+    "eventSlug": "wUc3uQrR",
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "wUc3uQrR",
+      "eventUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 0,
+          "priceText": "Ausverkauft",
+          "soldOut": true,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":0,\"priceCurrency\":\"EUR\",\"availability\":\"OutOfStock\",\"url\":\"https://bootshaus-club.ticket.io/wUc3uQrR/\",\"validFrom\":\"2026-01-15T12:13:03+01:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_json_ld",
+        "priceAmount": 0,
+        "priceText": "Ausverkauft",
+        "soldOut": true,
+        "strategyVersion": "phase4721-v1",
+        "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":0,\"priceCurrency\":\"EUR\",\"availability\":\"OutOfStock\",\"url\":\"https://bootshaus-club.ticket.io/wUc3uQrR/\",\"validFrom\":\"2026-01-15T12:13:03+01:00\"}"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "dbPriceText": "Tickets ab 32,00 Euro",
+    "canonicalPriceText": "Tickets ab 32,00 Euro",
+    "uiPriceVisible": true,
+    "ticketStatus": "external_link",
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785506421633-m1ktkpf",
+    "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+    "shopHost": "area51events.ticket.io",
+    "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/",
+    "eventSlug": "YSQcd9gq",
+    "discovery": {
+      "shopSlug": "area51events",
+      "listUrl": "https://area51events.ticket.io/",
+      "eventSlug": "YSQcd9gq",
+      "eventUrl": "https://area51events.ticket.io/YSQcd9gq/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 4,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 8,00 €",
+          "priceAmount": 8,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 8,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 8,
+          "priceText": "ab 8,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":8,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://area51events.ticket.io/YSQcd9gq/\",\"validFrom\":\"2026-07-18T22:09:25+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 8,00 €",
+        "priceAmount": 8,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 8,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "area51events",
+        "strategy": "json_ld_list_offer",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      }
+    },
+    "importPriceText": "ab 8,00 €",
+    "dbPriceText": "ab 8,00 €",
+    "canonicalPriceText": "ab 8,00 €",
+    "uiPriceVisible": true,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785506419485-ty33rrb",
+    "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+    "shopHost": "area51events.ticket.io",
+    "ticketUrl": "https://area51events.ticket.io/pK21qzGB/",
+    "eventSlug": "pK21qzGB",
+    "discovery": {
+      "shopSlug": "area51events",
+      "listUrl": "https://area51events.ticket.io/",
+      "eventSlug": "pK21qzGB",
+      "eventUrl": "https://area51events.ticket.io/pK21qzGB/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 4,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 8,00 €",
+          "priceAmount": 8,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 8,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 8,
+          "priceText": "ab 8,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":8,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://area51events.ticket.io/pK21qzGB/\",\"validFrom\":\"2026-07-18T22:11:36+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 8,00 €",
+        "priceAmount": 8,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 8,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "area51events",
+        "strategy": "json_ld_list_offer",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      }
+    },
+    "importPriceText": "ab 8,00 €",
+    "dbPriceText": "ab 8,00 €",
+    "canonicalPriceText": "ab 8,00 €",
+    "uiPriceVisible": true,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785506417389-t2f9fu4",
+    "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+    "shopHost": "area51events.ticket.io",
+    "ticketUrl": "https://area51events.ticket.io/aLr3YQLG/",
+    "eventSlug": "aLr3YQLG",
+    "discovery": {
+      "shopSlug": "area51events",
+      "listUrl": "https://area51events.ticket.io/",
+      "eventSlug": "aLr3YQLG",
+      "eventUrl": "https://area51events.ticket.io/aLr3YQLG/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 4,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 12,00 €",
+          "priceAmount": 12,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 12,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 12,
+          "priceText": "ab 12,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":12,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://area51events.ticket.io/aLr3YQLG/\",\"validFrom\":\"2026-07-18T22:26:30+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 12,00 €",
+        "priceAmount": 12,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 12,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "area51events",
+        "strategy": "json_ld_list_offer",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      }
+    },
+    "importPriceText": "ab 12,00 €",
+    "dbPriceText": "ab 12,00 €",
+    "canonicalPriceText": "ab 12,00 €",
+    "uiPriceVisible": true,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785506415247-c9ykti2",
+    "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+    "shopHost": "area51events.ticket.io",
+    "ticketUrl": "https://area51events.ticket.io/Z5ZN42qw/",
+    "eventSlug": "Z5ZN42qw",
+    "discovery": {
+      "shopSlug": "area51events",
+      "listUrl": "https://area51events.ticket.io/",
+      "eventSlug": "Z5ZN42qw",
+      "eventUrl": "https://area51events.ticket.io/Z5ZN42qw/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 4,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 8,00 €",
+          "priceAmount": 8,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 8,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 8,
+          "priceText": "ab 8,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":8,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://area51events.ticket.io/Z5ZN42qw/\",\"validFrom\":\"2026-07-19T14:54:06+02:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 8,00 €",
+        "priceAmount": 8,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 8,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "area51events",
+        "strategy": "json_ld_list_offer",
+        "listPageAccessible": true,
+        "detailPageAccessible": false
+      }
+    },
+    "importPriceText": "ab 8,00 €",
+    "dbPriceText": "ab 8,00 €",
+    "canonicalPriceText": "ab 8,00 €",
+    "uiPriceVisible": true,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  },
+  {
+    "eventId": "evt-1785339392687-tbdwup4",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "shopHost": "bootshaus-club.ticket.io",
+    "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+    "eventSlug": "fjspvLe4",
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "fjspvLe4",
+      "eventUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [],
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 0,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "uiPriceVisible": false,
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "EVENT_NOT_PRESENT_ON_ACCESSIBLE_LIST",
+      "codePath": "ticket-io-list-enrichment.ts:parseTicketIoListRowContexts|parseTicketIoCardRowContexts"
+    }
+  },
+  {
+    "eventId": "evt-1785339410908-9691748",
+    "title": "Bootshaus pres. BC173 (let's get loco)",
+    "shopHost": "bootshaus-club.ticket.io",
+    "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+    "eventSlug": "BcDqml12",
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "BcDqml12",
+      "eventUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [
+        {
+          "surface": "list_overview_row",
+          "priceText": "ab 23,00 €",
+          "priceAmount": 23,
+          "soldOut": false,
+          "rawSnippet": "Tickets ab 23,00 Euro",
+          "strategyVersion": "phase4721-v1"
+        },
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 23,
+          "priceText": "ab 23,00 €",
+          "soldOut": false,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":23,\"priceCurrency\":\"EUR\",\"availability\":\"InStock\",\"url\":\"https://bootshaus-club.ticket.io/BcDqml12/\",\"validFrom\":\"2026-01-15T14:35:17+01:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_overview_row",
+        "priceText": "ab 23,00 €",
+        "priceAmount": 23,
+        "soldOut": false,
+        "rawSnippet": "Tickets ab 23,00 Euro",
+        "strategyVersion": "phase4721-v1"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "uiPriceVisible": false,
+    "ticketStatus": "external_link",
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "LIST_PRICE_AVAILABLE_NOT_EXTRACTED",
+      "codePath": "ticket-io-adapter.ts:parseTicketIoShopHtml",
+      "rawEvidence": "Tickets ab 23,00 Euro"
+    }
+  },
+  {
+    "eventId": "evt-1785339420043-obhyeev",
+    "title": "Bootshaus on a Ship Vol. III",
+    "shopHost": "bootshaus-club.ticket.io",
+    "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+    "eventSlug": "wUc3uQrR",
+    "discovery": {
+      "shopSlug": "bootshaus-club",
+      "listUrl": "https://bootshaus-club.ticket.io/",
+      "eventSlug": "wUc3uQrR",
+      "eventUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+      "listAccessible": true,
+      "detailAccessible": false,
+      "detailAltchaBlocked": true,
+      "listRowCount": 15,
+      "hits": [
+        {
+          "surface": "list_json_ld",
+          "priceAmount": 0,
+          "priceText": "Ausverkauft",
+          "soldOut": true,
+          "strategyVersion": "phase4721-v1",
+          "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":0,\"priceCurrency\":\"EUR\",\"availability\":\"OutOfStock\",\"url\":\"https://bootshaus-club.ticket.io/wUc3uQrR/\",\"validFrom\":\"2026-01-15T12:13:03+01:00\"}"
+        }
+      ],
+      "bestHit": {
+        "surface": "list_json_ld",
+        "priceAmount": 0,
+        "priceText": "Ausverkauft",
+        "soldOut": true,
+        "strategyVersion": "phase4721-v1",
+        "rawSnippet": "{\"@type\":\"Offer\",\"category\":\"primary\",\"price\":0,\"priceCurrency\":\"EUR\",\"availability\":\"OutOfStock\",\"url\":\"https://bootshaus-club.ticket.io/wUc3uQrR/\",\"validFrom\":\"2026-01-15T12:13:03+01:00\"}"
+      },
+      "embeddedJsonScriptCount": 0,
+      "listJsonLdOfferCount": 1,
+      "registeredStrategy": {
+        "shopSlug": "bootshaus-club",
+        "strategy": "list_card_html",
+        "listPageAccessible": true,
+        "detailPageAccessible": false,
+        "notes": "Modern row cards + tio-overview-tickets-from; detail ALTCHA-blocked"
+      }
+    },
+    "dbPriceText": "Tickets ab 32,00 Euro",
+    "canonicalPriceText": "Tickets ab 32,00 Euro",
+    "uiPriceVisible": true,
+    "ticketStatus": "external_link",
+    "ticketPhasesCount": 0,
+    "classification": {
+      "failure": "NONE",
+      "codePath": "canonical_or_ui_price_present"
+    }
+  }
+]

@@ -12,6 +12,8 @@ import type { MergeContribution, MergeProvenanceService } from '@/features/aggre
 import type { AdminRole } from '@/features/import/admin/admin-roles';
 import { sourceHealthResolver } from '@/features/sources/domain/source-health-resolver';
 import { sourceQualityResolver } from '@/features/sources/domain/source-quality-resolver';
+import type { SourceReliabilitySummary } from '@/features/sources/domain/source-reliability-types';
+import { buildSourceReliabilitySummary } from '@/features/sources/domain/source-reliability-service';
 import { mapSourceRecordToRegistryEntry } from '@/features/sources/domain/source-registry';
 import type { SourceService } from '@/features/sources/services/source-service';
 
@@ -30,6 +32,7 @@ export interface SourceDetailMultiSourceContext {
   duplicateDecisions: DuplicateDecision[];
   health: ReturnType<typeof sourceHealthResolver.resolve>;
   quality: ReturnType<typeof sourceQualityResolver.resolve>;
+  reliability?: SourceReliabilitySummary;
 }
 
 export class AdminMultiSourceService {
@@ -127,6 +130,7 @@ export class AdminMultiSourceService {
     );
     const source = await this.sourceService.getByIdForAdmin(role, sourceId);
     const registryEntry = source ? mapSourceRecordToRegistryEntry(source) : null;
+    const reliability = source ? buildSourceReliabilitySummary(source, []) : undefined;
     return {
       sourceReferences,
       provenanceCount: provenanceLists.flat().length,
@@ -150,6 +154,7 @@ export class AdminMultiSourceService {
         }),
       }),
       quality: sourceQualityResolver.resolve([]),
+      reliability,
     };
   }
 }

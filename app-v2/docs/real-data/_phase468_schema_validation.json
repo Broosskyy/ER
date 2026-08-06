@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-08-03T06:41:03.519Z",
+  "totals": {
+    "event_lineup_entries": 334,
+    "event_lineup_entry_artists": 334
+  },
+  "integrity": {
+    "entriesWithoutArtists": 0,
+    "orphanJoinRows": 0,
+    "duplicateEntryArtistPairs": 0,
+    "maxEntryIdLength": 39,
+    "maxArtistIdLength": 138,
+    "longArtistIdRowsOver96Chars": 13,
+    "backfillFromLegacyEventArtists": 297,
+    "excludedLegacyArtifactEventArtists": 0
+  },
+  "idempotentRerun": {
+    "newEntries": 0,
+    "newEntryArtistRows": 0,
+    "note": "Migration uses ON CONFLICT DO NOTHING; counts verified stable on this run."
+  },
+  "pass": true,
+  "warnings": [
+    "13 join row(s) reference artist_id > 96 chars (pre-existing title-inferred garbage from backfill; repair may replace)"
+  ],
+  "blockers": []
+}

@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-08-04T12:18:11.888Z",
+  "gate": "E",
+  "count": 12,
+  "repairs": [
+    {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "title": "SA * 22.08.2026 | KitKatClub",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "blocked": true,
+      "blocker": "bootshaus_venue_linked_to_external_event_requires_review"
+    },
+    {
+      "eventId": "evt-1785339374416-shc7e7c",
+      "title": "CHROME COLOGNE",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339403309-prk3iiz",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "blocked": true,
+      "blocker": "bootshaus_venue_linked_to_external_event_requires_review"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339380511-rwjwfep",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785570943560-f5g5rj5",
+      "title": "NIBIRII pres. ELY OAKS!",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339401841-by9uoyc",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "blocked": true,
+      "blocker": "bootshaus_venue_linked_to_external_event_requires_review"
+    },
+    {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339372839-cwbr6ya",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "blocked": true,
+      "blocker": "bootshaus_venue_linked_to_external_event_requires_review"
+    },
+    {
+      "eventId": "evt-1785339283846-89x0jcd",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "blocked": true,
+      "blocker": "bootshaus_venue_linked_to_external_event_requires_review"
+    },
+    {
+      "eventId": "evt-1785339378982-kp48td0",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "issue": "missing_coordinates_with_venue_row",
+      "venueId": "venue-bootshaus-koeln",
+      "venueRowName": "Bootshaus",
+      "proposedCoordinates": {
+        "lat": 50.9234,
+        "lng": 6.9672
+      },
+      "blocked": false,
+      "blocker": null
+    }
+  ]
+}

@@ -17,6 +17,7 @@ import type {
 import type { EventQualityResolver } from '@/features/events/quality/event-quality-resolver';
 import type { PublishReadinessResolver } from '@/features/events/quality/publish-readiness-resolver';
 import type { Event } from '@/features/events/types/event';
+import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
 
 export interface MergeContribution {
   sourceId: string;
@@ -323,7 +324,7 @@ export class MergeProvenanceService {
       summary: `Merged ${request.contributions.length} source contribution(s) into ${request.canonicalEventId}`,
     });
 
-    await this.eventRepository.refresh();
+    await invalidateConsumerEventCaches(this.eventRepository);
 
     return {
       canonicalEventId: request.canonicalEventId,

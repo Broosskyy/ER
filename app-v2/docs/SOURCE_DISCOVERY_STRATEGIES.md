@@ -24,13 +24,14 @@ Defined in `acquisition-strategy-registry.ts`:
 | `rss` | RSS/Atom |
 | `html_cards` | Recurring HTML event cards |
 | `embedded_json` | Next.js/Nuxt embedded payloads |
-| `ticket_platform` | ticket.io, Ticket Kings, etc. |
+| `ticket_platform` | ticket.io (priority), other platforms TBD |
 
 ## Platform adapters
 
 Only for true platform specifics (`platform-registry.ts`):
 
-- **Production-ready:** `ticket_io`, `ticket_king`, `bootshaus_website`, `affenkaefig_website`
+- **Production-ready:** `ticket_io`, `bootshaus_website`, `affenkaefig_website`
+- **Deprecated:** `ticket_king` — see [TICKET_KINGS_DEPRECATION_PLAN.md](./TICKET_KINGS_DEPRECATION_PLAN.md)
 - **Placeholders (Sprint 33):** Resident Advisor, DICE, Shotgun, Eventbrite — identification and capability model only, no fake connectors.
 
 ## Evidence model

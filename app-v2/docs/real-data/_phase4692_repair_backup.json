@@ -1,0 +1,2047 @@
+{
+  "generatedAt": "2026-08-03T08:15:54.170Z",
+  "preflight": {
+    "generatedAt": "2026-08-03T08:14:23.590Z",
+    "readOnly": true,
+    "safetyGate": {
+      "watermark": "unknown",
+      "activeJobs": 0
+    },
+    "counts": {
+      "events": 127,
+      "artists": 354,
+      "structuredEntries": 250,
+      "legacyLinks": 263
+    },
+    "structuredLegacyMismatches": 1,
+    "snapshots": {
+      "evt-1785389055557-ux20897": {
+        "lineup": {
+          "structuredEntries": [
+            {
+              "id": "ele-evt-1785389055557-ux20897-0",
+              "billing_relation": "SOLO",
+              "sort_order": 0,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ASL∅",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-asl-0l5t3z"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-1",
+              "billing_relation": "SOLO",
+              "sort_order": 1,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ANNX",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-annx-r2t7pu"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-2",
+              "billing_relation": "SOLO",
+              "sort_order": 2,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "BLACK ZUSHI",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-black-zushi-m6g7rf"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-3",
+              "billing_relation": "SOLO",
+              "sort_order": 3,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "BOUNCE MC",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-bounce-mc-flz1jf"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-4",
+              "billing_relation": "SOLO",
+              "sort_order": 4,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "HOTBOI2300",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-hotboi2300-senum1"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-5",
+              "billing_relation": "SOLO",
+              "sort_order": 5,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "HYPNOTIZED",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-hypnotized-c8xlj1"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-6",
+              "billing_relation": "SOLO",
+              "sort_order": 6,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ICJ",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-icj-lwn0df"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-7",
+              "billing_relation": "SOLO",
+              "sort_order": 7,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "MAURO",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-mauro-dac77k"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-8",
+              "billing_relation": "SOLO",
+              "sort_order": 8,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "STIMULATE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-stimulate-9ugthz"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-9",
+              "billing_relation": "SOLO",
+              "sort_order": 9,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "THE M∅VEMENT",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-the-m-vement-87r7qz"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-10",
+              "billing_relation": "SOLO",
+              "sort_order": 10,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "TOMMY LIBERA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-tommy-libera-oybnsr"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-11",
+              "billing_relation": "SOLO",
+              "sort_order": 11,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "TURBO TIMOS",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-turbo-timos-omo2yw"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-12",
+              "billing_relation": "SOLO",
+              "sort_order": 12,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "JULEZ BRIXTON",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-julez-brixton-5jzrl5"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-13",
+              "billing_relation": "SOLO",
+              "sort_order": 13,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "SEBI LIEMEN",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-sebi-liemen-svl15j"
+                }
+              ]
+            }
+          ],
+          "legacyArtists": [
+            {
+              "artist_id": "artist-title-asl-0l5t3z",
+              "sort_order": 0,
+              "artists": {
+                "name": "ASL∅",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-annx-r2t7pu",
+              "sort_order": 1,
+              "artists": {
+                "name": "ANNX",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-black-zushi-m6g7rf",
+              "sort_order": 2,
+              "artists": {
+                "name": "BLACK ZUSHI",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-bounce-mc-flz1jf",
+              "sort_order": 3,
+              "artists": {
+                "name": "BOUNCE MC",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-hotboi2300-senum1",
+              "sort_order": 4,
+              "artists": {
+                "name": "HOTBOI2300",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-hypnotized-c8xlj1",
+              "sort_order": 5,
+              "artists": {
+                "name": "HYPNOTIZED",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-icj-lwn0df",
+              "sort_order": 6,
+              "artists": {
+                "name": "ICJ",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-mauro-dac77k",
+              "sort_order": 7,
+              "artists": {
+                "name": "MAURO",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-stimulate-9ugthz",
+              "sort_order": 8,
+              "artists": {
+                "name": "STIMULATE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-the-m-vement-87r7qz",
+              "sort_order": 9,
+              "artists": {
+                "name": "THE M∅VEMENT",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-tommy-libera-oybnsr",
+              "sort_order": 10,
+              "artists": {
+                "name": "TOMMY LIBERA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-turbo-timos-omo2yw",
+              "sort_order": 11,
+              "artists": {
+                "name": "TURBO TIMOS",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-julez-brixton-5jzrl5",
+              "sort_order": 12,
+              "artists": {
+                "name": "JULEZ BRIXTON",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-sebi-liemen-svl15j",
+              "sort_order": 13,
+              "artists": {
+                "name": "SEBI LIEMEN",
+                "lineup_legacy_artifact": false
+              }
+            }
+          ]
+        },
+        "structuredIds": [
+          "artist-title-asl-0l5t3z",
+          "artist-title-annx-r2t7pu",
+          "artist-title-black-zushi-m6g7rf",
+          "artist-title-bounce-mc-flz1jf",
+          "artist-title-hotboi2300-senum1",
+          "artist-title-hypnotized-c8xlj1",
+          "artist-title-icj-lwn0df",
+          "artist-title-mauro-dac77k",
+          "artist-title-stimulate-9ugthz",
+          "artist-title-the-m-vement-87r7qz",
+          "artist-title-tommy-libera-oybnsr",
+          "artist-title-turbo-timos-omo2yw",
+          "artist-title-julez-brixton-5jzrl5",
+          "artist-title-sebi-liemen-svl15j"
+        ],
+        "legacyIds": [
+          "artist-title-asl-0l5t3z",
+          "artist-title-annx-r2t7pu",
+          "artist-title-black-zushi-m6g7rf",
+          "artist-title-bounce-mc-flz1jf",
+          "artist-title-hotboi2300-senum1",
+          "artist-title-hypnotized-c8xlj1",
+          "artist-title-icj-lwn0df",
+          "artist-title-mauro-dac77k",
+          "artist-title-stimulate-9ugthz",
+          "artist-title-the-m-vement-87r7qz",
+          "artist-title-tommy-libera-oybnsr",
+          "artist-title-turbo-timos-omo2yw",
+          "artist-title-julez-brixton-5jzrl5",
+          "artist-title-sebi-liemen-svl15j"
+        ],
+        "mismatch": false
+      },
+      "evt-1785339383539-0lxvjlp": {
+        "lineup": {
+          "structuredEntries": [
+            {
+              "id": "ele-bf-e5d0c304538adae1b1cc4da81dd60bd4",
+              "billing_relation": "SOLO",
+              "sort_order": 0,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "LEVI",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-levi-c4xe5v"
+                }
+              ]
+            }
+          ],
+          "legacyArtists": [
+            {
+              "artist_id": "artist-title-levi-c4xe5v",
+              "sort_order": 0,
+              "artists": {
+                "name": "LEVI",
+                "lineup_legacy_artifact": false
+              }
+            }
+          ]
+        },
+        "structuredIds": [
+          "artist-title-levi-c4xe5v"
+        ],
+        "legacyIds": [
+          "artist-title-levi-c4xe5v"
+        ],
+        "mismatch": false
+      },
+      "evt-1785389054496-ns9b6la": {
+        "lineup": {
+          "structuredEntries": [
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-0",
+              "billing_relation": "F2F",
+              "sort_order": 0,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "DYSTOPIA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-dystopia-s16ua2"
+                },
+                {
+                  "artists": {
+                    "name": "VALKYRIE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-valkyrie-2ityi0"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-1",
+              "billing_relation": "F2F",
+              "sort_order": 1,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "EASYPYSI",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-easypysi-ptu3q8"
+                },
+                {
+                  "artists": {
+                    "name": "IAN CRANK",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-ian-crank-922eh2"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-2",
+              "billing_relation": "F2F",
+              "sort_order": 2,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "GREEKZ",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-greekz-lwnyow"
+                },
+                {
+                  "artists": {
+                    "name": "KARAMUSTAN",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-karamusta-pfmsk3"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-3",
+              "billing_relation": "F2F",
+              "sort_order": 3,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "KEVIN LA NIQUE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-kevin-la-nique-9ssw17"
+                },
+                {
+                  "artists": {
+                    "name": "THE RAFNIX",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-the-rafnix-usw8tk"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-4",
+              "billing_relation": "F2F",
+              "sort_order": 4,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "LEE-ANN",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-lee-ann-qhwfww"
+                },
+                {
+                  "artists": {
+                    "name": "NINA BENDER",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-nina-bender-sgyvdv"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-5",
+              "billing_relation": "B2B",
+              "sort_order": 5,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "FLASH",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-flash-m8ck4x"
+                },
+                {
+                  "artists": {
+                    "name": "FORWARD",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-forward-ktc9l5"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-6",
+              "billing_relation": "B2B",
+              "sort_order": 6,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "HELLMYER",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-hellmyer-2itf98"
+                },
+                {
+                  "artists": {
+                    "name": "STZ",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-stz-xipr2g"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-7",
+              "billing_relation": "B2B",
+              "sort_order": 7,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "I.D.A",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-i-d-a-5h8znf"
+                },
+                {
+                  "artists": {
+                    "name": "MAURO",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-mauro-dac77k"
+                }
+              ]
+            },
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-8",
+              "billing_relation": "B2B",
+              "sort_order": 8,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "PLEA5URE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-plea5ure-6okchm"
+                },
+                {
+                  "artists": {
+                    "name": "PUL5E",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-pul5e-qz1qim"
+                }
+              ]
+            }
+          ],
+          "legacyArtists": [
+            {
+              "artist_id": "artist-title-dystopia-s16ua2",
+              "sort_order": 0,
+              "artists": {
+                "name": "DYSTOPIA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-valkyrie-2ityi0",
+              "sort_order": 1,
+              "artists": {
+                "name": "VALKYRIE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-ian-crank-922eh2",
+              "sort_order": 2,
+              "artists": {
+                "name": "IAN CRANK",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-easypysi-ptu3q8",
+              "sort_order": 3,
+              "artists": {
+                "name": "EASYPYSI",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-karamusta-pfmsk3",
+              "sort_order": 4,
+              "artists": {
+                "name": "KARAMUSTAN",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-greekz-lwnyow",
+              "sort_order": 5,
+              "artists": {
+                "name": "GREEKZ",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-kevin-la-nique-9ssw17",
+              "sort_order": 6,
+              "artists": {
+                "name": "KEVIN LA NIQUE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-the-rafnix-usw8tk",
+              "sort_order": 7,
+              "artists": {
+                "name": "THE RAFNIX",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-nina-bender-sgyvdv",
+              "sort_order": 8,
+              "artists": {
+                "name": "NINA BENDER",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-lee-ann-qhwfww",
+              "sort_order": 9,
+              "artists": {
+                "name": "LEE-ANN",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-flash-m8ck4x",
+              "sort_order": 10,
+              "artists": {
+                "name": "FLASH",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-forward-ktc9l5",
+              "sort_order": 11,
+              "artists": {
+                "name": "FORWARD",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-hellmyer-2itf98",
+              "sort_order": 12,
+              "artists": {
+                "name": "HELLMYER",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-stz-xipr2g",
+              "sort_order": 13,
+              "artists": {
+                "name": "STZ",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-mauro-dac77k",
+              "sort_order": 14,
+              "artists": {
+                "name": "MAURO",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-i-d-a-5h8znf",
+              "sort_order": 15,
+              "artists": {
+                "name": "I.D.A",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-plea5ure-6okchm",
+              "sort_order": 16,
+              "artists": {
+                "name": "PLEA5URE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-pul5e-qz1qim",
+              "sort_order": 17,
+              "artists": {
+                "name": "PUL5E",
+                "lineup_legacy_artifact": false
+              }
+            }
+          ]
+        },
+        "structuredIds": [
+          "artist-title-dystopia-s16ua2",
+          "artist-title-valkyrie-2ityi0",
+          "artist-title-easypysi-ptu3q8",
+          "artist-title-ian-crank-922eh2",
+          "artist-title-greekz-lwnyow",
+          "artist-title-karamusta-pfmsk3",
+          "artist-title-kevin-la-nique-9ssw17",
+          "artist-title-the-rafnix-usw8tk",
+          "artist-title-lee-ann-qhwfww",
+          "artist-title-nina-bender-sgyvdv",
+          "artist-title-flash-m8ck4x",
+          "artist-title-forward-ktc9l5",
+          "artist-title-hellmyer-2itf98",
+          "artist-title-stz-xipr2g",
+          "artist-title-i-d-a-5h8znf",
+          "artist-title-mauro-dac77k",
+          "artist-title-plea5ure-6okchm",
+          "artist-title-pul5e-qz1qim"
+        ],
+        "legacyIds": [
+          "artist-title-dystopia-s16ua2",
+          "artist-title-valkyrie-2ityi0",
+          "artist-title-ian-crank-922eh2",
+          "artist-title-easypysi-ptu3q8",
+          "artist-title-karamusta-pfmsk3",
+          "artist-title-greekz-lwnyow",
+          "artist-title-kevin-la-nique-9ssw17",
+          "artist-title-the-rafnix-usw8tk",
+          "artist-title-nina-bender-sgyvdv",
+          "artist-title-lee-ann-qhwfww",
+          "artist-title-flash-m8ck4x",
+          "artist-title-forward-ktc9l5",
+          "artist-title-hellmyer-2itf98",
+          "artist-title-stz-xipr2g",
+          "artist-title-mauro-dac77k",
+          "artist-title-i-d-a-5h8znf",
+          "artist-title-plea5ure-6okchm",
+          "artist-title-pul5e-qz1qim"
+        ],
+        "mismatch": true
+      },
+      "evt-1785339386612-rjr91mv": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339389636-v1tq3hw": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339418526-dn9f7g0": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339382025-cazpz3d": {
+        "lineup": {
+          "structuredEntries": [
+            {
+              "id": "ele-bf-c483f64ed0c65cd7e3e9ffee733258fa",
+              "billing_relation": "SOLO",
+              "sort_order": 0,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "LUCA DANTE SPADAFORA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-luca-dante-spadafora-cur5ez"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-e38193593dfac76db956997c475f5c0f",
+              "billing_relation": "SOLO",
+              "sort_order": 1,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "2 ENGEL",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-2-engel-2ytlqe"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-5e2d6be6f704301905fc7c5d1ce89152",
+              "billing_relation": "SOLO",
+              "sort_order": 2,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "CHARLIE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-charlie-q5mohg"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-c8e4430aa6f526a4be6b2d879e1cb756",
+              "billing_relation": "SOLO",
+              "sort_order": 3,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "LUCA DANTE SPADA FORA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-luca-dante-spada-fora-uj5vm6"
+                }
+              ]
+            }
+          ],
+          "legacyArtists": [
+            {
+              "artist_id": "artist-title-luca-dante-spadafora-cur5ez",
+              "sort_order": 0,
+              "artists": {
+                "name": "LUCA DANTE SPADAFORA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-2-engel-2ytlqe",
+              "sort_order": 1,
+              "artists": {
+                "name": "2 ENGEL",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-charlie-q5mohg",
+              "sort_order": 2,
+              "artists": {
+                "name": "CHARLIE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-luca-dante-spada-fora-uj5vm6",
+              "sort_order": 3,
+              "artists": {
+                "name": "LUCA DANTE SPADA FORA",
+                "lineup_legacy_artifact": false
+              }
+            }
+          ]
+        },
+        "structuredIds": [
+          "artist-title-luca-dante-spadafora-cur5ez",
+          "artist-title-2-engel-2ytlqe",
+          "artist-title-charlie-q5mohg",
+          "artist-title-luca-dante-spada-fora-uj5vm6"
+        ],
+        "legacyIds": [
+          "artist-title-luca-dante-spadafora-cur5ez",
+          "artist-title-2-engel-2ytlqe",
+          "artist-title-charlie-q5mohg",
+          "artist-title-luca-dante-spada-fora-uj5vm6"
+        ],
+        "mismatch": false
+      },
+      "evt-1785339391167-tfaixrr": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339392687-tbdwup4": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339394218-cbqw3kx": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339398765-9lptzhg": {
+        "lineup": {
+          "structuredEntries": [
+            {
+              "id": "ele-bf-e231fd53060fa6b7072e6bd5937ebf66",
+              "billing_relation": "SOLO",
+              "sort_order": 0,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ECRAZE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-ecraze-xzgs4n"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-52da1692dff7ccd815a9be9984fac3aa",
+              "billing_relation": "SOLO",
+              "sort_order": 1,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "BIZO",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-bizo-bkoma6"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-3bf2a12ae6619df55235256c7a378207",
+              "billing_relation": "SOLO",
+              "sort_order": 2,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "KARA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-kara-3esy4u"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-a45b6bf578f4cac1ff4d29fccc1ea2d8",
+              "billing_relation": "SOLO",
+              "sort_order": 3,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "YOUPH ORIA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-youph-oria-l7a47l"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-0905a99c4f0ca2e2f0bcf9a28cf2d669",
+              "billing_relation": "SOLO",
+              "sort_order": 4,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "MADCORE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-madcore-j3lfcw"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-8a5ce8420f07686001ffa036ec961125",
+              "billing_relation": "SOLO",
+              "sort_order": 5,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ELLIE RICH",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-ellie-rich-8ecyr5"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-e1e8f58ca68aeef01dba745697813d5c",
+              "billing_relation": "SOLO",
+              "sort_order": 6,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "VDV",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-vdv-h2huru"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-a057692b44dad1c517a6207b1fb8f73f",
+              "billing_relation": "SOLO",
+              "sort_order": 7,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "MISCALL",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-miscall-vqwiwz"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-ab14a5e64dc266f2868762878b0a3a90",
+              "billing_relation": "SOLO",
+              "sort_order": 8,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "(A–Z):A.M.C",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-a-z-a-m-c-xy5mn5"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-9362d727ee6aa84640ab344a6c7f0a63",
+              "billing_relation": "SOLO",
+              "sort_order": 9,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "AKIRAH",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-akirah-6i1s4q"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-5036b7b1e939db49d2be0da33e6b4591",
+              "billing_relation": "SOLO",
+              "sort_order": 10,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "AUTODRIVE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-autodrive-npvs2v"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-5b5ba80bd3d338b24ac31aecf9651083",
+              "billing_relation": "SOLO",
+              "sort_order": 11,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "AUTOPSKI",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-autopski-my1j06"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-2db459659e16a9553a5ef1b49ab02d0a",
+              "billing_relation": "SOLO",
+              "sort_order": 12,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "BLANKE PRESENTS: FALLOUT",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-blanke-presents-fallout-zshj22"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-cd240f17baddb0216de88b89eadab399",
+              "billing_relation": "SOLO",
+              "sort_order": 13,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "BURR OAK",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-burr-oak-1vbajv"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-f6eeba8020cc8359545ee03dea8704bf",
+              "billing_relation": "SOLO",
+              "sort_order": 14,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "DJ MII",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-dj-mii-bw5q6k"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-1494bafecdd2620dfcc72fdc86ac79a5",
+              "billing_relation": "SOLO",
+              "sort_order": 15,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "EPTIC",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-eptic-69iw4k"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-b95ef0e378721cc14efd378a9ea12670",
+              "billing_relation": "SOLO",
+              "sort_order": 16,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ESKEI83",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-eskei83-jtrsri"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-0fb229d647d84d4b762d49a8db2bddb5",
+              "billing_relation": "SOLO",
+              "sort_order": 17,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "FLUX PAVILION",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-flux-pavilion-1xyjeq"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-03aeb4a44b5ae1087dffef3990361d0c",
+              "billing_relation": "SOLO",
+              "sort_order": 18,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "FORMULA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-formula-799tzn"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-4a4af39f125bd7f719255fd86aafd8b7",
+              "billing_relation": "SOLO",
+              "sort_order": 19,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "GLADDE PALING",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-gladde-paling-jxwwmv"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-4fb36215cb3443211418aba1baf26d77",
+              "billing_relation": "SOLO",
+              "sort_order": 20,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "GOURSKI",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-gourski-7jll6s"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-d3fbcc47b17d62e70ded0d4fd3113511",
+              "billing_relation": "SOLO",
+              "sort_order": 21,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "HAMMERHEAD",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-hammerhead-gyf5at"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-9c76991f7104ac878451a65891d08a7e",
+              "billing_relation": "SOLO",
+              "sort_order": 22,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "K MOTIONZ",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-k-motionz-yupj2m"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-ed2e47e5919abaf4e88efe816af64258",
+              "billing_relation": "SOLO",
+              "sort_order": 23,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "Ricky West)",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-ricky-west-375knq"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-5d745abb6d68ab31d1aa9e2ded10fc21",
+              "billing_relation": "SOLO",
+              "sort_order": 24,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "KANINE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-kanine-6hfau0"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-f01918dcb0c64b91a126508aad38e947",
+              "billing_relation": "SOLO",
+              "sort_order": 25,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "YOUPHORIA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-youphoria-hwop6t"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-be80c4c79981f16c5b70fa8d44839923",
+              "billing_relation": "SOLO",
+              "sort_order": 26,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "KOVEN",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-koven-8pkdna"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-c7169b20d3475c63a90aa30a9c1bdd5b",
+              "billing_relation": "SOLO",
+              "sort_order": 27,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "KREWELLA",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-krewella-gztef7"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-f7807a56961da4c75b21774805222d0e",
+              "billing_relation": "SOLO",
+              "sort_order": 28,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "MACHINYST",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-machinyst-47jde6"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-14a536ffd54ef181f528ca2c566511f6",
+              "billing_relation": "SOLO",
+              "sort_order": 29,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "MEFJUS",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-mefjus-1ym3bv"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-a6e2002c52f567f7d6983d96ce6427e4",
+              "billing_relation": "SOLO",
+              "sort_order": 30,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "NOIZBOIZ",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-noizboiz-fshz77"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-0ab69986b11ffe11177cbf103b8c5d7d",
+              "billing_relation": "SOLO",
+              "sort_order": 31,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "PRIMATE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-primate-u8zudi"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-9b5fc3f89f739186391c6ef4b48643ce",
+              "billing_relation": "SOLO",
+              "sort_order": 32,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "RIOT",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-riot-tdl4ly"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-333f68e5d2a510f809122dca77d80aad",
+              "billing_relation": "SOLO",
+              "sort_order": 33,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "SAMPLIFIRE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-samplifire-uw7b4s"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-51cc4e482e37baa6a9ae92b1a8c47741",
+              "billing_relation": "SOLO",
+              "sort_order": 34,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "SKIYE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-skiye-2gvbps"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-f9f5552aaafcd4d7d94185b38993d430",
+              "billing_relation": "SOLO",
+              "sort_order": 35,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "STOOG3S",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-stoog3s-dbybwv"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-797a85c869d58244d69f3feb6e780f5d",
+              "billing_relation": "SOLO",
+              "sort_order": 36,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "THE RESISTANCE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-the-resistance-6xwdgq"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-9a775ec0818d5643e5cab8cce9b3c483",
+              "billing_relation": "SOLO",
+              "sort_order": 37,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "UPGRADE",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-upgrade-xdtwjz"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-e69bdad2634ef26bff1aa59c9f138b4b",
+              "billing_relation": "SOLO",
+              "sort_order": 38,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ZOMBOY",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-zomboy-w3ufxa"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-26192a0c4316e8b8d8227f042a6c1b87",
+              "billing_relation": "SOLO",
+              "sort_order": 39,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "[IVY]",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-ivy-qcg8af"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-dcf6de5695a0e5b7ac7f72379a50a09b",
+              "billing_relation": "SOLO",
+              "sort_order": 40,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "[SAFYRE]",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-safyre-967fwx"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-f5d9fe0d94313b3b893c6cea0e7f4164",
+              "billing_relation": "SOLO",
+              "sort_order": 41,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "&AElig",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-aelig-ptfp6w"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-922a4c18aa9f0cb239365a808949c9f3",
+              "billing_relation": "SOLO",
+              "sort_order": 42,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-on-mode-more-tbasave-the-date-october-09-10-5w6c8y"
+                }
+              ]
+            },
+            {
+              "id": "ele-bf-e99aa3c6f54f7afb6e8e7996c64bda87",
+              "billing_relation": "SOLO",
+              "sort_order": 43,
+              "event_lineup_entry_artists": [
+                {
+                  "artists": {
+                    "name": "2026",
+                    "lineup_legacy_artifact": false
+                  },
+                  "artist_id": "artist-title-2026-auoq4c"
+                }
+              ]
+            }
+          ],
+          "legacyArtists": [
+            {
+              "artist_id": "artist-title-ecraze-xzgs4n",
+              "sort_order": 0,
+              "artists": {
+                "name": "ECRAZE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-bizo-bkoma6",
+              "sort_order": 1,
+              "artists": {
+                "name": "BIZO",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-kara-3esy4u",
+              "sort_order": 2,
+              "artists": {
+                "name": "KARA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-youph-oria-l7a47l",
+              "sort_order": 3,
+              "artists": {
+                "name": "YOUPH ORIA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-madcore-j3lfcw",
+              "sort_order": 4,
+              "artists": {
+                "name": "MADCORE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-ellie-rich-8ecyr5",
+              "sort_order": 5,
+              "artists": {
+                "name": "ELLIE RICH",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-vdv-h2huru",
+              "sort_order": 6,
+              "artists": {
+                "name": "VDV",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-miscall-vqwiwz",
+              "sort_order": 7,
+              "artists": {
+                "name": "MISCALL",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-a-z-a-m-c-xy5mn5",
+              "sort_order": 8,
+              "artists": {
+                "name": "(A–Z):A.M.C",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-akirah-6i1s4q",
+              "sort_order": 9,
+              "artists": {
+                "name": "AKIRAH",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-autodrive-npvs2v",
+              "sort_order": 10,
+              "artists": {
+                "name": "AUTODRIVE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-autopski-my1j06",
+              "sort_order": 11,
+              "artists": {
+                "name": "AUTOPSKI",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-blanke-presents-fallout-zshj22",
+              "sort_order": 12,
+              "artists": {
+                "name": "BLANKE PRESENTS: FALLOUT",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-burr-oak-1vbajv",
+              "sort_order": 13,
+              "artists": {
+                "name": "BURR OAK",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-dj-mii-bw5q6k",
+              "sort_order": 14,
+              "artists": {
+                "name": "DJ MII",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-eptic-69iw4k",
+              "sort_order": 15,
+              "artists": {
+                "name": "EPTIC",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-eskei83-jtrsri",
+              "sort_order": 16,
+              "artists": {
+                "name": "ESKEI83",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-flux-pavilion-1xyjeq",
+              "sort_order": 17,
+              "artists": {
+                "name": "FLUX PAVILION",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-formula-799tzn",
+              "sort_order": 18,
+              "artists": {
+                "name": "FORMULA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-gladde-paling-jxwwmv",
+              "sort_order": 19,
+              "artists": {
+                "name": "GLADDE PALING",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-gourski-7jll6s",
+              "sort_order": 20,
+              "artists": {
+                "name": "GOURSKI",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-hammerhead-gyf5at",
+              "sort_order": 21,
+              "artists": {
+                "name": "HAMMERHEAD",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-k-motionz-yupj2m",
+              "sort_order": 22,
+              "artists": {
+                "name": "K MOTIONZ",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-ricky-west-375knq",
+              "sort_order": 23,
+              "artists": {
+                "name": "Ricky West)",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-kanine-6hfau0",
+              "sort_order": 24,
+              "artists": {
+                "name": "KANINE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-youphoria-hwop6t",
+              "sort_order": 25,
+              "artists": {
+                "name": "YOUPHORIA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-koven-8pkdna",
+              "sort_order": 26,
+              "artists": {
+                "name": "KOVEN",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-krewella-gztef7",
+              "sort_order": 27,
+              "artists": {
+                "name": "KREWELLA",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-machinyst-47jde6",
+              "sort_order": 28,
+              "artists": {
+                "name": "MACHINYST",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-mefjus-1ym3bv",
+              "sort_order": 29,
+              "artists": {
+                "name": "MEFJUS",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-noizboiz-fshz77",
+              "sort_order": 30,
+              "artists": {
+                "name": "NOIZBOIZ",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-primate-u8zudi",
+              "sort_order": 31,
+              "artists": {
+                "name": "PRIMATE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-riot-tdl4ly",
+              "sort_order": 32,
+              "artists": {
+                "name": "RIOT",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-samplifire-uw7b4s",
+              "sort_order": 33,
+              "artists": {
+                "name": "SAMPLIFIRE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-skiye-2gvbps",
+              "sort_order": 34,
+              "artists": {
+                "name": "SKIYE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-stoog3s-dbybwv",
+              "sort_order": 35,
+              "artists": {
+                "name": "STOOG3S",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-the-resistance-6xwdgq",
+              "sort_order": 36,
+              "artists": {
+                "name": "THE RESISTANCE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-upgrade-xdtwjz",
+              "sort_order": 37,
+              "artists": {
+                "name": "UPGRADE",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-zomboy-w3ufxa",
+              "sort_order": 38,
+              "artists": {
+                "name": "ZOMBOY",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-ivy-qcg8af",
+              "sort_order": 39,
+              "artists": {
+                "name": "[IVY]",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-safyre-967fwx",
+              "sort_order": 40,
+              "artists": {
+                "name": "[SAFYRE]",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-aelig-ptfp6w",
+              "sort_order": 41,
+              "artists": {
+                "name": "&AElig",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-on-mode-more-tbasave-the-date-october-09-10-5w6c8y",
+              "sort_order": 42,
+              "artists": {
+                "name": "ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10",
+                "lineup_legacy_artifact": false
+              }
+            },
+            {
+              "artist_id": "artist-title-2026-auoq4c",
+              "sort_order": 43,
+              "artists": {
+                "name": "2026",
+                "lineup_legacy_artifact": false
+              }
+            }
+          ]
+        },
+        "structuredIds": [
+          "artist-title-ecraze-xzgs4n",
+          "artist-title-bizo-bkoma6",
+          "artist-title-kara-3esy4u",
+          "artist-title-youph-oria-l7a47l",
+          "artist-title-madcore-j3lfcw",
+          "artist-title-ellie-rich-8ecyr5",
+          "artist-title-vdv-h2huru",
+          "artist-title-miscall-vqwiwz",
+          "artist-title-a-z-a-m-c-xy5mn5",
+          "artist-title-akirah-6i1s4q",
+          "artist-title-autodrive-npvs2v",
+          "artist-title-autopski-my1j06",
+          "artist-title-blanke-presents-fallout-zshj22",
+          "artist-title-burr-oak-1vbajv",
+          "artist-title-dj-mii-bw5q6k",
+          "artist-title-eptic-69iw4k",
+          "artist-title-eskei83-jtrsri",
+          "artist-title-flux-pavilion-1xyjeq",
+          "artist-title-formula-799tzn",
+          "artist-title-gladde-paling-jxwwmv",
+          "artist-title-gourski-7jll6s",
+          "artist-title-hammerhead-gyf5at",
+          "artist-title-k-motionz-yupj2m",
+          "artist-title-ricky-west-375knq",
+          "artist-title-kanine-6hfau0",
+          "artist-title-youphoria-hwop6t",
+          "artist-title-koven-8pkdna",
+          "artist-title-krewella-gztef7",
+          "artist-title-machinyst-47jde6",
+          "artist-title-mefjus-1ym3bv",
+          "artist-title-noizboiz-fshz77",
+          "artist-title-primate-u8zudi",
+          "artist-title-riot-tdl4ly",
+          "artist-title-samplifire-uw7b4s",
+          "artist-title-skiye-2gvbps",
+          "artist-title-stoog3s-dbybwv",
+          "artist-title-the-resistance-6xwdgq",
+          "artist-title-upgrade-xdtwjz",
+          "artist-title-zomboy-w3ufxa",
+          "artist-title-ivy-qcg8af",
+          "artist-title-safyre-967fwx",
+          "artist-title-aelig-ptfp6w",
+          "artist-title-on-mode-more-tbasave-the-date-october-09-10-5w6c8y",
+          "artist-title-2026-auoq4c"
+        ],
+        "legacyIds": [
+          "artist-title-ecraze-xzgs4n",
+          "artist-title-bizo-bkoma6",
+          "artist-title-kara-3esy4u",
+          "artist-title-youph-oria-l7a47l",
+          "artist-title-madcore-j3lfcw",
+          "artist-title-ellie-rich-8ecyr5",
+          "artist-title-vdv-h2huru",
+          "artist-title-miscall-vqwiwz",
+          "artist-title-a-z-a-m-c-xy5mn5",
+          "artist-title-akirah-6i1s4q",
+          "artist-title-autodrive-npvs2v",
+          "artist-title-autopski-my1j06",
+          "artist-title-blanke-presents-fallout-zshj22",
+          "artist-title-burr-oak-1vbajv",
+          "artist-title-dj-mii-bw5q6k",
+          "artist-title-eptic-69iw4k",
+          "artist-title-eskei83-jtrsri",
+          "artist-title-flux-pavilion-1xyjeq",
+          "artist-title-formula-799tzn",
+          "artist-title-gladde-paling-jxwwmv",
+          "artist-title-gourski-7jll6s",
+          "artist-title-hammerhead-gyf5at",
+          "artist-title-k-motionz-yupj2m",
+          "artist-title-ricky-west-375knq",
+          "artist-title-kanine-6hfau0",
+          "artist-title-youphoria-hwop6t",
+          "artist-title-koven-8pkdna",
+          "artist-title-krewella-gztef7",
+          "artist-title-machinyst-47jde6",
+          "artist-title-mefjus-1ym3bv",
+          "artist-title-noizboiz-fshz77",
+          "artist-title-primate-u8zudi",
+          "artist-title-riot-tdl4ly",
+          "artist-title-samplifire-uw7b4s",
+          "artist-title-skiye-2gvbps",
+          "artist-title-stoog3s-dbybwv",
+          "artist-title-the-resistance-6xwdgq",
+          "artist-title-upgrade-xdtwjz",
+          "artist-title-zomboy-w3ufxa",
+          "artist-title-ivy-qcg8af",
+          "artist-title-safyre-967fwx",
+          "artist-title-aelig-ptfp6w",
+          "artist-title-on-mode-more-tbasave-the-date-october-09-10-5w6c8y",
+          "artist-title-2026-auoq4c"
+        ],
+        "mismatch": false
+      },
+      "evt-1785339374416-shc7e7c": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785339005035-wam829k": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      },
+      "evt-1785443914377-7g9l545": {
+        "lineup": {
+          "structuredEntries": [],
+          "legacyArtists": []
+        },
+        "structuredIds": [],
+        "legacyIds": [],
+        "mismatch": false
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-08-05T19:26:26.860Z",
+  "phase": "4.8.4.1",
+  "importerVersion": "phase4841-unified-website-v1",
+  "productionMutationsInThisRun": 0,
+  "passCount": 2,
+  "failCount": 0,
+  "results": [
+    {
+      "eventKey": "bootshaus-sommerfest"
+    },
+    {
+      "eventKey": "r3hab",
+      "venue": {
+        "venueName": "Bootshaus",
+        "strategy": "provider_default_candidate",
+        "confidence": 0.55,
+        "reliability": 0.45,
+        "reviewState": "pending",
+        "inclusionReason": "Provider default venue candidate — requires review; must not override stronger external venue evidence"
+      }
+    }
+  ],
+  "gaps": []
+}

@@ -33,6 +33,7 @@ export interface HomeFeedLocationContext {
   city?: string;
   latitude?: number;
   longitude?: number;
+  radiusKm?: number;
 }
 
 export interface HomeFeedSectionState {

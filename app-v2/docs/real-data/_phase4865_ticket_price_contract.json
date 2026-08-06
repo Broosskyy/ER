@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-08-06T01:06:43.167Z",
+  "phase": "4.8.6.5",
+  "productionMutationsInThisRun": 0,
+  "normalizedModel": {
+    "displayPriceText": "string | undefined",
+    "minimumPrice": "number | undefined",
+    "maximumPrice": "number | undefined",
+    "currency": "ISO-4217",
+    "availability": "available | sold_out | unknown | external_link",
+    "soldOut": "boolean",
+    "ticketPhases": "CanonicalTicketPhase[]",
+    "admissionProducts": "admission-only normalized products",
+    "checkoutUrl": "provider checkout when distinct from CTA",
+    "consumerCtaUrl": "public ticket destination",
+    "provider": "Ticket.io | Ticket Kings | …",
+    "evidence": {
+      "source": "connector surface + freshness",
+      "confidence": "0-1",
+      "reviewState": "verified | missing | review_required | sold_out",
+      "missingCause": "generic taxonomy"
+    }
+  },
+  "rules": {
+    "evidence": [
+      "explicit Event-specific evidence only",
+      "admission products only — add-ons excluded",
+      "sold-out is not zero price",
+      "checkout provider and consumer CTA remain independent",
+      "empty evidence cannot clear valid price",
+      "stale evidence cannot outrank fresh evidence",
+      "platform-specific raw objects must not reach consumer layer"
+    ],
+    "header": [
+      "at most one compact summary: ab X € | exact X € | no price | sold-out badge"
+    ],
+    "ticketSection": [
+      "provider + availability + meaningful phase cards",
+      "one price per distinct admission phase",
+      "no duplicate standalone price when phase cards carry same amount",
+      "no subtotal/total without cart selection",
+      "no repeated identical price blocks"
+    ],
+    "singlePhase": [
+      "one phase card only",
+      "do not repeat same amount in subtotal and total"
+    ],
+    "noPrice": [
+      "provider/CTA without fabricated price"
+    ]
+  },
+  "implementationBoundary": {
+    "dataCorrections": [
+      "missing canonical price",
+      "missing phases",
+      "admission/add-on classification"
+    ],
+    "consumerOnly": [
+      "hide redundant subtotal/total",
+      "hide duplicate section price",
+      "sanitize phase notes"
+    ]
+  }
+}

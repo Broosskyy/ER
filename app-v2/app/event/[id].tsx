@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter, type Href } from 'expo-router';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Alert, Linking, ScrollView, StyleSheet, View } from 'react-native';
 
 import { AppScreen, ResponsiveScreen } from '@/components';
@@ -11,6 +11,7 @@ import {
 } from '@/components/event-detail/EventDetailStates';
 import { EventNoticeBanner } from '@/components/event-detail/EventNoticeBanner';
 import { EventHero } from '@/components/event-detail/EventHero';
+import { FlyerGalleryViewer } from '@/components/event-detail/FlyerGalleryViewer';
 import { EventInfoSection } from '@/components/event-detail/EventInfoSection';
 import { EventTicketSection } from '@/components/event-detail/EventTicketSection';
 import { LineupSection } from '@/components/event-detail/LineupSection';
@@ -39,10 +40,11 @@ import {
   toTimetableSectionViewModel,
   toVenueDetailViewModel,
 } from '@/features/event-detail/utils/event-detail-view-model';
-import { getSourceDisplayLabel } from '@/features/events/data/demo-images';
 import { isTicketActionDisabled } from '@/features/events/status/event-status-resolver';
 import { useFavoriteToggle } from '@/features/favorites';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { resolveAddressValidity } from '@/features/event-detail/utils/address-validity';
+import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
 import { useEntityFollow } from '@/features/profiles/hooks/useEntityFollow';
 import {
   artistProfileRoute,
@@ -83,7 +85,16 @@ export default function EventDetailScreen() {
   });
 
   const hero = useMemo(() => (event ? toEventHeroViewModel(event) : undefined), [event]);
-  const info = useMemo(() => (event ? toEventInfoViewModel(event) : undefined), [event]);
+  const info = useMemo(
+    () =>
+      event
+        ? toEventInfoViewModel(event, {
+            hideOrganizer: Boolean(event.organizer || entities.organizer),
+            hidePrice: true,
+          })
+        : undefined,
+    [entities.organizer, event],
+  );
   const lineup = useMemo(() => (event ? toLineupSectionViewModel(event, entities) : undefined), [entities, event]);
   const timetable = useMemo(() => (event ? toTimetableSectionViewModel(event) : undefined), [event]);
   const venue = useMemo(
@@ -99,6 +110,9 @@ export default function EventDetailScreen() {
     [event],
   );
   const notice = useMemo(() => (event ? toEventNoticeViewModel(event) : undefined), [event]);
+  const [galleryVisible, setGalleryVisible] = useState(false);
+
+  const galleryImageUrls = event?.galleryImageUrls ?? [];
 
   useWebSeo({
     title: event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail,
@@ -257,7 +271,7 @@ export default function EventDetailScreen() {
     if (errorKind === 'not_found' || errorKind === 'archived') {
       return (
         <AppScreen>
-          <EventNotFoundState onGoBack={() => router.back()} />
+          <EventNotFoundState onGoBack={() => navigateBackSafely(router)} />
         </AppScreen>
       );
     }
@@ -282,8 +296,15 @@ export default function EventDetailScreen() {
     );
   }
 
-  const sourceLabel = getSourceDisplayLabel(event.source);
-  const hasMapsAction = Boolean(event.latitude && event.longitude) || Boolean(event.address);
+  const sourceLabel = event.ticketProviderLabel ?? event.sourceLabel;
+  const addressValidity = resolveAddressValidity({
+    venueName: event.venue,
+    address: event.address,
+    city: event.city,
+    latitude: event.latitude,
+    longitude: event.longitude,
+  });
+  const hasMapsAction = addressValidity.canOpenDirections;
   const hasSourceAction = Boolean(event.sourceUrl);
 
   return (
@@ -296,9 +317,18 @@ export default function EventDetailScreen() {
           <EventHero
             event={hero}
             saved={isHydrated && isFavorite(event.id)}
-            onBackPress={() => router.back()}
+            showGenreLabels={false}
+            onImagePress={galleryImageUrls.length > 0 ? () => setGalleryVisible(true) : undefined}
+            onBackPress={() => navigateBackSafely(router)}
             onSharePress={handleShare}
             onSavePress={handleToggleFavorite}
+          />
+
+          <FlyerGalleryViewer
+            visible={galleryVisible}
+            imageUrls={galleryImageUrls}
+            title={event.title}
+            onClose={() => setGalleryVisible(false)}
           />
 
           <View style={styles.content}>
@@ -321,16 +351,22 @@ export default function EventDetailScreen() {
               ))}
             </View>
 
-            <EventInfoSection info={info} title={t('eventDetail.sections.details')} />
+            <EventInfoSection
+              info={{
+                ...info,
+                items: info.items.filter((item) => item.id !== 'venue'),
+              }}
+              title={t('eventDetail.sections.details')}
+            />
 
             <EventTicketSection
               section={ticketSection}
               onCtaPress={ticketSection.mode === 'sold_out' ? undefined : handleOpenTickets}
             />
 
-            <LineupSection lineup={lineup!} onArtistPress={handleArtistPress} />
+            {lineup ? <LineupSection lineup={lineup} onArtistPress={handleArtistPress} /> : null}
 
-            <TimetableSection timetable={timetable!} />
+            {timetable ? <TimetableSection timetable={timetable} /> : null}
 
             <VenueDetailCard
               venue={venue}

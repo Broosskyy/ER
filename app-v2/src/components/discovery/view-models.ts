@@ -1,5 +1,7 @@
 import type { ImageSourcePropType } from 'react-native';
 
+import type { SemanticColorToken } from '@/design/ticket-semantics';
+
 /**
  * Presentation-only models for discovery components.
  * Parents resolve domain records, formatted labels, and image sources beforehand.
@@ -14,8 +16,12 @@ export type DiscoveryImageSource = ImageSourcePropType;
  */
 export type EventTicketStatus =
   | 'available'
+  | 'on_sale'
   | 'free'
   | 'limited'
+  | 'presale'
+  | 'coming_soon'
+  | 'waitlist'
   | 'reserved'
   | 'paid'
   | 'valid'
@@ -40,6 +46,7 @@ export interface EventCardViewModel {
   categoryLabel?: string;
   organizerLabel?: string;
   ticketLabel?: string;
+  ticketColorToken?: SemanticColorToken;
   ticketStatus?: EventTicketStatus;
   status?: EventStatus;
   verified?: boolean;
@@ -56,6 +63,9 @@ export interface EventListItemViewModel {
   venueLabel: string;
   cityLabel: string;
   genreLabels?: string[];
+  ticketLabel?: string;
+  ticketColorToken?: SemanticColorToken;
+  ticketStatus?: EventTicketStatus;
   status?: EventStatus;
   accessibilityLabel: string;
 }
@@ -119,6 +129,8 @@ export interface EventDiscoveryTileViewModel {
   cityLabel: string;
   status?: EventStatus;
   ticketStatus?: EventTicketStatus;
+  ticketLabel?: string;
+  ticketColorToken?: SemanticColorToken;
   accessibilityLabel: string;
 }
 
@@ -134,6 +146,8 @@ export function toEventDiscoveryTileViewModel(
     | 'cityLabel'
     | 'status'
     | 'ticketStatus'
+    | 'ticketLabel'
+    | 'ticketColorToken'
     | 'accessibilityLabel'
   >,
 ): EventDiscoveryTileViewModel {
@@ -147,6 +161,8 @@ export function toEventDiscoveryTileViewModel(
     cityLabel: event.cityLabel,
     status: event.status,
     ticketStatus: event.ticketStatus,
+    ticketLabel: event.ticketLabel,
+    ticketColorToken: event.ticketColorToken,
     accessibilityLabel: event.accessibilityLabel,
   };
 }

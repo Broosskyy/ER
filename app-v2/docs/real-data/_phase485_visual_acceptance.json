@@ -1,0 +1,276 @@
+{
+  "generatedAt": "2026-08-05T19:38:51.696Z",
+  "phase": "4.8.5",
+  "productionMutationsInThisRun": 0,
+  "panels": [
+    {
+      "eventKey": "r3hab",
+      "eventId": "evt-1785339421539-k3swcrl",
+      "currentApp": {
+        "db": {
+          "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "image_url": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+          "title": "R3HAB pres. by BOOTSHAUS",
+          "startDate": "2026-09-04T20:00:00+00:00",
+          "venueName": "Bootshaus",
+          "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus"
+        },
+        "canonicalReader": {
+          "title": "R3HAB pres. by BOOTSHAUS",
+          "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+        },
+        "apiProjection": {
+          "sanitizedDescription": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music’s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "shortDescription": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music’s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsB",
+          "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+          "ticketProviderLabel": "Bootshaus",
+          "ticketAvailability": "external_link",
+          "isSoldOut": false,
+          "venueLabel": "Bootshaus",
+          "cityLabel": "Köln",
+          "locationLabelComma": "Bootshaus, Köln",
+          "locationLabelDot": "Bootshaus · Köln",
+          "hasCoordinates": false,
+          "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+          "galleryImageUrls": [
+            "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+          ],
+          "genres": [
+            "BASSHOUSE",
+            "ELECTRO",
+            "House",
+            "PROGRESSIVE HOUSE",
+            "EDM",
+            "DANCE"
+          ],
+          "knownArtistNames": [],
+          "lineupEntries": [],
+          "lineupCompleteness": "none",
+          "lineupSectionTitle": "LINE-UP",
+          "hasKnownLineup": false,
+          "qualityState": "complete",
+          "sourceAttributionLabel": "Bootshaus"
+        },
+        "viewModel": {
+          "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music’s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "shortDescription": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music’s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsB",
+          "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+          "galleryImageUrls": [
+            "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+          ],
+          "title": "R3HAB pres. by BOOTSHAUS",
+          "venue": "Bootshaus",
+          "city": "Köln",
+          "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+          "genres": [
+            "BASSHOUSE",
+            "ELECTRO",
+            "House",
+            "PROGRESSIVE HOUSE",
+            "EDM",
+            "DANCE"
+          ]
+        },
+        "galleryViewer": {
+          "galleryImageUrls": [
+            "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+          ],
+          "fullscreenImage": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+        }
+      },
+      "currentCanonical": {
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+        "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+        "priceText": null
+      },
+      "legacyIntegrated": {
+        "title": "R3HAB pres. by BOOTSHAUS | Bootshaus Club",
+        "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR.\n\nA special night with one of electronic music’s most established names.\n\nMAINFLOOR:\n\nR3HAB\n\nLA FUENTE\n\nOLIVER MAGENTA\n\nRELOVA\n\nDAVE REPLAY"
+      },
+      "unifiedIntegrated": {
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "lineup": [
+          "R3HAB",
+          "LA FUENTE",
+          "OLIVER MAGENTA",
+          "RELOVA",
+          "DAVE REPLAY"
+        ],
+        "lineupState": "explicit_artists",
+        "venue": "Bootshaus",
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+      },
+      "publicTruth": {
+        "source": "bootshaus.tv",
+        "title": "R3HAB pres. by BOOTSHAUS | Bootshaus Club",
+        "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR.\n\nA special night with one of electronic music’s most established names.\n\nMAINFLOOR:\n\nR3HAB\n\nLA FUENTE\n\nOLIVER MAGENTA\n\nRELOVA\n\nDAVE REPLAY",
+        "descriptionSource": "event_body_bootshaus",
+        "flyer": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+        "gallery": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+        ],
+        "genres": [
+          "BASSHOUSE",
+          "ELECTRO",
+          "HOUSE",
+          "PROGRESSIVE HOUSE",
+          "EDM",
+          "DANCE"
+        ],
+        "outboundTicketLinks": [
+          "https://bootshaus-club.ticket.io/C7JPnatZ/"
+        ]
+      },
+      "expectedAfterControlledPublish": {
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "lineup": [
+          "R3HAB",
+          "LA FUENTE",
+          "OLIVER MAGENTA",
+          "RELOVA",
+          "DAVE REPLAY"
+        ],
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "note": "Not published in Phase 4.8.5 — preview only"
+      },
+      "fixesVisible": [
+        "stale description",
+        "missing lineup",
+        "dead ticket link"
+      ]
+    },
+    {
+      "eventKey": "sommerfest",
+      "eventId": "evt-1785339391167-tfaixrr",
+      "currentApp": {
+        "db": {
+          "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "image_url": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+          "title": "Bootshaus Sommerfest",
+          "startDate": "2026-09-05T20:00:00+00:00",
+          "endDate": "2026-09-06T05:00:00+00:00",
+          "venueName": "Essigfabrik",
+          "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "priceText": "Tickets ab 11,90 Euro"
+        },
+        "canonicalReader": {
+          "title": "Bootshaus Sommerfest",
+          "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+        },
+        "apiProjection": {
+          "sanitizedDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "shortDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "displayPriceText": "ab 11,90 €",
+          "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "ticketProviderLabel": "Ticket.io",
+          "ticketAvailability": "external_link",
+          "isSoldOut": false,
+          "venueLabel": "Essigfabrik",
+          "cityLabel": "Köln",
+          "locationLabelComma": "Essigfabrik, Köln",
+          "locationLabelDot": "Essigfabrik · Köln",
+          "hasCoordinates": false,
+          "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+          "galleryImageUrls": [
+            "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+          ],
+          "genres": [
+            "DUBSTEP",
+            "ELECTRO",
+            "Hard Techno",
+            "Techno",
+            "EDM"
+          ],
+          "knownArtistNames": [],
+          "lineupEntries": [],
+          "lineupCompleteness": "none",
+          "lineupSectionTitle": "LINE-UP",
+          "hasKnownLineup": false,
+          "qualityState": "complete",
+          "sourceAttributionLabel": "Bootshaus"
+        },
+        "viewModel": {
+          "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "shortDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+          "galleryImageUrls": [
+            "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+          ],
+          "title": "Bootshaus Sommerfest",
+          "venue": "Essigfabrik",
+          "city": "Köln",
+          "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "displayPriceText": "ab 11,90 €",
+          "genres": [
+            "DUBSTEP",
+            "ELECTRO",
+            "Hard Techno",
+            "Techno",
+            "EDM"
+          ]
+        },
+        "galleryViewer": {
+          "galleryImageUrls": [
+            "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+          ],
+          "fullscreenImage": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+        }
+      },
+      "currentCanonical": {
+        "title": "Bootshaus Sommerfest",
+        "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "priceText": "Tickets ab 11,90 Euro"
+      },
+      "legacyIntegrated": {
+        "title": "Bootshaus Sommerfest | Bootshaus Club",
+        "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep\n\nLineup TBA"
+      },
+      "unifiedIntegrated": {
+        "title": "Bootshaus Sommerfest",
+        "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "lineup": [],
+        "lineupState": "tba",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/"
+      },
+      "publicTruth": {
+        "source": "bootshaus.tv",
+        "title": "Bootshaus Sommerfest | Bootshaus Club",
+        "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep\n\nLineup TBA",
+        "descriptionSource": "event_body_bootshaus",
+        "flyer": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+        "gallery": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+        ],
+        "genres": [
+          "DUBSTEP",
+          "ELECTRO",
+          "HARDTECHNO",
+          "TECHNO",
+          "EDM"
+        ],
+        "outboundTicketLinks": [
+          "https://bootshaus-club.ticket.io/vB0cAmWg/"
+        ]
+      },
+      "expectedAfterControlledPublish": {
+        "title": "Bootshaus Sommerfest",
+        "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "lineup": [],
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "note": "Not published in Phase 4.8.5 — preview only"
+      },
+      "fixesVisible": [
+        "maintain description",
+        "maintain ticket link",
+        "truthful TBA lineup",
+        "no false venue overwrite"
+      ]
+    }
+  ]
+}

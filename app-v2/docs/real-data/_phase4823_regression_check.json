@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-08-05T16:34:18.579Z",
+  "phase": "4.8.2.3",
+  "productionMutationsInThisRun": 0,
+  "events": {
+    "evt-1785339391167-tfaixrr": {
+      "hashBefore": "3790898f7a7ac1b7",
+      "hashAfter": "3790898f7a7ac1b7",
+      "unchanged": true,
+      "fingerprint": {
+        "title": "Bootshaus Sommerfest",
+        "startDate": "2026-09-05T20:00:00+00:00",
+        "endDate": "2026-09-06T05:00:00+00:00",
+        "timezone": "UTC+02:00",
+        "venueId": "",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "organizerName": "Bootshaus",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "priceText": "Tickets ab 11,90 Euro",
+        "ticketStatus": "external_link",
+        "phases": null,
+        "availability": "external_link",
+        "lineup": null,
+        "artists": null,
+        "genres": [
+          "DUBSTEP",
+          "ELECTRO",
+          "HARDTECHNO",
+          "TECHNO",
+          "EDM"
+        ],
+        "sourceId": "source-bootshaus-koeln",
+        "websiteUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+        "origins": null,
+        "ownership": null
+      }
+    },
+    "evt-1785339421539-k3swcrl": {
+      "hashBefore": "fa8bef6b2901b567",
+      "hashAfter": "fa8bef6b2901b567",
+      "unchanged": true,
+      "fingerprint": {
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "startDate": "2026-09-04T20:00:00+00:00",
+        "timezone": "Europe/Berlin",
+        "venueId": "venue-bootshaus-koeln",
+        "venueName": "Bootshaus",
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "organizerName": "Bootshaus",
+        "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+        "priceText": "",
+        "ticketStatus": "external_link",
+        "phases": null,
+        "availability": "external_link",
+        "lineup": null,
+        "artists": null,
+        "genres": [
+          "BASSHOUSE",
+          "ELECTRO",
+          "HOUSE",
+          "PROGRESSIVE HOUSE",
+          "EDM",
+          "DANCE"
+        ],
+        "sourceId": "source-bootshaus-koeln",
+        "websiteUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+        "origins": null,
+        "ownership": null
+      }
+    }
+  },
+  "allForbiddenUnchanged": true
+}

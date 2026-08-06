@@ -5,7 +5,7 @@ import './bootstrap-ops-supabase';
 
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import { getEffectiveCandidate } from '@/features/import/admin/import-utils';
 import { sourceQualityResolver } from '@/features/sources/domain/source-quality-resolver';
 import { importRecordQualityEvaluator } from '@/features/trust-quality/services/import-record-quality-evaluator';

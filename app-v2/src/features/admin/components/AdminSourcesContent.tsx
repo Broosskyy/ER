@@ -213,6 +213,11 @@ export function AdminSourcesContent() {
                   onConfigurePress={() =>
                     router.push(`/admin/sources/${item.id}` as `/admin/events/${string}`)
                   }
+                  onViewEventsPress={() =>
+                    router.push(
+                      `/admin/events?sourceId=${encodeURIComponent(item.id)}` as '/admin/events',
+                    )
+                  }
                 />
               ))}
             </View>

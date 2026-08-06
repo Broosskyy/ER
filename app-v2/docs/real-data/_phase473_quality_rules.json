@@ -1,0 +1,9 @@
+[
+  {
+    "rule": "conflicting_explicit_attribute_origins",
+    "eventId": "evt-1785339389636-v1tq3hw",
+    "title": "SA * 22.08.2026 | KitKatClub",
+    "stage": "review_required",
+    "detail": "[{\"type\":\"outdoor\",\"values\":[\"true\",\"outdoor\"]}]"
+  }
+]

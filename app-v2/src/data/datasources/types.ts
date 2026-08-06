@@ -126,12 +126,22 @@ export interface StatsDatasource {
 
 import type { EventLineupInput } from '@/features/events/domain/event-lineup';
 import type { EventLineupArtist } from '@/features/events/domain/event-lineup';
+import type { ResolvedCanonicalLineupEntry } from '@/features/aggregation/domain/canonical-lineup-entry';
 
 export interface EventLineupDatasource {
   getLineupForEvent(eventId: string): Promise<EventLineupArtist[]>;
   getLineupsForEvents(eventIds: string[]): Promise<Map<string, EventLineupArtist[]>>;
   replaceEventLineup(eventId: string, lineup: EventLineupInput[]): Promise<EventLineupArtist[]>;
   deleteLineupForEvent(eventId: string): Promise<void>;
+}
+
+export interface EventLineupEntryDatasource {
+  getEntriesForEvent(eventId: string): Promise<ResolvedCanonicalLineupEntry[]>;
+  getEntriesForEvents(eventIds: string[]): Promise<Map<string, ResolvedCanonicalLineupEntry[]>>;
+  replaceEventLineupEntries(
+    eventId: string,
+    entries: ResolvedCanonicalLineupEntry[],
+  ): Promise<ResolvedCanonicalLineupEntry[]>;
 }
 
 export interface DatasourceBundle {
@@ -142,6 +152,7 @@ export interface DatasourceBundle {
   organizers: OrganizerDatasource;
   artists: ArtistDatasource;
   eventLineups: EventLineupDatasource;
+  eventLineupEntries: EventLineupEntryDatasource;
   collections: CollectionDatasource;
   sources: SourceDatasource;
   stats: StatsDatasource;

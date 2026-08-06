@@ -1,0 +1,359 @@
+{
+  "generatedAt": "2026-08-03T20:48:22.427Z",
+  "events": [
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://bootshaus.ticket.io/",
+      "websiteUrl": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+      "ticketStatus": "on_sale",
+      "lineupFingerprint": {
+        "structuredCount": 3,
+        "legacyCount": 3,
+        "artistNamesHash": "f55bb2849467fd24"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "websiteUrl": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+        "descriptionHash": "8c3716ea32b26413",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "organizer-bootshaus",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9749110188710708985001871_2719362357331366064983352.png",
+        "flyerUrl": "",
+        "sourceId": "source-bootshaus-koeln",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 3,
+          "legacyCount": 3,
+          "artistNamesHash": "f55bb2849467fd24"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://bootshaus.ticket.io/",
+      "websiteUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+      "ticketStatus": "on_sale",
+      "lineupFingerprint": {
+        "structuredCount": 3,
+        "legacyCount": 3,
+        "artistNamesHash": "d4def725cce106b2"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "websiteUrl": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+        "descriptionHash": "7a3b86cec7c2918d",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "organizer-bootshaus",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8084315766856158722460498_0156517496564163162733169.png",
+        "flyerUrl": "",
+        "sourceId": "source-bootshaus-koeln",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 3,
+          "legacyCount": 3,
+          "artistNamesHash": "d4def725cce106b2"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://bootshaus.ticket.io/",
+      "websiteUrl": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+      "ticketStatus": "on_sale",
+      "lineupFingerprint": {
+        "structuredCount": 3,
+        "legacyCount": 3,
+        "artistNamesHash": "4b32aa6ed0e8efb7"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "websiteUrl": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+        "descriptionHash": "e9a4b639acf5cfe6",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "organizer-bootshaus",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4076694954445140762170081_9848048500353295527762084.png",
+        "flyerUrl": "",
+        "sourceId": "source-bootshaus-koeln",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 3,
+          "legacyCount": 3,
+          "artistNamesHash": "4b32aa6ed0e8efb7"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "priceText": "ab 15,00 €",
+      "ticketStatus": "on_sale",
+      "ticketPhases": [
+        {
+          "id": "phase-e-ticket-early-bird-r_success%2f",
+          "kind": "early_bird",
+          "name": "E-Ticket — Early Bird",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 0,
+          "priceLabel": "ab 15,00 €",
+          "priceAmount": 15,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "lineupFingerprint": {
+        "structuredCount": 2,
+        "legacyCount": 2,
+        "artistNamesHash": "db52825363291553"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "descriptionHash": "23b3d261f620046d",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig-ticket-kings",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 2,
+          "legacyCount": 2,
+          "artistNamesHash": "db52825363291553"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://bootshaus.ticket.io/",
+      "websiteUrl": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+      "ticketStatus": "on_sale",
+      "lineupFingerprint": {
+        "structuredCount": 2,
+        "legacyCount": 2,
+        "artistNamesHash": "32b5850bf047424f"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "websiteUrl": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+        "descriptionHash": "8549d88f48b53feb",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "organizer-bootshaus",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7929454786907684949010280_4905387408877834665437515.png",
+        "flyerUrl": "",
+        "sourceId": "source-bootshaus-koeln",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 2,
+          "legacyCount": 2,
+          "artistNamesHash": "32b5850bf047424f"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://bootshaus.ticket.io/",
+      "websiteUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+      "ticketStatus": "on_sale",
+      "lineupFingerprint": {
+        "structuredCount": 0,
+        "legacyCount": 0,
+        "artistNamesHash": "e3b0c44298fc1c14"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "websiteUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+        "descriptionHash": "c96518cd9128cd40",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "organizer-bootshaus",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5917405727420453304224506_9628350533800786356032660.png",
+        "flyerUrl": "",
+        "sourceId": "source-bootshaus-koeln",
+        "eventAttributesHash": "68d7cc90cea6b29f",
+        "lineup": {
+          "structuredCount": 0,
+          "legacyCount": 0,
+          "artistNamesHash": "e3b0c44298fc1c14"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://bootshaus.ticket.io/",
+      "websiteUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+      "ticketStatus": "on_sale",
+      "lineupFingerprint": {
+        "structuredCount": 3,
+        "legacyCount": 3,
+        "artistNamesHash": "ee8980038209adac"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "websiteUrl": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+        "descriptionHash": "e15692ac676bf8ba",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "organizer-bootshaus",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/3129736408770490976904536_4424795000671778212268540.png",
+        "flyerUrl": "",
+        "sourceId": "source-bootshaus-koeln",
+        "eventAttributesHash": "23bb7440c3f83707",
+        "lineup": {
+          "structuredCount": 3,
+          "legacyCount": 3,
+          "artistNamesHash": "ee8980038209adac"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "websiteUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+      "priceText": "ab 20,00 €",
+      "ticketStatus": "on_sale",
+      "ticketPhases": [
+        {
+          "id": "phase-e-ticket-phase-1-r_success%2f",
+          "kind": "other",
+          "name": "E-Ticket — Phase 1",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 900,
+          "priceLabel": "ab 20,00 €",
+          "priceAmount": 20,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "lineupFingerprint": {
+        "structuredCount": 9,
+        "legacyCount": 18,
+        "artistNamesHash": "cdd9a89f6b9ec553"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "websiteUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+        "descriptionHash": "12ae32cb1ec02d01",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 9,
+          "legacyCount": 18,
+          "artistNamesHash": "cdd9a89f6b9ec553"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "websiteUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "priceText": "ab 15,00 €",
+      "ticketStatus": "on_sale",
+      "ticketPhases": [
+        {
+          "id": "phase-standard-early-bird-r_success%2f",
+          "kind": "early_bird",
+          "name": "Standard — Early Bird",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 0,
+          "priceLabel": "ab 15,00 €",
+          "priceAmount": 15,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "lineupFingerprint": {
+        "structuredCount": 0,
+        "legacyCount": 0,
+        "artistNamesHash": "e3b0c44298fc1c14"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "websiteUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "descriptionHash": "8cf93c25ca09ecd5",
+        "genreLabelsHash": "74234e98afe7498f",
+        "venueId": "",
+        "organizerId": "",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig-ticket-kings",
+        "eventAttributesHash": "4f53cda18c2baa0c",
+        "lineup": {
+          "structuredCount": 0,
+          "legacyCount": 0,
+          "artistNamesHash": "e3b0c44298fc1c14"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "websiteUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+      "priceText": "ab 15,00 €",
+      "ticketStatus": "on_sale",
+      "ticketPhases": [
+        {
+          "id": "phase-standard-ticket-phase-3-r_success%2f",
+          "kind": "other",
+          "name": "Standard Ticket — Phase 3",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 900,
+          "priceLabel": "ab 15,00 €",
+          "priceAmount": 15,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "lineupFingerprint": {
+        "structuredCount": 14,
+        "legacyCount": 14,
+        "artistNamesHash": "58682b7b8b78c295"
+      },
+      "forbiddenFingerprint": {
+        "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+        "websiteUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+        "descriptionHash": "2b3a8406ed1ebfdc",
+        "genreLabelsHash": "2295c0782cc6e0e9",
+        "venueId": "",
+        "organizerId": "",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig",
+        "eventAttributesHash": "21b08f1fd450ff43",
+        "lineup": {
+          "structuredCount": 14,
+          "legacyCount": 14,
+          "artistNamesHash": "58682b7b8b78c295"
+        }
+      }
+    }
+  ]
+}

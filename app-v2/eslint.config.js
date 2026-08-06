@@ -7,7 +7,15 @@ module.exports = defineConfig([
   expoConfig,
   eslintConfigPrettier,
   {
-    ignores: ['dist/*', 'node_modules/*', '.expo/*', '.build/*'],
+    ignores: [
+      'dist/*',
+      'node_modules/*',
+      '.expo/*',
+      '.build/*',
+      // Optional Playwright screenshot tooling (not installed in default dev graph)
+      'scripts/capture-*.mjs',
+      'scripts/verify-*.mjs',
+    ],
   },
   {
     rules: {

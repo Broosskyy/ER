@@ -1,0 +1,655 @@
+{
+  "summary": {
+    "generatedAt": "2026-08-03T14:52:50.308Z",
+    "totalTicketKingsEventsAudited": 5,
+    "eventsWithDbRecord": 4,
+    "eventsUsingAddonPriceAsCanonical": 4,
+    "eventsRequiringReview": 0,
+    "eventsWithPlannedMutations": 4,
+    "eventsWithAdmissionPrice": 5,
+    "eventsSoldOut": 0,
+    "eventsAvailable": 5
+  },
+  "events": [
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+      "dbPriceText": "ab 2,50 €",
+      "dbMinimumPrice": 2.5,
+      "dbAvailability": "available",
+      "dbTicketStatus": "on_sale",
+      "dbPhaseCount": 1,
+      "admissionPriceText": "ab 15,00 €",
+      "admissionMinimumPrice": 15,
+      "admissionMaximumPrice": 15,
+      "admissionAvailability": "available",
+      "admissionPhaseCount": 1,
+      "admissionPhases": [
+        {
+          "ticketType": "Standard",
+          "phaseName": "Early Bird",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 100 verfügbar",
+          "remainingQuantity": 100,
+          "soldOut": false
+        }
+      ],
+      "excludedProducts": [
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "allProducts": [
+        {
+          "rawProductName": "Standard",
+          "rawPhaseName": "Early Bird",
+          "rawPrice": "15,00 EUR",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 100 verfügbar",
+          "remainingQuantity": 100,
+          "optionalState": "required",
+          "sectionHeading": "Tickets",
+          "classification": "admission_ticket",
+          "includedInEventSummary": true,
+          "structuralSignals": [
+            "admission_option",
+            "section:Tickets",
+            "quantity_stepper"
+          ]
+        },
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "usesAddonPriceAsCanonical": true,
+      "reviewRequired": false,
+      "plannedMutations": {
+        "changed": true,
+        "patch": {
+          "priceText": "ab 15,00 €",
+          "ticketPhases": [
+            {
+              "id": "phase-standard-early-bird",
+              "name": "Standard — Early Bird",
+              "sortOrder": 0,
+              "kind": "early_bird",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "priceLabel": "ab 15,00 €",
+              "soldOut": false,
+              "available": true,
+              "isFree": false
+            }
+          ]
+        },
+        "fieldChanges": [
+          "priceText",
+          "ticketPhases"
+        ]
+      }
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+      "dbPriceText": "ab 2,50 €",
+      "dbMinimumPrice": 2.5,
+      "dbAvailability": "available",
+      "dbTicketStatus": "on_sale",
+      "dbPhaseCount": 1,
+      "admissionPriceText": "ab 15,00 €",
+      "admissionMinimumPrice": 15,
+      "admissionMaximumPrice": 15,
+      "admissionAvailability": "available",
+      "admissionPhaseCount": 1,
+      "admissionPhases": [
+        {
+          "ticketType": "E-Ticket",
+          "phaseName": "Early Bird",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 34 verfügbar",
+          "remainingQuantity": 34,
+          "soldOut": false
+        }
+      ],
+      "excludedProducts": [
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "allProducts": [
+        {
+          "rawProductName": "E-Ticket",
+          "rawPhaseName": "Early Bird",
+          "rawPrice": "15,00 EUR",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 34 verfügbar",
+          "remainingQuantity": 34,
+          "optionalState": "required",
+          "sectionHeading": "Tickets",
+          "classification": "admission_ticket",
+          "includedInEventSummary": true,
+          "structuralSignals": [
+            "admission_option",
+            "section:Tickets",
+            "quantity_stepper"
+          ]
+        },
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "usesAddonPriceAsCanonical": true,
+      "reviewRequired": false,
+      "plannedMutations": {
+        "changed": true,
+        "patch": {
+          "priceText": "ab 15,00 €",
+          "ticketPhases": [
+            {
+              "id": "phase-e-ticket-early-bird",
+              "name": "E-Ticket — Early Bird",
+              "sortOrder": 0,
+              "kind": "early_bird",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "priceLabel": "ab 15,00 €",
+              "soldOut": false,
+              "available": true,
+              "isFree": false
+            }
+          ]
+        },
+        "fieldChanges": [
+          "priceText",
+          "ticketPhases"
+        ]
+      }
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+      "dbPriceText": "ab 2,50 €",
+      "dbMinimumPrice": 2.5,
+      "dbAvailability": "available",
+      "dbTicketStatus": "on_sale",
+      "dbPhaseCount": 1,
+      "admissionPriceText": "ab 20,00 €",
+      "admissionMinimumPrice": 20,
+      "admissionMaximumPrice": 20,
+      "admissionAvailability": "available",
+      "admissionPhaseCount": 1,
+      "admissionPhases": [
+        {
+          "ticketType": "E-Ticket",
+          "phaseName": "Phase 1",
+          "priceAmount": 20,
+          "currency": "EUR",
+          "availabilityText": "noch 47 verfügbar",
+          "remainingQuantity": 47,
+          "soldOut": false
+        }
+      ],
+      "excludedProducts": [
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "allProducts": [
+        {
+          "rawProductName": "E-Ticket",
+          "rawPhaseName": "Phase 1",
+          "rawPrice": "20,00 EUR",
+          "priceAmount": 20,
+          "currency": "EUR",
+          "availabilityText": "noch 47 verfügbar",
+          "remainingQuantity": 47,
+          "optionalState": "required",
+          "sectionHeading": "Tickets",
+          "classification": "admission_ticket",
+          "includedInEventSummary": true,
+          "structuralSignals": [
+            "admission_option",
+            "section:Tickets",
+            "quantity_stepper"
+          ]
+        },
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "usesAddonPriceAsCanonical": true,
+      "reviewRequired": false,
+      "plannedMutations": {
+        "changed": true,
+        "patch": {
+          "priceText": "ab 20,00 €",
+          "ticketPhases": [
+            {
+              "id": "phase-e-ticket-phase-1",
+              "name": "E-Ticket — Phase 1",
+              "sortOrder": 900,
+              "kind": "other",
+              "priceAmount": 20,
+              "priceCurrency": "EUR",
+              "priceLabel": "ab 20,00 €",
+              "soldOut": false,
+              "available": true,
+              "isFree": false
+            }
+          ]
+        },
+        "fieldChanges": [
+          "priceText",
+          "ticketPhases"
+        ]
+      }
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+      "dbPriceText": "ab 2,50 €",
+      "dbMinimumPrice": 2.5,
+      "dbAvailability": "available",
+      "dbTicketStatus": "on_sale",
+      "dbPhaseCount": 1,
+      "admissionPriceText": "ab 15,00 €",
+      "admissionMinimumPrice": 15,
+      "admissionMaximumPrice": 15,
+      "admissionAvailability": "available",
+      "admissionPhaseCount": 1,
+      "admissionPhases": [
+        {
+          "ticketType": "Standard Ticket",
+          "phaseName": "Phase 3",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 114 verfügbar",
+          "remainingQuantity": 114,
+          "soldOut": false
+        }
+      ],
+      "excludedProducts": [
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "allProducts": [
+        {
+          "rawProductName": "Standard Ticket",
+          "rawPhaseName": "Phase 3",
+          "rawPrice": "15,00 EUR",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 114 verfügbar",
+          "remainingQuantity": 114,
+          "optionalState": "required",
+          "sectionHeading": "Tickets",
+          "classification": "admission_ticket",
+          "includedInEventSummary": true,
+          "structuralSignals": [
+            "admission_option",
+            "section:Tickets",
+            "quantity_stepper"
+          ]
+        },
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "usesAddonPriceAsCanonical": true,
+      "reviewRequired": false,
+      "plannedMutations": {
+        "changed": true,
+        "patch": {
+          "priceText": "ab 15,00 €",
+          "ticketPhases": [
+            {
+              "id": "phase-standard-ticket-phase-3",
+              "name": "Standard Ticket — Phase 3",
+              "sortOrder": 900,
+              "kind": "other",
+              "priceAmount": 15,
+              "priceCurrency": "EUR",
+              "priceLabel": "ab 15,00 €",
+              "soldOut": false,
+              "available": true,
+              "isFree": false
+            }
+          ]
+        },
+        "fieldChanges": [
+          "priceText",
+          "ticketPhases"
+        ]
+      }
+    },
+    {
+      "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "checkoutUrl": "https://nacht-manager.de/ticketing/native_event.php?id=40&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+      "dbPhaseCount": 0,
+      "admissionPriceText": "ab 15,00 €",
+      "admissionMinimumPrice": 15,
+      "admissionMaximumPrice": 15,
+      "admissionAvailability": "available",
+      "admissionPhaseCount": 1,
+      "admissionPhases": [
+        {
+          "ticketType": "E-Ticket",
+          "phaseName": "Early Bird",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 16 verfügbar",
+          "remainingQuantity": 16,
+          "soldOut": false
+        }
+      ],
+      "excludedProducts": [
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "allProducts": [
+        {
+          "rawProductName": "E-Ticket",
+          "rawPhaseName": "Early Bird",
+          "rawPrice": "15,00 EUR",
+          "priceAmount": 15,
+          "currency": "EUR",
+          "availabilityText": "noch 16 verfügbar",
+          "remainingQuantity": 16,
+          "optionalState": "required",
+          "sectionHeading": "Tickets",
+          "classification": "admission_ticket",
+          "includedInEventSummary": true,
+          "structuralSignals": [
+            "admission_option",
+            "section:Tickets",
+            "quantity_stepper"
+          ]
+        },
+        {
+          "rawProductName": "",
+          "rawPrice": "2,50 EUR &middot; pro Ticket",
+          "priceAmount": 2.5,
+          "currency": "EUR",
+          "optionalState": "optional",
+          "sectionHeading": "Zusatzoptionen",
+          "classification": "ticket_add_on",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_checkout_add_on",
+          "structuralSignals": [
+            "addon_checkbox",
+            "section:Zusatzoptionen",
+            "checkbox_optional"
+          ]
+        },
+        {
+          "rawProductName": "Rabattcode einlösen",
+          "optionalState": "optional",
+          "sectionHeading": "Weitere Angaben",
+          "classification": "unknown_review_required",
+          "includedInEventSummary": false,
+          "exclusionReason": "optional_buyer_section_product_requires_review",
+          "structuralSignals": [
+            "buyer_optional",
+            "section:Weitere Angaben",
+            "checkbox_optional"
+          ]
+        }
+      ],
+      "usesAddonPriceAsCanonical": false,
+      "reviewRequired": false,
+      "plannedMutations": {
+        "changed": false,
+        "patch": {},
+        "fieldChanges": []
+      }
+    }
+  ]
+}

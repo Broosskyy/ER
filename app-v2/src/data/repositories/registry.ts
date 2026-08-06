@@ -21,6 +21,7 @@ import {
   CityRepository,
   CollectionRepository,
   EventLineupRepository,
+  EventLineupEntryRepository,
   EventRepository,
   GenreRepository,
   SourceRepository,
@@ -39,6 +40,7 @@ import { bindDiscoveryServices } from '@/features/discovery/discovery-runtime';
 import { AdminEventModerationService } from '@/features/admin/services/admin-event-moderation-service';
 import { AdminModerationStateService } from '@/features/admin/services/admin-moderation-state-service';
 import { AdminMultiSourceService } from '@/features/admin/services/admin-multi-source-service';
+import { SourceEventsAdminService } from '@/features/admin/services/source-events-admin-service';
 import { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { SupabaseMultiSourceRepositories } from '@/features/aggregation/repositories/multi-source-repositories';
 import { ImportAggregationService } from '@/features/aggregation/services/import-aggregation-service';
@@ -106,6 +108,8 @@ import { TrustPublishDecisionEngine } from '@/features/trust-quality/services/tr
 import { ImportRecordQualityEvaluator } from '@/features/trust-quality/services/import-record-quality-evaluator';
 import { SourceTrustEngine } from '@/features/trust-quality/services/source-trust-engine';
 import { ImportReviewQueueService } from '@/features/trust-quality/services/import-review-queue-service';
+import { ImportReviewQueueReconciliationService } from '@/features/trust-quality/services/import-review-queue-reconciliation-service';
+import { SourceOperationalMetricsService } from '@/features/sources/services/source-operational-metrics-service';
 import { SourceReputationService } from '@/features/trust-quality/services/source-reputation-service';
 import { TrustQualityAdminService } from '@/features/trust-quality/services/trust-quality-admin-service';
 import { PublishDecisionService } from '@/features/import/services/publish-decision-service';
@@ -177,9 +181,14 @@ import { InMemorySourceOnboardingRepository } from '@/features/source-onboarding
 import { SupabaseSourceOnboardingRepository } from '@/features/source-onboarding/repositories/supabase-source-onboarding-repository';
 import { SourceOnboardingService } from '@/features/source-onboarding/services/source-onboarding-service';
 import { collectDiscoveryCorpusFromSources } from '@/features/ticket-platform-discovery/discovery/discovery-corpus';
+import { buildExpandedDiscoveryCorpus } from '@/features/ticket-platform-discovery/discovery/discovery-corpus-expansion';
+import { TicketIoCorpusExpansionService } from '@/features/ticket-platform-discovery/services/ticket-io-corpus-expansion-service';
 import { InMemoryPlatformDiscoveryRepository } from '@/features/ticket-platform-discovery/repositories/platform-discovery-repository';
 import { SupabasePlatformDiscoveryRepository } from '@/features/ticket-platform-discovery/repositories/supabase-platform-discovery-repository';
 import { PlatformDiscoveryService } from '@/features/ticket-platform-discovery/services/platform-discovery-service';
+import type { EventRow } from '@/data/mappers/event-mapper';
+import type { ImportRecordRow } from '@/data/mappers/import-mapper';
+import { getSupabaseClient } from '@/services/supabase/client';
 import { WorkerRecoveryService } from '@/features/operations/services/worker-recovery-service';
 import { ConnectorHealthPersistenceService } from '@/features/operations/services/connector-health-persistence-service';
 import {
@@ -225,10 +234,12 @@ export const artistRepository = new ArtistRepository();
 export const adminArtistRepository = new AdminArtistRepository();
 export const artistService = new ArtistService(artistRepository, adminArtistRepository);
 export const eventLineupRepository = new EventLineupRepository();
+export const eventLineupEntryRepository = new EventLineupEntryRepository();
 export const eventLineupService = new EventLineupService(
   eventLineupRepository,
   () => adminArtistRepository.getAll(),
   async (id) => adminEventRepository.getById(id),
+  eventLineupEntryRepository,
 );
 export const collectionRepository = new CollectionRepository();
 export const sourceRepository = new SourceRepository();
@@ -351,7 +362,7 @@ export const sourceOnboardingService = new SourceOnboardingService(
   async () => {
     const sources = await adminSourceRepository.getAll();
     return sources.flatMap((source) => {
-      const urls = [source.baseUrl, source.website, source.sourceUrl].filter(
+      const urls = [source.baseUrl, source.website].filter(
         (value): value is string => Boolean(value),
       );
       const seen = new Set<string>();
@@ -382,7 +393,46 @@ export const platformDiscoveryService = new PlatformDiscoveryService(
   async () => adminSourceRepository.getAll(),
   async () => {
     const sources = await adminSourceRepository.getAll();
-    return collectDiscoveryCorpusFromSources(sources);
+    if (useInMemoryPersistence) {
+      return collectDiscoveryCorpusFromSources(sources);
+    }
+    const client = getSupabaseClient();
+    const expanded = await buildExpandedDiscoveryCorpus({
+      sources,
+      includeSeeds: true,
+      fetchPublishedEvents: async () => {
+        const { data, error } = await client
+          .from('events')
+          .select('ticket_url,website_url,description')
+          .eq('status', 'published')
+          .limit(500);
+        if (error) {
+          return [];
+        }
+        const rows = (data ?? []) as Pick<EventRow, 'ticket_url' | 'website_url' | 'description'>[];
+        return rows.map((row) => ({
+          ticketUrl: row.ticket_url ?? undefined,
+          websiteUrl: row.website_url ?? undefined,
+          description: row.description ?? undefined,
+        }));
+      },
+      fetchImportRecordPayloads: async () => {
+        const { data, error } = await client
+          .from('import_records')
+          .select('raw_payload,normalized_payload')
+          .order('updated_at', { ascending: false })
+          .limit(300);
+        if (error) {
+          return [];
+        }
+        const payloadRows = (data ?? []) as Pick<ImportRecordRow, 'raw_payload' | 'normalized_payload'>[];
+        return payloadRows.map((row) => ({
+          ...(row.raw_payload as Record<string, unknown>),
+          ...(row.normalized_payload as Record<string, unknown> | null),
+        }));
+      },
+    });
+    return expanded.texts;
   },
   async (record: SourceRecord) => {
     const existing = await adminSourceRepository.getById(record.id);
@@ -396,6 +446,77 @@ export const platformDiscoveryService = new PlatformDiscoveryService(
       updatedAt: now,
     });
   },
+);
+
+function isTicketIoShopKnown(shopSlug: string, sources: SourceRecord[]): boolean {
+  const normalized = shopSlug.toLowerCase();
+  return sources.some((source) => {
+    const configSlug = source.sourceConfig?.ticketPlatform?.shopSlug?.toLowerCase();
+    if (configSlug === normalized) {
+      return true;
+    }
+    const urls = [source.baseUrl, source.website].filter(Boolean) as string[];
+    return urls.some((url) => url.toLowerCase().includes(`${normalized}.ticket.io`));
+  });
+}
+
+export const ticketIoCorpusExpansionService = new TicketIoCorpusExpansionService(
+  async () => adminSourceRepository.getAll(),
+  async () => {
+    const sources = await adminSourceRepository.getAll();
+    if (useInMemoryPersistence) {
+      return buildExpandedDiscoveryCorpus({ sources, includeSeeds: true });
+    }
+    const client = getSupabaseClient();
+    return buildExpandedDiscoveryCorpus({
+      sources,
+      includeSeeds: true,
+      fetchPublishedEvents: async () => {
+        const { data, error } = await client
+          .from('events')
+          .select('ticket_url,website_url,description')
+          .eq('status', 'published')
+          .limit(500);
+        if (error) {
+          return [];
+        }
+        const rows = (data ?? []) as Pick<EventRow, 'ticket_url' | 'website_url' | 'description'>[];
+        return rows.map((row) => ({
+          ticketUrl: row.ticket_url ?? undefined,
+          websiteUrl: row.website_url ?? undefined,
+          description: row.description ?? undefined,
+        }));
+      },
+      fetchImportRecordPayloads: async () => {
+        const { data, error } = await client
+          .from('import_records')
+          .select('raw_payload,normalized_payload')
+          .order('updated_at', { ascending: false })
+          .limit(300);
+        if (error) {
+          return [];
+        }
+        const payloadRows = (data ?? []) as Pick<ImportRecordRow, 'raw_payload' | 'normalized_payload'>[];
+        return payloadRows.map((row) => ({
+          ...(row.raw_payload as Record<string, unknown>),
+          ...(row.normalized_payload as Record<string, unknown> | null),
+        }));
+      },
+    });
+  },
+  async (record) => {
+    const existing = await adminSourceRepository.getById(record.id);
+    const now = new Date().toISOString();
+    if (existing) {
+      return adminSourceRepository.save({ ...record, updatedAt: now });
+    }
+    return adminSourceRepository.save({
+      ...record,
+      createdAt: record.createdAt ?? now,
+      updatedAt: now,
+    });
+  },
+  isTicketIoShopKnown,
 );
 
 const eventBlockingKeyRepository = useInMemoryPersistence
@@ -490,6 +611,8 @@ export const importEventPublishService = new ImportEventPublishService(
   eventCanonicalIdentityService,
   eventLifecycleOrchestrator,
   eventOriginService,
+  eventLineupService,
+  adminArtistRepository,
 );
 export const importPublishOrchestratorService = new ImportPublishOrchestratorService(
   importRecordRepository,
@@ -500,6 +623,24 @@ export const importPublishOrchestratorService = new ImportPublishOrchestratorSer
   sourceReputationService,
   multiSourceMatchOrchestrator,
   adminEventRepository,
+);
+export const sourceOperationalMetricsService = new SourceOperationalMetricsService(
+  adminSourceRepository,
+  importRecordRepository,
+  importJobRepository,
+  multiSourceRepositories.sourceReferences,
+  adminEventRepository,
+);
+export const sourceEventsAdminService = new SourceEventsAdminService(
+  multiSourceRepositories.sourceReferences,
+  adminEventRepository,
+);
+adminEventRepository.bindSourceEventIdResolver((sourceId) =>
+  sourceEventsAdminService.resolveEventIdsForSourceFilter(sourceId),
+);
+export const importReviewQueueReconciliationService = new ImportReviewQueueReconciliationService(
+  importReviewQueueRepository,
+  importRecordRepository,
 );
 export const importAggregationService = new ImportAggregationService(
   importSourceRepository,
@@ -514,6 +655,7 @@ export const importAggregationService = new ImportAggregationService(
   multiSourceMatchOrchestrator,
   eventLifecycleOrchestrator,
   sourceReputationService,
+  sourceOperationalMetricsService,
 );
 
 const importScheduleRepository = new SourceBackedImportScheduleRepository(adminSourceRepository);
@@ -683,6 +825,8 @@ export const adminEventModerationService = new AdminEventModerationService(
   adminEventRepository,
   eventModerationAuditService,
   adminModerationStateService,
+  eventFieldProvenanceWriter,
+  eventRepository,
 );
 
 export { importAdapterRegistry, connectorRegistry };

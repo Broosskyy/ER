@@ -1,4 +1,5 @@
-import { Modal, Pressable, StyleSheet, View } from 'react-native';
+import { useMemo, useState } from 'react';
+import { Modal, Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
@@ -9,8 +10,10 @@ import { radiusRoles } from '@/design/radii';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { FilterChip } from '@/features/home/components/FilterChip';
+import type { HomeRadiusKm } from '@/features/location/home-location-preferences';
 import type { UserLocationErrorCode } from '@/features/location/types/user-location';
 import type { ManualDiscoveryCityOption } from '@/features/location/UserLocationProvider';
+import { filterDiscoveryCityOptions } from '@/features/location/discovery-city-options';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export interface LocationPickerModalProps {
@@ -19,9 +22,13 @@ export interface LocationPickerModalProps {
   errorCode: UserLocationErrorCode | null;
   discoveryCities: ManualDiscoveryCityOption[];
   selectedDiscoveryCityId?: string;
+  radiusKm: HomeRadiusKm;
+  radiusOptions: readonly HomeRadiusKm[];
+  onRadiusChange: (radiusKm: HomeRadiusKm) => void;
   onClose: () => void;
   onUseCurrentLocation: () => void;
   onSelectDiscoveryCity: (city: ManualDiscoveryCityOption) => void;
+  onClearLocation?: () => void;
 }
 
 function resolveErrorMessage(
@@ -65,13 +72,23 @@ export function LocationPickerModal({
   errorCode,
   discoveryCities,
   selectedDiscoveryCityId,
+  radiusKm,
+  radiusOptions,
+  onRadiusChange,
   onClose,
   onUseCurrentLocation,
   onSelectDiscoveryCity,
+  onClearLocation,
 }: LocationPickerModalProps) {
   const insets = useSafeAreaInsets();
   const { t } = useAppTranslation();
+  const [cityQuery, setCityQuery] = useState('');
   const errorMessage = resolveErrorMessage(errorCode, t);
+
+  const filteredCities = useMemo(
+    () => filterDiscoveryCityOptions(discoveryCities, cityQuery),
+    [cityQuery, discoveryCities],
+  );
 
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onClose}>
@@ -96,8 +113,18 @@ export function LocationPickerModal({
           />
 
           <AppText style={styles.sectionLabel}>{t('home.location.discoveryCitySection')}</AppText>
+          <TextInput
+            accessibilityLabel={t('home.location.citySearch', { defaultValue: 'Stadt suchen' })}
+            placeholder={t('home.location.citySearchPlaceholder', { defaultValue: 'Stadt oder PLZ' })}
+            placeholderTextColor={colorRoles.emptyStateDescription}
+            value={cityQuery}
+            onChangeText={setCityQuery}
+            style={styles.citySearchInput}
+            autoCapitalize="words"
+            autoCorrect={false}
+          />
           <View style={styles.cityChips}>
-            {discoveryCities.map((city) => (
+            {filteredCities.map((city) => (
               <FilterChip
                 key={city.id}
                 label={city.label}
@@ -106,6 +133,31 @@ export function LocationPickerModal({
               />
             ))}
           </View>
+          {cityQuery.trim() && filteredCities.length === 0 ? (
+            <AppText style={styles.hint}>
+              {t('home.location.noCityMatch', { defaultValue: 'Keine Stadt gefunden.' })}
+            </AppText>
+          ) : null}
+
+          <AppText style={styles.sectionLabel}>{t('home.location.radiusSection', { defaultValue: 'Umkreis' })}</AppText>
+          <View style={styles.cityChips}>
+            {radiusOptions.map((option) => (
+              <FilterChip
+                key={option}
+                label={`${option} km`}
+                selected={radiusKm === option}
+                onPress={() => onRadiusChange(option)}
+              />
+            ))}
+          </View>
+
+          {onClearLocation ? (
+            <SecondaryButton
+              label={t('home.location.clear', { defaultValue: 'Standort zurücksetzen' })}
+              onPress={onClearLocation}
+              disabled={loading}
+            />
+          ) : null}
 
           {errorMessage ? (
             <AppText accessibilityRole="alert" style={styles.error}>
@@ -151,10 +203,23 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.textPrimary,
   },
+  citySearchInput: {
+    ...textRoles.body,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: radiusRoles.chip,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    color: colors.textPrimary,
+  },
   cityChips: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: spacing.xs,
+  },
+  hint: {
+    ...textRoles.metadata,
+    color: colorRoles.emptyStateDescription,
   },
   error: {
     ...textRoles.metadata,

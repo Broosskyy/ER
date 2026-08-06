@@ -6,7 +6,7 @@ import './bootstrap-ops-supabase';
 import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const OUT = join(dirname(fileURLToPath(import.meta.url)), '../../docs/real-data/_bootshaus_live_reality_check.json');
 const BOOTSHAUS_SOURCE = 'source-bootshaus-koeln';

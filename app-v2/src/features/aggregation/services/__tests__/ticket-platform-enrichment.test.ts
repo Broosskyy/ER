@@ -4,6 +4,8 @@ import { importUpdateService } from '@/features/aggregation/services/import-upda
 import type { AdminEventRecord } from '@/data/types/records';
 import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 
+import { createBootshausTicketIoProductionSourceRecord } from '@/features/sources/production/ticket-io-source.core';
+
 describe('ticket platform enrichment updates', () => {
   const existing: AdminEventRecord = {
     id: 'evt-bootshaus-1',
@@ -38,8 +40,10 @@ describe('ticket platform enrichment updates', () => {
     expect(enriched.sourceId).toBe('source-bootshaus-koeln');
   });
 
-  it('identifies ticket_platform as enrichment source type', () => {
+  it('identifies enrichment via publish behavior', () => {
+    const ticketSource = createBootshausTicketIoProductionSourceRecord();
+    expect(importUpdateService.isEnrichmentSource(ticketSource)).toBe(true);
     expect(importUpdateService.isTicketPlatformEnrichmentSource('ticket_platform')).toBe(true);
-    expect(importUpdateService.isTicketPlatformEnrichmentSource('website')).toBe(false);
+    expect(importUpdateService.isEnrichmentSource({ sourceType: 'website', enabled: true })).toBe(false);
   });
 });

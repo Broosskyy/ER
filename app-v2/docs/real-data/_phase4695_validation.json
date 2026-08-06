@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-08-03T09:43:02.816Z",
+  "metrics": {
+    "publishedEvents": 108,
+    "titleInferenceRemaining": 0,
+    "descriptionGarbageLineups": 0,
+    "genericTicketRemaining": 13,
+    "correctTicketUrls": 92,
+    "correctLineups": 42,
+    "externalBlocked": 21,
+    "referenceEvents": [
+      {
+        "eventId": "evt-1785389054496-ns9b6la",
+        "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+        "structuredCount": 9,
+        "apiArtists": [
+          "DYSTOPIA",
+          "VALKYRIE",
+          "IAN CRANK",
+          "EASYPYSI",
+          "KARAMUSTAN",
+          "GREEKZ",
+          "KEVIN LA NIQUE",
+          "THE RAFNIX",
+          "NINA BENDER",
+          "LEE-ANN",
+          "FLASH",
+          "FORWARD",
+          "HELLMYER",
+          "STZ",
+          "MAURO",
+          "I.D.A",
+          "PLEA5URE",
+          "PUL5E"
+        ],
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785389055557-ux20897",
+        "title": "Sommerfest Elektroküche 08.08.2026",
+        "structuredCount": 14,
+        "apiArtists": [
+          "ASL∅",
+          "ANNX",
+          "BLACK ZUSHI",
+          "BOUNCE MC",
+          "HOTBOI2300",
+          "HYPNOTIZED",
+          "ICJ",
+          "MAURO",
+          "STIMULATE",
+          "THE M∅VEMENT",
+          "TOMMY LIBERA",
+          "TURBO TIMOS",
+          "JULEZ BRIXTON",
+          "SEBI LIEMEN"
+        ],
+        "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "title": "NIGHTSWITHUS presents LEVI",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "genericTicket": true,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339420043-obhyeev",
+        "title": "Bootshaus on a Ship Vol. III",
+        "structuredCount": 4,
+        "apiArtists": [
+          "BRANDON",
+          "SAM COLLINS",
+          "OLIVER MAGENTA",
+          "LOST IDENTITY",
+          "DAVE REPLAY",
+          "EMIN",
+          "ALUKES",
+          "MAKLA"
+        ],
+        "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339418526-dn9f7g0",
+        "title": "Bootshaus on a Ship Vol. IV",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785506404218-hgmd9nz",
+        "title": "Vision Ekstase Open Air",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785506448834-4c5s8xl",
+        "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339398765-9lptzhg",
+        "title": "Blacklist Festival 2026",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "genericTicket": true,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339392687-tbdwup4",
+        "title": "BC173 Airport Session pres. by Bootshaus",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://bootshaus.ticket.io/",
+        "genericTicket": true,
+        "titleInferenceProvenance": false
+      },
+      {
+        "eventId": "evt-1785339389636-v1tq3hw",
+        "title": "SA * 22.08.2026 | KitKatClub",
+        "structuredCount": 0,
+        "apiArtists": [],
+        "ticketUrl": "https://www.vault-events.de/termine/kitkatclub-bootshaus/Veranstalterkontakt:",
+        "genericTicket": false,
+        "titleInferenceProvenance": false
+      }
+    ]
+  }
+}

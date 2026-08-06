@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-08-05T19:26:27.476Z",
+  "phase": "4.8.4.1",
+  "importerVersion": "phase4841-unified-website-v1",
+  "productionMutationsInThisRun": 0,
+  "comparisons": [
+    {
+      "eventKey": "bootshaus-sommerfest",
+      "eventId": "evt-1785339391167-tfaixrr",
+      "officialUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "fields": {
+        "title": {
+          "official": "Bootshaus Sommerfest | Bootshaus Club",
+          "unifiedNormalized": "Bootshaus Sommerfest",
+          "canonicalDb": "Bootshaus Sommerfest",
+          "appProjection": "Bootshaus Sommerfest"
+        },
+        "description": {
+          "unified": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "canonicalDb": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+          "publicEvidence": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep  Lineup TBA"
+        },
+        "venue": {
+          "canonicalDb": "Essigfabrik",
+          "appVenueLabel": "Essigfabrik"
+        },
+        "lineup": {},
+        "ticketUrl": {
+          "unified": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "canonicalDb": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "verified": "https://bootshaus-club.ticket.io/vB0cAmWg/"
+        },
+        "ticketPrice": {
+          "scope": "ticket_platform",
+          "unifiedClaims": false,
+          "canonicalDb": "Tickets ab 11,90 Euro"
+        },
+        "flyer": {
+          "unified": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+          "canonicalDb": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+        },
+        "genres": {
+          "unified": [
+            "DUBSTEP",
+            "ELECTRO",
+            "HARDTECHNO",
+            "TECHNO",
+            "EDM"
+          ],
+          "canonicalDb": [
+            "DUBSTEP",
+            "ELECTRO",
+            "HARDTECHNO",
+            "TECHNO",
+            "EDM"
+          ]
+        }
+      },
+      "importerBetterThanCanonical": false
+    },
+    {
+      "eventKey": "r3hab",
+      "eventId": "evt-1785339421539-k3swcrl",
+      "officialUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "fields": {
+        "title": {
+          "official": "R3HAB pres. by BOOTSHAUS | Bootshaus Club",
+          "unifiedNormalized": "R3HAB pres. by BOOTSHAUS",
+          "canonicalDb": "R3HAB pres. by BOOTSHAUS",
+          "appProjection": "R3HAB pres. by BOOTSHAUS"
+        },
+        "description": {
+          "unified": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+          "canonicalDb": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+          "publicEvidence": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Einlass ab 18 Jahren / Age for admission 18 years Bootshaus / Auenweg 173 / 51063 Cologne ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ Bootshaus Mobile App: https://bit.ly/Bootshaus-App Bootshaus Merchandise https://snash.com/kollektionen/bootshaus/ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ www.bootshaus.tv"
+        },
+        "venue": {
+          "unified": "Bootshaus",
+          "canonicalDb": "Bootshaus",
+          "appVenueLabel": "Bootshaus"
+        },
+        "lineup": {
+          "unifiedEntries": [
+            {
+              "sortOrder": 0,
+              "displayName": "R3HAB",
+              "rawSourceSpelling": "R3HAB",
+              "normalizedName": "R3HAB",
+              "billingRelation": "SOLO",
+              "isB2b": false,
+              "isF2f": false,
+              "isLiveSet": false,
+              "stage": "MAINFLOOR",
+              "confidence": 0.86,
+              "reviewState": "not_reviewed",
+              "inclusionReason": "Explicit lineup line from official event body"
+            },
+            {
+              "sortOrder": 1,
+              "displayName": "LA FUENTE",
+              "rawSourceSpelling": "LA FUENTE",
+              "normalizedName": "LA FUENTE",
+              "billingRelation": "SOLO",
+              "isB2b": false,
+              "isF2f": false,
+              "isLiveSet": false,
+              "stage": "MAINFLOOR",
+              "confidence": 0.86,
+              "reviewState": "not_reviewed",
+              "inclusionReason": "Explicit lineup line from official event body"
+            },
+            {
+              "sortOrder": 2,
+              "displayName": "OLIVER MAGENTA",
+              "rawSourceSpelling": "OLIVER MAGENTA",
+              "normalizedName": "OLIVER MAGENTA",
+              "billingRelation": "SOLO",
+              "isB2b": false,
+              "isF2f": false,
+              "isLiveSet": false,
+              "stage": "MAINFLOOR",
+              "confidence": 0.86,
+              "reviewState": "not_reviewed",
+              "inclusionReason": "Explicit lineup line from official event body"
+            },
+            {
+              "sortOrder": 3,
+              "displayName": "RELOVA",
+              "rawSourceSpelling": "RELOVA",
+              "normalizedName": "RELOVA",
+              "billingRelation": "SOLO",
+              "isB2b": false,
+              "isF2f": false,
+              "isLiveSet": false,
+              "stage": "MAINFLOOR",
+              "confidence": 0.86,
+              "reviewState": "not_reviewed",
+              "inclusionReason": "Explicit lineup line from official event body"
+            },
+            {
+              "sortOrder": 4,
+              "displayName": "DAVE REPLAY",
+              "rawSourceSpelling": "DAVE REPLAY",
+              "normalizedName": "DAVE REPLAY",
+              "billingRelation": "SOLO",
+              "isB2b": false,
+              "isF2f": false,
+              "isLiveSet": false,
+              "stage": "MAINFLOOR",
+              "confidence": 0.86,
+              "reviewState": "not_reviewed",
+              "inclusionReason": "Explicit lineup line from official event body"
+            }
+          ]
+        },
+        "ticketUrl": {
+          "unified": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "canonicalDb": "https://bit.ly/Bootshaus-AppBootshaus",
+          "verified": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+        },
+        "ticketPrice": {
+          "scope": "ticket_platform",
+          "unifiedClaims": false
+        },
+        "flyer": {
+          "unified": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+          "canonicalDb": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+        },
+        "genres": {
+          "unified": [
+            "BASSHOUSE",
+            "ELECTRO",
+            "HOUSE",
+            "PROGRESSIVE HOUSE",
+            "EDM",
+            "DANCE"
+          ],
+          "canonicalDb": [
+            "BASSHOUSE",
+            "ELECTRO",
+            "HOUSE",
+            "PROGRESSIVE HOUSE",
+            "EDM",
+            "DANCE"
+          ]
+        }
+      },
+      "importerBetterThanCanonical": true
+    }
+  ]
+}

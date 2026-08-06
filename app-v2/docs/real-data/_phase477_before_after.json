@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-08-04T12:20:00.000Z",
+  "before": {
+    "publishedTotal": 108,
+    "publishedReal": 93,
+    "stagingFixturesPublished": 15,
+    "repairableNow": 151,
+    "wrongTicketDestinations": 6,
+    "shopRootCtaEvents": 6
+  },
+  "after": {
+    "publishedTotal": 93,
+    "publishedReal": 93,
+    "stagingFixturesPublished": 0,
+    "stagingFixturesArchived": 15,
+    "repairableNow": 99,
+    "wrongTicketDestinations": 0,
+    "shopRootCtaEvents": 0,
+    "mdmaStructuredLineupEntries": 0,
+    "mdmaPublicArtists": 0,
+    "underlandTicketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "underlandDisplayPrice": "ab 23,90 €"
+  }
+}

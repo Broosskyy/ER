@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import type { ProfileHeaderViewModel } from '@/components/profiles/view-models';
+import { genreRepository } from '@/data/repositories/registry';
 import type { EntityProfileEvents } from '@/features/events/domain/entity-profile-events-service';
 import type { FollowEntityType } from '@/features/follows/follow-service';
 import type { ArtistRecord, OrganizerRecord, VenueRecord } from '@/data/types/records';
@@ -28,10 +29,17 @@ function countProfileEvents(events: EntityProfileEvents): number {
   return events.upcoming.length + events.happeningNow.length + events.past.length;
 }
 
+function resolveArtistGenreLabels(artist: ArtistRecord, genresById: Map<string, string>): string[] {
+  return artist.genreIds
+    .map((genreId) => genresById.get(genreId))
+    .filter((label): label is string => Boolean(label));
+}
+
 function toHeader(
   entityType: FollowEntityType,
   record: OrganizerRecord | VenueRecord | ArtistRecord,
   events: EntityProfileEvents,
+  genreLabels: string[] = [],
 ): ProfileHeaderViewModel {
   const eventCount = countProfileEvents(events);
   if (entityType === 'organizer') {
@@ -41,7 +49,7 @@ function toHeader(
     return toVenueProfileHeader(record as VenueRecord, eventCount);
   }
   const artist = record as ArtistRecord;
-  return toArtistProfileHeader(artist, eventCount, []);
+  return toArtistProfileHeader(artist, eventCount, genreLabels);
 }
 
 export function useEntityProfile(
@@ -73,7 +81,12 @@ export function useEntityProfile(
       setError(null);
 
       try {
-        const loaded = await loadEntityProfile(entityType, rawId);
+        const genreLoad =
+          entityType === 'artist' ? genreRepository.getActive() : Promise.resolve([]);
+        const [loaded, genres] = await Promise.all([
+          loadEntityProfile(entityType, rawId),
+          genreLoad,
+        ]);
         if (cancelled) {
           return;
         }
@@ -90,7 +103,12 @@ export function useEntityProfile(
         setCanonicalId(loaded.canonicalId);
         setRecord(loaded.record);
         setEvents(loaded.events);
-        setHeader(toHeader(entityType, loaded.record, loaded.events));
+        const genresById = new Map(genres.map((genre) => [genre.id, genre.name]));
+        const genreLabels =
+          entityType === 'artist'
+            ? resolveArtistGenreLabels(loaded.record as ArtistRecord, genresById)
+            : [];
+        setHeader(toHeader(entityType, loaded.record, loaded.events, genreLabels));
         setState('ready');
       } catch (cause) {
         if (!cancelled) {

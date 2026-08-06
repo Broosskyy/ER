@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useUserLocation } from '@/features/location/UserLocationProvider';
+import { resolveDiscoveryCityLabel } from '@/features/location/resolve-discovery-city';
+import { useHomeRadiusPreference } from '@/features/location/hooks/use-home-radius-preference';
 import { useNetworkStatus } from '@/platform/network/use-network-status';
 
 import {
@@ -41,6 +43,7 @@ export interface UseHomeFeedResult {
 
 export function useHomeFeed(): UseHomeFeedResult {
   const { location } = useUserLocation();
+  const { radiusKm } = useHomeRadiusPreference();
   const { isOnline } = useNetworkStatus();
   const sectionDefinitions = useMemo(() => getVisibleHomeFeedSections(), []);
   const [sectionsById, setSectionsById] = useState<Record<string, HomeFeedSectionState>>(() =>
@@ -52,11 +55,12 @@ export function useHomeFeed(): UseHomeFeedResult {
 
   const locationContext = useMemo<HomeFeedLocationContext>(
     () => ({
-      city: location?.city,
+      city: resolveDiscoveryCityLabel(location),
       latitude: location?.latitude,
       longitude: location?.longitude,
+      radiusKm,
     }),
-    [location?.city, location?.latitude, location?.longitude],
+    [location, radiusKm],
   );
 
   const applySectionResult = useCallback(

@@ -1,0 +1,292 @@
+{
+  "generatedAt": "2026-08-03T09:11:56.681Z",
+  "readOnly": true,
+  "note": "Simulated from stored import evidence per origin; not live re-import",
+  "scenarios": [
+    {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "steps": [
+        {
+          "step": "website_only",
+          "enabledOrigins": [
+            "source-bootshaus-koeln"
+          ]
+        },
+        {
+          "step": "ticket_platform_only",
+          "enabledOrigins": [
+            "source-bootshaus-ticket-io"
+          ]
+        },
+        {
+          "step": "all_origins",
+          "enabledOrigins": [
+            "source-bootshaus-ticket-io",
+            "source-bootshaus-koeln"
+          ],
+          "actual": {
+            "rawArtistNames": [],
+            "normalizedArtistNames": [
+              "BRANDON",
+              "SAM COLLINS",
+              "OLIVER MAGENTA",
+              "LOST IDENTITY",
+              "DAVE REPLAY",
+              "EMIN",
+              "ALUKES",
+              "MAKLA"
+            ],
+            "structuredEntryCount": 4,
+            "apiArtistNames": [
+              "BRANDON",
+              "SAM COLLINS",
+              "OLIVER MAGENTA",
+              "LOST IDENTITY",
+              "DAVE REPLAY",
+              "EMIN",
+              "ALUKES",
+              "MAKLA"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "steps": [
+        {
+          "step": "website_only",
+          "enabledOrigins": [
+            "source-bootshaus-koeln"
+          ]
+        },
+        {
+          "step": "ticket_platform_only",
+          "enabledOrigins": [
+            "source-bootshaus-ticket-io"
+          ]
+        },
+        {
+          "step": "all_origins",
+          "enabledOrigins": [
+            "source-bootshaus-ticket-io",
+            "source-bootshaus-koeln"
+          ],
+          "actual": {
+            "rawArtistNames": [
+              "NIKLAS DEEFABIAN FARELLOLIVER MAGENTATEKNOCLASHDANTH▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years"
+            ],
+            "normalizedArtistNames": [],
+            "structuredEntryCount": 0,
+            "apiArtistNames": []
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "steps": [
+        {
+          "step": "website_only",
+          "enabledOrigins": [
+            "source-affenkaefig",
+            "source-affenkaefig-ticket-kings"
+          ]
+        },
+        {
+          "step": "ticket_platform_only",
+          "enabledOrigins": [
+            "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "source-affenkaefig-ticket-kings",
+            "source-ticket-kings-org-elektrokuche"
+          ]
+        },
+        {
+          "step": "all_origins",
+          "enabledOrigins": [
+            "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "source-affenkaefig",
+            "source-affenkaefig-ticket-kings",
+            "source-ticket-kings-org-elektrokuche"
+          ],
+          "actual": {
+            "rawArtistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ],
+            "normalizedArtistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ],
+            "structuredEntryCount": 14,
+            "apiArtistNames": [
+              "ASL∅",
+              "ANNX",
+              "BLACK ZUSHI",
+              "BOUNCE MC",
+              "HOTBOI2300",
+              "HYPNOTIZED",
+              "ICJ",
+              "MAURO",
+              "STIMULATE",
+              "THE M∅VEMENT",
+              "TOMMY LIBERA",
+              "TURBO TIMOS",
+              "JULEZ BRIXTON",
+              "SEBI LIEMEN"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "steps": [
+        {
+          "step": "website_only",
+          "enabledOrigins": [
+            "source-affenkaefig-ticket-kings",
+            "source-bootshaus-koeln"
+          ]
+        },
+        {
+          "step": "ticket_platform_only",
+          "enabledOrigins": [
+            "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "source-affenkaefig-ticket-kings",
+            "source-bootshaus-ticket-io",
+            "source-ticket-kings-org-elektrokuche"
+          ]
+        },
+        {
+          "step": "all_origins",
+          "enabledOrigins": [
+            "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+            "source-affenkaefig-ticket-kings",
+            "source-bootshaus-koeln",
+            "source-bootshaus-ticket-io",
+            "source-ticket-kings-org-elektrokuche"
+          ],
+          "actual": {
+            "rawArtistNames": [
+              "Kili b2b Complex",
+              "RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS"
+            ],
+            "normalizedArtistNames": [
+              "Kili",
+              "Complex",
+              "RAN-DDEVIN WILDAVERSIONKILI",
+              "COMPLEXZELECTERRESTRICTLESS"
+            ],
+            "structuredEntryCount": 0,
+            "apiArtistNames": []
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "steps": [
+        {
+          "step": "website_only",
+          "enabledOrigins": [
+            "source-affenkaefig"
+          ]
+        },
+        {
+          "step": "ticket_platform_only",
+          "enabledOrigins": []
+        },
+        {
+          "step": "all_origins",
+          "enabledOrigins": [
+            "source-affenkaefig"
+          ],
+          "actual": {
+            "rawArtistNames": [
+              "DYSTOPIA F2F VALKYRIE",
+              "IAN CRANK F2F EASYPYSI",
+              "KARAMUSTAN F2F GREEKZ",
+              "KEVIN LA NIQUE F2F THE RAFNIX",
+              "NINA BENDER F2F LEE-ANN",
+              "FLASH B2B FORWARD",
+              "HELLMYER B2B STZ",
+              "MAURO B2B I.D.A",
+              "PLEA5URE B2B PUL5E"
+            ],
+            "normalizedArtistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTAN",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ],
+            "structuredEntryCount": 9,
+            "apiArtistNames": [
+              "DYSTOPIA",
+              "VALKYRIE",
+              "IAN CRANK",
+              "EASYPYSI",
+              "KARAMUSTAN",
+              "GREEKZ",
+              "KEVIN LA NIQUE",
+              "THE RAFNIX",
+              "NINA BENDER",
+              "LEE-ANN",
+              "FLASH",
+              "FORWARD",
+              "HELLMYER",
+              "STZ",
+              "MAURO",
+              "I.D.A",
+              "PLEA5URE",
+              "PUL5E"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

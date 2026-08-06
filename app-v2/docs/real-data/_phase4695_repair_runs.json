@@ -1,0 +1,2061 @@
+{
+  "generatedAt": "2026-08-03T09:42:29.702Z",
+  "runs": [
+    {
+      "at": "2026-08-03T09:40:37.808Z",
+      "pass": 1,
+      "mutations": 53,
+      "details": [
+        {
+          "eventId": "evt-1785339407876-uqm3mz0",
+          "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "JUNO @ Palma de Mallorca (ES",
+              "JUNONICOLE DA SILVA​",
+              "JUNON ICOLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "JUNO @ Palma de Mallorca (ES",
+              "JUNONICOLE DA SILVA​",
+              "JUNON ICOLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "LEVI"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339409363-puvo8be",
+          "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 2,
+            "legacyCount": 2,
+            "apiArtistNames": [
+              "MAXI MERAKI @ Palma de Mallorca (ES",
+              "MAXI MERAKIMCFLY​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 2,
+            "legacyCount": 2,
+            "apiArtistNames": [
+              "MAXI MERAKI @ Palma de Mallorca (ES",
+              "MAXI MERAKIMCFLY​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339410908-9691748",
+          "title": "Bootshaus pres. BC173 (let's get loco)",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "BC173 (let's get loco"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506435192-azaw5p4",
+          "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/yT7set9a/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Moonbootica"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/yT7set9a/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339388133-sq2ykbm",
+          "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "KAZ JAMES @ Palma de Mallorca (ES",
+              "KAZ JAMESALICIA HAHN​",
+              "KAZ JAMESA LICIA HAHN​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "KAZ JAMES @ Palma de Mallorca (ES",
+              "KAZ JAMESALICIA HAHN​",
+              "KAZ JAMESA LICIA HAHN​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506424190-nk60eqi",
+          "title": "TECHNO DAMPFER Duisburg w/ Pappenheimer",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/QC7jvv0A/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Pappenheimer"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/QC7jvv0A/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339389636-v1tq3hw",
+          "title": "SA * 22.08.2026 | KitKatClub",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://www.vault-events.de/termine/kitkatclub-bootshaus/Veranstalterkontakt:",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "ticket_url:https://bootshaus.ticket.io/→https://www.vault-events.de/termine/kitkatclub-bootshaus/Veranstalterkontakt:"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": "import_candidate_merge",
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506402039-8mam28r",
+          "title": "DIFFERENT SPACES IN CONCERT w/ The Tunegirl",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://lehmannclub.ticket.io/x8fkbb2D/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "The Tunegirl"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://lehmannclub.ticket.io/x8fkbb2D/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339424521-tn10siz",
+          "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 5,
+            "legacyCount": 5,
+            "apiArtistNames": [
+              "TRIPOLISM @ Palma de Mallorca (ES",
+              ". Opening the night",
+              "the German",
+              "duo Jean Philippe & Mole deliver punchy",
+              "organic grooves between Afro House and melodic house"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506433053-ezr3ujo",
+          "title": "TECHNO DAMPFER Düsseldorf w/ Lee Ann Roberts",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/yuLuqTQR/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Lee Ann Roberts"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/yuLuqTQR/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339375946-dszejnk",
+          "title": "Nibirii Festival 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+            "structuredCount": 9,
+            "legacyCount": 9,
+            "apiArtistNames": [
+              "C'MON - Rewi, Sarazar",
+              "Friends",
+              "s once – spanning Techno",
+              "Hardtechno",
+              "Psytrance",
+              "Groove",
+              "Bounce",
+              "Drum & Bass in all its forms.-",
+              "s once – spanning Techno, Hardtechno, Psytrance, Groove, Bounce, Drum & Bass in all its forms.-"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus-club.ticket.io/jNAEFLQG/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506363578-4wh50a1",
+          "title": "FATALITY pres. DEXPHASE",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://proton-the-club.ticket.io/7CwUj7pf/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "DEXPHASE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://proton-the-club.ticket.io/7CwUj7pf/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506426366-bujnxz7",
+          "title": "TECHNO DAMPFER Köln w/ Saltysis",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/pmsUCbbF/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Saltysis"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/pmsUCbbF/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506421633-m1ktkpf",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "R25 Düsseldorf"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://area51events.ticket.io/YSQcd9gq/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339377456-7miaf2o",
+          "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "NOTRE DAME @ Palma de Mallorca (ES",
+              "NOTRE DAMEMEERA",
+              "NOTRE DAMEM EERA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "NOTRE DAME @ Palma de Mallorca (ES",
+              "NOTRE DAMEMEERA",
+              "NOTRE DAMEM EERA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506441963-td8znfi",
+          "title": "TECHNO DAMPFER Hamburg w/ A.D.H.S",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/fTQxM4u1/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "A.D.H.S"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/fTQxM4u1/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339413919-ix5umo9",
+          "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "MARTEN LOU @ Palma de Mallorca (ES",
+              "MARTEN LOUNICOLE DA SILVA​",
+              "MARTEN LOUNI COLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "MARTEN LOU @ Palma de Mallorca (ES",
+              "MARTEN LOUNICOLE DA SILVA​",
+              "MARTEN LOUNI COLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339283846-89x0jcd",
+          "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bit.ly/ZAAGSTEPFor",
+            "structuredCount": 18,
+            "legacyCount": 18,
+            "apiArtistNames": [
+              "ZAAGSTEP by Dr Donk",
+              "A-ZDr Donk pres. ZAAGSTEP (Album Showcase)",
+              "Dr Donk",
+              "Yoshiko",
+              "GPF",
+              "Invaderz",
+              "Lekkerfaces",
+              "MADCORE",
+              "Must",
+              "Die!",
+              "Revenge Of The Nerds (Albino",
+              "Dr",
+              "Donk",
+              "Ricky West)",
+              "Drum & Bass &times",
+              "Zaag &times",
+              "Uptempo crossover concept⚡ Hosted by BLACKLIST & INURFASE",
+              "Must Die!"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://bit.ly/ZAAGSTEPFor",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506366010-1npnra9",
+          "title": "100% SCHRANZ pres. NIKOLINA",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://proton-the-club.ticket.io/ckmflhlc/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "NIKOLINA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://proton-the-club.ticket.io/ckmflhlc/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506439487-2hr731q",
+          "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Teenage Mutants"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339378982-kp48td0",
+          "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 6,
+            "legacyCount": 6,
+            "apiArtistNames": [
+              ".MAINFLOOR:CLEOPARD2000",
+              "ALBA",
+              "FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+              "ALBA FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 6,
+            "legacyCount": 6,
+            "apiArtistNames": [
+              ".MAINFLOOR:CLEOPARD2000",
+              "ALBA",
+              "FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+              "ALBA FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339392687-tbdwup4",
+          "title": "BC173 Airport Session pres. by Bootshaus",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506430597-ufglza0",
+          "title": "TECHNO DAMPFER Düsseldorf w/ Klaudia Gawlas",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/kVMC3cKZ/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Klaudia Gawlas"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/kVMC3cKZ/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506428527-m5ugmjh",
+          "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Felix Kröcher"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339397255-frpjss3",
+          "title": "Unreal Weekender Night I - September 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "A-Z: AFEM SYKO BIIANCO JOHANNES SCHUSTER KOTORRI MAD DOG NIKOLINA PIXIE DUST WILL ATKINSON"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339412398-hq6217j",
+          "title": "Unreal Weekender Night II - September 2026",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 8,
+            "legacyCount": 8,
+            "apiArtistNames": [
+              "ANNIE DJ DRECK ISCH DVAID GLANZ",
+              "ROSILI CIOUS KARAH",
+              "KUKO TASSERY TRIPTYKH",
+              "GOLPE",
+              "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+              "ROSILICIOUS KARAH KUKO",
+              "TASSERY TRIPTYKH",
+              "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 8,
+            "legacyCount": 8,
+            "apiArtistNames": [
+              "ANNIE DJ DRECK ISCH DVAID GLANZ",
+              "ROSILI CIOUS KARAH",
+              "KUKO TASSERY TRIPTYKH",
+              "GOLPE",
+              "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+              "ROSILICIOUS KARAH KUKO",
+              "TASSERY TRIPTYKH",
+              "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506419485-ty33rrb",
+          "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://area51events.ticket.io/pK21qzGB/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "R25 Düsseldorf"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://area51events.ticket.io/pK21qzGB/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785570943560-f5g5rj5",
+          "title": "NIBIRII pres. ELY OAKS!",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "ELY OAKS!"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339398765-9lptzhg",
+          "title": "Blacklist Festival 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 44,
+            "legacyCount": 44,
+            "apiArtistNames": [
+              "ECRAZE",
+              "BIZO",
+              "KARA",
+              "YOUPH ORIA",
+              "MADCORE",
+              "ELLIE RICH",
+              "VDV",
+              "MISCALL",
+              "(A–Z):A.M.C",
+              "AKIRAH",
+              "AUTODRIVE",
+              "AUTOPSKI",
+              "BLANKE PRESENTS: FALLOUT",
+              "BURR OAK",
+              "DJ MII",
+              "EPTIC",
+              "ESKEI83",
+              "FLUX PAVILION",
+              "FORMULA",
+              "GLADDE PALING",
+              "GOURSKI",
+              "HAMMERHEAD",
+              "K MOTIONZ",
+              "Ricky West)",
+              "KANINE",
+              "YOUPHORIA",
+              "KOVEN",
+              "KREWELLA",
+              "MACHINYST",
+              "MEFJUS",
+              "NOIZBOIZ",
+              "PRIMATE",
+              "RIOT",
+              "SAMPLIFIRE",
+              "SKIYE",
+              "STOOG3S",
+              "THE RESISTANCE",
+              "UPGRADE",
+              "ZOMBOY",
+              "[IVY]",
+              "[SAFYRE]",
+              "&AElig",
+              "ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10",
+              "2026"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506444104-084yf4g",
+          "title": "TECHNO DAMPFER Amsterdam w/ Anna Reusch",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://technodampfer.ticket.io/TFDZWEAD/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Anna Reusch"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://technodampfer.ticket.io/TFDZWEAD/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339400315-1mx4foh",
+          "title": "Bootshaus & Loonyland pres. Halloween 2026",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "Halloween 2026"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506417389-t2f9fu4",
+          "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://area51events.ticket.io/aLr3YQLG/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "AMPERE Düsseldorf"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://area51events.ticket.io/aLr3YQLG/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339401841-by9uoyc",
+          "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "KUKO All Night Long World Tour (Cologne"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785506415247-c9ykti2",
+          "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://area51events.ticket.io/Z5ZN42qw/",
+            "structuredCount": 1,
+            "legacyCount": 1,
+            "apiArtistNames": [
+              "R25 Düsseldorf"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "after": {
+            "ticketUrl": "https://area51events.ticket.io/Z5ZN42qw/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": false
+          },
+          "actions": [
+            "clear_stale_lineup"
+          ],
+          "rootCauseRemoved": true,
+          "remainingBlocker": "external_detail_blocked",
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        }
+      ]
+    },
+    {
+      "at": "2026-08-03T09:41:47.660Z",
+      "pass": 1,
+      "mutations": 0,
+      "details": [
+        {
+          "eventId": "evt-1785339407876-uqm3mz0",
+          "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "JUNO @ Palma de Mallorca (ES",
+              "JUNONICOLE DA SILVA​",
+              "JUNON ICOLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "JUNO @ Palma de Mallorca (ES",
+              "JUNONICOLE DA SILVA​",
+              "JUNON ICOLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339409363-puvo8be",
+          "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 2,
+            "legacyCount": 2,
+            "apiArtistNames": [
+              "MAXI MERAKI @ Palma de Mallorca (ES",
+              "MAXI MERAKIMCFLY​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 2,
+            "legacyCount": 2,
+            "apiArtistNames": [
+              "MAXI MERAKI @ Palma de Mallorca (ES",
+              "MAXI MERAKIMCFLY​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339410908-9691748",
+          "title": "Bootshaus pres. BC173 (let's get loco)",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339388133-sq2ykbm",
+          "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "KAZ JAMES @ Palma de Mallorca (ES",
+              "KAZ JAMESALICIA HAHN​",
+              "KAZ JAMESA LICIA HAHN​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "KAZ JAMES @ Palma de Mallorca (ES",
+              "KAZ JAMESALICIA HAHN​",
+              "KAZ JAMESA LICIA HAHN​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339424521-tn10siz",
+          "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339377456-7miaf2o",
+          "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "NOTRE DAME @ Palma de Mallorca (ES",
+              "NOTRE DAMEMEERA",
+              "NOTRE DAMEM EERA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "NOTRE DAME @ Palma de Mallorca (ES",
+              "NOTRE DAMEMEERA",
+              "NOTRE DAMEM EERA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339413919-ix5umo9",
+          "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "MARTEN LOU @ Palma de Mallorca (ES",
+              "MARTEN LOUNICOLE DA SILVA​",
+              "MARTEN LOUNI COLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "MARTEN LOU @ Palma de Mallorca (ES",
+              "MARTEN LOUNICOLE DA SILVA​",
+              "MARTEN LOUNI COLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339378982-kp48td0",
+          "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 6,
+            "legacyCount": 6,
+            "apiArtistNames": [
+              ".MAINFLOOR:CLEOPARD2000",
+              "ALBA",
+              "FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+              "ALBA FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 6,
+            "legacyCount": 6,
+            "apiArtistNames": [
+              ".MAINFLOOR:CLEOPARD2000",
+              "ALBA",
+              "FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+              "ALBA FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339392687-tbdwup4",
+          "title": "BC173 Airport Session pres. by Bootshaus",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339397255-frpjss3",
+          "title": "Unreal Weekender Night I - September 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339412398-hq6217j",
+          "title": "Unreal Weekender Night II - September 2026",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 8,
+            "legacyCount": 8,
+            "apiArtistNames": [
+              "ANNIE DJ DRECK ISCH DVAID GLANZ",
+              "ROSILI CIOUS KARAH",
+              "KUKO TASSERY TRIPTYKH",
+              "GOLPE",
+              "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+              "ROSILICIOUS KARAH KUKO",
+              "TASSERY TRIPTYKH",
+              "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 8,
+            "legacyCount": 8,
+            "apiArtistNames": [
+              "ANNIE DJ DRECK ISCH DVAID GLANZ",
+              "ROSILI CIOUS KARAH",
+              "KUKO TASSERY TRIPTYKH",
+              "GOLPE",
+              "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+              "ROSILICIOUS KARAH KUKO",
+              "TASSERY TRIPTYKH",
+              "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339398765-9lptzhg",
+          "title": "Blacklist Festival 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        }
+      ]
+    },
+    {
+      "at": "2026-08-03T09:42:29.702Z",
+      "pass": 2,
+      "mutations": 0,
+      "details": [
+        {
+          "eventId": "evt-1785339407876-uqm3mz0",
+          "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "JUNO @ Palma de Mallorca (ES",
+              "JUNONICOLE DA SILVA​",
+              "JUNON ICOLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "JUNO @ Palma de Mallorca (ES",
+              "JUNONICOLE DA SILVA​",
+              "JUNON ICOLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339409363-puvo8be",
+          "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 2,
+            "legacyCount": 2,
+            "apiArtistNames": [
+              "MAXI MERAKI @ Palma de Mallorca (ES",
+              "MAXI MERAKIMCFLY​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 2,
+            "legacyCount": 2,
+            "apiArtistNames": [
+              "MAXI MERAKI @ Palma de Mallorca (ES",
+              "MAXI MERAKIMCFLY​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339410908-9691748",
+          "title": "Bootshaus pres. BC173 (let's get loco)",
+          "rootCause": "H_TITLE_INFERENCE_PROMOTED",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": true,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339388133-sq2ykbm",
+          "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "KAZ JAMES @ Palma de Mallorca (ES",
+              "KAZ JAMESALICIA HAHN​",
+              "KAZ JAMESA LICIA HAHN​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "KAZ JAMES @ Palma de Mallorca (ES",
+              "KAZ JAMESALICIA HAHN​",
+              "KAZ JAMESA LICIA HAHN​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339424521-tn10siz",
+          "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339377456-7miaf2o",
+          "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "NOTRE DAME @ Palma de Mallorca (ES",
+              "NOTRE DAMEMEERA",
+              "NOTRE DAMEM EERA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "NOTRE DAME @ Palma de Mallorca (ES",
+              "NOTRE DAMEMEERA",
+              "NOTRE DAMEM EERA"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339413919-ix5umo9",
+          "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "MARTEN LOU @ Palma de Mallorca (ES",
+              "MARTEN LOUNICOLE DA SILVA​",
+              "MARTEN LOUNI COLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 3,
+            "legacyCount": 3,
+            "apiArtistNames": [
+              "MARTEN LOU @ Palma de Mallorca (ES",
+              "MARTEN LOUNICOLE DA SILVA​",
+              "MARTEN LOUNI COLE DA SILVA​"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339378982-kp48td0",
+          "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+          "rootCause": "D_RAW_SOURCE_INSUFFICIENT",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 6,
+            "legacyCount": 6,
+            "apiArtistNames": [
+              ".MAINFLOOR:CLEOPARD2000",
+              "ALBA",
+              "FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+              "ALBA FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 6,
+            "legacyCount": 6,
+            "apiArtistNames": [
+              ".MAINFLOOR:CLEOPARD2000",
+              "ALBA",
+              "FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMi LOWSATYS FYRE",
+              "ALBA FRANCHDAVYBOI",
+              "TRANCEMASTER KRAUSEMIKA HEGGEMANNPRADA2000TESTPRESSBLCKBX:ELOTRANCEHITMiLOWSATYS FYRE"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339392687-tbdwup4",
+          "title": "BC173 Airport Session pres. by Bootshaus",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339397255-frpjss3",
+          "title": "Unreal Weekender Night I - September 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339412398-hq6217j",
+          "title": "Unreal Weekender Night II - September 2026",
+          "rootCause": null,
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 8,
+            "legacyCount": 8,
+            "apiArtistNames": [
+              "ANNIE DJ DRECK ISCH DVAID GLANZ",
+              "ROSILI CIOUS KARAH",
+              "KUKO TASSERY TRIPTYKH",
+              "GOLPE",
+              "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+              "ROSILICIOUS KARAH KUKO",
+              "TASSERY TRIPTYKH",
+              "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 8,
+            "legacyCount": 8,
+            "apiArtistNames": [
+              "ANNIE DJ DRECK ISCH DVAID GLANZ",
+              "ROSILI CIOUS KARAH",
+              "KUKO TASSERY TRIPTYKH",
+              "GOLPE",
+              "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+              "ROSILICIOUS KARAH KUKO",
+              "TASSERY TRIPTYKH",
+              "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+            ],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        },
+        {
+          "eventId": "evt-1785339398765-9lptzhg",
+          "title": "Blacklist Festival 2026",
+          "rootCause": "G_DESCRIPTION_AS_LINEUP",
+          "before": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "after": {
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "structuredCount": 0,
+            "legacyCount": 0,
+            "apiArtistNames": [],
+            "titleInferenceProvenance": false,
+            "genericTicket": true
+          },
+          "actions": [],
+          "rootCauseRemoved": false,
+          "remainingBlocker": null,
+          "winningOrigin": null,
+          "ticketUrlOrigin": null,
+          "lineupOrigin": null
+        }
+      ]
+    }
+  ]
+}

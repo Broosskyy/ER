@@ -1,0 +1,2923 @@
+{
+  "generatedAt": "2026-08-04T14:32:31.365Z",
+  "readOnly": true,
+  "referenceEventId": "evt-1785339420043-obhyeev",
+  "matrix": [
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Persistence",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "LEVI persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Persistence",
+      "rootCause": "Ticket URL never persisted as event-specific page",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "LEVI import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "LEVI missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "LEVI attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "LEVI external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "LEVI has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "LEVI missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "NIGHTSWITHUS presents LEVI",
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "label": "LEVI",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "LEVI lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Underland persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Underland missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Underland import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Underland missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Underland attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Underland external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Underland has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Underland missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Underland Essigfabrik 05.09.2026",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "label": "Underland",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Underland lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Sommerfest Elektroküche persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Sommerfest Elektroküche missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Sommerfest Elektroküche import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Sommerfest Elektroküche missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Persistence",
+      "domain": "ticketPhases",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Sommerfest Elektroküche missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Sommerfest Elektroküche attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Sommerfest Elektroküche external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Sommerfest Elektroküche has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Sommerfest Elektroküche missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Sommerfest Elektroküche 08.08.2026",
+      "eventId": "evt-1785389055557-ux20897",
+      "label": "Sommerfest Elektroküche",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Sommerfest Elektroküche lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "MDMA 10.10 persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA 10.10 missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "MDMA 10.10 import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA 10.10 missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Persistence",
+      "domain": "ticketPhases",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA 10.10 missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "MDMA 10.10 attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "MDMA 10.10 external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Connector",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "MDMA 10.10 has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Connector",
+      "rootCause": "Connector did not emit structured lineup entries",
+      "repairStrategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA 10.10 missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "eventId": "evt-1785443911160-owt97y3",
+      "label": "MDMA 10.10",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "MDMA 10.10 lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "MDMA F2F persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA F2F missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "MDMA F2F import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA F2F missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Persistence",
+      "domain": "ticketPhases",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA F2F missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "MDMA F2F attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "MDMA F2F external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "MDMA F2F has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "MDMA F2F missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "label": "MDMA F2F",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "MDMA F2F lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "PROTON Stuttgart persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "PROTON Stuttgart missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "PROTON Stuttgart import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "PROTON Stuttgart missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Persistence",
+      "domain": "ticketPhases",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "PROTON Stuttgart missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "PROTON Stuttgart attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "PROTON Stuttgart external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Connector",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "PROTON Stuttgart has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Connector",
+      "rootCause": "Connector did not emit structured lineup entries",
+      "repairStrategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "PROTON Stuttgart missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "eventId": "evt-1785443914377-7g9l545",
+      "label": "PROTON Stuttgart",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "PROTON Stuttgart lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Affenkäfig persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Affenkäfig import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Affenkäfig missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Affenkäfig attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Affenkäfig external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Affenkäfig has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Affenkäfig missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "eventId": "evt-1785339005035-wam829k",
+      "label": "Affenkäfig",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Affenkäfig lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Persistence",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Unreal Weekender I persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Persistence",
+      "rootCause": "Ticket URL never persisted as event-specific page",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Unreal Weekender I import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Unreal Weekender I missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Persistence",
+      "domain": "ticketPhases",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Unreal Weekender I missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Unreal Weekender I attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Unreal Weekender I external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Unreal Weekender I has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Unreal Weekender I missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Unreal Weekender Night I - September 2026",
+      "eventId": "evt-1785339397255-frpjss3",
+      "label": "Unreal Weekender I",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Unreal Weekender I lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Merge",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Unreal Weekender II persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Merge",
+      "rootCause": "Multi-origin merge selected different ticket URL than reference archetype",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Unreal Weekender II import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Unreal Weekender II missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Persistence",
+      "domain": "ticketPhases",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Unreal Weekender II missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Unreal Weekender II attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Unreal Weekender II external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Connector",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Unreal Weekender II has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Connector",
+      "rootCause": "Connector did not emit structured lineup entries",
+      "repairStrategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Unreal Weekender II missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Unreal Weekender Night II - September 2026",
+      "eventId": "evt-1785339412398-hq6217j",
+      "label": "Unreal Weekender II",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Unreal Weekender II lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Persistence",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Blacklist Festival persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Persistence",
+      "rootCause": "Ticket URL never persisted as event-specific page",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Blacklist Festival import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Blacklist Festival missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Blacklist Festival attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Blacklist Festival external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Blacklist Festival has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Blacklist Festival missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "label": "Blacklist Festival",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Blacklist Festival lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Persistence",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Palma (TRIPOLISM) persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Persistence",
+      "rootCause": "Ticket URL never persisted as event-specific page",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Palma (TRIPOLISM) missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Palma (TRIPOLISM) import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Palma (TRIPOLISM) missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Palma (TRIPOLISM) attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Palma (TRIPOLISM) external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Connector",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Palma (TRIPOLISM) has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Connector",
+      "rootCause": "Connector did not emit structured lineup entries",
+      "repairStrategy": "repairLineupProjection from best import record",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Palma (TRIPOLISM) missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "eventId": "evt-1785339424521-tn10siz",
+      "label": "Palma (TRIPOLISM)",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Palma (TRIPOLISM) lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Persistence",
+      "domain": "ticketUrl",
+      "expectedBehaviour": "bootshaus-club.ticket.io/wUc3uQrR/ event slug persisted from ticket.io enrichment",
+      "actualBehaviour": "Technodampfer Köln persisted shop root or wrong-origin ticket URL",
+      "firstDivergence": "Persistence",
+      "rootCause": "Ticket URL never persisted as event-specific page",
+      "repairStrategy": "Re-merge with event-specific ticket.io slug; reject shop roots when better candidate exists",
+      "codePath": "merge-strategy.ts pickPreferredValue + ticket-url-quality resolveBetterTicketUrl → canonical-ticket-selection selectCanonicalTicket"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Persistence",
+      "domain": "provider",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Technodampfer Köln missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Source",
+      "domain": "price",
+      "expectedBehaviour": "Ship has priceText from bootshaus.tv description / ticket.io merge with explicit \"Tickets ab 32,00 Euro\"",
+      "actualBehaviour": "Technodampfer Köln import origins lack priceText at normalization stage",
+      "firstDivergence": "Source",
+      "rootCause": "No price evidence in any import origin",
+      "repairStrategy": "Require ticket_platform_detail or embedded_metadata origin",
+      "codePath": "connectors/ticket-platform/normalize-ticket-event.ts → import publish → events.price_text; fallback: field-fallback-priority priceText chain"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Persistence",
+      "domain": "availability",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Technodampfer Köln missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Projection",
+      "domain": "badges",
+      "expectedBehaviour": "Ship has sold_out availability → ticket badge; attributes not review-gated",
+      "actualBehaviour": "Technodampfer Köln attributes filtered or availability unknown",
+      "firstDivergence": "Projection",
+      "rootCause": "eventAttributes persisted but projectEventAttributeBadges filters reviewRequired/excluded types; or ticket badge requires price+availability",
+      "repairStrategy": "Clear reviewRequired on attributes; ensure availability maps to badge",
+      "codePath": "event-attribute-badge-projection.ts BADGE_EXCLUDED_TYPES; ticket-badge-projection.ts mapCanonicalAvailabilityToTicketBadge"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Merge",
+      "domain": "venue",
+      "expectedBehaviour": "Ship event is genuinely at Bootshaus/KD Boot — venue matches source",
+      "actualBehaviour": "Technodampfer Köln external geography but canonical venue empty or wrong",
+      "firstDivergence": "Merge",
+      "rootCause": "venueName mergeRule owner_wins gave organizer/shop default over external geography",
+      "repairStrategy": "Apply explicit external venue from import description (\"not at Bootshaus\")",
+      "codePath": "source-field-ownership-matrix venueName + merge-strategy fieldAuthority → events.venue_name"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Source",
+      "domain": "lineup",
+      "expectedBehaviour": "Description LINEUP block + flyer evidence produced 4 structured B2B entries",
+      "actualBehaviour": "Technodampfer Köln has no structured entries; list-only or prose-only source text",
+      "firstDivergence": "Source",
+      "rootCause": "Flyer artwork present but OCR provider not configured; import text insufficient",
+      "repairStrategy": "OCR/flyer evidence pipeline (blocked in 4.7.5) or manual structured lineup",
+      "codePath": "import-structured-lineup-from-record.ts → canonical-structured-lineup-writer.ts → event_lineup_entries; fallback: event_artists compatibility"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "Persistence",
+      "domain": "flyer",
+      "expectedBehaviour": "Reference event has complete field evidence",
+      "actualBehaviour": "Technodampfer Köln missing or different field value",
+      "firstDivergence": "Persistence",
+      "rootCause": "Field diverges from reference at persistence or projection",
+      "repairStrategy": "Compare import origins vs persisted canonical",
+      "codePath": "See pipeline trace stages"
+    },
+    {
+      "event": "TECHNO DAMPFER Köln w/ Saltysis",
+      "eventId": "evt-1785506426366-bujnxz7",
+      "label": "Technodampfer Köln",
+      "pipelineStage": "ViewModel",
+      "domain": "consumerProjection",
+      "expectedBehaviour": "Clean structured lineup projects to knownArtistNames",
+      "actualBehaviour": "Technodampfer Köln lineup filtered or empty at ViewModel",
+      "firstDivergence": "ViewModel",
+      "rootCause": "ViewModel drops fields not in canonical projection",
+      "repairStrategy": "Remove garbage artist entities; fix upstream lineup",
+      "codePath": "display-event.ts toEventDisplayModel → event-detail-view-model.ts"
+    }
+  ],
+  "traces": {
+    "shipReference": {
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null,
+            null
+          ],
+          "persistence": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "canonical": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "viewModel": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null,
+            null,
+            null
+          ],
+          "persistence": "Tickets ab 32,00 Euro",
+          "canonical": "Tickets ab 32,00 Euro",
+          "projection": "ab 32,00 €",
+          "viewModel": "ab 32,00 €"
+        },
+        "availability": {
+          "persistence": "sold_out",
+          "canonical": "sold_out",
+          "badge": "sold_out"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 2,
+          "attributeBadgesProjected": 1,
+          "ticketBadge": "sold_out",
+          "viewModelBadges": [
+            "Boat"
+          ]
+        },
+        "venue": {
+          "import": [
+            {},
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "KD Anleger Nr. 2",
+            "city": "Köln"
+          },
+          "projection": {
+            "label": "KD Anleger Nr. 2",
+            "city": "Köln",
+            "coords": true
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 4,
+          "compatibilityCount": 8,
+          "canonicalState": "structured",
+          "projectedArtists": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ],
+          "viewModelArtists": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ],
+          "ocrStatus": "text_extracted",
+          "flyerTextLines": 3
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+          "ocrStatus": "text_extracted"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "officialEventUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+          "displayPriceText": "ab 32,00 €",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [
+            "BRANDON",
+            "SAM COLLINS",
+            "OLIVER MAGENTA",
+            "LOST IDENTITY",
+            "DAVE REPLAY",
+            "EMIN",
+            "ALUKES",
+            "MAKLA"
+          ],
+          "attributeBadgeCount": 1,
+          "attributeBadges": [
+            "Boat"
+          ],
+          "galleryCount": 1,
+          "ticketAvailability": "sold_out",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": false,
+        "garbageArtists": 0
+      }
+    },
+    "levi": {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null
+          ],
+          "persistence": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "canonical": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "viewModel": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null
+          ]
+        },
+        "availability": {
+          "persistence": "external_link",
+          "canonical": "available",
+          "badge": "available"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "available",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {}
+          ],
+          "persistence": {
+            "name": "Bootshaus",
+            "city": "Köln",
+            "id": "venue-bootshaus-koeln"
+          },
+          "projection": {
+            "label": "Bootshaus",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+          "officialEventUrl": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "external_link",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": false,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "underland": {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null
+          ],
+          "persistence": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "canonical": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "viewModel": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-affenkaefig",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null,
+            null
+          ],
+          "persistence": "Tickets ab 23,90 Euro",
+          "canonical": "Tickets ab 23,90 Euro",
+          "projection": "ab 23,90 €",
+          "viewModel": "ab 23,90 €"
+        },
+        "availability": {
+          "persistence": "external_link",
+          "canonical": "available",
+          "badge": "available"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "available",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Essigfabrik / Elektroküche",
+            "city": "Köln"
+          },
+          "projection": {
+            "label": "Essigfabrik / Elektroküche",
+            "city": "Köln",
+            "coords": true
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "officialEventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+          "displayPriceText": "ab 23,90 €",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "external_link",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "sommerfest": {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "canonical": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "viewModel": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "shopRoot": false,
+          "destinationClass": "direct_purchase"
+        },
+        "provider": {
+          "persistence": "source-affenkaefig",
+          "projection": "Ticket Kings",
+          "viewModel": "Ticket Kings"
+        },
+        "price": {
+          "import": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "ab 15,00 €",
+          "canonical": "15,00 €",
+          "projection": "ab 15,00 €",
+          "viewModel": "ab 15,00 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 1
+        },
+        "badges": {
+          "attributesPersisted": 3,
+          "attributeBadgesProjected": 3,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": [
+            "Multi Floor",
+            "Indoor",
+            "Indoor & Outdoor"
+          ]
+        },
+        "venue": {
+          "import": [
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Essigfabrik",
+            "city": "Köln"
+          },
+          "projection": {
+            "label": "Essigfabrik",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 14,
+          "compatibilityCount": 14,
+          "canonicalState": "structured",
+          "projectedArtists": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ],
+          "viewModelArtists": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "officialEventUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+          "displayPriceText": "ab 15,00 €",
+          "ticketProviderLabel": "Ticket Kings",
+          "knownArtistNames": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ],
+          "attributeBadgeCount": 3,
+          "attributeBadges": [
+            "Multi Floor",
+            "Indoor",
+            "Indoor & Outdoor"
+          ],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets kaufen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "mdma1010": {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "canonical": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "viewModel": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "shopRoot": false,
+          "destinationClass": "direct_purchase"
+        },
+        "provider": {
+          "persistence": "source-affenkaefig-ticket-kings",
+          "projection": "Ticket Kings",
+          "viewModel": "Ticket Kings"
+        },
+        "price": {
+          "import": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "ab 15,00 €",
+          "canonical": "15,00 €",
+          "projection": "ab 15,00 €",
+          "viewModel": "ab 15,00 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 1
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {},
+            {},
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Essigfabrik",
+            "city": "Köln"
+          },
+          "projection": {
+            "label": "Essigfabrik",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "text_extracted",
+          "flyerTextLines": 3
+        },
+        "flyer": {
+          "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+          "ocrStatus": "text_extracted"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "officialEventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "displayPriceText": "ab 15,00 €",
+          "ticketProviderLabel": "Ticket Kings",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets kaufen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": false,
+        "garbageArtists": 0
+      }
+    },
+    "mdmaF2F": {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null,
+            null
+          ],
+          "persistence": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "canonical": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "viewModel": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "shopRoot": false,
+          "destinationClass": "direct_purchase"
+        },
+        "provider": {
+          "persistence": "source-affenkaefig",
+          "projection": "Ticket Kings",
+          "viewModel": "Ticket Kings"
+        },
+        "price": {
+          "import": [
+            null,
+            null,
+            null
+          ],
+          "persistence": "ab 20,00 €",
+          "canonical": "20,00 €",
+          "projection": "ab 20,00 €",
+          "viewModel": "ab 20,00 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 1
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {},
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Essigfabrik / Elektroküche",
+            "city": "Köln"
+          },
+          "projection": {
+            "label": "Essigfabrik / Elektroküche",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 9,
+          "compatibilityCount": 18,
+          "canonicalState": "structured",
+          "projectedArtists": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ],
+          "viewModelArtists": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "officialEventUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+          "displayPriceText": "ab 20,00 €",
+          "ticketProviderLabel": "Ticket Kings",
+          "knownArtistNames": [
+            "DYSTOPIA",
+            "VALKYRIE",
+            "IAN CRANK",
+            "EASYPYSI",
+            "KARAMUSTAN",
+            "GREEKZ",
+            "KEVIN LA NIQUE",
+            "THE RAFNIX",
+            "NINA BENDER",
+            "LEE-ANN",
+            "FLASH",
+            "FORWARD",
+            "HELLMYER",
+            "STZ",
+            "MAURO",
+            "I.D.A",
+            "PLEA5URE",
+            "PUL5E"
+          ],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets kaufen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "proton": {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "canonical": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "viewModel": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "shopRoot": false,
+          "destinationClass": "direct_purchase"
+        },
+        "provider": {
+          "persistence": "source-affenkaefig-ticket-kings",
+          "projection": "Ticket Kings",
+          "viewModel": "Ticket Kings"
+        },
+        "price": {
+          "import": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "ab 15,00 €",
+          "canonical": "15,00 €",
+          "projection": "ab 15,00 €",
+          "viewModel": "ab 15,00 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 1
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {},
+            {},
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Proton Stuttgart",
+            "city": "Stuttgart"
+          },
+          "projection": {
+            "label": "Proton Stuttgart",
+            "city": "Stuttgart",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "text_extracted",
+          "flyerTextLines": 5
+        },
+        "flyer": {
+          "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+          "ocrStatus": "text_extracted"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "officialEventUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+          "displayPriceText": "ab 15,00 €",
+          "ticketProviderLabel": "Ticket Kings",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets kaufen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": false,
+        "garbageArtists": 0
+      }
+    },
+    "affenkaefig": {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "canonical": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "viewModel": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "persistence": "Tickets ab 19,90 Euro",
+          "canonical": "Tickets ab 19,90 Euro",
+          "projection": "ab 19,90 €",
+          "viewModel": "ab 19,90 €"
+        },
+        "availability": {
+          "persistence": "external_link",
+          "canonical": "available",
+          "badge": "available"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "available",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {},
+            {},
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Bootshaus",
+            "city": "Köln",
+            "id": "venue-bootshaus-koeln"
+          },
+          "projection": {
+            "label": "Bootshaus",
+            "city": "Köln",
+            "coords": true
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8581948328378297824282182_6383504060263551298271971.jpeg",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+          "officialEventUrl": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln",
+          "displayPriceText": "ab 19,90 €",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "external_link",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "unrealI": {
+      "eventId": "evt-1785339397255-frpjss3",
+      "title": "Unreal Weekender Night I - September 2026",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null
+          ],
+          "persistence": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+          "canonical": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+          "viewModel": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null
+          ],
+          "persistence": "ab 45,00 €",
+          "canonical": "45,00 €",
+          "projection": "ab 45,00 €",
+          "viewModel": "ab 45,00 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 1
+        },
+        "badges": {
+          "attributesPersisted": 1,
+          "attributeBadgesProjected": 1,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": [
+            "Weekender"
+          ]
+        },
+        "venue": {
+          "import": [
+            {}
+          ],
+          "persistence": {
+            "name": "Bootshaus",
+            "city": "Köln",
+            "id": "venue-bootshaus-koeln"
+          },
+          "projection": {
+            "label": "Bootshaus",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+          "officialEventUrl": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026",
+          "displayPriceText": "ab 45,00 €",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 1,
+          "attributeBadges": [
+            "Weekender"
+          ],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": false,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "unrealII": {
+      "eventId": "evt-1785339412398-hq6217j",
+      "title": "Unreal Weekender Night II - September 2026",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null,
+            null
+          ],
+          "persistence": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+          "canonical": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+          "viewModel": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null,
+            null
+          ],
+          "persistence": "ab 45,00 €",
+          "canonical": "45,00 €",
+          "projection": "ab 45,00 €",
+          "viewModel": "ab 45,00 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 1
+        },
+        "badges": {
+          "attributesPersisted": 1,
+          "attributeBadgesProjected": 1,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": [
+            "Weekender"
+          ]
+        },
+        "venue": {
+          "import": [
+            {},
+            {}
+          ],
+          "persistence": {
+            "name": "Bootshaus",
+            "city": "Köln",
+            "id": "venue-bootshaus-koeln"
+          },
+          "projection": {
+            "label": "Bootshaus",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 8,
+          "compatibilityCount": 8,
+          "canonicalState": "structured",
+          "projectedArtists": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ],
+          "viewModelArtists": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ],
+          "ocrStatus": "text_extracted",
+          "flyerTextLines": 3
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg",
+          "ocrStatus": "text_extracted"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+          "officialEventUrl": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026",
+          "displayPriceText": "ab 45,00 €",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [
+            "ANNIE DJ DRECK ISCH DVAID GLANZ",
+            "ROSILI CIOUS KARAH",
+            "KUKO TASSERY TRIPTYKH",
+            "GOLPE",
+            "A-Z: ANNIE DJ DRECKISCH DVAID GLANZ",
+            "ROSILICIOUS KARAH KUKO",
+            "TASSERY TRIPTYKH",
+            "ROSILICIOUS KARAH KUKO TASSERY TRIPTYKH"
+          ],
+          "attributeBadgeCount": 1,
+          "attributeBadges": [
+            "Weekender"
+          ],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": true,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": false,
+        "garbageArtists": 0
+      }
+    },
+    "blacklist": {
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null
+          ],
+          "persistence": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+          "canonical": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+          "viewModel": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null
+          ]
+        },
+        "availability": {
+          "canonical": "unknown"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 1,
+          "attributeBadgesProjected": 1,
+          "viewModelBadges": [
+            "Festival"
+          ]
+        },
+        "venue": {
+          "import": [
+            {}
+          ],
+          "persistence": {
+            "name": "Bootshaus",
+            "city": "Köln",
+            "id": "venue-bootshaus-koeln"
+          },
+          "projection": {
+            "label": "Bootshaus",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+          "officialEventUrl": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 1,
+          "attributeBadges": [
+            "Festival"
+          ],
+          "galleryCount": 1,
+          "ticketAvailability": "external_link",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": false,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    },
+    "palma": {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null
+          ],
+          "canonical": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+          "viewModel": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+          "shopRoot": false,
+          "destinationClass": "official_event_page"
+        },
+        "provider": {
+          "persistence": "source-bootshaus-koeln",
+          "projection": "Veranstalterseite",
+          "viewModel": "Veranstalterseite"
+        },
+        "price": {
+          "import": [
+            null
+          ]
+        },
+        "availability": {
+          "canonical": "unknown"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 1,
+          "attributeBadgesProjected": 1,
+          "viewModelBadges": [
+            "Festival"
+          ]
+        },
+        "venue": {
+          "import": [
+            {}
+          ],
+          "persistence": {
+            "city": "Palma de Mallorca"
+          },
+          "projection": {
+            "label": "",
+            "city": "Palma de Mallorca",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "text_extracted",
+          "flyerTextLines": 1
+        },
+        "flyer": {
+          "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5917405727420453304224506_9628350533800786356032660.png",
+          "ocrStatus": "text_extracted"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+          "officialEventUrl": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+          "ticketProviderLabel": "Veranstalterseite",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 1,
+          "attributeBadges": [
+            "Festival"
+          ],
+          "galleryCount": 1,
+          "ticketAvailability": "external_link",
+          "ticketCtaLabel": "Eventseite öffnen"
+        }
+      },
+      "signals": {
+        "competingOrigins": false,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": false,
+        "garbageArtists": 0
+      }
+    },
+    "technodampfer": {
+      "eventId": "evt-1785506426366-bujnxz7",
+      "title": "TECHNO DAMPFER Köln w/ Saltysis",
+      "domains": {
+        "ticketUrl": {
+          "import": [
+            null
+          ],
+          "persistence": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "canonical": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "viewModel": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "shopRoot": false,
+          "destinationClass": "ticket_platform_event"
+        },
+        "provider": {
+          "persistence": "source-ticket-io-technodampfer",
+          "projection": "Ticket.io",
+          "viewModel": "Ticket.io"
+        },
+        "price": {
+          "import": [
+            null
+          ],
+          "persistence": "ab 39,90 €",
+          "canonical": "ab 39,90 €",
+          "projection": "ab 39,90 €",
+          "viewModel": "ab 39,90 €"
+        },
+        "availability": {
+          "persistence": "on_sale",
+          "canonical": "available",
+          "badge": "on_sale"
+        },
+        "ticketPhases": {
+          "persistence": 0
+        },
+        "badges": {
+          "attributesPersisted": 0,
+          "attributeBadgesProjected": 0,
+          "ticketBadge": "on_sale",
+          "viewModelBadges": []
+        },
+        "venue": {
+          "import": [
+            {}
+          ],
+          "persistence": {
+            "name": "Viking River Cruises 4",
+            "city": "Köln"
+          },
+          "projection": {
+            "label": "Viking River Cruises 4",
+            "city": "Köln",
+            "coords": false
+          }
+        },
+        "lineup": {
+          "importLineupCount": 0,
+          "importLineupSource": "structured",
+          "structuredCount": 0,
+          "compatibilityCount": 0,
+          "canonicalState": "empty",
+          "projectedArtists": [],
+          "viewModelArtists": [],
+          "ocrStatus": "pending_external",
+          "flyerTextLines": 0
+        },
+        "flyer": {
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/pmsUCbbF/img/holder-1080.jpg?16dfb887",
+          "ocrStatus": "pending_external"
+        },
+        "gallery": {
+          "count": 1,
+          "viewModelCount": 1
+        },
+        "consumerProjection": {
+          "ticketUrl": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "officialEventUrl": "https://technodampfer.ticket.io/pmsUCbbF/",
+          "displayPriceText": "ab 39,90 €",
+          "ticketProviderLabel": "Ticket.io",
+          "knownArtistNames": [],
+          "attributeBadgeCount": 0,
+          "attributeBadges": [],
+          "galleryCount": 1,
+          "ticketAvailability": "on_sale",
+          "ticketCtaLabel": "Tickets ansehen"
+        }
+      },
+      "signals": {
+        "competingOrigins": false,
+        "enrichmentDuplicate": false,
+        "listOnlyTicketIo": false,
+        "shopRootTicket": false,
+        "compatibilityOnlyLineup": false,
+        "ocrPending": true,
+        "garbageArtists": 0
+      }
+    }
+  }
+}

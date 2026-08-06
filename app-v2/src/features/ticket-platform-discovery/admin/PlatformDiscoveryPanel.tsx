@@ -12,7 +12,8 @@ import type {
   PlatformDiscoveryReport,
   PlatformDiscoveryRun,
 } from '@/features/ticket-platform-discovery/domain/types';
-import { colors, colorRoles } from '@/design/colors';
+import { colorRoles } from '@/design/colors';
+import { darkColors } from '@/design/theme/palettes/darkColors';
 import { spacing } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 
@@ -37,7 +38,10 @@ export function PlatformDiscoveryPanel({ role }: PlatformDiscoveryPanelProps) {
   }, [role]);
 
   useEffect(() => {
-    void loadRecent();
+    const timeout = setTimeout(() => {
+      void loadRecent();
+    }, 0);
+    return () => clearTimeout(timeout);
   }, [loadRecent]);
 
   const runDiscovery = async (platform: 'ticket_king' | 'ticket_io') => {
@@ -85,7 +89,7 @@ export function PlatformDiscoveryPanel({ role }: PlatformDiscoveryPanelProps) {
 
   return (
     <View style={styles.card}>
-      <AppText style={textRoles.headingSm}>Platform Discovery</AppText>
+      <AppText style={textRoles.sectionTitle}>Platform Discovery</AppText>
       <AppText style={styles.hint}>
         Discover ticket platform events beyond configured shops. Candidates require admin review before
         scheduler activation.
@@ -102,7 +106,7 @@ export function PlatformDiscoveryPanel({ role }: PlatformDiscoveryPanelProps) {
           disabled={loading}
         />
       </View>
-      {loading ? <ActivityIndicator color={colors.accent} style={styles.spinner} /> : null}
+      {loading ? <ActivityIndicator color={darkColors.accent} style={styles.spinner} /> : null}
       {error ? <AppText style={styles.error}>{error}</AppText> : null}
       {report ? <DiscoveryReportView report={report} activatingId={activatingId} onActivate={activate} /> : null}
       {recentRuns.length > 0 ? (
@@ -179,6 +183,8 @@ function CandidateRow({
   onActivate: (candidateId: string) => Promise<string | null>;
 }) {
   const eventCount = candidate.discoveryStats?.eventCount ?? candidate.discoveryStats?.accepted ?? 0;
+  const isActivated = candidate.status === 'activated';
+
   return (
     <View style={styles.candidate}>
       <AppText style={textRoles.label}>{candidate.displayName}</AppText>
@@ -188,14 +194,14 @@ function CandidateRow({
       {candidate.duplicateSourceId ? (
         <AppText style={styles.warning}>Matches source: {candidate.duplicateSourceId}</AppText>
       ) : null}
-      {candidate.status !== 'activated' ? (
+      {isActivated ? (
+        <AppText style={styles.success}>Activated</AppText>
+      ) : (
         <PrimaryButton
           label={activating ? 'Activating…' : 'Activate source'}
           onPress={() => void onActivate(candidate.id)}
-          disabled={activating || candidate.status === 'activated'}
+          disabled={activating}
         />
-      ) : (
-        <AppText style={styles.success}>Activated</AppText>
       )}
     </View>
   );
@@ -204,13 +210,14 @@ function CandidateRow({
 const styles = StyleSheet.create({
   card: {
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: colorRoles.cardBorder,
     borderRadius: 12,
     padding: spacing.md,
     gap: spacing.sm,
+    backgroundColor: colorRoles.cardBackground,
   },
   hint: {
-    color: colorRoles.textMuted,
+    color: colorRoles.emptyStateDescription,
   },
   actions: {
     flexDirection: 'row',
@@ -221,13 +228,13 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   error: {
-    color: colors.live,
+    color: darkColors.destructive,
   },
   warning: {
-    color: colors.warning,
+    color: darkColors.warning,
   },
   success: {
-    color: colors.success,
+    color: darkColors.success,
   },
   mono: {
     fontFamily: 'monospace',
@@ -243,7 +250,7 @@ const styles = StyleSheet.create({
   },
   candidate: {
     borderTopWidth: 1,
-    borderTopColor: colors.border,
+    borderTopColor: colorRoles.cardBorder,
     paddingTop: spacing.sm,
     gap: spacing.xs,
   },

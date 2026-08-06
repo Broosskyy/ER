@@ -1,5 +1,12 @@
 import type { EventStatus, EventTicketStatus } from '@/components/discovery/view-models';
 
+import { readCanonicalTicket } from '@/features/events/domain/canonical-ticket-read';
+import {
+  isSemanticallyFreeEvent,
+  resolveEventPriceAvailabilitySemantics,
+  toDiscoveryTicketStatus,
+} from '@/features/events/domain/event-price-availability-semantics';
+import { mapCanonicalAvailabilityToTicketBadge } from '@/features/events/formatting/ticket-badge-projection';
 import { isFeaturedEventId } from '../data/home-config';
 import type { EventDisplayModel } from '../formatting/display-event';
 import {
@@ -96,25 +103,46 @@ function isThisWeekendEvent(isoDateTime: string, referenceDate: Date = EVENT_REF
 }
 
 function resolvePriceTicketStatus(event: EventDisplayModel): EventTicketStatus | undefined {
-  const price = event.priceText?.toLowerCase() ?? '';
+  const canonical = readCanonicalTicket({
+    ticketUrl: event.ticketUrl,
+    websiteUrl: event.officialEventUrl,
+    sourceUrl: event.sourceUrl,
+    priceText: event.displayPriceText ?? event.priceText,
+    ticketStatus:
+      event.canonicalTicketStatus ??
+      (event.ticketAvailability === 'sold_out'
+        ? 'sold_out'
+        : event.ticketAvailability === 'on_sale'
+          ? 'on_sale'
+          : event.ticketAvailability === 'external_link'
+            ? 'external_link'
+            : event.ticketAvailability === 'sales_ended'
+              ? 'sales_ended'
+              : undefined),
+    ticketPhases: event.ticketPhases,
+    salesStartAt: event.salesStartAt,
+    salesEndAt: event.salesEndAt,
+  });
 
-  if (price.includes('sold out') || price.includes('ausverkauft')) {
-    return 'sold_out';
+  const fromCanonical = mapCanonicalAvailabilityToTicketBadge(
+    event.canonicalAvailability ?? canonical.availability,
+    canonical.ticketStatus,
+  );
+  if (fromCanonical) {
+    return fromCanonical;
   }
 
-  if (price.includes('limited') || price.includes('wenige')) {
-    return 'limited';
-  }
-
-  if (price.includes('free') || price.includes('kostenlos') || price === '0' || price === '0 €') {
-    return 'free';
-  }
-
-  if (event.priceText) {
-    return 'available';
-  }
-
-  return undefined;
+  const semantics = resolveEventPriceAvailabilitySemantics({
+    priceText: event.displayPriceText ?? event.priceText,
+    lifecycleStatus: event.lifecycleStatus,
+    ticketAvailability: event.ticketAvailability,
+    ticketPhases: event.ticketPhases?.map((phase) => ({
+      soldOut: phase.soldOut,
+      available: phase.available,
+      label: phase.name,
+    })),
+  });
+  return toDiscoveryTicketStatus(semantics);
 }
 
 function resolveConsumerStatuses(event: EventDisplayModel): ConsumerEventStatus[] {
@@ -130,6 +158,12 @@ function resolveConsumerStatuses(event: EventDisplayModel): ConsumerEventStatus[
   }
   if (event.lifecycleStatus === 'postponed') {
     statuses.add('postponed');
+  }
+  if (event.lifecycleNotices?.includes('date_changed')) {
+    statuses.add('date_changed');
+  }
+  if (event.lifecycleNotices?.includes('venue_changed')) {
+    statuses.add('venue_changed');
   }
   if (event.lifecycleStatus === 'sold_out') {
     statuses.add('sold_out');
@@ -148,7 +182,11 @@ function resolveConsumerStatuses(event: EventDisplayModel): ConsumerEventStatus[
     statuses.add('selling_fast');
   }
 
-  if (ticketStatus === 'free') {
+  if (isSemanticallyFreeEvent({
+    priceText: event.displayPriceText ?? event.priceText,
+    lifecycleStatus: event.lifecycleStatus,
+    ticketAvailability: event.ticketAvailability,
+  })) {
     statuses.add('free');
   }
 
@@ -166,6 +204,14 @@ function resolveConsumerStatuses(event: EventDisplayModel): ConsumerEventStatus[
 
   if (isFeaturedEventId(event.id)) {
     statuses.add('featured');
+  }
+
+  const publishedAt = event.publishedAt ?? event.createdAt;
+  if (publishedAt) {
+    const publishedMs = Date.parse(publishedAt);
+    if (!Number.isNaN(publishedMs) && EVENT_REFERENCE_DATE.getTime() - publishedMs <= NEWLY_ADDED_WINDOW_MS) {
+      statuses.add('newly_added');
+    }
   }
 
   if (event.ageRestriction) {

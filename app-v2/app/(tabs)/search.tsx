@@ -36,7 +36,9 @@ import {
   SearchResultsMeta,
 } from '@/features/search';
 import { DEFAULT_EVENT_FILTERS, type EventFilters } from '@/features/search/constants';
-import { useDiscoverySearch } from '@/features/search/hooks/use-discovery-search';
+import { useUniversalSearch } from '@/features/search/hooks/use-universal-search';
+import { UniversalSearchResults } from '@/features/search/components/UniversalSearchResults';
+import type { SearchEntityTab } from '@/features/search/domain/location-scope';
 import { useSearchSuggestions } from '@/features/search/hooks/use-search-suggestions';
 import { useSearchFilters } from '@/features/search/SearchContext';
 import {
@@ -100,7 +102,10 @@ export default function SearchScreen() {
 
   const {
     events,
+    visibleEvents,
+    grouped,
     loading,
+    loadingGrouped,
     refreshing,
     loadingMore,
     error,
@@ -110,7 +115,7 @@ export default function SearchScreen() {
     refresh,
     loadMore,
     retry,
-  } = useDiscoverySearch(filters, { enabled: !showExplorePanel });
+  } = useUniversalSearch(filters, { enabled: !showExplorePanel });
 
   const { suggestions, loading: suggestionsLoading } = useSearchSuggestions(
     filters.query,
@@ -182,6 +187,15 @@ export default function SearchScreen() {
     [applyFilters],
   );
 
+  const handleEntityTabChange = useCallback(
+    (entityTab: SearchEntityTab) => {
+      applyFilters({ ...filters, entityTab });
+    },
+    [applyFilters, filters],
+  );
+
+  const displayEvents = showTextResults ? visibleEvents : events;
+
   const handleSelectQuery = useCallback(
     (query: string) => {
       setQuery(query);
@@ -249,11 +263,11 @@ export default function SearchScreen() {
               />
             </View>
           ) : showTextResults ? (
-            loading && events.length === 0 ? (
+            loading && displayEvents.length === 0 ? (
               <View style={[styles.stateWrap, { paddingBottom: bottomInset }]}>
                 <ActivityIndicator />
               </View>
-            ) : events.length === 0 ? (
+            ) : displayEvents.length === 0 && !grouped ? (
               <SearchEmptyState
                 onClearAll={clearFilters}
                 onAdjustFilters={() => setFilterSheetVisible(true)}
@@ -261,7 +275,7 @@ export default function SearchScreen() {
             ) : (
               <FlatList
                 style={styles.list}
-                data={events}
+                data={showTextResults && grouped ? [] : displayEvents}
                 keyExtractor={keyExtractor}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}
@@ -271,11 +285,24 @@ export default function SearchScreen() {
                 onEndReached={() => void loadMore()}
                 onEndReachedThreshold={0.4}
                 ListHeaderComponent={
-                  <SearchResultsMeta
-                    count={totalMatched || events.length}
-                    summary={filterSummaries.length > 0 ? filterSummaries.join(' · ') : undefined}
-                    onClear={activeFilterCount > 0 ? clearFilters : undefined}
-                  />
+                  <>
+                    <SearchResultsMeta
+                      count={totalMatched || displayEvents.length}
+                      summary={filterSummaries.length > 0 ? filterSummaries.join(' · ') : undefined}
+                      onClear={activeFilterCount > 0 ? clearFilters : undefined}
+                    />
+                    {grouped ? (
+                      <UniversalSearchResults
+                        grouped={grouped}
+                        entityTab={filters.entityTab}
+                        onEntityTabChange={handleEntityTabChange}
+                        events={displayEvents}
+                        isFavorite={(eventId) => isHydrated && isFavorite(eventId)}
+                        onToggleFavorite={toggleFavorite}
+                      />
+                    ) : null}
+                    {loadingGrouped ? <ActivityIndicator /> : null}
+                  </>
                 }
                 ListFooterComponent={
                   loadingMore ? (

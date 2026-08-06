@@ -11,6 +11,7 @@ import { useTheme } from '@/design/theme';
 
 import { EventImage } from './EventImage';
 import { EventStatusBadge, TicketStatusBadge } from './EventStatusBadge';
+import { TicketPriceLabel } from './TicketPriceLabel';
 import { resolveEventCardMetrics, type EventCardVariant } from './event-card-styles';
 import type { EventCardViewModel } from './view-models';
 
@@ -222,9 +223,7 @@ function FeaturedHomeCard({
               ))}
             </View>
             {event.ticketLabel ? (
-              <AppText role="metadata" color={theme.colors.accent} style={styles.featuredHomePrice}>
-                {event.ticketLabel}
-              </AppText>
+              <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
             ) : null}
           </View>
         </View>
@@ -286,6 +285,10 @@ function CompactPremiumCard({
             <AppText role="caption" color={theme.colors.textMuted} numberOfLines={1}>
               {genreLine}
             </AppText>
+          ) : null}
+
+          {event.ticketLabel ? (
+            <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
           ) : null}
         </View>
 
@@ -386,6 +389,10 @@ function VerticalPremiumCard({
             {event.timeLabel}
             {event.endTimeLabel ? ` – ${event.endTimeLabel}` : ''}
           </AppText>
+        ) : null}
+
+        {event.ticketLabel ? (
+          <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
         ) : null}
       </View>
     </Card>
@@ -489,9 +496,7 @@ function LegacyEventCard({
                 {event.status ? <EventStatusBadge status={event.status} /> : null}
                 {event.ticketStatus ? <TicketStatusBadge status={event.ticketStatus} /> : null}
                 {event.ticketLabel ? (
-                  <AppText role="metadata" color={theme.colors.success}>
-                    {event.ticketLabel}
-                  </AppText>
+                  <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
                 ) : null}
               </View>
             </View>

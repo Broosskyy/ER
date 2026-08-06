@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-08-04T14:32:25.663Z",
+  "totals": {
+    "repairable_now": 0,
+    "requires_external_source": 23,
+    "requires_OCR": 130,
+    "requires_connector": 75,
+    "requires_review": 31,
+    "blocked_by_missing_public_evidence": 74
+  },
+  "trueProjectionDefects": 0,
+  "canonicalEvidenceGaps": 17,
+  "cacheDefects": 0,
+  "reclassificationSummary": {
+    "previousRepairableNow": 95,
+    "correctedRepairableNow": 0,
+    "venueLabelCases": {
+      "total": 0,
+      "byCorrectedClass": {}
+    }
+  }
+}

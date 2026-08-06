@@ -9,11 +9,16 @@ import {
   resolveEventPresentation,
   resolvePrimaryCardStatus,
 } from '../status/event-status-resolver';
+import { resolvePublicTicketPresentation } from './ticket-presentation';
 
 /** Maps domain display events into discovery card view models for the component library. */
 export function toEventCardViewModel(event: EventDisplayModel): EventCardViewModel {
   const primaryGenre = event.genres[0];
   const presentation = resolveEventPresentation(event);
+  const ticket = resolvePublicTicketPresentation(event);
+  const venueLabel = event.venueLabel ?? event.venue;
+  const cityLabel = event.cityLabel ?? event.city;
+  const locationLabel = event.locationLabelComma ?? `${venueLabel}, ${cityLabel}`;
 
   return {
     id: event.id,
@@ -23,21 +28,26 @@ export function toEventCardViewModel(event: EventDisplayModel): EventCardViewMod
     weekdayLabel: formatWeekdayLabel(event.startDateTime, event.timezone),
     timeLabel: event.startTime,
     endTimeLabel: event.endTime,
-    venueLabel: event.venue,
-    cityLabel: event.city,
+    venueLabel,
+    cityLabel,
     genreLabels: event.genres,
     categoryLabel: primaryGenre,
     organizerLabel: event.organizer,
-    ticketLabel: event.priceText,
+    ticketLabel: ticket.ticketLabel,
+    ticketColorToken: ticket.colorToken,
     ticketStatus: presentation.ticketStatus,
     status: presentation.primaryStatus ?? resolvePrimaryCardStatus(event),
-    accessibilityLabel: `${event.title}, ${event.venue}, ${event.city}`,
+    accessibilityLabel: `${event.title}, ${locationLabel}`,
   };
 }
 
 /** Maps domain display events into compact list item view models. */
 export function toEventListItemViewModel(event: EventDisplayModel): EventListItemViewModel {
   const presentation = resolveEventPresentation(event);
+  const ticket = resolvePublicTicketPresentation(event);
+  const venueLabel = event.venueLabel ?? event.venue;
+  const cityLabel = event.cityLabel ?? event.city;
+  const locationLabel = event.locationLabelComma ?? `${venueLabel}, ${cityLabel}`;
 
   return {
     id: event.id,
@@ -45,10 +55,13 @@ export function toEventListItemViewModel(event: EventDisplayModel): EventListIte
     image: event.image,
     dateLabel: event.date,
     timeLabel: event.startTime,
-    venueLabel: event.venue,
-    cityLabel: event.city,
+    venueLabel,
+    cityLabel,
     genreLabels: event.genres,
+    ticketLabel: ticket.ticketLabel,
+    ticketColorToken: ticket.colorToken,
+    ticketStatus: presentation.ticketStatus,
     status: presentation.primaryStatus,
-    accessibilityLabel: `${event.title}, ${event.venue}, ${event.city}`,
+    accessibilityLabel: `${event.title}, ${locationLabel}`,
   };
 }

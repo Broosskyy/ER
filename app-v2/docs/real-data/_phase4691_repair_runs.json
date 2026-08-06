@@ -1,0 +1,171 @@
+{
+  "generatedAt": "2026-08-03T08:00:28.140Z",
+  "runs": [
+    {
+      "phase": "repair-ownership",
+      "at": "2026-08-03T08:00:06.237Z",
+      "mutations": 8,
+      "details": [
+        {
+          "action": "detach_mdma_origin",
+          "refId": "ref-evt-1785339386612-rjr91mv-source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt-https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+        },
+        {
+          "action": "detach_mdma_origin",
+          "refId": "ref-evt-1785339386612-rjr91mv-source-affenkaefig-ticket-kings-https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+        },
+        {
+          "action": "detach_mdma_origin",
+          "refId": "ref-evt-1785339386612-rjr91mv-source-ticket-kings-org-elektrokuche-https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+        },
+        {
+          "action": "unlink_mdma_import",
+          "recordId": "dfb5321d-9bd4-474c-9ee2-2a4565fc89bb"
+        },
+        {
+          "action": "unlink_mdma_import",
+          "recordId": "bb203ffc-2ef0-4371-b3ad-e71b2d82a984"
+        },
+        {
+          "action": "unlink_mdma_import",
+          "recordId": "7689483f-43e9-4971-8934-57210f8db390"
+        },
+        {
+          "action": "clear_contaminated_lineup",
+          "eventId": "evt-1785339386612-rjr91mv"
+        },
+        {
+          "action": "skip_republish_ownership_mismatch",
+          "recordId": "658c7b44-24a3-4e50-a937-5075cc92e906"
+        },
+        {
+          "action": "skip_republish_ownership_mismatch",
+          "recordId": "29205f77-50a7-424c-88ba-5a4eaa894e82"
+        }
+      ]
+    },
+    {
+      "phase": "repair-invalid-artists",
+      "at": "2026-08-03T08:00:10.670Z",
+      "mutations": 41,
+      "details": [
+        {
+          "eventId": "evt-1785339389636-v1tq3hw",
+          "clearedLineup": true,
+          "marked": {
+            "markedLegacy": [
+              "artist-title-crazy-rabbit-hole-ldquo-a6sp9i",
+              "artist-title-deco-ldquo-78352o",
+              "artist-title-kitkatclub-rdquo-l2gbia",
+              "artist-title-artwork-by-victor-calma-surreal-ldquo-2aucf0",
+              "artist-title-ziegfeld-follies-rdquo-cxd2a0",
+              "artist-title-offnet-sich-das-bootshaus-fur-eine-der-spektakularen-eventnachte-des-jahres-dem-kitty-sommernachtstraum-landolf-eoqpzw",
+              "artist-title-basti-und-die-gesamte-kitty-crew-laden-zu-einer-rauschhaften-reise-voller-fantasie-ylkwwv",
+              "artist-title-gema-dem-motto-bdquo-83rnfs",
+              "artist-title-verkleide-dich-nicht-8vkdpx",
+              "artist-title-sondern-erfinde-dich-neu-ldquo-7tj7lf",
+              "artist-title-surrealer-kreaturen-und-extravagant-inszenierter-charaktere-zwischen-psychedelischen-fantasiewelten-090equ",
+              "artist-title-toleranz-und-lust-auf-kreative-selbstinszenierung-willkommen-ist-prinzipiell-alles-c14luw",
+              "artist-title-das-die-elemente-bdquo-q50hta",
+              "artist-title-fantasievoll-ldquo-5cmnxe",
+              "artist-title-und-bdquo-5uqvzh",
+              "artist-title-sinnlich-ldquo-zc6ddd",
+              "artist-title-unverkennbar-berucksichtigt-von-glamouros-bis-avantgardistisch-f04hbr",
+              "artist-title-einer-spektakularen-loonyland-bdquo-x8a0xe",
+              "artist-title-d-eacute-2h0xt1",
+              "artist-title-surreal-ldquo-ou1l5m",
+              "artist-title-massageservice-808nrm",
+              "artist-title-den-hei-begehrten-vault-polaroids-und-vielen-weiteren-liebevoll-inszenierten-details-das-outdoor-atrium-mit-barservice-ks8dow",
+              "artist-title-raucher-lounge-l1v2ms",
+              "artist-title-u-a-pragender-resident-der-legendaren-wasteland-amsterdam-neben-ihm-an-den-decks-don-basti-6d6762",
+              "artist-title-kitkatclub-legende-und-meister-hypnotischer-8ilzzh",
+              "artist-title-der-europaweit-praktisch-jeden-hedonistisch-orientierten-dancefloor-in-ekstase-versetzt-hat-somit-ist-gewahrleistet-i9uoxr",
+              "artist-title-dj-mag-ldquo-hl7719",
+              "artist-title-zieht-die-location-feiernde-aus-aller-welt-an-wo-einst-schiffsschrauben-gefertigt-wurden-3io593",
+              "artist-title-brilliert-heute-ein-unverwechselbar-einzigartiger-klang-und-erlebniskosmos-aus-sound-1kl44x",
+              "artist-title-definiert-sich-der-kitkatclub-als-avantgardistischer-nachtclub-74c1kq",
+              "artist-title-der-die-traditionen-der-bdquo-1pa1oa",
+              "artist-title-verruchten-ldquo-66ocj1",
+              "artist-title-berliner-clubs-der-bdquo-i50qcr",
+              "artist-title-goldenen-zwanziger-ldquo-zvtnzs",
+              "artist-title-kit-kat-club-rdquo-bet59j",
+              "artist-title-einer-spektakularen-loony-land-bdquo-4nxrs8",
+              "artist-title-definiert-sich-der-kit-kat-club-als-avantgardistischer-nachtclub-9h08il"
+            ],
+            "skipped": []
+          }
+        },
+        {
+          "eventId": "evt-1785339372839-cwbr6ya",
+          "clearedLineup": true,
+          "marked": {
+            "markedLegacy": [],
+            "skipped": []
+          }
+        }
+      ]
+    },
+    {
+      "phase": "repair-ownership",
+      "at": "2026-08-03T08:00:27.110Z",
+      "mutations": 0,
+      "details": [
+        {
+          "action": "skip_detach_already_inactive",
+          "refId": "ref-evt-1785339386612-rjr91mv-source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt-https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+        },
+        {
+          "action": "skip_detach_already_inactive",
+          "refId": "ref-evt-1785339386612-rjr91mv-source-affenkaefig-ticket-kings-https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+        },
+        {
+          "action": "skip_detach_already_inactive",
+          "refId": "ref-evt-1785339386612-rjr91mv-source-ticket-kings-org-elektrokuche-https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+        },
+        {
+          "action": "skip_clear_lineup_already_empty",
+          "eventId": "evt-1785339386612-rjr91mv"
+        },
+        {
+          "action": "skip_republish_ownership_mismatch",
+          "recordId": "658c7b44-24a3-4e50-a937-5075cc92e906"
+        },
+        {
+          "action": "skip_republish_ownership_mismatch",
+          "recordId": "29205f77-50a7-424c-88ba-5a4eaa894e82"
+        }
+      ]
+    },
+    {
+      "phase": "repair-invalid-artists",
+      "at": "2026-08-03T08:00:28.139Z",
+      "mutations": 0,
+      "details": [
+        {
+          "action": "skip_clear_lineup_already_empty",
+          "eventId": "evt-1785339389636-v1tq3hw"
+        },
+        {
+          "eventId": "evt-1785339389636-v1tq3hw",
+          "clearedLineup": false,
+          "marked": {
+            "markedLegacy": [],
+            "skipped": []
+          }
+        },
+        {
+          "action": "skip_clear_lineup_already_empty",
+          "eventId": "evt-1785339372839-cwbr6ya"
+        },
+        {
+          "eventId": "evt-1785339372839-cwbr6ya",
+          "clearedLineup": false,
+          "marked": {
+            "markedLegacy": [],
+            "skipped": []
+          }
+        }
+      ]
+    }
+  ]
+}

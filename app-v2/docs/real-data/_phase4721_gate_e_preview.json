@@ -1,0 +1,72 @@
+{
+  "gate": "E",
+  "readOnly": true,
+  "allowedFields": [
+    "canonical_attributes",
+    "attribute_provenance"
+  ],
+  "forbiddenFields": [
+    "ticket_fields",
+    "lineup",
+    "venue_ownership",
+    "organizer"
+  ],
+  "mutationCount": 1,
+  "events": [
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "plannedMutations": {},
+      "schemaMigrationRequired": [
+        "multi_floor"
+      ],
+      "forbiddenDomainsChecked": [
+        "ticket",
+        "lineup",
+        "venue_ownership",
+        "organizer"
+      ]
+    }
+  ],
+  "schemaProposal": {
+    "canonicalColumns": {
+      "age_restriction": {
+        "exists": true,
+        "api": true,
+        "ui": "info_row"
+      },
+      "doors_open_at": {
+        "exists": true,
+        "api": true,
+        "ui": "info_row_optional"
+      },
+      "floor_count": {
+        "exists": false,
+        "proposal": "events.floor_count integer nullable"
+      },
+      "event_attributes": {
+        "exists": false,
+        "proposal": "events.event_attributes jsonb"
+      },
+      "venue_environment": {
+        "exists": false,
+        "proposal": "events.venue_environment text"
+      },
+      "badge_chips": {
+        "exists": false,
+        "proposal": "projection layer only"
+      }
+    },
+    "parserOutputFields": [
+      "sourceMetadata.eventAttributes",
+      "sourceMetadata.floorCount",
+      "sourceMetadata.venueEnvironment",
+      "minimumAge",
+      "doorsOpenAt"
+    ],
+    "mergeRules": "source_agnostic_field_trust",
+    "editorialBadgeInference": false
+  },
+  "idempotency": "second pass must produce zero mutations",
+  "backupRequired": true
+}

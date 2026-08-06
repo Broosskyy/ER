@@ -2,6 +2,7 @@ export type PlatformCapability =
   | 'list_discovery'
   | 'detail_discovery'
   | 'json_ld'
+  | 'html_cards'
   | 'ticket_checkout'
   | 'electronic_scope_filter'
   | 'onboarding_supported';

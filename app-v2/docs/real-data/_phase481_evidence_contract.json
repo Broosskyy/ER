@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-08-04T19:45:37.493Z",
+  "requiredCandidateFields": [
+    "fieldName",
+    "rawValue",
+    "normalizedValue",
+    "sourceId",
+    "sourceRole",
+    "originUrl",
+    "evidenceType",
+    "extractionStrategy",
+    "observedAt",
+    "importerVersion",
+    "confidence",
+    "reliability",
+    "reviewState",
+    "inclusionReason"
+  ],
+  "evidenceTypes": [
+    "official_event_page",
+    "ticket_platform_event_page",
+    "ticket_shop_list_row",
+    "checkout",
+    "json_ld",
+    "embedded_json",
+    "html_text",
+    "flyer",
+    "manual_admin_evidence",
+    "inferred_candidate",
+    "legacy_compatibility_evidence"
+  ],
+  "explicitBeatsInferred": true
+}

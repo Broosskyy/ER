@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-05T19:38:51.033Z",
+  "phase": "4.8.5",
+  "productionMutationsInThisRun": 0,
+  "deliberateFailureIsolated": true,
+  "legacyCompleted": [
+    {
+      "check": "flags_disabled_no_shadow_report",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

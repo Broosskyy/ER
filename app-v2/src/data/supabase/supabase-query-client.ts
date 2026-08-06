@@ -8,7 +8,7 @@ export type RawResult = {
 };
 
 export interface RawQuery extends PromiseLike<RawResult> {
-  select(columns?: string, options?: { count?: 'exact' }): RawQuery;
+  select(columns?: string, options?: { count?: 'exact'; head?: boolean }): RawQuery;
   eq(column: string, value: unknown): RawQuery;
   in(column: string, values: unknown[]): RawQuery;
   order(column: string, options?: { ascending?: boolean }): RawQuery;
@@ -18,6 +18,7 @@ export interface RawQuery extends PromiseLike<RawResult> {
     options?: { onConflict?: string },
   ): RawQuery;
   insert(values: Record<string, unknown> | Record<string, unknown>[]): RawQuery;
+  delete(): RawQuery;
   maybeSingle(): Promise<RawResult>;
   single(): Promise<RawResult>;
 }

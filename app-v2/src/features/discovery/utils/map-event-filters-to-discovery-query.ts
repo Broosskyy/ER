@@ -1,5 +1,4 @@
 import {
-  filterConfig,
   getActiveDistanceOptions,
   getActiveFestivalOptions,
   getActiveOrganizerOptions,
@@ -8,6 +7,12 @@ import {
   getActiveVenueOptions,
 } from '@/features/search/config/filter-config';
 import type { EventFilters } from '@/features/search/constants';
+
+import {
+  resolveSearchCityFilter,
+  resolveSearchLocationCoordinates,
+  shouldApplyNearbyFilter,
+} from '@/features/search/domain/location-scope';
 
 import type { DiscoveryQuery } from '../domain/discovery-query-types';
 
@@ -95,8 +100,14 @@ export function mapEventFiltersToDiscoveryQuery(
     longitude?: number;
   } = {},
 ): DiscoveryQuery {
-  const radiusKm = resolveRadiusKm(filters.distance);
-  const hasLocation = options.latitude !== undefined && options.longitude !== undefined;
+  const radiusKm = shouldApplyNearbyFilter(filters) ? resolveRadiusKm(filters.distance) : undefined;
+  const coordinates = resolveSearchLocationCoordinates(filters, {
+    latitude: options.latitude,
+    longitude: options.longitude,
+  });
+  const hasCoordinates =
+    coordinates.latitude !== undefined && coordinates.longitude !== undefined;
+  const cityFilter = resolveSearchCityFilter(filters);
 
   return {
     surface: options.surface ?? 'search_events',
@@ -105,18 +116,18 @@ export function mapEventFiltersToDiscoveryQuery(
       : undefined,
     date: resolveDateFilter(filters),
     entities: {
-      city: filters.city || undefined,
+      city: cityFilter,
       genres: filters.genres.length > 0 ? [...filters.genres] : undefined,
       venueId: resolveEntityId(filters.venueId, getActiveVenueOptions()),
       organizerId: resolveEntityId(filters.organizerId, getActiveOrganizerOptions()),
       festivalId: resolveEntityId(filters.festivalId, getActiveFestivalOptions()),
     },
     location:
-      hasLocation || radiusKm
+      hasCoordinates || radiusKm
         ? {
-            latitude: options.latitude,
-            longitude: options.longitude,
-            city: filters.city || undefined,
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude,
+            city: cityFilter,
             radiusKm,
           }
         : undefined,
@@ -134,7 +145,9 @@ export function isDefaultDiscoveryBrowseFilters(filters: EventFilters): boolean 
     filters.query.trim().length === 0 &&
     filters.dateRange === 'all-dates' &&
     filters.genres.length === 0 &&
-    filters.city === filterConfig.cityOptions.find((city) => city.id === filterConfig.defaultCityId)?.value &&
+    filters.locationScope === 'global' &&
+    !filters.city.trim() &&
+    filters.entityTab === 'all' &&
     filters.sortBy === 'recommended' &&
     filters.distance === 'any' &&
     filters.price === 'any' &&

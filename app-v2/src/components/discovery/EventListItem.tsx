@@ -9,6 +9,7 @@ import { spacing } from '@/design/spacing';
 import { useTheme } from '@/design/theme';
 
 import { EventImage } from './EventImage';
+import { TicketPriceLabel } from './TicketPriceLabel';
 import type { EventListItemViewModel } from './view-models';
 
 export type EventListItemDensity = 'default' | 'relaxed';
@@ -92,6 +93,9 @@ export function EventListItem({
             </View>
           ))}
         </View>
+      ) : null}
+      {event.ticketLabel ? (
+        <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
       ) : null}
     </View>
   );

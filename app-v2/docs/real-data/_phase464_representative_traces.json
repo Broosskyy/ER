@@ -1,0 +1,2318 @@
+{
+  "generatedAt": "2026-08-02T18:36:04.315Z",
+  "traces": [
+    {
+      "label": "Sommerfest Elektroküche",
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-affenkaefig",
+              "sourceType": "website",
+              "connectorKey": "organizer_website",
+              "externalEventId": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+              "listUrl": "https://affenkaefig.info/tickets/",
+              "detailUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+              "lastSeenAt": "2026-08-02T17:44:55.081+00:00",
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "listUrl": "https://ticketkings.de/all-events/",
+              "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "lastSeenAt": "2026-08-02T15:22:33.137+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-affenkaefig-ticket-kings",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "listUrl": "https://ticketkings.de/all-events/",
+              "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "lastSeenAt": "2026-08-02T17:45:41.937+00:00",
+              "detailPagesFetched": 5,
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-ticket-kings-org-elektrokuche",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "listUrl": "https://ticketkings.de/all-events/",
+              "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "lastSeenAt": "2026-08-02T15:27:26.758+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-affenkaefig-ticket-kings",
+          "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "detailPagesFetched": 5,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail pages fetched in origin metadata"
+        },
+        "parsedData": {
+          "artistNames": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ],
+          "description": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher...",
+          "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "genreNames": [
+            "Techno",
+            "Bounce",
+            "Hardtechno"
+          ],
+          "venueAddress": "Siegburger Str. 110, 50679, Köln"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "6c099016-c47a-489f-8ca2-a17e4016c7c8",
+          "lineupEntryCount": 14,
+          "updatedAt": "2026-08-02T17:45:43.946+00:00"
+        },
+        "publishedDbFields": {
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "description": {
+            "description": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher...",
+            "ticket_url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+            "price_text": "",
+            "venue_address": "Siegburger Str. 110, 50679 Köln, Köln",
+            "latitude": null
+          },
+          "lineup": [
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN",
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "complete",
+              "stage": null
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "complete",
+              "stage": null
+            },
+            "genres": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "complete",
+              "stage": null
+            },
+            "postalCode": {
+              "status": "complete",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "complete",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "missing",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "missing",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.73
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "complete",
+          "sectionWouldShow": true
+        }
+      }
+    },
+    {
+      "label": "MDMA — Musik Die Mich Antreibt",
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-affenkaefig",
+              "sourceType": "website",
+              "connectorKey": "organizer_website",
+              "externalEventId": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+              "listUrl": "https://affenkaefig.info/tickets/",
+              "detailUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+              "lastSeenAt": "2026-08-02T16:45:06.614+00:00",
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-affenkaefig",
+          "detailUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [
+            "DYSTOPIA F2F VALKYRIE",
+            "IAN CRANK F2F EASYPYSI",
+            "KARAMUSTA F2F GREEKZ",
+            "KEVIN LA NIQUE F2F THE RAFNIX",
+            "NINA BENDER F2F LEE-ANN",
+            "FLASH B2B FORWARD",
+            "HELLMYER B2B STZ",
+            "MAURO B2B I.D.A",
+            "PLEA5URE B2B PUL5E"
+          ],
+          "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "6e3a8a57-7544-401f-a047-3b9c0f6000d2",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T17:44:53.008+00:00"
+        },
+        "publishedDbFields": {
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "description": {
+            "description": "",
+            "ticket_url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "price_text": null,
+            "venue_address": "Siegburger Str. 110, 50679 Köln, Köln",
+            "latitude": null
+          },
+          "lineup": [
+            "DYSTOPIA F2F VALKYRIE",
+            "IAN CRANK F2F EASYPYSI",
+            "KARAMUSTA F2F GREEKZ",
+            "KEVIN LA NIQUE F2F THE RAFNIX",
+            "NINA BENDER F2F LEE-ANN",
+            "FLASH B2B FORWARD",
+            "HELLMYER B2B STZ",
+            "MAURO B2B I.D.A",
+            "PLEA5URE B2B PUL5E"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "complete",
+              "stage": null
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "complete",
+              "stage": null
+            },
+            "postalCode": {
+              "status": "complete",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "complete",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.65
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "complete",
+          "sectionWouldShow": true
+        }
+      }
+    },
+    {
+      "label": "Bootshaus on a Ship",
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-bootshaus-koeln",
+              "sourceType": "website",
+              "connectorKey": "club_website",
+              "externalEventId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+              "listUrl": "https://bootshaus.tv/events/",
+              "detailUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+              "lastSeenAt": "2026-08-02T16:41:26.444+00:00",
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-bootshaus-ticket-io",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+              "listUrl": "https://bootshaus-club.ticket.io/",
+              "detailUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+              "lastSeenAt": "2026-08-02T16:43:48.478+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-bootshaus-ticket-io",
+          "detailUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+          "priceText": "ab 32,00 €",
+          "priceAmount": 32,
+          "venueAddress": "Frankenwerft 35, 50667, Köln, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "5cdf0e42-b54a-49c6-a479-cb9a96fe5165",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:43:50.43+00:00"
+        },
+        "publishedDbFields": {
+          "title": "Bootshaus on a Ship Vol. IV",
+          "description": {
+            "description": "Bootshaus returns to the water.On September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session. Lineup:NIKLAS DEEFABIAN FARELLOLIVER MAGENTATEKNOCLASHDANTH▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+            "ticket_url": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+            "price_text": "Tickets ab 32,00 Euro",
+            "venue_address": "Auenweg 173, 51063 Köln",
+            "latitude": 50.9375699
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "complete",
+              "stage": null
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "complete",
+              "stage": null
+            },
+            "postalCode": {
+              "status": "complete",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "complete",
+              "stage": null
+            },
+            "latitude": {
+              "status": "complete",
+              "stage": null
+            },
+            "longitude": {
+              "status": "complete",
+              "stage": null
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.7
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "NEONSPLASH Paint-Rave",
+      "eventId": "evt-1785339385102-xocczqs",
+      "title": "NEONSPLASH Paint-Rave",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-bootshaus-koeln",
+              "sourceType": "website",
+              "connectorKey": "club_website",
+              "externalEventId": "https://bootshaus.tv/events/neonsplash-paint-rave",
+              "listUrl": "https://bootshaus.tv/events/",
+              "detailUrl": "https://bootshaus.tv/events/neonsplash-paint-rave",
+              "lastSeenAt": "2026-08-01T13:06:30.609+00:00",
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-bootshaus-koeln",
+          "detailUrl": "https://bootshaus.tv/events/neonsplash-paint-rave",
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "description": "NEONSPLASH is BACK! Am 14.08. kehren wir zurück an den Ort, wo alles angefangen hat — Bootshaus Cologne. Paint Rave Energy in der BLCKBX! Melodic House, Bounce & Trance + unsere legendären Farbkanonen, die hunderte Liter NEONPAINT in die Crowd schießen. Pure Chaos. Pure Energy. Pure Experience. Get ",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "venueAddress": "Auenweg 173, 51063 Köln"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "a4ea5844-540a-4f2c-b11f-ba3bd206dd11",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:41:39.599+00:00"
+        },
+        "publishedDbFields": {
+          "title": "NEONSPLASH Paint-Rave",
+          "description": {
+            "description": "NEONSPLASH is BACK! Am 14.08. kehren wir zurück an den Ort, wo alles angefangen hat — Bootshaus Cologne. Paint Rave Energy in der BLCKBX! Melodic House, Bounce & Trance + unsere legendären Farbkanonen, die hunderte Liter NEONPAINT in die Crowd schießen. Pure Chaos. Pure Energy. Pure Experience. Get ready for a night you'll never forget. NEONSPLASH Paint-Rave 📍 Bootshaus BLCKBX 📅 14.08.2026 No Prompts. Just Paint. Alive in Color.▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "ticket_url": "https://bootshaus.ticket.io/",
+            "price_text": null,
+            "venue_address": null,
+            "latitude": null
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "complete",
+              "stage": null
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "partial",
+              "stage": 5
+            },
+            "ticketPrice": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "partial",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.55
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "Vision Ekstase Open Air",
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-lehmannclub",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://lehmannclub.ticket.io/FdFEFNxU/",
+              "listUrl": "https://lehmannclub.ticket.io/",
+              "detailUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+              "lastSeenAt": "2026-07-31T21:15:04.812+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-lehmannclub",
+          "detailUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "priceText": "ab 15,00 €",
+          "priceAmount": 15,
+          "venueAddress": "Stresemannstraße 39, 70191, Stuttgart-Nord, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "ddadb0a9-6a3a-43b4-a532-ebf91398805c",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:46:04.712+00:00"
+        },
+        "publishedDbFields": {
+          "title": "Vision Ekstase Open Air",
+          "description": {
+            "description": "",
+            "ticket_url": "https://lehmannclub.ticket.io/FdFEFNxU/",
+            "price_text": "ab 15,00 €",
+            "venue_address": null,
+            "latitude": null
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.55
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "100% SCHRANZ PER PLEKS",
+      "eventId": "evt-1785506366010-1npnra9",
+      "title": "100% SCHRANZ pres. NIKOLINA",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-protontheclub",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://proton-the-club.ticket.io/ckmflhlc/",
+              "listUrl": "https://protontheclub.ticket.io/",
+              "detailUrl": "https://proton-the-club.ticket.io/ckmflhlc/",
+              "lastSeenAt": "2026-07-31T21:14:39.758+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-protontheclub",
+          "detailUrl": "https://proton-the-club.ticket.io/ckmflhlc/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [
+            "NIKOLINA"
+          ],
+          "ticketUrl": "https://proton-the-club.ticket.io/ckmflhlc/",
+          "priceText": "ab 29,00 €",
+          "priceAmount": 29,
+          "genreNames": [
+            "SCHRANZ"
+          ],
+          "venueAddress": "Königstraße 49, 70173, Stuttgart, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "e23fbf64-2c0f-4079-b383-f7cd55176223",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:46:40.336+00:00"
+        },
+        "publishedDbFields": {
+          "title": "100% SCHRANZ pres. NIKOLINA",
+          "description": {
+            "description": "",
+            "ticket_url": "https://proton-the-club.ticket.io/ckmflhlc/",
+            "price_text": "ab 29,00 €",
+            "venue_address": null,
+            "latitude": null
+          },
+          "lineup": [
+            "NIKOLINA"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "partial",
+              "stage": null
+            },
+            "genres": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.58
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "partial",
+          "sectionWouldShow": true
+        }
+      }
+    },
+    {
+      "label": "Blacklist Festival 2026",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-bootshaus-koeln",
+              "sourceType": "website",
+              "connectorKey": "club_website",
+              "externalEventId": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+              "listUrl": "https://bootshaus.tv/events/",
+              "detailUrl": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+              "lastSeenAt": "2026-08-01T13:05:49.152+00:00",
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-bootshaus-koeln",
+          "detailUrl": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026",
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "description": "THIS WAS BLACKLIST FESTIVAL 2025.10 YEARS WITH YOU – WE COULDN&rsquo;T BE MORE PROUD.2015–2025:A DECADE OF LOYALTY AND CONNECTION.NOW IT&rsquo;S TIME TO MOVE FORWARD.THIS IS NOT THE END – IT&rsquo;S THE BEGINNING OF SOMETHING NEW.2 DAYSOCTOBER 9–10, 2026Friday, October 9 | 18:00 – 06:00Saturday, Oct",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "genreNames": [
+            "DUBSTEP",
+            "DRUM'N'BASS"
+          ],
+          "venueAddress": "Auenweg 173, 51063 Köln"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "09b82bbf-46a4-4bc1-aa2e-42c849b81599",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:41:40.193+00:00"
+        },
+        "publishedDbFields": {
+          "title": "Blacklist Festival 2026",
+          "description": {
+            "description": "THIS WAS BLACKLIST FESTIVAL 2025.10 YEARS WITH YOU – WE COULDN&rsquo;T BE MORE PROUD.2015–2025:A DECADE OF LOYALTY AND CONNECTION.NOW IT&rsquo;S TIME TO MOVE FORWARD.THIS IS NOT THE END – IT&rsquo;S THE BEGINNING OF SOMETHING NEW.2 DAYSOCTOBER 9–10, 2026Friday, October 9 | 18:00 – 06:00Saturday, October 10 | 18:00 – 06:00THE SECOND WAVE IS OUT NOW!HERE ARE ALL ARTISTS (A–Z):A.M.C | AKIRAH | AUTODRIVE | AUTOPSKI | BLANKE PRESENTS: FALLOUT | BURR OAK | DJ MII | ECRAZE B2B BIZO | ELLIE RICH | EPTIC | ESKEI83 | FLUX PAVILION | FORMULA | GLADDE PALING | GOURSKI | HAMMERHEAD | K MOTIONZ | KANINE | KARA B2B YOUPHORIA | KOVEN | KREWELLA | MACHINYST | MADCORE B2B ELLIE RICH | MEFJUS | NOIZBOIZ | PRIMATE | RICKY WEST | RIOT | SAMPLIFIRE | SKIYE | STOOG3S | THE RESISTANCE | UPGRADE | VDV B2B MISCALL | ZOMBOY | [IVY] | [SAFYRE] | &AElig;ON:MODE....MORE TBASAVE THE DATE: OCTOBER 09-10, 2026",
+            "ticket_url": "https://bootshaus.ticket.io/",
+            "price_text": null,
+            "venue_address": null,
+            "latitude": null
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "complete",
+              "stage": null
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketUrl": {
+              "status": "partial",
+              "stage": 5
+            },
+            "ticketPrice": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "partial",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.53
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "PURE TECHNO",
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-hmg-concerts",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://hmg-concerts.ticket.io/0orkxNqw/",
+              "listUrl": "https://hmg-concerts.ticket.io/",
+              "detailUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+              "lastSeenAt": "2026-08-01T07:51:22.364+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-hmg-concerts",
+          "detailUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "ticketUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+          "priceText": "ab 17,60 €",
+          "priceAmount": 17.6,
+          "venueAddress": "Kraftwerk Mitte 28, 01067, Dresden, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "7e11e2b1-c1e5-45f1-b407-401531ce348a",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:47:12.563+00:00"
+        },
+        "publishedDbFields": {
+          "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+          "description": {
+            "description": "",
+            "ticket_url": "https://hmg-concerts.ticket.io/0orkxNqw/",
+            "price_text": "ab 17,60 €",
+            "venue_address": null,
+            "latitude": null
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.55
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "Lehmann working lineup",
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-lehmannclub",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://lehmannclub.ticket.io/VqX0G8j6/",
+              "listUrl": "https://lehmannclub.ticket.io/",
+              "detailUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+              "lastSeenAt": "2026-07-31T21:15:07.407+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-lehmannclub",
+          "detailUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY",
+            "SOURCE CODE",
+            "2ND FLOOR NKR"
+          ],
+          "ticketUrl": "https://lehmannclub.ticket.io/VqX0G8j6/",
+          "priceText": "ab 20,00 €",
+          "priceAmount": 20,
+          "venueAddress": "Breitscheidstraße 12, 70174, Stuttgart, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "624f7b62-73b4-460d-bc98-4734d5259857",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:46:06.784+00:00"
+        },
+        "publishedDbFields": {
+          "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+          "description": {
+            "description": "",
+            "ticket_url": "https://lehmannclub.ticket.io/VqX0G8j6/",
+            "price_text": "ab 20,00 €",
+            "venue_address": null,
+            "latitude": null
+          },
+          "lineup": [
+            "ÜBERREST",
+            "MILA BLACK",
+            "RAPHAEL DINCSOY",
+            "SOURCE CODE",
+            "2ND FLOOR NKR"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "complete",
+              "stage": null
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.65
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "complete",
+          "sectionWouldShow": true
+        }
+      }
+    },
+    {
+      "label": "Ticket.io missing lineup",
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-lehmannclub",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://lehmannclub.ticket.io/FdFEFNxU/",
+              "listUrl": "https://lehmannclub.ticket.io/",
+              "detailUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+              "lastSeenAt": "2026-07-31T21:15:04.812+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-lehmannclub",
+          "detailUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "priceText": "ab 15,00 €",
+          "priceAmount": 15,
+          "venueAddress": "Stresemannstraße 39, 70191, Stuttgart-Nord, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "ddadb0a9-6a3a-43b4-a532-ebf91398805c",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:46:04.712+00:00"
+        },
+        "publishedDbFields": {
+          "title": "Vision Ekstase Open Air",
+          "description": {
+            "description": "",
+            "ticket_url": "https://lehmannclub.ticket.io/FdFEFNxU/",
+            "price_text": "ab 15,00 €",
+            "venue_address": null,
+            "latitude": null
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.55
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "Working price example",
+      "eventId": "evt-1785506435192-azaw5p4",
+      "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-technodampfer",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://technodampfer.ticket.io/yT7set9a/",
+              "listUrl": "https://technodampfer.ticket.io/",
+              "detailUrl": "https://technodampfer.ticket.io/yT7set9a/",
+              "lastSeenAt": "2026-07-31T20:56:48.453+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-technodampfer",
+          "detailUrl": "https://technodampfer.ticket.io/yT7set9a/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [
+            "Moonbootica"
+          ],
+          "ticketUrl": "https://technodampfer.ticket.io/yT7set9a/",
+          "priceText": "ab 0,00 €",
+          "priceAmount": 0,
+          "venueAddress": "Robert-Lehr-Ufer 2, 40474, Düsseldorf, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "1b7a7a71-0962-4e2a-bdb0-6e84d71b4676",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:46:25.124+00:00"
+        },
+        "publishedDbFields": {
+          "title": "TECHNO DAMPFER Düsseldorf w/ Moonbootica",
+          "description": {
+            "description": "",
+            "ticket_url": "https://technodampfer.ticket.io/yT7set9a/",
+            "price_text": "ab 0,00 €",
+            "venue_address": null,
+            "latitude": null
+          },
+          "lineup": [
+            "Moonbootica"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "partial",
+              "stage": null
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.6
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "partial",
+          "sectionWouldShow": true
+        }
+      }
+    },
+    {
+      "label": "Missing price example",
+      "eventId": "evt-1785506448834-4c5s8xl",
+      "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-ticket-io-hmg-concerts",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://hmg-concerts.ticket.io/0orkxNqw/",
+              "listUrl": "https://hmg-concerts.ticket.io/",
+              "detailUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+              "lastSeenAt": "2026-08-01T07:51:22.364+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-ticket-io-hmg-concerts",
+          "detailUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+          "detailPagesFetched": 0,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail URL known, fetch count 0 in stored metadata"
+        },
+        "parsedData": {
+          "artistNames": [],
+          "ticketUrl": "https://hmg-concerts.ticket.io/0orkxNqw/",
+          "priceText": "ab 17,60 €",
+          "priceAmount": 17.6,
+          "venueAddress": "Kraftwerk Mitte 28, 01067, Dresden, Deutschland"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "7e11e2b1-c1e5-45f1-b407-401531ce348a",
+          "lineupEntryCount": 0,
+          "updatedAt": "2026-08-02T16:47:12.563+00:00"
+        },
+        "publishedDbFields": {
+          "title": "PURE TECHNO - ALEX STEIN, MARK REEVE, PETER PAHN, MARTIN BOOKS - 13 DJs - 2 Floors",
+          "description": {
+            "description": "",
+            "ticket_url": "https://hmg-concerts.ticket.io/0orkxNqw/",
+            "price_text": "ab 17,60 €",
+            "venue_address": null,
+            "latitude": null
+          }
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "missing",
+              "stage": 3
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "missing",
+              "stage": 5
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "missing",
+              "stage": 10
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.55
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "missing",
+          "sectionWouldShow": false
+        }
+      }
+    },
+    {
+      "label": "Complete address example",
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "source-affenkaefig",
+              "sourceType": "website",
+              "connectorKey": "organizer_website",
+              "externalEventId": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+              "listUrl": "https://affenkaefig.info/tickets/",
+              "detailUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+              "lastSeenAt": "2026-08-02T17:44:55.081+00:00",
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "listUrl": "https://ticketkings.de/all-events/",
+              "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "lastSeenAt": "2026-08-02T15:22:33.137+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-affenkaefig-ticket-kings",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "listUrl": "https://ticketkings.de/all-events/",
+              "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "lastSeenAt": "2026-08-02T17:45:41.937+00:00",
+              "detailPagesFetched": 5,
+              "detailBlockedByPow": false
+            },
+            {
+              "sourceId": "source-ticket-kings-org-elektrokuche",
+              "sourceType": "ticket_platform",
+              "connectorKey": "ticket_platform",
+              "externalEventId": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "listUrl": "https://ticketkings.de/all-events/",
+              "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+              "lastSeenAt": "2026-08-02T15:27:26.758+00:00",
+              "detailPagesFetched": 0,
+              "detailBlockedByPow": false
+            }
+          ],
+          "bestImportSourceId": "source-affenkaefig-ticket-kings",
+          "detailUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "detailPagesFetched": 5,
+          "detailBlockedByPow": false
+        },
+        "fetch": {
+          "evidence": "detail pages fetched in origin metadata"
+        },
+        "parsedData": {
+          "artistNames": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ],
+          "description": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher...",
+          "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "genreNames": [
+            "Techno",
+            "Bounce",
+            "Hardtechno"
+          ],
+          "venueAddress": "Siegburger Str. 110, 50679, Köln"
+        },
+        "normalizedImportRecord": {
+          "importRecordId": "6c099016-c47a-489f-8ca2-a17e4016c7c8",
+          "lineupEntryCount": 14,
+          "updatedAt": "2026-08-02T17:45:43.946+00:00"
+        },
+        "publishedDbFields": {
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "description": {
+            "description": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher...",
+            "ticket_url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+            "price_text": "",
+            "venue_address": "Siegburger Str. 110, 50679 Köln, Köln",
+            "latitude": null
+          },
+          "lineup": [
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN",
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "complete",
+              "stage": null
+            },
+            "image": {
+              "status": "complete",
+              "stage": null
+            },
+            "lineup": {
+              "status": "complete",
+              "stage": null
+            },
+            "genres": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueName": {
+              "status": "complete",
+              "stage": null
+            },
+            "street": {
+              "status": "complete",
+              "stage": null
+            },
+            "postalCode": {
+              "status": "complete",
+              "stage": null
+            },
+            "city": {
+              "status": "complete",
+              "stage": null
+            },
+            "country": {
+              "status": "complete",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "missing",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "missing",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.73
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "complete",
+          "sectionWouldShow": true
+        }
+      }
+    },
+    {
+      "label": "City only example",
+      "eventId": "klangkuenstler-berghain",
+      "title": "Klangkuenstler at Halle",
+      "pipeline": {
+        "source": {
+          "origins": [
+            {
+              "sourceId": "staging-seed-source-manual",
+              "sourceType": "manual",
+              "externalEventId": "klangkuenstler-berghain",
+              "detailUrl": "",
+              "lastSeenAt": "2026-07-30T09:46:51.439+00:00",
+              "detailBlockedByPow": false
+            }
+          ]
+        },
+        "fetch": {
+          "evidence": "list-only or no URL"
+        },
+        "parsedData": {},
+        "normalizedImportRecord": {},
+        "publishedDbFields": {
+          "title": "Klangkuenstler at Halle",
+          "description": {
+            "description": "Berlin staging highlight with Klangkuenstler. Ticket link kept for sold-out UI test.",
+            "ticket_url": "https://example.com/tickets/klangkuenstler-berghain",
+            "price_text": null,
+            "venue_address": null,
+            "latitude": null
+          },
+          "lineup": [
+            "Klangkuenstler"
+          ]
+        },
+        "canonicalProjection": {
+          "fieldStatuses": {
+            "title": {
+              "status": "complete",
+              "stage": null
+            },
+            "description": {
+              "status": "complete",
+              "stage": null
+            },
+            "image": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "lineup": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            },
+            "genres": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "ticketUrl": {
+              "status": "complete",
+              "stage": null
+            },
+            "ticketPrice": {
+              "status": "unavailable_at_source",
+              "stage": 3
+            },
+            "ticketPhases": {
+              "status": "missing",
+              "stage": 10
+            },
+            "ticketStatus": {
+              "status": "missing",
+              "stage": 10
+            },
+            "venueName": {
+              "status": "missing",
+              "stage": null
+            },
+            "street": {
+              "status": "partial",
+              "stage": 5
+            },
+            "postalCode": {
+              "status": "missing",
+              "stage": null
+            },
+            "city": {
+              "status": "missing",
+              "stage": null
+            },
+            "country": {
+              "status": "partial",
+              "stage": null
+            },
+            "latitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "longitude": {
+              "status": "missing",
+              "stage": 10
+            },
+            "minimumAge": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "doorsOpen": {
+              "status": "unavailable_at_source",
+              "stage": null
+            },
+            "startTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "endTime": {
+              "status": "complete",
+              "stage": null
+            },
+            "venueEnvironment": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "floorCount": {
+              "status": "unavailable_at_source",
+              "stage": 10
+            },
+            "timetable": {
+              "status": "unavailable_at_source",
+              "stage": 1
+            }
+          },
+          "consistencyTotal": 0.64
+        },
+        "uiViewModel": {
+          "note": "UI reads canonical projection; no separate UI-only lineup source when event_artists populated",
+          "lineupCompleteness": "unavailable_at_source",
+          "sectionWouldShow": true
+        }
+      }
+    }
+  ]
+}

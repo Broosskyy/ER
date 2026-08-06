@@ -39,8 +39,20 @@ export class SourceBackedImportScheduleRepository implements ImportScheduleRepos
   }
 
   async listStates(): Promise<ImportScheduleState[]> {
-    const result = await this.sourceRepository.list({ page: 1, pageSize: 10_000 });
-    return result.items
+    const pageSize = 100;
+    const sources: SourceRecord[] = [];
+    let page = 1;
+
+    do {
+      const result = await this.sourceRepository.list({ page, pageSize });
+      sources.push(...result.items);
+      if (sources.length >= result.total || result.items.length === 0) {
+        break;
+      }
+      page += 1;
+    } while (true);
+
+    return sources
       .filter((source) => source.enabled && !source.archived)
       .map(mapSourceRecordToScheduleState);
   }

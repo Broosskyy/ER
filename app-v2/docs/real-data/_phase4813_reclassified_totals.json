@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-04T20:55:51.963Z",
+  "productionMutationsInThisRun": 0,
+  "phase4812": {
+    "BOTH_CORRECT": 204,
+    "LEGACY_BETTER": 249,
+    "PUBLIC_SOURCE_HAS_NO_FIELD": 215,
+    "BOTH_INCORRECT": 42,
+    "UNIFIED_BETTER": 4
+  },
+  "phase4813": {
+    "BOTH_CORRECT": 234,
+    "LEGACY_BETTER": 69,
+    "INTENTIONALLY_UNSUPPORTED": 182,
+    "PUBLIC_SOURCE_HAS_NO_FIELD": 215,
+    "BOTH_INCORRECT": 5,
+    "STALE_EVIDENCE": 4,
+    "UNIFIED_BETTER": 4,
+    "REVIEW_REQUIRED": 1
+  }
+}

@@ -127,6 +127,11 @@ function provenanceFromRow(row: Record<string, unknown>): FieldProvenance {
     selectionReason: String(row.selection_reason),
     alternatives: Array.isArray(row.alternatives) ? row.alternatives as FieldProvenance['alternatives'] : [],
     lastChangedAt: String(row.updated_at),
+    confidence: row.confidence != null ? Number(row.confidence) : undefined,
+    freshnessAt: row.freshness_at ? String(row.freshness_at) : undefined,
+    originExternalId: row.origin_external_id ? String(row.origin_external_id) : undefined,
+    mergeDecision: row.merge_decision ? String(row.merge_decision) : undefined,
+    selectedTier: row.selected_tier ? String(row.selected_tier) as FieldProvenance['selectedTier'] : undefined,
   };
 }
 
@@ -285,6 +290,11 @@ export class SupabaseMultiSourceRepositories {
       selected_value: provenance.value, selected_source_id: provenance.selectedSourceId || null,
       selected_at: provenance.lastChangedAt, selection_reason: provenance.selectionReason,
       alternatives: provenance.alternatives, manually_overridden: manuallyOverridden, updated_at: provenance.lastChangedAt,
+      confidence: provenance.confidence ?? null,
+      freshness_at: provenance.freshnessAt ?? null,
+      origin_external_id: provenance.originExternalId ?? null,
+      merge_decision: provenance.mergeDecision ?? null,
+      selected_tier: provenance.selectedTier ?? null,
     }, { onConflict: 'canonical_event_id,field_path' }).select('*').single();
     return provenanceFromRow(resultOrThrow(result) as Record<string, unknown>);
   }

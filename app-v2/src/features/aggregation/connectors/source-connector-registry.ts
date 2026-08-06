@@ -33,6 +33,10 @@ import {
   sourceConnectorRateLimiter,
 } from '@/features/aggregation/connectors/framework/rate-limit';
 import type { SourceConnectorError } from '@/features/aggregation/connectors/framework/errors';
+import {
+  adaptRegisteredConnectorToSourceModule,
+  type SourceModule,
+} from '@/features/aggregation/connectors/framework/source-module-contract';
 import type { SourceConnector, SourceConnectorKey } from '@/features/aggregation/connectors/types';
 
 interface ConnectorRuntimeState {
@@ -202,6 +206,14 @@ export class SourceConnectorRegistry {
 
   listDescriptors(): SourceConnectorDescriptor[] {
     return [...this.connectors.keys()].map((key) => this.getDescriptor(key));
+  }
+
+  listSourceModules(): SourceModule[] {
+    return [...this.connectors.values()].map(adaptRegisteredConnectorToSourceModule);
+  }
+
+  getSourceModule(key: SourceConnectorKey): SourceModule {
+    return adaptRegisteredConnectorToSourceModule(this.get(key));
   }
 
   getHealth(key: SourceConnectorKey): SourceConnectorHealthSnapshot {

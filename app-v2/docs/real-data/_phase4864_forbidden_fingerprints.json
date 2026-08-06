@@ -1,0 +1,68 @@
+{
+  "evt-1785389049895-4mb7dub": {
+    "title": "Underland Essigfabrik 05.09.2026",
+    "description": "",
+    "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+    "websiteUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+    "venueName": "Essigfabrik / Elektroküche",
+    "genreLabels": null,
+    "organizerName": "Affenkäfig",
+    "sourceId": "source-affenkaefig",
+    "lineup": "frozen"
+  },
+  "evt-1785339421539-k3swcrl": {
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+    "websiteUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+    "venueName": "Bootshaus",
+    "genreLabels": [
+      "BASSHOUSE",
+      "ELECTRO",
+      "HOUSE",
+      "PROGRESSIVE HOUSE",
+      "EDM",
+      "DANCE"
+    ],
+    "organizerName": "Bootshaus",
+    "sourceId": "source-bootshaus-koeln",
+    "lineup": "frozen"
+  },
+  "evt-1785339391167-tfaixrr": {
+    "title": "Bootshaus Sommerfest",
+    "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+    "websiteUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+    "venueName": "Essigfabrik",
+    "genreLabels": [
+      "DUBSTEP",
+      "ELECTRO",
+      "HARDTECHNO",
+      "TECHNO",
+      "EDM"
+    ],
+    "organizerName": "Bootshaus",
+    "sourceId": "source-bootshaus-koeln",
+    "lineup": "frozen"
+  },
+  "evt-1785339386612-rjr91mv": {
+    "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+    "description": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort.Mainfloor:RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+    "websiteUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+    "venueName": "Essigfabrik",
+    "genreLabels": [
+      "HARDSTYLE"
+    ],
+    "organizerName": "Bootshaus",
+    "sourceId": "source-bootshaus-koeln",
+    "lineup": "frozen"
+  },
+  "_verification": {
+    "generatedAt": "2026-08-06T00:05:21.368Z",
+    "phase": "4.8.6.4",
+    "passed": true,
+    "violations": [],
+    "productionMutationsInThisRun": 0
+  }
+}

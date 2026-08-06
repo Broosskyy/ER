@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-08-06T01:06:49.232Z",
+  "phase": "4.8.6.5",
+  "productionMutationsInThisRun": 0,
+  "readyForBoundedRollout": false,
+  "blockers": [
+    "Missing-price truth must be classified and optionally persisted (Preview A)",
+    "Duplicate consumer price presentation must be fixed generically (Preview B)"
+  ],
+  "underlandCause": "VALID_EVIDENCE_NOT_PERSISTED",
+  "leviCause": "PUBLIC_PRICE_NOT_AVAILABLE",
+  "duplicateEvents": 3,
+  "dataPreviewCount": 1,
+  "uiPreviewReady": true,
+  "approvalsRequired": [
+    "Preview A: explicit approval per Event with verified public admission price",
+    "Preview B: generic UI contract rollout (no per-Event hacks)"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-08-05T23:18:21.740Z",
+  "phase": "4.8.6",
+  "productionMutationsInThisRun": 0,
+  "pass1MutationCount": 1,
+  "pass2MutationCount": 0,
+  "pass2Idempotent": true,
+  "r3habDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+  "r3habLineup": [
+    "R3HAB",
+    "LA FUENTE",
+    "OLIVER MAGENTA",
+    "RELOVA",
+    "DAVE REPLAY"
+  ],
+  "r3habTicketCta": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+  "sommerfestChecks": {
+    "descriptionStable": true,
+    "venueEssigfabrik": true,
+    "noBootshausVenueOverwrite": true,
+    "ticketIoCta": true,
+    "priceUntouched": true,
+    "noFakeTbaArtist": true
+  },
+  "canonicalVerification": {
+    "generatedAt": "2026-08-05T23:18:18.096Z",
+    "phase": "4.8.6",
+    "productionMutationsInThisRun": 0,
+    "r3habChecks": [
+      {
+        "field": "description",
+        "expected": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "actual": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "pass": true
+      },
+      {
+        "field": "ticketUrl",
+        "expected": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "actual": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "pass": true
+      },
+      {
+        "field": "lineup",
+        "expected": [
+          "R3HAB",
+          "LA FUENTE",
+          "OLIVER MAGENTA",
+          "RELOVA",
+          "DAVE REPLAY"
+        ],
+        "actual": [
+          "R3HAB",
+          "LA FUENTE",
+          "OLIVER MAGENTA",
+          "RELOVA",
+          "DAVE REPLAY"
+        ],
+        "pass": true
+      }
+    ],
+    "r3habPass": true,
+    "sommerfestUntouched": true
+  },
+  "forbiddenFingerprint": {
+    "generatedAt": "2026-08-05T23:18:20.880Z",
+    "phase": "4.8.6",
+    "productionMutationsInThisRun": 0,
+    "comparisons": {
+      "evt-1785339421539-k3swcrl": {
+        "beforeHash": "7b655b18fbfd38e6",
+        "afterHash": "7b655b18fbfd38e6",
+        "unchanged": true
+      },
+      "evt-1785339391167-tfaixrr": {
+        "beforeHash": "e55bb3209b9b34b7",
+        "afterHash": "e55bb3209b9b34b7",
+        "unchanged": true
+      }
+    },
+    "pass": true
+  },
+  "rollback": {
+    "generatedAt": "2026-08-05T23:18:21.740Z",
+    "phase": "4.8.6",
+    "rollbackReady": true,
+    "eventCount": 2,
+    "productionMutationsInThisRun": 0
+  },
+  "legacyRemainsEnabled": true,
+  "readinessVerdict": "PHASE_486_PASS1_COMPLETE"
+}

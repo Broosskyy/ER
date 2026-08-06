@@ -1,0 +1,241 @@
+{
+  "generatedAt": "2026-08-04T05:17:43.293Z",
+  "readOnly": true,
+  "note": "venue_relationships_not_mutated_without_stronger_explicit_evidence",
+  "representativeCount": 21,
+  "promoterInferred": 3,
+  "explicitMismatch": 0,
+  "events": [
+    {
+      "representative": "Mallorca Events",
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Mallorca Events",
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Mallorca Events",
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Mallorca Events",
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Mallorca Events",
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Mallorca Events",
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Ship Events",
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "canonicalVenue": "KD Anleger Nr. 2",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Ship Events",
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "canonicalVenue": "KD Anleger Nr. 2",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "External Bootshaus Events",
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "External Bootshaus Events",
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "External Bootshaus Events",
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "External Bootshaus Events",
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "External Bootshaus Events",
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "External Bootshaus Events",
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "canonicalVenue": "",
+      "canonicalVenueCity": "Palma de Mallorca",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "canonicalVenue": "Essigfabrik",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "title": "Vision Ekstase Open Air",
+      "canonicalVenue": "Killesberg",
+      "canonicalVenueCity": "Stuttgart-Nord",
+      "organizerName": "Lehmann Club GmbH & Co KG",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785506470445-pdpd3u6",
+      "title": "SAVE THE RAVE OPEN AIR ft. WESTBAM & K-PAUL",
+      "canonicalVenue": "Freilichtbühne",
+      "canonicalVenueCity": "Eberswalde",
+      "organizerName": "HMG Events GmbH & Co.KG",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "canonicalVenue": "Bootshaus",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": true,
+      "action": "review_promoter_venue_inference"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785339375946-dszejnk",
+      "title": "Nibirii Festival 2026",
+      "canonicalVenue": "Bootshaus",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": true,
+      "action": "review_promoter_venue_inference"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785339398765-9lptzhg",
+      "title": "Blacklist Festival 2026",
+      "canonicalVenue": "Bootshaus",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Bootshaus",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": true,
+      "action": "review_promoter_venue_inference"
+    },
+    {
+      "representative": "Festival Events",
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "canonicalVenue": "Essigfabrik",
+      "canonicalVenueCity": "Köln",
+      "organizerName": "Affenkäfig",
+      "explicitVenueFromImport": null,
+      "promoterInferredVenue": false,
+      "action": "verified"
+    }
+  ]
+}

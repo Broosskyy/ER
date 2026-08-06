@@ -1,0 +1,452 @@
+{
+  "generatedAt": "2026-08-02T12:18:29.761Z",
+  "traces": [
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 618,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "source": "source-affenkaefig",
+      "canonicalFields": {
+        "descriptionLen": 231,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "",
+        "displayPriceText": "",
+        "address": "Siegburger Str. 110, 50679 Köln, Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785506391332-nkworm2",
+      "title": "LEHMANN Schranznacht w/ IN VERRUF, DASSTUDACH, MOIA, GAAAS",
+      "source": "source-ticket-io-lehmannclub",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "priceText": "ab 20,00 €",
+        "displayPriceText": "ab 20,00 €"
+      },
+      "projection": {
+        "knownArtistNames": 4,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 545,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "source": "source-affenkaefig",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "address": "Siegburger Str. 110, 50679 Köln, Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785506408508-ema5ssy",
+      "title": "LEHMANN Clubnacht w/ ÜBERREST, MILA BLACK, RAPHAEL DINCSOY, SOURCE CODE, 2ND FLOOR NKR",
+      "source": "source-ticket-io-lehmannclub",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "priceText": "ab 20,00 €",
+        "displayPriceText": "ab 20,00 €"
+      },
+      "projection": {
+        "knownArtistNames": 5,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 612,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 625,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785506421633-m1ktkpf",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 3 FLOORS x R25 Düsseldorf",
+      "source": "source-ticket-io-area51events",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "ab 8,00 €",
+        "displayPriceText": "ab 8,00 €"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 636,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 12,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "Tickets ab 11,90 Euro",
+        "displayPriceText": "ab 11,90 €",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "address": "Auenweg 173, 51063 Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 5,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 586,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785389051072-mihh18f",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "source": "source-affenkaefig",
+      "canonicalFields": {
+        "descriptionLen": 224,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "address": "Siegburger Str. 110, 50679 Köln, Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 0,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339394218-cbqw3kx",
+      "title": "Bootshaus Sommerfest Closing",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 758,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "priceText": "Tickets ab 15,00 Euro",
+        "displayPriceText": "ab 15,00 €",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "address": "Auenweg 173, 51063 Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 0,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785389056612-4cwtdmo",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "source": "source-affenkaefig",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "address": "An der Saarlandhalle 3, 66113, Saarbrücken",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 0,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785506419485-ty33rrb",
+      "title": "AREA51 TECHNO - UNDERGROUND AFFAIRS / 2 FLOORS x R25 Düsseldorf",
+      "source": "source-ticket-io-area51events",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "ab 8,00 €",
+        "displayPriceText": "ab 8,00 €"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "source": "source-affenkaefig",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "priceText": "Tickets ab 34,90 Euro",
+        "displayPriceText": "ab 34,90 €",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "address": "Siegburger Str. 110, 50679 Köln, Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 0,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "source": "source-affenkaefig-ticket-kings",
+      "canonicalFields": {
+        "descriptionLen": 554,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "address": "Siegburger Str. 110, 50679, Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "source": "source-affenkaefig",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "Tickets ab 39,99 Euro",
+        "displayPriceText": "ab 39,99 €",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "address": "Dödterstraße 10, 58095 Hagen, Hagen",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "source": "source-bootshaus-koeln",
+      "canonicalFields": {
+        "descriptionLen": 745,
+        "artists": 0,
+        "lineup": 0,
+        "ticketPhases": 0,
+        "priceText": "Tickets ab 19,90 Euro",
+        "displayPriceText": "ab 19,90 €",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "address": "Auenweg 173, 51063 Köln",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 0,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "source": "source-affenkaefig-ticket-kings",
+      "canonicalFields": {
+        "descriptionLen": 547,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "address": "Königstraße 49, 70173, Stuttgart, Germany",
+        "ticketStatus": "external_link"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785506417389-t2f9fu4",
+      "title": "AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf",
+      "source": "source-ticket-io-area51events",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "ab 12,00 €",
+        "displayPriceText": "ab 12,00 €"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    },
+    {
+      "eventId": "evt-1785506415247-c9ykti2",
+      "title": "AREA51 TECHNO - HOLY SCHRANZ / 2 FLOORS x R25 Düsseldorf",
+      "source": "source-ticket-io-area51events",
+      "canonicalFields": {
+        "descriptionLen": 0,
+        "artists": 1,
+        "lineup": 1,
+        "ticketPhases": 0,
+        "priceText": "ab 8,00 €",
+        "displayPriceText": "ab 8,00 €"
+      },
+      "projection": {
+        "knownArtistNames": 1,
+        "genres": 0,
+        "ticketAvailability": "external_link",
+        "isSoldOut": false
+      }
+    }
+  ]
+}

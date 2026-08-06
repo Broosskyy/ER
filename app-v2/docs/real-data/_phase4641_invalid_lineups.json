@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-08-02T20:21:44.708Z",
+  "beforeCount": 4,
+  "afterCount": 0,
+  "cleared": [
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "invalidArtists": ["by BOOTSHAUS"],
+      "parserStage": "title_inference_or_json_ld_performer",
+      "genericFix": "reject_by_prefix_organizer_credits + clear_invalid_canonical_lineup"
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "invalidArtists": ["by BOOTSHAUS"],
+      "parserStage": "title_inference_or_json_ld_performer",
+      "genericFix": "reject_by_prefix_organizer_credits + clear_invalid_canonical_lineup"
+    },
+    {
+      "eventId": "evt-1785389053437-3oxde27",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "invalidArtists": ["by BOOTSHAUS"],
+      "parserStage": "title_inference_or_json_ld_performer",
+      "genericFix": "reject_by_prefix_organizer_credits + clear_invalid_canonical_lineup"
+    },
+    {
+      "eventId": "evt-1785339392687-tbdwup4",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "invalidArtists": ["by BOOTSHAUS"],
+      "parserStage": "title_inference_or_json_ld_performer",
+      "genericFix": "reject_by_prefix_organizer_credits + clear_invalid_canonical_lineup"
+    }
+  ],
+  "invalid": []
+}

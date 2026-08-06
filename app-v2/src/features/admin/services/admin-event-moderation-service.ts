@@ -1,6 +1,6 @@
 import { AppError } from '@/core/errors/app-error';
 import type { AdminEventRecord } from '@/data/types/records';
-import type { AdminEventRepository } from '@/data/repositories/repositories';
+import type { AdminEventRepository, EventRepository } from '@/data/repositories/repositories';
 import {
   canAdminModerateTransition,
   isContributorSubmission,
@@ -11,6 +11,8 @@ import { resolveModerationQueueStatus } from '@/features/admin/utils/moderation-
 import type { AdminModerationStateService } from '@/features/admin/services/admin-moderation-state-service';
 import type { EventModerationAuditService } from '@/features/admin/services/event-moderation-audit-service';
 import { resolveAdminRole, type AdminRole } from '@/features/import/admin/admin-roles';
+import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
+import type { EventFieldProvenanceWriter } from '@/features/import/services/event-field-provenance-writer';
 import type { AuthSession } from '@/services/supabase/auth-service';
 import type { SubmissionDisplayStatus } from '@/features/create/wizard/wizard-types';
 
@@ -80,6 +82,8 @@ export class AdminEventModerationService {
     private readonly eventRepository: AdminEventRepository,
     private readonly auditService: EventModerationAuditService,
     private readonly stateService: AdminModerationStateService,
+    private readonly fieldProvenanceWriter?: EventFieldProvenanceWriter,
+    private readonly consumerEventRepository?: EventRepository,
   ) {}
 
   private role(session: AuthSession | null): AdminRole | null {
@@ -271,6 +275,20 @@ export class AdminEventModerationService {
     };
 
     const saved = await this.eventRepository.save(record, { source: 'moderation' });
+
+    if (this.fieldProvenanceWriter) {
+      await this.fieldProvenanceWriter.writeFromModerationPublish(
+        saved.canonicalEventId ?? saved.id,
+        saved,
+        {
+          moderatorId: this.actorId(session),
+          contributorId: saved.createdBy,
+        },
+      );
+    }
+
+    await invalidateConsumerEventCaches(this.consumerEventRepository);
+
     await this.stateService.upsertState({
       eventId,
       queueStatus: 'published',

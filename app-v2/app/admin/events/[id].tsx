@@ -34,6 +34,10 @@ import {
   EventLineupEditor,
   type EventLineupDraftEntry,
 } from '@/features/admin/components/EventLineupEditor';
+import {
+  StructuredLineupAdminSection,
+  type StructuredLineupDraftEntry,
+} from '@/features/admin/components/StructuredLineupAdminSection';
 import { VenuePicker } from '@/features/admin/components/VenuePicker';
 import { OrganizerPicker } from '@/features/admin/components/OrganizerPicker';
 import { canEditEventLineup, canEditEvents, canModerateContributorEvents, canPublishEvents } from '@/features/admin/admin-permissions';
@@ -91,6 +95,7 @@ export default function AdminEventEditorScreen() {
   const canEditLineup = canEditEventLineup(role);
   const [record, setRecord] = useState<AdminEventRecord | null>(null);
   const [lineup, setLineup] = useState<EventLineupDraftEntry[]>([]);
+  const [structuredLineup, setStructuredLineup] = useState<StructuredLineupDraftEntry[]>([]);
   const [artistOptions, setArtistOptions] = useState<Awaited<ReturnType<typeof adminArtistRepository.getAll>>>([]);
   const [venueOptions, setVenueOptions] = useState<VenueRecord[]>([]);
   const [organizerOptions, setOrganizerOptions] = useState<OrganizerRecord[]>([]);
@@ -129,6 +134,7 @@ export default function AdminEventEditorScreen() {
       if (isNew) {
         setRecord((current) => current ?? createEmptyEvent(draftEventId));
         setLineup([]);
+        setStructuredLineup([]);
       } else {
         const existing = await adminEventRepository.getById(id);
         if (!existing) {
@@ -147,6 +153,8 @@ export default function AdminEventEditorScreen() {
             billingRole: entry.billingRole,
           })),
         );
+        const loadedStructured = await eventLineupService.getStructuredLineupForEvent(id);
+        setStructuredLineup(loadedStructured);
       }
     } catch (cause) {
       setError(getErrorMessage(cause));
@@ -211,6 +219,9 @@ export default function AdminEventEditorScreen() {
       const saved = await adminEventRepository.save(payload);
       if (canEditLineup) {
         await eventLineupService.replaceEventLineup(role, saved.id, lineup);
+        if (structuredLineup.length > 0) {
+          await eventLineupService.replaceStructuredLineup(role, saved.id, structuredLineup);
+        }
       }
       navigateToEventList(getSaveSuccessMessage(nextStatus));
     } catch (cause) {
@@ -414,6 +425,12 @@ export default function AdminEventEditorScreen() {
             availableArtists={artistOptions}
             editable={fieldsEditable && canEditLineup}
             onChange={setLineup}
+          />
+
+          <StructuredLineupAdminSection
+            entries={structuredLineup}
+            editable={fieldsEditable && canEditLineup}
+            onChange={setStructuredLineup}
           />
 
           <AppText style={styles.section}>Status</AppText>

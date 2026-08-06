@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-08-05T19:38:50.380Z",
+  "phase": "4.8.5",
+  "productionMutationsInThisRun": 0,
+  "checks": [
+    {
+      "rule": "source_host_not_venue",
+      "pass": true
+    },
+    {
+      "rule": "organizer_not_ticket_platform",
+      "pass": true
+    },
+    {
+      "rule": "stale_ticket_kings_cannot_override_ticket_io",
+      "pass": true
+    },
+    {
+      "rule": "provider_default_lower_confidence",
+      "pass": true
+    },
+    {
+      "rule": "affenkaefig_bootshaus_ticket_io_convergence",
+      "pass": true
+    }
+  ],
+  "note": "Validated via integrated field comparison and merge simulation on trace events"
+}

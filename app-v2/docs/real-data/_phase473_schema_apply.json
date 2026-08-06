@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-03T17:00:00.000Z",
+  "migrationFile": "20260803140000_phase473_canonical_event_attributes.sql",
+  "beforePublishedCount": 108,
+  "alreadyApplied": false,
+  "applied": false,
+  "status": "blocked",
+  "rowsChangedByMigration": 0,
+  "blockers": [
+    "DATABASE_URL / SUPABASE_DB_URL not configured in app-v2/.env — DDL cannot run via PostgREST service role"
+  ],
+  "nextStep": "Add SUPABASE_DB_URL (Supabase Dashboard → Database → Connection string), then run: npx tsx scripts/operations/_phase473-apply-schema-migration.ts"
+}

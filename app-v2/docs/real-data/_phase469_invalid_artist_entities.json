@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-08-03T09:43:55.308Z",
+  "readOnly": true,
+  "artists": [
+    {
+      "artistName": "Underland Essigfabrik 05.09.2026 5 Sep. @ 22:00 - 6 Sep. @ 07:00 CEST",
+      "signals": [
+        "prose_sentence",
+        "placeholder_not_rejected"
+      ],
+      "linkedEventIds": [
+        "evt-1785443911160-owt97y3"
+      ],
+      "likelySourceField": "description or artistNames fallback",
+      "likelyParserPath": "lineup-text-parser / import-lineup-from-record",
+      "qualityGateBypassed": true,
+      "eventTitles": [
+        "MDMA – Musik Die Mich Antreibt 10.10.26"
+      ]
+    },
+    {
+      "artistName": "M.D.M.A xxx PROTON xxx STUTTGART 24 Okt. @ 23:00 - 25 Okt. @ 06:00 CEST",
+      "signals": [
+        "prose_sentence",
+        "placeholder_not_rejected"
+      ],
+      "linkedEventIds": [
+        "evt-1785443911160-owt97y3"
+      ],
+      "likelySourceField": "description or artistNames fallback",
+      "likelyParserPath": "lineup-text-parser / import-lineup-from-record",
+      "qualityGateBypassed": true,
+      "eventTitles": [
+        "MDMA – Musik Die Mich Antreibt 10.10.26"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "generatedAt": "2026-08-03T14:48:20.300Z",
+  "ticketKingsEventsInBackup": 4,
+  "eventsWithPriceGained": 4,
+  "lineupFingerprintsUnchanged": true,
+  "forbiddenDomainsUnchanged": true,
+  "affected": [
+    {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+      "priceGained": true,
+      "afterPriceText": "ab 2,50 €",
+      "minimumPrice": 2.5,
+      "currency": "EUR",
+      "availability": "available",
+      "ticketStatus": "on_sale",
+      "phaseCount": 1,
+      "ticketPhases": [
+        {
+          "id": "phase-standard-r_success%2f",
+          "kind": "regular",
+          "name": "Standard",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 400,
+          "priceLabel": "ab 2,50 €",
+          "priceAmount": 2.5,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "mobileUi": {
+        "priceLabel": "2,50 €",
+        "availabilityLabel": "Verfügbar"
+      },
+      "apiPayload": {
+        "priceText": "2,50 €",
+        "minimumPrice": 2.5,
+        "maximumPrice": 2.5,
+        "currency": "EUR",
+        "availability": "available",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "phase-standard-r_success%2f",
+            "kind": "regular",
+            "name": "Standard",
+            "isFree": false,
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 400,
+            "priceLabel": "ab 2,50 €",
+            "priceAmount": 2.5,
+            "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=24&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "lineupFingerprintBefore": {
+        "structuredCount": 9,
+        "legacyCount": 18,
+        "artistNamesHash": "cdd9a89f6b9ec553"
+      },
+      "lineupFingerprintAfter": {
+        "structuredCount": 9,
+        "legacyCount": 18,
+        "artistNamesHash": "cdd9a89f6b9ec553"
+      },
+      "lineupUnchanged": true,
+      "forbiddenDomainFingerprintBefore": {
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "websiteUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+        "venueId": "",
+        "venueName": "Essigfabrik / Elektroküche",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+        "organizerId": "",
+        "organizerName": "Affenkäfig",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig"
+      },
+      "forbiddenDomainFingerprintAfter": {
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+        "websiteUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition",
+        "venueId": "",
+        "venueName": "Essigfabrik / Elektroküche",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+        "organizerId": "",
+        "organizerName": "Affenkäfig",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig"
+      },
+      "forbiddenDomainUnchanged": true
+    },
+    {
+      "eventId": "evt-1785443911160-owt97y3",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "priceGained": true,
+      "afterPriceText": "ab 2,50 €",
+      "minimumPrice": 2.5,
+      "currency": "EUR",
+      "availability": "available",
+      "ticketStatus": "on_sale",
+      "phaseCount": 1,
+      "ticketPhases": [
+        {
+          "id": "phase-standard-r_success%2f",
+          "kind": "regular",
+          "name": "Standard",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 400,
+          "priceLabel": "ab 2,50 €",
+          "priceAmount": 2.5,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "mobileUi": {
+        "priceLabel": "2,50 €",
+        "availabilityLabel": "Verfügbar"
+      },
+      "apiPayload": {
+        "priceText": "2,50 €",
+        "minimumPrice": 2.5,
+        "maximumPrice": 2.5,
+        "currency": "EUR",
+        "availability": "available",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "phase-standard-r_success%2f",
+            "kind": "regular",
+            "name": "Standard",
+            "isFree": false,
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 400,
+            "priceLabel": "ab 2,50 €",
+            "priceAmount": 2.5,
+            "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=30&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "lineupFingerprintBefore": {
+        "structuredCount": 2,
+        "legacyCount": 2,
+        "artistNamesHash": "db52825363291553"
+      },
+      "lineupFingerprintAfter": {
+        "structuredCount": 2,
+        "legacyCount": 2,
+        "artistNamesHash": "db52825363291553"
+      },
+      "lineupUnchanged": true,
+      "forbiddenDomainFingerprintBefore": {
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "venueId": "",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679, Köln",
+        "organizerId": "",
+        "organizerName": "M.D.M.A Musik die mich Antreibt",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig-ticket-kings"
+      },
+      "forbiddenDomainFingerprintAfter": {
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "websiteUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "venueId": "",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679, Köln",
+        "organizerId": "",
+        "organizerName": "M.D.M.A Musik die mich Antreibt",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_EB_MDMA_WEB3.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig-ticket-kings"
+      },
+      "forbiddenDomainUnchanged": true
+    },
+    {
+      "eventId": "evt-1785443914377-7g9l545",
+      "title": "M.D.M.A xxx PROTON xxx STUTTGART",
+      "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+      "priceGained": true,
+      "afterPriceText": "ab 2,50 €",
+      "minimumPrice": 2.5,
+      "currency": "EUR",
+      "availability": "available",
+      "ticketStatus": "on_sale",
+      "phaseCount": 1,
+      "ticketPhases": [
+        {
+          "id": "phase-standard-r_success%2f",
+          "kind": "regular",
+          "name": "Standard",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 400,
+          "priceLabel": "ab 2,50 €",
+          "priceAmount": 2.5,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "mobileUi": {
+        "priceLabel": "2,50 €",
+        "availabilityLabel": "Verfügbar"
+      },
+      "apiPayload": {
+        "priceText": "2,50 €",
+        "minimumPrice": 2.5,
+        "maximumPrice": 2.5,
+        "currency": "EUR",
+        "availability": "available",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "phase-standard-r_success%2f",
+            "kind": "regular",
+            "name": "Standard",
+            "isFree": false,
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 400,
+            "priceLabel": "ab 2,50 €",
+            "priceAmount": 2.5,
+            "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=31&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "lineupFingerprintBefore": {
+        "structuredCount": 0,
+        "legacyCount": 0,
+        "artistNamesHash": "e3b0c44298fc1c14"
+      },
+      "lineupFingerprintAfter": {
+        "structuredCount": 0,
+        "legacyCount": 0,
+        "artistNamesHash": "e3b0c44298fc1c14"
+      },
+      "lineupUnchanged": true,
+      "forbiddenDomainFingerprintBefore": {
+        "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "websiteUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "venueId": "",
+        "venueName": "Proton Stuttgart",
+        "venueCity": "Stuttgart",
+        "venueAddress": "Königstraße 49, 70173, Stuttgart, Germany",
+        "organizerId": "",
+        "organizerName": "M.D.M.A Musik die mich Antreibt",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig-ticket-kings"
+      },
+      "forbiddenDomainFingerprintAfter": {
+        "ticketUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "websiteUrl": "https://ticketkings.de/event/m-d-m-a-xxx-proton-xxx-stuttgart/",
+        "venueId": "",
+        "venueName": "Proton Stuttgart",
+        "venueCity": "Stuttgart",
+        "venueAddress": "Königstraße 49, 70173, Stuttgart, Germany",
+        "organizerId": "",
+        "organizerName": "M.D.M.A Musik die mich Antreibt",
+        "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/07/24.10.2026_FB_EB_MDMA_WEB.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig-ticket-kings"
+      },
+      "forbiddenDomainUnchanged": true
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+      "priceGained": true,
+      "beforePriceText": "",
+      "afterPriceText": "ab 2,50 €",
+      "minimumPrice": 2.5,
+      "currency": "EUR",
+      "availability": "available",
+      "ticketStatus": "on_sale",
+      "phaseCount": 1,
+      "ticketPhases": [
+        {
+          "id": "phase-standard-r_success%2f",
+          "kind": "regular",
+          "name": "Standard",
+          "isFree": false,
+          "soldOut": false,
+          "available": true,
+          "sortOrder": 400,
+          "priceLabel": "ab 2,50 €",
+          "priceAmount": 2.5,
+          "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "mobileUi": {
+        "priceLabel": "2,50 €",
+        "availabilityLabel": "Verfügbar"
+      },
+      "apiPayload": {
+        "priceText": "2,50 €",
+        "minimumPrice": 2.5,
+        "maximumPrice": 2.5,
+        "currency": "EUR",
+        "availability": "available",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "phase-standard-r_success%2f",
+            "kind": "regular",
+            "name": "Standard",
+            "isFree": false,
+            "soldOut": false,
+            "available": true,
+            "sortOrder": 400,
+            "priceLabel": "ab 2,50 €",
+            "priceAmount": 2.5,
+            "purchaseUrl": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "lineupFingerprintBefore": {
+        "structuredCount": 14,
+        "legacyCount": 14,
+        "artistNamesHash": "58682b7b8b78c295"
+      },
+      "lineupFingerprintAfter": {
+        "structuredCount": 14,
+        "legacyCount": 14,
+        "artistNamesHash": "58682b7b8b78c295"
+      },
+      "lineupUnchanged": true,
+      "forbiddenDomainFingerprintBefore": {
+        "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+        "websiteUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+        "venueId": "",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+        "organizerId": "",
+        "organizerName": "Affenkäfig",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig"
+      },
+      "forbiddenDomainFingerprintAfter": {
+        "ticketUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+        "websiteUrl": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026",
+        "venueId": "",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+        "organizerId": "",
+        "organizerName": "Affenkäfig",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+        "flyerUrl": "",
+        "sourceId": "source-affenkaefig"
+      },
+      "forbiddenDomainUnchanged": true
+    }
+  ]
+}

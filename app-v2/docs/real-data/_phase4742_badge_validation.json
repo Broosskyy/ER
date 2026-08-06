@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-08-03T20:29:04.422Z",
+  "projectionOnly": true,
+  "representatives": [
+    {
+      "key": "shipVol3",
+      "eventId": "evt-1785339420043-obhyeev",
+      "title": "Bootshaus on a Ship Vol. III",
+      "displayPriceText": "ab 32,00 €",
+      "ticketBadge": "sold_out",
+      "canonicalAvailability": "sold_out",
+      "hasBadge": true
+    },
+    {
+      "key": "bc173",
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "displayPriceText": "ab 23,00 €",
+      "ticketBadge": "on_sale",
+      "canonicalAvailability": "available",
+      "hasBadge": true
+    },
+    {
+      "key": "sommerfest",
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "displayPriceText": "ab 11,90 €",
+      "ticketBadge": "available",
+      "canonicalAvailability": "available",
+      "hasBadge": true
+    },
+    {
+      "key": "mdma",
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "displayPriceText": "ab 34,90 €",
+      "ticketBadge": "available",
+      "canonicalAvailability": "available",
+      "hasBadge": true
+    },
+    {
+      "key": "affenkaefig",
+      "eventId": "evt-1785339005035-wam829k",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "displayPriceText": "ab 19,90 €",
+      "ticketBadge": "available",
+      "canonicalAvailability": "available",
+      "hasBadge": true
+    },
+    {
+      "key": "proton",
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "displayPriceText": "ab 10,00 €",
+      "ticketBadge": "available",
+      "canonicalAvailability": "available",
+      "hasBadge": true
+    }
+  ]
+}

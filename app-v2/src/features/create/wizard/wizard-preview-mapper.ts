@@ -1,6 +1,8 @@
 import type { AdminEventRecord } from '@/data/types/records';
 import { filterConfig } from '@/features/search/constants';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
+import { toEventDisplayModel } from '@/features/events/formatting/display-event';
+import type { Event } from '@/features/events/types/event';
 import { combineDateAndTime } from '@/features/create/utils/event-draft-date-time';
 
 import type { EventFormData } from '../wizard/wizard-types';
@@ -62,16 +64,19 @@ export function buildPreviewDisplayModel(
         ? [genre.label]
         : [];
 
-  return {
+  const now = new Date().toISOString();
+  const previewEvent: Event = {
     id: record.id,
     slug: record.id,
     title: record.title,
     description: record.description,
-    image: record.imageUrl ? { uri: record.imageUrl } : 0,
-    date: formData.core.startDate,
-    startTime: formData.core.startTime,
+    imageUrl: record.imageUrl,
+    startDateTime: record.startDate,
+    endDateTime: record.endDate,
+    timezone: formData.extension.timezone,
     venue: record.venueName ?? formData.core.venueText ?? 'TBA',
     city: record.venueCity ?? formData.extension.city ?? 'Köln',
+    country: 'DE',
     genres,
     artists: formData.extension.lineup.map((entry) => entry.name),
     lineup: formData.extension.lineup.map((entry) => entry.name),
@@ -84,11 +89,11 @@ export function buildPreviewDisplayModel(
           : undefined,
     ticketUrl: record.ticketUrl,
     source: 'contributor',
-    sourceLabel: 'Vorschau',
-    startsAt: record.startDate,
-    startDateTime: record.startDate,
-    endDateTime: record.endDate,
-    timezone: formData.extension.timezone,
+    sourceEventId: record.id,
     status: 'published',
+    createdAt: now,
+    updatedAt: now,
   };
+
+  return toEventDisplayModel(previewEvent);
 }

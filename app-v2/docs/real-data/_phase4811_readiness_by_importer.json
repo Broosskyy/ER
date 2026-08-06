@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-04T20:04:50.436Z",
+  "productionMutationsInThisRun": 0,
+  "acceptanceGates": {
+    "completeMatrix": true,
+    "zeroUnexplainedBothWrong": true,
+    "zeroSchemaViolations": true,
+    "zeroContamination": true,
+    "idempotent": true
+  },
+  "unresolvedBothWrongCount": 0,
+  "productionShadowApproved": false,
+  "verdicts": {
+    "bootshaus-website": "READY_FOR_MORE_STAGING",
+    "official-website": "READY_FOR_MORE_STAGING",
+    "ticket-io": "READY_FOR_MORE_STAGING",
+    "ticket-kings": "READY_FOR_MORE_STAGING",
+    "nacht-manager": "READY_FOR_MORE_STAGING"
+  }
+}

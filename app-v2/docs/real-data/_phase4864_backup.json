@@ -1,0 +1,1757 @@
+{
+  "generatedAt": "2026-08-05T23:58:11.087Z",
+  "phase": "4.8.6.4",
+  "productionMutationsInThisRun": 0,
+  "events": {
+    "evt-1785389049895-4mb7dub": {
+      "event": {
+        "id": "evt-1785389049895-4mb7dub",
+        "title": "Underland Essigfabrik 05.09.2026",
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "priceText": "Tickets ab 23,90 Euro",
+        "ticketStatus": "external_link",
+        "venueName": "Essigfabrik / Elektroküche",
+        "venueCity": "Köln",
+        "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "sourceId": "source-affenkaefig",
+        "description": "",
+        "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+        "websiteUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026"
+      },
+      "sourceReferences": [
+        {
+          "sourceId": "source-bootshaus-ticket-io",
+          "externalEventId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "canonicalEventId": "evt-1785389049895-4mb7dub",
+          "originalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "rawRecordId": "34b314ac-caeb-4b1d-b6db-2c296900d96a",
+          "importJobId": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "firstSeenAt": "2026-07-30T13:22:52.357+00:00",
+          "lastSeenAt": "2026-08-02T21:24:29.387+00:00",
+          "active": true,
+          "sourcePriority": 65,
+          "sourceQuality": 70,
+          "metadata": {
+            "role": "ticketing",
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "C7JPnatZ",
+            "isPrimary": false,
+            "priceText": "ab 23,90 €",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "availability": "instock",
+            "canonicalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "defaultCityId": "koeln",
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "defaultOrganizerId": "organizer-bootshaus",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-affenkaefig",
+          "externalEventId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "canonicalEventId": "evt-1785389049895-4mb7dub",
+          "originalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "rawRecordId": "69cb971e-d37b-48db-b941-1337348f4280",
+          "importJobId": "ffd76e54-c117-4890-af98-0f4b5760126f",
+          "firstSeenAt": "2026-07-29T21:17:08.477+00:00",
+          "lastSeenAt": "2026-08-02T21:21:53.678+00:00",
+          "active": true,
+          "sourcePriority": 72,
+          "sourceQuality": 74,
+          "metadata": {
+            "role": "official",
+            "eventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "platform": "organizer_website",
+            "warnings": [],
+            "connector": "organizer_website",
+            "isPrimary": true,
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "sourceType": "website",
+            "syncStatus": "active",
+            "canonicalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "defaultCityId": "koeln",
+            "fieldEvidence": [
+              {
+                "field": "title",
+                "rawValue": "Underland Essigfabrik 05.09.2026",
+                "strategy": "json_ld",
+                "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T21:21:09.270Z",
+                "selectorOrPath": "name"
+              }
+            ],
+            "eventGeography": {
+              "city": "source_default",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "textualEnrichment": {
+              "attributes": [],
+              "outboundTicketLinks": []
+            },
+            "defaultOrganizerId": "organizer-affenkaefig",
+            "extractionStrategy": "json_ld",
+            "electronicRelevance": "relevant",
+            "outboundTicketLinks": [],
+            "extractionConfidence": 0.95,
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        }
+      ],
+      "provenance": {
+        "undefined": {
+          "value": {
+            "latitude": 50.9517133,
+            "longitude": 6.9819222
+          },
+          "selectedSourceId": "source-bootshaus-ticket-io",
+          "selectionReason": "import_publish",
+          "alternatives": [
+            {
+              "value": {
+                "latitude": 50.9517133,
+                "longitude": 6.9819222
+              },
+              "sourceId": "source-affenkaefig",
+              "confidence": 0.95,
+              "freshnessAt": "2026-08-02T21:21:53.181Z",
+              "originExternalId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/"
+            },
+            {
+              "value": {
+                "latitude": 50.9517133,
+                "longitude": 6.9819222
+              },
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-02T21:24:28.920Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+            }
+          ],
+          "lastChangedAt": "2026-08-02T21:24:28.92+00:00",
+          "freshnessAt": "2026-08-02T21:24:28.92+00:00",
+          "originExternalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "selectedTier": "ticket_platform"
+        }
+      },
+      "projection": {
+        "displayPriceText": "ab 23,90 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Essigfabrik / Elektroküche",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Essigfabrik / Elektroküche, Köln",
+        "locationLabelDot": "Essigfabrik / Elektroküche · Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+        "galleryImageUrls": [
+          "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Affenkäfig"
+      }
+    },
+    "evt-1785339421539-k3swcrl": {
+      "event": {
+        "id": "evt-1785339421539-k3swcrl",
+        "title": "R3HAB pres. by BOOTSHAUS",
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "ticketStatus": "external_link",
+        "venueName": "Bootshaus",
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "sourceId": "source-bootshaus-koeln",
+        "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+        "websiteUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+        "genreLabels": [
+          "BASSHOUSE",
+          "ELECTRO",
+          "HOUSE",
+          "PROGRESSIVE HOUSE",
+          "EDM",
+          "DANCE"
+        ]
+      },
+      "sourceReferences": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalEventId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "canonicalEventId": "evt-1785339421539-k3swcrl",
+          "originalUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "rawRecordId": "ff764aa3-a3ae-4032-bbbd-122724f6761b",
+          "importJobId": "f0a4b716-d09b-442a-b179-7f154ff4402f",
+          "firstSeenAt": "2026-07-28T21:49:28.619+00:00",
+          "lastSeenAt": "2026-08-02T20:54:34.268+00:00",
+          "active": true,
+          "sourcePriority": 78,
+          "sourceQuality": 76,
+          "metadata": {
+            "role": "official",
+            "eventUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "platform": "club_website",
+            "warnings": [
+              "detail_enrichment_applied",
+              "textual_attributes_from_description",
+              "cross_source_ticket_link:ticket_io_event",
+              "textual_attributes_from_description",
+              "cross_source_ticket_link:ticket_io_event"
+            ],
+            "connector": "club_website",
+            "isPrimary": true,
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "minimumAge": "18+",
+            "sourceType": "website",
+            "syncStatus": "active",
+            "canonicalUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "defaultCityId": "staging-seed-city-koeln",
+            "fieldEvidence": [
+              {
+                "field": "title",
+                "rawValue": "R3HAB pres. by BOOTSHAUS",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T20:52:32.979Z",
+                "selectorOrPath": ".upcoming-title"
+              },
+              {
+                "field": "rawStartDate",
+                "rawValue": "2026-09-04T22:00:00",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T20:52:32.979Z",
+                "selectorOrPath": ".date-day"
+              }
+            ],
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "source_default",
+              "venue": "source_default",
+              "address": "source_default",
+              "country": "explicit"
+            },
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [
+              {
+                "key": "accessible",
+                "label": "Age 18+",
+                "value": "18+",
+                "source": "website_description",
+                "confidence": 0.8
+              }
+            ],
+            "textualEnrichment": {
+              "attributes": [
+                {
+                  "key": "accessible",
+                  "label": "Age 18+",
+                  "value": "18+",
+                  "source": "website_description",
+                  "confidence": 0.8
+                }
+              ],
+              "minimumAge": "18+",
+              "outboundTicketLinks": [
+                {
+                  "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                },
+                {
+                  "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                }
+              ]
+            },
+            "defaultOrganizerId": "organizer-bootshaus",
+            "extractionStrategy": "html_selector",
+            "electronicRelevance": "relevant",
+            "outboundTicketLinks": [
+              {
+                "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                "class": "ticket_io_event",
+                "score": 70,
+                "reason": "path_with_event_segment",
+                "platform": "ticket_io"
+              },
+              {
+                "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                "class": "ticket_io_event",
+                "score": 70,
+                "reason": "path_with_event_segment",
+                "platform": "ticket_io"
+              }
+            ],
+            "extractionConfidence": 0.75,
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        }
+      ],
+      "provenance": {
+        "undefined": {
+          "value": "Köln",
+          "selectedSourceId": "source-bootshaus-koeln",
+          "selectionReason": "import_publish",
+          "alternatives": [
+            {
+              "value": "Köln",
+              "sourceId": "source-bootshaus-koeln",
+              "confidence": 0.75,
+              "freshnessAt": "2026-08-02T20:54:33.797Z",
+              "originExternalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus"
+            }
+          ],
+          "lastChangedAt": "2026-08-02T20:54:33.797+00:00",
+          "confidence": 0.75,
+          "freshnessAt": "2026-08-02T20:54:33.797+00:00",
+          "originExternalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "selectedTier": "official_venue"
+        }
+      },
+      "projection": {
+        "sanitizedDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "shortDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+        "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Bootshaus",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Bootshaus, Köln",
+        "locationLabelDot": "Bootshaus · Köln",
+        "hasCoordinates": false,
+        "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+        "galleryImageUrls": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png"
+        ],
+        "genres": [
+          "BASSHOUSE",
+          "ELECTRO",
+          "House",
+          "PROGRESSIVE HOUSE",
+          "EDM",
+          "DANCE"
+        ],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "complete",
+        "sourceAttributionLabel": "Bootshaus"
+      }
+    },
+    "evt-1785339391167-tfaixrr": {
+      "event": {
+        "id": "evt-1785339391167-tfaixrr",
+        "title": "Bootshaus Sommerfest",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "priceText": "Tickets ab 11,90 Euro",
+        "ticketStatus": "external_link",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "sourceId": "source-bootshaus-koeln",
+        "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+        "websiteUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+        "genreLabels": [
+          "DUBSTEP",
+          "ELECTRO",
+          "HARDTECHNO",
+          "TECHNO",
+          "EDM"
+        ]
+      },
+      "sourceReferences": [
+        {
+          "sourceId": "source-ticket-kings-org-elektrokuche",
+          "externalEventId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "canonicalEventId": "evt-1785339391167-tfaixrr",
+          "originalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "rawRecordId": "ea923d8b-51c8-4751-8039-a5fce5b703c9",
+          "importJobId": "eff5a712-5bfb-464a-845c-c339440c3511",
+          "firstSeenAt": "2026-07-30T19:08:13.95+00:00",
+          "lastSeenAt": "2026-08-02T19:38:47.339+00:00",
+          "active": true,
+          "sourcePriority": 60,
+          "sourceQuality": 65,
+          "metadata": {
+            "role": "ticketing",
+            "syncRun": {
+              "pagesProcessed": 6,
+              "paginationDetected": true
+            },
+            "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "platform": "ticket_king",
+            "shopSlug": "ticketkings",
+            "connector": "ticket_platform",
+            "isPrimary": false,
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "scopeStats": {
+              "accepted": 5,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 5,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "canonicalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "lineupEntries": [
+              {
+                "isB2b": false,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 0,
+                "confidence": 0.95,
+                "displayName": "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!",
+                "normalizedName": "wir haben für euch eine selektion an artists zusammengestellt, die wissen, wie man einen floor zum kochen bringt. hier ist das team, das euch ins underland entführt: sichert euch euer ticket ins underland! 🎟️ das hier ist der start von etwas großem, und ihr wollt von anfang an dabei sein! die nachfrage wird enorm sein, also zögert nicht. sichert euch eure tickets und seid teil dieser premiere. alle infos und tickets findet ihr auf ticketkings.de . seid schnell, bevor es zu spät ist! wir sehen uns im chaos! 🎉 packt eure tanzschuhe ein, bereitet euch auf eine nacht voller unvergesslicher momente vor und lasst uns gemeinsam das underland erobern. am samstag, 05. september 2026 , wird die essigfabrik zum epizentrum der harten sounds. affenkäfig lädt ein – seid ihr bereit für den abriss? wir können es kaum erwarten, mit euch die wände zum wackeln zu bringen! let’s go!"
+              }
+            ],
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "211feb8d106c04386b2d12d55bcfcfa8",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": false,
+              "pagesFetched": 5
+            },
+            "enrichmentSource": true,
+            "checkoutProviderId": "40",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+          "externalEventId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "canonicalEventId": "evt-1785339391167-tfaixrr",
+          "originalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "rawRecordId": "f24d7b0f-bd44-4294-8230-f8758d7e1dfd",
+          "importJobId": "48642057-5018-459d-bb06-daaf9fd11b98",
+          "firstSeenAt": "2026-07-30T19:09:41.079+00:00",
+          "lastSeenAt": "2026-08-02T21:26:57.639+00:00",
+          "active": true,
+          "sourcePriority": 60,
+          "sourceQuality": 65,
+          "metadata": {
+            "role": "ticketing",
+            "syncRun": {
+              "pagesProcessed": 6,
+              "paginationDetected": true
+            },
+            "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "platform": "ticket_king",
+            "shopSlug": "ticketkings",
+            "connector": "ticket_platform",
+            "isPrimary": false,
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "scopeStats": {
+              "accepted": 5,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 5,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "canonicalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "lineupEntries": [
+              {
+                "isB2b": false,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 0,
+                "confidence": 0.95,
+                "displayName": "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!",
+                "normalizedName": "wir haben für euch eine selektion an artists zusammengestellt, die wissen, wie man einen floor zum kochen bringt. hier ist das team, das euch ins underland entführt: sichert euch euer ticket ins underland! 🎟️ das hier ist der start von etwas großem, und ihr wollt von anfang an dabei sein! die nachfrage wird enorm sein, also zögert nicht. sichert euch eure tickets und seid teil dieser premiere. alle infos und tickets findet ihr auf ticketkings.de . seid schnell, bevor es zu spät ist! wir sehen uns im chaos! 🎉 packt eure tanzschuhe ein, bereitet euch auf eine nacht voller unvergesslicher momente vor und lasst uns gemeinsam das underland erobern. am samstag, 05. september 2026 , wird die essigfabrik zum epizentrum der harten sounds. affenkäfig lädt ein – seid ihr bereit für den abriss? wir können es kaum erwarten, mit euch die wände zum wackeln zu bringen! let’s go!"
+              }
+            ],
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "211feb8d106c04386b2d12d55bcfcfa8",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": false,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "maxDetailPages": 15,
+              "shopPagesFetched": 5,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 0,
+              "detailUrlsDiscovered": 0,
+              "detailUrlsPowBlocked": 0
+            },
+            "enrichmentSource": true,
+            "checkoutProviderId": "40",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-bootshaus-ticket-io",
+          "externalEventId": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "canonicalEventId": "evt-1785339391167-tfaixrr",
+          "originalUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "rawRecordId": "4da3ec00-b1b8-4b31-8c1e-cde6db6c449e",
+          "importJobId": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "firstSeenAt": "2026-07-30T13:22:52.471+00:00",
+          "lastSeenAt": "2026-08-02T21:24:45.033+00:00",
+          "active": true,
+          "sourcePriority": 65,
+          "sourceQuality": 70,
+          "metadata": {
+            "role": "ticketing",
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "eventUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "vB0cAmWg",
+            "isPrimary": false,
+            "priceText": "ab 11,90 €",
+            "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "availability": "instock",
+            "canonicalUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+            "defaultCityId": "koeln",
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "6771ec5cc4166c37d30a236ad4ee40be",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "defaultOrganizerId": "organizer-bootshaus",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-affenkaefig-ticket-kings",
+          "externalEventId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "canonicalEventId": "evt-1785339391167-tfaixrr",
+          "originalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "rawRecordId": "07ec3aa3-f15c-49d5-aa9c-a22df1e99686",
+          "importJobId": "db556f2b-141c-4970-8c6e-93b5cbaf36a7",
+          "firstSeenAt": "2026-07-30T13:23:48.275+00:00",
+          "lastSeenAt": "2026-08-02T21:25:55.013+00:00",
+          "active": true,
+          "sourcePriority": 64,
+          "sourceQuality": 68,
+          "metadata": {
+            "role": "ticketing",
+            "syncRun": {
+              "pagesProcessed": 6,
+              "paginationDetected": true
+            },
+            "eventUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "platform": "ticket_king",
+            "shopSlug": "ticketkings",
+            "connector": "ticket_platform",
+            "isPrimary": false,
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "scopeStats": {
+              "accepted": 5,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 5,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "canonicalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "defaultCityId": "koeln",
+            "lineupEntries": [
+              {
+                "isB2b": false,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 0,
+                "confidence": 0.95,
+                "displayName": "Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf ticketkings.de . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026 , wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go!",
+                "normalizedName": "wir haben für euch eine selektion an artists zusammengestellt, die wissen, wie man einen floor zum kochen bringt. hier ist das team, das euch ins underland entführt: sichert euch euer ticket ins underland! 🎟️ das hier ist der start von etwas großem, und ihr wollt von anfang an dabei sein! die nachfrage wird enorm sein, also zögert nicht. sichert euch eure tickets und seid teil dieser premiere. alle infos und tickets findet ihr auf ticketkings.de . seid schnell, bevor es zu spät ist! wir sehen uns im chaos! 🎉 packt eure tanzschuhe ein, bereitet euch auf eine nacht voller unvergesslicher momente vor und lasst uns gemeinsam das underland erobern. am samstag, 05. september 2026 , wird die essigfabrik zum epizentrum der harten sounds. affenkäfig lädt ein – seid ihr bereit für den abriss? wir können es kaum erwarten, mit euch die wände zum wackeln zu bringen! let’s go!"
+              }
+            ],
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "211feb8d106c04386b2d12d55bcfcfa8",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": false,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "maxDetailPages": 15,
+              "shopPagesFetched": 5,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 0,
+              "detailUrlsDiscovered": 0,
+              "detailUrlsPowBlocked": 0
+            },
+            "enrichmentSource": true,
+            "checkoutProviderId": "40",
+            "defaultOrganizerId": "organizer-affenkaefig",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalEventId": "https://bootshaus.tv/events/bootshaus-sommerfest",
+          "canonicalEventId": "evt-1785339391167-tfaixrr",
+          "originalUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+          "rawRecordId": "3ffbc1a6-402e-4e65-a255-50be5036810c",
+          "importJobId": "b806a457-189f-4580-8580-592b1c39fd61",
+          "firstSeenAt": "2026-07-28T21:49:28.619+00:00",
+          "lastSeenAt": "2026-08-02T21:20:24.007+00:00",
+          "active": true,
+          "sourcePriority": 78,
+          "sourceQuality": 76,
+          "metadata": {
+            "role": "official",
+            "eventUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+            "platform": "club_website",
+            "warnings": [
+              "detail_enrichment_applied"
+            ],
+            "connector": "club_website",
+            "isPrimary": true,
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "sourceType": "website",
+            "syncStatus": "active",
+            "canonicalUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+            "defaultCityId": "staging-seed-city-koeln",
+            "fieldEvidence": [
+              {
+                "field": "title",
+                "rawValue": "Bootshaus Sommerfest",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T21:18:30.285Z",
+                "selectorOrPath": ".upcoming-title"
+              },
+              {
+                "field": "rawStartDate",
+                "rawValue": "2026-09-05T22:00:00",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T21:18:30.285Z",
+                "selectorOrPath": ".date-day"
+              }
+            ],
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "source_default",
+              "venue": "source_default",
+              "address": "source_default",
+              "country": "explicit"
+            },
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "textualEnrichment": {
+              "attributes": [],
+              "outboundTicketLinks": []
+            },
+            "defaultOrganizerId": "organizer-bootshaus",
+            "extractionStrategy": "html_selector",
+            "electronicRelevance": "relevant",
+            "outboundTicketLinks": [],
+            "extractionConfidence": 0.75,
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        }
+      ],
+      "provenance": {
+        "undefined": {
+          "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+          "selectedSourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+          "selectionReason": "import_publish",
+          "alternatives": [
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-ticket-kings-org-elektrokuche",
+              "freshnessAt": "2026-08-02T19:38:46.768Z",
+              "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-bootshaus-koeln",
+              "confidence": 0.75,
+              "freshnessAt": "2026-08-02T21:20:23.578Z",
+              "originExternalId": "https://bootshaus.tv/events/bootshaus-sommerfest"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-02T21:24:44.546Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/vB0cAmWg/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-affenkaefig-ticket-kings",
+              "freshnessAt": "2026-08-02T21:25:54.575Z",
+              "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+              "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+              "freshnessAt": "2026-08-02T21:26:57.160Z",
+              "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            }
+          ],
+          "lastChangedAt": "2026-08-02T21:26:57.16+00:00",
+          "freshnessAt": "2026-08-02T21:26:57.16+00:00",
+          "originExternalId": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "selectedTier": "ticket_platform"
+        }
+      },
+      "projection": {
+        "sanitizedDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "shortDescription": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+        "displayPriceText": "ab 11,90 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Essigfabrik",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Essigfabrik, Köln",
+        "locationLabelDot": "Essigfabrik · Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+        "galleryImageUrls": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg"
+        ],
+        "genres": [
+          "DUBSTEP",
+          "ELECTRO",
+          "Hard Techno",
+          "Techno",
+          "EDM"
+        ],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "complete",
+        "sourceAttributionLabel": "Bootshaus"
+      }
+    },
+    "evt-1785339386612-rjr91mv": {
+      "event": {
+        "id": "evt-1785339386612-rjr91mv",
+        "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+        "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "priceText": "Tickets ab 23,00 Euro",
+        "ticketStatus": "external_link",
+        "venueName": "Essigfabrik",
+        "venueCity": "Köln",
+        "venueAddress": "Auenweg 173, 51063 Köln",
+        "latitude": 50.8785434,
+        "longitude": 7.1175157,
+        "sourceId": "source-bootshaus-koeln",
+        "description": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort.Mainfloor:RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+        "websiteUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+        "genreLabels": [
+          "HARDSTYLE"
+        ]
+      },
+      "sourceReferences": [
+        {
+          "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+          "externalEventId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "canonicalEventId": "evt-1785339386612-rjr91mv",
+          "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "rawRecordId": "7689483f-43e9-4971-8934-57210f8db390",
+          "importJobId": "48642057-5018-459d-bb06-daaf9fd11b98",
+          "firstSeenAt": "2026-07-30T19:09:40.959+00:00",
+          "lastSeenAt": "2026-08-02T21:26:54.39+00:00",
+          "active": false,
+          "sourcePriority": 60,
+          "sourceQuality": 65,
+          "metadata": {
+            "role": "ticketing",
+            "syncRun": {
+              "pagesProcessed": 6,
+              "paginationDetected": true
+            },
+            "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "platform": "ticket_king",
+            "shopSlug": "ticketkings",
+            "connector": "ticket_platform",
+            "isPrimary": false,
+            "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "scopeStats": {
+              "accepted": 5,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 5,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "canonicalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "lineupEntries": [
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 0,
+                "confidence": 0.95,
+                "displayName": "DYSTOPIA F2F VALKYRIE",
+                "normalizedName": "dystopia f2f valkyrie"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 1,
+                "confidence": 0.95,
+                "displayName": "IAN CRANK F2F EASYPYSI",
+                "normalizedName": "ian crank f2f easypysi"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 2,
+                "confidence": 0.95,
+                "displayName": "KARAMUSTA F2F GREEKZ",
+                "normalizedName": "karamusta f2f greekz"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 3,
+                "confidence": 0.95,
+                "displayName": "KEVIN LA NIQUE F2F THE RAFNIX",
+                "normalizedName": "kevin la nique f2f the rafnix"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 4,
+                "confidence": 0.95,
+                "displayName": "NINA BENDER F2F LEE-ANN",
+                "normalizedName": "nina bender f2f lee-ann"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 5,
+                "confidence": 0.95,
+                "displayName": "FLASH B2B FORWARD",
+                "normalizedName": "flash b2b forward"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 6,
+                "confidence": 0.95,
+                "displayName": "HELLMYER B2B STZ",
+                "normalizedName": "hellmyer b2b stz"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 7,
+                "confidence": 0.95,
+                "displayName": "MAURO B2B I.D.A",
+                "normalizedName": "mauro b2b i.d.a"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 8,
+                "confidence": 0.95,
+                "displayName": "PLEA5URE B2B PUL5E",
+                "normalizedName": "plea5ure b2b pul5e"
+              }
+            ],
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "e075ec259ca5c99646dec1e58c469c45",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": false,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "maxDetailPages": 15,
+              "shopPagesFetched": 5,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 0,
+              "detailUrlsDiscovered": 0,
+              "detailUrlsPowBlocked": 0
+            },
+            "enrichmentSource": true,
+            "checkoutProviderId": "24",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-affenkaefig-ticket-kings",
+          "externalEventId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "canonicalEventId": "evt-1785339386612-rjr91mv",
+          "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "rawRecordId": "bb203ffc-2ef0-4371-b3ad-e71b2d82a984",
+          "importJobId": "db556f2b-141c-4970-8c6e-93b5cbaf36a7",
+          "firstSeenAt": "2026-07-30T13:23:48.139+00:00",
+          "lastSeenAt": "2026-08-02T21:25:51.833+00:00",
+          "active": false,
+          "sourcePriority": 64,
+          "sourceQuality": 68,
+          "metadata": {
+            "role": "ticketing",
+            "syncRun": {
+              "pagesProcessed": 6,
+              "paginationDetected": true
+            },
+            "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "platform": "ticket_king",
+            "shopSlug": "ticketkings",
+            "connector": "ticket_platform",
+            "isPrimary": false,
+            "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "scopeStats": {
+              "accepted": 5,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 5,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "canonicalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "defaultCityId": "koeln",
+            "lineupEntries": [
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 0,
+                "confidence": 0.95,
+                "displayName": "DYSTOPIA F2F VALKYRIE",
+                "normalizedName": "dystopia f2f valkyrie"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 1,
+                "confidence": 0.95,
+                "displayName": "IAN CRANK F2F EASYPYSI",
+                "normalizedName": "ian crank f2f easypysi"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 2,
+                "confidence": 0.95,
+                "displayName": "KARAMUSTA F2F GREEKZ",
+                "normalizedName": "karamusta f2f greekz"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 3,
+                "confidence": 0.95,
+                "displayName": "KEVIN LA NIQUE F2F THE RAFNIX",
+                "normalizedName": "kevin la nique f2f the rafnix"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 4,
+                "confidence": 0.95,
+                "displayName": "NINA BENDER F2F LEE-ANN",
+                "normalizedName": "nina bender f2f lee-ann"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 5,
+                "confidence": 0.95,
+                "displayName": "FLASH B2B FORWARD",
+                "normalizedName": "flash b2b forward"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 6,
+                "confidence": 0.95,
+                "displayName": "HELLMYER B2B STZ",
+                "normalizedName": "hellmyer b2b stz"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 7,
+                "confidence": 0.95,
+                "displayName": "MAURO B2B I.D.A",
+                "normalizedName": "mauro b2b i.d.a"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 8,
+                "confidence": 0.95,
+                "displayName": "PLEA5URE B2B PUL5E",
+                "normalizedName": "plea5ure b2b pul5e"
+              }
+            ],
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "e075ec259ca5c99646dec1e58c469c45",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": false,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "maxDetailPages": 15,
+              "shopPagesFetched": 5,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 0,
+              "detailUrlsDiscovered": 0,
+              "detailUrlsPowBlocked": 0
+            },
+            "enrichmentSource": true,
+            "checkoutProviderId": "24",
+            "defaultOrganizerId": "organizer-affenkaefig",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-ticket-kings-org-elektrokuche",
+          "externalEventId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "canonicalEventId": "evt-1785339386612-rjr91mv",
+          "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "rawRecordId": "dfb5321d-9bd4-474c-9ee2-2a4565fc89bb",
+          "importJobId": "eff5a712-5bfb-464a-845c-c339440c3511",
+          "firstSeenAt": "2026-07-30T19:08:13.829+00:00",
+          "lastSeenAt": "2026-08-02T19:38:44.023+00:00",
+          "active": false,
+          "sourcePriority": 60,
+          "sourceQuality": 65,
+          "metadata": {
+            "role": "ticketing",
+            "syncRun": {
+              "pagesProcessed": 6,
+              "paginationDetected": true
+            },
+            "eventUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "platform": "ticket_king",
+            "shopSlug": "ticketkings",
+            "connector": "ticket_platform",
+            "isPrimary": false,
+            "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "scopeStats": {
+              "accepted": 5,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 5,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "canonicalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+            "lineupEntries": [
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 0,
+                "confidence": 0.95,
+                "displayName": "DYSTOPIA F2F VALKYRIE",
+                "normalizedName": "dystopia f2f valkyrie"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 1,
+                "confidence": 0.95,
+                "displayName": "IAN CRANK F2F EASYPYSI",
+                "normalizedName": "ian crank f2f easypysi"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 2,
+                "confidence": 0.95,
+                "displayName": "KARAMUSTA F2F GREEKZ",
+                "normalizedName": "karamusta f2f greekz"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 3,
+                "confidence": 0.95,
+                "displayName": "KEVIN LA NIQUE F2F THE RAFNIX",
+                "normalizedName": "kevin la nique f2f the rafnix"
+              },
+              {
+                "role": "f2f",
+                "isB2b": false,
+                "isF2f": true,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 4,
+                "confidence": 0.95,
+                "displayName": "NINA BENDER F2F LEE-ANN",
+                "normalizedName": "nina bender f2f lee-ann"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 5,
+                "confidence": 0.95,
+                "displayName": "FLASH B2B FORWARD",
+                "normalizedName": "flash b2b forward"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 6,
+                "confidence": 0.95,
+                "displayName": "HELLMYER B2B STZ",
+                "normalizedName": "hellmyer b2b stz"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 7,
+                "confidence": 0.95,
+                "displayName": "MAURO B2B I.D.A",
+                "normalizedName": "mauro b2b i.d.a"
+              },
+              {
+                "role": "b2b",
+                "isB2b": true,
+                "isF2f": false,
+                "source": "ticket_kings_html",
+                "isLiveSet": false,
+                "sortOrder": 8,
+                "confidence": 0.95,
+                "displayName": "PLEA5URE B2B PUL5E",
+                "normalizedName": "plea5ure b2b pul5e"
+              }
+            ],
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "e075ec259ca5c99646dec1e58c469c45",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": false,
+              "pagesFetched": 5
+            },
+            "enrichmentSource": true,
+            "checkoutProviderId": "24",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalEventId": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+          "canonicalEventId": "evt-1785339386612-rjr91mv",
+          "originalUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+          "rawRecordId": "658c7b44-24a3-4e50-a937-5075cc92e906",
+          "importJobId": "b806a457-189f-4580-8580-592b1c39fd61",
+          "firstSeenAt": "2026-07-28T21:49:28.619+00:00",
+          "lastSeenAt": "2026-08-02T21:20:14.025+00:00",
+          "active": true,
+          "sourcePriority": 78,
+          "sourceQuality": 76,
+          "metadata": {
+            "role": "official",
+            "eventUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+            "platform": "club_website",
+            "warnings": [
+              "detail_enrichment_applied",
+              "textual_lineup_from_description",
+              "textual_running_order_from_description",
+              "textual_attributes_from_description",
+              "textual_lineup_from_description",
+              "textual_running_order_from_description",
+              "textual_attributes_from_description"
+            ],
+            "connector": "club_website",
+            "isPrimary": true,
+            "ticketUrl": "https://bootshaus.ticket.io/",
+            "sourceType": "website",
+            "syncStatus": "active",
+            "canonicalUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+            "runningOrder": [
+              {
+                "role": "running_order",
+                "source": "website_description",
+                "sortOrder": 0,
+                "confidence": 0.7,
+                "displayName": "Kili b2b Complex",
+                "normalizedName": "kili b2b complex"
+              }
+            ],
+            "defaultCityId": "staging-seed-city-koeln",
+            "fieldEvidence": [
+              {
+                "field": "title",
+                "rawValue": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T21:18:30.284Z",
+                "selectorOrPath": ".upcoming-title"
+              },
+              {
+                "field": "rawStartDate",
+                "rawValue": "2026-08-15T23:00:00",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T21:18:30.284Z",
+                "selectorOrPath": ".date-day"
+              },
+              {
+                "field": "artists",
+                "rawValue": "Kili b2b Complex, RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+                "confidence": 0.75,
+                "extractedAt": "2026-08-02T21:18:31.102Z"
+              },
+              {
+                "field": "artists",
+                "rawValue": "Kili b2b Complex, RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+                "confidence": 0.75,
+                "extractedAt": "2026-08-02T21:18:34.154Z"
+              }
+            ],
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "source_default",
+              "venue": "source_default",
+              "address": "source_default",
+              "country": "explicit"
+            },
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [
+              {
+                "key": "outdoor",
+                "label": "Outdoor",
+                "source": "website_description",
+                "confidence": 0.8
+              }
+            ],
+            "venueEnvironment": "outdoor",
+            "textualEnrichment": {
+              "attributes": [
+                {
+                  "key": "outdoor",
+                  "label": "Outdoor",
+                  "source": "website_description",
+                  "confidence": 0.8
+                }
+              ],
+              "runningOrder": [
+                {
+                  "role": "running_order",
+                  "source": "website_description",
+                  "sortOrder": 0,
+                  "confidence": 0.7,
+                  "displayName": "Kili b2b Complex",
+                  "normalizedName": "kili b2b complex"
+                }
+              ],
+              "venueEnvironment": "outdoor",
+              "outboundTicketLinks": []
+            },
+            "defaultOrganizerId": "organizer-bootshaus",
+            "extractionStrategy": "html_selector",
+            "electronicRelevance": "relevant",
+            "outboundTicketLinks": [],
+            "extractionConfidence": 0.75,
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        {
+          "sourceId": "source-bootshaus-ticket-io",
+          "externalEventId": "https://bootshaus-club.ticket.io/BcDqml12/",
+          "canonicalEventId": "evt-1785339386612-rjr91mv",
+          "originalUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+          "rawRecordId": "29205f77-50a7-424c-88ba-5a4eaa894e82",
+          "importJobId": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "firstSeenAt": "2026-07-30T13:22:51.882+00:00",
+          "lastSeenAt": "2026-08-02T21:24:51.618+00:00",
+          "active": true,
+          "sourcePriority": 65,
+          "sourceQuality": 70,
+          "metadata": {
+            "role": "ticketing",
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "eventUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "BcDqml12",
+            "isPrimary": false,
+            "priceText": "ab 23,00 €",
+            "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "availability": "instock",
+            "canonicalUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+            "defaultCityId": "koeln",
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "540e24aba1603713950a0e78132e2bf3",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "defaultOrganizerId": "organizer-bootshaus",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        }
+      ],
+      "provenance": {
+        "undefined": {
+          "value": "https://bootshaus-club.ticket.io/BcDqml12/",
+          "selectedSourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+          "selectionReason": "import_publish",
+          "alternatives": [
+            {
+              "value": "https://bootshaus-club.ticket.io/BcDqml12/",
+              "sourceId": "source-ticket-kings-org-elektrokuche",
+              "freshnessAt": "2026-08-02T19:38:43.515Z",
+              "originExternalId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/BcDqml12/",
+              "sourceId": "source-bootshaus-koeln",
+              "confidence": 0.75,
+              "freshnessAt": "2026-08-02T21:20:13.561Z",
+              "originExternalId": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/BcDqml12/",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-02T21:24:51.192Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/BcDqml12/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/BcDqml12/",
+              "sourceId": "source-affenkaefig-ticket-kings",
+              "freshnessAt": "2026-08-02T21:25:51.402Z",
+              "originExternalId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+            },
+            {
+              "value": "https://bootshaus-club.ticket.io/BcDqml12/",
+              "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+              "freshnessAt": "2026-08-02T21:26:53.962Z",
+              "originExternalId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/"
+            }
+          ],
+          "lastChangedAt": "2026-08-02T21:26:53.962+00:00",
+          "freshnessAt": "2026-08-02T21:26:53.962+00:00",
+          "originExternalId": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "selectedTier": "ticket_platform"
+        }
+      },
+      "projection": {
+        "sanitizedDescription": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort.Mainfloor:RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+        "shortDescription": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche A",
+        "displayPriceText": "ab 23,00 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Essigfabrik",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Essigfabrik, Köln",
+        "locationLabelDot": "Essigfabrik · Köln",
+        "latitude": 50.8785434,
+        "longitude": 7.1175157,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+        "galleryImageUrls": [
+          "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png"
+        ],
+        "genres": [
+          "Hardstyle"
+        ],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "complete",
+        "sourceAttributionLabel": "Bootshaus"
+      }
+    }
+  },
+  "forbiddenFingerprints": {
+    "evt-1785389049895-4mb7dub": {
+      "title": "Underland Essigfabrik 05.09.2026",
+      "description": "",
+      "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+      "websiteUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+      "venueName": "Essigfabrik / Elektroküche",
+      "genreLabels": null,
+      "organizerName": "Affenkäfig",
+      "sourceId": "source-affenkaefig",
+      "lineup": "frozen"
+    },
+    "evt-1785339421539-k3swcrl": {
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "description": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR. A special night with one of electronic music’s most established names. MAINFLOOR: R3HAB LA FUENTE OLIVER MAGENTA RELOVA DAVE REPLAY",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6040282651513797069744665_0065463218711108022189235.png",
+      "websiteUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "venueName": "Bootshaus",
+      "genreLabels": [
+        "BASSHOUSE",
+        "ELECTRO",
+        "HOUSE",
+        "PROGRESSIVE HOUSE",
+        "EDM",
+        "DANCE"
+      ],
+      "organizerName": "Bootshaus",
+      "sourceId": "source-bootshaus-koeln",
+      "lineup": "frozen"
+    },
+    "evt-1785339391167-tfaixrr": {
+      "title": "Bootshaus Sommerfest",
+      "description": "Electro/EDM vs. Deep/TechHouse vs. Techno vs. DnB/Trap/Dubstep Lineup TBA",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/19-04-04-14-8dbecd78eaba1d7771ad.jpeg",
+      "websiteUrl": "https://bootshaus.tv/events/bootshaus-sommerfest",
+      "venueName": "Essigfabrik",
+      "genreLabels": [
+        "DUBSTEP",
+        "ELECTRO",
+        "HARDTECHNO",
+        "TECHNO",
+        "EDM"
+      ],
+      "organizerName": "Bootshaus",
+      "sourceId": "source-bootshaus-koeln",
+      "lineup": "frozen"
+    },
+    "evt-1785339386612-rjr91mv": {
+      "title": "Into The Madness Pre-Party Weekender w. RAN - D and more!",
+      "description": "The road to Madness starts here.Drei Wochen vor Into The Madness startet das offizielle Pre-Party-Weekend im Bootshaus Köln.Das Lineup vereint mit Ran-D, Kili b2b Complex, Zelecter, Restrictless und MC Livid zahlreiche Artists des Into The Madness-Lineups. Ergänzt wird es durch Aversion und Devin Wild, die exklusiv bei der Pre-Party zu erleben sind. Und wer nach dieser Nacht noch nicht genug hat, setzt das Pre-Party-Weekend am Sonntag beim Outdoor Daytime-Rave in Hamburg fort.Mainfloor:RAN-DDEVIN WILDAVERSIONKILI b2b COMPLEXZELECTERRESTRICTLESS",
+      "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6942790887003966823390016_1277246843386840968607475.png",
+      "websiteUrl": "https://bootshaus.tv/events/into-the-madness-pre-party-weekender-w-ran-d-and-more",
+      "venueName": "Essigfabrik",
+      "genreLabels": [
+        "HARDSTYLE"
+      ],
+      "organizerName": "Bootshaus",
+      "sourceId": "source-bootshaus-koeln",
+      "lineup": "frozen"
+    }
+  }
+}

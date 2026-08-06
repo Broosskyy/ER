@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-08-03T08:16:08.022Z",
+  "readOnly": false,
+  "results": {
+    "sommerfest": {
+      "eventId": "evt-1785389055557-ux20897",
+      "importMutations": 0,
+      "repairMutations": 0,
+      "structuredBefore": 14,
+      "structuredAfter": 14,
+      "legacyBefore": 14,
+      "legacyAfter": 14,
+      "oscillation": "none"
+    },
+    "levi": {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "importMutations": 0,
+      "repairMutations": 0,
+      "structuredBefore": 1,
+      "structuredAfter": 1,
+      "legacyBefore": 1,
+      "legacyAfter": 1,
+      "oscillation": "none"
+    },
+    "mdma": {
+      "eventId": "evt-1785389054496-ns9b6la",
+      "importMutations": 0,
+      "repairMutations": 0,
+      "structuredBefore": 9,
+      "structuredAfter": 9,
+      "legacyBefore": 18,
+      "legacyAfter": 18,
+      "oscillation": "none"
+    },
+    "intoTheMadness": {
+      "eventId": "evt-1785339386612-rjr91mv",
+      "importMutations": 0,
+      "repairMutations": 0,
+      "structuredBefore": 0,
+      "structuredAfter": 0,
+      "legacyBefore": 0,
+      "legacyAfter": 0,
+      "oscillation": "none"
+    },
+    "kitkat2208": {
+      "eventId": "evt-1785339389636-v1tq3hw",
+      "importMutations": 0,
+      "repairMutations": 0,
+      "structuredBefore": 0,
+      "structuredAfter": 0,
+      "legacyBefore": 0,
+      "legacyAfter": 0,
+      "oscillation": "none"
+    },
+    "bootshausOnShip": {
+      "eventId": "evt-1785339420043-obhyeev",
+      "importMutations": 0,
+      "repairMutations": 0,
+      "structuredBefore": 4,
+      "structuredAfter": 4,
+      "legacyBefore": 8,
+      "legacyAfter": 8,
+      "oscillation": "none"
+    }
+  },
+  "answers": {
+    "canImportUndoRepair": false,
+    "canRepairCreateImportRemovableState": false,
+    "exactlyOneAuthoritativeWriter": true
+  }
+}

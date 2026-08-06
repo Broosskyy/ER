@@ -1,0 +1,2175 @@
+{
+  "generatedAt": "2026-08-05T23:45:40.396Z",
+  "phase": "4.8.6.2.1",
+  "productionMutationsInThisRun": 0,
+  "collisionSlug": "C7JPnatZ",
+  "collisionHost": "bootshaus-club.ticket.io",
+  "traces": [
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "currentTicketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "currentSourceId": "source-bootshaus-koeln",
+      "sourceReferences": [
+        {
+          "id": "ref-evt-1785339421539-k3swcrl-source-bootshaus-koeln-https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "canonical_event_id": "evt-1785339421539-k3swcrl",
+          "source_id": "source-bootshaus-koeln",
+          "external_event_id": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "original_url": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "raw_record_id": "ff764aa3-a3ae-4032-bbbd-122724f6761b",
+          "import_job_id": "f0a4b716-d09b-442a-b179-7f154ff4402f",
+          "first_seen_at": "2026-07-28T21:49:28.619+00:00",
+          "last_seen_at": "2026-08-02T20:54:34.268+00:00",
+          "last_changed_at": null,
+          "active": true,
+          "source_priority": 78,
+          "source_quality_score": 76,
+          "source_health_score": null,
+          "metadata": {
+            "role": "official",
+            "eventUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "platform": "club_website",
+            "warnings": [
+              "detail_enrichment_applied",
+              "textual_attributes_from_description",
+              "cross_source_ticket_link:ticket_io_event",
+              "textual_attributes_from_description",
+              "cross_source_ticket_link:ticket_io_event"
+            ],
+            "connector": "club_website",
+            "isPrimary": true,
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "minimumAge": "18+",
+            "sourceType": "website",
+            "syncStatus": "active",
+            "canonicalUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "defaultCityId": "staging-seed-city-koeln",
+            "fieldEvidence": [
+              {
+                "field": "title",
+                "rawValue": "R3HAB pres. by BOOTSHAUS",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T20:52:32.979Z",
+                "selectorOrPath": ".upcoming-title"
+              },
+              {
+                "field": "rawStartDate",
+                "rawValue": "2026-09-04T22:00:00",
+                "strategy": "html_selector",
+                "sourceUrl": "https://bootshaus.tv/events/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T20:52:32.979Z",
+                "selectorOrPath": ".date-day"
+              }
+            ],
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "source_default",
+              "venue": "source_default",
+              "address": "source_default",
+              "country": "explicit"
+            },
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [
+              {
+                "key": "accessible",
+                "label": "Age 18+",
+                "value": "18+",
+                "source": "website_description",
+                "confidence": 0.8
+              }
+            ],
+            "textualEnrichment": {
+              "attributes": [
+                {
+                  "key": "accessible",
+                  "label": "Age 18+",
+                  "value": "18+",
+                  "source": "website_description",
+                  "confidence": 0.8
+                }
+              ],
+              "minimumAge": "18+",
+              "outboundTicketLinks": [
+                {
+                  "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                },
+                {
+                  "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                }
+              ]
+            },
+            "defaultOrganizerId": "organizer-bootshaus",
+            "extractionStrategy": "html_selector",
+            "electronicRelevance": "relevant",
+            "outboundTicketLinks": [
+              {
+                "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                "class": "ticket_io_event",
+                "score": 70,
+                "reason": "path_with_event_segment",
+                "platform": "ticket_io"
+              },
+              {
+                "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                "class": "ticket_io_event",
+                "score": 70,
+                "reason": "path_with_event_segment",
+                "platform": "ticket_io"
+              }
+            ],
+            "extractionConfidence": 0.75,
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          },
+          "consecutive_missing_count": 0,
+          "missing_since": null
+        }
+      ],
+      "importRecords": [
+        {
+          "id": "89de8774-5487-47ed-a680-aa6d23965643",
+          "import_job_id": "da459f02-a2a9-4e7b-b9e1-0e3d3bf946b8",
+          "source_id": "source-ticket-io-bootshaus-club",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-ticket-io-bootshaus-club",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Ticket.io — bootshaus-club",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "status": "needs_review",
+          "created_at": "2026-07-31T10:47:31.748+00:00",
+          "updated_at": "2026-07-31T14:11:56.478+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785339421539-k3swcrl",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "No artist \"unbekannt\" match found.",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": null,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        },
+        {
+          "id": "ff764aa3-a3ae-4032-bbbd-122724f6761b",
+          "import_job_id": "b806a457-189f-4580-8580-592b1c39fd61",
+          "source_id": "source-bootshaus-koeln",
+          "external_id": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+            "importId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "cancelled": false,
+            "imageUrls": [
+              "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png"
+            ],
+            "sourceUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "startDate": "2026-09-04T22:00:00",
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "externalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "genreNames": [
+              "BASSHOUSE",
+              "ELECTRO",
+              "HOUSE",
+              "PROGRESSIVE HOUSE",
+              "EDM",
+              "DANCE"
+            ],
+            "minimumAge": 18,
+            "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "originalLink": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "rawSourceType": "unknown",
+            "sourceMetadata": {
+              "warnings": [
+                "detail_enrichment_applied",
+                "textual_attributes_from_description",
+                "cross_source_ticket_link:ticket_io_event",
+                "textual_attributes_from_description",
+                "cross_source_ticket_link:ticket_io_event"
+              ],
+              "connector": "club_website",
+              "minimumAge": "18+",
+              "fieldEvidence": [
+                {
+                  "field": "title",
+                  "rawValue": "R3HAB pres. by BOOTSHAUS",
+                  "strategy": "html_selector",
+                  "sourceUrl": "https://bootshaus.tv/events/",
+                  "confidence": 0.8,
+                  "extractedAt": "2026-08-02T21:18:30.284Z",
+                  "selectorOrPath": ".upcoming-title"
+                },
+                {
+                  "field": "rawStartDate",
+                  "rawValue": "2026-09-04T22:00:00",
+                  "strategy": "html_selector",
+                  "sourceUrl": "https://bootshaus.tv/events/",
+                  "confidence": 0.8,
+                  "extractedAt": "2026-08-02T21:18:30.284Z",
+                  "selectorOrPath": ".date-day"
+                }
+              ],
+              "eventAttributes": [
+                {
+                  "key": "accessible",
+                  "label": "Age 18+",
+                  "value": "18+",
+                  "source": "website_description",
+                  "confidence": 0.8
+                }
+              ],
+              "textualEnrichment": {
+                "attributes": [
+                  {
+                    "key": "accessible",
+                    "label": "Age 18+",
+                    "value": "18+",
+                    "source": "website_description",
+                    "confidence": 0.8
+                  }
+                ],
+                "minimumAge": "18+",
+                "outboundTicketLinks": [
+                  {
+                    "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                    "class": "ticket_io_event",
+                    "score": 70,
+                    "reason": "path_with_event_segment",
+                    "platform": "ticket_io"
+                  },
+                  {
+                    "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                    "class": "ticket_io_event",
+                    "score": 70,
+                    "reason": "path_with_event_segment",
+                    "platform": "ticket_io"
+                  }
+                ]
+              },
+              "extractionStrategy": "html_selector",
+              "outboundTicketLinks": [
+                {
+                  "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                },
+                {
+                  "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                }
+              ],
+              "extractionConfidence": 0.75
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png",
+            "importId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "isAllDay": false,
+            "sourceId": "source-bootshaus-koeln",
+            "timezone": "Europe/Berlin",
+            "imageUrls": [
+              "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8514547101195377535093819_7664468931942973198339121.png"
+            ],
+            "sourceUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bit.ly/Bootshaus-AppBootshaus",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "genreNames": [
+              "BASSHOUSE",
+              "ELECTRO",
+              "HOUSE",
+              "PROGRESSIVE HOUSE",
+              "EDM",
+              "DANCE"
+            ],
+            "minimumAge": 18,
+            "sourceName": "Bootshaus Köln",
+            "countryCode": "DE",
+            "description": "On August 7th, BOOTSHAUS presents R3HAB on the MAINFLOOR.A special night with one of electronic music&rsquo;s most established names.MAINFLOOR:R3HAB▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 yearsBootshaus / Auenweg 173 / 51063 Cologne▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Bootshaus Mobile App:https://bit.ly/Bootshaus-AppBootshaus Merchandisehttps://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+            "originalLink": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+            "venueAddress": "Auenweg 173, 51063 Köln",
+            "organizerName": "Bootshaus",
+            "rawSourceType": "unknown",
+            "sourceMetadata": {
+              "warnings": [
+                "detail_enrichment_applied",
+                "textual_attributes_from_description",
+                "cross_source_ticket_link:ticket_io_event",
+                "textual_attributes_from_description",
+                "cross_source_ticket_link:ticket_io_event"
+              ],
+              "connector": "club_website",
+              "minimumAge": "18+",
+              "defaultCityId": "staging-seed-city-koeln",
+              "fieldEvidence": [
+                {
+                  "field": "title",
+                  "rawValue": "R3HAB pres. by BOOTSHAUS",
+                  "strategy": "html_selector",
+                  "sourceUrl": "https://bootshaus.tv/events/",
+                  "confidence": 0.8,
+                  "extractedAt": "2026-08-02T21:18:30.284Z",
+                  "selectorOrPath": ".upcoming-title"
+                },
+                {
+                  "field": "rawStartDate",
+                  "rawValue": "2026-09-04T22:00:00",
+                  "strategy": "html_selector",
+                  "sourceUrl": "https://bootshaus.tv/events/",
+                  "confidence": 0.8,
+                  "extractedAt": "2026-08-02T21:18:30.284Z",
+                  "selectorOrPath": ".date-day"
+                }
+              ],
+              "defaultVenueId": "venue-bootshaus-koeln",
+              "eventGeography": {
+                "city": "source_default",
+                "venue": "source_default",
+                "address": "source_default",
+                "country": "explicit"
+              },
+              "posterMetadata": {
+                "source": "poster_ocr",
+                "status": "pending"
+              },
+              "eventAttributes": [
+                {
+                  "key": "accessible",
+                  "label": "Age 18+",
+                  "value": "18+",
+                  "source": "website_description",
+                  "confidence": 0.8
+                }
+              ],
+              "textualEnrichment": {
+                "attributes": [
+                  {
+                    "key": "accessible",
+                    "label": "Age 18+",
+                    "value": "18+",
+                    "source": "website_description",
+                    "confidence": 0.8
+                  }
+                ],
+                "minimumAge": "18+",
+                "outboundTicketLinks": [
+                  {
+                    "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                    "class": "ticket_io_event",
+                    "score": 70,
+                    "reason": "path_with_event_segment",
+                    "platform": "ticket_io"
+                  },
+                  {
+                    "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                    "class": "ticket_io_event",
+                    "score": 70,
+                    "reason": "path_with_event_segment",
+                    "platform": "ticket_io"
+                  }
+                ]
+              },
+              "defaultOrganizerId": "organizer-bootshaus",
+              "extractionStrategy": "html_selector",
+              "electronicRelevance": "relevant",
+              "outboundTicketLinks": [
+                {
+                  "url": "https://bit.ly/Bootshaus-AppBootshaus",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                },
+                {
+                  "url": "https://snash.com/kollektionen/bootshaus/▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔www.bootshaus.tv",
+                  "class": "ticket_io_event",
+                  "score": 70,
+                  "reason": "path_with_event_segment",
+                  "platform": "ticket_io"
+                }
+              ],
+              "extractionConfidence": 0.75,
+              "historicalRepairVersion": "4.3.4",
+              "dataQualityRepairVersion": "4.3.4"
+            }
+          },
+          "status": "imported",
+          "created_at": "2026-07-28T21:49:28.619+00:00",
+          "updated_at": "2026-08-02T21:20:13.034+00:00",
+          "source_url": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "code": "END_DATE_MISSING",
+              "field": "endDate",
+              "message": "End date is missing."
+            }
+          ],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [
+            "staging-seed-genre-house"
+          ],
+          "duplicate_event_id": "evt-1785339421539-k3swcrl",
+          "duplicate_score": 96,
+          "matching_warnings": [
+            "No genre match for \"BASSHOUSE\".",
+            "No genre match for \"ELECTRO\".",
+            "No genre match for \"PROGRESSIVE HOUSE\".",
+            "No genre match for \"EDM\".",
+            "No genre match for \"DANCE\".",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": "evt-1785339421539-k3swcrl",
+          "reviewed_by": "system:trust-reevaluation",
+          "reviewed_at": "2026-07-29T15:37:01.539+00:00",
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": "organizer-bootshaus",
+          "source_type": null,
+          "original_url": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        },
+        {
+          "id": "34b314ac-caeb-4b1d-b6db-2c296900d96a",
+          "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "source_id": "source-bootshaus-ticket-io",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "electronicRelevance": "relevant",
+              "dataQualityRepairVersion": "4.3.1"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-bootshaus-ticket-io",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "changeType": "updated",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Bootshaus Ticket.io",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "mergeGroupId": "source-bootshaus-ticket-io:https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "defaultCityId": "koeln",
+              "defaultVenueId": "venue-bootshaus-koeln",
+              "eventGeography": {
+                "city": "explicit",
+                "venue": "explicit",
+                "address": "explicit",
+                "country": "explicit"
+              },
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "posterMetadata": {
+                "source": "poster_ocr",
+                "status": "pending"
+              },
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "defaultOrganizerId": "organizer-bootshaus",
+              "electronicRelevance": "relevant",
+              "historicalRepairVersion": "4.3.4",
+              "dataQualityRepairVersion": "4.3.4"
+            },
+            "sourceContributions": [
+              {
+                "priority": 65,
+                "sourceId": "source-bootshaus-ticket-io",
+                "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "sourceName": "Bootshaus Ticket.io",
+                "trustScore": 70,
+                "retrievedAt": "2026-08-02T21:23:08.919Z"
+              }
+            ]
+          },
+          "status": "imported",
+          "created_at": "2026-07-30T13:22:52.357+00:00",
+          "updated_at": "2026-08-02T21:24:31.205+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "code": "DESCRIPTION_MISSING",
+              "field": "description",
+              "message": "Description is missing."
+            }
+          ],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785389049895-4mb7dub",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": "evt-1785389049895-4mb7dub",
+          "reviewed_by": "phase466-pass2",
+          "reviewed_at": "2026-08-02T21:24:28.92+00:00",
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        }
+      ],
+      "collisionSlugImports": [
+        {
+          "id": "89de8774-5487-47ed-a680-aa6d23965643",
+          "import_job_id": "da459f02-a2a9-4e7b-b9e1-0e3d3bf946b8",
+          "source_id": "source-ticket-io-bootshaus-club",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-ticket-io-bootshaus-club",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Ticket.io — bootshaus-club",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "status": "needs_review",
+          "created_at": "2026-07-31T10:47:31.748+00:00",
+          "updated_at": "2026-07-31T14:11:56.478+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785339421539-k3swcrl",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "No artist \"unbekannt\" match found.",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": null,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        },
+        {
+          "id": "34b314ac-caeb-4b1d-b6db-2c296900d96a",
+          "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "source_id": "source-bootshaus-ticket-io",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "electronicRelevance": "relevant",
+              "dataQualityRepairVersion": "4.3.1"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-bootshaus-ticket-io",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "changeType": "updated",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Bootshaus Ticket.io",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "mergeGroupId": "source-bootshaus-ticket-io:https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "defaultCityId": "koeln",
+              "defaultVenueId": "venue-bootshaus-koeln",
+              "eventGeography": {
+                "city": "explicit",
+                "venue": "explicit",
+                "address": "explicit",
+                "country": "explicit"
+              },
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "posterMetadata": {
+                "source": "poster_ocr",
+                "status": "pending"
+              },
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "defaultOrganizerId": "organizer-bootshaus",
+              "electronicRelevance": "relevant",
+              "historicalRepairVersion": "4.3.4",
+              "dataQualityRepairVersion": "4.3.4"
+            },
+            "sourceContributions": [
+              {
+                "priority": 65,
+                "sourceId": "source-bootshaus-ticket-io",
+                "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "sourceName": "Bootshaus Ticket.io",
+                "trustScore": 70,
+                "retrievedAt": "2026-08-02T21:23:08.919Z"
+              }
+            ]
+          },
+          "status": "imported",
+          "created_at": "2026-07-30T13:22:52.357+00:00",
+          "updated_at": "2026-08-02T21:24:31.205+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "code": "DESCRIPTION_MISSING",
+              "field": "description",
+              "message": "Description is missing."
+            }
+          ],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785389049895-4mb7dub",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": "evt-1785389049895-4mb7dub",
+          "reviewed_by": "phase466-pass2",
+          "reviewed_at": "2026-08-02T21:24:28.92+00:00",
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        }
+      ],
+      "ticketUrlProvenance": [],
+      "origins": [],
+      "phaseArtifacts": {
+        "phase484TicketCta": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+      }
+    },
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "currentTicketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "currentSourceId": "source-affenkaefig",
+      "sourceReferences": [
+        {
+          "id": "ref-evt-1785389049895-4mb7dub-source-affenkaefig-https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "canonical_event_id": "evt-1785389049895-4mb7dub",
+          "source_id": "source-affenkaefig",
+          "external_event_id": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "original_url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "raw_record_id": "69cb971e-d37b-48db-b941-1337348f4280",
+          "import_job_id": "ffd76e54-c117-4890-af98-0f4b5760126f",
+          "first_seen_at": "2026-07-29T21:17:08.477+00:00",
+          "last_seen_at": "2026-08-02T21:21:53.678+00:00",
+          "last_changed_at": null,
+          "active": true,
+          "source_priority": 72,
+          "source_quality_score": 74,
+          "source_health_score": null,
+          "metadata": {
+            "role": "official",
+            "eventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "platform": "organizer_website",
+            "warnings": [],
+            "connector": "organizer_website",
+            "isPrimary": true,
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "sourceType": "website",
+            "syncStatus": "active",
+            "canonicalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "defaultCityId": "koeln",
+            "fieldEvidence": [
+              {
+                "field": "title",
+                "rawValue": "Underland Essigfabrik 05.09.2026",
+                "strategy": "json_ld",
+                "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+                "confidence": 0.8,
+                "extractedAt": "2026-08-02T21:21:09.270Z",
+                "selectorOrPath": "name"
+              }
+            ],
+            "eventGeography": {
+              "city": "source_default",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "eventAttributes": [],
+            "textualEnrichment": {
+              "attributes": [],
+              "outboundTicketLinks": []
+            },
+            "defaultOrganizerId": "organizer-affenkaefig",
+            "extractionStrategy": "json_ld",
+            "electronicRelevance": "relevant",
+            "outboundTicketLinks": [],
+            "extractionConfidence": 0.95,
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          },
+          "consecutive_missing_count": 0,
+          "missing_since": null
+        },
+        {
+          "id": "ref-evt-1785389049895-4mb7dub-source-bootshaus-ticket-io-https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "canonical_event_id": "evt-1785389049895-4mb7dub",
+          "source_id": "source-bootshaus-ticket-io",
+          "external_event_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_record_id": "34b314ac-caeb-4b1d-b6db-2c296900d96a",
+          "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "first_seen_at": "2026-07-30T13:22:52.357+00:00",
+          "last_seen_at": "2026-08-02T21:24:29.387+00:00",
+          "last_changed_at": null,
+          "active": true,
+          "source_priority": 65,
+          "source_quality_score": 70,
+          "source_health_score": null,
+          "metadata": {
+            "role": "ticketing",
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "C7JPnatZ",
+            "isPrimary": false,
+            "priceText": "ab 23,90 €",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "sourceType": "ticket_platform",
+            "syncStatus": "active",
+            "availability": "instock",
+            "canonicalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "defaultCityId": "koeln",
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "defaultOrganizerId": "organizer-bootshaus",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          },
+          "consecutive_missing_count": 0,
+          "missing_since": null
+        }
+      ],
+      "importRecords": [
+        {
+          "id": "89de8774-5487-47ed-a680-aa6d23965643",
+          "import_job_id": "da459f02-a2a9-4e7b-b9e1-0e3d3bf946b8",
+          "source_id": "source-ticket-io-bootshaus-club",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-ticket-io-bootshaus-club",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Ticket.io — bootshaus-club",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "status": "needs_review",
+          "created_at": "2026-07-31T10:47:31.748+00:00",
+          "updated_at": "2026-07-31T14:11:56.478+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785339421539-k3swcrl",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "No artist \"unbekannt\" match found.",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": null,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        },
+        {
+          "id": "69cb971e-d37b-48db-b941-1337348f4280",
+          "import_job_id": "ffd76e54-c117-4890-af98-0f4b5760126f",
+          "source_id": "source-affenkaefig",
+          "external_id": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "raw_payload": {
+            "title": "Underland Essigfabrik 05.09.2026",
+            "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+            "importId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "cancelled": false,
+            "imageUrls": [
+              "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+            ],
+            "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "startDate": "2026-09-05T00:00:00+02:00",
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "venueName": "Essigfabrik /  Elektroküche",
+            "externalId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "description": "",
+            "originalLink": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "warnings": [],
+              "connector": "organizer_website",
+              "fieldEvidence": [
+                {
+                  "field": "title",
+                  "rawValue": "Underland Essigfabrik 05.09.2026",
+                  "strategy": "json_ld",
+                  "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+                  "confidence": 0.8,
+                  "extractedAt": "2026-08-02T21:21:09.270Z",
+                  "selectorOrPath": "name"
+                }
+              ],
+              "eventAttributes": [],
+              "textualEnrichment": {
+                "attributes": [],
+                "outboundTicketLinks": []
+              },
+              "extractionStrategy": "json_ld",
+              "outboundTicketLinks": [],
+              "extractionConfidence": 0.95
+            }
+          },
+          "normalized_payload": {
+            "title": "Underland Essigfabrik 05.09.2026",
+            "cityName": "Köln",
+            "eventUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg",
+            "importId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "isAllDay": false,
+            "sourceId": "source-affenkaefig",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2-1030x1030.jpg"
+            ],
+            "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "startDate": "2026-09-04T22:00:00.000Z",
+            "startTime": "22:00",
+            "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "venueName": "Essigfabrik / Elektroküche",
+            "changeType": "updated",
+            "externalId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "sourceName": "Affenkäfig",
+            "countryCode": "DE",
+            "mergeGroupId": "source-affenkaefig:https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "originalLink": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "venueAddress": "Siegburger Str. 110, 50679 Köln, Köln",
+            "organizerName": "Affenkäfig",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "warnings": [],
+              "connector": "organizer_website",
+              "defaultCityId": "koeln",
+              "fieldEvidence": [
+                {
+                  "field": "title",
+                  "rawValue": "Underland Essigfabrik 05.09.2026",
+                  "strategy": "json_ld",
+                  "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+                  "confidence": 0.8,
+                  "extractedAt": "2026-08-02T21:21:09.270Z",
+                  "selectorOrPath": "name"
+                }
+              ],
+              "eventGeography": {
+                "city": "source_default",
+                "venue": "explicit",
+                "address": "explicit",
+                "country": "explicit"
+              },
+              "posterMetadata": {
+                "source": "poster_ocr",
+                "status": "pending"
+              },
+              "eventAttributes": [],
+              "textualEnrichment": {
+                "attributes": [],
+                "outboundTicketLinks": []
+              },
+              "defaultOrganizerId": "organizer-affenkaefig",
+              "extractionStrategy": "json_ld",
+              "electronicRelevance": "relevant",
+              "outboundTicketLinks": [],
+              "extractionConfidence": 0.95,
+              "historicalRepairVersion": "4.3.4",
+              "dataQualityRepairVersion": "4.3.4"
+            },
+            "sourceContributions": [
+              {
+                "priority": 72,
+                "sourceId": "source-affenkaefig",
+                "sourceUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+                "externalId": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+                "sourceName": "Affenkäfig",
+                "trustScore": 74,
+                "retrievedAt": "2026-08-02T21:21:12.817Z"
+              }
+            ]
+          },
+          "status": "imported",
+          "created_at": "2026-07-29T21:17:08.477+00:00",
+          "updated_at": "2026-08-02T21:21:55.507+00:00",
+          "source_url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "code": "END_DATE_MISSING",
+              "field": "endDate",
+              "message": "End date is missing."
+            },
+            {
+              "code": "DESCRIPTION_MISSING",
+              "field": "description",
+              "message": "Description is missing."
+            }
+          ],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": null,
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785389049895-4mb7dub",
+          "duplicate_score": 97,
+          "matching_warnings": [
+            "No venue match found for \"Essigfabrik / Elektroküche\".",
+            "No organizer match found for \"Affenkäfig\"."
+          ],
+          "resulting_event_id": "evt-1785389049895-4mb7dub",
+          "reviewed_by": "phase466-pass2",
+          "reviewed_at": "2026-08-02T21:21:53.181+00:00",
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": "dismissed",
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        },
+        {
+          "id": "34b314ac-caeb-4b1d-b6db-2c296900d96a",
+          "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "source_id": "source-bootshaus-ticket-io",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "electronicRelevance": "relevant",
+              "dataQualityRepairVersion": "4.3.1"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-bootshaus-ticket-io",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "changeType": "updated",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Bootshaus Ticket.io",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "mergeGroupId": "source-bootshaus-ticket-io:https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "defaultCityId": "koeln",
+              "defaultVenueId": "venue-bootshaus-koeln",
+              "eventGeography": {
+                "city": "explicit",
+                "venue": "explicit",
+                "address": "explicit",
+                "country": "explicit"
+              },
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "posterMetadata": {
+                "source": "poster_ocr",
+                "status": "pending"
+              },
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "defaultOrganizerId": "organizer-bootshaus",
+              "electronicRelevance": "relevant",
+              "historicalRepairVersion": "4.3.4",
+              "dataQualityRepairVersion": "4.3.4"
+            },
+            "sourceContributions": [
+              {
+                "priority": 65,
+                "sourceId": "source-bootshaus-ticket-io",
+                "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "sourceName": "Bootshaus Ticket.io",
+                "trustScore": 70,
+                "retrievedAt": "2026-08-02T21:23:08.919Z"
+              }
+            ]
+          },
+          "status": "imported",
+          "created_at": "2026-07-30T13:22:52.357+00:00",
+          "updated_at": "2026-08-02T21:24:31.205+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "code": "DESCRIPTION_MISSING",
+              "field": "description",
+              "message": "Description is missing."
+            }
+          ],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785389049895-4mb7dub",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": "evt-1785389049895-4mb7dub",
+          "reviewed_by": "phase466-pass2",
+          "reviewed_at": "2026-08-02T21:24:28.92+00:00",
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        }
+      ],
+      "collisionSlugImports": [
+        {
+          "id": "89de8774-5487-47ed-a680-aa6d23965643",
+          "import_job_id": "da459f02-a2a9-4e7b-b9e1-0e3d3bf946b8",
+          "source_id": "source-ticket-io-bootshaus-club",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-ticket-io-bootshaus-club",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Ticket.io — bootshaus-club",
+            "artistNames": [
+              "Unbekannt"
+            ],
+            "countryCode": "DE",
+            "description": "N/A",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "scopeStats": {
+                "accepted": 17,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 17,
+                "rejectionReasons": {}
+              },
+              "availability": "InStock",
+              "normalizedHash": "c21229d8c1c900a87065040d2af16c0c",
+              "connectorVersion": "1.1.0",
+              "enrichmentSource": false,
+              "electronicRelevance": "relevant"
+            }
+          },
+          "status": "needs_review",
+          "created_at": "2026-07-31T10:47:31.748+00:00",
+          "updated_at": "2026-07-31T14:11:56.478+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785339421539-k3swcrl",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "No artist \"unbekannt\" match found.",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": null,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        },
+        {
+          "id": "34b314ac-caeb-4b1d-b6db-2c296900d96a",
+          "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+          "source_id": "source-bootshaus-ticket-io",
+          "external_id": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "raw_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T05:00:00+02:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "latitude": 50.9517133,
+            "timezone": "Europe/Berlin",
+            "cancelled": false,
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T22:00:00+02:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "electronicRelevance": "relevant",
+              "dataQualityRepairVersion": "4.3.1"
+            }
+          },
+          "normalized_payload": {
+            "title": "R3HAB pres. by BOOTSHAUS",
+            "endDate": "2026-09-05T03:00:00.000Z",
+            "endTime": "03:00",
+            "cityName": "Köln",
+            "eventUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6",
+            "importId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "isAllDay": false,
+            "latitude": 50.9517133,
+            "sourceId": "source-bootshaus-ticket-io",
+            "timezone": "UTC+02:00",
+            "imageUrls": [
+              "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?aadfa4e6"
+            ],
+            "longitude": 6.9819222,
+            "priceText": "ab 23,90 €",
+            "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "startDate": "2026-09-04T20:00:00.000Z",
+            "startTime": "20:00",
+            "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueName": "Bootshaus",
+            "changeType": "updated",
+            "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "sourceName": "Bootshaus Ticket.io",
+            "countryCode": "DE",
+            "priceAmount": 23.9,
+            "mergeGroupId": "source-bootshaus-ticket-io:https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "originalLink": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+            "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+            "organizerName": "Bootshaus Cologne GmbH",
+            "priceCurrency": "EUR",
+            "rawSourceType": "json_ld",
+            "sourceMetadata": {
+              "soldOut": false,
+              "syncRun": {
+                "pagesProcessed": 1,
+                "paginationDetected": false
+              },
+              "platform": "ticket_io",
+              "shopSlug": "bootshaus-club",
+              "connector": "ticket_platform",
+              "eventSlug": "C7JPnatZ",
+              "priceText": "ab 23,90 €",
+              "scopeStats": {
+                "accepted": 15,
+                "rejected": 0,
+                "uncertain": 0,
+                "discovered": 15,
+                "rejectionReasons": {}
+              },
+              "availability": "instock",
+              "defaultCityId": "koeln",
+              "defaultVenueId": "venue-bootshaus-koeln",
+              "eventGeography": {
+                "city": "explicit",
+                "venue": "explicit",
+                "address": "explicit",
+                "country": "explicit"
+              },
+              "normalizedHash": "1979efc6f9664ec2da92267e87bd001e",
+              "posterMetadata": {
+                "source": "poster_ocr",
+                "status": "pending"
+              },
+              "connectorVersion": "1.2.0",
+              "detailEnrichment": {
+                "blockedByPow": true,
+                "pagesFetched": 0,
+                "detailFetched": false,
+                "parserInvoked": false,
+                "skippedReason": "pow_blocked",
+                "maxDetailPages": 15,
+                "shopPagesFetched": 0,
+                "detailFetchErrors": 0,
+                "detailUrlsFetched": 0,
+                "detailUrlsAttempted": 15,
+                "detailUrlsDiscovered": 15,
+                "detailUrlsPowBlocked": 15
+              },
+              "enrichmentSource": true,
+              "defaultOrganizerId": "organizer-bootshaus",
+              "electronicRelevance": "relevant",
+              "historicalRepairVersion": "4.3.4",
+              "dataQualityRepairVersion": "4.3.4"
+            },
+            "sourceContributions": [
+              {
+                "priority": 65,
+                "sourceId": "source-bootshaus-ticket-io",
+                "sourceUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "externalId": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+                "sourceName": "Bootshaus Ticket.io",
+                "trustScore": 70,
+                "retrievedAt": "2026-08-02T21:23:08.919Z"
+              }
+            ]
+          },
+          "status": "imported",
+          "created_at": "2026-07-30T13:22:52.357+00:00",
+          "updated_at": "2026-08-02T21:24:31.205+00:00",
+          "source_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "validation_errors": [],
+          "validation_warnings": [
+            {
+              "code": "DESCRIPTION_MISSING",
+              "field": "description",
+              "message": "Description is missing."
+            }
+          ],
+          "matched_city_id": "staging-seed-city-koeln",
+          "matched_venue_id": "venue-bootshaus-koeln",
+          "matched_artist_ids": [],
+          "matched_genre_ids": [],
+          "duplicate_event_id": "evt-1785389049895-4mb7dub",
+          "duplicate_score": 95,
+          "matching_warnings": [
+            "No organizer match found for \"Bootshaus Cologne GmbH\".",
+            "Potential duplicate detected (score 95)."
+          ],
+          "resulting_event_id": "evt-1785389049895-4mb7dub",
+          "reviewed_by": "phase466-pass2",
+          "reviewed_at": "2026-08-02T21:24:28.92+00:00",
+          "reject_reason": null,
+          "reject_note": null,
+          "reviewer_edits": null,
+          "duplicate_decision": null,
+          "matched_organizer_id": null,
+          "source_type": null,
+          "original_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+          "retrieved_at": null,
+          "match_evaluation_id": null
+        }
+      ],
+      "ticketUrlProvenance": [],
+      "origins": [],
+      "phaseArtifacts": {
+        "phase484TicketCta": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "observedAt": "2026-08-02T21:24:29.387+00:00",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "action": "ticket_io_source_reference_created",
+      "value": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "source": "source-bootshaus-ticket-io",
+      "evidence": "import batch linked C7JPnatZ to Underland without title/date guard",
+      "explicit": false
+    },
+    {
+      "observedAt": "2026-08-02T21:24:31.205+00:00",
+      "eventId": "evt-1785389049895-4mb7dub",
+      "action": "ticket_io_import_record_linked",
+      "value": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "source": "source-bootshaus-ticket-io",
+      "evidence": "normalized price ab 23,90 € persisted to Underland",
+      "explicit": false
+    },
+    {
+      "observedAt": "2026-08-05 (phase 4.8.6 apply)",
+      "eventId": "evt-1785339421539-k3swcrl",
+      "action": "website_controlled_publish_ticketUrl",
+      "value": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "source": "source-bootshaus-koeln",
+      "evidence": "Bootshaus official page CTA",
+      "explicit": true
+    }
+  ],
+  "assessments": {
+    "underlandReceivedStaleUrl": true,
+    "r3habReceivedUrlRecently": true,
+    "ticketIoSlugReassigned": false,
+    "structuredDataContamination": false,
+    "crossEventMergeCopiedUrl": false,
+    "websiteParserCrossEvent": false,
+    "databaseAssociationOnly": false
+  }
+}

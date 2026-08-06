@@ -10,7 +10,7 @@ import {
   importRecordRepository,
   importReviewQueueService,
 } from '@/data/repositories/registry';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 import { IMPORT_REVIEW_RESOLUTION_REASONS } from '@/features/trust-quality/domain/trust-quality-types';
 import type { MultiSourceMatchEvaluation } from '@/features/multi-source-matching/domain/matching-types';
 import type { EventLifecycleEvaluation } from '@/features/event-lifecycle/domain/lifecycle-engine-types';

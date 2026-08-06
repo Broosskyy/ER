@@ -1,0 +1,162 @@
+{
+  "sprint": 361,
+  "phase": "admin-truthfulness-fix",
+  "before": {
+    "sources": [
+      {
+        "id": "source-ticket-io-protontheclub",
+        "archived": false,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      },
+      {
+        "id": "source-ticket-io-lehmannclub",
+        "archived": false,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      },
+      {
+        "id": "source-ticket-io-area51events",
+        "archived": false,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      },
+      {
+        "id": "source-ticket-io-technodampfer",
+        "archived": false,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      },
+      {
+        "id": "source-ticket-io-hmg-concerts",
+        "archived": false,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      },
+      {
+        "id": "source-ticket-io-bootshaus-club",
+        "archived": false,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      }
+    ],
+    "reviewQueuePending": 56,
+    "canonicalEvents": 125,
+    "origins": 149,
+    "discoverableEvents": 102
+  },
+  "actions": {
+    "backfilledSources": 5,
+    "reviewReconciled": 32,
+    "reviewPreserved": 24,
+    "bootshausDisposition": {
+      "found": true,
+      "archived": true,
+      "reviewEntriesResolved": 17,
+      "enrichmentSourceId": "source-bootshaus-ticket-io"
+    }
+  },
+  "after": {
+    "sources": [
+      {
+        "id": "source-ticket-io-protontheclub",
+        "archived": false,
+        "totalValidEventCount": 12,
+        "totalImportCount": 12,
+        "lastImportAt": "2026-07-31T14:09:20.271+00:00",
+        "lastJobStatus": "completed"
+      },
+      {
+        "id": "source-ticket-io-lehmannclub",
+        "archived": false,
+        "totalValidEventCount": 11,
+        "totalImportCount": 12,
+        "lastImportAt": "2026-07-31T14:08:20.975+00:00",
+        "lastJobStatus": "completed_with_warnings"
+      },
+      {
+        "id": "source-ticket-io-area51events",
+        "archived": false,
+        "totalValidEventCount": 4,
+        "totalImportCount": 4,
+        "lastImportAt": "2026-07-31T14:08:38.523+00:00",
+        "lastJobStatus": "completed"
+      },
+      {
+        "id": "source-ticket-io-technodampfer",
+        "archived": false,
+        "totalValidEventCount": 10,
+        "totalImportCount": 12,
+        "lastImportAt": "2026-07-31T14:10:03.185+00:00",
+        "lastJobStatus": "completed"
+      },
+      {
+        "id": "source-ticket-io-hmg-concerts",
+        "archived": false,
+        "totalValidEventCount": 19,
+        "totalImportCount": 20,
+        "lastImportAt": "2026-07-31T14:11:00.48+00:00",
+        "lastJobStatus": "completed_with_warnings"
+      },
+      {
+        "id": "source-ticket-io-bootshaus-club",
+        "archived": true,
+        "totalValidEventCount": 0,
+        "totalImportCount": 0
+      }
+    ],
+    "reviewQueuePending": 7,
+    "canonicalEvents": 125,
+    "origins": 149,
+    "discoverableEvents": 102
+  },
+  "idempotency": {
+    "secondBackfillCount": 5,
+    "secondReviewReconciled": 0
+  },
+  "validation": [
+    {
+      "sourceId": "source-ticket-io-protontheclub",
+      "expectedEvents": 12,
+      "actualEvents": 12,
+      "passed": true,
+      "lastImportAt": "2026-07-31T14:09:20.271+00:00",
+      "lastJobStatus": "completed"
+    },
+    {
+      "sourceId": "source-ticket-io-lehmannclub",
+      "expectedEvents": 11,
+      "actualEvents": 11,
+      "passed": true,
+      "lastImportAt": "2026-07-31T14:08:20.975+00:00",
+      "lastJobStatus": "completed_with_warnings"
+    },
+    {
+      "sourceId": "source-ticket-io-area51events",
+      "expectedEvents": 4,
+      "actualEvents": 4,
+      "passed": true,
+      "lastImportAt": "2026-07-31T14:08:38.523+00:00",
+      "lastJobStatus": "completed"
+    },
+    {
+      "sourceId": "source-ticket-io-technodampfer",
+      "expectedEvents": 10,
+      "actualEvents": 10,
+      "passed": true,
+      "lastImportAt": "2026-07-31T14:10:03.185+00:00",
+      "lastJobStatus": "completed"
+    },
+    {
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "expectedEvents": 19,
+      "actualEvents": 19,
+      "passed": true,
+      "lastImportAt": "2026-07-31T14:11:00.48+00:00",
+      "lastJobStatus": "completed_with_warnings"
+    }
+  ],
+  "technodampferGenuineNeedsReview": 2,
+  "passed": true,
+  "finishedAt": "2026-07-31T15:50:13.530Z"
+}

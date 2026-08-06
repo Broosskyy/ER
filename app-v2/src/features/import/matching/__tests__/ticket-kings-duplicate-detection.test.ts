@@ -44,4 +44,29 @@ describe('duplicate detection for ticket kings enrichment', () => {
     expect(result.duplicateEventId).toBe('evt-mdma-edition');
     expect(result.isDuplicate).toBe(true);
   });
+
+  it('matches enrichment events when venue label differs by suffix (Essigfabrik / Elektroküche)', () => {
+    const websiteCatalog: MatchingCatalog = {
+      ...catalog,
+      events: [
+        {
+          id: 'evt-mdma-website',
+          title: 'MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION',
+          startDate: '2026-08-15T21:00:00.000Z',
+          venueName: 'Essigfabrik / Elektroküche',
+          ticketUrl: 'https://affenkaefig.info/event/mdma-edition/',
+        },
+      ],
+    };
+
+    const result = duplicateDetectionService.detect(
+      ticketCandidate,
+      websiteCatalog,
+      undefined,
+    );
+
+    expect(result.duplicateScore).toBeGreaterThanOrEqual(70);
+    expect(result.duplicateEventId).toBe('evt-mdma-website');
+    expect(result.isDuplicate).toBe(true);
+  });
 });

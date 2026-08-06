@@ -21,83 +21,35 @@ import { EventFieldProvenanceWriter } from '@/features/import/services/event-fie
 import { EventCanonicalIdentityService } from '@/features/events/services/event-canonical-identity-service';
 import type { EventLifecycleOrchestrator } from '@/features/event-lifecycle/services/event-lifecycle-orchestrator';
 import type { EventOriginService } from '@/features/events/services/event-origin-service';
+import { featureFlags } from '@/core/config/feature-flags';
+import {
+  isEnrichmentPublish,
+  resolveSourcePublishBehavior,
+} from '@/features/import/domain/publish-behavior';
+import {
+  fieldTrustMergeService,
+  FieldTrustMergeService,
+} from '@/features/import/services/field-trust-merge-service';
 
-
-
-function createEventId(): string {
-
-  return `evt-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
-
-}
-
-
+import { writeImportPublishLineup } from '@/features/import/services/import-publish-lineup-writer';
+import type { ImportPublishLineupResult } from '@/features/import/services/import-publish-lineup-writer';
+import { needsLineupProjectionRepair, baselineExistingArtistIdsForRepair } from '@/features/import/services/import-lineup-projection-repair';
+import type { EventLineupService } from '@/features/events/services/event-lineup-service';
+import { loadMatchingCatalog } from '@/features/import/matching/matching-catalog';
+import type { AdminArtistRepository } from '@/data/repositories/repositories';
+import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
+import { buildAdminEventFromImportFields } from '@/features/import/services/import-event-field-mapper';
 
 export function buildAdminEventFromImportRecord(
-
   record: ImportRecord,
-
   existingEventId?: string,
-
+  existing?: AdminEventRecord | null,
 ): AdminEventRecord {
-
-  const candidate = getEffectiveCandidate(record);
-
-  const now = new Date().toISOString();
-
-  const organizerId = record.reviewerEdits?.matchedOrganizerId ?? record.matchedOrganizerId;
-
-  const normalized = record.normalizedPayload as Record<string, unknown> | undefined;
-
-
-
-  return {
-
-    id: existingEventId ?? createEventId(),
-
-    title: candidate.title,
-
-    subtitle: typeof normalized?.subtitle === 'string' ? normalized.subtitle : undefined,
-
-    description: candidate.description ?? '',
-
-    cityId: record.reviewerEdits?.matchedCityId ?? record.matchedCityId,
-
-    venueId: record.reviewerEdits?.matchedVenueId ?? record.matchedVenueId,
-
-    organizerId,
-
-    organizerName: candidate.organizerName,
-
-    artistId: undefined,
-
-    genreId: (record.reviewerEdits?.matchedGenreIds ?? record.matchedGenreIds)?.[0],
-
-    sourceId: record.sourceId,
-
-    startDate: candidate.startDate,
-
-    endDate: candidate.endDate,
-
-    ticketUrl: candidate.ticketUrl,
-
-    imageUrl: candidate.imageUrl,
-
-    websiteUrl: candidate.eventUrl ?? record.originalUrl,
-
-    venueName: candidate.venueName,
-
-    venueCity: candidate.cityName,
-
-    timezone: candidate.timezone,
-
-    status: 'published',
-
-    createdAt: existingEventId ? now : now,
-
-    updatedAt: now,
-
-  };
-
+  return buildAdminEventFromImportFields({
+    record,
+    existingEventId,
+    existing,
+  });
 }
 
 
@@ -144,6 +96,16 @@ export class ImportEventPublishService {
 
     private readonly eventOriginService?: EventOriginService,
 
+    private readonly lineupService?: Pick<
+      EventLineupService,
+      | 'replaceFromImportPipeline'
+      | 'getLineupArtistIds'
+      | 'replaceStructuredLineupFromImport'
+      | 'getStructuredLineupForEvent'
+    >,
+
+    private readonly adminArtistRepository?: Pick<AdminArtistRepository, 'getAll' | 'save'>,
+
   ) {}
 
 
@@ -155,6 +117,8 @@ export class ImportEventPublishService {
     previousRecords: ImportRecord[],
 
     candidate?: CanonicalImportEvent,
+
+    source?: SourceRecord,
 
   ): Promise<string | undefined> {
 
@@ -204,6 +168,25 @@ export class ImportEventPublishService {
 
       return reference.canonicalEventId;
 
+    }
+
+
+
+    if (
+      candidate &&
+      this.canonicalIdentityService &&
+      source &&
+      isEnrichmentPublish(source, true)
+    ) {
+      const ticketUrl = candidate.ticketUrl ?? record.externalId;
+      const catalog = await loadMatchingCatalog();
+      const byTicketUrl = this.canonicalIdentityService.resolveByTicketIoEventUrl(
+        ticketUrl,
+        catalog.events,
+      );
+      if (byTicketUrl) {
+        return byTicketUrl;
+      }
     }
 
 
@@ -258,6 +241,8 @@ export class ImportEventPublishService {
 
       canonicalCandidate,
 
+      source,
+
     );
 
     const existingEvent = existingEventId
@@ -266,18 +251,37 @@ export class ImportEventPublishService {
 
       : null;
 
-    const isEnrichment =
-      importUpdateService.isTicketPlatformEnrichmentSource(source.sourceType) && Boolean(existingEvent);
+    const publishBehavior = resolveSourcePublishBehavior(source);
+    const isEnrichment = isEnrichmentPublish(source, Boolean(existingEvent));
 
-    const eventPayload = existingEvent
+    let eventPayload: AdminEventRecord;
+    let mergeDecisions: ReturnType<FieldTrustMergeService['mergeAdminEvent']>['decisions'] = [];
 
-      ? isEnrichment
-
+    if (featureFlags.genericSourceFieldTrustMerge) {
+      const provenanceByField =
+        existingEvent && this.fieldProvenanceWriter
+          ? await this.fieldProvenanceWriter.loadProvenanceByField(
+              existingEvent.canonicalEventId ?? existingEvent.id,
+            )
+          : undefined;
+      const mergeResult = fieldTrustMergeService.mergeAdminEvent({
+        existing: existingEvent,
+        candidate: canonicalCandidate,
+        source,
+        behavior: publishBehavior,
+        provenanceByField: provenanceByField?.size ? provenanceByField : undefined,
+      });
+      eventPayload = existingEvent
+        ? mergeResult.event
+        : buildAdminEventFromImportRecord(record, existingEventId, existingEvent);
+      mergeDecisions = mergeResult.decisions;
+    } else if (existingEvent) {
+      eventPayload = isEnrichment
         ? importUpdateService.buildEnrichmentAdminEvent(existingEvent, canonicalCandidate)
-
-        : importUpdateService.buildUpdatedAdminEvent(existingEvent, canonicalCandidate, source.id)
-
-      : buildAdminEventFromImportRecord(record, existingEventId);
+        : importUpdateService.buildUpdatedAdminEvent(existingEvent, canonicalCandidate, source.id);
+    } else {
+      eventPayload = buildAdminEventFromImportRecord(record, existingEventId);
+    }
 
 
 
@@ -373,11 +377,16 @@ export class ImportEventPublishService {
 
           savedEvent.canonicalEventId ?? savedEvent.id,
 
-          source.id,
+          source,
 
           savedEvent,
 
-          now,
+          {
+            publishedAt: now,
+            originExternalId: record.externalId,
+            confidence: FieldTrustMergeService.confidenceFromCandidate(canonicalCandidate),
+            mergeDecisions,
+          },
 
         );
 
@@ -421,6 +430,10 @@ export class ImportEventPublishService {
 
 
 
+    await this.writeLineupForRecord(updatedRecord, savedEvent.id);
+
+
+
     return {
 
       record: updatedRecord,
@@ -433,16 +446,73 @@ export class ImportEventPublishService {
 
   }
 
+  async repairLineupProjection(
+    record: ImportRecord,
+    eventId: string,
+  ): Promise<ImportPublishLineupResult> {
+    return this.writeLineupForRecord(record, eventId);
+  }
+
+  async repairLineupProjectionIfNeeded(
+    record: ImportRecord,
+    eventId: string,
+  ): Promise<ImportPublishLineupResult> {
+    const existingIds = this.lineupService
+      ? await this.lineupService.getLineupArtistIds(eventId)
+      : [];
+    if (!this.adminArtistRepository) {
+      if (existingIds.length > 0) {
+        return {
+          wroteLineup: false,
+          artistIds: [],
+          completeness: 'none',
+          source: 'structured',
+          createdArtistIds: [],
+          titleDerivedNames: [],
+        };
+      }
+      return this.repairLineupProjection(record, eventId);
+    }
+
+    const artists = await this.adminArtistRepository.getAll();
+    const artistsById = new Map(artists.map((artist) => [artist.id, artist] as const));
+    if (!needsLineupProjectionRepair(record, existingIds, artistsById)) {
+      return {
+        wroteLineup: false,
+        artistIds: [],
+        completeness: 'none',
+        source: 'structured',
+        createdArtistIds: [],
+        titleDerivedNames: [],
+      };
+    }
+    return this.repairLineupProjection(record, eventId);
+  }
+
+  private async writeLineupForRecord(
+    record: ImportRecord,
+    eventId: string,
+  ): Promise<ImportPublishLineupResult> {
+    const event = await this.adminEventRepository.getById(eventId);
+    return writeImportPublishLineup({
+      lineupService: this.lineupService,
+      record,
+      eventId,
+      eventTitle: event?.title,
+      eventTicketUrl: event?.ticketUrl,
+      eventWebsiteUrl: event?.websiteUrl,
+      catalog: this.adminArtistRepository ? await loadMatchingCatalog() : undefined,
+      allArtists: this.adminArtistRepository ? await this.adminArtistRepository.getAll() : undefined,
+      saveArtist: this.adminArtistRepository
+        ? (artist) => this.adminArtistRepository!.save(artist)
+        : undefined,
+    });
+  }
+
 
 
   async refreshConsumerFeed(): Promise<void> {
-
-    if (this.consumerEventRepository) {
-
-      await this.consumerEventRepository.refresh();
-
-    }
-
+    await invalidateConsumerEventCaches(this.consumerEventRepository);
   }
 
 }

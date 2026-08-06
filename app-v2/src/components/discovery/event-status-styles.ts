@@ -22,9 +22,13 @@ const eventStatusStyles: Record<EventStatus, ResolvedEventStatus> = {
 };
 
 const ticketStatusStyles: Record<EventTicketStatus, ResolvedEventStatus> = {
-  available: { label: 'Tickets verfügbar', badgeStatus: 'info', icon: 'ticket-outline' },
+  available: { label: 'Verfügbar', badgeStatus: 'info', icon: 'ticket-outline' },
+  on_sale: { label: 'Im Vorverkauf', badgeStatus: 'success', icon: 'ticket-outline' },
   free: { label: 'Kostenlos', badgeStatus: 'success', icon: 'gift-outline' },
   limited: { label: 'Limitiert', badgeStatus: 'warning', icon: 'pricetag-outline' },
+  presale: { label: 'Vorverkauf', badgeStatus: 'info', icon: 'time-outline' },
+  coming_soon: { label: 'Bald verfügbar', badgeStatus: 'info', icon: 'hourglass-outline' },
+  waitlist: { label: 'Warteliste', badgeStatus: 'warning', icon: 'list-outline' },
   reserved: { label: 'Reserviert', badgeStatus: 'warning', icon: 'time-outline' },
   paid: { label: 'Bezahlt', badgeStatus: 'success', icon: 'checkmark-circle-outline' },
   valid: { label: 'Gültig', badgeStatus: 'success', icon: 'checkmark-circle' },

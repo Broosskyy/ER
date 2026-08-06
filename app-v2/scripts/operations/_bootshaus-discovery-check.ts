@@ -4,7 +4,7 @@
 import './bootstrap-ops-supabase';
 
 import { createClient } from '@supabase/supabase-js';
-import { getSupabaseServiceClient } from '@/services/supabase/client';
+import { getSupabaseServiceClient } from '@/services/supabase/client-service-role';
 
 const BOOTSHAUS = 'source-bootshaus-koeln';
 

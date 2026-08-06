@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-08-05T23:45:37.324Z",
+  "phase": "4.8.6.2.1",
+  "productionMutationsInThisRun": 0,
+  "compositeIdentity": {
+    "platform": "ticket_io",
+    "host": "bootshaus-club.ticket.io",
+    "externalId": "C7JPnatZ",
+    "normalizedUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "compositeKey": "ticket_io:bootshaus-club.ticket.io:C7JPnatZ"
+  },
+  "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+  "discoveryBestHit": {
+    "surface": "list_overview_row",
+    "priceText": "ab 23,90 €",
+    "priceAmount": 23.9,
+    "soldOut": false,
+    "rawSnippet": "Tickets ab 23,90 Euro",
+    "strategyVersion": "phase4721-v1"
+  },
+  "surfaces": [
+    {
+      "requestedUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+      "finalUrl": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus/",
+      "httpStatus": 200,
+      "redirectChain": [
+        "https://bootshaus.tv/events/r3hab-pres-by-bootshaus",
+        "http://bootshaus.tv/events/r3hab-pres-by-bootshaus/"
+      ],
+      "pageTitle": "R3HAB pres. by BOOTSHAUS | Bootshaus Club",
+      "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+      "eventDate": "2026-09-04T22:00:00+02:00",
+      "venueName": "Bootshaus",
+      "ticketCtaUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "ticketPlatform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "slug": "C7JPnatZ",
+      "observedAt": "2026-08-05T23:45:37.324Z",
+      "contentHash": "4f767aa918aaa40f",
+      "identityMatch": "exact",
+      "identityMatchReason": "r3hab_website:title_date_venue_compatible"
+    },
+    {
+      "requestedUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026",
+      "finalUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+      "httpStatus": 200,
+      "redirectChain": [
+        "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026"
+      ],
+      "pageTitle": "Underland Essigfabrik 05.09.2026 &ndash; Affenkaefig Veranstaltungen",
+      "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+      "eventDate": "2026-09-05T00:00:00+02:00",
+      "venueName": "Essigfabrik / Elektroküche",
+      "ticketCtaUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "ticketPlatform": "ticket_king",
+      "host": "ticketkings.de",
+      "slug": "underland-essigfabrik-05-09-2026",
+      "observedAt": "2026-08-05T23:45:37.324Z",
+      "contentHash": "613d06ee661f0bde",
+      "identityMatch": "mismatch",
+      "identityMatchReason": "underland_website:title_mismatch"
+    },
+    {
+      "requestedUrl": "https://bootshaus-club.ticket.io/",
+      "finalUrl": "https://bootshaus-club.ticket.io/",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "pageTitle": "Tickets f&uuml;r Bootshaus | Karten und Infos auf ticket.io",
+      "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+      "eventDate": "2026-09-04T22:00:00+02:00",
+      "venueName": "Bootshaus",
+      "ticketCtaUrl": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+      "ticketPlatform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "slug": "wUc3uQrR",
+      "observedAt": "2026-08-05T23:45:37.324Z",
+      "contentHash": "099974d2cd3a61e4",
+      "identityMatch": "exact",
+      "identityMatchReason": "ticket_io_list:title_date_venue_compatible",
+      "rawPrice": "Tickets ab 23,90 Euro"
+    },
+    {
+      "requestedUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "finalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "pageTitle": "Security check...",
+      "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+      "eventDate": "2026-09-04T22:00:00+02:00",
+      "venueName": "Bootshaus",
+      "ticketPlatform": "ticket_io",
+      "host": "bootshaus-club.ticket.io",
+      "slug": "C7JPnatZ",
+      "observedAt": "2026-08-05T23:45:37.324Z",
+      "contentHash": "8987976ff32d2898",
+      "identityMatch": "exact",
+      "identityMatchReason": "ticket_io_event:title_date_venue_compatible"
+    },
+    {
+      "requestedUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "finalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "httpStatus": 200,
+      "redirectChain": [],
+      "pageTitle": "Underland Essigfabrik 05.09.2026 - TicketKings - Your Ticket Kingdom",
+      "listRowTitle": "R3HAB pres. by BOOTSHAUS",
+      "eventDate": "2026-09-05T00:00:00+02:00",
+      "venueName": "Essigfabrik / Elektroküche",
+      "ticketCtaUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "ticketPlatform": "ticket_king",
+      "host": "ticketkings.de",
+      "slug": "underland-essigfabrik-05-09-2026",
+      "observedAt": "2026-08-05T23:45:37.324Z",
+      "contentHash": "084b458724125c6d",
+      "identityMatch": "mismatch",
+      "identityMatchReason": "underland_ticket_kings:title_mismatch"
+    }
+  ]
+}

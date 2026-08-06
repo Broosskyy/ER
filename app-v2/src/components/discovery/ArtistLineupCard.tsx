@@ -3,10 +3,8 @@ import { StyleSheet, View, ViewStyle } from 'react-native';
 import { CardFoundation } from '@/components/cards/CardFoundation';
 import { AppText } from '@/components/layout/AppText';
 import { AppIcon } from '@/components/primitives/AppIcon';
-import { VerificationBadge } from '@/components/profiles/VerificationBadge';
 import { spacing } from '@/design/spacing';
 import { useTheme } from '@/design/theme';
-
 import { EventImage } from './EventImage';
 import type { LineupItemViewModel } from './view-models';
 
@@ -47,9 +45,6 @@ export function ArtistLineupCard({ artist, onPress, style }: ArtistLineupCardPro
             <AppText role="bodyMuted" numberOfLines={1}>
               {artist.subtitleLabel}
             </AppText>
-          ) : null}
-          {!artist.profileNavigable ? (
-            <VerificationBadge status="unverified" />
           ) : null}
         </View>
         {onPress ? <AppIcon name="chevron-forward" size="sm" colorRole="muted" /> : null}

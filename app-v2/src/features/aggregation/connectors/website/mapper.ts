@@ -4,6 +4,13 @@ import {
   applyWebsiteTitleTransforms,
   type WebsiteTitleTransform,
 } from '@/features/aggregation/connectors/website/title-transforms';
+import { readWebsiteTextualEnrichmentMetadata } from '@/features/aggregation/connectors/website/website-textual-enrichment';
+import { extractLineupNamesFromDescriptionText } from '@/features/aggregation/domain/lineup-text-parser';
+import {
+  classifyOutboundTicketLink,
+  pickBestOutboundTicketLink,
+} from '@/features/aggregation/domain/cross-source-ticket-discovery';
+import { filterArtistCandidatesThroughGate } from '@/features/events/domain/artist-candidate-quality-gate';
 
 export function mapRawWebsiteEventToImportedEvent(
   event: RawWebsiteEvent,
@@ -15,6 +22,32 @@ export function mapRawWebsiteEventToImportedEvent(
   }
 
   const title = applyWebsiteTitleTransforms(event.title, transforms);
+
+  const textual = readWebsiteTextualEnrichmentMetadata(event);
+  const descriptionLineupRaw =
+    !event.rawArtists?.length ? extractLineupNamesFromDescriptionText(event.rawDescription) : undefined;
+  const descriptionLineup = descriptionLineupRaw
+    ? filterArtistCandidatesThroughGate(descriptionLineupRaw, {
+        sourceField: 'description',
+        extractionStrategy: event.extractionStrategy,
+        eventTitle: title,
+      })
+    : undefined;
+  const lineupEntries = descriptionLineup?.length
+    ? descriptionLineup.map((displayName) => ({
+        displayName,
+        source: 'html_lineup' as const,
+        confidence: 0.75,
+      }))
+    : undefined;
+  const classifiedTicketLinks = [
+    ...(event.rawTicketLinks ?? []).map((url) => classifyOutboundTicketLink(url)),
+    ...textual.outboundTicketLinks,
+  ];
+  const bestTicket = pickBestOutboundTicketLink(classifiedTicketLinks);
+  const minimumAgeNumber = textual.minimumAge
+    ? Number.parseInt(textual.minimumAge.replace(/\D/g, ''), 10)
+    : undefined;
 
   return {
     externalId: event.externalId,
@@ -29,7 +62,7 @@ export function mapRawWebsiteEventToImportedEvent(
     venueAddress: event.rawLocation,
     artistNames: event.rawArtists,
     genreNames: event.rawGenres,
-    ticketUrl: event.rawTicketLinks?.[0],
+    ticketUrl: bestTicket?.url ?? event.rawTicketLinks?.[0],
     imageUrl: event.rawImages?.[0],
     imageUrls: event.rawImages,
     organizerName: event.rawOrganizer,
@@ -40,8 +73,19 @@ export function mapRawWebsiteEventToImportedEvent(
       extractionConfidence: event.extractionConfidence,
       fieldEvidence: event.fieldEvidence,
       warnings: event.warnings,
+      textualEnrichment: textual,
+      runningOrder: textual.runningOrder,
+      timetable: textual.timetable,
+      eventAttributes: textual.attributes,
+      doorsOpenAt: textual.doorsOpenAt,
+      minimumAge: textual.minimumAge,
+      floorCount: textual.floorCount,
+      venueEnvironment: textual.venueEnvironment,
+      outboundTicketLinks: textual.outboundTicketLinks,
+      ...(lineupEntries?.length ? { lineupEntries } : {}),
     },
     cancelled: event.rawStatus?.toLowerCase() === 'cancelled',
+    ...(Number.isFinite(minimumAgeNumber) ? { minimumAge: minimumAgeNumber } : {}),
   };
 }
 

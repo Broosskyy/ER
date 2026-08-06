@@ -1,3 +1,5 @@
+import type { SourcePriorityTier } from '@/features/events/domain/field-ownership-policy';
+
 export const EVENT_CONFLICT_SEVERITIES = ['info', 'warning', 'critical'] as const;
 export type EventConflictSeverity = (typeof EVENT_CONFLICT_SEVERITIES)[number];
 
@@ -14,12 +16,26 @@ export interface EventConflict {
   resolvedAt?: string;
 }
 
+export interface FieldProvenanceAlternative<T = unknown> {
+  sourceId: string;
+  value: T;
+  confidence?: number;
+  freshnessAt?: string;
+  originExternalId?: string;
+  mergeDecision?: string;
+}
+
 export interface FieldProvenance<T = unknown> {
   value: T;
   selectedSourceId: string;
   selectionReason: string;
-  alternatives: Array<{ sourceId: string; value: T }>;
+  alternatives: Array<FieldProvenanceAlternative<T>>;
   lastChangedAt: string;
+  confidence?: number;
+  freshnessAt?: string;
+  originExternalId?: string;
+  mergeDecision?: string;
+  selectedTier?: SourcePriorityTier;
 }
 
 export interface DuplicateDecision {

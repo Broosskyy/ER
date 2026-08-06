@@ -48,12 +48,13 @@ export interface EventSourceCardProps {
   source: EventSourceViewModel;
   onSyncPress?: () => void;
   onConfigurePress?: () => void;
+  onViewEventsPress?: () => void;
   style?: ViewStyle;
   testID?: string;
 }
 
 /** Mockup 44 source manager card. */
-export function EventSourceCard({ source, onSyncPress, onConfigurePress, style, testID }: EventSourceCardProps) {
+export function EventSourceCard({ source, onSyncPress, onConfigurePress, onViewEventsPress, style, testID }: EventSourceCardProps) {
   const { theme } = useTheme();
 
   return (
@@ -87,6 +88,9 @@ export function EventSourceCard({ source, onSyncPress, onConfigurePress, style, 
         ) : null}
       </View>
       <Stack direction="horizontal" gap="sm" style={styles.sourceActions}>
+        {onViewEventsPress ? (
+          <SecondaryButton label="Events anzeigen" onPress={onViewEventsPress} />
+        ) : null}
         {onSyncPress ? <PrimaryButton label="Synchronisieren" onPress={onSyncPress} /> : null}
         {onConfigurePress ? <SecondaryButton label="Konfigurieren" onPress={onConfigurePress} /> : null}
       </Stack>

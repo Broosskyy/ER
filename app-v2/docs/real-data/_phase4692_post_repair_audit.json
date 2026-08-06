@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-08-03T08:16:10.778Z",
+  "preflightStructuredLegacyMismatches": 1,
+  "representativeMismatchCount": 0,
+  "acceptance": {
+    "sommerfest14Structured": true,
+    "mdma9Entries18Artists": true,
+    "intoTheMadnessEmpty": true,
+    "kitkatNoLineup": true,
+    "bootshausOnShipStructured": true
+  },
+  "writerInventory": {
+    "authoritativeWriters": 1,
+    "independentFlatWriters": 0
+  }
+}

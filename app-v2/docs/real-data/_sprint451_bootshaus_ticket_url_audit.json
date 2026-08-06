@@ -1,0 +1,441 @@
+{
+  "startedAt": "2026-08-01T13:27:33.636Z",
+  "phase": "4.5.1",
+  "applyChanges": false,
+  "audit": {
+    "eventsAudited": 43,
+    "withEventSpecificOriginUrl": 18,
+    "canonicalAlreadyCorrect": 18,
+    "canonicalGeneric": 25,
+    "noEventSpecificAvailable": 25,
+    "conflictingUrls": 0,
+    "correctionsNeeded": 0
+  },
+  "samples": [
+    {
+      "eventId": "evt-1785339377456-7miaf2o",
+      "title": "122 pres. NOTRE DAME @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/122-pres-notre-dame-at-palma-de-mallorca-es",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339388133-sq2ykbm",
+      "title": "122 pres. KAZ JAMES @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/122-pres-kaz-james-at-palma-de-mallorca-es",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339406307-kw5r61q",
+      "title": "PLAY! Open Air – Bootshaus Köln",
+      "canonicalTicketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+      "canonicalTicketClass": "event_specific",
+      "bestOriginTicketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+      "bestOriginTicketClass": "event_specific",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/1-8-26-play-open-air-bootshaus-koeln",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        },
+        {
+          "sourceId": "source-bootshaus-ticket-io",
+          "externalId": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+          "ticketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+          "importedTicketClass": {
+            "class": "event_specific",
+            "score": 100,
+            "normalized": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+            "host": "bootshaus-club",
+            "reason": "ticket_io_event_page"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+      "trustDecision": {
+        "selected": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "event_specific",
+          "score": 100,
+          "normalized": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+          "host": "bootshaus-club",
+          "reason": "ticket_io_event_page"
+        },
+        "incoming": {
+          "class": "event_specific",
+          "score": 100,
+          "normalized": "https://bootshaus-club.ticket.io/gPHSUV3l/",
+          "host": "bootshaus-club",
+          "reason": "ticket_io_event_page"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339407876-uqm3mz0",
+      "title": "122 pres. JUNO @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/122-pres-juno-at-palma-de-mallorca-es",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339409363-puvo8be",
+      "title": "122 pres. MAXI MERAKI @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/122-pres-maxi-meraki-at-palma-de-mallorca-es",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339413919-ix5umo9",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339415449-xpazmaq",
+      "title": "Bootshaus Sommerfest - Part 4",
+      "canonicalTicketUrl": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+      "canonicalTicketClass": "event_specific",
+      "bestOriginTicketUrl": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+      "bestOriginTicketClass": "event_specific",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/1-8-26-bootshaus-sommerfest-part-4",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        },
+        {
+          "sourceId": "source-bootshaus-ticket-io",
+          "externalId": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+          "ticketUrl": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+          "importedTicketClass": {
+            "class": "event_specific",
+            "score": 100,
+            "normalized": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+            "host": "bootshaus-club",
+            "reason": "ticket_io_event_page"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+      "trustDecision": {
+        "selected": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "event_specific",
+          "score": 100,
+          "normalized": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+          "host": "bootshaus-club",
+          "reason": "ticket_io_event_page"
+        },
+        "incoming": {
+          "class": "event_specific",
+          "score": 100,
+          "normalized": "https://bootshaus-club.ticket.io/NEtJnQ4A/",
+          "host": "bootshaus-club",
+          "reason": "ticket_io_event_page"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339417014-efv9q5w",
+      "title": "LOONYLAND AT NATURE ONE",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/2026-loonyland-at-nature-one",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    },
+    {
+      "eventId": "evt-1785339424521-tn10siz",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "canonicalTicketUrl": "https://bootshaus.ticket.io/",
+      "canonicalTicketClass": "shop_root",
+      "bestOriginTicketUrl": "https://bootshaus.ticket.io/",
+      "bestOriginTicketClass": "shop_root",
+      "origins": [
+        {
+          "sourceId": "source-bootshaus-koeln",
+          "externalId": "https://bootshaus.tv/events/122-pres-tripolism-at-palma-de-mallorca-es",
+          "ticketUrl": "https://bootshaus.ticket.io/",
+          "importedTicketClass": {
+            "class": "shop_root",
+            "score": 20,
+            "normalized": "https://bootshaus.ticket.io/",
+            "host": "bootshaus",
+            "reason": "ticket_io_shop_root"
+          }
+        }
+      ],
+      "needsCorrection": false,
+      "proposedTicketUrl": "https://bootshaus.ticket.io/",
+      "trustDecision": {
+        "selected": "https://bootshaus.ticket.io/",
+        "decision": "kept_existing",
+        "existing": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "incoming": {
+          "class": "shop_root",
+          "score": 20,
+          "normalized": "https://bootshaus.ticket.io/",
+          "host": "bootshaus",
+          "reason": "ticket_io_shop_root"
+        },
+        "reason": "equivalent_urls"
+      }
+    }
+  ],
+  "correctionsPreview": [],
+  "rootCause": {
+    "mechanism": "importUpdateService.buildUpdatedAdminEvent used `candidate.ticketUrl ?? existing.ticketUrl`",
+    "trigger": "Phase 4.5 website reimport supplied generic bootshaus.ticket.io shop URL from detail enrichment",
+    "path": "legacy publish path (genericSourceFieldTrustMerge=false) overwrote Ticket.io deep links",
+    "fix": "resolveBetterTicketUrl in import-update-service, field-trust-merge-service, merge-strategy"
+  },
+  "counts": {
+    "canonicalPublishedBefore": 114,
+    "canonicalPublishedAfter": 114,
+    "originsBefore": 0,
+    "originsAfter": 0
+  },
+  "completedAt": "2026-08-01T13:27:34.406Z"
+}

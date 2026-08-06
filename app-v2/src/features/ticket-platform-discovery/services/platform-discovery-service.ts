@@ -38,7 +38,7 @@ function assertCanDiscover(role: AdminRole | null): void {
 function matchSourceByListUrl(sources: SourceRecord[], listUrl: string): SourceRecord | undefined {
   const normalized = listUrl.replace(/\/$/, '');
   return sources.find((source) => {
-    const urls = [source.baseUrl, source.website, source.sourceUrl].filter(Boolean) as string[];
+    const urls = [source.baseUrl, source.website].filter(Boolean) as string[];
     return urls.some((url) => url.replace(/\/$/, '') === normalized);
   });
 }
@@ -175,6 +175,8 @@ export class PlatformDiscoveryService {
     const shops = await discoverTicketIoShops({
       corpusTexts: corpus,
       knownShopSlugs: knownSlugs,
+      maxShops: 30,
+      excludeShopSlugs: ['bootshaus-club'],
     });
 
     const summary: PlatformDiscoveryRunSummary = {
@@ -190,8 +192,9 @@ export class PlatformDiscoveryService {
       existingSourceMatches: 0,
       limitations: [
         'ticket.io has no public platform-wide event index or shop directory API.',
-        'Discovery mines *.ticket.io shop URLs from existing Eternal Rave corpus (sources, imports, events).',
-        'New shops require a discoverable URL reference — slug enumeration is not performed.',
+        'Discovery mines *.ticket.io URLs from expanded corpus (sources, seeds, published events, import records).',
+        'Bootshaus enrichment source is excluded from new-shop discovery.',
+        'Slug enumeration is not performed.',
       ],
     };
 
@@ -277,8 +280,6 @@ export class PlatformDiscoveryService {
       scheduleIntervalPreset: 'every_6_hours',
       scheduleTimezone: 'Europe/Berlin',
       pollingIntervalMinutes: 360,
-      reviewRequired: true,
-      publishMode: 'manual_review',
     };
 
     const saved = await this.activateSource(record);

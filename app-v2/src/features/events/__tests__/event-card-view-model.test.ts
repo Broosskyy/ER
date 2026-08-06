@@ -40,7 +40,7 @@ describe('toEventCardViewModel', () => {
       genreLabels: ['Techno', 'Hard Techno'],
       categoryLabel: 'Techno',
       organizerLabel: 'VOID Events',
-      ticketLabel: 'Ab 15,00 €',
+      ticketLabel: 'ab 15,00 €',
       ticketStatus: 'available',
       accessibilityLabel: 'VOID: Techno Saturday, Bootshaus, Köln',
     });

@@ -3,6 +3,8 @@
 **Sprint:** 30  
 **Goal:** Move from code-defined sources to admin-registered sources with platform auto-detection
 
+> **Product update (2026-07-30):** Ticket Kings is **deprecated** as a strategic platform. **Ticket.io** is the prioritized ticket platform for net-new organizer/shop discovery. See [TICKET_KINGS_DEPRECATION_PLAN.md](./TICKET_KINGS_DEPRECATION_PLAN.md).
+
 ---
 
 ## Current State
@@ -58,14 +60,14 @@ Existing Import / Match / Review / Publish Pipeline
   - `TicketPlatformAdapter.detect(url)`
   - `TicketPlatformAdapter.listEvents(config)`
   - `TicketPlatformAdapter.fetchDetail(url)`
-- [ ] Platform adapters: `ticket_io`, `ticket_king` (config-driven, not hardcoded)
+- [ ] Platform adapters: `ticket_io` (priority); `ticket_king` deprecated — adapter retained for legacy data only
 - [ ] Wire into `source-connector-resolution.ts` for `sourceType === 'ticket_platform'`
 - [ ] Unit tests with recorded HTML fixtures (no live crawl in CI)
 
 ### Phase 3 — Platform Detection (Sprint 32)
 
 - [ ] `PlatformDetectorService`:
-  - Hostname rules (`*.ticket.io`, `ticketkings.de`)
+  - Hostname rules (`*.ticket.io` priority; `ticketkings.de` deprecated)
   - Framework fingerprints (Tribe Events, Night Manager embed)
   - JSON-LD `@type: Event` probe
   - Response header / meta generator tags

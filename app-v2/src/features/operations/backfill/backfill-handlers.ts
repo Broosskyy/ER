@@ -159,7 +159,7 @@ export function createProvenanceBackfillHandler(
             await sourceReferences.updateLastSeen(event.sourceId, externalEventId, now);
           }
 
-          await provenanceWriter.writeFromPublish(
+          await provenanceWriter.writeFromPublishBySourceId(
             canonicalEventId,
             event.sourceId,
             event,

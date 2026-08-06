@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-04T20:28:51.464Z",
+  "productionMutationsInThisRun": 0,
+  "results": [
+    {
+      "eventIds": [],
+      "hasPrice": false,
+      "hasPhases": false,
+      "hasAvailability": false,
+      "hasCheckoutUrl": false,
+      "supplementaryOnly": false
+    },
+    {
+      "eventIds": [
+        "evt-1785443911160-owt97y3"
+      ],
+      "hasPrice": true,
+      "hasPhases": true,
+      "hasAvailability": true,
+      "hasCheckoutUrl": true,
+      "supplementaryOnly": true
+    },
+    {
+      "eventIds": [
+        "evt-1785443914377-7g9l545"
+      ],
+      "hasPrice": true,
+      "hasPhases": true,
+      "hasAvailability": true,
+      "hasCheckoutUrl": true,
+      "supplementaryOnly": true
+    }
+  ]
+}

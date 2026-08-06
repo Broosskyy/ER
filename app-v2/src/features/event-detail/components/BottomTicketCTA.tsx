@@ -9,10 +9,11 @@ import { textRoles } from '@/design/typography';
 
 export interface BottomTicketCTAProps {
   ticketUrl?: string;
+  ctaLabel?: string;
   onPressTickets: () => void;
 }
 
-export function BottomTicketCTA({ ticketUrl, onPressTickets }: BottomTicketCTAProps) {
+export function BottomTicketCTA({ ticketUrl, ctaLabel = 'Tickets ansehen', onPressTickets }: BottomTicketCTAProps) {
   const insets = useSafeAreaInsets();
 
   if (!ticketUrl) {
@@ -24,7 +25,7 @@ export function BottomTicketCTA({ ticketUrl, onPressTickets }: BottomTicketCTAPr
       pointerEvents="box-none"
       style={[styles.container, { paddingBottom: Math.max(insets.bottom, spacing.md) }]}
     >
-      <PrimaryButton label="Tickets ansehen" onPress={onPressTickets} style={styles.button} />
+      <PrimaryButton label={ctaLabel} onPress={onPressTickets} style={styles.button} />
     </View>
   );
 }

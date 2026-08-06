@@ -37,10 +37,14 @@ export const BOOTSHAUS_WEBSITE_CONFIG: WebsiteConnectorConfig = {
   },
   limits: {
     maxEventsPerRun: 50,
-    maxDetailPages: 0,
+    maxDetailPages: 50,
     maxPaginationPages: 1,
     maxPagesPerRun: 1,
     timeoutMs: 30_000,
+  },
+  eventDetailPage: {
+    allowedDomains: ['bootshaus.tv', 'www.bootshaus.tv'],
+    linkIncludePattern: '^/events/',
   },
   transforms: [
     { type: 'regex_replace', value: '\\s*\\|\\s*Bootshaus Club\\s*$', replacement: '' },
@@ -92,7 +96,7 @@ export function createBootshausProductionSourceRecord(
       },
       website: BOOTSHAUS_WEBSITE_CONFIG,
       regional: { countryCode: 'DE', languageCode: 'de' },
-      publishPolicy: { mode: 'auto_publish', blockOnDuplicate: true },
+      publishPolicy: { mode: 'auto_publish', behavior: 'auto_publish', blockOnDuplicate: true },
       defaults: {
         cityName: 'Köln',
         cityId: 'koeln',

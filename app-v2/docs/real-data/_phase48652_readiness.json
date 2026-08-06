@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-08-06T06:18:52.331Z",
+  "phase": "4.8.6.5.2",
+  "productionMutationsInThisRun": 0,
+  "verdict": "READY_FOR_VISUAL_ACCEPTANCE",
+  "acceptancePassed": true,
+  "visualPassed": true,
+  "dataMutations": 0,
+  "consumerOnly": true,
+  "rolloutActivated": false
+}

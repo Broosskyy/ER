@@ -17,6 +17,12 @@ export function resolveVerificationStatus(status: VerificationStatus): ResolvedV
       return { label: 'In Prüfung', badgeStatus: 'warning', icon: 'hourglass-outline' };
     case 'rejected':
       return { label: 'Abgelehnt', badgeStatus: 'error', icon: 'close-circle-outline' };
+    case 'official_source':
+      return { label: 'Offizielle Quelle', badgeStatus: 'info', icon: 'shield-outline' };
+    case 'profile_not_claimed':
+      return { label: 'Profil nicht beansprucht', badgeStatus: 'default', icon: 'person-outline' };
+    case 'organizer_confirmed':
+      return { label: 'Veranstalter bestätigt', badgeStatus: 'success', icon: 'checkmark-circle' };
     case 'unverified':
     default:
       return { label: 'Nicht verifiziert', badgeStatus: 'default', icon: 'help-circle-outline' };

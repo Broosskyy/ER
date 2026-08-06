@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-08-06T06:18:52.330Z",
+  "phase": "4.8.6.5.2",
+  "productionMutationsInThisRun": 0,
+  "layouts": [
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 1,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 0,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 1,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 0,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 1,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 0,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "mobile": {
+        "hasStandalonePrice": false,
+        "phaseCardCount": 0,
+        "hasSummaryBlock": false,
+        "hasCta": true,
+        "hasProvider": true,
+        "hasAvailability": true
+      },
+      "web": {
+        "sameAsMobile": true,
+        "note": "EventTicketSection is shared between mobile and web layouts"
+      },
+      "balanced": true
+    }
+  ],
+  "passed": true
+}

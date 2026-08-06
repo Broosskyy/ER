@@ -6,6 +6,8 @@ import { assertSafeImportUrl } from '@/features/import/services/import-fetch-ser
 import type { DiscoveryEvidence } from '@/features/source-onboarding/domain/types';
 import { detectPlatformFromHostname } from '@/features/source-onboarding/registry/platform-registry';
 import { SOURCE_DISCOVERY_MAX_REDIRECTS } from '@/features/source-onboarding/security/url-normalizer';
+import { probeTicketIoShopUrl } from '@/features/ticket-platform-discovery/discovery/ticket-io-probe';
+import { parseTicketIoUrl } from '@/features/aggregation/connectors/ticket-platform/ticket-io-url';
 
 export interface SourceDiscoveryInput {
   url: string;
@@ -57,6 +59,10 @@ export async function fetchDiscoveryDocument(url: string): Promise<WebsiteDocume
     }
 
     const html = await response.text();
+    const headers: Record<string, string> = {};
+    response.headers.forEach((value, key) => {
+      headers[key] = value;
+    });
     return {
       requestedUrl: url,
       finalUrl: currentUrl,
@@ -66,6 +72,9 @@ export async function fetchDiscoveryDocument(url: string): Promise<WebsiteDocume
       responseSize: html.length,
       fetchedAt: new Date().toISOString(),
       redirectChain,
+      headers,
+      detectedSignals: [],
+      warnings: [],
     };
   }
 
@@ -146,6 +155,40 @@ export async function runSourceDiscovery(input: SourceDiscoveryInput): Promise<S
 
   if (/cloudflare|cf-chl|attention required/i.test(html)) {
     warnings.push('Possible bot protection detected.');
+  }
+
+  if (knownPlatform?.id === 'ticket_io') {
+    const parsedUrl = parseTicketIoUrl(document.finalUrl);
+    if (parsedUrl) {
+      pushStep(steps, {
+        step: 'ticket_io_url',
+        result: parsedUrl.shopSlug,
+        confidence: 0.98,
+        evidence: `Normalized ticket.io shop URL for ${parsedUrl.shopSlug}.`,
+      });
+    }
+
+    const probe = await probeTicketIoShopUrl(document.finalUrl, undefined, { fixtureHtml: document.html });
+    if (probe) {
+      pushStep(steps, {
+        step: 'ticket_io_probe',
+        result: probe.valid ? 'valid' : 'invalid',
+        confidence: probe.valid ? 0.95 : 0.4,
+        evidence: `Discovered ${probe.eventCount} electronic events on shop list page.`,
+        warnings: probe.warnings.length > 0 ? probe.warnings : undefined,
+      });
+      if (probe.preview.length > 0) {
+        pushStep(steps, {
+          step: 'ticket_io_preview',
+          result: 'generated',
+          confidence: 0.9,
+          evidence: probe.preview.map((event) => `${event.title} @ ${event.startDate}`).join('; '),
+        });
+      }
+      warnings.push(...probe.warnings);
+    } else {
+      warnings.push('ticket.io shop probe did not discover importable events.');
+    }
   }
 
   const detectedPlatform = knownPlatform?.id ?? (detectedFramework === 'wordpress_tribe' ? 'wordpress_tribe' : undefined);

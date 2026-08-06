@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-04T12:18:10.361Z",
+  "gate": "D",
+  "count": 1,
+  "repairs": [
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "issues": [
+        "cache_freshness"
+      ],
+      "note": "Event-specific ticket URL in DB; invalidate consumer cache if stale bundle served generic destination",
+      "proposedAction": "invalidateConsumerEventCaches only"
+    }
+  ],
+  "excludedIncompleteProjection": "incomplete_projection from 4.7.5.1 excluded when canonical venue/title absent — not projection bugs"
+}

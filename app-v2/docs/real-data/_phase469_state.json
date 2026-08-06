@@ -1,0 +1,1271 @@
+{
+  "startedAt": "2026-08-03T07:09:29.795Z",
+  "backup": {
+    "generatedAt": "2026-08-03T07:20:05.178Z",
+    "eventCount": 4,
+    "snapshots": {
+      "evt-1785389055557-ux20897": {
+        "event": {
+          "id": "evt-1785389055557-ux20897",
+          "title": "Sommerfest Elektroküche 08.08.2026",
+          "subtitle": null,
+          "description": "Eventinfos ☀️ ELEKTROKÜCHE SOMMERFEST 2026 ☀️Am 08.08. feiern wir gemeinsam das schönste Sommerfest des Jahres. 🔥 Freut euch auf 3 Floors, einen Open-Air-Bereich, treibenden Techno und eine Nacht voller unvergesslicher...",
+          "genre_id": null,
+          "venue_id": null,
+          "city_id": "staging-seed-city-koeln",
+          "artist_id": "artist-title-asl-0l5t3z",
+          "source_id": "source-affenkaefig",
+          "collection_id": null,
+          "start_date": "2026-08-08T15:00:00+00:00",
+          "end_date": "2026-08-09T05:00:00+00:00",
+          "ticket_url": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026/",
+          "image_url": "https://affenkaefig.info/wp-content/uploads/2026/04/3zu4-insta-773x1030.jpg",
+          "status": "published",
+          "created_at": "2026-07-30T05:24:15.557+00:00",
+          "updated_at": "2026-08-03T06:35:31.357+00:00",
+          "created_by": null,
+          "flyer_url": null,
+          "website_url": "https://affenkaefig.info/event/sommerfest-elektrokueche-08-08-2026/",
+          "instagram_url": null,
+          "facebook_url": null,
+          "venue_name": "Essigfabrik",
+          "venue_city": "Köln",
+          "organizer_id": null,
+          "organizer": "Affenkäfig",
+          "timezone": "UTC+02:00",
+          "doors_open_at": null,
+          "sales_start_at": null,
+          "sales_end_at": null,
+          "cancelled_at": null,
+          "postponed_at": null,
+          "published_at": "2026-07-30T05:24:15.557+00:00",
+          "first_published_at": "2026-07-30T05:24:15.557+00:00",
+          "last_seen_at": "2026-08-02T21:26:50.986+00:00",
+          "last_imported_at": "2026-08-02T21:26:50.986+00:00",
+          "canonical_event_id": "evt-1785389055557-ux20897",
+          "duplicate_group_id": null,
+          "festival_edition_id": null,
+          "event_series_id": null,
+          "search_document": "'08.08':9B '08.08.2026':3A '2026':7B '3':21B 'air':26B 'am':8B 'auf':20B 'bereich':27B 'das':13B 'des':16B 'eine':31B 'einen':23B 'elektroküche':2A,5B 'essigfabrik':35C 'euch':19B 'eventinfos':4B 'feiern':10B 'floors':22B 'freut':18B 'gemeinsam':12B 'jahres':17B 'nacht':32B 'open':25B 'open-air-bereich':24B 'schönste':14B 'sommerfest':1A,6B,15B 'techno':29B 'treibenden':28B 'und':30B 'unvergesslicher':34B 'voller':33B 'wir':11B",
+          "price_text": "",
+          "venue_address": "Siegburger Str. 110, 50679 Köln, Köln",
+          "venue_postal_code": "50679",
+          "venue_country_code": "DE",
+          "latitude": null,
+          "longitude": null,
+          "age_restriction": null,
+          "ticket_status": "external_link",
+          "ticket_phases": null,
+          "genre_labels": [
+            "Techno",
+            "Bounce",
+            "Hardtechno"
+          ]
+        },
+        "structuredLineup": {
+          "entries": [
+            {
+              "id": "ele-evt-1785389055557-ux20897-0",
+              "order": 0,
+              "billingRelation": "SOLO",
+              "artists": [
+                "ASL∅"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-1",
+              "order": 1,
+              "billingRelation": "SOLO",
+              "artists": [
+                "ANNX"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-2",
+              "order": 2,
+              "billingRelation": "SOLO",
+              "artists": [
+                "BLACK ZUSHI"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-3",
+              "order": 3,
+              "billingRelation": "SOLO",
+              "artists": [
+                "BOUNCE MC"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-4",
+              "order": 4,
+              "billingRelation": "SOLO",
+              "artists": [
+                "HOTBOI2300"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-5",
+              "order": 5,
+              "billingRelation": "SOLO",
+              "artists": [
+                "HYPNOTIZED"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-6",
+              "order": 6,
+              "billingRelation": "SOLO",
+              "artists": [
+                "ICJ"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-7",
+              "order": 7,
+              "billingRelation": "SOLO",
+              "artists": [
+                "MAURO"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-8",
+              "order": 8,
+              "billingRelation": "SOLO",
+              "artists": [
+                "STIMULATE"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-9",
+              "order": 9,
+              "billingRelation": "SOLO",
+              "artists": [
+                "THE M∅VEMENT"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-10",
+              "order": 10,
+              "billingRelation": "SOLO",
+              "artists": [
+                "TOMMY LIBERA"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-11",
+              "order": 11,
+              "billingRelation": "SOLO",
+              "artists": [
+                "TURBO TIMOS"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-12",
+              "order": 12,
+              "billingRelation": "SOLO",
+              "artists": [
+                "JULEZ BRIXTON"
+              ]
+            },
+            {
+              "id": "ele-evt-1785389055557-ux20897-13",
+              "order": 13,
+              "billingRelation": "SOLO",
+              "artists": [
+                "SEBI LIEMEN"
+              ]
+            }
+          ],
+          "flatArtists": [
+            "ASL∅",
+            "ANNX",
+            "BLACK ZUSHI",
+            "BOUNCE MC",
+            "HOTBOI2300",
+            "HYPNOTIZED",
+            "ICJ",
+            "MAURO",
+            "STIMULATE",
+            "THE M∅VEMENT",
+            "TOMMY LIBERA",
+            "TURBO TIMOS",
+            "JULEZ BRIXTON",
+            "SEBI LIEMEN"
+          ]
+        },
+        "eventArtists": [
+          {
+            "id": "ea-b9cdc821-86a2-4708-8f08-612d7da9e9d4",
+            "artist_id": "artist-title-asl-0l5t3z",
+            "sort_order": 0,
+            "artists": {
+              "name": "ASL∅",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-1a5f18a5-0dd0-4fd2-903b-11ae0835b00c",
+            "artist_id": "artist-title-annx-r2t7pu",
+            "sort_order": 1,
+            "artists": {
+              "name": "ANNX",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-9e9ddb15-1524-4f71-a206-57385869f2d6",
+            "artist_id": "artist-title-black-zushi-m6g7rf",
+            "sort_order": 2,
+            "artists": {
+              "name": "BLACK ZUSHI",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-add497de-1ebf-424f-b789-bef5629dbae0",
+            "artist_id": "artist-title-bounce-mc-flz1jf",
+            "sort_order": 3,
+            "artists": {
+              "name": "BOUNCE MC",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-ee94045d-7b08-4818-8f16-7660f52fdefa",
+            "artist_id": "artist-title-hotboi2300-senum1",
+            "sort_order": 4,
+            "artists": {
+              "name": "HOTBOI2300",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-96025bd6-f56b-4cd6-b76d-9847c333ac77",
+            "artist_id": "artist-title-hypnotized-c8xlj1",
+            "sort_order": 5,
+            "artists": {
+              "name": "HYPNOTIZED",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-c3824991-a287-4b49-9dc5-aa95675517e8",
+            "artist_id": "artist-title-icj-lwn0df",
+            "sort_order": 6,
+            "artists": {
+              "name": "ICJ",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-52fdc035-f3eb-46b0-a092-f141b21d3a59",
+            "artist_id": "artist-title-mauro-dac77k",
+            "sort_order": 7,
+            "artists": {
+              "name": "MAURO",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-65b743fe-5038-428c-9dc9-311b75c74a97",
+            "artist_id": "artist-title-stimulate-9ugthz",
+            "sort_order": 8,
+            "artists": {
+              "name": "STIMULATE",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-6aa98712-cdf2-465e-b002-d90bd3d9e261",
+            "artist_id": "artist-title-the-m-vement-87r7qz",
+            "sort_order": 9,
+            "artists": {
+              "name": "THE M∅VEMENT",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-777e3d69-b271-42f9-be49-014307c60ec8",
+            "artist_id": "artist-title-tommy-libera-oybnsr",
+            "sort_order": 10,
+            "artists": {
+              "name": "TOMMY LIBERA",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-f55fe5d9-1249-498a-ac4b-e5887d49cbef",
+            "artist_id": "artist-title-turbo-timos-omo2yw",
+            "sort_order": 11,
+            "artists": {
+              "name": "TURBO TIMOS",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-030b6aa8-5544-4ccc-aa67-b6c103ea25be",
+            "artist_id": "artist-title-julez-brixton-5jzrl5",
+            "sort_order": 12,
+            "artists": {
+              "name": "JULEZ BRIXTON",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-4bfe8727-e2ae-4112-b949-f6ffba4b72a3",
+            "artist_id": "artist-title-sebi-liemen-svl15j",
+            "sort_order": 13,
+            "artists": {
+              "name": "SEBI LIEMEN",
+              "lineup_legacy_artifact": false
+            }
+          }
+        ]
+      },
+      "evt-1785339383539-0lxvjlp": {
+        "event": {
+          "id": "evt-1785339383539-0lxvjlp",
+          "title": "NIGHTSWITHUS presents LEVI",
+          "subtitle": null,
+          "description": "NIGHTSWITHUS presents LEVI @ Bootshaus, Cologne ✨ Place: Bootshaus Cologne📅 Date: Friday, August 7, 2026⏱️ Start: 22:00 NIGHTSWITHUS returns with another unforgettable night with LEVI!This time bringing him to the legendary Bootshaus Cologne. Don't miss your chance to be part of one of the most anticipated events of the summer.Secure your tickets now!See you on August 7, 2026, at Bootshaus Cologne.NIGHTSWITHUS 🌙",
+          "genre_id": null,
+          "venue_id": "venue-bootshaus-koeln",
+          "city_id": "staging-seed-city-koeln",
+          "artist_id": "artist-title-levi-c4xe5v",
+          "source_id": "source-bootshaus-koeln",
+          "collection_id": null,
+          "start_date": "2026-08-07T20:00:00+00:00",
+          "end_date": null,
+          "ticket_url": "https://bootshaus.ticket.io/",
+          "image_url": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9081811360437433792583675_1639949960920195382082902.jpeg",
+          "status": "published",
+          "created_at": "2026-07-29T15:36:23.539+00:00",
+          "updated_at": "2026-08-02T21:56:49.297+00:00",
+          "created_by": null,
+          "flyer_url": null,
+          "website_url": "https://bootshaus.tv/events/nightswithus-presents-levi",
+          "instagram_url": null,
+          "facebook_url": null,
+          "venue_name": "Bootshaus",
+          "venue_city": "Köln",
+          "organizer_id": "organizer-bootshaus",
+          "organizer": "Bootshaus",
+          "timezone": "Europe/Berlin",
+          "doors_open_at": null,
+          "sales_start_at": null,
+          "sales_end_at": null,
+          "cancelled_at": null,
+          "postponed_at": null,
+          "published_at": "2026-07-29T15:36:23.539+00:00",
+          "first_published_at": "2026-07-29T15:36:23.539+00:00",
+          "last_seen_at": "2026-08-02T16:31:11.105+00:00",
+          "last_imported_at": "2026-08-02T16:31:11.105+00:00",
+          "canonical_event_id": "evt-1785339383539-0lxvjlp",
+          "duplicate_group_id": null,
+          "festival_edition_id": null,
+          "event_series_id": null,
+          "search_document": "'00':19B '2026':16B,63B '22':18B '7':15B,62B 'another':23B 'anticipated':50B 'at':64B 'august':14B,61B 'be':43B 'bootshaus':7B,10B,35B,65B,67C 'bringing':30B 'chance':41B 'cologne':8B,11B,36B 'cologne.nightswithus':66B 'date':12B 'don':37B 'events':51B 'friday':13B 'him':31B 'legendary':34B 'levi':3A,6B,27B 'miss':39B 'most':49B 'night':25B 'nightswithus':1A,4B,20B 'now':57B 'of':45B,47B,52B 'on':60B 'one':46B 'part':44B 'place':9B 'presents':2A,5B 'returns':21B 'see':58B 'start':17B 'summer.secure':54B 't':38B 'the':33B,48B,53B 'this':28B 'tickets':56B 'time':29B 'to':32B,42B 'unforgettable':24B 'with':22B,26B 'you':59B 'your':40B,55B",
+          "price_text": null,
+          "venue_address": "Auenweg 173, 51063 Köln",
+          "venue_postal_code": "51063",
+          "venue_country_code": "DE",
+          "latitude": null,
+          "longitude": null,
+          "age_restriction": null,
+          "ticket_status": "external_link",
+          "ticket_phases": null,
+          "genre_labels": [
+            "HOUSE"
+          ]
+        },
+        "structuredLineup": {
+          "entries": [
+            {
+              "id": "ele-bf-e5d0c304538adae1b1cc4da81dd60bd4",
+              "order": 0,
+              "billingRelation": "SOLO",
+              "artists": [
+                "LEVI"
+              ]
+            }
+          ],
+          "flatArtists": [
+            "LEVI"
+          ]
+        },
+        "eventArtists": [
+          {
+            "id": "ea-evt-1785339383539-0lxvjlp-artist-title-levi-c4xe5v-0",
+            "artist_id": "artist-title-levi-c4xe5v",
+            "sort_order": 0,
+            "artists": {
+              "name": "LEVI",
+              "lineup_legacy_artifact": false
+            }
+          }
+        ]
+      },
+      "evt-1785389054496-ns9b6la": {
+        "event": {
+          "id": "evt-1785389054496-ns9b6la",
+          "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+          "subtitle": null,
+          "description": "",
+          "genre_id": null,
+          "venue_id": null,
+          "city_id": "staging-seed-city-koeln",
+          "artist_id": "artist-title-karamusta-pfmsk3",
+          "source_id": "source-affenkaefig",
+          "collection_id": null,
+          "start_date": "2026-08-14T22:00:00+00:00",
+          "end_date": "2026-08-15T22:00:00+00:00",
+          "ticket_url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "image_url": "https://affenkaefig.info/wp-content/uploads/2026/07/15.08.2026_Quada_LineuP_MDMA_WEB-1030x1030.jpg",
+          "status": "published",
+          "created_at": "2026-07-30T05:24:14.496+00:00",
+          "updated_at": "2026-08-03T07:18:56.483+00:00",
+          "created_by": null,
+          "flyer_url": null,
+          "website_url": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-xxx-f2f-b2b-xxx-edition/",
+          "instagram_url": null,
+          "facebook_url": null,
+          "venue_name": "Essigfabrik / Elektroküche",
+          "venue_city": "Köln",
+          "organizer_id": null,
+          "organizer": "Affenkäfig",
+          "timezone": "UTC+02:00",
+          "doors_open_at": null,
+          "sales_start_at": null,
+          "sales_end_at": null,
+          "cancelled_at": null,
+          "postponed_at": null,
+          "published_at": "2026-07-30T05:24:14.496+00:00",
+          "first_published_at": "2026-07-30T05:24:14.496+00:00",
+          "last_seen_at": "2026-08-02T21:22:05.191+00:00",
+          "last_imported_at": "2026-08-02T21:22:05.191+00:00",
+          "canonical_event_id": "evt-1785389054496-ns9b6la",
+          "duplicate_group_id": null,
+          "festival_edition_id": null,
+          "event_series_id": null,
+          "search_document": "'antreibt':5A 'b2b':8A 'die':3A 'edition':10A 'elektroküche':12C 'essigfabrik':11C 'f2f':7A 'mdma':1A 'mich':4A 'musik':2A 'xxx':6A,9A",
+          "price_text": null,
+          "venue_address": "Siegburger Str. 110, 50679 Köln, Köln",
+          "venue_postal_code": "50679",
+          "venue_country_code": "DE",
+          "latitude": null,
+          "longitude": null,
+          "age_restriction": null,
+          "ticket_status": "external_link",
+          "ticket_phases": null,
+          "genre_labels": null
+        },
+        "structuredLineup": {
+          "entries": [
+            {
+              "id": "ele-evt-1785389054496-ns9b6la-0",
+              "order": 0,
+              "billingRelation": "F2F",
+              "artists": [
+                "KARAMUSTAN",
+                "GREEKZ"
+              ]
+            }
+          ],
+          "flatArtists": [
+            "KARAMUSTAN",
+            "GREEKZ"
+          ]
+        },
+        "eventArtists": [
+          {
+            "id": "ea-981cf3f9-021b-4f85-a41d-2399bc45fb6b",
+            "artist_id": "artist-title-karamusta-pfmsk3",
+            "sort_order": 0,
+            "artists": {
+              "name": "KARAMUSTAN",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-8a15eafc-dffb-45ae-8f52-f6e10664900d",
+            "artist_id": "artist-title-greekz-lwnyow",
+            "sort_order": 1,
+            "artists": {
+              "name": "GREEKZ",
+              "lineup_legacy_artifact": false
+            }
+          }
+        ]
+      },
+      "evt-1785339420043-obhyeev": {
+        "event": {
+          "id": "evt-1785339420043-obhyeev",
+          "title": "Bootshaus on a Ship Vol. III",
+          "subtitle": null,
+          "description": "Bootshaus returns to the water.On August 9th, Bootshaus on a Ship Vol. III sets sail on the KD Boot for another open-air daytime session. LINEUP:BRANDON b2b SAM COLLINSOLIVER MAGENTA b2b LOST IDENTITYDAVE REPLAY b2b EMINALUKES b2b MAKLA▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+          "genre_id": null,
+          "venue_id": null,
+          "city_id": "staging-seed-city-koeln",
+          "artist_id": "artist-title-brandon-lxp143",
+          "source_id": "source-bootshaus-koeln",
+          "collection_id": null,
+          "start_date": "2026-08-09T12:00:00+00:00",
+          "end_date": "2026-08-09T18:00:00+00:00",
+          "ticket_url": "https://bootshaus-club.ticket.io/wUc3uQrR/",
+          "image_url": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+          "status": "published",
+          "created_at": "2026-07-29T15:37:00.043+00:00",
+          "updated_at": "2026-08-03T07:19:15.938+00:00",
+          "created_by": null,
+          "flyer_url": null,
+          "website_url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iii",
+          "instagram_url": null,
+          "facebook_url": null,
+          "venue_name": "KD Anleger Nr. 2",
+          "venue_city": "Köln",
+          "organizer_id": "organizer-bootshaus",
+          "organizer": "Bootshaus",
+          "timezone": "UTC+02:00",
+          "doors_open_at": null,
+          "sales_start_at": null,
+          "sales_end_at": null,
+          "cancelled_at": null,
+          "postponed_at": null,
+          "published_at": "2026-07-29T15:37:00.043+00:00",
+          "first_published_at": "2026-07-29T15:37:00.043+00:00",
+          "last_seen_at": "2026-08-02T21:24:25.563+00:00",
+          "last_imported_at": "2026-08-02T21:24:25.563+00:00",
+          "canonical_event_id": "evt-1785339420043-obhyeev",
+          "duplicate_group_id": null,
+          "festival_edition_id": null,
+          "event_series_id": null,
+          "search_document": "'18':49B,54B '2':59C '9th':13B 'a':3A,16B 'ab':48B 'admission':53B 'age':51B 'air':30B 'anleger':57C 'another':27B 'august':12B 'b2b':35B,39B,43B,45B 'boot':25B 'bootshaus':1A,7B,14B 'brandon':34B 'collinsoliver':37B 'daytime':31B 'einlass':47B 'eminalukes':44B 'for':26B,52B 'identitydave':41B 'iii':6A,19B 'jahren':50B 'kd':24B,56C 'lineup':33B 'lost':40B 'magenta':38B 'makla':46B 'nr':58C 'on':2A,15B,22B 'open':29B 'open-air':28B 'replay':42B 'returns':8B 'sail':21B 'sam':36B 'session':32B 'sets':20B 'ship':4A,17B 'the':10B,23B 'to':9B 'vol':5A,18B 'water.on':11B 'years':55B",
+          "price_text": "Tickets ab 32,00 Euro",
+          "venue_address": "Auenweg 173, 51063 Köln",
+          "venue_postal_code": "51063",
+          "venue_country_code": "DE",
+          "latitude": 50.9375699,
+          "longitude": 6.9632867,
+          "age_restriction": "ab 18 Jahren",
+          "ticket_status": "external_link",
+          "ticket_phases": null,
+          "genre_labels": null
+        },
+        "structuredLineup": {
+          "entries": [
+            {
+              "id": "ele-evt-1785339420043-obhyeev-0",
+              "order": 0,
+              "billingRelation": "B2B",
+              "artists": [
+                "BRANDON",
+                "SAM COLLINS"
+              ]
+            },
+            {
+              "id": "ele-evt-1785339420043-obhyeev-1",
+              "order": 1,
+              "billingRelation": "B2B",
+              "artists": [
+                "OLIVER MAGENTA",
+                "LOST IDENTITY"
+              ]
+            },
+            {
+              "id": "ele-evt-1785339420043-obhyeev-2",
+              "order": 2,
+              "billingRelation": "B2B",
+              "artists": [
+                "DAVE REPLAY",
+                "EMIN"
+              ]
+            },
+            {
+              "id": "ele-evt-1785339420043-obhyeev-3",
+              "order": 3,
+              "billingRelation": "B2B",
+              "artists": [
+                "ALUKES",
+                "MAKLA"
+              ]
+            }
+          ],
+          "flatArtists": [
+            "BRANDON",
+            "SAM COLLINSOLIVER MAGENTA",
+            "LOST IDENTITYDAVE REPLAY",
+            "EMINALUKES",
+            "MAKLA"
+          ]
+        },
+        "eventArtists": [
+          {
+            "id": "ea-3ebf0d1e-f6e4-449a-a627-4370cbd1e452",
+            "artist_id": "artist-title-brandon-lxp143",
+            "sort_order": 0,
+            "artists": {
+              "name": "BRANDON",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-37b25b84-f1c2-4ca9-9f68-cc48b5eefd46",
+            "artist_id": "artist-title-sam-collinsoliver-magenta-fmf9uk",
+            "sort_order": 1,
+            "artists": {
+              "name": "SAM COLLINSOLIVER MAGENTA",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-3ae61a1e-26eb-4e49-b723-d1e905d300bd",
+            "artist_id": "artist-title-lost-identitydave-replay-5n9q42",
+            "sort_order": 2,
+            "artists": {
+              "name": "LOST IDENTITYDAVE REPLAY",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-0b35dcc1-299d-4f6c-a51a-d89189563373",
+            "artist_id": "artist-title-eminalukes-knn7qd",
+            "sort_order": 3,
+            "artists": {
+              "name": "EMINALUKES",
+              "lineup_legacy_artifact": false
+            }
+          },
+          {
+            "id": "ea-c05fea9d-cb7f-4e76-9a62-a7b04bcc6bb2",
+            "artist_id": "artist-title-makla-az92cb",
+            "sort_order": 4,
+            "artists": {
+              "name": "MAKLA",
+              "lineup_legacy_artifact": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "audit": {
+    "conflicts": {
+      "generatedAt": "2026-08-03T07:20:05.789Z",
+      "karamustaConflict": {
+        "textualSpelling": "KARAMUSTA",
+        "flyerSpelling": "KARAMUSTAN",
+        "resolution": {
+          "action": "accept",
+          "displayName": "KARAMUSTAN",
+          "preserveSourceSpelling": "KARAMUSTA",
+          "reason": "official_flyer_minor_spelling_correction"
+        },
+        "matchingArtists": [
+          {
+            "id": "artist-title-karamusta-f2f-greekz-8hxxms",
+            "name": "KARAMUSTA F2F GREEKZ",
+            "lineupLegacyArtifact": true
+          },
+          {
+            "id": "artist-title-karamusta-pfmsk3",
+            "name": "KARAMUSTAN",
+            "lineupLegacyArtifact": false
+          },
+          {
+            "id": "artist-title-karamusta-yd50lp",
+            "name": "KARAMUSTA",
+            "lineupLegacyArtifact": true
+          }
+        ],
+        "mdmaLineupArtists": [
+          "KARAMUSTAN"
+        ]
+      }
+    },
+    "flyerEvidence": {
+      "generatedAt": "2026-08-03T07:20:05.853Z",
+      "bootshaus": {
+        "eventId": "evt-1785339420043-obhyeev",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5271247246677624635317986_6766080141137254315291902.png",
+        "rawText": "BRANDON B2B SAM COLLINS\nOLIVER MAGENTA B2B LOST IDENTITY\nDAVE REPLAY B2B EMIN\nALUKES B2B MAKLA",
+        "contentHash": "63e128f596003b30",
+        "confidence": 0.92,
+        "reviewState": "accepted",
+        "autoPublishAllowed": false,
+        "eligibility": {
+          "officialOrigin": true,
+          "eventPoster": true,
+          "visibleBilling": true,
+          "identityVerified": true
+        }
+      },
+      "mdma": {
+        "eventId": "evt-1785389054496-ns9b6la",
+        "karamustanEntry": {
+          "id": "ele-evt-1785389054496-ns9b6la-0",
+          "order": 0,
+          "billingRelation": "F2F",
+          "artists": [
+            "KARAMUSTAN",
+            "GREEKZ"
+          ]
+        }
+      }
+    }
+  },
+  "repair": {
+    "completedAt": "2026-08-03T07:20:33.428Z",
+    "identityCorrection": {
+      "karamustanId": "artist-title-karamusta-pfmsk3",
+      "legacyMarked": [],
+      "aliasCreated": false
+    },
+    "legacyCleanup": {
+      "markedLegacy": [],
+      "skipped": []
+    },
+    "collapsedBefore": [],
+    "passes": [
+      {
+        "pass": 1,
+        "mutations": [
+          {
+            "eventId": "evt-1785389055557-ux20897",
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 14,
+            "afterEntryCount": 14,
+            "beforeFlatCount": 14,
+            "afterFlatCount": 14
+          },
+          {
+            "eventId": "evt-1785339383539-0lxvjlp",
+            "title": "NIGHTSWITHUS presents LEVI",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 1,
+            "afterEntryCount": 1,
+            "beforeFlatCount": 1,
+            "afterFlatCount": 1
+          },
+          {
+            "eventId": "evt-1785389054496-ns9b6la",
+            "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+            "wroteLineup": true,
+            "changed": true,
+            "beforeEntryCount": 1,
+            "afterEntryCount": 9,
+            "beforeFlatCount": 2,
+            "afterFlatCount": 18
+          },
+          {
+            "eventId": "evt-1785339420043-obhyeev",
+            "title": "Bootshaus on a Ship Vol. III",
+            "wroteLineup": true,
+            "changed": true,
+            "beforeEntryCount": 4,
+            "afterEntryCount": 4,
+            "beforeFlatCount": 5,
+            "afterFlatCount": 8
+          }
+        ],
+        "mutationCount": 2
+      },
+      {
+        "pass": 2,
+        "mutations": [
+          {
+            "eventId": "evt-1785389055557-ux20897",
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 14,
+            "afterEntryCount": 14,
+            "beforeFlatCount": 14,
+            "afterFlatCount": 14
+          },
+          {
+            "eventId": "evt-1785339383539-0lxvjlp",
+            "title": "NIGHTSWITHUS presents LEVI",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 1,
+            "afterEntryCount": 1,
+            "beforeFlatCount": 1,
+            "afterFlatCount": 1
+          },
+          {
+            "eventId": "evt-1785389054496-ns9b6la",
+            "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 9,
+            "afterEntryCount": 9,
+            "beforeFlatCount": 18,
+            "afterFlatCount": 18
+          },
+          {
+            "eventId": "evt-1785339420043-obhyeev",
+            "title": "Bootshaus on a Ship Vol. III",
+            "wroteLineup": true,
+            "changed": true,
+            "beforeEntryCount": 4,
+            "afterEntryCount": 4,
+            "beforeFlatCount": 8,
+            "afterFlatCount": 5
+          }
+        ],
+        "mutationCount": 1
+      },
+      {
+        "pass": 3,
+        "mutations": [
+          {
+            "eventId": "evt-1785389055557-ux20897",
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 14,
+            "afterEntryCount": 14,
+            "beforeFlatCount": 14,
+            "afterFlatCount": 14
+          },
+          {
+            "eventId": "evt-1785339383539-0lxvjlp",
+            "title": "NIGHTSWITHUS presents LEVI",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 1,
+            "afterEntryCount": 1,
+            "beforeFlatCount": 1,
+            "afterFlatCount": 1
+          },
+          {
+            "eventId": "evt-1785389054496-ns9b6la",
+            "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 9,
+            "afterEntryCount": 9,
+            "beforeFlatCount": 18,
+            "afterFlatCount": 18
+          },
+          {
+            "eventId": "evt-1785339420043-obhyeev",
+            "title": "Bootshaus on a Ship Vol. III",
+            "wroteLineup": true,
+            "changed": true,
+            "beforeEntryCount": 4,
+            "afterEntryCount": 4,
+            "beforeFlatCount": 5,
+            "afterFlatCount": 8
+          }
+        ],
+        "mutationCount": 1
+      },
+      {
+        "pass": 4,
+        "mutations": [
+          {
+            "eventId": "evt-1785389055557-ux20897",
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 14,
+            "afterEntryCount": 14,
+            "beforeFlatCount": 14,
+            "afterFlatCount": 14
+          },
+          {
+            "eventId": "evt-1785339383539-0lxvjlp",
+            "title": "NIGHTSWITHUS presents LEVI",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 1,
+            "afterEntryCount": 1,
+            "beforeFlatCount": 1,
+            "afterFlatCount": 1
+          },
+          {
+            "eventId": "evt-1785389054496-ns9b6la",
+            "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 9,
+            "afterEntryCount": 9,
+            "beforeFlatCount": 18,
+            "afterFlatCount": 18
+          },
+          {
+            "eventId": "evt-1785339420043-obhyeev",
+            "title": "Bootshaus on a Ship Vol. III",
+            "wroteLineup": true,
+            "changed": true,
+            "beforeEntryCount": 4,
+            "afterEntryCount": 4,
+            "beforeFlatCount": 8,
+            "afterFlatCount": 5
+          }
+        ],
+        "mutationCount": 1
+      },
+      {
+        "pass": 5,
+        "mutations": [
+          {
+            "eventId": "evt-1785389055557-ux20897",
+            "title": "Sommerfest Elektroküche 08.08.2026",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 14,
+            "afterEntryCount": 14,
+            "beforeFlatCount": 14,
+            "afterFlatCount": 14
+          },
+          {
+            "eventId": "evt-1785339383539-0lxvjlp",
+            "title": "NIGHTSWITHUS presents LEVI",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 1,
+            "afterEntryCount": 1,
+            "beforeFlatCount": 1,
+            "afterFlatCount": 1
+          },
+          {
+            "eventId": "evt-1785389054496-ns9b6la",
+            "title": "MDMA- Musik Die Mich Antreibt xxx F2F & B2B xxx EDITION",
+            "wroteLineup": false,
+            "changed": false,
+            "beforeEntryCount": 9,
+            "afterEntryCount": 9,
+            "beforeFlatCount": 18,
+            "afterFlatCount": 18
+          },
+          {
+            "eventId": "evt-1785339420043-obhyeev",
+            "title": "Bootshaus on a Ship Vol. III",
+            "wroteLineup": true,
+            "changed": true,
+            "beforeEntryCount": 4,
+            "afterEntryCount": 4,
+            "beforeFlatCount": 5,
+            "afterFlatCount": 8
+          }
+        ],
+        "mutationCount": 1
+      }
+    ]
+  },
+  "validation": {
+    "generatedAt": "2026-08-03T07:20:33.949Z",
+    "passCount": 4,
+    "total": 4,
+    "rows": [
+      {
+        "label": "Sommerfest Elektroküche",
+        "eventId": "evt-1785389055557-ux20897",
+        "pass": true,
+        "entryCount": 14,
+        "artistCount": 14,
+        "collapsedArtists": [],
+        "billingInNames": [],
+        "entries": [
+          {
+            "billing": "SOLO",
+            "artists": [
+              "ASL∅"
+            ],
+            "label": "ASL∅"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "ANNX"
+            ],
+            "label": "ANNX"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "BLACK ZUSHI"
+            ],
+            "label": "BLACK ZUSHI"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "BOUNCE MC"
+            ],
+            "label": "BOUNCE MC"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "HOTBOI2300"
+            ],
+            "label": "HOTBOI2300"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "HYPNOTIZED"
+            ],
+            "label": "HYPNOTIZED"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "ICJ"
+            ],
+            "label": "ICJ"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "MAURO"
+            ],
+            "label": "MAURO"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "STIMULATE"
+            ],
+            "label": "STIMULATE"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "THE M∅VEMENT"
+            ],
+            "label": "THE M∅VEMENT"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "TOMMY LIBERA"
+            ],
+            "label": "TOMMY LIBERA"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "TURBO TIMOS"
+            ],
+            "label": "TURBO TIMOS"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "JULEZ BRIXTON"
+            ],
+            "label": "JULEZ BRIXTON"
+          },
+          {
+            "billing": "SOLO",
+            "artists": [
+              "SEBI LIEMEN"
+            ],
+            "label": "SEBI LIEMEN"
+          }
+        ],
+        "flatArtists": [
+          "ASL∅",
+          "ANNX",
+          "BLACK ZUSHI",
+          "BOUNCE MC",
+          "HOTBOI2300",
+          "HYPNOTIZED",
+          "ICJ",
+          "MAURO",
+          "STIMULATE",
+          "THE M∅VEMENT",
+          "TOMMY LIBERA",
+          "TURBO TIMOS",
+          "JULEZ BRIXTON",
+          "SEBI LIEMEN"
+        ]
+      },
+      {
+        "label": "LEVI",
+        "eventId": "evt-1785339383539-0lxvjlp",
+        "pass": true,
+        "entryCount": 1,
+        "artistCount": 1,
+        "collapsedArtists": [],
+        "billingInNames": [],
+        "entries": [
+          {
+            "billing": "SOLO",
+            "artists": [
+              "LEVI"
+            ],
+            "label": "LEVI"
+          }
+        ],
+        "flatArtists": [
+          "LEVI"
+        ]
+      },
+      {
+        "label": "MDMA",
+        "eventId": "evt-1785389054496-ns9b6la",
+        "pass": true,
+        "entryCount": 9,
+        "artistCount": 18,
+        "collapsedArtists": [],
+        "billingInNames": [],
+        "entries": [
+          {
+            "billing": "F2F",
+            "artists": [
+              "DYSTOPIA",
+              "VALKYRIE"
+            ],
+            "label": "DYSTOPIA f2f VALKYRIE"
+          },
+          {
+            "billing": "F2F",
+            "artists": [
+              "IAN CRANK",
+              "EASYPYSI"
+            ],
+            "label": "IAN CRANK f2f EASYPYSI"
+          },
+          {
+            "billing": "F2F",
+            "artists": [
+              "KARAMUSTAN",
+              "GREEKZ"
+            ],
+            "label": "KARAMUSTAN f2f GREEKZ"
+          },
+          {
+            "billing": "F2F",
+            "artists": [
+              "KEVIN LA NIQUE",
+              "THE RAFNIX"
+            ],
+            "label": "KEVIN LA NIQUE f2f THE RAFNIX"
+          },
+          {
+            "billing": "F2F",
+            "artists": [
+              "NINA BENDER",
+              "LEE-ANN"
+            ],
+            "label": "NINA BENDER f2f LEE-ANN"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "FLASH",
+              "FORWARD"
+            ],
+            "label": "FLASH b2b FORWARD"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "HELLMYER",
+              "STZ"
+            ],
+            "label": "HELLMYER b2b STZ"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "MAURO",
+              "I.D.A"
+            ],
+            "label": "MAURO b2b I.D.A"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "PLEA5URE",
+              "PUL5E"
+            ],
+            "label": "PLEA5URE b2b PUL5E"
+          }
+        ],
+        "flatArtists": [
+          "DYSTOPIA",
+          "VALKYRIE",
+          "IAN CRANK",
+          "EASYPYSI",
+          "KARAMUSTAN",
+          "GREEKZ",
+          "KEVIN LA NIQUE",
+          "THE RAFNIX",
+          "NINA BENDER",
+          "LEE-ANN",
+          "FLASH",
+          "FORWARD",
+          "HELLMYER",
+          "STZ",
+          "MAURO",
+          "I.D.A",
+          "PLEA5URE",
+          "PUL5E"
+        ]
+      },
+      {
+        "label": "Bootshaus on a Ship Vol. III",
+        "eventId": "evt-1785339420043-obhyeev",
+        "pass": true,
+        "entryCount": 4,
+        "artistCount": 8,
+        "collapsedArtists": [],
+        "billingInNames": [],
+        "entries": [
+          {
+            "billing": "B2B",
+            "artists": [
+              "BRANDON",
+              "SAM COLLINS"
+            ],
+            "label": "BRANDON b2b SAM COLLINS"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "OLIVER MAGENTA",
+              "LOST IDENTITY"
+            ],
+            "label": "OLIVER MAGENTA b2b LOST IDENTITY"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "DAVE REPLAY",
+              "EMIN"
+            ],
+            "label": "DAVE REPLAY b2b EMIN"
+          },
+          {
+            "billing": "B2B",
+            "artists": [
+              "ALUKES",
+              "MAKLA"
+            ],
+            "label": "ALUKES b2b MAKLA"
+          }
+        ],
+        "flatArtists": [
+          "BRANDON",
+          "SAM COLLINS",
+          "OLIVER MAGENTA",
+          "LOST IDENTITY",
+          "DAVE REPLAY",
+          "EMIN",
+          "ALUKES",
+          "MAKLA"
+        ]
+      }
+    ]
+  }
+}

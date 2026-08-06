@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-08-06T00:05:21.882Z",
+  "phase": "4.8.6.4",
+  "gate": "A",
+  "eventId": "evt-1785389049895-4mb7dub",
+  "mutations": [],
+  "deactivateRefs": [],
+  "venueDiagnostic": {
+    "consistent": true,
+    "reason": "ok"
+  },
+  "candidateCount": 0,
+  "productionMutationsInThisRun": 0,
+  "approvalRequired": "apply-gate-a --approve with PHASE4864_APPLY_APPROVED=true"
+}
