@@ -82,9 +82,9 @@ function readCandidateMetadata(candidate?: CanonicalImportEvent): Record<string,
   return candidate?.sourceMetadata as Record<string, unknown> | undefined;
 }
 
-function readVerifiedAt(metadata: Record<string, unknown> | undefined, now: string): string | undefined {
+function readVerifiedAt(metadata: Record<string, unknown> | undefined): string | undefined {
   const raw = metadata?.verifiedAt ?? metadata?.observedAt ?? metadata?.freshnessAt;
-  return typeof raw === 'string' && raw.trim() ? raw.trim() : now;
+  return typeof raw === 'string' && raw.trim() ? raw.trim() : undefined;
 }
 
 function readOfficialOutboundTicketUrls(metadata: Record<string, unknown> | undefined): string[] | undefined {
@@ -196,7 +196,7 @@ export function writeCanonicalTicketFields(input: CanonicalTicketWriteInput): Ca
       ? buildAtomicAdmissionSnapshot({
           phases: incomingPhases,
           sourceKey,
-          verifiedAt: readVerifiedAt(metadata, now),
+          verifiedAt: readVerifiedAt(metadata),
           checkoutEvidenceUrl: identity.checkoutEvidenceUrl,
           publicCtaCandidateUrl: identity.publicCtaCandidateUrl,
           soldOut: metadata?.soldOut === true,

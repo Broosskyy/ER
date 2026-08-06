@@ -16,6 +16,7 @@ import { TICKET_IO_DATA_QUALITY_REPAIR_VERSION } from './ticket-io-repair';
 import { extractTicketIoEventSlug } from './ticket-io-url';
 import { fetchTicketIoDetailPagesWithAudit, type TicketIoDetailFetchStats } from './ticket-io-detail-fetch';
 import { withTicketIoEffectiveLimits } from './ticket-io-effective-config';
+import { buildTicketPlatformEvidenceMetadata } from './ticket-platform-evidence-metadata';
 import { classifyExternalLineupBlocker } from '@/features/events/domain/external-lineup-blocker-classification';
 import type { TicketPlatformSourceConfig } from './types';
 import { inferSourceCategory } from '@/features/sources/domain/source-categories';
@@ -118,6 +119,9 @@ export async function fetchTicketPlatformEvents(input: {
   connectorKey: string;
   fixtureHtml?: string;
   fixtureDetailHtmlBySlug?: Record<string, string>;
+  fixtureDetailHtmlByUrl?: Record<string, string>;
+  fixtureCheckoutHtmlByUrl?: Record<string, string>;
+  observedAt?: string;
 }): Promise<RawImportedEvent[]> {
   const config = readTicketPlatformConfig(input.importSource);
   const adapter = getTicketPlatformAdapter(config.platform);
@@ -126,6 +130,7 @@ export async function fetchTicketPlatformEvents(input: {
   const rateLimiter = TicketIoRequestRateLimiter.fromRequestsPerMinute(
     config.limits?.requestsPerMinute,
   );
+  const observedAt = input.observedAt ?? new Date().toISOString();
 
   const html =
     input.fixtureHtml ??
@@ -162,7 +167,10 @@ export async function fetchTicketPlatformEvents(input: {
   const ticketKingsDetail =
     config.platform === 'ticket_king' && !usingFixtureList
       ? await fetchTicketKingsDetailPages(html, config, userAgent, rateLimiter)
-      : { detailHtmlByUrl: {} as Record<string, string>, checkoutHtmlByUrl: {} as Record<string, string> };
+      : {
+          detailHtmlByUrl: input.fixtureDetailHtmlByUrl ?? ({} as Record<string, string>),
+          checkoutHtmlByUrl: input.fixtureCheckoutHtmlByUrl ?? ({} as Record<string, string>),
+        };
   const detailHtmlByUrl = ticketKingsDetail.detailHtmlByUrl;
   const checkoutHtmlByUrl = ticketKingsDetail.checkoutHtmlByUrl;
 
@@ -203,6 +211,29 @@ export async function fetchTicketPlatformEvents(input: {
       extractTicketIoEventSlug(normalized.ticketUrl) ??
       extractTicketIoEventSlug(normalized.eventUrl);
     const eventDetailFetched = Boolean(eventSlug && detailHtmlBySlug[eventSlug]);
+    const detailHtml =
+      config.platform === 'ticket_io'
+        ? eventSlug
+          ? detailHtmlBySlug[eventSlug]
+          : undefined
+        : detailHtmlByUrl[event.eventUrl] ?? detailHtmlByUrl[normalized.eventUrl];
+    const checkoutUrl =
+      config.platform === 'ticket_king' && detailHtml
+        ? extractNativeEventCheckoutUrl(detailHtml)
+        : undefined;
+    const evidenceMetadata = buildTicketPlatformEvidenceMetadata({
+      event,
+      connectorKey: input.connectorKey,
+      platform: config.platform,
+      shopSlug: config.shopSlug,
+      enrichmentSource: isEnrichment,
+      observedAt,
+      verifiedAt: observedAt,
+      detailHtml,
+      checkoutUrl,
+      listRowTitle: !detailHtml && event.title ? event.title : undefined,
+      scopeStats: scopeStats as unknown as Record<string, unknown>,
+    });
     return {
       externalId: normalized.externalId,
       importId: normalized.externalId,
@@ -231,10 +262,7 @@ export async function fetchTicketPlatformEvents(input: {
       cancelled: normalized.cancelled,
       rawSourceType: 'json_ld',
       sourceMetadata: {
-        connector: input.connectorKey,
-        platform: config.platform,
-        shopSlug: config.shopSlug,
-        enrichmentSource: isEnrichment,
+        ...evidenceMetadata,
         normalizedHash: normalized.normalizedHash,
         availability: normalized.availability,
         soldOut: event.soldOut,

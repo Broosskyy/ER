@@ -30,6 +30,14 @@ describe('ticket platform enrichment updates', () => {
     venueName: 'Bootshaus',
     cityName: 'Köln',
     rawSourceType: 'json_ld',
+    sourceMetadata: {
+      pageTitle: 'Bootshaus Sommerfest',
+      listRowTitle: 'Bootshaus Sommerfest',
+      eventDate: '2026-08-01T20:00:00.000Z',
+      venueName: 'Bootshaus',
+      verifiedAt: '2026-02-01T12:00:00.000Z',
+      publicTicketPageUrl: 'https://bootshaus-club.ticket.io/NEtJnQ4A/',
+    },
   };
 
   it('enriches ticket URL without overwriting official title', () => {
