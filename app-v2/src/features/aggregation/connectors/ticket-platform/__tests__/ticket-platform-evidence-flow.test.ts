@@ -14,6 +14,11 @@ import { writeCanonicalTicketFields } from '@/features/events/domain/canonical-t
 import type { AdminEventRecord } from '@/data/types/records';
 import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 import { mergeImportPublishFields } from '@/features/import/services/import-event-field-mapper';
+import { evaluateEventEvidenceIdentityGate } from '@/features/import/domain/event-evidence-identity-gate';
+import {
+  evaluatePublicIdentityMatch,
+  normalizeExtractedTicketPlatformPageTitle,
+} from '@/features/import/ticket-platform-identity/identity-match';
 
 const FIXTURE_OBSERVED_AT = '2026-02-01T12:00:00.000Z';
 const TICKET_IO_DETAIL = join(
@@ -344,5 +349,119 @@ describe('ticket platform evidence flow', () => {
     expect(withDetail?.sourceMetadata?.pageTitle).toContain('SHOCKONE');
     expect(withDetail?.sourceMetadata?.verifiedAt).toBe(FIXTURE_OBSERVED_AT);
     expect(withDetail?.sourceMetadata?.publicTicketPageUrl).toMatch(/ticket\.io/);
+  });
+
+  describe('ticket kings extracted identity normalization', () => {
+    const eventSnapshot = {
+      eventId: 'evt-alpha',
+      title: 'Event Alpha',
+      startDate: '2026-09-01T20:00:00+02:00',
+      venueName: 'Essigfabrik',
+    };
+
+    it('A strips TicketKings shop chrome and matches the canonical event title', () => {
+      const rawTitle = 'Event Alpha - TicketKings - Your Ticket Kingdom';
+      expect(normalizeExtractedTicketPlatformPageTitle(rawTitle)).toBe('Event Alpha');
+
+      const metadata = buildTicketPlatformEvidenceMetadata({
+        event: {
+          externalId: 'tk-alpha',
+          title: 'Event Alpha',
+          startDate: eventSnapshot.startDate,
+          venueName: eventSnapshot.venueName,
+          ticketUrl: 'https://ticketkings.de/event/event-alpha/',
+        },
+        connectorKey: 'ticket_platform',
+        platform: 'ticket_king',
+        shopSlug: 'ticketkings',
+        observedAt: FIXTURE_OBSERVED_AT,
+        detailHtml: `<html><head><meta property="og:title" content="${rawTitle}" /></head></html>`,
+      });
+
+      expect(metadata.pageTitle).toBe('Event Alpha');
+      expect(metadata.pageTitleRaw).toBe(rawTitle);
+
+      const gate = evaluateEventEvidenceIdentityGate({
+        event: eventSnapshot,
+        evidence: {
+          pageTitle: metadata.pageTitle as string,
+          eventDate: eventSnapshot.startDate,
+          venueName: eventSnapshot.venueName,
+        },
+        evidenceUrl: 'https://ticketkings.de/event/event-alpha/',
+      });
+      expect(gate.verdict).toBe('exact');
+      expect(gate.criticalFieldsPublishAllowed).toBe(true);
+    });
+
+    it('B keeps mismatch when only the shop suffix matches', () => {
+      const gate = evaluateEventEvidenceIdentityGate({
+        event: eventSnapshot,
+        evidence: {
+          pageTitle: normalizeExtractedTicketPlatformPageTitle(
+            'Wrong Event Name - TicketKings - Your Ticket Kingdom',
+          ),
+          eventDate: eventSnapshot.startDate,
+          venueName: eventSnapshot.venueName,
+        },
+        evidenceUrl: 'https://ticketkings.de/event/wrong-event/',
+      });
+      expect(gate.verdict).toBe('mismatch');
+      expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    });
+
+    it('C blocks critical fields when only candidate.title would match but extracted page identity is wrong', () => {
+      const write = writeCanonicalTicketFields({
+        existing: {
+          ...genericExistingEvent(),
+          title: 'Event Alpha',
+          startDate: eventSnapshot.startDate,
+          venueName: eventSnapshot.venueName,
+        },
+        candidate: {
+          externalId: 'tk-alpha',
+          sourceId: 'source-tk',
+          sourceName: 'Ticket Kings',
+          title: 'Event Alpha',
+          startDate: eventSnapshot.startDate,
+          venueName: eventSnapshot.venueName,
+          ticketUrl: 'https://ticketkings.de/event/event-alpha/',
+          priceText: 'ab 15,00 €',
+          rawSourceType: 'html',
+          sourceMetadata: {
+            pageTitle: 'Completely Different Event',
+            eventDate: eventSnapshot.startDate,
+            venueName: eventSnapshot.venueName,
+            verifiedAt: FIXTURE_OBSERVED_AT,
+            publicCtaCandidateUrl: 'https://ticketkings.de/event/event-alpha/',
+          },
+        },
+        fillOnly: false,
+      });
+
+      expect(write.audit.identityVerdict).toBe('mismatch');
+      expect(write.audit.blockedCriticalFields).toContain('priceText');
+    });
+
+    it('D accepts matching listRowTitle when pageTitle is missing', () => {
+      const match = evaluatePublicIdentityMatch(eventSnapshot, {
+        listRowTitle: 'Event Alpha',
+        eventDate: eventSnapshot.startDate,
+        venueName: eventSnapshot.venueName,
+      });
+      expect(match.match).toBe('exact');
+
+      const gate = evaluateEventEvidenceIdentityGate({
+        event: eventSnapshot,
+        evidence: {
+          listRowTitle: 'Event Alpha',
+          eventDate: eventSnapshot.startDate,
+          venueName: eventSnapshot.venueName,
+        },
+        evidenceUrl: 'https://ticketkings.de/event/event-alpha/',
+      });
+      expect(gate.verdict).toBe('exact');
+      expect(gate.criticalFieldsPublishAllowed).toBe(true);
+    });
   });
 });

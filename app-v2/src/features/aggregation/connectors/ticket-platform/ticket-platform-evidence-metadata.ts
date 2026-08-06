@@ -1,7 +1,11 @@
 import { decodeHtmlEntities } from '@/features/import/normalization/text-normalizer';
+import { normalizeExtractedTicketPlatformPageTitle } from '@/features/import/ticket-platform-identity/identity-match';
 import { classifyTicketDestination } from '@/features/events/domain/ticket-destination-classification';
 
 import type { ParsedTicketPlatformEvent } from './types';
+
+function stripHtmlText(value: string): string {  return decodeHtmlEntities(value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+}
 
 export interface TicketPlatformEvidenceMetadataInput {
   event: ParsedTicketPlatformEvent;
@@ -31,13 +35,36 @@ function extractPageTitleFromHtml(html: string | undefined): string | undefined 
   return titleMatch?.[1] ? decodeHtmlEntities(titleMatch[1]).trim() || undefined : undefined;
 }
 
+function extractListRowTitleFromDetailHtml(
+  html: string | undefined,
+  platform: string,
+): string | undefined {
+  if (!html?.trim()) {
+    return undefined;
+  }
+  if (platform === 'ticket_king') {
+    const espbpMatch = html.match(/<div class="espbp-title-date"[^>]*>\s*<h2[^>]*>([\s\S]*?)<\/h2>/i);
+    if (espbpMatch?.[1]) {
+      const title = stripHtmlText(espbpMatch[1]);
+      return title || undefined;
+    }
+  }
+  return undefined;
+}
+
 /** Builds typed page identity, freshness, and URL-role evidence for the import truth pipeline. */
 export function buildTicketPlatformEvidenceMetadata(
   input: TicketPlatformEvidenceMetadataInput,
 ): Record<string, unknown> {
   const { event } = input;
-  const pageTitle = extractPageTitleFromHtml(input.detailHtml);
-  const listRowTitle = input.listRowTitle?.trim() || undefined;
+  const pageTitleRaw = extractPageTitleFromHtml(input.detailHtml);
+  const pageTitle = pageTitleRaw
+    ? normalizeExtractedTicketPlatformPageTitle(pageTitleRaw)
+    : undefined;
+  const listRowTitle =
+    input.listRowTitle?.trim() ||
+    extractListRowTitleFromDetailHtml(input.detailHtml, input.platform) ||
+    undefined;
   const ticketUrl = event.ticketUrl?.trim();
   const classified = ticketUrl ? classifyTicketDestination(ticketUrl) : undefined;
 
@@ -80,6 +107,7 @@ export function buildTicketPlatformEvidenceMetadata(
     enrichmentSource: input.enrichmentSource ?? true,
     scopeStats: input.scopeStats,
     pageTitle,
+    ...(pageTitleRaw && pageTitleRaw !== pageTitle ? { pageTitleRaw } : {}),
     listRowTitle,
     eventDate: event.startDate,
     venueName: event.venueName,

@@ -10,6 +10,19 @@ export interface IdentityMatchResult {
   venueAgrees: boolean;
 }
 
+/** Known ticketing-shop suffixes stripped before identity comparison. */
+const TICKET_PLATFORM_SHOP_TITLE_SUFFIX =
+  /\s*[-–|]\s*TicketKings(?:\s*[-–|]\s*Your Ticket Kingdom)?\s*$/i;
+
+/** Removes provider/shop chrome from an extracted public page title for identity matching. */
+export function normalizeExtractedTicketPlatformPageTitle(raw: string): string {
+  const trimmed = raw.trim();
+  if (!trimmed) {
+    return trimmed;
+  }
+  return trimmed.replace(TICKET_PLATFORM_SHOP_TITLE_SUFFIX, '').trim();
+}
+
 function tokenOverlapScore(left: string, right: string): number {
   const a = new Set(normalizeMatchText(left).split(' ').filter(Boolean));
   const b = new Set(normalizeMatchText(right).split(' ').filter(Boolean));
@@ -37,24 +50,61 @@ function venueCompatible(eventVenue: string | undefined, evidenceVenue: string |
   return left.includes(right) || right.includes(left);
 }
 
-export function evaluatePublicIdentityMatch(
-  event: EventIdentitySnapshot,
-  evidence: Pick<
-    PublicIdentityEvidence,
-    'pageTitle' | 'listRowTitle' | 'eventDate' | 'venueName'
-  >,
-): IdentityMatchResult {
-  const evidenceTitle = evidence.listRowTitle ?? evidence.pageTitle;
-  if (!evidenceTitle?.trim()) {
-    return {
-      match: 'unverifiable',
-      reason: 'no_public_title_evidence',
-      titleScore: 0,
-      dateAgrees: true,
-      venueAgrees: true,
-    };
+function normalizeEvidenceTitle(title: string | undefined): string | undefined {
+  if (!title?.trim()) {
+    return undefined;
   }
+  const normalized = normalizeExtractedTicketPlatformPageTitle(title);
+  return normalized || undefined;
+}
 
+function uniqueEvidenceTitles(
+  evidence: Pick<PublicIdentityEvidence, 'pageTitle' | 'listRowTitle'>,
+): string[] {
+  const titles: string[] = [];
+  const seen = new Set<string>();
+  for (const raw of [evidence.listRowTitle, evidence.pageTitle]) {
+    const normalized = normalizeEvidenceTitle(raw);
+    if (!normalized) {
+      continue;
+    }
+    const key = normalizeMatchText(normalized);
+    if (!key || seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    titles.push(normalized);
+  }
+  return titles;
+}
+
+const MATCH_RANK: Record<IdentityMatchResult['match'], number> = {
+  exact: 4,
+  partial: 3,
+  mismatch: 2,
+  unverifiable: 1,
+};
+
+function pickStrongerIdentityMatch(
+  left: IdentityMatchResult,
+  right: IdentityMatchResult,
+): IdentityMatchResult {
+  const leftRank = MATCH_RANK[left.match];
+  const rightRank = MATCH_RANK[right.match];
+  if (rightRank > leftRank) {
+    return right;
+  }
+  if (rightRank < leftRank) {
+    return left;
+  }
+  return right.titleScore > left.titleScore ? right : left;
+}
+
+function evaluateEvidenceTitle(
+  event: EventIdentitySnapshot,
+  evidence: Pick<PublicIdentityEvidence, 'eventDate' | 'venueName'>,
+  evidenceTitle: string,
+): IdentityMatchResult {
   const titleScore = tokenOverlapScore(event.title, evidenceTitle);
   const dateAgrees = evidence.eventDate
     ? sameCalendarDay(event.startDate ?? '', evidence.eventDate)
@@ -98,6 +148,31 @@ export function evaluatePublicIdentityMatch(
     dateAgrees,
     venueAgrees,
   };
+}
+
+export function evaluatePublicIdentityMatch(
+  event: EventIdentitySnapshot,
+  evidence: Pick<
+    PublicIdentityEvidence,
+    'pageTitle' | 'listRowTitle' | 'eventDate' | 'venueName'
+  >,
+): IdentityMatchResult {
+  const evidenceTitles = uniqueEvidenceTitles(evidence);
+  if (evidenceTitles.length === 0) {
+    return {
+      match: 'unverifiable',
+      reason: 'no_public_title_evidence',
+      titleScore: 0,
+      dateAgrees: true,
+      venueAgrees: true,
+    };
+  }
+
+  return evidenceTitles.reduce(
+    (best, evidenceTitle) =>
+      pickStrongerIdentityMatch(best, evaluateEvidenceTitle(event, evidence, evidenceTitle)),
+    evaluateEvidenceTitle(event, evidence, evidenceTitles[0]!),
+  );
 }
 
 export function sameTitleDifferentDate(
