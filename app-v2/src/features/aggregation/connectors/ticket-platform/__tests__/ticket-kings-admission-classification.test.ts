@@ -167,6 +167,114 @@ describe('ticket kings admission checkout extraction', () => {
     expect(evidence.excludedProducts).toHaveLength(1);
   });
 
+  it('uses admission price when optional add-on is cheaper than admission ticket', () => {
+    const html = `
+      <div class="ticket-card ticket-selection-card">
+        <h2 class="title is-5">Tickets</h2>
+        <div class="box ticket-type-box ticket-option-choice">
+          <div class="ticket-option-choice-inner">
+            <div class="control ticket-option-main">
+              <div class="ticket-option-title">Standard Ticket</div>
+              <div class="ticket-meta ticket-option-meta">
+                <span>Phase 1</span>
+                <span><strong>30,00 EUR</strong> pro Ticket</span>
+                <span>noch 8 verfügbar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-card ticket-addons-card">
+        <h2 class="title is-5">Zusatzoptionen</h2>
+        <div class="box ticket-type-box ticket-addon-choice">
+          <input type="checkbox" />
+          <label class="ticket-addon-title">Locker Rental</label>
+          <label class="ticket-addon-price">4,00 EUR</label>
+        </div>
+      </div>
+    `;
+    const evidence = parseTicketKingsCheckoutHtml(html);
+
+    expect(evidence.priceAmount).toBe(30);
+    expect(evidence.releases).toHaveLength(1);
+    expect(evidence.excludedProducts).toHaveLength(1);
+    expect(evidence.excludedProducts[0]?.rawProductName).toBe('Locker Rental');
+  });
+
+  it('lists every optional-section product in excludedProducts', () => {
+    const html = `
+      <div class="ticket-card ticket-selection-card">
+        <h2 class="title is-5">Tickets</h2>
+        <div class="box ticket-type-box ticket-option-choice">
+          <div class="ticket-option-choice-inner">
+            <div class="control ticket-option-main">
+              <div class="ticket-option-title">Standard Ticket</div>
+              <div class="ticket-meta ticket-option-meta">
+                <span>Phase 1</span>
+                <span><strong>20,00 EUR</strong> pro Ticket</span>
+                <span>noch 5 verfügbar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-card ticket-addons-card">
+        <h2 class="title is-5">Zusatzoptionen</h2>
+        <div class="box ticket-type-box ticket-addon-choice">
+          <input type="checkbox" />
+          <label class="ticket-addon-title">Ticket Flex Option</label>
+          <label class="ticket-addon-price">2,50 EUR</label>
+        </div>
+        <div class="box ticket-type-box ticket-addon-choice">
+          <input type="checkbox" />
+          <label class="ticket-addon-title">Parking Pass</label>
+          <label class="ticket-addon-price">8,00 EUR</label>
+        </div>
+      </div>
+    `;
+    const evidence = parseTicketKingsCheckoutHtml(html);
+
+    expect(evidence.excludedProducts).toHaveLength(2);
+    expect(evidence.excludedProducts.map((product) => product.rawProductName)).toEqual([
+      'Ticket Flex Option',
+      'Parking Pass',
+    ]);
+  });
+
+  it('ends optional-section scope when the next admission section starts', () => {
+    const html = `
+      <div class="ticket-card ticket-addons-card">
+        <h2 class="title is-5">Zusatzoptionen</h2>
+        <div class="box ticket-type-box ticket-addon-choice">
+          <input type="checkbox" />
+          <label class="ticket-addon-title">Ticket Flex Option</label>
+          <label class="ticket-addon-price">2,50 EUR</label>
+        </div>
+      </div>
+      <div class="ticket-card ticket-selection-card">
+        <h2 class="title is-5">Tickets</h2>
+        <div class="box ticket-type-box ticket-option-choice">
+          <div class="ticket-option-choice-inner">
+            <div class="control ticket-option-main">
+              <div class="ticket-option-title">Standard Ticket</div>
+              <div class="ticket-meta ticket-option-meta">
+                <span>Phase 1</span>
+                <span><strong>25,00 EUR</strong> pro Ticket</span>
+                <span>noch 2 verfügbar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const evidence = parseTicketKingsCheckoutHtml(html);
+
+    expect(evidence.priceAmount).toBe(25);
+    expect(evidence.releases).toHaveLength(1);
+    expect(evidence.excludedProducts).toHaveLength(1);
+    expect(evidence.excludedProducts[0]?.rawProductName).toBe('Ticket Flex Option');
+  });
+
   it('aggregates sold_out only from admission products', () => {
     expect(
       aggregateAdmissionAvailability([

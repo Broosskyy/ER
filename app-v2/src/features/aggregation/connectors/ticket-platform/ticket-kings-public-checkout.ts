@@ -102,16 +102,68 @@ function buildReleaseName(ticketType: string, phaseName?: string): string {
   return ticketType;
 }
 
+function extractBalancedDivBlock(html: string, startIndex: number): string | undefined {
+  if (!/^<div[\s>]/i.test(html.slice(startIndex))) {
+    return undefined;
+  }
+
+  let depth = 0;
+  let index = startIndex;
+  while (index < html.length) {
+    const divOpen = html.slice(index).match(/^<div[\s>]/i);
+    if (divOpen) {
+      depth += 1;
+      index += divOpen[0].length;
+      continue;
+    }
+    if (html.slice(index).startsWith('</div>')) {
+      depth -= 1;
+      index += 6;
+      if (depth === 0) {
+        return html.slice(startIndex, index);
+      }
+      continue;
+    }
+    index += 1;
+  }
+
+  return undefined;
+}
+
+function extractTicketCardSection(html: string, sectionClass: string): string | undefined {
+  const openPattern = new RegExp(`<div[^>]*\\b${sectionClass}\\b[^>]*>`, 'i');
+  const openMatch = openPattern.exec(html);
+  if (openMatch?.index === undefined) {
+    return undefined;
+  }
+  return extractBalancedDivBlock(html, openMatch.index);
+}
+
+function extractBalancedBoxBlocks(
+  sectionHtml: string,
+  boxClass: 'ticket-option-choice' | 'ticket-addon-choice',
+): string[] {
+  const blocks: string[] = [];
+  const pattern = new RegExp(`<div class="box ticket-type-box ${boxClass}"`, 'gi');
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(sectionHtml)) !== null) {
+    const block = extractBalancedDivBlock(sectionHtml, match.index);
+    if (!block) {
+      continue;
+    }
+    blocks.push(block);
+    pattern.lastIndex = match.index + block.length;
+  }
+
+  return blocks;
+}
+
 function parseAdmissionOptionBlocks(html: string): TicketKingsCheckoutProductRecord[] {
   const products: TicketKingsCheckoutProductRecord[] = [];
-  const sectionHeading = stripTags(
-    html.match(/ticket-selection-card[\s\S]*?<h2[^>]*>([^<]+)<\/h2>/i)?.[1] ?? 'Tickets',
-  );
-
-  const blocks =
-    html.match(
-      /<div class="box ticket-type-box ticket-option-choice">[\s\S]*?<\/div>\s*<\/div>\s*(?:\n\s*)?<\/div>/gi,
-    ) ?? [];
+  const sectionHtml = extractTicketCardSection(html, 'ticket-selection-card') ?? html;
+  const sectionHeading = stripTags(sectionHtml.match(/<h2[^>]*>([^<]+)<\/h2>/i)?.[1] ?? 'Tickets');
+  const blocks = extractBalancedBoxBlocks(sectionHtml, 'ticket-option-choice');
 
   for (const block of blocks) {
     const ticketType = stripTags(block.match(/ticket-option-title[^>]*>([^<]+)</i)?.[1] ?? '');
@@ -157,13 +209,13 @@ function parseAdmissionOptionBlocks(html: string): TicketKingsCheckoutProductRec
 
 function parseAddonBlocks(html: string): TicketKingsCheckoutProductRecord[] {
   const products: TicketKingsCheckoutProductRecord[] = [];
-  const sectionHeading = stripTags(
-    html.match(/ticket-addons-card[\s\S]*?<h2[^>]*>([^<]+)<\/h2>/i)?.[1] ?? 'Zusatzoptionen',
-  );
-  const blocks =
-    html.match(
-      /<div class="box ticket-type-box ticket-addon-choice">[\s\S]*?<\/div>\s*<\/div>\s*(?:\n\s*)?<\/div>/gi,
-    ) ?? [];
+  const sectionHtml = extractTicketCardSection(html, 'ticket-addons-card');
+  if (!sectionHtml) {
+    return products;
+  }
+
+  const sectionHeading = stripTags(sectionHtml.match(/<h2[^>]*>([^<]+)<\/h2>/i)?.[1] ?? 'Zusatzoptionen');
+  const blocks = extractBalancedBoxBlocks(sectionHtml, 'ticket-addon-choice');
 
   for (const block of blocks) {
     const productName =
