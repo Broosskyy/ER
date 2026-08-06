@@ -12,6 +12,18 @@ export function slugifyMatchText(value: string): string {
   return normalizeMatchText(value).replace(/\s+/g, '-');
 }
 
+/** Keep artist primary keys index-safe (B-tree composite indexes include entry_id + artist_id). */
+export const MAX_ARTIST_ID_SLUG_LENGTH = 96;
+
+export function capArtistIdSlug(slug: string, maxLength = MAX_ARTIST_ID_SLUG_LENGTH): string {
+  const trimmed = slug.replace(/^-+|-+$/g, '');
+  if (trimmed.length <= maxLength) {
+    return trimmed || 'artist';
+  }
+  const suffix = trimmed.slice(-8);
+  return `${trimmed.slice(0, maxLength - 9)}-${suffix}`;
+}
+
 export function tokenSimilarity(left: string, right: string): number {
   const a = normalizeMatchText(left);
   const b = normalizeMatchText(right);

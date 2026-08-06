@@ -1,5 +1,9 @@
 import type { ArtistRecord } from '@/data/types/records';
 import type { ArtistBillingRole } from '@/features/events/domain/artist-billing-role';
+import type {
+  BillingRelation,
+  ResolvedCanonicalLineupEntry,
+} from '@/features/aggregation/domain/canonical-lineup-entry';
 
 export interface EventArtistRecord {
   id: string;
@@ -21,4 +25,16 @@ export interface EventLineupArtist {
 export interface EventLineupInput {
   artistId: string;
   billingRole: ArtistBillingRole;
+}
+
+export interface StructuredLineupEntryInput {
+  order: number;
+  artistIds: string[];
+  billingRelation: BillingRelation;
+  stage?: string;
+  startTime?: string;
+  endTime?: string;
+  runningOrder?: number;
+  confidence?: number;
+  provenance?: ResolvedCanonicalLineupEntry['provenance'];
 }

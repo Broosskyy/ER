@@ -1,0 +1,162 @@
+{
+  "generatedAt": "2026-08-06T10:47:15.905Z",
+  "phase": "4.8.6.5.3",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "events": [
+    {
+      "eventId": "evt-1785389049895-4mb7dub",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "observedAt": "2026-08-06T10:47:15.535Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026",
+        "priceText": "15,00 €",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "headerPrice": "ab 15,00 €",
+        "phasePrices": [
+          "ab 15,00 €"
+        ],
+        "availabilityLabel": "Verfügbar",
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [
+        {
+          "raw": "E-Ticket — Early Bird",
+          "consumer": {
+            "displayName": "E-Ticket — Early Bird",
+            "rawLabel": "E-Ticket — Early Bird"
+          },
+          "observedAt": "2026-08-06T10:47:15.535Z"
+        }
+      ],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    },
+    {
+      "eventId": "evt-1785389055557-ux20897",
+      "title": "Sommerfest Elektroküche 08.08.2026",
+      "observedAt": "2026-08-06T10:47:15.610Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://ticketkings.de/event/sommerfest-elektrokueche-20-06-2026",
+        "checkoutEvidenceUrl": "https://nacht-manager.de/ticketing/native_event.php?id=41&embed=1&embed_layout=checkout&embed_flow=stepped&return_url=https%3A%2F%2Fticketkings.de%2Forder_success%2F",
+        "priceText": "15,00 €",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "headerPrice": "ab 15,00 €",
+        "phasePrices": [
+          "ab 15,00 €"
+        ],
+        "availabilityLabel": "Verfügbar",
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [
+        {
+          "raw": "Standard Ticket — Phase 3",
+          "consumer": {
+            "displayName": "Standard Ticket — Phase 3",
+            "rawLabel": "Standard Ticket — Phase 3"
+          },
+          "observedAt": "2026-08-06T10:47:15.610Z"
+        }
+      ],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    },
+    {
+      "eventId": "evt-1785339383539-0lxvjlp",
+      "title": "NIGHTSWITHUS presents LEVI",
+      "observedAt": "2026-08-06T10:47:15.669Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://bootshaus-tickets.ticket.io/YvJnLSXd/",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "phasePrices": [],
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    },
+    {
+      "eventId": "evt-1785339410908-9691748",
+      "title": "Bootshaus pres. BC173 (let's get loco)",
+      "observedAt": "2026-08-06T10:47:15.731Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://bootshaus-club.ticket.io/BcDqml12/",
+        "priceText": "23,00 €",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "headerPrice": "ab 23,00 €",
+        "phasePrices": [
+          "ab 23,00 €"
+        ],
+        "availabilityLabel": "Verfügbar",
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [
+        {
+          "raw": "Admission",
+          "consumer": {
+            "displayName": "Ticket",
+            "rawLabel": "Admission"
+          },
+          "observedAt": "2026-08-06T10:47:15.731Z"
+        }
+      ],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    },
+    {
+      "eventId": "evt-1785339421539-k3swcrl",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "observedAt": "2026-08-06T10:47:15.790Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "priceText": "ab 23,90 €",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "headerPrice": "ab 23,90 €",
+        "phasePrices": [],
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    },
+    {
+      "eventId": "evt-1785339391167-tfaixrr",
+      "title": "Bootshaus Sommerfest",
+      "observedAt": "2026-08-06T10:47:15.849Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "priceText": "Tickets ab 11,90 Euro",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "headerPrice": "ab 11,90 €",
+        "phasePrices": [],
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    },
+    {
+      "eventId": "evt-1785389052337-0gv1iz1",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "observedAt": "2026-08-06T10:47:15.905Z",
+      "canonicalTicket": {
+        "publicCtaUrl": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+        "priceText": "Tickets ab 34,90 Euro",
+        "destinationClass": "ticket_platform_event"
+      },
+      "consumerPresentation": {
+        "headerPrice": "ab 34,90 €",
+        "phasePrices": [],
+        "ctaLabel": "Tickets ansehen"
+      },
+      "phaseLabels": [],
+      "sourceTruthNote": "Compared against live DB row; importer preview not mutated"
+    }
+  ]
+}

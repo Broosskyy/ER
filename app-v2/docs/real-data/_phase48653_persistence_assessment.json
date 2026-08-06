@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-08-06T10:47:15.907Z",
+  "phase": "4.8.6.5.3",
+  "productionMutationsInThisRun": 0,
+  "canPersistWithoutMigration": true,
+  "persistenceGap": false,
+  "recommendedFieldPaths": [
+    "ticketEvidence.checkoutUrl",
+    "ticketEvidence.publicCtaCandidateUrl",
+    "ticketEvidence.identityVerdict",
+    "ticketEvidence.verifiedAt",
+    "ticketEvidence.sourceSnapshot"
+  ],
+  "recommendedSourceReferenceMetadataKeys": [
+    "checkoutEvidenceUrl",
+    "publicCtaCandidateUrl",
+    "identityVerdict",
+    "verifiedAt",
+    "ticketSourceSnapshot"
+  ],
+  "followUpMigration": "Optional additive migration: first-class ticket_evidence JSON on events or dedicated ticket_evidence table for queryability; until then event_field_provenance.field_path + event_source_references.metadata suffice.",
+  "readinessBlocked": false
+}

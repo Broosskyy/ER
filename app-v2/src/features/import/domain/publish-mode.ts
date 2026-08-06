@@ -6,6 +6,8 @@ export const DEFAULT_PUBLISH_MODE: PublishMode = 'manual_review';
 
 export interface PublishPolicyConfig {
   mode: PublishMode;
+  /** Explicit publish behaviour (Phase 2). When set, overrides legacy mode-only inference. */
+  behavior?: import('@/features/import/domain/publish-behavior').SourcePublishBehavior;
   minTrustScore?: number;
   minExtractionConfidence?: number;
   blockOnDuplicate?: boolean;
@@ -39,6 +41,7 @@ export function resolvePublishPolicy(source: {
   const overrides = source.sourceConfig?.publishPolicy ?? {};
   return {
     mode,
+    behavior: overrides.behavior,
     minTrustScore: overrides.minTrustScore ?? DEFAULT_PUBLISH_POLICY.minTrustScore,
     minExtractionConfidence:
       overrides.minExtractionConfidence ?? DEFAULT_PUBLISH_POLICY.minExtractionConfidence,

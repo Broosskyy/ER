@@ -239,6 +239,7 @@ export interface AdminEventRecord {
   startDate: string;
   endDate?: string;
   ticketUrl?: string;
+  priceText?: string;
   websiteUrl?: string;
   instagramUrl?: string;
   facebookUrl?: string;
@@ -248,6 +249,24 @@ export interface AdminEventRecord {
   venueName?: string;
   /** Optional city label for suggested venues. */
   venueCity?: string;
+  /** Denormalized street address when no canonical venue is linked. */
+  venueAddress?: string;
+  venuePostalCode?: string;
+  venueCountryCode?: string;
+  latitude?: number;
+  longitude?: number;
+  ageRestriction?: string;
+  ticketStatus?: 'not_configured' | 'external_link' | 'on_sale' | 'sold_out' | 'sales_ended';
+  ticketPhases?: import('@/features/import/domain/canonical-ticket-phase').CanonicalTicketPhase[];
+  genreLabels?: string[];
+  eventAttributes?: import('@/features/events/domain/canonical-event-attribute-types').CanonicalEventAttribute[];
+  floorCount?: number;
+  stageCount?: number;
+  venueEnvironment?: import('@/features/events/domain/canonical-event-attribute-types').VenueEnvironmentValue;
+  lastEntryAt?: string;
+  dressCode?: string;
+  accessibilityNotes?: string;
+  attributeReviewRequired?: boolean;
   organizerId?: string;
   /** @deprecated Legacy free-text organizer; canonical source is `organizerId`. */
   organizerName?: string;

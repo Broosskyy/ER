@@ -43,7 +43,7 @@ export function normalizeIanaTimezone(
 
   const normalizedKey = trimmed.toUpperCase().replace(/\s+/g, '');
   const offsetMatch = normalizedKey.match(/^(?:UTC)?([+-])(\d{1,2})(?::?(\d{2}))?$/);
-  if (offsetMatch) {
+  if (offsetMatch?.[1] && offsetMatch[2]) {
     const sign = offsetMatch[1];
     const hours = offsetMatch[2].padStart(2, '0');
     const minutes = (offsetMatch[3] ?? '00').padStart(2, '0');
@@ -122,6 +122,20 @@ export function formatTimeInTimezone(isoDateTime: string, timezone: string): str
   }).format(date);
 }
 
+/** True when the ISO timestamp carries a meaningful clock time (not date-only midnight). */
+export function hasKnownEventClockTime(isoDateTime: string | undefined, timezone: string): boolean {
+  if (!isoDateTime?.trim()) {
+    return false;
+  }
+
+  if (/T00:00:00(?:\.000)?Z?$/i.test(isoDateTime.trim())) {
+    return false;
+  }
+
+  const formatted = formatTimeInTimezone(isoDateTime, timezone);
+  return formatted.length > 0 && formatted !== '00:00';
+}
+
 export function formatDateLabel(isoDateTime: string, timezone: string): string {
   const date = parseIsoDateTime(isoDateTime);
 
@@ -157,19 +171,29 @@ export function formatWeekdayLabel(isoDateTime: string, timezone: string): strin
 }
 
 export function formatEventTimeRange(event: EventDateFields): string {
+  const hasStart = hasKnownEventClockTime(event.startDateTime, event.timezone);
+  if (!hasStart) {
+    return '';
+  }
+
   const start = formatTimeInTimezone(event.startDateTime, event.timezone);
 
-  if (!event.endDateTime) {
+  if (!event.endDateTime || !hasKnownEventClockTime(event.endDateTime, event.timezone)) {
     return start;
   }
 
   const end = formatTimeInTimezone(event.endDateTime, event.timezone);
+  if (end === start) {
+    return start;
+  }
+
   return `${start} – ${end}`;
 }
 
 export function formatEventDateTime(event: EventDateFields): string {
   const dateLabel = formatDateLabel(event.startDateTime, event.timezone);
-  return `${dateLabel} · ${formatEventTimeRange(event)}`;
+  const timeRange = formatEventTimeRange(event);
+  return timeRange ? `${dateLabel} · ${timeRange}` : dateLabel;
 }
 
 export function isUpcomingEvent(

@@ -28,12 +28,14 @@ export interface NormalizedEventCandidate {
   eventUrl?: string;
   imageUrl?: string;
   minimumAge?: number;
+  doorsOpenAt?: string;
   organizerName?: string;
   subtitle?: string;
   importId?: string;
   originalLink?: string;
   priceAmount?: number;
   priceCurrency?: string;
+  priceText?: string;
   imageUrls?: string[];
   sourceId?: string;
   sourceName?: string;

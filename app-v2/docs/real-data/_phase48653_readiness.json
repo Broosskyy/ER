@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-08-06T10:47:15.908Z",
+  "phase": "4.8.6.5.3",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "layoutContractPassed": true,
+  "browserVerified": false,
+  "verificationMode": "not_browser_verified",
+  "manualReviewPending": true,
+  "persistenceGap": false,
+  "verdict": "READY_FOR_MANUAL_VISUAL_REVIEW",
+  "sections": {
+    "unitTests": "see CI vitest phase48653-* suites",
+    "sourceTruth": "_phase48653_regression_fixtures.json",
+    "identity": "_phase48653_identity_gate.json",
+    "layoutContract": "_phase48652_visual_verification.json",
+    "browserScreenshots": "_phase48653_screenshot_manifest.json",
+    "manualAcceptance": "pending"
+  },
+  "identity": {
+    "generatedAt": "2026-08-06T10:47:15.906Z",
+    "phase": "4.8.6.5.3",
+    "productionMutationsInThisRun": 0,
+    "samples": [
+      {
+        "label": "mdma_chrome_block",
+        "gate": {
+          "verdict": "mismatch",
+          "criticalFieldsPublishAllowed": false,
+          "match": "mismatch",
+          "reason": "title_mismatch",
+          "diagnostics": [
+            "identity_match:mismatch",
+            "title_mismatch",
+            "title_score:0.00",
+            "date_agrees:true",
+            "venue_agrees:true",
+            "official_page_linked:false"
+          ],
+          "titleScore": 0,
+          "dateAgrees": true,
+          "venueAgrees": true,
+          "officialPageLinked": false
+        },
+        "observedAt": "2026-08-06T10:47:15.906Z"
+      }
+    ]
+  },
+  "persistence": {
+    "generatedAt": "2026-08-06T10:47:15.907Z",
+    "phase": "4.8.6.5.3",
+    "productionMutationsInThisRun": 0,
+    "canPersistWithoutMigration": true,
+    "persistenceGap": false,
+    "recommendedFieldPaths": [
+      "ticketEvidence.checkoutUrl",
+      "ticketEvidence.publicCtaCandidateUrl",
+      "ticketEvidence.identityVerdict",
+      "ticketEvidence.verifiedAt",
+      "ticketEvidence.sourceSnapshot"
+    ],
+    "recommendedSourceReferenceMetadataKeys": [
+      "checkoutEvidenceUrl",
+      "publicCtaCandidateUrl",
+      "identityVerdict",
+      "verifiedAt",
+      "ticketSourceSnapshot"
+    ],
+    "followUpMigration": "Optional additive migration: first-class ticket_evidence JSON on events or dedicated ticket_evidence table for queryability; until then event_field_provenance.field_path + event_source_references.metadata suffice.",
+    "readinessBlocked": false
+  }
+}

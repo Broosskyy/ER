@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-06T10:47:15.906Z",
+  "phase": "4.8.6.5.3",
+  "productionMutationsInThisRun": 0,
+  "samples": [
+    {
+      "label": "mdma_chrome_block",
+      "gate": {
+        "verdict": "mismatch",
+        "criticalFieldsPublishAllowed": false,
+        "match": "mismatch",
+        "reason": "title_mismatch",
+        "diagnostics": [
+          "identity_match:mismatch",
+          "title_mismatch",
+          "title_score:0.00",
+          "date_agrees:true",
+          "venue_agrees:true",
+          "official_page_linked:false"
+        ],
+        "titleScore": 0,
+        "dateAgrees": true,
+        "venueAgrees": true,
+        "officialPageLinked": false
+      },
+      "observedAt": "2026-08-06T10:47:15.906Z"
+    }
+  ]
+}

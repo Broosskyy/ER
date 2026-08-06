@@ -30,6 +30,9 @@ export interface CanonicalImportEvent {
   imageUrls?: string[];
   priceAmount?: number;
   priceCurrency?: string;
+  priceText?: string;
+  minimumAge?: number;
+  doorsOpenAt?: string;
   importId?: string;
   originalLink?: string;
   rawSourceType: NormalizedEventCandidate['rawSourceType'];
@@ -83,6 +86,12 @@ export function mapNormalizedCandidateToCanonical(
     imageUrls,
     priceAmount: candidate.priceAmount,
     priceCurrency: candidate.priceCurrency,
+    priceText: candidate.priceText,
+    minimumAge: candidate.minimumAge,
+    doorsOpenAt:
+      typeof candidate.sourceMetadata?.doorsOpenAt === 'string'
+        ? candidate.sourceMetadata.doorsOpenAt
+        : undefined,
     importId: candidate.importId ?? candidate.externalId,
     originalLink: candidate.originalLink ?? candidate.eventUrl ?? candidate.sourceUrl,
     rawSourceType: candidate.rawSourceType,

@@ -1,4 +1,5 @@
 import { FIELD_LIMITS } from '@/features/import/config/import-config';
+import { meaningfulEventText } from '@/features/events/domain/event-field-value';
 
 const HTML_ENTITY_MAP: Record<string, string> = {
   '&amp;': '&',
@@ -6,22 +7,73 @@ const HTML_ENTITY_MAP: Record<string, string> = {
   '&gt;': '>',
   '&quot;': '"',
   '&#39;': "'",
+  '&apos;': "'",
   '&nbsp;': ' ',
+  '&Auml;': 'Ä',
+  '&auml;': 'ä',
+  '&Aring;': 'Å',
+  '&aring;': 'å',
+  '&AElig;': 'Æ',
+  '&aelig;': 'æ',
+  '&Ccedil;': 'Ç',
+  '&ccedil;': 'ç',
+  '&Euml;': 'Ë',
+  '&euml;': 'ë',
+  '&Iuml;': 'Ï',
+  '&iuml;': 'ï',
+  '&Ntilde;': 'Ñ',
+  '&ntilde;': 'ñ',
+  '&Ouml;': 'Ö',
+  '&ouml;': 'ö',
+  '&Oslash;': 'Ø',
+  '&oslash;': 'ø',
+  '&Uuml;': 'Ü',
+  '&uuml;': 'ü',
+  '&szlig;': 'ß',
+  '&Yuml;': 'Ÿ',
+  '&yuml;': 'ÿ',
+  '&ndash;': '–',
+  '&mdash;': '—',
+  '&lsquo;': '\u2018',
+  '&rsquo;': '\u2019',
+  '&ldquo;': '\u201C',
+  '&rdquo;': '\u201D',
+  '&bdquo;': '\u201E',
+  '&sbquo;': '\u201A',
+  '&hellip;': '…',
+  '&bull;': '•',
+  '&middot;': '·',
+  '&copy;': '©',
+  '&reg;': '®',
+  '&trade;': '™',
+  '&euro;': '€',
+  '&pound;': '£',
+  '&cent;': '¢',
+  '&yen;': '¥',
+  '&frac12;': '½',
+  '&frac14;': '¼',
+  '&frac34;': '¾',
 };
 
 export function decodeHtmlEntities(value: string): string {
-  return value.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (match) => {
-    if (HTML_ENTITY_MAP[match]) return HTML_ENTITY_MAP[match];
-    if (match.startsWith('&#x')) {
-      const code = Number.parseInt(match.slice(3, -1), 16);
-      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
-    }
-    if (match.startsWith('&#')) {
-      const code = Number.parseInt(match.slice(2, -1), 10);
-      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
-    }
-    return match;
-  });
+  let result = value;
+  let prev = '';
+  while (prev !== result) {
+    prev = result;
+    result = result.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (match) => {
+      if (HTML_ENTITY_MAP[match]) return HTML_ENTITY_MAP[match];
+      if (match.startsWith('&#x')) {
+        const code = Number.parseInt(match.slice(3, -1), 16);
+        return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+      }
+      if (match.startsWith('&#')) {
+        const code = Number.parseInt(match.slice(2, -1), 10);
+        return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+      }
+      return match;
+    });
+  }
+  return result;
 }
 
 export function stripHtml(value: string): string {
@@ -41,11 +93,12 @@ export function normalizeText(value: unknown, maxLength = FIELD_LIMITS.field): s
     .replace(/[ \t]+\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
-  if (!text) return undefined;
-  if (text.length > maxLength) {
-    return text.slice(0, maxLength);
+  const meaningful = meaningfulEventText(text);
+  if (!meaningful) return undefined;
+  if (meaningful.length > maxLength) {
+    return meaningful.slice(0, maxLength);
   }
-  return text;
+  return meaningful;
 }
 
 export function normalizeStringList(value: unknown): string[] | undefined {

@@ -1,7 +1,18 @@
 import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 import type { AdminEventRecord } from '@/data/types/records';
 import type { ImportRecord } from '@/features/import/models/types';
+import type { SourceRecord } from '@/data/types/records';
 import { recordCandidateEquivalent } from '@/features/import/services/import-record-identity';
+import { resolveSourcePublishBehavior } from '@/features/import/domain/publish-behavior';
+import {
+  isRepairablePlaceholderText,
+  resolveFillOnlyText,
+} from '@/features/aggregation/connectors/ticket-platform/ticket-io-repair';
+import { isTicketIoPlaceholderDescription } from '@/features/aggregation/connectors/ticket-platform/ticket-io-field-quality';
+import {
+  buildImportPublishFieldPatch,
+  mergeImportPublishFields,
+} from '@/features/import/services/import-event-field-mapper';
 
 function normalizeComparableInstant(value: string | undefined): string {
   if (!value) {
@@ -18,6 +29,7 @@ export const IMPORT_CHANGE_FIELDS = [
   'endDate',
   'venueName',
   'ticketUrl',
+  'priceText',
   'artistNames',
   'organizerName',
   'imageUrl',
@@ -40,13 +52,24 @@ export interface ImportUpdateContext {
   existingRecord?: ImportRecord | null;
   existingEvent?: AdminEventRecord | null;
   cancelled?: boolean;
+  fillOnly?: boolean;
+}
+
+function resolvePrimaryDescriptionUpdate(
+  existing: string | undefined,
+  incoming: string | undefined,
+): string {
+  if (incoming?.trim() && !isTicketIoPlaceholderDescription(incoming)) {
+    return incoming;
+  }
+  return existing ?? '';
 }
 
 export class ImportUpdateService {
   detectChanges(
     candidate: CanonicalImportEvent,
     existingEvent?: AdminEventRecord | null,
-    options: { cancelled?: boolean; existingRecord?: ImportRecord | null } = {},
+    options: { cancelled?: boolean; existingRecord?: ImportRecord | null; fillOnly?: boolean } = {},
   ): ImportChangeSet {
     if (options.cancelled) {
       return { changeType: 'cancelled', changedFields: ['status'] };
@@ -63,27 +86,58 @@ export class ImportUpdateService {
     }
 
     const changedFields: ImportChangeField[] = [];
+    const fillOnly = options.fillOnly ?? false;
+
+    const previewPatch = buildImportPublishFieldPatch(candidate, {
+      existing: existingEvent,
+      fillOnly,
+    });
 
     if ((existingEvent.title ?? '') !== (candidate.title ?? '')) {
       changedFields.push('title');
     }
-    if ((existingEvent.description ?? '') !== (candidate.description ?? '')) {
+
+    if (fillOnly) {
+      const nextDescription = resolveFillOnlyText(existingEvent.description, candidate.description) ?? '';
+      if ((existingEvent.description ?? '') !== nextDescription) {
+        changedFields.push('description');
+      }
+    } else if (
+      (existingEvent.description ?? '') !== resolvePrimaryDescriptionUpdate(existingEvent.description, candidate.description)
+    ) {
       changedFields.push('description');
     }
+
     if (normalizeComparableInstant(existingEvent.startDate) !== normalizeComparableInstant(candidate.startDate)) {
       changedFields.push('startDate');
     }
     if (normalizeComparableInstant(existingEvent.endDate) !== normalizeComparableInstant(candidate.endDate)) {
       changedFields.push('endDate');
     }
-    if ((existingEvent.ticketUrl ?? '') !== (candidate.ticketUrl ?? '')) {
+    if ((existingEvent.ticketUrl ?? '') !== (previewPatch.ticketUrl ?? existingEvent.ticketUrl ?? '')) {
       changedFields.push('ticketUrl');
     }
-    if ((existingEvent.venueName ?? '') !== (candidate.venueName ?? '')) {
-      changedFields.push('venueName');
+    if ((existingEvent.priceText ?? '') !== (previewPatch.priceText ?? existingEvent.priceText ?? '')) {
+      if (previewPatch.priceText?.trim() || isRepairablePlaceholderText(existingEvent.priceText)) {
+        changedFields.push('priceText');
+      }
     }
-    if ((existingEvent.organizerName ?? '') !== (candidate.organizerName ?? '')) {
-      changedFields.push('organizerName');
+    if (fillOnly) {
+      const nextVenue = resolveFillOnlyText(existingEvent.venueName, candidate.venueName) ?? '';
+      if ((existingEvent.venueName ?? '') !== nextVenue) {
+        changedFields.push('venueName');
+      }
+      const nextOrganizer = resolveFillOnlyText(existingEvent.organizerName, candidate.organizerName) ?? '';
+      if ((existingEvent.organizerName ?? '') !== nextOrganizer) {
+        changedFields.push('organizerName');
+      }
+    } else {
+      if ((existingEvent.venueName ?? '') !== (candidate.venueName ?? '')) {
+        changedFields.push('venueName');
+      }
+      if ((existingEvent.organizerName ?? '') !== (candidate.organizerName ?? '')) {
+        changedFields.push('organizerName');
+      }
     }
     if ((existingEvent.imageUrl ?? '') !== (candidate.imageUrl ?? '')) {
       changedFields.push('imageUrl');
@@ -108,16 +162,13 @@ export class ImportUpdateService {
     candidate: CanonicalImportEvent,
     sourceId: string,
   ): AdminEventRecord {
+    const merged = mergeImportPublishFields({
+      existing,
+      candidate,
+      fillOnly: false,
+    });
     return {
-      ...existing,
-      title: candidate.title,
-      subtitle: candidate.subtitle ?? existing.subtitle,
-      description: candidate.description ?? existing.description,
-      startDate: candidate.startDate,
-      endDate: candidate.endDate,
-      ticketUrl: candidate.ticketUrl ?? existing.ticketUrl,
-      imageUrl: candidate.imageUrl ?? existing.imageUrl,
-      websiteUrl: candidate.originalLink ?? candidate.eventUrl ?? existing.websiteUrl,
+      ...merged,
       sourceId,
       updatedAt: new Date().toISOString(),
     };
@@ -128,16 +179,22 @@ export class ImportUpdateService {
     existing: AdminEventRecord,
     candidate: CanonicalImportEvent,
   ): AdminEventRecord {
-    return {
-      ...existing,
-      ticketUrl: candidate.ticketUrl ?? existing.ticketUrl,
-      imageUrl: existing.imageUrl ? existing.imageUrl : candidate.imageUrl,
-      updatedAt: new Date().toISOString(),
-    };
+    return mergeImportPublishFields({
+      existing,
+      candidate,
+      fillOnly: true,
+    });
   }
 
+  /** @deprecated Use resolveSourcePublishBehavior / isEnrichmentPublish instead. */
   isTicketPlatformEnrichmentSource(sourceType?: string): boolean {
     return sourceType === 'ticket_platform';
+  }
+
+  isEnrichmentSource(
+    source: Pick<SourceRecord, 'sourceType' | 'publishMode' | 'sourceConfig' | 'sourceRoles' | 'category'>,
+  ): boolean {
+    return resolveSourcePublishBehavior(source) === 'enrichment';
   }
 
   findMissingExternalIds(
