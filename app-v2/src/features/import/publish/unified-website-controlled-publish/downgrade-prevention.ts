@@ -9,6 +9,7 @@ import {
   normalizeCompareValue,
 } from '@/features/import/shadow/official-website-public-truth';
 import { UNIFIED_WEBSITE_IMPORTER_VERSION } from '@/features/import/unified-website/types';
+import { evaluateLineupPublishGate } from '@/features/import/domain/lineup-publish-gate';
 
 import {
   isForbiddenPublishField,
@@ -328,26 +329,7 @@ export function evaluateDowngradePrevention(input: {
     };
   }
 
-  const correctsStaleness =
-    input.field === 'description' &&
-    typeof input.currentValue === 'string' &&
-    typeof input.proposedValue === 'string' &&
-    (input.currentValue.includes('August 7th') || input.currentValue.includes('bit.ly')) &&
-    !String(input.proposedValue).includes('August 7th');
-
-  const correctsTicket =
-    input.field === 'ticketUrl' &&
-    typeof input.currentValue === 'string' &&
-    input.currentValue.includes('bit.ly') &&
-    typeof input.proposedValue === 'string' &&
-    input.proposedValue.includes('ticket.io');
-
-  const writeReason =
-    correctsStaleness
-      ? 'Corrects stale/contaminated official website description'
-      : correctsTicket
-        ? 'Corrects malformed ticket CTA with event-specific Ticket.io URL'
-        : `Unified explicit ${input.field} from official website evidence`;
+  const writeReason = `Unified explicit ${input.field} from official website evidence`;
 
   return {
     eventId: input.eventId,
@@ -430,11 +412,32 @@ export function buildPublishPreview(input: {
   );
 
   if (values.lineupEntries?.length) {
+    const titleCandidate = candidateForField(input.unified, shadowEventId, 'title');
+    const descriptionCandidate = candidateForField(input.unified, shadowEventId, 'description');
+    const lineupGate = evaluateLineupPublishGate({
+      event: {
+        eventId: input.event.id,
+        title: input.event.title,
+        startDate: input.event.startDate,
+        venueName: input.event.venueName,
+        venueCity: input.event.venueCity,
+      },
+      contentBlocks: [
+        String(descriptionCandidate?.normalizedValue ?? input.event.description ?? ''),
+      ],
+      pageEvidence: {
+        pageTitle: String(titleCandidate?.normalizedValue ?? input.event.title),
+        eventDate: input.event.startDate,
+        venueName: input.event.venueName,
+      },
+    });
     proposals.push({
       eventId,
       field: 'lineup',
       currentValue: null,
-      proposedValue: values.lineupEntries.map((e) => e.displayName),
+      proposedValue: lineupGate.allowed
+        ? lineupGate.extraction.entries.map((e) => e.displayName)
+        : [],
       currentProvenance: input.provenanceByField.lineup,
       proposedProvenance: {
         sourceId: input.sourceId,
@@ -443,13 +446,18 @@ export function buildPublishPreview(input: {
         channel: 'automatic_source_import',
       },
       evidenceUrl,
-      writeReason: 'Explicit structured lineup from official website body',
+      writeReason: lineupGate.allowed
+        ? 'Explicit structured lineup from official website body'
+        : `Lineup blocked: ${lineupGate.reason}`,
       rollbackValue: null,
-      consumerVisibleResult: values.lineupEntries.map((e) => ({
-        name: e.displayName,
-        stage: e.stage,
-      })),
-      decision: 'approved_write',
+      consumerVisibleResult: lineupGate.allowed
+        ? lineupGate.extraction.entries.map((e) => ({
+            name: e.displayName,
+            stage: e.stage,
+          }))
+        : [],
+      decision: lineupGate.allowed ? 'approved_write' : 'rejected_review_required',
+      rejectReason: lineupGate.allowed ? undefined : lineupGate.reason,
     });
   }
 

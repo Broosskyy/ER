@@ -53,6 +53,7 @@ export interface ImportPublishFieldPatch {
   dressCode?: string;
   accessibilityNotes?: string;
   attributeReviewRequired?: boolean;
+  sourceReferenceTicketEvidence?: Record<string, unknown>;
 }
 
 export interface BuildAdminEventFromImportInput {
@@ -172,7 +173,9 @@ export function buildImportPublishFieldPatch(
   const patch: ImportPublishFieldPatch = {
     title: fillOnly ? resolveTextField(existing?.title, candidate.title, true) : candidate.title,
     subtitle: resolveOptionalField(existing?.subtitle, candidate.subtitle, fillOnly),
-    description: resolvePrimaryDescription(existing?.description, candidate.description, fillOnly),
+    description: fillOnly
+      ? resolvePrimaryDescription(existing?.description, undefined, true)
+      : normalizeCanonicalEventDescription(existing?.description) ?? '',
     startDate: fillOnly
       ? resolveOptionalField(existing?.startDate, candidate.startDate, false) ?? existing?.startDate
       : candidate.startDate,
@@ -284,21 +287,22 @@ export function buildImportPublishFieldPatch(
     );
   }
 
-  void buildSourceReferenceTicketEvidenceMetadata(
+  const ticketEvidenceMetadata = buildSourceReferenceTicketEvidenceMetadata(
     ticketWrite.audit,
     typeof metadata?.verifiedAt === 'string' ? metadata.verifiedAt : undefined,
   );
+  patch.sourceReferenceTicketEvidence = ticketEvidenceMetadata;
 
   patch.ticketUrl = ticketWrite.patch.ticketUrl;
   patch.websiteUrl =
     ticketWrite.patch.websiteUrl ??
     resolveOptionalField(existing?.websiteUrl, candidate.eventUrl ?? candidate.originalLink, fillOnly);
   patch.priceText = ticketWrite.patch.priceText;
-  patch.ticketStatus = ticketWrite.patch.ticketStatus ?? resolveOptionalField(
-    existing?.ticketStatus,
-    ticketStatusFallback,
-    fillOnly,
-  );
+  const criticalTicketBlocked = ticketWrite.audit.blockedCriticalFields.length > 0;
+  patch.ticketStatus = criticalTicketBlocked
+    ? existing?.ticketStatus
+    : ticketWrite.patch.ticketStatus ??
+      resolveOptionalField(existing?.ticketStatus, ticketStatusFallback, fillOnly);
   patch.ticketPhases = ticketWrite.patch.ticketPhases;
 
   return patch;
@@ -308,12 +312,16 @@ export function applyImportPublishFieldPatch(
   base: AdminEventRecord,
   patch: ImportPublishFieldPatch,
 ): AdminEventRecord {
-  return {
-    ...base,
-    ...patch,
-    description: patch.description ?? base.description,
-    startDate: patch.startDate ?? base.startDate,
-  };
+  const merged: AdminEventRecord = { ...base };
+  (Object.keys(patch) as Array<keyof ImportPublishFieldPatch>).forEach((key) => {
+    const value = patch[key];
+    if (value !== undefined) {
+      (merged as Record<string, unknown>)[key] = value;
+    }
+  });
+  merged.description = patch.description ?? base.description;
+  merged.startDate = patch.startDate ?? base.startDate;
+  return merged;
 }
 
 export function mergeImportPublishFields(input: MergeImportPublishFieldsInput): AdminEventRecord {

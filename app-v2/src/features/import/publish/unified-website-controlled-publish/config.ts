@@ -1,5 +1,7 @@
 import { env } from '@/core/config/env';
 import { featureFlags } from '@/core/config/feature-flags';
+import type { UnifiedImportResult } from '@/features/import/contracts';
+import { evaluateEventEvidenceIdentityGate } from '@/features/import/domain/event-evidence-identity-gate';
 
 export const PHASE486_EXECUTION_MODE = 'unified_website_controlled_publish' as const;
 export const PHASE486_IMPORTER_VERSION = 'phase4841-unified-website-v1';
@@ -70,12 +72,72 @@ export function evaluatePublishEligibility(input: {
   sourceId: string;
   eventId: string;
   config?: UnifiedWebsitePublishConfigOverrides;
+  importResult?: UnifiedImportResult;
+  eventSnapshot?: {
+    title: string;
+    startDate?: string;
+    venueName?: string;
+    venueCity?: string;
+    websiteUrl?: string;
+  };
 }): { eligible: boolean; issues: string[] } {
   const config = resolveUnifiedWebsitePublishConfig(input.config);
   const issues: string[] = [];
 
   if (config.sourceIds.length > 0 && !config.sourceIds.includes(input.sourceId)) {
     issues.push(`Source ${input.sourceId} not in configured source allowlist`);
+  }
+
+  if (input.importResult) {
+    const roles = input.importResult.sourceIdentity.sourceRoles ?? [];
+    if (!roles.includes('official_website_source') && !roles.includes('organizer')) {
+      issues.push('source_role_not_official_website');
+    }
+
+    const shadowEventId =
+      input.importResult.fieldEvidenceCandidates.find((c) => c.eventIdentityMatch)
+        ?.eventIdentityMatch ?? input.eventId;
+    const titleCandidate = input.importResult.fieldEvidenceCandidates.find(
+      (c) => c.eventIdentityMatch === shadowEventId && c.fieldName === 'title',
+    );
+    const descriptionCandidate = input.importResult.fieldEvidenceCandidates.find(
+      (c) => c.eventIdentityMatch === shadowEventId && c.fieldName === 'description',
+    );
+
+    if (descriptionCandidate?.reviewState === 'rejected') {
+      issues.push('description_evidence_rejected');
+    }
+
+    const identity = evaluateEventEvidenceIdentityGate({
+      event: {
+        eventId: input.eventId,
+        title: input.eventSnapshot?.title ?? String(titleCandidate?.normalizedValue ?? ''),
+        startDate: input.eventSnapshot?.startDate,
+        venueName: input.eventSnapshot?.venueName,
+        venueCity: input.eventSnapshot?.venueCity,
+        websiteUrl: input.eventSnapshot?.websiteUrl,
+      },
+      evidence: {
+        pageTitle: String(titleCandidate?.normalizedValue ?? ''),
+        eventDate: input.eventSnapshot?.startDate,
+        venueName: input.eventSnapshot?.venueName,
+      },
+      officialEventUrl: input.eventSnapshot?.websiteUrl,
+    });
+
+    if (identity.verdict === 'mismatch') {
+      issues.push(`identity_mismatch:${identity.reason}`);
+    }
+    if (identity.verdict === 'unverifiable') {
+      issues.push(`identity_unverifiable:${identity.reason}`);
+    }
+
+    const staleEvidence = input.importResult.fieldEvidenceCandidates.some(
+      (candidate) => candidate.reviewState === 'pending' && (candidate.confidence ?? 0) < 0.5,
+    );
+    if (staleEvidence) {
+      issues.push('field_evidence_low_confidence_or_stale');
+    }
   }
 
   return { eligible: issues.length === 0, issues };

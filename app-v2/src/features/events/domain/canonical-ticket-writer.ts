@@ -17,7 +17,7 @@ import {
   buildAtomicAdmissionSnapshot,
   evaluateTicketEvidenceFreshness,
   replaceAdmissionSnapshotForSource,
-  resolveSourceRank,
+  incomingAdmissionEvidenceDominates,
   type FreshnessMergeDecision,
 } from '@/features/import/domain/ticket-evidence-freshness-merge';
 import type { EventEvidenceIdentityGateResult } from '@/features/import/domain/event-evidence-identity-gate';
@@ -82,9 +82,9 @@ function readCandidateMetadata(candidate?: CanonicalImportEvent): Record<string,
   return candidate?.sourceMetadata as Record<string, unknown> | undefined;
 }
 
-function readVerifiedAt(metadata: Record<string, unknown> | undefined, now: string): string | undefined {
-  const raw = metadata?.verifiedAt ?? metadata?.observedAt ?? metadata?.freshnessAt;
-  return typeof raw === 'string' && raw.trim() ? raw.trim() : now;
+function readVerifiedAt(metadata: Record<string, unknown> | undefined): string | undefined {
+  const raw = metadata?.verifiedAt ?? metadata?.observedAt;
+  return typeof raw === 'string' && raw.trim() ? raw.trim() : undefined;
 }
 
 function readOfficialOutboundTicketUrls(metadata: Record<string, unknown> | undefined): string[] | undefined {
@@ -103,8 +103,6 @@ function readEvidenceIdentityUrl(
   return (
     (typeof metadata?.publicCtaCandidateUrl === 'string' && metadata.publicCtaCandidateUrl) ||
     (typeof metadata?.publicTicketPageUrl === 'string' && metadata.publicTicketPageUrl) ||
-    candidate?.ticketUrl ||
-    (typeof metadata?.ticketUrl === 'string' && metadata.ticketUrl) ||
     undefined
   );
 }
@@ -178,7 +176,6 @@ function partitionUrlCandidates(candidates: TicketUrlCandidate[]): {
 
 export function writeCanonicalTicketFields(input: CanonicalTicketWriteInput): CanonicalTicketWriteResult {
   const existing = input.existing;
-  const now = input.now ?? new Date().toISOString();
   const metadata = readCandidateMetadata(input.candidate);
   const sourceKey = input.candidate?.sourceId ?? 'unknown';
   const existingSourceKey =
@@ -196,7 +193,7 @@ export function writeCanonicalTicketFields(input: CanonicalTicketWriteInput): Ca
       ? buildAtomicAdmissionSnapshot({
           phases: incomingPhases,
           sourceKey,
-          verifiedAt: readVerifiedAt(metadata, now),
+          verifiedAt: readVerifiedAt(metadata),
           checkoutEvidenceUrl: identity.checkoutEvidenceUrl,
           publicCtaCandidateUrl: identity.publicCtaCandidateUrl,
           soldOut: metadata?.soldOut === true,
@@ -221,8 +218,36 @@ export function writeCanonicalTicketFields(input: CanonicalTicketWriteInput): Ca
       sourceKey,
     },
     decision: freshnessDecision,
-    incomingDominatesExistingSource:
-      resolveSourceRank(sourceKey) >= resolveSourceRank(existingSourceKey),
+    incomingDominatesExistingSource: incomingAdmissionEvidenceDominates({
+      incoming: {
+        sourceKey,
+        sourceRoles: Array.isArray(metadata?.sourceRoles)
+          ? (metadata.sourceRoles as string[])
+          : undefined,
+        identityVerdict: identity.gate.verdict,
+        verifiedAt: incomingSnapshot?.verifiedAt,
+        trustScore:
+          typeof metadata?.trustScore === 'number' ? (metadata.trustScore as number) : undefined,
+      },
+      existing: {
+        sourceKey: existingSourceKey,
+        sourceRoles: Array.isArray(metadata?.existingSourceRoles)
+          ? (metadata.existingSourceRoles as string[])
+          : undefined,
+        identityVerdict:
+          typeof metadata?.existingIdentityVerdict === 'string'
+            ? (metadata.existingIdentityVerdict as import('@/features/import/domain/event-evidence-identity-gate').IdentityPublishVerdict)
+            : undefined,
+        verifiedAt:
+          typeof metadata?.existingVerifiedAt === 'string'
+            ? metadata.existingVerifiedAt
+            : undefined,
+        trustScore:
+          typeof metadata?.existingTrustScore === 'number'
+            ? (metadata.existingTrustScore as number)
+            : undefined,
+      },
+    }),
   });
 
   const incomingCandidates: TicketUrlCandidate[] = [

@@ -23,7 +23,7 @@ export interface TicketEvidencePersistenceAssessment {
 export function assessTicketEvidencePersistence(): TicketEvidencePersistenceAssessment {
   return {
     canPersistWithoutMigration: true,
-    persistenceGap: false,
+    persistenceGap: true,
     recommendedFieldPaths: [
       'ticketEvidence.checkoutUrl',
       'ticketEvidence.publicCtaCandidateUrl',
@@ -97,13 +97,15 @@ export function buildSourceReferenceTicketEvidenceMetadata(
   audit: CanonicalTicketWriteAudit,
   verifiedAt?: string,
 ): Record<string, unknown> {
+  const observedAt =
+    typeof verifiedAt === 'string' && verifiedAt.trim() ? verifiedAt.trim() : undefined;
   return {
     checkoutEvidenceUrl: audit.checkoutEvidenceUrl,
     publicCtaCandidateUrl: audit.publicCtaCandidateUrl,
     identityVerdict: audit.identityVerdict,
     identityReason: audit.identityReason,
-    verifiedAt,
-    observedAt: verifiedAt ?? new Date().toISOString(),
+    verifiedAt: observedAt,
+    observedAt,
     freshnessFallbackRule: audit.freshnessFallbackRule,
   };
 }

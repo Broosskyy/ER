@@ -6,6 +6,7 @@ import {
 import { extractDetailPage } from './detail-extraction';
 import { assembleFieldEvidence } from './evidence-assembler';
 import { buildRelationshipCandidates, resolveSourceRoles } from './relationship-extraction';
+import { featureFlags } from '@/core/config/feature-flags';
 import { UNIFIED_WEBSITE_IMPORTER_VERSION } from './types';
 import type { UnifiedWebsiteImportContext } from './types';
 
@@ -19,10 +20,13 @@ export interface UnifiedWebsiteImportInput {
     finalUrl: string;
     error?: string;
   };
+  /** When true and publish flags allow, marks import as proposal-ready (still dry-run by default). */
+  proposalMode?: boolean;
 }
 
 export function runUnifiedWebsiteImport(input: UnifiedWebsiteImportInput): UnifiedImportResult {
   const { context, html, fetchMeta } = input;
+  const proposalMode = input.proposalMode === true && featureFlags.unifiedWebsitePublishEnabled;
   const detail = extractDetailPage(html, fetchMeta.finalUrl || context.websiteUrl);
   const { candidates, diagnostics } = assembleFieldEvidence(detail, context);
 
@@ -34,7 +38,7 @@ export function runUnifiedWebsiteImport(input: UnifiedWebsiteImportInput): Unifi
 
   return {
     contractVersion: 'phase481-v1',
-    stagingOnly: true,
+    stagingOnly: !proposalMode,
     sourceIdentity: {
       sourceId: context.sourceId,
       sourceName: context.sourceName,
@@ -46,7 +50,7 @@ export function runUnifiedWebsiteImport(input: UnifiedWebsiteImportInput): Unifi
       runId: createPilotImportRunId(`${IMPORTER_KEY}-${context.eventId}`),
       channel: 'automatic_source_import',
       startedAt: new Date().toISOString(),
-      pilotOnly: true,
+      pilotOnly: !proposalMode,
     },
     rawEvidenceReferences: [
       {

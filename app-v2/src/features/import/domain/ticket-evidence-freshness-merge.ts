@@ -6,6 +6,71 @@ import {
 } from '@/features/import/domain/canonical-ticket-phase';
 import type { IdentityPublishVerdict } from '@/features/import/domain/event-evidence-identity-gate';
 
+const IDENTITY_VERDICT_RANK: Record<IdentityPublishVerdict, number> = {
+  exact: 50,
+  corroborated: 40,
+  partial_review_only: 10,
+  mismatch: 0,
+  unverifiable: 0,
+};
+
+const SOURCE_ROLE_TRUST_RANK: Record<string, number> = {
+  official_website_source: 30,
+  organizer: 28,
+  ticketing: 18,
+  enrichment: 8,
+};
+
+export interface AdmissionEvidenceStrengthInput {
+  sourceKey?: string;
+  sourceRoles?: string[];
+  identityVerdict?: IdentityPublishVerdict;
+  verifiedAt?: string;
+  trustScore?: number;
+}
+
+function parseVerifiedMs(value: string | undefined): number | undefined {
+  if (!value?.trim()) {
+    return undefined;
+  }
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? undefined : parsed;
+}
+
+function scoreAdmissionEvidence(side: AdmissionEvidenceStrengthInput): number {
+  let score = IDENTITY_VERDICT_RANK[side.identityVerdict ?? 'unverifiable'] ?? 0;
+  const roles = side.sourceRoles ?? [];
+  if (roles.length > 0) {
+    score += Math.max(...roles.map((role) => SOURCE_ROLE_TRUST_RANK[role] ?? 0));
+  }
+  if (typeof side.trustScore === 'number' && Number.isFinite(side.trustScore)) {
+    score += Math.min(25, Math.max(0, side.trustScore));
+  }
+  const verifiedMs = parseVerifiedMs(side.verifiedAt);
+  if (verifiedMs !== undefined) {
+    score += verifiedMs / 1e15;
+  }
+  return score;
+}
+
+/** True when incoming admission evidence dominates existing (identity, roles, trust, freshness). */
+export function incomingAdmissionEvidenceDominates(input: {
+  incoming: AdmissionEvidenceStrengthInput;
+  existing: AdmissionEvidenceStrengthInput;
+}): boolean {
+  const incomingScore = scoreAdmissionEvidence(input.incoming);
+  const existingScore = scoreAdmissionEvidence(input.existing);
+  if (incomingScore !== existingScore) {
+    return incomingScore > existingScore;
+  }
+  const incomingMs = parseVerifiedMs(input.incoming.verifiedAt);
+  const existingMs = parseVerifiedMs(input.existing.verifiedAt);
+  if (incomingMs !== undefined && existingMs !== undefined) {
+    return incomingMs > existingMs;
+  }
+  return incomingMs !== undefined && existingMs === undefined;
+}
+
 export type FreshnessFallbackRule =
   | 'manual_lock'
   | 'incoming_newer_verified'
@@ -156,11 +221,11 @@ export function evaluateTicketEvidenceFreshness(input: {
     };
   }
 
-  // Neither side has verifiedAt — prefer incoming only on exact/corroborated identity (first write path).
+  // Neither side has verifiedAt — do not treat as freshly verified.
   return {
-    apply: true,
-    reason: 'both_untimestamped_identity_allowed_atomic_replace',
-    fallbackRule: 'incoming_newer_verified',
+    apply: false,
+    reason: 'both_untimestamped_no_verified_at',
+    fallbackRule: 'existing_untimestamped_not_preferred',
     ...base,
   };
 }
@@ -195,18 +260,7 @@ export function replaceAdmissionSnapshotForSource(input: {
   return input.existingPhases;
 }
 
-export function resolveSourceRank(sourceKey: string | undefined): number {
-  if (!sourceKey) {
-    return 0;
-  }
-  if (sourceKey.includes('ticket_kings') || sourceKey.includes('ticket-kings')) {
-    return 80;
-  }
-  if (sourceKey.includes('ticket_io') || sourceKey.includes('ticket-io')) {
-    return 75;
-  }
-  if (sourceKey.includes('nacht_manager') || sourceKey.includes('nacht-manager')) {
-    return 60;
-  }
-  return 50;
+/** @deprecated Use incomingAdmissionEvidenceDominates — provider names are not truth signals. */
+export function resolveSourceRank(_sourceKey: string | undefined): number {
+  return 0;
 }

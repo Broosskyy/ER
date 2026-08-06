@@ -7,6 +7,7 @@ import { defaultHttpClient } from '@/features/endpoints/http/default-http-client
 import { getTicketPlatformAdapter } from './adapter-registry';
 import { toNormalizedTicketFields } from './normalize-ticket-event';
 import { resolveTicketShopBaseUrl } from './normalize-ticket-event';
+import { buildTicketPlatformEvidenceMetadata } from './ticket-platform-evidence-metadata';
 import type { TicketPlatformSourceConfig } from './types';
 
 const DEFAULT_USER_AGENT =
@@ -58,8 +59,21 @@ export async function fetchTicketPlatformEvents(input: {
 
   const { events, scopeStats } = adapter.parseShopHtml(html, config);
 
+  const fetchedAt = new Date().toISOString();
+
   return events.map((event) => {
     const normalized = toNormalizedTicketFields(event);
+    const evidence = buildTicketPlatformEvidenceMetadata({
+      event,
+      connectorKey: input.connectorKey,
+      platform: config.platform,
+      shopSlug: config.shopSlug,
+      enrichmentSource: true,
+      observedAt: fetchedAt,
+      scopeStats,
+      listRowTitle: event.title,
+      sourceRoles: ['ticketing', 'enrichment'],
+    });
     return {
       externalId: normalized.externalId,
       importId: normalized.externalId,
@@ -86,14 +100,8 @@ export async function fetchTicketPlatformEvents(input: {
       priceCurrency: normalized.priceCurrency,
       rawSourceType: 'json_ld',
       sourceMetadata: {
-        connector: input.connectorKey,
-        platform: config.platform,
-        shopSlug: config.shopSlug,
-        enrichmentSource: true,
+        ...evidence,
         scopeStats,
-        ...(event.checkoutProviderId
-          ? { checkoutProviderId: event.checkoutProviderId }
-          : {}),
       },
     };
   });

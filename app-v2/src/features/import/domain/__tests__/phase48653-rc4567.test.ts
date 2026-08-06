@@ -186,7 +186,7 @@ describe('RC-7 consumer labels', () => {
 describe('RC-F checkout evidence persistence', () => {
   it('can persist via field provenance and source reference metadata without migration', () => {
     const assessment = assessTicketEvidencePersistence();
-    expect(assessment.persistenceGap).toBe(false);
+    expect(assessment.persistenceGap).toBe(true);
     expect(assessment.canPersistWithoutMigration).toBe(true);
 
     const audit: CanonicalTicketWriteAudit = {

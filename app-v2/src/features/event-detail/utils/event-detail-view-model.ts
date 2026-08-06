@@ -19,7 +19,8 @@ import {
   resolveEventNoticeType,
   resolveEventPresentation,
 } from '@/features/events/status/event-status-resolver';
-import { getSourceDisplayLabel } from '@/features/events/data/demo-images';
+import { resolveConsumerTicketPresentation } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
+import { readCanonicalTicket } from '@/features/events/domain/canonical-ticket-read';
 import type { ArtistRecord, OrganizerRecord, VenueRecord } from '@/data/types/records';
 import type { Event } from '@/features/events/types/event';
 import type { EventDetailEntities } from '@/features/event-detail/services/event-detail-entity-loader';
@@ -33,6 +34,7 @@ import {
 export function toEventHeroViewModel(event: EventDisplayModel): EventHeroViewModel {
   const presentation = resolveEventPresentation(event);
   const card = toEventCardViewModel(event);
+  const ticketPresentation = resolveConsumerTicketPresentation(event);
 
   return {
     id: event.id,
@@ -46,7 +48,7 @@ export function toEventHeroViewModel(event: EventDisplayModel): EventHeroViewMod
     cityLabel: event.city,
     genreLabels: event.genres,
     categoryLabel: card.categoryLabel,
-    ticketLabel: card.ticketLabel,
+    ticketLabel: ticketPresentation.headerPriceLabel ?? card.ticketLabel,
     ticketStatus: presentation.ticketStatus,
     status: presentation.primaryStatus,
     accessibilityLabel: card.accessibilityLabel,
@@ -239,9 +241,17 @@ export function toEventTicketSectionViewModel(event: EventDisplayModel): EventTi
   const notice = resolveEventNoticeType(event);
   const disabled = isTicketActionDisabled(event);
   const ticketStatus = presentation.ticketStatus;
+  const canonicalTicket = readCanonicalTicket({
+    ticketUrl: event.ticketUrl,
+    websiteUrl: event.officialEventUrl,
+    sourceUrl: event.sourceUrl,
+    priceText: event.priceText ?? event.displayPriceText,
+    ticketStatus: event.ticketAvailability,
+    ticketPhases: event.ticketPhases,
+  });
 
   let mode: EventTicketMode = 'unavailable';
-  let ctaLabel = 'Tickets ansehen';
+  let ctaLabel = canonicalTicket.ctaLabel ?? 'Tickets ansehen';
   let noticeLabel: string | undefined;
 
   if (notice === 'cancelled') {
@@ -258,16 +268,26 @@ export function toEventTicketSectionViewModel(event: EventDisplayModel): EventTi
   } else if (ticketStatus === 'free') {
     mode = 'free_rsvp';
     ctaLabel = 'Kostenlos teilnehmen';
-  } else if (event.ticketUrl) {
+  } else if (canonicalTicket.hasActiveCta) {
     mode = 'external';
-    ctaLabel = 'Tickets ansehen';
+    ctaLabel = canonicalTicket.ctaLabel ?? 'Tickets ansehen';
   }
 
-  return {
-    mode: disabled && mode !== 'free_rsvp' ? 'sold_out' : mode,
-    ticketTypes: [],
+  const resolvedMode = disabled && mode !== 'free_rsvp' ? 'sold_out' : mode;
+  const ticketPresentation = resolveConsumerTicketPresentation(event, {
+    mode: resolvedMode,
     ctaLabel,
-    externalUrlLabel: event.ticketUrl ? getSourceDisplayLabel(event.source) : undefined,
+  });
+
+  return {
+    mode: resolvedMode,
+    ticketTypes: ticketPresentation.ticketTypes,
+    summary: ticketPresentation.summary,
+    showSummary: ticketPresentation.showSummary,
+    ctaLabel: ticketPresentation.cta,
+    priceLabel: ticketPresentation.sectionPriceLabel,
+    availabilityLabel: ticketPresentation.availabilityLabel,
+    externalUrlLabel: ticketPresentation.providerLabel,
     noticeLabel,
     accessibilityLabel: `Tickets für ${event.title}`,
   };

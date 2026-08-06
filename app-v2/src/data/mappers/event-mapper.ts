@@ -9,7 +9,7 @@ import type {
   AdminEventStatus,
 } from '@/data/types/records';
 
-interface EventRow {
+export interface EventRow {
   id: string;
   title: string;
   subtitle: string | null;

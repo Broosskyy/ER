@@ -62,6 +62,7 @@
     "doctor": "expo-doctor",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
