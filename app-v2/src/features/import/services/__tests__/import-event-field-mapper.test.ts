@@ -35,6 +35,12 @@ function baseCandidate(overrides: Partial<CanonicalImportEvent> = {}): Canonical
     sourceMetadata: {
       externalLocationFromTitle: true,
       eventGeography: { venue: 'explicit', city: 'explicit' },
+      pageTitle: 'PLAY! Open Air – Mallorca',
+      listRowTitle: 'PLAY! Open Air – Mallorca',
+      eventDate: '2026-08-01T14:00:00+02:00',
+      venueName: 'Beach Club Mallorca',
+      verifiedAt: '2026-01-01T00:00:00.000Z',
+      publicTicketPageUrl: 'https://bootshaus-club.ticket.io/gPHSUV3l/',
       ticketOffers: [
         { name: 'Early Bird', priceAmount: 15, priceCurrency: 'EUR' },
         { name: 'Regular', priceAmount: 20, priceCurrency: 'EUR' },
@@ -201,7 +207,12 @@ describe('import publish field mapper', () => {
       candidate,
     });
     const updated = mergeImportPublishFields({
-      existing: existingEvent(),
+      existing: {
+        ...existingEvent(),
+        title: candidate.title,
+        venueName: candidate.venueName,
+        venueCity: candidate.cityName,
+      },
       candidate,
       fillOnly: false,
     });
@@ -257,6 +268,11 @@ describe('import publish field mapper', () => {
     ];
     const candidate = baseCandidate({
       sourceMetadata: {
+        pageTitle: 'PLAY! Open Air – Mallorca',
+        listRowTitle: 'PLAY! Open Air – Mallorca',
+        eventDate: '2026-08-01T14:00:00+02:00',
+        venueName: 'Beach Club Mallorca',
+        verifiedAt: '2026-01-01T00:00:00.000Z',
         ticketOffers: [{ name: 'Regular', priceAmount: 10 }],
       },
     });

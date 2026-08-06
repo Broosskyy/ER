@@ -294,11 +294,11 @@ export function buildImportPublishFieldPatch(
     ticketWrite.patch.websiteUrl ??
     resolveOptionalField(existing?.websiteUrl, candidate.eventUrl ?? candidate.originalLink, fillOnly);
   patch.priceText = ticketWrite.patch.priceText;
-  patch.ticketStatus = ticketWrite.patch.ticketStatus ?? resolveOptionalField(
-    existing?.ticketStatus,
-    ticketStatusFallback,
-    fillOnly,
-  );
+  const criticalTicketBlocked = ticketWrite.audit.blockedCriticalFields.length > 0;
+  patch.ticketStatus = criticalTicketBlocked
+    ? existing?.ticketStatus
+    : ticketWrite.patch.ticketStatus ??
+      resolveOptionalField(existing?.ticketStatus, ticketStatusFallback, fillOnly);
   patch.ticketPhases = ticketWrite.patch.ticketPhases;
 
   return patch;
@@ -308,9 +308,13 @@ export function applyImportPublishFieldPatch(
   base: AdminEventRecord,
   patch: ImportPublishFieldPatch,
 ): AdminEventRecord {
+  const definedPatch = Object.fromEntries(
+    Object.entries(patch).filter(([, value]) => value !== undefined),
+  ) as Partial<ImportPublishFieldPatch>;
+
   return {
     ...base,
-    ...patch,
+    ...definedPatch,
     description: patch.description ?? base.description,
     startDate: patch.startDate ?? base.startDate,
   };
