@@ -1,4 +1,9 @@
 import { normalizeMatchText, sameCalendarDay } from '@/features/import/matching/matching-utils';
+import { decodeHtmlEntities } from '@/features/import/normalization/text-normalizer';
+import {
+  scoreTitleCoreAgreement,
+  type EventTitleCoreSecondaryEvidence,
+} from '@/features/import/matching/event-title-core';
 
 import type { EventIdentitySnapshot, PublicIdentityEvidence } from './types';
 
@@ -21,6 +26,12 @@ export function normalizeExtractedTicketPlatformPageTitle(raw: string): string {
     return trimmed;
   }
   return trimmed.replace(TICKET_PLATFORM_SHOP_TITLE_SUFFIX, '').trim();
+}
+
+function normalizeIdentityComparisonTitle(raw: string): string {
+  return normalizeMatchText(
+    normalizeExtractedTicketPlatformPageTitle(decodeHtmlEntities(raw.trim())),
+  );
 }
 
 function tokenOverlapScore(left: string, right: string): number {
@@ -114,15 +125,75 @@ function evaluateEvidenceTitle(
   event: EventIdentitySnapshot,
   evidence: Pick<PublicIdentityEvidence, 'eventDate' | 'venueName'>,
   evidenceTitle: string,
+  secondaryEvidence?: EventTitleCoreSecondaryEvidence,
 ): IdentityMatchResult {
-  const titleScore = tokenOverlapScore(event.title, evidenceTitle);
+  const normalizedEventTitle = normalizeIdentityComparisonTitle(event.title);
+  const normalizedEvidenceTitle = normalizeIdentityComparisonTitle(evidenceTitle);
+  const titlesStructurallyIdentical = normalizedEventTitle === normalizedEvidenceTitle;
   const dateAgrees = datesCompatible(event.startDate, evidence.eventDate);
   const venueAgrees = venueCompatible(event.venueName, evidence.venueName);
 
-  if (titleScore >= 0.55 && dateAgrees && venueAgrees) {
+  if (titlesStructurallyIdentical && dateAgrees && venueAgrees) {
     return {
       match: 'exact',
-      reason: 'title_date_venue_compatible',
+      reason: 'identical_normalized_titles',
+      titleScore: 1,
+      dateAgrees,
+      venueAgrees,
+    };
+  }
+
+  const coreScore = scoreTitleCoreAgreement(
+    decodeHtmlEntities(event.title.trim()),
+    decodeHtmlEntities(evidenceTitle.trim()),
+    {
+      ...secondaryEvidence,
+      dateAgrees,
+      venueCompatible: venueAgrees,
+    },
+    {
+      left: { venueName: event.venueName },
+      right: { venueName: evidence.venueName },
+    },
+  );
+  const titleScore = coreScore.coresAgree ? coreScore.score : 0;
+
+  if (
+    coreScore.coresAgree &&
+    titleScore >= 0.8 &&
+    dateAgrees &&
+    venueAgrees &&
+    coreScore.maxMatchStrength === 'exact' &&
+    titlesStructurallyIdentical
+  ) {
+    return {
+      match: 'exact',
+      reason: coreScore.comparisonReason,
+      titleScore,
+      dateAgrees,
+      venueAgrees,
+    };
+  }
+
+  if (coreScore.coresAgree && titleScore >= 0.55 && dateAgrees && venueAgrees) {
+    return {
+      match: 'partial',
+      reason: coreScore.comparisonReason,
+      titleScore,
+      dateAgrees,
+      venueAgrees,
+    };
+  }
+
+  if (
+    coreScore.coresAgree &&
+    coreScore.requiresSecondaryEvidence &&
+    titleScore < 0.55 &&
+    dateAgrees
+  ) {
+    return {
+      match: 'partial',
+      reason: coreScore.comparisonReason,
       titleScore,
       dateAgrees,
       venueAgrees,
@@ -164,6 +235,11 @@ export function evaluatePublicIdentityMatch(
     PublicIdentityEvidence,
     'pageTitle' | 'listRowTitle' | 'eventDate' | 'venueName'
   >,
+  options?: {
+    verifiedAt?: string;
+    officialOutboundConfirmed?: boolean;
+    slugRelationshipConfirmed?: boolean;
+  },
 ): IdentityMatchResult {
   const evidenceTitles = uniqueEvidenceTitles(evidence);
   if (evidenceTitles.length === 0) {
@@ -176,10 +252,19 @@ export function evaluatePublicIdentityMatch(
     };
   }
 
+  const secondaryEvidence: EventTitleCoreSecondaryEvidence = {
+    verifiedAt: options?.verifiedAt,
+    officialOutboundConfirmed: options?.officialOutboundConfirmed,
+    slugRelationshipConfirmed: options?.slugRelationshipConfirmed,
+  };
+
   return evidenceTitles.reduce(
     (best, evidenceTitle) =>
-      pickStrongerIdentityMatch(best, evaluateEvidenceTitle(event, evidence, evidenceTitle)),
-    evaluateEvidenceTitle(event, evidence, evidenceTitles[0]!),
+      pickStrongerIdentityMatch(
+        best,
+        evaluateEvidenceTitle(event, evidence, evidenceTitle, secondaryEvidence),
+      ),
+    evaluateEvidenceTitle(event, evidence, evidenceTitles[0]!, secondaryEvidence),
   );
 }
 
@@ -198,7 +283,23 @@ export function sameTitleDifferentDate(
   left: EventIdentitySnapshot,
   right: EventIdentitySnapshot,
 ): boolean {
-  const titleScore = tokenOverlapScore(left.title, right.title);
+  const coreScore = scoreTitleCoreAgreement(
+    left.title,
+    right.title,
+    {
+      dateAgrees: Boolean(
+        left.startDate?.trim() &&
+          right.startDate?.trim() &&
+          sameCalendarDay(left.startDate, right.startDate),
+      ),
+      venueCompatible: venueCompatible(left.venueName, right.venueName),
+    },
+    {
+      left: { venueName: left.venueName },
+      right: { venueName: right.venueName },
+    },
+  );
+  const titleScore = coreScore.coresAgree ? coreScore.score : 0;
   if (titleScore < 0.85) {
     return false;
   }

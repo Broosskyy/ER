@@ -8,6 +8,7 @@ import {
   publicSourcesStructuralAgree,
   type IdentityMatchResult,
 } from '@/features/import/ticket-platform-identity/identity-match';
+import { compareEventTitleCores, analyzeEventTitleCore } from '@/features/import/matching/event-title-core';
 import { sameCalendarDay } from '@/features/import/matching/matching-utils';
 import type { EventIdentitySnapshot, PublicIdentityEvidence } from '@/features/import/ticket-platform-identity/types';
 
@@ -230,8 +231,12 @@ function hasOfficialCorroborationFields(official: OfficialPageIdentityEvidence):
 function publicSourcesAgree(
   official: OfficialPageIdentityEvidence,
   ticketEvidence: Pick<PublicIdentityEvidence, 'pageTitle' | 'listRowTitle' | 'eventDate' | 'venueName'>,
+  options?: {
+    verifiedAt?: string;
+    officialOutboundConfirmed?: boolean;
+  },
 ): IdentityMatchResult {
-  return evaluatePublicIdentityMatch(officialAsEventSnapshot(official), ticketEvidence);
+  return evaluatePublicIdentityMatch(officialAsEventSnapshot(official), ticketEvidence, options);
 }
 
 function buildSuggestedIdentityCorrections(input: {
@@ -274,7 +279,11 @@ function buildSuggestedIdentityCorrections(input: {
   if (
     publicTitle &&
     input.officialVsCanonical.titleScore < 0.55 &&
-    input.ticketVsCanonical.titleScore < 0.55
+    input.ticketVsCanonical.titleScore < 0.55 &&
+    !compareEventTitleCores(
+      analyzeEventTitleCore(input.canonical.title),
+      analyzeEventTitleCore(publicTitle),
+    ).coresAgree
   ) {
     corrections.push({
       field: 'title',
@@ -345,12 +354,21 @@ function buildSuggestedIdentityCorrections(input: {
 export function evaluateOfficialPageTicketCorroboration(
   input: OfficialPageTicketCorroborationInput,
 ): OfficialPageTicketCorroborationResult {
-  const ticketVsCanonical = evaluatePublicIdentityMatch(input.canonical, input.ticketEvidence);
   const official = input.officialPage;
   const outbound = resolveOfficialOutboundRelationship({
     publicTicketPageUrl: input.publicTicketPageUrl,
     outboundTicketUrls: official?.outboundTicketUrls,
   });
+  const identityOptions = {
+    verifiedAt: input.verifiedAt,
+    officialOutboundConfirmed: outbound.confirmed,
+    slugRelationshipConfirmed: outbound.confirmed,
+  };
+  const ticketVsCanonical = evaluatePublicIdentityMatch(
+    input.canonical,
+    input.ticketEvidence,
+    identityOptions,
+  );
 
   const diagnostics: string[] = [
     `ticket_vs_canonical:${ticketVsCanonical.match}`,
@@ -397,8 +415,12 @@ export function evaluateOfficialPageTicketCorroboration(
   }
 
   const officialEvidence = officialAsIdentityEvidence(official!);
-  const officialVsCanonical = evaluatePublicIdentityMatch(input.canonical, officialEvidence);
-  const officialVsTicket = publicSourcesAgree(official!, input.ticketEvidence);
+  const officialVsCanonical = evaluatePublicIdentityMatch(
+    input.canonical,
+    officialEvidence,
+    identityOptions,
+  );
+  const officialVsTicket = publicSourcesAgree(official!, input.ticketEvidence, identityOptions);
 
   const canonicalOfficialAgree = identityPairAgrees(officialVsCanonical, {
     leftDate: input.canonical.startDate,

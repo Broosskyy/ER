@@ -118,7 +118,11 @@ export function evaluateEventEvidenceIdentityGate(
     };
   }
 
-  const identityMatch = evaluatePublicIdentityMatch(input.event, input.evidence);
+  const identityMatch = evaluatePublicIdentityMatch(input.event, input.evidence, {
+    verifiedAt: input.verifiedAt,
+    officialOutboundConfirmed: officialPageLinked,
+    slugRelationshipConfirmed: officialPageLinked,
+  });
 
   const diagnostics = [
     `identity_match:${identityMatch.match}`,
