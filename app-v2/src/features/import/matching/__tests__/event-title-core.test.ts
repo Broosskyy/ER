@@ -296,3 +296,116 @@ describe('event title core integration', () => {
     expect(gate.verdict).not.toMatch(/exact|corroborated/);
   });
 });
+
+describe('NOVA single-core secondary evidence gate', () => {
+  const NOVA_TICKET = 'https://example-shop.ticket.io/N0vAs1ug/';
+  const VERIFIED_AT = '2026-08-07T10:00:00.000Z';
+  const EVENT_DATE = '2026-09-01T22:00:00+02:00';
+
+  function buildNovaGate(
+    overrides: Partial<Parameters<typeof evaluateEventEvidenceIdentityGate>[0]> = {},
+  ) {
+    return evaluateEventEvidenceIdentityGate({
+      event: {
+        eventId: 'evt-nova',
+        title: 'NOVA',
+        startDate: EVENT_DATE,
+        venueName: 'Hall X',
+        ticketUrl: NOVA_TICKET,
+      },
+      evidence: {
+        listRowTitle: 'NOVA presented by Warehouse Collective @ Hall X',
+        eventDate: EVENT_DATE,
+        venueName: 'Hall X',
+      },
+      officialPage: {
+        pageTitle: 'Warehouse Collective presents NOVA',
+        outboundTicketUrls: [NOVA_TICKET],
+      },
+      evidenceUrl: NOVA_TICKET,
+      verifiedAt: VERIFIED_AT,
+      ...overrides,
+    });
+  }
+
+  it('corroborates only with verifiedAt, same day, venue, outbound, and slug-bound ticket', () => {
+    const gate = buildNovaGate();
+    expect(gate.verdict).toMatch(/exact|corroborated/);
+    expect(gate.criticalFieldsPublishAllowed).toBe(true);
+  });
+
+  it('blocks when verifiedAt is missing', () => {
+    const gate = buildNovaGate({ verifiedAt: undefined });
+    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.verdict).not.toMatch(/exact|corroborated/);
+  });
+
+  it('blocks when calendar day diverges', () => {
+    const gate = buildNovaGate({
+      evidence: {
+        listRowTitle: 'NOVA presented by Warehouse Collective @ Hall X',
+        eventDate: '2026-09-02T22:00:00+02:00',
+        venueName: 'Hall X',
+      },
+    });
+    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.verdict).toMatch(/mismatch|partial_review_only/);
+  });
+
+  it('blocks when venue diverges', () => {
+    const gate = buildNovaGate({
+      evidence: {
+        listRowTitle: 'NOVA presented by Warehouse Collective @ Hall X',
+        eventDate: EVENT_DATE,
+        venueName: 'Other Hall',
+      },
+    });
+    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.verdict).not.toMatch(/exact|corroborated/);
+  });
+
+  it('blocks when official outbound relationship is missing', () => {
+    const gate = buildNovaGate({
+      officialPage: {
+        pageTitle: 'Warehouse Collective presents NOVA',
+        outboundTicketUrls: ['https://example-shop.ticket.io/other-slug/'],
+      },
+    });
+    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.verdict).not.toMatch(/exact|corroborated/);
+  });
+
+  it('blocks when public ticket slug is not bound to the outbound link', () => {
+    const gate = buildNovaGate({
+      evidenceUrl: 'https://example-shop.ticket.io/different-slug/',
+    });
+    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.verdict).not.toMatch(/exact|corroborated/);
+  });
+
+  it('agrees official title-only page with ticket when date and venue exist on ticket', () => {
+    const corroboration = evaluateOfficialPageTicketCorroboration({
+      canonical: {
+        eventId: 'evt-nova',
+        title: 'NOVA',
+        startDate: EVENT_DATE,
+        venueName: 'Hall X',
+        ticketUrl: NOVA_TICKET,
+      },
+      ticketEvidence: {
+        listRowTitle: 'NOVA presented by Warehouse Collective @ Hall X',
+        eventDate: EVENT_DATE,
+        venueName: 'Hall X',
+      },
+      officialPage: {
+        pageTitle: 'Warehouse Collective presents NOVA',
+        outboundTicketUrls: [NOVA_TICKET],
+      },
+      publicTicketPageUrl: NOVA_TICKET,
+      verifiedAt: VERIFIED_AT,
+    });
+
+    expect(corroboration.officialOutboundRelationship.confirmed).toBe(true);
+    expect(corroboration.corroborated).toBe(true);
+  });
+});

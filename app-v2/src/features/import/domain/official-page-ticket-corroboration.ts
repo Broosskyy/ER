@@ -209,19 +209,11 @@ export function identityPairAgrees(
     return true;
   }
 
-  const leftDate = options?.leftDate?.trim();
-  const rightDate = options?.rightDate?.trim();
-  const leftVenue = options?.leftVenue?.trim();
-  const rightVenue = options?.rightVenue?.trim();
-
-  if (Boolean(leftDate) !== Boolean(rightDate)) {
-    return false;
-  }
-  if (Boolean(leftVenue) !== Boolean(rightVenue)) {
+  if (!match.dateAgrees || !match.venueAgrees) {
     return false;
   }
 
-  return match.dateAgrees && match.venueAgrees && match.titleScore >= 0.35;
+  return match.titleScore >= 0.35;
 }
 
 function hasOfficialCorroborationFields(official: OfficialPageIdentityEvidence): boolean {
@@ -234,6 +226,7 @@ function publicSourcesAgree(
   options?: {
     verifiedAt?: string;
     officialOutboundConfirmed?: boolean;
+    slugRelationshipConfirmed?: boolean;
   },
 ): IdentityMatchResult {
   return evaluatePublicIdentityMatch(officialAsEventSnapshot(official), ticketEvidence, options);
@@ -295,9 +288,9 @@ function buildSuggestedIdentityCorrections(input: {
 
   if (
     publicVenue &&
-    !input.officialVsCanonical.venueAgrees &&
     !input.ticketVsCanonical.venueAgrees &&
-    input.officialVsTicket.venueAgrees
+    input.officialVsTicket.venueAgrees &&
+    (!input.official.venueName?.trim() || !input.officialVsCanonical.venueAgrees)
   ) {
     corrections.push({
       field: 'venueName',

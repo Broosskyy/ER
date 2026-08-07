@@ -28,11 +28,100 @@ export interface OfficialWebsitePublicTruth {
   descriptionSource?: string;
 }
 
+function skipHtmlWhitespace(source: string, index: number): number {
+  let cursor = index;
+  while (cursor < source.length && /\s/.test(source[cursor]!)) {
+    cursor += 1;
+  }
+  return cursor;
+}
+
+/** Quote-aware attribute parser for isolated tag attribute strings. */
+export function parseHtmlAttributes(source: string): Map<string, string> {
+  const attrs = new Map<string, string>();
+  let index = 0;
+
+  const readName = (): string | undefined => {
+    index = skipHtmlWhitespace(source, index);
+    const start = index;
+    while (index < source.length && /[^\s="'/>]/.test(source[index]!)) {
+      index += 1;
+    }
+    if (start === index) {
+      return undefined;
+    }
+    return source.slice(start, index).toLowerCase();
+  };
+
+  const readValue = (): string | undefined => {
+    index = skipHtmlWhitespace(source, index);
+    if (index >= source.length) {
+      return undefined;
+    }
+    const quote = source[index];
+    if (quote === '"' || quote === "'") {
+      index += 1;
+      let value = '';
+      while (index < source.length) {
+        if (source[index] === quote) {
+          index += 1;
+          return value;
+        }
+        value += source[index];
+        index += 1;
+      }
+      return value;
+    }
+    const start = index;
+    while (index < source.length && !/\s/.test(source[index]!)) {
+      index += 1;
+    }
+    return source.slice(start, index);
+  };
+
+  while (index < source.length) {
+    const name = readName();
+    if (!name) {
+      break;
+    }
+    index = skipHtmlWhitespace(source, index);
+    if (source[index] !== '=') {
+      continue;
+    }
+    index += 1;
+    const value = readValue();
+    if (value !== undefined) {
+      attrs.set(name, value);
+    }
+  }
+
+  return attrs;
+}
+
+function extractMetaTagAttributes(html: string): Map<string, string>[] {
+  const tags: Map<string, string>[] = [];
+  for (const match of html.matchAll(/<meta\b([^>]*?)>/gi)) {
+    const attrs = parseHtmlAttributes(match[1] ?? '');
+    if (attrs.size > 0) {
+      tags.push(attrs);
+    }
+  }
+  return tags;
+}
+
 function readMeta(html: string, property: string): string | undefined {
-  const match =
-    html.match(new RegExp(`property=["']${property}["'][^>]*content=["']([^"']+)["']`, 'i')) ??
-    html.match(new RegExp(`content=["']([^"']+)["'][^>]*property=["']${property}["']`, 'i'));
-  return match?.[1]?.trim();
+  const target = property.toLowerCase();
+  for (const attrs of extractMetaTagAttributes(html)) {
+    const key = attrs.get('property') ?? attrs.get('name');
+    if (!key || key.toLowerCase() !== target) {
+      continue;
+    }
+    const content = attrs.get('content');
+    if (content?.trim()) {
+      return decodeHtmlEntities(content).trim();
+    }
+  }
+  return undefined;
 }
 
 function extractOutboundTicketLinks(html: string): string[] {
