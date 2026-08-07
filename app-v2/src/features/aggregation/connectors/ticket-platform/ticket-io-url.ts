@@ -136,24 +136,70 @@ export function extractTicketIoEventSlug(url: string): string | undefined {
   }
 }
 
+export function normalizeTicketIoListAnchorUrl(anchorHref: string, shopRootUrl?: string): string | undefined {
+  const trimmed = anchorHref.trim();
+  if (!trimmed) {
+    return undefined;
+  }
+  try {
+    if (shopRootUrl?.trim()) {
+      return new URL(trimmed, shopRootUrl).href;
+    }
+    return new URL(trimmed.startsWith('http') ? trimmed : `https://${trimmed}`).href;
+  } catch {
+    return undefined;
+  }
+}
+
+export function buildShopRootEventUrl(shopRootUrl: string, eventSlug: string): string | undefined {
+  return normalizeTicketIoListAnchorUrl(`/${eventSlug}/`, shopRootUrl);
+}
+
+export function ticketIoUrlsShareEventSlug(left: string, right: string, eventSlug: string): boolean {
+  return (
+    extractTicketIoEventSlug(left) === eventSlug && extractTicketIoEventSlug(right) === eventSlug
+  );
+}
+
+export interface TicketIoEventUrlAliasProof {
+  valid: boolean;
+  eventSlug: string;
+  linkedEventUrl?: string;
+  redirectFinalUrl?: string;
+}
+
 export function validateTicketIoEventUrl(input: {
   ticketUrl: string;
   shopSlug: string;
   title?: string;
   eventSlug?: string;
+  aliasProof?: TicketIoEventUrlAliasProof;
 }): { valid: boolean; reason?: string } {
   const shopSlug = extractTicketIoShopSlug(input.shopSlug) ?? input.shopSlug;
   const ticketShopSlug = extractTicketIoShopSlug(input.ticketUrl);
   if (!ticketShopSlug) {
     return { valid: false, reason: 'not_ticket_io_url' };
   }
-  if (ticketShopSlug !== shopSlug.toLowerCase()) {
-    return { valid: false, reason: 'wrong_shop' };
-  }
 
   const slug = input.eventSlug ?? extractTicketIoEventSlug(input.ticketUrl);
   if (!slug) {
     return { valid: false, reason: 'missing_event_slug' };
+  }
+
+  if (ticketShopSlug !== shopSlug.toLowerCase()) {
+    const aliasProof = input.aliasProof;
+    if (!aliasProof?.valid || aliasProof.eventSlug !== slug) {
+      return { valid: false, reason: 'wrong_shop' };
+    }
+    const finalUrl = aliasProof.redirectFinalUrl ?? aliasProof.linkedEventUrl;
+    if (!finalUrl || extractTicketIoEventSlug(finalUrl) !== slug) {
+      return { valid: false, reason: 'alias_slug_not_proven' };
+    }
+    const finalHost = hostnameFromTicketIoUrl(finalUrl);
+    const ticketHost = hostnameFromTicketIoUrl(input.ticketUrl);
+    if (!finalHost || !ticketHost || finalHost !== ticketHost) {
+      return { valid: false, reason: 'alias_host_not_proven' };
+    }
   }
 
   const normalized = normalizeTicketIoEventUrl(input.ticketUrl);
@@ -167,6 +213,14 @@ export function validateTicketIoEventUrl(input: {
   }
 
   return { valid: true };
+}
+
+function hostnameFromTicketIoUrl(url: string): string | undefined {
+  try {
+    return new URL(url).hostname.toLowerCase();
+  } catch {
+    return undefined;
+  }
 }
 
 export function ticketIoEventUrlsEquivalent(left: string, right: string): boolean {

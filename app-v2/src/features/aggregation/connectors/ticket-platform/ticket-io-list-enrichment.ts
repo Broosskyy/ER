@@ -1,10 +1,18 @@
 import { decodeHtmlEntities } from '@/features/import/normalization/text-normalizer';
 
 import { formatTicketPriceFromOverviewText } from './format-ticket-price';
+import { parseTicketIoListCardJsonLdBinding } from './ticket-io-shop-alias-discovery';
 import { parseTicketIoCardRowContexts } from './ticket-io-list-card-enrichment';
+import { normalizeTicketIoListAnchorUrl } from './ticket-io-url';
 
 export interface TicketIoListRowContext {
   eventSlug: string;
+  listRowTitle?: string;
+  eventDate?: string;
+  venueName?: string;
+  /** Slug-bound href from the same list card (resolved against the shop root). */
+  linkedEventUrl?: string;
+  publicTicketPageUrl?: string;
   genreText?: string;
   genreNames?: string[];
   priceOverviewText?: string;
@@ -44,7 +52,10 @@ function parseGenreNames(genreText: string | undefined): string[] | undefined {
   return parts.length > 0 ? [...new Set(parts)] : [cleaned];
 }
 
-export function parseTicketIoListRowContexts(html: string): Map<string, TicketIoListRowContext> {
+export function parseTicketIoListRowContexts(
+  html: string,
+  shopRootUrl?: string,
+): Map<string, TicketIoListRowContext> {
   const contexts = new Map<string, TicketIoListRowContext>();
   let match: RegExpExecArray | null;
   const pattern = new RegExp(EVENT_ROW_PATTERN.source, 'gi');
@@ -63,8 +74,25 @@ export function parseTicketIoListRowContexts(html: string): Map<string, TicketIo
     const priceOverviewText = priceMatch?.[1] ? decodeHtmlEntities(priceMatch[1]) : undefined;
     const soldOut = priceOverviewText ? /ausverkauft|sold\s*out/i.test(priceOverviewText) : false;
 
+    const binding = parseTicketIoListCardJsonLdBinding(rowHtml, eventSlug, shopRootUrl);
+    const titleMatch = rowHtml.match(/class="a-eventlink"[^>]*>([^<]+)<\/a>/i);
+    const anchorMatch =
+      rowHtml.match(/class="a-eventlink"[^>]*href=["']([^"']+)["']/i) ??
+      rowHtml.match(/href=["'](\/[A-Za-z0-9]+\/)["'][^>]*class="[^"]*a-eventlink/i);
+    const linkedEventUrl = anchorMatch?.[1]
+      ? normalizeTicketIoListAnchorUrl(anchorMatch[1], shopRootUrl)
+      : shopRootUrl
+        ? normalizeTicketIoListAnchorUrl(`/${eventSlug}/`, shopRootUrl)
+        : undefined;
+    const listRowTitle = binding.listRowTitle ?? (titleMatch?.[1] ? decodeHtmlEntities(titleMatch[1]).trim() : undefined);
+
     contexts.set(eventSlug, {
       eventSlug,
+      listRowTitle,
+      eventDate: binding.eventDate,
+      venueName: binding.venueName,
+      linkedEventUrl,
+      publicTicketPageUrl: binding.publicTicketPageUrl ?? linkedEventUrl,
       genreText: decodedGenreText,
       genreNames: parseGenreNames(decodedGenreText),
       priceOverviewText,
@@ -77,14 +105,47 @@ export function parseTicketIoListRowContexts(html: string): Map<string, TicketIo
 }
 
 /** Merges legacy table rows and modern card rows for a Ticket.io shop list page. */
-export function parseAllTicketIoListRowContexts(html: string): Map<string, TicketIoListRowContext> {
-  const merged = parseTicketIoListRowContexts(html);
+export function parseAllTicketIoListRowContexts(
+  html: string,
+  shopRootUrl?: string,
+): Map<string, TicketIoListRowContext> {
+  const merged = parseTicketIoListRowContexts(html, shopRootUrl);
   for (const [slug, context] of parseTicketIoCardRowContexts(html)) {
-    if (!merged.has(slug) || (!merged.get(slug)?.priceText && context.priceText)) {
-      merged.set(slug, { ...merged.get(slug), ...context });
+    const existing = merged.get(slug);
+    const cardHtml = extractCardHtmlForSlug(html, slug);
+    const binding = cardHtml
+      ? parseTicketIoListCardJsonLdBinding(cardHtml, slug, shopRootUrl)
+      : {};
+    const enriched = {
+      ...context,
+      ...existing,
+      listRowTitle: binding.listRowTitle ?? existing?.listRowTitle ?? context.listRowTitle,
+      eventDate: binding.eventDate ?? existing?.eventDate ?? context.eventDate,
+      venueName: binding.venueName ?? existing?.venueName ?? context.venueName,
+      linkedEventUrl: existing?.linkedEventUrl ?? context.linkedEventUrl,
+      publicTicketPageUrl:
+        binding.publicTicketPageUrl ?? existing?.publicTicketPageUrl ?? context.publicTicketPageUrl,
+      priceOverviewText: context.priceOverviewText ?? existing?.priceOverviewText,
+      priceText: context.priceText ?? existing?.priceText,
+      soldOut: context.soldOut ?? existing?.soldOut,
+    };
+    if (!merged.has(slug) || (!merged.get(slug)?.priceText && enriched.priceText)) {
+      merged.set(slug, enriched);
     }
   }
   return merged;
+}
+
+function extractCardHtmlForSlug(html: string, slug: string): string | undefined {
+  const pattern = new RegExp(
+    `<a[^>]+href="/${slug}/"[^>]*class="[^"]*a-eventlink[^"]*"`,
+    'i',
+  );
+  const match = pattern.exec(html);
+  if (match?.index === undefined) {
+    return undefined;
+  }
+  return html.slice(Math.max(0, match.index - 500), match.index + 2500);
 }
 
 export function extractTicketIoEventSlugFromUrl(url: string): string | undefined {

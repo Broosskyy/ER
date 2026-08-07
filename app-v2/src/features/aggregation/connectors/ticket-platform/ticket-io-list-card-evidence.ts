@@ -1,5 +1,11 @@
 import { parseGermanPriceText } from './format-ticket-price';
 import { classifyTicketIoDetailHtml } from './ticket-io-detail-classification';
+import {
+  buildSlugBindingProof,
+  resolveTicketAdmissionSnapshot,
+  type TicketIoShopDiscoveryResult,
+  type TicketIoSlugBindingProof,
+} from './ticket-io-shop-alias-discovery';
 import type { TicketIoListRowContext } from './ticket-io-list-enrichment';
 import type { TicketIoTicketOffer } from './ticket-io-detail-parser';
 import type { ParsedTicketPlatformEvent } from './types';
@@ -23,6 +29,17 @@ export interface TicketIoListCardEvidence {
   verifiedAt?: string;
   soldOut?: boolean;
   identityEvidenceConflict?: boolean;
+  discoveredShopRoot?: string;
+  shopDiscoveryMethod?: string;
+  sourceOfficialPageUrl?: string;
+  shopRootHost?: string;
+  linkedEventUrl?: string;
+  redirectFinalUrl?: string;
+  redirectFinalHost?: string;
+  existingCanonicalHost?: string;
+  aliasEvidenceSource?: string;
+  slugBindingProof?: TicketIoSlugBindingProof;
+  redirectOrEmbedRelationship?: string;
 }
 
 export interface BuildTicketIoListCardEvidenceInput {
@@ -33,6 +50,18 @@ export interface BuildTicketIoListCardEvidenceInput {
   observedAt: string;
   verifiedAt?: string;
   detailPageTitle?: string;
+  shopDiscovery?: TicketIoShopDiscoveryResult;
+  shopRootUrl?: string;
+  aliasProof?: import('./ticket-io-shop-alias-discovery').TicketIoPerSlugAliasProof;
+  existingCanonicalUrl?: string;
+  previousAdmissionSnapshot?: {
+    priceText?: string;
+    ticketOffers?: TicketIoTicketOffer[];
+  };
+  detailAdmission?: {
+    priceText?: string;
+    ticketOffers?: TicketIoTicketOffer[];
+  };
 }
 
 function extractDetailPageTitle(detailHtml: string | undefined): string | undefined {
@@ -73,7 +102,7 @@ export function ticketIoListDetailIdentityConflict(
 export function buildTicketIoListCardEvidence(
   input: BuildTicketIoListCardEvidenceInput,
 ): TicketIoListCardEvidence | undefined {
-  const listRowTitle = input.event.title?.trim();
+  const listRowTitle = input.listContext?.listRowTitle?.trim() || input.event.title?.trim();
   if (!listRowTitle) {
     return undefined;
   }
@@ -82,25 +111,38 @@ export function buildTicketIoListCardEvidence(
   const detailPageTitle =
     input.detailPageTitle?.trim() ||
     (detailStatus === 'ok' ? extractDetailPageTitle(input.detailHtml) : undefined);
+  const eventDate = input.listContext?.eventDate ?? input.event.startDate;
+  const venueName = input.listContext?.venueName ?? input.event.venueName;
   const identityEvidenceConflict =
     detailStatus === 'ok' &&
-    ticketIoListDetailIdentityConflict(
-      detailPageTitle,
-      listRowTitle,
-      input.event.startDate,
-      input.event.venueName,
-    );
+    ticketIoListDetailIdentityConflict(detailPageTitle, listRowTitle, eventDate, venueName);
 
-  const admissionPriceText =
-    input.listContext?.priceText ??
-    (input.listContext?.soldOut ? 'Ausverkauft' : undefined);
+  const listCardOffers = buildListCardAdmissionOffers(input.listContext, input.event.ticketUrl);
+  const admissionSnapshot = resolveTicketAdmissionSnapshot({
+    listCard: input.listContext,
+    listCardOffers,
+    detail: {
+      priceText: input.detailAdmission?.priceText,
+      ticketOffers: input.detailAdmission?.ticketOffers,
+      detailFetchStatus: detailStatus,
+    },
+    previousSnapshot: input.previousAdmissionSnapshot,
+  });
+
+  const slugBindingProof = input.listContext
+    ? buildSlugBindingProof({
+        listContext: input.listContext,
+        shopRootUrl: input.shopDiscovery?.discoveredShopRoot ?? input.shopRootUrl,
+        redirectFinalUrl: input.aliasProof?.redirectFinalUrl,
+      })
+    : undefined;
 
   return {
     listRowTitle,
-    eventDate: input.event.startDate,
-    venueName: input.event.venueName,
-    priceText: admissionPriceText,
-    publicTicketPageUrl: input.event.ticketUrl,
+    eventDate,
+    venueName,
+    priceText: admissionSnapshot.priceText ?? input.listContext?.priceText,
+    publicTicketPageUrl: input.listContext?.publicTicketPageUrl ?? input.event.ticketUrl,
     eventSlug: input.event.eventSlug,
     evidenceRole: TICKET_IO_PUBLIC_SHOP_LIST_EVIDENCE_ROLE,
     detailFetchStatus: detailStatus,
@@ -108,6 +150,35 @@ export function buildTicketIoListCardEvidence(
     verifiedAt: input.verifiedAt ?? input.observedAt,
     soldOut: input.listContext?.soldOut,
     ...(identityEvidenceConflict ? { identityEvidenceConflict: true } : {}),
+    ...(input.shopDiscovery?.discoveredShopRoot
+      ? { discoveredShopRoot: input.shopDiscovery.discoveredShopRoot }
+      : {}),
+    ...(input.shopDiscovery?.shopDiscoveryMethod
+      ? { shopDiscoveryMethod: input.shopDiscovery.shopDiscoveryMethod }
+      : {}),
+    ...(input.shopDiscovery?.sourceOfficialPageUrl
+      ? { sourceOfficialPageUrl: input.shopDiscovery.sourceOfficialPageUrl }
+      : {}),
+    ...(slugBindingProof?.shopRootHost ? { shopRootHost: slugBindingProof.shopRootHost } : {}),
+    ...(slugBindingProof?.linkedEventUrl ? { linkedEventUrl: slugBindingProof.linkedEventUrl } : {}),
+    ...(input.aliasProof?.redirectFinalUrl
+      ? { redirectFinalUrl: input.aliasProof.redirectFinalUrl }
+      : {}),
+    ...(slugBindingProof?.redirectFinalHost
+      ? { redirectFinalHost: slugBindingProof.redirectFinalHost }
+      : input.aliasProof?.redirectFinalHost
+        ? { redirectFinalHost: input.aliasProof.redirectFinalHost }
+        : {}),
+    ...(input.aliasProof?.existingCanonicalHost
+      ? { existingCanonicalHost: input.aliasProof.existingCanonicalHost }
+      : {}),
+    ...(input.aliasProof?.evidenceSource
+      ? { aliasEvidenceSource: input.aliasProof.evidenceSource }
+      : {}),
+    ...(slugBindingProof ? { slugBindingProof } : {}),
+    ...(input.shopDiscovery?.redirectOrEmbedRelationship
+      ? { redirectOrEmbedRelationship: input.shopDiscovery.redirectOrEmbedRelationship }
+      : {}),
   };
 }
 
