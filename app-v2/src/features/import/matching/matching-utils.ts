@@ -61,14 +61,83 @@ export function extractPostalCode(value?: string): string | undefined {
   return match?.[0];
 }
 
+export interface EventCalendarDay {
+  year: number;
+  month: number;
+  day: number;
+}
+
+const ISO_DATE_ONLY = /^(\d{4})-(\d{2})-(\d{2})$/;
+const ISO_DATE_TIME =
+  /^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\.\d+)?)?)?(Z|[+-]\d{2}:\d{2})?$/;
+
+/**
+ * Parses the local event calendar day from an ISO date or date-time string.
+ * Uses the literal Y-M-D when an offset is present — no UTC shift of the visible event day.
+ */
+export function parseEventCalendarDay(value: string): EventCalendarDay | null {
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  const dateOnly = trimmed.match(ISO_DATE_ONLY);
+  if (dateOnly) {
+    return {
+      year: Number(dateOnly[1]),
+      month: Number(dateOnly[2]),
+      day: Number(dateOnly[3]),
+    };
+  }
+
+  const iso = trimmed.match(ISO_DATE_TIME);
+  if (iso) {
+    return {
+      year: Number(iso[1]),
+      month: Number(iso[2]),
+      day: Number(iso[3]),
+    };
+  }
+
+  const parsed = new Date(trimmed);
+  if (Number.isNaN(parsed.getTime())) {
+    return null;
+  }
+
+  return {
+    year: parsed.getUTCFullYear(),
+    month: parsed.getUTCMonth() + 1,
+    day: parsed.getUTCDate(),
+  };
+}
+
+/** True when both values refer to the same local event calendar day (time-of-day ignored). */
 export function sameCalendarDay(left: string, right: string): boolean {
-  const l = new Date(left);
-  const r = new Date(right);
-  if (Number.isNaN(l.getTime()) || Number.isNaN(r.getTime())) return false;
+  const l = parseEventCalendarDay(left);
+  const r = parseEventCalendarDay(right);
+  if (!l || !r) {
+    return false;
+  }
+  return l.year === r.year && l.month === r.month && l.day === r.day;
+}
+
+const ISO_TIME_PART =
+  /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2})(?:\.\d+)?)?(Z|[+-]\d{2}:\d{2})?$/;
+
+/** Non-critical hint: same event day but different clock times were declared. */
+export function eventDatesNeedTimeOfDayReview(left: string, right: string): boolean {
+  if (!sameCalendarDay(left, right)) {
+    return false;
+  }
+  const leftTime = left.trim().match(ISO_TIME_PART);
+  const rightTime = right.trim().match(ISO_TIME_PART);
+  if (!leftTime || !rightTime) {
+    return false;
+  }
   return (
-    l.getUTCFullYear() === r.getUTCFullYear() &&
-    l.getUTCMonth() === r.getUTCMonth() &&
-    l.getUTCDate() === r.getUTCDate()
+    leftTime[4] !== rightTime[4] ||
+    leftTime[5] !== rightTime[5] ||
+    (leftTime[6] ?? '00') !== (rightTime[6] ?? '00')
   );
 }
 

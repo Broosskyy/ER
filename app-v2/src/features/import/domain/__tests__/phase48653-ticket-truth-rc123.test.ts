@@ -78,8 +78,14 @@ describe('event evidence identity gate', () => {
         eventDate: '2026-08-08T20:00:00.000Z',
         venueName: 'Bootshaus',
       },
+      officialPage: {
+        pageTitle: 'Sommerfest Elektroküche 08.08.2026',
+        eventDate: '2026-08-08T20:00:00.000Z',
+        venueName: 'Bootshaus',
+        outboundTicketUrls: [NACHT_MANAGER_CHECKOUT],
+      },
       evidenceUrl: NACHT_MANAGER_CHECKOUT,
-      officialOutboundTicketUrls: [NACHT_MANAGER_CHECKOUT],
+      verifiedAt: '2026-08-06T10:00:00.000Z',
     });
     expect(gate.verdict).toBe('corroborated');
     expect(gate.criticalFieldsPublishAllowed).toBe(true);

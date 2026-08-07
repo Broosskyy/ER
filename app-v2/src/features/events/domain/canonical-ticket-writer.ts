@@ -43,6 +43,13 @@ export interface CanonicalTicketWritePatch {
 export interface CanonicalTicketWriteAudit {
   identityVerdict: string;
   identityReason: string;
+  canonicalIdentityReviewRequired: boolean;
+  suggestedIdentityCorrections: Array<{
+    field: string;
+    currentValue?: string;
+    suggestedValue?: string;
+    reason: string;
+  }>;
   freshnessDecision: string;
   freshnessFallbackRule: string;
   checkoutEvidenceUrl?: string;
@@ -95,6 +102,42 @@ function readOfficialOutboundTicketUrls(metadata: Record<string, unknown> | unde
   return raw.filter((entry): entry is string => typeof entry === 'string' && entry.trim().length > 0);
 }
 
+function readOfficialPageIdentity(metadata: Record<string, unknown> | undefined) {
+  const nested =
+    metadata?.officialPageIdentity && typeof metadata.officialPageIdentity === 'object'
+      ? (metadata.officialPageIdentity as Record<string, unknown>)
+      : undefined;
+
+  const pageTitle =
+    (typeof nested?.pageTitle === 'string' && nested.pageTitle) ||
+    (typeof metadata?.officialPageTitle === 'string' && metadata.officialPageTitle) ||
+    undefined;
+  const eventDate =
+    (typeof nested?.eventDate === 'string' && nested.eventDate) ||
+    (typeof metadata?.officialPageEventDate === 'string' && metadata.officialPageEventDate) ||
+    undefined;
+  const venueName =
+    (typeof nested?.venueName === 'string' && nested.venueName) ||
+    (typeof metadata?.officialPageVenueName === 'string' && metadata.officialPageVenueName) ||
+    undefined;
+  const officialPageUrl =
+    (typeof nested?.officialPageUrl === 'string' && nested.officialPageUrl) ||
+    (typeof metadata?.officialPageUrl === 'string' && metadata.officialPageUrl) ||
+    undefined;
+
+  if (!pageTitle && !eventDate && !venueName && !officialPageUrl) {
+    return undefined;
+  }
+
+  return {
+    officialPageUrl,
+    pageTitle,
+    eventDate,
+    venueName,
+    outboundTicketUrls: readOfficialOutboundTicketUrls(metadata),
+  };
+}
+
 function readEvidenceIdentityUrl(
   metadata: Record<string, unknown> | undefined,
   candidate?: CanonicalImportEvent,
@@ -144,8 +187,10 @@ function readEvidenceIdentityInput(
       venueName: typeof metadata?.venueName === 'string' ? metadata.venueName : undefined,
     },
     officialEventUrl: existing?.websiteUrl ?? candidate?.eventUrl ?? candidate?.originalLink,
+    officialPage: readOfficialPageIdentity(metadata),
     officialOutboundTicketUrls: readOfficialOutboundTicketUrls(metadata),
     evidenceUrl,
+    verifiedAt: readVerifiedAt(metadata),
   });
 
   return {
@@ -380,6 +425,8 @@ export function writeCanonicalTicketFields(input: CanonicalTicketWriteInput): Ca
   const audit: CanonicalTicketWriteAudit = {
     identityVerdict: identity.gate.verdict,
     identityReason: identity.gate.reason,
+    canonicalIdentityReviewRequired: identity.gate.canonicalIdentityReviewRequired,
+    suggestedIdentityCorrections: identity.gate.suggestedIdentityCorrections,
     freshnessDecision: freshnessDecision.reason,
     freshnessFallbackRule: freshnessDecision.fallbackRule,
     checkoutEvidenceUrl,

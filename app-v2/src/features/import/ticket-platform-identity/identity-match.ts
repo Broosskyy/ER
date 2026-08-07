@@ -38,7 +38,7 @@ function tokenOverlapScore(left: string, right: string): number {
   return overlap / Math.max(a.size, b.size);
 }
 
-function venueCompatible(eventVenue: string | undefined, evidenceVenue: string | undefined): boolean {
+export function venueCompatible(eventVenue: string | undefined, evidenceVenue: string | undefined): boolean {
   if (!eventVenue?.trim() || !evidenceVenue?.trim()) {
     return true;
   }
@@ -100,15 +100,23 @@ function pickStrongerIdentityMatch(
   return right.titleScore > left.titleScore ? right : left;
 }
 
+function datesCompatible(
+  eventStartDate: string | undefined,
+  evidenceEventDate: string | undefined,
+): boolean {
+  if (!evidenceEventDate?.trim() || !eventStartDate?.trim()) {
+    return true;
+  }
+  return sameCalendarDay(eventStartDate, evidenceEventDate);
+}
+
 function evaluateEvidenceTitle(
   event: EventIdentitySnapshot,
   evidence: Pick<PublicIdentityEvidence, 'eventDate' | 'venueName'>,
   evidenceTitle: string,
 ): IdentityMatchResult {
   const titleScore = tokenOverlapScore(event.title, evidenceTitle);
-  const dateAgrees = evidence.eventDate
-    ? sameCalendarDay(event.startDate ?? '', evidence.eventDate)
-    : true;
+  const dateAgrees = datesCompatible(event.startDate, evidence.eventDate);
   const venueAgrees = venueCompatible(event.venueName, evidence.venueName);
 
   if (titleScore >= 0.55 && dateAgrees && venueAgrees) {
@@ -173,6 +181,17 @@ export function evaluatePublicIdentityMatch(
       pickStrongerIdentityMatch(best, evaluateEvidenceTitle(event, evidence, evidenceTitle)),
     evaluateEvidenceTitle(event, evidence, evidenceTitles[0]!),
   );
+}
+
+export function publicSourcesStructuralAgree(
+  left: { eventDate?: string; venueName?: string },
+  right: { eventDate?: string; venueName?: string },
+  matchResult: Pick<IdentityMatchResult, 'dateAgrees'>,
+): boolean {
+  if (!left.eventDate?.trim() || !right.eventDate?.trim()) {
+    return false;
+  }
+  return matchResult.dateAgrees && venueCompatible(left.venueName, right.venueName);
 }
 
 export function sameTitleDifferentDate(
