@@ -17,6 +17,12 @@ import { extractTicketIoEventSlug } from './ticket-io-url';
 import { fetchTicketIoDetailPagesWithAudit, type TicketIoDetailFetchStats } from './ticket-io-detail-fetch';
 import { withTicketIoEffectiveLimits } from './ticket-io-effective-config';
 import { buildTicketPlatformEvidenceMetadata } from './ticket-platform-evidence-metadata';
+import {
+  buildListCardAdmissionOffers,
+  buildTicketIoListCardEvidence,
+  resolveTicketIoDetailFetchStatus,
+} from './ticket-io-list-card-evidence';
+import { parseAllTicketIoListRowContexts } from './ticket-io-list-enrichment';
 import { classifyExternalLineupBlocker } from '@/features/events/domain/external-lineup-blocker-classification';
 import type { TicketPlatformSourceConfig } from './types';
 import { inferSourceCategory } from '@/features/sources/domain/source-categories';
@@ -204,23 +210,59 @@ export async function fetchTicketPlatformEvents(input: {
       (config.limits?.maxDetailPages ?? 0) > 0 &&
       Object.keys(detailHtmlByUrl).length === 0);
 
+  const ticketIoListContexts =
+    config.platform === 'ticket_io' ? parseAllTicketIoListRowContexts(html) : undefined;
+
   return events.map((event) => {
     const normalized = toNormalizedTicketFields(event);
     const eventSlug =
       event.eventSlug ??
       extractTicketIoEventSlug(normalized.ticketUrl) ??
       extractTicketIoEventSlug(normalized.eventUrl);
-    const eventDetailFetched = Boolean(eventSlug && detailHtmlBySlug[eventSlug]);
     const detailHtml =
       config.platform === 'ticket_io'
         ? eventSlug
           ? detailHtmlBySlug[eventSlug]
           : undefined
         : detailHtmlByUrl[event.eventUrl] ?? detailHtmlByUrl[normalized.eventUrl];
+    const detailFetchStatus =
+      config.platform === 'ticket_io'
+        ? resolveTicketIoDetailFetchStatus(detailHtml)
+        : undefined;
+    const eventDetailFetched = Boolean(
+      eventSlug &&
+        detailHtmlBySlug[eventSlug] &&
+        (config.platform !== 'ticket_io' || detailFetchStatus !== 'pow_challenge'),
+    );
     const checkoutUrl =
       config.platform === 'ticket_king' && detailHtml
         ? extractNativeEventCheckoutUrl(detailHtml)
         : undefined;
+
+    const listContext =
+      config.platform === 'ticket_io' && eventSlug
+        ? ticketIoListContexts?.get(eventSlug)
+        : undefined;
+    const listCardEvidence =
+      config.platform === 'ticket_io'
+        ? buildTicketIoListCardEvidence({
+            event,
+            listContext,
+            detailHtml,
+            detailFetchStatus: detailFetchStatus ?? 'missing',
+            observedAt,
+            verifiedAt: observedAt,
+          })
+        : undefined;
+    const listCardAdmissionOffers =
+      config.platform === 'ticket_io' &&
+      listCardEvidence &&
+      (detailFetchStatus === 'pow_challenge' || detailFetchStatus === 'missing')
+        ? buildListCardAdmissionOffers(listContext, event.ticketUrl)
+        : undefined;
+    const ticketOffers =
+      event.ticketOffers ?? listCardAdmissionOffers ?? undefined;
+
     const evidenceMetadata = buildTicketPlatformEvidenceMetadata({
       event,
       connectorKey: input.connectorKey,
@@ -231,7 +273,7 @@ export async function fetchTicketPlatformEvents(input: {
       verifiedAt: observedAt,
       detailHtml,
       checkoutUrl,
-      listRowTitle: !detailHtml && event.title ? event.title : undefined,
+      listCardEvidence,
       scopeStats: scopeStats as unknown as Record<string, unknown>,
     });
     return {
@@ -269,7 +311,7 @@ export async function fetchTicketPlatformEvents(input: {
         priceText: event.priceText,
         eventSlug: event.eventSlug ?? extractTicketIoEventSlug(normalized.ticketUrl),
         lineupEntries: event.lineupEntries,
-        ticketOffers: event.ticketOffers,
+        ticketOffers,
         genreNames: event.genreNames,
         eventAttributes: event.eventAttributes,
         floorCount: event.floorCount,
@@ -285,7 +327,10 @@ export async function fetchTicketPlatformEvents(input: {
           detailFetched: eventDetailFetched,
           shopPagesFetched: shopDetailPagesFetched,
           ...ticketIoDetailFetchStats,
-          blockedByPow: detailPagesBlocked,
+          blockedByPow:
+            detailFetchStatus === 'pow_challenge' ||
+            (detailFetchStatus === undefined && detailPagesBlocked),
+          detailFetchStatus,
           parserInvoked: eventDetailFetched,
           lineupBlockerClass: classifyExternalLineupBlocker({
             metadata: {

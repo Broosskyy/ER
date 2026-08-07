@@ -59,6 +59,23 @@ describe('sprint 43.1 production repair', () => {
       description: 'Real description',
       priceText: 'ab 12,00 €',
       startDate: '2026-07-31T23:00:00+02:00',
+      ticketUrl: 'https://proton-the-club.ticket.io/hyHJr2xd/',
+      sourceMetadata: {
+        listRowTitle: 'Event',
+        eventDate: '2026-07-31T23:00:00+02:00',
+        verifiedAt: '2026-01-01T00:00:00.000Z',
+        publicTicketPageUrl: 'https://proton-the-club.ticket.io/hyHJr2xd/',
+        evidenceRole: 'public_shop_list',
+        detailFetchStatus: 'pow_challenge',
+        ticketOffers: [
+          {
+            name: 'List admission',
+            priceAmount: 12,
+            priceCurrency: 'EUR',
+            purchaseUrl: 'https://proton-the-club.ticket.io/hyHJr2xd/',
+          },
+        ],
+      },
     } as CanonicalImportEvent;
 
     const enriched = importUpdateService.buildEnrichmentAdminEvent(existing, candidate);

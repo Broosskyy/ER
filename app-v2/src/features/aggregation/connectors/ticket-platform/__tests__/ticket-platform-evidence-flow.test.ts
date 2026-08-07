@@ -25,6 +25,10 @@ const TICKET_IO_DETAIL = join(
   process.cwd(),
   'src/features/aggregation/connectors/ticket-platform/fixtures/ticket-io-proton-shockone-detail-enriched.html',
 );
+const TICKET_IO_POW_DETAIL = join(
+  process.cwd(),
+  'src/features/aggregation/connectors/ticket-platform/fixtures/ticket-io-proton-shockone-detail.html',
+);
 const TICKET_KINGS_DETAIL = join(
   process.cwd(),
   'src/features/aggregation/connectors/ticket-platform/fixtures/ticket-kings-event-detail.html',
@@ -38,6 +42,37 @@ const GENERIC_TICKET_IO_LIST_HTML = `<table><tbody><tr><td id="event-row-hyHJr2x
 <script type="application/ld+json">{"@context":"http://schema.org","@type":"MusicEvent","name":"DNB CONNECTION pres. SHOCKONE","description":"N/A","startDate":"2026-07-31T23:00:00+02:00","location":{"@type":"Place","name":"Proton The Club","address":{"addressLocality":"Stuttgart"}},"offers":{"price":12,"priceCurrency":"EUR","url":"https://proton-the-club.ticket.io/hyHJr2xd/"},"performer":{"name":"Unbekannt"},"url":"https://proton-the-club.ticket.io/hyHJr2xd/"}</script>
 <ul class="fa-ul list-eventinfos"><li class="tio-overview-tickets-from"><span>Tickets from 12,00 Euro</span></li></ul>
 </td></tr></tbody></table>`;
+
+const TICKET_IO_TWO_CARD_LIST_HTML = `<table><tbody>
+<tr><td id="event-row-hyHJr2xd" class="row">
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"MusicEvent","name":"DNB CONNECTION pres. SHOCKONE","startDate":"2026-07-31T23:00:00+02:00","location":{"@type":"Place","name":"Proton The Club"},"offers":{"price":12,"priceCurrency":"EUR","url":"https://proton-the-club.ticket.io/hyHJr2xd/"},"url":"https://proton-the-club.ticket.io/hyHJr2xd/"}</script>
+<ul class="fa-ul list-eventinfos"><li class="tio-overview-tickets-from"><span>Tickets from 12,00 Euro</span></li></ul>
+</td></tr>
+<tr><td id="event-row-othrEv99" class="row">
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"MusicEvent","name":"Unrelated Warehouse Night","startDate":"2026-08-15T23:00:00+02:00","location":{"@type":"Place","name":"Other Venue"},"offers":{"price":99,"priceCurrency":"EUR","url":"https://proton-the-club.ticket.io/othrEv99/"},"url":"https://proton-the-club.ticket.io/othrEv99/"}</script>
+<ul class="fa-ul list-eventinfos"><li class="tio-overview-tickets-from"><span>Tickets from 99,00 Euro</span></li></ul>
+</td></tr>
+</tbody></table>`;
+
+const TICKET_IO_LIST_NO_PRICE_HTML = `<table><tbody><tr><td id="event-row-hyHJr2xd" class="row">
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"MusicEvent","name":"DNB CONNECTION pres. SHOCKONE","startDate":"2026-07-31T23:00:00+02:00","location":{"@type":"Place","name":"Proton The Club"},"offers":{"url":"https://proton-the-club.ticket.io/hyHJr2xd/"},"url":"https://proton-the-club.ticket.io/hyHJr2xd/"}</script>
+<ul class="fa-ul list-eventinfos"><li class="tio-overview-tickets-from"><span>Tickets available soon</span></li></ul>
+</td></tr></tbody></table>`;
+
+function shockoneExistingEvent(overrides: Partial<AdminEventRecord> = {}): AdminEventRecord {
+  return {
+    id: 'evt-shockone',
+    title: 'DNB CONNECTION pres. SHOCKONE',
+    description: 'Official description',
+    startDate: '2026-07-31T23:00:00+02:00',
+    venueName: 'Proton The Club',
+    venueCity: 'Stuttgart',
+    status: 'published',
+    createdAt: '2026-01-01T00:00:00.000Z',
+    updatedAt: '2026-01-01T00:00:00.000Z',
+    ...overrides,
+  };
+}
 
 function genericExistingEvent(overrides: Partial<AdminEventRecord> = {}): AdminEventRecord {
   return {
@@ -462,6 +497,248 @@ describe('ticket platform evidence flow', () => {
       });
       expect(gate.verdict).toBe('exact');
       expect(gate.criticalFieldsPublishAllowed).toBe(true);
+    });
+  });
+
+  describe('ticket.io list-card evidence fallback', () => {
+    async function fetchShockoneWithFixtures(options: {
+      listHtml: string;
+      detailHtml?: string;
+      observedAt?: string;
+    }) {
+      return fetchTicketPlatformEvents({
+        source: {
+          id: 'source-fixture',
+          name: 'Fixture Source',
+          type: 'ticket_platform',
+          url: 'https://proton-the-club.ticket.io/',
+          enabled: true,
+        },
+        importSource: {
+          id: 'source-fixture',
+          name: 'Fixture Source',
+          type: 'ticket_platform',
+          sourceConfig: {
+            ticketPlatform: {
+              platform: 'ticket_io',
+              shopSlug: 'proton-the-club',
+              timezone: 'Europe/Berlin',
+              limits: { maxDetailPages: 1 },
+            },
+          },
+        } as never,
+        connectorKey: 'ticket_platform',
+        fixtureHtml: options.listHtml,
+        fixtureDetailHtmlBySlug: options.detailHtml
+          ? { hyHJr2xd: options.detailHtml }
+          : undefined,
+        observedAt: options.observedAt ?? FIXTURE_OBSERVED_AT,
+      });
+    }
+
+    it('A uses list-card identity and admission price when detail is PoW-blocked', async () => {
+      const powDetail = readFileSync(TICKET_IO_POW_DETAIL, 'utf8');
+      const rawEvents = await fetchShockoneWithFixtures({
+        listHtml: GENERIC_TICKET_IO_LIST_HTML,
+        detailHtml: powDetail,
+      });
+      const shockone = rawEvents.find((event) => event.title.includes('SHOCKONE'));
+      expect(shockone?.sourceMetadata?.detailFetchStatus).toBe('pow_challenge');
+      expect(shockone?.sourceMetadata?.evidenceRole).toBe('public_shop_list');
+      expect(shockone?.sourceMetadata?.listRowTitle).toBe('DNB CONNECTION pres. SHOCKONE');
+      expect(shockone?.sourceMetadata?.verifiedAt).toBe(FIXTURE_OBSERVED_AT);
+      expect(shockone?.sourceMetadata?.publicTicketPageUrl).toBe(
+        'https://proton-the-club.ticket.io/hyHJr2xd/',
+      );
+
+      const write = writeCanonicalTicketFields({
+        existing: shockoneExistingEvent(),
+        candidate: {
+          externalId: shockone!.externalId,
+          sourceId: 'source-ticket-io-proton',
+          sourceName: 'Proton Ticket.io',
+          title: shockone!.title,
+          startDate: shockone!.startDate,
+          venueName: shockone!.venueName,
+          ticketUrl: shockone!.ticketUrl,
+          priceText: shockone!.priceText,
+          rawSourceType: 'json_ld',
+          sourceMetadata: shockone!.sourceMetadata as Record<string, unknown>,
+        },
+        fillOnly: true,
+      });
+
+      expect(write.audit.identityVerdict).toBe('exact');
+      expect(write.audit.blockedCriticalFields).toEqual([]);
+      expect(write.patch.ticketUrl).toBe('https://proton-the-club.ticket.io/hyHJr2xd/');
+      expect(write.patch.priceText).toBe('ab 12,00 €');
+    });
+
+    it('B does not invent price or phases when list card has no admission price', async () => {
+      const powDetail = readFileSync(TICKET_IO_POW_DETAIL, 'utf8');
+      const rawEvents = await fetchShockoneWithFixtures({
+        listHtml: TICKET_IO_LIST_NO_PRICE_HTML,
+        detailHtml: powDetail,
+      });
+      const shockone = rawEvents.find((event) => event.title.includes('SHOCKONE'));
+      expect(shockone?.sourceMetadata?.ticketOffers).toBeUndefined();
+
+      const write = writeCanonicalTicketFields({
+        existing: shockoneExistingEvent({ priceText: 'ab 18,00 €' }),
+        candidate: {
+          externalId: shockone!.externalId,
+          sourceId: 'source-ticket-io-proton',
+          sourceName: 'Proton Ticket.io',
+          title: shockone!.title,
+          startDate: shockone!.startDate,
+          venueName: shockone!.venueName,
+          ticketUrl: shockone!.ticketUrl,
+          rawSourceType: 'json_ld',
+          sourceMetadata: shockone!.sourceMetadata as Record<string, unknown>,
+        },
+        fillOnly: true,
+      });
+
+      expect(write.audit.identityVerdict).toBe('exact');
+      expect(write.patch.priceText).toBeUndefined();
+      expect(write.patch.ticketPhases).toBeUndefined();
+    });
+
+    it('C blocks critical fields when list title does not match the canonical event', async () => {
+      const powDetail = readFileSync(TICKET_IO_POW_DETAIL, 'utf8');
+      const wrongTitleList = GENERIC_TICKET_IO_LIST_HTML.replace(
+        'DNB CONNECTION pres. SHOCKONE',
+        'Wrong Event Title On Card',
+      );
+      const rawEvents = await fetchShockoneWithFixtures({
+        listHtml: wrongTitleList,
+        detailHtml: powDetail,
+      });
+      const shockone = rawEvents.find((event) => event.title.includes('Wrong Event'));
+      const write = writeCanonicalTicketFields({
+        existing: shockoneExistingEvent(),
+        candidate: {
+          externalId: shockone!.externalId,
+          sourceId: 'source-ticket-io-proton',
+          sourceName: 'Proton Ticket.io',
+          title: shockone!.title,
+          startDate: shockone!.startDate,
+          venueName: shockone!.venueName,
+          ticketUrl: shockone!.ticketUrl,
+          priceText: shockone!.priceText,
+          rawSourceType: 'json_ld',
+          sourceMetadata: shockone!.sourceMetadata as Record<string, unknown>,
+        },
+        fillOnly: true,
+      });
+
+      expect(write.audit.identityVerdict).toBe('mismatch');
+      expect(write.audit.blockedCriticalFields).toContain('priceText');
+      expect(write.patch.priceText).toBeUndefined();
+    });
+
+    it('D keeps title, date, venue, price, and URL bound to the same list card', async () => {
+      const powDetail = readFileSync(TICKET_IO_POW_DETAIL, 'utf8');
+      const rawEvents = await fetchShockoneWithFixtures({
+        listHtml: TICKET_IO_TWO_CARD_LIST_HTML,
+        detailHtml: powDetail,
+      });
+      const shockone = rawEvents.find((event) => event.title.includes('SHOCKONE'));
+      const other = rawEvents.find((event) => event.title.includes('Unrelated'));
+
+      expect(shockone?.priceText).toBe('ab 12,00 €');
+      expect(shockone?.ticketUrl).toBe('https://proton-the-club.ticket.io/hyHJr2xd/');
+      expect(other?.priceText).toBe('ab 99,00 €');
+      expect(other?.ticketUrl).toBe('https://proton-the-club.ticket.io/othrEv99/');
+      expect(shockone?.sourceMetadata?.listRowTitle).toBe('DNB CONNECTION pres. SHOCKONE');
+      expect(shockone?.sourceMetadata?.eventDate).toBe('2026-07-31T23:00:00+02:00');
+      expect(shockone?.sourceMetadata?.venueName).toBe('Proton The Club');
+    });
+
+    it('E skips freshness refresh when list-card evidence has no verifiedAt', async () => {
+      const powDetail = readFileSync(TICKET_IO_POW_DETAIL, 'utf8');
+      const rawEvents = await fetchShockoneWithFixtures({
+        listHtml: GENERIC_TICKET_IO_LIST_HTML,
+        detailHtml: powDetail,
+      });
+      const shockone = rawEvents.find((event) => event.title.includes('SHOCKONE'));
+      const listCardEvidence = (shockone!.sourceMetadata as Record<string, unknown>)
+        .listCardEvidence as Record<string, unknown>;
+      const metadata = {
+        ...(shockone!.sourceMetadata as Record<string, unknown>),
+        verifiedAt: undefined,
+        observedAt: undefined,
+        existingVerifiedAt: '2026-01-15T10:00:00.000Z',
+        listCardEvidence: {
+          ...listCardEvidence,
+          verifiedAt: undefined,
+          observedAt: undefined,
+        },
+      };
+
+      const write = writeCanonicalTicketFields({
+        existing: shockoneExistingEvent({ priceText: 'ab 18,00 €' }),
+        candidate: {
+          externalId: shockone!.externalId,
+          sourceId: 'source-ticket-io-proton',
+          sourceName: 'Proton Ticket.io',
+          title: shockone!.title,
+          startDate: shockone!.startDate,
+          venueName: shockone!.venueName,
+          ticketUrl: shockone!.ticketUrl,
+          priceText: shockone!.priceText,
+          rawSourceType: 'json_ld',
+          sourceMetadata: metadata,
+        },
+        fillOnly: true,
+      });
+
+      expect(write.patch.priceText).toBeUndefined();
+      expect(write.audit.freshnessFallbackRule).toBe('existing_untimestamped_not_preferred');
+    });
+
+    it('F blocks writes when accessible detail identity conflicts with list-card identity', async () => {
+      const conflictingDetail = `<html><head><title>Completely Different Event</title><meta property="og:title" content="Completely Different Event" /></head><body><div class="altcha">challenge</div></body></html>`;
+      const rawEvents = await fetchShockoneWithFixtures({
+        listHtml: GENERIC_TICKET_IO_LIST_HTML,
+        detailHtml: conflictingDetail.replace('altcha', 'x-waitio-location: pow'),
+      });
+
+      const shockone = rawEvents.find((event) => event.title.includes('SHOCKONE'));
+      expect(shockone?.sourceMetadata?.detailFetchStatus).toBe('pow_challenge');
+
+      const accessibleConflictDetail = readFileSync(TICKET_IO_DETAIL, 'utf8').replace(
+        'DNB CONNECTION pres. SHOCKONE',
+        'Completely Different Event',
+      );
+      const conflictEvents = await fetchShockoneWithFixtures({
+        listHtml: GENERIC_TICKET_IO_LIST_HTML,
+        detailHtml: accessibleConflictDetail,
+      });
+      const conflictEvent = conflictEvents.find((event) => event.title.includes('SHOCKONE'));
+      expect(conflictEvent?.sourceMetadata?.identityEvidenceConflict).toBe(true);
+      expect(conflictEvent?.sourceMetadata?.listRowTitle).toBeUndefined();
+
+      const write = writeCanonicalTicketFields({
+        existing: shockoneExistingEvent(),
+        candidate: {
+          externalId: conflictEvent!.externalId,
+          sourceId: 'source-ticket-io-proton',
+          sourceName: 'Proton Ticket.io',
+          title: conflictEvent!.title,
+          startDate: conflictEvent!.startDate,
+          venueName: conflictEvent!.venueName,
+          ticketUrl: conflictEvent!.ticketUrl,
+          priceText: conflictEvent!.priceText,
+          rawSourceType: 'json_ld',
+          sourceMetadata: conflictEvent!.sourceMetadata as Record<string, unknown>,
+        },
+        fillOnly: true,
+      });
+
+      expect(['mismatch', 'partial_review_only']).toContain(write.audit.identityVerdict);
+      expect(write.audit.blockedCriticalFields).toContain('priceText');
+      expect(write.patch.priceText).toBeUndefined();
     });
   });
 });

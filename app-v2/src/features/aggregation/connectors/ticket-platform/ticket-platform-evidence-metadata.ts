@@ -1,6 +1,8 @@
 import { decodeHtmlEntities } from '@/features/import/normalization/text-normalizer';
 import { normalizeExtractedTicketPlatformPageTitle } from '@/features/import/ticket-platform-identity/identity-match';
 import { classifyTicketDestination } from '@/features/events/domain/ticket-destination-classification';
+import { isTicketIoPowChallengePage } from './ticket-io-field-quality';
+import type { TicketIoListCardEvidence } from './ticket-io-list-card-evidence';
 
 import type { ParsedTicketPlatformEvent } from './types';
 
@@ -19,6 +21,7 @@ export interface TicketPlatformEvidenceMetadataInput {
   checkoutUrl?: string;
   listRowTitle?: string;
   scopeStats?: Record<string, unknown>;
+  listCardEvidence?: TicketIoListCardEvidence;
 }
 
 function extractPageTitleFromHtml(html: string | undefined): string | undefined {
@@ -57,13 +60,18 @@ export function buildTicketPlatformEvidenceMetadata(
   input: TicketPlatformEvidenceMetadataInput,
 ): Record<string, unknown> {
   const { event } = input;
-  const pageTitleRaw = extractPageTitleFromHtml(input.detailHtml);
+  const listCard = input.listCardEvidence;
+  const detailHtmlUsable =
+    input.detailHtml?.trim() &&
+    !(input.platform === 'ticket_io' && isTicketIoPowChallengePage(input.detailHtml));
+  const pageTitleRaw = detailHtmlUsable ? extractPageTitleFromHtml(input.detailHtml) : undefined;
   const pageTitle = pageTitleRaw
     ? normalizeExtractedTicketPlatformPageTitle(pageTitleRaw)
     : undefined;
   const listRowTitle =
+    (listCard?.identityEvidenceConflict ? undefined : listCard?.listRowTitle) ||
     input.listRowTitle?.trim() ||
-    extractListRowTitleFromDetailHtml(input.detailHtml, input.platform) ||
+    extractListRowTitleFromDetailHtml(detailHtmlUsable ? input.detailHtml : undefined, input.platform) ||
     undefined;
   const ticketUrl = event.ticketUrl?.trim();
   const classified = ticketUrl ? classifyTicketDestination(ticketUrl) : undefined;
@@ -94,11 +102,15 @@ export function buildTicketPlatformEvidenceMetadata(
   const verifiedAt =
     typeof input.verifiedAt === 'string' && input.verifiedAt.trim()
       ? input.verifiedAt.trim()
-      : undefined;
+      : listCard?.verifiedAt?.trim() || undefined;
   const observedAt =
     typeof input.observedAt === 'string' && input.observedAt.trim()
       ? input.observedAt.trim()
-      : verifiedAt;
+      : listCard?.observedAt?.trim() || verifiedAt;
+
+  const eventDate = listCard?.eventDate ?? event.startDate;
+  const venueName = listCard?.venueName ?? event.venueName;
+  const publicTicketPageFromList = listCard?.publicTicketPageUrl?.trim();
 
   return {
     connector: input.connectorKey,
@@ -109,14 +121,24 @@ export function buildTicketPlatformEvidenceMetadata(
     pageTitle,
     ...(pageTitleRaw && pageTitleRaw !== pageTitle ? { pageTitleRaw } : {}),
     listRowTitle,
-    eventDate: event.startDate,
-    venueName: event.venueName,
+    eventDate,
+    venueName,
     observedAt,
     verifiedAt,
-    publicCtaCandidateUrl,
-    publicTicketPageUrl,
+    publicCtaCandidateUrl: publicTicketPageFromList || publicCtaCandidateUrl,
+    publicTicketPageUrl: publicTicketPageFromList || publicTicketPageUrl,
     checkoutEvidenceUrl,
     sourceRoles: ['ticketing', 'enrichment'],
+    ...(listCard
+      ? {
+          evidenceRole: listCard.evidenceRole,
+          detailFetchStatus: listCard.detailFetchStatus,
+          listCardEvidence: listCard,
+          ...(listCard.identityEvidenceConflict
+            ? { identityEvidenceConflict: true }
+            : {}),
+        }
+      : {}),
     ...(event.checkoutProviderId ? { checkoutProviderId: event.checkoutProviderId } : {}),
   };
 }
