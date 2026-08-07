@@ -1,5 +1,5 @@
 import { parseGermanPriceText } from './format-ticket-price';
-import { isTicketIoPowChallengePage } from './ticket-io-field-quality';
+import { classifyTicketIoDetailHtml } from './ticket-io-detail-classification';
 import type { TicketIoListRowContext } from './ticket-io-list-enrichment';
 import type { TicketIoTicketOffer } from './ticket-io-detail-parser';
 import type { ParsedTicketPlatformEvent } from './types';
@@ -50,10 +50,7 @@ function extractDetailPageTitle(detailHtml: string | undefined): string | undefi
 }
 
 export function resolveTicketIoDetailFetchStatus(detailHtml?: string): TicketIoDetailFetchStatus {
-  if (!detailHtml?.trim()) {
-    return 'missing';
-  }
-  return isTicketIoPowChallengePage(detailHtml) ? 'pow_challenge' : 'ok';
+  return classifyTicketIoDetailHtml(detailHtml).detailFetchStatus;
 }
 
 export function ticketIoListDetailIdentityConflict(

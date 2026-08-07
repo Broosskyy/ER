@@ -7,9 +7,12 @@ import { decodeHtmlEntities, stripHtml } from '@/features/import/normalization/t
 
 import { formatGermanTicketPrice } from './format-ticket-price';
 import {
+  classifyTicketIoDetailHtml,
+  partitionTicketIoAdmissionProducts,
+} from './ticket-io-detail-classification';
+import {
   isTicketIoPlaceholderArtist,
   isTicketIoPlaceholderDescription,
-  isTicketIoPowChallengePage,
   sanitizeTicketIoArtistNames,
   sanitizeTicketIoDescription,
 } from './ticket-io-field-quality';
@@ -188,10 +191,6 @@ export function parseTicketIoDetailHtml(
   html: string,
   fallbackTitle?: string,
 ): TicketIoDetailEnrichment {
-  if (isTicketIoPowChallengePage(html)) {
-    return { blockedByPow: true };
-  }
-
   let description: string | undefined;
   let jsonLdArtists: string[] | undefined;
   let ticketOffers: TicketIoTicketOffer[] = [];
@@ -262,10 +261,18 @@ export function parseTicketIoDetailHtml(
       : []),
   ];
 
-  const allPrices = ticketOffers
+  const classification = classifyTicketIoDetailHtml(html);
+  if (classification.detailFetchStatus === 'pow_challenge') {
+    return { blockedByPow: true };
+  }
+
+  const { admissionProducts } = partitionTicketIoAdmissionProducts(ticketOffers);
+  const effectiveOffers = admissionProducts.length > 0 ? admissionProducts : ticketOffers;
+
+  const allPrices = effectiveOffers
     .map((offer) => offer.priceAmount)
     .filter((value): value is number => value !== undefined && Number.isFinite(value));
-  const availablePrices = ticketOffers
+  const availablePrices = effectiveOffers
     .filter((offer) => !offer.soldOut && offer.priceAmount !== undefined)
     .map((offer) => offer.priceAmount as number);
   const lowestPrice =
@@ -279,7 +286,7 @@ export function parseTicketIoDetailHtml(
     description: sanitizeTicketIoDescription(description),
     artistNames,
     lineupEntries: lineupEntries.length > 0 ? lineupEntries : undefined,
-    ticketOffers: ticketOffers.length > 0 ? ticketOffers : undefined,
+    ticketOffers: effectiveOffers.length > 0 ? effectiveOffers : undefined,
     priceAmount: lowestPrice,
     priceCurrency,
     priceText: soldOut

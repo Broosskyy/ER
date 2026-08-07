@@ -1,7 +1,7 @@
 import { extractJsonLdBlocks, collectJsonLdNodes } from '@/features/import/adapters/parsers/json-ld-parser';
 
 import { parseTicketIoListRowContexts } from './ticket-io-list-enrichment';
-import { isTicketIoPowChallengePage } from './ticket-io-field-quality';
+import { classifyTicketIoDetailHtml } from './ticket-io-detail-classification';
 import { extractTicketIoEventSlug } from './ticket-io-url';
 import { TicketIoRequestRateLimiter } from './ticket-io-rate-limit';
 import type { TicketPlatformSourceConfig } from './types';
@@ -108,7 +108,7 @@ export async function fetchTicketIoDetailPagesWithAudit(input: {
     detailUrlsAttempted += 1;
     try {
       const html = await input.fetchHtml(detailUrl);
-      if (isTicketIoPowChallengePage(html)) {
+      if (classifyTicketIoDetailHtml(html).detailFetchStatus === 'pow_challenge') {
         detailUrlsPowBlocked += 1;
         continue;
       }

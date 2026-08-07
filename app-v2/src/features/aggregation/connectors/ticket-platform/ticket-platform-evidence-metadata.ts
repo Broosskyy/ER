@@ -1,7 +1,7 @@
 import { decodeHtmlEntities } from '@/features/import/normalization/text-normalizer';
 import { normalizeExtractedTicketPlatformPageTitle } from '@/features/import/ticket-platform-identity/identity-match';
 import { classifyTicketDestination } from '@/features/events/domain/ticket-destination-classification';
-import { isTicketIoPowChallengePage } from './ticket-io-field-quality';
+import { classifyTicketIoDetailHtml } from './ticket-io-detail-classification';
 import type { TicketIoListCardEvidence } from './ticket-io-list-card-evidence';
 
 import type { ParsedTicketPlatformEvent } from './types';
@@ -63,7 +63,8 @@ export function buildTicketPlatformEvidenceMetadata(
   const listCard = input.listCardEvidence;
   const detailHtmlUsable =
     input.detailHtml?.trim() &&
-    !(input.platform === 'ticket_io' && isTicketIoPowChallengePage(input.detailHtml));
+    (input.platform !== 'ticket_io' ||
+      classifyTicketIoDetailHtml(input.detailHtml).detailFetchStatus === 'ok');
   const pageTitleRaw = detailHtmlUsable ? extractPageTitleFromHtml(input.detailHtml) : undefined;
   const pageTitle = pageTitleRaw
     ? normalizeExtractedTicketPlatformPageTitle(pageTitleRaw)
