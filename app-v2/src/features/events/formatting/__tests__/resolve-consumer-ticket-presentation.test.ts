@@ -9,11 +9,16 @@ import type { CanonicalTicketPhase } from '@/features/import/domain/canonical-ti
 import {
   auditConsumerTicketPresentationForEvent,
   dedupeConsumerTicketPhases,
+  isConsumerEventTimeEnded,
   presentationToConsumerSlots,
   resolveConsumerTicketPresentation,
 } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
 import { isConsumerDiagnosticText } from '@/features/events/formatting/consumer-ticket-text-sanitizer';
-import { toTicketSummaryViewModel } from '@/features/events/formatting/ticket-phase-consumer-bridge';
+import {
+  localizeConsumerTicketPhaseLabel,
+  toTicketSummaryViewModel,
+  toTicketTypeViewModels,
+} from '@/features/events/formatting/ticket-phase-consumer-bridge';
 
 function baseEvent(overrides: Partial<EventDisplayModel> = {}): EventDisplayModel {
   return {
@@ -141,6 +146,105 @@ describe('resolveConsumerTicketPresentation', () => {
     expect(isConsumerDiagnosticText('surface: ticket_io_detail')).toBe(true);
     expect(isConsumerDiagnosticText('Early bird ends Friday')).toBe(false);
   });
+
+  it('maps generic admission labels to Ticket with ab price on the card', () => {
+    const phases = [
+      admissionPhase({
+        id: 'list-admission',
+        name: 'List admission',
+        priceAmount: 26,
+        priceCurrency: 'EUR',
+        priceLabel: 'ab 26,00 €',
+      }),
+    ];
+    const [ticketType] = toTicketTypeViewModels(phases);
+
+    expect(localizeConsumerTicketPhaseLabel('List admission')).toEqual({
+      displayName: 'Ticket',
+      rawLabel: 'List admission',
+    });
+    expect(ticketType?.name).toBe('Ticket');
+    expect(ticketType?.priceLabel).toBe('ab 26,00 €');
+    expect(ticketType?.availabilityLabel).toBe('Verfügbar');
+    expect(ticketType?.accessibilityLabel).toBe('List admission: ab 26,00 €');
+
+    const [fromAmountOnly] = toTicketTypeViewModels([
+      admissionPhase({
+        id: 'list-admission-amount',
+        name: 'List admission',
+        priceAmount: 26,
+        priceCurrency: 'EUR',
+        priceLabel: undefined,
+      }),
+    ]);
+    expect(fromAmountOnly?.priceLabel).toBe('ab 26,00 €');
+  });
+
+  it('shows Beendet without ticket cards when endDateTime is in the past', () => {
+    const now = new Date('2026-08-08T12:00:00.000Z');
+    const event = baseEvent({
+      endDateTime: '2026-08-07T23:00:00.000Z',
+      displayPriceText: 'ab 40,00 €',
+      priceText: 'ab 40,00 €',
+      ticketUrl: 'https://bootshaus-tickets.ticket.io/YvJnLSXd/',
+      ticketPhases: [
+        admissionPhase({
+          id: 'list-admission',
+          name: 'List admission',
+          priceAmount: 40,
+          priceLabel: 'ab 40,00 €',
+        }),
+      ],
+    });
+
+    const presentation = resolveConsumerTicketPresentation(event, { now });
+    const section = toEventTicketSectionViewModel(event, { now });
+
+    expect(isConsumerEventTimeEnded({ endDateTime: event.endDateTime }, now)).toBe(true);
+    expect(presentation.ticketTypes).toHaveLength(0);
+    expect(presentation.availabilityLabel).toBe('Beendet');
+    expect(presentation.cta).toBe('Beendet');
+    expect(section.mode).toBe('unavailable');
+    expect(section.ticketTypes).toHaveLength(0);
+    expect(section.availabilityLabel).toBe('Beendet');
+    expect(section.ctaLabel).toBe('Beendet');
+  });
+
+  it('keeps overnight events available until explicit endDateTime', () => {
+    const now = new Date('2026-08-08T02:00:00.000Z');
+    const event = baseEvent({
+      startDateTime: '2026-08-07T20:00:00.000Z',
+      endDateTime: '2026-08-08T06:00:00.000Z',
+      ticketUrl: 'https://bootshaus-club.ticket.io/example/',
+      ticketPhases: [
+        admissionPhase({
+          id: 'admission',
+          name: 'Admission',
+          priceAmount: 30,
+        }),
+      ],
+    });
+
+    expect(isConsumerEventTimeEnded({ endDateTime: event.endDateTime }, now)).toBe(false);
+    const presentation = resolveConsumerTicketPresentation(event, { now });
+    expect(presentation.ticketTypes).toHaveLength(1);
+    expect(presentation.ticketTypes[0]?.name).toBe('Ticket');
+    expect(presentation.availabilityLabel).not.toBe('Beendet');
+  });
+
+  it('does not infer ended state when endDateTime is missing', () => {
+    const now = new Date('2026-08-08T12:00:00.000Z');
+    const event = baseEvent({
+      id: 'evt-1785339383539-0lxvjlp',
+      startDateTime: '2026-08-07T20:00:00.000Z',
+      endDateTime: undefined,
+      ticketUrl: 'https://bootshaus-tickets.ticket.io/YvJnLSXd/',
+    });
+
+    expect(isConsumerEventTimeEnded({ endDateTime: event.endDateTime }, now)).toBe(false);
+    const presentation = resolveConsumerTicketPresentation(event, { now });
+    expect(presentation.availabilityLabel).not.toBe('Beendet');
+  });
 });
 
 describe('acceptance event snapshots', () => {
@@ -185,19 +289,20 @@ describe('acceptance event snapshots', () => {
       label: 'BC173',
       event: baseEvent({
         id: 'evt-1785339410908-9691748',
-        displayPriceText: 'ab 23,00 €',
-        priceText: 'ab 23,00 €',
+        displayPriceText: 'ab 26,00 €',
+        priceText: 'ab 26,00 €',
         ticketPhases: [
           admissionPhase({
             id: 'bc173-admission',
-            name: 'Admission',
-            priceAmount: 23,
-            priceLabel: 'ab 23,00 €',
+            name: 'List admission',
+            priceAmount: 26,
+            priceLabel: 'ab 26,00 €',
           }),
         ],
       }),
-      header: 'ab 23,00 €',
+      header: 'ab 26,00 €',
       phaseName: 'Ticket',
+      phasePrice: 'ab 26,00 €',
     },
     {
       label: 'R3HAB',
@@ -207,9 +312,18 @@ describe('acceptance event snapshots', () => {
         priceText: 'ab 23,90 €',
         ticketUrl: 'https://bootshaus-club.ticket.io/C7JPnatZ/',
         ticketProviderLabel: 'Ticket.io',
+        ticketPhases: [
+          admissionPhase({
+            id: 'r3hab-admission',
+            name: 'List admission',
+            priceAmount: 23.9,
+            priceLabel: 'ab 23,90 €',
+          }),
+        ],
       }),
       header: 'ab 23,90 €',
-      phaseName: undefined,
+      phaseName: 'Ticket',
+      phasePrice: 'ab 23,90 €',
     },
     {
       label: 'Bootshaus Sommerfest',
@@ -245,7 +359,7 @@ describe('acceptance event snapshots', () => {
     },
   ] as const;
 
-  it.each(cases)('$label presentation contract', ({ event, header, phaseName }) => {
+  it.each(cases)('$label presentation contract', ({ event, header, phaseName, phasePrice }) => {
     const hero = toEventHeroViewModel(event);
     const section = toEventTicketSectionViewModel(event);
     const { audit } = auditConsumerTicketPresentationForEvent(event, { mode: section.mode, ctaLabel: section.ctaLabel });
@@ -258,6 +372,9 @@ describe('acceptance event snapshots', () => {
     if (phaseName) {
       expect(section.ticketTypes).toHaveLength(1);
       expect(section.ticketTypes[0]?.name).toBe(phaseName);
+      if (phasePrice) {
+        expect(section.ticketTypes[0]?.priceLabel).toBe(phasePrice);
+      }
     } else {
       expect(section.ticketTypes).toHaveLength(0);
     }

@@ -15,6 +15,18 @@ import {
 } from '@/features/events/formatting/ticket-phase-consumer-bridge';
 import { resolvePublicTicketPresentation } from '@/features/events/formatting/ticket-presentation';
 
+/** Consumer ended state uses explicit endDateTime only — never inferred default duration. */
+export function isConsumerEventTimeEnded(
+  input: { endDateTime?: string },
+  now: Date = new Date(),
+): boolean {
+  if (!input.endDateTime?.trim()) {
+    return false;
+  }
+  const endMs = Date.parse(input.endDateTime);
+  return Number.isFinite(endMs) && endMs <= now.getTime();
+}
+
 export interface ConsumerTicketPresentationSource {
   id?: string;
   title?: string;
@@ -28,6 +40,7 @@ export interface ConsumerTicketPresentationSource {
   ticketProviderLabel?: string;
   timezone?: string;
   lifecycleStatus?: LifecycleStatus;
+  endDateTime?: string;
 }
 
 export interface ConsumerTicketPresentationModel {
@@ -46,6 +59,7 @@ export interface ResolveConsumerTicketPresentationOptions {
   ctaLabel?: string;
   /** True only when the user has selected ticket quantities in an in-app cart. */
   hasCartSelection?: boolean;
+  now?: Date;
 }
 
 function phaseDedupeKey(phase: CanonicalTicketPhase): string {
@@ -117,6 +131,20 @@ export function resolveConsumerTicketPresentation(
   source: ConsumerTicketPresentationSource,
   options: ResolveConsumerTicketPresentationOptions = {},
 ): ConsumerTicketPresentationModel {
+  const now = options.now ?? new Date();
+  if (isConsumerEventTimeEnded({ endDateTime: source.endDateTime }, now)) {
+    return {
+      headerPriceLabel: resolveHeaderPriceLabel(source),
+      sectionPriceLabel: undefined,
+      ticketTypes: [],
+      summary: undefined,
+      showSummary: false,
+      availabilityLabel: 'Beendet',
+      providerLabel: undefined,
+      cta: 'Beendet',
+    };
+  }
+
   const canonicalTicket = readCanonicalTicket({
     ticketUrl: source.ticketUrl,
     websiteUrl: source.officialEventUrl,

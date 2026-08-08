@@ -14,6 +14,7 @@ import { resolveEventNoticeTitle } from '@/components/event-detail/event-detail-
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
 import { formatEventDateTime, formatEventTimeRange } from '@/features/events/formatting/date-time';
 import { toEventCardViewModel } from '@/features/events/formatting/event-card-view-model';
+import { isConsumerEventTimeEnded } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
 import {
   isTicketActionDisabled,
   resolveEventNoticeType,
@@ -321,7 +322,32 @@ export function toOrganizerDetailViewModel(
   };
 }
 
-export function toEventTicketSectionViewModel(event: EventDisplayModel): EventTicketSectionViewModel {
+export function toEventTicketSectionViewModel(
+  event: EventDisplayModel,
+  options?: { now?: Date },
+): EventTicketSectionViewModel {
+  const now = options?.now;
+  if (isConsumerEventTimeEnded({ endDateTime: event.endDateTime }, now)) {
+    const ticketPresentation = resolveConsumerTicketPresentation(event, {
+      mode: 'unavailable',
+      ctaLabel: 'Beendet',
+      now,
+    });
+
+    return {
+      mode: 'unavailable',
+      ticketTypes: [],
+      summary: undefined,
+      showSummary: false,
+      ctaLabel: ticketPresentation.cta,
+      priceLabel: undefined,
+      availabilityLabel: ticketPresentation.availabilityLabel,
+      externalUrlLabel: undefined,
+      noticeLabel: undefined,
+      accessibilityLabel: `Tickets für ${event.title}`,
+    };
+  }
+
   const presentation = resolveEventPresentation(event);
   const notice = resolveEventNoticeType(event);
   const disabled = isTicketActionDisabled(event);
@@ -362,6 +388,7 @@ export function toEventTicketSectionViewModel(event: EventDisplayModel): EventTi
   const ticketPresentation = resolveConsumerTicketPresentation(event, {
     mode: resolvedMode,
     ctaLabel,
+    now,
   });
 
   return {

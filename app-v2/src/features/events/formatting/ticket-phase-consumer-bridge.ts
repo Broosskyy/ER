@@ -1,5 +1,8 @@
 import type { TicketTypeViewModel, TicketSummaryViewModel } from '@/components/ticketing/view-models';
-import { formatGermanTicketPrice } from '@/features/aggregation/connectors/ticket-platform/format-ticket-price';
+import {
+  formatGermanTicketPrice,
+  parseGermanPriceText,
+} from '@/features/aggregation/connectors/ticket-platform/format-ticket-price';
 import type { CanonicalTicketPhase } from '@/features/import/domain/canonical-ticket-phase';
 import {
   deriveSummaryPriceTextFromPhases,
@@ -8,7 +11,11 @@ import {
 import { formatTimeInTimezone, hasKnownEventClockTime } from '@/features/events/formatting/date-time';
 import { isConsumerDiagnosticText } from '@/features/events/formatting/consumer-ticket-text-sanitizer';
 
-const GENERIC_ADMISSION_LABEL = /^(?:admission|general admission|entry)$/i;
+const GENERIC_ADMISSION_LABEL = /^(?:list\s+admission|admission|general admission|entry)$/i;
+
+export function isGenericConsumerAdmissionLabel(name: string): boolean {
+  return GENERIC_ADMISSION_LABEL.test(name.trim());
+}
 
 export function localizeConsumerTicketPhaseLabel(name: string): {
   displayName: string;
@@ -40,6 +47,23 @@ function formatSalesPeriodLabel(
   return fromLabel ?? untilLabel;
 }
 
+function resolveGenericAdmissionPriceLabel(phase: CanonicalTicketPhase): string | undefined {
+  if (phase.priceLabel) {
+    if (/\bab\b/i.test(phase.priceLabel)) {
+      return phase.priceLabel;
+    }
+    const parsed = parseGermanPriceText(phase.priceLabel);
+    if (parsed.amount !== undefined) {
+      return formatGermanTicketPrice(parsed.amount, parsed.currency ?? 'EUR', { prefix: 'ab' });
+    }
+    return phase.priceLabel;
+  }
+  if (phase.priceAmount !== undefined) {
+    return formatGermanTicketPrice(phase.priceAmount, phase.priceCurrency ?? 'EUR', { prefix: 'ab' });
+  }
+  return undefined;
+}
+
 function resolvePhaseStatus(phase: CanonicalTicketPhase): TicketTypeViewModel['status'] {
   if (phase.soldOut || phase.available === false) {
     return 'sold_out';
@@ -61,7 +85,11 @@ export function toTicketTypeViewModels(
     const status = resolvePhaseStatus(phase);
     const diagnosticNote = isConsumerDiagnosticText(phase.note);
     const localized = localizeConsumerTicketPhaseLabel(phase.name);
+    const genericAdmissionPrice = isGenericConsumerAdmissionLabel(phase.name)
+      ? resolveGenericAdmissionPriceLabel(phase)
+      : undefined;
     const priceLabel: string =
+      genericAdmissionPrice ??
       phase.priceLabel ??
       (phase.isFree
         ? 'Kostenlos'

@@ -7,6 +7,7 @@ import {
   toDiscoveryTicketStatus,
 } from '@/features/events/domain/event-price-availability-semantics';
 import { mapCanonicalAvailabilityToTicketBadge } from '@/features/events/formatting/ticket-badge-projection';
+import { isConsumerEventTimeEnded } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
 import { isFeaturedEventId } from '../data/home-config';
 import type { EventDisplayModel } from '../formatting/display-event';
 import {
@@ -103,6 +104,10 @@ function isThisWeekendEvent(isoDateTime: string, referenceDate: Date = EVENT_REF
 }
 
 function resolvePriceTicketStatus(event: EventDisplayModel): EventTicketStatus | undefined {
+  if (isConsumerEventTimeEnded({ endDateTime: event.endDateTime })) {
+    return undefined;
+  }
+
   const canonical = readCanonicalTicket({
     ticketUrl: event.ticketUrl,
     websiteUrl: event.officialEventUrl,
@@ -311,6 +316,10 @@ export function resolveEventNoticeType(
 }
 
 export function isTicketActionDisabled(event: EventDisplayModel): boolean {
+  if (isConsumerEventTimeEnded({ endDateTime: event.endDateTime })) {
+    return true;
+  }
+
   const notice = resolveEventNoticeType(event);
   return notice === 'cancelled' || notice === 'sold_out';
 }
