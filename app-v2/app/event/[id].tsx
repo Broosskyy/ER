@@ -39,11 +39,11 @@ import {
   toOrganizerDetailViewModel,
   toTimetableSectionViewModel,
   toVenueDetailViewModel,
+  resolveEventDetailAddressValidity,
 } from '@/features/event-detail/utils/event-detail-view-model';
 import { isTicketActionDisabled } from '@/features/events/status/event-status-resolver';
 import { useFavoriteToggle } from '@/features/favorites';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
-import { resolveAddressValidity } from '@/features/event-detail/utils/address-validity';
 import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
 import { useEntityFollow } from '@/features/profiles/hooks/useEntityFollow';
 import {
@@ -110,6 +110,10 @@ export default function EventDetailScreen() {
     [event],
   );
   const notice = useMemo(() => (event ? toEventNoticeViewModel(event) : undefined), [event]);
+  const addressValidity = useMemo(
+    () => (event ? resolveEventDetailAddressValidity(event, entities) : undefined),
+    [entities, event],
+  );
   const [galleryVisible, setGalleryVisible] = useState(false);
 
   const galleryImageUrls = event?.galleryImageUrls ?? [];
@@ -297,14 +301,7 @@ export default function EventDetailScreen() {
   }
 
   const sourceLabel = event.ticketProviderLabel ?? event.sourceLabel;
-  const addressValidity = resolveAddressValidity({
-    venueName: event.venue,
-    address: event.address,
-    city: event.city,
-    latitude: event.latitude,
-    longitude: event.longitude,
-  });
-  const hasMapsAction = addressValidity.canOpenDirections;
+  const hasMapsAction = addressValidity?.canOpenDirections ?? false;
   const hasSourceAction = Boolean(event.sourceUrl);
 
   return (

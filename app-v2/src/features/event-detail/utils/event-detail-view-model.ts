@@ -37,6 +37,10 @@ import { resolveVenueVerificationStatus } from '@/features/profiles/utils/entity
 import { inferLineupCompleteness, resolveLineupSectionTitle } from '@/features/event-detail/utils/lineup-completeness';
 import { buildLineupBillingRows } from '@/features/event-detail/utils/lineup-billing-display';
 import { resolveAddressValidity } from '@/features/event-detail/utils/address-validity';
+import {
+  evaluateEventVenueIdentity,
+  resolveTrustedLinkedVenue,
+} from '@/features/event-detail/utils/event-venue-identity';
 import { normalizePublicEventDescription } from '@/features/events/formatting/public-description-normalizer';
 import {
   collectSearchableAttributeTerms,
@@ -248,46 +252,87 @@ export function toTimetableSectionViewModel(
 
 export function toVenueDetailViewModel(
   event: EventDisplayModel,
-  entities?: Pick<EventDetailEntities, 'venue'>,
+  entities?: Pick<EventDetailEntities, 'venue' | 'organizer'>,
 ): VenueDetailViewModel {
+  const venueIdentity = evaluateEventVenueIdentity({
+    canonicalVenueName: event.venueLabel,
+    linkedVenue: entities?.venue,
+    inlineAddress: event.address,
+    organizerName: entities?.organizer?.name ?? event.organizer,
+  });
+  const trustedVenue = resolveTrustedLinkedVenue(venueIdentity, entities?.venue);
+  const inlineAddress = venueIdentity.staleInlineAddress ? undefined : event.address;
+
   const venueStreet =
-    entities?.venue?.street && entities.venue.houseNumber
-      ? `${entities.venue.street} ${entities.venue.houseNumber}`
-      : entities?.venue?.street ?? entities?.venue?.address;
+    trustedVenue?.street && trustedVenue.houseNumber
+      ? `${trustedVenue.street} ${trustedVenue.houseNumber}`
+      : trustedVenue?.street ?? trustedVenue?.address;
   const addressValidity = resolveAddressValidity({
-    venueName: entities?.venue?.name ?? event.venue,
-    address: event.address ?? venueStreet,
-    city: entities?.venue?.city ?? event.city,
-    latitude: event.latitude ?? entities?.venue?.latitude,
-    longitude: event.longitude ?? entities?.venue?.longitude,
+    venueName: event.venueLabel,
+    address: inlineAddress ?? venueStreet,
+    city: trustedVenue?.city ?? event.city,
+    latitude: event.latitude ?? trustedVenue?.latitude,
+    longitude: event.longitude ?? trustedVenue?.longitude,
   });
 
-  if (entities?.venue) {
-    const fromRecord = toVenueDetailFromRecord(entities.venue, event);
+  if (trustedVenue) {
+    const fromRecord = toVenueDetailFromRecord(trustedVenue, {
+      ...event,
+      address: inlineAddress ?? event.address,
+      venue: event.venueLabel,
+    });
     return {
       ...fromRecord,
+      name: event.venueLabel,
       addressLabel: addressValidity.streetAddress,
+      cityLabel: event.cityLabel,
       profileNavigable: true,
-      verified: resolveVenueVerificationStatus(entities.venue.id) === 'official_source',
+      verified: resolveVenueVerificationStatus(trustedVenue.id) === 'official_source',
     };
   }
 
   const address =
     addressValidity.streetAddress ??
-    (event.address?.trim() && event.address.trim().toLowerCase() !== event.venueLabel.toLowerCase()
-      ? event.address.trim()
+    (inlineAddress?.trim() && inlineAddress.trim().toLowerCase() !== event.venueLabel.toLowerCase()
+      ? inlineAddress.trim()
       : undefined);
 
   return {
-    id: event.venueId ?? event.venueLabel,
+    id: event.venueLabel,
     name: event.venueLabel,
     addressLabel: address,
     cityLabel: event.cityLabel,
     image: event.image,
-    verified: event.venueId ? resolveVenueVerificationStatus(event.venueId) === 'official_source' : false,
+    verified: false,
     profileNavigable: false,
-    accessibilityLabel: `${event.venue}, ${event.city}`,
+    accessibilityLabel: `${event.venueLabel}, ${event.cityLabel}`,
   };
+}
+
+export function resolveEventDetailAddressValidity(
+  event: EventDisplayModel,
+  entities?: Pick<EventDetailEntities, 'venue' | 'organizer'>,
+) {
+  const venueIdentity = evaluateEventVenueIdentity({
+    canonicalVenueName: event.venueLabel,
+    linkedVenue: entities?.venue,
+    inlineAddress: event.address,
+    organizerName: entities?.organizer?.name ?? event.organizer,
+  });
+  const trustedVenue = resolveTrustedLinkedVenue(venueIdentity, entities?.venue);
+  const inlineAddress = venueIdentity.staleInlineAddress ? undefined : event.address;
+  const venueStreet =
+    trustedVenue?.street && trustedVenue.houseNumber
+      ? `${trustedVenue.street} ${trustedVenue.houseNumber}`
+      : trustedVenue?.street ?? trustedVenue?.address;
+
+  return resolveAddressValidity({
+    venueName: event.venueLabel,
+    address: inlineAddress ?? venueStreet,
+    city: trustedVenue?.city ?? event.city,
+    latitude: event.latitude ?? trustedVenue?.latitude,
+    longitude: event.longitude ?? trustedVenue?.longitude,
+  });
 }
 
 export function toOrganizerDetailViewModel(
