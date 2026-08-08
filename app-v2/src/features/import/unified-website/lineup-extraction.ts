@@ -85,17 +85,38 @@ function expandBillingLine(block: string, stage?: string, sortStart = 0): Lineup
   }));
 }
 
+export function normalizeLineupContentBlocks(contentBlocks: string[]): string[] {
+  const expanded: string[] = [];
+  for (const block of contentBlocks) {
+    if (!block.includes('\n')) {
+      expanded.push(block);
+      continue;
+    }
+    for (const line of block.split(/\n+/)) {
+      const trimmed = line.trim();
+      if (trimmed) {
+        expanded.push(trimmed);
+      }
+    }
+  }
+  return expanded;
+}
+
 /**
  * Extract explicit lineup evidence from preserved description content blocks.
  * Never infers artists from event title or footer prose.
  */
 export function extractLineupFromContentBlocks(contentBlocks: string[]): LineupExtractionResult {
-  if (contentBlocks.length === 0) {
+  const normalizedBlocks = normalizeLineupContentBlocks(contentBlocks);
+  if (normalizedBlocks.length === 0) {
     return { state: 'empty', entries: [], inclusionReason: 'No description content blocks' };
   }
 
-  const joined = contentBlocks.join('\n');
-  if (/\blineup\s+tba\b/i.test(joined) && !contentBlocks.some((b) => isLikelyArtistLine(b) && !isLineupTbaBlock(b))) {
+  const joined = normalizedBlocks.join('\n');
+  if (
+    /\blineup\s+tba\b/i.test(joined) &&
+    !normalizedBlocks.some((block) => isLikelyArtistLine(block) && !isLineupTbaBlock(block))
+  ) {
     return {
       state: 'tba',
       entries: [],
@@ -108,7 +129,7 @@ export function extractLineupFromContentBlocks(contentBlocks: string[]): LineupE
   const entries: LineupEvidenceEntry[] = [];
   let sortOrder = 0;
 
-  for (const block of contentBlocks) {
+  for (const block of normalizedBlocks) {
     const trimmed = block.trim();
 
     if (inLineupSection && LINEUP_SECTION_TERMINATORS.test(trimmed)) {
