@@ -7,10 +7,11 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '../..');
-const envPath = join(projectRoot, '.env');
+const defaultEnvPath = join(projectRoot, '.env');
 
-if (existsSync(envPath)) {
-  for (const line of readFileSync(envPath, 'utf8').split(/\r?\n/)) {
+function loadEnvFromFile(path: string): void {
+  if (!existsSync(path)) return;
+  for (const line of readFileSync(path, 'utf8').split(/\r?\n/)) {
     if (!line || /^\s*#/.test(line)) {
       continue;
     }
@@ -24,6 +25,13 @@ if (existsSync(envPath)) {
       process.env[key] = value;
     }
   }
+}
+
+const explicitEnvPath = process.env.ER_OPS_ENV_FILE;
+if (explicitEnvPath) {
+  loadEnvFromFile(explicitEnvPath);
+} else {
+  loadEnvFromFile(defaultEnvPath);
 }
 
 /**
