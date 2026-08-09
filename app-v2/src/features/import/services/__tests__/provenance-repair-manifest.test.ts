@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 
 import { buildRowFingerprint } from '@/features/import/generic-truth-pipeline/restricted-canary-preview';
-import { buildStableProvenanceRepairManifestHash } from '@/features/import/services/provenance-repair-manifest';
+import {
+  buildProvenanceRowFingerprint,
+  buildStableProvenanceRepairManifestHash,
+} from '@/features/import/services/provenance-repair-manifest';
 
 const EVIDENCE_VERIFIED_AT = '2026-08-09T19:21:16.347Z';
 
@@ -26,6 +29,7 @@ const rollbackPrice = {
     },
   ],
   updatedAt: '2026-08-02T21:24:48.048+00:00',
+  selectedAt: '2026-08-02T21:24:48.048+00:00',
   selectionReason: 'import_publish',
   confidence: null,
   freshnessAt: '2026-08-02T21:24:48.048+00:00',
@@ -55,6 +59,7 @@ const rollbackStatus = {
     },
   ],
   updatedAt: '2026-08-02T21:24:48.048+00:00',
+  selectedAt: '2026-08-02T21:24:48.048+00:00',
   selectionReason: 'import_publish',
   confidence: null,
   freshnessAt: '2026-08-02T21:24:48.048+00:00',
@@ -85,7 +90,7 @@ describe('provenance repair manifest', () => {
       ],
     });
     expect(hash).toMatch(/^[a-f0-9]{64}$/);
-    expect(hash).toBe('4230e5fd62a179ea30bdeaeaa5398aaa15690a5d4aae003257b43836d6e962f2');
+    expect(hash).toBe('fdf54bf6e0f19206e19ad1cd7a2596666f5333bf68bc7d532f5b89f4271a7309');
   });
 
   it('matches post-canary row fingerprint', () => {
@@ -116,5 +121,26 @@ describe('provenance repair manifest', () => {
         sourceId: 'source-bootshaus-koeln',
       }),
     ).toBe('e55b65e3871ba6d91e51f522c16426eab0c4802a2aa129f0ca1234386ae66e6f');
+  });
+
+  it('builds a stable provenance row fingerprint', () => {
+    const fingerprint = buildProvenanceRowFingerprint({
+      id: 'provenance-evt-1785339418526-dn9f7g0-priceText',
+      canonical_event_id: 'evt-1785339418526-dn9f7g0',
+      field_path: 'priceText',
+      selected_value: 'ab 32,00 €',
+      selected_source_id: 'source-bootshaus-ticket-io',
+      selected_at: '2026-08-09T19:22:13.576+00:00',
+      selection_reason: 'import_publish',
+      alternatives: [],
+      manually_overridden: false,
+      updated_at: '2026-08-09T19:22:13.576+00:00',
+      confidence: null,
+      freshness_at: '2026-08-09T19:22:13.576+00:00',
+      origin_external_id: 'https://bootshaus-club.ticket.io/4zjKRnsa/',
+      merge_decision: null,
+      selected_tier: 'ticket_platform',
+    });
+    expect(fingerprint).toMatch(/^[a-f0-9]{64}$/);
   });
 });
