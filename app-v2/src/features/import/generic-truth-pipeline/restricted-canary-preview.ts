@@ -79,12 +79,23 @@ const ROLLBACK_FIELD_KEYS = [
 export function buildRollbackPayload(
   event: AdminEventRecord,
   patchFields?: readonly string[],
+  options?: { rawTicketPhases?: unknown },
 ): Record<string, unknown> {
   const keys =
     patchFields ??
     ROLLBACK_FIELD_KEYS.filter((field) => event[field as keyof AdminEventRecord] !== undefined);
   const payload: Record<string, unknown> = {};
   for (const field of keys) {
+    if (field === 'ticketPhases') {
+      if (options?.rawTicketPhases !== undefined) {
+        payload.ticketPhases = options.rawTicketPhases;
+      } else if (event.ticketPhases === undefined) {
+        payload.ticketPhases = null;
+      } else {
+        payload.ticketPhases = event.ticketPhases;
+      }
+      continue;
+    }
     const value = event[field as keyof AdminEventRecord];
     if (value !== undefined) {
       payload[field] = value;

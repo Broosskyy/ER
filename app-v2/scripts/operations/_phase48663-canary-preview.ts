@@ -113,6 +113,101 @@ async function loadManualLocks(eventId: string): Promise<string[]> {
     .map((row) => row.field_path as string);
 }
 
+async function loadRawDbTicketPhases(eventId: string): Promise<unknown> {
+  const { data, error } = await opsClient()
+    .from('events')
+    .select('ticket_phases')
+    .eq('id', eventId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return data?.ticket_phases ?? null;
+}
+
+const CANARY_PROVENANCE_FIELDS = ['priceText', 'ticketStatus'] as const;
+
+async function loadProvenanceSnapshots(eventId: string) {
+  const { data, error } = await opsClient()
+    .from('event_field_provenance')
+    .select(
+      'id,canonical_event_id,field_path,selected_value,selected_source_id,manually_overridden,alternatives,updated_at,selection_reason,confidence,freshness_at,origin_external_id,merge_decision,selected_tier',
+    )
+    .eq('canonical_event_id', eventId)
+    .in('field_path', [...CANARY_PROVENANCE_FIELDS]);
+  if (error) throw new Error(error.message);
+  return (data ?? []) as Array<Record<string, unknown>>;
+}
+
+async function loadSourceReferenceSnapshot(eventId: string, sourceId: string) {
+  const { data, error } = await opsClient()
+    .from('event_source_references')
+    .select('id,canonical_event_id,source_id,external_event_id,original_url,last_seen_at,active')
+    .eq('canonical_event_id', eventId)
+    .eq('source_id', sourceId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return data ?? null;
+}
+
+function buildProvenanceRollbackAssessment(input: {
+  eventId: string;
+  sourceId: string;
+  patchFields: readonly string[];
+  provenanceRows: Array<Record<string, unknown>>;
+  sourceReference: Record<string, unknown> | null;
+}) {
+  const provenanceFields = CANARY_PROVENANCE_FIELDS.filter((field) =>
+    input.patchFields.includes(field),
+  );
+  const wouldWriteProvenance = provenanceFields.length > 0;
+  const wouldUpsertSourceReference = Boolean(input.sourceReference);
+
+  const fieldRollback = provenanceFields.map((field) => {
+    const row = input.provenanceRows.find((entry) => entry.field_path === field);
+    if (!row) {
+      return {
+        fieldPath: field,
+        actionOnApply: 'insert',
+        beforeSnapshot: null,
+        rollbackAction: 'delete_inserted_row_only',
+      };
+    }
+    return {
+      fieldPath: field,
+      actionOnApply: 'upsert',
+      beforeSnapshot: {
+        id: row.id,
+        selectedValue: row.selected_value,
+        selectedSourceId: row.selected_source_id,
+        manuallyOverridden: row.manually_overridden,
+        alternatives: row.alternatives,
+        updatedAt: row.updated_at,
+        selectionReason: row.selection_reason,
+        confidence: row.confidence,
+        freshnessAt: row.freshness_at,
+        originExternalId: row.origin_external_id,
+        mergeDecision: row.merge_decision,
+        selectedTier: row.selected_tier,
+      },
+      rollbackAction: 'restore_before_snapshot',
+    };
+  });
+
+  return {
+    wouldWriteProvenance,
+    wouldUpsertSourceReference,
+    ticketPhasesProvenanceWrite: false,
+    fieldRollback,
+    sourceReferenceRollback: input.sourceReference
+      ? {
+          actionOnApply: 'upsert_last_seen_at',
+          beforeSnapshot: input.sourceReference,
+          rollbackAction: 'restore_last_seen_at_and_active',
+        }
+      : null,
+    note: 'Rollback restores only rows touched by this canary; foreign provenance rows are never deleted.',
+  };
+}
+
 function readAdmissionMetadata(candidate: CanonicalImportEvent) {
   const meta = (candidate.sourceMetadata as Record<string, unknown> | undefined) ?? {};
   const admissionRaw = meta.admissionProducts ?? meta.ticketAdmissionProducts;
@@ -221,8 +316,22 @@ async function main(): Promise<void> {
       Object.assign(expectedPatches, delta.proposed);
     }
 
+    const patchFieldKeys = Object.keys(expectedPatches);
+    const rawDbTicketPhases = await loadRawDbTicketPhases(shadowEvent.eventId);
+    const provenanceRows = await loadProvenanceSnapshots(shadowEvent.eventId);
+    const sourceReference = await loadSourceReferenceSnapshot(shadowEvent.eventId, sourceId);
+    const provenanceRollback = buildProvenanceRollbackAssessment({
+      eventId: shadowEvent.eventId,
+      sourceId,
+      patchFields: patchFieldKeys,
+      provenanceRows,
+      sourceReference,
+    });
+
     const rowFingerprint = buildRowFingerprint(existing);
-    const rollbackPayload = buildRollbackPayload(existing, Object.keys(expectedPatches));
+    const rollbackPayload = buildRollbackPayload(existing, patchFieldKeys, {
+      rawTicketPhases: rawDbTicketPhases,
+    });
 
     candidates.push({
       eventId: shadowEvent.eventId,
@@ -235,7 +344,7 @@ async function main(): Promise<void> {
         websiteUrl: existing.websiteUrl,
         priceText: existing.priceText,
         ticketStatus: existing.ticketStatus,
-        ticketPhases: existing.ticketPhases,
+        ticketPhases: rawDbTicketPhases,
       },
       proposedValues: {
         ticketUrl: fullEval.dryRunAfter.ticketUrl,
@@ -244,7 +353,7 @@ async function main(): Promise<void> {
         ticketStatus: fullEval.dryRunAfter.ticketStatus,
         ticketPhases: fullEval.dryRunAfter.ticketPhases,
       },
-      ticketPhasesBefore: existing.ticketPhases,
+      ticketPhasesBefore: rawDbTicketPhases,
       ticketPhasesAfter: fullEval.dryRunAfter.ticketPhases,
       admissionProducts: admissionMeta.admissionProducts,
       excludedAddons: admissionMeta.excludedAddons,
@@ -266,6 +375,7 @@ async function main(): Promise<void> {
       rowFingerprint,
       rowFingerprintShort: formatRowFingerprintShort(rowFingerprint),
       rollbackPayload,
+      provenanceRollback,
       allowedFieldGroups: [...fullEval.fieldGroupEligibility.policyEligibleFieldGroups].filter((group) =>
         RESTRICTED_CANARY_FIELD_GROUPS.includes(group),
       ),
@@ -303,7 +413,7 @@ async function main(): Promise<void> {
     }));
 
   const plan = {
-    phase: '4.8.6.6.3a',
+    phase: '4.8.6.6.3b',
     productionMutationsInThisRun,
     rolloutActivated: false,
     sourceId,
@@ -338,10 +448,12 @@ async function main(): Promise<void> {
     rolloutActivated: false,
     sourceId,
     manifestHash,
+    provenanceRollback: candidates[0]?.provenanceRollback ?? null,
     entries: candidates.map((entry) => ({
       eventId: entry.eventId,
       rowFingerprint: entry.rowFingerprint,
       rollbackPayload: entry.rollbackPayload,
+      provenanceRollback: entry.provenanceRollback,
     })),
     prerequisites: [
       'GENERIC_TRUTH_PIPELINE_ENABLED=false',
@@ -378,7 +490,7 @@ async function main(): Promise<void> {
 
   console.log(
     JSON.stringify({
-      phase: '4.8.6.6.3a',
+      phase: '4.8.6.6.3b',
       productionMutationsInThisRun,
       rolloutActivated: false,
       totalDatabaseWrites,

@@ -104,6 +104,13 @@ export interface EvaluateGenericTruthPublishInput {
 }
 
 const IDENTITY_OK: IdentityPublishVerdict[] = ['exact', 'corroborated'];
+const TICKET_MANUAL_LOCK_FIELDS = [
+  'ticketUrl',
+  'websiteUrl',
+  'priceText',
+  'ticketPhases',
+  'ticketStatus',
+] as const;
 
 function buildFieldGroupEvaluations(
   deltas: FieldGroupDeltaReport[],
@@ -274,6 +281,14 @@ export function evaluateGenericTruthPublish(
   if (genreBlocked) blockedGroups.genres = descriptionGenre.blockedReason ?? 'genre_blocked';
   if (lineupBlocked) blockedGroups.lineup = lineupGate.reason;
 
+  const manualTicketLock = [...(input.manualLocks ?? [])].some((field) =>
+    TICKET_MANUAL_LOCK_FIELDS.includes(field as (typeof TICKET_MANUAL_LOCK_FIELDS)[number]),
+  );
+  if (manualTicketLock) {
+    blockedGroups.tickets = 'manual_lock';
+    blockedGroups.cta_checkout = 'manual_lock';
+  }
+
   if (input.allowedFieldGroups) {
     for (const group of ALL_GENERIC_TRUTH_FIELD_GROUPS) {
       if (!input.allowedFieldGroups.includes(group)) {
@@ -346,7 +361,8 @@ export function evaluateGenericTruthPublish(
     rollout.enabled &&
     isRolloutModeAllowsActivation(rollout) &&
     isSourceInRolloutScope(bundle.sourceId, rollout) &&
-    isEventInCanary(bundle.sourceId, input.existing.id, rollout);
+    isEventInCanary(bundle.sourceId, input.existing.id, rollout) &&
+    !manualTicketLock;
 
   const reviewRequired = reviewReasons.length > 0;
   const autoEligible = activationEligible && rollout.mode === 'automatic' && rollout.autoPublishEnabled;
@@ -438,6 +454,38 @@ export function evaluateGenericTruthPublish(
 function readString(meta: Record<string, unknown>, key: string): string | undefined {
   const value = meta[key];
   return typeof value === 'string' && value.trim() ? value.trim() : undefined;
+}
+
+export function extractApplicableGenericTruthPatch(
+  evaluation: GenericTruthPublishEvaluation,
+  fieldGroups?: readonly GenericTruthFieldGroup[],
+): ImportPublishFieldPatch {
+  const allowedGroups =
+    fieldGroups ?? evaluation.fieldGroupEligibility.policyEligibleFieldGroups;
+  const patch: ImportPublishFieldPatch = {};
+  for (const delta of evaluation.fieldGroupDeltas) {
+    if (!allowedGroups.includes(delta.group) || !delta.wouldChange) {
+      continue;
+    }
+    const proposed = delta.proposed as Record<string, unknown>;
+    for (const [key, value] of Object.entries(proposed)) {
+      if (value !== undefined) {
+        (patch as Record<string, unknown>)[key] = value;
+      }
+    }
+  }
+  return patch;
+}
+
+export function shouldApplyGenericTruthPublish(
+  evaluation: GenericTruthPublishEvaluation,
+  rollout: GenericTruthRolloutConfig = resolveGenericTruthRollout(),
+): boolean {
+  return (
+    evaluation.activationEligible &&
+    !shouldSuppressTruthPipelineWrites(evaluation, rollout) &&
+    evaluation.wouldApplyIfEnabled
+  );
 }
 
 export function shouldSuppressTruthPipelineWrites(

@@ -198,6 +198,16 @@ export function canonicalImportEventToEvidenceBundle(
   };
 }
 
+/** Evidence verifiedAt only — no observedAt or apply-time fallback. */
+export function readCandidateEvidenceVerifiedAt(candidate: CanonicalImportEvent): string | undefined {
+  const nested = (candidate.sourceMetadata as Record<string, unknown> | undefined) ?? {};
+  const listCard =
+    nested.listCardEvidence && typeof nested.listCardEvidence === 'object'
+      ? (nested.listCardEvidence as Record<string, unknown>)
+      : undefined;
+  return readString(nested, 'verifiedAt') ?? readString(listCard ?? {}, 'verifiedAt');
+}
+
 export function adminEventToIdentitySnapshot(event: AdminEventRecord) {
   return {
     eventId: event.id,

@@ -38,8 +38,16 @@ import type { EventLineupService } from '@/features/events/services/event-lineup
 import { loadMatchingCatalog } from '@/features/import/matching/matching-catalog';
 import type { AdminArtistRepository } from '@/data/repositories/repositories';
 import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
-import { buildAdminEventFromImportFields } from '@/features/import/services/import-event-field-mapper';
-import { evaluateGenericTruthPublish } from '@/features/import/generic-truth-pipeline';
+import {
+  applyImportPublishFieldPatch,
+  buildAdminEventFromImportFields,
+} from '@/features/import/services/import-event-field-mapper';
+import {
+  evaluateGenericTruthPublish,
+  extractApplicableGenericTruthPatch,
+  readCandidateEvidenceVerifiedAt,
+  shouldApplyGenericTruthPublish,
+} from '@/features/import/generic-truth-pipeline';
 import { resolveServerGenericTruthRollout } from '@/features/import/generic-truth-pipeline/server-rollout-config';
 
 export function buildAdminEventFromImportRecord(
@@ -290,19 +298,35 @@ export class ImportEventPublishService {
     const now = new Date().toISOString();
     const normalizedPayload = record.normalizedPayload as Record<string, unknown> | undefined;
 
-    const stampedEvent = applyEventPublishLifecycle(eventPayload, {
+    let stampedEvent = applyEventPublishLifecycle(eventPayload, {
       existing: existingEvent,
       normalizedPayload,
       publishedAt: now,
     });
 
-    if (resolveServerGenericTruthRollout().enabled && existingEvent) {
-      evaluateGenericTruthPublish({
+    const rollout = resolveServerGenericTruthRollout();
+    if (rollout.enabled && existingEvent) {
+      const manualLocks =
+        this.fieldProvenanceWriter
+          ? await this.loadPublishManualLocks(existingEvent.canonicalEventId ?? existingEvent.id)
+          : undefined;
+      const genericTruthEvaluation = evaluateGenericTruthPublish({
         existing: existingEvent,
         candidate: canonicalCandidate,
-        rollout: resolveServerGenericTruthRollout(),
+        rollout,
         fillOnly: isEnrichment,
+        allowedFieldGroups: rollout.fieldGroups.length > 0 ? rollout.fieldGroups : undefined,
+        manualLocks,
       });
+      if (shouldApplyGenericTruthPublish(genericTruthEvaluation, rollout)) {
+        const truthPatch = extractApplicableGenericTruthPatch(
+          genericTruthEvaluation,
+          rollout.fieldGroups,
+        );
+        if (Object.keys(truthPatch).length > 0) {
+          stampedEvent = applyImportPublishFieldPatch(stampedEvent, truthPatch);
+        }
+      }
     }
 
     let savedEvent = await this.adminEventRepository.save({
@@ -385,20 +409,16 @@ export class ImportEventPublishService {
       if (this.fieldProvenanceWriter) {
 
         await this.fieldProvenanceWriter.writeFromPublish(
-
           savedEvent.canonicalEventId ?? savedEvent.id,
-
           source,
-
           savedEvent,
-
           {
             publishedAt: now,
+            evidenceVerifiedAt: readCandidateEvidenceVerifiedAt(canonicalCandidate),
             originExternalId: record.externalId,
             confidence: FieldTrustMergeService.confidenceFromCandidate(canonicalCandidate),
             mergeDecisions,
           },
-
         );
 
       }
@@ -526,6 +546,19 @@ export class ImportEventPublishService {
     await invalidateConsumerEventCaches(this.consumerEventRepository);
   }
 
+  private async loadPublishManualLocks(canonicalEventId: string): Promise<Set<string> | undefined> {
+    if (!this.fieldProvenanceWriter) {
+      return undefined;
+    }
+    const provenanceByField = await this.fieldProvenanceWriter.loadProvenanceByField(canonicalEventId);
+    const locks = new Set<string>();
+    for (const [field, provenance] of provenanceByField.entries()) {
+      if (provenance.selectedSourceId === 'manual_override') {
+        locks.add(field);
+      }
+    }
+    return locks.size > 0 ? locks : undefined;
+  }
 }
 
 

@@ -14,6 +14,7 @@ export {
 export {
   adminEventToIdentitySnapshot,
   canonicalImportEventToEvidenceBundle,
+  readCandidateEvidenceVerifiedAt,
 } from './evidence-from-canonical';
 export {
   buildFieldGroupDeltas,
@@ -26,6 +27,8 @@ export {
 } from './field-delta';
 export {
   evaluateGenericTruthPublish,
+  extractApplicableGenericTruthPatch,
+  shouldApplyGenericTruthPublish,
   shouldSuppressTruthPipelineWrites,
   type EvaluateGenericTruthPublishInput,
   type FieldGroupEvaluation,
