@@ -1,0 +1,19 @@
+{
+  "phase": "4.8.6.6.4d",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "rejectedManifestHash": "474bc892d1c5ad85ad58d50aa38861ce02012e5a86731b67014f7c4e7f62957e",
+  "manifestHash": "47aa2ada1af9e3587d534b6aff5434501378cc9ce1b1892445941928587820e0",
+  "groupAApplyReady": true,
+  "groupBApplyReadyCount": 0,
+  "reviewOnlyCount": 11,
+  "provenanceRepairApplyReady": true,
+  "blockers": [
+    "11 fields remain review_only"
+  ],
+  "tests": {
+    "reverificationPlan": "provenance-reverification-plan.test.ts",
+    "repairManifest": "provenance-repair-manifest.test.ts"
+  },
+  "nextStep": "Apply 48664d manifest after explicit production authorization"
+}

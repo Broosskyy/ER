@@ -1,0 +1,115 @@
+{
+  "phase": "4.8.6.6.4d",
+  "productionMutationsInThisRun": 0,
+  "manifestHash": "47aa2ada1af9e3587d534b6aff5434501378cc9ce1b1892445941928587820e0",
+  "rollbackEntries": [
+    {
+      "fieldPath": "priceText",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-priceText",
+      "group": "A",
+      "repairKind": "freshness_only_known_evidence",
+      "restoreSnapshot": {
+        "id": "provenance-evt-1785339418526-dn9f7g0-priceText",
+        "selectedValue": "ab 32,00 €",
+        "selectedSourceId": "source-bootshaus-ticket-io",
+        "manuallyOverridden": false,
+        "alternatives": [
+          {
+            "value": "Tickets ab 32,00 Euro",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "ab 32,00 €",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-09T19:22:13.576Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "updatedAt": "2026-08-09T19:22:13.576+00:00",
+        "selectedAt": "2026-08-09T19:22:13.576+00:00",
+        "selectionReason": "import_publish",
+        "confidence": null,
+        "freshnessAt": "2026-08-09T19:22:13.576+00:00",
+        "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "mergeDecision": null,
+        "selectedTier": "ticket_platform"
+      },
+      "rowFingerprint": "24dbefa9ebe3deb047103c9357e6edcf14b64ccae8fec9c5ee6d01c0926d5df5"
+    },
+    {
+      "fieldPath": "ticketStatus",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+      "group": "A",
+      "repairKind": "freshness_only_known_evidence",
+      "restoreSnapshot": {
+        "id": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+        "selectedValue": "on_sale",
+        "selectedSourceId": "source-bootshaus-ticket-io",
+        "manuallyOverridden": false,
+        "alternatives": [
+          {
+            "value": "external_link",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "on_sale",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-09T19:22:13.576Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "updatedAt": "2026-08-09T19:22:13.576+00:00",
+        "selectedAt": "2026-08-09T19:22:13.576+00:00",
+        "selectionReason": "import_publish",
+        "confidence": null,
+        "freshnessAt": "2026-08-09T19:22:13.576+00:00",
+        "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "mergeDecision": null,
+        "selectedTier": "ticket_platform"
+      },
+      "rowFingerprint": "807287f46fa17cf57166c5f88185991d8673ea71425831601b8e9be5f0d5a99e"
+    },
+    {
+      "fieldPath": "ticketUrl",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-ticketUrl",
+      "group": "A",
+      "repairKind": "freshness_only_known_evidence",
+      "restoreSnapshot": {
+        "id": "provenance-evt-1785339418526-dn9f7g0-ticketUrl",
+        "selectedValue": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "selectedSourceId": "source-bootshaus-ticket-io",
+        "manuallyOverridden": false,
+        "alternatives": [
+          {
+            "value": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-09T19:22:13.576Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "updatedAt": "2026-08-09T19:22:13.576+00:00",
+        "selectedAt": "2026-08-09T19:22:13.576+00:00",
+        "selectionReason": "import_publish",
+        "confidence": null,
+        "freshnessAt": "2026-08-09T19:22:13.576+00:00",
+        "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "mergeDecision": null,
+        "selectedTier": "ticket_platform"
+      },
+      "rowFingerprint": "d2d7f80454548f418e05b96fe08389d583d42d79892670b36c78bd38ce262d7a"
+    }
+  ]
+}
