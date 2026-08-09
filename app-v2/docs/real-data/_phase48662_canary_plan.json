@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-08-09T17:51:17.224Z",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "selectedSourceId": "source-bootshaus-ticket-io",
+  "selectionReason": "Highest conformance score (13.07) with live fetch, native identity, verifiedAt, and policy-eligible field groups",
+  "candidates": [
+    {
+      "sourceId": "source-bootshaus-ticket-io",
+      "sourceName": "Bootshaus Ticket.io",
+      "score": 13.066666666666666,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "identity_schedule_venue",
+        "tickets",
+        "cta_checkout",
+        "genres"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-io-protontheclub",
+      "sourceName": "protontheclub",
+      "score": 13,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "tickets",
+        "genres",
+        "identity_schedule_venue"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-io-technodampfer",
+      "sourceName": "technodampfer",
+      "score": 11,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "identity_schedule_venue",
+        "tickets"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-io-area51events",
+      "sourceName": "area51events",
+      "score": 11,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "identity_schedule_venue",
+        "tickets"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-io-hmg-concerts",
+      "sourceName": "hmg-concerts",
+      "score": 11,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "identity_schedule_venue",
+        "tickets"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-io-lehmannclub",
+      "sourceName": "lehmannclub",
+      "score": 10.428571428571429,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "identity_schedule_venue",
+        "tickets"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-kings-org-m-d-m-a-musik-die-mich-antreibt",
+      "sourceName": "Ticket Kings — M.D.M.A Musik die mich Antreibt",
+      "score": 9.666666666666666,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "description",
+        "tickets"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-affenkaefig-ticket-kings",
+      "sourceName": "Affenkäfig Ticket Kings",
+      "score": 9.666666666666666,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "description",
+        "tickets"
+      ],
+      "errors": []
+    },
+    {
+      "sourceId": "source-ticket-kings-org-elektrokuche",
+      "sourceName": "Ticket Kings — Elektroküche",
+      "score": 7,
+      "nativeIdentityCoverage": 1,
+      "verifiedAtCoverage": 1,
+      "policyEligibleFieldGroups": [
+        "description"
+      ],
+      "errors": []
+    }
+  ],
+  "canaryPercent": 10,
+  "fieldGroups": [
+    "identity_schedule_venue",
+    "tickets",
+    "cta_checkout",
+    "genres"
+  ],
+  "canaryEvents": [
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "externalId": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "policyEligibleFieldGroups": [
+        "identity_schedule_venue",
+        "tickets",
+        "cta_checkout"
+      ],
+      "expectedPatches": [
+        {
+          "group": "identity_schedule_venue",
+          "before": {
+            "title": "Bootshaus on a Ship Vol. IV",
+            "startDate": "2026-09-13T12:00:00+00:00",
+            "endDate": "2026-09-13T18:00:00+00:00",
+            "timezone": "UTC+02:00",
+            "venueName": "KD Anleger Nr. 2",
+            "venueCity": "Köln",
+            "venueAddress": "Auenweg 173, 51063 Köln",
+            "venuePostalCode": "51063",
+            "venueCountryCode": "DE",
+            "latitude": 50.9375699,
+            "longitude": 6.9632867,
+            "organizerName": "Bootshaus"
+          },
+          "proposed": {
+            "title": "Bootshaus on a Ship Vol. IV",
+            "startDate": "2026-09-13T12:00:00.000Z",
+            "endDate": "2026-09-13T18:00:00.000Z",
+            "timezone": "UTC+02:00",
+            "venueName": "KD Anleger Nr. 2",
+            "venueCity": "Köln",
+            "venueAddress": "Frankenwerft 35, 50667, Köln, Deutschland",
+            "venuePostalCode": "50667",
+            "venueCountryCode": "DE",
+            "latitude": 50.9375699,
+            "longitude": 6.9632867,
+            "organizerName": "Bootshaus Cologne GmbH"
+          },
+          "normalizedEqual": false,
+          "wouldChange": true
+        },
+        {
+          "group": "tickets",
+          "before": {
+            "priceText": "Tickets ab 32,00 Euro",
+            "ticketStatus": "external_link"
+          },
+          "proposed": {
+            "priceText": "ab 32,00 €",
+            "ticketStatus": "on_sale",
+            "ticketPhases": [
+              {
+                "id": "phase-list-admission-io/4zjkrnsa/",
+                "name": "List admission",
+                "sortOrder": 900,
+                "kind": "other",
+                "priceAmount": 32,
+                "priceCurrency": "EUR",
+                "priceLabel": "ab 32,00 €",
+                "soldOut": false,
+                "isFree": false,
+                "purchaseUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+              }
+            ]
+          },
+          "normalizedEqual": false,
+          "wouldChange": true
+        },
+        {
+          "group": "cta_checkout",
+          "before": {
+            "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          "proposed": {
+            "websiteUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          },
+          "normalizedEqual": false,
+          "wouldChange": true
+        }
+      ],
+      "excluded": [],
+      "blockReasons": [
+        "no_structured_lineup_or_dual_headliner_confirmation"
+      ],
+      "beforeFingerprint": "507230e7c4efe2d3"
+    }
+  ],
+  "rollbackPrerequisites": [
+    "GENERIC_TRUTH_PIPELINE_ENABLED=false",
+    "preserve event_field_provenance rows from beforeFingerprint window",
+    "re-run import publish with writesSuppressed until dry-run matches beforeFingerprint"
+  ]
+}

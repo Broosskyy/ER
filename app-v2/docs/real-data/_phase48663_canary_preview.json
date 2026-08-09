@@ -1,0 +1,83 @@
+{
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "totalDatabaseWrites": 0,
+  "sourceId": "source-bootshaus-ticket-io",
+  "candidates": [
+    {
+      "eventId": "evt-1785339418526-dn9f7g0",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "sourceId": "source-bootshaus-ticket-io",
+      "identityVerdict": "exact",
+      "verifiedAt": true,
+      "currentDbValues": {
+        "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+        "priceText": "Tickets ab 32,00 Euro",
+        "ticketStatus": "external_link"
+      },
+      "proposedValues": {
+        "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "websiteUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "priceText": "ab 32,00 €",
+        "ticketStatus": "on_sale",
+        "ticketPhases": [
+          {
+            "id": "phase-list-admission-io/4zjkrnsa/",
+            "name": "List admission",
+            "sortOrder": 900,
+            "kind": "other",
+            "priceAmount": 32,
+            "priceCurrency": "EUR",
+            "priceLabel": "ab 32,00 €",
+            "soldOut": false,
+            "isFree": false,
+            "purchaseUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ]
+      },
+      "ticketPhasesAfter": [
+        {
+          "id": "phase-list-admission-io/4zjkrnsa/",
+          "name": "List admission",
+          "sortOrder": 900,
+          "kind": "other",
+          "priceAmount": 32,
+          "priceCurrency": "EUR",
+          "priceLabel": "ab 32,00 €",
+          "soldOut": false,
+          "isFree": false,
+          "purchaseUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+        }
+      ],
+      "admissionProducts": [],
+      "excludedAddons": [],
+      "publicCta": {
+        "before": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "after": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+      },
+      "checkoutEvidence": {},
+      "manualLocks": [],
+      "collisionResult": {
+        "collision": false,
+        "reasons": [],
+        "canonicalVerdict": "none",
+        "eventIds": []
+      },
+      "rowFingerprint": "cf2908217b37c7ed",
+      "rollbackPayload": {
+        "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+        "priceText": "Tickets ab 32,00 Euro",
+        "ticketStatus": "external_link"
+      },
+      "allowedFieldGroups": [
+        "tickets",
+        "cta_checkout"
+      ],
+      "skipReasons": [],
+      "eligible": true
+    }
+  ],
+  "skippedNonCanaryCount": 13
+}

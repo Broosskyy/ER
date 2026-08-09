@@ -1,0 +1,26 @@
+{
+  "phase": "4.8.6.6.3",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "sourceId": "source-bootshaus-ticket-io",
+  "canaryPercent": 10,
+  "maxEvents": 3,
+  "allowedFieldGroups": [
+    "tickets",
+    "cta_checkout"
+  ],
+  "excludedScopes": [
+    "identity_schedule_venue",
+    "description",
+    "genres",
+    "lineup",
+    "age_environment",
+    "duplicate_merge",
+    "event_unpublish_delete"
+  ],
+  "selectedEventIds": [
+    "evt-1785339418526-dn9f7g0"
+  ],
+  "evaluatedEvents": 14,
+  "stableManifestHash": "9deb93acde9f5db13b5927c17975b44814a350b528239d6c5d82c060d6fc9ba9"
+}
