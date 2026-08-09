@@ -39,6 +39,8 @@ import { loadMatchingCatalog } from '@/features/import/matching/matching-catalog
 import type { AdminArtistRepository } from '@/data/repositories/repositories';
 import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
 import { buildAdminEventFromImportFields } from '@/features/import/services/import-event-field-mapper';
+import { evaluateGenericTruthPublish } from '@/features/import/generic-truth-pipeline';
+import { resolveServerGenericTruthRollout } from '@/features/import/generic-truth-pipeline/server-rollout-config';
 
 export function buildAdminEventFromImportRecord(
   record: ImportRecord,
@@ -293,6 +295,15 @@ export class ImportEventPublishService {
       normalizedPayload,
       publishedAt: now,
     });
+
+    if (resolveServerGenericTruthRollout().enabled && existingEvent) {
+      evaluateGenericTruthPublish({
+        existing: existingEvent,
+        candidate: canonicalCandidate,
+        rollout: resolveServerGenericTruthRollout(),
+        fillOnly: isEnrichment,
+      });
+    }
 
     let savedEvent = await this.adminEventRepository.save({
       ...stampedEvent,
