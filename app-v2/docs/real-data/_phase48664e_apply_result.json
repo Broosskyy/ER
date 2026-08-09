@@ -1,0 +1,143 @@
+{
+  "phase": "4.8.6.6.4e",
+  "productionMutationsInThisRun": 3,
+  "rolloutActivated": false,
+  "manifestHash": "47aa2ada1af9e3587d534b6aff5434501378cc9ce1b1892445941928587820e0",
+  "applyToken": "exact:phase48664d-ticket-provenance-freshness",
+  "canonicalEventId": "evt-1785339418526-dn9f7g0",
+  "preflight": {
+    "manifestHash": "47aa2ada1af9e3587d534b6aff5434501378cc9ce1b1892445941928587820e0",
+    "canonicalEventId": "evt-1785339418526-dn9f7g0",
+    "groupAFields": [
+      "priceText",
+      "ticketStatus",
+      "ticketUrl"
+    ],
+    "groupBCount": 0,
+    "groupCCount": 11,
+    "groupCNotInApplyPayload": true,
+    "manualLocks": false,
+    "rollbackSnapshotsComplete": true
+  },
+  "writeCounters": {
+    "attemptedRows": 3,
+    "successfulRows": 3,
+    "databaseWriteRequests": 3,
+    "affectedRows": 3,
+    "rollbackWriteRequests": 0,
+    "totalProductionWriteOperations": 3,
+    "productionMutationsInThisRun": 3
+  },
+  "rowResults": [
+    {
+      "fieldPath": "priceText",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-priceText",
+      "status": "applied",
+      "before": {
+        "freshness_at": "2026-08-09T19:22:13.576+00:00",
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_value": "ab 32,00 €",
+        "selected_at": "2026-08-09T19:22:13.576+00:00"
+      },
+      "after": {
+        "freshness_at": "2026-08-09T19:21:16.347+00:00",
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_value": "ab 32,00 €",
+        "selected_at": "2026-08-09T19:22:13.576+00:00"
+      },
+      "unchangedColumns": [
+        "selected_source_id",
+        "selected_value",
+        "selected_at",
+        "alternatives",
+        "manually_overridden",
+        "selection_reason",
+        "confidence",
+        "origin_external_id",
+        "merge_decision",
+        "selected_tier"
+      ]
+    },
+    {
+      "fieldPath": "ticketStatus",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+      "status": "applied",
+      "before": {
+        "freshness_at": "2026-08-09T19:22:13.576+00:00",
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_value": "on_sale",
+        "selected_at": "2026-08-09T19:22:13.576+00:00"
+      },
+      "after": {
+        "freshness_at": "2026-08-09T19:21:16.347+00:00",
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_value": "on_sale",
+        "selected_at": "2026-08-09T19:22:13.576+00:00"
+      },
+      "unchangedColumns": [
+        "selected_source_id",
+        "selected_value",
+        "selected_at",
+        "alternatives",
+        "manually_overridden",
+        "selection_reason",
+        "confidence",
+        "origin_external_id",
+        "merge_decision",
+        "selected_tier"
+      ]
+    },
+    {
+      "fieldPath": "ticketUrl",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-ticketUrl",
+      "status": "applied",
+      "before": {
+        "freshness_at": "2026-08-09T19:22:13.576+00:00",
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_value": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "selected_at": "2026-08-09T19:22:13.576+00:00"
+      },
+      "after": {
+        "freshness_at": "2026-08-09T19:21:16.347+00:00",
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_value": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "selected_at": "2026-08-09T19:22:13.576+00:00"
+      },
+      "unchangedColumns": [
+        "selected_source_id",
+        "selected_value",
+        "selected_at",
+        "alternatives",
+        "manually_overridden",
+        "selection_reason",
+        "confidence",
+        "origin_external_id",
+        "merge_decision",
+        "selected_tier"
+      ]
+    }
+  ],
+  "errors": [],
+  "officialReviewOnlyRowsUntouched": [
+    "title",
+    "description",
+    "startDate",
+    "venueName",
+    "venueCity",
+    "venueAddress",
+    "cityName",
+    "countryCode",
+    "organizerName",
+    "websiteUrl",
+    "ageRestriction"
+  ],
+  "officialReviewOnlyRowCount": 11,
+  "eventFieldMutations": 0,
+  "generatedAt": "2026-08-09T20:28:44.851Z"
+}

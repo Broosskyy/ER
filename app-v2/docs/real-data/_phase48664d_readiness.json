@@ -1,6 +1,6 @@
 {
-  "phase": "4.8.6.6.4d",
-  "productionMutationsInThisRun": 0,
+  "phase": "4.8.6.6.4e",
+  "productionMutationsInThisRun": 3,
   "rolloutActivated": false,
   "rejectedManifestHash": "474bc892d1c5ad85ad58d50aa38861ce02012e5a86731b67014f7c4e7f62957e",
   "manifestHash": "47aa2ada1af9e3587d534b6aff5434501378cc9ce1b1892445941928587820e0",
@@ -15,5 +15,8 @@
     "reverificationPlan": "provenance-reverification-plan.test.ts",
     "repairManifest": "provenance-repair-manifest.test.ts"
   },
-  "nextStep": "Apply 48664d manifest after explicit production authorization"
+  "nextStep": "Group A freshness repair complete; Group C remains review_only",
+  "groupAApplied": true,
+  "applyResultFile": "_phase48664e_apply_result.json",
+  "lastApplyAt": "2026-08-09T20:28:44.851Z"
 }
