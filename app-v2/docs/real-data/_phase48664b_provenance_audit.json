@@ -1,0 +1,221 @@
+{
+  "phase": "4.8.6.6.4b",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "canonicalEventId": "evt-1785339418526-dn9f7g0",
+  "title": "Bootshaus on a Ship Vol. IV",
+  "sourceId": "source-bootshaus-ticket-io",
+  "evidenceVerifiedAt": "2026-08-09T19:21:16.347Z",
+  "applyAuditAt": "2026-08-09T19:22:13.576Z",
+  "upsertedProvenanceCount": 14,
+  "legitimateProvenanceCount": 2,
+  "illegitimateProvenanceCount": 12,
+  "eventPatchChangedFields": ["priceText", "ticketStatus", "ticketPhases"],
+  "ticketPhasesProvenanceSupported": false,
+  "ticketPhasesEvidencePath": "event_source_references.metadata.ticketOffers + events.ticket_phases",
+  "artifactSources": {
+    "beforeProvenance": "_phase48663_canary_rollback.json",
+    "afterProvenanceSample": "_phase48664_canary_apply_result.json (priceText, ticketStatus only)",
+    "upsertedFieldPaths": "reconstructed from PUBLISH_TRACKED_FIELDS × saved event values (4866.6.4 writer behavior)"
+  },
+  "rows": [
+    {
+      "field_path": "title",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "description",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "startDate",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "venueName",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "venueCity",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "venueAddress",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "cityName",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "countryCode",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "organizerName",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "ticketUrl",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "websiteUrl",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "ageRestriction",
+      "legitimate": false,
+      "eventPatchChanged": false,
+      "manualLock": false,
+      "beforeSnapshotSource": "not_in_rollback_artifact",
+      "afterSnapshotSource": "not_captured_in_apply_result_artifact",
+      "contamination": "illegitimate_upsert_refresh"
+    },
+    {
+      "field_path": "priceText",
+      "legitimate": true,
+      "eventPatchChanged": true,
+      "manualLock": false,
+      "selected_source_id_before": "source-bootshaus-ticket-io",
+      "selected_source_id_after": "source-bootshaus-ticket-io",
+      "selected_value_before": "Tickets ab 32,00 Euro",
+      "selected_value_after": "ab 32,00 €",
+      "freshness_at_before": "2026-08-02T21:24:48.048+00:00",
+      "freshness_at_after": "2026-08-09T19:22:13.576+00:00",
+      "selected_at_before": "2026-08-02T21:24:48.048+00:00",
+      "selected_at_after": "2026-08-09T19:22:13.576+00:00",
+      "alternatives_before": [
+        {
+          "value": "Tickets ab 32,00 Euro",
+          "sourceId": "source-bootshaus-koeln",
+          "confidence": 0.75,
+          "freshnessAt": "2026-08-02T21:20:06.937Z",
+          "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+        },
+        {
+          "value": "Tickets ab 32,00 Euro",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-02T21:24:48.048Z",
+          "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+        }
+      ],
+      "alternatives_after": [
+        {
+          "value": "Tickets ab 32,00 Euro",
+          "sourceId": "source-bootshaus-koeln",
+          "confidence": 0.75,
+          "freshnessAt": "2026-08-02T21:20:06.937Z",
+          "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+        },
+        {
+          "value": "ab 32,00 €",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-09T19:22:13.576Z",
+          "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+        }
+      ],
+      "contamination": "freshness_at_used_apply_time_not_evidence_verifiedAt"
+    },
+    {
+      "field_path": "ticketStatus",
+      "legitimate": true,
+      "eventPatchChanged": true,
+      "manualLock": false,
+      "selected_source_id_before": "source-bootshaus-ticket-io",
+      "selected_source_id_after": "source-bootshaus-ticket-io",
+      "selected_value_before": "external_link",
+      "selected_value_after": "on_sale",
+      "freshness_at_before": "2026-08-02T21:24:48.048+00:00",
+      "freshness_at_after": "2026-08-09T19:22:13.576+00:00",
+      "selected_at_before": "2026-08-02T21:24:48.048+00:00",
+      "selected_at_after": "2026-08-09T19:22:13.576+00:00",
+      "alternatives_before": [
+        {
+          "value": "external_link",
+          "sourceId": "source-bootshaus-koeln",
+          "confidence": 0.75,
+          "freshnessAt": "2026-08-02T21:20:06.937Z",
+          "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+        },
+        {
+          "value": "external_link",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-02T21:24:48.048Z",
+          "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+        }
+      ],
+      "alternatives_after": [
+        {
+          "value": "external_link",
+          "sourceId": "source-bootshaus-koeln",
+          "confidence": 0.75,
+          "freshnessAt": "2026-08-02T21:20:06.937Z",
+          "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+        },
+        {
+          "value": "on_sale",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-09T19:22:13.576Z",
+          "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+        }
+      ],
+      "contamination": "freshness_at_used_apply_time_not_evidence_verifiedAt"
+    }
+  ]
+}

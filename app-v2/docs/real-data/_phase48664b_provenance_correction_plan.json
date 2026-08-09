@@ -1,0 +1,69 @@
+{
+  "phase": "4.8.6.6.4b",
+  "productionMutationsInThisRun": 0,
+  "readOnly": true,
+  "canonicalEventId": "evt-1785339418526-dn9f7g0",
+  "title": "Bootshaus on a Ship Vol. IV",
+  "evidenceVerifiedAt": "2026-08-09T19:21:16.347Z",
+  "applyAuditAt": "2026-08-09T19:22:13.576Z",
+  "manifestHash": "4230e5fd62a179ea30bdeaeaa5398aaa15690a5d4aae003257b43836d6e962f2",
+  "beforeRowFingerprint": "cf2908217b37c7ed9da7fde3ca0a82b3b8c97f37500055d10983b5e217c6b3f8",
+  "afterRowFingerprint": "e55b65e3871ba6d91e51f522c16426eab0c4802a2aa129f0ca1234386ae66e6f",
+  "eventFieldMutation": false,
+  "sourceReferenceRollback": false,
+  "sourceReferenceNote": "last_seen_at update to 2026-08-09T19:22:14.381Z is correct enrichment sync; do not revert",
+  "ticketPhasesProvenanceSupported": false,
+  "ticketPhasesEvidenceNote": "Atomic admission snapshot lives on events.ticket_phases and event_source_references.metadata.ticketOffers; no event_field_provenance field_path for ticketPhases",
+  "legitimateProvenanceRows": [
+    {
+      "fieldPath": "priceText",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-priceText",
+      "correction": {
+        "freshness_at": "2026-08-09T19:21:16.347Z",
+        "alternatives": {
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-09T19:21:16.347Z"
+        },
+        "preserve": {
+          "selected_value": "ab 32,00 €",
+          "selected_source_id": "source-bootshaus-ticket-io",
+          "selected_at": "2026-08-09T19:22:13.576+00:00",
+          "updated_at": "2026-08-09T19:22:13.576+00:00"
+        }
+      }
+    },
+    {
+      "fieldPath": "ticketStatus",
+      "provenanceId": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+      "correction": {
+        "freshness_at": "2026-08-09T19:21:16.347Z",
+        "alternatives": {
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-09T19:21:16.347Z"
+        },
+        "preserve": {
+          "selected_value": "on_sale",
+          "selected_source_id": "source-bootshaus-ticket-io",
+          "selected_at": "2026-08-09T19:22:13.576+00:00",
+          "updated_at": "2026-08-09T19:22:13.576+00:00"
+        }
+      }
+    }
+  ],
+  "illegitimateProvenanceRows": [
+    "title",
+    "description",
+    "startDate",
+    "venueName",
+    "venueCity",
+    "venueAddress",
+    "cityName",
+    "countryCode",
+    "organizerName",
+    "ticketUrl",
+    "websiteUrl",
+    "ageRestriction"
+  ],
+  "illegitimateCorrectionPolicy": "No rollback snapshots in canary artifacts. Before repair apply, read pre-canary provenance from DB or accept timestamp-only contamination if selected_value unchanged. Code fix prevents recurrence.",
+  "applyBlockedUntil": "scoped provenance writer deployed; manifest hash verified; read-only rehearsal complete"
+}
