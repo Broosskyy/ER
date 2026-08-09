@@ -16,7 +16,10 @@ import type { ImportRecordRepository } from '@/data/repositories/import-reposito
 
 import { applyEventPublishLifecycle } from '@/features/import/services/event-publish-lifecycle';
 
-import { EventFieldProvenanceWriter } from '@/features/import/services/event-field-provenance-writer';
+import {
+  computeChangedPublishTrackedFields,
+  EventFieldProvenanceWriter,
+} from '@/features/import/services/event-field-provenance-writer';
 
 import { EventCanonicalIdentityService } from '@/features/events/services/event-canonical-identity-service';
 import type { EventLifecycleOrchestrator } from '@/features/event-lifecycle/services/event-lifecycle-orchestrator';
@@ -407,6 +410,20 @@ export class ImportEventPublishService {
 
 
       if (this.fieldProvenanceWriter) {
+        const provenanceBaseline: AdminEventRecord = existingEvent ?? {
+          id: savedEvent.id,
+          title: '',
+          description: '',
+          startDate: savedEvent.startDate,
+          status: savedEvent.status,
+          sourceId: savedEvent.sourceId ?? source.id,
+          createdAt: savedEvent.createdAt,
+          updatedAt: savedEvent.updatedAt,
+        };
+        const appliedFieldPaths = computeChangedPublishTrackedFields(
+          provenanceBaseline,
+          savedEvent,
+        );
 
         await this.fieldProvenanceWriter.writeFromPublish(
           savedEvent.canonicalEventId ?? savedEvent.id,
@@ -418,6 +435,7 @@ export class ImportEventPublishService {
             originExternalId: record.externalId,
             confidence: FieldTrustMergeService.confidenceFromCandidate(canonicalCandidate),
             mergeDecisions,
+            appliedFieldPaths,
           },
         );
 

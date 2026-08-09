@@ -26,7 +26,7 @@ import {
 import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
 import { resolveConsumerTicketPresentation } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
 import {
-  countPublishTrackedFieldsWithValues,
+  computeChangedPublishTrackedFields,
 } from '@/features/import/services/event-field-provenance-writer';
 import { readCanonicalTicketFromAdminEvent } from '@/features/events/domain/canonical-ticket-read';
 import {
@@ -527,19 +527,16 @@ async function main(): Promise<void> {
     );
     recordSuccessfulWrite(writeCounters);
 
-    const provenanceWriteRequests = countPublishTrackedFieldsWithValues(
-      mapEventRowToAdminRecord(await loadEventRow(CANDIDATE_EVENT_ID)),
-    );
+    await invalidateConsumerEventCaches();
+
+    const afterRow = await loadEventRow(CANDIDATE_EVENT_ID);
+    const afterEvent = mapEventRowToAdminRecord(afterRow);
+    const provenanceWriteRequests = computeChangedPublishTrackedFields(existing, afterEvent).length;
     provenanceWrites = provenanceWriteRequests;
     sourceReferenceWrites = 1;
     eventFieldMutations = 3;
     writeCounters.totalProductionWriteOperations =
       1 + 1 + 1 + provenanceWriteRequests;
-
-    await invalidateConsumerEventCaches();
-
-    const afterRow = await loadEventRow(CANDIDATE_EVENT_ID);
-    const afterEvent = mapEventRowToAdminRecord(afterRow);
     afterSnapshot.event = {
       priceText: afterEvent.priceText,
       ticketStatus: afterEvent.ticketStatus,

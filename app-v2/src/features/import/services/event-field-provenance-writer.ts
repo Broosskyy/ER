@@ -55,6 +55,24 @@ const ADMIN_FIELD_MAP: Record<PublishTrackedField, keyof AdminEventRecord> = {
   genres: 'genreLabels',
 };
 
+function publishTrackedValuesEqual(left: unknown, right: unknown): boolean {
+  return JSON.stringify(left) === JSON.stringify(right);
+}
+
+export function computeChangedPublishTrackedFields(
+  before: AdminEventRecord,
+  after: AdminEventRecord,
+): PublishTrackedField[] {
+  return PUBLISH_TRACKED_FIELDS.filter((field) => {
+    const afterValue = resolvePublishTrackedValue(after, field);
+    if (afterValue === undefined || afterValue === null || afterValue === '') {
+      return false;
+    }
+    const beforeValue = resolvePublishTrackedValue(before, field);
+    return !publishTrackedValuesEqual(beforeValue, afterValue);
+  });
+}
+
 export function listPublishTrackedFieldsWithValues(event: AdminEventRecord): PublishTrackedField[] {
   return PUBLISH_TRACKED_FIELDS.filter((field) => {
     const value = resolvePublishTrackedValue(event, field);
@@ -90,10 +108,14 @@ export class EventFieldProvenanceWriter {
       originExternalId?: string;
       confidence?: number;
       mergeDecisions?: FieldMergeResult[];
+      appliedFieldPaths?: readonly PublishTrackedField[];
     } = {},
   ): Promise<void> {
     const publishAuditAt = options.publishedAt ?? new Date().toISOString();
     const evidenceFreshnessAt = options.evidenceVerifiedAt?.trim() || undefined;
+    const fieldsToWrite =
+      options.appliedFieldPaths ??
+      listPublishTrackedFieldsWithValues(event);
     const incomingTier = resolveSourcePriorityTier({
       sourceType: source.sourceType,
       sourceRoles: source.sourceRoles,
@@ -103,7 +125,7 @@ export class EventFieldProvenanceWriter {
       (options.mergeDecisions ?? []).map((entry) => [entry.field, entry]),
     );
 
-    for (const field of PUBLISH_TRACKED_FIELDS) {
+    for (const field of fieldsToWrite) {
       const value = resolvePublishTrackedValue(event, field);
       if (value === undefined || value === null || value === '') {
         continue;

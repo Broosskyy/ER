@@ -23,7 +23,7 @@ function baseEvent(): AdminEventRecord {
 }
 
 describe('EventFieldProvenanceWriter.writeFromPublish freshness', () => {
-  it('stores evidence verifiedAt as freshness_at and apply time as lastChangedAt', async () => {
+  it('stores evidence verifiedAt as freshness_at and apply audit time as lastChangedAt', async () => {
     const multiSource = new InMemoryMultiSourceRepositories();
     const writer = new EventFieldProvenanceWriter(multiSource.fieldProvenance);
     const evidenceVerifiedAt = '2026-08-09T19:21:16.347Z';
@@ -95,5 +95,45 @@ describe('EventFieldProvenanceWriter.writeFromPublish freshness', () => {
     expect(priceText?.freshnessAt).toBeUndefined();
     const ticketAlt = priceText?.alternatives.find((entry) => entry.sourceId === 'source-ticket');
     expect(ticketAlt?.freshnessAt).toBeUndefined();
+  });
+
+  it('keeps selected_at audit time separate from evidence freshness_at', async () => {
+    const multiSource = new InMemoryMultiSourceRepositories();
+    const writer = new EventFieldProvenanceWriter(multiSource.fieldProvenance);
+    const verifiedAt = '2026-08-09T19:21:16.347Z';
+    const applyAt = '2026-08-09T19:22:13.576Z';
+
+    await writer.writeFromPublish(
+      'evt-freshness-2',
+      {
+        id: 'source-ticket',
+        slug: 'ticket',
+        stableKey: 'ticket',
+        displayName: 'Ticket',
+        sourceType: 'ticket_platform',
+        parserType: 'unknown',
+        acquisitionStrategy: 'manual',
+        status: 'active',
+        enabled: true,
+        archived: false,
+        reviewRequired: false,
+        priority: 65,
+        trustScore: 70,
+        requiresAuthentication: false,
+        createdAt: applyAt,
+        updatedAt: applyAt,
+      },
+      baseEvent(),
+      {
+        publishedAt: applyAt,
+        evidenceVerifiedAt: verifiedAt,
+        appliedFieldPaths: ['priceText'],
+      },
+    );
+
+    const row = await multiSource.fieldProvenance.findByFieldPath('evt-freshness-2', 'priceText');
+    expect(row?.freshnessAt).toBe(verifiedAt);
+    expect(row?.lastChangedAt).toBe(applyAt);
+    expect(row?.freshnessAt).not.toBe(applyAt);
   });
 });
