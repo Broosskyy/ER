@@ -1,0 +1,466 @@
+{
+  "phase": "4.8.6.6.4",
+  "productionMutationsInThisRun": 17,
+  "rolloutActivated": false,
+  "preflight": {
+    "ok": true,
+    "failures": [],
+    "evaluation": {
+      "identityVerdict": "exact",
+      "activationEligible": true,
+      "wouldApplyIfEnabled": true
+    }
+  },
+  "selectedCandidate": {
+    "eventId": "evt-1785339418526-dn9f7g0",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "sourceId": "source-bootshaus-ticket-io",
+    "externalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+  },
+  "before": {
+    "event": {
+      "priceText": "Tickets ab 32,00 Euro",
+      "ticketStatus": "external_link",
+      "ticketPhases": null,
+      "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+      "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "description": "Bootshaus returns to the water.On September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session. Lineup:NIKLAS DEEFABIAN FARELLOLIVER MAGENTATEKNOCLASHDANTH▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+      "startDate": "2026-09-13T12:00:00+00:00",
+      "venueName": "KD Anleger Nr. 2"
+    },
+    "provenance": [
+      {
+        "id": "provenance-evt-1785339418526-dn9f7g0-priceText",
+        "canonical_event_id": "evt-1785339418526-dn9f7g0",
+        "field_path": "priceText",
+        "selected_value": "Tickets ab 32,00 Euro",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_at": "2026-08-02T21:24:48.048+00:00",
+        "selection_reason": "import_publish",
+        "alternatives": [
+          {
+            "value": "Tickets ab 32,00 Euro",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "Tickets ab 32,00 Euro",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-02T21:24:48.048Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "manually_overridden": false,
+        "updated_at": "2026-08-02T21:24:48.048+00:00",
+        "confidence": null,
+        "freshness_at": "2026-08-02T21:24:48.048+00:00",
+        "origin_external_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "merge_decision": null,
+        "selected_tier": "ticket_platform"
+      },
+      {
+        "id": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+        "canonical_event_id": "evt-1785339418526-dn9f7g0",
+        "field_path": "ticketStatus",
+        "selected_value": "external_link",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_at": "2026-08-02T21:24:48.048+00:00",
+        "selection_reason": "import_publish",
+        "alternatives": [
+          {
+            "value": "external_link",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "external_link",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-02T21:24:48.048Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "manually_overridden": false,
+        "updated_at": "2026-08-02T21:24:48.048+00:00",
+        "confidence": null,
+        "freshness_at": "2026-08-02T21:24:48.048+00:00",
+        "origin_external_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "merge_decision": null,
+        "selected_tier": "ticket_platform"
+      }
+    ],
+    "sourceReference": {
+      "id": "ref-evt-1785339418526-dn9f7g0-source-bootshaus-ticket-io-https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "canonical_event_id": "evt-1785339418526-dn9f7g0",
+      "source_id": "source-bootshaus-ticket-io",
+      "external_event_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "original_url": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "raw_record_id": "5cdf0e42-b54a-49c6-a479-cb9a96fe5165",
+      "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+      "first_seen_at": "2026-07-30T13:22:52.585+00:00",
+      "last_seen_at": "2026-08-02T21:24:48.487+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 65,
+      "source_quality_score": 70,
+      "source_health_score": null,
+      "metadata": {
+        "role": "ticketing",
+        "soldOut": false,
+        "syncRun": {
+          "pagesProcessed": 1,
+          "paginationDetected": false
+        },
+        "eventUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "platform": "ticket_io",
+        "shopSlug": "bootshaus-club",
+        "connector": "ticket_platform",
+        "eventSlug": "4zjKRnsa",
+        "isPrimary": false,
+        "priceText": "ab 32,00 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "scopeStats": {
+          "accepted": 15,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 15,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "availability": "instock",
+        "canonicalUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "defaultCityId": "koeln",
+        "defaultVenueId": "venue-bootshaus-koeln",
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "3497153f9c44929361eb703b43c09a82",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": true,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "skippedReason": "pow_blocked",
+          "maxDetailPages": 15,
+          "shopPagesFetched": 0,
+          "detailFetchErrors": 0,
+          "detailUrlsFetched": 0,
+          "detailUrlsAttempted": 15,
+          "detailUrlsDiscovered": 15,
+          "detailUrlsPowBlocked": 15
+        },
+        "enrichmentSource": true,
+        "defaultOrganizerId": "organizer-bootshaus",
+        "electronicRelevance": "relevant",
+        "historicalRepairVersion": "4.3.4",
+        "dataQualityRepairVersion": "4.3.4"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    }
+  },
+  "after": {
+    "event": {
+      "priceText": "ab 32,00 €",
+      "ticketStatus": "on_sale",
+      "ticketPhases": [
+        {
+          "id": "phase-list-admission-io/4zjkrnsa/",
+          "kind": "other",
+          "name": "List admission",
+          "isFree": false,
+          "soldOut": false,
+          "sortOrder": 900,
+          "priceLabel": "ab 32,00 €",
+          "priceAmount": 32,
+          "purchaseUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "websiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv",
+      "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "description": "Bootshaus returns to the water.On September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session. Lineup:NIKLAS DEEFABIAN FARELLOLIVER MAGENTATEKNOCLASHDANTH▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔Einlass ab 18 Jahren / Age for admission 18 years",
+      "startDate": "2026-09-13T12:00:00+00:00",
+      "venueName": "KD Anleger Nr. 2"
+    },
+    "provenance": [
+      {
+        "id": "provenance-evt-1785339418526-dn9f7g0-priceText",
+        "canonical_event_id": "evt-1785339418526-dn9f7g0",
+        "field_path": "priceText",
+        "selected_value": "ab 32,00 €",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_at": "2026-08-09T19:22:13.576+00:00",
+        "selection_reason": "import_publish",
+        "alternatives": [
+          {
+            "value": "Tickets ab 32,00 Euro",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "ab 32,00 €",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-09T19:22:13.576Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "manually_overridden": false,
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "confidence": null,
+        "freshness_at": "2026-08-09T19:22:13.576+00:00",
+        "origin_external_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "merge_decision": null,
+        "selected_tier": "ticket_platform"
+      },
+      {
+        "id": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+        "canonical_event_id": "evt-1785339418526-dn9f7g0",
+        "field_path": "ticketStatus",
+        "selected_value": "on_sale",
+        "selected_source_id": "source-bootshaus-ticket-io",
+        "selected_at": "2026-08-09T19:22:13.576+00:00",
+        "selection_reason": "import_publish",
+        "alternatives": [
+          {
+            "value": "external_link",
+            "sourceId": "source-bootshaus-koeln",
+            "confidence": 0.75,
+            "freshnessAt": "2026-08-02T21:20:06.937Z",
+            "originExternalId": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+          },
+          {
+            "value": "on_sale",
+            "sourceId": "source-bootshaus-ticket-io",
+            "freshnessAt": "2026-08-09T19:22:13.576Z",
+            "originExternalId": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+          }
+        ],
+        "manually_overridden": false,
+        "updated_at": "2026-08-09T19:22:13.576+00:00",
+        "confidence": null,
+        "freshness_at": "2026-08-09T19:22:13.576+00:00",
+        "origin_external_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "merge_decision": null,
+        "selected_tier": "ticket_platform"
+      }
+    ],
+    "sourceReference": {
+      "id": "ref-evt-1785339418526-dn9f7g0-source-bootshaus-ticket-io-https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "canonical_event_id": "evt-1785339418526-dn9f7g0",
+      "source_id": "source-bootshaus-ticket-io",
+      "external_event_id": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "original_url": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "raw_record_id": "5cdf0e42-b54a-49c6-a479-cb9a96fe5165",
+      "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+      "first_seen_at": "2026-07-30T13:22:52.585+00:00",
+      "last_seen_at": "2026-08-09T19:22:14.381+00:00",
+      "last_changed_at": null,
+      "active": true,
+      "source_priority": 65,
+      "source_quality_score": 70,
+      "source_health_score": null,
+      "metadata": {
+        "role": "ticketing",
+        "soldOut": false,
+        "syncRun": {
+          "pagesProcessed": 1,
+          "paginationDetected": false
+        },
+        "eventUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "platform": "ticket_io",
+        "shopSlug": "bootshaus-club",
+        "connector": "ticket_platform",
+        "eventDate": "2026-09-13T14:00:00+02:00",
+        "eventSlug": "4zjKRnsa",
+        "isPrimary": false,
+        "priceText": "ab 32,00 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "venueName": "KD Anleger Nr. 2",
+        "observedAt": "2026-08-09T19:21:16.347Z",
+        "scopeStats": {
+          "accepted": 14,
+          "rejected": 0,
+          "uncertain": 0,
+          "discovered": 14,
+          "rejectionReasons": {}
+        },
+        "sourceType": "ticket_platform",
+        "syncStatus": "active",
+        "verifiedAt": "2026-08-09T19:21:16.347Z",
+        "sourceRoles": [
+          "ticketing",
+          "enrichment"
+        ],
+        "availability": "instock",
+        "canonicalUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "evidenceRole": "public_shop_list",
+        "listRowTitle": "Bootshaus on a Ship Vol. IV",
+        "ticketOffers": [
+          {
+            "name": "List admission",
+            "priceAmount": 32,
+            "purchaseUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+            "priceCurrency": "EUR"
+          }
+        ],
+        "defaultCityId": "koeln",
+        "defaultVenueId": "venue-bootshaus-koeln",
+        "eventGeography": {
+          "city": "explicit",
+          "venue": "explicit",
+          "address": "explicit",
+          "country": "explicit"
+        },
+        "normalizedHash": "3497153f9c44929361eb703b43c09a82",
+        "posterMetadata": {
+          "source": "poster_ocr",
+          "status": "pending"
+        },
+        "connectorVersion": "1.2.0",
+        "detailEnrichment": {
+          "blockedByPow": false,
+          "pagesFetched": 0,
+          "detailFetched": false,
+          "parserInvoked": false,
+          "skippedReason": "pow_blocked",
+          "maxDetailPages": 15,
+          "shopPagesFetched": 0,
+          "detailFetchErrors": 0,
+          "detailFetchStatus": "missing",
+          "detailUrlsFetched": 0,
+          "lineupBlockerClass": "external_detail_blocked",
+          "detailUrlsAttempted": 14,
+          "detailUrlsDiscovered": 14,
+          "detailUrlsPowBlocked": 14
+        },
+        "enrichmentSource": true,
+        "listCardEvidence": {
+          "soldOut": false,
+          "eventDate": "2026-09-13T14:00:00+02:00",
+          "eventSlug": "4zjKRnsa",
+          "priceText": "ab 32,00 €",
+          "venueName": "KD Anleger Nr. 2",
+          "observedAt": "2026-08-09T19:21:16.347Z",
+          "verifiedAt": "2026-08-09T19:21:16.347Z",
+          "evidenceRole": "public_shop_list",
+          "listRowTitle": "Bootshaus on a Ship Vol. IV",
+          "linkedEventUrl": "https://4zjkrnsa/",
+          "slugBindingProof": {
+            "notes": [
+              "price_from_same_card_overview_row",
+              "linked_event_url_from_same_card"
+            ],
+            "eventSlug": "4zjKRnsa",
+            "linkedEventUrl": "https://4zjkrnsa/",
+            "linkedEventHost": "4zjkrnsa",
+            "listContextSlug": "4zjKRnsa",
+            "publicTicketPageUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+            "listPriceOverviewText": "Tickets ab 32,00 Euro",
+            "allFieldsFromSameSlugCard": false
+          },
+          "detailFetchStatus": "missing",
+          "publicTicketPageUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+        },
+        "detailFetchStatus": "missing",
+        "defaultOrganizerId": "organizer-bootshaus",
+        "electronicRelevance": "relevant",
+        "publicTicketPageUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "publicCtaCandidateUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "historicalRepairVersion": "4.6.6",
+        "dataQualityRepairVersion": "4.6.6",
+        "ticketPlatformRepairVersion": "4.6.6"
+      },
+      "consecutive_missing_count": 0,
+      "missing_since": null
+    },
+    "consumer": {
+      "headerPrice": "ab 32,00 €",
+      "ticketAvailability": "Verfügbar",
+      "ticketCardCount": 1,
+      "consumerLabel": "Tickets ansehen",
+      "cardPrice": "ab 32,00 €",
+      "showSummary": false,
+      "publicCtaUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "officialWebsiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+    },
+    "publishEventId": "evt-1785339418526-dn9f7g0"
+  },
+  "consumerAfter": {
+    "headerPrice": "ab 32,00 €",
+    "ticketAvailability": "Verfügbar",
+    "ticketCardCount": 1,
+    "consumerLabel": "Tickets ansehen",
+    "cardPrice": "ab 32,00 €",
+    "showSummary": false,
+    "publicCtaUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "officialWebsiteUrl": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv"
+  },
+  "writeCounters": {
+    "attemptedApplicationEvents": 1,
+    "successfulApplicationEvents": 1,
+    "attemptedWrites": 1,
+    "successfulWrites": 1,
+    "rollbackWrites": 0,
+    "retryWrites": 0,
+    "databaseWriteRequests": 17,
+    "affectedRows": 17,
+    "eventFieldMutations": 3,
+    "provenanceWriteRequests": 14,
+    "sourceReferenceWriteRequests": 1,
+    "rollbackWriteRequests": 0,
+    "totalProductionWriteOperations": 17
+  },
+  "writeReconstruction": {
+    "operations": [
+      {
+        "table": "events",
+        "operation": "update",
+        "requests": 1,
+        "affectedRows": 1,
+        "purpose": "Apply enrichment + generic truth ticket patch (priceText, ticketStatus, ticketPhases)"
+      },
+      {
+        "table": "import_records",
+        "operation": "update",
+        "requests": 1,
+        "affectedRows": 1,
+        "purpose": "Mark import record imported after publish"
+      },
+      {
+        "table": "event_source_references",
+        "operation": "upsert",
+        "requests": 1,
+        "affectedRows": 1,
+        "purpose": "Refresh ticket.io source reference last_seen_at and metadata"
+      },
+      {
+        "table": "event_field_provenance",
+        "operation": "upsert",
+        "requests": 14,
+        "affectedRows": 14,
+        "purpose": "Publish provenance refresh for all tracked fields with values on saved event"
+      }
+    ],
+    "note": "attemptedWrites counts publish attempts, not additional DB operations"
+  },
+  "rolledBack": false,
+  "otherEventsMutated": [],
+  "approvedManifestHash": "163a5b061d2d9ed79ce7812ef176ae76e4bc694d6c9da5bdbe75b0beb07ff35c"
+}

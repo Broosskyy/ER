@@ -1,0 +1,46 @@
+{
+  "phase": "4.8.6.6.4a",
+  "readOnly": true,
+  "productionMutationsInThisRun": 0,
+  "reason": "Canary provenance rows used apply-time freshness_at instead of source evidence verifiedAt",
+  "evidenceVerifiedAt": "2026-08-09T19:21:16.347Z",
+  "incorrectApplyAuditAt": "2026-08-09T19:22:13.576Z",
+  "canonicalEventId": "evt-1785339418526-dn9f7g0",
+  "sourceId": "source-bootshaus-ticket-io",
+  "corrections": [
+    {
+      "table": "event_field_provenance",
+      "id": "provenance-evt-1785339418526-dn9f7g0-priceText",
+      "fieldPath": "priceText",
+      "patch": {
+        "freshness_at": "2026-08-09T19:21:16.347Z",
+        "alternatives": {
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-09T19:21:16.347Z"
+        }
+      },
+      "preserve": {
+        "selected_at": "2026-08-09T19:22:13.576Z",
+        "updated_at": "2026-08-09T19:22:13.576Z",
+        "lastChangedAtSemantics": "apply audit time remains on selected_at/updated_at"
+      }
+    },
+    {
+      "table": "event_field_provenance",
+      "id": "provenance-evt-1785339418526-dn9f7g0-ticketStatus",
+      "fieldPath": "ticketStatus",
+      "patch": {
+        "freshness_at": "2026-08-09T19:21:16.347Z",
+        "alternatives": {
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-09T19:21:16.347Z"
+        }
+      },
+      "preserve": {
+        "selected_at": "2026-08-09T19:22:13.576Z",
+        "updated_at": "2026-08-09T19:22:13.576Z"
+      }
+    }
+  ],
+  "applyBlockedUntil": "code fix deployed and reviewed; run read-only validation before any write"
+}
