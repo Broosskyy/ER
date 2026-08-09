@@ -18,6 +18,7 @@ import {
   buildRollbackPayload,
   buildRowFingerprint,
   buildStableCanaryManifestHash,
+  formatRowFingerprintShort,
   canonicalImportEventToEvidenceBundle,
   evaluateGenericTruthPublish,
   GenericTruthLiveShadowRunner,
@@ -221,7 +222,7 @@ async function main(): Promise<void> {
     }
 
     const rowFingerprint = buildRowFingerprint(existing);
-    const rollbackPayload = buildRollbackPayload(existing);
+    const rollbackPayload = buildRollbackPayload(existing, Object.keys(expectedPatches));
 
     candidates.push({
       eventId: shadowEvent.eventId,
@@ -263,6 +264,7 @@ async function main(): Promise<void> {
         eventIds: fullEval.collisionEventIds,
       },
       rowFingerprint,
+      rowFingerprintShort: formatRowFingerprintShort(rowFingerprint),
       rollbackPayload,
       allowedFieldGroups: [...fullEval.fieldGroupEligibility.policyEligibleFieldGroups].filter((group) =>
         RESTRICTED_CANARY_FIELD_GROUPS.includes(group),
@@ -301,7 +303,7 @@ async function main(): Promise<void> {
     }));
 
   const plan = {
-    phase: '4.8.6.6.3',
+    phase: '4.8.6.6.3a',
     productionMutationsInThisRun,
     rolloutActivated: false,
     sourceId,
@@ -376,7 +378,7 @@ async function main(): Promise<void> {
 
   console.log(
     JSON.stringify({
-      phase: '4.8.6.6.3',
+      phase: '4.8.6.6.3a',
       productionMutationsInThisRun,
       rolloutActivated: false,
       totalDatabaseWrites,

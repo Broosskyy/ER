@@ -19,6 +19,7 @@ import type { EventIdentitySnapshot } from '@/features/import/ticket-platform-id
 
 import { evaluateCanonicalIdentityCollision } from './canonical-identity-collision';
 import { canonicalImportEventToEvidenceBundle, adminEventToIdentitySnapshot } from './evidence-from-canonical';
+import { filterPatchByFieldBoundaries } from './field-boundaries';
 import {
   buildFieldGroupDeltas,
   filterBlockedPatch,
@@ -281,7 +282,13 @@ export function evaluateGenericTruthPublish(
     }
   }
 
-  const applicablePatch = filterBlockedPatch(patch, blockedGroups);
+  const boundaryFiltered = filterPatchByFieldBoundaries({
+    patch,
+    existing: input.existing,
+    bundle,
+    allowedFieldGroups: input.allowedFieldGroups,
+  });
+  const applicablePatch = filterBlockedPatch(boundaryFiltered.patch, blockedGroups);
   const fieldGroupDeltas = buildFieldGroupDeltas({
     before: input.existing,
     patch: applicablePatch,
@@ -417,6 +424,7 @@ export function evaluateGenericTruthPublish(
     diagnostics: [
       ...identityGate.diagnostics,
       ...ticketWrite.audit.diagnostics,
+      ...boundaryFiltered.diagnostics,
       lineupGate.reason,
       collisionGuard.reason,
     ].filter(Boolean),

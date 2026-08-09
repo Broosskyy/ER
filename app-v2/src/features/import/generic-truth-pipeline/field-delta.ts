@@ -21,13 +21,14 @@ const GROUP_FIELDS: Record<GenericTruthFieldGroup, (keyof ImportPublishFieldPatc
     'latitude',
     'longitude',
     'organizerName',
+    'websiteUrl',
   ],
   tickets: ['priceText', 'ticketStatus', 'ticketPhases'],
   description: ['description'],
   genres: ['genreLabels'],
   lineup: [],
   age_environment: ['ageRestriction', 'venueEnvironment'],
-  cta_checkout: ['ticketUrl', 'websiteUrl'],
+  cta_checkout: ['ticketUrl'],
 };
 
 function normalizeIsoDate(value: unknown): string | undefined {

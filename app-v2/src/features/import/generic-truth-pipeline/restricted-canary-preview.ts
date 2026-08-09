@@ -60,18 +60,37 @@ export function buildRowFingerprint(event: AdminEventRecord): string {
         ticketPhases: event.ticketPhases,
       }),
     )
-    .digest('hex')
-    .slice(0, 16);
+    .digest('hex');
 }
 
-export function buildRollbackPayload(event: AdminEventRecord): Record<string, unknown> {
-  return {
-    ticketUrl: event.ticketUrl,
-    websiteUrl: event.websiteUrl,
-    priceText: event.priceText,
-    ticketStatus: event.ticketStatus,
-    ticketPhases: event.ticketPhases,
-  };
+/** Short display form for human-readable reports — manifest uses full fingerprint. */
+export function formatRowFingerprintShort(fingerprint: string): string {
+  return fingerprint.slice(0, 16);
+}
+
+const ROLLBACK_FIELD_KEYS = [
+  'ticketUrl',
+  'websiteUrl',
+  'priceText',
+  'ticketStatus',
+  'ticketPhases',
+] as const;
+
+export function buildRollbackPayload(
+  event: AdminEventRecord,
+  patchFields?: readonly string[],
+): Record<string, unknown> {
+  const keys =
+    patchFields ??
+    ROLLBACK_FIELD_KEYS.filter((field) => event[field as keyof AdminEventRecord] !== undefined);
+  const payload: Record<string, unknown> = {};
+  for (const field of keys) {
+    const value = event[field as keyof AdminEventRecord];
+    if (value !== undefined) {
+      payload[field] = value;
+    }
+  }
+  return payload;
 }
 
 export interface RestrictedCanaryEligibilityResult {
