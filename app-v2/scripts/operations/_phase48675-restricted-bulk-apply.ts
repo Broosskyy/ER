@@ -130,7 +130,7 @@ async function loadSourceReference(eventId: string, sourceId: string): Promise<R
 async function touchSourceReference(eventId: string, sourceId: string): Promise<void> {
   const { error } = await opsClient()
     .from('event_source_references')
-    .update({ last_seen_at: new Date().toISOString(), updated_at: new Date().toISOString() } as never)
+    .update({ last_seen_at: new Date().toISOString() } as never)
     .eq('canonical_event_id', eventId)
     .eq('source_id', sourceId);
   if (error) throw new Error(error.message);
@@ -142,7 +142,6 @@ async function restoreSourceReference(snapshot: Record<string, unknown>): Promis
     .update({
       last_seen_at: snapshot.last_seen_at,
       active: snapshot.active,
-      updated_at: snapshot.updated_at,
     } as never)
     .eq('id', snapshot.id as string);
   if (error) throw new Error(error.message);
