@@ -407,7 +407,6 @@ async function main(): Promise<void> {
         applyOk = false;
         applyError = 'readback_failed';
       }
-    }
   }
 
   const result = {
