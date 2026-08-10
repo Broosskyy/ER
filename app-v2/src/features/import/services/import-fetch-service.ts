@@ -10,12 +10,17 @@ export interface ImportFetchOptions {
 }
 
 export interface ImportFetchResponse {
+  requestedUrl: string;
   url: string;
   status: number;
   contentType: string;
   body: string;
   bytesRead: number;
+  redirectChain: string[];
 }
+
+const SUPPORTED_REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
+const MAX_REDIRECTS = 5;
 
 const BLOCKED_PROTOCOLS = ['file:', 'ftp:', 'data:', 'javascript:', 'vbscript:'];
 const BLOCKED_HOSTNAMES = new Set(['localhost', '0.0.0.0', '[::1]', '::1']);
@@ -157,6 +162,9 @@ export class ImportFetchService {
             allowedContentTypes: options.allowedContentTypes,
           },
           maxBytes,
+          options.url,
+          [options.url],
+          new Set([options.url]),
         );
         clearTimeout(timeoutId);
         return result;
@@ -190,6 +198,9 @@ export class ImportFetchService {
       allowedContentTypes?: string[];
     },
     maxBytes: number,
+    requestedUrl: string,
+    redirectChain: string[],
+    visitedUrls: Set<string>,
     redirectCount = 0,
   ): Promise<ImportFetchResponse> {
     assertSafeImportUrl(url);
@@ -201,16 +212,30 @@ export class ImportFetchService {
       redirect: 'manual',
     });
 
-    if (response.status >= 300 && response.status < 400) {
+    if (SUPPORTED_REDIRECT_STATUSES.has(response.status)) {
       const location = response.headers.get('location');
       if (!location) {
         throw new ImportExecutionError('Redirect without location header.', 'IMPORT_EXECUTION_FAILED');
       }
-      if (redirectCount >= importConfig.maxRedirects) {
+      if (redirectCount >= MAX_REDIRECTS) {
         throw new ImportExecutionError('Too many redirects.', 'IMPORT_EXECUTION_FAILED');
       }
       const nextUrl = new URL(location, url).toString();
-      return this.fetchWithRedirects(nextUrl, options, maxBytes, redirectCount + 1);
+      assertSafeImportUrl(nextUrl);
+      if (visitedUrls.has(nextUrl)) {
+        throw new ImportExecutionError('Redirect loop detected.', 'IMPORT_EXECUTION_FAILED');
+      }
+      const nextVisitedUrls = new Set(visitedUrls);
+      nextVisitedUrls.add(nextUrl);
+      return this.fetchWithRedirects(
+        nextUrl,
+        options,
+        maxBytes,
+        requestedUrl,
+        [...redirectChain, nextUrl],
+        nextVisitedUrls,
+        redirectCount + 1,
+      );
     }
 
     if (!response.ok) {
@@ -228,11 +253,13 @@ export class ImportFetchService {
     const { body, bytesRead } = await readLimitedBody(response, maxBytes);
 
     return {
+      requestedUrl,
       url: response.url || url,
       status: response.status,
       contentType,
       body,
       bytesRead,
+      redirectChain,
     };
   }
 }

@@ -20,10 +20,19 @@ export interface EvidencedValue<T> {
   verifiedAt: string;
 }
 
+export interface TicketExcludedProductEvidence {
+  name: string;
+  reason: string;
+  priceAmount?: number;
+  priceCurrency?: string;
+}
+
 export interface ConnectorOutput {
   sourceId: string;
   sourceFamily: CleanSourceFamily;
   sourceUrl: string;
+  requestedSourceUrl?: string;
+  finalSourceUrl?: string;
   verifiedAt?: string;
   title?: string;
   startDate?: string;
@@ -47,6 +56,8 @@ export interface ConnectorOutput {
     text?: string;
   };
   ticketPhases?: CanonicalTicketPhase[];
+  admissionProducts?: CanonicalTicketPhase[];
+  excludedProducts?: TicketExcludedProductEvidence[];
   ticketStatus?: AdminEventTicketStatus;
   duplicateCandidate?: boolean;
   diagnostics?: string[];
@@ -56,6 +67,8 @@ export interface EventEvidence {
   sourceId: string;
   sourceFamily: CleanSourceFamily;
   sourceUrl: string;
+  requestedSourceUrl?: string;
+  finalSourceUrl?: string;
   verifiedAt?: string;
   identity: {
     title?: EvidencedValue<string>;
@@ -84,6 +97,8 @@ export interface EventEvidence {
       text?: string;
     }>;
     ticketPhases?: EvidencedValue<CanonicalTicketPhase[]>;
+    admissionProducts?: EvidencedValue<CanonicalTicketPhase[]>;
+    excludedProducts?: EvidencedValue<TicketExcludedProductEvidence[]>;
     ticketStatus?: EvidencedValue<AdminEventTicketStatus>;
   };
   duplicateCandidate: boolean;

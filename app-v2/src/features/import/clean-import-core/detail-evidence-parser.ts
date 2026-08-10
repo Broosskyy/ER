@@ -92,12 +92,26 @@ function toLineupEvidence(
 
 function ticketFieldsFromOffers(offers: TicketIoTicketOffer[] | undefined): Pick<
   ConnectorOutput,
-  'admissionPrice' | 'ticketPhases' | 'ticketStatus'
+  'admissionPrice' | 'ticketPhases' | 'admissionProducts' | 'ticketStatus'
 > {
   if (!offers?.length) {
     return {};
   }
-  const ticketPhases = offers.map(normalizeSourceTicketOffer);
+  const ticketPhases = offers.map((offer, index) =>
+    normalizeSourceTicketOffer(
+      {
+        ...offer,
+        soldOut:
+          offer.soldOut ??
+          (offer.purchaseUrl &&
+          offer.priceAmount !== undefined &&
+          offer.priceAmount > 0
+            ? false
+            : undefined),
+      },
+      index,
+    ),
+  );
   const availableAmounts = ticketPhases
     .filter((phase) => phase.soldOut !== true && phase.available !== false)
     .map((phase) => phase.priceAmount)
@@ -110,6 +124,7 @@ function ticketFieldsFromOffers(offers: TicketIoTicketOffer[] | undefined): Pick
 
   return {
     ticketPhases,
+    admissionProducts: ticketPhases,
     ticketStatus: deriveTicketStatusFromPhases(ticketPhases),
     admissionPrice: Number.isFinite(amount)
       ? {
@@ -192,11 +207,15 @@ function parseTicketIo(request: DetailEvidenceRequest): ConnectorOutput {
   const listPrice = request.listCard?.priceText
     ? parseGermanPriceText(request.listCard.priceText)
     : undefined;
+  const explicitFree = /(?:kostenlos|freier\s+eintritt|\bfree\b)/i.test(
+    request.listCard?.priceText ?? '',
+  );
   const listOffers: TicketIoTicketOffer[] | undefined =
-    listPrice?.amount || request.listCard?.soldOut
+    (listPrice?.amount !== undefined && (listPrice.amount > 0 || explicitFree)) ||
+    request.listCard?.soldOut
       ? [
           {
-            name: 'List admission',
+            name: explicitFree ? 'Free admission' : 'List admission',
             priceAmount: listPrice?.amount,
             priceCurrency: listPrice?.currency ?? 'EUR',
             soldOut: request.listCard?.soldOut,
@@ -231,7 +250,13 @@ function parseTicketIo(request: DetailEvidenceRequest): ConnectorOutput {
       classification.identity.publicTicketPageUrl ??
       request.sourceUrl,
     ...ticketFieldsFromOffers(offers),
-    diagnostics: classification.diagnostics,
+    excludedProducts: classification.excludedProducts,
+    diagnostics: [
+      ...classification.diagnostics,
+      ...classification.excludedProducts.map(
+        (product) => `excluded_add_on:${product.name}`,
+      ),
+    ],
   };
 }
 
@@ -244,7 +269,13 @@ function parseTicketKings(request: DetailEvidenceRequest): ConnectorOutput {
     name: release.name,
     priceAmount: release.priceAmount,
     priceCurrency: release.priceCurrency,
-    soldOut: release.soldOut,
+    soldOut:
+      release.soldOut ??
+      (release.available === false
+        ? true
+        : release.available === true
+          ? false
+          : undefined),
     purchaseUrl: release.purchaseUrl,
   }));
   const lineup = toLineupEvidence(detail.lineupEntries);
@@ -269,6 +300,12 @@ function parseTicketKings(request: DetailEvidenceRequest): ConnectorOutput {
     publicTicketUrl: request.sourceUrl,
     checkoutEvidenceUrl,
     ...ticketFieldsFromOffers(offers),
+    excludedProducts: checkout?.excludedProducts.map((product) => ({
+      name: product.rawProductName,
+      reason: product.exclusionReason ?? 'supplementary_add_on_product',
+      priceAmount: product.priceAmount,
+      priceCurrency: product.priceCurrency,
+    })),
     diagnostics: [
       ...detail.fieldCoverage.map((field) => `detail:${field}`),
       ...(checkout?.excludedProducts.map(

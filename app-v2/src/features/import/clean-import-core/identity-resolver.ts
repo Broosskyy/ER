@@ -26,6 +26,56 @@ export interface IdentityResolution {
   reasons: string[];
 }
 
+export interface SourceNativeIdentity {
+  title?: string;
+  startDate?: string;
+  venueName?: string;
+  locationText?: string;
+  organizerName?: string;
+}
+
+export interface SourceNativeIdentityCompatibility {
+  compatible: boolean;
+  reasons: Array<'title_missing' | 'date_missing' | 'title_mismatch' | 'date_mismatch' | 'venue_mismatch'>;
+}
+
+/**
+ * Guards source mappings and clustering with source-native identity only.
+ * Organizer equality is intentionally not considered evidence of event identity.
+ */
+export function evaluateSourceNativeIdentityCompatibility(
+  left: SourceNativeIdentity,
+  right: SourceNativeIdentity,
+): SourceNativeIdentityCompatibility {
+  const reasons: SourceNativeIdentityCompatibility['reasons'] = [];
+  if (!left.title?.trim() || !right.title?.trim()) {
+    reasons.push('title_missing');
+  }
+  if (!left.startDate?.trim() || !right.startDate?.trim()) {
+    reasons.push('date_missing');
+  }
+  if (reasons.length > 0) {
+    return { compatible: false, reasons };
+  }
+
+  const leftVenue = left.venueName ?? left.locationText;
+  const rightVenue = right.venueName ?? right.locationText;
+  const titleComparison = compareEventTitleCores(
+    analyzeEventTitleCore(left.title!, { venueName: leftVenue }),
+    analyzeEventTitleCore(right.title!, { venueName: rightVenue }),
+  );
+  if (!titleComparison.coresAgree) {
+    reasons.push('title_mismatch');
+  }
+  if (!sameCalendarDay(left.startDate!, right.startDate!)) {
+    reasons.push('date_mismatch');
+  }
+  if (leftVenue?.trim() && rightVenue?.trim() && !venueCompatible(leftVenue, rightVenue)) {
+    reasons.push('venue_mismatch');
+  }
+  return { compatible: reasons.length === 0, reasons };
+}
+
 function hasCompleteOfficialIdentity(evidence: EventEvidence): boolean {
   return Boolean(
     evidence.verifiedAt &&
@@ -74,28 +124,34 @@ function identityPair(
     };
   }
 
-  const dateAgrees = sameCalendarDay(officialDate, candidateDate);
-  const venueAgrees = venueCompatible(officialVenue, candidateVenue);
-  const titleComparison = compareEventTitleCores(
-    analyzeEventTitleCore(officialTitle, { venueName: officialVenue }),
-    analyzeEventTitleCore(candidateTitle, { venueName: candidateVenue }),
+  const compatibility = evaluateSourceNativeIdentityCompatibility(
+    {
+      title: officialTitle,
+      startDate: officialDate,
+      venueName: officialVenue,
+    },
+    {
+      title: candidateTitle,
+      startDate: candidateDate,
+      venueName: candidateVenue,
+    },
   );
 
-  if (!dateAgrees) {
+  if (compatibility.reasons.includes('date_mismatch')) {
     return {
       accepted: false,
       verdict: 'mismatch',
       reason: `identity_date_mismatch:${candidate.sourceId}`,
     };
   }
-  if (!venueAgrees) {
+  if (compatibility.reasons.includes('venue_mismatch')) {
     return {
       accepted: false,
       verdict: 'mismatch',
       reason: `identity_venue_mismatch:${candidate.sourceId}`,
     };
   }
-  if (!titleComparison.coresAgree) {
+  if (compatibility.reasons.includes('title_mismatch')) {
     return {
       accepted: false,
       verdict: 'mismatch',

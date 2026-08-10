@@ -11,6 +11,32 @@ export interface ReviewDecisionResult {
   reviewReasons: string[];
 }
 
+export type MissingLiveEvidenceDisposition =
+  | 'live_evidence_present'
+  | 'historical_preserve'
+  | 'review';
+
+/** Keeps confirmed historical canonical events out of active missing-evidence review. */
+export function resolveMissingLiveEvidenceDisposition(input: {
+  existingEventId?: string;
+  endDate?: string;
+  hasLiveEvidence: boolean;
+  now: Date;
+}): MissingLiveEvidenceDisposition {
+  if (input.hasLiveEvidence) {
+    return 'live_evidence_present';
+  }
+  const endTime = input.endDate ? Date.parse(input.endDate) : Number.NaN;
+  if (
+    input.existingEventId &&
+    Number.isFinite(endTime) &&
+    endTime < input.now.getTime()
+  ) {
+    return 'historical_preserve';
+  }
+  return 'review';
+}
+
 function missingRequired(canonicalEvent: CanonicalEvent | undefined): string[] {
   if (!canonicalEvent) {
     return ['title', 'startDate', 'venueOrLocation', 'websiteUrl', 'stableIdentity'];
