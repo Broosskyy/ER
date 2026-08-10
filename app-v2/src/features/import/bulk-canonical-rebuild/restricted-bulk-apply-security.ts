@@ -178,11 +178,29 @@ export function filterManifestPatch(
   return patch as Record<AllowedPatchField, unknown>;
 }
 
+export const HARD_BLOCKED_WRITER_FIELDS = [
+  'ticketPhases',
+  'ticketUrl',
+  'websiteUrl',
+  'title',
+  'description',
+  'startDate',
+  'endDate',
+  'venueName',
+  'organizerName',
+  'genreLabels',
+  'imageUrl',
+] as const;
+
 export function rejectWholeRowReplacement(
   writerFieldChanges: string[],
   allowedFields: readonly string[],
 ): string[] {
-  return writerFieldChanges.filter((field) => !allowedFields.includes(field));
+  return writerFieldChanges.filter(
+    (field) =>
+      HARD_BLOCKED_WRITER_FIELDS.includes(field as (typeof HARD_BLOCKED_WRITER_FIELDS)[number]) &&
+      !allowedFields.includes(field),
+  );
 }
 
 export function rejectStatusDowngrade(
