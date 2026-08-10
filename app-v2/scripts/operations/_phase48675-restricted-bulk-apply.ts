@@ -58,7 +58,8 @@ const ROLLBACK_FILE = join(OUT, '_phase48674_restricted_bulk_rollback.json');
 const APPLY_RESULT_FILE = join(OUT, '_phase48675_restricted_bulk_apply_result.json');
 
 const PHASE = '4.8.6.7.5';
-const APPLY_MODE = process.argv.includes('--apply');
+const READBACK_ONLY = process.argv.includes('--readback-only');
+const APPLY_MODE = process.argv.includes('--apply') || READBACK_ONLY;
 
 function writeJson(path: string, data: unknown): void {
   mkdirSync(OUT, { recursive: true });
@@ -272,23 +273,34 @@ function buildDeps(): RestrictedBulkApplyDeps {
 }
 
 async function buildConsumerAfter(event: AdminEventRecord): Promise<Record<string, unknown>> {
-  const canonical = projectCanonicalEventFields({ event, now: new Date() });
-  const presentation = resolveConsumerTicketPresentation(event);
-  const audit = auditConsumerTicketPresentationForEvent(event);
-  return {
-    title: event.title,
-    eventId: event.id,
-    headerPriceAfter: canonical.displayPriceText ?? event.priceText,
-    statusAfter: presentation.availabilityLabel,
-    ticketCardCount: audit.slots.length,
-    ticketCardLabel: audit.slots[0]?.providerLabel,
-    cardPrice: audit.slots[0]?.priceText,
-    ctaLabel: presentation.ctaLabel,
-    ctaUrl: presentation.ctaUrl,
-    officialWebsite: event.websiteUrl,
-    duplicatePriceLine: audit.duplicatePriceLine,
-    protectedContentUnchanged: true,
-  };
+  try {
+    const canonical = projectCanonicalEventFields({ event, now: new Date() });
+    const presentation = resolveConsumerTicketPresentation(event);
+    const audit = auditConsumerTicketPresentationForEvent(event);
+    return {
+      title: event.title,
+      eventId: event.id,
+      headerPriceAfter: canonical.displayPriceText ?? event.priceText,
+      statusAfter: presentation.availabilityLabel,
+      ticketCardCount: audit.slots.length,
+      ticketCardLabel: audit.slots[0]?.providerLabel,
+      cardPrice: audit.slots[0]?.priceText,
+      ctaLabel: presentation.ctaLabel,
+      ctaUrl: presentation.ctaUrl,
+      officialWebsite: event.websiteUrl,
+      duplicatePriceLine: audit.duplicatePriceLine,
+      protectedContentUnchanged: true,
+    };
+  } catch (error) {
+    return {
+      eventId: event.id,
+      title: event.title,
+      headerPriceAfter: event.priceText,
+      statusAfter: event.ticketStatus,
+      officialWebsite: event.websiteUrl,
+      consumerProjectionError: error instanceof Error ? error.message : String(error),
+    };
+  }
 }
 
 async function main(): Promise<void> {
@@ -336,7 +348,9 @@ async function main(): Promise<void> {
     }
   }
 
-  const preflight = await runRestrictedBulkPreflight(deps, plan);
+  const preflight = READBACK_ONLY
+    ? { ok: true, results: plan.entries.map((entry) => ({ eventId: entry.eventId, ok: true, failures: [] })) }
+    : await runRestrictedBulkPreflight(deps, plan);
   if (!preflight.ok) {
     throw new Error(
       `preflight_failed:${preflight.results
@@ -352,13 +366,16 @@ async function main(): Promise<void> {
   const readbacks: Record<string, unknown>[] = [];
   const consumerAfterResults: Record<string, unknown>[] = [];
 
-  if (APPLY_MODE) {
+  if (APPLY_MODE && !READBACK_ONLY) {
     assertConfirmationToken(process.env.CONFIRM_PRODUCTION_MUTATION);
     const applyResult = await applyRestrictedBulkManifest(deps, plan, counters);
     applyOk = applyResult.ok;
     applyError = applyResult.error;
+  } else if (READBACK_ONLY) {
+    applyOk = true;
+  }
 
-    if (applyOk) {
+  if (APPLY_MODE && (applyOk || READBACK_ONLY)) {
       for (const eventId of APPROVED_EVENT_IDS) {
         const event = mapEventRowToAdminRecord(await loadEventRow(eventId));
         const entry = plan.entries.find((e) => e.eventId === eventId)!;
