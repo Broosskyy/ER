@@ -1,0 +1,103 @@
+{
+  "phase": "4.8.6.7.4",
+  "invalidPriorManifestHashRejected": true,
+  "manifestHash": "c00344f2c8f43f22c5699aade8006bb6e82ed3507556120d8637f47f29a1e08f",
+  "selectedCount": 8,
+  "selectedEventIds": [
+    "evt-1785506397824-yhn81xp",
+    "evt-1785506404218-hgmd9nz",
+    "evt-1785506439487-2hr731q",
+    "evt-1785506472665-1b5azyj",
+    "evt-1785672261305-bgdu8dk",
+    "evt-1785443904478-dg3lk70",
+    "evt-1785443908695-6n8vfff",
+    "evt-1785506428527-m5ugmjh"
+  ],
+  "removedFromPreselection": [],
+  "liveRevalidation": [
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:04:58.980Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:04:58.980Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:05:31.526Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:08:13.901Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:09:42.508Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:07:00.726Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:07:00.726Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "passed": true,
+      "reasons": [],
+      "verifiedAt": "2026-08-10T11:05:31.526Z",
+      "detailFetchStatuses": [
+        "ok"
+      ]
+    }
+  ],
+  "eligibilityCounts": {
+    "safe_no_change": 37,
+    "safe_field_patch": 8
+  },
+  "plannedFieldMutations": 11,
+  "fixtureAcceptance": {
+    "passed": true,
+    "passCount": 7,
+    "total": 7
+  },
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false
+}

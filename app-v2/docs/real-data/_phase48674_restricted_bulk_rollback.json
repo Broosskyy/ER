@@ -1,0 +1,196 @@
+{
+  "phase": "4.8.6.7.4",
+  "entries": [
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "eventFields": {
+        "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+        "startDate": "2026-08-14T21:00:00+00:00",
+        "endDate": "2026-08-15T05:00:00+00:00",
+        "venueName": "LEHMANN Club",
+        "organizerName": "Lehmann Club GmbH & Co KG",
+        "websiteUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "priceText": "ab 19,00 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 19,00 €",
+          "after": "ab 22,00 €"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "eventFields": {
+        "title": "Vision Ekstase Open Air",
+        "startDate": "2026-08-15T10:00:00+00:00",
+        "endDate": "2026-08-15T20:00:00+00:00",
+        "venueName": "Killesberg",
+        "organizerName": "Lehmann Club GmbH & Co KG",
+        "websiteUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "priceText": "ab 15,00 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 15,00 €",
+          "after": "ab 18,00 €"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "eventFields": {
+        "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+        "startDate": "2026-09-18T15:45:00+00:00",
+        "endDate": "2026-09-18T20:30:00+00:00",
+        "venueName": "Bregenz Hafen (Pier 69)",
+        "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+        "websiteUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "priceText": "ab 42,90 €",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "eventFields": {
+        "title": "NEELIX",
+        "startDate": "2026-10-23T20:00:00+00:00",
+        "endDate": "2026-10-24T02:00:00+00:00",
+        "venueName": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "organizerName": "HMG Events GmbH & Co.KG",
+        "websiteUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "priceText": "ab 28,20 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 28,20 €",
+          "after": "ab 25,00 €"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "eventFields": {
+        "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+        "startDate": "2026-08-29T21:00:00+00:00",
+        "endDate": "2026-08-30T04:00:00+00:00",
+        "venueName": "Proton The Club",
+        "organizerName": "proton the club GmbH & Co. KG",
+        "websiteUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "priceText": "ab 10,00 €",
+        "ticketStatus": "external_link",
+        "genreLabels": [
+          "HARDTECHNO"
+        ],
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "eventFields": {
+        "title": "DEBORAH DE LUCA pres by Bootshaus",
+        "startDate": "2027-01-23T21:00:00+00:00",
+        "endDate": "2027-01-24T05:00:00+00:00",
+        "venueName": "Bootshaus",
+        "organizerName": "Bootshaus Cologne GmbH",
+        "websiteUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "priceText": "Tickets ab 19,90 Euro",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "Tickets ab 19,90 Euro",
+          "after": "ab 19,90 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "eventFields": {
+        "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+        "startDate": "2026-08-27T18:00:00+00:00",
+        "endDate": "2026-08-28T01:00:00+00:00",
+        "venueName": "Bootshaus",
+        "organizerName": "Bootshaus Cologne GmbH",
+        "websiteUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "priceText": "Tickets ab 30,00 Euro",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "Tickets ab 30,00 Euro",
+          "after": "ab 30,00 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      }
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "eventFields": {
+        "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+        "startDate": "2026-09-25T15:15:00+00:00",
+        "endDate": "2026-09-25T20:00:00+00:00",
+        "venueName": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,",
+        "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+        "websiteUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "priceText": "ab 69,90 €",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "ticketPhases": null,
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 69,90 €",
+          "after": "ab 49,90 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "phase": "4.8.6.7.4",
+  "readyForRestrictedApply": true,
+  "selectedCount": 8,
+  "manifestHash": "c00344f2c8f43f22c5699aade8006bb6e82ed3507556120d8637f47f29a1e08f",
+  "invalidPriorHashes": [
+    "978aed3839e10116d7b2cab20564c2e6c9ec045869cd73401780820bd175dad5"
+  ],
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "nextStep": "controlled_restricted_bulk_apply"
+}

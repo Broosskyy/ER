@@ -1,0 +1,874 @@
+{
+  "phase": "4.8.6.7.4",
+  "invalidPriorManifestHash": "978aed3839e10116d7b2cab20564c2e6c9ec045869cd73401780820bd175dad5",
+  "candidateCount": 8,
+  "patchSemantics": "field_group_only_no_whole_row_replacement",
+  "entries": [
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "clusterId": "mapped:evt-1785506397824-yhn81xp",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:04:58.980Z",
+      "beforeFingerprint": {
+        "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+        "startDate": "2026-08-14T21:00:00+00:00",
+        "endDate": "2026-08-15T05:00:00+00:00",
+        "venueName": "LEHMANN Club",
+        "organizerName": "Lehmann Club GmbH & Co KG",
+        "websiteUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "priceText": "ab 19,00 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 19,00 €",
+          "after": "ab 22,00 €"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "priceText",
+          "sourceId": "source-ticket-io-lehmannclub",
+          "freshnessAt": "2026-08-10T11:04:58.980Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 19,00 €",
+        "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "LEHMANN Club",
+        "cityLabel": "Stuttgart",
+        "locationLabelComma": "LEHMANN Club, Stuttgart",
+        "locationLabelDot": "LEHMANN Club · Stuttgart",
+        "hasCoordinates": false,
+        "heroImageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 22,00 €",
+        "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "LEHMANN Club",
+        "cityLabel": "",
+        "locationLabelComma": "LEHMANN Club",
+        "locationLabelDot": "LEHMANN Club",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+          "startDate": "2026-08-14T21:00:00+00:00",
+          "endDate": "2026-08-15T05:00:00+00:00",
+          "venueName": "LEHMANN Club",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "websiteUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "priceText": "ab 19,00 €",
+          "ticketStatus": "on_sale",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "clusterId": "mapped:evt-1785506404218-hgmd9nz",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:04:58.980Z",
+      "beforeFingerprint": {
+        "title": "Vision Ekstase Open Air",
+        "startDate": "2026-08-15T10:00:00+00:00",
+        "endDate": "2026-08-15T20:00:00+00:00",
+        "venueName": "Killesberg",
+        "organizerName": "Lehmann Club GmbH & Co KG",
+        "websiteUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "priceText": "ab 15,00 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 15,00 €",
+          "after": "ab 18,00 €"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "priceText",
+          "sourceId": "source-ticket-io-lehmannclub",
+          "freshnessAt": "2026-08-10T11:04:58.980Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 15,00 €",
+        "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "Killesberg",
+        "cityLabel": "Stuttgart-Nord",
+        "locationLabelComma": "Killesberg, Stuttgart-Nord",
+        "locationLabelDot": "Killesberg · Stuttgart-Nord",
+        "hasCoordinates": false,
+        "heroImageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 18,00 €",
+        "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "Killesberg",
+        "cityLabel": "",
+        "locationLabelComma": "Killesberg",
+        "locationLabelDot": "Killesberg",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "Vision Ekstase Open Air",
+          "startDate": "2026-08-15T10:00:00+00:00",
+          "endDate": "2026-08-15T20:00:00+00:00",
+          "venueName": "Killesberg",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "websiteUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "priceText": "ab 15,00 €",
+          "ticketStatus": "on_sale",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "clusterId": "mapped:evt-1785506439487-2hr731q",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:05:31.526Z",
+      "beforeFingerprint": {
+        "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+        "startDate": "2026-09-18T15:45:00+00:00",
+        "endDate": "2026-09-18T20:30:00+00:00",
+        "venueName": "Bregenz Hafen (Pier 69)",
+        "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+        "websiteUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "priceText": "ab 42,90 €",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "ticketStatus",
+          "sourceId": "source-ticket-io-technodampfer",
+          "freshnessAt": "2026-08-10T11:05:31.526Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 42,90 €",
+        "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Bregenz Hafen (Pier 69)",
+        "cityLabel": "Bregenz",
+        "locationLabelComma": "Bregenz Hafen (Pier 69), Bregenz",
+        "locationLabelDot": "Bregenz Hafen (Pier 69) · Bregenz",
+        "latitude": 47.5057625,
+        "longitude": 9.7464436,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 42,90 €",
+        "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "Bregenz Hafen (Pier 69)",
+        "cityLabel": "",
+        "locationLabelComma": "Bregenz Hafen (Pier 69)",
+        "locationLabelDot": "Bregenz Hafen (Pier 69)",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+          "startDate": "2026-09-18T15:45:00+00:00",
+          "endDate": "2026-09-18T20:30:00+00:00",
+          "venueName": "Bregenz Hafen (Pier 69)",
+          "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+          "websiteUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "priceText": "ab 42,90 €",
+          "ticketStatus": "external_link",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "clusterId": "mapped:evt-1785506472665-1b5azyj",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:08:13.901Z",
+      "beforeFingerprint": {
+        "title": "NEELIX",
+        "startDate": "2026-10-23T20:00:00+00:00",
+        "endDate": "2026-10-24T02:00:00+00:00",
+        "venueName": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "organizerName": "HMG Events GmbH & Co.KG",
+        "websiteUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "priceText": "ab 28,20 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 28,20 €",
+          "after": "ab 25,00 €"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "priceText",
+          "sourceId": "source-ticket-io-hmg-concerts",
+          "freshnessAt": "2026-08-10T11:08:13.901Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 28,20 €",
+        "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "cityLabel": "Dresden",
+        "locationLabelComma": "STROMWERK | Kulturarena Kraftwerk Mitte, Dresden",
+        "locationLabelDot": "STROMWERK | Kulturarena Kraftwerk Mitte · Dresden",
+        "hasCoordinates": false,
+        "heroImageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 25,00 €",
+        "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "cityLabel": "",
+        "locationLabelComma": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "locationLabelDot": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "NEELIX",
+          "startDate": "2026-10-23T20:00:00+00:00",
+          "endDate": "2026-10-24T02:00:00+00:00",
+          "venueName": "STROMWERK | Kulturarena Kraftwerk Mitte",
+          "organizerName": "HMG Events GmbH & Co.KG",
+          "websiteUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "priceText": "ab 28,20 €",
+          "ticketStatus": "on_sale",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "clusterId": "mapped:evt-1785672261305-bgdu8dk",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:09:42.508Z",
+      "beforeFingerprint": {
+        "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+        "startDate": "2026-08-29T21:00:00+00:00",
+        "endDate": "2026-08-30T04:00:00+00:00",
+        "venueName": "Proton The Club",
+        "organizerName": "proton the club GmbH & Co. KG",
+        "websiteUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "priceText": "ab 10,00 €",
+        "ticketStatus": "external_link",
+        "genreLabels": [
+          "HARDTECHNO"
+        ],
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description",
+        "genreLabels"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "ticketStatus",
+          "sourceId": "source-ticket-io-protontheclub",
+          "freshnessAt": "2026-08-10T11:09:42.508Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 10,00 €",
+        "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Proton The Club",
+        "cityLabel": "Stuttgart",
+        "locationLabelComma": "Proton The Club, Stuttgart",
+        "locationLabelDot": "Proton The Club · Stuttgart",
+        "latitude": 48.7735521,
+        "longitude": 9.1751239,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d"
+        ],
+        "genres": [
+          "Hard Techno"
+        ],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 10,00 €",
+        "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "Proton The Club",
+        "cityLabel": "",
+        "locationLabelComma": "Proton The Club",
+        "locationLabelDot": "Proton The Club",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+          "startDate": "2026-08-29T21:00:00+00:00",
+          "endDate": "2026-08-30T04:00:00+00:00",
+          "venueName": "Proton The Club",
+          "organizerName": "proton the club GmbH & Co. KG",
+          "websiteUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "priceText": "ab 10,00 €",
+          "ticketStatus": "external_link",
+          "genreLabels": [
+            "HARDTECHNO"
+          ],
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "clusterId": "mapped:evt-1785443904478-dg3lk70",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:07:00.726Z",
+      "beforeFingerprint": {
+        "title": "DEBORAH DE LUCA pres by Bootshaus",
+        "startDate": "2027-01-23T21:00:00+00:00",
+        "endDate": "2027-01-24T05:00:00+00:00",
+        "venueName": "Bootshaus",
+        "organizerName": "Bootshaus Cologne GmbH",
+        "websiteUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "priceText": "Tickets ab 19,90 Euro",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "Tickets ab 19,90 Euro",
+          "after": "ab 19,90 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "priceText",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-10T11:07:00.726Z"
+        },
+        {
+          "fieldPath": "ticketStatus",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-10T11:07:00.726Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 19,90 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Bootshaus",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Bootshaus, Köln",
+        "locationLabelDot": "Bootshaus · Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 19,90 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "Bootshaus",
+        "cityLabel": "",
+        "locationLabelComma": "Bootshaus",
+        "locationLabelDot": "Bootshaus",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "DEBORAH DE LUCA pres by Bootshaus",
+          "startDate": "2027-01-23T21:00:00+00:00",
+          "endDate": "2027-01-24T05:00:00+00:00",
+          "venueName": "Bootshaus",
+          "organizerName": "Bootshaus Cologne GmbH",
+          "websiteUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "priceText": "Tickets ab 19,90 Euro",
+          "ticketStatus": "external_link",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "clusterId": "mapped:evt-1785443908695-6n8vfff",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:07:00.726Z",
+      "beforeFingerprint": {
+        "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+        "startDate": "2026-08-27T18:00:00+00:00",
+        "endDate": "2026-08-28T01:00:00+00:00",
+        "venueName": "Bootshaus",
+        "organizerName": "Bootshaus Cologne GmbH",
+        "websiteUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "priceText": "Tickets ab 30,00 Euro",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "Tickets ab 30,00 Euro",
+          "after": "ab 30,00 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "priceText",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-10T11:07:00.726Z"
+        },
+        {
+          "fieldPath": "ticketStatus",
+          "sourceId": "source-bootshaus-ticket-io",
+          "freshnessAt": "2026-08-10T11:07:00.726Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 30,00 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "Bootshaus",
+        "cityLabel": "Köln",
+        "locationLabelComma": "Bootshaus, Köln",
+        "locationLabelDot": "Bootshaus · Köln",
+        "latitude": 50.9517133,
+        "longitude": 6.9819222,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 30,00 €",
+        "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "Bootshaus",
+        "cityLabel": "",
+        "locationLabelComma": "Bootshaus",
+        "locationLabelDot": "Bootshaus",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+          "startDate": "2026-08-27T18:00:00+00:00",
+          "endDate": "2026-08-28T01:00:00+00:00",
+          "venueName": "Bootshaus",
+          "organizerName": "Bootshaus Cologne GmbH",
+          "websiteUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "priceText": "Tickets ab 30,00 Euro",
+          "ticketStatus": "external_link",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "clusterId": "mapped:evt-1785506428527-m5ugmjh",
+      "rowOrigin": "identity_cluster",
+      "identityVerdict": "exact",
+      "verifiedAt": "2026-08-10T11:05:31.526Z",
+      "beforeFingerprint": {
+        "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+        "startDate": "2026-09-25T15:15:00+00:00",
+        "endDate": "2026-09-25T20:00:00+00:00",
+        "venueName": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,",
+        "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+        "websiteUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "priceText": "ab 69,90 €",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "allowedFieldGroups": [
+        "tickets"
+      ],
+      "fieldGroupPatch": {
+        "priceText": {
+          "before": "ab 69,90 €",
+          "after": "ab 49,90 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "blockedFields": [
+        "startDate",
+        "endDate",
+        "venueName",
+        "organizerName",
+        "websiteUrl",
+        "description"
+      ],
+      "provenancePlan": [
+        {
+          "fieldPath": "priceText",
+          "sourceId": "source-ticket-io-technodampfer",
+          "freshnessAt": "2026-08-10T11:05:31.526Z"
+        },
+        {
+          "fieldPath": "ticketStatus",
+          "sourceId": "source-ticket-io-technodampfer",
+          "freshnessAt": "2026-08-10T11:05:31.526Z"
+        }
+      ],
+      "consumerBefore": {
+        "displayPriceText": "ab 69,90 €",
+        "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "external_link",
+        "isSoldOut": false,
+        "venueLabel": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,",
+        "cityLabel": "Mainz",
+        "locationLabelComma": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,, Mainz",
+        "locationLabelDot": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33, · Mainz",
+        "latitude": 49.9986505,
+        "longitude": 8.2796404,
+        "hasCoordinates": true,
+        "heroImageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2",
+        "galleryImageUrls": [
+          "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2"
+        ],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "consumerAfter": {
+        "displayPriceText": "ab 49,90 €",
+        "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "ticketProviderLabel": "Ticket.io",
+        "ticketAvailability": "on_sale",
+        "isSoldOut": false,
+        "venueLabel": "zwischen Holz- und Weintor,   auf Höhe Uferstraße 33,",
+        "cityLabel": "",
+        "locationLabelComma": "zwischen Holz- und Weintor,   auf Höhe Uferstraße 33,",
+        "locationLabelDot": "zwischen Holz- und Weintor,   auf Höhe Uferstraße 33,",
+        "hasCoordinates": false,
+        "galleryImageUrls": [],
+        "genres": [],
+        "knownArtistNames": [],
+        "lineupEntries": [],
+        "lineupCompleteness": "none",
+        "lineupSectionTitle": "LINE-UP",
+        "hasKnownLineup": false,
+        "qualityState": "partial",
+        "sourceAttributionLabel": "Ticket.io"
+      },
+      "rollback": {
+        "eventFields": {
+          "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+          "startDate": "2026-09-25T15:15:00+00:00",
+          "endDate": "2026-09-25T20:00:00+00:00",
+          "venueName": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,",
+          "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+          "websiteUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "priceText": "ab 69,90 €",
+          "ticketStatus": "external_link",
+          "descriptionLength": 0
+        },
+        "ticketPhases": null
+      }
+    }
+  ],
+  "manifestHash": "c00344f2c8f43f22c5699aade8006bb6e82ed3507556120d8637f47f29a1e08f",
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false
+}
