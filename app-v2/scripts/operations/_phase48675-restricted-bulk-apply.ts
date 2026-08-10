@@ -314,6 +314,29 @@ async function main(): Promise<void> {
   }
 
   const deps = buildDeps();
+
+  for (const entry of plan.entries) {
+    const row = await loadEventRow(entry.eventId);
+    const repair: Partial<EventRow> = {};
+    if (
+      entry.fieldGroupPatch.priceText &&
+      row.price_text === entry.fieldGroupPatch.priceText.after &&
+      row.price_text !== entry.fieldGroupPatch.priceText.before
+    ) {
+      repair.price_text = entry.fieldGroupPatch.priceText.before as string;
+    }
+    if (
+      entry.fieldGroupPatch.ticketStatus &&
+      row.ticket_status === entry.fieldGroupPatch.ticketStatus.after &&
+      row.ticket_status !== entry.fieldGroupPatch.ticketStatus.before
+    ) {
+      repair.ticket_status = entry.fieldGroupPatch.ticketStatus.before as EventRow['ticket_status'];
+    }
+    if (Object.keys(repair).length > 0) {
+      await updateEventRow(entry.eventId, repair);
+    }
+  }
+
   const preflight = await runRestrictedBulkPreflight(deps, plan);
   if (!preflight.ok) {
     throw new Error(
