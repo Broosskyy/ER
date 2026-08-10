@@ -179,7 +179,6 @@ export function filterManifestPatch(
 }
 
 export const HARD_BLOCKED_WRITER_FIELDS = [
-  'ticketPhases',
   'ticketUrl',
   'websiteUrl',
   'title',
