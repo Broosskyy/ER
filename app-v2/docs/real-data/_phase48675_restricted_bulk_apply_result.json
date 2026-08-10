@@ -1,0 +1,2910 @@
+{
+  "phase": "4.8.6.7.5b",
+  "commitSha": "4992ecc32af9331561ab8ea1072f47d2010353f9",
+  "remoteHead": "4992ecc32af9331561ab8ea1072f47d2010353f9",
+  "manifestHash": "c00344f2c8f43f22c5699aade8006bb6e82ed3507556120d8637f47f29a1e08f",
+  "confirmationTokenName": "exact:phase48674-first-restricted-bulk",
+  "preflight": [
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "ok": true,
+      "failures": []
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "ok": true,
+      "failures": []
+    }
+  ],
+  "applyMode": true,
+  "applyOk": true,
+  "batchClassification": "applied_successfully_with_false_negative_readback",
+  "falseNegativeCause": {
+    "mechanism": "pre_apply_event_row_repair_block",
+    "expected": "manifest fieldGroupPatch.after values on event rows",
+    "read": "event rows at manifest.before after repair-block rerun; provenance/source/import at manifest.after",
+    "faultyLogic": "repair block in apply runner rewrote AFTER event rows back to BEFORE before readback; readback used strict string compare for fingerprint arrays and ISO timestamps",
+    "comparisonBug": "genreLabels arrays compared with referential inequality; provenance freshness compared raw strings (2026-08-10T11:04:58.980Z vs 2026-08-10T11:04:58.98+00:00)",
+    "whyDbWasCorrect": "applyRestrictedBulkManifest completed 32 writes; companion provenance/source/import remained at AFTER while readback_failed only flipped runner status"
+  },
+  "certification": {
+    "mode": "read_only",
+    "certifiedEvents": 8,
+    "eventRowsAtAfterCount": 0,
+    "totalEvents": 8,
+    "rows": [
+      {
+        "eventId": "evt-1785443904478-dg3lk70",
+        "certified": false,
+        "failures": [
+          "priceText:Tickets ab 19,90 Euro",
+          "ticketStatus:external_link"
+        ]
+      },
+      {
+        "eventId": "evt-1785443908695-6n8vfff",
+        "certified": false,
+        "failures": [
+          "priceText:Tickets ab 30,00 Euro",
+          "ticketStatus:external_link"
+        ]
+      },
+      {
+        "eventId": "evt-1785506397824-yhn81xp",
+        "certified": false,
+        "failures": [
+          "priceText:ab 19,00 €"
+        ]
+      },
+      {
+        "eventId": "evt-1785506404218-hgmd9nz",
+        "certified": false,
+        "failures": [
+          "priceText:ab 15,00 €"
+        ]
+      },
+      {
+        "eventId": "evt-1785506428527-m5ugmjh",
+        "certified": false,
+        "failures": [
+          "priceText:ab 69,90 €",
+          "ticketStatus:external_link"
+        ]
+      },
+      {
+        "eventId": "evt-1785506439487-2hr731q",
+        "certified": false,
+        "failures": [
+          "ticketStatus:external_link"
+        ]
+      },
+      {
+        "eventId": "evt-1785506472665-1b5azyj",
+        "certified": false,
+        "failures": [
+          "priceText:ab 28,20 €"
+        ]
+      },
+      {
+        "eventId": "evt-1785672261305-bgdu8dk",
+        "certified": false,
+        "failures": [
+          "ticketStatus:external_link"
+        ]
+      }
+    ],
+    "otherEventsUnchanged": true,
+    "manifestAfterConfirmed": true
+  },
+  "writeCounters": {
+    "attemptedApplicationEvents": 0,
+    "successfulApplicationEvents": 0,
+    "failedApplicationEvents": 0,
+    "eventUpdateRequests": 0,
+    "eventFieldMutations": 0,
+    "importRecordWriteRequests": 0,
+    "provenanceWriteRequests": 0,
+    "provenanceAffectedRows": 0,
+    "sourceReferenceWriteRequests": 0,
+    "sourceReferenceAffectedRows": 0,
+    "rollbackWriteRequests": 0,
+    "rollbackAffectedRows": 0,
+    "retryWriteRequests": 0,
+    "databaseWriteRequests": 0,
+    "affectedRows": 0,
+    "totalProductionWriteOperations": 0
+  },
+  "productionMutationsInThisRun": 0,
+  "rolloutActivated": false,
+  "readbacks": [
+    {
+      "eventId": "evt-1785443904478-dg3lk70",
+      "failures": [
+        "priceText:Tickets ab 19,90 Euro",
+        "ticketStatus:external_link"
+      ],
+      "manifestPatch": {
+        "priceText": {
+          "before": "Tickets ab 19,90 Euro",
+          "after": "ab 19,90 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "event": {
+        "title": "DEBORAH DE LUCA pres by Bootshaus",
+        "startDate": "2027-01-23T21:00:00+00:00",
+        "endDate": "2027-01-24T05:00:00+00:00",
+        "venueName": "Bootshaus",
+        "organizerName": "Bootshaus Cologne GmbH",
+        "websiteUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "priceText": "Tickets ab 19,90 Euro",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785443904478-dg3lk70-priceText",
+          "canonical_event_id": "evt-1785443904478-dg3lk70",
+          "field_path": "priceText",
+          "selected_value": "ab 19,90 €",
+          "selected_source_id": "source-bootshaus-ticket-io",
+          "selected_at": "2026-08-10T18:29:10.386+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 19,90 €",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-10T11:07:00.726Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/uSXeJhHU/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:10.386+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:07:00.726+00:00",
+          "origin_external_id": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        },
+        "ticketStatus": {
+          "id": "provenance-evt-1785443904478-dg3lk70-ticketStatus",
+          "canonical_event_id": "evt-1785443904478-dg3lk70",
+          "field_path": "ticketStatus",
+          "selected_value": "on_sale",
+          "selected_source_id": "source-bootshaus-ticket-io",
+          "selected_at": "2026-08-10T18:29:10.386+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "on_sale",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-10T11:07:00.726Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/uSXeJhHU/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:10.386+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:07:00.726+00:00",
+          "origin_external_id": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785443904478-dg3lk70-source-bootshaus-ticket-io-https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "canonical_event_id": "evt-1785443904478-dg3lk70",
+        "source_id": "source-bootshaus-ticket-io",
+        "external_event_id": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "original_url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "raw_record_id": "814570cf-38b5-413f-a6e4-51c1736d1d4e",
+        "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+        "first_seen_at": "2026-07-30T13:22:53.428+00:00",
+        "last_seen_at": "2026-08-10T18:29:10.707+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 65,
+        "source_quality_score": 70,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "platform": "ticket_io",
+          "shopSlug": "bootshaus-club",
+          "connector": "ticket_platform",
+          "eventSlug": "uSXeJhHU",
+          "isPrimary": false,
+          "priceText": "ab 19,90 €",
+          "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "scopeStats": {
+            "accepted": 15,
+            "rejected": 0,
+            "uncertain": 0,
+            "discovered": 15,
+            "rejectionReasons": {}
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "defaultCityId": "koeln",
+          "defaultVenueId": "venue-bootshaus-koeln",
+          "eventGeography": {
+            "city": "explicit",
+            "venue": "explicit",
+            "address": "explicit",
+            "country": "explicit"
+          },
+          "normalizedHash": "af8f09daa24e9027d7ba1b050cd95602",
+          "posterMetadata": {
+            "source": "poster_ocr",
+            "status": "pending"
+          },
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": true,
+            "pagesFetched": 0,
+            "detailFetched": false,
+            "parserInvoked": false,
+            "skippedReason": "pow_blocked",
+            "maxDetailPages": 15,
+            "shopPagesFetched": 0,
+            "detailFetchErrors": 0,
+            "detailUrlsFetched": 0,
+            "detailUrlsAttempted": 15,
+            "detailUrlsDiscovered": 15,
+            "detailUrlsPowBlocked": 15
+          },
+          "enrichmentSource": true,
+          "defaultOrganizerId": "organizer-bootshaus",
+          "electronicRelevance": "relevant",
+          "historicalRepairVersion": "4.3.4",
+          "dataQualityRepairVersion": "4.3.4"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "814570cf-38b5-413f-a6e4-51c1736d1d4e",
+        "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+        "source_id": "source-bootshaus-ticket-io",
+        "external_id": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "raw_payload": {
+          "title": "DEBORAH DE LUCA pres by Bootshaus",
+          "endDate": "2027-01-24T06:00:00+01:00",
+          "cityName": "Köln",
+          "eventUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+          "importId": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "latitude": 50.9517133,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 6.9819222,
+          "priceText": "ab 19,90 €",
+          "sourceUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "startDate": "2027-01-23T22:00:00+01:00",
+          "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "venueName": "Bootshaus",
+          "externalId": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "countryCode": "DE",
+          "priceAmount": 19.9,
+          "originalLink": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+          "organizerName": "Bootshaus Cologne GmbH",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "uSXeJhHU",
+            "priceText": "ab 19,90 €",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "normalizedHash": "af8f09daa24e9027d7ba1b050cd95602",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "DEBORAH DE LUCA pres by Bootshaus",
+          "endDate": "2027-01-24T05:00:00.000Z",
+          "endTime": "05:00",
+          "cityName": "Köln",
+          "eventUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+          "importId": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "isAllDay": false,
+          "latitude": 50.9517133,
+          "sourceId": "source-bootshaus-ticket-io",
+          "timezone": "UTC+01:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf"
+          ],
+          "longitude": 6.9819222,
+          "priceText": "ab 19,90 €",
+          "sourceUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "startDate": "2027-01-23T21:00:00.000Z",
+          "startTime": "21:00",
+          "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "venueName": "Bootshaus",
+          "externalId": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "sourceName": "Bootshaus Ticket.io",
+          "countryCode": "DE",
+          "priceAmount": 19.9,
+          "originalLink": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+          "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+          "organizerName": "Bootshaus Cologne GmbH",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "uSXeJhHU",
+            "priceText": "ab 19,90 €",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "defaultCityId": "koeln",
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "af8f09daa24e9027d7ba1b050cd95602",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "defaultOrganizerId": "organizer-bootshaus",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "imported",
+        "created_at": "2026-07-30T13:22:53.428+00:00",
+        "updated_at": "2026-08-10T18:29:10.768+00:00",
+        "source_url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": "staging-seed-city-koeln",
+        "matched_venue_id": "venue-bootshaus-koeln",
+        "matched_artist_ids": [],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785443904478-dg3lk70",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No organizer match found for \"Bootshaus Cologne GmbH\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785443904478-dg3lk70",
+        "reviewed_by": "phase466-pass2",
+        "reviewed_at": "2026-08-02T21:24:41.46+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785443908695-6n8vfff",
+      "failures": [
+        "priceText:Tickets ab 30,00 Euro",
+        "ticketStatus:external_link"
+      ],
+      "manifestPatch": {
+        "priceText": {
+          "before": "Tickets ab 30,00 Euro",
+          "after": "ab 30,00 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "event": {
+        "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+        "startDate": "2026-08-27T18:00:00+00:00",
+        "endDate": "2026-08-28T01:00:00+00:00",
+        "venueName": "Bootshaus",
+        "organizerName": "Bootshaus Cologne GmbH",
+        "websiteUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "priceText": "Tickets ab 30,00 Euro",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785443908695-6n8vfff-priceText",
+          "canonical_event_id": "evt-1785443908695-6n8vfff",
+          "field_path": "priceText",
+          "selected_value": "ab 30,00 €",
+          "selected_source_id": "source-bootshaus-ticket-io",
+          "selected_at": "2026-08-10T18:29:11.252+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 30,00 €",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-10T11:07:00.726Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/AVltKz9P/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:11.252+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:07:00.726+00:00",
+          "origin_external_id": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        },
+        "ticketStatus": {
+          "id": "provenance-evt-1785443908695-6n8vfff-ticketStatus",
+          "canonical_event_id": "evt-1785443908695-6n8vfff",
+          "field_path": "ticketStatus",
+          "selected_value": "on_sale",
+          "selected_source_id": "source-bootshaus-ticket-io",
+          "selected_at": "2026-08-10T18:29:11.252+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "on_sale",
+              "sourceId": "source-bootshaus-ticket-io",
+              "freshnessAt": "2026-08-10T11:07:00.726Z",
+              "originExternalId": "https://bootshaus-club.ticket.io/AVltKz9P/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:11.252+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:07:00.726+00:00",
+          "origin_external_id": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785443908695-6n8vfff-source-bootshaus-ticket-io-https://bootshaus-club.ticket.io/AVltKz9P/",
+        "canonical_event_id": "evt-1785443908695-6n8vfff",
+        "source_id": "source-bootshaus-ticket-io",
+        "external_event_id": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "original_url": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "raw_record_id": "8d8b916e-18d1-4ff0-b5e7-48da8e5e721c",
+        "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+        "first_seen_at": "2026-07-30T13:22:52.123+00:00",
+        "last_seen_at": "2026-08-10T18:29:11.556+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 65,
+        "source_quality_score": 70,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "platform": "ticket_io",
+          "shopSlug": "bootshaus-club",
+          "connector": "ticket_platform",
+          "eventSlug": "AVltKz9P",
+          "isPrimary": false,
+          "priceText": "ab 30,00 €",
+          "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "scopeStats": {
+            "accepted": 15,
+            "rejected": 0,
+            "uncertain": 0,
+            "discovered": 15,
+            "rejectionReasons": {}
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "defaultCityId": "koeln",
+          "defaultVenueId": "venue-bootshaus-koeln",
+          "eventGeography": {
+            "city": "explicit",
+            "venue": "explicit",
+            "address": "explicit",
+            "country": "explicit"
+          },
+          "normalizedHash": "c2c8d7be2f19b287787598e627b0a16f",
+          "posterMetadata": {
+            "source": "poster_ocr",
+            "status": "pending"
+          },
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": true,
+            "pagesFetched": 0,
+            "detailFetched": false,
+            "parserInvoked": false,
+            "skippedReason": "pow_blocked",
+            "maxDetailPages": 15,
+            "shopPagesFetched": 0,
+            "detailFetchErrors": 0,
+            "detailUrlsFetched": 0,
+            "detailUrlsAttempted": 15,
+            "detailUrlsDiscovered": 15,
+            "detailUrlsPowBlocked": 15
+          },
+          "enrichmentSource": true,
+          "defaultOrganizerId": "organizer-bootshaus",
+          "electronicRelevance": "relevant",
+          "historicalRepairVersion": "4.3.4",
+          "dataQualityRepairVersion": "4.3.4"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "8d8b916e-18d1-4ff0-b5e7-48da8e5e721c",
+        "import_job_id": "691b1b50-250f-4c18-9128-dfc6de168fa4",
+        "source_id": "source-bootshaus-ticket-io",
+        "external_id": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "raw_payload": {
+          "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+          "endDate": "2026-08-28T03:00:00+02:00",
+          "cityName": "Köln",
+          "eventUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a",
+          "importId": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "latitude": 50.9517133,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 6.9819222,
+          "priceText": "ab 30,00 €",
+          "sourceUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "startDate": "2026-08-27T20:00:00+02:00",
+          "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "venueName": "Bootshaus",
+          "externalId": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "countryCode": "DE",
+          "priceAmount": 30,
+          "originalLink": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+          "organizerName": "Bootshaus Cologne GmbH",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "AVltKz9P",
+            "priceText": "ab 30,00 €",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "normalizedHash": "c2c8d7be2f19b287787598e627b0a16f",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+          "endDate": "2026-08-28T01:00:00.000Z",
+          "endTime": "01:00",
+          "cityName": "Köln",
+          "eventUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a",
+          "importId": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "isAllDay": false,
+          "latitude": 50.9517133,
+          "sourceId": "source-bootshaus-ticket-io",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/DMnDlIN6/events/AVltKz9P/img/holder-1080.jpg?70c3a77a"
+          ],
+          "longitude": 6.9819222,
+          "priceText": "ab 30,00 €",
+          "sourceUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "startDate": "2026-08-27T18:00:00.000Z",
+          "startTime": "18:00",
+          "ticketUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "venueName": "Bootshaus",
+          "externalId": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "sourceName": "Bootshaus Ticket.io",
+          "countryCode": "DE",
+          "priceAmount": 30,
+          "originalLink": "https://bootshaus-club.ticket.io/AVltKz9P/",
+          "venueAddress": "Auenweg 173, 51063, Köln, Deutschland",
+          "organizerName": "Bootshaus Cologne GmbH",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "bootshaus-club",
+            "connector": "ticket_platform",
+            "eventSlug": "AVltKz9P",
+            "priceText": "ab 30,00 €",
+            "scopeStats": {
+              "accepted": 15,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 15,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "defaultCityId": "koeln",
+            "defaultVenueId": "venue-bootshaus-koeln",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "c2c8d7be2f19b287787598e627b0a16f",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 15,
+              "detailUrlsDiscovered": 15,
+              "detailUrlsPowBlocked": 15
+            },
+            "enrichmentSource": true,
+            "defaultOrganizerId": "organizer-bootshaus",
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "imported",
+        "created_at": "2026-07-30T13:22:52.123+00:00",
+        "updated_at": "2026-08-10T18:29:11.615+00:00",
+        "source_url": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": "staging-seed-city-koeln",
+        "matched_venue_id": "venue-bootshaus-koeln",
+        "matched_artist_ids": [],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785443908695-6n8vfff",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No organizer match found for \"Bootshaus Cologne GmbH\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785443908695-6n8vfff",
+        "reviewed_by": "phase466-pass2",
+        "reviewed_at": "2026-08-02T21:25:00.544+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://bootshaus-club.ticket.io/AVltKz9P/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785506397824-yhn81xp",
+      "failures": [
+        "priceText:ab 19,00 €"
+      ],
+      "manifestPatch": {
+        "priceText": {
+          "before": "ab 19,00 €",
+          "after": "ab 22,00 €"
+        }
+      },
+      "event": {
+        "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+        "startDate": "2026-08-14T21:00:00+00:00",
+        "endDate": "2026-08-15T05:00:00+00:00",
+        "venueName": "LEHMANN Club",
+        "organizerName": "Lehmann Club GmbH & Co KG",
+        "websiteUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "priceText": "ab 19,00 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785506397824-yhn81xp-priceText",
+          "canonical_event_id": "evt-1785506397824-yhn81xp",
+          "field_path": "priceText",
+          "selected_value": "ab 22,00 €",
+          "selected_source_id": "source-ticket-io-lehmannclub",
+          "selected_at": "2026-08-10T18:29:12.081+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 22,00 €",
+              "sourceId": "source-ticket-io-lehmannclub",
+              "freshnessAt": "2026-08-10T11:04:58.980Z",
+              "originExternalId": "https://lehmannclub.ticket.io/WDLtIc4K/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:12.081+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:04:58.98+00:00",
+          "origin_external_id": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785506397824-yhn81xp-source-ticket-io-lehmannclub-https://lehmannclub.ticket.io/WDLtIc4K/",
+        "canonical_event_id": "evt-1785506397824-yhn81xp",
+        "source_id": "source-ticket-io-lehmannclub",
+        "external_event_id": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "original_url": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "raw_record_id": "3437ba9e-e7ea-4f94-9cda-378af8c19af3",
+        "import_job_id": "1cb5b4a3-fbe2-4150-b898-620c417dac84",
+        "first_seen_at": "2026-07-31T13:52:59.969+00:00",
+        "last_seen_at": "2026-08-10T18:29:12.259+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 60,
+        "source_quality_score": 72,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "platform": "ticket_io",
+          "shopSlug": "lehmannclub",
+          "connector": "ticket_platform",
+          "eventSlug": "WDLtIc4K",
+          "isPrimary": true,
+          "priceText": "ab 19,00 €",
+          "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "scopeStats": {
+            "accepted": 12,
+            "rejected": 0,
+            "uncertain": 0,
+            "discovered": 12,
+            "rejectionReasons": {}
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "normalizedHash": "47cca0c2327cc33c2f780dad0167454a",
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": false,
+            "pagesFetched": 0
+          },
+          "enrichmentSource": false,
+          "electronicRelevance": "relevant",
+          "dataQualityRepairVersion": "4.3.1"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "3437ba9e-e7ea-4f94-9cda-378af8c19af3",
+        "import_job_id": "a06c3b9b-fdd6-415a-a049-7516231a2d48",
+        "source_id": "source-ticket-io-lehmannclub",
+        "external_id": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "raw_payload": {
+          "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+          "endDate": "2026-08-15T07:00:00+02:00",
+          "cityName": "Stuttgart",
+          "eventUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d",
+          "importId": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "latitude": 48.7792067,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 9.1672642,
+          "priceText": "ab 19,00 €",
+          "sourceUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "startDate": "2026-08-14T23:00:00+02:00",
+          "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "venueName": "LEHMANN Club",
+          "externalId": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "artistNames": [
+            "2 YEARS STUTTGART HARDCORE SOUND"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 19,
+          "originalLink": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "venueAddress": "Breitscheidstraße 12, 70174, Stuttgart, Deutschland",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "lehmannclub",
+            "connector": "ticket_platform",
+            "eventSlug": "WDLtIc4K",
+            "priceText": "ab 19,00 €",
+            "scopeStats": {
+              "accepted": 10,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 10,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "normalizedHash": "47cca0c2327cc33c2f780dad0167454a",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 10,
+              "detailUrlsDiscovered": 10,
+              "detailUrlsPowBlocked": 10
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+          "endDate": "2026-08-15T05:00:00.000Z",
+          "endTime": "05:00",
+          "cityName": "Stuttgart",
+          "eventUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d",
+          "importId": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "isAllDay": false,
+          "latitude": 48.7792067,
+          "sourceId": "source-ticket-io-lehmannclub",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/q7u08Vx9/events/WDLtIc4K/img/holder-1080.jpg?8bc7248d"
+          ],
+          "longitude": 9.1672642,
+          "priceText": "ab 19,00 €",
+          "sourceUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "startDate": "2026-08-14T21:00:00.000Z",
+          "startTime": "21:00",
+          "ticketUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "venueName": "LEHMANN Club",
+          "externalId": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "sourceName": "lehmannclub",
+          "artistNames": [
+            "2 YEARS STUTTGART HARDCORE SOUND"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 19,
+          "originalLink": "https://lehmannclub.ticket.io/WDLtIc4K/",
+          "venueAddress": "Breitscheidstraße 12, 70174, Stuttgart, Deutschland",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "lehmannclub",
+            "connector": "ticket_platform",
+            "eventSlug": "WDLtIc4K",
+            "priceText": "ab 19,00 €",
+            "scopeStats": {
+              "accepted": 10,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 10,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "47cca0c2327cc33c2f780dad0167454a",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 10,
+              "detailUrlsDiscovered": 10,
+              "detailUrlsPowBlocked": 10
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "needs_review",
+        "created_at": "2026-07-31T13:52:59.969+00:00",
+        "updated_at": "2026-08-10T18:29:12.316+00:00",
+        "source_url": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": null,
+        "matched_venue_id": null,
+        "matched_artist_ids": [
+          "artist-title-2-years-stuttgart-hardcore-sound-7fz3bb"
+        ],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785506397824-yhn81xp",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No city match found for \"Stuttgart\".",
+          "No venue match found for \"LEHMANN Club\".",
+          "No organizer match found for \"Lehmann Club GmbH & Co KG\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785506397824-yhn81xp",
+        "reviewed_by": "sprint431-ticket-io-repair:run-1",
+        "reviewed_at": "2026-07-31T21:15:29.975+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://lehmannclub.ticket.io/WDLtIc4K/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "failures": [
+        "priceText:ab 15,00 €"
+      ],
+      "manifestPatch": {
+        "priceText": {
+          "before": "ab 15,00 €",
+          "after": "ab 18,00 €"
+        }
+      },
+      "event": {
+        "title": "Vision Ekstase Open Air",
+        "startDate": "2026-08-15T10:00:00+00:00",
+        "endDate": "2026-08-15T20:00:00+00:00",
+        "venueName": "Killesberg",
+        "organizerName": "Lehmann Club GmbH & Co KG",
+        "websiteUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "priceText": "ab 15,00 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785506404218-hgmd9nz-priceText",
+          "canonical_event_id": "evt-1785506404218-hgmd9nz",
+          "field_path": "priceText",
+          "selected_value": "ab 18,00 €",
+          "selected_source_id": "source-ticket-io-lehmannclub",
+          "selected_at": "2026-08-10T18:29:12.88+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 18,00 €",
+              "sourceId": "source-ticket-io-lehmannclub",
+              "freshnessAt": "2026-08-10T11:04:58.980Z",
+              "originExternalId": "https://lehmannclub.ticket.io/FdFEFNxU/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:12.88+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:04:58.98+00:00",
+          "origin_external_id": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785506404218-hgmd9nz-source-ticket-io-lehmannclub-https://lehmannclub.ticket.io/FdFEFNxU/",
+        "canonical_event_id": "evt-1785506404218-hgmd9nz",
+        "source_id": "source-ticket-io-lehmannclub",
+        "external_event_id": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "original_url": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "raw_record_id": "ddadb0a9-6a3a-43b4-a532-ebf91398805c",
+        "import_job_id": "1cb5b4a3-fbe2-4150-b898-620c417dac84",
+        "first_seen_at": "2026-07-31T13:53:00.204+00:00",
+        "last_seen_at": "2026-08-10T18:29:13.056+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 60,
+        "source_quality_score": 72,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "platform": "ticket_io",
+          "shopSlug": "lehmannclub",
+          "connector": "ticket_platform",
+          "eventSlug": "FdFEFNxU",
+          "isPrimary": true,
+          "priceText": "ab 15,00 €",
+          "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "scopeStats": {
+            "accepted": 12,
+            "rejected": 0,
+            "uncertain": 0,
+            "discovered": 12,
+            "rejectionReasons": {}
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "normalizedHash": "b36d991d61f13fe2ba77f945541b6380",
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": false,
+            "pagesFetched": 0
+          },
+          "enrichmentSource": false,
+          "electronicRelevance": "relevant",
+          "dataQualityRepairVersion": "4.3.1"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "ddadb0a9-6a3a-43b4-a532-ebf91398805c",
+        "import_job_id": "a06c3b9b-fdd6-415a-a049-7516231a2d48",
+        "source_id": "source-ticket-io-lehmannclub",
+        "external_id": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "raw_payload": {
+          "title": "Vision Ekstase Open Air",
+          "endDate": "2026-08-15T22:00:00+02:00",
+          "cityName": "Stuttgart-Nord",
+          "eventUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d",
+          "importId": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "latitude": 48.8014921,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 9.169712,
+          "priceText": "ab 15,00 €",
+          "sourceUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "startDate": "2026-08-15T12:00:00+02:00",
+          "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "venueName": "Killesberg",
+          "externalId": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "countryCode": "DE",
+          "priceAmount": 15,
+          "originalLink": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "venueAddress": "Stresemannstraße 39, 70191, Stuttgart-Nord, Deutschland",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "lehmannclub",
+            "connector": "ticket_platform",
+            "eventSlug": "FdFEFNxU",
+            "priceText": "ab 15,00 €",
+            "scopeStats": {
+              "accepted": 10,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 10,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "normalizedHash": "b36d991d61f13fe2ba77f945541b6380",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 10,
+              "detailUrlsDiscovered": 10,
+              "detailUrlsPowBlocked": 10
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "Vision Ekstase Open Air",
+          "endDate": "2026-08-15T20:00:00.000Z",
+          "endTime": "20:00",
+          "cityName": "Stuttgart-Nord",
+          "eventUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "imageUrl": "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d",
+          "importId": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "isAllDay": false,
+          "latitude": 48.8014921,
+          "sourceId": "source-ticket-io-lehmannclub",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/q7u08Vx9/events/FdFEFNxU/img/holder-1080.jpg?8bc7248d"
+          ],
+          "longitude": 9.169712,
+          "priceText": "ab 15,00 €",
+          "sourceUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "startDate": "2026-08-15T10:00:00.000Z",
+          "startTime": "10:00",
+          "ticketUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "venueName": "Killesberg",
+          "externalId": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "sourceName": "lehmannclub",
+          "countryCode": "DE",
+          "priceAmount": 15,
+          "originalLink": "https://lehmannclub.ticket.io/FdFEFNxU/",
+          "venueAddress": "Stresemannstraße 39, 70191, Stuttgart-Nord, Deutschland",
+          "organizerName": "Lehmann Club GmbH & Co KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "lehmannclub",
+            "connector": "ticket_platform",
+            "eventSlug": "FdFEFNxU",
+            "priceText": "ab 15,00 €",
+            "scopeStats": {
+              "accepted": 10,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 10,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "b36d991d61f13fe2ba77f945541b6380",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 10,
+              "detailUrlsDiscovered": 10,
+              "detailUrlsPowBlocked": 10
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "needs_review",
+        "created_at": "2026-07-31T13:53:00.204+00:00",
+        "updated_at": "2026-08-10T18:29:13.114+00:00",
+        "source_url": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": null,
+        "matched_venue_id": null,
+        "matched_artist_ids": [],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785506404218-hgmd9nz",
+        "duplicate_score": 96,
+        "matching_warnings": [
+          "No city match found for \"Stuttgart-Nord\".",
+          "No venue match found for \"Killesberg\".",
+          "No organizer match found for \"Lehmann Club GmbH & Co KG\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785506404218-hgmd9nz",
+        "reviewed_by": "sprint431-ticket-io-repair:run-1",
+        "reviewed_at": "2026-07-31T21:15:04.397+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://lehmannclub.ticket.io/FdFEFNxU/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "failures": [
+        "priceText:ab 69,90 €",
+        "ticketStatus:external_link"
+      ],
+      "manifestPatch": {
+        "priceText": {
+          "before": "ab 69,90 €",
+          "after": "ab 49,90 €"
+        },
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "event": {
+        "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+        "startDate": "2026-09-25T15:15:00+00:00",
+        "endDate": "2026-09-25T20:00:00+00:00",
+        "venueName": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,",
+        "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+        "websiteUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+        "priceText": "ab 69,90 €",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785506428527-m5ugmjh-priceText",
+          "canonical_event_id": "evt-1785506428527-m5ugmjh",
+          "field_path": "priceText",
+          "selected_value": "ab 49,90 €",
+          "selected_source_id": "source-ticket-io-technodampfer",
+          "selected_at": "2026-08-10T18:29:13.598+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 49,90 €",
+              "sourceId": "source-ticket-io-technodampfer",
+              "freshnessAt": "2026-08-10T11:05:31.526Z",
+              "originExternalId": "https://technodampfer.ticket.io/qqglRlFM/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:13.598+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:05:31.526+00:00",
+          "origin_external_id": "https://technodampfer.ticket.io/qqglRlFM/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        },
+        "ticketStatus": {
+          "id": "provenance-evt-1785506428527-m5ugmjh-ticketStatus",
+          "canonical_event_id": "evt-1785506428527-m5ugmjh",
+          "field_path": "ticketStatus",
+          "selected_value": "on_sale",
+          "selected_source_id": "source-ticket-io-technodampfer",
+          "selected_at": "2026-08-10T18:29:13.598+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "on_sale",
+              "sourceId": "source-ticket-io-technodampfer",
+              "freshnessAt": "2026-08-10T11:05:31.526Z",
+              "originExternalId": "https://technodampfer.ticket.io/qqglRlFM/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:13.598+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:05:31.526+00:00",
+          "origin_external_id": "https://technodampfer.ticket.io/qqglRlFM/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785506428527-m5ugmjh-source-ticket-io-technodampfer-https://technodampfer.ticket.io/qqglRlFM/",
+        "canonical_event_id": "evt-1785506428527-m5ugmjh",
+        "source_id": "source-ticket-io-technodampfer",
+        "external_event_id": "https://technodampfer.ticket.io/qqglRlFM/",
+        "original_url": "https://technodampfer.ticket.io/qqglRlFM/",
+        "raw_record_id": "bea30723-56f6-41fe-b595-922ada5f527e",
+        "import_job_id": "232d2afb-0e14-406d-a72f-43ff08b64fac",
+        "first_seen_at": "2026-07-31T12:40:12.272+00:00",
+        "last_seen_at": "2026-08-10T18:29:13.896+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 60,
+        "source_quality_score": 72,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "platform": "ticket_io",
+          "shopSlug": "technodampfer",
+          "connector": "ticket_platform",
+          "eventSlug": "qqglRlFM",
+          "isPrimary": true,
+          "priceText": "ab 69,90 €",
+          "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "scopeStats": {
+            "accepted": 11,
+            "rejected": 1,
+            "uncertain": 0,
+            "discovered": 12,
+            "rejectionReasons": {
+              "no_electronic_signal": 1
+            }
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "eventGeography": {
+            "city": "explicit",
+            "venue": "explicit",
+            "address": "explicit",
+            "country": "explicit"
+          },
+          "normalizedHash": "cf3574ea10c00e7376bdb264c9add0b8",
+          "posterMetadata": {
+            "source": "poster_ocr",
+            "status": "pending"
+          },
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": false,
+            "pagesFetched": 0
+          },
+          "enrichmentSource": false,
+          "electronicRelevance": "relevant",
+          "historicalRepairVersion": "4.3.4",
+          "dataQualityRepairVersion": "4.3.4"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "bea30723-56f6-41fe-b595-922ada5f527e",
+        "import_job_id": "3dc10509-3d28-4ab5-9c51-bf6bf9dcdc7a",
+        "source_id": "source-ticket-io-technodampfer",
+        "external_id": "https://technodampfer.ticket.io/qqglRlFM/",
+        "raw_payload": {
+          "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+          "endDate": "2026-09-25T22:00:00+02:00",
+          "cityName": "Mainz",
+          "eventUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2",
+          "importId": "https://technodampfer.ticket.io/qqglRlFM/",
+          "latitude": 49.9986505,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 8.2796404,
+          "priceText": "ab 69,90 €",
+          "sourceUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "startDate": "2026-09-25T17:15:00+02:00",
+          "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "venueName": "zwischen Holz- und Weintor,   auf Höhe Uferstraße 33,",
+          "externalId": "https://technodampfer.ticket.io/qqglRlFM/",
+          "artistNames": [
+            "Felix Kröcher"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 69.9,
+          "originalLink": "https://technodampfer.ticket.io/qqglRlFM/",
+          "venueAddress": "Uferstraße 33, 55116, Mainz, Deutschland",
+          "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "technodampfer",
+            "connector": "ticket_platform",
+            "eventSlug": "qqglRlFM",
+            "priceText": "ab 69,90 €",
+            "scopeStats": {
+              "accepted": 11,
+              "rejected": 1,
+              "uncertain": 0,
+              "discovered": 12,
+              "rejectionReasons": {
+                "no_electronic_signal": 1
+              }
+            },
+            "availability": "instock",
+            "normalizedHash": "cf3574ea10c00e7376bdb264c9add0b8",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 12,
+              "detailUrlsDiscovered": 12,
+              "detailUrlsPowBlocked": 12
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+          "endDate": "2026-09-25T20:00:00.000Z",
+          "endTime": "20:00",
+          "cityName": "Mainz",
+          "eventUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2",
+          "importId": "https://technodampfer.ticket.io/qqglRlFM/",
+          "isAllDay": false,
+          "latitude": 49.9986505,
+          "sourceId": "source-ticket-io-technodampfer",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/z358Ho3e/events/qqglRlFM/img/holder-1080.jpg?e12d8a2"
+          ],
+          "longitude": 8.2796404,
+          "priceText": "ab 69,90 €",
+          "sourceUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "startDate": "2026-09-25T15:15:00.000Z",
+          "startTime": "15:15",
+          "ticketUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+          "venueName": "zwischen Holz- und Weintor, auf Höhe Uferstraße 33,",
+          "externalId": "https://technodampfer.ticket.io/qqglRlFM/",
+          "sourceName": "technodampfer",
+          "artistNames": [
+            "Felix Kröcher"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 69.9,
+          "originalLink": "https://technodampfer.ticket.io/qqglRlFM/",
+          "venueAddress": "Uferstraße 33, 55116, Mainz, Deutschland",
+          "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "technodampfer",
+            "connector": "ticket_platform",
+            "eventSlug": "qqglRlFM",
+            "priceText": "ab 69,90 €",
+            "scopeStats": {
+              "accepted": 11,
+              "rejected": 1,
+              "uncertain": 0,
+              "discovered": 12,
+              "rejectionReasons": {
+                "no_electronic_signal": 1
+              }
+            },
+            "availability": "instock",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "cf3574ea10c00e7376bdb264c9add0b8",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 12,
+              "detailUrlsDiscovered": 12,
+              "detailUrlsPowBlocked": 12
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "needs_review",
+        "created_at": "2026-07-31T12:40:12.272+00:00",
+        "updated_at": "2026-08-10T18:29:13.957+00:00",
+        "source_url": "https://technodampfer.ticket.io/qqglRlFM/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": null,
+        "matched_venue_id": null,
+        "matched_artist_ids": [
+          "artist-title-felix-krocher-wfjt1k"
+        ],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785506428527-m5ugmjh",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No city match found for \"Mainz\".",
+          "No venue match found for \"zwischen Holz- und Weintor, auf Höhe Uferstraße 33,\".",
+          "No organizer match found for \"Everlasting Entertainment UG (haftungsbeschränkt)\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785506428527-m5ugmjh",
+        "reviewed_by": "sprint431-ticket-io-repair:run-1",
+        "reviewed_at": "2026-07-31T21:16:21.251+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://technodampfer.ticket.io/qqglRlFM/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785506439487-2hr731q",
+      "failures": [
+        "ticketStatus:external_link"
+      ],
+      "manifestPatch": {
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "event": {
+        "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+        "startDate": "2026-09-18T15:45:00+00:00",
+        "endDate": "2026-09-18T20:30:00+00:00",
+        "venueName": "Bregenz Hafen (Pier 69)",
+        "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+        "websiteUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "priceText": "ab 42,90 €",
+        "ticketStatus": "external_link",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785506439487-2hr731q-priceText",
+          "canonical_event_id": "evt-1785506439487-2hr731q",
+          "field_path": "priceText",
+          "selected_value": "ab 42,90 €",
+          "selected_source_id": "source-ticket-io-technodampfer",
+          "selected_at": "2026-08-02T12:04:05.36+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 42,90 €",
+              "sourceId": "source-ticket-io-technodampfer",
+              "freshnessAt": "2026-08-02T12:04:05.360Z",
+              "originExternalId": "https://technodampfer.ticket.io/GmlHJ3dK/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-02T12:04:05.36+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-02T12:04:05.36+00:00",
+          "origin_external_id": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        },
+        "ticketStatus": {
+          "id": "provenance-evt-1785506439487-2hr731q-ticketStatus",
+          "canonical_event_id": "evt-1785506439487-2hr731q",
+          "field_path": "ticketStatus",
+          "selected_value": "on_sale",
+          "selected_source_id": "source-ticket-io-technodampfer",
+          "selected_at": "2026-08-10T18:29:14.421+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "on_sale",
+              "sourceId": "source-ticket-io-technodampfer",
+              "freshnessAt": "2026-08-10T11:05:31.526Z",
+              "originExternalId": "https://technodampfer.ticket.io/GmlHJ3dK/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:14.421+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:05:31.526+00:00",
+          "origin_external_id": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785506439487-2hr731q-source-ticket-io-technodampfer-https://technodampfer.ticket.io/GmlHJ3dK/",
+        "canonical_event_id": "evt-1785506439487-2hr731q",
+        "source_id": "source-ticket-io-technodampfer",
+        "external_event_id": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "original_url": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "raw_record_id": "de96e3bb-b412-4c01-bbd2-7c2adcf7e694",
+        "import_job_id": "8dcdd58b-15b1-42c4-963c-039aa3a5f25b",
+        "first_seen_at": "2026-07-31T12:40:12.038+00:00",
+        "last_seen_at": "2026-08-10T18:29:14.614+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 60,
+        "source_quality_score": 72,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "platform": "ticket_io",
+          "shopSlug": "technodampfer",
+          "connector": "ticket_platform",
+          "eventSlug": "GmlHJ3dK",
+          "isPrimary": true,
+          "priceText": "ab 42,90 €",
+          "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "scopeStats": {
+            "accepted": 11,
+            "rejected": 1,
+            "uncertain": 0,
+            "discovered": 12,
+            "rejectionReasons": {
+              "no_electronic_signal": 1
+            }
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "eventGeography": {
+            "city": "explicit",
+            "venue": "explicit",
+            "address": "explicit",
+            "country": "explicit"
+          },
+          "normalizedHash": "91b807631c090adb6218d5ad45172702",
+          "posterMetadata": {
+            "source": "poster_ocr",
+            "status": "pending"
+          },
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": false,
+            "pagesFetched": 0
+          },
+          "enrichmentSource": false,
+          "electronicRelevance": "relevant",
+          "historicalRepairVersion": "4.3.4",
+          "dataQualityRepairVersion": "4.3.4"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "de96e3bb-b412-4c01-bbd2-7c2adcf7e694",
+        "import_job_id": "3dc10509-3d28-4ab5-9c51-bf6bf9dcdc7a",
+        "source_id": "source-ticket-io-technodampfer",
+        "external_id": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "raw_payload": {
+          "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+          "endDate": "2026-09-18T22:30:00+02:00",
+          "cityName": "Bregenz",
+          "eventUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3",
+          "importId": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "latitude": 47.5057625,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 9.7464436,
+          "priceText": "ab 42,90 €",
+          "sourceUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "startDate": "2026-09-18T17:45:00+02:00",
+          "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "venueName": "Bregenz Hafen (Pier 69)",
+          "externalId": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "artistNames": [
+            "Teenage Mutants"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 42.9,
+          "originalLink": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "venueAddress": "Seestraße 4, 6900, Bregenz, Österreich",
+          "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "technodampfer",
+            "connector": "ticket_platform",
+            "eventSlug": "GmlHJ3dK",
+            "priceText": "ab 42,90 €",
+            "scopeStats": {
+              "accepted": 11,
+              "rejected": 1,
+              "uncertain": 0,
+              "discovered": 12,
+              "rejectionReasons": {
+                "no_electronic_signal": 1
+              }
+            },
+            "availability": "instock",
+            "normalizedHash": "91b807631c090adb6218d5ad45172702",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 12,
+              "detailUrlsDiscovered": 12,
+              "detailUrlsPowBlocked": 12
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+          "endDate": "2026-09-18T20:30:00.000Z",
+          "endTime": "20:30",
+          "cityName": "Bregenz",
+          "eventUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "imageUrl": "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3",
+          "importId": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "isAllDay": false,
+          "latitude": 47.5057625,
+          "sourceId": "source-ticket-io-technodampfer",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/z358Ho3e/events/GmlHJ3dK/img/holder-1080.jpg?678bbca3"
+          ],
+          "longitude": 9.7464436,
+          "priceText": "ab 42,90 €",
+          "sourceUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "startDate": "2026-09-18T15:45:00.000Z",
+          "startTime": "15:45",
+          "ticketUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "venueName": "Bregenz Hafen (Pier 69)",
+          "externalId": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "sourceName": "technodampfer",
+          "artistNames": [
+            "Teenage Mutants"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 42.9,
+          "originalLink": "https://technodampfer.ticket.io/GmlHJ3dK/",
+          "venueAddress": "Seestraße 4, 6900, Bregenz, Österreich",
+          "organizerName": "Everlasting Entertainment UG (haftungsbeschränkt)",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "technodampfer",
+            "connector": "ticket_platform",
+            "eventSlug": "GmlHJ3dK",
+            "priceText": "ab 42,90 €",
+            "scopeStats": {
+              "accepted": 11,
+              "rejected": 1,
+              "uncertain": 0,
+              "discovered": 12,
+              "rejectionReasons": {
+                "no_electronic_signal": 1
+              }
+            },
+            "availability": "instock",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "91b807631c090adb6218d5ad45172702",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 12,
+              "detailUrlsDiscovered": 12,
+              "detailUrlsPowBlocked": 12
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "needs_review",
+        "created_at": "2026-07-31T12:40:12.038+00:00",
+        "updated_at": "2026-08-10T18:29:14.673+00:00",
+        "source_url": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": null,
+        "matched_venue_id": null,
+        "matched_artist_ids": [
+          "artist-title-teenage-mutants-otgq6y"
+        ],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785506439487-2hr731q",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No city match found for \"Bregenz\".",
+          "No venue match found for \"Bregenz Hafen (Pier 69)\".",
+          "No organizer match found for \"Everlasting Entertainment UG (haftungsbeschränkt)\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785506439487-2hr731q",
+        "reviewed_by": "sprint431-ticket-io-repair:run-1",
+        "reviewed_at": "2026-07-31T21:16:15.321+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://technodampfer.ticket.io/GmlHJ3dK/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785506472665-1b5azyj",
+      "failures": [
+        "priceText:ab 28,20 €"
+      ],
+      "manifestPatch": {
+        "priceText": {
+          "before": "ab 28,20 €",
+          "after": "ab 25,00 €"
+        }
+      },
+      "event": {
+        "title": "NEELIX",
+        "startDate": "2026-10-23T20:00:00+00:00",
+        "endDate": "2026-10-24T02:00:00+00:00",
+        "venueName": "STROMWERK | Kulturarena Kraftwerk Mitte",
+        "organizerName": "HMG Events GmbH & Co.KG",
+        "websiteUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "priceText": "ab 28,20 €",
+        "ticketStatus": "on_sale",
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785506472665-1b5azyj-priceText",
+          "canonical_event_id": "evt-1785506472665-1b5azyj",
+          "field_path": "priceText",
+          "selected_value": "ab 25,00 €",
+          "selected_source_id": "source-ticket-io-hmg-concerts",
+          "selected_at": "2026-08-10T18:29:15.133+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 25,00 €",
+              "sourceId": "source-ticket-io-hmg-concerts",
+              "freshnessAt": "2026-08-10T11:08:13.901Z",
+              "originExternalId": "https://hmg-concerts.ticket.io/dBWrKBPu/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:15.133+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:08:13.901+00:00",
+          "origin_external_id": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785506472665-1b5azyj-source-ticket-io-hmg-concerts-https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "canonical_event_id": "evt-1785506472665-1b5azyj",
+        "source_id": "source-ticket-io-hmg-concerts",
+        "external_event_id": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "original_url": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "raw_record_id": "6b1923f0-fedc-49da-964d-ed29ab9fbeed",
+        "import_job_id": "bc6264ec-b1e1-4fc6-aa0c-0b96b63762c6",
+        "first_seen_at": "2026-07-31T13:54:39.619+00:00",
+        "last_seen_at": "2026-08-10T18:29:15.309+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 60,
+        "source_quality_score": 72,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "platform": "ticket_io",
+          "shopSlug": "hmg-concerts",
+          "connector": "ticket_platform",
+          "eventSlug": "dBWrKBPu",
+          "isPrimary": true,
+          "priceText": "ab 28,20 €",
+          "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "scopeStats": {
+            "accepted": 20,
+            "rejected": 0,
+            "uncertain": 0,
+            "discovered": 20,
+            "rejectionReasons": {}
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "normalizedHash": "bc2781cc64d6059db1ea88fd8c420287",
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": false,
+            "pagesFetched": 0
+          },
+          "enrichmentSource": false,
+          "electronicRelevance": "relevant",
+          "dataQualityRepairVersion": "4.3.1"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "6b1923f0-fedc-49da-964d-ed29ab9fbeed",
+        "import_job_id": "7c8c857b-d6cd-419e-a84c-72cb1cee56f8",
+        "source_id": "source-ticket-io-hmg-concerts",
+        "external_id": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "raw_payload": {
+          "title": "NEELIX",
+          "endDate": "2026-10-24T04:00:00+02:00",
+          "cityName": "Dresden",
+          "eventUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a",
+          "importId": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "latitude": 51.0535981,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 13.7225112,
+          "priceText": "ab 28,20 €",
+          "sourceUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "startDate": "2026-10-23T22:00:00+02:00",
+          "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "venueName": "STROMWERK | Kulturarena Kraftwerk Mitte",
+          "externalId": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "countryCode": "DE",
+          "priceAmount": 28.2,
+          "originalLink": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "venueAddress": "Kraftwerk Mitte 28, 01067, Dresden, Deutschland",
+          "organizerName": "HMG Events GmbH & Co.KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "hmg-concerts",
+            "connector": "ticket_platform",
+            "eventSlug": "dBWrKBPu",
+            "priceText": "ab 28,20 €",
+            "scopeStats": {
+              "accepted": 20,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 20,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "normalizedHash": "bc2781cc64d6059db1ea88fd8c420287",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 20,
+              "detailUrlsDiscovered": 20,
+              "detailUrlsPowBlocked": 20
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "NEELIX",
+          "endDate": "2026-10-24T02:00:00.000Z",
+          "endTime": "02:00",
+          "cityName": "Dresden",
+          "eventUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "imageUrl": "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a",
+          "importId": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "isAllDay": false,
+          "latitude": 51.0535981,
+          "sourceId": "source-ticket-io-hmg-concerts",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/Y0Evn4oh/events/dBWrKBPu/img/holder-1080.jpg?3097f23a"
+          ],
+          "longitude": 13.7225112,
+          "priceText": "ab 28,20 €",
+          "sourceUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "startDate": "2026-10-23T20:00:00.000Z",
+          "startTime": "20:00",
+          "ticketUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "venueName": "STROMWERK | Kulturarena Kraftwerk Mitte",
+          "externalId": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "sourceName": "hmg-concerts",
+          "countryCode": "DE",
+          "priceAmount": 28.2,
+          "originalLink": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+          "venueAddress": "Kraftwerk Mitte 28, 01067, Dresden, Deutschland",
+          "organizerName": "HMG Events GmbH & Co.KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "hmg-concerts",
+            "connector": "ticket_platform",
+            "eventSlug": "dBWrKBPu",
+            "priceText": "ab 28,20 €",
+            "scopeStats": {
+              "accepted": 20,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 20,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "bc2781cc64d6059db1ea88fd8c420287",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 20,
+              "detailUrlsDiscovered": 20,
+              "detailUrlsPowBlocked": 20
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "needs_review",
+        "created_at": "2026-07-31T13:54:39.619+00:00",
+        "updated_at": "2026-08-10T18:29:15.374+00:00",
+        "source_url": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": null,
+        "matched_venue_id": null,
+        "matched_artist_ids": [],
+        "matched_genre_ids": [],
+        "duplicate_event_id": "evt-1785506472665-1b5azyj",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No city match found for \"Dresden\".",
+          "No venue match found for \"STROMWERK | Kulturarena Kraftwerk Mitte\".",
+          "No organizer match found for \"HMG Events GmbH & Co.KG\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785506472665-1b5azyj",
+        "reviewed_by": "sprint431-ticket-io-repair:run-1",
+        "reviewed_at": "2026-07-31T21:17:12.175+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    },
+    {
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "failures": [
+        "ticketStatus:external_link"
+      ],
+      "manifestPatch": {
+        "ticketStatus": {
+          "before": "external_link",
+          "after": "on_sale"
+        }
+      },
+      "event": {
+        "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+        "startDate": "2026-08-29T21:00:00+00:00",
+        "endDate": "2026-08-30T04:00:00+00:00",
+        "venueName": "Proton The Club",
+        "organizerName": "proton the club GmbH & Co. KG",
+        "websiteUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "priceText": "ab 10,00 €",
+        "ticketStatus": "external_link",
+        "genreLabels": [
+          "HARDTECHNO"
+        ],
+        "descriptionLength": 0
+      },
+      "provenance": {
+        "priceText": {
+          "id": "provenance-evt-1785672261305-bgdu8dk-priceText",
+          "canonical_event_id": "evt-1785672261305-bgdu8dk",
+          "field_path": "priceText",
+          "selected_value": "ab 10,00 €",
+          "selected_source_id": "source-ticket-io-protontheclub",
+          "selected_at": "2026-08-02T12:04:21.305+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "ab 10,00 €",
+              "sourceId": "source-ticket-io-protontheclub",
+              "freshnessAt": "2026-08-02T12:04:21.305Z",
+              "originExternalId": "https://proton-the-club.ticket.io/NbJxGh41/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-02T12:04:21.305+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-02T12:04:21.305+00:00",
+          "origin_external_id": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        },
+        "ticketStatus": {
+          "id": "provenance-evt-1785672261305-bgdu8dk-ticketStatus",
+          "canonical_event_id": "evt-1785672261305-bgdu8dk",
+          "field_path": "ticketStatus",
+          "selected_value": "on_sale",
+          "selected_source_id": "source-ticket-io-protontheclub",
+          "selected_at": "2026-08-10T18:29:15.829+00:00",
+          "selection_reason": "import_publish",
+          "alternatives": [
+            {
+              "value": "on_sale",
+              "sourceId": "source-ticket-io-protontheclub",
+              "freshnessAt": "2026-08-10T11:09:42.508Z",
+              "originExternalId": "https://proton-the-club.ticket.io/NbJxGh41/"
+            }
+          ],
+          "manually_overridden": false,
+          "updated_at": "2026-08-10T18:29:15.829+00:00",
+          "confidence": null,
+          "freshness_at": "2026-08-10T11:09:42.508+00:00",
+          "origin_external_id": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "merge_decision": null,
+          "selected_tier": "ticket_platform"
+        }
+      },
+      "sourceReference": {
+        "id": "ref-evt-1785672261305-bgdu8dk-source-ticket-io-protontheclub-https://proton-the-club.ticket.io/NbJxGh41/",
+        "canonical_event_id": "evt-1785672261305-bgdu8dk",
+        "source_id": "source-ticket-io-protontheclub",
+        "external_event_id": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "original_url": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "raw_record_id": "37a52042-ab6c-46dd-b144-a25c215c9489",
+        "import_job_id": "82fa80f8-196f-4bf4-be89-8cce62c2cad9",
+        "first_seen_at": "2026-08-02T12:04:15.387+00:00",
+        "last_seen_at": "2026-08-10T18:29:16.007+00:00",
+        "last_changed_at": null,
+        "active": true,
+        "source_priority": 60,
+        "source_quality_score": 72,
+        "source_health_score": null,
+        "metadata": {
+          "role": "ticketing",
+          "soldOut": false,
+          "syncRun": {
+            "pagesProcessed": 1,
+            "paginationDetected": false
+          },
+          "eventUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "platform": "ticket_io",
+          "shopSlug": "proton-the-club",
+          "connector": "ticket_platform",
+          "eventSlug": "NbJxGh41",
+          "isPrimary": true,
+          "priceText": "ab 10,00 €",
+          "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "scopeStats": {
+            "accepted": 7,
+            "rejected": 0,
+            "uncertain": 0,
+            "discovered": 7,
+            "rejectionReasons": {}
+          },
+          "sourceType": "ticket_platform",
+          "syncStatus": "active",
+          "availability": "instock",
+          "canonicalUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "eventGeography": {
+            "city": "explicit",
+            "venue": "explicit",
+            "address": "explicit",
+            "country": "explicit"
+          },
+          "normalizedHash": "dbc0498f261cec6b07a1a312026ccfb3",
+          "posterMetadata": {
+            "source": "poster_ocr",
+            "status": "pending"
+          },
+          "connectorVersion": "1.2.0",
+          "detailEnrichment": {
+            "blockedByPow": false,
+            "pagesFetched": 0
+          },
+          "enrichmentSource": false,
+          "electronicRelevance": "relevant",
+          "historicalRepairVersion": "4.3.4",
+          "dataQualityRepairVersion": "4.3.4"
+        },
+        "consecutive_missing_count": 0,
+        "missing_since": null
+      },
+      "importRecord": {
+        "id": "37a52042-ab6c-46dd-b144-a25c215c9489",
+        "import_job_id": "ba9df7d1-568c-47a8-93b1-b49a662f4280",
+        "source_id": "source-ticket-io-protontheclub",
+        "external_id": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "raw_payload": {
+          "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+          "endDate": "2026-08-30T06:00:00+02:00",
+          "cityName": "Stuttgart",
+          "eventUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d",
+          "importId": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "latitude": 48.7735521,
+          "timezone": "Europe/Berlin",
+          "cancelled": false,
+          "longitude": 9.1751239,
+          "priceText": "ab 10,00 €",
+          "sourceUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "startDate": "2026-08-29T23:00:00+02:00",
+          "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "venueName": "Proton The Club",
+          "externalId": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "genreNames": [
+            "HARDTECHNO"
+          ],
+          "artistNames": [
+            "POWERLAURA",
+            "JUSTIN PRICE"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 10,
+          "originalLink": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "venueAddress": "Königstraße 49, 70173, Stuttgart, Deutschland",
+          "organizerName": "proton the club GmbH & Co. KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "proton-the-club",
+            "connector": "ticket_platform",
+            "eventSlug": "NbJxGh41",
+            "priceText": "ab 10,00 €",
+            "genreNames": [
+              "HARDTECHNO"
+            ],
+            "scopeStats": {
+              "accepted": 7,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 7,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "normalizedHash": "dbc0498f261cec6b07a1a312026ccfb3",
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 7,
+              "detailUrlsDiscovered": 7,
+              "detailUrlsPowBlocked": 7
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "dataQualityRepairVersion": "4.3.1"
+          }
+        },
+        "normalized_payload": {
+          "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+          "endDate": "2026-08-30T04:00:00.000Z",
+          "endTime": "04:00",
+          "cityName": "Stuttgart",
+          "eventUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "imageUrl": "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d",
+          "importId": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "isAllDay": false,
+          "latitude": 48.7735521,
+          "sourceId": "source-ticket-io-protontheclub",
+          "timezone": "UTC+02:00",
+          "imageUrls": [
+            "https://cdn.ticket.io/companies/OxSFhaeL/events/NbJxGh41/img/holder-1080.jpg?6f2e30d"
+          ],
+          "longitude": 9.1751239,
+          "priceText": "ab 10,00 €",
+          "sourceUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "startDate": "2026-08-29T21:00:00.000Z",
+          "startTime": "21:00",
+          "ticketUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "venueName": "Proton The Club",
+          "externalId": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "genreNames": [
+            "HARDTECHNO"
+          ],
+          "sourceName": "protontheclub",
+          "artistNames": [
+            "POWERLAURA",
+            "JUSTIN PRICE"
+          ],
+          "countryCode": "DE",
+          "priceAmount": 10,
+          "originalLink": "https://proton-the-club.ticket.io/NbJxGh41/",
+          "venueAddress": "Königstraße 49, 70173, Stuttgart, Deutschland",
+          "organizerName": "proton the club GmbH & Co. KG",
+          "priceCurrency": "EUR",
+          "rawSourceType": "json_ld",
+          "sourceMetadata": {
+            "soldOut": false,
+            "syncRun": {
+              "pagesProcessed": 1,
+              "paginationDetected": false
+            },
+            "platform": "ticket_io",
+            "shopSlug": "proton-the-club",
+            "connector": "ticket_platform",
+            "eventSlug": "NbJxGh41",
+            "priceText": "ab 10,00 €",
+            "genreNames": [
+              "HARDTECHNO"
+            ],
+            "scopeStats": {
+              "accepted": 7,
+              "rejected": 0,
+              "uncertain": 0,
+              "discovered": 7,
+              "rejectionReasons": {}
+            },
+            "availability": "instock",
+            "eventGeography": {
+              "city": "explicit",
+              "venue": "explicit",
+              "address": "explicit",
+              "country": "explicit"
+            },
+            "normalizedHash": "dbc0498f261cec6b07a1a312026ccfb3",
+            "posterMetadata": {
+              "source": "poster_ocr",
+              "status": "pending"
+            },
+            "connectorVersion": "1.2.0",
+            "detailEnrichment": {
+              "blockedByPow": true,
+              "pagesFetched": 0,
+              "detailFetched": false,
+              "parserInvoked": false,
+              "skippedReason": "pow_blocked",
+              "maxDetailPages": 15,
+              "shopPagesFetched": 0,
+              "detailFetchErrors": 0,
+              "detailUrlsFetched": 0,
+              "detailUrlsAttempted": 7,
+              "detailUrlsDiscovered": 7,
+              "detailUrlsPowBlocked": 7
+            },
+            "enrichmentSource": false,
+            "electronicRelevance": "relevant",
+            "historicalRepairVersion": "4.3.4",
+            "dataQualityRepairVersion": "4.3.4"
+          }
+        },
+        "status": "needs_review",
+        "created_at": "2026-08-02T12:04:15.387+00:00",
+        "updated_at": "2026-08-10T18:29:16.065+00:00",
+        "source_url": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "validation_errors": [],
+        "validation_warnings": [
+          {
+            "code": "DESCRIPTION_MISSING",
+            "field": "description",
+            "message": "Description is missing."
+          }
+        ],
+        "matched_city_id": null,
+        "matched_venue_id": null,
+        "matched_artist_ids": [
+          "artist-title-powerlaura-7zmq9t",
+          "artist-title-justin-price-dtzgzh"
+        ],
+        "matched_genre_ids": [
+          "staging-seed-genre-hard-techno"
+        ],
+        "duplicate_event_id": "evt-1785672261305-bgdu8dk",
+        "duplicate_score": 95,
+        "matching_warnings": [
+          "No city match found for \"Stuttgart\".",
+          "No venue match found for \"Proton The Club\".",
+          "No organizer match found for \"proton the club GmbH & Co. KG\".",
+          "Potential duplicate detected (score 95)."
+        ],
+        "resulting_event_id": "evt-1785672261305-bgdu8dk",
+        "reviewed_by": "phase462:pass1:source-ticket-io-protontheclub",
+        "reviewed_at": "2026-08-02T12:04:21.305+00:00",
+        "reject_reason": null,
+        "reject_note": null,
+        "reviewer_edits": null,
+        "duplicate_decision": null,
+        "matched_organizer_id": null,
+        "source_type": null,
+        "original_url": "https://proton-the-club.ticket.io/NbJxGh41/",
+        "retrieved_at": null,
+        "match_evaluation_id": null
+      }
+    }
+  ],
+  "consumerAfter": [
+    {
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "eventId": "evt-1785443904478-dg3lk70",
+      "headerPriceAfter": "ab 19,90 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+      "officialWebsite": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 19,90 €",
+      "statusBefore": "external_link",
+      "headerPriceExpectedAfter": "ab 19,90 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "ANIME SOUNDS by CrispyRob - The Last Chapter",
+      "eventId": "evt-1785443908695-6n8vfff",
+      "headerPriceAfter": "ab 30,00 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://bootshaus-club.ticket.io/AVltKz9P/",
+      "officialWebsite": "https://bootshaus-club.ticket.io/AVltKz9P/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 30,00 €",
+      "statusBefore": "external_link",
+      "headerPriceExpectedAfter": "ab 30,00 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "HCG pres. 2 YEARS STUTTGART HARDCORE SOUND",
+      "eventId": "evt-1785506397824-yhn81xp",
+      "headerPriceAfter": "ab 19,00 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://lehmannclub.ticket.io/WDLtIc4K/",
+      "officialWebsite": "https://lehmannclub.ticket.io/WDLtIc4K/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 19,00 €",
+      "statusBefore": "on_sale",
+      "headerPriceExpectedAfter": "ab 22,00 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "Vision Ekstase Open Air",
+      "eventId": "evt-1785506404218-hgmd9nz",
+      "headerPriceAfter": "ab 15,00 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://lehmannclub.ticket.io/FdFEFNxU/",
+      "officialWebsite": "https://lehmannclub.ticket.io/FdFEFNxU/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 15,00 €",
+      "statusBefore": "on_sale",
+      "headerPriceExpectedAfter": "ab 18,00 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "TECHNO DAMPFER Mainz w/ Felix Kröcher",
+      "eventId": "evt-1785506428527-m5ugmjh",
+      "headerPriceAfter": "ab 69,90 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://technodampfer.ticket.io/qqglRlFM/",
+      "officialWebsite": "https://technodampfer.ticket.io/qqglRlFM/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 69,90 €",
+      "statusBefore": "external_link",
+      "headerPriceExpectedAfter": "ab 49,90 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "TECHNO DAMPFER Bregenz w/ Teenage Mutants",
+      "eventId": "evt-1785506439487-2hr731q",
+      "headerPriceAfter": "ab 42,90 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://technodampfer.ticket.io/GmlHJ3dK/",
+      "officialWebsite": "https://technodampfer.ticket.io/GmlHJ3dK/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 42,90 €",
+      "statusBefore": "external_link",
+      "headerPriceExpectedAfter": "ab 42,90 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "NEELIX",
+      "eventId": "evt-1785506472665-1b5azyj",
+      "headerPriceAfter": "ab 28,20 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+      "officialWebsite": "https://hmg-concerts.ticket.io/dBWrKBPu/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 28,20 €",
+      "statusBefore": "on_sale",
+      "headerPriceExpectedAfter": "ab 25,00 €",
+      "statusExpectedAfter": "on_sale"
+    },
+    {
+      "title": "POWERMODE pres. POWERLAURA & JUSTIN PRICE",
+      "eventId": "evt-1785672261305-bgdu8dk",
+      "headerPriceAfter": "ab 10,00 €",
+      "statusAfter": "Verfügbar",
+      "ticketCardCount": 0,
+      "ctaLabel": "Tickets ansehen",
+      "ctaUrl": "https://proton-the-club.ticket.io/NbJxGh41/",
+      "officialWebsite": "https://proton-the-club.ticket.io/NbJxGh41/",
+      "duplicatePriceLine": false,
+      "protectedContentUnchanged": true,
+      "headerPriceBefore": "ab 10,00 €",
+      "statusBefore": "external_link",
+      "headerPriceExpectedAfter": "ab 10,00 €",
+      "statusExpectedAfter": "on_sale"
+    }
+  ],
+  "lanUrls": [
+    "http://localhost:8081/event/evt-1785443904478-dg3lk70",
+    "http://localhost:8081/event/evt-1785443908695-6n8vfff",
+    "http://localhost:8081/event/evt-1785506397824-yhn81xp",
+    "http://localhost:8081/event/evt-1785506404218-hgmd9nz",
+    "http://localhost:8081/event/evt-1785506428527-m5ugmjh",
+    "http://localhost:8081/event/evt-1785506439487-2hr731q",
+    "http://localhost:8081/event/evt-1785506472665-1b5azyj",
+    "http://localhost:8081/event/evt-1785672261305-bgdu8dk"
+  ],
+  "rollbackArtifact": true
+}

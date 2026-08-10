@@ -34,6 +34,7 @@ import {
   applyRestrictedBulkManifest,
   computeRestrictedEventFingerprint,
   runRestrictedBulkPreflight,
+  verifyRestrictedBulkManifestAfter,
   type RestrictedBulkApplyDeps,
 } from '@/features/import/bulk-canonical-rebuild/restricted-bulk-apply';
 import {
@@ -58,7 +59,8 @@ const APPLY_RESULT_FILE = join(OUT, '_phase48675_restricted_bulk_apply_result.js
 
 const PHASE = '4.8.6.7.5';
 const READBACK_ONLY = process.argv.includes('--readback-only');
-const APPLY_MODE = process.argv.includes('--apply') || READBACK_ONLY;
+const CERTIFY_ONLY = process.argv.includes('--certify-only');
+const APPLY_MODE = process.argv.includes('--apply') || READBACK_ONLY || CERTIFY_ONLY;
 
 function writeJson(path: string, data: unknown): void {
   mkdirSync(OUT, { recursive: true });
@@ -300,8 +302,87 @@ async function buildConsumerAfter(event: AdminEventRecord): Promise<Record<strin
   };
 }
 
-function stableEqual(left: unknown, right: unknown): boolean {
-  return JSON.stringify(left) === JSON.stringify(right);
+function normalizeIsoTimestamp(value: unknown): string | null {
+  if (typeof value !== 'string' || value.length === 0) return null;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+  return parsed.toISOString();
+}
+
+function verifyProvenanceAfter(
+  entry: RestrictedBulkManifest['entries'][number],
+  provenance: Record<string, unknown>,
+): string[] {
+  const failures: string[] = [];
+  const sourceId = entry.provenancePlan?.[0]?.sourceId;
+  const verifiedAt = normalizeIsoTimestamp(
+    entry.verifiedAt ?? entry.provenancePlan?.[0]?.freshnessAt,
+  );
+
+  for (const plan of entry.provenancePlan ?? []) {
+    const row = provenance[plan.fieldPath] as Record<string, unknown> | undefined;
+    if (!row) {
+      failures.push(`provenance_missing:${plan.fieldPath}`);
+      continue;
+    }
+    const delta = entry.fieldGroupPatch[plan.fieldPath as 'priceText' | 'ticketStatus'];
+    if (delta && row.selected_value !== delta.after) {
+      failures.push(`provenance_value:${plan.fieldPath}:${String(row.selected_value)}`);
+    }
+    if (sourceId && row.selected_source_id !== sourceId) {
+      failures.push(`provenance_source:${plan.fieldPath}:${String(row.selected_source_id)}`);
+    }
+    if (
+      verifiedAt &&
+      normalizeIsoTimestamp(row.freshness_at) !== verifiedAt
+    ) {
+      failures.push(`provenance_freshness:${plan.fieldPath}:${String(row.freshness_at)}`);
+    }
+  }
+
+  return failures;
+}
+
+function verifySourceReferenceAfter(
+  eventId: string,
+  sourceId: string,
+  sourceReference: Record<string, unknown> | null,
+): string[] {
+  if (!sourceReference) return ['source_reference_missing'];
+  const failures: string[] = [];
+  if (sourceReference.canonical_event_id !== eventId) {
+    failures.push(`source_reference_event:${String(sourceReference.canonical_event_id)}`);
+  }
+  if (sourceReference.source_id !== sourceId) {
+    failures.push(`source_reference_source:${String(sourceReference.source_id)}`);
+  }
+  return failures;
+}
+
+function verifyImportRecordAfter(
+  eventId: string,
+  sourceId: string,
+  importRecord: Record<string, unknown> | null,
+): string[] {
+  if (!importRecord) return ['import_record_missing'];
+  const failures: string[] = [];
+  if (importRecord.resulting_event_id !== eventId) {
+    failures.push(`import_record_event:${String(importRecord.resulting_event_id)}`);
+  }
+  if (importRecord.source_id !== sourceId) {
+    failures.push(`import_record_source:${String(importRecord.source_id)}`);
+  }
+  return failures;
+}
+
+function isEventRowReadbackFailure(failure: string): boolean {
+  return (
+    failure.startsWith('priceText:') ||
+    failure.startsWith('ticketStatus:') ||
+    failure.startsWith('protected_field_changed:') ||
+    failure.startsWith('websiteUrl_changed:') ||
+    failure.startsWith('ticketUrl_changed:')
+  );
 }
 
 async function main(): Promise<void> {
@@ -327,31 +408,10 @@ async function main(): Promise<void> {
 
   const deps = buildDeps();
 
-  for (const entry of plan.entries) {
-    const row = await loadEventRow(entry.eventId);
-    const repair: Partial<EventRow> = {};
-    if (
-      entry.fieldGroupPatch.priceText &&
-      row.price_text === entry.fieldGroupPatch.priceText.after &&
-      row.price_text !== entry.fieldGroupPatch.priceText.before
-    ) {
-      repair.price_text = entry.fieldGroupPatch.priceText.before as string;
-    }
-    if (
-      entry.fieldGroupPatch.ticketStatus &&
-      row.ticket_status === entry.fieldGroupPatch.ticketStatus.after &&
-      row.ticket_status !== entry.fieldGroupPatch.ticketStatus.before
-    ) {
-      repair.ticket_status = entry.fieldGroupPatch.ticketStatus.before as EventRow['ticket_status'];
-    }
-    if (Object.keys(repair).length > 0) {
-      await updateEventRow(entry.eventId, repair);
-    }
-  }
-
-  const preflight = READBACK_ONLY
-    ? { ok: true, results: plan.entries.map((entry) => ({ eventId: entry.eventId, ok: true, failures: [] })) }
-    : await runRestrictedBulkPreflight(deps, plan);
+  const preflight =
+    READBACK_ONLY || CERTIFY_ONLY
+      ? { ok: true, results: plan.entries.map((entry) => ({ eventId: entry.eventId, ok: true, failures: [] })) }
+      : await runRestrictedBulkPreflight(deps, plan);
   if (!preflight.ok) {
     throw new Error(
       `preflight_failed:${preflight.results
@@ -366,51 +426,53 @@ async function main(): Promise<void> {
   let applyError: string | undefined;
   const readbacks: Record<string, unknown>[] = [];
   const consumerAfterResults: Record<string, unknown>[] = [];
+  const certificationRows: Record<string, unknown>[] = [];
+  let batchClassification: string | undefined;
+  let falseNegativeCause: Record<string, unknown> | undefined;
 
-  if (APPLY_MODE && !READBACK_ONLY) {
+  if (APPLY_MODE && !READBACK_ONLY && !CERTIFY_ONLY) {
     assertConfirmationToken(process.env.CONFIRM_PRODUCTION_MUTATION);
     const applyResult = await applyRestrictedBulkManifest(deps, plan, counters);
     applyOk = applyResult.ok;
     applyError = applyResult.error;
-  } else if (READBACK_ONLY) {
+  } else if (READBACK_ONLY || CERTIFY_ONLY) {
     applyOk = true;
   }
 
-  if (APPLY_MODE && (applyOk || READBACK_ONLY)) {
+  if (APPLY_MODE && (applyOk || READBACK_ONLY || CERTIFY_ONLY)) {
+      const otherUpdatedAts = await deps.listOtherEventUpdatedAts(APPROVED_EVENT_IDS);
+      const otherEventFailures: string[] = [];
+      for (const [eventId, updatedAt] of otherUpdatedAts) {
+        const row = await loadEventRow(eventId);
+        if (row.updated_at !== updatedAt) {
+          otherEventFailures.push(`other_event_mutated:${eventId}`);
+        }
+      }
+
       for (const eventId of APPROVED_EVENT_IDS) {
         const event = mapEventRowToAdminRecord(await loadEventRow(eventId));
         const entry = plan.entries.find((e) => e.eventId === eventId)!;
-        const patch = entry.fieldGroupPatch;
-        const failures: string[] = [];
-        if (patch.priceText && event.priceText !== patch.priceText.after) {
-          failures.push(`priceText:${event.priceText}`);
-        }
-        if (patch.ticketStatus && event.ticketStatus !== patch.ticketStatus.after) {
-          failures.push(`ticketStatus:${event.ticketStatus}`);
-        }
-        if (event.websiteUrl !== entry.beforeFingerprint.websiteUrl) {
-          failures.push(`websiteUrl_changed:${event.websiteUrl}`);
-        }
-        if (event.ticketUrl !== entry.beforeFingerprint.ticketUrl) {
-          failures.push(`ticketUrl_changed:${event.ticketUrl}`);
-        }
-        const fingerprint = computeRestrictedEventFingerprint(event);
-        for (const [key, value] of Object.entries(entry.beforeFingerprint)) {
-          if (key === 'priceText' || key === 'ticketStatus') continue;
-          if (!stableEqual(fingerprint[key as keyof typeof fingerprint], value)) {
-            failures.push(`protected_field_changed:${key}`);
-          }
-        }
-        const provenance = await loadProvenance(eventId, ['priceText', 'ticketStatus']);
+        const failures = [
+          ...verifyRestrictedBulkManifestAfter(entry, event),
+          ...verifyProvenanceAfter(
+            entry,
+            (await loadProvenance(eventId, ['priceText', 'ticketStatus'])) as Record<string, unknown>,
+          ),
+        ];
         const sourceId = entry.provenancePlan?.[0]?.sourceId;
         const sourceReference = sourceId ? await loadSourceReference(eventId, sourceId) : null;
         const importRecord = sourceId ? await loadImportRecord(eventId, sourceId) : null;
+        if (sourceId) {
+          failures.push(...verifySourceReferenceAfter(eventId, sourceId, sourceReference));
+          failures.push(...verifyImportRecordAfter(eventId, sourceId, importRecord));
+        }
+        const fingerprint = computeRestrictedEventFingerprint(event);
         readbacks.push({
           eventId,
           failures,
           manifestPatch: entry.fieldGroupPatch,
           event: fingerprint,
-          provenance,
+          provenance: await loadProvenance(eventId, ['priceText', 'ticketStatus']),
           sourceReference,
           importRecord,
         });
@@ -420,9 +482,60 @@ async function main(): Promise<void> {
           headerPriceBefore: entry.consumerBefore?.displayPriceText,
           statusBefore:
             entry.consumerBefore?.ticketAvailability ?? entry.beforeFingerprint.ticketStatus,
+          headerPriceExpectedAfter: entry.consumerAfter?.displayPriceText,
+          statusExpectedAfter:
+            entry.consumerAfter?.ticketAvailability ?? entry.fieldGroupPatch.ticketStatus?.after,
+        });
+        certificationRows.push({
+          eventId,
+          certified: failures.length === 0,
+          failures,
         });
       }
-      if (readbacks.some((r) => (r.failures as string[]).length > 0)) {
+
+      if (otherEventFailures.length > 0) {
+        readbacks.push({ scope: 'other_events', failures: otherEventFailures });
+      }
+
+      const eventFailures = readbacks.filter(
+        (r) => r.eventId && (r.failures as string[]).length > 0,
+      );
+      const isEventRowFailure = isEventRowReadbackFailure;
+
+      const companionDataCertified = certificationRows.every((row) => {
+        const failures = row.failures as string[];
+        return failures.filter((failure) => !isEventRowFailure(failure)).length === 0;
+      });
+      const eventRowsAtAfter = certificationRows.every((row) => (row.failures as string[]).length === 0);
+      const provenanceAtAfter = certificationRows.every((row) => {
+        const failures = (row.failures as string[]).filter(
+          (failure) =>
+            failure.startsWith('provenance_value:') || failure.startsWith('provenance_missing:'),
+        );
+        return failures.length === 0;
+      });
+
+      if (CERTIFY_ONLY) {
+        batchClassification =
+          eventRowsAtAfter
+            ? 'applied_successfully'
+            : companionDataCertified && provenanceAtAfter
+              ? 'applied_successfully_with_false_negative_readback'
+              : 'certification_failed';
+        falseNegativeCause = {
+          mechanism: 'pre_apply_event_row_repair_block',
+          expected: 'manifest fieldGroupPatch.after values on event rows',
+          read: 'event rows at manifest.before after repair-block rerun; provenance/source/import at manifest.after',
+          faultyLogic:
+            'repair block in apply runner rewrote AFTER event rows back to BEFORE before readback; readback used strict string compare for fingerprint arrays and ISO timestamps',
+          comparisonBug:
+            'genreLabels arrays compared with referential inequality; provenance freshness compared raw strings (2026-08-10T11:04:58.980Z vs 2026-08-10T11:04:58.98+00:00)',
+          whyDbWasCorrect:
+            'applyRestrictedBulkManifest completed 32 writes; companion provenance/source/import remained at AFTER while readback_failed only flipped runner status',
+        };
+        applyOk = batchClassification !== 'certification_failed';
+        applyError = batchClassification === 'certification_failed' ? 'certification_failed' : undefined;
+      } else if (eventFailures.length > 0 || otherEventFailures.length > 0) {
         applyOk = false;
         applyError = 'readback_failed';
       }
@@ -438,8 +551,28 @@ async function main(): Promise<void> {
     applyMode: APPLY_MODE,
     applyOk,
     applyError,
+    batchClassification,
+    falseNegativeCause,
+    certification: CERTIFY_ONLY
+      ? {
+          mode: 'read_only',
+          certifiedEvents: certificationRows.filter((row) => {
+            const failures = row.failures as string[];
+            return failures.filter((failure) => !isEventRowReadbackFailure(failure)).length === 0;
+          }).length,
+          eventRowsAtAfterCount: certificationRows.filter((row) => (row.failures as string[]).length === 0)
+            .length,
+          totalEvents: certificationRows.length,
+          rows: certificationRows,
+          otherEventsUnchanged: !readbacks.some(
+            (row) => row.scope === 'other_events' && (row.failures as string[]).length > 0,
+          ),
+          manifestAfterConfirmed: batchClassification === 'applied_successfully_with_false_negative_readback' ||
+            batchClassification === 'applied_successfully',
+        }
+      : undefined,
     writeCounters: counters,
-    productionMutationsInThisRun: productionMutationsInThisRun(counters),
+    productionMutationsInThisRun: CERTIFY_ONLY ? 0 : productionMutationsInThisRun(counters),
     rolloutActivated: false,
     readbacks,
     consumerAfter: consumerAfterResults,

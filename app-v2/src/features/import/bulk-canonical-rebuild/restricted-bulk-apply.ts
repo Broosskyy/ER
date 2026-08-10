@@ -6,7 +6,6 @@ import type { PublishTrackedField } from '@/features/import/services/event-field
 
 import { createBulkDetailFetchFn } from './detail-fetch-http';
 import {
-  ALLOWED_PATCH_FIELDS,
   type AllowedPatchField,
   APPROVED_CANDIDATE_FIELDS,
   filterManifestPatch,
@@ -66,6 +65,15 @@ export interface AppliedEventSnapshot {
   sourceReferenceBefore: Record<string, unknown> | null;
   importRecordBefore: Record<string, unknown> | null;
   allowedFields: readonly AllowedPatchField[];
+  touchedProvenanceFields: PublishTrackedField[];
+  touchedSourceReference: boolean;
+  touchedImportRecord: boolean;
+}
+
+export interface RestrictedBulkReadbackRow {
+  eventId: string;
+  failures: string[];
+  event: Record<string, unknown>;
 }
 
 export function computeRestrictedEventFingerprint(event: AdminEventRecord): Record<string, unknown> {
@@ -86,6 +94,91 @@ export function computeRestrictedEventFingerprint(event: AdminEventRecord): Reco
 
 function stableEqual(left: unknown, right: unknown): boolean {
   return JSON.stringify(left) === JSON.stringify(right);
+}
+
+export function verifyRestrictedBulkManifestAfter(
+  entry: RestrictedBulkManifestEntry,
+  event: AdminEventRecord,
+): string[] {
+  const failures: string[] = [];
+  const fingerprint = computeRestrictedEventFingerprint(event);
+  const approvedFields = APPROVED_CANDIDATE_FIELDS[entry.eventId] ?? [];
+
+  for (const field of approvedFields) {
+    const delta = entry.fieldGroupPatch[field];
+    if (!delta) {
+      failures.push(`missing_patch:${field}`);
+      continue;
+    }
+    const current = fingerprint[field as keyof typeof fingerprint];
+    if (!stableEqual(current, delta.after)) {
+      failures.push(`${field}:${String(current)}`);
+    }
+  }
+
+  for (const [key, value] of Object.entries(entry.beforeFingerprint)) {
+    if (key === 'priceText' || key === 'ticketStatus') continue;
+    if (!stableEqual(fingerprint[key as keyof typeof fingerprint], value)) {
+      failures.push(`protected_field_changed:${key}`);
+    }
+  }
+
+  if (event.websiteUrl !== entry.beforeFingerprint.websiteUrl) {
+    failures.push(`websiteUrl_changed:${event.websiteUrl}`);
+  }
+  if (event.ticketUrl !== entry.beforeFingerprint.ticketUrl) {
+    failures.push(`ticketUrl_changed:${event.ticketUrl}`);
+  }
+
+  return failures;
+}
+
+export function assertAppliedEventSnapshotComplete(
+  snapshot: AppliedEventSnapshot,
+  entry: RestrictedBulkManifestEntry,
+  sourceId: string,
+  options: {
+    willWriteProvenance: boolean;
+    willTouchSourceReference: boolean;
+    willTouchImportRecord: boolean;
+  },
+): void {
+  const failures: string[] = [];
+  const manifestPatch = filterManifestPatch(entry);
+
+  for (const field of Object.keys(manifestPatch)) {
+    if (field === 'priceText' && snapshot.eventRowBefore.price_text === undefined) {
+      failures.push('event_snapshot_missing:price_text');
+    }
+    if (field === 'ticketStatus' && snapshot.eventRowBefore.ticket_status === undefined) {
+      failures.push('event_snapshot_missing:ticket_status');
+    }
+  }
+
+  if (options.willWriteProvenance) {
+    for (const field of snapshot.allowedFields) {
+      if (field !== 'priceText' && field !== 'ticketStatus') continue;
+      if (!Object.prototype.hasOwnProperty.call(snapshot.provenanceBefore, field)) {
+        failures.push(`provenance_snapshot_missing:${field}`);
+      }
+    }
+  }
+
+  if (options.willTouchSourceReference && !snapshot.sourceReferenceBefore) {
+    failures.push('source_reference_snapshot_missing');
+  }
+
+  if (options.willTouchImportRecord && !snapshot.importRecordBefore) {
+    failures.push('import_record_snapshot_missing');
+  }
+
+  if (!sourceId && (options.willWriteProvenance || options.willTouchSourceReference)) {
+    failures.push('source_id_missing');
+  }
+
+  if (failures.length > 0) {
+    throw new Error(`snapshot_incomplete:${entry.eventId}:${failures.join(',')}`);
+  }
 }
 
 function toEventRowPatch(
@@ -206,17 +299,17 @@ export async function rollbackRestrictedBulkSnapshots(
     recordDbWrite(counters, 'event', 1, Object.keys(snapshot.eventRowBefore).length);
     await deps.updateEventRow(snapshot.eventId, snapshot.eventRowBefore);
 
-    for (const [fieldPath, row] of Object.entries(snapshot.provenanceBefore)) {
-      const provenance = row as Record<string, unknown> | null;
+    for (const fieldPath of snapshot.touchedProvenanceFields) {
+      const provenance = snapshot.provenanceBefore[fieldPath] as Record<string, unknown> | null | undefined;
       recordDbWrite(counters, 'rollback', 1);
-      await deps.restoreProvenanceSnapshot(snapshot.eventId, fieldPath, provenance);
+      await deps.restoreProvenanceSnapshot(snapshot.eventId, fieldPath, provenance ?? null);
     }
 
-    if (snapshot.sourceReferenceBefore) {
+    if (snapshot.touchedSourceReference && snapshot.sourceReferenceBefore) {
       recordDbWrite(counters, 'rollback', 1);
       await deps.restoreSourceReference(snapshot.sourceReferenceBefore);
     }
-    if (snapshot.importRecordBefore) {
+    if (snapshot.touchedImportRecord && snapshot.importRecordBefore) {
       recordDbWrite(counters, 'rollback', 1);
       await deps.restoreImportRecord(snapshot.importRecordBefore);
     }
@@ -251,13 +344,26 @@ export async function applyRestrictedBulkManifest(
         ticket_status: rawRow.ticket_status,
         ticket_phases: rawRow.ticket_phases,
       };
-      const provenanceBefore = await deps.loadProvenanceSnapshot(entry.eventId, [...ALLOWED_PATCH_FIELDS]);
+      const provenanceFieldPaths = allowedFields.filter(
+        (field): field is PublishTrackedField => field === 'priceText' || field === 'ticketStatus',
+      );
+      const provenanceBeforeRaw = await deps.loadProvenanceSnapshot(entry.eventId, provenanceFieldPaths);
+      const provenanceBefore: Record<string, unknown> = {};
+      for (const field of provenanceFieldPaths) {
+        provenanceBefore[field] = Object.prototype.hasOwnProperty.call(provenanceBeforeRaw, field)
+          ? provenanceBeforeRaw[field]
+          : null;
+      }
       const sourceReferenceBefore = sourceId
         ? await deps.loadSourceReference(entry.eventId, sourceId)
         : null;
       const importRecordBefore = sourceId
         ? await deps.loadImportRecord(entry.eventId, sourceId)
         : null;
+      const existingSourceReference = sourceReferenceBefore;
+      const willTouchSourceReference = Boolean(sourceId && existingSourceReference);
+      const willTouchImportRecord = Boolean(importRecordBefore?.id);
+      const willWriteProvenance = provenanceFieldPaths.length > 0 && Boolean(sourceId);
 
       const snapshot: AppliedEventSnapshot = {
         eventId: entry.eventId,
@@ -266,7 +372,16 @@ export async function applyRestrictedBulkManifest(
         sourceReferenceBefore,
         importRecordBefore,
         allowedFields,
+        touchedProvenanceFields: [],
+        touchedSourceReference: false,
+        touchedImportRecord: false,
       };
+
+      assertAppliedEventSnapshotComplete(snapshot, entry, sourceId, {
+        willWriteProvenance,
+        willTouchSourceReference,
+        willTouchImportRecord,
+      });
       applied.push(snapshot);
 
       const rowPatch = toEventRowPatch(manifestPatch);
@@ -281,34 +396,28 @@ export async function applyRestrictedBulkManifest(
           event.ticketStatus,
       };
 
-      const provenanceFields: PublishTrackedField[] = [];
-      for (const field of allowedFields) {
-        if (field === 'priceText' || field === 'ticketStatus') {
-          provenanceFields.push(field);
-        }
-      }
-      if (provenanceFields.length > 0 && sourceId) {
-        recordDbWrite(counters, 'provenance', provenanceFields.length);
+      if (willWriteProvenance) {
+        recordDbWrite(counters, 'provenance', provenanceFieldPaths.length);
         await deps.writeProvenance({
           eventId: entry.eventId,
           sourceId,
           event: afterEvent,
-          fields: provenanceFields,
+          fields: provenanceFieldPaths,
           verifiedAt: entry.verifiedAt ?? undefined,
           externalId: event.ticketUrl,
         });
+        snapshot.touchedProvenanceFields = [...provenanceFieldPaths];
       }
 
-      if (sourceId) {
-        const ref = await deps.loadSourceReference(entry.eventId, sourceId);
-        if (ref) {
-          recordDbWrite(counters, 'sourceReference', 1);
-          await deps.touchSourceReference(entry.eventId, sourceId);
-        }
+      if (willTouchSourceReference) {
+        recordDbWrite(counters, 'sourceReference', 1);
+        await deps.touchSourceReference(entry.eventId, sourceId);
+        snapshot.touchedSourceReference = true;
       }
-      if (importRecordBefore?.id) {
+      if (willTouchImportRecord && importRecordBefore?.id) {
         recordDbWrite(counters, 'importRecord', 1);
         await deps.touchImportRecord(String(importRecordBefore.id));
+        snapshot.touchedImportRecord = true;
       }
 
       counters.successfulApplicationEvents += 1;

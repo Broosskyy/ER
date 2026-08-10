@@ -1,5 +1,15 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
+import type { EventRow } from '@/data/mappers/event-mapper';
+import type { AdminEventRecord } from '@/data/types/records';
+import {
+  applyRestrictedBulkManifest,
+  assertAppliedEventSnapshotComplete,
+  rollbackRestrictedBulkSnapshots,
+  verifyRestrictedBulkManifestAfter,
+  type AppliedEventSnapshot,
+  type RestrictedBulkApplyDeps,
+} from '@/features/import/bulk-canonical-rebuild/restricted-bulk-apply';
 import {
   APPROVED_CANDIDATE_FIELDS,
   APPROVED_FIELD_MUTATION_COUNT,
@@ -157,5 +167,221 @@ describe('restricted bulk apply security', () => {
   it('validates approved mutation count constant', () => {
     const total = Object.values(APPROVED_CANDIDATE_FIELDS).reduce((sum, fields) => sum + fields.length, 0);
     expect(total).toBe(APPROVED_FIELD_MUTATION_COUNT);
+  });
+});
+
+function manifestEntry(eventId: string, fields: string[]): RestrictedBulkManifest['entries'][number] {
+  return {
+    eventId,
+    identityVerdict: 'exact',
+    verifiedAt: '2026-08-10T11:00:00.000Z',
+    beforeFingerprint: {
+      title: 't',
+      startDate: '2026-01-01T00:00:00+00:00',
+      endDate: '2026-01-02T00:00:00+00:00',
+      venueName: 'v',
+      organizerName: 'o',
+      websiteUrl: 'https://example.com',
+      ticketUrl: 'https://ticket.io/x',
+      priceText: 'ab 10,00 €',
+      ticketStatus: 'external_link',
+      genreLabels: ['HARDTECHNO'],
+      descriptionLength: 0,
+    },
+    fieldGroupPatch: Object.fromEntries(
+      fields.map((field) => [
+        field,
+        {
+          before: field === 'ticketStatus' ? 'external_link' : 'ab 10,00 €',
+          after: field === 'ticketStatus' ? 'on_sale' : 'ab 12,00 €',
+        },
+      ]),
+    ),
+    provenancePlan: [{ fieldPath: fields[0], sourceId: 'source-test', freshnessAt: '2026-08-10T11:00:00.000Z' }],
+  };
+}
+
+function adminEvent(overrides: Partial<AdminEventRecord> = {}): AdminEventRecord {
+  return {
+    id: 'evt-test',
+    title: 't',
+    startDate: '2026-01-01T00:00:00+00:00',
+    endDate: '2026-01-02T00:00:00+00:00',
+    venueName: 'v',
+    organizerName: 'o',
+    websiteUrl: 'https://example.com',
+    ticketUrl: 'https://ticket.io/x',
+    priceText: 'ab 12,00 €',
+    ticketStatus: 'on_sale',
+    genreLabels: ['HARDTECHNO'],
+    description: '',
+    status: 'published',
+    sourceId: 'source-test',
+    ...overrides,
+  } as AdminEventRecord;
+}
+
+function baseSnapshot(overrides: Partial<AppliedEventSnapshot> = {}): AppliedEventSnapshot {
+  return {
+    eventId: 'evt-test',
+    eventRowBefore: { price_text: 'ab 10,00 €', ticket_status: 'external_link', ticket_phases: null },
+    provenanceBefore: { priceText: { selected_value: 'ab 10,00 €' } },
+    sourceReferenceBefore: { id: 'ref-1', last_seen_at: '2026-01-01T00:00:00.000Z', active: true },
+    importRecordBefore: { id: 'imp-1', updated_at: '2026-01-01T00:00:00.000Z', status: 'imported' },
+    allowedFields: ['priceText'],
+    touchedProvenanceFields: [],
+    touchedSourceReference: false,
+    touchedImportRecord: false,
+    ...overrides,
+  };
+}
+
+function buildDeps(overrides: Partial<RestrictedBulkApplyDeps> = {}): RestrictedBulkApplyDeps {
+  const event = adminEvent();
+  const rawRow: EventRow = {
+    id: 'evt-test',
+    title: 't',
+    price_text: 'ab 10,00 €',
+    ticket_status: 'external_link',
+    ticket_phases: null,
+  } as EventRow;
+
+  return {
+    loadEvent: vi.fn(async () => event),
+    loadEventRowRaw: vi.fn(async () => rawRow),
+    updateEventRow: vi.fn(async () => undefined),
+    loadManualLocks: vi.fn(async () => []),
+    loadProvenanceSnapshot: vi.fn(async () => ({ priceText: { selected_value: 'ab 10,00 €' } })),
+    restoreProvenanceSnapshot: vi.fn(async () => undefined),
+    loadSourceReference: vi.fn(async () => ({ id: 'ref-1', last_seen_at: 'old', active: true })),
+    touchSourceReference: vi.fn(async () => undefined),
+    restoreSourceReference: vi.fn(async () => undefined),
+    loadImportRecord: vi.fn(async () => ({ id: 'imp-1', updated_at: 'old', status: 'imported' })),
+    touchImportRecord: vi.fn(async () => undefined),
+    restoreImportRecord: vi.fn(async () => undefined),
+    loadCandidateEnvelope: vi.fn(async () => null),
+    writeProvenance: vi.fn(async () => undefined),
+    invalidateConsumerCaches: vi.fn(async () => undefined),
+    listOtherEventUpdatedAts: vi.fn(async () => new Map()),
+    now: () => '2026-08-10T11:00:00.000Z',
+    ...overrides,
+  };
+}
+
+describe('restricted bulk readback and rollback', () => {
+  it('recognizes manifest-after as successful', () => {
+    const entry = manifestEntry('evt-1785443904478-dg3lk70', ['priceText', 'ticketStatus']);
+    const failures = verifyRestrictedBulkManifestAfter(entry, adminEvent());
+    expect(failures).toEqual([]);
+  });
+
+  it('does not false-negative on genreLabels array fingerprint comparison', () => {
+    const entry = manifestEntry('evt-1785672261305-bgdu8dk', ['ticketStatus']);
+    const failures = verifyRestrictedBulkManifestAfter(entry, adminEvent());
+    expect(failures).toEqual([]);
+  });
+
+  it('still fails on real value mismatch', () => {
+    const eventId = 'evt-1785506397824-yhn81xp';
+    const entry = manifestEntry(eventId, ['priceText']);
+    const failures = verifyRestrictedBulkManifestAfter(
+      entry,
+      adminEvent({ id: eventId, priceText: 'ab 19,00 €', ticketStatus: 'on_sale' }),
+    );
+    expect(failures).toContain('priceText:ab 19,00 €');
+  });
+
+  it('blocks apply when provenance before snapshot is missing', () => {
+    expect(() =>
+      assertAppliedEventSnapshotComplete(
+        baseSnapshot({ provenanceBefore: {} }),
+        manifestEntry('evt-1785506397824-yhn81xp', ['priceText']),
+        'source-test',
+        {
+          willWriteProvenance: true,
+          willTouchSourceReference: true,
+          willTouchImportRecord: true,
+        },
+      ),
+    ).toThrow('provenance_snapshot_missing:priceText');
+  });
+
+  it('blocks apply when source reference before snapshot is missing', () => {
+    expect(() =>
+      assertAppliedEventSnapshotComplete(
+        baseSnapshot({ sourceReferenceBefore: null }),
+        manifestEntry('evt-1785506397824-yhn81xp', ['priceText']),
+        'source-test',
+        {
+          willWriteProvenance: true,
+          willTouchSourceReference: true,
+          willTouchImportRecord: true,
+        },
+      ),
+    ).toThrow('source_reference_snapshot_missing');
+  });
+
+  it('blocks apply when import record before snapshot is missing', () => {
+    expect(() =>
+      assertAppliedEventSnapshotComplete(
+        baseSnapshot({ importRecordBefore: null }),
+        manifestEntry('evt-1785506397824-yhn81xp', ['priceText']),
+        'source-test',
+        {
+          willWriteProvenance: true,
+          willTouchSourceReference: true,
+          willTouchImportRecord: true,
+        },
+      ),
+    ).toThrow('import_record_snapshot_missing');
+  });
+
+  it('rolls back event, provenance, source reference and import record together', async () => {
+    const deps = buildDeps();
+    const counters = createRestrictedBulkWriteCounters();
+    const snapshot = baseSnapshot({
+      touchedProvenanceFields: ['priceText'],
+      touchedSourceReference: true,
+      touchedImportRecord: true,
+    });
+
+    await rollbackRestrictedBulkSnapshots(deps, [snapshot], counters);
+
+    expect(deps.updateEventRow).toHaveBeenCalledWith('evt-test', snapshot.eventRowBefore);
+    expect(deps.restoreProvenanceSnapshot).toHaveBeenCalledWith('evt-test', 'priceText', snapshot.provenanceBefore.priceText);
+    expect(deps.restoreSourceReference).toHaveBeenCalledWith(snapshot.sourceReferenceBefore);
+    expect(deps.restoreImportRecord).toHaveBeenCalledWith(snapshot.importRecordBefore);
+    expect(counters.rollbackWriteRequests).toBe(3);
+  });
+
+  it('does not restore untouched provenance fields', async () => {
+    const deps = buildDeps();
+    const snapshot = baseSnapshot({
+      provenanceBefore: {
+        priceText: { selected_value: 'ab 10,00 €' },
+        ticketStatus: { selected_value: 'external_link' },
+      },
+      touchedProvenanceFields: ['priceText'],
+    });
+
+    await rollbackRestrictedBulkSnapshots(deps, [snapshot], createRestrictedBulkWriteCounters());
+
+    expect(deps.restoreProvenanceSnapshot).toHaveBeenCalledTimes(1);
+    expect(deps.restoreProvenanceSnapshot).toHaveBeenCalledWith('evt-test', 'priceText', snapshot.provenanceBefore.priceText);
+  });
+
+  it('accepts explicit null provenance snapshot entries', () => {
+    const snapshot = baseSnapshot({
+      provenanceBefore: { priceText: null },
+      allowedFields: ['priceText'],
+    });
+
+    expect(() =>
+      assertAppliedEventSnapshotComplete(snapshot, manifestEntry('evt-test', ['priceText']), 'source-test', {
+        willWriteProvenance: true,
+        willTouchSourceReference: true,
+        willTouchImportRecord: true,
+      }),
+    ).not.toThrow();
   });
 });
