@@ -26,10 +26,9 @@ import {
 } from '@/data/repositories/registry';
 import { EventFieldProvenanceWriter } from '@/features/import/services/event-field-provenance-writer';
 import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
-import { projectCanonicalEventFields } from '@/features/events/formatting/canonical-event-projection';
+import { readCanonicalTicketFromAdminEvent } from '@/features/events/domain/canonical-ticket-read';
 import {
   auditConsumerTicketPresentationForEvent,
-  resolveConsumerTicketPresentation,
 } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
 import {
   applyRestrictedBulkManifest,
@@ -273,34 +272,36 @@ function buildDeps(): RestrictedBulkApplyDeps {
 }
 
 async function buildConsumerAfter(event: AdminEventRecord): Promise<Record<string, unknown>> {
-  try {
-    const canonical = projectCanonicalEventFields({ event, now: new Date() });
-    const presentation = resolveConsumerTicketPresentation(event);
-    const audit = auditConsumerTicketPresentationForEvent(event);
-    return {
-      title: event.title,
-      eventId: event.id,
-      headerPriceAfter: canonical.displayPriceText ?? event.priceText,
-      statusAfter: presentation.availabilityLabel,
-      ticketCardCount: audit.slots.length,
-      ticketCardLabel: audit.slots[0]?.providerLabel,
-      cardPrice: audit.slots[0]?.priceText,
-      ctaLabel: presentation.ctaLabel,
-      ctaUrl: presentation.ctaUrl,
-      officialWebsite: event.websiteUrl,
-      duplicatePriceLine: audit.duplicatePriceLine,
-      protectedContentUnchanged: true,
-    };
-  } catch (error) {
-    return {
-      eventId: event.id,
-      title: event.title,
-      headerPriceAfter: event.priceText,
-      statusAfter: event.ticketStatus,
-      officialWebsite: event.websiteUrl,
-      consumerProjectionError: error instanceof Error ? error.message : String(error),
-    };
-  }
+  const source = {
+    id: event.id,
+    title: event.title,
+    priceText: event.priceText,
+    ticketUrl: event.ticketUrl,
+    officialEventUrl: event.websiteUrl,
+    ticketAvailability: event.ticketStatus,
+    ticketPhases: event.ticketPhases,
+    endDateTime: event.endDate,
+  };
+  const canonical = readCanonicalTicketFromAdminEvent(event);
+  const { presentation, audit: priceAudit } = auditConsumerTicketPresentationForEvent(source);
+  return {
+    title: event.title,
+    eventId: event.id,
+    headerPriceAfter: presentation.headerPriceLabel,
+    statusAfter: presentation.availabilityLabel,
+    ticketCardCount: presentation.ticketTypes.length,
+    ticketCardLabel: presentation.providerLabel,
+    cardPrice: presentation.ticketTypes[0]?.priceLabel,
+    ctaLabel: presentation.cta,
+    ctaUrl: canonical.publicCtaUrl,
+    officialWebsite: event.websiteUrl,
+    duplicatePriceLine: priceAudit.duplicateGroups.length > 0,
+    protectedContentUnchanged: true,
+  };
+}
+
+function stableEqual(left: unknown, right: unknown): boolean {
+  return JSON.stringify(left) === JSON.stringify(right);
 }
 
 async function main(): Promise<void> {
@@ -396,12 +397,30 @@ async function main(): Promise<void> {
         const fingerprint = computeRestrictedEventFingerprint(event);
         for (const [key, value] of Object.entries(entry.beforeFingerprint)) {
           if (key === 'priceText' || key === 'ticketStatus') continue;
-          if (fingerprint[key as keyof typeof fingerprint] !== value) {
+          if (!stableEqual(fingerprint[key as keyof typeof fingerprint], value)) {
             failures.push(`protected_field_changed:${key}`);
           }
         }
-        readbacks.push({ eventId, failures, event: fingerprint });
-        consumerAfterResults.push(await buildConsumerAfter(event));
+        const provenance = await loadProvenance(eventId, ['priceText', 'ticketStatus']);
+        const sourceId = entry.provenancePlan?.[0]?.sourceId;
+        const sourceReference = sourceId ? await loadSourceReference(eventId, sourceId) : null;
+        const importRecord = sourceId ? await loadImportRecord(eventId, sourceId) : null;
+        readbacks.push({
+          eventId,
+          failures,
+          manifestPatch: entry.fieldGroupPatch,
+          event: fingerprint,
+          provenance,
+          sourceReference,
+          importRecord,
+        });
+        const consumerAfter = await buildConsumerAfter(event);
+        consumerAfterResults.push({
+          ...consumerAfter,
+          headerPriceBefore: entry.consumerBefore?.displayPriceText,
+          statusBefore:
+            entry.consumerBefore?.ticketAvailability ?? entry.beforeFingerprint.ticketStatus,
+        });
       }
       if (readbacks.some((r) => (r.failures as string[]).length > 0)) {
         applyOk = false;
