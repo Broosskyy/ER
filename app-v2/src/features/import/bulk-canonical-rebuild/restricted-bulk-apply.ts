@@ -259,6 +259,16 @@ export async function applyRestrictedBulkManifest(
         ? await deps.loadImportRecord(entry.eventId, sourceId)
         : null;
 
+      const snapshot: AppliedEventSnapshot = {
+        eventId: entry.eventId,
+        eventRowBefore,
+        provenanceBefore,
+        sourceReferenceBefore,
+        importRecordBefore,
+        allowedFields,
+      };
+      applied.push(snapshot);
+
       const rowPatch = toEventRowPatch(manifestPatch);
       recordDbWrite(counters, 'event', 1, Object.keys(rowPatch).length);
       await deps.updateEventRow(entry.eventId, rowPatch);
@@ -301,16 +311,7 @@ export async function applyRestrictedBulkManifest(
         await deps.touchImportRecord(String(importRecordBefore.id));
       }
 
-      applied.push({
-        eventId: entry.eventId,
-        eventRowBefore,
-        provenanceBefore,
-        sourceReferenceBefore,
-        importRecordBefore,
-        allowedFields,
-      });
       counters.successfulApplicationEvents += 1;
-
       eventResults.push({
         eventId: entry.eventId,
         appliedFields: allowedFields,

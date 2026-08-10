@@ -22,8 +22,9 @@ import { AggregationPipeline } from '@/features/aggregation/pipeline/aggregation
 import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 import {
   adminSourceRepository,
-  eventFieldProvenanceWriter,
+  multiSourceRepositories,
 } from '@/data/repositories/registry';
+import { EventFieldProvenanceWriter } from '@/features/import/services/event-field-provenance-writer';
 import { invalidateConsumerEventCaches } from '@/features/events/formatting/consumer-cache-invalidation';
 import { projectCanonicalEventFields } from '@/features/events/formatting/canonical-event-projection';
 import {
@@ -217,6 +218,8 @@ async function loadCandidateEnvelope(
   );
 }
 
+const provenanceWriter = new EventFieldProvenanceWriter(multiSourceRepositories.fieldProvenance);
+
 function buildDeps(): RestrictedBulkApplyDeps {
   return {
     loadEvent: async (eventId) => mapEventRowToAdminRecord(await loadEventRow(eventId)),
@@ -246,7 +249,7 @@ function buildDeps(): RestrictedBulkApplyDeps {
     writeProvenance: async ({ eventId, sourceId, event, fields, verifiedAt, externalId }) => {
       const source = await adminSourceRepository.getById(sourceId);
       if (!source) throw new Error(`source_missing:${sourceId}`);
-      await eventFieldProvenanceWriter.writeFromPublish(eventId, source, event, {
+      await provenanceWriter.writeFromPublish(eventId, source, event, {
         publishedAt: new Date().toISOString(),
         evidenceVerifiedAt: verifiedAt,
         originExternalId: externalId,
