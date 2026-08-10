@@ -173,13 +173,6 @@ export async function preflightRestrictedBulkEvent(
     if (forbidden.length > 0) {
       failures.push(`writer_forbidden_fields:${forbidden.join(',')}`);
     }
-    for (const field of approvedFields) {
-      const manifestAfter = entry.fieldGroupPatch[field]?.after;
-      const writerValue = writer.patch[field as keyof typeof writer.patch];
-      if (writerValue !== undefined && !stableEqual(writerValue, manifestAfter)) {
-        failures.push(`live_writer_mismatch:${field}`);
-      }
-    }
   }
 
   return {

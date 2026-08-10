@@ -4,27 +4,15 @@
  * CONFIRM_PRODUCTION_MUTATION=exact:phase48674-first-restricted-bulk \
  *   npx tsx scripts/operations/_phase48675-restricted-bulk-apply.ts --apply
  */
-import { existsSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const OPS_DIR = dirname(fileURLToPath(import.meta.url));
-if (!existsSync(join(OPS_DIR, '../../.env'))) {
-  const fallbacks = ['C:/ER/app-v2/.env', join(OPS_DIR, '../../../../ER/app-v2/.env')];
-  for (const fallbackEnv of fallbacks) {
-    if (existsSync(fallbackEnv)) {
-      process.env.ER_OPS_ENV_FILE = fallbackEnv;
-      break;
-    }
-  }
-}
-
+import './phase48675-env-bootstrap';
 import './bootstrap-ops-supabase';
 
 import { execSync } from 'node:child_process';
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-import { mapSourceRecordToImportSource, type SourceRow } from '@/data/mappers/source-mapper';
+import { mapSourceRecordToImportSource } from '@/data/mappers/source-mapper';
 import { mapEventRowToAdminRecord, type EventRow } from '@/data/mappers/event-mapper';
 import type { AdminEventRecord } from '@/data/types/records';
 import { createSourceConnectorFetchProvider } from '@/features/aggregation/connectors/create-source-connector-fetch-provider';
@@ -42,7 +30,6 @@ import {
   auditConsumerTicketPresentationForEvent,
   resolveConsumerTicketPresentation,
 } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
-import type { PublishTrackedField } from '@/features/import/services/event-field-provenance-writer';
 import {
   applyRestrictedBulkManifest,
   computeRestrictedEventFingerprint,
@@ -62,6 +49,7 @@ import {
 
 import { opsClient, updateEventRow } from './ops-supabase-rows';
 
+const OPS_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(OPS_DIR, '../..');
 const OUT = join(ROOT, 'docs/real-data');
 const MANIFEST_FILE = join(OUT, '_phase48674_restricted_bulk_plan.json');
@@ -219,12 +207,14 @@ async function loadCandidateEnvelope(
   });
   const importSource = mapSourceRecordToImportSource(source);
   const result = await pipeline.run(source, importSource, 'manual', 'phase48675-restricted-bulk-apply');
-  return result.records.find(
-    (r) =>
-      r.canonicalEvent?.ticketUrl === ticketUrl ||
-      r.canonicalEvent?.eventUrl === ticketUrl ||
-      r.canonicalEvent?.originalLink === ticketUrl,
-  )?.canonicalEvent ?? null;
+  return (
+    result.records.find(
+      (r) =>
+        r.canonicalEvent?.ticketUrl === ticketUrl ||
+        r.canonicalEvent?.eventUrl === ticketUrl ||
+        r.canonicalEvent?.originalLink === ticketUrl,
+    )?.canonicalEvent ?? null
+  );
 }
 
 function buildDeps(): RestrictedBulkApplyDeps {
@@ -286,7 +276,6 @@ async function buildConsumerAfter(event: AdminEventRecord): Promise<Record<strin
   return {
     title: event.title,
     eventId: event.id,
-    headerPriceBefore: undefined,
     headerPriceAfter: canonical.displayPriceText ?? event.priceText,
     statusAfter: presentation.availabilityLabel,
     ticketCardCount: audit.slots.length,
@@ -336,7 +325,7 @@ async function main(): Promise<void> {
   let applyOk = false;
   let applyError: string | undefined;
   const readbacks: Record<string, unknown>[] = [];
-  const consumerAfter: Record<string, unknown>[] = [];
+  const consumerAfterResults: Record<string, unknown>[] = [];
 
   if (APPLY_MODE) {
     assertConfirmationToken(process.env.CONFIRM_PRODUCTION_MUTATION);
@@ -370,7 +359,7 @@ async function main(): Promise<void> {
           }
         }
         readbacks.push({ eventId, failures, event: fingerprint });
-        consumerAfter.push(await buildConsumerAfter(event));
+        consumerAfterResults.push(await buildConsumerAfter(event));
       }
       if (readbacks.some((r) => (r.failures as string[]).length > 0)) {
         applyOk = false;
@@ -393,13 +382,15 @@ async function main(): Promise<void> {
     productionMutationsInThisRun: productionMutationsInThisRun(counters),
     rolloutActivated: false,
     readbacks,
-    consumerAfter,
+    consumerAfter: consumerAfterResults,
     lanUrls: APPROVED_EVENT_IDS.map((id) => `http://localhost:8081/event/${id}`),
     rollbackArtifact: rollback ? true : false,
   };
 
   writeJson(APPLY_RESULT_FILE, result);
-  console.log(JSON.stringify({ applyOk, productionMutationsInThisRun: result.productionMutationsInThisRun }));
+  console.log(
+    JSON.stringify({ applyOk, productionMutationsInThisRun: result.productionMutationsInThisRun }),
+  );
   if (!applyOk && APPLY_MODE) {
     process.exit(1);
   }
