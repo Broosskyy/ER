@@ -224,6 +224,38 @@ function nonEmpty<T>(value: T[] | undefined): T[] | undefined {
   return value?.length ? value : undefined;
 }
 
+function latestFieldEvidenceExtractedAt(value: unknown): string | undefined {
+  if (!Array.isArray(value)) return undefined;
+  let latest: string | undefined;
+  for (const entry of value) {
+    const extractedAt = text(record(entry).extractedAt);
+    if (!extractedAt) continue;
+    if (!latest || extractedAt > latest) {
+      latest = extractedAt;
+    }
+  }
+  return latest;
+}
+
+/** Uses connector metadata or field-evidence timestamps — never wall-clock guesses. */
+function resolveFetchObservedAt(
+  metadata: JsonRecord,
+  raw: RawImportedEvent,
+  fetchVerifiedAt?: string,
+): string | undefined {
+  const listCard = record(metadata.listCardEvidence);
+  return (
+    text(metadata.verifiedAt) ??
+    text(metadata.observedAt) ??
+    text(metadata.fetchedAt) ??
+    text(listCard.verifiedAt) ??
+    text(listCard.observedAt) ??
+    latestFieldEvidenceExtractedAt(metadata.fieldEvidence) ??
+    latestFieldEvidenceExtractedAt(raw.sourceMetadata?.fieldEvidence) ??
+    fetchVerifiedAt
+  );
+}
+
 function mergeEvidence(
   base: ConnectorOutput,
   supplemental: ConnectorOutput | undefined,
@@ -369,6 +401,7 @@ export function bridgeProductionSourceEvidence(input: {
   const { rawEvent: raw, sourceFamily: family } = input;
   const metadata = record(raw.sourceMetadata);
   const listCard = record(metadata.listCardEvidence);
+  const fetchObservedAt = resolveFetchObservedAt(metadata, raw, input.fetchVerifiedAt);
   const phases =
     family === 'official_website'
       ? undefined
@@ -404,10 +437,7 @@ export function bridgeProductionSourceEvidence(input: {
       raw.originalLink ??
       raw.sourceUrl,
     finalSourceUrl: input.finalSourceUrl ?? sourceUrl,
-    verifiedAt:
-      text(metadata.verifiedAt) ??
-      text(listCard.verifiedAt) ??
-      input.fetchVerifiedAt,
+    verifiedAt: fetchObservedAt,
     title:
       family === 'official_website'
         ? raw.title
@@ -428,7 +458,7 @@ export function bridgeProductionSourceEvidence(input: {
         : text(metadata.venueName) ??
           text(listCard.venueName) ??
           raw.venueName,
-    locationText: raw.venueAddress ?? raw.cityName ?? raw.venueName,
+    locationText: raw.venueAddress ?? raw.cityName,
     officialWebsiteUrl:
       family === 'official_website' ? raw.eventUrl ?? raw.sourceUrl : undefined,
     outboundTicketUrls:

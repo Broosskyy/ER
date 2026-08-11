@@ -17,6 +17,7 @@ import {
 } from './clean-import-persistence';
 import {
   CrossSourceEventResolver,
+  normalizePublicUrl,
   type ResolvedEventCluster,
   type ResolvableEventContribution,
 } from './cross-source-event-resolver';
@@ -26,7 +27,7 @@ import type {
   CleanSourceFamily,
   EventEvidence,
 } from './event-evidence';
-import { IdentityResolver } from './identity-resolver';
+import { evaluateSourceNativeIdentityCompatibility, IdentityResolver } from './identity-resolver';
 import {
   bridgeProductionSourceEvidence,
   type EvidenceTransferAudit,
@@ -146,6 +147,67 @@ function isHistorical(event: CanonicalEvent, now: Date): boolean {
   return Number.isFinite(timestamp) && timestamp < now.getTime();
 }
 
+function ticketKingsContributionKey(contribution: CollectedContribution): string | undefined {
+  const url =
+    contribution.evidence.tickets.publicTicketUrl?.value ?? contribution.evidence.sourceUrl;
+  return normalizePublicUrl(url);
+}
+
+function deduplicateIdenticalTicketKingsContributions(
+  contributions: CollectedContribution[],
+): CollectedContribution[] {
+  const result: CollectedContribution[] = [];
+  const byUrl = new Map<string, CollectedContribution>();
+
+  for (const contribution of contributions) {
+    if (contribution.evidence.sourceFamily !== 'ticket_kings') {
+      result.push(contribution);
+      continue;
+    }
+    const key = ticketKingsContributionKey(contribution);
+    if (!key) {
+      result.push(contribution);
+      continue;
+    }
+    const existing = byUrl.get(key);
+    if (!existing) {
+      byUrl.set(key, contribution);
+      result.push(contribution);
+      continue;
+    }
+    const compatibility = evaluateSourceNativeIdentityCompatibility(
+      {
+        title: existing.evidence.identity.title?.value,
+        startDate: existing.evidence.identity.startDate?.value,
+        venueName:
+          existing.evidence.identity.venueName?.value ??
+          existing.evidence.identity.locationText?.value,
+      },
+      {
+        title: contribution.evidence.identity.title?.value,
+        startDate: contribution.evidence.identity.startDate?.value,
+        venueName:
+          contribution.evidence.identity.venueName?.value ??
+          contribution.evidence.identity.locationText?.value,
+      },
+    );
+    if (
+      compatibility.reasons.some((reason) =>
+        ['title_mismatch', 'date_mismatch', 'venue_mismatch'].includes(reason),
+      )
+    ) {
+      result.push(contribution);
+      continue;
+    }
+    existing.evidence.diagnostics = [
+      ...existing.evidence.diagnostics,
+      `registry_source_alias:${contribution.evidence.sourceId}`,
+    ];
+  }
+
+  return result;
+}
+
 /** Collects all source evidence before any identity or canonical decision is made. */
 export class CleanMultiSourceImportService {
   constructor(
@@ -169,6 +231,7 @@ export class CleanMultiSourceImportService {
     for (const source of sources) {
       try {
         const family = sourceFamily(source);
+        const fetchObservedAt = new Date().toISOString();
         const rawEvents = stableRawEvents(await this.collection.executeSource(source));
         const duplicateCounts = new Map<string, number>();
         const contributionIds: string[] = [];
@@ -180,6 +243,7 @@ export class CleanMultiSourceImportService {
             sourceId: source.id,
             sourceFamily: family,
             rawEvent: raw,
+            fetchVerifiedAt: fetchObservedAt,
           });
           contributionIds.push(id);
           collected.push({
@@ -206,7 +270,8 @@ export class CleanMultiSourceImportService {
       }
     }
 
-    const resolution = this.resolver.resolve(collected);
+    const deduplicated = deduplicateIdenticalTicketKingsContributions(collected);
+    const resolution = this.resolver.resolve(deduplicated);
     const canonicalEvents: CanonicalEvent[] = [];
     const decisions: CleanClusterDecision[] = [];
     for (const cluster of resolution.clusters) {
@@ -230,7 +295,7 @@ export class CleanMultiSourceImportService {
 
     const result: CleanImportRunResult = {
       sourceResults,
-      contributions: collected.map((entry) => entry.evidence),
+      contributions: deduplicated.map((entry) => entry.evidence),
       clusters: resolution.clusters,
       canonicalEvents,
       decisions,
@@ -238,9 +303,9 @@ export class CleanMultiSourceImportService {
         sourceCount: sources.length,
         successfulSourceCount: sourceResults.filter((entry) => entry.status === 'success').length,
         failedSourceCount: sourceResults.filter((entry) => entry.status === 'error').length,
-        contributionCount: collected.length,
+        contributionCount: deduplicated.length,
         clusterCount: resolution.clusters.length,
-        unexpectedEvidenceTransferLoss: collected.reduce(
+        unexpectedEvidenceTransferLoss: deduplicated.reduce(
           (total, entry) => total + entry.transferAudit.unexpectedLostFields.length,
           0,
         ),

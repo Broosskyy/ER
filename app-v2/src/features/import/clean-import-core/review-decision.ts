@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   CanonicalEvent,
   CleanImportDecision,
 } from './event-evidence';
@@ -37,21 +37,34 @@ export function resolveMissingLiveEvidenceDisposition(input: {
   return 'review';
 }
 
-function missingRequired(canonicalEvent: CanonicalEvent | undefined): string[] {
+function missingRequired(
+  canonicalEvent: CanonicalEvent | undefined,
+  identity: IdentityResolution,
+): string[] {
   if (!canonicalEvent) {
-    return ['title', 'startDate', 'venueOrLocation', 'websiteUrl', 'stableIdentity'];
+    return identity.reasons.length > 0
+      ? identity.reasons
+      : ['title_missing', 'start_date_missing', 'venue_missing'];
   }
-  return [
-    ...(!canonicalEvent.title.trim() ? ['title'] : []),
-    ...(!canonicalEvent.startDate.trim() ? ['startDate'] : []),
-    ...(!canonicalEvent.venueName?.trim() && !canonicalEvent.locationText?.trim()
-      ? ['venueOrLocation']
-      : []),
-    ...(!canonicalEvent.websiteUrl.trim() ? ['websiteUrl'] : []),
-  ];
+  const missing: string[] = [];
+  if (!canonicalEvent.title.trim()) missing.push('title_missing');
+  if (!canonicalEvent.startDate.trim()) missing.push('start_date_missing');
+  if (!canonicalEvent.venueName?.trim() && !canonicalEvent.locationText?.trim()) {
+    missing.push('venue_missing');
+  }
+  if (
+    identity.identityMode === 'official_website' &&
+    !canonicalEvent.websiteUrl?.trim()
+  ) {
+    missing.push('official_website_missing');
+  }
+  return missing;
 }
 
-function missingOptional(canonicalEvent: CanonicalEvent | undefined): string[] {
+function missingOptional(
+  canonicalEvent: CanonicalEvent | undefined,
+  identity: IdentityResolution,
+): string[] {
   if (!canonicalEvent) {
     return [
       'description',
@@ -64,7 +77,7 @@ function missingOptional(canonicalEvent: CanonicalEvent | undefined): string[] {
       'venueEnvironment',
     ];
   }
-  return [
+  const optional: string[] = [
     ...(!canonicalEvent.description ? ['description'] : []),
     ...(!canonicalEvent.genres?.length ? ['genres'] : []),
     ...(!canonicalEvent.lineup?.length && canonicalEvent.lineupState !== 'tba'
@@ -76,6 +89,13 @@ function missingOptional(canonicalEvent: CanonicalEvent | undefined): string[] {
     ...(!canonicalEvent.endDate ? ['endDate'] : []),
     ...(!canonicalEvent.venueEnvironment ? ['venueEnvironment'] : []),
   ];
+  if (identity.identityMode === 'ticket_platform' && !canonicalEvent.websiteUrl?.trim()) {
+    optional.push('officialWebsite');
+  }
+  if (identity.identityMode === 'official_website' && !canonicalEvent.ticketUrl?.trim()) {
+    optional.push('ticketUrl');
+  }
+  return optional;
 }
 
 export class ReviewDecision {
@@ -83,8 +103,8 @@ export class ReviewDecision {
     canonicalEvent: CanonicalEvent | undefined,
     identity: IdentityResolution,
   ): ReviewDecisionResult {
-    const missingRequiredFields = missingRequired(canonicalEvent);
-    const missingOptionalFields = missingOptional(canonicalEvent);
+    const missingRequiredFields = missingRequired(canonicalEvent, identity);
+    const missingOptionalFields = missingOptional(canonicalEvent, identity);
     const reviewReasons = [...identity.reasons];
 
     if (identity.verdict === 'duplicate_candidate') {
@@ -107,19 +127,13 @@ export class ReviewDecision {
 
     if (!canonicalEvent || missingRequiredFields.length > 0) {
       return {
-        decision:
-          identity.verdict === 'unverifiable' ? 'reject' : 'review',
-        missingRequiredFields: [
-          ...missingRequiredFields,
-          ...(identity.verdict === 'unverifiable' ? ['stableIdentity'] : []),
-        ].filter((field, index, all) => all.indexOf(field) === index),
+        decision: 'review',
+        missingRequiredFields,
         missingOptionalFields,
         reviewReasons: [
           ...reviewReasons,
-          identity.verdict === 'unverifiable'
-            ? 'stable_identity_unverifiable'
-            : 'required_fields_missing',
-        ],
+          ...missingRequiredFields,
+        ].filter((value, index, all) => all.indexOf(value) === index),
       };
     }
 

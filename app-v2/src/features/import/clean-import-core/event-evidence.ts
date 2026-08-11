@@ -111,7 +111,7 @@ export interface CanonicalEvent {
   endDate?: string;
   venueName?: string;
   locationText?: string;
-  websiteUrl: string;
+  websiteUrl?: string;
   description?: string;
   genres?: string[];
   lineup?: LineupEvidenceEntry[];

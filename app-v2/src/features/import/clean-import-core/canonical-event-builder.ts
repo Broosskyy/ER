@@ -17,74 +17,56 @@ function firstValue<T>(
 /** Builds only from accepted evidence; no canonical-row or DB fallback is available. */
 export class CanonicalEventBuilder {
   build(resolution: IdentityResolution): CanonicalEvent | undefined {
-    const official = resolution.official;
-    if (!official) {
+    const anchor = resolution.identityAnchor ?? resolution.official;
+    if (!anchor) {
       return undefined;
     }
 
-    const officialFirst = [
-      official,
-      ...resolution.acceptedEvidence.filter((entry) => entry !== official),
-    ];
+    const officialEntries = resolution.acceptedEvidence.filter(
+      (entry) => entry.sourceFamily === 'official_website',
+    );
     const ticketEvidence = resolution.acceptedEvidence.filter(
       (entry) => entry.sourceFamily !== 'official_website',
     );
-    const title = official.identity.title?.value;
-    const startDate = official.identity.startDate?.value;
-    const websiteUrl = official.identity.officialWebsiteUrl?.value;
-    if (!title || !startDate || !websiteUrl) {
+    const contentSources =
+      officialEntries.length > 0 ? officialEntries : [anchor];
+    const title = anchor.identity.title?.value;
+    const startDate = anchor.identity.startDate?.value;
+    const venueName = anchor.identity.venueName?.value;
+    if (!title || !startDate || !venueName) {
       return undefined;
     }
+
+    const websiteUrl = firstValue(
+      officialEntries,
+      (entry) => entry.identity.officialWebsiteUrl?.value,
+    );
 
     return {
       title,
       startDate,
-      endDate: official.identity.endDate?.value,
-      venueName: official.identity.venueName?.value,
-      locationText: official.identity.locationText?.value,
+      endDate: anchor.identity.endDate?.value,
+      venueName,
+      locationText: anchor.identity.locationText?.value,
       websiteUrl,
-      description: firstValue(
-        officialFirst,
-        (entry) => entry.content.description?.value,
-      ),
-      genres: firstValue(officialFirst, (entry) => entry.content.genres?.value),
-      lineup: firstValue(officialFirst, (entry) => entry.content.lineup?.value),
-      lineupState: firstValue(
-        officialFirst,
-        (entry) => entry.content.lineupState?.value,
-      ),
-      lineupReason: firstValue(
-        officialFirst,
-        (entry) => entry.content.lineupReason?.value,
-      ),
-      minimumAge: firstValue(
-        officialFirst,
-        (entry) => entry.content.minimumAge?.value,
-      ),
+      description: firstValue(contentSources, (entry) => entry.content.description?.value),
+      genres: firstValue(contentSources, (entry) => entry.content.genres?.value),
+      lineup: firstValue(contentSources, (entry) => entry.content.lineup?.value),
+      lineupState: firstValue(contentSources, (entry) => entry.content.lineupState?.value),
+      lineupReason: firstValue(contentSources, (entry) => entry.content.lineupReason?.value),
+      minimumAge: firstValue(contentSources, (entry) => entry.content.minimumAge?.value),
       venueEnvironment: firstValue(
-        officialFirst,
+        contentSources,
         (entry) => entry.content.venueEnvironment?.value,
       ),
       ticketUrl: firstValue(
-        ticketEvidence,
+        ticketEvidence.length > 0 ? ticketEvidence : resolution.acceptedEvidence,
         (entry) => entry.tickets.publicTicketUrl?.value,
       ),
-      checkoutEvidenceUrl: firstValue(
-        ticketEvidence,
-        (entry) => entry.tickets.checkoutEvidenceUrl?.value,
-      ),
-      admissionPrice: firstValue(
-        ticketEvidence,
-        (entry) => entry.tickets.admissionPrice?.value,
-      ),
-      ticketPhases: firstValue(
-        ticketEvidence,
-        (entry) => entry.tickets.ticketPhases?.value,
-      ),
-      ticketStatus: firstValue(
-        ticketEvidence,
-        (entry) => entry.tickets.ticketStatus?.value,
-      ),
+      checkoutEvidenceUrl: firstValue(ticketEvidence, (entry) => entry.tickets.checkoutEvidenceUrl?.value),
+      admissionPrice: firstValue(ticketEvidence, (entry) => entry.tickets.admissionPrice?.value),
+      ticketPhases: firstValue(ticketEvidence, (entry) => entry.tickets.ticketPhases?.value),
+      ticketStatus: firstValue(ticketEvidence, (entry) => entry.tickets.ticketStatus?.value),
     };
   }
 }

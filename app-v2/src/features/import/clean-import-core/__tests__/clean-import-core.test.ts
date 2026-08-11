@@ -578,9 +578,9 @@ describe('minimal clean import vertical slice', () => {
 
     const result = new ImportRunner().run([output]);
 
-    expect(result.decision).toBe('reject');
+    expect(result.decision).toBe('review');
     expect(result.canonicalEvent).toBeUndefined();
-    expect(result.evidence[0]?.diagnostics).toContain('verified_at:missing');
+    expect(result.reviewReasons).toContain('verified_at_missing');
   });
 
   it('preserves a confirmed historical event missing from the current live listing', () => {
