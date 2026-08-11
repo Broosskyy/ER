@@ -58,8 +58,11 @@ export class UnifiedImportDraftService {
     const payload = submission.payload ?? {};
 
     const primary = core.evidence[0];
+    const evidenceGenres = core.evidence
+      .flatMap((entry) => entry.content.genres?.value ?? [])
+      .filter((value, index, all) => all.indexOf(value) === index);
     const rawGenres =
-      primary?.content.genres?.value ??
+      (evidenceGenres.length ? evidenceGenres : undefined) ??
       payload.genres ??
       core.canonicalEvent?.genres;
     const genres = resolveGenreContract({

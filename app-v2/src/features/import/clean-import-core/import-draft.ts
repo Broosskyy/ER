@@ -11,7 +11,11 @@ export interface DraftDuplicateCandidate {
   eventId: string;
   score?: number;
   reason: string;
-  recommendedAction: 'merge_into_existing' | 'create_new' | 'manual_compare';
+  recommendedAction:
+    | 'merge_into_existing'
+    | 'create_new'
+    | 'manual_compare'
+    | 'review_duplicate_url_identity';
 }
 
 export interface DraftFieldChange {
@@ -36,6 +40,25 @@ export interface ImportDraftAudit {
   persistenceMode: 'dry_run_noop';
   coreDecision: CleanImportDecision;
   provenanceSourceIds: string[];
+  duplicateUrlReconciliation?: {
+    normalizedUrls: string[];
+    clusterIds: string[];
+    mode: 'compatible_merge' | 'identity_conflict';
+    conflictReasons: string[];
+    identitySnapshots: Array<{
+      clusterId: string;
+      sourceIds: string[];
+      title?: string;
+      localCalendarDay?: string;
+      venue?: string;
+      identityVerdict: string;
+      verifiedAt: string[];
+      officialUrls: string[];
+      ticketUrls: string[];
+      contributionCount: number;
+      evidenceSnapshots: EventEvidence[];
+    }>;
+  };
 }
 
 export interface ImportDraft {

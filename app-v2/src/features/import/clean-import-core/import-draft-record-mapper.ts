@@ -6,7 +6,8 @@ import type {
 } from '@/features/import/models/types';
 import type { ImportRecordStatus } from '@/features/import/models/statuses';
 
-import { isConcreteEventUrl, normalizePublicUrl } from './cross-source-event-resolver';
+import { normalizePublicUrl } from './cross-source-event-resolver';
+import { isEventIdentityUrl } from './duplicate-url-reconciliation';
 import type { ImportDraft } from './import-draft';
 
 export const UNIFIED_DRAFT_PAYLOAD_VERSION = 1 as const;
@@ -78,11 +79,22 @@ function concreteIdentityUrl(draft: ImportDraft): string | undefined {
     draft.proposedCanonicalEvent?.ticketUrl,
   ];
   for (const candidate of candidates) {
-    if (candidate && isConcreteEventUrl(candidate)) {
+    if (candidate && isEventIdentityUrl(candidate)) {
       return normalizePublicUrl(candidate);
     }
   }
   return undefined;
+}
+
+function safeSourceExternalId(value: string | undefined): string | undefined {
+  const normalized = value?.trim();
+  if (!normalized) return undefined;
+  try {
+    new URL(normalized);
+    return isEventIdentityUrl(normalized) ? normalized : undefined;
+  } catch {
+    return normalized;
+  }
 }
 
 /**
@@ -90,10 +102,11 @@ function concreteIdentityUrl(draft: ImportDraft): string | undefined {
  * Date and venue remain part of URL/external identities so incompatible
  * occurrences cannot silently overwrite one another.
  */
-export function deriveImportDraftIdempotencyKey(
+export function tryDeriveImportDraftIdempotencyKey(
   draft: ImportDraft,
   sourceId: string,
-): string {
+): string | undefined {
+  if (!sourceId.trim()) return undefined;
   const event = draft.proposedCanonicalEvent;
   const day = localCalendarDay(event?.startDate);
   const venue = normalizedVenue(draft);
@@ -103,11 +116,12 @@ export function deriveImportDraftIdempotencyKey(
       }).coreTokens.join(' ')
     : '';
 
-  if (draft.sourceExternalId?.trim()) {
+  const sourceExternalId = safeSourceExternalId(draft.sourceExternalId);
+  if (sourceExternalId) {
     return [
       'source_external',
       sourceId,
-      draft.sourceExternalId.trim(),
+      sourceExternalId,
       day,
       venue,
     ].join('|');
@@ -118,6 +132,7 @@ export function deriveImportDraftIdempotencyKey(
     return ['public_url', sourceId, publicUrl, day, venue].join('|');
   }
 
+  if (!(titleCore && day && venue)) return undefined;
   return [
     'identity',
     sourceId,
@@ -125,6 +140,102 @@ export function deriveImportDraftIdempotencyKey(
     day,
     venue,
   ].join('|');
+}
+
+export function deriveImportDraftIdempotencyKey(
+  draft: ImportDraft,
+  sourceId: string,
+): string {
+  const key = tryDeriveImportDraftIdempotencyKey(draft, sourceId);
+  if (!key) throw new Error('import_draft_requires_secure_identity');
+  return key;
+}
+
+export interface FaultIsolatedDraftCandidate {
+  clusterId: string;
+  sourceId: string;
+  draft: ImportDraft;
+}
+
+export interface QuarantinedDraftCandidate<T extends FaultIsolatedDraftCandidate> {
+  candidate: T;
+  reason: string;
+  reasons: string[];
+}
+
+/**
+ * Item-level staging gate. Invalid identities and duplicate ownership are
+ * quarantined while independent valid drafts remain eligible for persistence.
+ */
+export function partitionFaultIsolatedDrafts<T extends FaultIsolatedDraftCandidate>(
+  candidates: T[],
+  integrityIssues: (draft: ImportDraft) => string[],
+): {
+  valid: Array<T & { idempotencyKey: string }>;
+  quarantined: Array<QuarantinedDraftCandidate<T>>;
+} {
+  const valid: Array<T & { idempotencyKey: string }> = [];
+  const quarantined: Array<QuarantinedDraftCandidate<T>> = [];
+  const keyOwners = new Set<string>();
+  const urlOwners = new Map<string, string>();
+  const identityOwners = new Map<string, string>();
+
+  for (const candidate of candidates) {
+    const issues = integrityIssues(candidate.draft);
+    const idempotencyKey = tryDeriveImportDraftIdempotencyKey(
+      candidate.draft,
+      candidate.sourceId,
+    );
+    if (!idempotencyKey) issues.push('no_secure_idempotency_key');
+    if (idempotencyKey && keyOwners.has(idempotencyKey)) {
+      issues.push(`duplicate_draft_idempotency_key:${idempotencyKey}`);
+    }
+
+    const event = candidate.draft.proposedCanonicalEvent;
+    const identitySignature = [
+      normalizeMatchText(event?.title ?? ''),
+      localCalendarDay(event?.startDate),
+      normalizedVenue(candidate.draft),
+    ].join('|');
+    const completeIdentity = identitySignature.split('|').every(Boolean);
+    const previousIdentity = completeIdentity
+      ? identityOwners.get(identitySignature)
+      : undefined;
+    if (previousIdentity && previousIdentity !== candidate.clusterId) {
+      issues.push(`duplicate_title_day_venue:${identitySignature}`);
+    }
+
+    const urls = [
+      event?.websiteUrl,
+      event?.ticketUrl,
+      ...candidate.draft.sources.map((source) => source.sourceUrl),
+    ]
+      .filter((value): value is string => Boolean(value && isEventIdentityUrl(value)))
+      .map(normalizePublicUrl)
+      .filter((value): value is string => Boolean(value));
+    for (const url of urls) {
+      const previousUrl = urlOwners.get(url);
+      if (previousUrl && previousUrl !== candidate.clusterId) {
+        issues.push(`duplicate_concrete_event_url:${url}`);
+      }
+    }
+
+    const reasons = [...new Set(issues)];
+    if (!idempotencyKey || reasons.length) {
+      quarantined.push({
+        candidate,
+        reason: reasons[0] ?? 'no_secure_idempotency_key',
+        reasons,
+      });
+      continue;
+    }
+    keyOwners.add(idempotencyKey);
+    if (completeIdentity) identityOwners.set(identitySignature, candidate.clusterId);
+    for (const url of urls) urlOwners.set(url, candidate.clusterId);
+    valid.push({ ...candidate, idempotencyKey });
+  }
+
+  return { valid, quarantined };
 }
 
 export function stableDraftId(idempotencyKey: string): string {
