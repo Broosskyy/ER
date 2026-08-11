@@ -1,6 +1,6 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton';
@@ -12,7 +12,14 @@ import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { getErrorMessage } from '@/core/errors/app-error';
 import type { ImportRecord } from '@/features/import/models/types';
-import { importReviewService, sourceRepository, venueRepository, organizerRepository } from '@/data/repositories/registry';
+import {
+  importAdminRepository,
+  importRecordRepository,
+  importReviewService,
+  sourceRepository,
+  venueRepository,
+  organizerRepository,
+} from '@/data/repositories/registry';
 import {
   AdminErrorState,
   AdminLoadingState,
@@ -24,6 +31,29 @@ import { useAdminRole } from '@/features/import/admin/use-admin-role';
 import type { RejectReason } from '@/features/import/models/statuses';
 import type { SourceRecord } from '@/data/types/records';
 import { formatSourceStatus, formatSourceTypeLabel } from '@/features/sources/admin/source-labels';
+import { GenrePicker } from '@/features/create/components/GenrePicker';
+import { GENRE_SYNONYMS } from '@/features/import/matching/matching-config';
+import { normalizeCanonicalGenreLabel } from '@/features/events/formatting/canonical-genre-normalizer';
+import {
+  AdminDraftReviewController,
+  buildCompactDraftReviewCard,
+} from '@/features/import/clean-import-core/admin-draft-review';
+import { mapImportRecordToDraft } from '@/features/import/clean-import-core/import-draft-record-mapper';
+import { ImportRecordDraftReviewPersistence } from '@/features/import/clean-import-core/draft-review-persistence';
+import type { ImportDraft } from '@/features/import/clean-import-core/import-draft';
+
+const draftReviewController = new AdminDraftReviewController(
+  new ImportRecordDraftReviewPersistence(
+    importRecordRepository,
+    importAdminRepository,
+    'import_records_only',
+  ),
+);
+
+const GENRE_OPTIONS = Object.keys(GENRE_SYNONYMS).map((id) => ({
+  id: normalizeCanonicalGenreLabel(id),
+  label: normalizeCanonicalGenreLabel(id),
+}));
 
 export default function ReviewDetailScreen() {
   const router = useRouter();
@@ -31,6 +61,7 @@ export default function ReviewDetailScreen() {
   const { session, can } = useAdminRole();
   const [record, setRecord] = useState<ImportRecord | null>(null);
   const [title, setTitle] = useState('');
+  const [genreNames, setGenreNames] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [acting, setActing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -47,7 +78,12 @@ export default function ReviewDetailScreen() {
       const loaded = await importReviewService.getRecord(session, id);
       if (loaded) {
         setRecord(loaded);
-        setTitle(getEffectiveCandidate(loaded).title);
+        const draft = mapImportRecordToDraft(loaded);
+        setTitle(
+          draft?.proposedCanonicalEvent?.title ??
+            getEffectiveCandidate(loaded).title,
+        );
+        setGenreNames(draft?.genres.normalizedLabels ?? []);
         const matchedVenueId =
           loaded.reviewerEdits?.matchedVenueId ?? loaded.matchedVenueId ?? undefined;
         if (matchedVenueId) {
@@ -91,6 +127,17 @@ export default function ReviewDetailScreen() {
     setActing(true);
     setError(null);
     try {
+      const draft = mapImportRecordToDraft(record);
+      if (draft) {
+        await draftReviewController.edit(
+          draft,
+          { title, genres: genreNames },
+          session.user.id,
+        );
+        await load();
+        setSuccess('Draft-Änderungen gespeichert.');
+        return;
+      }
       const updated = await importReviewService.editRecord(
         session,
         record.id,
@@ -111,6 +158,13 @@ export default function ReviewDetailScreen() {
     setActing(true);
     setError(null);
     try {
+      const draft = mapImportRecordToDraft(record);
+      if (draft) {
+        await draftReviewController.approveOne(draft, session.user.id);
+        await load();
+        setSuccess('Draft freigegeben. Es wurde kein Event erzeugt.');
+        return;
+      }
       const { record: updated, event } = await importReviewService.approveRecord(
         session,
         record.id,
@@ -130,6 +184,17 @@ export default function ReviewDetailScreen() {
     setActing(true);
     setError(null);
     try {
+      const draft = mapImportRecordToDraft(record);
+      if (draft) {
+        await draftReviewController.reject(
+          draft,
+          undefined,
+          session.user.id,
+        );
+        await load();
+        setSuccess('Draft abgelehnt.');
+        return;
+      }
       const updated = await importReviewService.rejectRecord(
         session,
         record.id,
@@ -191,6 +256,243 @@ export default function ReviewDetailScreen() {
   }
   if (!record) {
     return <AdminErrorState message="Record not found." onRetry={load} />;
+  }
+
+  const unifiedDraft = mapImportRecordToDraft(record);
+  if (unifiedDraft) {
+    const card = buildCompactDraftReviewCard(unifiedDraft);
+    const runDraftAction = async (
+      action: (draft: ImportDraft) => Promise<unknown>,
+      successMessage: string,
+    ) => {
+      if (!session) return;
+      setActing(true);
+      setError(null);
+      try {
+        await action(unifiedDraft);
+        await load();
+        setSuccess(successMessage);
+      } catch (cause) {
+        setError(getErrorMessage(cause));
+      } finally {
+        setActing(false);
+      }
+    };
+
+    return (
+      <AppScreen>
+        <SafeAreaContainer style={styles.container}>
+          <ScrollView
+            style={adminPageLayoutStyles.flexScroll}
+            contentContainerStyle={styles.content}
+          >
+            <View style={styles.header}>
+              <SecondaryButton label="Zurück" onPress={() => router.back()} />
+              <AppText style={styles.title}>Draft prüfen</AppText>
+            </View>
+            {error ? <AppText style={styles.error}>{error}</AppText> : null}
+            {success ? <AppText style={styles.success}>{success}</AppText> : null}
+
+            <View style={styles.card}>
+              {card.imageUrl ? (
+                <Image source={{ uri: card.imageUrl }} style={styles.draftImage} />
+              ) : null}
+              <AppText style={styles.sectionTitle}>{card.title}</AppText>
+              <AppText style={styles.value}>{card.dateTime}</AppText>
+              <AppText style={styles.value}>{card.venue}</AppText>
+              <AppText style={styles.meta}>
+                Genres: {card.genres.join(', ') || 'fehlen'}
+              </AppText>
+              <AppText style={styles.meta}>
+                Line-up: {card.lineup.join(', ') || 'fehlt'}
+              </AppText>
+              <AppText style={styles.meta}>
+                Tickets: {card.ticketStatus}
+                {card.ticketPrice ? ` · ${card.ticketPrice}` : ''}
+              </AppText>
+              <AppText style={styles.meta}>
+                Quelle: {card.sourceLabel} · Eingang: {card.submissionLabel}
+              </AppText>
+              <AppText style={styles.warning}>
+                Review: {card.reviewReason}
+              </AppText>
+              {card.highlightedChanges.map((change) => (
+                <AppText key={change} style={styles.success}>
+                  {change}
+                </AppText>
+              ))}
+              {card.correctionTargetEventId ? (
+                <AppText style={styles.warning}>
+                  Korrektur für bestehendes Event: {card.correctionTargetEventId}
+                </AppText>
+              ) : null}
+              <AppText style={styles.meta}>
+                Einreicher: {card.submitterLabel ?? '—'}
+              </AppText>
+            </View>
+
+            {can('records:edit') ? (
+              <View style={styles.card}>
+                <AppText style={styles.sectionTitle}>Schnell bearbeiten</AppText>
+                <AppText style={styles.label}>Titel</AppText>
+                <TextInput
+                  style={styles.input}
+                  value={title}
+                  onChangeText={setTitle}
+                />
+                <GenrePicker
+                  label="Genres"
+                  helper={
+                    card.protectedGenres.length
+                      ? `Geschützt: ${card.protectedGenres.join(', ')}`
+                      : 'Mehrfachauswahl'
+                  }
+                  options={GENRE_OPTIONS}
+                  value=""
+                  onChange={() => undefined}
+                  multiple
+                  selectedIds={genreNames}
+                  onChangeMultiple={setGenreNames}
+                />
+                <SecondaryButton
+                  label="Änderungen speichern"
+                  onPress={handleSaveEdits}
+                  disabled={acting}
+                />
+              </View>
+            ) : null}
+
+            <View style={styles.actions}>
+              {can('records:approve') &&
+              unifiedDraft.reviewTrack !== 'conflict_review' ? (
+                <PrimaryButton
+                  label="Draft bestätigen"
+                  onPress={handleApprove}
+                  disabled={acting}
+                />
+              ) : null}
+              {card.correctionTargetEventId && can('records:duplicate') ? (
+                <PrimaryButton
+                  label="Bestehendes Event ergänzen"
+                  onPress={() =>
+                    void runDraftAction(
+                      (draft) =>
+                        draftReviewController.mergeIntoExisting(
+                          draft,
+                          card.correctionTargetEventId!,
+                          session?.user.id,
+                        ),
+                      'Als Ergänzung freigegeben. Kein Event wurde verändert.',
+                    )
+                  }
+                  disabled={acting}
+                />
+              ) : null}
+              {unifiedDraft.duplicates.map((duplicate) => (
+                <SecondaryButton
+                  key={`${duplicate.eventId}-${duplicate.reason}`}
+                  label={`Dublette auswählen: ${duplicate.eventId}`}
+                  onPress={() =>
+                    void runDraftAction(
+                      (draft) =>
+                        draftReviewController.selectDuplicate(
+                          draft,
+                          duplicate.eventId,
+                          session?.user.id,
+                        ),
+                      'Dublette im Draft vermerkt.',
+                    )
+                  }
+                  disabled={acting || !can('records:duplicate')}
+                />
+              ))}
+              {can('records:approve') ? (
+                <SecondaryButton
+                  label="Als neues Event markieren"
+                  onPress={() =>
+                    void runDraftAction(
+                      (draft) =>
+                        draftReviewController.createNew(
+                          draft,
+                          session?.user.id,
+                        ),
+                      'Als neuer Event-Draft freigegeben. Noch nicht publiziert.',
+                    )
+                  }
+                  disabled={acting}
+                />
+              ) : null}
+              <SecondaryButton
+                label="Später prüfen"
+                onPress={() =>
+                  void runDraftAction(
+                    (draft) =>
+                      draftReviewController.defer(draft, session?.user.id),
+                    'Draft zurückgestellt.',
+                  )
+                }
+                disabled={acting || !can('records:edit')}
+              />
+              {can('records:reject') ? (
+                <SecondaryButton
+                  label="Ablehnen"
+                  onPress={handleReject}
+                  disabled={acting}
+                />
+              ) : null}
+            </View>
+
+            <SecondaryButton
+              label={showRaw ? 'Diagnose ausblenden' : 'Diagnose anzeigen'}
+              onPress={() => setShowRaw((value) => !value)}
+            />
+            {showRaw ? (
+              <View style={styles.card}>
+                <AppText style={styles.sectionTitle}>Diagnose</AppText>
+                <AppText style={styles.meta}>
+                  Verifiziert: {card.diagnose.verifiedAt ?? '—'}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Confidence:{' '}
+                  {Object.entries(card.diagnose.fieldGroupConfidence)
+                    .map(([field, confidence]) => `${field}=${confidence}`)
+                    .join(', ')}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Evidence: {card.diagnose.evidenceSourceIds.join(', ') || '—'}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Provenance: {card.diagnose.provenanceSourceIds.join(', ') || '—'}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Website: {card.diagnose.urlRoles.websiteUrl ?? '—'}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Ticket: {card.diagnose.urlRoles.ticketUrl ?? '—'}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Quellen: {card.diagnose.urlRoles.sourceUrls.join(', ') || '—'}
+                </AppText>
+                <AppText style={styles.meta}>
+                  Genre-Evidenz:{' '}
+                  {card.diagnose.genreEvidence
+                    .map(
+                      (genre) =>
+                        `${genre.rawValue} → ${genre.normalizedLabel} (${genre.confidence}${genre.confirmed ? ', geschützt' : ''})`,
+                    )
+                    .join('; ') || '—'}
+                </AppText>
+                {card.diagnose.diagnostics.map((diagnostic) => (
+                  <AppText key={diagnostic} style={styles.meta}>
+                    {diagnostic}
+                  </AppText>
+                ))}
+              </View>
+            ) : null}
+          </ScrollView>
+        </SafeAreaContainer>
+      </AppScreen>
+    );
   }
 
   const candidate = getEffectiveCandidate(record);
@@ -437,4 +739,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   actions: { gap: spacing.sm },
+  draftImage: {
+    width: '100%',
+    height: 180,
+    borderRadius: 8,
+  },
 });

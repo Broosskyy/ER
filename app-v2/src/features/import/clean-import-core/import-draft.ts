@@ -40,6 +40,10 @@ export interface ImportDraftAudit {
 
 export interface ImportDraft {
   id: string;
+  /** Stable source-native ID, never a guessed canonical event ID. */
+  sourceExternalId?: string;
+  /** Present only after loading the draft from import_records. */
+  persistenceRecordId?: string;
   proposedCanonicalEvent?: CanonicalEvent;
   submissionKind: ImportSubmissionKind;
   submitter: ImportSubmitter;
@@ -208,6 +212,7 @@ export function buildImportDraft(input: {
 
   return {
     id: `draft:${input.submission.id}`,
+    sourceExternalId: input.submission.externalId,
     proposedCanonicalEvent: event
       ? {
           ...event,

@@ -79,6 +79,8 @@ export interface ImportSubmission {
   kind: ImportSubmissionKind;
   submitter: ImportSubmitter;
   submittedAt: string;
+  /** Stable source-native event ID when the connector/channel provides one. */
+  externalId?: string;
   /** Optional for automatic_source when connectorOutputs already carry the payload. */
   payload?: ImportSubmissionPayload;
   sourceId?: string;

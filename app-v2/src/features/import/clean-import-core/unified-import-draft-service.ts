@@ -17,6 +17,11 @@ import {
   NoopDraftReviewPersistence,
   type DraftReviewPersistence,
 } from './draft-review-persistence';
+import {
+  NoopImportDraftRecordPersistence,
+  type ImportDraftRecordPersistence,
+} from './import-draft-record-persistence';
+import type { ImportDraftRecordContext } from './import-draft-record-mapper';
 
 export interface UnifiedImportDraftResult {
   draft: ImportDraft;
@@ -35,6 +40,8 @@ export class UnifiedImportDraftService {
   constructor(
     private readonly runner = new ImportRunner(),
     private readonly reviewPersistence: DraftReviewPersistence = new NoopDraftReviewPersistence(),
+    private readonly draftPersistence: ImportDraftRecordPersistence =
+      new NoopImportDraftRecordPersistence(),
   ) {}
 
   getReviewPersistence(): DraftReviewPersistence {
@@ -112,6 +119,21 @@ export class UnifiedImportDraftService {
     return {
       draft,
       databaseWriteOperations: 0,
+      productionMutations: 0,
+      rolloutActivated: false,
+      wroteEventsTable: false,
+    };
+  }
+
+  async processAndPersist(
+    submission: ImportSubmission,
+    context: ImportDraftRecordContext,
+  ): Promise<UnifiedImportDraftResult> {
+    const result = this.process(submission);
+    const persisted = await this.draftPersistence.persist(result.draft, context);
+    return {
+      draft: persisted.draft,
+      databaseWriteOperations: persisted.databaseWriteOperations,
       productionMutations: 0,
       rolloutActivated: false,
       wroteEventsTable: false,
