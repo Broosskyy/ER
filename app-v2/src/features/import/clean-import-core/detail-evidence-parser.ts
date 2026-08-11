@@ -21,6 +21,7 @@ import {
   normalizeSourceTicketOffer,
 } from '@/features/import/domain/canonical-ticket-phase';
 import { extractDetailPage } from '@/features/import/unified-website/detail-extraction';
+import { extractOfficialWebsitePublicTruth } from '@/features/import/shadow/official-website-public-truth';
 
 import type {
   CleanSourceFamily,
@@ -138,23 +139,38 @@ function ticketFieldsFromOffers(offers: TicketIoTicketOffer[] | undefined): Pick
 
 function parseOfficialWebsite(request: DetailEvidenceRequest): ConnectorOutput {
   const detail = extractDetailPage(request.html, request.sourceUrl);
-  const description = detail.description?.description;
+  const publicTruth = extractOfficialWebsitePublicTruth(
+    request.html,
+    request.sourceUrl,
+  );
+  const description =
+    detail.description?.description ?? publicTruth.description;
   const attributes = extractAttributesFromDescriptionText(description, 'official_website');
+  const outboundTicketUrls = [
+    ...new Set([
+      ...(detail.ticket?.url ? [detail.ticket.url] : []),
+      ...(publicTruth.outboundTicketLinks ?? []),
+    ]),
+  ];
 
   return {
     sourceId: request.sourceId,
     sourceFamily: request.sourceFamily,
     sourceUrl: request.sourceUrl,
     verifiedAt: request.verifiedAt,
-    title: detail.title?.normalizedTitle,
-    startDate: detail.startDate,
+    title: detail.title?.normalizedTitle ?? publicTruth.title,
+    startDate: detail.startDate ?? publicTruth.dateTime,
     endDate: detail.endDate,
-    venueName: detail.venue?.venueName,
-    locationText: detail.venue?.venueName ?? detail.cityName,
+    venueName: detail.venue?.venueName ?? publicTruth.venue,
+    locationText:
+      detail.venue?.venueName ??
+      detail.cityName ??
+      publicTruth.location ??
+      publicTruth.city,
     officialWebsiteUrl: detail.officialEventUrl ?? request.sourceUrl,
-    outboundTicketUrls: detail.ticket?.url ? [detail.ticket.url] : [],
+    outboundTicketUrls,
     description,
-    genres: detail.genres,
+    genres: detail.genres?.length ? detail.genres : publicTruth.genres,
     lineup: detail.lineup?.entries,
     lineupState: detail.lineup?.state,
     lineupReason: detail.lineup?.inclusionReason,

@@ -8,6 +8,7 @@ import { parseDetailEvidenceFromHtml } from '@/features/import/clean-import-core
 import type { ConnectorOutput } from '@/features/import/clean-import-core/event-evidence';
 import { evaluateSourceNativeIdentityCompatibility } from '@/features/import/clean-import-core/identity-resolver';
 import { ImportRunner } from '@/features/import/clean-import-core/import-runner';
+import { bridgeProductionSourceEvidence } from '@/features/import/clean-import-core/production-evidence-bridge';
 import { resolveMissingLiveEvidenceDisposition } from '@/features/import/clean-import-core/review-decision';
 import { SourceAdapter } from '@/features/import/clean-import-core/source-adapter';
 import { ImportFetchService } from '@/features/import/services/import-fetch-service';
@@ -38,6 +39,219 @@ describe('minimal clean import vertical slice', () => {
     expect(result.canonicalEvent?.ticketUrl).toBe(
       'https://reference.ticket.io/levi/',
     );
+  });
+
+  it('bridges productive official evidence without transfer loss', () => {
+    const bridged = bridgeProductionSourceEvidence({
+      sourceId: 'official-production',
+      sourceFamily: 'official_website',
+      fetchVerifiedAt: VERIFIED_AT,
+      rawEvent: {
+        externalId: 'official-production-event',
+        importId: 'official-production-event',
+        sourceUrl: 'https://official.example/events/production',
+        eventUrl: 'https://official.example/events/production',
+        title: 'Production Official Event',
+        description: 'Official public description',
+        startDate: '2026-09-10T22:00:00+02:00',
+        venueName: 'Reference Club',
+        genreNames: ['Techno'],
+        artistNames: ['Artist A B2B Artist B'],
+        minimumAge: 18,
+        ticketUrl: 'https://reference.ticket.io/production/',
+        rawSourceType: 'json_ld',
+        sourceMetadata: {
+          venueEnvironment: 'indoor',
+        },
+      },
+    });
+
+    expect(bridged.output.officialWebsiteUrl).toBe(
+      'https://official.example/events/production',
+    );
+    expect(bridged.output.outboundTicketUrls).toContain(
+      'https://reference.ticket.io/production/',
+    );
+    expect(bridged.output.lineup).toHaveLength(2);
+    expect(bridged.output.verifiedAt).toBe(VERIFIED_AT);
+    expect(bridged.audit.unexpectedLostFields).toEqual([]);
+  });
+
+  it('preserves validated structured lineup order and roles in EventEvidence', () => {
+    const bridged = bridgeProductionSourceEvidence({
+      sourceId: 'official-structured-lineup',
+      sourceFamily: 'official_website',
+      fetchVerifiedAt: VERIFIED_AT,
+      rawEvent: {
+        externalId: 'official-structured-lineup-event',
+        importId: 'official-structured-lineup-event',
+        sourceUrl: 'https://official.example/events/structured-lineup',
+        eventUrl: 'https://official.example/events/structured-lineup',
+        title: 'Structured Lineup Event',
+        startDate: '2026-09-12T22:00:00+02:00',
+        venueName: 'Reference Club',
+        artistNames: ['Description Fallback Artist'],
+        rawSourceType: 'json_ld',
+        sourceMetadata: {
+          lineupEntries: [
+            {
+              displayName: 'TBA',
+              normalizedName: 'tba',
+              source: 'structured',
+              confidence: 0.8,
+              sortOrder: 0,
+            },
+            {
+              displayName: '<b>HTML Artist</b>',
+              normalizedName: 'html artist',
+              source: 'structured',
+              confidence: 0.8,
+              sortOrder: 1,
+            },
+            {
+              displayName: 'Amelie Lens',
+              normalizedName: 'amelie lens',
+              headliner: true,
+              source: 'structured',
+              confidence: 0.95,
+              sortOrder: 2,
+            },
+            {
+              displayName: 'Alignment',
+              normalizedName: 'alignment',
+              isB2b: true,
+              source: 'structured',
+              confidence: 0.9,
+              sortOrder: 3,
+            },
+            {
+              displayName: 'Alignment',
+              normalizedName: 'alignment',
+              source: 'structured',
+              confidence: 0.8,
+              sortOrder: 4,
+            },
+            {
+              displayName: 'Public Transport tickets included',
+              normalizedName: 'public transport tickets included',
+              source: 'structured',
+              confidence: 0.5,
+              sortOrder: 5,
+            },
+          ],
+        },
+      },
+    });
+    const evidence = new SourceAdapter().adapt(bridged.output);
+    const lineup = evidence.content.lineup?.value;
+
+    expect(lineup?.map((entry) => entry.displayName)).toEqual([
+      'Amelie Lens',
+      'Alignment',
+    ]);
+    expect(lineup?.map((entry) => entry.sortOrder)).toEqual([0, 1]);
+    expect(lineup?.[0]?.billingRelation).toBe('HEADLINER');
+    expect(lineup?.[1]?.billingRelation).toBe('B2B');
+    expect(lineup?.some((entry) => entry.displayName.includes('Fallback'))).toBe(
+      false,
+    );
+    expect(bridged.audit.unexpectedLostFields).toEqual([]);
+  });
+
+  it('bridges Ticket.io production metadata into ticket evidence', () => {
+    const bridged = bridgeProductionSourceEvidence({
+      sourceId: 'ticket-io-production',
+      sourceFamily: 'ticket_io',
+      rawEvent: {
+        externalId: 'ticket-io-production-event',
+        importId: 'ticket-io-production-event',
+        sourceUrl: 'https://reference.ticket.io/AbCdEf12/',
+        eventUrl: 'https://reference.ticket.io/AbCdEf12/',
+        title: 'Raw list title',
+        startDate: '2026-09-10T22:00:00+02:00',
+        venueName: 'Reference Club',
+        ticketUrl: 'https://reference.ticket.io/AbCdEf12/',
+        priceAmount: 25,
+        priceCurrency: 'EUR',
+        priceText: 'ab 25,00 €',
+        imageUrl: 'https://images.example/ticket.jpg',
+        rawSourceType: 'json_ld',
+        sourceMetadata: {
+          pageTitle: 'Production Ticket Event',
+          listRowTitle: 'Production Ticket Event',
+          eventDate: '2026-09-10T22:00:00+02:00',
+          venueName: 'Reference Club',
+          publicTicketPageUrl: 'https://reference.ticket.io/AbCdEf12/',
+          verifiedAt: VERIFIED_AT,
+          availability: 'https://schema.org/InStock',
+          sourceOfficialPageUrl:
+            'https://official.example/events/production-ticket',
+          ticketOffers: [
+            {
+              name: 'Admission',
+              priceAmount: 25,
+              priceCurrency: 'EUR',
+              purchaseUrl: 'https://reference.ticket.io/AbCdEf12/',
+            },
+          ],
+        },
+      },
+    });
+    const evidence = new SourceAdapter().adapt(bridged.output);
+
+    expect(evidence.identity.title?.value).toBe('Production Ticket Event');
+    expect(evidence.identity.officialWebsiteUrl).toBeUndefined();
+    expect(evidence.tickets.admissionProducts?.value).toHaveLength(1);
+    expect(evidence.tickets.ticketStatus?.value).toBe('on_sale');
+    expect(bridged.audit.intentionallyExcludedFields).toEqual(
+      expect.arrayContaining(['officialWebsiteUrl', 'images']),
+    );
+    expect(bridged.audit.unexpectedLostFields).toEqual([]);
+  });
+
+  it('bridges Ticket Kings checkout admissions and excluded add-ons', () => {
+    const checkoutHtml = readFileSync(
+      join(TICKET_FIXTURE_DIR, 'ticket-kings-admission-flex-checkout.html'),
+      'utf8',
+    );
+    const detailEvidence = parseDetailEvidenceFromHtml({
+      sourceId: 'ticket-kings-production',
+      sourceFamily: 'ticket_kings',
+      sourceUrl: 'https://ticketkings.de/event/production-event/',
+      verifiedAt: VERIFIED_AT,
+      html: '<iframe src="https://nacht-manager.de/ticketing/native_event.php?id=123"></iframe>',
+      checkoutHtml,
+      identity: {
+        title: 'Production Event',
+        startDate: '2026-10-10T22:00:00+02:00',
+        venueName: 'Reference Club',
+      },
+    });
+    const bridged = bridgeProductionSourceEvidence({
+      sourceId: 'ticket-kings-production',
+      sourceFamily: 'ticket_kings',
+      supplementalEvidence: detailEvidence,
+      rawEvent: {
+        externalId: 'ticket-kings-production-event',
+        importId: 'ticket-kings-production-event',
+        sourceUrl: 'https://ticketkings.de/event/production-event/',
+        eventUrl: 'https://ticketkings.de/event/production-event/',
+        title: 'Production Event',
+        startDate: '2026-10-10T22:00:00+02:00',
+        venueName: 'Reference Club',
+        ticketUrl: 'https://ticketkings.de/event/production-event/',
+        rawSourceType: 'json_ld',
+        sourceMetadata: { verifiedAt: VERIFIED_AT },
+      },
+    });
+
+    expect(bridged.output.admissionPrice?.amount).toBe(15);
+    expect(bridged.output.excludedProducts).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ name: 'Ticket Flex Option' }),
+      ]),
+    );
+    expect(bridged.audit.unexpectedLostFields).toEqual([]);
   });
 
   it('does not create identity from a Ticket.io PoW page and caches the result', async () => {
