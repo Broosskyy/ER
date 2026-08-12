@@ -105,6 +105,7 @@ describe('bootshaus golden import path', () => {
 
   it('extracts pipe-delimited offsite venue names from titles', () => {
     expect(extractPipeVenueFromTitle('SA * 22.08.2026 | KitKatClub')).toBe('KitKatClub');
+    expect(extractPipeVenueFromTitle('SA * 22.08.2026\u00a0|\u00a0KitKatClub')).toBe('KitKatClub');
     const split = splitOfficialVenueGeography({
       title: 'SA * 22.08.2026 | KitKatClub',
       metadata: {},

@@ -123,11 +123,11 @@ function isBootshausDefaultLabel(
 }
 
 export function extractPipeVenueFromTitle(title: string | undefined): string | undefined {
-  const trimmed = title?.trim();
-  if (!trimmed?.includes('|')) {
+  const normalized = title?.replace(/\u00a0/g, ' ').trim();
+  if (!normalized?.includes('|')) {
     return undefined;
   }
-  return trimmed.match(TITLE_PIPE_VENUE_PATTERN)?.[1]?.trim() || undefined;
+  return normalized.match(TITLE_PIPE_VENUE_PATTERN)?.[1]?.trim() || undefined;
 }
 
 function detectOffsiteVenueSignals(input: {
@@ -314,7 +314,7 @@ export function splitOfficialVenueGeography(input: {
   const externalFromTitle = extractExternalLocationFromTitle(input.title);
   const pipeVenue = extractPipeVenueFromTitle(input.title);
 
-  if (pipeVenue && !venueName) {
+  if (pipeVenue && (!venueName || isBootshausDefaultLabel(venueName, defaults))) {
     venueName = pipeVenue;
   }
   if (externalFromTitle?.cityName?.trim() && !venueCity) {
