@@ -55,35 +55,6 @@ const ADMIN_FIELD_MAP: Record<PublishTrackedField, keyof AdminEventRecord> = {
   genres: 'genreLabels',
 };
 
-function publishTrackedValuesEqual(left: unknown, right: unknown): boolean {
-  return JSON.stringify(left) === JSON.stringify(right);
-}
-
-export function computeChangedPublishTrackedFields(
-  before: AdminEventRecord,
-  after: AdminEventRecord,
-): PublishTrackedField[] {
-  return PUBLISH_TRACKED_FIELDS.filter((field) => {
-    const afterValue = resolvePublishTrackedValue(after, field);
-    if (afterValue === undefined || afterValue === null || afterValue === '') {
-      return false;
-    }
-    const beforeValue = resolvePublishTrackedValue(before, field);
-    return !publishTrackedValuesEqual(beforeValue, afterValue);
-  });
-}
-
-export function listPublishTrackedFieldsWithValues(event: AdminEventRecord): PublishTrackedField[] {
-  return PUBLISH_TRACKED_FIELDS.filter((field) => {
-    const value = resolvePublishTrackedValue(event, field);
-    return value !== undefined && value !== null && value !== '';
-  });
-}
-
-export function countPublishTrackedFieldsWithValues(event: AdminEventRecord): number {
-  return listPublishTrackedFieldsWithValues(event).length;
-}
-
 function resolvePublishTrackedValue(event: AdminEventRecord, field: PublishTrackedField): unknown {
   if (field === 'coordinates') {
     if (event.latitude !== undefined || event.longitude !== undefined) {
@@ -104,18 +75,12 @@ export class EventFieldProvenanceWriter {
     event: AdminEventRecord,
     options: {
       publishedAt?: string;
-      evidenceVerifiedAt?: string;
       originExternalId?: string;
       confidence?: number;
       mergeDecisions?: FieldMergeResult[];
-      appliedFieldPaths?: readonly PublishTrackedField[];
     } = {},
   ): Promise<void> {
-    const publishAuditAt = options.publishedAt ?? new Date().toISOString();
-    const evidenceFreshnessAt = options.evidenceVerifiedAt?.trim() || undefined;
-    const fieldsToWrite =
-      options.appliedFieldPaths ??
-      listPublishTrackedFieldsWithValues(event);
+    const publishedAt = options.publishedAt ?? new Date().toISOString();
     const incomingTier = resolveSourcePriorityTier({
       sourceType: source.sourceType,
       sourceRoles: source.sourceRoles,
@@ -125,7 +90,7 @@ export class EventFieldProvenanceWriter {
       (options.mergeDecisions ?? []).map((entry) => [entry.field, entry]),
     );
 
-    for (const field of fieldsToWrite) {
+    for (const field of PUBLISH_TRACKED_FIELDS) {
       const value = resolvePublishTrackedValue(event, field);
       if (value === undefined || value === null || value === '') {
         continue;
@@ -141,7 +106,7 @@ export class EventFieldProvenanceWriter {
         continue;
       }
 
-      const alternatives = this.buildAlternatives(existing, source.id, value, evidenceFreshnessAt, {
+      const alternatives = this.buildAlternatives(existing, source.id, value, publishedAt, {
         confidence: options.confidence,
         originExternalId: options.originExternalId,
         mergeDecision: mergeDecision?.decision,
@@ -155,9 +120,9 @@ export class EventFieldProvenanceWriter {
         selectedSourceId: source.id,
         selectionReason: mergeDecision ? `import_publish_${mergeDecision.decision}` : 'import_publish',
         alternatives,
-        lastChangedAt: publishAuditAt,
+        lastChangedAt: publishedAt,
         confidence: options.confidence,
-        freshnessAt: evidenceFreshnessAt,
+        freshnessAt: publishedAt,
         originExternalId: options.originExternalId,
         mergeDecision: mergeDecision?.decision,
         selectedTier: incomingTier,
@@ -169,22 +134,22 @@ export class EventFieldProvenanceWriter {
     existing: FieldProvenance | null,
     sourceId: string,
     value: unknown,
-    evidenceFreshnessAt: string | undefined,
+    freshnessAt: string,
     meta: { confidence?: number; originExternalId?: string; mergeDecision?: string },
   ): FieldProvenance['alternatives'] {
     const prior = existing?.alternatives ?? [];
     const withoutDuplicate = prior.filter((entry) => entry.sourceId !== sourceId);
-    const alternative: FieldProvenance['alternatives'][number] = {
-      sourceId,
-      value,
-      confidence: meta.confidence,
-      originExternalId: meta.originExternalId,
-      mergeDecision: meta.mergeDecision,
-    };
-    if (evidenceFreshnessAt) {
-      alternative.freshnessAt = evidenceFreshnessAt;
-    }
-    return [...withoutDuplicate, alternative];
+    return [
+      ...withoutDuplicate,
+      {
+        sourceId,
+        value,
+        confidence: meta.confidence,
+        freshnessAt,
+        originExternalId: meta.originExternalId,
+        mergeDecision: meta.mergeDecision,
+      },
+    ];
   }
 
   async loadProvenanceByField(canonicalEventId: string): Promise<Map<string, FieldProvenance>> {

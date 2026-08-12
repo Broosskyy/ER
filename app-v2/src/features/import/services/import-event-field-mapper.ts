@@ -20,10 +20,6 @@ import {
 import { buildCanonicalAttributeBundleFromImport, serializeCanonicalEventAttributes } from '@/features/events/domain/event-attribute-merge';
 import { resolveDescriptionGenrePublish } from '@/features/import/domain/description-genre-publish-resolver';
 import { buildSourceReferenceTicketEvidenceMetadata } from '@/features/import/domain/ticket-evidence-provenance';
-import {
-  evaluateGenericTruthPublish,
-  type GenericTruthPublishEvaluation,
-} from '@/features/import/generic-truth-pipeline';
 
 export interface ImportPublishFieldPatch {
   title?: string;
@@ -145,18 +141,6 @@ function readMinimumAge(candidate: CanonicalImportEvent): number | undefined {
     return raw;
   }
   return undefined;
-}
-
-export function evaluateImportPublishTruthDryRun(input: {
-  existing: AdminEventRecord;
-  candidate: CanonicalImportEvent;
-  fillOnly?: boolean;
-}): GenericTruthPublishEvaluation {
-  return evaluateGenericTruthPublish({
-    existing: input.existing,
-    candidate: input.candidate,
-    fillOnly: input.fillOnly,
-  });
 }
 
 export function buildImportPublishFieldPatch(

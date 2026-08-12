@@ -42,9 +42,10 @@ function parseCharset(contentType: string): string | undefined {
 function buildDocument(
   request: WebsiteFetchRequest,
   response: ImportFetchResponse,
+  redirectChain: string[],
 ): WebsiteDocument {
   return {
-    requestedUrl: response.requestedUrl || request.url,
+    requestedUrl: request.url,
     finalUrl: response.url || request.url,
     statusCode: response.status,
     contentType: response.contentType,
@@ -52,7 +53,7 @@ function buildDocument(
     html: response.body,
     responseSize: response.bytesRead,
     fetchedAt: new Date().toISOString(),
-    redirectChain: response.redirectChain,
+    redirectChain,
     headers: {},
     detectedSignals: [],
     warnings: [],
@@ -106,7 +107,7 @@ export class WebsiteFetchLayer {
 
     try {
       const response = await importFetchService.fetch(options);
-      return buildDocument(request, response);
+      return buildDocument(request, response, [request.url, response.url].filter(Boolean));
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Website fetch failed.';
       const code = message.toLowerCase().includes('timed out') ? 'timeout' : 'network_error';
