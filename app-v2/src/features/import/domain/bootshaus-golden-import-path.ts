@@ -13,13 +13,17 @@ import {
   resolveSourceFieldDefaults,
 } from '@/features/import/normalization/source-field-defaults';
 import {
+  deriveSummaryPriceTextFromPhases,
+  deriveTicketStatusFromPhases,
+  normalizeTicketOffersFromCandidate,
   parsePostalCodeFromAddress,
   type AdminEventTicketStatus,
 } from '@/features/import/domain/canonical-ticket-phase';
+import type { CanonicalImportEvent } from '@/features/aggregation/domain/canonical-import-event';
 import { analyzeEventTitleCore, compareEventTitleCores } from '@/features/import/matching/event-title-core';
 import { sameCalendarDay } from '@/features/import/matching/matching-utils';
 import { extractExternalLocationFromTitle } from '@/features/import/normalization/external-location-from-title';
-import { resolveOfficialOutboundRelationship } from '@/features/import/domain/official-page-ticket-corroboration';
+import { resolveOfficialOutboundRelationship, urlsReferToSameTicketEvent } from '@/features/import/domain/official-page-ticket-corroboration';
 import {
   buildCanonicalEventFromVerifiedPublicEvidence,
   type BuildCanonicalEventFromVerifiedPublicEvidenceResult,
@@ -253,6 +257,14 @@ function readClassifiedOutboundLinks(raw: RawImportedEvent): ClassifiedOutboundT
     links.push(classifyOutboundTicketLink(raw.ticketUrl));
   }
   return links;
+}
+
+function collectConcreteTicketUrls(raw: RawImportedEvent): string[] {
+  const urls = readClassifiedOutboundLinks(raw)
+    .filter((link) => link.class === 'ticket_io_event' || link.class === 'ticket_kings_event')
+    .map((link) => link.url)
+    .filter((url): url is string => Boolean(url?.trim()));
+  return [...new Set(urls)];
 }
 
 function collectOutboundTicketUrls(raw: RawImportedEvent): string[] {
@@ -521,6 +533,7 @@ export function mapOfficialRawToVerifiedEvidence(
     minimumAge: raw.minimumAge,
     organizerName: candidate.organizerName,
     outboundTicketUrls: collectOutboundTicketUrls(raw),
+    concreteTicketUrls: collectConcreteTicketUrls(raw),
     verifiedAt,
   };
 }
@@ -531,27 +544,62 @@ export function mapTicketRawToVerifiedEvidence(
 ): VerifiedTicketEvidence {
   const metadata = raw.sourceMetadata as Record<string, unknown> | undefined;
   const listCard = metadata?.listCardEvidence as TicketIoListCardEvidence | undefined;
-  const ticketOffers = (metadata?.ticketOffers as VerifiedTicketEvidence['ticketOffers']) ??
+  const allOffers = (metadata?.ticketOffers as VerifiedTicketEvidence['ticketOffers']) ??
     (raw.sourceMetadata?.ticketOffers as VerifiedTicketEvidence['ticketOffers']);
+  const admissionOffers = (allOffers ?? []).filter(
+    (offer) => offer.kind !== 'addon' && offer.kind !== 'add_on',
+  );
   const publicTicketUrl =
     raw.ticketUrl?.trim() ||
     listCard?.publicTicketPageUrl?.trim() ||
     raw.eventUrl?.trim() ||
     raw.externalId?.trim();
+  const listRowTitle =
+    listCard?.listRowTitle ??
+    (metadata?.listRowTitle as string | undefined) ??
+    raw.title;
+  const eventDate = raw.startDate ?? listCard?.eventDate;
+  const evidenceVerifiedAt =
+    (metadata?.verifiedAt as string | undefined) ?? listCard?.verifiedAt ?? verifiedAt;
+  const soldOut = listCard?.soldOut === true || metadata?.soldOut === true;
+
+  const phaseCandidate: CanonicalImportEvent = {
+    externalId: publicTicketUrl ?? raw.externalId,
+    sourceId: 'bootshaus-ticket-io-list',
+    sourceName: 'Bootshaus Ticket.io list',
+    title: listRowTitle ?? '',
+    startDate: eventDate ?? '',
+    ticketUrl: publicTicketUrl,
+    priceText: raw.priceText ?? listCard?.priceText,
+    rawSourceType: 'json_ld',
+    sourceMetadata: {
+      ticketOffers: admissionOffers.length > 0 ? admissionOffers : allOffers,
+      soldOut,
+      verifiedAt: evidenceVerifiedAt,
+      listRowTitle,
+      listCardEvidence: listCard,
+    },
+  };
+  const ticketPhases = normalizeTicketOffersFromCandidate(phaseCandidate);
+  const priceText =
+    raw.priceText ??
+    listCard?.priceText ??
+    deriveSummaryPriceTextFromPhases(ticketPhases);
+  const ticketStatus = soldOut
+    ? ('sold_out' as const)
+    : deriveTicketStatusFromPhases(ticketPhases, admissionOffers.length > 0 || priceText ? 'on_sale' : undefined);
 
   return {
     publicTicketUrl,
     pageTitle: (metadata?.pageTitle as string | undefined) ?? listCard?.listRowTitle,
-    listRowTitle:
-      listCard?.listRowTitle ??
-      (metadata?.listRowTitle as string | undefined) ??
-      raw.title,
-    eventDate: raw.startDate ?? listCard?.eventDate,
+    listRowTitle,
+    eventDate,
     venueName: listCard?.venueName ?? raw.venueName,
-    priceText: raw.priceText ?? listCard?.priceText,
-    ticketStatus: listCard?.soldOut ? 'sold_out' : undefined,
-    verifiedAt: (metadata?.verifiedAt as string | undefined) ?? listCard?.verifiedAt ?? verifiedAt,
-    ticketOffers,
+    priceText,
+    ticketPhases,
+    ticketStatus,
+    verifiedAt: evidenceVerifiedAt,
+    ticketOffers: admissionOffers.length > 0 ? admissionOffers : allOffers,
     ticketPlatformGenres: raw.genreNames,
   };
 }
@@ -561,6 +609,37 @@ export interface BootshausTicketMatchResult {
   conflictingTicketEvidence?: VerifiedTicketEvidence;
   matchReason: string;
   matchedByOutbound: boolean;
+}
+
+export function findTicketEvidenceByPublicUrl(
+  pool: VerifiedTicketEvidence[],
+  ticketUrl: string | undefined | null,
+): VerifiedTicketEvidence | undefined {
+  const needle = ticketUrl?.trim();
+  if (!needle) {
+    return undefined;
+  }
+  return pool.find(
+    (entry) => entry.publicTicketUrl && urlsReferToSameTicketEvent(entry.publicTicketUrl, needle),
+  );
+}
+
+/** Official stub when list-card ticket evidence corroborates a known official page URL. */
+export function buildListCorroboratedOfficialEvidence(input: {
+  officialPageUrl: string;
+  ticketEvidence: VerifiedTicketEvidence;
+  verifiedAt: string;
+}): VerifiedOfficialEvidence {
+  const ticketUrl = input.ticketEvidence.publicTicketUrl?.trim();
+  return {
+    pageUrl: input.officialPageUrl,
+    pageTitle: input.ticketEvidence.listRowTitle ?? input.ticketEvidence.pageTitle,
+    eventDate: input.ticketEvidence.eventDate,
+    venueName: input.ticketEvidence.venueName,
+    outboundTicketUrls: ticketUrl ? [ticketUrl] : undefined,
+    concreteTicketUrls: ticketUrl ? [ticketUrl] : undefined,
+    verifiedAt: input.verifiedAt,
+  };
 }
 
 export function matchTicketEvidenceForOfficial(
@@ -599,6 +678,41 @@ export function matchTicketEvidenceForOfficial(
       ticketEvidence: outboundMatches[0],
       matchReason: 'multiple_outbound_ticket_matches',
       matchedByOutbound: true,
+    };
+  }
+
+  const concreteUrls = [
+    ...(official.concreteTicketUrls ?? []),
+    ...(official.outboundTicketUrls ?? []),
+  ];
+  const exactUrlMatches = ticketCandidates.filter((ticket) => {
+    const ticketUrl = ticket.publicTicketUrl?.trim();
+    if (!ticketUrl || concreteUrls.length === 0) {
+      return false;
+    }
+    if (
+      official.eventDate &&
+      ticket.eventDate &&
+      !sameCalendarDay(official.eventDate, ticket.eventDate)
+    ) {
+      return false;
+    }
+    return concreteUrls.some((officialUrl) => urlsReferToSameTicketEvent(officialUrl, ticketUrl));
+  });
+
+  if (exactUrlMatches.length === 1) {
+    return {
+      ticketEvidence: exactUrlMatches[0],
+      matchReason: 'exact_concrete_ticket_url',
+      matchedByOutbound: false,
+    };
+  }
+  if (exactUrlMatches.length > 1) {
+    return {
+      conflictingTicketEvidence: exactUrlMatches[1],
+      ticketEvidence: exactUrlMatches[0],
+      matchReason: 'multiple_exact_ticket_url_matches',
+      matchedByOutbound: false,
     };
   }
 

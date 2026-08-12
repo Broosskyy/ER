@@ -97,7 +97,7 @@ function eventSlugFromUrl(url: string): string | undefined {
   return kingsMatch?.[1]?.toLowerCase();
 }
 
-function urlsReferToSameTicketEvent(left: string, right: string): boolean {
+export function urlsReferToSameTicketEvent(left: string, right: string): boolean {
   const leftKey = normalizeUrlForComparison(left);
   const rightKey = normalizeUrlForComparison(right);
   if (leftKey && rightKey && leftKey === rightKey) {

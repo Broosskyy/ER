@@ -38,6 +38,8 @@ export interface VerifiedOfficialEvidence {
   minimumAge?: number;
   organizerName?: string;
   outboundTicketUrls?: string[];
+  /** Normalized concrete ticket-event URLs from official scrape (never shop roots). */
+  concreteTicketUrls?: string[];
   countryCode?: string;
   verifiedAt?: string;
 }
@@ -196,6 +198,7 @@ function buildTicketCandidate(
       publicCtaCandidateUrl: ticket.publicTicketUrl,
       checkoutEvidenceUrl: checkout?.checkoutUrl,
       ticketOffers: ticket.ticketOffers,
+      soldOut: ticket.ticketStatus === 'sold_out',
       officialPageTitle: official?.pageTitle,
       officialPageEventDate: official?.eventDate,
       officialPageVenueName: official?.venueName,
