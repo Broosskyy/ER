@@ -17,6 +17,7 @@ import { normalizePublicUrl } from './cross-source-event-resolver';
 import { isEventIdentityUrl } from './duplicate-url-reconciliation';
 import type { CanonicalEvent } from './event-evidence';
 import type { GenreContractResult } from './genre-contract';
+import type { CanonicalTicketPhase } from '@/features/import/domain/canonical-ticket-phase';
 import {
   IdentityResolver,
   hasStablePublicIdentity,
@@ -58,6 +59,7 @@ export interface PublishedEventSnapshot {
   genreLabels?: string[];
   priceText?: string;
   ticketStatus?: string;
+  ticketPhases?: CanonicalTicketPhase[];
   ageRestriction?: string;
   venueEnvironment?: string;
   organizerName?: string;
@@ -426,6 +428,8 @@ function currentValueForField(
   field: string,
 ): unknown {
   if (field === 'genres') return existing.genreLabels;
+  if (field === 'ticketPhases') return existing.ticketPhases;
+  if (field === 'lineup') return existing.lineup;
   return existing[field as keyof PublishedEventSnapshot];
 }
 

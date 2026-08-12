@@ -44,6 +44,7 @@ import { invalidateConsumerEventCaches } from '@/features/events/formatting/cons
 import {
   applyImportPublishFieldPatch,
   buildAdminEventFromImportFields,
+  type ImportPublishFieldPatch,
 } from '@/features/import/services/import-event-field-mapper';
 import {
   evaluateGenericTruthPublish,
@@ -67,11 +68,20 @@ export function buildAdminEventFromImportRecord(
 
 
 
+export interface ControlledPublishOptions {
+  targetEventId: string;
+  patch: ImportPublishFieldPatch;
+  evidenceVerifiedAt: string;
+  skipLineupWrite?: boolean;
+}
+
 export interface PublishImportRecordOptions {
 
   actorId?: string;
 
   skipProvenance?: boolean;
+
+  controlledPublish?: ControlledPublishOptions;
 
 }
 
@@ -244,7 +254,14 @@ export class ImportEventPublishService {
 
     };
 
-
+    if (options.controlledPublish) {
+      return this.publishRecordWithControlledPatch(
+        record,
+        source,
+        canonicalCandidate,
+        options,
+      );
+    }
 
     const existingEventId = await this.resolveExistingEventId(
 
@@ -493,6 +510,132 @@ export class ImportEventPublishService {
 
     };
 
+  }
+
+  private async publishRecordWithControlledPatch(
+    record: ImportRecord,
+    source: SourceRecord,
+    canonicalCandidate: CanonicalImportEvent,
+    options: PublishImportRecordOptions,
+  ): Promise<PublishImportRecordResult> {
+    const controlled = options.controlledPublish;
+    if (!controlled) {
+      throw new Error('controlled_publish_options_missing');
+    }
+
+    const existingEvent = await this.adminEventRepository.getById(controlled.targetEventId);
+    if (!existingEvent) {
+      throw new Error(`controlled_publish_target_missing:${controlled.targetEventId}`);
+    }
+
+    const eventPayload = applyImportPublishFieldPatch(existingEvent, controlled.patch);
+    const now = new Date().toISOString();
+    const normalizedPayload = record.normalizedPayload as Record<string, unknown> | undefined;
+
+    let stampedEvent = applyEventPublishLifecycle(eventPayload, {
+      existing: existingEvent,
+      normalizedPayload,
+      publishedAt: now,
+    });
+
+    let savedEvent = await this.adminEventRepository.save({
+      ...stampedEvent,
+      status: 'published',
+      sourceId: existingEvent.sourceId ?? source.id,
+      updatedAt: now,
+      createdAt: existingEvent.createdAt,
+    });
+
+    if (this.lifecycleOrchestrator) {
+      try {
+        const lifecycleEvent = await this.lifecycleOrchestrator.processImportPublish({
+          before: existingEvent,
+          after: savedEvent,
+          candidate: canonicalCandidate,
+          source,
+          record,
+          cancelled: normalizedPayload?.isCancelled === true || normalizedPayload?.cancelled === true,
+          postponed: normalizedPayload?.isPostponed === true || normalizedPayload?.postponed === true,
+        });
+        if (
+          lifecycleEvent.updatedAt !== savedEvent.updatedAt ||
+          lifecycleEvent.status !== savedEvent.status
+        ) {
+          savedEvent = await this.adminEventRepository.save({
+            ...lifecycleEvent,
+            status: 'published',
+            sourceId: existingEvent.sourceId ?? source.id,
+            updatedAt: lifecycleEvent.updatedAt,
+            createdAt: savedEvent.createdAt,
+          });
+        }
+      } catch {
+        // Event is already persisted; lifecycle side-effects must not fail controlled publish.
+      }
+    }
+
+    if (!options.skipProvenance) {
+      if (this.eventOriginService) {
+        await this.eventOriginService.upsertFromPublish({
+          canonicalEventId: savedEvent.canonicalEventId ?? savedEvent.id,
+          source,
+          record,
+          candidate: canonicalCandidate,
+          isPrimary: false,
+        });
+      } else {
+        await this.sourceReferences.upsert({
+          id: `ref-${savedEvent.id}-${source.id}-${record.externalId}`,
+          canonicalEventId: savedEvent.canonicalEventId ?? savedEvent.id,
+          sourceId: source.id,
+          externalEventId: record.externalId,
+          originalUrl: record.originalUrl ?? record.sourceUrl,
+          rawRecordId: record.id,
+          importJobId: record.importJobId,
+          firstSeenAt: record.retrievedAt ?? record.createdAt,
+          lastSeenAt: now,
+          active: true,
+          sourcePriority: source.priority,
+          sourceQuality: source.trustScore,
+        });
+      }
+
+      if (this.fieldProvenanceWriter) {
+        const appliedFieldPaths = computeChangedPublishTrackedFields(existingEvent, savedEvent);
+        await this.fieldProvenanceWriter.writeFromPublish(
+          savedEvent.canonicalEventId ?? savedEvent.id,
+          source,
+          savedEvent,
+          {
+            publishedAt: now,
+            evidenceVerifiedAt: controlled.evidenceVerifiedAt,
+            originExternalId: record.externalId,
+            confidence: FieldTrustMergeService.confidenceFromCandidate(canonicalCandidate),
+            mergeDecisions: [],
+            appliedFieldPaths,
+          },
+        );
+      }
+    }
+
+    const updatedRecord = await this.recordRepository.update({
+      ...record,
+      status: 'imported',
+      resultingEventId: savedEvent.id,
+      reviewedBy: options.actorId,
+      reviewedAt: now,
+      validationErrors: [],
+    });
+
+    if (!controlled.skipLineupWrite) {
+      await this.writeLineupForRecord(updatedRecord, savedEvent.id);
+    }
+
+    return {
+      record: updatedRecord,
+      event: savedEvent,
+      created: false,
+    };
   }
 
   async repairLineupProjection(
