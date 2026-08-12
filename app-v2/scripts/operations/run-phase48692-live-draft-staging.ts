@@ -1,4 +1,5 @@
 /**
+ * @deprecated Retired — use run-bootshaus-source-pack-proof.ts / runSourcePackImport().
  * Phase 4.8.6.9.2c — fault-isolated unified draft staging whose only allowed
  * database mutations are idempotent import_records upserts.
  */

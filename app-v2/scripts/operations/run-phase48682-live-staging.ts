@@ -1,4 +1,5 @@
 /**
+ * @deprecated Retired — use run-bootshaus-source-pack-proof.ts / runSourcePackImport().
  * Phase 4.8.6.8.2 — bounded, read-only live staging validation.
  *
  * DB access is SELECT-only. The only writes are the two requested JSON artifacts.

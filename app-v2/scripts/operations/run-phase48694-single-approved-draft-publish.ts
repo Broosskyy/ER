@@ -1,4 +1,5 @@
 /**
+ * @deprecated Retired — use run-bootshaus-source-pack-proof.ts / runSourcePackImport().
  * Phase 4.8.6.9.4 — Single approved unified import draft test-publish.
  *
  * ER_OPS_ENV_FILE=... CONFIRM_PRODUCTION_MUTATION=exact:phase48694-single-approved-draft-publish \

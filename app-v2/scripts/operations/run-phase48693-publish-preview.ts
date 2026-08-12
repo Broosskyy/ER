@@ -1,4 +1,5 @@
 /**
+ * @deprecated Retired — use run-bootshaus-source-pack-proof.ts / runSourcePackImport().
  * Phase 4.8.6.9.3 — read-only automatic eligibility and publish preview
  * for persisted unified import drafts. No production writes.
  */
