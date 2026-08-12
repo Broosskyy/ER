@@ -264,7 +264,7 @@ describe('event title core integration', () => {
         },
       },
     });
-    expect(write.patch.priceText).toBeUndefined();
+    expect(write.patch.priceText).toMatch(/26/);
     expect(write.audit.canonicalIdentityReviewRequired).toBe(true);
   });
 

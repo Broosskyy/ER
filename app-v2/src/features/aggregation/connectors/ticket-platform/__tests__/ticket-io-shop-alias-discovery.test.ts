@@ -332,7 +332,7 @@ describe('ticket.io official shop alias discovery', () => {
     expect(discovery.discoveredShopRoot).toBeUndefined();
   });
 
-  it('H keeps three-way identity gate effective and blocks writes on conflict', () => {
+  it('H allows ticket writes when official outbound is exact despite venue divergence', () => {
     const contexts = parseAllTicketIoListRowContexts(BC173_LIST_CARD_ROW, SHOP_ROOT);
     const card = contexts.get('BcDqml12')!;
     const gate = evaluateEventEvidenceIdentityGate({
@@ -358,7 +358,8 @@ describe('ticket.io official shop alias discovery', () => {
       evidenceUrl: card.publicTicketPageUrl,
       verifiedAt: '2026-08-07T12:00:00.000Z',
     });
-    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.criticalFieldsPublishAllowed).toBe(true);
+    expect(gate.officialPageLinked).toBe(true);
 
     const write = writeCanonicalTicketFields({
       existing: {
@@ -389,12 +390,16 @@ describe('ticket.io official shop alias discovery', () => {
           venueName: card.venueName,
           publicTicketPageUrl: card.publicTicketPageUrl,
           verifiedAt: '2026-08-07T12:00:00.000Z',
+          officialPageTitle: 'Bootshaus pres. BC173 (let\'s get loco)',
+          officialPageEventDate: '2026-08-15T14:00:00+00:00',
+          officialPageVenueName: 'Bootshaus',
+          officialOutboundTicketUrls: ['https://bootshaus-club.ticket.io/BcDqml12/'],
           ticketOffers: buildListCardAdmissionOffers(card, card.publicTicketPageUrl),
         },
       },
       fillOnly: false,
     });
-    expect(write.patch.priceText).toBeUndefined();
+    expect(write.patch.priceText).toBe(card.priceText);
   });
 
   it('requires complete same-card identity before accepting alias proof', () => {

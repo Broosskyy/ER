@@ -484,6 +484,36 @@ export function evaluateOfficialPageTicketCorroboration(
   }
 
   if (canonicalOfficialAgree && !officialTicketAgree) {
+    const outboundDateAgrees = Boolean(
+      outbound.confirmed &&
+        official!.eventDate?.trim() &&
+        input.ticketEvidence.eventDate?.trim() &&
+        sameCalendarDay(official!.eventDate, input.ticketEvidence.eventDate),
+    );
+    const ticketTitleAcceptable = ticketVsCanonical.match !== 'mismatch';
+
+    if (outboundDateAgrees && ticketTitleAcceptable) {
+      if (!input.verifiedAt?.trim()) {
+        return {
+          ...withPairs,
+          reason: 'corroboration_requires_verified_at',
+          diagnostics: [...diagnostics, 'verified_at:missing'],
+        };
+      }
+
+      return {
+        ...withPairs,
+        corroborated: true,
+        threeWayOutcome: 'all_agree',
+        reason: 'official_outbound_exact_overrides_venue_divergence',
+        diagnostics: [
+          ...diagnostics,
+          'three_way:official_outbound_exact_ticket_relationship',
+          'venue_divergence:non_blocking_with_outbound',
+        ],
+      };
+    }
+
     return {
       ...withPairs,
       ticketEvidenceBlocked: true,

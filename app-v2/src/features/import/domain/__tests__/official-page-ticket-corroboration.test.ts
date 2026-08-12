@@ -293,6 +293,34 @@ describe('official page ticket corroboration contract', () => {
     expect(gate.criticalFieldsPublishAllowed).toBe(false);
     expect(gate.verdict).not.toBe('corroborated');
   });
+
+  it('G allows ticket relationship when official outbound is exact despite venue divergence', () => {
+    const result = evaluateOfficialPageTicketCorroboration({
+      canonical: {
+        eventId: 'evt-offsite',
+        title: "Bootshaus pres. BC173 (let's get loco)",
+        startDate: '2026-08-15T16:00:00+02:00',
+        venueName: 'Bootshaus',
+      },
+      ticketEvidence: {
+        listRowTitle: 'BC173 Airport Session pres. by Bootshaus III',
+        eventDate: '2026-08-15T16:00:00+02:00',
+        venueName: 'Moxy Köln/Bonn Flughafen',
+      },
+      officialPage: {
+        pageTitle: "Bootshaus pres. BC173 (let's get loco)",
+        eventDate: '2026-08-15T16:00:00+02:00',
+        venueName: 'Bootshaus',
+        outboundTicketUrls: [TICKET_IO_EVENT],
+      },
+      publicTicketPageUrl: TICKET_IO_EVENT,
+      verifiedAt: '2026-08-07T10:00:00.000Z',
+    });
+
+    expect(result.corroborated).toBe(true);
+    expect(result.ticketEvidenceBlocked).toBe(false);
+    expect(result.reason).toBe('official_outbound_exact_overrides_venue_divergence');
+  });
 });
 
 describe('event calendar day identity semantics', () => {
@@ -439,7 +467,7 @@ describe('three-way identity consistency', () => {
     });
 
     expect(gate.canonicalIdentityReviewRequired).toBe(true);
-    expect(gate.criticalFieldsPublishAllowed).toBe(false);
+    expect(gate.criticalFieldsPublishAllowed).toBe(true);
     expect(gate.suggestedIdentityCorrections.some((entry) => entry.field === 'venueName')).toBe(true);
   });
 

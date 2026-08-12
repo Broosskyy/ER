@@ -3,7 +3,7 @@ import {
   type OfficialPageIdentityEvidence,
   type SuggestedIdentityCorrection,
 } from '@/features/import/domain/official-page-ticket-corroboration';
-import { eventDatesNeedTimeOfDayReview } from '@/features/import/matching/matching-utils';
+import { eventDatesNeedTimeOfDayReview, sameCalendarDay } from '@/features/import/matching/matching-utils';
 import { evaluatePublicIdentityMatch } from '@/features/import/ticket-platform-identity/identity-match';
 import type { EventIdentitySnapshot, PublicIdentityEvidence } from '@/features/import/ticket-platform-identity/types';
 
@@ -157,6 +157,30 @@ export function evaluateEventEvidenceIdentityGate(
   };
 
   if (corroboration.canonicalIdentityReviewRequired) {
+    const outboundTicketFieldsAllowed = Boolean(
+      officialPageLinked &&
+        input.officialPage?.venueName?.trim() &&
+        corroboration.officialVsTicket?.venueAgrees &&
+        input.evidence.eventDate?.trim() &&
+        input.event.startDate?.trim() &&
+        sameCalendarDay(input.event.startDate, input.evidence.eventDate) &&
+        identityMatch.match !== 'mismatch',
+    );
+
+    if (outboundTicketFieldsAllowed) {
+      return {
+        ...blockedBase,
+        verdict: identityMatch.match === 'exact' ? 'exact' : 'corroborated',
+        criticalFieldsPublishAllowed: true,
+        reason: 'canonical_identity_review_with_outbound_ticket_confirmed',
+        diagnostics: [
+          ...diagnostics,
+          'canonical_identity_review_required',
+          'ticket_fields:allowed_via_official_outbound_exact',
+        ],
+      };
+    }
+
     return {
       ...blockedBase,
       verdict: 'partial_review_only',

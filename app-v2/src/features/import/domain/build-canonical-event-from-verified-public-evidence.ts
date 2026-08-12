@@ -38,6 +38,7 @@ export interface VerifiedOfficialEvidence {
   minimumAge?: number;
   organizerName?: string;
   outboundTicketUrls?: string[];
+  countryCode?: string;
   verifiedAt?: string;
 }
 
@@ -316,6 +317,7 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
     venueAddress: official?.venueAddress,
     venuePostalCode: official?.venuePostalCode,
     venueCity: official?.venueCity ?? identityEvent.venueCity,
+    venueCountryCode: official?.countryCode,
     websiteUrl: official?.pageUrl ?? identityEvent.websiteUrl,
     imageUrl: official?.imageUrl,
     organizerName: official?.organizerName,
