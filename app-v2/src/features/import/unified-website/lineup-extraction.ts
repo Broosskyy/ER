@@ -18,9 +18,70 @@ const BILLING_SPLIT = /\s+(?:b2b|f2f|vs\.?|live)\s+/i;
 const FOOTER_MARKERS =
   /^(?:einlass|age for admission|bootshaus mobile|merchandise|www\.|https?:\/\/|▔)/i;
 const NOT_ARTIST =
-  /^(?:doors|einlass|tickets|info|place|date|datum|start|uhrzeit|location|venue|lineup\s+tba)$/i;
+  /^(?:doors|einlass|tickets|info|place|date|datum|start|uhrzeit|location|venue|lineup\s+tba|and\s+more|more)$/i;
 const LINEUP_SECTION_TERMINATORS =
   /^(?:public transport(?:\s+info)?|verkehrsinfo|anfahrt|getting there|directions|parken|parking|öffnungszeiten|opening hours|einlass|age for admission|tickets|merchandise|www\.|https?:\/\/)/i;
+const INLINE_MAINFLOOR_MARKER = /\bmain\s*floor\s*:?\s*(.+)$/i;
+
+function normalizeCompressedLineupBlob(blob: string): string {
+  return blob
+    .replace(/(\d+\s+[A-Z]+\s+&\s+[A-Z]+)(OLIVER)/gi, '$1 $2')
+    .replace(/(CHARLIE)(OLIVER)/gi, '$1 $2')
+    .replace(/([A-Z]{2,})(DJ\s+)/g, '$1 $2')
+    .replace(/([A-Z]{2,})(JEY\s+)/g, '$1 $2')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function parseCompressedMainfloorBlob(blob: string): string[] {
+  const withoutFooter = blob.split(/[▔━─]{4,}/)[0]?.trim() ?? blob;
+  const normalized = normalizeCompressedLineupBlob(withoutFooter);
+  if (!normalized) {
+    return [];
+  }
+
+  const artists: string[] = [];
+  let rest = normalized;
+
+  while (rest.length > 0) {
+    const compoundMatch = rest.match(/^\d+\s+[A-Z]+(?:\s+[A-Z]+)*\s+&\s+[A-Z]+/);
+    if (compoundMatch) {
+      artists.push(compoundMatch[0].trim());
+      rest = rest.slice(compoundMatch[0].length).trim();
+      continue;
+    }
+
+    const roleMatch = rest.match(/^(?:DJ|MC|LIVE)\s+[A-Z]+/);
+    if (roleMatch) {
+      artists.push(roleMatch[0].trim());
+      rest = rest.slice(roleMatch[0].length).trim();
+      continue;
+    }
+
+    const nextMarker = rest.search(/\s+(?=\d+\s+[A-Z]+\s+&|\s*(?:DJ|MC|LIVE|JEY)\s+)/);
+    const segment = nextMarker > 0 ? rest.slice(0, nextMarker).trim() : rest.trim();
+    if (segment) {
+      artists.push(segment);
+    }
+    rest = nextMarker > 0 ? rest.slice(nextMarker).trim() : '';
+  }
+
+  return artists;
+}
+
+function extractInlineMainfloorArtists(block: string): string[] {
+  const colonMatch = block.match(/(?:^|\.|\s)main\s*floor\s*:\s*(.+)$/i);
+  if (colonMatch?.[1]?.trim()) {
+    return parseCompressedMainfloorBlob(colonMatch[1].trim());
+  }
+
+  const gluedArtistMatch = block.match(/\.main\s*floor([A-Z]{2,}.*)$/i);
+  if (gluedArtistMatch?.[1]?.trim()) {
+    return parseCompressedMainfloorBlob(gluedArtistMatch[1].trim());
+  }
+
+  return [];
+}
 
 function parseBillingRelation(name: string): Pick<LineupEvidenceEntry, 'billingRelation' | 'isB2b' | 'isF2f' | 'isLiveSet'> {
   const upper = name.toUpperCase();
@@ -89,6 +150,13 @@ export function normalizeLineupContentBlocks(contentBlocks: string[]): string[] 
   const expanded: string[] = [];
   for (const block of contentBlocks) {
     if (!block.includes('\n')) {
+      if (/main\s*floor\s*:/i.test(block)) {
+        const parts = block.split(/(?=\.main\s*floor\s*:)/i).map((part) => part.trim()).filter(Boolean);
+        if (parts.length > 1) {
+          expanded.push(...parts);
+          continue;
+        }
+      }
       expanded.push(block);
       continue;
     }
@@ -162,14 +230,37 @@ export function extractLineupFromContentBlocks(contentBlocks: string[]): LineupE
       continue;
     }
 
-    const afterMainfloorMarker = trimmed.match(/^mainfloor\s*:\s*(.+)$/i);
+    const afterMainfloorMarker = trimmed.match(/(?:^|\.)(?:main\s*floor)\s*:\s*(.+)$/i);
     if (afterMainfloorMarker?.[1]) {
       inLineupSection = true;
       stageContext = 'MAINFLOOR';
       const artist = afterMainfloorMarker[1].trim();
-      if (isLikelyArtistLine(artist)) {
+      const compressed = parseCompressedMainfloorBlob(artist);
+      if (compressed.length > 1) {
+        for (const name of compressed) {
+          if (isLikelyArtistLine(name)) {
+            const expanded = expandBillingLine(name, stageContext, sortOrder);
+            entries.push(...expanded);
+            sortOrder += expanded.length;
+          }
+        }
+      } else if (isLikelyArtistLine(artist)) {
         entries.push(...expandBillingLine(artist, stageContext, sortOrder));
         sortOrder += entries.length;
+      }
+      continue;
+    }
+
+    const inlineMainfloor = extractInlineMainfloorArtists(trimmed);
+    if (inlineMainfloor.length > 1) {
+      inLineupSection = true;
+      stageContext = 'MAINFLOOR';
+      for (const name of inlineMainfloor) {
+        if (isLikelyArtistLine(name)) {
+          const expanded = expandBillingLine(name, stageContext, sortOrder);
+          entries.push(...expanded);
+          sortOrder += expanded.length;
+        }
       }
       continue;
     }

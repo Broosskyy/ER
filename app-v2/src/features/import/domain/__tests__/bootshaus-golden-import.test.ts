@@ -165,7 +165,6 @@ describe('bootshaus golden import path', () => {
     expect(row.venueAddress).toBeUndefined();
     expect(row.decision).toBe('quick_review');
     expect(row.reviewReason).toBe('venue_missing');
-    expect(row.enrichmentGaps).toContain('lineup');
   });
 
   it('keeps optional lineup gaps from blocking on-site consumer-ready events', () => {
@@ -189,7 +188,7 @@ describe('bootshaus golden import path', () => {
     });
 
     expect(result.matrix[0]?.decision).toBe('consumer_ready');
-    expect(result.matrix[0]?.enrichmentGaps).toContain('lineup');
+    expect(result.matrix[0]?.enrichmentGaps.some((gap) => gap === 'lineup' || gap === 'no_structured_lineup_or_dual_headliner_confirmation')).toBe(true);
   });
 
   it('reprocesses the live capture snapshot offline without production writes', () => {

@@ -69,6 +69,8 @@ export function normalizeCanonicalEventDescription(
   }
 
   let text = repairEscapedNewlines(String(value));
+  text = text.replace(/\bmain\s*floor\.(?=[A-Z])/gi, 'mainfloor. ');
+  text = text.replace(/([a-z])([A-Z][A-Z]{3,}:)/g, '$1 $2');
   text = stripMetadataLines(text);
   text = decodeHtmlEntities(stripHtmlPreservingLines(text));
   text = stripMarketingEmojiSpam(text);

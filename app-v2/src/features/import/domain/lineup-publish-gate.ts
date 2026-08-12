@@ -5,6 +5,12 @@ import {
 } from '@/features/import/domain/event-evidence-identity-gate';
 import type { OfficialPageIdentityEvidence } from '@/features/import/domain/official-page-ticket-corroboration';
 import {
+  dedupeLineupEvidenceEntries,
+  detectLineupNotAnnouncedSignals,
+  extractPresByHeadlinerFromTitle,
+  extractPresentedArtistsFromTitle,
+} from '@/features/import/domain/golden-content-quality-gate';
+import {
   analyzeEventTitleCore,
   compareEventTitleCores,
 } from '@/features/import/matching/event-title-core';
@@ -138,6 +144,48 @@ function resolveSingleHeadlinerArtist(input: LineupPublishGateInput): {
   return { artist, officialTitleConfirms, descriptionConfirms };
 }
 
+function buildTitleArtistEntries(
+  title: string,
+  inclusionReason: string,
+): LineupEvidenceEntry[] {
+  const presented = extractPresentedArtistsFromTitle(title);
+  if (presented.length === 0) {
+    return [];
+  }
+  return presented.map((name, index) => ({
+    sortOrder: index,
+    displayName: name,
+    rawSourceSpelling: name,
+    normalizedName: name,
+    billingRelation: 'SOLO',
+    isB2b: false,
+    isF2f: false,
+    isLiveSet: false,
+    confidence: 0.78,
+    reviewState: 'not_reviewed',
+    inclusionReason,
+  }));
+}
+
+function buildHeadlinerEntry(
+  artist: string,
+  inclusionReason: string,
+): LineupEvidenceEntry {
+  return {
+    sortOrder: 0,
+    displayName: artist,
+    rawSourceSpelling: artist,
+    normalizedName: artist,
+    billingRelation: 'HEADLINER',
+    isB2b: false,
+    isF2f: false,
+    isLiveSet: false,
+    confidence: 0.82,
+    reviewState: 'not_reviewed',
+    inclusionReason,
+  };
+}
+
 function identityAllowsLineupPublish(
   identity: ReturnType<typeof evaluateEventEvidenceIdentityGate>,
 ): boolean {
@@ -168,6 +216,17 @@ export function evaluateLineupPublishGate(input: LineupPublishGateInput): Lineup
 
   const normalizedBlocks = normalizeLineupContentBlocks(input.contentBlocks);
   const extraction = extractLineupFromContentBlocks(normalizedBlocks);
+  const dedupedEntries = dedupeLineupEvidenceEntries(extraction.entries);
+  const dedupedExtraction = {
+    ...extraction,
+    entries: dedupedEntries,
+    state:
+      dedupedEntries.length > 0
+        ? ('explicit_artists' as const)
+        : extraction.state === 'tba'
+          ? ('tba' as const)
+          : ('empty' as const),
+  };
 
   if (extraction.state === 'tba') {
     return {
@@ -175,18 +234,78 @@ export function evaluateLineupPublishGate(input: LineupPublishGateInput): Lineup
       reason: identityAllowsLineupPublish(identity)
         ? 'lineup_tba_confirmed'
         : `lineup_review_only:${identity.verdict}`,
-      extraction,
+      extraction: dedupedExtraction,
     };
   }
 
-  if (extraction.state === 'explicit_artists' && extraction.entries.length > 0) {
+  if (detectLineupNotAnnouncedSignals(normalizedBlocks)) {
+    return {
+      allowed: identityAllowsLineupPublish(identity),
+      reason: identityAllowsLineupPublish(identity)
+        ? 'lineup_not_announced'
+        : `lineup_review_only:${identity.verdict}`,
+      extraction: {
+        state: 'empty',
+        entries: [],
+        inclusionReason: 'Official source indicates lineup not yet announced',
+      },
+    };
+  }
+
+  if (dedupedExtraction.state === 'explicit_artists' && dedupedExtraction.entries.length > 0) {
     return {
       allowed: identityAllowsLineupPublish(identity),
       reason: identityAllowsLineupPublish(identity)
         ? 'structured_lineup_identity_ok'
         : `lineup_review_only:${identity.verdict}`,
-      extraction,
+      extraction: dedupedExtraction,
     };
+  }
+
+  const presByHeadliner = extractPresByHeadlinerFromTitle(input.event.title);
+  if (
+    presByHeadliner &&
+    new RegExp(`\\b${escapeRegExp(presByHeadliner)}\\b`, 'i').test(
+      input.identityEvidence?.officialPage?.pageTitle ??
+        input.identityEvidence?.evidence?.pageTitle ??
+        input.pageEvidence?.pageTitle ??
+        input.event.title,
+    ) &&
+    identityAllowsLineupPublish(identity)
+  ) {
+    const entry = buildHeadlinerEntry(
+      presByHeadliner,
+      'Headliner confirmed by pres.-by title pattern and official page title',
+    );
+    return {
+      allowed: true,
+      reason: 'single_headliner_pres_by_title',
+      extraction: {
+        state: 'explicit_artists',
+        entries: [entry],
+        inclusionReason: entry.inclusionReason,
+      },
+      headlinerOnly: presByHeadliner,
+    };
+  }
+
+  const titleArtists = buildTitleArtistEntries(
+    input.event.title,
+    'Artists inferred from presented-by event title with compound act preservation',
+  );
+  if (titleArtists.length > 0 && identityAllowsLineupPublish(identity)) {
+    const dedupedTitleArtists = dedupeLineupEvidenceEntries(titleArtists);
+    if (dedupedTitleArtists.length > 0) {
+      return {
+        allowed: true,
+        reason: 'title_presented_artists_identity_ok',
+        extraction: {
+          state: 'explicit_artists',
+          entries: dedupedTitleArtists,
+          inclusionReason: dedupedTitleArtists[0]?.inclusionReason ?? 'Title presented artists',
+        },
+      };
+    }
   }
 
   const headliner = resolveSingleHeadlinerArtist(input);
@@ -196,20 +315,10 @@ export function evaluateLineupPublishGate(input: LineupPublishGateInput): Lineup
     headliner.descriptionConfirms &&
     identityAllowsLineupPublish(identity)
   ) {
-    const entry: LineupEvidenceEntry = {
-      sortOrder: 0,
-      displayName: headliner.artist,
-      rawSourceSpelling: headliner.artist,
-      normalizedName: headliner.artist,
-      billingRelation: 'HEADLINER',
-      isB2b: false,
-      isF2f: false,
-      isLiveSet: false,
-      confidence: 0.82,
-      reviewState: 'not_reviewed',
-      inclusionReason:
-        'Headliner confirmed by shared title core, official title mention, and description performance evidence',
-    };
+    const entry = buildHeadlinerEntry(
+      headliner.artist,
+      'Headliner confirmed by shared title core, official title mention, and description performance evidence',
+    );
     return {
       allowed: true,
       reason: 'single_headliner_dual_confirmation',
@@ -228,13 +337,13 @@ export function evaluateLineupPublishGate(input: LineupPublishGateInput): Lineup
       reason: !headliner.officialTitleConfirms
         ? 'single_headliner_blocked_title_not_confirmed'
         : 'single_headliner_blocked_description_not_confirmed',
-      extraction,
+      extraction: dedupedExtraction,
     };
   }
 
   return {
     allowed: false,
     reason: 'no_structured_lineup_or_dual_headliner_confirmation',
-    extraction,
+    extraction: dedupedExtraction,
   };
 }

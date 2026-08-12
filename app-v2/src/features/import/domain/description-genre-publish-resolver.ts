@@ -4,6 +4,13 @@ import { normalizeCanonicalEventDescription } from '@/features/import/domain/can
 import { normalizeCanonicalGenreLabels } from '@/features/events/formatting/canonical-genre-normalizer';
 import { isTicketIoPlaceholderDescription } from '@/features/aggregation/connectors/ticket-platform/ticket-io-field-quality';
 import { evaluateEventEvidenceIdentityGate } from '@/features/import/domain/event-evidence-identity-gate';
+import {
+  detectDescriptionContamination,
+  detectDescriptionSpacingErrors,
+  isLineupChromeDescription,
+  normalizeOfficialStructuredGenres,
+  stripNonEditorialLineupFromDescription,
+} from '@/features/import/domain/golden-content-quality-gate';
 import type { EventIdentitySnapshot } from '@/features/import/ticket-platform-identity/types';
 import {
   applyDescriptionBoundaries,
@@ -25,6 +32,9 @@ export interface DescriptionGenrePublishResult {
   descriptionProvenance?: FieldPublishProvenance;
   genreProvenance?: FieldPublishProvenance;
   blockedReason?: string;
+  descriptionContaminated?: boolean;
+  descriptionSpacingErrors?: boolean;
+  rejectedGenreSignals?: Array<{ signal: string; reason: string }>;
 }
 
 const NAV_BOILERPLATE =
@@ -67,16 +77,31 @@ export function stripAffenkaefigDescriptionNoise(raw: string): {
   if (raw.includes('<')) {
     blocks = extractDescriptionBoundariesFromHtml(raw).contentBlocks;
   } else {
-    blocks = raw
-      .split(/\n+/)
+    const inlineParts = raw
+      .split(/[\s▔━─\-_=]{8,}/)
       .map((line) => line.trim())
       .filter(Boolean);
+    blocks =
+      inlineParts.length > 1
+        ? inlineParts
+        : raw
+            .split(/\n+/)
+            .map((line) => line.trim())
+            .filter(Boolean);
   }
 
   const kept: string[] = [];
   for (const block of blocks) {
     if (NAV_BOILERPLATE.test(block.trim())) {
       removed.push(block.slice(0, 80));
+      continue;
+    }
+    if (/^>\s*line-?up/i.test(block.trim())) {
+      removed.push('lineup_chrome_fragment');
+      continue;
+    }
+    if (/^line\s*up\s*:?\s*$/i.test(block.trim())) {
+      removed.push('lineup_heading_only');
       continue;
     }
     if (/checkout|ticketing|iframe|cookie-banner|comment-form/i.test(block)) {
@@ -89,7 +114,11 @@ export function stripAffenkaefigDescriptionNoise(raw: string): {
   const bounded = applyDescriptionBoundaries(kept);
   removed.push(...bounded.removedBlocks.map((entry) => entry.reason));
 
-  const cleaned = bounded.normalizedDescription ?? bounded.cleanedText;
+  let cleaned = bounded.normalizedDescription ?? bounded.cleanedText;
+  if (cleaned) {
+    cleaned = cleaned.replace(/^events\s*\n+/i, '').trim();
+    cleaned = cleaned.replace(/\bmain\s*floor\.(?=[A-Z])/gi, 'mainfloor. ');
+  }
   return {
     cleaned: cleaned ? normalizeCanonicalEventDescription(cleaned) : undefined,
     removed,
@@ -132,6 +161,7 @@ export function resolveDescriptionGenrePublish(input: {
   existingGenres?: string[];
   officialDescription?: string;
   officialHtml?: string;
+  officialGenreLabels?: string[];
   ticketPlatformDescription?: string;
   ticketPlatformGenres?: string[];
   event: EventIdentitySnapshot;
@@ -145,28 +175,95 @@ export function resolveDescriptionGenrePublish(input: {
   observedAt?: string;
 }): DescriptionGenrePublishResult {
   const observedAt = input.observedAt ?? new Date().toISOString();
-  const officialRaw = input.officialHtml ?? input.officialDescription;
-  const official =
-    officialRaw !== undefined ? stripAffenkaefigDescriptionNoise(officialRaw).cleaned : undefined;
+  const structuredGenres = normalizeOfficialStructuredGenres(input.officialGenreLabels);
+  const rejectedGenreSignals: Array<{ signal: string; reason: string }> = [];
 
-  if (official?.trim()) {
-    const genreResult = extractGenresFromTrustedText(official, observedAt);
+  const officialRaw = input.officialHtml ?? input.officialDescription;
+  const strippedOfficial =
+    officialRaw !== undefined ? stripAffenkaefigDescriptionNoise(officialRaw).cleaned : undefined;
+  const editorialDescription = strippedOfficial
+    ? stripNonEditorialLineupFromDescription(strippedOfficial)
+    : undefined;
+  const normalizedEditorial = editorialDescription
+    ? normalizeCanonicalEventDescription(editorialDescription)
+    : undefined;
+  const contamination = detectDescriptionContamination(normalizedEditorial);
+  const spacingErrors = detectDescriptionSpacingErrors(normalizedEditorial);
+
+  if (normalizedEditorial?.trim()) {
+    const genreResult = extractGenresFromTrustedText(normalizedEditorial, observedAt);
+    const mergedGenres =
+      structuredGenres ??
+      genreResult?.genres ??
+      input.existingGenres;
+    if (structuredGenres && genreResult?.genres?.length) {
+      for (const genre of genreResult.genres) {
+        if (!structuredGenres.includes(genre)) {
+          rejectedGenreSignals.push({ signal: genre, reason: 'text_genre_subordinate_to_structured_tags' });
+        }
+      }
+    }
     return {
-      description: official,
-      genreLabels: genreResult?.genres ?? input.existingGenres,
-      descriptionProvenance: {
-        field: 'description',
+      description: contamination.contaminated ? undefined : normalizedEditorial,
+      genreLabels: mergedGenres,
+      descriptionProvenance: contamination.contaminated
+        ? undefined
+        : {
+            field: 'description',
+            sourceId: input.sourceId,
+            extractionStrategy: 'official_body_boundaries',
+            observedAt,
+            inclusionReason: 'Official website body after boundary stripping',
+          },
+      genreProvenance: structuredGenres
+        ? {
+            field: 'genres',
+            sourceId: input.sourceId,
+            extractionStrategy: 'official_structured_tags',
+            observedAt,
+            inclusionReason: 'Structured official genre tags',
+            rawEvidence: input.officialGenreLabels?.join(', '),
+          }
+        : genreResult?.provenance,
+      blockedReason:
+        contamination.contaminated && normalizedEditorial?.trim()
+          ? 'description_contaminated'
+          : undefined,
+      descriptionContaminated:
+        contamination.contaminated && Boolean(normalizedEditorial?.trim()),
+      descriptionSpacingErrors: spacingErrors,
+      rejectedGenreSignals,
+    };
+  }
+
+  if (structuredGenres?.length) {
+    return {
+      genreLabels: structuredGenres,
+      genreProvenance: {
+        field: 'genres',
         sourceId: input.sourceId,
-        extractionStrategy: 'official_body_boundaries',
+        extractionStrategy: 'official_structured_tags',
         observedAt,
-        inclusionReason: 'Official website body after boundary stripping',
+        inclusionReason: 'Structured official genre tags without editorial description',
+        rawEvidence: input.officialGenreLabels?.join(', '),
       },
-      genreProvenance: genreResult?.provenance,
+      blockedReason:
+        contamination.contaminated && Boolean(strippedOfficial?.trim())
+          ? 'description_contaminated'
+          : undefined,
+      descriptionContaminated:
+        contamination.contaminated && Boolean(strippedOfficial?.trim()),
+      descriptionSpacingErrors: spacingErrors,
+      rejectedGenreSignals,
     };
   }
 
   const existingUsable = input.existingDescription?.trim();
-  if (existingUsable && !isTicketIoPlaceholderDescription(existingUsable)) {
+  if (
+    existingUsable &&
+    !isTicketIoPlaceholderDescription(existingUsable) &&
+    !isLineupChromeDescription(existingUsable)
+  ) {
     const genreResult = extractGenresFromTrustedText(existingUsable, observedAt);
     return {
       description: normalizeCanonicalEventDescription(existingUsable),

@@ -333,6 +333,7 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
   const descGenre = resolveDescriptionGenrePublish({
     event: identityEvent,
     officialDescription: official?.description,
+    officialGenreLabels: official?.genreLabels,
     ticketPlatformDescription: undefined,
     ticketPlatformGenres: ticket?.ticketPlatformGenres,
     ticketEvidence: ticket
@@ -349,9 +350,7 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
   if (descGenre.description) {
     canonicalPatch.description = descGenre.description;
   }
-  if (official?.genreLabels?.length) {
-    canonicalPatch.genreLabels = official.genreLabels;
-  } else if (descGenre.genreLabels?.length) {
+  if (descGenre.genreLabels?.length) {
     canonicalPatch.genreLabels = descGenre.genreLabels;
   }
   if (descGenre.blockedReason) {
@@ -388,7 +387,7 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
     contentBlocks: official?.lineupContentBlocks ?? [],
     identityEvidence: {
       evidence: {
-        pageTitle: ticket?.pageTitle,
+        pageTitle: ticket?.pageTitle ?? official?.pageTitle,
         listRowTitle: ticket?.listRowTitle,
         eventDate: ticket?.eventDate,
         venueName: ticket?.venueName,
@@ -400,7 +399,9 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
       verifiedAt: observedAt,
     },
     descriptionMentionsArtist: undefined,
-    contaminationDetected: conflictingBlocked,
+    contaminationDetected:
+      conflictingBlocked ||
+      (descGenre.descriptionContaminated === true && Boolean(descGenre.description)),
   });
 
   const lineupPatch: GoldenLineupPatch = {
@@ -409,8 +410,19 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
     entries: lineupGate.extraction.entries,
   };
 
-  if (!lineupGate.allowed && lineupGate.reason !== 'lineup_tba_confirmed') {
+  const optionalLineupReasons = new Set([
+    'lineup_tba_confirmed',
+    'lineup_not_announced',
+    'no_structured_lineup_or_dual_headliner_confirmation',
+  ]);
+  if (
+    !lineupGate.allowed &&
+    !optionalLineupReasons.has(lineupGate.reason) &&
+    !lineupGate.reason.startsWith('lineup_review_only:')
+  ) {
     reviewReasons.push(`lineup:${lineupGate.reason}`);
+  } else if (lineupGate.reason === 'lineup_not_announced') {
+    reviewReasons.push('lineup_not_announced');
   }
 
   const disposition = resolveDisposition(identityGate, conflictingBlocked);

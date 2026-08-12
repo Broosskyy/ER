@@ -5,6 +5,10 @@ import type { TicketIoListCardEvidence } from '@/features/aggregation/connectors
 import { projectCanonicalEventFields } from '@/features/events/formatting/canonical-event-projection';
 import { resolveConsumerTicketPresentation } from '@/features/events/formatting/resolve-consumer-ticket-presentation';
 import { eventVenueNamesMatch } from '@/features/event-detail/utils/event-venue-identity';
+import {
+  isLineupBlobArtistName,
+  isLineupPlaceholderArtist,
+} from '@/features/events/domain/lineup-artist-quality';
 import type { ImportSource } from '@/features/import/models/types';
 import type { NormalizedEventCandidate } from '@/features/import/models/normalized-event-candidate';
 import { eventNormalizer } from '@/features/import/normalization/event-normalizer';
@@ -31,6 +35,16 @@ import {
   type VerifiedPublicEvidenceBundle,
   type VerifiedTicketEvidence,
 } from '@/features/import/domain/build-canonical-event-from-verified-public-evidence';
+import {
+  detectCompoundActSplitRisk,
+  detectDescriptionContamination,
+  detectDescriptionSpacingErrors,
+  extractStructuredRunningOrderNames,
+  hasDuplicateLineupNames,
+  isInvalidStructuredLineupValue,
+  isLineupChromeDescription,
+  normalizeOfficialStructuredGenres,
+} from '@/features/import/domain/golden-content-quality-gate';
 import type { ImportPublishFieldPatch } from '@/features/import/services/import-event-field-mapper';
 
 export type BootshausImportDecision =
@@ -52,6 +66,16 @@ export interface BootshausConsumerErrorCounters {
   invalidLineupEntries: number;
   unsupportedGenres: number;
   dbFallbackFieldsUsed: number;
+  descriptionContamination: number;
+  descriptionSpacingErrors: number;
+  lineupEvidenceLost: number;
+  lineupDuplicates: number;
+  compoundActSplit: number;
+  explicitGenreEvidenceLost: number;
+  venueOrOrganizerUsedAsGenre: number;
+  ticketFieldsChanged: number;
+  venueFieldContamination: number;
+  urlRoleErrors: number;
 }
 
 export const EMPTY_BOOTSHAUS_CONSUMER_ERROR_COUNTERS: BootshausConsumerErrorCounters = {
@@ -67,6 +91,16 @@ export const EMPTY_BOOTSHAUS_CONSUMER_ERROR_COUNTERS: BootshausConsumerErrorCoun
   invalidLineupEntries: 0,
   unsupportedGenres: 0,
   dbFallbackFieldsUsed: 0,
+  descriptionContamination: 0,
+  descriptionSpacingErrors: 0,
+  lineupEvidenceLost: 0,
+  lineupDuplicates: 0,
+  compoundActSplit: 0,
+  explicitGenreEvidenceLost: 0,
+  venueOrOrganizerUsedAsGenre: 0,
+  ticketFieldsChanged: 0,
+  venueFieldContamination: 0,
+  urlRoleErrors: 0,
 };
 
 export interface BootshausGoldenEventMatrixRow {
@@ -479,19 +513,27 @@ function readMetadataTextBlock(value: unknown): string | undefined {
 }
 
 function buildLineupContentBlocks(raw: RawImportedEvent, candidate: NormalizedEventCandidate): string[] {
-  const metadata = raw.sourceMetadata ?? {};
-  const runningOrder = readMetadataTextBlock(metadata.runningOrder);
-  const timetable = readMetadataTextBlock(metadata.timetable);
-  if (runningOrder) {
-    return [runningOrder];
+  const metadata = (raw.sourceMetadata ?? {}) as Record<string, unknown>;
+  const structuredNames = extractStructuredRunningOrderNames(metadata);
+  const validStructured = structuredNames.filter((name) => !isInvalidStructuredLineupValue(name));
+
+  const descriptionBlocks: string[] = [];
+  if (candidate.description?.trim() && !isLineupChromeDescription(candidate.description)) {
+    descriptionBlocks.push(candidate.description.trim());
   }
-  if (timetable) {
-    return [timetable];
+
+  const runningOrderText = readMetadataTextBlock(metadata.runningOrder);
+  const timetableText = readMetadataTextBlock(metadata.timetable);
+  if (validStructured.length > 0) {
+    return [...descriptionBlocks, ...validStructured];
   }
-  if (candidate.description?.trim()) {
-    return [candidate.description.trim()];
+  if (runningOrderText && !isInvalidStructuredLineupValue(runningOrderText)) {
+    return [...descriptionBlocks, runningOrderText];
   }
-  return [];
+  if (timetableText) {
+    return [...descriptionBlocks, timetableText];
+  }
+  return descriptionBlocks;
 }
 
 export function mapOfficialRawToVerifiedEvidence(
@@ -774,14 +816,24 @@ function countRowConsumerErrors(
   official: VerifiedOfficialEvidence,
   ticket?: VerifiedTicketEvidence,
   matchReason?: string,
+  buildResult?: BuildCanonicalEventFromVerifiedPublicEvidenceResult,
 ): BootshausConsumerErrorCounters {
   const counters = { ...EMPTY_BOOTSHAUS_CONSUMER_ERROR_COUNTERS };
   const venueCity = patch.venueCity?.trim() ?? '';
   const venueName = patch.venueName?.trim() ?? '';
   const venueAddress = patch.venueAddress?.trim() ?? '';
 
+  const descriptionContamination = detectDescriptionContamination(patch.description);
+  if (descriptionContamination.contaminated) {
+    counters.descriptionContamination += 1;
+  }
+  if (detectDescriptionSpacingErrors(patch.description?.replace(/\bmain\s*floor\.(?=[A-Z])/gi, 'mainfloor. '))) {
+    counters.descriptionSpacingErrors += 1;
+  }
+
   if (venueCity && (POSTAL_CODE_PATTERN.test(venueCity) || venueCity.includes(','))) {
     counters.fullAddressInVenueCity += 1;
+    counters.venueFieldContamination += 1;
   }
   if (
     venueName &&
@@ -789,6 +841,7 @@ function countRowConsumerErrors(
       (STREET_IN_LABEL_PATTERN.test(venueName) && venueName.includes(',')))
   ) {
     counters.addressUsedAsVenueName += 1;
+    counters.venueFieldContamination += 1;
   }
   if (venueName && venueAddress) {
     const addressParts = venueAddress
@@ -802,9 +855,11 @@ function countRowConsumerErrors(
   }
   if (patch.websiteUrl && TICKET_IO_HOST_PATTERN.test(patch.websiteUrl)) {
     counters.ticketUrlInWebsiteUrl += 1;
+    counters.urlRoleErrors += 1;
   }
   if (patch.ticketUrl && patch.ticketUrl.includes(BOOTSHAUS_OFFICIAL_HOST)) {
     counters.officialUrlInTicketUrl += 1;
+    counters.urlRoleErrors += 1;
   }
   if (
     patch.ticketUrl &&
@@ -829,13 +884,51 @@ function countRowConsumerErrors(
     counters.addOnUsedAsAdmission += 1;
   }
   for (const entry of lineup) {
-    if (entry.length < 2 || entry.includes('http') || entry.includes('@')) {
+    if (
+      isLineupPlaceholderArtist(entry) ||
+      isLineupBlobArtistName(entry) ||
+      entry.length < 2 ||
+      entry.includes('http') ||
+      entry.includes('@') ||
+      /^>\s*line-?up/i.test(entry)
+    ) {
       counters.invalidLineupEntries += 1;
     }
   }
+  if (hasDuplicateLineupNames(lineup)) {
+    counters.lineupDuplicates += 1;
+  }
+  const lineupSourceText = [
+    official.description ?? '',
+    ...(official.lineupContentBlocks ?? []),
+    official.pageTitle ?? '',
+  ].join('\n');
+  if (detectCompoundActSplitRisk(lineupSourceText, lineup)) {
+    counters.compoundActSplit += 1;
+  }
+
+  const officialStructuredGenres = normalizeOfficialStructuredGenres(official.genreLabels);
+  if (officialStructuredGenres?.length) {
+    const patchGenres = patch.genreLabels ?? [];
+    for (const genre of officialStructuredGenres) {
+      if (!patchGenres.includes(genre)) {
+        counters.explicitGenreEvidenceLost += 1;
+      }
+    }
+  }
+
   for (const genre of patch.genreLabels ?? []) {
     if (/ticket|admission|venue/i.test(genre)) {
       counters.unsupportedGenres += 1;
+    }
+    if (/bootshaus|organizer|venue/i.test(genre)) {
+      counters.venueOrOrganizerUsedAsGenre += 1;
+    }
+  }
+
+  if (buildResult) {
+    if (buildResult.reviewReasons.some((reason) => reason.startsWith('lineup:lineup_evidence_lost'))) {
+      counters.lineupEvidenceLost += 1;
     }
   }
 
@@ -855,6 +948,20 @@ function mergeConsumerErrorCounters(
 
 function isBlockingReviewReason(reason: string): boolean {
   if (reason === 'venue_missing' || reason === 'venue_conflict') {
+    return true;
+  }
+  if (reason === 'description_contaminated') {
+    return true;
+  }
+  if (
+    reason === 'lineup_evidence_lost' ||
+    reason === 'lineup_duplicate' ||
+    reason === 'lineup_grouping_ambiguous' ||
+    reason === 'genres_evidence_lost'
+  ) {
+    return true;
+  }
+  if (reason.startsWith('lineup:lineup_evidence_lost') || reason.startsWith('lineup:lineup_duplicate')) {
     return true;
   }
   if (reason.startsWith('ticket_match_conflict:')) {
@@ -908,10 +1015,24 @@ function deriveEnrichmentGaps(input: {
   }
 
   if (input.lineup.length === 0) {
-    gaps.add('lineup');
+    const lineupReason = input.buildResult.lineupPatch.reason;
+    if (lineupReason === 'lineup_not_announced') {
+      gaps.add('lineup_not_announced');
+    } else if (
+      lineupReason === 'no_structured_lineup_or_dual_headliner_confirmation' &&
+      (input.official.imageUrl || input.official.description?.includes('MAINFLOOR'))
+    ) {
+      gaps.add('lineup_requires_media_extraction');
+    } else if (lineupReason !== 'lineup_tba_confirmed') {
+      gaps.add('lineup');
+    }
   }
-  if (!input.canonicalPatch.genreLabels?.length && !input.official.genreLabels?.length) {
-    gaps.add('genres');
+  if (!input.canonicalPatch.genreLabels?.length) {
+    if (input.official.imageUrl && !input.official.genreLabels?.length) {
+      gaps.add('genres_requires_media_extraction');
+    } else {
+      gaps.add('genres_missing');
+    }
   }
   if (!input.canonicalPatch.description?.trim() && !input.official.description?.trim()) {
     gaps.add('description');
@@ -927,6 +1048,10 @@ function deriveEnrichmentGaps(input: {
   }
   if (!input.canonicalPatch.ticketUrl?.trim() && !input.ticketMatched) {
     gaps.add('ticket_data');
+  }
+
+  if (hasDuplicateLineupNames(input.lineup)) {
+    gaps.add('lineup_duplicate');
   }
 
   return [...gaps];
@@ -980,6 +1105,12 @@ function classifyBootshausImportDecision(
   });
 
   for (const reason of buildResult.reviewReasons) {
+    if (
+      reason === 'description_contaminated' &&
+      !buildResult.canonicalPatch.description?.trim()
+    ) {
+      continue;
+    }
     if (isBlockingReviewReason(reason)) {
       blockingReasons.push(reason);
     }
@@ -1186,6 +1317,7 @@ export function runBootshausGoldenImportPath(input: {
       officialForBuild,
       ticketMatch.ticketEvidence,
       ticketMatch.matchReason,
+      buildResult,
     );
     consumerErrorCounters = mergeConsumerErrorCounters(consumerErrorCounters, rowErrors);
 
