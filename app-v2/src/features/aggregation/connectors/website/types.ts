@@ -61,6 +61,8 @@ export interface RawWebsiteEvent {
   extractionConfidence: number;
   fieldEvidence: WebsiteFieldEvidence[];
   warnings: string[];
+  /** Raw official detail page HTML when list-detail enrichment fetched a detail page. */
+  officialDetailHtml?: string;
 }
 
 export interface WebsiteDetectedSignal {

@@ -23,6 +23,12 @@ Official detail HTML
 - Optional `sourceMetadata.officialDetailHtml` enables offline replay when list capture
   descriptions are chrome-only.
 
-## Module
+## Connector wiring
+
+List-detail enrichment stores fetched detail HTML on `RawWebsiteEvent.officialDetailHtml`,
+which `mapRawWebsiteEventToImportedEvent` forwards into `sourceMetadata.officialDetailHtml`
+for the golden path. Up to three detail pages are fetched concurrently.
+
+Live dry-runs must use `createBootshausLiveProductionSourceRecord()` (no fixture list HTML).
 
 `src/features/import/domain/official-detail-text-evidence.ts`

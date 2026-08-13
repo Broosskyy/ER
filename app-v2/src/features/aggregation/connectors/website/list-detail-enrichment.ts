@@ -34,6 +34,8 @@ export interface WebsiteListDetailEnrichmentInput {
   };
 }
 
+const DEFAULT_DETAIL_FETCH_CONCURRENCY = 3;
+
 function resolveDetailUrl(listEvent: RawWebsiteEvent, baseUrl: string): string | undefined {
   if (listEvent.detailUrl) {
     return listEvent.detailUrl;
@@ -45,7 +47,7 @@ function resolveDetailUrl(listEvent: RawWebsiteEvent, baseUrl: string): string |
 }
 
 function applyMergedFields(listEvent: RawWebsiteEvent, merged: ReturnType<typeof mergeListDetailFields>['merged']): RawWebsiteEvent {
-  const mergedEvent = enrichWebsiteEventFromTextualSources({
+  return enrichWebsiteEventFromTextualSources({
     ...listEvent,
     rawDescription: merged.description ?? listEvent.rawDescription,
     rawArtists: merged.artists ?? listEvent.rawArtists,
@@ -60,7 +62,13 @@ function applyMergedFields(listEvent: RawWebsiteEvent, merged: ReturnType<typeof
       ...(merged.description ? ['detail_enrichment_applied'] : []),
     ],
   });
-  return mergedEvent;
+}
+
+function withOfficialDetailHtml(event: RawWebsiteEvent, detailHtml: string): RawWebsiteEvent {
+  return {
+    ...event,
+    officialDetailHtml: detailHtml,
+  };
 }
 
 export async function enrichWebsiteListEventsWithDetailPages(
@@ -88,19 +96,24 @@ export async function enrichWebsiteListEventsWithDetailPages(
   };
 
   let detailPagesFetched = input.detailPagesAlreadyFetched ?? 0;
-  const enrichedEvents: RawWebsiteEvent[] = [];
+  const enrichedEvents: RawWebsiteEvent[] = new Array(input.events.length);
+  let nextIndex = 0;
+  const concurrency = Math.min(
+    DEFAULT_DETAIL_FETCH_CONCURRENCY,
+    Math.max(1, input.events.length),
+  );
 
-  for (const listEvent of input.events) {
+  const enrichOne = async (listEvent: RawWebsiteEvent, eventIndex: number): Promise<void> => {
     const detailUrl = resolveDetailUrl(listEvent, input.baseUrl);
     if (!detailUrl) {
       diagnostics.skipped += 1;
-      enrichedEvents.push(listEvent);
-      continue;
+      enrichedEvents[eventIndex] = listEvent;
+      return;
     }
     if (detailPagesFetched >= maxDetailPages) {
       diagnostics.blocked += 1;
-      enrichedEvents.push(listEvent);
-      continue;
+      enrichedEvents[eventIndex] = listEvent;
+      return;
     }
 
     diagnostics.attempted += 1;
@@ -124,8 +137,8 @@ export async function enrichWebsiteListEventsWithDetailPages(
       const detailEvent = await extractDetailPageEventWithStrategy(detailDocument, input.config, context);
       if (!detailEvent) {
         diagnostics.failed += 1;
-        enrichedEvents.push(listEvent);
-        continue;
+        enrichedEvents[eventIndex] = withOfficialDetailHtml(listEvent, detailDocument.html);
+        return;
       }
 
       const { merged } = mergeListDetailFields(
@@ -153,16 +166,29 @@ export async function enrichWebsiteListEventsWithDetailPages(
 
       if (merged.description || merged.artists?.length || merged.genres?.length) {
         diagnostics.enriched += 1;
-        enrichedEvents.push(applyMergedFields(listEvent, merged));
+        enrichedEvents[eventIndex] = withOfficialDetailHtml(applyMergedFields(listEvent, merged), detailDocument.html);
       } else {
         diagnostics.skipped += 1;
-        enrichedEvents.push(listEvent);
+        enrichedEvents[eventIndex] = withOfficialDetailHtml(listEvent, detailDocument.html);
       }
     } catch {
       diagnostics.failed += 1;
-      enrichedEvents.push(listEvent);
+      enrichedEvents[eventIndex] = listEvent;
     }
-  }
+  };
+
+  await Promise.all(
+    Array.from({ length: concurrency }, async () => {
+      while (true) {
+        const eventIndex = nextIndex;
+        nextIndex += 1;
+        if (eventIndex >= input.events.length) {
+          return;
+        }
+        await enrichOne(input.events[eventIndex]!, eventIndex);
+      }
+    }),
+  );
 
   return { events: enrichedEvents, diagnostics };
 }

@@ -83,6 +83,7 @@ export function mapRawWebsiteEventToImportedEvent(
       venueEnvironment: textual.venueEnvironment,
       outboundTicketLinks: textual.outboundTicketLinks,
       ...(lineupEntries?.length ? { lineupEntries } : {}),
+      ...(event.officialDetailHtml ? { officialDetailHtml: event.officialDetailHtml } : {}),
     },
     cancelled: event.rawStatus?.toLowerCase() === 'cancelled',
     ...(Number.isFinite(minimumAgeNumber) ? { minimumAge: minimumAgeNumber } : {}),

@@ -60,5 +60,6 @@ describe('website list-detail enrichment', () => {
     expect(result.diagnostics.enriched).toBe(1);
     expect(result.events[0].rawDescription).toContain('Drum');
     expect(result.events[0].warnings).toContain('detail_enrichment_applied');
+    expect(result.events[0].officialDetailHtml).toContain('Drum');
   });
 });
