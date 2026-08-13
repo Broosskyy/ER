@@ -48,7 +48,12 @@ import {
   buildLineupContentBlocksFromOfficialText,
   extractOfficialDetailTextEvidence,
 } from '@/features/import/domain/official-detail-text-evidence';
+import { resolveProviderAdapter } from '@/features/import/unified-website/provider-adapters';
 import type { ImportPublishFieldPatch } from '@/features/import/services/import-event-field-mapper';
+import {
+  billingNamesFromPersistencePayload,
+  buildCanonicalEventPersistencePayload,
+} from '@/features/import/services/canonical-event-persistence-payload';
 
 export type BootshausImportDecision =
   | 'consumer_ready'
@@ -120,6 +125,7 @@ export interface BootshausGoldenEventMatrixRow {
   priceText?: string;
   ticketStatus?: AdminEventTicketStatus;
   genreLabels?: string[];
+  description?: string;
   lineup: string[];
   decision: BootshausImportDecision;
   reviewReason: string;
@@ -573,10 +579,13 @@ export function mapOfficialRawToVerifiedEvidence(
     : undefined;
   const description =
     officialTextEvidence?.description?.trim() || candidate.description;
-  const genreLabels =
-    officialTextEvidence && officialTextEvidence.genreLabels.length > 0
-      ? officialTextEvidence.genreLabels
-      : candidate.genreNames;
+  const adapterGenreLabels =
+    detailHtml && pageUrl ? resolveProviderAdapter(pageUrl)?.extractGenres?.(detailHtml) : undefined;
+  const genreLabels = normalizeOfficialStructuredGenres([
+    ...(officialTextEvidence?.genreLabels ?? []),
+    ...(adapterGenreLabels ?? []),
+    ...(candidate.genreNames ?? []),
+  ]);
   return {
     pageUrl,
     pageTitle: candidate.title,
@@ -1328,7 +1337,8 @@ export function runBootshausGoldenImportPath(input: {
       conflictingTicketEvidence: ticketMatch.conflictingTicketEvidence,
     };
     const buildResult = buildCanonicalEventFromVerifiedPublicEvidence(bundle);
-    const lineup = buildResult.lineupPatch.entries.map((entry) => entry.displayName);
+    const persistencePayload = buildCanonicalEventPersistencePayload(buildResult);
+    const lineup = billingNamesFromPersistencePayload(persistencePayload);
     const classification = classifyBootshausImportDecision(buildResult, ticketMatch, officialForBuild);
     const rowErrors = countRowConsumerErrors(
       buildResult.canonicalPatch,
@@ -1354,6 +1364,7 @@ export function runBootshausGoldenImportPath(input: {
       priceText: buildResult.canonicalPatch.priceText,
       ticketStatus: buildResult.canonicalPatch.ticketStatus,
       genreLabels: buildResult.canonicalPatch.genreLabels,
+      description: persistencePayload.eventPatch.description,
       lineup,
       decision: classification.decision,
       reviewReason: classification.reviewReason,
@@ -1395,7 +1406,7 @@ export function projectBootshausConsumerView(row: BootshausGoldenEventMatrixRow)
 } {
   const projection = projectCanonicalEventFields({
     title: row.title,
-    description: '',
+    description: row.description ?? '',
     venue: row.venueName ?? '',
     city: row.venueCity ?? '',
     artists: row.lineup,

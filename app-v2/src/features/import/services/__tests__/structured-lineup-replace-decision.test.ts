@@ -97,6 +97,50 @@ describe('structured-lineup-replace-decision', () => {
     expect(needsStructuredLineupReplace(legacy, incoming)).toBe(true);
   });
 
+  it('replaces legacy backfill when billing labels differ even if artist ids overlap', () => {
+    const legacy = [
+      entry({
+        order: 0,
+        artists: ['LUCA DANTE SPADAFORA'],
+        artistIds: ['a1'],
+        provenance: { source: 'event_artists_backfill' },
+        confidence: 0.5,
+      }),
+      entry({
+        order: 1,
+        artists: ['2 ENGEL'],
+        artistIds: ['a2'],
+        provenance: { source: 'event_artists_backfill' },
+        confidence: 0.5,
+      }),
+      entry({
+        order: 2,
+        artists: ['CHARLIE'],
+        artistIds: ['a3'],
+        provenance: { source: 'event_artists_backfill' },
+        confidence: 0.5,
+      }),
+    ];
+    const incoming = [
+      entry({
+        order: 0,
+        artists: ['LUCA DANTE SPADAFORA'],
+        artistIds: ['a1'],
+        provenance: { importRecordId: 'imp-1', source: 'structured' },
+        confidence: 0.86,
+      }),
+      entry({
+        order: 1,
+        artists: ['2 ENGEL & CHARLIE'],
+        artistIds: ['a2'],
+        provenance: { importRecordId: 'imp-1', source: 'structured' },
+        confidence: 0.86,
+      }),
+    ];
+
+    expect(needsStructuredLineupReplace(legacy, incoming)).toBe(true);
+  });
+
   it('skips when import structure already persisted', () => {
     const persisted = [
       entry({

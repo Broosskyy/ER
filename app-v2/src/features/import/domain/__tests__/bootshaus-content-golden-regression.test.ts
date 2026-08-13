@@ -91,8 +91,8 @@ describe('bootshaus content golden regressions', () => {
     });
     expect(desc.descriptionContaminated).toBe(false);
     expect(desc.description).toContain('LOONYLAND returns');
+    expect(desc.description).not.toMatch(/\bmain\s*floor\b/i);
     expect(desc.description).not.toMatch(/bit\.ly/i);
-    expect(desc.description).not.toMatch(/main\s*floor\s*:/i);
     expect(desc.description).not.toMatch(/einlass ab/i);
   });
 

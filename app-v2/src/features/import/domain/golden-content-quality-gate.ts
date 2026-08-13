@@ -124,8 +124,42 @@ export function isLineupChromeDescription(description: string): boolean {
   return false;
 }
 
-export function stripNonEditorialLineupFromDescription(description: string): string {
+/** Remove short venue-floor hype paragraphs before the editorial body. */
+export function stripVenueStageMarketingIntro(description: string): string {
   let text = description.trim();
+  if (!text) {
+    return '';
+  }
+
+  const paragraphs = text
+    .split(/\n\n+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+  if (paragraphs.length > 1) {
+    const first = paragraphs[0]!;
+    const rest = paragraphs.slice(1);
+    const isVenueFloorHype =
+      /\bmain\s*floor\b/i.test(first) &&
+      /\b(let['’]s\s+go|we['’]re\s+back)\b/i.test(first) &&
+      first.length < 160;
+    if (isVenueFloorHype) {
+      text = rest.join('\n\n').trim();
+    }
+  }
+
+  const dateLeadIn = text.match(/\bOn\s+[A-Z][a-z]+\s+\d{1,2}(?:st|nd|rd|th)?,/);
+  if (dateLeadIn?.index && dateLeadIn.index > 0) {
+    const prefix = text.slice(0, dateLeadIn.index);
+    if (/\bmain\s*floor\b/i.test(prefix) || /\blet['’]s\s+go\b/i.test(prefix)) {
+      text = text.slice(dateLeadIn.index).trim();
+    }
+  }
+
+  return text.trim();
+}
+
+export function stripNonEditorialLineupFromDescription(description: string): string {
+  let text = stripVenueStageMarketingIntro(description.trim());
   if (!text) {
     return '';
   }

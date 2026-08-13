@@ -7,7 +7,11 @@ import {
 import type { EventLineupService } from '@/features/events/services/event-lineup-service';
 import type { MatchingCatalog } from '@/features/import/matching/match-result';
 import type { ImportRecord } from '@/features/import/models/types';
-import { needsStructuredLineupReplace } from '@/features/import/services/structured-lineup-replace-decision';
+import {
+  lineupBillingNamesFingerprint,
+  lineupBillingNamesFromEntries,
+  needsStructuredLineupReplace,
+} from '@/features/import/services/structured-lineup-replace-decision';
 import { resolveArtistIdsForNames } from '@/features/import/services/import-title-lineup-resolver';
 import type {
   LineupArtistSource,
@@ -107,10 +111,13 @@ export async function writeExplicitStructuredLineup(input: {
   const flatUnchanged =
     nextArtistIds.length === existingArtistIds.length &&
     nextArtistIds.every((id, index) => id === existingArtistIds[index]);
+  const billingUnchanged =
+    lineupBillingNamesFingerprint(lineupBillingNamesFromEntries(existingStructuredEntries)) ===
+    lineupBillingNamesFingerprint(lineupBillingNamesFromEntries(resolvedEntries));
   const structuredUnchanged =
     !input.forceReplace && !needsStructuredLineupReplace(existingStructuredEntries, resolvedEntries);
 
-  if (flatUnchanged && structuredUnchanged) {
+  if (flatUnchanged && structuredUnchanged && billingUnchanged) {
     return {
       wroteLineup: false,
       entries: resolvedEntries,
