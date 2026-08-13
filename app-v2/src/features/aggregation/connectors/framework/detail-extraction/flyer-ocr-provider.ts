@@ -21,6 +21,8 @@ export interface FlyerOcrInput {
   description?: string;
   importArtistNames?: string[];
   importLineupText?: string;
+  imageBytes?: Buffer;
+  mimeType?: string;
 }
 
 export interface FlyerOcrResult {

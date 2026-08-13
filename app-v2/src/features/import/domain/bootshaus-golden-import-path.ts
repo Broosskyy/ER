@@ -45,6 +45,13 @@ import {
   isLineupChromeDescription,
   normalizeOfficialStructuredGenres,
 } from '@/features/import/domain/golden-content-quality-gate';
+import {
+  buildMediaEvidenceBatchForOfficialEvents,
+  mergeMediaEvidenceErrorCounters,
+  type MediaEvidenceBatchResult,
+} from '@/features/import/domain/bootshaus-media-golden-path';
+import type { EventMediaEvidence, MediaEvidenceErrorCounters } from '@/features/import/domain/media-evidence-types';
+import { EMPTY_MEDIA_EVIDENCE_ERROR_COUNTERS } from '@/features/import/domain/media-evidence-types';
 import type { ImportPublishFieldPatch } from '@/features/import/services/import-event-field-mapper';
 
 export type BootshausImportDecision =
@@ -76,6 +83,13 @@ export interface BootshausConsumerErrorCounters {
   ticketFieldsChanged: number;
   venueFieldContamination: number;
   urlRoleErrors: number;
+  mediaAssignedToWrongEvent: number;
+  duplicateMediaFetches: number;
+  mediaWithoutFingerprint: number;
+  mediaArtistHallucinations: number;
+  lineupEvidenceConflicts: number;
+  genreInferredFromArtist: number;
+  genreInferredFromVenueOrOrganizer: number;
 }
 
 export const EMPTY_BOOTSHAUS_CONSUMER_ERROR_COUNTERS: BootshausConsumerErrorCounters = {
@@ -101,6 +115,13 @@ export const EMPTY_BOOTSHAUS_CONSUMER_ERROR_COUNTERS: BootshausConsumerErrorCoun
   ticketFieldsChanged: 0,
   venueFieldContamination: 0,
   urlRoleErrors: 0,
+  mediaAssignedToWrongEvent: 0,
+  duplicateMediaFetches: 0,
+  mediaWithoutFingerprint: 0,
+  mediaArtistHallucinations: 0,
+  lineupEvidenceConflicts: 0,
+  genreInferredFromArtist: 0,
+  genreInferredFromVenueOrOrganizer: 0,
 };
 
 export interface BootshausGoldenEventMatrixRow {
@@ -127,9 +148,11 @@ export interface BootshausGoldenImportRunResult {
   matrix: BootshausGoldenEventMatrixRow[];
   statusCounts: Record<BootshausImportDecision, number>;
   consumerErrorCounters: BootshausConsumerErrorCounters;
+  mediaErrorCounters: MediaEvidenceErrorCounters;
   officialEventCount: number;
   ticketEventCount: number;
   verifiedAt: string;
+  uniqueMediaImageCount?: number;
 }
 
 const STREET_IN_LABEL_PATTERN = /\b\d{1,4}\b/;
@@ -1272,6 +1295,8 @@ export function runBootshausGoldenImportPath(input: {
   ticketRawEvents: RawImportedEvent[];
   officialImportSource: ImportSource;
   verifiedAt: string;
+  mediaEvidenceByOfficialUrl?: Map<string, EventMediaEvidence>;
+  mediaBatch?: MediaEvidenceBatchResult;
 }): BootshausGoldenImportRunResult {
   const verifiedAt = input.verifiedAt;
   const upcomingOfficial = input.officialRawEvents.filter((raw) =>
@@ -1283,6 +1308,10 @@ export function runBootshausGoldenImportPath(input: {
 
   const matrix: BootshausGoldenEventMatrixRow[] = [];
   let consumerErrorCounters = { ...EMPTY_BOOTSHAUS_CONSUMER_ERROR_COUNTERS };
+  let mediaErrorCounters = { ...EMPTY_MEDIA_EVIDENCE_ERROR_COUNTERS };
+  if (input.mediaBatch) {
+    mediaErrorCounters = mergeMediaEvidenceErrorCounters(mediaErrorCounters, input.mediaBatch.errorCounters);
+  }
 
   for (const raw of upcomingOfficial) {
     const official = mapOfficialRawToVerifiedEvidence(raw, input.officialImportSource, verifiedAt);
@@ -1307,6 +1336,9 @@ export function runBootshausGoldenImportPath(input: {
       officialEvidence: officialForBuild,
       ticketEvidence: ticketMatch.ticketEvidence,
       conflictingTicketEvidence: ticketMatch.conflictingTicketEvidence,
+      mediaEvidence: input.mediaEvidenceByOfficialUrl?.get(
+        official.pageUrl ?? raw.eventUrl ?? raw.sourceUrl ?? raw.externalId ?? '',
+      ),
     };
     const buildResult = buildCanonicalEventFromVerifiedPublicEvidence(bundle);
     const lineup = buildResult.lineupPatch.entries.map((entry) => entry.displayName);
@@ -1320,6 +1352,21 @@ export function runBootshausGoldenImportPath(input: {
       buildResult,
     );
     consumerErrorCounters = mergeConsumerErrorCounters(consumerErrorCounters, rowErrors);
+    if (buildResult.reviewReasons.includes('lineup_evidence_conflict')) {
+      consumerErrorCounters.lineupEvidenceConflicts += 1;
+      mediaErrorCounters.lineupEvidenceConflicts += 1;
+    }
+    if (buildResult.reviewReasons.includes('compound_act_split')) {
+      consumerErrorCounters.compoundActSplit += 1;
+    }
+    if (buildResult.reviewReasons.includes('genre_inferred_from_artist')) {
+      consumerErrorCounters.genreInferredFromArtist += 1;
+      mediaErrorCounters.genreInferredFromArtist += 1;
+    }
+    if (buildResult.reviewReasons.some((reason) => reason.includes('genre_inferred_from_venue'))) {
+      consumerErrorCounters.genreInferredFromVenueOrOrganizer += 1;
+      mediaErrorCounters.genreInferredFromVenueOrOrganizer += 1;
+    }
 
     matrix.push({
       title: buildResult.canonicalPatch.title ?? official.pageTitle ?? '',
@@ -1358,11 +1405,32 @@ export function runBootshausGoldenImportPath(input: {
     matrix,
     statusCounts,
     consumerErrorCounters,
+    mediaErrorCounters,
     officialEventCount: upcomingOfficial.length,
     ticketEventCount: input.ticketRawEvents.length,
     verifiedAt,
+    uniqueMediaImageCount: input.mediaBatch?.uniqueImageCount,
   };
 }
+
+export async function runBootshausGoldenImportPathWithMedia(input: {
+  officialRawEvents: RawImportedEvent[];
+  ticketRawEvents: RawImportedEvent[];
+  officialImportSource: ImportSource;
+  verifiedAt: string;
+}): Promise<BootshausGoldenImportRunResult> {
+  const mediaBatch = await buildMediaEvidenceBatchForOfficialEvents({
+    officialRawEvents: input.officialRawEvents.filter((raw) => isUpcomingBootshausOfficialEvent(raw)),
+    observedAt: input.verifiedAt,
+  });
+  return runBootshausGoldenImportPath({
+    ...input,
+    mediaEvidenceByOfficialUrl: mediaBatch.byOfficialUrl,
+    mediaBatch,
+  });
+}
+
+export { buildMediaEvidenceBatchForOfficialEvents };
 
 export function noopPersistBootshausGoldenImportResult(
   _result: BootshausGoldenImportRunResult,

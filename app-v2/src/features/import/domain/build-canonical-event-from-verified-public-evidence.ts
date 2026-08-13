@@ -19,6 +19,11 @@ import {
 } from '@/features/import/domain/canonical-ticket-phase';
 import type { ImportPublishFieldPatch } from '@/features/import/services/import-event-field-mapper';
 import type { EventIdentitySnapshot } from '@/features/import/ticket-platform-identity/types';
+import type { EventMediaEvidence } from '@/features/import/domain/media-evidence-types';
+import {
+  mergeOfficialAndMediaGenreEvidence,
+  mergeOfficialAndMediaLineupEvidence,
+} from '@/features/import/domain/media-lineup-merge';
 
 const EVIDENCE_ONLY_EVENT_ID = 'evidence-only';
 
@@ -74,6 +79,8 @@ export interface VerifiedPublicEvidenceBundle {
   checkoutEvidence?: VerifiedCheckoutEvidence;
   /** Contradictory ticket contribution — never merged into canonical. */
   conflictingTicketEvidence?: VerifiedTicketEvidence;
+  /** Verified official flyer media evidence (lineup/genres only; never overrides tickets/venue). */
+  mediaEvidence?: EventMediaEvidence;
 }
 
 export type GoldenImportDisposition = 'publish' | 'review' | 'blocked' | 'collision_review';
@@ -350,9 +357,6 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
   if (descGenre.description) {
     canonicalPatch.description = descGenre.description;
   }
-  if (descGenre.genreLabels?.length) {
-    canonicalPatch.genreLabels = descGenre.genreLabels;
-  }
   if (descGenre.blockedReason) {
     reviewReasons.push(descGenre.blockedReason);
   }
@@ -404,11 +408,41 @@ export function buildCanonicalEventFromVerifiedPublicEvidence(
       (descGenre.descriptionContaminated === true && Boolean(descGenre.description)),
   });
 
+  const mediaLineupMerge = mergeOfficialAndMediaLineupEvidence({
+    officialEntries: lineupGate.extraction.entries,
+    mediaEvidence: input.mediaEvidence,
+    lineupSourceText: (official?.lineupContentBlocks ?? []).join('\n'),
+  });
+  for (const reason of mediaLineupMerge.reviewReasons) {
+    if (reason === 'lineup_evidence_conflict' || reason === 'compound_act_split') {
+      reviewReasons.push(reason);
+    }
+  }
+
   const lineupPatch: GoldenLineupPatch = {
-    allowed: lineupGate.allowed,
-    reason: lineupGate.reason,
-    entries: lineupGate.extraction.entries,
+    allowed: lineupGate.allowed || mediaLineupMerge.entries.length > 0,
+    reason:
+      mediaLineupMerge.entries.length > 0 && lineupGate.reason === 'no_structured_lineup_or_dual_headliner_confirmation'
+        ? 'structured_lineup_identity_ok'
+        : lineupGate.reason,
+    entries: mediaLineupMerge.entries,
   };
+
+  const mediaGenreMerge = mergeOfficialAndMediaGenreEvidence({
+    officialGenres: descGenre.genreLabels,
+    mediaEvidence: input.mediaEvidence,
+    artistNames: mediaLineupMerge.entries.map((entry) => entry.displayName),
+    venueName: official?.venueName,
+    organizerName: official?.organizerName,
+  });
+  if (mediaGenreMerge.genreLabels.length > 0) {
+    canonicalPatch.genreLabels = mediaGenreMerge.genreLabels;
+  } else if (descGenre.genreLabels?.length) {
+    canonicalPatch.genreLabels = descGenre.genreLabels;
+  }
+  for (const reason of mediaGenreMerge.reviewReasons) {
+    reviewReasons.push(reason);
+  }
 
   const optionalLineupReasons = new Set([
     'lineup_tba_confirmed',
