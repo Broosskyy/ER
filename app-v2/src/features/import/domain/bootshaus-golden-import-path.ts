@@ -42,9 +42,12 @@ import {
   extractStructuredRunningOrderNames,
   hasDuplicateLineupNames,
   isInvalidStructuredLineupValue,
-  isLineupChromeDescription,
   normalizeOfficialStructuredGenres,
 } from '@/features/import/domain/golden-content-quality-gate';
+import {
+  buildLineupContentBlocksFromOfficialText,
+  extractOfficialDetailTextEvidence,
+} from '@/features/import/domain/official-detail-text-evidence';
 import type { ImportPublishFieldPatch } from '@/features/import/services/import-event-field-mapper';
 
 export type BootshausImportDecision =
@@ -514,26 +517,30 @@ function readMetadataTextBlock(value: unknown): string | undefined {
 
 function buildLineupContentBlocks(raw: RawImportedEvent, candidate: NormalizedEventCandidate): string[] {
   const metadata = (raw.sourceMetadata ?? {}) as Record<string, unknown>;
+  const detailHtml = readMetadataTextBlock(metadata.officialDetailHtml);
+  const officialBlocks = buildLineupContentBlocksFromOfficialText({
+    description: candidate.description,
+    detailHtml,
+  });
+  if (officialBlocks.length > 0) {
+    return officialBlocks;
+  }
+
   const structuredNames = extractStructuredRunningOrderNames(metadata);
   const validStructured = structuredNames.filter((name) => !isInvalidStructuredLineupValue(name));
-
-  const descriptionBlocks: string[] = [];
-  if (candidate.description?.trim() && !isLineupChromeDescription(candidate.description)) {
-    descriptionBlocks.push(candidate.description.trim());
-  }
 
   const runningOrderText = readMetadataTextBlock(metadata.runningOrder);
   const timetableText = readMetadataTextBlock(metadata.timetable);
   if (validStructured.length > 0) {
-    return [...descriptionBlocks, ...validStructured];
+    return validStructured;
   }
   if (runningOrderText && !isInvalidStructuredLineupValue(runningOrderText)) {
-    return [...descriptionBlocks, runningOrderText];
+    return [runningOrderText];
   }
   if (timetableText) {
-    return [...descriptionBlocks, timetableText];
+    return [timetableText];
   }
-  return descriptionBlocks;
+  return [];
 }
 
 export function mapOfficialRawToVerifiedEvidence(
@@ -558,6 +565,18 @@ export function mapOfficialRawToVerifiedEvidence(
   });
 
   const pageUrl = candidate.eventUrl ?? raw.eventUrl ?? raw.sourceUrl ?? raw.externalId;
+  const detailHtml = readMetadataTextBlock(
+    (raw.sourceMetadata as Record<string, unknown> | undefined)?.officialDetailHtml,
+  );
+  const officialTextEvidence = detailHtml?.includes('<')
+    ? extractOfficialDetailTextEvidence(detailHtml)
+    : undefined;
+  const description =
+    officialTextEvidence?.description?.trim() || candidate.description;
+  const genreLabels =
+    officialTextEvidence && officialTextEvidence.genreLabels.length > 0
+      ? officialTextEvidence.genreLabels
+      : candidate.genreNames;
   return {
     pageUrl,
     pageTitle: candidate.title,
@@ -568,10 +587,10 @@ export function mapOfficialRawToVerifiedEvidence(
     venuePostalCode: geography.venuePostalCode,
     venueCity: geography.venueCity,
     countryCode: geography.countryCode,
-    description: candidate.description,
+    description,
     imageUrl: candidate.imageUrl,
-    genreLabels: candidate.genreNames,
-    lineupContentBlocks: buildLineupContentBlocks(raw, candidate),
+    genreLabels,
+    lineupContentBlocks: buildLineupContentBlocks(raw, { ...candidate, description }),
     minimumAge: raw.minimumAge,
     organizerName: candidate.organizerName,
     outboundTicketUrls: collectOutboundTicketUrls(raw),

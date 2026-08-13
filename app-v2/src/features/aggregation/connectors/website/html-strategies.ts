@@ -12,7 +12,6 @@ import {
   extractMetaProperty,
 
   extractTextContent,
-  extractStructuredLineupSectionFromHtml,
 } from '@/features/aggregation/connectors/website/html-utils';
 
 import { resolveRelativeUrl } from '@/features/aggregation/connectors/website/security';
@@ -33,6 +32,7 @@ import {
 
 import { jsonLdWebsiteStrategy } from '@/features/aggregation/connectors/website/strategies';
 import { parseAffenkaefigLineupFromHtml } from '@/features/aggregation/connectors/website/affenkaefig-detail-lineup';
+import { extractEventDescription } from '@/features/import/unified-website/description-extraction';
 
 
 
@@ -404,42 +404,8 @@ export async function extractDetailPageEventWithStrategy(
   return extractDetailPageEvent(detailDocument);
 }
 
-function scoreDescriptionCandidate(value: string): number {
-  const lengthScore = value.length;
-  const lineBreaks = value.match(/\n/g)?.length ?? 0;
-  const structuredLineupBonus =
-    /line[\s-]?up\s*:?/i.test(value) && lineBreaks > 0 ? 2_000 : 0;
-  return lengthScore + lineBreaks * 250 + structuredLineupBonus;
-}
-
 function extractDetailDescription(html: string): string | undefined {
-  const ogDescription = decodeHtmlEntities(extractMetaProperty(html, 'og:description'));
-  const structuredLineup = extractStructuredLineupSectionFromHtml(html);
-  const bodyCandidates = [
-    ...extractTextContent(html, 'article'),
-    ...extractTextContent(html, '.event-description'),
-    ...extractTextContent(html, '.description'),
-    ...extractTextContent(html, '.entry-content'),
-    ...extractTextContent(html, 'main'),
-  ]
-    .map((value) => value.trim())
-    .filter((value) => value.length > 40);
-
-  if (structuredLineup) {
-    const intro = bodyCandidates.sort((a, b) => b.length - a.length)[0];
-    const introLead = intro?.split(/line[\s-]?up\s*:?/i)[0]?.trim();
-    if (introLead) {
-      return `${introLead}\n\nLine Up:\n${structuredLineup}`;
-    }
-    return `Line Up:\n${structuredLineup}`;
-  }
-
-  const scoredCandidates = [
-    ...(ogDescription ? [{ value: ogDescription, score: scoreDescriptionCandidate(ogDescription) }] : []),
-    ...bodyCandidates.map((value) => ({ value, score: scoreDescriptionCandidate(value) })),
-  ].sort((left, right) => right.score - left.score);
-
-  return scoredCandidates[0]?.value;
+  return extractEventDescription(html).description;
 }
 
 function extractDetailPageEvent(detailDocument: WebsiteDocument): RawWebsiteEvent | null {

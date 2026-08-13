@@ -105,6 +105,16 @@ export function isLineupChromeDescription(description: string): boolean {
   if (/^>\s*line-?up/i.test(trimmed)) {
     return true;
   }
+  if (/\n\s*">\s*line-?up/i.test(trimmed) || /">\s*line-?up/i.test(trimmed)) {
+    return true;
+  }
+  if (
+    /^events\b/i.test(trimmed) &&
+    /\bline\s*up\s*:/i.test(trimmed) &&
+    !/\bmain\s*floor\s*:/i.test(trimmed)
+  ) {
+    return true;
+  }
   if (/^line\s*up\s*:/i.test(trimmed) && !/\bmain\s*floor\s*:/i.test(trimmed)) {
     const body = trimmed.replace(/^line\s*up\s*:\s*/i, '').trim();
     if (trimmed.length < 120 || !/[.!?]/.test(body)) {
