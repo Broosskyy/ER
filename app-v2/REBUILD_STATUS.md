@@ -6,7 +6,7 @@
 - Der bisherige Event-/Import-/Persistence-/Consumer-Datenpfad wird nicht weiter repariert.
 - Er wird nach und nach durch genau einen neuen Event-Core ersetzt.
 - Der alte Stand liegt ausschließlich im Archiv-Branch.
-- Die bestehende Supabase-Datenbank bleibt vorerst unverändert und dient nicht als Source Truth für den Rebuild.
+- Das bestehende Supabase-Projekt wurde auf die Event-Core-Baseline zurückgesetzt und ist nicht mehr Source Truth für Legacy-Events.
 
 ## Einziger geplanter Datenweg
 
@@ -31,8 +31,8 @@ Source Evidence → Canonical Event → Validation → Event Writer → Clean Da
 
 ## Meilensteine
 
-- [ ] M1 Clean Environment — **IN PROGRESS**
-- [ ] M2 Manual Event Roundtrip
+- [x] M1 Clean Environment
+- [ ] M2 Manual Event Roundtrip — **IN PROGRESS**
 - [ ] M3 One Official Import Roundtrip
 - [ ] M4 Seven Reference Events
 - [ ] M5 Bootshaus 30-Event Run
@@ -43,12 +43,12 @@ Nur ein Meilenstein darf gleichzeitig als IN PROGRESS markiert sein.
 
 ## Aktueller Zustand
 
-M1 Clean Environment — IN PROGRESS
+M2 Manual Event Roundtrip — IN PROGRESS
 
 ## Aktive Umgebung
 
 - aktiver Git-Branch: `rebuild/event-core-clean`
 - Legacy-Branch: `archive/event-system-legacy-2026-08-13`
-- alte Supabase-Datenbank: eingefroren, noch produktiv lesbar
-- neue Supabase-Entwicklungsumgebung: noch nicht erstellt
-- nächster Schritt: saubere neue Supabase-Entwicklungsumgebung und manueller Event-Roundtrip
+- Supabase-Projekt: `gnkjzinwvmrxcadwebhv` (Event-Core-Baseline, Auth behalten)
+- public-Schema: sechs leere Tabellen `venues`, `events`, `event_lineup`, `event_genres`, `event_tickets`, `event_sources`
+- nächster Schritt: manueller Event-Roundtrip in der echten App
