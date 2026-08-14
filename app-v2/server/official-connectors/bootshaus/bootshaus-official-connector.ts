@@ -15,6 +15,7 @@ import {
   type OfficialEventConsumerPreview,
 } from '../types';
 import { BOOTSHAUS_LIST_URL } from './constants';
+import { buildBootshausMediaEvidenceContext } from './build-bootshaus-media-evidence';
 import { parseBootshausDetailPage } from './parse-detail';
 import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './parse-list';
 
@@ -122,6 +123,7 @@ export class BootshausOfficialConnector {
           mediaCounters,
           allowedImageHosts,
           sourceObservedAt: fetchedAt,
+          mediaContext: buildBootshausMediaEvidenceContext(textEvidence),
         });
       }
 

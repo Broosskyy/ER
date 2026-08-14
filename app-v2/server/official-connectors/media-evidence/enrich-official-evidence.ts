@@ -1,12 +1,20 @@
 import type { ConnectorErrorCounters, OfficialEventEvidence } from '../types';
 import {
+  buildMediaEvidenceContextFromEvidence,
+  type MediaEvidenceContext,
+} from '../shared/media-evidence-context';
+import {
+  findCachedMediaEvidenceByImageUrl,
   readCachedImageBytes,
   readCachedMediaEvidence,
   writeCachedImageBytes,
 } from './media-evidence-cache';
 import { reconcileOfficialAndMediaEvidence } from './reconcile-evidence';
 import { buildImageHostAllowlist, safeFetchImage } from './safe-image-fetch';
-import { TesseractMediaEvidenceProvider } from './tesseract-media-evidence-provider';
+import {
+  reparseCachedMediaEvidence,
+  TesseractMediaEvidenceProvider,
+} from './tesseract-media-evidence-provider';
 import type { EventMediaEvidence, MediaEvidenceProvider, MediaPassCounters } from './types';
 
 export interface EnrichOfficialEvidenceOptions {
@@ -15,6 +23,8 @@ export interface EnrichOfficialEvidenceOptions {
   allowedImageHosts: ReadonlySet<string>;
   sourceObservedAt: string;
   provider?: MediaEvidenceProvider;
+  mediaContext?: MediaEvidenceContext;
+  cachedOnly?: boolean;
 }
 
 const urlImageCache = new Map<
@@ -58,6 +68,102 @@ async function loadOfficialImage(
   return payload;
 }
 
+function resolveMediaContext(
+  textEvidence: OfficialEventEvidence,
+  options: EnrichOfficialEvidenceOptions,
+): MediaEvidenceContext {
+  return (
+    options.mediaContext ??
+    buildMediaEvidenceContextFromEvidence({
+      venueName: textEvidence.venue?.name,
+      organizerLabel: textEvidence.organizerLabel,
+      city: textEvidence.venue?.city,
+      officialUrl: textEvidence.officialUrl,
+      officialImageUrl: textEvidence.officialImageUrl,
+    })
+  );
+}
+
+function loadCachedMediaEvidenceForEvent(
+  textEvidence: OfficialEventEvidence,
+  mediaContext: MediaEvidenceContext,
+): EventMediaEvidence | undefined {
+  const imageUrl = textEvidence.officialImageUrl;
+  if (!imageUrl) {
+    return undefined;
+  }
+
+  const cached =
+    findCachedMediaEvidenceByImageUrl(imageUrl) ??
+    (() => {
+      const imageCache = urlImageCache.get(imageUrl);
+      return imageCache ? readCachedMediaEvidence(imageCache.fingerprint) : undefined;
+    })();
+
+  if (!cached?.ocrLines?.length) {
+    return cached;
+  }
+
+  return reparseCachedMediaEvidence(cached, mediaContext);
+}
+
+export function enrichOfficialEvidenceFromCachedMedia(
+  textEvidence: OfficialEventEvidence,
+  options: {
+    mediaCounters?: MediaPassCounters;
+    mediaContext?: MediaEvidenceContext;
+  } = {},
+): OfficialEventEvidence {
+  const imageUrl = textEvidence.officialImageUrl;
+  if (!imageUrl) {
+    return textEvidence;
+  }
+
+  const mediaCounters = options.mediaCounters;
+  if (mediaCounters) {
+    mediaCounters.imageUrlsDiscovered += 1;
+  }
+
+  const mediaContext = resolveMediaContext(textEvidence, options as EnrichOfficialEvidenceOptions);
+  const mediaEvidence = loadCachedMediaEvidenceForEvent(textEvidence, mediaContext);
+
+  if (!mediaEvidence) {
+    return {
+      ...textEvidence,
+      enrichmentGaps: textEvidence.enrichmentGaps.includes('media_ocr_unreadable')
+        ? textEvidence.enrichmentGaps
+        : [...textEvidence.enrichmentGaps, 'media_ocr_unreadable'],
+    };
+  }
+
+  if (mediaCounters) {
+    if (!seenFingerprints.has(mediaEvidence.imageFingerprint)) {
+      seenFingerprints.add(mediaEvidence.imageFingerprint);
+      mediaCounters.uniqueImageFingerprints += 1;
+    } else {
+      mediaCounters.duplicateImageContents += 1;
+    }
+
+    if (!analyzedFingerprints.has(mediaEvidence.imageFingerprint)) {
+      analyzedFingerprints.add(mediaEvidence.imageFingerprint);
+      mediaCounters.uniqueImagesAnalyzed += 1;
+    }
+
+    if (mediaEvidence.mediaClassification === 'unreadable') {
+      mediaCounters.mediaOcrUnreadable += 1;
+    }
+  }
+
+  const reconciled = reconcileOfficialAndMediaEvidence(textEvidence, mediaEvidence, {
+    mediaContext,
+  });
+  if (reconciled.conflicts.length > 0 && mediaCounters) {
+    mediaCounters.lineupMediaAmbiguous += 1;
+  }
+
+  return reconciled.evidence;
+}
+
 export async function enrichOfficialEvidenceWithMedia(
   textEvidence: OfficialEventEvidence,
   options: EnrichOfficialEvidenceOptions,
@@ -67,8 +173,13 @@ export async function enrichOfficialEvidenceWithMedia(
     return textEvidence;
   }
 
+  if (options.cachedOnly) {
+    return enrichOfficialEvidenceFromCachedMedia(textEvidence, options);
+  }
+
   options.mediaCounters.imageUrlsDiscovered += 1;
   const provider = options.provider ?? new TesseractMediaEvidenceProvider();
+  const mediaContext = resolveMediaContext(textEvidence, options);
 
   let mediaEvidence: EventMediaEvidence | undefined;
   try {
@@ -92,6 +203,7 @@ export async function enrichOfficialEvidenceWithMedia(
       imageBytes,
       mimeType,
       sourceObservedAt: options.sourceObservedAt,
+      mediaContext,
     });
 
     if (mediaEvidence.mediaClassification === 'unreadable') {
@@ -104,16 +216,14 @@ export async function enrichOfficialEvidenceWithMedia(
     };
   }
 
-  const reconciled = reconcileOfficialAndMediaEvidence(textEvidence, mediaEvidence);
+  const reconciled = reconcileOfficialAndMediaEvidence(textEvidence, mediaEvidence, {
+    mediaContext,
+  });
   if (reconciled.conflicts.length > 0) {
     options.mediaCounters.lineupMediaAmbiguous += 1;
   }
 
   return reconciled.evidence;
-}
-
-export function buildBootshausImageHostAllowlist(imageUrls: string[]): Set<string> {
-  return buildImageHostAllowlist(imageUrls);
 }
 
 export function resetMediaPassStateForTests(): void {

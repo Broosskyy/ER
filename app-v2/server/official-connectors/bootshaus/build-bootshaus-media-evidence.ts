@@ -2,11 +2,14 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 import {
-  buildBootshausImageHostAllowlist,
+  buildImageHostAllowlist,
   createEmptyMediaPassCounters,
-  enrichOfficialEvidenceWithMedia,
-  terminateSharedTesseractWorker,
+  enrichOfficialEvidenceFromCachedMedia,
 } from '../media-evidence';
+import {
+  buildMediaEvidenceContextFromEvidence,
+  type MediaEvidenceContext,
+} from '../shared/media-evidence-context';
 import { parseBootshausDetailPage } from './parse-detail';
 import { buildConsumerPreview } from '../preview';
 import {
@@ -17,11 +20,36 @@ import {
 
 const M5_CACHE_DIR = '.tmp/m3-bootshaus-cache/details';
 
+const BOOTSHAUS_CONNECTOR_NOISE_TERMS = [
+  'bootshaus',
+  'bootshaus mobile app',
+  'bootshaus merchandise',
+  'www.bootshaus.tv',
+  'auenweg',
+];
+
 export interface BuildBootshausMediaEvidenceBatch {
   evidences: OfficialEventEvidence[];
   previews: OfficialEventConsumerPreview[];
   mediaCounters: ReturnType<typeof createEmptyMediaPassCounters>;
   connectorCounters: ReturnType<typeof createEmptyConnectorCounters>;
+}
+
+export function buildBootshausImageHostAllowlist(imageUrls: string[]): Set<string> {
+  return buildImageHostAllowlist(imageUrls);
+}
+
+export function buildBootshausMediaEvidenceContext(
+  textEvidence: OfficialEventEvidence,
+): MediaEvidenceContext {
+  return buildMediaEvidenceContextFromEvidence({
+    venueName: textEvidence.venue?.name,
+    organizerLabel: textEvidence.organizerLabel,
+    city: textEvidence.venue?.city,
+    officialUrl: textEvidence.officialUrl,
+    officialImageUrl: textEvidence.officialImageUrl,
+    additionalNoiseTerms: BOOTSHAUS_CONNECTOR_NOISE_TERMS,
+  });
 }
 
 export async function buildBootshausOfficialEvidenceWithMedia(
@@ -34,7 +62,7 @@ export async function buildBootshausOfficialEvidenceWithMedia(
 ): Promise<BuildBootshausMediaEvidenceBatch> {
   const connectorCounters = createEmptyConnectorCounters();
   const mediaCounters = createEmptyMediaPassCounters();
-  const allowedHosts = buildBootshausImageHostAllowlist(
+  const allowedHosts = buildImageHostAllowlist(
     entries.map((entry) => entry.officialImageUrl).filter((url): url is string => Boolean(url)),
   );
 
@@ -49,17 +77,15 @@ export async function buildBootshausOfficialEvidenceWithMedia(
       entry.fetchedAt,
       connectorCounters,
     );
-    const enriched = await enrichOfficialEvidenceWithMedia(textEvidence, {
-      counters: connectorCounters,
+    const enriched = enrichOfficialEvidenceFromCachedMedia(textEvidence, {
       mediaCounters,
-      allowedImageHosts: allowedHosts,
-      sourceObservedAt: entry.fetchedAt,
+      mediaContext: buildBootshausMediaEvidenceContext(textEvidence),
     });
     evidences.push(enriched);
     previews.push(buildConsumerPreview(enriched, connectorCounters));
   }
 
-  await terminateSharedTesseractWorker();
+  void allowedHosts;
   return { evidences, previews, mediaCounters, connectorCounters };
 }
 

@@ -1,3 +1,5 @@
+import type { MediaEvidenceContext } from '../shared/media-evidence-context';
+
 export type MediaClassification =
   | 'event_flyer'
   | 'event_artwork_without_billing'
@@ -79,6 +81,7 @@ export interface MediaEvidenceExtractInput {
   imageBytes: Buffer;
   mimeType: string;
   sourceObservedAt: string;
+  mediaContext?: MediaEvidenceContext;
 }
 
 export interface MediaEvidenceProvider {

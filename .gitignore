@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Tesseract runtime language data (never commit)
+*.traineddata
+
 # Expo
 .expo/
 dist/

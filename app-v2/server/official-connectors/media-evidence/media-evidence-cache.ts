@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 import type { EventMediaEvidence } from './types';
@@ -57,4 +57,22 @@ export function writeCachedImageBytes(
 ): void {
   ensureMediaCacheDirs();
   writeFileSync(join(IMAGE_DIR, `${fingerprint}.${extensionForMime(mimeType)}`), bytes);
+}
+
+export function findCachedMediaEvidenceByImageUrl(imageUrl: string): EventMediaEvidence | undefined {
+  if (!existsSync(EVIDENCE_DIR)) {
+    return undefined;
+  }
+
+  for (const fileName of readdirSync(EVIDENCE_DIR)) {
+    if (!fileName.endsWith('.json')) {
+      continue;
+    }
+    const evidence = JSON.parse(readFileSync(join(EVIDENCE_DIR, fileName), 'utf8')) as EventMediaEvidence;
+    if (evidence.sourceImageUrl === imageUrl) {
+      return evidence;
+    }
+  }
+
+  return undefined;
 }

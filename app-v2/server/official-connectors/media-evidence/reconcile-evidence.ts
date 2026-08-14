@@ -1,41 +1,18 @@
-import { normalizeOfficialGenreLabels } from '../bootshaus/normalize-genre';
+import { normalizeOfficialGenreLabels } from '../shared/normalize-genre';
+import {
+  canonicalActKey,
+  inferLineupEvidenceRole,
+  preferDisplayName,
+  sanitizeFinalLineupCandidates,
+  type LineupValidationContext,
+} from '../shared/lineup-normalization';
+import { buildMediaEvidenceContextFromEvidence, type MediaEvidenceContext } from '../shared/media-evidence-context';
 import type {
   OfficialEventEvidence,
   OfficialLineupCandidate,
   RejectedOfficialCandidate,
 } from '../types';
 import type { EventMediaEvidence } from './types';
-
-function canonicalActKey(name: string): string {
-  return name.replace(/\s+/g, ' ').trim().toLowerCase();
-}
-
-function preferDisplayName(current: string, next: string): string {
-  const currentHasUpper = /[A-Z]/.test(current);
-  const nextHasUpper = /[A-Z]/.test(next);
-  if (nextHasUpper && !currentHasUpper) {
-    return next;
-  }
-  if (current.length >= next.length) {
-    return current;
-  }
-  return next;
-}
-
-function inferEvidenceRole(
-  displayName: string,
-  billingOrder: number,
-): OfficialLineupCandidate['evidenceRole'] {
-  if (
-    displayName.includes('&') ||
-    /\bx\b/i.test(displayName) ||
-    /\bb2b\b/i.test(displayName) ||
-    /\bvs\.?\b/i.test(displayName)
-  ) {
-    return 'compound_act';
-  }
-  return billingOrder === 0 ? 'headliner' : 'artist';
-}
 
 function withoutGap(gaps: string[], gapPrefix: string): string[] {
   return gaps.filter((gap) => !gap.startsWith(gapPrefix));
@@ -47,9 +24,15 @@ export interface ReconciledOfficialEvidence {
   conflicts: string[];
 }
 
+export interface ReconcileOfficialEvidenceOptions {
+  mediaContext?: MediaEvidenceContext;
+  validationContext?: LineupValidationContext;
+}
+
 export function reconcileOfficialAndMediaEvidence(
   textEvidence: OfficialEventEvidence,
   mediaEvidence: EventMediaEvidence | undefined,
+  options: ReconcileOfficialEvidenceOptions = {},
 ): ReconciledOfficialEvidence {
   const rejectedCandidates = [...textEvidence.rejectedCandidates];
   const conflicts: string[] = [];
@@ -57,18 +40,48 @@ export function reconcileOfficialAndMediaEvidence(
   let lineupCandidates = [...textEvidence.lineupCandidates];
   let explicitGenreLabels = [...textEvidence.explicitGenreLabels];
 
+  const mediaContext =
+    options.mediaContext ??
+    buildMediaEvidenceContextFromEvidence({
+      venueName: textEvidence.venue?.name,
+      organizerLabel: textEvidence.organizerLabel,
+      city: textEvidence.venue?.city,
+      officialUrl: textEvidence.officialUrl,
+      officialImageUrl: textEvidence.officialImageUrl,
+    });
+  const validationContext: LineupValidationContext = {
+    mediaContext,
+    ...options.validationContext,
+  };
+
   if (!mediaEvidence) {
-    return { evidence: textEvidence, rejectedCandidates, conflicts };
+    const sanitized = sanitizeFinalLineupCandidates(lineupCandidates, {
+      eventTitle: textEvidence.title,
+      validationContext,
+    });
+    rejectedCandidates.push(...sanitized.rejectedCandidates);
+    return {
+      evidence: { ...textEvidence, lineupCandidates: sanitized.lineupCandidates, rejectedCandidates },
+      rejectedCandidates,
+      conflicts,
+    };
   }
 
   if (mediaEvidence.mediaClassification === 'unreadable') {
     if (!enrichmentGaps.includes('media_ocr_unreadable')) {
       enrichmentGaps.push('media_ocr_unreadable');
     }
+    const sanitized = sanitizeFinalLineupCandidates(lineupCandidates, {
+      eventTitle: textEvidence.title,
+      validationContext,
+    });
+    rejectedCandidates.push(...sanitized.rejectedCandidates);
     return {
       evidence: {
         ...textEvidence,
+        lineupCandidates: sanitized.lineupCandidates,
         enrichmentGaps,
+        rejectedCandidates,
         evidenceAudit: {
           lineupBlocks: textEvidence.evidenceAudit?.lineupBlocks ?? [],
           normalizedGenres: textEvidence.evidenceAudit?.normalizedGenres ?? [],
@@ -116,7 +129,7 @@ export function reconcileOfficialAndMediaEvidence(
       displayName: mediaAct.displayName,
       rawText: mediaAct.rawText,
       billingOrder: lineupCandidates.length + mediaActsToAppend.length,
-      evidenceRole: mediaAct.evidenceRole ?? inferEvidenceRole(mediaAct.displayName, lineupCandidates.length),
+      evidenceRole: mediaAct.evidenceRole ?? inferLineupEvidenceRole(mediaAct.displayName, lineupCandidates.length),
       evidenceOrigin: 'official_media',
     });
   }
@@ -174,10 +187,16 @@ export function reconcileOfficialAndMediaEvidence(
     });
   }
 
+  const sanitized = sanitizeFinalLineupCandidates(lineupCandidates, {
+    eventTitle: textEvidence.title,
+    validationContext,
+  });
+  rejectedCandidates.push(...sanitized.rejectedCandidates);
+
   return {
     evidence: {
       ...textEvidence,
-      lineupCandidates,
+      lineupCandidates: sanitized.lineupCandidates,
       explicitGenreLabels,
       enrichmentGaps,
       rejectedCandidates,

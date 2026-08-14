@@ -1,5 +1,8 @@
 import { createWorker, PSM, type Block, type Page, type Worker } from 'tesseract.js';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
+import type { MediaEvidenceContext } from '../shared/media-evidence-context';
 import { parseMediaLayoutFromOcr } from './parse-media-layout';
 import { prepareImageForOcr } from './prepare-image-for-ocr';
 import {
@@ -17,7 +20,9 @@ import type {
 } from './types';
 
 const PROVIDER_ID = 'tesseract-local';
-const EXTRACTION_MODEL = 'tesseract.js:eng+deu:psm-auto:layout-v3';
+const EXTRACTION_MODEL = 'tesseract.js:eng+deu:psm-auto:layout-v4';
+export const TESSERACT_RUNTIME_CACHE_DIR =
+  process.env.TESSERACT_CACHE_DIR ?? join(tmpdir(), 'eternal-rave-tesseract');
 
 let sharedWorkerPromise: Promise<Worker> | undefined;
 
@@ -26,6 +31,7 @@ async function getSharedWorker(): Promise<Worker> {
     sharedWorkerPromise = (async () => {
       const worker = await createWorker('eng+deu', 1, {
         logger: () => undefined,
+        cachePath: TESSERACT_RUNTIME_CACHE_DIR,
       });
       await worker.setParameters({
         tessedit_pageseg_mode: PSM.AUTO,
@@ -120,6 +126,25 @@ function mapBlocksFromPage(page: Page): MediaOcrBlock[] {
   }));
 }
 
+export function reparseCachedMediaEvidence(
+  cached: EventMediaEvidence,
+  mediaContext?: MediaEvidenceContext,
+): EventMediaEvidence {
+  const parsed = parseMediaLayoutFromOcr(cached.ocrLines, cached.ocrBlocks, mediaContext);
+  const evidence: EventMediaEvidence = {
+    ...cached,
+    extractedAt: new Date().toISOString(),
+    extractionModel: EXTRACTION_MODEL,
+    lineupCandidates: parsed.lineupCandidates,
+    genreCandidates: parsed.genreCandidates,
+    rejectedCandidates: parsed.rejectedCandidates,
+    mediaClassification: parsed.mediaClassification,
+    confidence: parsed.confidence,
+  };
+  writeCachedMediaEvidence(evidence);
+  return evidence;
+}
+
 export class TesseractMediaEvidenceProvider implements MediaEvidenceProvider {
   readonly providerId = PROVIDER_ID;
 
@@ -130,19 +155,7 @@ export class TesseractMediaEvidenceProvider implements MediaEvidenceProvider {
     }
 
     if (cached?.ocrLines?.length) {
-      const parsed = parseMediaLayoutFromOcr(cached.ocrLines, cached.ocrBlocks);
-      const evidence: EventMediaEvidence = {
-        ...cached,
-        extractedAt: new Date().toISOString(),
-        extractionModel: EXTRACTION_MODEL,
-        lineupCandidates: parsed.lineupCandidates,
-        genreCandidates: parsed.genreCandidates,
-        rejectedCandidates: parsed.rejectedCandidates,
-        mediaClassification: parsed.mediaClassification,
-        confidence: parsed.confidence,
-      };
-      writeCachedMediaEvidence(evidence);
-      return evidence;
+      return reparseCachedMediaEvidence(cached, input.mediaContext);
     }
 
     const worker = await getSharedWorker();
@@ -171,7 +184,7 @@ export class TesseractMediaEvidenceProvider implements MediaEvidenceProvider {
         },
       ];
     }
-    const parsed = parseMediaLayoutFromOcr(ocrLines, ocrBlocks);
+    const parsed = parseMediaLayoutFromOcr(ocrLines, ocrBlocks, input.mediaContext);
 
     const evidence: EventMediaEvidence = {
       sourceImageUrl: input.sourceImageUrl,

@@ -1,10 +1,15 @@
-import { normalizeOfficialGenreLabel } from '../bootshaus/normalize-genre';
+import { normalizeOfficialGenreLabel } from '../shared/normalize-genre';
 import {
+  canonicalActKey,
+  inferLineupEvidenceRole,
+  isAcceptableOfficialMediaLineupActName,
   isFloorOrStageHeader,
   isLineupIntroMarker,
-  isAcceptableOfficialMediaLineupActName,
   isShowcaseLabelLine,
-} from '../bootshaus/parse-lineup';
+  isTicketMarketingOrCtaLine,
+  type LineupValidationContext,
+} from '../shared/lineup-normalization';
+import { isContextNoiseTerm, type MediaEvidenceContext } from '../shared/media-evidence-context';
 import type {
   EventMediaEvidence,
   MediaClassification,
@@ -23,51 +28,105 @@ const PLACEHOLDER_PATTERN =
   /^(?:tba|and more|and many more|more tba|support tba|\.\.\.\s*more tba)$/i;
 const PLACEHOLDER_INLINE_PATTERN = /\b(?:tba|and many more|support tba)\b/i;
 const TIME_PATTERN = /^\d{1,2}[:.]\d{2}/;
-const URL_PATTERN = /^https?:\/\/|^www\./i;
-const TICKET_PATTERN =
-  /ticket|einlass|admission|euro|€|vorverkauf|abendkasse|shop|snash\.com|ticket\.io/i;
-const VENUE_NAME_PATTERN =
-  /^(?:amok|mallorca|bootshaus|bootshans|köln|cologne|aniok)$/i;
-const VENUE_BRAND_PATTERN = /bootshans?|aniok|llorca\.com/i;
-const PROMO_NUMBERED_PATTERN = /^\d{2,3}\s+every\s+/i;
 const ROSTER_DASH_PATTERN = /\s+-\s+/;
-const OCR_GARBAGE_PATTERN =
-  /^(?:presents?|into the|party|at|weekender|sessions?|airport|lineup)$/i;
 const LINEUP_HEADER_PATTERN = /lineup\s*\(/i;
 const SYMBOL_HEAVY_PATTERN = /[©¢\\#%*]{2,}|\\=\/|~\~/;
 const DATE_LINE_PATTERN =
   /\b(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|august|september|october|january)\b/i;
-const PROMO_LINE_PATTERN = /every\s+.*\s+night|tasty|llorca\.com/i;
+const PROMO_LINE_PATTERN = /every\s+.*\s+night|tasty/i;
 const DATE_PATTERN =
   /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)\b|\b\d{1,2}[./-]\d{1,2}(?:[./-]\d{2,4})?\b/i;
 const GENRE_HEADER_PATTERN = /^(?:genres?|sounds?|styles?)\s*:?\s*$/i;
 const LOGO_BOILERPLATE_PATTERN =
-  /presented by|powered by|in association|bootshaus\.tv|www\.|facebook|instagram|spotify/i;
+  /presented by|powered by|in association|facebook|instagram|spotify/i;
+const OCR_GARBAGE_PATTERN = /^(?:presents?|into the|party|at|weekender|sessions?|airport|lineup)$/i;
+const PROMO_NUMBERED_PATTERN = /^\d{2,3}\s+every\s+/i;
+const SYMBOL_COMPOUND_VENUE_PATTERN = /\*\s*[A-Z]{3,6}$/;
+
+function splitBillingSegments(text: string): string[] {
+  return text
+    .split(/\s*(?:&|\+|\/|\bx\b|\bb2b\b|\*)\s*/i)
+    .map((part) => normalizeLine(text))
+    .filter(Boolean);
+}
 
 function normalizeLine(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
 
-function canonicalActKey(name: string): string {
-  return normalizeLine(name).toLowerCase();
+function buildValidationContext(mediaContext?: MediaEvidenceContext): LineupValidationContext {
+  return { mediaContext };
 }
 
-function inferEvidenceRole(
-  displayName: string,
-  billingOrder: number,
-): MediaLineupCandidate['evidenceRole'] {
-  if (
-    displayName.includes('&') ||
-    /\bx\b/i.test(displayName) ||
-    /\bb2b\b/i.test(displayName) ||
-    /\bvs\.?\b/i.test(displayName)
-  ) {
-    return 'compound_act';
+function classifyMediaLine(
+  line: MediaOcrLine,
+  mediaContext?: MediaEvidenceContext,
+): string {
+  const text = normalizeLine(line.text);
+  if (!text) {
+    return 'empty';
   }
-  return billingOrder === 0 ? 'headliner' : 'artist';
+  if (isFloorOrStageHeader(text) || isShowcaseLabelLine(text)) {
+    return 'floor_header';
+  }
+  if (GENRE_HEADER_PATTERN.test(text)) {
+    return 'genre_header';
+  }
+  if (PLACEHOLDER_PATTERN.test(text) || PLACEHOLDER_INLINE_PATTERN.test(text)) {
+    return 'placeholder';
+  }
+  if (TIME_PATTERN.test(text)) {
+    return 'time';
+  }
+  if (isTicketMarketingOrCtaLine(text)) {
+    return 'ticket';
+  }
+  if (mediaContext && isContextNoiseTerm(text, mediaContext)) {
+    return 'venue';
+  }
+  if (OCR_GARBAGE_PATTERN.test(text)) {
+    return 'logo';
+  }
+  if (PROMO_NUMBERED_PATTERN.test(text)) {
+    return 'logo';
+  }
+  if (SYMBOL_COMPOUND_VENUE_PATTERN.test(text)) {
+    return 'venue';
+  }
+  if (mediaContext && splitBillingSegments(text).every((segment) => isContextNoiseTerm(segment, mediaContext))) {
+    return 'venue';
+  }
+  if (LINEUP_HEADER_PATTERN.test(text)) {
+    return 'logo';
+  }
+  if (SYMBOL_HEAVY_PATTERN.test(text)) {
+    return 'logo';
+  }
+  if (ROSTER_DASH_PATTERN.test(text)) {
+    const segments = text.split(/\s+-\s+/).map((part) => normalizeLine(part)).filter(Boolean);
+    if (segments.length >= 2) {
+      return 'roster_line';
+    }
+  }
+  if (DATE_LINE_PATTERN.test(text) && text.length < 60) {
+    return 'date';
+  }
+  if (PROMO_LINE_PATTERN.test(text)) {
+    return 'logo';
+  }
+  if (DATE_PATTERN.test(text) && text.length < 50) {
+    return 'date';
+  }
+  if (LOGO_BOILERPLATE_PATTERN.test(text)) {
+    return 'logo';
+  }
+  if (isLikelyArtistLine(text, mediaContext)) {
+    return 'artist_candidate';
+  }
+  return 'prose';
 }
 
-function isLikelyArtistLine(text: string): boolean {
+function isLikelyArtistLine(text: string, mediaContext?: MediaEvidenceContext): boolean {
   const normalized = normalizeLine(text);
   if (!normalized || normalized.length > MAX_ARTIST_LINE_LENGTH) {
     return false;
@@ -79,12 +138,13 @@ function isLikelyArtistLine(text: string): boolean {
     PLACEHOLDER_PATTERN.test(normalized) ||
     PLACEHOLDER_INLINE_PATTERN.test(normalized) ||
     TIME_PATTERN.test(normalized) ||
-    URL_PATTERN.test(normalized) ||
-    TICKET_PATTERN.test(normalized) ||
+    isTicketMarketingOrCtaLine(normalized) ||
     GENRE_HEADER_PATTERN.test(normalized) ||
-    LOGO_BOILERPLATE_PATTERN.test(normalized) ||
-    VENUE_BRAND_PATTERN.test(normalized)
+    LOGO_BOILERPLATE_PATTERN.test(normalized)
   ) {
+    return false;
+  }
+  if (mediaContext && isContextNoiseTerm(normalized, mediaContext)) {
     return false;
   }
   if (DATE_PATTERN.test(normalized) && normalized.length < 40) {
@@ -107,77 +167,10 @@ function splitGenreLabels(text: string): string[] {
     .filter(Boolean);
 }
 
-function classifyMediaLine(line: MediaOcrLine): string {
-  const text = normalizeLine(line.text);
-  if (!text) {
-    return 'empty';
-  }
-  if (isFloorOrStageHeader(text) || isShowcaseLabelLine(text)) {
-    return 'floor_header';
-  }
-  if (GENRE_HEADER_PATTERN.test(text)) {
-    return 'genre_header';
-  }
-  if (PLACEHOLDER_PATTERN.test(text) || PLACEHOLDER_INLINE_PATTERN.test(text)) {
-    return 'placeholder';
-  }
-  if (TIME_PATTERN.test(text)) {
-    return 'time';
-  }
-  if (URL_PATTERN.test(text)) {
-    return 'url';
-  }
-  if (TICKET_PATTERN.test(text)) {
-    return 'ticket';
-  }
-  if (VENUE_NAME_PATTERN.test(text)) {
-    return 'venue';
-  }
-  if (VENUE_BRAND_PATTERN.test(text) && (/\*/.test(text) || text.length < 24)) {
-    return 'logo';
-  }
-  if (PROMO_NUMBERED_PATTERN.test(text)) {
-    return 'logo';
-  }
-  if (OCR_GARBAGE_PATTERN.test(text)) {
-    return 'logo';
-  }
-  if (LINEUP_HEADER_PATTERN.test(text)) {
-    return 'logo';
-  }
-  if (SYMBOL_HEAVY_PATTERN.test(text)) {
-    return 'logo';
-  }
-  if (ROSTER_DASH_PATTERN.test(text)) {
-    const segments = text.split(/\s+-\s+/).map((part) => normalizeLine(part)).filter(Boolean);
-    if (segments.length >= 2) {
-      return 'roster_line';
-    }
-  }
-  if (DATE_LINE_PATTERN.test(text) && text.length < 60) {
-    return 'date';
-  }
-  if (PROMO_LINE_PATTERN.test(text)) {
-    return 'logo';
-  }
-  if (/bootshaus|köln|cologne|auenweg/i.test(text) && text.length < 60) {
-    return 'venue';
-  }
-  if (DATE_PATTERN.test(text) && text.length < 50) {
-    return 'date';
-  }
-  if (LOGO_BOILERPLATE_PATTERN.test(text)) {
-    return 'logo';
-  }
-  if (isLikelyArtistLine(text)) {
-    return 'artist_candidate';
-  }
-  return 'prose';
-}
-
 export function parseMediaLayoutFromOcr(
   ocrLines: MediaOcrLine[],
   ocrBlocks: MediaOcrBlock[],
+  mediaContext?: MediaEvidenceContext,
 ): Pick<
   EventMediaEvidence,
   | 'lineupCandidates'
@@ -195,6 +188,7 @@ export function parseMediaLayoutFromOcr(
   let billingOrder = 0;
   let readableLineCount = 0;
   let confidenceSum = 0;
+  const validationContext = buildValidationContext(mediaContext);
 
   const sortedLines = [...ocrLines].sort((left, right) => {
     if (left.bbox.y0 !== right.bbox.y0) {
@@ -212,7 +206,7 @@ export function parseMediaLayoutFromOcr(
     readableLineCount += 1;
     confidenceSum += line.confidence;
 
-    const kind = classifyMediaLine(line);
+    const kind = classifyMediaLine(line, mediaContext);
     if (kind === 'genre_header') {
       inGenreSection = true;
       continue;
@@ -227,7 +221,11 @@ export function parseMediaLayoutFromOcr(
       });
       continue;
     }
-    if (['placeholder', 'time', 'url', 'ticket', 'venue', 'date', 'logo', 'prose', 'roster_line', 'empty'].includes(kind)) {
+    if (
+      ['placeholder', 'time', 'url', 'ticket', 'venue', 'date', 'logo', 'prose', 'roster_line', 'empty'].includes(
+        kind,
+      )
+    ) {
       if (kind === 'placeholder') {
         rejectedCandidates.push({
           rawText: text,
@@ -293,7 +291,7 @@ export function parseMediaLayoutFromOcr(
       continue;
     }
 
-    if (!isAcceptableOfficialMediaLineupActName(text)) {
+    if (!isAcceptableOfficialMediaLineupActName(text, validationContext)) {
       rejectedCandidates.push({
         rawText: text,
         reason: 'invalid_media_lineup_entry',
@@ -319,7 +317,7 @@ export function parseMediaLayoutFromOcr(
       displayName: text,
       rawText: text,
       confidence: line.confidence,
-      evidenceRole: inferEvidenceRole(text, billingOrder),
+      evidenceRole: inferLineupEvidenceRole(text, billingOrder),
       billingOrder,
       sourceRegion: 'ocr_line',
     });

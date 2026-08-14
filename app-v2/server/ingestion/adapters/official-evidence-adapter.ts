@@ -1,5 +1,5 @@
 import type { OfficialEventEvidence } from '../../official-connectors/types';
-import { normalizeOfficialGenreLabels } from '../../official-connectors/bootshaus/normalize-genre';
+import { normalizeOfficialGenreLabels } from '../../official-connectors/shared/normalize-genre';
 import type { EventCandidate, EventCandidateLineupAct } from '../types/event-candidate';
 
 function mapLineupRole(
