@@ -1,11 +1,13 @@
 export type OfficialLineupEvidenceRole = 'headliner' | 'artist' | 'compound_act';
 
+export type OfficialLineupEvidenceOrigin = 'official_text' | 'official_media';
+
 export interface OfficialLineupCandidate {
   displayName: string;
   rawText: string;
   billingOrder: number;
   evidenceRole: OfficialLineupEvidenceRole;
-  evidenceOrigin: 'official_text';
+  evidenceOrigin: OfficialLineupEvidenceOrigin;
 }
 
 export interface RejectedOfficialCandidate {
@@ -60,6 +62,7 @@ export interface OfficialEvidenceAudit {
     status: 'normalized' | 'unmapped';
   }>;
   unmappedGenreLabels: string[];
+  mediaEvidence?: import('./media-evidence/types').EventMediaEvidence;
 }
 
 export type ConsumerPreviewDecision = 'preview_ready' | 'review_required';

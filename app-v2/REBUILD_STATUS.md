@@ -40,6 +40,7 @@ Source Evidence → EventCandidate → Validation → EventWritePlan → Control
 - [x] M4.1 Generische Bootshaus-Bereinigung (30/30 Gate)
 - [x] M5 Bootshaus 30-Event Run
 - [x] M5.1 Bootshaus Official Text Evidence (30/30 Gate)
+- [x] M5.2 Bootshaus Official Media Evidence (30/30 Gate, local Tesseract)
 - [ ] M6 Controlled Cutover
 - [ ] M7 Legacy Removal
 
@@ -51,13 +52,15 @@ M4.1 wurde visuell funktional bestätigt (`passed_remote_desktop_web`). M5 hat d
 
 M5.1 hat alle 30 gecachten Bootshaus-Detailseiten offline auf explizite Line-up-/Genreblöcke geprüft, textbasierte Evidence generisch vervollständigt und Media-only-Gaps ehrlich markiert (`lineup_media_required` wo nur Flyer/Bilder Acts liefern). Eine atomare Korrektur hat 16 Events mit ergänzter Official-Text-Line-up-Evidenz aktualisiert (`event_lineup` 45 → 114); Genres blieben bei 41 Zeilen. Keine Ticketanreicherung, keine Eventkernfeld-Änderungen, M2 unverändert.
 
-Nächster Schritt: Official Media/Flyer Evidence für verbleibende Media-Gaps. Danach: verifizierte Ticket-Evidenz (M6).
+M5.2 hat alle 30 Bootshaus-Official-Images über den Golden Path verarbeitet: Safe Image Fetch (HTTPS-Host-Allowlist, Redirect-/MIME-/Größenprüfung, SHA-256), lokaler `TesseractMediaEvidenceProvider` (`tesseract.js`, keine externe Vision-API), layout-aware OCR, Media/Text-Reconciliation und Content Quality Gate. Eine atomare Korrektur hat 9 Events mit verifizierter Media-Line-up-Evidenz ergänzt (`event_lineup` 114 → 139); Genres blieben bei 41 Zeilen. Unsichere OCR-Konflikte wurden als `lineup_media_ambiguous` dokumentiert, ohne unsichere Acts zu publizieren. M2 unverändert.
+
+Nächster Schritt: verifizierte Ticket-Evidenz (M6).
 
 ## Aktive Umgebung
 
 - aktiver Git-Branch: `rebuild/event-core-clean`
 - Legacy-Branch: `archive/event-system-legacy-2026-08-13`
 - Supabase-Projekt: `gnkjzinwvmrxcadwebhv` (Event-Core-Baseline, Auth behalten)
-- public-Schema: 31 Events (30 Bootshaus Official + 1 M2), 31 Sources (30 Official + 1 Manual), 114 `event_lineup`, 41 `event_genres`
-- `physicalDeviceVisualCheck`: `pending_official_evidence_recheck` (M5.1)
-- nächster Schritt: Official Media/Flyer Evidence für verbleibende `lineup_media_required`-Gaps, danach M6 Ticket-Evidenz
+- public-Schema: 31 Events (30 Bootshaus Official + 1 M2), 31 Sources (30 Official + 1 Manual), 139 `event_lineup`, 41 `event_genres`
+- `physicalDeviceVisualCheck`: `pending_official_evidence_recheck` (M5.2)
+- nächster Schritt: M6 Ticket-Evidenz

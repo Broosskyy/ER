@@ -584,7 +584,13 @@ export function isAcceptableOfficialLineupActName(text: string): boolean {
   return validateLineupAct(text, 'structured_lineup_header').accepted;
 }
 
-export function blocksToParsedActs(blocks: LineupEvidenceBlock[]): ParsedLineupAct[] {
+export function isAcceptableOfficialMediaLineupActName(text: string): boolean {
+  return validateLineupAct(text, 'floor_billing').accepted;
+}
+
+export function blocksToParsedActs(
+  blocks: LineupEvidenceBlock[],
+): ParsedLineupAct[] {
   const acts: ParsedLineupAct[] = [];
 
   blocks.forEach((block, blockIndex) => {

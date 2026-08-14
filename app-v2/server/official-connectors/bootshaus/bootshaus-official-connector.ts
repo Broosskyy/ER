@@ -1,6 +1,12 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
+import {
+  buildImageHostAllowlist,
+  createEmptyMediaPassCounters,
+  enrichOfficialEvidenceWithMedia,
+  terminateSharedTesseractWorker,
+} from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
 import { safeFetchHtml } from '../safe-fetch';
 import {
@@ -28,6 +34,7 @@ export interface BootshausConnectorRunResult {
   loadedDetailUrls: string[];
   previews: OfficialEventConsumerPreview[];
   counters: ConnectorErrorCounters;
+  mediaCounters: ReturnType<typeof createEmptyMediaPassCounters>;
 }
 
 async function mapWithConcurrency<TInput, TOutput>(
@@ -54,6 +61,8 @@ async function mapWithConcurrency<TInput, TOutput>(
 export class BootshausOfficialConnector {
   async runPreview(options: BootshausConnectorRunOptions = {}): Promise<BootshausConnectorRunResult> {
     const counters = createEmptyConnectorCounters();
+    const mediaCounters = createEmptyMediaPassCounters();
+    const allowedImageHosts = new Set<string>();
     const fetchedAt = (options.now?.() ?? new Date()).toISOString();
     const writeCache =
       options.writeCache ??
@@ -92,19 +101,34 @@ export class BootshausOfficialConnector {
       const slug = new URL(detailResult.finalUrl).pathname.split('/').filter(Boolean)[1] ?? 'unknown';
       await writeCache(`m3-bootshaus-cache/details/${slug}.html`, detailResult.html);
 
-      const evidence = parseBootshausDetailPage(
+      const textEvidence = parseBootshausDetailPage(
         detailResult.html,
         detailResult.finalUrl,
         fetchedAt,
         counters,
       );
 
-      if (evidence.startsAt && Date.parse(evidence.startsAt) < nowMs) {
-        evidence.enrichmentGaps = [...new Set([...evidence.enrichmentGaps, 'past_event_skipped'])];
+      if (textEvidence.startsAt && Date.parse(textEvidence.startsAt) < nowMs) {
+        textEvidence.enrichmentGaps = [...new Set([...textEvidence.enrichmentGaps, 'past_event_skipped'])];
+      }
+
+      let evidence = textEvidence;
+      if (textEvidence.officialImageUrl && !textEvidence.enrichmentGaps.includes('past_event_skipped')) {
+        for (const host of buildImageHostAllowlist([textEvidence.officialImageUrl])) {
+          allowedImageHosts.add(host);
+        }
+        evidence = await enrichOfficialEvidenceWithMedia(textEvidence, {
+          counters,
+          mediaCounters,
+          allowedImageHosts,
+          sourceObservedAt: fetchedAt,
+        });
       }
 
       return buildConsumerPreview(evidence, counters);
     });
+
+    await terminateSharedTesseractWorker();
 
     const futurePreviews = previews.filter(
       (preview) => !preview.enrichmentGaps.includes('past_event_skipped'),
@@ -117,6 +141,7 @@ export class BootshausOfficialConnector {
       loadedDetailUrls: [...fetchedUrlSet],
       previews: futurePreviews,
       counters,
+      mediaCounters,
     };
   }
 }
