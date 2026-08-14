@@ -32,7 +32,8 @@ Source Evidence → Canonical Event → Validation → Event Writer → Clean Da
 ## Meilensteine
 
 - [x] M1 Clean Environment
-- [ ] M2 Manual Event Roundtrip — **IN PROGRESS**
+- [x] M1 Security Hardening
+- [ ] M2 Manual Event Roundtrip
 - [ ] M3 One Official Import Roundtrip
 - [ ] M4 Seven Reference Events
 - [ ] M5 Bootshaus 30-Event Run
@@ -43,7 +44,7 @@ Nur ein Meilenstein darf gleichzeitig als IN PROGRESS markiert sein.
 
 ## Aktueller Zustand
 
-M2 Manual Event Roundtrip — IN PROGRESS
+M1 Security Hardening abgeschlossen. Nächster Schritt: Legacy Source Purge. Danach: Manual Event Roundtrip.
 
 ## Aktive Umgebung
 
