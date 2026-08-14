@@ -28,9 +28,14 @@ export function resolveConsumerEventStatus(
 }
 
 export function resolveConsumerTicketStatus(
-  event: Pick<EventDisplayModel, 'ticketStatus' | 'ticketUrl'>,
-): EventTicketStatus {
-  if (!event.ticketUrl) return 'unavailable';
+  event: Pick<EventDisplayModel, 'ticketStatus' | 'ticketUrl' | 'priceText'>,
+): EventTicketStatus | undefined {
+  if (!event.ticketUrl && !event.priceText) {
+    return undefined;
+  }
+  if (!event.ticketUrl) {
+    return undefined;
+  }
   return event.ticketStatus === 'sold_out' ? 'sold_out' : 'on_sale';
 }
 
@@ -46,9 +51,17 @@ export function resolvePrimaryCardStatus(event: EventDisplayModel): EventStatus 
 }
 
 export function resolvePublicTicketPresentation(event: EventDisplayModel) {
+  if (!event.ticketUrl && !event.priceText) {
+    return {
+      ticketLabel: undefined,
+      colorToken: 'default' as const,
+      ticketStatus: undefined,
+    };
+  }
+
   const ticketStatus = resolveConsumerTicketStatus(event);
   return {
-    ticketLabel: event.priceText ?? 'Tickets',
+    ticketLabel: event.priceText,
     colorToken: 'default' as const,
     ticketStatus,
   };

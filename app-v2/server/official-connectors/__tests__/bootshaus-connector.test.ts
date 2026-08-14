@@ -47,6 +47,8 @@ describe('bootshaus detail parsing', () => {
     expect(evidence.enrichmentGaps).toContain('genres_missing');
     expect(evidence.linkedTicketUrl).toMatch(/^https:\/\/bootshaus-club\.ticket\.io\//);
     expect(evidence.descriptionClean).not.toContain('Bootshaus Mobile App');
+    expect(evidence.descriptionClean).not.toContain('Auenweg 173');
+    expect(evidence.descriptionClean).not.toContain('snash.com');
   });
 
   it('parses chris stussy control case', () => {
@@ -77,5 +79,8 @@ describe('bootshaus detail parsing', () => {
     expect(evidence.enrichmentGaps).toContain('lineup_not_announced');
     expect(evidence.enrichmentGaps).toContain('genres_missing');
     expect(evidence.descriptionClean).not.toContain('Bootshaus Mobile App');
+    expect(evidence.descriptionClean).not.toContain('Auenweg 173');
+    expect(evidence.descriptionClean).not.toContain('snash.com');
+    expect(evidence.descriptionClean).not.toContain('Early Bird');
   });
 });

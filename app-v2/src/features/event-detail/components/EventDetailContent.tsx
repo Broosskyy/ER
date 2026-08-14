@@ -66,9 +66,6 @@ export function EventDetailContent({ detail, display }: EventDetailContentProps)
           {detail.lineup.map((act) => (
             <View key={act.id} style={styles.lineupRow}>
               <AppText role="body">{act.billingName}</AppText>
-              <AppText role="caption" style={{ color: theme.colors.textMuted }}>
-                {act.billingRole}
-              </AppText>
             </View>
           ))}
         </View>

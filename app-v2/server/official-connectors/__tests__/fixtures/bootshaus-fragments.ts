@@ -27,6 +27,8 @@ export const BOOTSHAUS_DETAIL_FRAGMENT = `
       <p>Bootshaus / Auenweg 173 / 51063 Cologne</p>
       <p>Bootshaus Mobile App:</p>
       <p>https://bit.ly/Bootshaus-App</p>
+      <p>Bootshaus Merchandise</p>
+      <p>https://snash.com/kollektionen/bootshaus/</p>
     </div>
   </div>
 </div>
@@ -64,8 +66,13 @@ export const BOOTSHAUS_AFFENKAEFIG_FRAGMENT = `
 </div>
 <div class="upcoming-title">AFFENKÄFIG RULES // BOOTSHAUS KÖLN</div>
 <div class="event-description-content">
-  <p>AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE!</p>
+  <p>AFFENKÄFIG RULES! BOOTSHAUS – FULL HOUSE! 🐒🔥</p>
+  <p>Am 23. Oktober trifft sich das Rudel zum gepflegten Abriss im Bootshaus Köln.</p>
+  <p>🎟️ Early Bird Tickets sind jetzt verfügbar – nur für kurze Zeit.</p>
   <p>Das Line Up hauen wir euch bald um die Ohren.</p>
+  <p>Sichert euch so lange die vergünstigten Tickets im Shop.</p>
+  <p>▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔</p>
+  <p>Bootshaus / Auenweg 173 / 51063 Cologne</p>
   <p>Bootshaus Mobile App:</p>
 </div>
 <div class="genres-container"><div class="tag-container"></div></div>

@@ -37,6 +37,7 @@ Source Evidence → EventCandidate → Validation → EventWritePlan → Control
 - [x] M2 Manual Event Roundtrip
 - [x] M3 Bootshaus Official Connector (Noop)
 - [x] M4 Gemeinsamer EventCandidate und Referenz-Persistenz
+- [x] M4.1 Generische Bootshaus-Bereinigung (30/30 Gate)
 - [ ] M5 Bootshaus 30-Event Run
 - [ ] M6 Controlled Cutover
 - [ ] M7 Legacy Removal
@@ -45,12 +46,12 @@ Nur ein Meilenstein darf gleichzeitig als IN PROGRESS markiert sein.
 
 ## Aktueller Zustand
 
-M3 Noop abgeschlossen. M4 gemeinsamer EventCandidate und Referenz-Persistenz abgeschlossen: drei Official Events (Loonyland, Chris Stussy, Affenkäfig) plus M2-Testevent im Event-Core. Nächster Schritt: visuelle Prüfung in der App und danach verbleibende Bootshaus-Events.
+M4-Geräteprüfung deckte generische Description- und Projection-Fehler auf. M4.1 bereinigt Bootshaus-Beschreibungen generisch über alle 30 gecachten Events, korrigiert Ticket- und Line-up-Rollenprojektion in der App und aktualisiert die drei bereits persistierten Official Events über denselben Pfad. Keine Event-Sonderlogik. Die übrigen 27 Events sind offline geprüft, aber noch nicht persistiert. Nächster Schritt: visuelle Reprüfung (`pending_recheck`), danach M5 kontrollierte Persistenz der übrigen 27 Events.
 
 ## Aktive Umgebung
 
 - aktiver Git-Branch: `rebuild/event-core-clean`
 - Legacy-Branch: `archive/event-system-legacy-2026-08-13`
 - Supabase-Projekt: `gnkjzinwvmrxcadwebhv` (Event-Core-Baseline, Auth behalten)
-- public-Schema: sechs Tabellen mit M2-Testdatensatz plus drei Official-Referenz-Events
-- nächster Schritt: visuelle Abnahme der vier Events in der App, danach verbleibende Bootshaus-Events
+- public-Schema: vier Events (M2 + 3 Official), 30 Bootshaus-Evidences offline geprüft
+- nächster Schritt: visuelle Reprüfung, dann M5 Persistenz der übrigen 27 Bootshaus-Events

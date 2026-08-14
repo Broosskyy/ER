@@ -17,12 +17,143 @@ const LINEUP_NOT_ANNOUNCED_PATTERNS = [
 ];
 
 const FLOOR_HEADER_PATTERN = /^[A-Z0-9][A-Z0-9\s/&-]{1,40}:$/;
+const DECORATIVE_SEPARATOR_PATTERN = /^[▔_\-\s]{6,}$/;
+
+export type RemovedDescriptionBlockCategory =
+  | 'footer_address'
+  | 'app_promo'
+  | 'merch_promo'
+  | 'standalone_url'
+  | 'ticket_cta'
+  | 'age_admission'
+  | 'decorative_separator'
+  | 'boilerplate'
+  | 'lineup_block'
+  | 'lineup_not_announced';
 
 export function containsLineupNotAnnouncedSignal(text: string): boolean {
   return LINEUP_NOT_ANNOUNCED_PATTERNS.some((pattern) => pattern.test(text));
 }
 
-export function isBoilerplateParagraph(text: string): boolean {
+export function isDecorativeSeparator(text: string): boolean {
+  return DECORATIVE_SEPARATOR_PATTERN.test(text.trim());
+}
+
+export function isStandaloneUrlParagraph(text: string): boolean {
+  const trimmed = text.trim();
+  return /^https?:\/\/\S+$/i.test(trimmed) || /^www\.\S+$/i.test(trimmed);
+}
+
+export function isAddressFooterParagraph(text: string): boolean {
+  const normalized = text.trim().toLowerCase();
+  if (/bootshaus\s*\/\s*auenweg/i.test(normalized)) {
+    return true;
+  }
+
+  return (
+    /auenweg\s*173/.test(normalized) &&
+    /51063/.test(normalized) &&
+    /(köln|cologne|bootshaus)/i.test(normalized)
+  );
+}
+
+export function isAppPromoParagraph(text: string): boolean {
+  const normalized = text.trim().toLowerCase();
+  return (
+    normalized.includes('bootshaus mobile app') ||
+    normalized.includes('bit.ly/bootshaus-app') ||
+    normalized === 'app:'
+  );
+}
+
+export function isMerchPromoParagraph(text: string): boolean {
+  const normalized = text.trim().toLowerCase();
+  return (
+    normalized.includes('bootshaus merchandise') ||
+    normalized.includes('bootshaus merch') ||
+    normalized.includes('snash.com') ||
+    normalized.includes('merch-shop')
+  );
+}
+
+export function isTicketCtaParagraph(text: string): boolean {
+  const normalized = text.trim().toLowerCase();
+  if (!normalized) {
+    return false;
+  }
+
+  if (/early\s+bird\s+tickets/.test(normalized)) {
+    return true;
+  }
+  if (/tickets.*jetzt\s+verfügbar/.test(normalized)) {
+    return true;
+  }
+  if (/vergünstigten?\s+tickets/.test(normalized)) {
+    return true;
+  }
+  if (/sichert\s+euch/.test(normalized) && /tickets?|shop/.test(normalized)) {
+    return true;
+  }
+  if (/nur\s+für\s+kurze\s+zeit/.test(normalized) && /tickets?/.test(normalized)) {
+    return true;
+  }
+
+  return (
+    normalized.length < 220 &&
+    /tickets?/.test(normalized) &&
+    /(shop|verfügbar|sichern|sichert)/.test(normalized) &&
+    !/[.!?].{40,}/.test(normalized)
+  );
+}
+
+export function isAgeAdmissionParagraph(text: string): boolean {
+  const normalized = text.trim().toLowerCase();
+  return normalized.includes('einlass ab') || normalized.includes('age for admission');
+}
+
+export function isFooterSentinelParagraph(text: string): boolean {
+  return (
+    isDecorativeSeparator(text) ||
+    isAgeAdmissionParagraph(text) ||
+    isAddressFooterParagraph(text) ||
+    isAppPromoParagraph(text) ||
+    isMerchPromoParagraph(text) ||
+    isStandaloneUrlParagraph(text)
+  );
+}
+
+export function classifyForbiddenDescriptionParagraph(
+  text: string,
+): RemovedDescriptionBlockCategory | null {
+  if (isDecorativeSeparator(text)) {
+    return 'decorative_separator';
+  }
+  if (isAgeAdmissionParagraph(text)) {
+    return 'age_admission';
+  }
+  if (isAddressFooterParagraph(text)) {
+    return 'footer_address';
+  }
+  if (isAppPromoParagraph(text)) {
+    return 'app_promo';
+  }
+  if (isMerchPromoParagraph(text)) {
+    return 'merch_promo';
+  }
+  if (isStandaloneUrlParagraph(text)) {
+    return 'standalone_url';
+  }
+  if (isTicketCtaParagraph(text)) {
+    return 'ticket_cta';
+  }
+  if (isBoilerplateParagraph(text)) {
+    return 'boilerplate';
+  }
+
+  return null;
+}
+
+function isSplitBoilerplateParagraph(text: string): boolean {
   const normalized = text.trim().toLowerCase();
   if (!normalized) {
     return true;
@@ -31,13 +162,60 @@ export function isBoilerplateParagraph(text: string): boolean {
   return BOILERPLATE_MARKERS.some((marker) => normalized.includes(marker));
 }
 
+export function isBoilerplateParagraph(text: string): boolean {
+  const normalized = text.trim().toLowerCase();
+  if (!normalized) {
+    return true;
+  }
+
+  if (isSplitBoilerplateParagraph(text)) {
+    return true;
+  }
+
+  return (
+    isAddressFooterParagraph(text) ||
+    isAppPromoParagraph(text) ||
+    isMerchPromoParagraph(text) ||
+    isStandaloneUrlParagraph(text) ||
+    isTicketCtaParagraph(text) ||
+    isDecorativeSeparator(text) ||
+    isAgeAdmissionParagraph(text)
+  );
+}
+
+export function isFloorListHeaderParagraph(text: string): boolean {
+  const upper = text.trim().toUpperCase();
+  return FLOOR_HEADER_PATTERN.test(upper.endsWith(':') ? upper : `${upper}:`);
+}
+
+export function truncateDescriptionBeforeStructuredFloorList(paragraphs: string[]): string[] {
+  const floorIndex = paragraphs.findIndex((paragraph) => isFloorListHeaderParagraph(paragraph));
+  if (floorIndex === -1) {
+    return paragraphs;
+  }
+  return paragraphs.slice(0, floorIndex);
+}
+
 export function isFloorHeader(text: string): boolean {
   return FLOOR_HEADER_PATTERN.test(text.trim().toUpperCase());
 }
 
+export function normalizeDescriptionParagraph(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
+export function stripTrailingFooterParagraphs(paragraphs: string[]): string[] {
+  const normalized = paragraphs.map((paragraph) => normalizeDescriptionParagraph(paragraph));
+  const footerIndex = normalized.findIndex((paragraph) => isFooterSentinelParagraph(paragraph));
+  if (footerIndex === -1) {
+    return normalized.filter(Boolean);
+  }
+  return normalized.slice(0, footerIndex).filter(Boolean);
+}
+
 export function cleanDescriptionParagraphs(paragraphs: string[]): string {
   return paragraphs
-    .map((paragraph) => paragraph.replace(/\s+/g, ' ').trim())
+    .map((paragraph) => normalizeDescriptionParagraph(paragraph))
     .filter((paragraph) => paragraph.length > 0 && !isBoilerplateParagraph(paragraph))
     .join('\n\n');
 }
@@ -76,7 +254,7 @@ export function splitDescriptionAndLineupBlocks(paragraphs: string[]): {
       continue;
     }
 
-    if (isBoilerplateParagraph(paragraph)) {
+    if (isSplitBoilerplateParagraph(paragraph)) {
       inLineupBlock = false;
       continue;
     }
@@ -94,4 +272,13 @@ export function splitDescriptionAndLineupBlocks(paragraphs: string[]): {
     lineupParagraphs,
     lineupNotAnnounced,
   };
+}
+
+export function containsForbiddenDescriptionContent(text: string | undefined): boolean {
+  if (!text?.trim()) {
+    return false;
+  }
+
+  const paragraphs = text.split(/\n{2,}/).map((entry) => normalizeDescriptionParagraph(entry));
+  return paragraphs.some((paragraph) => isBoilerplateParagraph(paragraph));
 }

@@ -16,6 +16,8 @@ import {
   cleanDescriptionParagraphs,
   extractDescriptionParagraphsFromHtml,
   splitDescriptionAndLineupBlocks,
+  stripTrailingFooterParagraphs,
+  truncateDescriptionBeforeStructuredFloorList,
 } from './parse-description';
 import { parseBootshausExplicitGenres } from './parse-genres';
 import { parseBootshausLineupParagraphs } from './parse-lineup';
@@ -106,15 +108,16 @@ export function parseBootshausDetailPage(
   const paragraphs = extractDescriptionParagraphsFromHtml(descriptionHtml);
   const { descriptionParagraphs, lineupParagraphs, lineupNotAnnounced } =
     splitDescriptionAndLineupBlocks(paragraphs);
-  const descriptionRaw = cleanDescriptionParagraphs([
-    ...descriptionParagraphs,
-    ...lineupParagraphs,
-  ]);
-  const descriptionClean = cleanDescriptionParagraphs(descriptionParagraphs);
-
-  if (descriptionClean !== descriptionRaw && descriptionClean.length < descriptionRaw.length) {
-    // tracked only when boilerplate survived into clean text
-  }
+  const editorialDescriptionParagraphs = truncateDescriptionBeforeStructuredFloorList(
+    descriptionParagraphs,
+  );
+  const descriptionParagraphsForClean = stripTrailingFooterParagraphs(editorialDescriptionParagraphs);
+  const descriptionRaw =
+    cleanDescriptionParagraphs([
+      ...stripTrailingFooterParagraphs(editorialDescriptionParagraphs),
+      ...lineupParagraphs,
+    ]) || undefined;
+  const descriptionClean = cleanDescriptionParagraphs(descriptionParagraphsForClean) || undefined;
 
   const lineupResult = parseBootshausLineupParagraphs(lineupParagraphs);
   const explicitGenreLabels = parseBootshausExplicitGenres($('.genres-container').html() ?? '');

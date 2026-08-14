@@ -1,18 +1,5 @@
+import { containsForbiddenDescriptionContent } from './bootshaus/parse-description';
 import type { ConnectorErrorCounters, OfficialEventConsumerPreview, OfficialEventEvidence } from './types';
-
-function containsBoilerplate(text: string | undefined): boolean {
-  if (!text) {
-    return false;
-  }
-
-  const normalized = text.toLowerCase();
-  return (
-    normalized.includes('bootshaus mobile app') ||
-    normalized.includes('bootshaus merchandise') ||
-    normalized.includes('einlass ab 18') ||
-    normalized.includes('www.bootshaus.tv')
-  );
-}
 
 export function buildConsumerPreview(
   evidence: OfficialEventEvidence,
@@ -38,7 +25,7 @@ export function buildConsumerPreview(
   if (evidence.endsAt && evidence.startsAt && Date.parse(evidence.endsAt) < Date.parse(evidence.startsAt)) {
     reviewReasons.push('end_before_start');
   }
-  if (containsBoilerplate(evidence.descriptionClean)) {
+  if (containsForbiddenDescriptionContent(evidence.descriptionClean)) {
     reviewReasons.push('boilerplate_in_description');
     counters.boilerplateInDescriptions += 1;
   }
