@@ -1,9 +1,0 @@
-{
-  "generatedAt": "2026-08-06T01:18:03.675Z",
-  "phase": "4.8.6.5.1",
-  "productionMutationsInThisRun": 0,
-  "eventId": "evt-1785389049895-4mb7dub",
-  "mutations": [],
-  "candidateCount": 0,
-  "approvalRequired": "apply --approve with PHASE48651_APPLY_APPROVED=true"
-}

@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
 import { spacing, spacingRoles } from '@/design/spacing';
-import { HOME_FILTER_CHIPS, HomeFilterChipId } from '@/features/events/data/home-config';
+import { HOME_FILTER_CHIPS, HomeFilterChipId } from '@/features/events/config/home-config';
 
 import { FilterChip } from './FilterChip';
 

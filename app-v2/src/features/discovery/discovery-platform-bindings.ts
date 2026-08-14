@@ -1,4 +1,4 @@
-import type { EventRepository, OrganizerRepository, VenueRepository } from '@/data/repositories/repositories';
+import type { EventRepository } from '@/data/repositories/repositories';
 import { DiscoveryHttpAdapter } from '@/features/discovery/api/http/discovery-http-adapter';
 import { createRegistryDiscoveryEntityReaders } from '@/features/discovery/api/services/discovery-entity-readers';
 import { DiscoveryQueryPlatform } from '@/features/discovery/api/services/discovery-query-platform';
@@ -8,24 +8,10 @@ import type { DiscoveryEngine } from '@/features/discovery/services/discovery-en
 import { getDiscoverablePublishedEvents } from '@/features/events/discovery/discovery-feed-helpers';
 import type { Event } from '@/features/events/types/event';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
+import { toEventDisplayModel } from '@/features/events/formatting/display-event';
 
 export interface DiscoveryPlatformDependencies {
   eventRepository: EventRepository;
-  venueRepository: VenueRepository;
-  organizerRepository: OrganizerRepository;
-  loadEventOrigins?: (eventId: string) => Promise<
-    Array<{
-      id: string;
-      sourceId: string;
-      platform?: string;
-      role: string;
-      ticketUrl?: string;
-      eventUrl?: string;
-      syncStatus: string;
-      isPrimary: boolean;
-      isActive: boolean;
-    }>
-  >;
 }
 
 export function bindDiscoveryPlatform(
@@ -37,23 +23,13 @@ export function bindDiscoveryPlatform(
     discoveryApi: discoveryApiService,
     entityReaders: createRegistryDiscoveryEntityReaders({
       getEventById: (id) => deps.eventRepository.getEventById(id),
-      getVenueById: (id) => deps.venueRepository.getById(id),
-      getOrganizerById: (id) => deps.organizerRepository.getById(id),
       getPublishedEvents: () => getDiscoverablePublishedEvents(),
     }),
-    mapEventToDisplay: (event: Event): EventDisplayModel => loadEventDisplayModel(event),
-    loadEventOrigins: deps.loadEventOrigins,
+    mapEventToDisplay: (event: Event): EventDisplayModel => toEventDisplayModel(event),
   });
 
   const httpAdapter = new DiscoveryHttpAdapter(queryPlatform);
   bindDiscoveryServices(discoveryEngine, discoveryApiService, queryPlatform, httpAdapter);
 
   return { queryPlatform, httpAdapter };
-}
-
-function loadEventDisplayModel(event: Event): EventDisplayModel {
-  const { toEventDisplayModel } =
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    require('@/features/events/formatting/display-event') as typeof import('@/features/events/formatting/display-event');
-  return toEventDisplayModel(event);
 }

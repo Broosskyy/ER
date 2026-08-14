@@ -1,6 +1,5 @@
 import { featureFlags } from '@/core/config/feature-flags';
 import type { EventRepository } from '@/data/repositories/repositories';
-import { initializeEntityAliasStore } from '@/features/entity-resolution/entity-alias-store-bootstrap';
 
 let eventRepositoryRef: EventRepository | undefined;
 let bootstrapPromise: Promise<void> | undefined;
@@ -27,22 +26,10 @@ async function runBootstrap(): Promise<void> {
 
   if (featureFlags.useSupabase) {
     await repository.initialize();
-    await initializeEntityAliasStore();
-    try {
-      const { isSupabaseConfigured } = await import('@/core/config/env');
-      if (isSupabaseConfigured()) {
-        const { multiSourceRepositories } = await import('@/data/repositories/registry');
-        repository.applyCanonicalAliases(await multiSourceRepositories.loadEventIdAliases());
-      }
-    } catch {
-      repository.applyCanonicalAliases(new Map());
-    }
-    await hydrateFollowService();
-    return;
+  } else {
+    repository.initializeSync([]);
   }
 
-  // Consumer app loads only published database events — no demo pipeline fallback.
-  repository.initializeSync([]);
   await hydrateFollowService();
 }
 

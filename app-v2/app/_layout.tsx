@@ -33,16 +33,10 @@ function RootStack() {
       <Stack.Screen name="forgot-password" />
       <Stack.Screen name="reset-password" />
       <Stack.Screen name="auth/callback" />
-      <Stack.Screen name="create" />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="notifications" />
       <Stack.Screen name="activity" />
       <Stack.Screen name="event/[id]" />
-      <Stack.Screen name="organizer/[id]" />
-      <Stack.Screen name="venue/[id]" />
-      <Stack.Screen name="artist/[id]" />
-      <Stack.Screen name="profile/events" />
-      <Stack.Screen name="profile/organizer" />
       <Stack.Screen name="profile/edit" />
       <Stack.Screen name="settings/index" />
       <Stack.Screen name="settings/account" />
@@ -52,9 +46,6 @@ function RootStack() {
       <Stack.Screen name="settings/privacy" />
       <Stack.Screen name="settings/help" />
       <Stack.Screen name="settings/about" />
-      <Stack.Screen name="collection/[type]" />
-      <Stack.Screen name="design-preview" />
-      <Stack.Screen name="admin" />
     </Stack>
   );
 }

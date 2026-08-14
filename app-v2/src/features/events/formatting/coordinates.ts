@@ -1,30 +1,7 @@
-import { hasValidEventCoordinates } from '@/features/events/domain/event-field-value';
-
-export function parseCoordinate(value: string | number | undefined): number | undefined {
-  if (value === undefined || value === null || value === '') {
-    return undefined;
-  }
-
-  const parsed = typeof value === 'number' ? value : Number.parseFloat(value);
-
-  if (!Number.isFinite(parsed)) {
-    return undefined;
-  }
-
-  return parsed;
-}
-
-export function isValidLatitude(value: number | undefined): boolean {
-  return value !== undefined && value >= -90 && value <= 90;
-}
-
-export function isValidLongitude(value: number | undefined): boolean {
-  return value !== undefined && value >= -180 && value <= 180;
-}
+import type { Event } from '@/features/events/types/event';
 
 export function hasValidCoordinates(
-  latitude: number | undefined,
-  longitude: number | undefined,
-): latitude is number {
-  return hasValidEventCoordinates(latitude, longitude);
+  event: Pick<Event, 'latitude' | 'longitude'>,
+): event is Event & { latitude: number; longitude: number } {
+  return typeof event.latitude === 'number' && typeof event.longitude === 'number';
 }

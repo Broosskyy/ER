@@ -1,5 +1,13 @@
 import type { EventStatus } from './event-status';
-import type { VenueType } from '@/features/events/domain/festival-foundation';
+
+export type VenueType = 'club' | 'open_air' | 'festival' | 'warehouse' | 'other';
+
+export interface EventLineupEntryProjection {
+  id: string;
+  billingName: string;
+  billingRole?: string;
+  sortOrder?: number;
+}
 
 export interface Event {
   id: string;
@@ -20,7 +28,7 @@ export interface Event {
   genres: string[];
   artists: string[];
   lineup?: string[];
-  lineupEntries?: import('@/features/events/domain/event-lineup-entry-projection').EventLineupEntryProjection[];
+  lineupEntries?: EventLineupEntryProjection[];
   organizer?: string;
   venueId?: string;
   organizerId?: string;
@@ -45,11 +53,6 @@ export interface Event {
   ageRestriction?: string;
   priceText?: string;
   ticketUrl?: string;
-  ticketPhases?: import('@/features/import/domain/canonical-ticket-phase').CanonicalTicketPhase[];
-  eventAttributes?: import('@/features/events/domain/canonical-event-attribute-types').CanonicalEventAttribute[];
-  floorCount?: number;
-  stageCount?: number;
-  venueEnvironment?: import('@/features/events/domain/canonical-event-attribute-types').VenueEnvironmentValue;
   flyerUrl?: string;
   lastEntryAt?: string;
   dressCode?: string;
@@ -58,8 +61,12 @@ export interface Event {
   sourceEventId: string;
   sourceUrl?: string;
   status: EventStatus;
+  lifecycleStatus?: EventStatus;
   createdAt: string;
   updatedAt: string;
+  galleryImageUrls?: string[];
+  ticketProviderLabel?: string;
+  sourceLabel?: string;
 }
 
 export interface EventWithCoordinates extends Event {

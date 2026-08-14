@@ -1,9 +1,0 @@
-{
-  "generatedAt": "2026-08-05T19:39:00.947Z",
-  "phase": "4.8.5",
-  "productionMutationsInThisRun": 0,
-  "readinessVerdict": "INTEGRATED_SHADOW_READY_AWAITING_PUBLISH_APPROVAL",
-  "nextApprovalRequired": "Explicit approval to enable Unified publishing (Phase 4.8.6+); do not disable Legacy in same step",
-  "unexplainedGapCount": 0,
-  "flagsDefaultSafe": true
-}

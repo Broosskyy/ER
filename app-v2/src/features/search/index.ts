@@ -22,9 +22,7 @@ export {
   summarizeActiveFilters,
 } from './utils/filter-events';
 export {
-  EventDiscoveryGrid,
   ExploreFeed,
-  ExplorePosterGrid,
   FilterSheet,
   FilterSummaryBar,
   QuickFilterRow,

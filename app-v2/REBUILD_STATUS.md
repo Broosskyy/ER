@@ -33,6 +33,7 @@ Source Evidence → Canonical Event → Validation → Event Writer → Clean Da
 
 - [x] M1 Clean Environment
 - [x] M1 Security Hardening
+- [x] M1 Legacy Source Purge
 - [ ] M2 Manual Event Roundtrip
 - [ ] M3 One Official Import Roundtrip
 - [ ] M4 Seven Reference Events
@@ -44,7 +45,7 @@ Nur ein Meilenstein darf gleichzeitig als IN PROGRESS markiert sein.
 
 ## Aktueller Zustand
 
-M1 Security Hardening abgeschlossen. Nächster Schritt: Legacy Source Purge. Danach: Manual Event Roundtrip.
+M1 Legacy Source Purge abgeschlossen. Aktiver Branch frei von alter Event-/Import-Runtime. Datenbank weiterhin leer. Nächster Schritt: Manual Event Roundtrip.
 
 ## Aktive Umgebung
 

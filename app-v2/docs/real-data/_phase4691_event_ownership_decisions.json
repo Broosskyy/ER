@@ -1,6 +1,0 @@
-{
-  "generatedAt": "2026-08-03T09:48:00.000Z",
-  "readOnly": true,
-  "matcherVersion": "phase4691",
-  "note": "Ownership decisions are emitted at import/match time via evaluateEventOwnershipMatch. Sample regression cases documented in event-ownership-decision.test.ts."
-}

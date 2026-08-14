@@ -1,6 +1,4 @@
 export { ExploreFeed } from './ExploreFeed';
-export { EventDiscoveryGrid } from './EventDiscoveryGrid';
-export { ExplorePosterGrid } from './ExplorePosterGrid';
 export { FilterSheet } from './FilterSheet';
 export { FilterSummaryBar } from './FilterSummaryBar';
 export { QuickFilterRow } from './QuickFilterRow';

@@ -1,8 +1,0 @@
-{
-  "generatedAt": "2026-08-06T00:05:21.747Z",
-  "phase": "4.8.6.4",
-  "backupPresent": true,
-  "affectedEventCount": 4,
-  "rollbackReady": true,
-  "productionMutationsInThisRun": 0
-}

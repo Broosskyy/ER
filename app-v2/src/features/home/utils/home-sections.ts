@@ -4,7 +4,7 @@ import {
   isUpcomingEvent,
 } from '@/features/events/formatting/date-time';
 import type { Event } from '@/features/events/types/event';
-import { isFeaturedEventId } from '@/features/events/data/home-config';
+import { isFeaturedEventId } from '@/features/events/config/home-config';
 
 function isSameDay(isoDateTime: string, referenceDate: Date): boolean {
   const eventDate = new Date(isoDateTime);

@@ -1,5 +1,4 @@
 import { useRouter } from 'expo-router';
-import { useEffect, useState } from 'react';
 import { Alert, Pressable, StyleSheet, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
@@ -11,12 +10,10 @@ import { useTheme } from '@/design/theme';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { getProfileAuthLinks } from '@/features/auth/auth-route-utils';
 import { useAuth } from '@/features/auth/AuthContext';
-import { PROFILE_MY_EVENTS_ROUTE, PROFILE_ORGANIZER_ROUTE } from '@/features/create/constants/contributor-event-routes';
 import { useFavorites } from '@/features/favorites';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 import { resolveAccountCapabilities } from '@/features/profile/account-capability-resolver';
 import { useUserProfile } from '@/features/profile/UserProfileProvider';
-import { loadOrganizerProfile } from '@/features/organizer-profile/organizer-profile-storage';
 
 interface SettingsRowProps {
   label: string;
@@ -50,30 +47,6 @@ export function ProfileScreenContent() {
   const { savedEvents, isHydrated } = useFavorites();
   const { user, session, isAuthenticated, loading, signOut } = useAuth();
   const { loginHref, registerHref } = getProfileAuthLinks();
-  const [hasLinkedOrganizerProfile, setHasLinkedOrganizerProfile] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function loadLinkedOrganizer() {
-      if (!user?.id) {
-        if (!cancelled) {
-          setHasLinkedOrganizerProfile(false);
-        }
-        return;
-      }
-
-      const linked = await loadOrganizerProfile(user.id);
-      if (!cancelled) {
-        setHasLinkedOrganizerProfile(Boolean(linked?.name.trim()));
-      }
-    }
-
-    void loadLinkedOrganizer();
-    return () => {
-      cancelled = true;
-    };
-  }, [user?.id]);
 
   const capabilities = resolveAccountCapabilities({
     isAuthenticated,
@@ -81,7 +54,7 @@ export function ProfileScreenContent() {
     role: session?.role,
     displayName: profile.displayName,
     username: profile.username,
-    hasLinkedOrganizerProfile,
+    hasLinkedOrganizerProfile: false,
   });
 
   const savedCount = isHydrated ? savedEvents.length : 0;
@@ -151,28 +124,6 @@ export function ProfileScreenContent() {
           />
         </View>
       )}
-
-      {capabilities.canManageOrganizerProfile ? (
-        <View style={[styles.card, { backgroundColor: theme.colors.surface, borderColor: theme.colors.borderSubtle }]}>
-          <AppText role="sectionTitle">{t('organizerProfile.sectionTitle')}</AppText>
-          <AppText role="bodyMuted">{t('organizerProfile.sectionDescription')}</AppText>
-          <PrimaryButton
-            label={t('organizerProfile.actions.open')}
-            onPress={() => router.push(PROFILE_ORGANIZER_ROUTE)}
-          />
-        </View>
-      ) : null}
-
-      {isAuthenticated ? (
-        <View style={[styles.card, { backgroundColor: theme.colors.surface, borderColor: theme.colors.borderSubtle }]}>
-          <AppText role="sectionTitle">{t('profile.myEvents.linkTitle')}</AppText>
-          <AppText role="bodyMuted">{t('profile.myEvents.linkDescription')}</AppText>
-          <SecondaryButton
-            label={t('profile.myEvents.open')}
-            onPress={() => router.push(PROFILE_MY_EVENTS_ROUTE)}
-          />
-        </View>
-      ) : null}
 
       <View style={[styles.card, { backgroundColor: theme.colors.surface, borderColor: theme.colors.borderSubtle }]}>
         <AppText role="sectionTitle">Einstellungen</AppText>

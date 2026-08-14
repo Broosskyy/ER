@@ -6,16 +6,11 @@ import type {
 import type { EventDisplayModel } from './display-event';
 import { formatWeekdayLabel } from './date-time';
 import {
-  resolveEventPresentation,
-  resolvePrimaryCardStatus,
+  resolveConsumerEventStatus,
+  resolveConsumerTicketStatus,
 } from '../status/event-status-resolver';
-import { resolvePublicTicketPresentation } from './ticket-presentation';
 
-/** Maps domain display events into discovery card view models for the component library. */
 export function toEventCardViewModel(event: EventDisplayModel): EventCardViewModel {
-  const primaryGenre = event.genres[0];
-  const presentation = resolveEventPresentation(event);
-  const ticket = resolvePublicTicketPresentation(event);
   const venueLabel = event.venueLabel ?? event.venue;
   const cityLabel = event.cityLabel ?? event.city;
   const locationLabel = event.locationLabelComma ?? `${venueLabel}, ${cityLabel}`;
@@ -31,20 +26,17 @@ export function toEventCardViewModel(event: EventDisplayModel): EventCardViewMod
     venueLabel,
     cityLabel,
     genreLabels: event.genres,
-    categoryLabel: primaryGenre,
+    categoryLabel: event.genres[0],
     organizerLabel: event.organizer,
-    ticketLabel: ticket.ticketLabel,
-    ticketColorToken: ticket.colorToken,
-    ticketStatus: presentation.ticketStatus,
-    status: presentation.primaryStatus ?? resolvePrimaryCardStatus(event),
+    ticketLabel: event.priceText ?? 'Tickets',
+    ticketColorToken: undefined,
+    ticketStatus: resolveConsumerTicketStatus(event),
+    status: resolveConsumerEventStatus(event),
     accessibilityLabel: `${event.title}, ${locationLabel}`,
   };
 }
 
-/** Maps domain display events into compact list item view models. */
 export function toEventListItemViewModel(event: EventDisplayModel): EventListItemViewModel {
-  const presentation = resolveEventPresentation(event);
-  const ticket = resolvePublicTicketPresentation(event);
   const venueLabel = event.venueLabel ?? event.venue;
   const cityLabel = event.cityLabel ?? event.city;
   const locationLabel = event.locationLabelComma ?? `${venueLabel}, ${cityLabel}`;
@@ -58,10 +50,9 @@ export function toEventListItemViewModel(event: EventDisplayModel): EventListIte
     venueLabel,
     cityLabel,
     genreLabels: event.genres,
-    ticketLabel: ticket.ticketLabel,
-    ticketColorToken: ticket.colorToken,
-    ticketStatus: presentation.ticketStatus,
-    status: presentation.primaryStatus,
+    ticketLabel: event.priceText ?? 'Tickets',
+    ticketStatus: resolveConsumerTicketStatus(event),
+    status: resolveConsumerEventStatus(event),
     accessibilityLabel: `${event.title}, ${locationLabel}`,
   };
 }

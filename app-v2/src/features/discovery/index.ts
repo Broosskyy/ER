@@ -24,9 +24,6 @@ export type {
   DiscoverySearchMode,
   DiscoverySearchQuery,
 } from './domain/discovery-search-types';
-export { DiscoveryFilterEngine, createDiscoveryFilterEngine } from './filters/discovery-filter-engine';
-export { buildDiscoveryFilterPredicates } from './filters/discovery-filter-predicates';
-export { resolveDiscoveryDateWindow } from './filters/discovery-date-presets';
 export { matchesDiscoverySearch } from './search/discovery-search-matcher';
 export { buildDiscoveryTextIndex, buildDiscoveryTextIndexFromEvent } from './search/discovery-text-index';
 export { normalizeDiscoverySearchText, tokenizeDiscoverySearchText } from './search/discovery-search-normalizer';

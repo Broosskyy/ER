@@ -45,9 +45,7 @@ export const SavedEventCard = memo(function SavedEventCard({
           <AppText role="bodyMuted">Dieses Event ist nicht mehr verfügbar.</AppText>
         </View>
       ) : null}
-      {consumerStatus &&
-      consumerStatus !== 'unavailable' &&
-      consumerStatus !== 'upcoming' ? (
+      {consumerStatus && consumerStatus !== 'upcoming' ? (
         <View style={styles.statusRow}>
           <EventStatusBadge status={consumerStatus} showIcon />
         </View>

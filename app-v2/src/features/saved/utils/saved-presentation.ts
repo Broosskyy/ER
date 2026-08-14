@@ -1,63 +1,16 @@
-import type { EventStatus, EventTicketStatus } from '@/components/discovery/view-models';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
-import { EVENT_REFERENCE_DATE, isUpcomingEvent } from '@/features/events/formatting/date-time';
-import {
-  isTicketActionDisabled,
-  resolveEventNoticeType,
-  resolveEventPresentation,
-} from '@/features/events/status/event-status-resolver';
+import type { EventStatus, EventTicketStatus } from '@/components/discovery/view-models';
 
-export type SavedConsumerStatus = EventStatus | 'unavailable';
+import { resolveConsumerEventStatus, resolveConsumerTicketStatus } from '@/features/events/status/event-status-resolver';
 
-export function resolveSavedConsumerStatus(event: EventDisplayModel): SavedConsumerStatus | undefined {
-  const presentation = resolveEventPresentation(event);
-  return presentation.primaryStatus;
+export function formatSavedAtLabel(savedAt: string): string {
+  return new Date(savedAt).toLocaleDateString('de-DE');
+}
+
+export function resolveSavedConsumerStatus(event: EventDisplayModel): EventStatus {
+  return resolveConsumerEventStatus(event);
 }
 
 export function resolveSavedTicketStatus(event: EventDisplayModel): EventTicketStatus | undefined {
-  return resolveEventPresentation(event).ticketStatus;
+  return resolveConsumerTicketStatus(event);
 }
-
-export function isSavedEventUpcoming(event: EventDisplayModel): boolean {
-  const status = resolveSavedConsumerStatus(event);
-  if (status === 'cancelled' || status === 'unavailable') {
-    return false;
-  }
-
-  return isUpcomingEvent(event);
-}
-
-export function isSavedEventPast(event: EventDisplayModel): boolean {
-  return new Date(event.startDateTime).getTime() < EVENT_REFERENCE_DATE.getTime();
-}
-
-export function isSavedEventCancelled(event: EventDisplayModel): boolean {
-  const notice = resolveEventNoticeType(event);
-  return (
-    notice === 'cancelled' ||
-    event.lifecycleStatus === 'cancelled' ||
-    event.status === 'archived'
-  );
-}
-
-export function isSavedEventPostponed(event: EventDisplayModel): boolean {
-  return event.lifecycleStatus === 'postponed' || resolveSavedConsumerStatus(event) === 'postponed';
-}
-
-export function formatSavedAtLabel(savedAt: string): string {
-  const savedDate = new Date(savedAt);
-  const diffMs = EVENT_REFERENCE_DATE.getTime() - savedDate.getTime();
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-  if (diffDays <= 0) {
-    return 'Heute gespeichert';
-  }
-
-  if (diffDays === 1) {
-    return 'Gestern gespeichert';
-  }
-
-  return `Vor ${diffDays} Tagen gespeichert`;
-}
-
-export { isTicketActionDisabled };

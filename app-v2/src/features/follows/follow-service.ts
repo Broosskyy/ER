@@ -1,6 +1,3 @@
-import type { RealDataDomainEventBus } from '@/features/events/domain/real-data-domain-events';
-import { publishEntityFollowDomainEvent } from '@/features/events/domain/real-data-domain-events';
-
 export type FollowEntityType = 'organizer' | 'venue' | 'artist';
 
 export interface FollowRecord {
@@ -61,7 +58,6 @@ function followKey(entityType: FollowEntityType, canonicalEntityId: string): str
 
 export interface FollowServiceOptions {
   storage?: FollowStorage;
-  domainEventBus?: RealDataDomainEventBus;
   resolveCanonicalId?: (
     entityType: FollowEntityType,
     entityId: string,
@@ -82,11 +78,47 @@ export class FollowService {
     if (this.hydrated) {
       return;
     }
-    this.records = this.dedupe(await this.storage.load());
+    this.records = await this.storage.load();
     this.hydrated = true;
   }
 
-  async resolveCanonicalEntityId(
+  async isFollowing(entityType: FollowEntityType, entityId: string): Promise<boolean> {
+    await this.hydrate();
+    const canonicalId = await this.resolveCanonicalId(entityType, entityId);
+    return this.records.some(
+      (record) =>
+        record.entityType === entityType && record.canonicalEntityId === canonicalId,
+    );
+  }
+
+  async follow(entityType: FollowEntityType, entityId: string): Promise<void> {
+    await this.hydrate();
+    const canonicalId = await this.resolveCanonicalId(entityType, entityId);
+    const key = followKey(entityType, canonicalId);
+    if (this.records.some((record) => followKey(record.entityType, record.canonicalEntityId) === key)) {
+      return;
+    }
+    this.records.push({
+      entityType,
+      canonicalEntityId: canonicalId,
+      followedAt: new Date().toISOString(),
+    });
+    await this.storage.save(this.records);
+  }
+
+  async unfollow(entityType: FollowEntityType, entityId: string): Promise<void> {
+    await this.hydrate();
+    const canonicalId = await this.resolveCanonicalId(entityType, entityId);
+    this.records = this.records.filter(
+      (record) =>
+        !(
+          record.entityType === entityType && record.canonicalEntityId === canonicalId
+        ),
+    );
+    await this.storage.save(this.records);
+  }
+
+  private async resolveCanonicalId(
     entityType: FollowEntityType,
     entityId: string,
   ): Promise<string> {
@@ -94,85 +126,5 @@ export class FollowService {
       return this.options.resolveCanonicalId(entityType, entityId);
     }
     return entityId;
-  }
-
-  async follow(entityType: FollowEntityType, entityId: string): Promise<void> {
-    await this.hydrate();
-    const canonicalEntityId = await this.resolveCanonicalEntityId(entityType, entityId);
-    const key = followKey(entityType, canonicalEntityId);
-    if (this.records.some((record) => followKey(record.entityType, record.canonicalEntityId) === key)) {
-      return;
-    }
-    this.records.push({
-      entityType,
-      canonicalEntityId,
-      followedAt: new Date().toISOString(),
-    });
-    await this.storage.save(this.records);
-    if (this.options.domainEventBus) {
-      publishEntityFollowDomainEvent(this.options.domainEventBus, {
-        type: 'entity_followed',
-        entityType,
-        canonicalEntityId,
-      });
-    }
-  }
-
-  async unfollow(entityType: FollowEntityType, entityId: string): Promise<void> {
-    await this.hydrate();
-    const canonicalEntityId = await this.resolveCanonicalEntityId(entityType, entityId);
-    const key = followKey(entityType, canonicalEntityId);
-    this.records = this.records.filter(
-      (record) => followKey(record.entityType, record.canonicalEntityId) !== key,
-    );
-    await this.storage.save(this.records);
-    if (this.options.domainEventBus) {
-      publishEntityFollowDomainEvent(this.options.domainEventBus, {
-        type: 'entity_unfollowed',
-        entityType,
-        canonicalEntityId,
-      });
-    }
-  }
-
-  async isFollowing(entityType: FollowEntityType, entityId: string): Promise<boolean> {
-    await this.hydrate();
-    const canonicalEntityId = await this.resolveCanonicalEntityId(entityType, entityId);
-    const key = followKey(entityType, canonicalEntityId);
-    return this.records.some(
-      (record) => followKey(record.entityType, record.canonicalEntityId) === key,
-    );
-  }
-
-  async list(entityType?: FollowEntityType): Promise<FollowRecord[]> {
-    await this.hydrate();
-    if (!entityType) {
-      return [...this.records];
-    }
-    return this.records.filter((record) => record.entityType === entityType);
-  }
-
-  async getFollowerCount(entityType: FollowEntityType, entityId: string): Promise<number> {
-    const canonicalEntityId = await this.resolveCanonicalEntityId(entityType, entityId);
-    if (this.storage.countFollowers) {
-      return this.storage.countFollowers(entityType, canonicalEntityId);
-    }
-    await this.hydrate();
-    return this.records.filter(
-      (record) =>
-        record.entityType === entityType && record.canonicalEntityId === canonicalEntityId,
-    ).length;
-  }
-
-  private dedupe(records: FollowRecord[]): FollowRecord[] {
-    const seen = new Set<string>();
-    return records.filter((record) => {
-      const key = followKey(record.entityType, record.canonicalEntityId);
-      if (seen.has(key)) {
-        return false;
-      }
-      seen.add(key);
-      return true;
-    });
   }
 }

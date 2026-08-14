@@ -32,6 +32,13 @@ yarn-error.*
 # Local env files
 .env
 .env*.local
+.tmp/
+supabase/.temp/
+.build-smoke/
+
+# Local backup artifacts
+*.backup
+*.bak
 
 # TypeScript
 *.tsbuildinfo

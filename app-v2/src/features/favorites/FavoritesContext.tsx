@@ -9,7 +9,8 @@ import {
   useState,
 } from 'react';
 
-import { eventRepository, toEventDisplayModel, type EventDisplayModel } from '@/features/events';
+import { eventRepository } from '@/data/repositories/registry';
+import { toEventDisplayModel, type EventDisplayModel } from '@/features/events/formatting/display-event';
 import type { Event } from '@/features/events/types/event';
 import type { SavedEvent, SavedEventRecord, SavedEventSource } from '@/features/saved/types/saved-event';
 

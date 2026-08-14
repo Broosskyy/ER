@@ -1,8 +1,0 @@
-{
-  "generatedAt": "2026-08-05T23:18:21.741Z",
-  "phase": "4.8.6",
-  "productionMutationsInThisRun": 0,
-  "readinessVerdict": "PHASE_486_PASS1_COMPLETE",
-  "legacyRemainsEnabled": true,
-  "pass2Idempotent": true
-}
