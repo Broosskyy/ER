@@ -1,3 +1,9 @@
+import {
+  isFloorOrStageHeader,
+  isLineupIntroMarker,
+  splitDescriptionAndStructuredLineup,
+} from './parse-lineup';
+
 const BOILERPLATE_MARKERS = [
   'einlass ab',
   'age for admission',
@@ -183,21 +189,24 @@ export function isBoilerplateParagraph(text: string): boolean {
   );
 }
 
+export function isFloorHeader(text: string): boolean {
+  const normalized = text.trim().toUpperCase();
+  const withColon = normalized.endsWith(':') ? normalized : `${normalized}:`;
+  return FLOOR_HEADER_PATTERN.test(withColon);
+}
+
 export function isFloorListHeaderParagraph(text: string): boolean {
-  const upper = text.trim().toUpperCase();
-  return FLOOR_HEADER_PATTERN.test(upper.endsWith(':') ? upper : `${upper}:`);
+  return isFloorOrStageHeader(text);
 }
 
 export function truncateDescriptionBeforeStructuredFloorList(paragraphs: string[]): string[] {
-  const floorIndex = paragraphs.findIndex((paragraph) => isFloorListHeaderParagraph(paragraph));
+  const floorIndex = paragraphs.findIndex(
+    (paragraph) => isFloorOrStageHeader(paragraph) || isLineupIntroMarker(paragraph),
+  );
   if (floorIndex === -1) {
     return paragraphs;
   }
   return paragraphs.slice(0, floorIndex);
-}
-
-export function isFloorHeader(text: string): boolean {
-  return FLOOR_HEADER_PATTERN.test(text.trim().toUpperCase());
 }
 
 export function normalizeDescriptionParagraph(text: string): string {
@@ -206,11 +215,24 @@ export function normalizeDescriptionParagraph(text: string): string {
 
 export function stripTrailingFooterParagraphs(paragraphs: string[]): string[] {
   const normalized = paragraphs.map((paragraph) => normalizeDescriptionParagraph(paragraph));
-  const footerIndex = normalized.findIndex((paragraph) => isFooterSentinelParagraph(paragraph));
-  if (footerIndex === -1) {
-    return normalized.filter(Boolean);
+  let end = normalized.length;
+
+  while (end > 0) {
+    const paragraph = normalized[end - 1]!;
+    if (!paragraph) {
+      end -= 1;
+      continue;
+    }
+
+    if (isFooterSentinelParagraph(paragraph) || isDecorativeSeparator(paragraph)) {
+      end -= 1;
+      continue;
+    }
+
+    break;
   }
-  return normalized.slice(0, footerIndex).filter(Boolean);
+
+  return normalized.slice(0, end).filter(Boolean);
 }
 
 export function cleanDescriptionParagraphs(paragraphs: string[]): string {
@@ -222,15 +244,33 @@ export function cleanDescriptionParagraphs(paragraphs: string[]): string {
 
 export function extractDescriptionParagraphsFromHtml(html: string): string[] {
   const paragraphMatches = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)];
-  return paragraphMatches.map((match) =>
-    (match[1] ?? '')
+  const lines: string[] = [];
+
+  for (const match of paragraphMatches) {
+    const inner = (match[1] ?? '')
+      .replace(/<br\s*\/?>/gi, '\n')
       .replace(/<[^>]+>/g, '')
       .replace(/&nbsp;/g, ' ')
       .replace(/&amp;/g, '&')
       .replace(/&rsquo;/g, "'")
       .replace(/&#39;/g, "'")
-      .trim(),
-  );
+      .replace(/&ouml;/g, 'ö')
+      .replace(/&Ouml;/g, 'Ö')
+      .replace(/&uuml;/g, 'ü')
+      .replace(/&Uuml;/g, 'Ü')
+      .replace(/&auml;/g, 'ä')
+      .replace(/&Auml;/g, 'Ä')
+      .replace(/&szlig;/g, 'ß');
+
+    for (const line of inner.split('\n')) {
+      const normalized = normalizeDescriptionParagraph(line);
+      if (normalized) {
+        lines.push(normalized);
+      }
+    }
+  }
+
+  return lines;
 }
 
 export function splitDescriptionAndLineupBlocks(paragraphs: string[]): {
@@ -238,39 +278,11 @@ export function splitDescriptionAndLineupBlocks(paragraphs: string[]): {
   lineupParagraphs: string[];
   lineupNotAnnounced: boolean;
 } {
-  const descriptionParagraphs: string[] = [];
-  const lineupParagraphs: string[] = [];
-  let inLineupBlock = false;
-  let lineupNotAnnounced = false;
-
-  for (const paragraph of paragraphs) {
-    if (containsLineupNotAnnouncedSignal(paragraph)) {
-      lineupNotAnnounced = true;
-      continue;
-    }
-
-    if (isFloorHeader(paragraph.replace(/:$/, '')) || /^[A-Z0-9][A-Z0-9\s/&-]{1,40}:$/.test(paragraph.trim())) {
-      inLineupBlock = true;
-      continue;
-    }
-
-    if (isSplitBoilerplateParagraph(paragraph)) {
-      inLineupBlock = false;
-      continue;
-    }
-
-    if (inLineupBlock) {
-      lineupParagraphs.push(paragraph);
-      continue;
-    }
-
-    descriptionParagraphs.push(paragraph);
-  }
-
+  const split = splitDescriptionAndStructuredLineup(paragraphs);
   return {
-    descriptionParagraphs,
-    lineupParagraphs,
-    lineupNotAnnounced,
+    descriptionParagraphs: split.descriptionParagraphs,
+    lineupParagraphs: split.lineupBlocks.flatMap((block) => block.rawLines),
+    lineupNotAnnounced: split.lineupNotAnnounced,
   };
 }
 

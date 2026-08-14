@@ -44,6 +44,22 @@ export interface OfficialEventEvidence {
   explicitGenreLabels: string[];
   enrichmentGaps: string[];
   rejectedCandidates: RejectedOfficialCandidate[];
+  evidenceAudit?: OfficialEvidenceAudit;
+}
+
+export interface OfficialEvidenceAudit {
+  lineupBlocks: Array<{
+    blockType: string;
+    headerText?: string;
+    rawLines: string[];
+  }>;
+  normalizedGenres: Array<{
+    rawLabel: string;
+    genreKey: string;
+    displayName: string;
+    status: 'normalized' | 'unmapped';
+  }>;
+  unmappedGenreLabels: string[];
 }
 
 export type ConsumerPreviewDecision = 'preview_ready' | 'review_required';

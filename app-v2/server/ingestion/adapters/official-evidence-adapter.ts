@@ -1,4 +1,5 @@
 import type { OfficialEventEvidence } from '../../official-connectors/types';
+import { normalizeOfficialGenreLabels } from '../../official-connectors/bootshaus/normalize-genre';
 import type { EventCandidate, EventCandidateLineupAct } from '../types/event-candidate';
 
 function mapLineupRole(
@@ -39,9 +40,9 @@ export function officialEvidenceToEventCandidate(evidence: OfficialEventEvidence
       billingRole: mapLineupRole(candidate.evidenceRole),
       sortOrder: candidate.billingOrder,
     })),
-    genres: evidence.explicitGenreLabels.map((label, index) => ({
-      genreKey: label.toLowerCase().replace(/\s+/g, '-'),
-      displayName: label,
+    genres: normalizeOfficialGenreLabels(evidence.explicitGenreLabels).normalized.map((entry, index) => ({
+      genreKey: entry.genreKey,
+      displayName: entry.displayName,
       sortOrder: index,
     })),
     tickets: [],

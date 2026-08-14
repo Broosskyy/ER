@@ -13,14 +13,24 @@ import {
   BOOTSHAUS_LIST_URL,
 } from './constants';
 import {
+  domBlocksToParsedActs,
+  extractArtistsContainerBlock,
+  extractLineupContainerBlock,
+  extractTimetableBlock,
+} from './parse-dom-sections';
+import {
   cleanDescriptionParagraphs,
   extractDescriptionParagraphsFromHtml,
-  splitDescriptionAndLineupBlocks,
   stripTrailingFooterParagraphs,
   truncateDescriptionBeforeStructuredFloorList,
 } from './parse-description';
-import { parseBootshausExplicitGenres } from './parse-genres';
-import { parseBootshausLineupParagraphs } from './parse-lineup';
+import { parseBootshausGenreEvidence } from './parse-genres';
+import {
+  blocksToParsedActs,
+  mergeOfficialLineupEvidence,
+  parseExplicitLineupSentences,
+  splitDescriptionAndStructuredLineup,
+} from './parse-lineup';
 import { parseBootshausVenueBlock } from './parse-venue';
 import { buildBootshausDetailUrl, canonicalizeBootshausUrl } from './url-policy';
 
@@ -106,31 +116,59 @@ export function parseBootshausDetailPage(
 
   const descriptionHtml = $('.event-description-content').html() ?? '';
   const paragraphs = extractDescriptionParagraphsFromHtml(descriptionHtml);
-  const { descriptionParagraphs, lineupParagraphs, lineupNotAnnounced } =
-    splitDescriptionAndLineupBlocks(paragraphs);
+  const structuredSplit = splitDescriptionAndStructuredLineup(paragraphs);
+  const sentenceActs = parseExplicitLineupSentences(structuredSplit.descriptionParagraphs);
+  const domBlocks = [
+    extractLineupContainerBlock($),
+    extractArtistsContainerBlock($),
+    extractTimetableBlock($),
+  ].filter((block): block is NonNullable<typeof block> => Boolean(block));
+
+  const lineupActs = [
+    ...blocksToParsedActs(structuredSplit.lineupBlocks),
+    ...domBlocksToParsedActs(domBlocks),
+    ...sentenceActs,
+  ];
+  const lineupResult = mergeOfficialLineupEvidence(lineupActs);
+
   const editorialDescriptionParagraphs = truncateDescriptionBeforeStructuredFloorList(
-    descriptionParagraphs,
+    structuredSplit.descriptionParagraphs,
   );
   const descriptionParagraphsForClean = stripTrailingFooterParagraphs(editorialDescriptionParagraphs);
   const descriptionRaw =
     cleanDescriptionParagraphs([
       ...stripTrailingFooterParagraphs(editorialDescriptionParagraphs),
-      ...lineupParagraphs,
+      ...structuredSplit.lineupBlocks.flatMap((block) => block.rawLines),
     ]) || undefined;
   const descriptionClean = cleanDescriptionParagraphs(descriptionParagraphsForClean) || undefined;
 
-  const lineupResult = parseBootshausLineupParagraphs(lineupParagraphs);
-  const explicitGenreLabels = parseBootshausExplicitGenres($('.genres-container').html() ?? '');
+  const genreEvidence = parseBootshausGenreEvidence($('.genres-container').html() ?? '');
   const enrichmentGaps: string[] = [];
 
-  if (lineupNotAnnounced && lineupResult.lineupCandidates.length === 0) {
+  if (structuredSplit.lineupNotAnnounced && lineupResult.lineupCandidates.length === 0) {
     enrichmentGaps.push('lineup_not_announced');
-  } else if (lineupResult.lineupCandidates.length === 0 && lineupParagraphs.length === 0) {
-    enrichmentGaps.push('lineup_not_announced');
+  } else if (lineupResult.lineupCandidates.length === 0) {
+    const hasLineupSignals =
+      structuredSplit.lineupBlocks.length > 0 ||
+      domBlocks.length > 0 ||
+      /line\s*-?\s*up|artists/i.test(descriptionHtml);
+    if (hasLineupSignals) {
+      enrichmentGaps.push('lineup_media_required');
+    } else {
+      enrichmentGaps.push('lineup_not_announced');
+    }
   }
 
-  if (explicitGenreLabels.length === 0) {
-    enrichmentGaps.push('genres_missing');
+  if (genreEvidence.explicitGenreLabels.length === 0) {
+    if ($('.genres-container').length > 0 && $('.genres-container').hasClass('element-hidden')) {
+      enrichmentGaps.push('genres_media_required');
+    } else {
+      enrichmentGaps.push('genres_missing');
+    }
+  }
+
+  for (const unmapped of genreEvidence.unmappedGenreLabels) {
+    enrichmentGaps.push(`genre_label_unmapped:${unmapped.rawLabel}`);
   }
 
   const pageFingerprint = fingerprintHtmlPage(html);
@@ -156,9 +194,18 @@ export function parseBootshausDetailPage(
     officialImageUrl: extractOfficialImageUrl($),
     linkedTicketUrl: extractTicketUrl($),
     lineupCandidates: lineupResult.lineupCandidates,
-    explicitGenreLabels,
+    explicitGenreLabels: genreEvidence.explicitGenreLabels,
     enrichmentGaps,
     rejectedCandidates: lineupResult.rejectedCandidates,
+    evidenceAudit: {
+      lineupBlocks: structuredSplit.lineupBlocks.map((block) => ({
+        blockType: block.blockType,
+        headerText: block.headerText,
+        rawLines: block.rawLines,
+      })),
+      normalizedGenres: genreEvidence.normalizedGenres,
+      unmappedGenreLabels: genreEvidence.unmappedGenreLabels.map((entry) => entry.rawLabel),
+    },
   };
 
   if (!evidence.officialUrl) {
