@@ -2,9 +2,8 @@ import { describe, expect, it } from 'vitest';
 
 import { toEventDisplayModelFromDetail } from '@/data/mappers/event-core-display';
 import { mapEventDetail } from '@/data/mappers/event-core-mapper';
-import type { EventDetail } from '@/features/events/types/event-core';
 
-function buildDetail(): EventDetail {
+function buildDetail() {
   return mapEventDetail(
     {
       id: 'event-1',
@@ -94,5 +93,54 @@ describe('event-core-display', () => {
     expect(display.priceText).toBe('19,90 €');
     expect(display.ticketUrl).toBe('https://example.com/eternal-rave-core-test');
     expect(display.lineup).toEqual(['ALPHA & BETA']);
+  });
+
+  it('uses an empty image placeholder when image_url is missing', () => {
+    const display = toEventDisplayModelFromDetail(buildDetail());
+    expect(display.image).toEqual({ uri: '' });
+  });
+
+  it('projects official image_url when present', () => {
+    const detail = mapEventDetail(
+      {
+        id: 'event-official',
+        status: 'published',
+        title: 'Official Image Event',
+        description: 'Official description',
+        starts_at: '2026-10-16T20:00:00+02:00',
+        ends_at: '2026-10-17T05:00:00+02:00',
+        timezone: 'Europe/Berlin',
+        image_url: 'https://example.com/official-flyer.png',
+        official_url: 'https://example.com/events/official',
+        venue_id: 'venue-1',
+        organizer_name: 'BOOTSHAUS',
+        created_by: null,
+        published_at: '2026-08-14T08:00:00Z',
+        created_at: '2026-08-14T08:00:00Z',
+        updated_at: '2026-08-14T08:00:00Z',
+      },
+      {
+        id: 'venue-1',
+        name: 'Bootshaus',
+        address_line: 'Auenweg 173',
+        postal_code: '51063',
+        city: 'Köln',
+        country_code: 'DE',
+        latitude: null,
+        longitude: null,
+        official_url: null,
+        created_at: '2026-08-14T08:00:00Z',
+        updated_at: '2026-08-14T08:00:00Z',
+      },
+      [],
+      [],
+      [],
+    );
+    const display = toEventDisplayModelFromDetail(detail);
+
+    expect(display.image).toEqual({ uri: 'https://example.com/official-flyer.png' });
+    expect(display.priceText).toBeUndefined();
+    expect(display.ticketStatus).toBeUndefined();
+    expect(display.genres).toEqual([]);
   });
 });

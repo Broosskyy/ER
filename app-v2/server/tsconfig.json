@@ -6,6 +6,10 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["official-connectors/**/*.ts"],
-  "exclude": ["official-connectors/**/__tests__/**", "official-connectors/scripts/**"]
+  "include": ["official-connectors/**/*.ts", "ingestion/**/*.ts"],
+  "exclude": [
+    "official-connectors/**/__tests__/**",
+    "official-connectors/scripts/**",
+    "ingestion/**/__tests__/**"
+  ]
 }

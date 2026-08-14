@@ -65,6 +65,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:connectors": "vitest run server/official-connectors",
+    "test:ingestion": "vitest run server/ingestion",
     "test:watch": "vitest"
   },
   "overrides": {

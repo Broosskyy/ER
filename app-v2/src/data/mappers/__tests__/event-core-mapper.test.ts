@@ -110,6 +110,21 @@ describe('event-core-mapper', () => {
     expect(summary.venue?.city).toBe('Köln');
     expect(summary.genres).toHaveLength(2);
     expect(summary.primaryTicket?.priceFromMinor).toBe(1990);
+    expect(summary.imageUrl).toBeNull();
+  });
+
+  it('maps image_url when present', () => {
+    const summary = mapEventSummary(
+      {
+        ...eventRow,
+        image_url: 'https://example.com/flyer.png',
+      },
+      venueRow,
+      [],
+      [],
+    );
+
+    expect(summary.imageUrl).toBe('https://example.com/flyer.png');
   });
 
   it('maps Supabase rows to EventDetail with billing order preserved', () => {
