@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["official-connectors/**/*.ts"],
+  "exclude": ["official-connectors/**/__tests__/**", "official-connectors/scripts/**"]
+}

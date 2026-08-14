@@ -33,6 +33,7 @@
   "devDependencies": {
     "@types/node": "^26.1.2",
     "@types/react": "~19.2.2",
+    "cheerio": "^1.2.0",
     "eslint": "^9.39.2",
     "eslint-config-expo": "~57.0.0",
     "eslint-config-prettier": "^10.1.8",
@@ -58,10 +59,12 @@
     "release:check": "npm run typecheck && npm run lint && npm test && npm run validate:pwa && npm run validate:ios && npm run generate:seo && npm run validate:seo && npm run build:web && npm run validate:build-output",
     "doctor": "expo-doctor",
     "lint": "eslint .",
-    "typecheck": "npm run typecheck:app",
+    "typecheck": "npm run typecheck:app && npm run typecheck:server",
     "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
+    "typecheck:server": "tsc --noEmit -p server/tsconfig.json",
     "format": "prettier --write .",
     "test": "vitest run",
+    "test:connectors": "vitest run server/official-connectors",
     "test:watch": "vitest"
   },
   "overrides": {

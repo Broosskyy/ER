@@ -35,7 +35,8 @@ Source Evidence → Canonical Event → Validation → Event Writer → Clean Da
 - [x] M1 Security Hardening
 - [x] M1 Legacy Source Purge
 - [x] M2 Manual Event Roundtrip
-- [ ] M3 One Official Import Roundtrip
+- [x] M3 Bootshaus Official Connector (Noop)
+- [ ] M3 Controlled Persistence
 - [ ] M4 Seven Reference Events
 - [ ] M5 Bootshaus 30-Event Run
 - [ ] M6 Controlled Cutover
@@ -45,12 +46,12 @@ Nur ein Meilenstein darf gleichzeitig als IN PROGRESS markiert sein.
 
 ## Aktueller Zustand
 
-M2 Manual Event Roundtrip technisch abgeschlossen. Ein veröffentlichter M2-Testevent ist in Supabase vorhanden. Die App liest ausschließlich den neuen Event-Core (kein Legacy-Fallback, keine `event_sources`-Reads). Physical-Device-Sichtprüfung: **pending**. Nächster Schritt erst nach visueller Bestätigung: erster neuer Official Connector.
+M2 visuell auf Android Mobile Web bestätigt. M3 Bootshaus Official Connector (Noop) abgeschlossen: sicherer Listen- und Detail-Fetch, strukturierte Official Evidence, Consumer Preview ohne Persistenz. Keine Datenbankmutation. Nächster Schritt: kontrollierte Persistenz erst nach Prüfung des M3-Berichts.
 
 ## Aktive Umgebung
 
 - aktiver Git-Branch: `rebuild/event-core-clean`
 - Legacy-Branch: `archive/event-system-legacy-2026-08-13`
 - Supabase-Projekt: `gnkjzinwvmrxcadwebhv` (Event-Core-Baseline, Auth behalten)
-- public-Schema: sechs leere Tabellen `venues`, `events`, `event_lineup`, `event_genres`, `event_tickets`, `event_sources`
-- nächster Schritt: manueller Event-Roundtrip in der echten App
+- public-Schema: sechs Tabellen mit M2-Testdatensatz (1 Event) plus Auth
+- nächster Schritt: kontrollierte Persistenz nach M3-Review
