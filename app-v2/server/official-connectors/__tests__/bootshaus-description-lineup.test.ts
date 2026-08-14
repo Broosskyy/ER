@@ -157,6 +157,8 @@ describe('bootshaus description cleanup', () => {
 
     expect(truncated).toEqual(['Editorial intro.']);
   });
+
+  it('does not rely on event titles or slugs for cleanup', () => {
     const evidence = parseBootshausDetailPage(
       BOOTSHAUS_AFFENKAEFIG_FRAGMENT,
       'https://bootshaus.tv/events/any-slug-here/',
