@@ -241,4 +241,24 @@ describe('event write planner', () => {
     expect(plan.sourceAction).toBe('noop');
     expect(isPlanIdempotent(plan)).toBe(true);
   });
+
+  it('keeps genre writes noop when an unchanged official source already has genres', () => {
+    const evidence = buildChrisEvidence();
+    evidence.explicitGenreLabels = ['TECHNO'];
+    const candidate = officialEvidenceToEventCandidate(evidence);
+    const plan = planOfficialEventWrite(candidate, {
+      existingSources: [
+        {
+          sourceId: 'source-1',
+          eventId: 'event-1',
+          sourceUrl: 'https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/',
+          contentHash: 'chris-fingerprint',
+        },
+      ],
+      existingVenues: [],
+    });
+
+    expect(plan.genresAction).toBe('noop');
+    expect(isPlanIdempotent(plan)).toBe(true);
+  });
 });

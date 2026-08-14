@@ -164,7 +164,7 @@ export function planOfficialEventWrite(
   let eventAction: WriteAction = 'insert';
   let sourceAction: WriteAction = 'insert';
   let lineupAction: WriteAction = candidate.lineup.length > 0 ? 'replace' : 'noop';
-  const genresAction: WriteAction = candidate.genres.length > 0 ? 'replace' : 'noop';
+  let genresAction: WriteAction = candidate.genres.length > 0 ? 'replace' : 'noop';
   const ticketsAction: WriteAction = 'noop';
   const reasons: string[] = [];
 
@@ -173,6 +173,7 @@ export function planOfficialEventWrite(
     eventAction = sameFingerprint ? 'noop' : 'update';
     sourceAction = sameFingerprint ? 'noop' : 'update';
     lineupAction = sameFingerprint ? 'noop' : candidate.lineup.length > 0 ? 'replace' : 'noop';
+    genresAction = sameFingerprint ? 'noop' : candidate.genres.length > 0 ? 'replace' : 'noop';
     reasons.push(sameFingerprint ? 'existing_official_source_unchanged' : 'existing_official_source_changed');
   } else {
     reasons.push('new_official_source');
