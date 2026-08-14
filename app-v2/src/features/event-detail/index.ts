@@ -1,4 +1,8 @@
 export { EventNotFoundState } from './components/EventNotFoundState';
+export {
+  EventDetailContent,
+  EventDetailLoadingState,
+} from './components/EventDetailContent';
 
 export async function openEventInMaps(): Promise<boolean> {
   return false;

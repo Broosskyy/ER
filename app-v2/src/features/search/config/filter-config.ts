@@ -146,8 +146,6 @@ export const filterConfig: FilterConfig = {
 
   venueOptions: [
     { id: 'any', label: 'Beliebig', value: 'any', active: true, sortOrder: 0, entityId: null },
-    { id: 'bootshaus', label: 'Bootshaus', value: 'bootshaus', active: true, sortOrder: 1, entityId: 'venue-bootshaus' },
-    { id: 'warehouse', label: 'Warehouse', value: 'warehouse', active: true, sortOrder: 2, entityId: 'venue-warehouse' },
   ],
 
   organizerOptions: [

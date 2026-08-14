@@ -10,8 +10,8 @@ import {
 } from 'react';
 
 import { eventRepository } from '@/data/repositories/registry';
-import { toEventDisplayModel, type EventDisplayModel } from '@/features/events/formatting/display-event';
-import type { Event } from '@/features/events/types/event';
+import { toEventDisplayModelFromDetail } from '@/data/mappers/event-core-display';
+import type { EventDisplayModel } from '@/features/events/formatting/display-event';
 import type { SavedEvent, SavedEventRecord, SavedEventSource } from '@/features/saved/types/saved-event';
 
 import {
@@ -58,37 +58,41 @@ function sanitizeSavedRecords(records: readonly SavedEventRecord[]): SavedEventR
 
 function resolveFavoriteEvents(records: readonly SavedEventRecord[]): EventDisplayModel[] {
   return records
-    .map((record) => eventRepository.getEventById(record.eventId))
+    .map((record) => eventRepository.getPublishedDetail(record.eventId))
     .filter((event) => event !== undefined)
-    .map(toEventDisplayModel);
+    .map((event) => toEventDisplayModelFromDetail(event));
 }
 
 function buildUnavailableEventDisplayModel(eventId: string, savedAt: string): EventDisplayModel {
-  const unavailableEvent: Event = {
+  return {
     id: eventId,
     slug: eventId,
     title: 'Event nicht mehr verfügbar',
     description: '',
-    startDateTime: savedAt,
-    timezone: 'Europe/Berlin',
+    image: { uri: '' },
+    date: '',
+    startTime: '',
     venue: 'Unbekannt',
     city: '—',
     country: 'DE',
     genres: [],
     artists: [],
-    source: 'demo',
-    sourceEventId: eventId,
+    source: 'event-core',
+    sourceLabel: '',
+    startsAt: savedAt,
+    startDateTime: savedAt,
+    timezone: 'Europe/Berlin',
     status: 'archived',
-    createdAt: savedAt,
-    updatedAt: savedAt,
+    lifecycleStatus: 'archived',
+    venueLabel: 'Unbekannt',
+    cityLabel: '—',
+    locationLabelComma: 'Unbekannt, —',
   };
-
-  return toEventDisplayModel(unavailableEvent);
 }
 
 function resolveSavedEvents(records: readonly SavedEventRecord[]): SavedEvent[] {
   return records.map((record) => {
-    const event = eventRepository.getEventById(record.eventId);
+    const event = eventRepository.getPublishedDetail(record.eventId);
 
     if (!event) {
       return {
@@ -100,7 +104,7 @@ function resolveSavedEvents(records: readonly SavedEventRecord[]): SavedEvent[] 
 
     return {
       ...record,
-      event: toEventDisplayModel(event),
+      event: toEventDisplayModelFromDetail(event),
     };
   });
 }

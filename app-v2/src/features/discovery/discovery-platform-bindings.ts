@@ -22,7 +22,10 @@ export function bindDiscoveryPlatform(
   const queryPlatform = new DiscoveryQueryPlatform({
     discoveryApi: discoveryApiService,
     entityReaders: createRegistryDiscoveryEntityReaders({
-      getEventById: (id) => deps.eventRepository.getEventById(id),
+      getEventById: (id) => {
+        const detail = deps.eventRepository.getPublishedDetail(id);
+        return detail ? undefined : undefined;
+      },
       getPublishedEvents: () => getDiscoverablePublishedEvents(),
     }),
     mapEventToDisplay: (event: Event): EventDisplayModel => toEventDisplayModel(event),

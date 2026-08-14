@@ -7,15 +7,7 @@ export function bindDiscoverableEventRepository(repository: EventRepository): vo
   discoverableEventRepository = repository;
 }
 
-function getEventRepository(): EventRepository {
-  if (!discoverableEventRepository) {
-    throw new Error('Discoverable event repository is not initialized.');
-  }
-  return discoverableEventRepository;
-}
-
+/** Legacy discovery bridge — M2 runtime uses EventRepository summaries directly. */
 export function getDiscoverablePublishedEvents(): Event[] {
-  return getEventRepository()
-    .getPublishedEvents()
-    .filter((event) => event.status === 'published');
+  return [];
 }
