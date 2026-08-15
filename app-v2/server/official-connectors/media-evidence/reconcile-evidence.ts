@@ -4,8 +4,14 @@ import {
   inferLineupEvidenceRole,
   preferDisplayName,
   sanitizeFinalLineupCandidates,
+  validateOfficialLineupAct,
   type LineupValidationContext,
 } from '../shared/lineup-normalization';
+import { applyMediaBillingOrder } from '../shared/media-billing-order';
+import {
+  classifyGenreEvidenceGaps,
+  replaceLegacyGenreGaps,
+} from '../shared/genre-gap-classification';
 import {
   extractVerifiedTitleLineupCandidates,
   mergeTitleLineupCandidates,
@@ -20,6 +26,28 @@ import type { EventMediaEvidence } from './types';
 
 function withoutGap(gaps: string[], gapPrefix: string): string[] {
   return gaps.filter((gap) => !gap.startsWith(gapPrefix));
+}
+
+function applyClassifiedGenreGaps(
+  enrichmentGaps: string[],
+  explicitGenreLabels: string[],
+  textEvidence: OfficialEventEvidence,
+  mediaEvidence?: EventMediaEvidence,
+): string[] {
+  const withoutLegacy = replaceLegacyGenreGaps(enrichmentGaps);
+  if (explicitGenreLabels.length > 0) {
+    return withoutLegacy;
+  }
+
+  const classified = classifyGenreEvidenceGaps(
+    {
+      ...textEvidence,
+      explicitGenreLabels,
+      enrichmentGaps: withoutLegacy,
+    },
+    mediaEvidence,
+  );
+  return [...withoutLegacy, ...classified];
 }
 
 export interface ReconciledOfficialEvidence {
@@ -38,6 +66,7 @@ function finalizeLineupEvidence(
   lineupCandidates: OfficialLineupCandidate[],
   rejectedCandidates: RejectedOfficialCandidate[],
   validationContext: LineupValidationContext,
+  mediaEvidence?: EventMediaEvidence,
 ): {
   lineupCandidates: OfficialLineupCandidate[];
   rejectedCandidates: RejectedOfficialCandidate[];
@@ -58,7 +87,11 @@ function finalizeLineupEvidence(
   });
 
   return {
-    lineupCandidates: sanitized.lineupCandidates,
+    lineupCandidates: applyMediaBillingOrder(
+      sanitized.lineupCandidates,
+      mediaEvidence,
+      validationContext,
+    ),
     rejectedCandidates: [...rejectedCandidates, ...sanitized.rejectedCandidates],
   };
 }
@@ -85,6 +118,7 @@ export function reconcileOfficialAndMediaEvidence(
     });
   const validationContext: LineupValidationContext = {
     mediaContext,
+    knownGenreLabels: textEvidence.explicitGenreLabels,
     ...options.validationContext,
   };
 
@@ -100,6 +134,11 @@ export function reconcileOfficialAndMediaEvidence(
         ...textEvidence,
         lineupCandidates: finalized.lineupCandidates,
         rejectedCandidates: finalized.rejectedCandidates,
+        enrichmentGaps: applyClassifiedGenreGaps(
+          textEvidence.enrichmentGaps,
+          textEvidence.explicitGenreLabels,
+          textEvidence,
+        ),
       },
       rejectedCandidates: finalized.rejectedCandidates,
       conflicts,
@@ -120,7 +159,7 @@ export function reconcileOfficialAndMediaEvidence(
       evidence: {
         ...textEvidence,
         lineupCandidates: finalized.lineupCandidates,
-        enrichmentGaps,
+        enrichmentGaps: applyClassifiedGenreGaps(enrichmentGaps, explicitGenreLabels, textEvidence, mediaEvidence),
         rejectedCandidates: finalized.rejectedCandidates,
         evidenceAudit: {
           lineupBlocks: textEvidence.evidenceAudit?.lineupBlocks ?? [],
@@ -161,6 +200,19 @@ export function reconcileOfficialAndMediaEvidence(
       rejectedCandidates.push({
         rawText: mediaAct.rawText,
         reason: 'lineup_evidence_conflict',
+      });
+      continue;
+    }
+
+    const mediaValidation = validateOfficialLineupAct(
+      mediaAct.rawText,
+      'official_media',
+      validationContext,
+    );
+    if (!mediaValidation.accepted) {
+      rejectedCandidates.push({
+        rawText: mediaAct.rawText,
+        reason: mediaValidation.reason ?? 'invalid_media_lineup_entry',
       });
       continue;
     }
@@ -232,6 +284,7 @@ export function reconcileOfficialAndMediaEvidence(
     lineupCandidates,
     rejectedCandidates,
     validationContext,
+    mediaEvidence,
   );
 
   if (finalized.lineupCandidates.length > 0) {
@@ -244,7 +297,7 @@ export function reconcileOfficialAndMediaEvidence(
       ...textEvidence,
       lineupCandidates: finalized.lineupCandidates,
       explicitGenreLabels,
-      enrichmentGaps,
+      enrichmentGaps: applyClassifiedGenreGaps(enrichmentGaps, explicitGenreLabels, textEvidence, mediaEvidence),
       rejectedCandidates: finalized.rejectedCandidates,
       evidenceAudit: {
         lineupBlocks: textEvidence.evidenceAudit?.lineupBlocks ?? [],

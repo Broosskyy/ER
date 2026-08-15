@@ -5,6 +5,7 @@ import {
   isAcceptableOfficialMediaLineupActName,
   isFloorOrStageHeader,
   isLineupIntroMarker,
+  isLineupPlaceholderLine,
   isShowcaseLabelLine,
   isTicketMarketingOrCtaLine,
   type LineupValidationContext,
@@ -25,7 +26,7 @@ const MIN_PUBLISH_WORD_CONFIDENCE = 40;
 const MAX_ARTIST_LINE_LENGTH = 80;
 
 const PLACEHOLDER_PATTERN =
-  /^(?:tba|and more|and many more|more tba|support tba|\.\.\.\s*more tba)$/i;
+  /^(?:tba|and more|and many more|more tba|support tba|\.\.\.\s*more tba|soon|coming\s*:?\s*soon|coming soon|line-?up\s+soon|to be announced)$/i;
 const PLACEHOLDER_INLINE_PATTERN = /\b(?:tba|and many more|support tba)\b/i;
 const TIME_PATTERN = /^\d{1,2}[:.]\d{2}/;
 const ROSTER_DASH_PATTERN = /\s+-\s+/;
@@ -72,7 +73,7 @@ function classifyMediaLine(
   if (GENRE_HEADER_PATTERN.test(text)) {
     return 'genre_header';
   }
-  if (PLACEHOLDER_PATTERN.test(text) || PLACEHOLDER_INLINE_PATTERN.test(text)) {
+  if (PLACEHOLDER_PATTERN.test(text) || PLACEHOLDER_INLINE_PATTERN.test(text) || isLineupPlaceholderLine(text)) {
     return 'placeholder';
   }
   if (TIME_PATTERN.test(text)) {
@@ -190,6 +191,61 @@ export function parseMediaLayoutFromOcr(
   let confidenceSum = 0;
   const validationContext = buildValidationContext(mediaContext);
 
+  const appendArtistCandidate = (candidateText: string, line: MediaOcrLine): void => {
+    const text = normalizeLine(candidateText);
+    if (!text || !isLikelyArtistLine(text, mediaContext)) {
+      return;
+    }
+    if (line.confidence < MIN_PUBLISH_LINE_CONFIDENCE) {
+      rejectedCandidates.push({
+        rawText: text,
+        reason: 'low_ocr_confidence',
+        confidence: line.confidence,
+        sourceRegion: 'ocr_line',
+      });
+      return;
+    }
+    const weakWords = line.words.filter((word) => word.confidence < MIN_PUBLISH_WORD_CONFIDENCE);
+    if (weakWords.length > line.words.length / 2) {
+      rejectedCandidates.push({
+        rawText: text,
+        reason: 'low_word_confidence',
+        confidence: line.confidence,
+        sourceRegion: 'ocr_line',
+      });
+      return;
+    }
+    if (!isAcceptableOfficialMediaLineupActName(text, validationContext)) {
+      rejectedCandidates.push({
+        rawText: text,
+        reason: 'invalid_media_lineup_entry',
+        confidence: line.confidence,
+        sourceRegion: 'ocr_line',
+      });
+      return;
+    }
+    const key = canonicalActKey(text);
+    if (seenActs.has(key)) {
+      rejectedCandidates.push({
+        rawText: text,
+        reason: 'duplicate_lineup_entry',
+        confidence: line.confidence,
+        sourceRegion: 'ocr_line',
+      });
+      return;
+    }
+    seenActs.add(key);
+    lineupCandidates.push({
+      displayName: text,
+      rawText: text,
+      confidence: line.confidence,
+      evidenceRole: inferLineupEvidenceRole(text, billingOrder),
+      billingOrder,
+      sourceRegion: 'ocr_line',
+    });
+    billingOrder += 1;
+  };
+
   const sortedLines = [...ocrLines].sort((left, right) => {
     if (left.bbox.y0 !== right.bbox.y0) {
       return left.bbox.y0 - right.bbox.y0;
@@ -222,7 +278,7 @@ export function parseMediaLayoutFromOcr(
       continue;
     }
     if (
-      ['placeholder', 'time', 'url', 'ticket', 'venue', 'date', 'logo', 'prose', 'roster_line', 'empty'].includes(
+      ['placeholder', 'time', 'url', 'ticket', 'venue', 'date', 'logo', 'prose', 'empty'].includes(
         kind,
       )
     ) {
@@ -233,6 +289,12 @@ export function parseMediaLayoutFromOcr(
           confidence: line.confidence,
           sourceRegion: 'ocr_line',
         });
+      }
+      continue;
+    }
+    if (kind === 'roster_line') {
+      for (const segment of text.split(/\s+-\s+/).map(normalizeLine).filter(Boolean)) {
+        appendArtistCandidate(segment, line);
       }
       continue;
     }
@@ -270,58 +332,7 @@ export function parseMediaLayoutFromOcr(
       continue;
     }
 
-    if (line.confidence < MIN_PUBLISH_LINE_CONFIDENCE) {
-      rejectedCandidates.push({
-        rawText: text,
-        reason: 'low_ocr_confidence',
-        confidence: line.confidence,
-        sourceRegion: 'ocr_line',
-      });
-      continue;
-    }
-
-    const weakWords = line.words.filter((word) => word.confidence < MIN_PUBLISH_WORD_CONFIDENCE);
-    if (weakWords.length > line.words.length / 2) {
-      rejectedCandidates.push({
-        rawText: text,
-        reason: 'low_word_confidence',
-        confidence: line.confidence,
-        sourceRegion: 'ocr_line',
-      });
-      continue;
-    }
-
-    if (!isAcceptableOfficialMediaLineupActName(text, validationContext)) {
-      rejectedCandidates.push({
-        rawText: text,
-        reason: 'invalid_media_lineup_entry',
-        confidence: line.confidence,
-        sourceRegion: 'ocr_line',
-      });
-      continue;
-    }
-
-    const key = canonicalActKey(text);
-    if (seenActs.has(key)) {
-      rejectedCandidates.push({
-        rawText: text,
-        reason: 'duplicate_lineup_entry',
-        confidence: line.confidence,
-        sourceRegion: 'ocr_line',
-      });
-      continue;
-    }
-
-    seenActs.add(key);
-    lineupCandidates.push({
-      displayName: text,
-      rawText: text,
-      confidence: line.confidence,
-      evidenceRole: inferLineupEvidenceRole(text, billingOrder),
-      billingOrder,
-      sourceRegion: 'ocr_line',
-    });
-    billingOrder += 1;
+    appendArtistCandidate(text, line);
   }
 
   const avgConfidence = readableLineCount > 0 ? confidenceSum / readableLineCount : 0;

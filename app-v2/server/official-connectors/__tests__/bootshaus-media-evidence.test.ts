@@ -14,8 +14,14 @@ import { reconcileOfficialAndMediaEvidence } from '../media-evidence/reconcile-e
 import { TESSERACT_RUNTIME_CACHE_DIR } from '../media-evidence/tesseract-media-evidence-provider';
 import {
   getIsolatedTitleFragmentKeys,
+  isClubOrFloorDescriptorLine,
+  isDateOcrFragmentLine,
+  isEventPolicyOrBrandSloganLine,
+  isLineupOcrPlaceholderFragment,
+  isLineupPlaceholderLine,
   isTicketMarketingOrCtaLine,
   sanitizeFinalLineupCandidates,
+  validateOfficialLineupAct,
 } from '../shared/lineup-normalization';
 import { normalizeOfficialGenreLabel } from '../shared/normalize-genre';
 import { createEmptyConnectorCounters } from '../types';
@@ -223,6 +229,91 @@ describe('bootshaus media evidence reconciliation', () => {
 
     expect(parsed.lineupCandidates.map((act) => act.displayName)).toEqual(['R3HAB']);
     expect(parsed.rejectedCandidates.some((entry) => entry.reason === 'placeholder_not_billing')).toBe(true);
+  });
+
+  it('rejects lineup placeholder and club-night descriptor classes generically', () => {
+    expect(isLineupPlaceholderLine('SOON')).toBe(true);
+    expect(isLineupPlaceholderLine('COMING SOON')).toBe(true);
+    expect(isLineupPlaceholderLine('LINEUP SOON')).toBe(true);
+    expect(isLineupOcrPlaceholderFragment('LINE UP SS')).toBe(true);
+    expect(isClubOrFloorDescriptorLine('¢ INDOOR CLUB NIGHT')).toBe(true);
+  });
+
+  it('rejects event slogans, ocr placeholders, and date fragments as lineup acts', () => {
+    expect(validateOfficialLineupAct('Together We Create the Space', 'floor_billing', {}).accepted).toBe(
+      false,
+    );
+    expect(validateOfficialLineupAct('LINE UP SS', 'floor_billing', {}).accepted).toBe(false);
+    expect(validateOfficialLineupAct('Ao OKTOBER 20267', 'floor_billing', {}).accepted).toBe(false);
+    expect(validateOfficialLineupAct('OGUZ', 'floor_billing', {}).accepted).toBe(true);
+    expect(isEventPolicyOrBrandSloganLine('Together We Create the Space')).toBe(true);
+    expect(isDateOcrFragmentLine('Ao OKTOBER 20267')).toBe(true);
+  });
+
+  it('parses roster dash lines into ordered artist candidates', () => {
+    const parsed = parseMediaLayoutFromOcr(
+      [
+        {
+          text: 'DANTH - FABIAN FARELL',
+          confidence: 90,
+          bbox: { x0: 0, y0: 10, x1: 10, y1: 20 },
+          words: [],
+        },
+        {
+          text: 'NIKLAS DEE - OLIVER MAGENTA',
+          confidence: 90,
+          bbox: { x0: 0, y0: 30, x1: 10, y1: 40 },
+          words: [],
+        },
+        {
+          text: 'TEKNOCLASH',
+          confidence: 90,
+          bbox: { x0: 0, y0: 50, x1: 10, y1: 60 },
+          words: [],
+        },
+      ],
+      [],
+    );
+
+    expect(parsed.lineupCandidates.map((act) => act.displayName)).toEqual([
+      'DANTH',
+      'FABIAN FARELL',
+      'NIKLAS DEE',
+      'OLIVER MAGENTA',
+      'TEKNOCLASH',
+    ]);
+  });
+
+  it('keeps into the madness at seven acts without indoor club night media noise', async () => {
+    const { previews } = await buildBootshausOfficialEvidenceWithMedia(loadBootshausPreviewEntries());
+    const madness = previews.find(
+      (preview) => preview.sourceEventKey === 'into-the-madness-pre-party-weekender-w-ran-d-and-more',
+    );
+
+    expect(madness?.lineupCandidates).toHaveLength(7);
+    expect(madness?.lineupCandidates.map((act) => act.displayName)).toEqual([
+      'RAN-D',
+      'KILI b2b COMPLEX',
+      'ZELECTER',
+      'RESTRICTLESS',
+      'MC Livid',
+      'AVERSION',
+      'DEVIN WILD',
+    ]);
+    expect(madness?.explicitGenreLabels).toContain('Hardstyle');
+  });
+
+  it('orders bootshaus on a ship lineup by flyer roster evidence', async () => {
+    const { previews } = await buildBootshausOfficialEvidenceWithMedia(loadBootshausPreviewEntries());
+    const ship = previews.find((preview) => preview.sourceEventKey === 'bootshaus-on-a-ship-vol-iv');
+
+    expect(ship?.lineupCandidates.map((act) => act.displayName)).toEqual([
+      'DANTH',
+      'FABIAN FARELL',
+      'NIKLAS DEE',
+      'OLIVER MAGENTA',
+      'TEKNOCLASH',
+    ]);
   });
 
   it('does not dump prose paragraphs into lineup via parseBootshausLineupParagraphs fallback', () => {

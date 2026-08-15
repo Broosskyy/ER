@@ -15,6 +15,7 @@ export interface LineupValidationContext {
   mediaContext?: MediaEvidenceContext;
   additionalNoiseTerms?: string[];
   eventTitle?: string;
+  knownGenreLabels?: string[];
 }
 
 const INVALID_LINEUP_PATTERNS = [
@@ -22,6 +23,7 @@ const INVALID_LINEUP_PATTERNS = [
   /^and more$/i,
   /^and many more$/i,
   /^tba$/i,
+  /^soon$/i,
   /^more tba$/i,
   /^support tba$/i,
   /^\.{2,}\s*more tba$/i,
@@ -58,12 +60,139 @@ const DESCRIPTION_PROSE_PATTERN =
   /detailinfos|shoppingadressen|einlass ab|age for admission|live the |public transport|strict .+ dresscode|verkleide dich|umkleidebereich|schließfächer/i;
 const PLACEHOLDER_INLINE_PATTERN = /\b(?:tba|and many more|support tba)\b/i;
 const DATE_PATTERN =
-  /\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)\b|\b\d{1,2}[./-]\d{1,2}(?:[./-]\d{2,4})?\b/i;
+  /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)\b(?:,?\s*\d{1,2}(?:st|nd|rd|th)?)?|\b\d{1,2}[./-]\d{1,2}(?:[./-]\d{2,4})?\b/i;
+const DATE_ONLY_LINE_PATTERN =
+  /^(?:[A-Za-z]+,?\s*)?\d{1,2}(?:st|nd|rd|th)$/i;
 const VENUE_ADDRESS_PATTERN = /\bauenweg\b|\b\d{5}\s+[a-z]/i;
 const DOMAIN_SUFFIX_PATTERN = /\.(?:com|de|tv|io|net|org)\b/i;
+const COPYRIGHT_PATTERN = /©|\(c\)|copyright/i;
+const OCR_PIPE_PATTERN = /\|/;
+const EVENT_TITLE_DESCRIPTOR_PATTERN =
+  /\b(?:festival|weekender|sessions?|showcase|world tour|all night long|paint[- ]?rave|paint splash)\b/i;
+const LINEUP_PLACEHOLDER_PATTERN =
+  /^(?:soon|tba|to be announced|more tba|support tba|and more|and many more|coming\s*:?\s*soon|coming soon|line-?up\s+soon|lineup\s+soon|announced\s+soon)$/i;
+const LINEUP_OCR_PLACEHOLDER_PATTERN =
+  /^line\s*-?\s*up(?:\s+[a-z]{1,4})?$/i;
+const LINEUP_OCR_SUFFIX_PATTERN = /\b(?:ss|soon|tba)\b/i;
+const CLUB_OR_FLOOR_DESCRIPTOR_PATTERN = /\bclub\s+night\b/i;
+const CURRENCY_PREFIX_PATTERN = /^[¢$€£]\s*/;
+const POLICY_SLOGAN_SIGNAL_PATTERN =
+  /\b(?:together|create|creating|respect|freedom|awareness|positive|comes first|safe as possible|dress\s*code|playroom|participation|voluntary)\b/i;
+const DATE_MONTH_PATTERN =
+  /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag|oktober)\b/i;
+const DATE_PREFIX_OCR_PATTERN =
+  /^[a-zäöüß]{1,3}\s+(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag|oktober)\b/i;
+const IMPLAUSIBLE_YEAR_PATTERN = /\b(?:19[0-4]\d|20[4-9]\d|\d{5,})\b/;
 
 export function normalizeLineupName(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
+}
+
+export function isLineupOcrPlaceholderFragment(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  if (LINEUP_OCR_PLACEHOLDER_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (/^line\s*-?\s*up\b/i.test(normalized)) {
+    const remainder = normalized.replace(/^line\s*-?\s*up\b/i, '').trim();
+    if (!remainder || LINEUP_OCR_SUFFIX_PATTERN.test(remainder)) {
+      return true;
+    }
+  }
+  if (/^lineup\s+[a-z]{1,4}$/i.test(normalized)) {
+    return true;
+  }
+  return false;
+}
+
+export function isEventPolicyOrBrandSloganLine(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  if (normalized.includes('&') || /\bb2b\b/i.test(normalized) || /\bvs\.?\b/i.test(normalized)) {
+    return false;
+  }
+  const words = normalized.split(/\s+/);
+  if (words.length < 4) {
+    return false;
+  }
+  if (POLICY_SLOGAN_SIGNAL_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (/\bthe\s+[a-z]+\b/i.test(normalized) && words.length >= 4 && !/^[A-Z0-9\s'.-]+$/.test(normalized)) {
+    return true;
+  }
+  return looksLikePromotionalSloganLine(normalized);
+}
+
+export function isDateOcrFragmentLine(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  if (DATE_PREFIX_OCR_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (DATE_MONTH_PATTERN.test(normalized) && IMPLAUSIBLE_YEAR_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (DATE_MONTH_PATTERN.test(normalized) && /\d{5,}/.test(normalized)) {
+    return true;
+  }
+  if (/^\d{1,2}[./-]\d{1,2}[./-]\d{2,}$/i.test(normalized)) {
+    return true;
+  }
+  return false;
+}
+
+export function isLineupPlaceholderLine(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return true;
+  }
+  if (LINEUP_PLACEHOLDER_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (isLineupOcrPlaceholderFragment(normalized)) {
+    return true;
+  }
+  if (PLACEHOLDER_INLINE_PATTERN.test(normalized) && normalized.length < 40) {
+    return true;
+  }
+  return false;
+}
+
+export function isClubOrFloorDescriptorLine(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  if (CLUB_OR_FLOOR_DESCRIPTOR_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (CURRENCY_PREFIX_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (/\bindoor\b/i.test(normalized) && /\b(?:club|night|floor)\b/i.test(normalized)) {
+    return true;
+  }
+  return false;
+}
+
+export function isPublishedGenreLabel(
+  text: string,
+  knownGenreLabels: string[] = [],
+): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  const key = canonicalActKey(normalized);
+  return knownGenreLabels.some((label) => canonicalActKey(label) === key);
 }
 
 export function canonicalActKey(name: string): string {
@@ -145,6 +274,30 @@ export function isShowcaseLabelLine(text: string): boolean {
 export function isSuspectedFlyerArtifactName(text: string): boolean {
   const normalized = normalizeLineupName(text);
   return /^[A-Z0-9]{2,5}-[A-Z0-9]{1,3}$/.test(normalized) && !normalized.includes(' ');
+}
+
+export function looksLikePromotionalSloganLine(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  if (normalized.includes('&') || /\bb2b\b/i.test(normalized) || /\bvs\.?\b/i.test(normalized)) {
+    return false;
+  }
+  if (EVENT_TITLE_DESCRIPTOR_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (/\bon the [a-z]/i.test(normalized) && normalized.split(/\s+/).length >= 3) {
+    return true;
+  }
+  const words = normalized.split(/\s+/);
+  if (words.length >= 4) {
+    const uppercaseWords = words.filter((word) => /^[A-Z0-9][A-Z0-9'.-]*$/.test(word));
+    if (uppercaseWords.length >= Math.ceil(words.length * 0.8)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 export function stripTimetableTimePrefix(text: string): string {
@@ -237,6 +390,30 @@ export function validateOfficialLineupAct(
     return { accepted: false, reason: 'floor_or_boilerplate' };
   }
 
+  if (isLineupPlaceholderLine(displayName)) {
+    return { accepted: false, reason: 'placeholder_not_billing' };
+  }
+
+  if (isLineupOcrPlaceholderFragment(displayName)) {
+    return { accepted: false, reason: 'placeholder_not_billing' };
+  }
+
+  if (isEventPolicyOrBrandSloganLine(displayName)) {
+    return { accepted: false, reason: 'event_policy_slogan' };
+  }
+
+  if (isDateOcrFragmentLine(displayName)) {
+    return { accepted: false, reason: 'date_or_time_line' };
+  }
+
+  if (isClubOrFloorDescriptorLine(displayName)) {
+    return { accepted: false, reason: 'club_or_floor_descriptor' };
+  }
+
+  if (context?.knownGenreLabels && isPublishedGenreLabel(displayName, context.knownGenreLabels)) {
+    return { accepted: false, reason: 'genre_label_as_artist' };
+  }
+
   if (/^STYLE\s*:/i.test(displayName)) {
     return { accepted: false, reason: 'style_metadata' };
   }
@@ -265,6 +442,47 @@ export function validateOfficialLineupAct(
     return { accepted: false, reason: 'url_or_domain_line' };
   }
 
+  if (COPYRIGHT_PATTERN.test(displayName)) {
+    return { accepted: false, reason: 'copyright_or_symbol_line' };
+  }
+
+  if (OCR_PIPE_PATTERN.test(displayName)) {
+    return { accepted: false, reason: 'ocr_pipe_artifact' };
+  }
+
+  if (looksLikePromotionalSloganLine(displayName)) {
+    return { accepted: false, reason: 'show_slogan_line' };
+  }
+
+  if (
+    /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\b/i.test(
+      displayName,
+    ) &&
+    /\d{4,}/.test(displayName)
+  ) {
+    return { accepted: false, reason: 'date_or_time_line' };
+  }
+
+  if (
+    /\bevent\b/i.test(displayName) &&
+    !displayName.includes('&') &&
+    displayName.split(/\s+/).length <= 5
+  ) {
+    return { accepted: false, reason: 'event_policy_line' };
+  }
+
+  if (/^\s*closing\s*$/i.test(displayName) || isLineupIntroMarker(displayName)) {
+    return { accepted: false, reason: 'non_lineup_boilerplate' };
+  }
+
+  if (
+    /\bfestival\b/i.test(displayName) &&
+    !displayName.includes('&') &&
+    !/\bb2b\b/i.test(displayName)
+  ) {
+    return { accepted: false, reason: 'show_or_event_title' };
+  }
+
   if (isDescriptionProseLine(displayName)) {
     return { accepted: false, reason: 'description_prose_line' };
   }
@@ -273,7 +491,7 @@ export function validateOfficialLineupAct(
     return { accepted: false, reason: 'placeholder_not_billing' };
   }
 
-  if (DATE_PATTERN.test(displayName) && displayName.length < 50) {
+  if (DATE_PATTERN.test(displayName) && (displayName.length < 50 || DATE_ONLY_LINE_PATTERN.test(displayName))) {
     return { accepted: false, reason: 'date_or_time_line' };
   }
 
