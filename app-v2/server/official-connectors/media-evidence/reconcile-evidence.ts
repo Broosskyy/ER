@@ -6,6 +6,10 @@ import {
   sanitizeFinalLineupCandidates,
   type LineupValidationContext,
 } from '../shared/lineup-normalization';
+import {
+  extractVerifiedTitleLineupCandidates,
+  mergeTitleLineupCandidates,
+} from '../shared/title-lineup-evidence';
 import { buildMediaEvidenceContextFromEvidence, type MediaEvidenceContext } from '../shared/media-evidence-context';
 import type {
   OfficialEventEvidence,
@@ -27,6 +31,36 @@ export interface ReconciledOfficialEvidence {
 export interface ReconcileOfficialEvidenceOptions {
   mediaContext?: MediaEvidenceContext;
   validationContext?: LineupValidationContext;
+}
+
+function finalizeLineupEvidence(
+  textEvidence: OfficialEventEvidence,
+  lineupCandidates: OfficialLineupCandidate[],
+  rejectedCandidates: RejectedOfficialCandidate[],
+  validationContext: LineupValidationContext,
+): {
+  lineupCandidates: OfficialLineupCandidate[];
+  rejectedCandidates: RejectedOfficialCandidate[];
+} {
+  const titleEvidence = extractVerifiedTitleLineupCandidates({
+    eventTitle: textEvidence.title,
+    organizerLabel: textEvidence.organizerLabel,
+    validationContext,
+  });
+
+  const merged = mergeTitleLineupCandidates(lineupCandidates, titleEvidence.candidates);
+  rejectedCandidates.push(...titleEvidence.rejectedCandidates);
+
+  const sanitized = sanitizeFinalLineupCandidates(merged, {
+    eventTitle: textEvidence.title,
+    validationContext,
+    showTitleFragmentKeys: titleEvidence.showTitleFragmentKeys,
+  });
+
+  return {
+    lineupCandidates: sanitized.lineupCandidates,
+    rejectedCandidates: [...rejectedCandidates, ...sanitized.rejectedCandidates],
+  };
 }
 
 export function reconcileOfficialAndMediaEvidence(
@@ -55,14 +89,19 @@ export function reconcileOfficialAndMediaEvidence(
   };
 
   if (!mediaEvidence) {
-    const sanitized = sanitizeFinalLineupCandidates(lineupCandidates, {
-      eventTitle: textEvidence.title,
-      validationContext,
-    });
-    rejectedCandidates.push(...sanitized.rejectedCandidates);
-    return {
-      evidence: { ...textEvidence, lineupCandidates: sanitized.lineupCandidates, rejectedCandidates },
+    const finalized = finalizeLineupEvidence(
+      textEvidence,
+      lineupCandidates,
       rejectedCandidates,
+      validationContext,
+    );
+    return {
+      evidence: {
+        ...textEvidence,
+        lineupCandidates: finalized.lineupCandidates,
+        rejectedCandidates: finalized.rejectedCandidates,
+      },
+      rejectedCandidates: finalized.rejectedCandidates,
       conflicts,
     };
   }
@@ -71,17 +110,18 @@ export function reconcileOfficialAndMediaEvidence(
     if (!enrichmentGaps.includes('media_ocr_unreadable')) {
       enrichmentGaps.push('media_ocr_unreadable');
     }
-    const sanitized = sanitizeFinalLineupCandidates(lineupCandidates, {
-      eventTitle: textEvidence.title,
+    const finalized = finalizeLineupEvidence(
+      textEvidence,
+      lineupCandidates,
+      rejectedCandidates,
       validationContext,
-    });
-    rejectedCandidates.push(...sanitized.rejectedCandidates);
+    );
     return {
       evidence: {
         ...textEvidence,
-        lineupCandidates: sanitized.lineupCandidates,
+        lineupCandidates: finalized.lineupCandidates,
         enrichmentGaps,
-        rejectedCandidates,
+        rejectedCandidates: finalized.rejectedCandidates,
         evidenceAudit: {
           lineupBlocks: textEvidence.evidenceAudit?.lineupBlocks ?? [],
           normalizedGenres: textEvidence.evidenceAudit?.normalizedGenres ?? [],
@@ -89,7 +129,7 @@ export function reconcileOfficialAndMediaEvidence(
           mediaEvidence,
         },
       },
-      rejectedCandidates,
+      rejectedCandidates: finalized.rejectedCandidates,
       conflicts,
     };
   }
@@ -187,19 +227,25 @@ export function reconcileOfficialAndMediaEvidence(
     });
   }
 
-  const sanitized = sanitizeFinalLineupCandidates(lineupCandidates, {
-    eventTitle: textEvidence.title,
+  const finalized = finalizeLineupEvidence(
+    textEvidence,
+    lineupCandidates,
+    rejectedCandidates,
     validationContext,
-  });
-  rejectedCandidates.push(...sanitized.rejectedCandidates);
+  );
+
+  if (finalized.lineupCandidates.length > 0) {
+    enrichmentGaps = withoutGap(enrichmentGaps, 'lineup_media_required');
+    enrichmentGaps = withoutGap(enrichmentGaps, 'lineup_not_announced');
+  }
 
   return {
     evidence: {
       ...textEvidence,
-      lineupCandidates: sanitized.lineupCandidates,
+      lineupCandidates: finalized.lineupCandidates,
       explicitGenreLabels,
       enrichmentGaps,
-      rejectedCandidates,
+      rejectedCandidates: finalized.rejectedCandidates,
       evidenceAudit: {
         lineupBlocks: textEvidence.evidenceAudit?.lineupBlocks ?? [],
         normalizedGenres:
@@ -214,7 +260,7 @@ export function reconcileOfficialAndMediaEvidence(
         mediaEvidence,
       },
     },
-    rejectedCandidates,
+    rejectedCandidates: finalized.rejectedCandidates,
     conflicts,
   };
 }

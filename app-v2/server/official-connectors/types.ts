@@ -1,6 +1,6 @@
 export type OfficialLineupEvidenceRole = 'headliner' | 'artist' | 'compound_act';
 
-export type OfficialLineupEvidenceOrigin = 'official_text' | 'official_media';
+export type OfficialLineupEvidenceOrigin = 'official_text' | 'official_media' | 'official_title';
 
 export interface OfficialLineupCandidate {
   displayName: string;

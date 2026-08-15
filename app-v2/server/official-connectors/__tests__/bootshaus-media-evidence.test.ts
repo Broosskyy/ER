@@ -165,6 +165,9 @@ describe('bootshaus media evidence reconciliation', () => {
     const preview = previews[0]!;
     const acts = preview.lineupCandidates.map((act) => act.displayName);
 
+    expect(acts).toEqual(['VERTILE']);
+    expect(preview.lineupCandidates[0]?.evidenceOrigin).toBe('official_title');
+    expect(acts.filter((act) => act === 'VERTILE')).toHaveLength(1);
     expect(acts).not.toContain('EVERYTHING');
     expect(acts).not.toContain('CHANGES');
     expect(acts.some((act) => /ticket|fase|backstage|see you at/i.test(act))).toBe(false);

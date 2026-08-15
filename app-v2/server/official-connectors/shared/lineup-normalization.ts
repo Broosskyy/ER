@@ -8,7 +8,8 @@ export type LineupEvidenceBlockType =
   | 'floor_billing'
   | 'timetable'
   | 'explicit_sentence'
-  | 'official_media';
+  | 'official_media'
+  | 'official_title';
 
 export interface LineupValidationContext {
   mediaContext?: MediaEvidenceContext;
@@ -363,6 +364,7 @@ export function sanitizeFinalLineupCandidates(
   options: {
     eventTitle?: string;
     validationContext?: LineupValidationContext;
+    showTitleFragmentKeys?: Set<string>;
   },
 ): {
   lineupCandidates: OfficialLineupCandidate[];
@@ -376,13 +378,20 @@ export function sanitizeFinalLineupCandidates(
   const mediaOnlyNames = lineupCandidates
     .filter((act) => act.evidenceOrigin === 'official_media')
     .map((act) => act.displayName);
-  const titleFragmentKeys = options.eventTitle
-    ? getIsolatedTitleFragmentKeys(options.eventTitle, mediaOnlyNames)
-    : new Set<string>();
+  const titleFragmentKeys = new Set<string>(options.showTitleFragmentKeys ?? []);
+  if (options.eventTitle) {
+    for (const key of getIsolatedTitleFragmentKeys(options.eventTitle, mediaOnlyNames)) {
+      titleFragmentKeys.add(key);
+    }
+  }
 
   for (const act of lineupCandidates) {
     const blockType: LineupEvidenceBlockType =
-      act.evidenceOrigin === 'official_media' ? 'official_media' : 'floor_billing';
+      act.evidenceOrigin === 'official_media'
+        ? 'official_media'
+        : act.evidenceOrigin === 'official_title'
+          ? 'official_title'
+          : 'floor_billing';
     const validation = validateOfficialLineupAct(act.rawText, blockType, validationContext);
     if (!validation.accepted) {
       rejectedCandidates.push({
