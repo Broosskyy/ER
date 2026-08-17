@@ -58,6 +58,15 @@ export interface RejectedMediaCandidate {
   sourceRegion?: string;
 }
 
+export type EventMediaRole = 'event_flyer' | 'event_artwork' | 'unknown';
+
+export interface EventMediaReference {
+  sourceImageUrl: string;
+  imageFingerprint?: string;
+  sourceObservedAt: string;
+  mediaRole: EventMediaRole;
+}
+
 export interface EventMediaEvidence {
   sourceImageUrl: string;
   imageFingerprint: string;
@@ -82,6 +91,7 @@ export interface MediaEvidenceExtractInput {
   mimeType: string;
   sourceObservedAt: string;
   mediaContext?: MediaEvidenceContext;
+  corroborationLineup?: string[];
 }
 
 export interface MediaEvidenceProvider {

@@ -3,8 +3,6 @@ import type { OfficialLineupCandidate } from '../types';
 import {
   canonicalActKey,
   inferLineupEvidenceRole,
-  validateOfficialLineupAct,
-  type LineupValidationContext,
 } from './lineup-normalization';
 
 const ROSTER_DASH_PATTERN = /\s+-\s+/;
@@ -12,9 +10,9 @@ const ROSTER_DASH_PATTERN = /\s+-\s+/;
 function mediaBillingOrderKeys(mediaEvidence: EventMediaEvidence): string[] {
   const ordered: string[] = [];
   const seen = new Set<string>();
-  const mediaActs = [...mediaEvidence.lineupCandidates].sort(
-    (left, right) => (left.billingOrder ?? 0) - (right.billingOrder ?? 0),
-  );
+  const mediaActs = [...mediaEvidence.lineupCandidates]
+    .filter((act) => act.sourceRegion !== 'ocr_corroboration')
+    .sort((left, right) => (left.billingOrder ?? 0) - (right.billingOrder ?? 0));
 
   for (const act of mediaActs) {
     const key = canonicalActKey(act.displayName);
@@ -24,7 +22,12 @@ function mediaBillingOrderKeys(mediaEvidence: EventMediaEvidence): string[] {
     }
   }
 
-  if (ordered.length > 0) {
+  if (ordered.length >= 2) {
+    return ordered;
+  }
+
+  const hasRosterLines = mediaEvidence.ocrLines.some((line) => ROSTER_DASH_PATTERN.test(line.text));
+  if (!hasRosterLines) {
     return ordered;
   }
 
@@ -60,7 +63,6 @@ function mediaBillingOrderKeys(mediaEvidence: EventMediaEvidence): string[] {
 export function applyMediaBillingOrder(
   lineupCandidates: OfficialLineupCandidate[],
   mediaEvidence: EventMediaEvidence | undefined,
-  validationContext?: LineupValidationContext,
 ): OfficialLineupCandidate[] {
   if (!mediaEvidence || lineupCandidates.length === 0) {
     return lineupCandidates;
@@ -81,19 +83,7 @@ export function applyMediaBillingOrder(
     mediaOrderKeys.every((key) => lineupKeySet.has(key)) &&
     lineupKeys.every((key) => mediaKeySet.has(key));
 
-  if (!sameSet && mediaOrderKeys.length < lineupKeys.length) {
-    const allMediaActsValid = mediaOrderKeys.every(
-      (key) => {
-        const act = lineupCandidates.find((entry) => canonicalActKey(entry.displayName) === key);
-        return act
-          ? validateOfficialLineupAct(act.rawText, 'official_media', validationContext).accepted
-          : false;
-      },
-    );
-    if (!allMediaActsValid) {
-      return lineupCandidates;
-    }
-  } else if (!sameSet) {
+  if (!sameSet) {
     return lineupCandidates;
   }
 

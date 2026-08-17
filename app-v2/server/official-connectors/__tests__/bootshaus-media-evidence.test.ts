@@ -10,6 +10,7 @@ import {
 import { parseBootshausDetailPage } from '../bootshaus/parse-detail';
 import { parseBootshausLineupParagraphs } from '../bootshaus/parse-lineup';
 import { parseMediaLayoutFromOcr } from '../media-evidence/parse-media-layout';
+import { corroborateMediaLineupFromOcr } from '../media-evidence/corroborate-media-lineup-from-ocr';
 import { reconcileOfficialAndMediaEvidence } from '../media-evidence/reconcile-evidence';
 import { TESSERACT_RUNTIME_CACHE_DIR } from '../media-evidence/tesseract-media-evidence-provider';
 import {
@@ -314,6 +315,59 @@ describe('bootshaus media evidence reconciliation', () => {
       'OLIVER MAGENTA',
       'TEKNOCLASH',
     ]);
+  });
+
+  it('corroborates loonyland lineup from multi-region ocr evidence', () => {
+    const html = readFileSync(
+      '.tmp/m3-bootshaus-cache/details/loonyland-pres-luca-dante-spadafora-2-engel-charlie.html',
+      'utf8',
+    );
+    const textEvidence = parseBootshausDetailPage(
+      html,
+      'https://bootshaus.tv/events/loonyland-pres-luca-dante-spadafora-2-engel-charlie/',
+      '2026-08-14T12:00:00.000Z',
+      createEmptyConnectorCounters(),
+    );
+    const mediaContext = buildBootshausMediaEvidenceContext(textEvidence);
+    const ocrLines = [
+      { text: 'EUCAZDANTEISPADAEORA', confidence: 75, bbox: { x0: 0, y0: 0, x1: 10, y1: 10 }, words: [] },
+      { text: '2 ENGEL & CHARLIE', confidence: 75, bbox: { x0: 0, y0: 20, x1: 10, y1: 30 }, words: [] },
+      { text: 'OLIVER MAGENTA', confidence: 75, bbox: { x0: 0, y0: 40, x1: 10, y1: 50 }, words: [] },
+      { text: 'DJ OLDE', confidence: 75, bbox: { x0: 0, y0: 60, x1: 10, y1: 70 }, words: [] },
+      { text: 'JEY AUX PLATINES', confidence: 75, bbox: { x0: 0, y0: 80, x1: 10, y1: 90 }, words: [] },
+    ];
+    const parsed = corroborateMediaLineupFromOcr(
+      parseMediaLayoutFromOcr(ocrLines, [], mediaContext),
+      ocrLines,
+      textEvidence.lineupCandidates.map((act) => act.displayName),
+      { mediaContext },
+    );
+    const reconciled = reconcileOfficialAndMediaEvidence(textEvidence, {
+      sourceImageUrl: textEvidence.officialImageUrl ?? '',
+      imageFingerprint: 'loonyland-fixture',
+      sourceObservedAt: '2026-08-14T12:00:00.000Z',
+      extractedAt: '2026-08-14T12:00:00.000Z',
+      extractionProvider: 'tesseract-local',
+      mediaClassification: 'event_flyer',
+      ocrBlocks: [],
+      ocrLines,
+      lineupCandidates: parsed.lineupCandidates,
+      genreCandidates: [],
+      rejectedCandidates: [],
+      confidence: 75,
+    });
+
+    expect(reconciled.evidence.lineupCandidates.map((act) => act.displayName)).toEqual([
+      'LUCA DANTE SPADAFORA',
+      '2 ENGEL & CHARLIE',
+      'OLIVER MAGENTA',
+      'DJ OLDE',
+      'JEY AUX PLATINES',
+    ]);
+    expect(
+      reconciled.evidence.lineupCandidates.every((act) => act.evidenceOrigin === 'official_media'),
+    ).toBe(true);
+    expect(reconciled.evidence.enrichmentGaps).not.toContain('media_ocr_unreadable');
   });
 
   it('does not dump prose paragraphs into lineup via parseBootshausLineupParagraphs fallback', () => {

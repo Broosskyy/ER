@@ -90,7 +90,6 @@ function finalizeLineupEvidence(
     lineupCandidates: applyMediaBillingOrder(
       sanitized.lineupCandidates,
       mediaEvidence,
-      validationContext,
     ),
     rejectedCandidates: [...rejectedCandidates, ...sanitized.rejectedCandidates],
   };
@@ -183,11 +182,15 @@ export function reconcileOfficialAndMediaEvidence(
     const existing = textActKeys.get(key);
     if (existing) {
       const preferred = preferDisplayName(existing.displayName, mediaAct.displayName);
-      if (preferred !== existing.displayName) {
-        lineupCandidates = lineupCandidates.map((act) =>
-          canonicalActKey(act.displayName) === key ? { ...act, displayName: preferred } : act,
-        );
-      }
+      lineupCandidates = lineupCandidates.map((act) =>
+        canonicalActKey(act.displayName) === key
+          ? {
+              ...act,
+              displayName: preferred,
+              evidenceOrigin: 'official_media',
+            }
+          : act,
+      );
       continue;
     }
 

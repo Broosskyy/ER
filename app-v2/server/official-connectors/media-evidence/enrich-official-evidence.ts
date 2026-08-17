@@ -93,6 +93,8 @@ function loadCachedMediaEvidenceForEvent(
     return undefined;
   }
 
+  const corroborationLineup = textEvidence.lineupCandidates.map((act) => act.displayName);
+
   const cached =
     findCachedMediaEvidenceByImageUrl(imageUrl) ??
     (() => {
@@ -104,7 +106,7 @@ function loadCachedMediaEvidenceForEvent(
     return cached;
   }
 
-  return reparseCachedMediaEvidence(cached, mediaContext);
+  return reparseCachedMediaEvidence(cached, mediaContext, corroborationLineup);
 }
 
 export function enrichOfficialEvidenceFromCachedMedia(
@@ -204,6 +206,7 @@ export async function enrichOfficialEvidenceWithMedia(
       mimeType,
       sourceObservedAt: options.sourceObservedAt,
       mediaContext,
+      corroborationLineup: textEvidence.lineupCandidates.map((act) => act.displayName),
     });
 
     if (mediaEvidence.mediaClassification === 'unreadable') {
