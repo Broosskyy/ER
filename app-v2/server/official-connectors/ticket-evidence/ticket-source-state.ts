@@ -136,6 +136,7 @@ export function mapResolutionToTicketSourceState(
 ): TicketSourceState | undefined {
   switch (resolutionClass) {
     case 'verified_ticket_complete':
+    case 'verified_ticket_available':
     case 'verified_sold_out_without_public_price':
       return 'current_ticket_detail';
     case 'verified_ticket_with_historical_price':
