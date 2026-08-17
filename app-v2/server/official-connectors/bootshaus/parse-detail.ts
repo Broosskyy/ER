@@ -33,6 +33,10 @@ import {
 } from './parse-lineup';
 import { parseBootshausVenueBlock } from './parse-venue';
 import { buildBootshausDetailUrl, canonicalizeBootshausUrl } from './url-policy';
+import {
+  discoverTicketLinksFromHtml,
+  selectPrimaryTicketLink,
+} from '../ticket-evidence/discover-ticket-links';
 
 function readDetailFieldHtml($: cheerio.CheerioAPI, label: string): string {
   let value = '';
@@ -56,13 +60,11 @@ function readDetailFieldText($: cheerio.CheerioAPI, label: string): string {
     .trim();
 }
 
-function extractTicketUrl($: cheerio.CheerioAPI): string | undefined {
-  const ticketAnchor = $('a.button.secondary.fluid[href*="ticket"]').first();
-  const href = ticketAnchor.attr('href')?.trim();
-  if (!href || !/^https:\/\//i.test(href)) {
-    return undefined;
-  }
-  return href;
+function extractTicketUrl($: cheerio.CheerioAPI, pageUrl: string): string | undefined {
+  const html = $.root().html() ?? '';
+  const links = discoverTicketLinksFromHtml(html, pageUrl, new Date().toISOString());
+  const primary = selectPrimaryTicketLink(links);
+  return primary?.rawUrl;
 }
 
 function extractOfficialImageUrl($: cheerio.CheerioAPI): string | undefined {
@@ -192,7 +194,7 @@ export function parseBootshausDetailPage(
     descriptionRaw: descriptionRaw || undefined,
     descriptionClean: descriptionClean || undefined,
     officialImageUrl: extractOfficialImageUrl($),
-    linkedTicketUrl: extractTicketUrl($),
+    linkedTicketUrl: extractTicketUrl($, canonicalUrl ?? officialUrl),
     lineupCandidates: lineupResult.lineupCandidates,
     explicitGenreLabels: genreEvidence.explicitGenreLabels,
     enrichmentGaps,
