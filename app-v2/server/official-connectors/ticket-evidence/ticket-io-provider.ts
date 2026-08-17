@@ -12,8 +12,6 @@ import {
   isTicketIoShopRootUrl,
 } from './url-policy';
 
-const CACHE_DIR = '.tmp/m6-ticket-evidence-cache';
-
 export interface TicketIoDiscoveryInput {
   sourceEventKey: string;
   officialUrl: string;
@@ -31,13 +29,35 @@ export interface TicketIoEventResult {
   reviewReason?: string;
 }
 
-function cachePathForUrl(url: string): string {
-  const hash = createHash('sha256').update(url).digest('hex');
-  return join(CACHE_DIR, `${hash}.json`);
+export interface TicketIoLivePassOptions {
+  /** When false, skip filesystem cache reads and writes. */
+  useCache?: boolean;
+  /** Explicit cache directory; no implicit default path. Ops runners must supply this. */
+  cacheDir?: string;
 }
 
-function readCache(url: string): TicketIoEventResult['evidence'] | 'blocked' | undefined {
-  const path = cachePathForUrl(url);
+function resolveCacheDir(options: TicketIoLivePassOptions): string | undefined {
+  const cacheDir = options.cacheDir?.trim();
+  return cacheDir ? cacheDir : undefined;
+}
+
+function shouldUseFilesystemCache(options: TicketIoLivePassOptions): boolean {
+  if (options.useCache === false) {
+    return false;
+  }
+  return Boolean(resolveCacheDir(options));
+}
+
+function cachePathForUrl(cacheDir: string, url: string): string {
+  const hash = createHash('sha256').update(url).digest('hex');
+  return join(cacheDir, `${hash}.json`);
+}
+
+function readCache(
+  cacheDir: string,
+  url: string,
+): TicketIoEventResult['evidence'] | 'blocked' | undefined {
+  const path = cachePathForUrl(cacheDir, url);
   if (!existsSync(path)) {
     return undefined;
   }
@@ -51,14 +71,18 @@ function readCache(url: string): TicketIoEventResult['evidence'] | 'blocked' | u
   return payload.evidence;
 }
 
-function writeCache(url: string, payload: { blocked?: boolean; evidence?: EventTicketEvidence }): void {
-  mkdirSync(CACHE_DIR, { recursive: true });
-  writeFileSync(cachePathForUrl(url), `${JSON.stringify(payload, null, 2)}\n`);
+function writeCache(
+  cacheDir: string,
+  url: string,
+  payload: { blocked?: boolean; evidence?: EventTicketEvidence },
+): void {
+  mkdirSync(cacheDir, { recursive: true });
+  writeFileSync(cachePathForUrl(cacheDir, url), `${JSON.stringify(payload, null, 2)}\n`);
 }
 
 export async function fetchTicketIoEvidenceForUrl(
   linkedTicketUrl: string,
-  options: { useCache?: boolean } = {},
+  options: TicketIoLivePassOptions = {},
 ): Promise<{ blocked: boolean; evidence?: EventTicketEvidence; blockReason?: string }> {
   const canonical = canonicalizeTicketIoUrl(linkedTicketUrl);
   if (!canonical) {
@@ -68,8 +92,9 @@ export async function fetchTicketIoEvidenceForUrl(
     return { blocked: false, blockReason: 'ticket_identity_unverifiable' };
   }
 
-  if (options.useCache !== false) {
-    const cached = readCache(canonical);
+  const cacheDir = resolveCacheDir(options);
+  if (shouldUseFilesystemCache(options) && cacheDir) {
+    const cached = readCache(cacheDir, canonical);
     if (cached === 'blocked') {
       return { blocked: true, blockReason: 'bot_protection' };
     }
@@ -80,7 +105,9 @@ export async function fetchTicketIoEvidenceForUrl(
 
   const fetched = await safeFetchTicketPage(canonical);
   if (fetched.blocked) {
-    writeCache(canonical, { blocked: true });
+    if (shouldUseFilesystemCache(options) && cacheDir) {
+      writeCache(cacheDir, canonical, { blocked: true });
+    }
     return { blocked: true, blockReason: fetched.blockReason ?? 'bot_protection' };
   }
 
@@ -94,13 +121,15 @@ export async function fetchTicketIoEvidenceForUrl(
   if (!evidence) {
     return { blocked: false, blockReason: 'ticket_status_ambiguous' };
   }
-  writeCache(canonical, { evidence });
+  if (shouldUseFilesystemCache(options) && cacheDir) {
+    writeCache(cacheDir, canonical, { evidence });
+  }
   return { blocked: false, evidence };
 }
 
 export async function runTicketIoLivePass(
   events: TicketIoDiscoveryInput[],
-  options: { useCache?: boolean } = {},
+  options: TicketIoLivePassOptions = {},
 ): Promise<TicketIoEventResult[]> {
   const fetchedUrls = new Set<string>();
   const results: TicketIoEventResult[] = [];
