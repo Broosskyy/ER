@@ -3,6 +3,9 @@ import {
   normalizeOfficialGenreLabels,
   type NormalizedGenreLabel,
 } from './normalize-genre';
+import { parseDescriptionExplicitGenres } from '../shared/parse-description-genres';
+
+export { parseDescriptionExplicitGenres };
 
 export function parseBootshausExplicitGenres(genresHtml: string): string[] {
   const labels = [...genresHtml.matchAll(/<[^>]+class="[^"]*tag[^"]*"[^>]*>([^<]+)<\/[^>]+>/gi)]

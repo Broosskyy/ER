@@ -462,6 +462,38 @@ export function mergeOfficialLineupEvidence(sources: ParsedLineupAct[]): {
   return { lineupCandidates, rejectedCandidates };
 }
 
+function splitParenthesisAwareCommas(line: string): string[] {
+  const parts: string[] = [];
+  let current = '';
+  let depth = 0;
+
+  for (const char of line) {
+    if (char === '(') {
+      depth += 1;
+    } else if (char === ')') {
+      depth = Math.max(0, depth - 1);
+    }
+
+    if (char === ',' && depth === 0) {
+      const trimmed = normalizeLineupName(current);
+      if (trimmed) {
+        parts.push(trimmed);
+      }
+      current = '';
+      continue;
+    }
+
+    current += char;
+  }
+
+  const trimmed = normalizeLineupName(current);
+  if (trimmed) {
+    parts.push(trimmed);
+  }
+
+  return parts;
+}
+
 export function blocksToParsedActs(
   blocks: LineupEvidenceBlock[],
 ): ParsedLineupAct[] {
@@ -469,15 +501,22 @@ export function blocksToParsedActs(
 
   blocks.forEach((block, blockIndex) => {
     block.rawLines.forEach((line, lineIndex) => {
-      acts.push({
-        displayName: stripTimetableTimePrefix(line),
-        rawText: line,
-        evidenceRole: 'artist',
-        blockType: block.blockType,
-        blockIndex,
-        lineIndex,
-        confidence: block.confidence,
-      });
+      const segments =
+        block.blockType === 'structured_lineup_header' && line.includes(',')
+          ? splitParenthesisAwareCommas(line)
+          : [line];
+
+      for (const [segmentIndex, segment] of segments.entries()) {
+        acts.push({
+          displayName: stripTimetableTimePrefix(segment),
+          rawText: segment,
+          evidenceRole: 'artist',
+          blockType: block.blockType,
+          blockIndex,
+          lineIndex: lineIndex + segmentIndex * 0.01,
+          confidence: block.confidence,
+        });
+      }
     });
   });
 

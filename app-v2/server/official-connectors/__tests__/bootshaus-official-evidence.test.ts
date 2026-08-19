@@ -29,6 +29,37 @@ function parseCachedDetail(sourceEventKey: string) {
 }
 
 describe('bootshaus official lineup evidence', () => {
+  it('parses zaagstep full line-up block from cached html', () => {
+    const evidence = parseCachedDetail('blacklist-inurfase-pres-zaagstep-by-dr-donk');
+    expect(evidence.lineupCandidates.map((act) => act.displayName)).toEqual([
+      'Dr Donk pres. ZAAGSTEP (Album Showcase)',
+      'Dr Donk b2b Yoshiko',
+      'GPF',
+      'Invaderz',
+      'Lekkerfaces',
+      'Madcore',
+      'Must Die!',
+      'Revenge Of The Nerds (Albino b2b Dr Donk b2b Ricky West)',
+      'TMPR',
+    ]);
+    expect(evidence.descriptionClean).not.toContain('HIGHLIGHTS');
+    expect(evidence.descriptionClean?.length ?? 0).toBeGreaterThan(200);
+  });
+
+  it('parses nibirii explicit genres from official description text', () => {
+    const evidence = parseCachedDetail('nibirii-festival-2026');
+    expect(evidence.explicitGenreLabels).toEqual([
+      'Techno',
+      'Hard Techno',
+      'Psytrance',
+      'Groove',
+      'Bounce',
+      'Drum & Bass',
+    ]);
+    expect(evidence.descriptionClean).not.toMatch(/\n-\n/);
+    expect(evidence.descriptionClean?.trim().endsWith('-')).toBe(false);
+  });
+
   it('recognizes lineup header variants', () => {
     expect(isLineupIntroMarker('Line-Up:')).toBe(true);
     expect(isLineupIntroMarker('LINEUP')).toBe(true);

@@ -43,9 +43,10 @@ const FLOOR_STAGE_HEADER_PATTERN =
   /^(?:MAIN\s*FLOOR|MAINFLOOR|UPPER\s*FLOOR|UPPERFLOOR|LOWER\s*FLOOR|LOWERFLOOR|1ST\s*FLOOR|BASEMENT|OUTDOOR|BLCKBX|DREHEREI|MAIN|UPPER|LOWER)(?:\s*:|)?$/i;
 
 const LINEUP_INTRO_MARKER_PATTERN = /^(?:line\s*-?\s*up|artists)\s*:?\s*$/i;
+const FULL_LINEUP_MARKER_PATTERN = /^full\s+line\s*-?\s*up(?:\s+a\s*-?\s*z)?\s*:?\s*$/i;
 const DJ_LINEUP_INTRO_MARKER_PATTERN = /^dj\s+line\s*-?\s*up\s*:?\s*$/i;
 const NON_LINEUP_SECTION_HEADER_PATTERN =
-  /^(?:ELEMENTS|STYLE|INFO|INFOS|DETAILS|PROGRAM|LIVE THE|PUBLIC TRANSPORT INFO)\s*:?$/i;
+  /^(?:ELEMENTS|STYLE|INFO|INFOS|DETAILS|PROGRAM|LIVE THE|PUBLIC TRANSPORT INFO|HIGHLIGHTS)\s*:?$/i;
 const NON_LINEUP_BOILERPLATE_PATTERN =
   /public transport|travel pass|passengers wishing|valid for \d|inbound travel|return journey|vrs network/i;
 const DECOR_BULLET_PATTERN = /^\*[^*].*\*$/;
@@ -114,6 +115,9 @@ export function isEventPolicyOrBrandSloganLine(text: string): boolean {
     return false;
   }
   if (normalized.includes('&') || /\bb2b\b/i.test(normalized) || /\bvs\.?\b/i.test(normalized)) {
+    return false;
+  }
+  if (/\bpres\./i.test(normalized) && /\([^)]+\)/.test(normalized)) {
     return false;
   }
   const words = normalized.split(/\s+/);
@@ -229,7 +233,9 @@ export function inferLineupEvidenceRole(
 export function isLineupIntroMarker(text: string): boolean {
   const normalized = normalizeLineupName(text);
   return (
-    LINEUP_INTRO_MARKER_PATTERN.test(normalized) || DJ_LINEUP_INTRO_MARKER_PATTERN.test(normalized)
+    LINEUP_INTRO_MARKER_PATTERN.test(normalized) ||
+    DJ_LINEUP_INTRO_MARKER_PATTERN.test(normalized) ||
+    FULL_LINEUP_MARKER_PATTERN.test(normalized)
   );
 }
 
@@ -284,6 +290,9 @@ export function looksLikePromotionalSloganLine(text: string): boolean {
   if (normalized.includes('&') || /\bb2b\b/i.test(normalized) || /\bvs\.?\b/i.test(normalized)) {
     return false;
   }
+  if (/\bpres\./i.test(normalized) && /\([^)]+\)/.test(normalized)) {
+    return false;
+  }
   if (EVENT_TITLE_DESCRIPTOR_PATTERN.test(normalized)) {
     return true;
   }
@@ -332,6 +341,9 @@ export function isTicketMarketingOrCtaLine(text: string): boolean {
 export function isDescriptionProseLine(text: string): boolean {
   const normalized = normalizeLineupName(text);
   if (!normalized) {
+    return false;
+  }
+  if (/\bb2b\b/i.test(normalized) || /\([^)]+\)/.test(normalized)) {
     return false;
   }
   if (DESCRIPTION_PROSE_PATTERN.test(normalized)) {

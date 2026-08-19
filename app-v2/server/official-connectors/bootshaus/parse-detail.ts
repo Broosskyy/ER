@@ -24,7 +24,8 @@ import {
   stripTrailingFooterParagraphs,
   truncateDescriptionBeforeStructuredFloorList,
 } from './parse-description';
-import { parseBootshausGenreEvidence } from './parse-genres';
+import { parseBootshausGenreEvidence, parseDescriptionExplicitGenres } from './parse-genres';
+import { normalizeOfficialGenreLabels } from '../shared/normalize-genre';
 import {
   blocksToParsedActs,
   mergeOfficialLineupEvidence,
@@ -145,6 +146,15 @@ export function parseBootshausDetailPage(
   const descriptionClean = cleanDescriptionParagraphs(descriptionParagraphsForClean) || undefined;
 
   const genreEvidence = parseBootshausGenreEvidence($('.genres-container').html() ?? '');
+  const descriptionGenreLabels = parseDescriptionExplicitGenres(descriptionRaw);
+  const resolvedGenreEvidence =
+    descriptionGenreLabels.length > 0
+      ? {
+          explicitGenreLabels: descriptionGenreLabels,
+          normalizedGenres: normalizeOfficialGenreLabels(descriptionGenreLabels).normalized,
+          unmappedGenreLabels: normalizeOfficialGenreLabels(descriptionGenreLabels).unmapped,
+        }
+      : genreEvidence;
   const enrichmentGaps: string[] = [];
 
   if (structuredSplit.lineupNotAnnounced && lineupResult.lineupCandidates.length === 0) {
@@ -161,7 +171,7 @@ export function parseBootshausDetailPage(
     }
   }
 
-  if (genreEvidence.explicitGenreLabels.length === 0) {
+  if (resolvedGenreEvidence.explicitGenreLabels.length === 0) {
     if ($('.genres-container').length > 0 && $('.genres-container').hasClass('element-hidden')) {
       enrichmentGaps.push('genres_media_required');
     } else {
@@ -169,7 +179,7 @@ export function parseBootshausDetailPage(
     }
   }
 
-  for (const unmapped of genreEvidence.unmappedGenreLabels) {
+  for (const unmapped of resolvedGenreEvidence.unmappedGenreLabels) {
     enrichmentGaps.push(`genre_label_unmapped:${unmapped.rawLabel}`);
   }
 
@@ -196,7 +206,7 @@ export function parseBootshausDetailPage(
     officialImageUrl: extractOfficialImageUrl($),
     linkedTicketUrl: extractTicketUrl($, canonicalUrl ?? officialUrl),
     lineupCandidates: lineupResult.lineupCandidates,
-    explicitGenreLabels: genreEvidence.explicitGenreLabels,
+    explicitGenreLabels: resolvedGenreEvidence.explicitGenreLabels,
     enrichmentGaps,
     rejectedCandidates: lineupResult.rejectedCandidates,
     evidenceAudit: {
@@ -205,8 +215,8 @@ export function parseBootshausDetailPage(
         headerText: block.headerText,
         rawLines: block.rawLines,
       })),
-      normalizedGenres: genreEvidence.normalizedGenres,
-      unmappedGenreLabels: genreEvidence.unmappedGenreLabels.map((entry) => entry.rawLabel),
+      normalizedGenres: resolvedGenreEvidence.normalizedGenres,
+      unmappedGenreLabels: resolvedGenreEvidence.unmappedGenreLabels.map((entry) => entry.rawLabel),
     },
   };
 

@@ -168,9 +168,30 @@ function isSplitBoilerplateParagraph(text: string): boolean {
   return BOILERPLATE_MARKERS.some((marker) => normalized.includes(marker));
 }
 
+export function isEventMetadataBoilerplateParagraph(text: string): boolean {
+  const normalized = text.trim();
+  if (!normalized) {
+    return true;
+  }
+  if (/^[-–—]$/.test(normalized)) {
+    return true;
+  }
+  if (/^[📍📅⏰🎟️⚡]/.test(normalized)) {
+    return true;
+  }
+  if (/pre-?register/i.test(normalized) && /(ticket|bit\.ly|http)/i.test(normalized)) {
+    return true;
+  }
+  return false;
+}
+
 export function isBoilerplateParagraph(text: string): boolean {
   const normalized = text.trim().toLowerCase();
   if (!normalized) {
+    return true;
+  }
+
+  if (isEventMetadataBoilerplateParagraph(text)) {
     return true;
   }
 
@@ -199,14 +220,22 @@ export function isFloorListHeaderParagraph(text: string): boolean {
   return isFloorOrStageHeader(text);
 }
 
+export function stripPostLineupMarketingParagraphs(paragraphs: string[]): string[] {
+  const highlightsIndex = paragraphs.findIndex((paragraph) => /^HIGHLIGHTS$/i.test(paragraph.trim()));
+  if (highlightsIndex === -1) {
+    return paragraphs;
+  }
+  return paragraphs.slice(0, highlightsIndex);
+}
+
 export function truncateDescriptionBeforeStructuredFloorList(paragraphs: string[]): string[] {
   const floorIndex = paragraphs.findIndex(
     (paragraph) => isFloorOrStageHeader(paragraph) || isLineupIntroMarker(paragraph),
   );
   if (floorIndex === -1) {
-    return paragraphs;
+    return stripPostLineupMarketingParagraphs(paragraphs);
   }
-  return paragraphs.slice(0, floorIndex);
+  return stripPostLineupMarketingParagraphs(paragraphs.slice(0, floorIndex));
 }
 
 export function normalizeDescriptionParagraph(text: string): string {

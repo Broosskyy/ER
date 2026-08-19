@@ -17,6 +17,7 @@ import {
   mergeTitleLineupCandidates,
 } from '../shared/title-lineup-evidence';
 import { buildMediaEvidenceContextFromEvidence, type MediaEvidenceContext } from '../shared/media-evidence-context';
+import { parseDescriptionExplicitGenres } from '../shared/parse-description-genres';
 import type {
   OfficialEventEvidence,
   OfficialLineupCandidate,
@@ -250,16 +251,21 @@ export function reconcileOfficialAndMediaEvidence(
   const textGenreKeys = new Set(
     normalizeOfficialGenreLabels(explicitGenreLabels).normalized.map((entry) => entry.genreKey),
   );
-  for (const mediaGenre of mediaEvidence.genreCandidates) {
-    if (!mediaGenre.normalizedLabel) {
-      continue;
+  const descriptionGenreLabels = parseDescriptionExplicitGenres(
+    textEvidence.descriptionClean ?? textEvidence.descriptionRaw,
+  );
+  if (descriptionGenreLabels.length === 0) {
+    for (const mediaGenre of mediaEvidence.genreCandidates) {
+      if (!mediaGenre.normalizedLabel) {
+        continue;
+      }
+      const normalized = normalizeOfficialGenreLabels([mediaGenre.rawLabel]).normalized[0];
+      if (!normalized || textGenreKeys.has(normalized.genreKey)) {
+        continue;
+      }
+      textGenreKeys.add(normalized.genreKey);
+      explicitGenreLabels.push(normalized.displayName);
     }
-    const normalized = normalizeOfficialGenreLabels([mediaGenre.rawLabel]).normalized[0];
-    if (!normalized || textGenreKeys.has(normalized.genreKey)) {
-      continue;
-    }
-    textGenreKeys.add(normalized.genreKey);
-    explicitGenreLabels.push(normalized.displayName);
   }
 
   if (lineupCandidates.length > 0) {
