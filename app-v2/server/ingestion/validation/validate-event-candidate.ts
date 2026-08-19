@@ -4,6 +4,78 @@ function isHttpsUrl(value: string | undefined): boolean {
   return typeof value === 'string' && value.startsWith('https://');
 }
 
+function hostnameOf(url: string): string | undefined {
+  try {
+    return new URL(url).hostname.toLowerCase();
+  } catch {
+    return undefined;
+  }
+}
+
+function isTicketProviderOfficialUrl(url: string): boolean {
+  const hostname = hostnameOf(url);
+  if (!hostname) {
+    return false;
+  }
+  return /(?:^|\.)ticket\.io$|(?:^|\.)fourvenues\.com$|^shop\.paylogic\.com$|ticketkings|eventim\.|(?:^|\.)arep\.co$/i.test(
+    hostname,
+  );
+}
+
+function isGenericOfficialHomepage(url: string): boolean {
+  try {
+    const path = new URL(url).pathname.replace(/\/+$/, '') || '/';
+    return path === '/' || /^\/(?:de|en|events|event)?$/.test(path);
+  } catch {
+    return false;
+  }
+}
+
+function isGenericSocialProfile(url: string): boolean {
+  try {
+    const hostname = hostnameOf(url) ?? '';
+    const path = new URL(url).pathname.replace(/\/+$/, '') || '/';
+    const segments = path.split('/').filter(Boolean);
+    const isInstagram = hostname === 'instagram.com' || hostname.endsWith('.instagram.com');
+    const isFacebook = hostname === 'facebook.com' || hostname.endsWith('.facebook.com') || hostname === 'fb.com';
+    const isPost =
+      segments.includes('p') ||
+      segments.includes('reel') ||
+      segments.includes('reels') ||
+      segments.includes('tv') ||
+      path.includes('/posts/') ||
+      path.includes('/permalink.php') ||
+      segments[0] === 'events';
+    if (isPost) {
+      return false;
+    }
+    return (isInstagram || isFacebook) && segments.length === 1;
+  } catch {
+    return false;
+  }
+}
+
+function isUnverifiedSocialPost(url: string): boolean {
+  try {
+    const hostname = hostnameOf(url) ?? '';
+    const path = new URL(url).pathname;
+    const segments = path.split('/').filter(Boolean);
+    const isInstagram = hostname === 'instagram.com' || hostname.endsWith('.instagram.com');
+    const isFacebook = hostname === 'facebook.com' || hostname.endsWith('.facebook.com') || hostname === 'fb.com';
+    const isPost =
+      segments.includes('p') ||
+      segments.includes('reel') ||
+      segments.includes('reels') ||
+      segments.includes('tv') ||
+      path.includes('/posts/') ||
+      path.includes('/permalink.php') ||
+      (isFacebook && segments[0] === 'events');
+    return (isInstagram || isFacebook) && isPost;
+  } catch {
+    return false;
+  }
+}
+
 export function validateEventCandidate(candidate: EventCandidate): EventCandidateValidation {
   const reasons: string[] = [];
 
@@ -29,7 +101,20 @@ export function validateEventCandidate(candidate: EventCandidate): EventCandidat
 
   if (candidate.origin.kind === 'official_connector') {
     if (!isHttpsUrl(candidate.origin.officialUrl)) {
+      reasons.push('official_source_missing');
       reasons.push('missing_official_url');
+    } else if (isTicketProviderOfficialUrl(candidate.origin.officialUrl)) {
+      reasons.push('official_source_missing');
+      reasons.push('ticket_url_used_as_official_source');
+    } else if (isGenericOfficialHomepage(candidate.origin.officialUrl)) {
+      reasons.push('official_source_missing');
+      reasons.push('generic_homepage_used_as_official_source');
+    } else if (isGenericSocialProfile(candidate.origin.officialUrl)) {
+      reasons.push('official_source_missing');
+      reasons.push('generic_social_profile_used_as_official_source');
+    } else if (isUnverifiedSocialPost(candidate.origin.officialUrl)) {
+      reasons.push('official_source_missing');
+      reasons.push('social_post_without_verified_account');
     }
     if (!candidate.origin.sourceEventKey.trim()) {
       reasons.push('missing_source_event_key');
@@ -56,7 +141,17 @@ export function validateEventCandidate(candidate: EventCandidate): EventCandidat
   if (reasons.length > 0) {
     return {
       decision: reasons.some((reason) =>
-        ['missing_title', 'invalid_starts_at', 'end_before_start', 'missing_official_url'].includes(reason),
+        [
+          'missing_title',
+          'invalid_starts_at',
+          'end_before_start',
+          'missing_official_url',
+          'official_source_missing',
+          'ticket_url_used_as_official_source',
+          'generic_homepage_used_as_official_source',
+          'generic_social_profile_used_as_official_source',
+          'social_post_without_verified_account',
+        ].includes(reason),
       )
         ? 'rejected'
         : 'review_required',

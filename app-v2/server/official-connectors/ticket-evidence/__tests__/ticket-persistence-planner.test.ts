@@ -107,8 +107,8 @@ describe('ticket persistence planning', () => {
         contentFingerprint: 'fp-provider',
         offers: [
           {
-            rawLabel: 'Admission',
-            normalizedLabel: 'Admission',
+            rawLabel: 'Phase 3',
+            normalizedLabel: 'Phase 3',
             rawPrice: 'ab 25,90 EUR',
             amountMinor: 2590,
             currency: 'EUR',
@@ -160,11 +160,27 @@ describe('ticket persistence planning', () => {
           discoveredFromSource: 'a[href]',
           observedAt: '2026-08-16T19:53:41.518Z',
         },
-        canonicalTicketUrl: 'https://musical-madness.ticket.io/ebqBfbhC/',
+        canonicalTicketUrl: 'https://musical-madness.ticket.io/xYzVert1/',
         providerKey: 'ticket_io',
-        identityResult: 'ticket_identity_verified',
-        identityReasons: [],
-        classification: 'verified_sales_ended',
+        identityResult: 'ticket_identity_conflict',
+        identityReasons: ['provider_date_mismatch'],
+        targetIdentityEvidence: {
+          originalUrl: 'https://musical-madness.ticket.io/ebqBfbhC/',
+          redirectChain: [
+            'https://musical-madness.ticket.io/ebqBfbhC/',
+            'https://musical-madness.ticket.io/xYzVert1/',
+          ],
+          terminalUrl: 'https://musical-madness.ticket.io/xYzVert1/',
+          providerKey: 'ticket_io',
+          providerEventId: 'xYzVert1',
+          terminalTitle: 'VERTILE',
+          terminalStartAt: '2026-09-20T22:00:00+02:00',
+          observedAt: '2026-08-16T19:53:41.518Z',
+          contentFingerprint: 'fp-hist',
+          identityDecision: 'redirected_to_different_event',
+          reasons: ['provider_date_mismatch'],
+        },
+        classification: 'ticket_identity_conflict',
         verifiedTicketComplete: false,
       },
       {
@@ -194,6 +210,8 @@ describe('ticket persistence planning', () => {
       existingTicketSources: [],
     });
     expect(plans[0]?.plannedTicketRow?.salesStatus).toBe('sales_ended');
+    expect(plans[0]?.plannedTicketRow?.priceFromMinor).toBeUndefined();
+    expect(plans[0]?.plannedTicketRow?.ticketUrl).toBeUndefined();
     expect(plans[0]?.consumerProjection.hasActivePurchaseCta).toBe(false);
     expect(plans[0]?.ticketOperation).toBe('insert');
   });
@@ -234,8 +252,8 @@ describe('ticket persistence planning', () => {
         contentFingerprint: 'fp-provider',
         offers: [
           {
-            rawLabel: 'Admission',
-            normalizedLabel: 'Admission',
+            rawLabel: 'Phase 3',
+            normalizedLabel: 'Phase 3',
             rawPrice: 'ab 25,90 EUR',
             amountMinor: 2590,
             currency: 'EUR',

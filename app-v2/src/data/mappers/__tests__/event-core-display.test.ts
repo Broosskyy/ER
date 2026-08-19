@@ -90,9 +90,11 @@ describe('event-core-display', () => {
     expect(display.venue).toBe('Eternal Rave Test Venue');
     expect(display.city).toBe('Köln');
     expect(display.genres).toEqual(['Techno', 'Hard Techno']);
-    expect(display.priceText).toBe('19,90 €');
+    expect(display.priceText).toBe('ab 19,90 €');
     expect(display.ticketUrl).toBe('https://example.com/eternal-rave-core-test');
     expect(display.lineup).toEqual(['ALPHA & BETA']);
+    expect(display.officialEventUrl).toBeUndefined();
+    expect(display.officialSourceMissing).toBe(true);
   });
 
   it('uses an empty image placeholder when image_url is missing', () => {
@@ -139,6 +141,11 @@ describe('event-core-display', () => {
     const display = toEventDisplayModelFromDetail(detail);
 
     expect(display.image).toEqual({ uri: 'https://example.com/official-flyer.png' });
+    expect(display.officialEventUrl).toBe('https://example.com/events/official');
+    expect(display.sourceLabel).toBe('Offizielle Eventseite von Example');
+    expect(display.sourceUrl).toBe('https://example.com/events/official');
+    expect(display.sourceImageUrl).toBe('https://example.com/official-flyer.png');
+    expect(display.visibleSources?.[0]?.role).toBe('official_event');
     expect(display.priceText).toBeUndefined();
     expect(display.ticketStatus).toBeUndefined();
     expect(display.genres).toEqual([]);

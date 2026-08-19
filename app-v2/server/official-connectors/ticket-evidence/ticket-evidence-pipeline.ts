@@ -22,7 +22,8 @@ import {
   type VerifiedTicketCompleteResult,
 } from './ticket-audit-metrics';
 import { verifyTicketIdentity } from './ticket-identity-verify';
-import { lowestAdmissionOffer } from './ticket-io-evidence-provider';
+import { selectRegularAdmissionOffer } from './select-regular-admission-offer';
+import { evaluateTicketTargetIdentity, isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import type { TicketBrowserOps } from './ticket-browser-ops';
 import { isAdmissionOfferRole } from './ticket-offer-role';
 import { enrichResultWithM6_4 } from './ticket-event-resolution';
@@ -30,6 +31,7 @@ import { isCheckoutOrSessionTicketUrl, isMerchandiseUrl, isShopRootUrl } from '.
 import { discoverOfficialTicketCtaFromHtml } from './discover-official-ticket-cta';
 import { resolveTicketSourceState } from './ticket-source-state';
 import type { OfficialPageCaptureResult } from './ticket-browser-ops';
+import { classifyProviderPageReadiness, isProviderPageReady } from './page-readiness';
 
 export interface OfficialEventTicketInput {
   sourceEventKey: string;
@@ -227,19 +229,85 @@ async function continueWithResolvedLink(
       ? await options.browserOps.fetchTicketPage(resolved.canonicalTicketUrl)
       : await fetchTicketPage(resolved.canonicalTicketUrl);
 
-    if (fetchResult.blocked) {
+    const terminalUrl = fetchResult.finalUrl || resolved.canonicalTicketUrl;
+    const fetchRedirectChain =
+      fetchResult.redirectChain.length > 0 ? fetchResult.redirectChain : resolved.redirectChain;
+    const pageReady =
+      Boolean(fetchResult.body) &&
+      isProviderPageReady(classifyProviderPageReadiness(fetchResult.body, fetchResult.contentType));
+
+    if (fetchResult.blocked && !pageReady) {
+      let terminalTitle: string | undefined;
+      let terminalStartAt: string | undefined;
+      if (fetchResult.body) {
+        const provider = defaultTicketProviderRegistry.resolveProvider(new URL(terminalUrl));
+        if (provider) {
+          try {
+            const partialEvidence = await provider.fetchEventEvidence({
+              url: new URL(terminalUrl),
+              canonicalTicketUrl: resolved.canonicalTicketUrl,
+              redirectChain: fetchRedirectChain,
+              body: fetchResult.body,
+              contentType: fetchResult.contentType,
+              fingerprint: fetchResult.fingerprint,
+              observedAt,
+              extractedAt: new Date().toISOString(),
+            });
+            terminalTitle = partialEvidence.event.rawTitle;
+            terminalStartAt = partialEvidence.event.startAt;
+          } catch {
+            // blocked body may be unusable
+          }
+        }
+      }
+
       const identity = verifyTicketIdentity({
         providerEventId:
-          resolved.providerKey === 'fourvenues'
-            ? (resolved.canonicalTicketUrl.match(/events\/([^/]+)/i)?.[1] ?? resolved.canonicalTicketUrl)
-            : resolved.canonicalTicketUrl,
-        shopHost: new URL(resolved.canonicalTicketUrl).hostname,
+          extractProviderEventIdFromResolved(resolved) ??
+          extractProviderEventIdFromResolved({
+            ...resolved,
+            canonicalTicketUrl: terminalUrl,
+            resolvedUrl: terminalUrl,
+          }) ??
+          terminalUrl,
+        shopHost: new URL(terminalUrl).hostname,
+        providerTitle: terminalTitle,
+        providerStartAt: terminalStartAt,
         officialTitle: input.title,
         officialStartAt: input.startsAt,
         officialVenue: input.venueName,
         officialTicketUrl: primary.rawUrl,
-        canonicalTicketUrl: resolved.canonicalTicketUrl,
+        canonicalTicketUrl: terminalUrl,
       });
+
+      const targetIdentityEvidence = evaluateTicketTargetIdentity({
+        originalUrl: primary.rawUrl,
+        redirectChain: fetchRedirectChain,
+        terminalUrl,
+        providerKey: resolved.providerKey,
+        providerEventId: extractProviderEventIdFromResolved({
+          ...resolved,
+          canonicalTicketUrl: terminalUrl,
+          resolvedUrl: terminalUrl,
+        }),
+        terminalTitle,
+        terminalStartAt,
+        officialTitle: input.title,
+        officialStartAt: input.startsAt,
+        officialVenue: input.venueName,
+        officialTicketUrl: primary.rawUrl,
+        observedAt,
+        contentFingerprint: fetchResult.fingerprint,
+      });
+
+      const mergedIdentityResult =
+        !isVerifiedTicketTargetIdentity(targetIdentityEvidence.identityDecision)
+          ? identity.result === 'ticket_identity_verified'
+            ? 'ticket_identity_conflict'
+            : identity.result
+          : identity.result;
+      const mergedIdentityReasons = [...new Set([...identity.reasons, ...targetIdentityEvidence.reasons])];
+
       const partial: VerifiedTicketCompleteResult = {
         sourceEventKey: input.sourceEventKey,
         officialUrl: input.officialUrl,
@@ -249,11 +317,15 @@ async function continueWithResolvedLink(
         discoveredLinks,
         rejectedCandidates,
         primaryLink: primary,
-        canonicalTicketUrl: resolved.canonicalTicketUrl,
+        canonicalTicketUrl: terminalUrl,
         providerKey: resolved.providerKey,
-        identityResult: identity.result,
-        identityReasons: identity.reasons,
-        classification: 'ticket_provider_blocked',
+        identityResult: mergedIdentityResult,
+        identityReasons: mergedIdentityReasons,
+        targetIdentityEvidence,
+        classification:
+          mergedIdentityResult === 'ticket_identity_conflict'
+            ? 'ticket_identity_conflict'
+            : 'ticket_provider_blocked',
         verifiedTicketComplete: false,
       };
       return enrichResultWithM6_4(partial, {
@@ -263,7 +335,7 @@ async function continueWithResolvedLink(
       });
     }
 
-    const provider = defaultTicketProviderRegistry.resolveProvider(new URL(fetchResult.finalUrl));
+    const provider = defaultTicketProviderRegistry.resolveProvider(new URL(terminalUrl));
     if (!provider) {
       return buildIncompleteResult(
         input,
@@ -279,9 +351,9 @@ async function continueWithResolvedLink(
 
     const extractedAt = new Date().toISOString();
     providerEvidence = await provider.fetchEventEvidence({
-      url: new URL(fetchResult.finalUrl),
+      url: new URL(terminalUrl),
       canonicalTicketUrl: resolved.canonicalTicketUrl,
-      redirectChain: fetchResult.redirectChain,
+      redirectChain: fetchRedirectChain,
       body: fetchResult.body,
       contentType: fetchResult.contentType,
       fingerprint: fetchResult.fingerprint,
@@ -304,10 +376,21 @@ async function continueWithResolvedLink(
     );
   }
 
+  const evidenceTerminalUrl =
+    providerEvidence.tickets.sourceUrl || providerEvidence.sourceUrl || resolved.canonicalTicketUrl;
+  const evidenceRedirectChain =
+    evidenceTerminalUrl !== primary.rawUrl
+      ? [primary.rawUrl, ...resolved.redirectChain.filter((url) => url !== primary.rawUrl), evidenceTerminalUrl]
+      : resolved.redirectChain;
+
   const identity = verifyTicketIdentity({
     providerEventId:
-      extractProviderEventIdFromResolved(resolved) ?? providerEvidence.providerIdentity.providerEventId,
-    shopHost: providerEvidence.providerIdentity.providerScope ?? new URL(resolved.canonicalTicketUrl).hostname,
+      extractProviderEventIdFromResolved({
+        ...resolved,
+        canonicalTicketUrl: evidenceTerminalUrl,
+        resolvedUrl: evidenceTerminalUrl,
+      }) ?? providerEvidence.providerIdentity.providerEventId,
+    shopHost: providerEvidence.providerIdentity.providerScope ?? new URL(evidenceTerminalUrl).hostname,
     providerTitle: providerEvidence.event.rawTitle,
     providerStartAt: providerEvidence.event.startAt,
     providerVenue: providerEvidence.event.venueName,
@@ -315,11 +398,36 @@ async function continueWithResolvedLink(
     officialStartAt: input.startsAt,
     officialVenue: input.venueName,
     officialTicketUrl: primary.rawUrl,
-    canonicalTicketUrl: resolved.canonicalTicketUrl,
+    canonicalTicketUrl: evidenceTerminalUrl,
   });
 
+  const targetIdentityEvidence = evaluateTicketTargetIdentity({
+    originalUrl: primary.rawUrl,
+    redirectChain: evidenceRedirectChain,
+    terminalUrl: evidenceTerminalUrl,
+    providerKey: resolved.providerKey,
+    providerEventId: providerEvidence.providerIdentity.providerEventId,
+    terminalTitle: providerEvidence.event.rawTitle,
+    terminalStartAt: providerEvidence.event.startAt,
+    terminalVenue: providerEvidence.event.venueName,
+    officialTitle: input.title,
+    officialStartAt: input.startsAt,
+    officialVenue: input.venueName,
+    officialTicketUrl: primary.rawUrl,
+    observedAt: observedAt,
+    contentFingerprint: providerEvidence.tickets.contentFingerprint,
+  });
+
+  const mergedIdentityResult =
+    !isVerifiedTicketTargetIdentity(targetIdentityEvidence.identityDecision)
+      ? identity.result === 'ticket_identity_verified'
+        ? 'ticket_identity_conflict'
+        : identity.result
+      : identity.result;
+  const mergedIdentityReasons = [...new Set([...identity.reasons, ...targetIdentityEvidence.reasons])];
+
   const tickets = providerEvidence.tickets;
-  const lowest = lowestAdmissionOffer(tickets);
+  const lowest = selectRegularAdmissionOffer(tickets);
   const admissionOffers = tickets.offers.filter((o) => isAdmissionOfferRole(o.role ?? 'unknown_addon'));
 
   const consumerPreview: TicketConsumerPreviewRow = {
@@ -336,15 +444,15 @@ async function continueWithResolvedLink(
     admissionOfferCount: admissionOffers.length,
     rejectedAddonCount: tickets.rejectedOffers.length,
     evidenceOrigin: primary.discoveredFromSource,
-    identityResult: identity.result,
+    identityResult: mergedIdentityResult,
   };
 
   let classification = 'ticket_evidence_missing';
-  if (identity.result === 'ticket_identity_verified' && lowest?.amountMinor !== undefined) {
+  if (mergedIdentityResult === 'ticket_identity_verified' && lowest?.amountMinor !== undefined) {
     classification = `verified_ticket_${tickets.normalizedStatus}`;
-  } else if (identity.result === 'ticket_identity_conflict') {
+  } else if (mergedIdentityResult === 'ticket_identity_conflict') {
     classification = 'ticket_identity_conflict';
-  } else if (identity.result === 'ticket_identity_unverifiable') {
+  } else if (mergedIdentityResult === 'ticket_identity_unverifiable') {
     classification = 'ticket_identity_unverifiable';
   }
 
@@ -361,8 +469,9 @@ async function continueWithResolvedLink(
     providerKey: tickets.providerKey,
     providerEvidence,
     ticketEvidence: tickets,
-    identityResult: identity.result,
-    identityReasons: identity.reasons,
+    identityResult: mergedIdentityResult,
+    identityReasons: mergedIdentityReasons,
+    targetIdentityEvidence,
     classification,
     consumerPreview,
     verifiedTicketComplete: false,
@@ -414,7 +523,7 @@ export function resetTicketFetchCache(): void {
 }
 
 export function ticketEvidenceToCandidateTicket(evidence: EventTicketEvidence) {
-  const lowest = lowestAdmissionOffer(evidence);
+  const lowest = selectRegularAdmissionOffer(evidence);
   return {
     provider: evidence.providerKey,
     ticketUrl: evidence.canonicalTicketUrl,

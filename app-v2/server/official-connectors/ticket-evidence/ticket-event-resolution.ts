@@ -10,9 +10,11 @@ import type {
   TicketStatusEvidenceOrigin,
 } from './types';
 import { buildResolvedTicketAction, consumerActionLabel } from './ticket-action';
+import { hasActivePurchaseCta, hasVerifiedPresaleCta } from './consumer-ticket-safety-gate';
 import { isEventEnded, projectTicketStatus } from './ticket-lifecycle';
-import { buildTicketPriceEvidence, formatConsumerPriceLabel } from './ticket-price-evidence';
+import { buildTicketPriceEvidence, projectConsumerPriceLabel } from './ticket-price-evidence';
 import type { VerifiedTicketCompleteResult } from './ticket-audit-metrics';
+import { mapResolutionToTicketSourceState } from './ticket-source-state';
 
 export interface M6_4ConsumerPreview {
   title: string;
@@ -50,19 +52,19 @@ export function classifyTicketEventResolution(input: {
   if (!input.primaryLink || !input.resolvedAction) {
     return 'unresolved_ticket_relationship';
   }
-  if (input.identityResult === 'ticket_identity_conflict') {
-    return 'ticket_identity_conflict';
-  }
   if (input.resolvedAction.kind === 'presale_registration') {
     return 'verified_presale_registration';
-  }
-  if (input.statusAvailability === 'availability_unverified' && input.priceEvidence?.state === 'provider_access_unavailable') {
-    return 'provider_access_unavailable';
   }
   if (input.statusAvailability === 'sales_ended') {
     return input.priceEvidence?.state === 'verified_historical'
       ? 'verified_ticket_with_historical_price'
       : 'verified_sales_ended';
+  }
+  if (input.identityResult === 'ticket_identity_conflict') {
+    return 'ticket_identity_conflict';
+  }
+  if (input.statusAvailability === 'availability_unverified' && input.priceEvidence?.state === 'provider_access_unavailable') {
+    return 'provider_access_unavailable';
   }
   if (input.statusAvailability === 'sold_out' && input.priceEvidence?.state === 'no_longer_public') {
     return 'verified_sold_out_without_public_price';
@@ -72,10 +74,16 @@ export function classifyTicketEventResolution(input: {
   }
   if (
     input.identityResult === 'ticket_identity_verified' &&
-    input.priceEvidence?.state === 'verified_current' &&
+    input.resolvedAction &&
     (input.statusAvailability === 'available' || input.statusAvailability === 'sold_out')
   ) {
-    return 'verified_ticket_complete';
+    if (input.priceEvidence?.state === 'verified_current') {
+      return 'verified_ticket_complete';
+    }
+    if (input.statusAvailability === 'sold_out') {
+      return 'verified_sold_out_without_public_price';
+    }
+    return 'verified_ticket_available';
   }
   if (
     input.identityResult === 'ticket_identity_verified' &&
@@ -184,6 +192,7 @@ export function enrichResultWithM6_4(
         soldOut: statusProjection.availabilityStatus === 'sold_out',
         historicalCapture: options?.historicalCapture,
         presaleRegistration: isPresaleRegistration,
+        targetIdentityEvidence: result.targetIdentityEvidence,
       });
 
   const resolutionClass = classifyTicketEventResolution({
@@ -197,6 +206,10 @@ export function enrichResultWithM6_4(
     ticketSourceState: options?.ticketSourceStateEvidence?.state,
   });
 
+  const tentativeSourceState =
+    options?.ticketSourceStateEvidence?.state ??
+    mapResolutionToTicketSourceState(resolutionClass, resolvedAction?.kind);
+
   const consumerPreview: M6_4ConsumerPreview = {
     title: result.title,
     startsAt: result.startsAt,
@@ -205,13 +218,39 @@ export function enrichResultWithM6_4(
     canonicalTicketUrl: isTicketLinkNotYetPublished
       ? undefined
       : resolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
-    priceLabel: formatConsumerPriceLabel(priceEvidence),
+    priceLabel: projectConsumerPriceLabel(priceEvidence, {
+      identityResult: result.identityResult,
+      identityDecision: result.targetIdentityEvidence?.identityDecision,
+      salesStatus: statusProjection.availabilityStatus,
+    }),
     priceEvidenceState: priceEvidence.state,
     status: statusProjection.normalizedStatus,
     badge: statusProjection.statusLabel,
     statusEvidenceOrigin: statusProjection.statusEvidenceOrigin,
     actionKind: isTicketLinkNotYetPublished ? 'ticket_detail' : resolvedAction?.kind ?? 'ticket_detail',
-    actionLabel: isTicketLinkNotYetPublished ? '' : consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail'),
+    actionLabel: isTicketLinkNotYetPublished
+      ? ''
+      : hasActivePurchaseCta({
+          ticketSourceState: tentativeSourceState ?? 'provider_access_unavailable',
+          identityResult: result.identityResult,
+          identityDecision: result.targetIdentityEvidence?.identityDecision,
+          salesStatus: statusProjection.availabilityStatus,
+          actionKind: resolvedAction?.kind,
+          actionLabel: consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail'),
+          canonicalTicketUrl: resolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
+          priceEvidenceState: priceEvidence.state,
+        }) || hasVerifiedPresaleCta({
+          ticketSourceState: tentativeSourceState ?? 'presale_registration',
+          identityResult: result.identityResult,
+          identityDecision: result.targetIdentityEvidence?.identityDecision,
+          salesStatus: statusProjection.availabilityStatus,
+          actionKind: resolvedAction?.kind,
+          actionLabel: consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail'),
+          canonicalTicketUrl: resolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
+          priceEvidenceState: priceEvidence.state,
+        })
+        ? consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail')
+        : '',
     evidenceObservedAt: priceEvidence.sourceObservedAt,
     identityResult: result.identityResult,
   };

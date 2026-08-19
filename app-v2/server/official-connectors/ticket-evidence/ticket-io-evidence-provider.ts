@@ -8,7 +8,8 @@ import type {
 } from './types';
 import { buildTicketIoIdentity } from './build-provider-identity';
 import { parseTicketIoDetailDom, type TicketIoDetailDomEvidence } from './parse-ticket-io-detail-dom';
-import { classifyTicketOfferRole, isAdmissionOfferRole } from './ticket-offer-role';
+import { classifyTicketOffer, isAdmissionOfferRole, rejectionReasonForRole } from './ticket-offer-role';
+import { selectRegularAdmissionOffer } from './select-regular-admission-offer';
 import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import {
   classificationForStatus,
@@ -34,10 +35,12 @@ function buildEventTicketEvidence(
   identity: TicketProviderIdentity,
   domEvidence: TicketIoDetailDomEvidence,
 ): EventTicketEvidence {
-  const offers = domEvidence.offers
-    .filter((offer) => isAdmissionOfferRole(offer.role))
-    .map((offer) => {
-    const role = classifyTicketOfferRole(offer.rawLabel);
+  const offers = domEvidence.offers.map((offer) => {
+    const classification = classifyTicketOffer({
+      label: offer.rawLabel,
+      category: offer.category,
+      description: offer.description,
+    });
     const availability: import('./types').VerifiedTicketStatus = offer.soldOut
       ? 'sold_out'
       : offer.purchasable
@@ -49,11 +52,27 @@ function buildEventTicketEvidence(
       rawPrice: offer.rawPrice,
       amountMinor: offer.amountMinor,
       currency: offer.currency,
-      role,
+      role: classification.role,
+      grantsEventEntry: classification.grantsEventEntry,
+      requiresBaseTicket: classification.requiresBaseTicket,
+      category: offer.category,
+      description: offer.description,
       availability,
       confidence: offer.purchasable ? 0.9 : 0.75,
     };
   });
+
+  const rejectedOffers = domEvidence.offers
+    .filter((offer) => !isAdmissionOfferRole(offer.role))
+    .map((offer) => ({
+      rawLabel: offer.rawLabel,
+      reason: rejectionReasonForRole(offer.role),
+    }));
+  rejectedOffers.push(
+    ...domEvidence.offers
+      .filter((offer) => isAdmissionOfferRole(offer.role) && (offer.soldOut || !offer.purchasable))
+      .map((offer) => ({ rawLabel: offer.rawLabel, reason: 'offer_not_currently_available' })),
+  );
 
   const normalizedStatus =
     toConsumerNormalizedStatus(domEvidence.ticketStatus) ??
@@ -74,10 +93,7 @@ function buildEventTicketEvidence(
     offers,
     normalizedStatus,
     statusLabel: projectStatusLabel(domEvidence.ticketStatus),
-    rejectedOffers: domEvidence.rejectedOffers.map((offer) => ({
-      rawLabel: offer.rawLabel,
-      reason: offer.reason,
-    })),
+    rejectedOffers,
     confidence: offers.length > 0 ? 0.9 : 0.6,
   };
 }
@@ -213,15 +229,7 @@ export function parseTicketIoFromJsonLdOrDom(input: {
 }
 
 export function lowestAdmissionOffer(evidence: EventTicketEvidence) {
-  const admission = evidence.offers.filter((offer) => isAdmissionOfferRole(offer.role ?? 'unknown_addon'));
-  const priced = admission.filter((offer) => offer.amountMinor !== undefined);
-  const available = priced.filter(
-    (offer) => offer.availability === 'available' || offer.availability === 'free',
-  );
-  const pool = available.length > 0 ? available : priced.filter((offer) => offer.availability === 'sold_out');
-  return pool.sort(
-    (left, right) => (left.amountMinor ?? Number.MAX_SAFE_INTEGER) - (right.amountMinor ?? Number.MAX_SAFE_INTEGER),
-  )[0];
+  return selectRegularAdmissionOffer(evidence);
 }
 
 export { classificationForStatus };

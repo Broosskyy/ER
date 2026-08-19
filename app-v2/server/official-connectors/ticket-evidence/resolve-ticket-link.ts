@@ -17,7 +17,8 @@ import {
 } from './url-policy';
 
 const DEFAULT_MAX_REDIRECTS = 5;
-const USER_AGENT = 'EternalRave/0.2.0 (m6-ticket-evidence; contact@eternal-rave.local)';
+const USER_AGENT =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 
 function hashPath(url: string): string {
   return createHash('sha256').update(url).digest('hex').slice(0, 16);
@@ -85,7 +86,8 @@ export async function followRedirects(
         signal: controller.signal,
         headers: {
           'User-Agent': USER_AGENT,
-          Accept: 'text/html,application/json',
+          Accept: 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8',
         },
       });
 

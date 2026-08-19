@@ -2,6 +2,8 @@ import type { EventCandidateTicket } from '../../ingestion/types/event-candidate
 import { canonicalizeOfficialSourceUrl } from '../../ingestion/identity/source-identity';
 import { buildTicketSourcePayload } from './attach-ticket-evidence';
 import type { VerifiedTicketCompleteResult } from './ticket-audit-metrics';
+import { consumerTicketUrl, hasActivePurchaseCta, hasVerifiedPresaleCta } from './consumer-ticket-safety-gate';
+import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
 import type {
   ExistingEventTicketRecord,
@@ -54,12 +56,61 @@ function resolveSourceState(result: VerifiedTicketCompleteResult): TicketSourceS
   throw new Error(`ticket_source_state_missing:${result.sourceEventKey}`);
 }
 
-function shouldPersistTicketRow(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): boolean {
-  if (sourceState === 'ticket_link_not_yet_published' || sourceState === 'presale_registration' || sourceState === 'waitlist') {
+function identityAllowsPersistedPurchaseUrl(result: VerifiedTicketCompleteResult): boolean {
+  if (result.identityResult === 'ticket_identity_conflict' || result.identityResult === 'ticket_identity_unverifiable') {
     return false;
   }
-  const ticketUrl = result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl;
-  return Boolean(ticketUrl?.startsWith('https://'));
+  const decision = result.targetIdentityEvidence?.identityDecision;
+  if (decision && !isVerifiedTicketTargetIdentity(decision)) {
+    return false;
+  }
+  return result.identityResult === 'ticket_identity_verified';
+}
+
+function shouldPersistTicketRow(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): boolean {
+  if (sourceState === 'ticket_link_not_yet_published') {
+    return false;
+  }
+  if (sourceState === 'provider_access_unavailable') {
+    if (result.targetIdentityEvidence?.identityDecision === 'redirected_to_different_event') {
+      return true;
+    }
+    return false;
+  }
+  if (sourceState === 'historical_ticket_detail') {
+    return true;
+  }
+  if (sourceState === 'presale_registration' || sourceState === 'waitlist') {
+    return hasVerifiedPresaleCta(buildSafetyInput(sourceState, result));
+  }
+  if (sourceState === 'current_ticket_detail') {
+    const salesStatus = mapSalesStatus(sourceState, result);
+    if (salesStatus === 'sold_out' || salesStatus === 'sales_ended') {
+      return true;
+    }
+    if (identityAllowsPersistedPurchaseUrl(result) && (result.canonicalTicketUrl || result.resolvedAction?.canonicalTicketUrl)) {
+      return true;
+    }
+    if (hasActivePurchaseCta(buildSafetyInput(sourceState, result))) {
+      return true;
+    }
+    return false;
+  }
+  return false;
+}
+
+function buildSafetyInput(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult) {
+  const preview = result.consumerPreview;
+  return {
+    ticketSourceState: sourceState,
+    identityResult: result.identityResult,
+    identityDecision: result.targetIdentityEvidence?.identityDecision,
+    salesStatus: mapSalesStatus(sourceState, result),
+    actionKind: preview?.actionKind ?? result.resolvedAction?.kind,
+    actionLabel: preview?.actionLabel,
+    canonicalTicketUrl: preview?.canonicalTicketUrl ?? result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl,
+    priceEvidenceState: preview?.priceEvidenceState ?? result.priceEvidence?.state,
+  };
 }
 
 function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): string {
@@ -85,23 +136,51 @@ function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCo
 function mapPlannedTicketRow(
   sourceState: TicketSourceState,
   result: VerifiedTicketCompleteResult,
+  existing?: ExistingEventTicketRecord,
 ): EventCandidateTicket | undefined {
   if (!shouldPersistTicketRow(sourceState, result)) {
     return undefined;
   }
-  const ticketUrl = result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl;
-  if (!ticketUrl) {
-    return undefined;
+  const safetyInput = buildSafetyInput(sourceState, result);
+  let salesStatus = mapSalesStatus(sourceState, result);
+  const catalogMissing =
+    result.priceEvidence?.reason === 'regular_price_not_exposed_by_provider' ||
+    result.priceEvidence?.reason === 'admission_without_price';
+  const verifiedCurrentPrice =
+    result.priceEvidence?.state === 'verified_current' || result.priceEvidence?.state === 'verified_historical';
+  if (
+    catalogMissing &&
+    existing &&
+    (existing.salesStatus === 'sold_out' || existing.salesStatus === 'sales_ended') &&
+    sourceState === 'current_ticket_detail'
+  ) {
+    salesStatus = existing.salesStatus;
   }
-  const priceEvidence = result.priceEvidence;
-  const includePrice =
-    priceEvidence?.state === 'verified_current' || priceEvidence?.state === 'verified_historical';
+  let ticketUrl =
+    salesStatus === 'sold_out' || salesStatus === 'sales_ended' || salesStatus === 'cancelled'
+      ? undefined
+      : consumerTicketUrl(safetyInput) ??
+        (identityAllowsPersistedPurchaseUrl(result)
+          ? result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl
+          : undefined);
+  if (!ticketUrl?.startsWith('https://')) {
+    ticketUrl = undefined;
+  }
+  let priceFromMinor = verifiedCurrentPrice ? result.priceEvidence?.amountMinor : undefined;
+  let currency = verifiedCurrentPrice ? result.priceEvidence?.currency : undefined;
+  if (sourceState === 'historical_ticket_detail' || sourceState === 'provider_access_unavailable') {
+    if (!verifiedCurrentPrice) {
+      priceFromMinor = undefined;
+      currency = undefined;
+    }
+    ticketUrl = undefined;
+  }
   return {
-    provider: result.providerKey ?? result.ticketEvidence?.providerKey ?? 'unknown',
+    provider: result.providerKey ?? result.ticketEvidence?.providerKey ?? existing?.provider ?? 'unknown',
     ticketUrl,
-    priceFromMinor: includePrice ? priceEvidence?.amountMinor : undefined,
-    currency: includePrice ? priceEvidence?.currency : undefined,
-    salesStatus: mapSalesStatus(sourceState, result),
+    priceFromMinor,
+    currency,
+    salesStatus,
     sortOrder: 0,
   };
 }
@@ -111,6 +190,7 @@ function buildConsumerProjection(
   result: VerifiedTicketCompleteResult,
 ): PlannedConsumerProjection {
   const preview = result.consumerPreview;
+  const safetyInput = buildSafetyInput(sourceState, result);
   const actionLabel = preview?.actionLabel ?? '';
   return {
     ticketSourceState: sourceState,
@@ -121,9 +201,8 @@ function buildConsumerProjection(
     badge: preview?.badge ?? result.statusProjection?.statusLabel ?? '',
     actionKind: preview?.actionKind ?? result.resolvedAction?.kind ?? 'ticket_detail',
     actionLabel,
-    canonicalTicketUrl: preview?.canonicalTicketUrl ?? result.canonicalTicketUrl,
-    hasActivePurchaseCta:
-      sourceState === 'current_ticket_detail' && actionLabel.trim().length > 0,
+    canonicalTicketUrl: consumerTicketUrl(safetyInput),
+    hasActivePurchaseCta: hasActivePurchaseCta(safetyInput),
   };
 }
 
@@ -140,6 +219,7 @@ function buildProvenancePayload(
     statusProjection: result.statusProjection ?? null,
     identityResult: result.identityResult,
     observedAt: result.ticketSourceStateEvidence?.observedAt ?? result.priceEvidence?.sourceObservedAt ?? null,
+    targetIdentityEvidence: result.targetIdentityEvidence ?? null,
   };
 }
 
@@ -308,8 +388,8 @@ export function planTicketEvidencePersistence(
     }
 
     const sourceState = resolveSourceState(result);
-    const plannedTicketRow = mapPlannedTicketRow(sourceState, result);
     const existingTicket = findExistingTicket(binding.eventId, context.existingTickets);
+    const plannedTicketRow = mapPlannedTicketRow(sourceState, result, existingTicket);
     const ticketResolution = resolveTicketOperation(existingTicket, plannedTicketRow);
     const provenancePayload = buildProvenancePayload(sourceState, result);
     const provenanceOperation: TicketPersistenceOperation = provenanceEqual(binding.rawPayload, provenancePayload)

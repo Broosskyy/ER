@@ -148,6 +148,8 @@ export function mapResolutionToTicketSourceState(
       return 'provider_access_unavailable';
     case 'ticket_link_not_yet_published':
       return 'ticket_link_not_yet_published';
+    case 'ticket_identity_conflict':
+      return 'provider_access_unavailable';
     default:
       return undefined;
   }

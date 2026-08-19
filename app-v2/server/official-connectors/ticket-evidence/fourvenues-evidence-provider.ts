@@ -8,7 +8,8 @@ import type {
   VerifiedTicketStatus,
 } from './types';
 import { buildFourvenuesIdentity } from './build-provider-identity';
-import { classifyTicketOfferRole, isAdmissionOfferRole } from './ticket-offer-role';
+import { classifyTicketOffer, isAdmissionOfferRole, isGenericPlaceholderOfferLabel, rejectionReasonForRole } from './ticket-offer-role';
+import { selectRegularAdmissionOffer } from './select-regular-admission-offer';
 import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import {
   normalizeTicketStatusFromText,
@@ -23,21 +24,62 @@ import {
 } from './url-policy';
 import type { TicketEvidenceProvider } from './types';
 
-function extractJsonLd(body: string): Record<string, unknown> | undefined {
+function extractJsonLdEvents(body: string): Record<string, unknown>[] {
   const pattern = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  const events: Record<string, unknown>[] = [];
   let match: RegExpExecArray | null;
   while ((match = pattern.exec(body)) !== null) {
     try {
       const parsed = JSON.parse(match[1] ?? '') as Record<string, unknown>;
       const type = String(parsed['@type'] ?? '');
       if (type.includes('Event') || type.includes('MusicEvent')) {
-        return parsed;
+        events.push(parsed);
       }
     } catch {
       // ignore
     }
   }
-  return undefined;
+  return events;
+}
+
+function pushOfferFromJsonLd(
+  offer: Record<string, unknown>,
+  offers: EventTicketEvidence['offers'],
+  rejectedOffers: EventTicketEvidence['rejectedOffers'],
+): void {
+  const label = String(offer.name ?? '').trim();
+  if (!label || isGenericPlaceholderOfferLabel(label)) {
+    rejectedOffers.push({ rawLabel: label || 'unnamed_jsonld_offer', reason: 'unknown_without_admission_evidence' });
+    return;
+  }
+  const classification = classifyTicketOffer({ label });
+  const priceAmount = offer.price;
+  let amountMinor: number | undefined;
+  let rawPrice: string | undefined;
+  if (typeof priceAmount === 'number') {
+    amountMinor = Math.round(priceAmount * 100);
+    rawPrice = `ab ${priceAmount.toFixed(2).replace('.', ',')} €`;
+  } else if (typeof priceAmount === 'string') {
+    const normalized = normalizeTicketPriceLine(priceAmount);
+    amountMinor = normalized.amountMinor;
+    rawPrice = normalized.rawPrice;
+  }
+  const availability = mapAvailability(String(offer.availability ?? ''));
+  offers.push({
+    rawLabel: label,
+    normalizedLabel: label,
+    rawPrice,
+    amountMinor,
+    currency: String(offer.priceCurrency ?? 'EUR'),
+    role: classification.role,
+    grantsEventEntry: classification.grantsEventEntry,
+    requiresBaseTicket: classification.requiresBaseTicket,
+    availability,
+    confidence: 0.85,
+  });
+  if (!isAdmissionOfferRole(classification.role)) {
+    rejectedOffers.push({ rawLabel: label, rawPrice, reason: rejectionReasonForRole(classification.role) });
+  }
 }
 
 function mapAvailability(raw?: string): VerifiedTicketStatus {
@@ -61,69 +103,66 @@ function buildEvidence(
   const offers: EventTicketEvidence['offers'] = [];
   const rejectedOffers: EventTicketEvidence['rejectedOffers'] = [];
 
-  const offer = event?.offers as Record<string, unknown> | undefined;
-  if (offer) {
-    const label = String(offer.name ?? 'Admission').trim() || 'Admission';
-    const role = classifyTicketOfferRole(label);
-    const priceAmount = offer.price;
-    let amountMinor: number | undefined;
-    let rawPrice: string | undefined;
-    if (typeof priceAmount === 'number') {
-      amountMinor = Math.round(priceAmount * 100);
-      rawPrice = `ab ${priceAmount.toFixed(2).replace('.', ',')} €`;
-    } else if (typeof priceAmount === 'string') {
-      const normalized = normalizeTicketPriceLine(priceAmount);
-      amountMinor = normalized.amountMinor;
-      rawPrice = normalized.rawPrice;
+  const offer = event?.offers as Record<string, unknown> | Array<Record<string, unknown>> | undefined;
+  if (Array.isArray(offer)) {
+    for (const entry of offer) {
+      pushOfferFromJsonLd(entry, offers, rejectedOffers);
     }
-    const availability = mapAvailability(String(offer.availability ?? ''));
-    if (isAdmissionOfferRole(role)) {
-      offers.push({
-        rawLabel: label,
-        normalizedLabel: label,
-        rawPrice,
-        amountMinor,
-        currency: String(offer.priceCurrency ?? 'EUR'),
-        role,
-        availability,
-        confidence: 0.85,
-      });
-    } else {
-      rejectedOffers.push({ rawLabel: label, rawPrice, reason: 'non_admission_offer' });
-    }
+  } else if (offer) {
+    pushOfferFromJsonLd(offer, offers, rejectedOffers);
   }
 
-  $('.ticket, .ticket-item, [data-ticket], .product-row').each((_i, el) => {
+  $('.ticket, .ticket-item, [data-ticket], .product-row, .ticket-type, .ticket-card').each((_i, el) => {
     const label = $(el).find('.name, .title, h3, h4').first().text().replace(/\s+/g, ' ').trim();
     const priceText = $(el).find('.price, .amount').first().text().replace(/\s+/g, ' ').trim();
     if (!label && !priceText) {
       return;
     }
-    const role = classifyTicketOfferRole(label);
+    const classification = classifyTicketOffer({ label });
     const normalized = priceText ? normalizeTicketPriceLine(priceText) : undefined;
     const soldOut = /sold\s*out|ausverkauft/i.test($(el).text());
     const availability = soldOut ? 'sold_out' : 'available';
-    if (isAdmissionOfferRole(role)) {
-      offers.push({
-        rawLabel: label,
-        normalizedLabel: label,
-        rawPrice: normalized?.rawPrice ?? priceText,
-        amountMinor: normalized?.amountMinor,
-        currency: normalized?.currency ?? 'EUR',
-        role,
-        availability,
-        confidence: 0.75,
-      });
+    offers.push({
+      rawLabel: label,
+      normalizedLabel: label,
+      rawPrice: normalized?.rawPrice ?? priceText,
+      amountMinor: normalized?.amountMinor,
+      currency: normalized?.currency ?? 'EUR',
+      role: classification.role,
+      grantsEventEntry: classification.grantsEventEntry,
+      requiresBaseTicket: classification.requiresBaseTicket,
+      availability,
+      confidence: 0.75,
+    });
+    if (!isAdmissionOfferRole(classification.role)) {
+      rejectedOffers.push({ rawLabel: label, rawPrice: normalized?.rawPrice ?? priceText, reason: rejectionReasonForRole(classification.role) });
     }
   });
 
   const location = event?.location as Record<string, unknown> | undefined;
   let ticketStatus: VerifiedTicketStatus = 'unavailable_unknown';
-  if (offers.some((o) => o.availability === 'available' || o.availability === 'free')) {
+  const regularAdmission = selectRegularAdmissionOffer({
+    providerKey: 'fourvenues',
+    providerIdentity: identity,
+    sourceUrl: request.url.toString(),
+    canonicalTicketUrl: request.canonicalTicketUrl,
+    sourceObservedAt: request.observedAt,
+    extractedAt: request.extractedAt,
+    contentFingerprint: request.fingerprint,
+    eventIdentityEvidence: {},
+    offers,
+    normalizedStatus: 'available',
+    statusLabel: '',
+    rejectedOffers,
+    confidence: 0.5,
+  });
+  if (regularAdmission) {
     ticketStatus = 'available';
-  } else if (offers.every((o) => o.availability === 'sold_out')) {
+  } else if (offers.some((o) => o.availability === 'available' || o.availability === 'free')) {
+    ticketStatus = 'available';
+  } else if (offers.length > 0 && offers.every((o) => o.availability === 'sold_out')) {
     ticketStatus = 'sold_out';
-  } else if (offer) {
+  } else if (offer && !Array.isArray(offer)) {
     ticketStatus = mapAvailability(String(offer.availability ?? ''));
   }
 
@@ -181,7 +220,7 @@ export class FourvenuesEvidenceProvider implements TicketEvidenceProvider {
     if (!identity) {
       throw new Error('fourvenues_identity_missing');
     }
-    const event = extractJsonLd(request.body);
+    const event = extractJsonLdEvents(request.body)[0];
     const tickets = buildEvidence(request, identity, event, request.body);
     const location = event?.location as Record<string, unknown> | undefined;
     return {

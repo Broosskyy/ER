@@ -117,15 +117,24 @@ describe('consumer projection without ticket evidence', () => {
     expect(ticketPresentation.ticketStatus).toBeUndefined();
     expect(display.priceText).toBeUndefined();
     expect(display.ticketUrl).toBeUndefined();
+    expect(display.officialEventUrl).toBe('https://example.com/events/official');
+    expect(display.sourceLabel).toBe('Offizielle Eventseite von Example');
+    expect(display.visibleSources).toEqual([
+      {
+        role: 'official_event',
+        label: 'Offizielle Eventseite von Example',
+        url: 'https://example.com/events/official',
+      },
+    ]);
   });
 
-  it('keeps M2 ticket price and ticket area when verified tickets exist', () => {
+  it('keeps M2 ticket price and CTA when a ticket row exists', () => {
     const display = toEventDisplayModelFromDetail(buildM2DetailWithTicket());
     const card = toEventCardViewModel(display);
 
-    expect(display.priceText).toBe('19,90 €');
+    expect(display.priceText).toBe('ab 19,90 €');
     expect(display.ticketUrl).toBe('https://example.com/eternal-rave-core-test');
-    expect(card.ticketLabel).toBe('19,90 €');
+    expect(card.ticketLabel).toBe('ab 19,90 €');
     expect(card.ticketStatus).toBe('on_sale');
   });
 

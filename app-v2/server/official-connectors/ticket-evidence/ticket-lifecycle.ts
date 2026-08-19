@@ -39,10 +39,14 @@ function mapProviderStatus(ticketEvidence?: EventTicketEvidence): TicketAvailabi
   }
   const status = ticketEvidence.normalizedStatus;
   if (status === 'available') {
-    const hasPurchasableAdmission = ticketEvidence.offers.some(
-      (o) =>
-        isAdmissionOfferRole(o.role ?? 'unknown_addon') &&
-        (o.availability === 'available' || o.availability === 'free'),
+    const namedAdmission = ticketEvidence.offers.filter((offer) =>
+      isAdmissionOfferRole(offer.role ?? 'unknown_addon'),
+    );
+    if (namedAdmission.length === 0) {
+      return 'available';
+    }
+    const hasPurchasableAdmission = namedAdmission.some(
+      (offer) => offer.availability === 'available' || offer.availability === 'free',
     );
     return hasPurchasableAdmission ? 'available' : 'sold_out';
   }

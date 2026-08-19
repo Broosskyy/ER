@@ -128,6 +128,7 @@ export interface ResolvedTicketAction {
 
 export type TicketEventResolutionClass =
   | 'verified_ticket_complete'
+  | 'verified_ticket_available'
   | 'verified_ticket_with_historical_price'
   | 'verified_sold_out_without_public_price'
   | 'verified_sales_ended'
@@ -139,17 +140,63 @@ export type TicketEventResolutionClass =
   | 'unresolved_ticket_relationship';
 
 export type TicketOfferRole =
-  | 'admission'
+  | 'regular_admission'
   | 'vip_admission'
-  | 'early_entry'
   | 'group_admission'
+  | 'camping'
+  | 'upgrade'
   | 'parking'
+  | 'shuttle'
   | 'locker'
-  | 'insurance'
-  | 'shipping'
+  | 'table'
   | 'merchandise'
+  | 'food_or_beverage'
+  | 'power_or_equipment'
+  | 'insurance'
   | 'donation'
-  | 'unknown_addon';
+  | 'other_addon'
+  | 'unknown'
+  /** @deprecated use regular_admission */
+  | 'admission'
+  /** @deprecated use table */
+  | 'table_reservation'
+  /** @deprecated use unknown */
+  | 'unknown_addon'
+  /** @deprecated use upgrade */
+  | 'early_entry'
+  /** @deprecated use other_addon */
+  | 'shipping';
+
+export interface TicketOfferClassification {
+  role: TicketOfferRole;
+  grantsEventEntry: boolean;
+  requiresBaseTicket: boolean;
+  category?: string;
+  rejectionReason?: string;
+}
+
+export type TicketTargetIdentityDecision =
+  | 'verified_same_event'
+  | 'redirected_same_event'
+  | 'redirected_to_different_event'
+  | 'stale_ticket_detail'
+  | 'identity_unverifiable';
+
+export interface TicketTargetIdentityEvidence {
+  originalUrl: string;
+  redirectChain: string[];
+  terminalUrl: string;
+  providerKey?: string;
+  providerEventId?: string;
+  terminalTitle?: string;
+  terminalStartAt?: string;
+  terminalVenue?: string;
+  terminalOrganizer?: string;
+  observedAt: string;
+  contentFingerprint: string;
+  identityDecision: TicketTargetIdentityDecision;
+  reasons: string[];
+}
 
 export interface DiscoveredTicketLink {
   rawUrl: string;
@@ -192,6 +239,10 @@ export interface TicketOfferEvidence {
   amountMinor?: number;
   currency?: string;
   role?: TicketOfferRole;
+  category?: string;
+  description?: string;
+  grantsEventEntry?: boolean;
+  requiresBaseTicket?: boolean;
   availability: VerifiedTicketStatus;
   feeNotice?: string;
   confidence: number;

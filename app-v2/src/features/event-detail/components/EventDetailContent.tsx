@@ -1,4 +1,4 @@
-import { ActivityIndicator, Linking, ScrollView, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { EventImage } from '@/components/discovery/EventImage';
@@ -7,6 +7,7 @@ import { spacingRoles } from '@/design/spacing';
 import { useTheme } from '@/design/theme';
 import type { EventDetail } from '@/features/events/types/event-core';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
+import { buildEventDetailVisibleSurface } from '@/features/event-detail/event-detail-visible-surface';
 
 export interface EventDetailContentProps {
   detail: EventDetail;
@@ -33,76 +34,133 @@ function GenreChip({ label }: { label: string }) {
 
 export function EventDetailContent({ detail, display }: EventDetailContentProps) {
   const { theme } = useTheme();
-  const ticket = detail.tickets[0];
+  const surface = buildEventDetailVisibleSurface(detail, display);
 
   return (
     <ScrollView contentContainerStyle={styles.content} testID="event-detail-content">
       <EventImage variant="hero" source={display.image} />
 
       <View style={styles.section}>
-        <AppText role="titleLarge">{display.title}</AppText>
+        <AppText role="titleLarge">{surface.title}</AppText>
         <AppText role="body" style={styles.meta}>
           {display.date}
           {display.startTime ? ` · ${display.startTime}` : ''}
           {display.endTime ? ` – ${display.endTime}` : ''}
         </AppText>
         <AppText role="body" style={styles.meta}>
-          {[display.venue, display.city].filter(Boolean).join(', ')}
+          {surface.venueLine}
         </AppText>
       </View>
 
-      {display.description ? (
+      {surface.description ? (
         <View style={styles.section}>
           <AppText role="titleSmall">Beschreibung</AppText>
           <AppText role="body" style={styles.description}>
-            {display.description}
+            {surface.description}
           </AppText>
         </View>
       ) : null}
 
-      {detail.lineup.length > 0 ? (
+      {surface.lineup.length > 0 ? (
         <View style={styles.section}>
           <AppText role="titleSmall">Line-up</AppText>
-          {detail.lineup.map((act) => (
-            <View key={act.id} style={styles.lineupRow}>
-              <AppText role="body">{act.billingName}</AppText>
+          {surface.lineup.map((billingName, index) => (
+            <View key={`${index}:${billingName}`} style={styles.lineupRow}>
+              <AppText role="body">{billingName}</AppText>
             </View>
           ))}
         </View>
       ) : null}
 
-      {detail.genres.length > 0 ? (
+      {surface.genres.length > 0 ? (
         <View style={styles.section}>
           <AppText role="titleSmall">Genres</AppText>
           <View style={styles.genreRow}>
-            {detail.genres.map((genre) => (
-              <GenreChip key={genre.id} label={genre.displayName} />
+            {surface.genres.map((label) => (
+              <GenreChip key={label} label={label} />
             ))}
           </View>
         </View>
       ) : null}
 
-      {ticket ? (
+      {detail.tickets[0] ? (
         <View style={styles.section}>
           <AppText role="titleSmall">Tickets</AppText>
-          <AppText role="body">
-            {display.priceText ?? 'Preis auf Anfrage'}
-            {ticket.currency ? ` · ${ticket.currency}` : ''}
-          </AppText>
-          {ticket.salesStatus ? (
+          {surface.priceText ? <AppText role="body">{surface.priceText}</AppText> : null}
+          {surface.statusLabel ? (
             <AppText role="caption" style={{ color: theme.colors.textMuted }}>
-              Status: {ticket.salesStatus}
+              {surface.statusLabel}
             </AppText>
           ) : null}
-          {ticket.ticketUrl ? (
+          {surface.purchaseCtaLabel && surface.ticketCtaUrl ? (
             <PrimaryButton
-              label="Tickets öffnen"
+              label={surface.purchaseCtaLabel}
               style={styles.ticketButton}
               onPress={() => {
-                void Linking.openURL(ticket.ticketUrl!);
+                void Linking.openURL(surface.ticketCtaUrl!);
               }}
             />
           ) : null}
+          {surface.presaleCtaLabel && surface.ticketCtaUrl ? (
+            <PrimaryButton
+              label={surface.presaleCtaLabel}
+              style={styles.ticketButton}
+              onPress={() => {
+                void Linking.openURL(surface.ticketCtaUrl!);
+              }}
+            />
+          ) : null}
+        </View>
+      ) : null}
+
+      {display.visibleSources && display.visibleSources.length > 0 ? (
+        <View style={styles.section} testID="event-source-section">
+          <AppText role="titleSmall">Quellen</AppText>
+          {display.visibleSources.map((source) => (
+            <Pressable
+              key={`${source.role}:${source.url}`}
+              accessibilityRole="link"
+              accessibilityLabel={source.label}
+              testID={
+                source.role === 'official_event' ? 'event-official-source-link' : 'event-social-source-link'
+              }
+              onPress={() => {
+                void Linking.openURL(source.url);
+              }}
+            >
+              <AppText role="body" style={{ color: theme.colors.primary }}>
+                {source.label} ↗
+              </AppText>
+            </Pressable>
+          ))}
+        </View>
+      ) : null}
+
+      {surface.organizerName || (display.organizerLinks && display.organizerLinks.length > 0) ? (
+        <View style={styles.section} testID="event-organizer-section">
+          <AppText role="titleSmall">Veranstalter</AppText>
+          {surface.organizerName ? <AppText role="body">{surface.organizerName}</AppText> : null}
+          {(display.organizerLinks ?? []).map((link) => (
+            <Pressable
+              key={`${link.role}:${link.url}`}
+              accessibilityRole="link"
+              accessibilityLabel={link.label}
+              testID={
+                link.role === 'organizer_website'
+                  ? 'event-organizer-website-link'
+                  : link.role === 'organizer_social'
+                    ? 'event-organizer-social-link'
+                    : 'event-organizer-link'
+              }
+              onPress={() => {
+                void Linking.openURL(link.url);
+              }}
+            >
+              <AppText role="body" style={{ color: theme.colors.primary }}>
+                {link.label} ↗
+              </AppText>
+            </Pressable>
+          ))}
         </View>
       ) : null}
     </ScrollView>

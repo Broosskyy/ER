@@ -8,6 +8,7 @@ import {
   hasKnownEventClockTime,
   isUpcomingEvent,
 } from './date-time';
+import { resolveConsumerOfficialSource } from '../sources/consumer-official-source';
 
 export interface EventDisplayModel {
   id: string;
@@ -29,10 +30,22 @@ export interface EventDisplayModel {
   ageRestriction?: string;
   priceText?: string;
   ticketUrl?: string;
+  eventSourceUrl?: string;
   officialEventUrl?: string;
+  organizerSocialUrl?: string;
+  venueSocialUrl?: string;
+  organizerWebsiteUrl?: string;
+  sourceImageUrl?: string;
   source: string;
   sourceLabel: string;
   sourceUrl?: string;
+  visibleSources?: Array<{ role: 'official_event' | 'official_social_post'; label: string; url: string }>;
+  organizerLinks?: Array<{
+    role: 'organizer_website' | 'organizer_social' | 'venue_website' | 'venue_social';
+    label: string;
+    url: string;
+  }>;
+  officialSourceMissing?: boolean;
   startsAt: string;
   startDateTime: string;
   endDateTime?: string;
@@ -57,6 +70,26 @@ export interface EventDisplayModel {
 export function toEventDisplayModel(event: Event): EventDisplayModel {
   const hasClock = hasKnownEventClockTime(event.startDateTime, event.timezone);
   const timeRange = formatEventTimeRange(event);
+  const officialSource = resolveConsumerOfficialSource({
+    officialUrl: event.websiteUrl,
+    organizerName: event.organizer,
+    eventTitle: event.title,
+    startsAt: event.startDateTime,
+    imageUrl: event.imageUrl,
+    venueName: event.venue,
+    ticket: event.ticketUrl
+      ? {
+          id: event.id,
+          provider: event.ticketProviderLabel ?? null,
+          ticketUrl: event.ticketUrl,
+          priceFromMinor: null,
+          currency: null,
+          salesStatus: null,
+          sortOrder: 0,
+        }
+      : null,
+    purchaseTicketUrl: event.ticketUrl,
+  });
 
   return {
     id: event.id,
@@ -78,10 +111,18 @@ export function toEventDisplayModel(event: Event): EventDisplayModel {
     ageRestriction: event.ageRestriction,
     priceText: event.priceText,
     ticketUrl: event.ticketUrl,
-    officialEventUrl: event.websiteUrl,
+    eventSourceUrl: officialSource.eventSourceUrl,
+    officialEventUrl: officialSource.officialEventUrl,
+    organizerSocialUrl: officialSource.organizerSocialUrl,
+    venueSocialUrl: officialSource.venueSocialUrl,
+    organizerWebsiteUrl: officialSource.organizerWebsiteUrl,
+    sourceImageUrl: officialSource.sourceImageUrl,
     source: event.source,
-    sourceLabel: event.sourceLabel ?? event.source,
-    sourceUrl: event.sourceUrl,
+    sourceLabel: officialSource.sourceLabel || event.sourceLabel || event.source,
+    sourceUrl: officialSource.eventSourceUrl ?? event.sourceUrl,
+    visibleSources: officialSource.visibleLinks,
+    organizerLinks: officialSource.organizerLinks,
+    officialSourceMissing: officialSource.officialSourceMissing,
     startsAt: event.startDateTime,
     startDateTime: event.startDateTime,
     endDateTime: event.endDateTime,

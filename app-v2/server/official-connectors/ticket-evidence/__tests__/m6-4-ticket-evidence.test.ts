@@ -11,10 +11,10 @@ describe('M6.4 ticket price evidence state', () => {
     const price = buildTicketPriceEvidence({ providerBlocked: true });
     expect(price.state).toBe('provider_access_unavailable');
     expect(price.amountMinor).toBeUndefined();
-    expect(formatConsumerPriceLabel(price)).toBe('Preis beim Anbieter prüfen');
+    expect(formatConsumerPriceLabel(price)).toBe('Preis derzeit nicht verifizierbar');
   });
 
-  it('uses historical capture when current admission price missing', () => {
+  it('does not treat unnamed historical JSON-LD as admission evidence', () => {
     const price = buildTicketPriceEvidence({
       historicalCapture: {
         amountMinor: 3000,
@@ -25,12 +25,11 @@ describe('M6.4 ticket price evidence state', () => {
         contentFingerprint: 'abc123',
       },
     });
-    expect(price.state).toBe('verified_historical');
-    expect(price.amountMinor).toBe(3000);
-    expect(formatConsumerPriceLabel(price)).toContain('zuletzt');
+    expect(price.state).toBe('not_yet_published');
+    expect(price.amountMinor).toBeUndefined();
   });
 
-  it('prefers historical capture for ended events', () => {
+  it('rejects unnamed Admission plus VERTILE-style historical capture for ended events', () => {
     const price = buildTicketPriceEvidence({
       eventEnded: true,
       ticketEvidence: {
@@ -71,8 +70,27 @@ describe('M6.4 ticket price evidence state', () => {
         contentFingerprint: 'f921c4318cefeacdcde87196f1e8f404c1f26ae7128fecf11016bb2a7b8ca454',
       },
     });
+    expect(price.state).toBe('no_longer_public');
+    expect(price.amountMinor).toBeUndefined();
+    expect(formatConsumerPriceLabel(price)).toBe('Verkauf beendet');
+  });
+
+  it('keeps a named historical GA amount after sales ended', () => {
+    const price = buildTicketPriceEvidence({
+      eventEnded: true,
+      historicalCapture: {
+        amountMinor: 2500,
+        currency: 'EUR',
+        rawPriceText: 'ab 25,00 €',
+        namedProductLabel: 'General Admission',
+        sourceUrl: 'https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-17-08-2026-RD7M',
+        sourceObservedAt: '2026-08-17T12:00:00.000Z',
+        contentFingerprint: 'kaz',
+      },
+    });
     expect(price.state).toBe('verified_historical');
-    expect(price.amountMinor).toBe(3400);
+    expect(price.amountMinor).toBe(2500);
+    expect(formatConsumerPriceLabel(price)).toContain('zuletzt');
   });
 });
 

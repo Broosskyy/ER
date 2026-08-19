@@ -190,6 +190,28 @@ describe('event candidate validation', () => {
     const candidate = officialEvidenceToEventCandidate(buildLoonylandEvidence());
     expect(validateEventCandidate(candidate)).toEqual({ decision: 'persist_ready', reasons: [] });
   });
+
+  it('rejects ticket provider urls as official event source', () => {
+    const candidate = officialEvidenceToEventCandidate(buildLoonylandEvidence());
+    if (candidate.origin.kind === 'official_connector') {
+      candidate.origin.officialUrl = 'https://bootshaus-club.ticket.io/tA3dBrv7/';
+    }
+    expect(validateEventCandidate(candidate)).toEqual({
+      decision: 'rejected',
+      reasons: ['official_source_missing', 'ticket_url_used_as_official_source'],
+    });
+  });
+
+  it('rejects generic social profiles as official event source', () => {
+    const candidate = officialEvidenceToEventCandidate(buildLoonylandEvidence());
+    if (candidate.origin.kind === 'official_connector') {
+      candidate.origin.officialUrl = 'https://www.instagram.com/bootshaus/';
+    }
+    expect(validateEventCandidate(candidate)).toEqual({
+      decision: 'rejected',
+      reasons: ['official_source_missing', 'generic_social_profile_used_as_official_source'],
+    });
+  });
 });
 
 describe('event write planner', () => {

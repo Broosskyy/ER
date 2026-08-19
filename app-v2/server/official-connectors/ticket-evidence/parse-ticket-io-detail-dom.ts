@@ -1,6 +1,13 @@
 import { createHash } from 'node:crypto';
 
-import { classifyTicketOfferRole, isAdmissionOfferRole } from './ticket-offer-role';
+import * as cheerio from 'cheerio';
+
+import {
+  classifyTicketOffer,
+  isAdmissionOfferRole,
+  isGenericPlaceholderOfferLabel,
+  rejectionReasonForRole,
+} from './ticket-offer-role';
 import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import type { TicketOfferRole, VerifiedTicketStatus } from './types';
 import { canonicalizeTicketIoUrl, extractTicketIoProviderEventId } from './url-policy';
@@ -18,6 +25,8 @@ export interface TicketIoDetailDomOffer {
   rawPrice?: string;
   amountMinor?: number;
   currency?: string;
+  category?: string;
+  description?: string;
   soldOut: boolean;
   purchasable: boolean;
 }
@@ -91,7 +100,16 @@ function extractJsonLdEvent(body: string): Record<string, unknown> | undefined {
 
 function extractEmbeddedJsonPayload(body: string): {
   statusText?: string;
-  offers?: Array<{ label?: string; price?: string; status?: string; feeNotice?: string }>;
+  offers?: Array<{
+    label?: string;
+    name?: string;
+    title?: string;
+    category?: string;
+    description?: string;
+    price?: string;
+    status?: string;
+    feeNotice?: string;
+  }>;
 } | undefined {
   const scriptMatch = body.match(
     /<script[^>]*type=["']application\/json["'][^>]*id=["']ticket-event-data["'][^>]*>([\s\S]*?)<\/script>/i,
@@ -102,11 +120,47 @@ function extractEmbeddedJsonPayload(body: string): {
   try {
     return JSON.parse(scriptMatch[1]) as {
       statusText?: string;
-      offers?: Array<{ label?: string; price?: string; status?: string; feeNotice?: string }>;
+      offers?: Array<{
+        label?: string;
+        name?: string;
+        title?: string;
+        category?: string;
+        description?: string;
+        price?: string;
+        status?: string;
+        feeNotice?: string;
+      }>;
     };
   } catch {
     return undefined;
   }
+}
+
+function toDomOffer(input: {
+  rawLabel: string;
+  rawPrice?: string;
+  soldOut: boolean;
+  purchasable: boolean;
+  category?: string;
+  description?: string;
+}): TicketIoDetailDomOffer {
+  const classification = classifyTicketOffer({
+    label: input.rawLabel,
+    category: input.category,
+    description: input.description,
+  });
+  const normalized = input.rawPrice ? normalizeTicketPriceLine(input.rawPrice) : undefined;
+  return {
+    rawLabel: input.rawLabel,
+    role: classification.role,
+    rawPrice: input.rawPrice || undefined,
+    amountMinor: normalized?.amountMinor,
+    currency: normalized?.currency,
+    category: input.category,
+    description: input.description,
+    soldOut: input.soldOut,
+    purchasable: input.purchasable,
+  };
 }
 
 function parseEmbeddedJsonOffers(body: string): TicketIoDetailDomOffer[] {
@@ -116,21 +170,23 @@ function parseEmbeddedJsonOffers(body: string): TicketIoDetailDomOffer[] {
   }
   const offers: TicketIoDetailDomOffer[] = [];
   for (const offer of payload.offers) {
-    const rawLabel = String(offer.label ?? '').trim();
+    const rawLabel = String(offer.label ?? offer.name ?? offer.title ?? '').trim();
+    if (!rawLabel) {
+      continue;
+    }
     const rawPrice = String(offer.price ?? '').trim();
     const soldOut = SOLD_OUT_PATTERN.test(String(offer.status ?? ''));
     const purchasable = !soldOut && (/available|instock|^$/i.test(String(offer.status ?? '').trim()) || !offer.status);
-    const role = classifyTicketOfferRole(rawLabel);
-    const normalized = rawPrice ? normalizeTicketPriceLine(rawPrice) : undefined;
-    offers.push({
-      rawLabel,
-      role,
-      rawPrice: rawPrice || undefined,
-      amountMinor: normalized?.amountMinor,
-      currency: normalized?.currency,
-      soldOut,
-      purchasable,
-    });
+    offers.push(
+      toDomOffer({
+        rawLabel,
+        rawPrice,
+        soldOut,
+        purchasable,
+        category: offer.category,
+        description: offer.description,
+      }),
+    );
   }
   return offers;
 }
@@ -143,20 +199,120 @@ function parseDomOffers(body: string): TicketIoDetailDomOffer[] {
   while ((match = rowPattern.exec(body)) !== null) {
     const rawLabel = match[1]?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() ?? '';
     const rawPrice = match[2]?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() ?? '';
+    if (!rawLabel) {
+      continue;
+    }
     const soldOut = SOLD_OUT_PATTERN.test(match[0]);
     const purchasable = /select-quantity|add-to-cart|in\s+den\s+warenkorb/i.test(match[0]) && !soldOut;
-    const role = classifyTicketOfferRole(rawLabel);
-    const normalized = rawPrice ? normalizeTicketPriceLine(rawPrice) : undefined;
-    offers.push({
-      rawLabel,
-      role,
-      rawPrice: rawPrice || undefined,
-      amountMinor: normalized?.amountMinor,
-      currency: normalized?.currency,
-      soldOut,
-      purchasable,
-    });
+    offers.push(toDomOffer({ rawLabel, rawPrice, soldOut, purchasable }));
   }
+
+  const $ = cheerio.load(body);
+  $('[data-product-name], .product-name, .product-row, .ticket-category, [data-product]').each((_i, el) => {
+    const node = $(el);
+    const rawLabel = (
+      node.attr('data-product-name') ||
+      node.find('.name, .title, .product-name, h3, h4').first().text() ||
+      node.text()
+    )
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!rawLabel || rawLabel.length > 180) {
+      return;
+    }
+    if (offers.some((offer) => offer.rawLabel === rawLabel)) {
+      return;
+    }
+    const rawPrice = node.find('.price, .product-price, .amount').first().text().replace(/\s+/g, ' ').trim();
+    const soldOut = SOLD_OUT_PATTERN.test(node.text());
+    const purchasable = /select-quantity|add-to-cart|in\s+den\s+warenkorb/i.test(node.html() ?? '') && !soldOut;
+    if (!rawPrice && !soldOut && !purchasable) {
+      return;
+    }
+    offers.push(toDomOffer({ rawLabel, rawPrice, soldOut, purchasable }));
+  });
+  return offers;
+}
+
+function jsonLdOfferRecords(offer: unknown): Record<string, unknown>[] {
+  if (!offer) {
+    return [];
+  }
+  if (Array.isArray(offer)) {
+    return offer.filter((entry) => entry && typeof entry === 'object') as Record<string, unknown>[];
+  }
+  if (typeof offer === 'object') {
+    const record = offer as Record<string, unknown>;
+    if (Array.isArray(record.offers)) {
+      return jsonLdOfferRecords(record.offers);
+    }
+    return [record];
+  }
+  return [];
+}
+
+function parseNamedJsonLdOffers(jsonLd: Record<string, unknown> | undefined): TicketIoDetailDomOffer[] {
+  if (!jsonLd) {
+    return [];
+  }
+  const offers: TicketIoDetailDomOffer[] = [];
+  for (const offer of jsonLdOfferRecords(jsonLd.offers)) {
+    const type = String(offer['@type'] ?? '');
+    if (/aggregateoffer/i.test(type)) {
+      continue;
+    }
+    const rawLabel = String(offer.name ?? '').trim();
+    if (!rawLabel || isGenericPlaceholderOfferLabel(rawLabel)) {
+      continue;
+    }
+    const priceText =
+      typeof offer.price === 'number'
+        ? `ab ${String(offer.price).replace('.', ',')} ${String(offer.priceCurrency ?? 'EUR')}`
+        : String(offer.price ?? offer.lowPrice ?? '');
+    const soldOut = /soldout|sold_out/i.test(String(offer.availability ?? ''));
+    offers.push(toDomOffer({ rawLabel, rawPrice: priceText, soldOut, purchasable: !soldOut }));
+  }
+  return offers;
+}
+
+export function extractTicketIoProductsFromUnknownJson(payload: unknown): TicketIoDetailDomOffer[] {
+  const offers: TicketIoDetailDomOffer[] = [];
+  const visit = (node: unknown, depth: number): void => {
+    if (!node || depth > 8) {
+      return;
+    }
+    if (Array.isArray(node)) {
+      for (const entry of node) {
+        visit(entry, depth + 1);
+      }
+      return;
+    }
+    if (typeof node !== 'object') {
+      return;
+    }
+    const record = node as Record<string, unknown>;
+    const rawLabel = String(record.name ?? record.title ?? record.label ?? record.productName ?? record.product_name ?? '').trim();
+    let priceValue: unknown = record.price ?? record.amount ?? record.priceGross ?? record.currentPrice ?? record.unitPrice ?? record.salesPrice ?? record.minPrice ?? record.price_from;
+    if (priceValue && typeof priceValue === 'object') {
+      const nested = priceValue as Record<string, unknown>;
+      priceValue = nested.amount ?? nested.value ?? nested.gross ?? nested.brutto;
+    }
+    const category = String(record.category ?? record.groupName ?? record.tab ?? '').trim() || undefined;
+    const description = String(record.description ?? record.info ?? '').trim() || undefined;
+    if (rawLabel && priceValue !== undefined && rawLabel.length < 180) {
+      const rawPrice = typeof priceValue === 'number' ? `${priceValue}` : String(priceValue);
+      const soldOut = SOLD_OUT_PATTERN.test(String(record.status ?? record.availability ?? record.soldOut ?? ''));
+      if (!offers.some((offer) => offer.rawLabel === rawLabel && offer.rawPrice === rawPrice)) {
+        offers.push(toDomOffer({ rawLabel, rawPrice, soldOut, purchasable: !soldOut, category, description }));
+      }
+    }
+    for (const value of Object.values(record)) {
+      if (value && typeof value === 'object') {
+        visit(value, depth + 1);
+      }
+    }
+  };
+  visit(payload, 0);
   return offers;
 }
 
@@ -199,7 +355,13 @@ export function parseTicketIoDetailDom(
   const jsonLd = extractJsonLdEvent(body);
   const embeddedOffers = parseEmbeddedJsonOffers(body);
   const domOffers = parseDomOffers(body);
-  const offers = embeddedOffers.length > 0 ? embeddedOffers : domOffers.length > 0 ? domOffers : [];
+  const jsonLdOffers = parseNamedJsonLdOffers(jsonLd);
+  const offers =
+    embeddedOffers.length > 0
+      ? embeddedOffers
+      : domOffers.length > 0
+        ? domOffers
+        : jsonLdOffers;
 
   const eventTitle = jsonLd ? String(jsonLd.name ?? '').trim() : undefined;
   const startAt = jsonLd ? String(jsonLd.startDate ?? '').trim() : undefined;
@@ -212,31 +374,12 @@ export function parseTicketIoDetailDom(
     expected?.providerEventId ??
     (canonicalTicketUrl ? extractTicketIoProviderEventId(canonicalTicketUrl) : undefined);
 
-  if (offer && offers.length === 0) {
-    const label = String(offer.name ?? 'Admission').trim() || 'Admission';
-    const priceText =
-      typeof offer.price === 'number'
-        ? `ab ${String(offer.price).replace('.', ',')} ${String(offer.priceCurrency ?? 'EUR')}`
-        : String(offer.price ?? '');
-    const normalized = priceText ? normalizeTicketPriceLine(priceText) : undefined;
-    const soldOut = /soldout|sold_out/i.test(String(offer.availability ?? ''));
-    offers.push({
-      rawLabel: label,
-      role: classifyTicketOfferRole(label),
-      rawPrice: normalized?.rawPrice,
-      amountMinor: normalized?.amountMinor,
-      currency: normalized?.currency ?? String(offer.priceCurrency ?? ''),
-      soldOut,
-      purchasable: !soldOut,
-    });
-  }
-
   const admissionOffers = offers.filter((offer) => isAdmissionOfferRole(offer.role));
   const purchasableAdmission = admissionOffers.filter((offer) => offer.purchasable && !offer.soldOut);
   const rejectedOffers = [
     ...offers
       .filter((offer) => !isAdmissionOfferRole(offer.role))
-      .map((offer) => ({ rawLabel: offer.rawLabel, reason: 'non_admission_offer' })),
+      .map((offer) => ({ rawLabel: offer.rawLabel, reason: rejectionReasonForRole(offer.role) })),
     ...offers
       .filter((offer) => isAdmissionOfferRole(offer.role) && (offer.soldOut || !offer.purchasable))
       .map((offer) => ({ rawLabel: offer.rawLabel, reason: 'offer_not_currently_available' })),

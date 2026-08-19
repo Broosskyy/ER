@@ -8,7 +8,7 @@ import type {
 import { createEmptyTicketAuditCounters } from './types';
 import { isAdmissionOfferRole } from './ticket-offer-role';
 import { isMerchandiseUrl } from './url-policy';
-import { lowestAdmissionOffer } from './ticket-io-evidence-provider';
+import { selectRegularAdmissionOffer } from './select-regular-admission-offer';
 
 export interface VerifiedTicketCompleteResult {
   sourceEventKey: string;
@@ -25,6 +25,7 @@ export interface VerifiedTicketCompleteResult {
   ticketEvidence?: EventTicketEvidence;
   identityResult: TicketIdentityResult;
   identityReasons: string[];
+  targetIdentityEvidence?: import('./types').TicketTargetIdentityEvidence;
   classification: string;
   verifiedTicketComplete: boolean;
   resolvedAction?: import('./types').ResolvedTicketAction;
@@ -69,7 +70,7 @@ export function isVerifiedTicketComplete(result: VerifiedTicketCompleteResult): 
   if (!result.ticketEvidence) return false;
   if (!result.providerEvidence) return false;
 
-  const lowest = lowestAdmissionOffer(result.ticketEvidence);
+  const lowest = selectRegularAdmissionOffer(result.ticketEvidence);
   const admissionOffers = result.ticketEvidence.offers.filter((o) =>
     isAdmissionOfferRole(o.role ?? 'unknown_addon'),
   );
@@ -135,7 +136,7 @@ export function computeCoverageMetrics(results: VerifiedTicketCompleteResult[]):
     if (admissionCount > 0) {
       metrics.eventsWithAdmissionOffer += 1;
     }
-    const lowest = result.ticketEvidence ? lowestAdmissionOffer(result.ticketEvidence) : undefined;
+    const lowest = result.ticketEvidence ? selectRegularAdmissionOffer(result.ticketEvidence) : undefined;
     if (lowest?.amountMinor !== undefined) {
       metrics.eventsWithVerifiedPrice += 1;
     }
@@ -179,7 +180,7 @@ export function computeTicketAuditCountersFromResults(
     if (!result.ticketEvidence) {
       counters.linkedEventsWithoutTicketRow += 1;
     }
-    const lowest = result.ticketEvidence ? lowestAdmissionOffer(result.ticketEvidence) : undefined;
+    const lowest = result.ticketEvidence ? selectRegularAdmissionOffer(result.ticketEvidence) : undefined;
     if (!lowest?.amountMinor) {
       counters.linkedEventsWithoutVerifiedPrice += 1;
     }

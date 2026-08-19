@@ -5,7 +5,7 @@ export type ProviderPageReadiness =
   | 'event_page_partial'
   | 'provider_error';
 
-const CHALLENGE_PATTERN = /Nur einen Moment|Just a moment|cf-browser|Security check|altcha/i;
+const CHALLENGE_PATTERN = /Nur einen Moment|Just a moment|Hang on a sec|cf-browser|Security check|altcha/i;
 const EVENT_READY_PATTERN =
   /application\/ld\+json|MusicEvent|"@type"\s*:\s*"Event"|data-product|product-price|ticket-category|select-quantity/i;
 

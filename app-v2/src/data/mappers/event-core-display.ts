@@ -1,5 +1,7 @@
 import type { EventDetail, EventSummary, EventTicket } from '@/features/events/types/event-core';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
+import { resolveConsumerOfficialSource } from '@/features/events/sources/consumer-official-source';
+import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 import {
   formatDateLabel,
   formatEventTimeRange,
@@ -9,36 +11,14 @@ import {
 } from '@/features/events/formatting/date-time';
 import type { Event } from '@/features/events/types/event';
 
-function formatTicketPrice(ticket: EventTicket | null): string | undefined {
-  if (!ticket || ticket.priceFromMinor == null) {
-    return undefined;
-  }
-
-  const amount = ticket.priceFromMinor / 100;
-  const formatted = amount.toLocaleString('de-DE', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-  const currency = ticket.currency ?? 'EUR';
-  return currency === 'EUR' ? `${formatted} €` : `${formatted} ${currency}`;
-}
-
 function mapTicketStatus(
   ticket: EventTicket | null,
+  presentation: ReturnType<typeof resolveConsumerTicketPresentation>,
 ): Event['ticketStatus'] | undefined {
-  if (!ticket?.ticketUrl) {
+  if (!presentation.ticketUrl && !presentation.priceText) {
     return undefined;
   }
-
-  switch (ticket.salesStatus) {
-    case 'sold_out':
-      return 'sold_out';
-    case 'available':
-    case 'on_sale':
-      return 'on_sale';
-    default:
-      return 'external_link';
-  }
+  return presentation.ticketStatus;
 }
 
 function toDisplayFields(
@@ -53,6 +33,18 @@ function toDisplayFields(
   const genres = summary.genres.map((genre) => genre.displayName);
   const lineup = detail?.lineup.map((act) => act.billingName);
   const ticket = summary.primaryTicket;
+  const ticketPresentation = resolveConsumerTicketPresentation(ticket);
+  const officialSource = resolveConsumerOfficialSource({
+    officialUrl: detail?.officialUrl ?? null,
+    organizerName: summary.organizerName,
+    eventTitle: summary.title,
+    startsAt: summary.startsAt,
+    imageUrl: summary.imageUrl,
+    venueOfficialUrl: summary.venue?.officialUrl,
+    venueName: summary.venue?.name,
+    ticket,
+    purchaseTicketUrl: ticketPresentation.ticketUrl,
+  });
   const hasClock = hasKnownEventClockTime(startDateTime, timezone);
   const timeRange = formatEventTimeRange({
     startDateTime,
@@ -77,11 +69,20 @@ function toDisplayFields(
     artists: lineup ?? [],
     lineup,
     organizer: summary.organizerName ?? undefined,
-    priceText: formatTicketPrice(ticket),
-    ticketUrl: ticket?.ticketUrl ?? undefined,
-    officialEventUrl: detail?.officialUrl ?? undefined,
+    priceText: ticketPresentation.priceText,
+    ticketUrl: ticketPresentation.ticketUrl,
+    eventSourceUrl: officialSource.eventSourceUrl,
+    officialEventUrl: officialSource.officialEventUrl,
+    organizerSocialUrl: officialSource.organizerSocialUrl,
+    venueSocialUrl: officialSource.venueSocialUrl,
+    organizerWebsiteUrl: officialSource.organizerWebsiteUrl,
+    sourceImageUrl: officialSource.sourceImageUrl,
     source: 'event-core',
-    sourceLabel: '',
+    sourceLabel: officialSource.sourceLabel,
+    sourceUrl: officialSource.eventSourceUrl,
+    visibleSources: officialSource.visibleLinks,
+    organizerLinks: officialSource.organizerLinks,
+    officialSourceMissing: officialSource.officialSourceMissing,
     startsAt: startDateTime,
     startDateTime,
     endDateTime,
@@ -92,7 +93,7 @@ function toDisplayFields(
     lifecycleStatus: 'published',
     venueId: summary.venue?.id,
     ticketProviderLabel: ticket?.provider ?? undefined,
-    ticketStatus: mapTicketStatus(ticket),
+    ticketStatus: mapTicketStatus(ticket, ticketPresentation),
     venueLabel: venueName,
     cityLabel: city,
     locationLabelComma: venueName && city ? `${venueName}, ${city}` : venueName || city,
