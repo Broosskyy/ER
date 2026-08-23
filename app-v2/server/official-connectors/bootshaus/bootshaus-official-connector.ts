@@ -1,6 +1,14 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
+import type {
+  OfficialConnector,
+  OfficialConnectorDiscoveryResult,
+  OfficialConnectorFetchResult,
+  OfficialConnectorMetadata,
+  OfficialConnectorRunOptions,
+  OfficialConnectorRunResult,
+} from '../connector-contract';
 import {
   buildImageHostAllowlist,
   createEmptyMediaPassCounters,
@@ -9,12 +17,14 @@ import {
 } from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
 import { safeFetchHtml } from '../safe-fetch';
+import type { SafeFetchRequestContext, SafeFetchRequestOptions } from '../generic-safe-fetch';
 import {
   createEmptyConnectorCounters,
   type ConnectorErrorCounters,
   type OfficialEventConsumerPreview,
+  type OfficialEventEvidence,
 } from '../types';
-import { BOOTSHAUS_LIST_URL } from './constants';
+import { BOOTSHAUS_CONNECTOR_ID, BOOTSHAUS_LIST_URL } from './constants';
 import { buildBootshausMediaEvidenceContext } from './build-bootshaus-media-evidence';
 import { parseBootshausDetailPage } from './parse-detail';
 import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './parse-list';
@@ -22,21 +32,9 @@ import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './pars
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
 
-export interface BootshausConnectorRunOptions {
-  now?: () => Date;
-  maxDetailPages?: number;
-  writeCache?: (relativePath: string, contents: string) => Promise<void>;
-}
+export interface BootshausConnectorRunOptions extends OfficialConnectorRunOptions {}
 
-export interface BootshausConnectorRunResult {
-  fetchedAt: string;
-  listUrl: string;
-  discoveredDetailUrls: string[];
-  loadedDetailUrls: string[];
-  previews: OfficialEventConsumerPreview[];
-  counters: ConnectorErrorCounters;
-  mediaCounters: ReturnType<typeof createEmptyMediaPassCounters>;
-}
+export interface BootshausConnectorRunResult extends OfficialConnectorRunResult {}
 
 async function mapWithConcurrency<TInput, TOutput>(
   items: readonly TInput[],
@@ -59,7 +57,52 @@ async function mapWithConcurrency<TInput, TOutput>(
   return results;
 }
 
-export class BootshausOfficialConnector {
+export class BootshausOfficialConnector implements OfficialConnector {
+  readonly metadata: OfficialConnectorMetadata = {
+    connectorId: BOOTSHAUS_CONNECTOR_ID,
+    sourceType: 'venue_club',
+    displayName: 'Bootshaus Official',
+    defaultListUrl: BOOTSHAUS_LIST_URL,
+    capabilities: {
+      listDiscovery: true,
+      detailFetch: true,
+      mediaEnrichment: true,
+    },
+  };
+
+  discoverFromListHtml(listHtml: string, listUrl: string): OfficialConnectorDiscoveryResult {
+    const discovered = extractBootshausDetailUrlsFromListHtml(listHtml);
+    const { uniqueUrls, duplicateCount } = dedupeDetailUrls(discovered);
+    return {
+      listUrl,
+      detailUrls: uniqueUrls,
+      duplicateCount,
+    };
+  }
+
+  async fetchHtml(
+    url: string,
+    options: SafeFetchRequestOptions,
+    context: SafeFetchRequestContext = {},
+  ): Promise<OfficialConnectorFetchResult> {
+    const counters = options.counters as ConnectorErrorCounters;
+    return safeFetchHtml(url, {
+      ...options,
+      counters,
+      allowListOnly: context.allowListOnly,
+      allowDetailOnly: context.allowDetailOnly,
+    });
+  }
+
+  parseDetailPage(
+    html: string,
+    finalUrl: string,
+    fetchedAt: string,
+    counters: ConnectorErrorCounters,
+  ): OfficialEventEvidence {
+    return parseBootshausDetailPage(html, finalUrl, fetchedAt, counters);
+  }
+
   async runPreview(options: BootshausConnectorRunOptions = {}): Promise<BootshausConnectorRunResult> {
     const counters = createEmptyConnectorCounters();
     const mediaCounters = createEmptyMediaPassCounters();
@@ -73,18 +116,18 @@ export class BootshausOfficialConnector {
         await writeFile(target, contents, 'utf8');
       });
 
-    const listResult = await safeFetchHtml(BOOTSHAUS_LIST_URL, {
-      counters,
-      allowListOnly: true,
-    });
+    const listResult = await this.fetchHtml(
+      BOOTSHAUS_LIST_URL,
+      { counters },
+      { allowListOnly: true },
+    );
     await writeCache('m3-bootshaus-cache/list.html', listResult.html);
 
-    const discovered = extractBootshausDetailUrlsFromListHtml(listResult.html);
-    const { uniqueUrls, duplicateCount } = dedupeDetailUrls(discovered);
-    counters.duplicateListEntries += duplicateCount;
+    const discovery = this.discoverFromListHtml(listResult.html, BOOTSHAUS_LIST_URL);
+    counters.duplicateListEntries += discovery.duplicateCount;
 
     const nowMs = Date.parse(fetchedAt);
-    const detailUrls = uniqueUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
+    const detailUrls = discovery.detailUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
 
     const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
@@ -94,15 +137,16 @@ export class BootshausOfficialConnector {
       }
       fetchedUrlSet.add(detailUrl);
 
-      const detailResult = await safeFetchHtml(detailUrl, {
-        counters,
-        allowDetailOnly: true,
-      });
+      const detailResult = await this.fetchHtml(
+        detailUrl,
+        { counters },
+        { allowDetailOnly: true },
+      );
 
       const slug = new URL(detailResult.finalUrl).pathname.split('/').filter(Boolean)[1] ?? 'unknown';
       await writeCache(`m3-bootshaus-cache/details/${slug}.html`, detailResult.html);
 
-      const textEvidence = parseBootshausDetailPage(
+      const textEvidence = this.parseDetailPage(
         detailResult.html,
         detailResult.finalUrl,
         fetchedAt,
@@ -139,7 +183,7 @@ export class BootshausOfficialConnector {
     return {
       fetchedAt,
       listUrl: BOOTSHAUS_LIST_URL,
-      discoveredDetailUrls: uniqueUrls,
+      discoveredDetailUrls: discovery.detailUrls,
       loadedDetailUrls: [...fetchedUrlSet],
       previews: futurePreviews,
       counters,
