@@ -49,9 +49,15 @@ function resolveSourceState(result: VerifiedTicketCompleteResult): TicketSourceS
   if (result.ticketSourceStateEvidence?.state) {
     return result.ticketSourceStateEvidence.state;
   }
-  const mapped = mapResolutionToTicketSourceState(result.resolutionClass, result.resolvedAction?.kind);
+  const mapped = mapResolutionToTicketSourceState(
+    result.resolutionClass ?? result.classification,
+    result.resolvedAction?.kind,
+  );
   if (mapped) {
     return mapped;
+  }
+  if (result.priceEvidence?.state === 'provider_access_unavailable') {
+    return 'provider_access_unavailable';
   }
   throw new Error(`ticket_source_state_missing:${result.sourceEventKey}`);
 }
@@ -300,13 +306,49 @@ function provenanceEqual(
   );
 }
 
+function shouldPreserveExistingTicketOnTransientFailure(
+  result: VerifiedTicketCompleteResult,
+  sourceState: TicketSourceState,
+): boolean {
+  if (sourceState === 'provider_access_unavailable') {
+    return true;
+  }
+  if (sourceState === 'ticket_link_not_yet_published') {
+    return true;
+  }
+  if (result.identityResult === 'ticket_identity_unverifiable') {
+    return true;
+  }
+  if (result.identityResult === 'ticket_identity_conflict') {
+    return true;
+  }
+  if (result.resolutionClass === 'internal_pipeline_failure') {
+    return true;
+  }
+  if (result.resolutionClass === 'unresolved_ticket_relationship') {
+    return true;
+  }
+  if (result.resolutionClass === 'provider_access_unavailable') {
+    return true;
+  }
+  if (result.priceEvidence?.state === 'provider_access_unavailable') {
+    return true;
+  }
+  return false;
+}
+
 function resolveTicketOperation(
   existing: ExistingEventTicketRecord | undefined,
   planned: EventCandidateTicket | undefined,
+  result: VerifiedTicketCompleteResult,
+  sourceState: TicketSourceState,
 ): { operation: TicketPersistenceOperation; reason: string } {
   if (!planned) {
     if (existing) {
-      return { operation: 'delete', reason: 'ticket_row_no_longer_supported_for_source_state' };
+      if (shouldPreserveExistingTicketOnTransientFailure(result, sourceState)) {
+        return { operation: 'noop', reason: 'preserve_existing_ticket_on_transient_failure' };
+      }
+      return { operation: 'noop', reason: 'preserve_existing_ticket_fail_closed' };
     }
     return { operation: 'noop', reason: 'no_ticket_row_required' };
   }
@@ -390,7 +432,12 @@ export function planTicketEvidencePersistence(
     const sourceState = resolveSourceState(result);
     const existingTicket = findExistingTicket(binding.eventId, context.existingTickets);
     const plannedTicketRow = mapPlannedTicketRow(sourceState, result, existingTicket);
-    const ticketResolution = resolveTicketOperation(existingTicket, plannedTicketRow);
+    const ticketResolution = resolveTicketOperation(
+      existingTicket,
+      plannedTicketRow,
+      result,
+      sourceState,
+    );
     const provenancePayload = buildProvenancePayload(sourceState, result);
     const provenanceOperation: TicketPersistenceOperation = provenanceEqual(binding.rawPayload, provenancePayload)
       ? 'noop'

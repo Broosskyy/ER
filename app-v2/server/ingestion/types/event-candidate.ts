@@ -1,3 +1,5 @@
+import type { EventReconciliationSummary } from '../reconciliation/types';
+
 export type SubmissionOriginRole = 'user' | 'organizer' | 'artist';
 
 export interface OfficialConnectorOrigin {
@@ -123,6 +125,8 @@ export interface EventWritePlan {
   existingVenueId?: string;
   reasons: string[];
   expectedRowCounts: EventWritePlanRowCounts;
+  reconciliation?: EventReconciliationSummary;
+  incomingCandidate?: EventCandidate;
 }
 
 export interface IdempotencyCheckResult {

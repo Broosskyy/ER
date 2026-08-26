@@ -8,12 +8,24 @@ import type {
   WriteAction,
 } from '../types/event-candidate';
 import { buildVenueIdentityKey, canonicalizeOfficialSourceUrl } from '../identity/source-identity';
+import {
+  eventWriteActionFromReconciliation,
+  genresWriteActionFromReconciliation,
+  lineupWriteActionFromReconciliation,
+  reconcileOfficialEvent,
+  sourceWriteActionFromReconciliation,
+  type ExistingEventConsumerState,
+} from '../reconciliation/reconciliation-policy';
 import { validateEventCandidate } from '../validation/validate-event-candidate';
+
+export type { ExistingEventConsumerState };
 
 export interface PlannerContext {
   existingSources: ExistingOfficialSourceRecord[];
   existingVenues: ExistingVenueRecord[];
+  existingEvents?: ExistingEventConsumerState[];
   pendingVenueKeys?: Set<string>;
+  sourceUnavailable?: boolean;
 }
 
 function emptyRowCounts(): EventWritePlanRowCounts {
@@ -149,6 +161,16 @@ function buildExpectedRowCounts(
   return counts;
 }
 
+function findExistingEvent(
+  eventId: string | undefined,
+  context: PlannerContext,
+): ExistingEventConsumerState | undefined {
+  if (!eventId) {
+    return undefined;
+  }
+  return context.existingEvents?.find((event) => event.eventId === eventId);
+}
+
 export function planOfficialEventWrite(
   candidate: EventCandidate,
   context: PlannerContext,
@@ -160,23 +182,59 @@ export function planOfficialEventWrite(
     (source) => canonicalizeOfficialSourceUrl(source.sourceUrl) === sourceIdentity.sourceUrl,
   );
   const venueResolution = resolveVenueAction(candidate, context);
+  const incomingCandidate = candidate;
 
-  let eventAction: WriteAction = 'insert';
-  let sourceAction: WriteAction = 'insert';
-  let lineupAction: WriteAction = candidate.lineup.length > 0 ? 'replace' : 'noop';
-  let genresAction: WriteAction = candidate.genres.length > 0 ? 'replace' : 'noop';
+  const sameFingerprint = existingSource
+    ? existingSource.contentHash === sourceIdentity.contentHash
+    : false;
+  const existingEvent = findExistingEvent(existingSource?.eventId, context);
+
+  const reconciliation = reconcileOfficialEvent({
+    candidate,
+    existingEvent,
+    hasExistingSource: Boolean(existingSource),
+    fingerprintChanged: existingSource ? !sameFingerprint : false,
+    sourceUnavailable: context.sourceUnavailable,
+    validationDecision: validation.decision,
+  });
+
+  const reconciledCandidate = reconciliation.reconciledCandidate;
+  const lineupDecision = reconciliation.fieldDecisions.find((entry) => entry.field === 'lineup');
+  const genresDecision = reconciliation.fieldDecisions.find((entry) => entry.field === 'genres');
+
+  let eventAction: WriteAction = existingSource
+    ? eventWriteActionFromReconciliation(reconciliation.fieldDecisions, !sameFingerprint)
+    : 'insert';
+  let sourceAction: WriteAction = existingSource
+    ? sourceWriteActionFromReconciliation(
+        !sameFingerprint,
+        reconciliation.classification,
+        reconciliation.fieldDecisions,
+      )
+    : 'insert';
+  let lineupAction: WriteAction = existingSource
+    ? lineupWriteActionFromReconciliation(lineupDecision, reconciledCandidate.lineup.length)
+    : reconciledCandidate.lineup.length > 0
+      ? 'replace'
+      : 'noop';
+  let genresAction: WriteAction = existingSource
+    ? genresWriteActionFromReconciliation(genresDecision, reconciledCandidate.genres.length)
+    : reconciledCandidate.genres.length > 0
+      ? 'replace'
+      : 'noop';
   const ticketsAction: WriteAction = 'noop';
-  const reasons: string[] = [];
+  const reasons: string[] = [...reconciliation.reasons];
 
-  if (existingSource) {
-    const sameFingerprint = existingSource.contentHash === sourceIdentity.contentHash;
-    eventAction = sameFingerprint ? 'noop' : 'update';
-    sourceAction = sameFingerprint ? 'noop' : 'update';
-    lineupAction = sameFingerprint ? 'noop' : candidate.lineup.length > 0 ? 'replace' : 'noop';
-    genresAction = sameFingerprint ? 'noop' : candidate.genres.length > 0 ? 'replace' : 'noop';
-    reasons.push(sameFingerprint ? 'existing_official_source_unchanged' : 'existing_official_source_changed');
-  } else {
-    reasons.push('new_official_source');
+  if (context.sourceUnavailable) {
+    eventAction = 'noop';
+    sourceAction = 'noop';
+    lineupAction = 'noop';
+    genresAction = 'noop';
+    reasons.push('source_unavailable_no_consumer_writes');
+  }
+
+  if (reconciliation.reviewRequired) {
+    reasons.push('reconciliation_review_required');
   }
 
   if (venueResolution.action === 'reuse') {
@@ -194,11 +252,13 @@ export function planOfficialEventWrite(
     genresAction,
     ticketsAction,
     sourceAction,
-    candidate,
+    candidate: reconciledCandidate,
+    incomingCandidate,
     sourcePayload,
     existingSource,
     existingVenueId: venueResolution.existingVenueId,
     reasons,
+    reconciliation,
     expectedRowCounts: buildExpectedRowCounts(
       eventAction,
       venueResolution.action,
@@ -206,7 +266,7 @@ export function planOfficialEventWrite(
       genresAction,
       ticketsAction,
       sourceAction,
-      candidate,
+      reconciledCandidate,
     ),
   };
 }

@@ -76,7 +76,7 @@ describe('ticket persistence planning', () => {
       sourceEventKey: 'loonyland',
       officialUrl: 'https://bootshaus.tv/events/loonyland/',
       title: 'Loonyland',
-      startsAt: '2026-08-21T22:00:00+02:00',
+      startsAt: '2027-08-21T22:00:00+02:00',
       discoveredLinks: [],
       rejectedCandidates: [],
       primaryLink: {
@@ -221,7 +221,7 @@ describe('ticket persistence planning', () => {
       sourceEventKey: 'loonyland',
       officialUrl: 'https://bootshaus.tv/events/loonyland/',
       title: 'Loonyland',
-      startsAt: '2026-08-21T22:00:00+02:00',
+      startsAt: '2027-08-21T22:00:00+02:00',
       discoveredLinks: [],
       rejectedCandidates: [],
       primaryLink: {
@@ -328,5 +328,50 @@ describe('ticket persistence planning', () => {
     expect(summary.currentTicketUpdatesRequired).toBe(0);
     expect(plans[0]?.ticketOperation).toBe('noop');
     expect(plans[0]?.providerSourceOperation).toBe('noop');
+  });
+
+  it('preserves existing verified ticket on provider_access_unavailable', () => {
+    const result = enrichResultWithM6_4(
+      {
+        sourceEventKey: 'loonyland',
+        officialUrl: 'https://bootshaus.tv/events/loonyland/',
+        title: 'Loonyland',
+        startsAt: '2027-08-21T22:00:00+02:00',
+        discoveredLinks: [],
+        rejectedCandidates: [],
+        identityResult: 'ticket_identity_unverifiable',
+        identityReasons: [],
+        classification: 'provider_access_unavailable',
+        verifiedTicketComplete: false,
+      },
+      { providerBlocked: true },
+    );
+    const plans = planTicketEvidencePersistence([result], {
+      officialBindings: [
+        {
+          eventId: 'event-loonyland',
+          officialUrl: 'https://bootshaus.tv/events/loonyland/',
+          sourceId: 'source-loonyland',
+          contentHash: 'fp',
+          rawPayload: {},
+          title: 'Loonyland',
+        },
+      ],
+      existingTickets: [
+        {
+          ticketId: 'ticket-1',
+          eventId: 'event-loonyland',
+          provider: 'ticket_io',
+          ticketUrl: 'https://bootshaus-club.ticket.io/tA3dBrv7/',
+          priceFromMinor: 2590,
+          currency: 'EUR',
+          salesStatus: 'available',
+          sortOrder: 0,
+        },
+      ],
+      existingTicketSources: [],
+    });
+    expect(plans[0]?.ticketOperation).toBe('noop');
+    expect(plans[0]?.ticketOperationReason).toBe('preserve_existing_ticket_on_transient_failure');
   });
 });
