@@ -17,13 +17,18 @@ import {
   type ExistingEventConsumerState,
 } from '../reconciliation/reconciliation-policy';
 import { validateEventCandidate } from '../validation/validate-event-candidate';
+import type { EventMatchCatalogEntry } from '../identity/event-match-types';
+import { catalogEntryFromCandidate } from '../identity/event-matcher';
+import { resolveEventIdentity } from '../identity/resolve-event-identity';
 
 export type { ExistingEventConsumerState };
+export type { EventMatchCatalogEntry };
 
 export interface PlannerContext {
   existingSources: ExistingOfficialSourceRecord[];
   existingVenues: ExistingVenueRecord[];
   existingEvents?: ExistingEventConsumerState[];
+  eventCatalog?: EventMatchCatalogEntry[];
   pendingVenueKeys?: Set<string>;
   sourceUnavailable?: boolean;
 }
@@ -178,22 +183,36 @@ export function planOfficialEventWrite(
   const validation = validateEventCandidate(candidate);
   const sourceIdentity = resolveSourceIdentity(candidate);
   const sourcePayload = buildOfficialSourcePayload(candidate);
+  const incomingCandidate = candidate;
+
+  const identity = resolveEventIdentity({
+    candidate,
+    catalog: context.eventCatalog ?? [],
+    existingSources: context.existingSources,
+  });
+
   const existingSource = context.existingSources.find(
     (source) => canonicalizeOfficialSourceUrl(source.sourceUrl) === sourceIdentity.sourceUrl,
   );
+
+  const resolvedEventId =
+    existingSource?.eventId ??
+    (identity.autoBindAllowed ? identity.candidateEventId : undefined);
+
   const venueResolution = resolveVenueAction(candidate, context);
-  const incomingCandidate = candidate;
 
   const sameFingerprint = existingSource
     ? existingSource.contentHash === sourceIdentity.contentHash
     : false;
-  const existingEvent = findExistingEvent(existingSource?.eventId, context);
+  const existingEvent = findExistingEvent(resolvedEventId, context);
+  const hasUrlBinding = Boolean(existingSource);
+  const hasCanonicalEvent = Boolean(resolvedEventId);
 
   const reconciliation = reconcileOfficialEvent({
     candidate,
     existingEvent,
-    hasExistingSource: Boolean(existingSource),
-    fingerprintChanged: existingSource ? !sameFingerprint : false,
+    hasExistingSource: hasCanonicalEvent,
+    fingerprintChanged: hasUrlBinding ? !sameFingerprint : hasCanonicalEvent,
     sourceUnavailable: context.sourceUnavailable,
     validationDecision: validation.decision,
   });
@@ -202,28 +221,50 @@ export function planOfficialEventWrite(
   const lineupDecision = reconciliation.fieldDecisions.find((entry) => entry.field === 'lineup');
   const genresDecision = reconciliation.fieldDecisions.find((entry) => entry.field === 'genres');
 
-  let eventAction: WriteAction = existingSource
-    ? eventWriteActionFromReconciliation(reconciliation.fieldDecisions, !sameFingerprint)
-    : 'insert';
-  let sourceAction: WriteAction = existingSource
+  let eventAction: WriteAction = !hasCanonicalEvent ? 'insert' : 'update';
+  let sourceAction: WriteAction = hasUrlBinding
     ? sourceWriteActionFromReconciliation(
         !sameFingerprint,
         reconciliation.classification,
         reconciliation.fieldDecisions,
       )
-    : 'insert';
-  let lineupAction: WriteAction = existingSource
+    : hasCanonicalEvent
+      ? 'insert'
+      : 'insert';
+
+  if (!hasCanonicalEvent) {
+    eventAction = 'insert';
+    sourceAction = 'insert';
+  } else if (hasCanonicalEvent && !hasUrlBinding && identity.autoBindAllowed) {
+    eventAction = eventWriteActionFromReconciliation(
+      reconciliation.fieldDecisions,
+      reconciliation.classification !== 'unchanged',
+    );
+    sourceAction = 'insert';
+  } else if (hasUrlBinding) {
+    eventAction = eventWriteActionFromReconciliation(reconciliation.fieldDecisions, !sameFingerprint);
+  }
+
+  let lineupAction: WriteAction = hasCanonicalEvent
     ? lineupWriteActionFromReconciliation(lineupDecision, reconciledCandidate.lineup.length)
     : reconciledCandidate.lineup.length > 0
       ? 'replace'
       : 'noop';
-  let genresAction: WriteAction = existingSource
+  let genresAction: WriteAction = hasCanonicalEvent
     ? genresWriteActionFromReconciliation(genresDecision, reconciledCandidate.genres.length)
     : reconciledCandidate.genres.length > 0
       ? 'replace'
       : 'noop';
   const ticketsAction: WriteAction = 'noop';
-  const reasons: string[] = [...reconciliation.reasons];
+  const reasons: string[] = [...reconciliation.reasons, `identity:${identity.decision}`];
+
+  if (identity.decision === 'review_required' || identity.decision === 'possible_match') {
+    if (!hasUrlBinding) {
+      eventAction = 'insert';
+      sourceAction = 'insert';
+      reasons.push('identity_review_required_separate_event');
+    }
+  }
 
   if (context.sourceUnavailable) {
     eventAction = 'noop';
@@ -237,8 +278,12 @@ export function planOfficialEventWrite(
     reasons.push('reconciliation_review_required');
   }
 
+  if (hasUrlBinding && sameFingerprint && eventAction === 'update') {
+    eventAction = eventWriteActionFromReconciliation(reconciliation.fieldDecisions, false);
+  }
+
   if (venueResolution.action === 'reuse') {
-    reasons.push(existingSource ? 'venue_already_bound' : 'venue_reuse_or_pending');
+    reasons.push(hasCanonicalEvent ? 'venue_already_bound' : 'venue_reuse_or_pending');
   } else if (venueResolution.action === 'insert') {
     reasons.push('venue_insert');
   }
@@ -256,7 +301,9 @@ export function planOfficialEventWrite(
     incomingCandidate,
     sourcePayload,
     existingSource,
-    existingVenueId: venueResolution.existingVenueId,
+    existingVenueId: venueResolution.existingVenueId ?? existingEvent?.venueId ?? undefined,
+    resolvedEventId,
+    identity,
     reasons,
     reconciliation,
     expectedRowCounts: buildExpectedRowCounts(
@@ -276,17 +323,28 @@ export function planOfficialEventWrites(
   context: PlannerContext,
 ): EventWritePlan[] {
   const pendingVenueKeys = new Set(context.pendingVenueKeys ?? []);
+  const catalog = [...(context.eventCatalog ?? [])];
   const plans: EventWritePlan[] = [];
 
-  for (const candidate of candidates) {
+  for (const [index, candidate] of candidates.entries()) {
     const plan = planOfficialEventWrite(candidate, {
       ...context,
       pendingVenueKeys,
+      eventCatalog: catalog,
     });
     plans.push(plan);
 
     if (plan.venueAction === 'insert' && candidate.venue) {
       pendingVenueKeys.add(buildVenueIdentityKey(candidate.venue));
+    }
+
+    if (plan.eventAction === 'insert') {
+      catalog.push(catalogEntryFromCandidate(candidate, `pending-event-${index + 1}`));
+    } else if (plan.resolvedEventId) {
+      const existingIndex = catalog.findIndex((entry) => entry.eventId === plan.resolvedEventId);
+      if (existingIndex === -1) {
+        catalog.push(catalogEntryFromCandidate(candidate, plan.resolvedEventId));
+      }
     }
   }
 

@@ -1,4 +1,5 @@
 import type { EventReconciliationSummary } from '../reconciliation/types';
+import type { EventMatchResult } from '../identity/event-match-types';
 
 export type SubmissionOriginRole = 'user' | 'organizer' | 'artist';
 
@@ -89,6 +90,9 @@ export interface ExistingOfficialSourceRecord {
   eventId: string;
   sourceUrl: string;
   contentHash: string | null;
+  sourceRole?: string;
+  sourceEventKey?: string;
+  connectorId?: string;
 }
 
 export interface ExistingVenueRecord {
@@ -127,6 +131,8 @@ export interface EventWritePlan {
   expectedRowCounts: EventWritePlanRowCounts;
   reconciliation?: EventReconciliationSummary;
   incomingCandidate?: EventCandidate;
+  identity?: EventMatchResult;
+  resolvedEventId?: string;
 }
 
 export interface IdempotencyCheckResult {
