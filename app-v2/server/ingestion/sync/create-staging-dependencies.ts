@@ -1,0 +1,47 @@
+import { randomUUID } from 'node:crypto';
+
+import { registerDefaultOfficialConnectors } from '../../official-connectors/register-default-connectors';
+import { getOfficialSourceRegistry } from '../../official-connectors/source-registry';
+import {
+  getSourceOperationalConfigRegistry,
+  registerDefaultSourceOperationalConfigs,
+} from '../../official-connectors/source-operational-config';
+import { createOfficialEventApplyExecutor } from './execute-official-event-apply';
+import { loadPlannerContextFromLinkedDb } from './load-planner-context';
+import {
+  createSupabaseCliLinkedQueryExecutor,
+  type LinkedQueryExecutor,
+  verifyLinkedStagingTarget,
+} from './linked-db';
+import type { SyncOrchestratorDependencies } from './orchestrator';
+import { createSqlIngestionSyncPersistence } from './sql-run-persistence';
+import type { IngestionSyncPersistence } from './run-persistence';
+
+export interface StagingSyncDependenciesOptions {
+  cwd?: string;
+  runQuery?: LinkedQueryExecutor;
+  persistence?: IngestionSyncPersistence;
+  verifyTarget?: boolean;
+}
+
+export function createStagingSyncDependencies(
+  options: StagingSyncDependenciesOptions = {},
+): SyncOrchestratorDependencies {
+  const cwd = options.cwd ?? process.cwd();
+  if (options.verifyTarget !== false) {
+    verifyLinkedStagingTarget(cwd);
+  }
+
+  const runQuery = options.runQuery ?? createSupabaseCliLinkedQueryExecutor(cwd);
+  registerDefaultOfficialConnectors();
+  registerDefaultSourceOperationalConfigs();
+
+  return {
+    registry: getOfficialSourceRegistry(),
+    operationalConfig: getSourceOperationalConfigRegistry(),
+    persistence: options.persistence ?? createSqlIngestionSyncPersistence(runQuery),
+    loadPlannerContext: async () => loadPlannerContextFromLinkedDb(runQuery),
+    applyPlan: createOfficialEventApplyExecutor(runQuery),
+    createRunId: () => randomUUID(),
+  };
+}

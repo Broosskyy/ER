@@ -362,7 +362,13 @@ function reconcileDateField(
     return finalizeDecision(field, 'accept', 'populate_missing_date', context);
   }
 
-  const deltaMs = Math.abs(Date.parse(incomingValue) - Date.parse(existingValue));
+  const incomingMs = Date.parse(incomingValue);
+  const existingMs = Date.parse(existingValue);
+  if (!Number.isNaN(incomingMs) && !Number.isNaN(existingMs) && incomingMs === existingMs) {
+    return finalizeDecision(field, 'noop', 'same_instant_different_representation', context);
+  }
+
+  const deltaMs = Math.abs(incomingMs - existingMs);
   const destructiveRisk = deltaMs > 3 * 60 * 60 * 1000;
   if (destructiveRisk) {
     const strength = fieldStrength(field, context);

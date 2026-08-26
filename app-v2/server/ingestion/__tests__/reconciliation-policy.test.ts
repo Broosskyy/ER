@@ -209,6 +209,39 @@ describe('official event reconciliation policy', () => {
     expect(plan.candidate.lineup).toHaveLength(2);
   });
 
+  it('treats equivalent instants with different timezone representations as unchanged', () => {
+    const existing = buildExistingEvent({
+      startsAt: '2026-10-10T20:00:00.000Z',
+      endsAt: '2026-10-11T04:00:00.000Z',
+    });
+    const evidence = buildOrigin({
+      pageFingerprint: 'fingerprint-changed-only',
+      startsAt: '2026-10-10T22:00:00+02:00',
+      endsAt: '2026-10-11T06:00:00+02:00',
+      descriptionClean: existing.description ?? undefined,
+      lineupCandidates: existing.lineup.map((act, index) => ({
+        displayName: act.billingName,
+        rawText: act.billingName,
+        billingOrder: index,
+        evidenceRole: act.billingRole,
+        evidenceOrigin: 'official_text' as const,
+      })),
+      explicitGenreLabels: existing.genres.map((genre) => genre.displayName),
+    });
+    const plan = planWithExisting(officialEvidenceToEventCandidate(evidence), existing, 'fingerprint-db');
+    expect(isPlanIdempotent(plan)).toBe(true);
+    expect(plan.reconciliation?.classification).toBe('parse_degraded');
+    expect(
+      plan.reconciliation?.fieldDecisions.filter(
+        (decision) => decision.field === 'startsAt' || decision.field === 'endsAt',
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ decision: 'noop', reason: 'same_instant_different_representation' }),
+      ]),
+    );
+  });
+
   it('remains idempotent on a second identical reconciliation run', () => {
     const existing = buildExistingEvent({ description: 'Stable description' });
     const evidence = buildOrigin({

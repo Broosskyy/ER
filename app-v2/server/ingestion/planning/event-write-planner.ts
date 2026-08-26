@@ -278,7 +278,13 @@ export function planOfficialEventWrite(
     reasons.push('reconciliation_review_required');
   }
 
-  if (hasUrlBinding && sameFingerprint && eventAction === 'update') {
+  if (hasUrlBinding && sameFingerprint && !reconciliation.reviewRequired) {
+    eventAction = 'noop';
+    sourceAction = 'noop';
+    lineupAction = 'noop';
+    genresAction = 'noop';
+    reasons.push('official_source_fingerprint_unchanged_noop');
+  } else if (hasUrlBinding && sameFingerprint && eventAction === 'update') {
     eventAction = eventWriteActionFromReconciliation(reconciliation.fieldDecisions, false);
   }
 
