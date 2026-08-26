@@ -75,4 +75,13 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 10,
     });
   }
+  if (!registry.get('affenkaefig-official')) {
+    registry.register({
+      connectorId: 'affenkaefig-official',
+      sourceType: 'organizer',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      maxConcurrency: 2,
+      expectedMinParsedOnSuccess: 3,
+    });
+  }
 }

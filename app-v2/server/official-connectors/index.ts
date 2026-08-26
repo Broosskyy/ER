@@ -1,5 +1,7 @@
 export { BootshausOfficialConnector } from './bootshaus/bootshaus-official-connector';
+export { AffenkaefigOfficialConnector } from './affenkaefig/affenkaefig-official-connector';
 export { parseBootshausDetailPage } from './bootshaus/parse-detail';
+export { parseAffenkaefigDetailPage } from './affenkaefig/parse-detail';
 export { extractBootshausDetailUrlsFromListHtml } from './bootshaus/parse-list';
 export type {
   ConnectorErrorCounters,
