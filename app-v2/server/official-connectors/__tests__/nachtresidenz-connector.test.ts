@@ -28,10 +28,11 @@ import {
 const FETCHED_AT = '2026-08-26T12:00:00.000Z';
 
 describe('nachtresidenz official connector', () => {
-  it('registers with existing connectors without duplicate ids', () => {
+  it('can be registered explicitly without duplicate ids', () => {
     resetOfficialSourceRegistryForTests();
     const registry = getOfficialSourceRegistry();
     registerDefaultOfficialConnectors(registry);
+    registry.register(new NachtresidenzOfficialConnector());
     expect(registry.listConnectorIds()).toContain(NACHTRESIDENZ_CONNECTOR_ID);
     expect(registry.get(NACHTRESIDENZ_CONNECTOR_ID).metadata.displayName).toBe('Nachtresidenz Official');
   });

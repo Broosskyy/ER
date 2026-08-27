@@ -11,7 +11,12 @@ import type {
 } from '../connector-contract';
 import { safeFetchHtmlWithPolicy } from '../generic-safe-fetch';
 import type { SafeFetchRequestContext, SafeFetchRequestOptions } from '../generic-safe-fetch';
-import { createEmptyMediaPassCounters } from '../media-evidence';
+import {
+  buildImageHostAllowlist,
+  createEmptyMediaPassCounters,
+  enrichOfficialEvidenceWithMedia,
+  terminateSharedTesseractWorker,
+} from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
 import {
   createEmptyConnectorCounters,
@@ -24,6 +29,7 @@ import {
   AFFENKAEFIG_LIST_URL,
 } from './constants';
 import { affenkaefigSafeFetchPolicy } from './fetch-policy';
+import { buildAffenkaefigMediaEvidenceContext } from './build-affenkaefig-media-evidence';
 import { parseAffenkaefigDetailPage } from './parse-detail';
 import {
   dedupeAffenkaefigDetailUrls,
@@ -63,7 +69,7 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
     capabilities: {
       listDiscovery: true,
       detailFetch: true,
-      mediaEnrichment: false,
+      mediaEnrichment: true,
     },
   };
 
@@ -102,6 +108,8 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
 
   async runPreview(options: OfficialConnectorRunOptions = {}): Promise<OfficialConnectorRunResult> {
     const counters = createEmptyConnectorCounters();
+    const mediaCounters = createEmptyMediaPassCounters();
+    const allowedImageHosts = new Set<string>();
     const fetchedAt = (options.now?.() ?? new Date()).toISOString();
     const writeCache =
       options.writeCache ??
@@ -152,8 +160,27 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
         evidence.enrichmentGaps = [...new Set([...evidence.enrichmentGaps, 'past_event_skipped'])];
       }
 
-      return buildConsumerPreview(evidence, counters);
+      let enrichedEvidence = evidence;
+      if (
+        evidence.officialImageUrl &&
+        !evidence.enrichmentGaps.includes('past_event_skipped')
+      ) {
+        for (const host of buildImageHostAllowlist([evidence.officialImageUrl])) {
+          allowedImageHosts.add(host);
+        }
+        enrichedEvidence = await enrichOfficialEvidenceWithMedia(evidence, {
+          counters,
+          mediaCounters,
+          allowedImageHosts,
+          sourceObservedAt: fetchedAt,
+          mediaContext: buildAffenkaefigMediaEvidenceContext(evidence),
+        });
+      }
+
+      return buildConsumerPreview(enrichedEvidence, counters);
     });
+
+    await terminateSharedTesseractWorker();
 
     const futurePreviews = previews.filter(
       (preview) => !preview.enrichmentGaps.includes('past_event_skipped'),
@@ -166,7 +193,7 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
       loadedDetailUrls: [...fetchedUrlSet],
       previews: futurePreviews,
       counters,
-      mediaCounters: createEmptyMediaPassCounters(),
+      mediaCounters,
     };
   }
 }

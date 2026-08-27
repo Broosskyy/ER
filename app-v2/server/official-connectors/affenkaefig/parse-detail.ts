@@ -37,6 +37,7 @@ interface JsonLdEvent {
   description?: string;
   image?: string | string[];
   url?: string;
+  offers?: { url?: string };
   location?: {
     name?: string;
     address?: {
@@ -161,14 +162,17 @@ export function parseAffenkaefigDetailPage(
   const locationLabel = readMetaValue($, 'Location');
   const addressLine = readMetaValue($, 'Adresse');
   const descriptionHtml = $('.ecm-event-single__content').html() ?? '';
+  const ogDescription = $('meta[property="og:description"]').attr('content')?.trim();
   const descriptionClean =
     cleanAffenkaefigDescription(descriptionHtml) ||
     jsonLd?.description?.trim() ||
+    ogDescription ||
     undefined;
   const descriptionRaw = descriptionClean;
 
   const startsAt = resolveStartsAt(jsonLd, displayDate, descriptionClean ?? '');
   const endsAt = jsonLd?.endDate?.trim() || undefined;
+  const officialImageUrl = resolveImageUrl(jsonLd, $);
 
   if (!startsAt || !isValidIsoDateTime(startsAt)) {
     counters.invalidDates += 1;
@@ -183,9 +187,14 @@ export function parseAffenkaefigDetailPage(
   const hasLineupSection = $('.ecm-event-lineup').length > 0;
 
   const enrichmentGaps: string[] = [];
+  if (!descriptionClean) {
+    enrichmentGaps.push('description_missing');
+  }
   if (lineupResult.lineupCandidates.length === 0) {
     if (lineupNotAnnouncedSignal || (hasLineupSection && lineupActs.length === 0)) {
       enrichmentGaps.push('lineup_not_announced');
+    } else if (!hasLineupSection && officialImageUrl) {
+      enrichmentGaps.push('lineup_media_required');
     } else if (!hasLineupSection) {
       enrichmentGaps.push('lineup_not_announced');
     } else {
@@ -202,6 +211,7 @@ export function parseAffenkaefigDetailPage(
 
   const ticketLinks = discoverTicketLinksFromHtml(html, canonicalUrl ?? officialUrl, fetchedAt);
   const primaryTicket = selectPrimaryTicketLink(ticketLinks);
+  const jsonLdTicketUrl = jsonLd?.offers?.url?.trim();
 
   const evidence: OfficialEventEvidence = {
     connectorId: AFFENKAEFIG_CONNECTOR_ID,
@@ -225,8 +235,8 @@ export function parseAffenkaefigDetailPage(
     organizerLabel: jsonLd?.organizer?.name?.trim() || 'Affenkäfig',
     descriptionRaw,
     descriptionClean,
-    officialImageUrl: resolveImageUrl(jsonLd, $),
-    linkedTicketUrl: primaryTicket?.rawUrl,
+    officialImageUrl,
+    linkedTicketUrl: primaryTicket?.rawUrl ?? jsonLdTicketUrl,
     lineupCandidates: lineupResult.lineupCandidates,
     explicitGenreLabels: [],
     enrichmentGaps,

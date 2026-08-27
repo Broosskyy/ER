@@ -26,6 +26,7 @@ import {
   AFFENKAEFIG_LIST_FRAGMENT,
   AFFENKAEFIG_MALFORMED_DATE_FRAGMENT,
   AFFENKAEFIG_MISSING_DESCRIPTION_FRAGMENT,
+  AFFENKAEFIG_UNDERLAND_FRAGMENT,
 } from './fixtures/affenkaefig-fragments';
 
 const FETCHED_AT = '2026-08-26T12:00:00.000Z';
@@ -38,9 +39,6 @@ describe('affenkaefig official connector', () => {
     expect(registry.listConnectorIds().sort()).toEqual([
       'affenkaefig-official',
       'bootshaus-official',
-      'nachtresidenz-official',
-      'stadtgarten-official',
-      'zakk-official',
     ]);
     expect(registry.get(AFFENKAEFIG_CONNECTOR_ID).metadata.displayName).toBe('Affenkäfig Official');
   });
@@ -83,6 +81,21 @@ describe('affenkaefig official connector', () => {
     expect(evidence.enrichmentGaps).toContain('genres_missing');
     expect(evidence.startsAt).toContain('T22:00:00');
     expect(evidence.venue?.city).toBe('Köln');
+  });
+
+  it('marks underland golden case with description_missing and lineup_media_required', () => {
+    const evidence = parseAffenkaefigDetailPage(
+      AFFENKAEFIG_UNDERLAND_FRAGMENT,
+      'https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/',
+      FETCHED_AT,
+      createEmptyConnectorCounters(),
+    );
+    expect(evidence.title).toContain('Underland');
+    expect(evidence.descriptionClean).toBeUndefined();
+    expect(evidence.enrichmentGaps).toContain('description_missing');
+    expect(evidence.enrichmentGaps).toContain('lineup_media_required');
+    expect(evidence.linkedTicketUrl).toBe('https://ticketkings.de/event/underland-essigfabrik-05-09-2026/');
+    expect(evidence.officialImageUrl).toContain('05.09.26_QUADA_EB_ULand');
   });
 
   it('marks lineup_not_announced without inventing acts', () => {

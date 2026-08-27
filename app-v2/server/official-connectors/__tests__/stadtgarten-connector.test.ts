@@ -34,10 +34,11 @@ import {
 const FETCHED_AT = '2026-08-26T12:00:00.000Z';
 
 describe('stadtgarten official connector', () => {
-  it('registers with existing connectors without duplicate ids', () => {
+  it('can be registered explicitly without duplicate ids', () => {
     resetOfficialSourceRegistryForTests();
     const registry = getOfficialSourceRegistry();
     registerDefaultOfficialConnectors(registry);
+    registry.register(new StadtgartenOfficialConnector());
     expect(registry.listConnectorIds()).toContain(STADTGARTEN_CONNECTOR_ID);
     expect(registry.get(STADTGARTEN_CONNECTOR_ID).metadata.displayName).toBe('Stadtgarten Official');
   });

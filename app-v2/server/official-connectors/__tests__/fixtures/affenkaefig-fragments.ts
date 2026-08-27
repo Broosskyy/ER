@@ -37,6 +37,16 @@ export const AFFENKAEFIG_MISSING_DESCRIPTION_FRAGMENT = `
 <div class="ecm-event-single__content"></div>
 `;
 
+export const AFFENKAEFIG_UNDERLAND_FRAGMENT = `
+<script type="application/ld+json" class="event-cards-manager-schema">{"@context":"https://schema.org","@type":"Event","name":"Underland Essigfabrik 05.09.2026","startDate":"2026-09-05T00:00:00+02:00","url":"https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/","description":"","image":["https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2.jpg"],"location":{"@type":"Place","name":"Essigfabrik / Elektroküche","address":{"@type":"PostalAddress","streetAddress":"Siegburger Str. 110, 50679 Köln","addressLocality":"Köln"}},"offers":{"@type":"Offer","url":"https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"}}</script>
+<h1 class="entry-title">Underland Essigfabrik 05.09.2026</h1>
+<div class="ecm-event-meta-item"><span class="ecm-event-meta-item__label">Datum</span><span class="ecm-event-meta-item__value">05.09.2026</span></div>
+<div class="ecm-event-meta-item"><span class="ecm-event-meta-item__label">Location</span><span class="ecm-event-meta-item__value">Essigfabrik / Elektroküche · Köln</span></div>
+<div class="ecm-event-single__content"></div>
+<a class="ecm-event-single__ticket-button" href="https://ticketkings.de/event/underland-essigfabrik-05-09-2026/">Tickets</a>
+<meta property="og:image" content="https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2.jpg" />
+`;
+
 export const AFFENKAEFIG_MALFORMED_DATE_FRAGMENT = `
 <script type="application/ld+json" class="event-cards-manager-schema">{"@context":"https://schema.org","@type":"Event","name":"Broken Date Event","startDate":"not-a-date","url":"https://affenkaefig.info/event/broken-date/"}</script>
 <h1 class="entry-title">Broken Date Event</h1>
