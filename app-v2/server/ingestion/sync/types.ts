@@ -24,7 +24,14 @@ export type IngestionErrorCategory =
   | 'apply_precondition_failed'
   | 'unexpected_zero_results'
   | 'source_disabled'
+  | 'already_running'
   | 'unknown';
+
+/** Content-review categories must not degrade technical source health. */
+export const CONTENT_REVIEW_ERROR_CATEGORIES: ReadonlySet<IngestionErrorCategory> = new Set([
+  'reconciliation_review',
+  'identity_ambiguous',
+]);
 
 export interface SyncRunCounters {
   discovered: number;
@@ -97,6 +104,8 @@ export interface SourceHealthRecord {
   lastParsedCount: number;
   lastAppliedCount: number;
   lastErrorCategory?: IngestionErrorCategory;
+  /** Pending content-review events from the latest run (not a technical fault). */
+  contentReviewCount?: number;
   healthStatus: SourceHealthStatus;
 }
 
@@ -108,12 +117,24 @@ export type SyncEventOutcome =
   | 'review_required'
   | 'failed';
 
+export interface SyncEventReviewSignal {
+  signal: string;
+  outcome: string;
+  reason: string;
+}
+
 export interface SyncEventProcessingResult {
   sourceEventKey: string;
   officialUrl: string;
   outcome: SyncEventOutcome;
   errorCategory?: IngestionErrorCategory;
   errorMessage?: string;
+  identityDecision?: string;
+  identityReasons?: string[];
+  identitySignals?: SyncEventReviewSignal[];
+  matchedEventId?: string;
+  reconciliationClassification?: string;
+  reconciliationReviewReasons?: string[];
 }
 
 export interface SyncRunRequest {

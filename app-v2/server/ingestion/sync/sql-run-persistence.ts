@@ -158,6 +158,19 @@ export class SqlIngestionSyncPersistence implements IngestionSyncPersistence {
     return rows[0] ? rowToRunRecord(rows[0]) : undefined;
   }
 
+  async getActiveRun(connectorId: string): Promise<IngestionRunRecord | undefined> {
+    const rows = loadJsonAgg<Record<string, unknown>>(
+      this.runQuery,
+      `
+      SELECT jsonb_agg(to_jsonb(r) ORDER BY r.started_at DESC) AS rows
+      FROM public.ingestion_runs r
+      WHERE r.connector_id = ${sqlLiteral(connectorId)}
+        AND r.status = 'running';
+    `,
+    );
+    return rows[0] ? rowToRunRecord(rows[0]) : undefined;
+  }
+
   async upsertHealth(record: SourceHealthRecord): Promise<void> {
     this.runQuery(`
       INSERT INTO public.ingestion_source_health (

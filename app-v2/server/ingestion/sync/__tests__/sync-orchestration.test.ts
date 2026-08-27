@@ -606,3 +606,38 @@ describe('M8.4 50-source scale simulation', () => {
     expect(maxActive).toBeLessThanOrEqual(4);
   });
 });
+
+describe('M8.7 run overlap protection', () => {
+  it('skips second concurrent trigger for the same connector', async () => {
+    let releaseFirst: (() => void) | undefined;
+    const firstGate = new Promise<void>((resolve) => {
+      releaseFirst = resolve;
+    });
+
+    const connector = new MockOfficialConnector('source-overlap', async () => {
+      await firstGate;
+      return buildRunResult([
+        buildPreview(
+          buildEvidence({
+            sourceEventKey: 'event-overlap',
+            officialUrl: 'https://example.com/events/event-overlap/',
+            title: 'Overlap Event',
+            startsAt: '2027-08-21T22:00:00+02:00',
+          }),
+        ),
+      ]);
+    });
+
+    const deps = createTestDependencies(connector);
+    const firstPromise = runSourceSync({ connectorId: 'source-overlap', mode: 'dry_run' }, deps);
+    await new Promise((resolve) => setTimeout(resolve, 10));
+
+    const second = await runSourceSync({ connectorId: 'source-overlap', mode: 'dry_run' }, deps);
+    expect(second.run.status).toBe('cancelled');
+    expect(second.run.errorCategories).toContain('already_running');
+
+    releaseFirst?.();
+    const first = await firstPromise;
+    expect(first.run.status).toBe('succeeded');
+  });
+});

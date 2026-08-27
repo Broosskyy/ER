@@ -1,5 +1,6 @@
 import { describe, expect, it, beforeEach } from 'vitest';
 
+import { AFFENKAEFIG_CONNECTOR_ID } from '../affenkaefig/constants';
 import { BootshausOfficialConnector } from '../bootshaus/bootshaus-official-connector';
 import { BOOTSHAUS_CONNECTOR_ID } from '../bootshaus/constants';
 import { registerDefaultOfficialConnectors } from '../register-default-connectors';
@@ -16,11 +17,11 @@ describe('official source registry', () => {
     resetOfficialSourceRegistryForTests();
   });
 
-  it('registers bootshaus via default registration', () => {
+  it('registers default official connectors', () => {
     registerDefaultOfficialConnectors();
     const registry = getOfficialSourceRegistry();
 
-    expect(registry.listConnectorIds()).toEqual([BOOTSHAUS_CONNECTOR_ID]);
+    expect(registry.listConnectorIds()).toEqual([AFFENKAEFIG_CONNECTOR_ID, BOOTSHAUS_CONNECTOR_ID]);
     expect(registry.get(BOOTSHAUS_CONNECTOR_ID).metadata.displayName).toBe('Bootshaus Official');
   });
 

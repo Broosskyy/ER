@@ -7,7 +7,7 @@ import {
 import { isPlanIdempotent, planOfficialEventWrites, type PlannerContext } from '../planning/event-write-planner';
 import type { EventWritePlan } from '../types/event-candidate';
 import { classifyIngestionError } from './error-taxonomy';
-import { appendZeroResultAnomaly, detectUnexpectedZeroResults, updateSourceHealth } from './health';
+import { appendZeroResultAnomaly, detectUnexpectedZeroResults, updateSourceHealth, createInitialSourceHealth } from './health';
 import type { IngestionSyncPersistence } from './run-persistence';
 import { DEFAULT_RETRY_POLICY, executeWithRetry } from './retry-policy';
 import type {
@@ -65,6 +65,47 @@ function canApplyPlan(plan: EventWritePlan): boolean {
     !isIdentityReview(plan) &&
     !isOfficialEventApplyNoop(plan)
   );
+}
+
+function classifyReviewErrorCategory(plan: EventWritePlan): IngestionErrorCategory {
+  if (isIdentityReview(plan)) {
+    return 'identity_ambiguous';
+  }
+  if (plan.reconciliation?.reviewRequired) {
+    return 'reconciliation_review';
+  }
+  return 'reconciliation_review';
+}
+
+function buildEventProcessingResult(
+  plan: EventWritePlan,
+  sourceEventKey: string,
+  officialUrl: string,
+  outcome: SyncEventProcessingResult['outcome'],
+  extras: Partial<SyncEventProcessingResult> = {},
+): SyncEventProcessingResult {
+  const reconciliationReviewReasons =
+    plan.reconciliation?.fieldDecisions
+      .filter((decision) => decision.decision === 'review_required')
+      .map((decision) => `${decision.field}:${decision.reason}`) ?? [];
+
+  return {
+    sourceEventKey,
+    officialUrl,
+    outcome,
+    identityDecision: plan.identity?.decision,
+    identityReasons: plan.identity?.reasons,
+    identitySignals: plan.identity?.signals?.map((entry) => ({
+      signal: entry.signal,
+      outcome: entry.outcome,
+      reason: entry.reason,
+    })),
+    matchedEventId: plan.identity?.candidateEventId ?? plan.resolvedEventId,
+    reconciliationClassification: plan.reconciliation?.classification,
+    reconciliationReviewReasons:
+      reconciliationReviewReasons.length > 0 ? reconciliationReviewReasons : undefined,
+    ...extras,
+  };
 }
 
 function classifyPlanOutcome(plan: EventWritePlan, mode: SyncRunMode, applied: boolean): SyncEventProcessingResult['outcome'] {
@@ -176,13 +217,13 @@ async function processConnectorResult(
 
       const outcome = classifyPlanOutcome(plan, mode, applied);
       if (outcome === 'review_required') {
-        errorCategories.push('reconciliation_review');
+        errorCategories.push(classifyReviewErrorCategory(plan));
       }
       if (outcome === 'rejected') {
         errorCategories.push('validation_rejected');
       }
 
-      eventResults.push({ sourceEventKey, officialUrl, outcome });
+      eventResults.push(buildEventProcessingResult(plan, sourceEventKey, officialUrl, outcome));
     } catch (error) {
       counters.failures += 1;
       const classified = classifyIngestionError(error);
@@ -241,6 +282,28 @@ export async function runSourceSync(
     health.healthStatus = 'disabled';
     health.lastDurationMs = 0;
     await deps.persistence.upsertHealth(health);
+    return { run, eventResults: [], health };
+  }
+
+  const activeRun = await deps.persistence.getActiveRun(request.connectorId);
+  if (activeRun) {
+    const run: IngestionRunRecord = {
+      runId,
+      connectorId: request.connectorId,
+      mode,
+      triggerType,
+      status: 'cancelled',
+      startedAt,
+      finishedAt: startedAt,
+      durationMs: 0,
+      counters,
+      errorCategories: ['already_running'],
+      errorSummary: `already_running:${activeRun.runId}`,
+      retryCount: 0,
+    };
+    await deps.persistence.createRun(run);
+    const health =
+      previousHealth ?? createInitialSourceHealth(request.connectorId, enabled);
     return { run, eventResults: [], health };
   }
 

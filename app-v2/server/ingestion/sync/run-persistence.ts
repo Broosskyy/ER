@@ -4,6 +4,7 @@ export interface IngestionSyncPersistence {
   createRun(record: IngestionRunRecord): Promise<void>;
   completeRun(runId: string, update: Partial<IngestionRunRecord>): Promise<void>;
   getRun(runId: string): Promise<IngestionRunRecord | undefined>;
+  getActiveRun(connectorId: string): Promise<IngestionRunRecord | undefined>;
   upsertHealth(health: SourceHealthRecord): Promise<void>;
   getHealth(connectorId: string): Promise<SourceHealthRecord | undefined>;
   listRunsForConnector(connectorId: string): Promise<IngestionRunRecord[]>;
@@ -28,6 +29,13 @@ export class InMemoryIngestionSyncPersistence implements IngestionSyncPersistenc
   async getRun(runId: string): Promise<IngestionRunRecord | undefined> {
     const record = this.runs.get(runId);
     return record ? { ...record } : undefined;
+  }
+
+  async getActiveRun(connectorId: string): Promise<IngestionRunRecord | undefined> {
+    const active = [...this.runs.values()].find(
+      (run) => run.connectorId === connectorId && run.status === 'running',
+    );
+    return active ? { ...active } : undefined;
   }
 
   async upsertHealth(record: SourceHealthRecord): Promise<void> {

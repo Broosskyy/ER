@@ -5,6 +5,7 @@ import type {
   SourceHealthStatus,
   SyncRunCounters,
 } from './types';
+import { CONTENT_REVIEW_ERROR_CATEGORIES } from './types';
 
 const ZERO_RESULT_THRESHOLD = 5;
 
@@ -23,6 +24,7 @@ export function createInitialSourceHealth(connectorId: string, enabled: boolean)
     lastDiscoveredCount: 0,
     lastParsedCount: 0,
     lastAppliedCount: 0,
+    contentReviewCount: 0,
     healthStatus: enabled ? 'unknown' : 'disabled',
   };
 }
@@ -44,11 +46,34 @@ export function detectUnexpectedZeroResults(
   return baseline >= expectedMinParsed && counters.discovered === 0 && counters.fetched === 0;
 }
 
+export function hasTechnicalErrorCategories(errorCategories: IngestionErrorCategory[]): boolean {
+  return errorCategories.some((category) => !CONTENT_REVIEW_ERROR_CATEGORIES.has(category));
+}
+
+export function isContentReviewOnlyRun(
+  runStatus: IngestionRunRecord['status'],
+  counters: SyncRunCounters,
+  errorCategories: IngestionErrorCategory[],
+): boolean {
+  if (runStatus !== 'partially_succeeded' && runStatus !== 'succeeded') {
+    return false;
+  }
+  if (counters.failures > 0 || counters.rejected > 0) {
+    return false;
+  }
+  if (hasTechnicalErrorCategories(errorCategories)) {
+    return false;
+  }
+  return counters.reviewRequired > 0 || errorCategories.some((category) => CONTENT_REVIEW_ERROR_CATEGORIES.has(category));
+}
+
 export function resolveHealthStatus(
   enabled: boolean,
   runStatus: IngestionRunRecord['status'],
   consecutiveFailures: number,
   hasZeroResultAnomaly: boolean,
+  counters: SyncRunCounters,
+  errorCategories: IngestionErrorCategory[],
 ): SourceHealthStatus {
   if (!enabled) {
     return 'disabled';
@@ -56,14 +81,17 @@ export function resolveHealthStatus(
   if (hasZeroResultAnomaly || consecutiveFailures >= 3) {
     return 'failing';
   }
+  if (isContentReviewOnlyRun(runStatus, counters, errorCategories)) {
+    return 'healthy';
+  }
   if (runStatus === 'partially_succeeded' || consecutiveFailures > 0) {
     return 'degraded';
   }
   if (runStatus === 'failed') {
     return consecutiveFailures >= 2 ? 'failing' : 'degraded';
   }
-  if (runStatus === 'succeeded') {
-    return 'healthy';
+  if (runStatus === 'succeeded' || runStatus === 'cancelled') {
+    return runStatus === 'succeeded' ? 'healthy' : 'unknown';
   }
   return 'unknown';
 }
@@ -74,33 +102,51 @@ export function updateSourceHealth(input: HealthEvaluationInput): SourceHealthRe
     input.run.errorCategories.includes('unexpected_zero_results') ||
     detectUnexpectedZeroResults(input.run.counters, previous);
 
-  const succeeded = input.run.status === 'succeeded';
+  const contentReviewOnly = isContentReviewOnlyRun(
+    input.run.status,
+    input.run.counters,
+    input.run.errorCategories,
+  );
+  const technicalSuccess =
+    input.run.status === 'succeeded' || (input.run.status === 'partially_succeeded' && contentReviewOnly);
   const failed = input.run.status === 'failed';
-  const consecutiveFailures = succeeded ? 0 : failed ? previous.consecutiveFailures + 1 : previous.consecutiveFailures;
+  const consecutiveFailures = technicalSuccess
+    ? 0
+    : failed
+      ? previous.consecutiveFailures + 1
+      : previous.consecutiveFailures;
 
-  const primaryError = input.run.errorCategories[0] ?? previous.lastErrorCategory;
+  const technicalErrors = input.run.errorCategories.filter(
+    (category) => !CONTENT_REVIEW_ERROR_CATEGORIES.has(category),
+  );
+  const primaryError = technicalErrors[0] ?? input.run.errorCategories[0] ?? previous.lastErrorCategory;
 
   const healthStatus = resolveHealthStatus(
     input.enabled,
     input.run.status,
     consecutiveFailures,
     zeroResultAnomaly,
+    input.run.counters,
+    input.run.errorCategories,
   );
 
   const now = new Date().toISOString();
+  const technicalPartialFailure =
+    input.run.status === 'partially_succeeded' && !contentReviewOnly;
 
   return {
     connectorId: input.connectorId,
     enabled: input.enabled,
     lastAttemptAt: now,
-    lastSuccessAt: succeeded ? now : previous.lastSuccessAt,
-    lastFailureAt: failed || input.run.status === 'partially_succeeded' ? now : previous.lastFailureAt,
+    lastSuccessAt: technicalSuccess ? now : previous.lastSuccessAt,
+    lastFailureAt: failed || technicalPartialFailure ? now : previous.lastFailureAt,
     consecutiveFailures,
     lastDurationMs: undefined,
     lastDiscoveredCount: input.run.counters.discovered,
     lastParsedCount: input.run.counters.parsed,
     lastAppliedCount: input.run.counters.appliedWrites,
     lastErrorCategory: primaryError,
+    contentReviewCount: input.run.counters.reviewRequired,
     healthStatus,
   };
 }
