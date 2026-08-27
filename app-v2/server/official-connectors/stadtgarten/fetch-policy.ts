@@ -1,0 +1,42 @@
+import type { SafeFetchRequestContext, SafeFetchUrlPolicy } from '../generic-safe-fetch';
+import { STADTGARTEN_HOST, STADTGARTEN_USER_AGENT } from './constants';
+import {
+  canonicalizeStadtgartenUrl,
+  isStadtgartenDetailUrl,
+  isStadtgartenListUrl,
+  resolveStadtgartenRedirectUrl,
+} from './url-policy';
+
+export const stadtgartenSafeFetchPolicy: SafeFetchUrlPolicy = {
+  userAgent: STADTGARTEN_USER_AGENT,
+  canonicalizeUrl(rawUrl: string, baseUrl?: string) {
+    try {
+      const resolved = baseUrl ? new URL(rawUrl, baseUrl).toString() : rawUrl;
+      return canonicalizeStadtgartenUrl(resolved);
+    } catch {
+      return canonicalizeStadtgartenUrl(rawUrl);
+    }
+  },
+  resolveRedirectUrl(currentUrl: string, locationHeader: string | null) {
+    return resolveStadtgartenRedirectUrl(currentUrl, locationHeader);
+  },
+  validateRequestUrl(url: string, context: SafeFetchRequestContext) {
+    if (context.allowListOnly && !isStadtgartenListUrl(url)) {
+      return 'disallowed_path';
+    }
+    if (context.allowDetailOnly && !isStadtgartenDetailUrl(url)) {
+      return 'disallowed_path';
+    }
+    return null;
+  },
+  isCrossOriginRedirect(currentUrl: string, resolvedUrl: string | null) {
+    if (resolvedUrl) {
+      return false;
+    }
+    try {
+      return new URL(currentUrl).hostname !== STADTGARTEN_HOST;
+    } catch {
+      return true;
+    }
+  },
+};

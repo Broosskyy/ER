@@ -39,6 +39,7 @@ describe('affenkaefig official connector', () => {
       'affenkaefig-official',
       'bootshaus-official',
       'nachtresidenz-official',
+      'stadtgarten-official',
     ]);
     expect(registry.get(AFFENKAEFIG_CONNECTOR_ID).metadata.displayName).toBe('Affenkäfig Official');
   });

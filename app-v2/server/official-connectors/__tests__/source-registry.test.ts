@@ -4,6 +4,7 @@ import { AFFENKAEFIG_CONNECTOR_ID } from '../affenkaefig/constants';
 import { BootshausOfficialConnector } from '../bootshaus/bootshaus-official-connector';
 import { BOOTSHAUS_CONNECTOR_ID } from '../bootshaus/constants';
 import { NACHTRESIDENZ_CONNECTOR_ID } from '../nachtresidenz/constants';
+import { STADTGARTEN_CONNECTOR_ID } from '../stadtgarten/constants';
 import { registerDefaultOfficialConnectors } from '../register-default-connectors';
 import {
   DuplicateOfficialConnectorError,
@@ -26,6 +27,7 @@ describe('official source registry', () => {
       AFFENKAEFIG_CONNECTOR_ID,
       BOOTSHAUS_CONNECTOR_ID,
       NACHTRESIDENZ_CONNECTOR_ID,
+      STADTGARTEN_CONNECTOR_ID,
     ]);
     expect(registry.get(BOOTSHAUS_CONNECTOR_ID).metadata.displayName).toBe('Bootshaus Official');
   });

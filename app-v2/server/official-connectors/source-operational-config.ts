@@ -93,4 +93,13 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 5,
     });
   }
+  if (!registry.get('stadtgarten-official')) {
+    registry.register({
+      connectorId: 'stadtgarten-official',
+      sourceType: 'venue_club',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      maxConcurrency: 2,
+      expectedMinParsedOnSuccess: 3,
+    });
+  }
 }
