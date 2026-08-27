@@ -7,6 +7,7 @@ import {
   registerDefaultSourceOperationalConfigs,
 } from '../../official-connectors/source-operational-config';
 import { createOfficialEventApplyExecutor } from './execute-official-event-apply';
+import { executeTicketPersistenceFromResults, planTicketPersistenceFromResults } from './execute-ticket-persistence';
 import { loadPlannerContextFromLinkedDb } from './load-planner-context';
 import {
   createSupabaseCliLinkedQueryExecutor,
@@ -43,6 +44,23 @@ export function createStagingSyncDependencies(
     persistence: options.persistence ?? createSqlIngestionSyncPersistence(runQuery),
     loadPlannerContext: async () => loadPlannerContextFromLinkedDb(runQuery),
     applyPlan: createOfficialEventApplyExecutor(runQuery),
+    applyTicketResults: async (results, mode) => {
+      if (mode === 'dry_run') {
+        const planned = planTicketPersistenceFromResults(runQuery, results);
+        return {
+          applied: false,
+          inserts: planned.currentTicketInsertsRequired,
+          updates: planned.currentTicketUpdatesRequired,
+          deletes: planned.currentTicketDeletesRequired,
+          ticketRowsChanged:
+            planned.currentTicketInsertsRequired +
+            planned.currentTicketUpdatesRequired +
+            planned.currentTicketDeletesRequired,
+          allIdempotent: planned.allIdempotent,
+        };
+      }
+      return executeTicketPersistenceFromResults(runQuery, results);
+    },
     createRunId: () => randomUUID(),
     linkedProjectRef: STAGING_PROJECT_REF,
   };

@@ -1,7 +1,10 @@
 import type { EventTicketEvidence, TicketOfferEvidence } from './types';
 import {
   classifyTicketOffer,
+  isAdmissionOfferRole,
+  isGenericPlaceholderOfferLabel,
   isSelectableRegularAdmission,
+  normalizeOfferRole,
   rejectionReasonForRole,
 } from './ticket-offer-role';
 
@@ -18,7 +21,22 @@ function offerClassification(offer: TicketOfferEvidence) {
 }
 
 function isSelectableRegularAdmissionOffer(offer: TicketOfferEvidence): boolean {
-  return isSelectableRegularAdmission(offerClassification(offer));
+  const classified = offerClassification(offer);
+  if (isSelectableRegularAdmission(classified)) {
+    return true;
+  }
+  if (!offer.role || !isAdmissionOfferRole(offer.role)) {
+    return false;
+  }
+  const label = (offer.normalizedLabel ?? offer.rawLabel ?? '').trim();
+  if (isGenericPlaceholderOfferLabel(label)) {
+    return false;
+  }
+  return isSelectableRegularAdmission({
+    role: normalizeOfferRole(offer.role),
+    grantsEventEntry: isAdmissionOfferRole(offer.role),
+    requiresBaseTicket: false,
+  });
 }
 
 export interface RegularAdmissionSelection {

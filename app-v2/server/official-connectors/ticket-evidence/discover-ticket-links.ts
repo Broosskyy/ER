@@ -60,7 +60,7 @@ function inferRelation(text: string, className: string, href: string): TicketLin
   if (BOX_OFFICE_PATTERN.test(combined)) {
     return 'box_office';
   }
-  if (/\.ticket\.io\b|paylogic\.com|fourvenues\.com|eventim\.|rausgegangen\./i.test(href)) {
+  if (/\.ticket\.io\b|paylogic\.com|fourvenues\.com|ticketkings\.|eventim\.|rausgegangen\./i.test(href)) {
     return 'ticket_provider';
   }
   if (TICKET_CTA_TEXT_PATTERN.test(combined)) {

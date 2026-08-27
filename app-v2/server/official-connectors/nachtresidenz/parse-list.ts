@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import type { Element } from 'domhandler';
 
 import {
   buildNachtresidenzEventUrl,
@@ -20,7 +21,7 @@ export interface NachtresidenzListEvent {
 
 function readExternalLink(
   $: cheerio.CheerioAPI,
-  $card: cheerio.Cheerio<cheerio.Element>,
+  $card: cheerio.Cheerio<Element>,
 ): string | undefined {
   const overlayLink = $card.find('a.b-box__link').attr('href')?.trim();
   if (overlayLink && overlayLink.length > 0 && overlayLink !== '#') {

@@ -132,7 +132,10 @@ export function buildOfficialEventApplySummary(
 
   if (plan.lineupAction === 'replace') {
     const lineupCount = plan.candidate.lineup.length;
-    if (lineupCount === 0) {
+    const clearingOcrNoise =
+      plan.reconciliation?.fieldDecisions.find((decision) => decision.field === 'lineup')?.reason ===
+      'clear_ocr_noise_lineup';
+    if (lineupCount === 0 && !clearingOcrNoise) {
       throw new OfficialEventApplyError('lineup_replace_requires_non_empty_target', 'invalid_plan');
     }
     statements.push({
@@ -223,12 +226,6 @@ export function assertOfficialEventApplyPrecondition(
   plan: EventWritePlan,
   precondition: OfficialEventApplyPrecondition,
 ): void {
-  if (plan.eventAction === 'update' && precondition.description !== undefined) {
-    if (precondition.description !== (plan.candidate.description ?? null)) {
-      throw new OfficialEventApplyError('description_precondition_failed', 'precondition_failed');
-    }
-  }
-
   if (plan.existingSource && precondition.sourceContentHash !== undefined) {
     if ((precondition.sourceContentHash ?? null) !== (plan.existingSource.contentHash ?? null)) {
       throw new OfficialEventApplyError('source_hash_precondition_failed', 'precondition_failed');

@@ -8,6 +8,7 @@ import {
   isFourvenuesHost,
   isPaylogicHost,
   isTicketIoHost,
+  isTicketKingsHost,
 } from './url-policy';
 
 const SPECIFIC_PROVIDERS: TicketEvidenceProvider[] = [
@@ -42,6 +43,9 @@ export class DefaultTicketProviderRegistry implements TicketProviderRegistry {
 export function classifyProviderKeyFromUrl(url: URL): string {
   if (isTicketIoHost(url.hostname)) {
     return 'ticket_io';
+  }
+  if (isTicketKingsHost(url.hostname)) {
+    return 'ticket_kings';
   }
   if (isPaylogicHost(url.hostname)) {
     return 'paylogic';

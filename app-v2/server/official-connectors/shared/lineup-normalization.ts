@@ -55,7 +55,9 @@ const TIMETABLE_TIME_PREFIX = /^\d{1,2}:\d{2}(?::\d{2})?\s*[-–—]\s*/;
 const DECORATIVE_SEPARATOR_PATTERN = /^[▔_\-\s]{6,}$/;
 const URL_PATTERN = /^https?:\/\/|^www\./i;
 const TICKET_MARKETING_PATTERN =
-  /ticket|einlass|eintritt|admission|euro|€|vorverkauf|abendkasse|dresscode|veranstalter|fase\s*\d|backstage meet|see you at|barzahlung|garderobe|umkleide|faq\/|uhrzeit:|verkleide|limited!|highest chance|exclusive giveaway|mobile app|merchandise|to be announced|bald angekündigt/i;
+  /ticket|einlass|eintritt|admission|euro|€|vorverkauf|abendkasse|dresscode|veranstalter|fase\s*\d|backstage meet|see you at|barzahlung|garderobe|umkleide|faq\/|uhrzeit:|verkleide|limited!|highest chance|exclusive giveaway|mobile app|merchandise|to be announced|bald angekündigt|early\s*bird|earlybird|sichert euch/i;
+const EARLY_BIRD_FRAGMENT_PATTERN = /^(?:early|arly|earlybird)$/i;
+const TICKET_PHASE_FRAGMENT_PATTERN = /^phase\s*[12]$/i;
 const MARKETING_PREFIX_PATTERN = /^[✔⚠️]/;
 const DESCRIPTION_PROSE_PATTERN =
   /detailinfos|shoppingadressen|einlass ab|age for admission|live the |public transport|strict .+ dresscode|verkleide dich|umkleidebereich|schließfächer/i;
@@ -332,10 +334,67 @@ export function isTicketMarketingOrCtaLine(text: string): boolean {
   return (
     MARKETING_PREFIX_PATTERN.test(normalized) ||
     TICKET_MARKETING_PATTERN.test(normalized) ||
+    EARLY_BIRD_FRAGMENT_PATTERN.test(normalized) ||
+    TICKET_PHASE_FRAGMENT_PATTERN.test(normalized) ||
     URL_PATTERN.test(normalized) ||
     /@/.test(normalized) ||
     /\[email/i.test(normalized)
   );
+}
+
+export function isEarlyBirdOcrSplitFragment(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return false;
+  }
+  if (/^early\s*bird$/i.test(normalized) || /^earlybird$/i.test(normalized)) {
+    return true;
+  }
+  if (EARLY_BIRD_FRAGMENT_PATTERN.test(normalized)) {
+    return true;
+  }
+  if (/^bird$/i.test(normalized)) {
+    return true;
+  }
+  return false;
+}
+
+export function isOcrFlyerNoiseLine(text: string): boolean {
+  const normalized = normalizeLineupName(text);
+  if (!normalized) {
+    return true;
+  }
+  if (/^soon\.?$/i.test(normalized) || /^llu\)?$/i.test(normalized)) {
+    return true;
+  }
+  if (/\d{1,2}\.0KT\./i.test(normalized) || /^\d{1,2}[./]\d{1,2}[A-Z]{2,}/i.test(normalized)) {
+    return true;
+  }
+  if (/^sichert euch/i.test(normalized) || /\bburger\b|\bonlin\b/i.test(normalized)) {
+    return true;
+  }
+  // Preserve short but valid billing labels such as "ACT 1".
+  if (/^[A-Za-z]{2,}\s+\d{1,2}$/.test(normalized)) {
+    return false;
+  }
+  if (/[\\(){}|<>]/.test(normalized) && normalized.replace(/[^A-Za-zÀ-ÿ]/g, '').length < 8) {
+    return true;
+  }
+  const words = normalized.split(/\s+/);
+  if (words.length === 1 && normalized.replace(/[^A-Za-zÀ-ÿ]/g, '').length >= 5) {
+    return false;
+  }
+  if (
+    words.length <= 3 &&
+    words.every((word) => word.replace(/[^A-Za-zÀ-ÿ]/g, '').length <= 3) &&
+    normalized.replace(/[^A-Za-zÀ-ÿ]/g, '').length <= 6
+  ) {
+    return true;
+  }
+  if (words.length === 1 && normalized.length <= 4 && !/\bb2b\b/i.test(normalized)) {
+    return true;
+  }
+  return false;
 }
 
 export function isDescriptionProseLine(text: string): boolean {
@@ -448,6 +507,14 @@ export function validateOfficialLineupAct(
 
   if (isTicketMarketingOrCtaLine(displayName)) {
     return { accepted: false, reason: 'ticket_or_marketing_line' };
+  }
+
+  if (isEarlyBirdOcrSplitFragment(displayName)) {
+    return { accepted: false, reason: 'ticket_marketing_fragment' };
+  }
+
+  if (blockType === 'official_media' && isOcrFlyerNoiseLine(displayName)) {
+    return { accepted: false, reason: 'ocr_flyer_noise' };
   }
 
   if (DOMAIN_SUFFIX_PATTERN.test(displayName)) {
@@ -615,6 +682,13 @@ export function sanitizeFinalLineupCandidates(
     }
   }
 
+  const earlyBirdSplitKeys = new Set<string>();
+  const actKeys = lineupCandidates.map((act) => canonicalActKey(act.displayName));
+  if (actKeys.includes('arly') && actKeys.includes('bird')) {
+    earlyBirdSplitKeys.add('arly');
+    earlyBirdSplitKeys.add('bird');
+  }
+
   for (const act of lineupCandidates) {
     const blockType: LineupEvidenceBlockType =
       act.evidenceOrigin === 'official_media'
@@ -638,6 +712,14 @@ export function sanitizeFinalLineupCandidates(
       rejectedCandidates.push({
         rawText: act.rawText,
         reason: 'title_phrase_fragment',
+      });
+      continue;
+    }
+
+    if (earlyBirdSplitKeys.has(canonicalActKey(act.displayName))) {
+      rejectedCandidates.push({
+        rawText: act.rawText,
+        reason: 'early_bird_ocr_split',
       });
       continue;
     }

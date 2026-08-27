@@ -27,6 +27,7 @@ const SESSION_QUERY_PATTERN = /(?:[?&])(?:session|token|sid|checkout)=/i;
 const SHOP_ROOT_PATTERNS = [
   /^https:\/\/[a-z0-9-]+\.ticket\.io\/$/i,
   /^https:\/\/shop\.paylogic\.com\/$/i,
+  /^https:\/\/affenkaefig\.info\/tickets\/?$/i,
 ];
 
 const TRACKING_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid', '_gl'];

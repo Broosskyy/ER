@@ -43,6 +43,7 @@ export interface OfficialConnectorRunResult {
   previews: OfficialEventConsumerPreview[];
   counters: ConnectorErrorCounters;
   mediaCounters: import('./media-evidence/types').MediaPassCounters;
+  ticketResults?: import('./ticket-evidence/ticket-audit-metrics').VerifiedTicketCompleteResult[];
 }
 
 export interface OfficialConnector {

@@ -7,7 +7,6 @@ import type {
 } from './types';
 import { buildTicketKingsIdentity } from './build-provider-identity';
 import { classifyTicketOfferRole, isAdmissionOfferRole } from './ticket-offer-role';
-import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import {
   normalizeTicketStatusFromText,
   toConsumerNormalizedStatus,
@@ -15,66 +14,45 @@ import {
 import { projectStatusLabel } from './ticket-status-badge';
 import { isTicketKingsHost } from './url-policy';
 import type { TicketEvidenceProvider } from './types';
+import { fetchTicketPage } from './fetch-ticket-page';
+import {
+  enrichTicketKingsDomWithEmbeds,
+  parseTicketKingsDetailDom,
+} from './parse-ticket-kings-detail-dom';
 
-function extractJsonLd(body: string): Record<string, unknown> | undefined {
-  const pattern = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
-  let match: RegExpExecArray | null;
-  while ((match = pattern.exec(body)) !== null) {
-    try {
-      const parsed = JSON.parse(match[1] ?? '') as Record<string, unknown>;
-      const type = String(parsed['@type'] ?? '');
-      if (type.includes('Event') || type.includes('MusicEvent')) {
-        return parsed;
-      }
-    } catch {
-      // ignore
-    }
-  }
-  return undefined;
-}
-
-function buildEvidence(
+function buildEvidenceFromDom(
   request: TicketEvidenceRequest,
   identity: TicketProviderIdentity,
-  event: Record<string, unknown> | undefined,
+  domEvidence: ReturnType<typeof parseTicketKingsDetailDom>,
 ): EventTicketEvidence {
   const offers: EventTicketEvidence['offers'] = [];
-  const rejectedOffers: EventTicketEvidence['rejectedOffers'] = [];
+  const rejectedOffers: EventTicketEvidence['rejectedOffers'] = [...domEvidence.rejectedOffers];
 
-  const offer = event?.offers as Record<string, unknown> | undefined;
-  if (offer) {
-    const label = String(offer.name ?? 'Admission').trim() || 'Admission';
+  for (const offer of domEvidence.offers) {
+    const label = offer.phaseLabel ? `${offer.rawLabel} ${offer.phaseLabel}` : offer.rawLabel;
     const role = classifyTicketOfferRole(label);
-    const priceAmount = offer.price;
-    let amountMinor: number | undefined;
-    let rawPrice: string | undefined;
-    if (typeof priceAmount === 'number') {
-      amountMinor = Math.round(priceAmount * 100);
-      rawPrice = `ab ${priceAmount.toFixed(2).replace('.', ',')} €`;
-    } else if (typeof priceAmount === 'string') {
-      const normalized = normalizeTicketPriceLine(priceAmount);
-      amountMinor = normalized.amountMinor;
-      rawPrice = normalized.rawPrice;
-    }
-    const availability = normalizeTicketStatusFromText(String(offer.availability ?? 'available')).status;
+    const availability: VerifiedTicketStatus = offer.soldOut
+      ? 'sold_out'
+      : offer.purchasable
+        ? 'available'
+        : normalizeTicketStatusFromText('available').status;
     if (isAdmissionOfferRole(role)) {
       offers.push({
         rawLabel: label,
-        normalizedLabel: label,
-        rawPrice,
-        amountMinor,
-        currency: String(offer.priceCurrency ?? 'EUR'),
+        normalizedLabel: offer.rawLabel,
+        rawPrice: offer.rawPrice,
+        amountMinor: offer.amountMinor,
+        currency: offer.currency ?? 'EUR',
         role,
         availability,
-        confidence: 0.85,
+        confidence: offer.purchasable ? 0.9 : 0.75,
       });
     } else {
-      rejectedOffers.push({ rawLabel: label, rawPrice, reason: 'non_admission_offer' });
+      rejectedOffers.push({ rawLabel: label, rawPrice: offer.rawPrice, reason: 'non_admission_offer' });
     }
   }
 
-  const location = event?.location as Record<string, unknown> | undefined;
-  let ticketStatus: VerifiedTicketStatus = 'unavailable_unknown';
+  let ticketStatus: VerifiedTicketStatus = domEvidence.ticketStatus;
   if (offers.some((o) => o.availability === 'available' || o.availability === 'free')) {
     ticketStatus = 'available';
   } else if (offers.length > 0 && offers.every((o) => o.availability === 'sold_out')) {
@@ -90,17 +68,17 @@ function buildEvidence(
     canonicalTicketUrl: request.canonicalTicketUrl,
     sourceObservedAt: request.observedAt,
     extractedAt: request.extractedAt,
-    contentFingerprint: request.fingerprint,
+    contentFingerprint: domEvidence.contentFingerprint || request.fingerprint,
     eventIdentityEvidence: {
-      rawTitle: event ? String(event.name ?? '').trim() : undefined,
-      startAt: event ? String(event.startDate ?? '').trim() : undefined,
-      venueName: location ? String(location.name ?? '').trim() : undefined,
+      rawTitle: domEvidence.eventTitle,
+      startAt: domEvidence.startAt,
+      venueName: domEvidence.venueName,
     },
     offers,
     normalizedStatus,
     statusLabel: projectStatusLabel(ticketStatus),
     rejectedOffers,
-    confidence: offers.length > 0 ? 0.85 : 0.5,
+    confidence: offers.length > 0 ? 0.9 : 0.55,
   };
 }
 
@@ -120,7 +98,8 @@ export class TicketKingsEvidenceProvider implements TicketEvidenceProvider {
     const segments = parsed.pathname.split('/').filter(Boolean);
     return {
       canonicalUrl: parsed.toString(),
-      isEventDetailUrl: segments.length >= 1,
+      isEventDetailUrl:
+        segments.length >= 1 && (segments[0] === 'event' || segments[0] === 'events'),
     };
   }
 
@@ -138,9 +117,14 @@ export class TicketKingsEvidenceProvider implements TicketEvidenceProvider {
     if (!identity) {
       throw new Error('ticket_kings_identity_missing');
     }
-    const event = extractJsonLd(request.body);
-    const tickets = buildEvidence(request, identity, event);
-    const location = event?.location as Record<string, unknown> | undefined;
+
+    const domEvidence = parseTicketKingsDetailDom(request.body, request.canonicalTicketUrl);
+    const enrichedDom = await enrichTicketKingsDomWithEmbeds(domEvidence, async (embedUrl) => {
+      const result = await fetchTicketPage(embedUrl);
+      return { body: result.body, blocked: result.blocked };
+    });
+    const tickets = buildEvidenceFromDom(request, identity, enrichedDom);
+
     return {
       providerKey: 'ticket_kings',
       providerIdentity: identity,
@@ -148,14 +132,21 @@ export class TicketKingsEvidenceProvider implements TicketEvidenceProvider {
       canonicalTicketUrl: request.canonicalTicketUrl,
       sourceObservedAt: request.observedAt,
       extractedAt: request.extractedAt,
-      contentFingerprint: request.fingerprint,
+      contentFingerprint: enrichedDom.contentFingerprint || request.fingerprint,
       event: {
-        rawTitle: event ? String(event.name ?? '').trim() : undefined,
-        startAt: event ? String(event.startDate ?? '').trim() : undefined,
-        venueName: location ? String(location.name ?? '').trim() : undefined,
+        rawTitle: enrichedDom.eventTitle,
+        startAt: enrichedDom.startAt,
+        venueName: enrichedDom.venueName,
+        description: enrichedDom.descriptionClean,
       },
       tickets,
       confidence: tickets.confidence,
+      supplementalContent: enrichedDom.descriptionClean
+        ? {
+            descriptionClean: enrichedDom.descriptionClean,
+            lineupCandidates: enrichedDom.lineupCandidates,
+          }
+        : undefined,
     };
   }
 }

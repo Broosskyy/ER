@@ -1,4 +1,5 @@
 import type { EventCandidate, EventCandidateGenre, EventCandidateLineupAct } from '../types/event-candidate';
+import { isOcrFlyerNoiseLine } from '../../official-connectors/shared/lineup-normalization';
 import type {
   ChangeClassification,
   EvidenceStrength,
@@ -190,7 +191,13 @@ function finalizeDecision(
   if (decision === 'accept' && strength === 'unavailable') {
     resolved = 'noop';
     reason = `${reason}:source_unavailable`;
-  } else if (decision === 'accept' && strength === 'weak' && options?.destructiveRisk) {
+  } else if (
+    decision === 'accept' &&
+    strength === 'weak' &&
+    options?.destructiveRisk &&
+    reason !== 'clear_ocr_noise_lineup' &&
+    reason !== 'replace_media_ocr_with_supplemental_lineup'
+  ) {
     resolved = 'review_required';
     reason = `${reason}:weak_evidence_blocks_destructive_change`;
   }
@@ -254,12 +261,27 @@ function reconcileLineup(
 ): FieldReconciliationResult {
   const field: ReconcilableField = 'lineup';
   if (existing.length > 0 && incoming.length === 0) {
+    const allExistingNoise = existing.every((act) => isOcrFlyerNoiseLine(act.billingName));
+    if (allExistingNoise) {
+      return finalizeDecision(field, 'accept', 'clear_ocr_noise_lineup', context, {
+        destructiveRisk: true,
+      });
+    }
     return finalizeDecision(field, 'noop', 'preserve_existing_lineup_on_empty_incoming', context, {
       preservedExisting: true,
     });
   }
   if (lineupSignature(incoming) === lineupSignature(existing)) {
     return finalizeDecision(field, 'noop', 'unchanged', context);
+  }
+  if (
+    incoming.length > 0 &&
+    existing.length > 0 &&
+    existing.every((act) => isOcrFlyerNoiseLine(act.billingName))
+  ) {
+    return finalizeDecision(field, 'accept', 'replace_media_ocr_with_supplemental_lineup', context, {
+      destructiveRisk: true,
+    });
   }
   if (incoming.length === 0 && existing.length === 0) {
     return finalizeDecision(field, 'noop', 'both_empty', context);
@@ -571,7 +593,13 @@ export function lineupWriteActionFromReconciliation(
   decision: FieldReconciliationResult | undefined,
   incomingLength: number,
 ): 'replace' | 'noop' {
-  if (!decision || decision.decision !== 'accept' || incomingLength === 0) {
+  if (!decision || decision.decision !== 'accept') {
+    return 'noop';
+  }
+  if (incomingLength === 0 && decision.reason === 'clear_ocr_noise_lineup') {
+    return 'replace';
+  }
+  if (incomingLength === 0) {
     return 'noop';
   }
   return 'replace';
@@ -590,8 +618,9 @@ export function genresWriteActionFromReconciliation(
 export function eventWriteActionFromReconciliation(
   fieldDecisions: FieldReconciliationResult[],
   fingerprintChanged: boolean,
+  allowSupplementalWithoutFingerprintChange = false,
 ): 'update' | 'noop' {
-  if (!fingerprintChanged) {
+  if (!fingerprintChanged && !allowSupplementalWithoutFingerprintChange) {
     return 'noop';
   }
   const eventScalarFields: ReconcilableField[] = [

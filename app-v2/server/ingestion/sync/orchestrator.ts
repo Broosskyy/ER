@@ -27,6 +27,8 @@ import { createEmptySyncRunCounters } from './types';
 import type { OfficialConnector, OfficialConnectorRunResult } from '../../official-connectors/connector-contract';
 import type { OfficialSourceRegistry } from '../../official-connectors/source-registry';
 import type { SourceOperationalConfigRegistry } from '../../official-connectors/source-operational-config';
+import type { VerifiedTicketCompleteResult } from '../../official-connectors/ticket-evidence/ticket-audit-metrics';
+import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 
 export interface SyncOrchestratorDependencies {
   registry: OfficialSourceRegistry;
@@ -34,6 +36,10 @@ export interface SyncOrchestratorDependencies {
   persistence: IngestionSyncPersistence;
   loadPlannerContext: (connectorId: string) => Promise<PlannerContext>;
   applyPlan?: (plan: EventWritePlan) => Promise<ApplyExecutionResult>;
+  applyTicketResults?: (
+    results: VerifiedTicketCompleteResult[],
+    mode: SyncRunMode,
+  ) => Promise<TicketPersistenceExecutionResult>;
   createRunId?: () => string;
   now?: () => Date;
   sleep?: (ms: number) => Promise<void>;
@@ -238,6 +244,17 @@ async function processConnectorResult(
         errorCategory: classified.category,
         errorMessage: classified.message,
       });
+    }
+  }
+
+  const ticketResults = connectorResult.ticketResults ?? [];
+  if (ticketResults.length > 0 && deps.applyTicketResults) {
+    try {
+      await deps.applyTicketResults(ticketResults, mode);
+    } catch (error) {
+      counters.failures += 1;
+      const classified = classifyIngestionError(error);
+      errorCategories.push(classified.category);
     }
   }
 

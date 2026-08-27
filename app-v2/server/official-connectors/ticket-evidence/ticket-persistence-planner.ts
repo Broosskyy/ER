@@ -5,6 +5,7 @@ import type { VerifiedTicketCompleteResult } from './ticket-audit-metrics';
 import { consumerTicketUrl, hasActivePurchaseCta, hasVerifiedPresaleCta } from './consumer-ticket-safety-gate';
 import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
+import { isShopRootUrl } from './url-policy';
 import type {
   ExistingEventTicketRecord,
   ExistingOfficialEventBinding,
@@ -139,11 +140,41 @@ function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCo
   return 'available';
 }
 
+function buildSafeShopRootTicketDowngrade(existing: ExistingEventTicketRecord): EventCandidateTicket {
+  return {
+    provider: existing.provider ?? 'organizer_shop',
+    ticketUrl: undefined,
+    priceFromMinor: undefined,
+    currency: undefined,
+    salesStatus: 'availability_unverified',
+    sortOrder: 0,
+  };
+}
+
+function existingTicketNeedsShopRootDowngrade(
+  existing: ExistingEventTicketRecord,
+  result: VerifiedTicketCompleteResult,
+): boolean {
+  if (!existing.ticketUrl || !isShopRootUrl(existing.ticketUrl)) {
+    return false;
+  }
+  if (result.classification === 'ticket_evidence_missing') {
+    return true;
+  }
+  if (!result.ticketEvidence?.offers?.some((offer) => offer.role === 'regular_admission')) {
+    return true;
+  }
+  return !identityAllowsPersistedPurchaseUrl(result);
+}
+
 function mapPlannedTicketRow(
   sourceState: TicketSourceState,
   result: VerifiedTicketCompleteResult,
   existing?: ExistingEventTicketRecord,
 ): EventCandidateTicket | undefined {
+  if (existing && existingTicketNeedsShopRootDowngrade(existing, result)) {
+    return buildSafeShopRootTicketDowngrade(existing);
+  }
   if (!shouldPersistTicketRow(sourceState, result)) {
     return undefined;
   }
@@ -420,10 +451,12 @@ export function planTicketEvidencePersistence(
   results: VerifiedTicketCompleteResult[],
   context: TicketPersistencePlannerContext,
 ): EventTicketPersistencePlan[] {
-  return results.map((result) => {
+  const plans: EventTicketPersistencePlan[] = [];
+
+  for (const result of results) {
     const binding = findOfficialBinding(result.officialUrl, context.officialBindings);
     if (!binding) {
-      throw new Error(`official_binding_missing:${result.sourceEventKey}`);
+      continue;
     }
     if (binding.title === M2_TEST_EVENT_TITLE) {
       throw new Error(`m2_event_in_ticket_batch:${result.sourceEventKey}`);
@@ -455,7 +488,7 @@ export function planTicketEvidencePersistence(
       plannedTicketRow ? `ticketUrl=${plannedTicketRow.ticketUrl}` : 'no_ticket_row',
     ].join('; ');
 
-    return {
+    plans.push({
       sourceEventKey: result.sourceEventKey,
       officialUrl: result.officialUrl,
       eventId: binding.eventId,
@@ -477,8 +510,10 @@ export function planTicketEvidencePersistence(
         provenanceOperation === 'noop' ? 'official_provenance_already_matches' : 'official_provenance_update_required',
       provenancePayload,
       consumerProjection: buildConsumerProjection(sourceState, result),
-    };
-  });
+    });
+  }
+
+  return plans;
 }
 
 export function summarizeTicketPersistencePlan(plans: EventTicketPersistencePlan[]): TicketPersistenceWritePlanSummary {

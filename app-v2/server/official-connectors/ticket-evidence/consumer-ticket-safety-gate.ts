@@ -5,6 +5,7 @@ import type {
   TicketSourceState,
   TicketTargetIdentityDecision,
 } from './types';
+import { isShopRootUrl } from './url-policy';
 
 export interface ConsumerTicketSafetyInput {
   ticketSourceState?: TicketSourceState;
@@ -46,6 +47,9 @@ const BLOCKED_SALES_STATUSES = new Set([
 
 export function hasVerifiedPurchaseTarget(input: ConsumerTicketSafetyInput): boolean {
   if (!input.canonicalTicketUrl?.startsWith('https://')) {
+    return false;
+  }
+  if (isShopRootUrl(input.canonicalTicketUrl)) {
     return false;
   }
   if (input.ticketSourceState && BLOCKED_SOURCE_STATES.has(input.ticketSourceState)) {

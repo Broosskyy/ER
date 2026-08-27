@@ -150,6 +150,11 @@ export function mapResolutionToTicketSourceState(
       return 'ticket_link_not_yet_published';
     case 'ticket_identity_conflict':
       return 'provider_access_unavailable';
+    case 'ticket_identity_unverifiable':
+    case 'ticket_evidence_missing':
+    case 'internal_pipeline_failure':
+    case 'unresolved_ticket_relationship':
+      return 'ticket_link_not_yet_published';
     default:
       return undefined;
   }

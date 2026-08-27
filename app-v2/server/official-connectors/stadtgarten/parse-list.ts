@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import type { Element } from 'domhandler';
 
 import {
   canonicalizeStadtgartenUrl,
@@ -18,7 +19,7 @@ export interface StadtgartenListEntry {
 
 function readCardCategories(
   $: cheerio.CheerioAPI,
-  $card: cheerio.Cheerio<cheerio.Element>,
+  $card: cheerio.Cheerio<Element>,
 ): string[] {
   const categories: string[] = [];
   $card.find('.mono.block.mt1 span.category').each((_index, element) => {
@@ -30,11 +31,11 @@ function readCardCategories(
   return categories;
 }
 
-function readCardGenreLabel($card: cheerio.Cheerio<cheerio.Element>): string {
+function readCardGenreLabel($card: cheerio.Cheerio<Element>): string {
   return $card.find('div.block.bold').first().text().replace(/\s+/g, ' ').trim();
 }
 
-function readCardTimeLabel($card: cheerio.Cheerio<cheerio.Element>): string {
+function readCardTimeLabel($card: cheerio.Cheerio<Element>): string {
   const monoBlock = $card.find('.mono.block.mt1').first().text().replace(/\s+/g, ' ').trim();
   const categoryMatch = monoBlock.match(/^(\d{1,2}:\d{2})/);
   return categoryMatch?.[1] ?? '';

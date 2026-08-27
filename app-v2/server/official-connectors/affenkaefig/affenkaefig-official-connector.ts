@@ -19,6 +19,12 @@ import {
 } from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
 import {
+  processOfficialEventTickets,
+  resetTicketFetchCache,
+} from '../ticket-evidence/ticket-evidence-pipeline';
+import { reconcileVerifiedTicketSupplementalEvidence } from '../ticket-evidence/reconcile-verified-ticket-supplemental';
+import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
+import {
   createEmptyConnectorCounters,
   type ConnectorErrorCounters,
   type OfficialEventConsumerPreview,
@@ -133,6 +139,9 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
     const detailUrls = discovery.detailUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
 
+    const ticketResults: VerifiedTicketCompleteResult[] = [];
+    resetTicketFetchCache();
+
     const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
       if (fetchedUrlSet.has(detailUrl)) {
         counters.duplicateDetailFetches += 1;
@@ -177,7 +186,26 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
         });
       }
 
-      return buildConsumerPreview(enrichedEvidence, counters);
+      const ticketResult = await processOfficialEventTickets(
+        {
+          sourceEventKey: enrichedEvidence.sourceEventKey,
+          officialUrl: enrichedEvidence.officialUrl,
+          title: enrichedEvidence.title,
+          startsAt: enrichedEvidence.startsAt,
+          endsAt: enrichedEvidence.endsAt,
+          venueName: enrichedEvidence.venue?.name,
+          organizerName: enrichedEvidence.organizerLabel,
+        },
+        {
+          prefetchedHtml: detailResult.html,
+          observedAt: fetchedAt,
+        },
+      );
+      ticketResults.push(ticketResult);
+
+      const withSupplemental = reconcileVerifiedTicketSupplementalEvidence(enrichedEvidence, ticketResult);
+
+      return buildConsumerPreview(withSupplemental, counters);
     });
 
     await terminateSharedTesseractWorker();
@@ -194,6 +222,7 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
       previews: futurePreviews,
       counters,
       mediaCounters,
+      ticketResults,
     };
   }
 }

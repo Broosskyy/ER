@@ -16,6 +16,7 @@ import {
   sourceWriteActionFromReconciliation,
   type ExistingEventConsumerState,
 } from '../reconciliation/reconciliation-policy';
+import { isOcrFlyerNoiseLine } from '../../official-connectors/shared/lineup-normalization';
 import { validateEventCandidate } from '../validation/validate-event-candidate';
 import type { EventMatchCatalogEntry } from '../identity/event-match-types';
 import { catalogEntryFromCandidate } from '../identity/event-matcher';
@@ -279,11 +280,24 @@ export function planOfficialEventWrite(
   }
 
   if (hasUrlBinding && sameFingerprint && !reconciliation.reviewRequired) {
-    eventAction = 'noop';
-    sourceAction = 'noop';
-    lineupAction = 'noop';
-    genresAction = 'noop';
-    reasons.push('official_source_fingerprint_unchanged_noop');
+    const hasAcceptedSupplementalChange = reconciliation.fieldDecisions.some(
+      (decision) =>
+        decision.decision === 'accept' &&
+        ['description', 'lineup', 'title', 'startsAt', 'endsAt', 'organizer', 'image'].includes(decision.field),
+    );
+    if (!hasAcceptedSupplementalChange) {
+      eventAction = 'noop';
+      sourceAction = 'noop';
+      lineupAction = 'noop';
+      genresAction = 'noop';
+      reasons.push('official_source_fingerprint_unchanged_noop');
+    } else {
+      eventAction = eventWriteActionFromReconciliation(reconciliation.fieldDecisions, false, true);
+      sourceAction = 'noop';
+      lineupAction = lineupWriteActionFromReconciliation(lineupDecision, reconciledCandidate.lineup.length);
+      genresAction = genresWriteActionFromReconciliation(genresDecision, reconciledCandidate.genres.length);
+      reasons.push('supplemental_reconciliation_with_unchanged_fingerprint');
+    }
   } else if (hasUrlBinding && sameFingerprint && eventAction === 'update') {
     eventAction = eventWriteActionFromReconciliation(reconciliation.fieldDecisions, false);
   }

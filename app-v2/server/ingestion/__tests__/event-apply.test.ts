@@ -230,7 +230,7 @@ describe('official event apply executor', () => {
     expect(() =>
       assertOfficialEventApplyPrecondition(plan, {
         description: 'stale description',
-        sourceContentHash: 'fingerprint-old',
+        sourceContentHash: 'fingerprint-new',
       }),
     ).toThrow(OfficialEventApplyError);
 

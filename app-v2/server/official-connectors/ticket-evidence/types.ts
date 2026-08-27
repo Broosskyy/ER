@@ -297,6 +297,10 @@ export interface TicketProviderEventEvidence {
   };
   tickets: EventTicketEvidence;
   confidence: number;
+  supplementalContent?: {
+    descriptionClean?: string;
+    lineupCandidates?: Array<{ displayName: string; rawText: string }>;
+  };
 }
 
 export interface TicketEvidenceRequest {
