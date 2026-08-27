@@ -102,4 +102,13 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 3,
     });
   }
+  if (!registry.get('zakk-official')) {
+    registry.register({
+      connectorId: 'zakk-official',
+      sourceType: 'venue_club',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      maxConcurrency: 2,
+      expectedMinParsedOnSuccess: 5,
+    });
+  }
 }

@@ -2,6 +2,7 @@ import { AffenkaefigOfficialConnector } from './affenkaefig/affenkaefig-official
 import { BootshausOfficialConnector } from './bootshaus/bootshaus-official-connector';
 import { NachtresidenzOfficialConnector } from './nachtresidenz/nachtresidenz-official-connector';
 import { StadtgartenOfficialConnector } from './stadtgarten/stadtgarten-official-connector';
+import { ZakkOfficialConnector } from './zakk/zakk-official-connector';
 import { getOfficialSourceRegistry } from './source-registry';
 
 export function registerDefaultOfficialConnectors(
@@ -19,5 +20,8 @@ export function registerDefaultOfficialConnectors(
   }
   if (!connectorIds.has('stadtgarten-official')) {
     registry.register(new StadtgartenOfficialConnector());
+  }
+  if (!connectorIds.has('zakk-official')) {
+    registry.register(new ZakkOfficialConnector());
   }
 }
