@@ -35,7 +35,11 @@ describe('affenkaefig official connector', () => {
     resetOfficialSourceRegistryForTests();
     const registry = getOfficialSourceRegistry();
     registerDefaultOfficialConnectors(registry);
-    expect(registry.listConnectorIds().sort()).toEqual(['affenkaefig-official', 'bootshaus-official']);
+    expect(registry.listConnectorIds().sort()).toEqual([
+      'affenkaefig-official',
+      'bootshaus-official',
+      'nachtresidenz-official',
+    ]);
     expect(registry.get(AFFENKAEFIG_CONNECTOR_ID).metadata.displayName).toBe('Affenkäfig Official');
   });
 

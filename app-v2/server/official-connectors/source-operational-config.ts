@@ -84,4 +84,13 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 3,
     });
   }
+  if (!registry.get('nachtresidenz-official')) {
+    registry.register({
+      connectorId: 'nachtresidenz-official',
+      sourceType: 'venue_club',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      maxConcurrency: 2,
+      expectedMinParsedOnSuccess: 5,
+    });
+  }
 }

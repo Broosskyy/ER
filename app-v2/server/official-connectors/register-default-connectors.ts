@@ -1,5 +1,6 @@
 import { AffenkaefigOfficialConnector } from './affenkaefig/affenkaefig-official-connector';
 import { BootshausOfficialConnector } from './bootshaus/bootshaus-official-connector';
+import { NachtresidenzOfficialConnector } from './nachtresidenz/nachtresidenz-official-connector';
 import { getOfficialSourceRegistry } from './source-registry';
 
 export function registerDefaultOfficialConnectors(
@@ -11,5 +12,8 @@ export function registerDefaultOfficialConnectors(
   }
   if (!connectorIds.has('affenkaefig-official')) {
     registry.register(new AffenkaefigOfficialConnector());
+  }
+  if (!connectorIds.has('nachtresidenz-official')) {
+    registry.register(new NachtresidenzOfficialConnector());
   }
 }
