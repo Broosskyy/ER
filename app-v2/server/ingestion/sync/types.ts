@@ -25,6 +25,8 @@ export type IngestionErrorCategory =
   | 'unexpected_zero_results'
   | 'source_disabled'
   | 'already_running'
+  | 'scheduler_disabled'
+  | 'production_scheduler_forbidden'
   | 'unknown';
 
 /** Content-review categories must not degrade technical source health. */

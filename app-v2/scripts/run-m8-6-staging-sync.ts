@@ -15,7 +15,6 @@ import {
   verifyLinkedStagingTarget,
 } from '../server/ingestion/sync/linked-db';
 import { runSourceSync } from '../server/ingestion/sync/orchestrator';
-import { UNATTENDED_SCHEDULER_ENABLED } from '../server/ingestion/sync/scheduler-boundary';
 import { STAGING_PROJECT_REF, PRODUCTION_PROJECT_REF } from '../server/ingestion/sync/staging-guard';
 import {
   compareTicketSnapshots,
@@ -42,10 +41,6 @@ async function main() {
   verifyLinkedStagingTarget(cwd);
   const runQuery = createSupabaseCliLinkedQueryExecutor(cwd);
   const deps = createStagingSyncDependencies({ cwd, runQuery, verifyTarget: false });
-
-  if (UNATTENDED_SCHEDULER_ENABLED) {
-    abort('scheduler_must_remain_disabled');
-  }
 
   writeJson('preflight.json', {
     branch: 'rebuild/event-core-clean',

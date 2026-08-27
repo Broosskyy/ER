@@ -16,6 +16,7 @@ import {
 import type { SyncOrchestratorDependencies } from './orchestrator';
 import { createSqlIngestionSyncPersistence } from './sql-run-persistence';
 import type { IngestionSyncPersistence } from './run-persistence';
+import { STAGING_PROJECT_REF } from './staging-guard';
 
 export interface StagingSyncDependenciesOptions {
   cwd?: string;
@@ -43,5 +44,6 @@ export function createStagingSyncDependencies(
     loadPlannerContext: async () => loadPlannerContextFromLinkedDb(runQuery),
     applyPlan: createOfficialEventApplyExecutor(runQuery),
     createRunId: () => randomUUID(),
+    linkedProjectRef: STAGING_PROJECT_REF,
   };
 }

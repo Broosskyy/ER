@@ -67,7 +67,8 @@
     "test": "vitest run",
     "test:connectors": "vitest run server/official-connectors",
     "test:ingestion": "vitest run server/ingestion",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "run:scheduled-staging-sync": "tsx scripts/run-scheduled-staging-sync.ts"
   },
   "overrides": {
     "react-i18next": {

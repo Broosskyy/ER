@@ -8,6 +8,7 @@ import { isPlanIdempotent, planOfficialEventWrites, type PlannerContext } from '
 import type { EventWritePlan } from '../types/event-candidate';
 import { classifyIngestionError } from './error-taxonomy';
 import { appendZeroResultAnomaly, detectUnexpectedZeroResults, updateSourceHealth, createInitialSourceHealth } from './health';
+import { evaluateScheduledApplyGuard } from './scheduler-guard';
 import type { IngestionSyncPersistence } from './run-persistence';
 import { DEFAULT_RETRY_POLICY, executeWithRetry } from './retry-policy';
 import type {
@@ -36,6 +37,8 @@ export interface SyncOrchestratorDependencies {
   createRunId?: () => string;
   now?: () => Date;
   sleep?: (ms: number) => Promise<void>;
+  /** When set, scheduled apply guards validate the linked Supabase project ref. */
+  linkedProjectRef?: string;
 }
 
 function createRunIdDefault(): string {
@@ -256,6 +259,33 @@ export async function runSourceSync(
   const enabled = operational?.enabled ?? false;
 
   const previousHealth = await deps.persistence.getHealth(request.connectorId);
+
+  const schedulerGuard = evaluateScheduledApplyGuard({
+    connectorId: request.connectorId,
+    mode,
+    triggerType,
+    linkedProjectRef: deps.linkedProjectRef,
+  });
+  if (!schedulerGuard.allowed) {
+    const run: IngestionRunRecord = {
+      runId,
+      connectorId: request.connectorId,
+      mode,
+      triggerType,
+      status: 'cancelled',
+      startedAt,
+      finishedAt: startedAt,
+      durationMs: 0,
+      counters,
+      errorCategories: [schedulerGuard.errorCategory ?? 'apply_precondition_failed'],
+      errorSummary: schedulerGuard.errorSummary,
+      retryCount: 0,
+    };
+    await deps.persistence.createRun(run);
+    const health =
+      previousHealth ?? createInitialSourceHealth(request.connectorId, operational?.enabled ?? false);
+    return { run, eventResults: [], health };
+  }
 
   if (!enabled) {
     const run: IngestionRunRecord = {

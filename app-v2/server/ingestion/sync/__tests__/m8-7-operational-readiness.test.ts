@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest';
 
 import { matchEventToCatalog } from '../../identity/event-matcher';
 import type { EventMatchCatalogEntry, EventMatchCandidateInput } from '../../identity/event-match-types';
-import { UNATTENDED_SCHEDULER_ENABLED } from '../scheduler-boundary';
+import {
+  PRODUCTION_SCHEDULER_ENABLED,
+  STAGING_SCHEDULER_ENABLED,
+} from '../scheduler-boundary';
 import { createEmptySyncRunCounters } from '../types';
 import { isContentReviewOnlyRun } from '../health';
 
@@ -37,8 +40,9 @@ function candidate(
 }
 
 describe('M8.7 operational readiness', () => {
-  it('keeps unattended scheduler disabled', () => {
-    expect(UNATTENDED_SCHEDULER_ENABLED).toBe(false);
+  it('keeps production scheduler disabled while staging scheduler is enabled', () => {
+    expect(STAGING_SCHEDULER_ENABLED).toBe(true);
+    expect(PRODUCTION_SCHEDULER_ENABLED).toBe(false);
   });
 
   it('treats single review event as non-blocking for technical health', () => {
