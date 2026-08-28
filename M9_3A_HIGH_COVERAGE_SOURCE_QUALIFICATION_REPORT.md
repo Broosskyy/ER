@@ -405,7 +405,7 @@ Ideal **discovery-only** role: find event + outbound official/ticket URLs → ev
 ## 17. Cross-Source Overlap
 
 | Source | Bootshaus overlap | Affenkäfig overlap | Other overlap | Unique value |
-|--------|-------------------|--------------------|--------------|--------------| 
+|--------|-------------------|--------------------|--------------|--------------|
 | ticket.io Bootshaus shop | **HIGH (~90%)** | LOW | — | Ticket/media authority, not discovery |
 | Rausgegangen Cologne | **HIGH (~40%)** | **MEDIUM (~25%)** | Odonien, Garagen | Discovery + outbound links |
 | ticket.io portal | LOW | LOW | Many shops | National discovery |
