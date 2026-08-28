@@ -12,6 +12,7 @@ import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import type { TicketOfferRole, VerifiedTicketStatus } from './types';
 import { canonicalizeTicketIoUrl, extractTicketIoProviderEventId } from './url-policy';
 import { isTicketProviderBlockedBody } from './safe-fetch-ticket';
+import { extractPrimaryPageImageUrl } from '../media-evidence/extract-page-image-url';
 
 export type CachedResponseClassification =
   | 'security_challenge_only'
@@ -36,6 +37,7 @@ export interface TicketIoDetailDomEvidence {
   eventTitle?: string;
   startAt?: string;
   venueName?: string;
+  imageUrl?: string;
   canonicalTicketUrl?: string;
   ticketStatus: VerifiedTicketStatus;
   offers: TicketIoDetailDomOffer[];
@@ -370,6 +372,7 @@ export function parseTicketIoDetailDom(
   const offer = jsonLd?.offers as Record<string, unknown> | undefined;
   const offerUrl = offer ? String(offer.url ?? '').trim() : expected?.sourceUrl;
   const canonicalTicketUrl = offerUrl ? canonicalizeTicketIoUrl(offerUrl) : undefined;
+  const imageUrl = canonicalTicketUrl ? extractPrimaryPageImageUrl(body, canonicalTicketUrl) : undefined;
   const providerEventId =
     expected?.providerEventId ??
     (canonicalTicketUrl ? extractTicketIoProviderEventId(canonicalTicketUrl) : undefined);
@@ -407,6 +410,7 @@ export function parseTicketIoDetailDom(
     eventTitle,
     startAt,
     venueName,
+    imageUrl,
     canonicalTicketUrl,
     ticketStatus: finalTicketStatus,
     offers,

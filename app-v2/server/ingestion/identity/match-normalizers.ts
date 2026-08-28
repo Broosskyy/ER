@@ -36,13 +36,28 @@ export function extractTitleYears(title: string): number[] {
   return [...new Set(matches.map((year) => Number.parseInt(year, 10)))];
 }
 
+const TITLE_EXPANSION_SUFFIX =
+  /\s+(?:and more|uvm|ua|und mehr|\+ more|and friends|and special guests)(?:\s+.*)?$/i;
+
+function isTitleEvolutionExpansion(left: string, right: string): boolean {
+  const a = normalizeEventTitle(left);
+  const b = normalizeEventTitle(right);
+  if (!a || !b || a === b) {
+    return false;
+  }
+  const stripExpansion = (value: string) => value.replace(TITLE_EXPANSION_SUFFIX, '').trim();
+  const aCore = stripExpansion(a);
+  const bCore = stripExpansion(b);
+  return aCore === bCore || aCore === b || bCore === a;
+}
+
 export function titleSimilarity(left: string, right: string): number {
   const a = normalizeEventTitle(left);
   const b = normalizeEventTitle(right);
   if (!a || !b) {
     return 0;
   }
-  if (a === b) {
+  if (a === b || isTitleEvolutionExpansion(left, right)) {
     return 1;
   }
   if (a.includes(b) || b.includes(a)) {

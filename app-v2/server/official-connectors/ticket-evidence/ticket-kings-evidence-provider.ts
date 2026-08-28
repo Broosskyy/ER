@@ -138,6 +138,7 @@ export class TicketKingsEvidenceProvider implements TicketEvidenceProvider {
         startAt: enrichedDom.startAt,
         venueName: enrichedDom.venueName,
         description: enrichedDom.descriptionClean,
+        imageUrl: enrichedDom.imageUrl,
       },
       tickets,
       confidence: tickets.confidence,

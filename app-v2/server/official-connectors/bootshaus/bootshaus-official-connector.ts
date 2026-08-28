@@ -10,12 +10,13 @@ import type {
   OfficialConnectorRunResult,
 } from '../connector-contract';
 import {
-  buildImageHostAllowlist,
   createEmptyMediaPassCounters,
-  enrichOfficialEvidenceWithMedia,
+  finalizeOfficialEventEvidence,
   terminateSharedTesseractWorker,
 } from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
+import { resetTicketFetchCache } from '../ticket-evidence/ticket-evidence-pipeline';
+import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
 import { safeFetchHtml } from '../safe-fetch';
 import type { SafeFetchRequestContext, SafeFetchRequestOptions } from '../generic-safe-fetch';
 import {
@@ -130,6 +131,9 @@ export class BootshausOfficialConnector implements OfficialConnector {
     const detailUrls = discovery.detailUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
 
+    const ticketResults: VerifiedTicketCompleteResult[] = [];
+    resetTicketFetchCache();
+
     const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
       if (fetchedUrlSet.has(detailUrl)) {
         counters.duplicateDetailFetches += 1;
@@ -157,21 +161,21 @@ export class BootshausOfficialConnector implements OfficialConnector {
         textEvidence.enrichmentGaps = [...new Set([...textEvidence.enrichmentGaps, 'past_event_skipped'])];
       }
 
-      let evidence = textEvidence;
-      if (textEvidence.officialImageUrl && !textEvidence.enrichmentGaps.includes('past_event_skipped')) {
-        for (const host of buildImageHostAllowlist([textEvidence.officialImageUrl])) {
-          allowedImageHosts.add(host);
-        }
-        evidence = await enrichOfficialEvidenceWithMedia(textEvidence, {
-          counters,
-          mediaCounters,
-          allowedImageHosts,
-          sourceObservedAt: fetchedAt,
-          mediaContext: buildBootshausMediaEvidenceContext(textEvidence),
-        });
+      const finalized = await finalizeOfficialEventEvidence({
+        evidence: textEvidence,
+        prefetchedHtml: detailResult.html,
+        fetchedAt,
+        counters,
+        mediaCounters,
+        allowedImageHosts,
+        buildMediaContext: buildBootshausMediaEvidenceContext,
+        processTickets: Boolean(textEvidence.linkedTicketUrl),
+      });
+      if (finalized.ticketResult) {
+        ticketResults.push(finalized.ticketResult);
       }
 
-      return buildConsumerPreview(evidence, counters);
+      return buildConsumerPreview(finalized.evidence, counters);
     });
 
     await terminateSharedTesseractWorker();
@@ -188,6 +192,7 @@ export class BootshausOfficialConnector implements OfficialConnector {
       previews: futurePreviews,
       counters,
       mediaCounters,
+      ticketResults,
     };
   }
 }

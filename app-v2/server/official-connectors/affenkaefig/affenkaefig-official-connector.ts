@@ -12,17 +12,14 @@ import type {
 import { safeFetchHtmlWithPolicy } from '../generic-safe-fetch';
 import type { SafeFetchRequestContext, SafeFetchRequestOptions } from '../generic-safe-fetch';
 import {
-  buildImageHostAllowlist,
   createEmptyMediaPassCounters,
-  enrichOfficialEvidenceWithMedia,
+  finalizeOfficialEventEvidence,
   terminateSharedTesseractWorker,
 } from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
 import {
-  processOfficialEventTickets,
   resetTicketFetchCache,
 } from '../ticket-evidence/ticket-evidence-pipeline';
-import { reconcileVerifiedTicketSupplementalEvidence } from '../ticket-evidence/reconcile-verified-ticket-supplemental';
 import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
 import {
   createEmptyConnectorCounters,
@@ -169,43 +166,21 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
         evidence.enrichmentGaps = [...new Set([...evidence.enrichmentGaps, 'past_event_skipped'])];
       }
 
-      let enrichedEvidence = evidence;
-      if (
-        evidence.officialImageUrl &&
-        !evidence.enrichmentGaps.includes('past_event_skipped')
-      ) {
-        for (const host of buildImageHostAllowlist([evidence.officialImageUrl])) {
-          allowedImageHosts.add(host);
-        }
-        enrichedEvidence = await enrichOfficialEvidenceWithMedia(evidence, {
-          counters,
-          mediaCounters,
-          allowedImageHosts,
-          sourceObservedAt: fetchedAt,
-          mediaContext: buildAffenkaefigMediaEvidenceContext(evidence),
-        });
+      const finalized = await finalizeOfficialEventEvidence({
+        evidence,
+        prefetchedHtml: detailResult.html,
+        fetchedAt,
+        counters,
+        mediaCounters,
+        allowedImageHosts,
+        buildMediaContext: buildAffenkaefigMediaEvidenceContext,
+        processTickets: true,
+      });
+      if (finalized.ticketResult) {
+        ticketResults.push(finalized.ticketResult);
       }
 
-      const ticketResult = await processOfficialEventTickets(
-        {
-          sourceEventKey: enrichedEvidence.sourceEventKey,
-          officialUrl: enrichedEvidence.officialUrl,
-          title: enrichedEvidence.title,
-          startsAt: enrichedEvidence.startsAt,
-          endsAt: enrichedEvidence.endsAt,
-          venueName: enrichedEvidence.venue?.name,
-          organizerName: enrichedEvidence.organizerLabel,
-        },
-        {
-          prefetchedHtml: detailResult.html,
-          observedAt: fetchedAt,
-        },
-      );
-      ticketResults.push(ticketResult);
-
-      const withSupplemental = reconcileVerifiedTicketSupplementalEvidence(enrichedEvidence, ticketResult);
-
-      return buildConsumerPreview(withSupplemental, counters);
+      return buildConsumerPreview(finalized.evidence, counters);
     });
 
     await terminateSharedTesseractWorker();

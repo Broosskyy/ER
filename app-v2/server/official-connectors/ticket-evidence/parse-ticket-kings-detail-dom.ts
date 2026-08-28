@@ -7,6 +7,7 @@ import { isTicketMarketingOrCtaLine } from '../shared/lineup-normalization';
 import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import type { TicketOfferRole, VerifiedTicketStatus } from './types';
 import { isTicketProviderBlockedBody } from './safe-fetch-ticket';
+import { extractPrimaryPageImageUrl } from '../media-evidence/extract-page-image-url';
 
 export interface TicketKingsDetailDomOffer {
   rawLabel: string;
@@ -26,6 +27,7 @@ export interface TicketKingsDetailDomEvidence {
   endAt?: string;
   venueName?: string;
   descriptionClean?: string;
+  imageUrl?: string;
   lineupCandidates: Array<{ displayName: string; rawText: string }>;
   ticketStatus: VerifiedTicketStatus;
   offers: TicketKingsDetailDomOffer[];
@@ -317,6 +319,7 @@ export function parseTicketKingsDetailDom(body: string, canonicalUrl: string): T
   const jsonLd = extractJsonLdEvent(body);
   const location = jsonLd?.location as Record<string, unknown> | undefined;
   const descriptionClean = extractDescriptionFromDom(body);
+  const imageUrl = extractPrimaryPageImageUrl(body, canonicalUrl);
   const embeddedTicketingUrls = extractEmbeddedTicketingUrls(body);
   let offers = parseOffersFromEmbedDom(body);
   const rejectedOffers = offers
@@ -335,6 +338,7 @@ export function parseTicketKingsDetailDom(body: string, canonicalUrl: string): T
     endAt: jsonLd ? String(jsonLd.endDate ?? '').trim() : undefined,
     venueName: location ? String(location.name ?? '').trim() : undefined,
     descriptionClean,
+    imageUrl,
     lineupCandidates: extractLineupFromTicketKingsDescription(descriptionClean),
     ticketStatus: resolveTicketStatus(offers),
     offers,

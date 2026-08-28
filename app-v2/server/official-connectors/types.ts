@@ -63,6 +63,7 @@ export interface OfficialEvidenceAudit {
   }>;
   unmappedGenreLabels: string[];
   mediaEvidence?: import('./media-evidence/types').EventMediaEvidence;
+  mediaSelection?: import('./media-evidence/event-media-candidate').EventMediaSelectionResult;
 }
 
 export type ConsumerPreviewDecision = 'preview_ready' | 'review_required';

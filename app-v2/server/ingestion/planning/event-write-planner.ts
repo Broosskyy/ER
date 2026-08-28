@@ -280,11 +280,16 @@ export function planOfficialEventWrite(
   }
 
   if (hasUrlBinding && sameFingerprint && !reconciliation.reviewRequired) {
-    const hasAcceptedSupplementalChange = reconciliation.fieldDecisions.some(
-      (decision) =>
-        decision.decision === 'accept' &&
-        ['description', 'lineup', 'title', 'startsAt', 'endsAt', 'organizer', 'image'].includes(decision.field),
-    );
+    const existingImage = existingEvent?.imageUrl?.trim();
+    const candidateImage = reconciledCandidate.imageUrl?.trim();
+    const imageFieldChanged = Boolean(existingImage && candidateImage && existingImage !== candidateImage);
+    const hasAcceptedSupplementalChange =
+      imageFieldChanged ||
+      reconciliation.fieldDecisions.some(
+        (decision) =>
+          decision.decision === 'accept' &&
+          ['description', 'lineup', 'title', 'startsAt', 'endsAt', 'organizer', 'image'].includes(decision.field),
+      );
     if (!hasAcceptedSupplementalChange) {
       eventAction = 'noop';
       sourceAction = 'noop';
