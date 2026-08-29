@@ -37,6 +37,7 @@ export function inferProviderHint(url: string): string | undefined {
     if (host.includes('eventim.')) return 'eventim';
     if (host.includes('vault-events.de')) return 'organizer_shop';
     if (host.includes('arep.co')) return 'organizer_shop';
+    if (host.includes('n8manager.de')) return 'organizer_shop';
     if (host.includes('bit.ly')) return 'redirector';
     return undefined;
   } catch {
@@ -47,7 +48,7 @@ export function inferProviderHint(url: string): string | undefined {
 function inferRelation(text: string, className: string, href: string): TicketLinkRelation {
   const combined = `${text} ${className} ${href}`;
   if (PRESALE_PATTERN.test(combined)) return 'presale';
-  if (/\.ticket\.io\b|paylogic\.com|fourvenues\.com|eventim\.|ticketkings/i.test(href)) {
+  if (/\.ticket\.io\b|paylogic\.com|fourvenues\.com|eventim\.|ticketkings|n8manager\.de/i.test(href)) {
     return 'ticket_provider';
   }
   if (TICKET_CTA_TEXT_PATTERN.test(combined)) return 'official_ticket';
@@ -144,6 +145,7 @@ export function extractTicketUrlsFromEmbeddedContent(html: string): string[] {
     /https:\/\/[a-z0-9-]+\.ticket\.io\/[A-Za-z0-9]{6,12}\/?/gi,
     /https:\/\/site\.fourvenues\.com\/[^"'\\s<>]+/gi,
     /https:\/\/www\.vault-events\.de\/termine\/[^"'\\s<>]+/gi,
+    /https:\/\/[a-z0-9.-]+\.n8manager\.de\/ticketing\/native_event\.php[^"'\\s<>]*/gi,
   ];
   const urls: string[] = [];
   for (const pattern of patterns) {

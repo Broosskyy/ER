@@ -27,7 +27,7 @@ function buildBinding(eventId = 'event-1'): ExistingOfficialEventBinding {
 }
 
 describe('ticket persistence planning', () => {
-  it('does not plan ticket rows for ticket_link_not_yet_published', () => {
+  it('does not plan ticket rows for ticket_link_not_yet_published without door admission', () => {
     const evidence = resolveTicketSourceState({
       officialUrl: OFFICIAL_URL,
       startsAt: FUTURE_START,
@@ -69,6 +69,51 @@ describe('ticket persistence planning', () => {
     expect(plans[0]?.ticketOperation).toBe('noop');
     expect(plans[0]?.consumerProjection.hasActivePurchaseCta).toBe(false);
     expect(plans[0]?.provenanceOperation).toBe('update');
+  });
+
+  it('plans door-admission price rows for ticket_link_not_yet_published with Eintritt', () => {
+    const html =
+      '<div class="event-description-content"><p>Eintritt: 35 Euro</p></div><a href="" class="button secondary fluid element_hidden">Tickets</a>';
+    const evidence = resolveTicketSourceState({
+      officialUrl: OFFICIAL_URL,
+      startsAt: FUTURE_START,
+      html,
+      discoveredLinks: [],
+      rejectedCandidates: [],
+      observedAt: '2026-08-17T12:00:00.000Z',
+      captureMeta: {
+        html,
+        sourceEventUrl: OFFICIAL_URL,
+        observedAt: '2026-08-17T12:00:00.000Z',
+        contentFingerprint: 'fp',
+        ctaProbeAttempted: true,
+      },
+    });
+    const result = enrichResultWithM6_4(
+      {
+        sourceEventKey: 'kitkat',
+        officialUrl: OFFICIAL_URL,
+        title: 'KitKatClub',
+        startsAt: FUTURE_START,
+        discoveredLinks: [],
+        rejectedCandidates: [],
+        identityResult: 'ticket_identity_unverifiable',
+        identityReasons: [],
+        classification: 'ticket_link_not_yet_published',
+        verifiedTicketComplete: false,
+      },
+      { ticketSourceStateEvidence: evidence, officialPageHtml: html },
+    );
+    const plans = planTicketEvidencePersistence([result], {
+      officialBindings: [buildBinding()],
+      existingTickets: [],
+      existingTicketSources: [],
+    });
+    expect(plans[0]?.ticketOperation).toBe('insert');
+    expect(plans[0]?.plannedTicketRow?.priceFromMinor).toBe(3500);
+    expect(plans[0]?.plannedTicketRow?.ticketUrl).toBeUndefined();
+    expect(plans[0]?.plannedTicketRow?.salesStatus).toBe('available');
+    expect(plans[0]?.consumerProjection.hasActivePurchaseCta).toBe(false);
   });
 
   it('plans current ticket insert for verified complete evidence', () => {

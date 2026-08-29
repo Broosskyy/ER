@@ -106,7 +106,11 @@ function hasVerifiedEventSpecificTicketTargetFromResult(result: VerifiedTicketCo
 
 function shouldPersistTicketRow(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): boolean {
   if (sourceState === 'ticket_link_not_yet_published') {
-    return false;
+    return (
+      result.priceEvidence?.state === 'verified_current' &&
+      result.priceEvidence.amountMinor != null &&
+      result.priceEvidence.reason === 'official_door_admission_without_purchase_target'
+    );
   }
   if (sourceState === 'provider_access_unavailable') {
     if (result.targetIdentityEvidence?.identityDecision === 'redirected_to_different_event') {

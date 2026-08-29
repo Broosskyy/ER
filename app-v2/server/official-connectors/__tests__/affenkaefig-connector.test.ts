@@ -16,6 +16,8 @@ import {
   buildAffenkaefigDetailUrl,
   canonicalizeAffenkaefigUrl,
   extractAffenkaefigDetailSlug,
+  isAffenkaefigShortlinkUrl,
+  resolveAffenkaefigRedirectUrl,
 } from '../affenkaefig/url-policy';
 import { registerDefaultOfficialConnectors } from '../register-default-connectors';
 import { getOfficialSourceRegistry, resetOfficialSourceRegistryForTests } from '../source-registry';
@@ -26,6 +28,7 @@ import {
   AFFENKAEFIG_LIST_FRAGMENT,
   AFFENKAEFIG_MALFORMED_DATE_FRAGMENT,
   AFFENKAEFIG_MISSING_DESCRIPTION_FRAGMENT,
+  AFFENKAEFIG_N8MANAGER_TICKET_FRAGMENT,
   AFFENKAEFIG_UNDERLAND_FRAGMENT,
 } from './fixtures/affenkaefig-fragments';
 
@@ -50,6 +53,13 @@ describe('affenkaefig official connector', () => {
     expect(extractAffenkaefigDetailSlug('https://affenkaefig.info/event/sample/')).toBe('sample');
     expect(buildAffenkaefigDetailUrl('sample')).toBe('https://affenkaefig.info/event/sample/');
     expect(canonicalizeAffenkaefigUrl('https://bootshaus.tv/events/x/')).toBeNull();
+    expect(isAffenkaefigShortlinkUrl('https://affenkaefig.info/?p=196303')).toBe(true);
+    expect(
+      resolveAffenkaefigRedirectUrl(
+        'https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/',
+        'https://affenkaefig.info/',
+      ),
+    ).toBeNull();
   });
 
   it('discovers canonical detail urls from tickets list', () => {
@@ -71,7 +81,7 @@ describe('affenkaefig official connector', () => {
     const counters = createEmptyConnectorCounters();
     const evidence = parseAffenkaefigDetailPage(
       AFFENKAEFIG_FULL_EVENT_FRAGMENT,
-      'https://affenkaefig.info/event/14-jahreaffenkaefig19-09-2026/',
+      'https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/',
       FETCHED_AT,
       counters,
     );
@@ -81,6 +91,16 @@ describe('affenkaefig official connector', () => {
     expect(evidence.enrichmentGaps).toContain('genres_missing');
     expect(evidence.startsAt).toContain('T22:00:00');
     expect(evidence.venue?.city).toBe('Köln');
+  });
+
+  it('discovers embedded n8manager ticket targets from affenkaefig detail html', () => {
+    const evidence = parseAffenkaefigDetailPage(
+      AFFENKAEFIG_N8MANAGER_TICKET_FRAGMENT,
+      'https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/',
+      FETCHED_AT,
+      createEmptyConnectorCounters(),
+    );
+    expect(evidence.linkedTicketUrl).toContain('rheinaudio.n8manager.de/ticketing/native_event.php?id=21');
   });
 
   it('marks underland golden case with description_missing and lineup_media_required', () => {

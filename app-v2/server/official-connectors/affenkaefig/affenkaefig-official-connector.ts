@@ -32,12 +32,17 @@ import {
   AFFENKAEFIG_LIST_URL,
 } from './constants';
 import { affenkaefigSafeFetchPolicy } from './fetch-policy';
+import { fetchAffenkaefigDetailHtml } from './fetch-detail-html';
 import { buildAffenkaefigMediaEvidenceContext } from './build-affenkaefig-media-evidence';
 import { parseAffenkaefigDetailPage } from './parse-detail';
 import {
   dedupeAffenkaefigDetailUrls,
   extractAffenkaefigDetailUrlsFromListHtml,
 } from './parse-list';
+import {
+  extractAffenkaefigDetailSlug,
+  isAffenkaefigDetailUrl,
+} from './url-policy';
 import { markPastOfficialEventIfNeeded } from '../shared/mark-past-official-event';
 
 const MAX_DETAIL_PAGES = 40;
@@ -93,6 +98,18 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
     context: SafeFetchRequestContext = {},
   ): Promise<OfficialConnectorFetchResult> {
     const counters = options.counters as ConnectorErrorCounters;
+    if (context.allowDetailOnly) {
+      const result = await fetchAffenkaefigDetailHtml(
+        url,
+        { ...options, counters },
+        context,
+      );
+      return {
+        finalUrl: result.finalUrl,
+        html: result.html,
+        contentType: result.contentType,
+      };
+    }
     const result = await safeFetchHtmlWithPolicy(url, affenkaefigSafeFetchPolicy, options, context);
     return {
       finalUrl: result.finalUrl,
@@ -152,7 +169,17 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
         { allowDetailOnly: true },
       );
 
-      const slug = new URL(detailResult.finalUrl).pathname.split('/').filter(Boolean).pop() ?? 'unknown';
+      const requestedSlug = extractAffenkaefigDetailSlug(detailUrl);
+      const finalSlug = extractAffenkaefigDetailSlug(detailResult.finalUrl);
+      if (
+        !isAffenkaefigDetailUrl(detailResult.finalUrl) ||
+        (requestedSlug && finalSlug && requestedSlug !== finalSlug)
+      ) {
+        counters.disallowedPathFetches += 1;
+        throw new Error(`Affenkäfig detail fetch resolved away from event page: ${detailUrl} -> ${detailResult.finalUrl}`);
+      }
+
+      const slug = finalSlug ?? 'unknown';
       await writeCache(`m8-6-affenkaefig-cache/details/${slug}.html`, detailResult.html);
 
       let evidence = this.parseDetailPage(

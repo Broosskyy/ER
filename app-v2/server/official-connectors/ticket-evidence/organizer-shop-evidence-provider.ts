@@ -18,6 +18,9 @@ import {
 } from './normalize-ticket-status';
 import { projectStatusLabel } from './ticket-status-badge';
 import type { TicketEvidenceProvider } from './types';
+import { parseTicketKingsDetailDom } from './parse-ticket-kings-detail-dom';
+
+const N8MANAGER_TICKETING_PATTERN = /n8manager\.de|ticketing\/native_event/i;
 
 function hashPath(url: string): string {
   return createHash('sha256').update(url).digest('hex').slice(0, 16);
@@ -58,6 +61,68 @@ function extractAdmissionFromText(body: string): Array<{ label: string; price: s
     }
   }
   return results;
+}
+
+function buildEvidenceFromN8ManagerDom(
+  request: TicketEvidenceRequest,
+  identity: TicketProviderIdentity,
+  domEvidence: ReturnType<typeof parseTicketKingsDetailDom>,
+): EventTicketEvidence {
+  const offers: EventTicketEvidence['offers'] = [];
+  const rejectedOffers: EventTicketEvidence['rejectedOffers'] = [...domEvidence.rejectedOffers];
+
+  for (const offer of domEvidence.offers) {
+    const label = offer.phaseLabel ? `${offer.rawLabel} ${offer.phaseLabel}` : offer.rawLabel;
+    const role = classifyTicketOfferRole(label);
+    const availability: VerifiedTicketStatus = offer.soldOut
+      ? 'sold_out'
+      : offer.purchasable
+        ? 'available'
+        : normalizeTicketStatusFromText('available').status;
+    if (isAdmissionOfferRole(role)) {
+      offers.push({
+        rawLabel: label,
+        normalizedLabel: offer.rawLabel,
+        rawPrice: offer.rawPrice,
+        amountMinor: offer.amountMinor,
+        currency: offer.currency ?? 'EUR',
+        role,
+        availability,
+        confidence: offer.purchasable ? 0.9 : 0.75,
+      });
+    } else {
+      rejectedOffers.push({ rawLabel: label, rawPrice: offer.rawPrice, reason: 'non_admission_offer' });
+    }
+  }
+
+  let ticketStatus: VerifiedTicketStatus = domEvidence.ticketStatus;
+  if (offers.some((o) => o.availability === 'available' || o.availability === 'free')) {
+    ticketStatus = 'available';
+  } else if (offers.length > 0 && offers.every((o) => o.availability === 'sold_out')) {
+    ticketStatus = 'sold_out';
+  }
+
+  const normalizedStatus = toConsumerNormalizedStatus(ticketStatus) ?? 'available';
+
+  return {
+    providerKey: 'organizer_shop',
+    providerIdentity: identity,
+    sourceUrl: request.url.toString(),
+    canonicalTicketUrl: request.canonicalTicketUrl,
+    sourceObservedAt: request.observedAt,
+    extractedAt: request.extractedAt,
+    contentFingerprint: domEvidence.contentFingerprint || request.fingerprint,
+    eventIdentityEvidence: {
+      rawTitle: domEvidence.eventTitle,
+      startAt: domEvidence.startAt,
+      venueName: domEvidence.venueName,
+    },
+    offers,
+    normalizedStatus,
+    statusLabel: projectStatusLabel(ticketStatus),
+    rejectedOffers,
+    confidence: offers.length > 0 ? 0.9 : 0.55,
+  };
 }
 
 function buildEvidence(
@@ -211,6 +276,27 @@ export class OrganizerShopEvidenceProvider implements TicketEvidenceProvider {
     const identity = this.extractProviderIdentity(request.url);
     if (!identity) {
       throw new Error('organizer_shop_identity_missing');
+    }
+    const requestTarget = `${request.url.hostname}${request.url.pathname}`;
+    if (N8MANAGER_TICKETING_PATTERN.test(requestTarget)) {
+      const domEvidence = parseTicketKingsDetailDom(request.body, request.canonicalTicketUrl);
+      const tickets = buildEvidenceFromN8ManagerDom(request, identity, domEvidence);
+      return {
+        providerKey: 'organizer_shop',
+        providerIdentity: identity,
+        sourceUrl: request.url.toString(),
+        canonicalTicketUrl: request.canonicalTicketUrl,
+        sourceObservedAt: request.observedAt,
+        extractedAt: request.extractedAt,
+        contentFingerprint: domEvidence.contentFingerprint || request.fingerprint,
+        event: {
+          rawTitle: domEvidence.eventTitle,
+          startAt: domEvidence.startAt,
+          venueName: domEvidence.venueName,
+        },
+        tickets,
+        confidence: tickets.confidence,
+      };
     }
     const event = extractJsonLd(request.body);
     const tickets = buildEvidence(request, identity, event, request.body);

@@ -7,6 +7,7 @@ import {
   canonicalizeAffenkaefigUrl,
   isAffenkaefigDetailUrl,
   isAffenkaefigListUrl,
+  isAffenkaefigShortlinkUrl,
   resolveAffenkaefigRedirectUrl,
 } from './url-policy';
 
@@ -26,6 +27,9 @@ export const affenkaefigSafeFetchPolicy: SafeFetchUrlPolicy = {
   validateRequestUrl(url: string, context: SafeFetchRequestContext) {
     if (context.allowListOnly && !isAffenkaefigListUrl(url)) {
       return 'disallowed_path';
+    }
+    if (context.allowShortlinkFallback && isAffenkaefigShortlinkUrl(url)) {
+      return null;
     }
     if (context.allowDetailOnly && !isAffenkaefigDetailUrl(url)) {
       return 'disallowed_path';

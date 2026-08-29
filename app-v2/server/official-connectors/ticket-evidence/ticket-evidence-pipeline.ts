@@ -129,6 +129,7 @@ export async function processOfficialEventTickets(
         {
           officialEndsAt: input.endsAt,
           ticketSourceStateEvidence,
+          officialPageHtml: html,
         },
       );
     }

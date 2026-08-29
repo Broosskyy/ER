@@ -20,6 +20,22 @@ describe('consumer ticket safety gate', () => {
     expect(presentation.statusLabel).toBe('Ticketverfügbarkeit wird geprüft');
   });
 
+  it('shows door admission price without purchase CTA', () => {
+    const presentation = resolveConsumerTicketPresentation({
+      id: 'ticket-1',
+      provider: 'organizer_shop',
+      ticketUrl: undefined,
+      priceFromMinor: 3500,
+      currency: 'EUR',
+      salesStatus: 'available',
+      sortOrder: 0,
+    });
+
+    expect(presentation.showPurchaseCta).toBe(false);
+    expect(presentation.ticketUrl).toBeUndefined();
+    expect(presentation.priceText).toBe('ab 35 €');
+  });
+
   it('allows purchase CTA for verified available tickets', () => {
     const presentation = resolveConsumerTicketPresentation({
       id: 'ticket-1',

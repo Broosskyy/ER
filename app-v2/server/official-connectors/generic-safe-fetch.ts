@@ -27,6 +27,7 @@ export interface SafeFetchPolicyCounters {
 export interface SafeFetchRequestContext {
   allowListOnly?: boolean;
   allowDetailOnly?: boolean;
+  allowShortlinkFallback?: boolean;
 }
 
 export interface SafeFetchUrlPolicy {

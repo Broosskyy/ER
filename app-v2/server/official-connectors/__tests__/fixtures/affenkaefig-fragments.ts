@@ -53,3 +53,9 @@ export const AFFENKAEFIG_MALFORMED_DATE_FRAGMENT = `
 <div class="ecm-event-meta-item"><span class="ecm-event-meta-item__label">Datum</span><span class="ecm-event-meta-item__value">invalid</span></div>
 <div class="ecm-event-meta-item"><span class="ecm-event-meta-item__label">Location</span><span class="ecm-event-meta-item__value">Bootshaus · Köln</span></div>
 `;
+
+export const AFFENKAEFIG_N8MANAGER_TICKET_FRAGMENT = `
+<script type="application/ld+json" class="event-cards-manager-schema">{"@context":"https://schema.org","@type":"Event","name":"14 Jahre Affenkäfig 19.09.2026","startDate":"2026-09-19T00:00:00+02:00","url":"https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/","location":{"@type":"Place","name":"Essigfabrik / Elektroküche","address":{"@type":"PostalAddress","addressLocality":"Köln"}}}</script>
+<h1 class="ecm-event-single__title">14 Jahre Affenkäfig 19.09.2026</h1>
+<div class="ecm-event-single__ticket-snippet"><iframe src="https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&amp;embed=1&amp;embed_layout=checkout&amp;embed_flow=stepped"></iframe></div>
+`;

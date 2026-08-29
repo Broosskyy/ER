@@ -12,6 +12,7 @@ import type {
 import { buildResolvedTicketAction, consumerActionLabel } from './ticket-action';
 import { hasActivePurchaseCta, hasVerifiedPresaleCta } from './consumer-ticket-safety-gate';
 import { isEventEnded, projectTicketStatus } from './ticket-lifecycle';
+import { extractOfficialDoorAdmissionFromHtml } from './extract-official-door-admission';
 import { buildTicketPriceEvidence, projectConsumerPriceLabel } from './ticket-price-evidence';
 import type { VerifiedTicketCompleteResult } from './ticket-audit-metrics';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
@@ -128,10 +129,15 @@ export function enrichResultWithM6_4(
       contentFingerprint: string;
     };
     ticketSourceStateEvidence?: TicketSourceStateEvidence;
+    officialPageHtml?: string;
   },
 ): VerifiedTicketCompleteResult {
   const eventEnded = isEventEnded(result.startsAt, options?.officialEndsAt);
   const isTicketLinkNotYetPublished = options?.ticketSourceStateEvidence?.state === 'ticket_link_not_yet_published';
+  const officialDoorAdmission =
+    isTicketLinkNotYetPublished && options?.officialPageHtml
+      ? extractOfficialDoorAdmissionFromHtml(options.officialPageHtml)
+      : undefined;
 
   const resolvedAction =
     !isTicketLinkNotYetPublished && result.primaryLink
@@ -175,15 +181,27 @@ export function enrichResultWithM6_4(
         presaleRegistration: isPresaleRegistration,
       });
 
-  const priceEvidence = isTicketLinkNotYetPublished
-    ? {
-        state: 'not_yet_published' as const,
-        evidenceOrigin: 'provider_detail' as const,
-        reason: 'ticket_link_not_yet_published',
-        sourceUrl: options!.ticketSourceStateEvidence!.sourceEventUrl,
-        sourceObservedAt: options!.ticketSourceStateEvidence!.observedAt,
-        contentFingerprint: options!.ticketSourceStateEvidence!.contentFingerprint,
-      }
+  const priceEvidence: TicketPriceEvidence = isTicketLinkNotYetPublished
+    ? officialDoorAdmission
+      ? {
+          state: 'verified_current',
+          evidenceOrigin: 'provider_detail',
+          reason: 'official_door_admission_without_purchase_target',
+          sourceUrl: options!.ticketSourceStateEvidence!.sourceEventUrl,
+          sourceObservedAt: options!.ticketSourceStateEvidence!.observedAt,
+          contentFingerprint: options!.ticketSourceStateEvidence!.contentFingerprint,
+          amountMinor: officialDoorAdmission.amountMinor,
+          currency: officialDoorAdmission.currency,
+          rawPriceText: officialDoorAdmission.rawPriceText,
+        }
+      : {
+          state: 'not_yet_published',
+          evidenceOrigin: 'provider_detail',
+          reason: 'ticket_link_not_yet_published',
+          sourceUrl: options!.ticketSourceStateEvidence!.sourceEventUrl,
+          sourceObservedAt: options!.ticketSourceStateEvidence!.observedAt,
+          contentFingerprint: options!.ticketSourceStateEvidence!.contentFingerprint,
+        }
     : buildTicketPriceEvidence({
         ticketEvidence: result.ticketEvidence,
         providerBlocked: options?.providerBlocked,

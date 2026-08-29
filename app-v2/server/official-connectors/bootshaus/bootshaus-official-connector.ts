@@ -30,6 +30,8 @@ import { buildBootshausMediaEvidenceContext } from './build-bootshaus-media-evid
 import { parseBootshausDetailPage } from './parse-detail';
 import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './parse-list';
 import { markPastOfficialEventIfNeeded } from '../shared/mark-past-official-event';
+import { discoverOfficialTicketCtaFromHtml } from '../ticket-evidence/discover-official-ticket-cta';
+import { extractOfficialDoorAdmissionFromHtml } from '../ticket-evidence/extract-official-door-admission';
 
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
@@ -159,6 +161,8 @@ export class BootshausOfficialConnector implements OfficialConnector {
 
       textEvidence = markPastOfficialEventIfNeeded(textEvidence);
 
+      const doorAdmission = extractOfficialDoorAdmissionFromHtml(detailResult.html);
+      const ticketCta = discoverOfficialTicketCtaFromHtml(detailResult.html);
       const finalized = await finalizeOfficialEventEvidence({
         evidence: textEvidence,
         prefetchedHtml: detailResult.html,
@@ -167,7 +171,9 @@ export class BootshausOfficialConnector implements OfficialConnector {
         mediaCounters,
         allowedImageHosts,
         buildMediaContext: buildBootshausMediaEvidenceContext,
-        processTickets: Boolean(textEvidence.linkedTicketUrl),
+        processTickets: Boolean(
+          textEvidence.linkedTicketUrl || doorAdmission || ticketCta.hasTicketSemantics,
+        ),
       });
       if (finalized.ticketResult && !textEvidence.enrichmentGaps.includes('past_event_skipped')) {
         ticketResults.push(finalized.ticketResult);
