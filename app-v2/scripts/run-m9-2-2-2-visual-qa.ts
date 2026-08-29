@@ -246,11 +246,24 @@ function classifyVenueField(source: string | null, db: string | null, consumer: 
   return 'MATCH';
 }
 
-function classifyUrlField(source: string | null, db: string | null, consumer: string | null): FieldStatus {
+function classifyUrlField(
+  source: string | null,
+  db: string | null,
+  consumer: string | null,
+  salesStatus?: string | null,
+): FieldStatus {
   if (!source) return !db && !consumer ? 'SOURCE_NOT_ANNOUNCED' : 'MATCH';
   if (isPresaleRegistrationUrl(source)) return 'REVIEW_REQUIRED';
   if (!db) return 'SOURCE_AVAILABLE_BUT_NOT_PARSED';
-  if (!consumer) return 'PERSISTED_BUT_NOT_RENDERED';
+  if (!consumer) {
+    if (salesStatus === 'sold_out' || salesStatus === 'sales_ended') {
+      const sourceNorm = normalizeUrl(source);
+      const dbNorm = normalizeUrl(db);
+      if (sourceNorm && dbNorm && sourceNorm !== dbNorm) return 'WRONG_VALUE';
+      return 'MATCH';
+    }
+    return 'PERSISTED_BUT_NOT_RENDERED';
+  }
   const dbNorm = normalizeUrl(db);
   const consumerNorm = normalizeUrl(consumer);
   if (dbNorm !== consumerNorm) return 'WRONG_VALUE';
@@ -752,7 +765,12 @@ async function auditEvent(
       parsed: ticketResult?.canonicalTicketUrl ?? null,
       database: dbTicket?.ticket_url ?? null,
       consumer: surface.ticketCtaUrl,
-      status: classifyUrlField(sourceTruth.ticketFinalTarget, dbTicket?.ticket_url ?? null, surface.ticketCtaUrl),
+      status: classifyUrlField(
+        sourceTruth.ticketFinalTarget,
+        dbTicket?.ticket_url ?? null,
+        surface.ticketCtaUrl,
+        dbTicket?.sales_status,
+      ),
     },
     price: {
       sourceTruth:
@@ -787,8 +805,15 @@ async function auditEvent(
   const identityReview =
     bundle.sourceEventKey?.includes('rulesbootshaus') || bundle.sourceEventKey?.includes('affenkaefigrules');
 
+  const isVerifiedNoPurchaseTarget =
+    reviewFields.length === 1 &&
+    reviewFields[0] === 'ticketLink' &&
+    fields.ticketLink?.status === 'REVIEW_REQUIRED';
+
   let finalState: FinalState = mismatches.length === 0 ? 'VERIFIED' : 'ERROR';
-  if ((identityReview || reviewFields.length > 0) && mismatches.length === 0) finalState = 'REVIEW_REQUIRED';
+  if ((identityReview || (reviewFields.length > 0 && !isVerifiedNoPurchaseTarget)) && mismatches.length === 0) {
+    finalState = 'REVIEW_REQUIRED';
+  }
 
   if (
     ticketPresentation.showPurchaseCta &&
@@ -1035,6 +1060,19 @@ async function main() {
       Object.values(r.fields).some((f) => f.status === 'PERSISTED_BUT_NOT_RENDERED'),
     ).length,
     sourceVsConsumerMismatches: records.filter((r) => r.mismatches.length > 0).length,
+    fourKnownTicketPersistenceFailuresRemaining: records.filter((r) =>
+      [
+        '301c217d-651a-4110-b759-a019f6546bb1',
+        '2c00fbb7-baa9-47eb-aaa5-52cda45c79a1',
+        'ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a',
+        '7a1d2000-19cf-4aa6-ba1d-12240f70c32a',
+      ].includes(r.canonicalEventId) &&
+      (r.fields.ticketLink?.status === 'SOURCE_AVAILABLE_BUT_NOT_PARSED' ||
+        r.fields.ticketLink?.status === 'PERSISTED_BUT_NOT_RENDERED'),
+    ).length,
+    eventsWithUnresolvedReview: records.filter(
+      (r) => r.finalState === 'REVIEW_REQUIRED' && !r.mismatches.some((m) => m.startsWith('ticketLink:REVIEW_REQUIRED')),
+    ).length,
     pastEventsRemainingThrough2026_08_28: pastEvents.length,
     pastEventsRecreated: pastEvents.length,
     allScopeEventsVisuallyVerified: records.every((r) => r.sourceScreenshots.official && r.sourceScreenshots.consumer),
@@ -1046,6 +1084,8 @@ async function main() {
     counters.scopeEventCount >= 30 &&
     counters.eventsWithErrors === 0 &&
     counters.sourceVsConsumerMismatches === 0 &&
+    counters.fourKnownTicketPersistenceFailuresRemaining === 0 &&
+    counters.eventsWithUnresolvedReview === 0 &&
     counters.pastEventsRemainingThrough2026_08_28 === 0 &&
     counters.eventsOfficialPagesVisuallyChecked === counters.scopeEventCount &&
     counters.eventsConsumerPagesVisuallyChecked === counters.scopeEventCount;
@@ -1056,7 +1096,7 @@ async function main() {
     production: PRODUCTION_PROJECT_REF,
     finalStatus: pass
       ? counters.eventsReviewRequired === 0
-        ? 'M9_2_2_2_FULL_31_EVENT_VISUAL_SOURCE_TRUTH_QA_VERIFIED'
+        ? 'M9_2_2_2_FULL_VISUAL_SOURCE_TRUTH_QA_VERIFIED'
         : 'PARTIAL_REVIEW_REQUIRED'
       : 'PARTIAL_REVIEW_REQUIRED',
     genericFixes:

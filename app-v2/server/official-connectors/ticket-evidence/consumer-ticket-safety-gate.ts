@@ -5,6 +5,7 @@ import type {
   TicketSourceState,
   TicketTargetIdentityDecision,
 } from './types';
+import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { isShopRootUrl } from './url-policy';
 
 export interface ConsumerTicketSafetyInput {
@@ -45,12 +46,50 @@ const BLOCKED_SALES_STATUSES = new Set([
   'cancelled',
 ]);
 
+export function hasVerifiedEventSpecificTicketTarget(input: ConsumerTicketSafetyInput): boolean {
+  if (input.identityResult !== 'ticket_identity_verified') {
+    return false;
+  }
+  if (input.identityDecision && !isVerifiedTicketTargetIdentity(input.identityDecision)) {
+    return false;
+  }
+  if (!input.canonicalTicketUrl?.startsWith('https://')) {
+    return false;
+  }
+  if (isShopRootUrl(input.canonicalTicketUrl)) {
+    return false;
+  }
+  return true;
+}
+
 export function hasVerifiedPurchaseTarget(input: ConsumerTicketSafetyInput): boolean {
   if (!input.canonicalTicketUrl?.startsWith('https://')) {
     return false;
   }
   if (isShopRootUrl(input.canonicalTicketUrl)) {
     return false;
+  }
+  if (
+    input.ticketSourceState === 'provider_access_unavailable' &&
+    hasVerifiedEventSpecificTicketTarget(input)
+  ) {
+    if (input.identityResult && BLOCKED_IDENTITY_RESULTS.has(input.identityResult)) {
+      return false;
+    }
+    if (input.identityDecision && BLOCKED_IDENTITY_DECISIONS.has(input.identityDecision)) {
+      return false;
+    }
+    if (input.salesStatus && BLOCKED_SALES_STATUSES.has(input.salesStatus)) {
+      return false;
+    }
+    if (
+      input.actionKind === 'presale_registration' ||
+      input.actionKind === 'waitlist' ||
+      input.actionKind === 'historical_ticket_detail'
+    ) {
+      return false;
+    }
+    return true;
   }
   if (input.ticketSourceState && BLOCKED_SOURCE_STATES.has(input.ticketSourceState)) {
     return false;

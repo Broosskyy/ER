@@ -2,7 +2,12 @@ import type { EventCandidateTicket } from '../../ingestion/types/event-candidate
 import { canonicalizeOfficialSourceUrl } from '../../ingestion/identity/source-identity';
 import { buildTicketSourcePayload } from './attach-ticket-evidence';
 import type { VerifiedTicketCompleteResult } from './ticket-audit-metrics';
-import { consumerTicketUrl, hasActivePurchaseCta, hasVerifiedPresaleCta } from './consumer-ticket-safety-gate';
+import {
+  consumerTicketUrl,
+  hasActivePurchaseCta,
+  hasVerifiedEventSpecificTicketTarget,
+  hasVerifiedPresaleCta,
+} from './consumer-ticket-safety-gate';
 import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
 import { isShopRootUrl } from './url-policy';
@@ -74,12 +79,40 @@ function identityAllowsPersistedPurchaseUrl(result: VerifiedTicketCompleteResult
   return result.identityResult === 'ticket_identity_verified';
 }
 
+function resolveVerifiedEventTicketUrl(result: VerifiedTicketCompleteResult): string | undefined {
+  if (!identityAllowsPersistedPurchaseUrl(result)) {
+    return undefined;
+  }
+  const url =
+    result.targetIdentityEvidence?.terminalUrl ??
+    result.canonicalTicketUrl ??
+    result.resolvedAction?.canonicalTicketUrl;
+  if (!url?.startsWith('https://') || isShopRootUrl(url)) {
+    return undefined;
+  }
+  return url;
+}
+
+function hasVerifiedEventSpecificTicketTargetFromResult(result: VerifiedTicketCompleteResult): boolean {
+  return hasVerifiedEventSpecificTicketTarget({
+    identityResult: result.identityResult,
+    identityDecision: result.targetIdentityEvidence?.identityDecision,
+    canonicalTicketUrl:
+      result.canonicalTicketUrl ??
+      result.resolvedAction?.canonicalTicketUrl ??
+      result.targetIdentityEvidence?.terminalUrl,
+  });
+}
+
 function shouldPersistTicketRow(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): boolean {
   if (sourceState === 'ticket_link_not_yet_published') {
     return false;
   }
   if (sourceState === 'provider_access_unavailable') {
     if (result.targetIdentityEvidence?.identityDecision === 'redirected_to_different_event') {
+      return true;
+    }
+    if (hasVerifiedEventSpecificTicketTargetFromResult(result)) {
       return true;
     }
     return false;
@@ -115,7 +148,11 @@ function buildSafetyInput(sourceState: TicketSourceState, result: VerifiedTicket
     salesStatus: mapSalesStatus(sourceState, result),
     actionKind: preview?.actionKind ?? result.resolvedAction?.kind,
     actionLabel: preview?.actionLabel,
-    canonicalTicketUrl: preview?.canonicalTicketUrl ?? result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl,
+    canonicalTicketUrl:
+      preview?.canonicalTicketUrl ??
+      result.canonicalTicketUrl ??
+      result.resolvedAction?.canonicalTicketUrl ??
+      result.targetIdentityEvidence?.terminalUrl,
     priceEvidenceState: preview?.priceEvidenceState ?? result.priceEvidence?.state,
   };
 }
@@ -125,6 +162,20 @@ function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCo
     return 'sales_ended';
   }
   if (sourceState === 'provider_access_unavailable') {
+    if (hasVerifiedEventSpecificTicketTargetFromResult(result)) {
+      const normalized =
+        result.ticketEvidence?.normalizedStatus ?? result.statusProjection?.normalizedStatus;
+      if (normalized === 'sold_out') {
+        return 'sold_out';
+      }
+      if (normalized === 'sales_ended') {
+        return 'sales_ended';
+      }
+      if (normalized === 'sale_not_started') {
+        return 'sale_not_started';
+      }
+      return 'available';
+    }
     return 'availability_unverified';
   }
   const normalized = result.statusProjection?.normalizedStatus;
@@ -193,13 +244,11 @@ function mapPlannedTicketRow(
   ) {
     salesStatus = existing.salesStatus;
   }
+  const verifiedEventUrl = resolveVerifiedEventTicketUrl(result);
   let ticketUrl =
     salesStatus === 'sold_out' || salesStatus === 'sales_ended' || salesStatus === 'cancelled'
-      ? undefined
-      : consumerTicketUrl(safetyInput) ??
-        (identityAllowsPersistedPurchaseUrl(result)
-          ? result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl
-          : undefined);
+      ? verifiedEventUrl
+      : consumerTicketUrl(safetyInput) ?? verifiedEventUrl;
   if (!ticketUrl?.startsWith('https://')) {
     ticketUrl = undefined;
   }
@@ -210,7 +259,11 @@ function mapPlannedTicketRow(
       priceFromMinor = undefined;
       currency = undefined;
     }
-    ticketUrl = undefined;
+    if (sourceState === 'historical_ticket_detail') {
+      ticketUrl = undefined;
+    } else if (!verifiedEventUrl) {
+      ticketUrl = undefined;
+    }
   }
   return {
     provider: result.providerKey ?? result.ticketEvidence?.providerKey ?? existing?.provider ?? 'unknown',

@@ -374,4 +374,148 @@ describe('ticket persistence planning', () => {
     expect(plans[0]?.ticketOperation).toBe('noop');
     expect(plans[0]?.ticketOperationReason).toBe('preserve_existing_ticket_on_transient_failure');
   });
+
+  it('plans verified ticket.io subdomain target when provider page is blocked', () => {
+    const result = enrichResultWithM6_4(
+      {
+        sourceEventKey: 'cosmic-gate',
+        officialUrl: 'https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/',
+        title: 'Cosmic Gate pres by Bootshaus & Senses!',
+        startsAt: '2026-10-17T20:00:00+02:00',
+        discoveredLinks: [],
+        rejectedCandidates: [],
+        primaryLink: {
+          rawUrl: 'https://senses-bootshaus.ticket.io/GhUtpLGh/',
+          relation: 'ticket_provider',
+          discoveredOnUrl: 'https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/',
+          discoveredFromSource: 'a[href]',
+          observedAt: '2026-08-28T06:37:56.328Z',
+        },
+        canonicalTicketUrl: 'https://senses-bootshaus.ticket.io/GhUtpLGh/',
+        providerKey: 'ticket_io',
+        identityResult: 'ticket_identity_verified',
+        identityReasons: [],
+        targetIdentityEvidence: {
+          originalUrl: 'https://senses-bootshaus.ticket.io/GhUtpLGh/',
+          redirectChain: ['https://senses-bootshaus.ticket.io/GhUtpLGh/'],
+          terminalUrl: 'https://senses-bootshaus.ticket.io/GhUtpLGh/',
+          providerKey: 'ticket_io',
+          providerEventId: 'GhUtpLGh',
+          observedAt: '2026-08-28T06:37:56.328Z',
+          contentFingerprint: 'fp-cosmic',
+          identityDecision: 'verified_same_event',
+          reasons: [],
+        },
+        classification: 'provider_access_unavailable',
+        verifiedTicketComplete: false,
+      },
+      { providerBlocked: true },
+    );
+    const plans = planTicketEvidencePersistence([result], {
+      officialBindings: [
+        {
+          eventId: 'event-cosmic-gate',
+          officialUrl: 'https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/',
+          sourceId: 'source-cosmic-gate',
+          contentHash: 'fp',
+          rawPayload: {},
+          title: 'Cosmic Gate pres by Bootshaus & Senses!',
+        },
+      ],
+      existingTickets: [],
+      existingTicketSources: [],
+    });
+    expect(plans[0]?.ticketOperation).toBe('insert');
+    expect(plans[0]?.plannedTicketRow?.ticketUrl).toBe('https://senses-bootshaus.ticket.io/GhUtpLGh/');
+    expect(plans[0]?.plannedTicketRow?.salesStatus).toBe('available');
+    expect(plans[0]?.plannedTicketRow?.priceFromMinor).toBeUndefined();
+    expect(plans[0]?.consumerProjection.hasActivePurchaseCta).toBe(true);
+  });
+
+  it('persists verified sold-out ticket.io URL without purchase CTA', () => {
+    const result = enrichResultWithM6_4(
+      {
+        sourceEventKey: 'unreal-kuko',
+        officialUrl: 'https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/',
+        title: 'UNREAL x KUKO All Night Long World Tour (Cologne)',
+        startsAt: '2026-12-19T22:00:00+01:00',
+        discoveredLinks: [],
+        rejectedCandidates: [],
+        primaryLink: {
+          rawUrl: 'https://unreal-bootshaus.ticket.io/nUs0Ktl4/',
+          relation: 'ticket_provider',
+          discoveredOnUrl:
+            'https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/',
+          discoveredFromSource: 'a[href]',
+          observedAt: '2026-08-28T06:37:56.328Z',
+        },
+        canonicalTicketUrl: 'https://unreal-bootshaus.ticket.io/nUs0Ktl4/',
+        providerKey: 'ticket_io',
+        identityResult: 'ticket_identity_verified',
+        identityReasons: [],
+        targetIdentityEvidence: {
+          originalUrl: 'https://unreal-bootshaus.ticket.io/nUs0Ktl4/',
+          redirectChain: ['https://unreal-bootshaus.ticket.io/nUs0Ktl4/'],
+          terminalUrl: 'https://unreal-bootshaus.ticket.io/nUs0Ktl4/',
+          providerKey: 'ticket_io',
+          providerEventId: 'nUs0Ktl4',
+          observedAt: '2026-08-28T06:37:56.328Z',
+          contentFingerprint: 'fp-unreal',
+          identityDecision: 'verified_same_event',
+          reasons: [],
+        },
+        classification: 'provider_access_unavailable',
+        verifiedTicketComplete: false,
+        ticketEvidence: {
+          providerKey: 'ticket_io',
+          providerIdentity: {
+            providerKey: 'ticket_io',
+            providerEventId: 'nUs0Ktl4',
+            providerScope: 'unreal-bootshaus.ticket.io',
+            identityKey: 'ticket_io:unreal-bootshaus.ticket.io:nUs0Ktl4',
+          },
+          sourceUrl: 'https://unreal-bootshaus.ticket.io/nUs0Ktl4/',
+          canonicalTicketUrl: 'https://unreal-bootshaus.ticket.io/nUs0Ktl4/',
+          sourceObservedAt: '2026-08-17T13:46:56.751Z',
+          extractedAt: '2026-08-17T13:49:45.459Z',
+          contentFingerprint: 'fp-unreal-provider',
+          offers: [],
+          normalizedStatus: 'sold_out',
+          statusLabel: 'Ausverkauft',
+          rejectedOffers: [],
+          confidence: 0.9,
+        },
+      },
+      { providerBlocked: true },
+    );
+    const plans = planTicketEvidencePersistence([result], {
+      officialBindings: [
+        {
+          eventId: 'event-unreal',
+          officialUrl: 'https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/',
+          sourceId: 'source-unreal',
+          contentHash: 'fp',
+          rawPayload: {},
+          title: 'UNREAL x KUKO All Night Long World Tour (Cologne)',
+        },
+      ],
+      existingTickets: [
+        {
+          ticketId: 'ticket-unreal',
+          eventId: 'event-unreal',
+          provider: 'ticket_io',
+          ticketUrl: undefined,
+          priceFromMinor: undefined,
+          currency: undefined,
+          salesStatus: 'sold_out',
+          sortOrder: 0,
+        },
+      ],
+      existingTicketSources: [],
+    });
+    expect(plans[0]?.ticketOperation).toBe('update');
+    expect(plans[0]?.plannedTicketRow?.ticketUrl).toBe('https://unreal-bootshaus.ticket.io/nUs0Ktl4/');
+    expect(plans[0]?.plannedTicketRow?.salesStatus).toBe('sold_out');
+    expect(plans[0]?.consumerProjection.hasActivePurchaseCta).toBe(false);
+  });
 });
