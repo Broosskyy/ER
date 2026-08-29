@@ -38,6 +38,7 @@
     "eslint": "^9.39.2",
     "eslint-config-expo": "~57.0.0",
     "eslint-config-prettier": "^10.1.8",
+    "playwright": "^1.62.1",
     "prettier": "^3.8.1",
     "tsx": "^4.20.3",
     "typescript": "~6.0.3",
