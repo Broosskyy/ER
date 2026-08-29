@@ -190,7 +190,58 @@ describe('global event media selection', () => {
           confidence: 34,
         },
       }),
-    ).toBe('event_flyer');
+    ).toBe('announcement_flyer');
+  });
+
+  it('prefers verified ticket lineup flyer over official early-bird announcement media', () => {
+    const evidence = buildEvidence({
+      officialImageUrl: 'https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2.jpg',
+      evidenceAudit: {
+        lineupBlocks: [],
+        normalizedGenres: [],
+        unmappedGenreLabels: [],
+        mediaEvidence: {
+          sourceImageUrl: 'https://affenkaefig.info/wp-content/uploads/2026/07/05.09.26_QUADA_EB_ULand_WEB2.jpg',
+          imageFingerprint: 'underland-eb-fp',
+          sourceObservedAt: '2026-08-28T10:00:00.000Z',
+          extractedAt: '2026-08-28T10:00:00.000Z',
+          extractionProvider: 'tesseract',
+          mediaClassification: 'event_flyer',
+          rawText: 'UNDERLAND 05.09.2026 EARLY BIRD',
+          ocrBlocks: [],
+          ocrLines: [],
+          lineupCandidates: [{ displayName: 'UNDERLAND', rawText: 'UNDERLAND', confidence: 80, evidenceRole: 'headliner' }],
+          genreCandidates: [],
+          rejectedCandidates: [],
+          confidence: 70,
+        },
+      },
+    });
+    const ticketResult = buildTicketResult({
+      providerEvidence: {
+        ...buildTicketResult().providerEvidence!,
+        event: {
+          imageUrl: 'https://ticketkings.de/wp-content/uploads/2026/04/original-20260522-134011-7db369482b94.jpg',
+        },
+        supplementalContent: {
+          lineupCandidates: [
+            { displayName: 'ACINA', rawText: 'ACINA' },
+            { displayName: 'BASSSTØRM', rawText: 'BASSSTØRM' },
+            { displayName: 'JEYPIEH', rawText: 'JEYPIEH' },
+            { displayName: 'KULISCHKIN', rawText: 'KULISCHKIN' },
+            { displayName: 'MILØ', rawText: 'MILØ' },
+            { displayName: 'MIXXR', rawText: 'MIXXR' },
+            { displayName: 'NIKKEL', rawText: 'NIKKEL' },
+            { displayName: 'OPOSITION', rawText: 'OPOSITION' },
+            { displayName: 'REFLEXX', rawText: 'REFLEXX' },
+            { displayName: 'VERNEX', rawText: 'VERNEX' },
+          ],
+        },
+      },
+    });
+    const selection = selectBestVerifiedEventMedia(evidence, ticketResult);
+    expect(selection.selected?.sourceType).toBe('verified_ticket_provider');
+    expect(selection.selected?.imageUrl).toContain('ticketkings.de');
   });
 
   it('rejects ticket placeholder images and prefers verified ticket media', () => {

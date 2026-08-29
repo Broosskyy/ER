@@ -4,7 +4,7 @@ import { processOfficialEventTickets } from '../ticket-evidence/ticket-evidence-
 import { reconcileVerifiedTicketSupplementalEvidence } from '../ticket-evidence/reconcile-verified-ticket-supplemental';
 import type { MediaEvidenceContext } from '../shared/media-evidence-context';
 import { buildImageHostAllowlist } from './safe-image-fetch';
-import { enrichOfficialEvidenceWithMedia } from './enrich-official-evidence';
+import { enrichOfficialEvidenceWithMedia, enrichVerifiedTicketProviderMediaImage } from './enrich-official-evidence';
 import { reconcileEventMediaEvidence } from './reconcile-event-media-evidence';
 import type { MediaPassCounters } from './types';
 
@@ -63,6 +63,20 @@ export async function finalizeOfficialEventEvidence(
   }
 
   const withSupplemental = reconcileVerifiedTicketSupplementalEvidence(evidence, ticketResult);
+
+  if (ticketResult?.providerEvidence?.event.imageUrl && !skipPast) {
+    for (const host of buildImageHostAllowlist([ticketResult.providerEvidence.event.imageUrl])) {
+      input.allowedImageHosts.add(host);
+    }
+    await enrichVerifiedTicketProviderMediaImage(withSupplemental, ticketResult, {
+      counters: input.counters,
+      mediaCounters: input.mediaCounters,
+      allowedImageHosts: input.allowedImageHosts,
+      sourceObservedAt: input.fetchedAt,
+      mediaContext: input.buildMediaContext(withSupplemental),
+    });
+  }
+
   const withMedia = reconcileEventMediaEvidence(withSupplemental, ticketResult, evidence.officialImageUrl);
 
   return {

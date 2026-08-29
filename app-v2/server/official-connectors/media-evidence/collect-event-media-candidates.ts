@@ -8,7 +8,10 @@ import type {
   EventMediaSourceType,
 } from './event-media-candidate';
 import { classifyEventMediaType } from './classify-event-media-type';
+import { findCachedMediaEvidenceByImageUrl } from './media-evidence-cache';
+import { reparseCachedMediaEvidence } from './tesseract-media-evidence-provider';
 import type { EventMediaEvidence } from './types';
+import { buildMediaEvidenceContextFromEvidence } from '../shared/media-evidence-context';
 
 function canonicalActKey(name: string): string {
   return name.trim().toLowerCase();
@@ -31,6 +34,27 @@ function mapTicketIdentity(identity?: TicketIdentityResult): EventMediaIdentityR
     default:
       return 'review_required';
   }
+}
+
+function resolveMediaEvidenceForImage(
+  evidence: OfficialEventEvidence,
+  imageUrl: string,
+  corroborationLineup?: string[],
+): EventMediaEvidence | undefined {
+  const cached = findCachedMediaEvidenceByImageUrl(imageUrl);
+  if (!cached?.ocrLines?.length) {
+    return cached;
+  }
+
+  const mediaContext = buildMediaEvidenceContextFromEvidence({
+    venueName: evidence.venue?.name,
+    organizerLabel: evidence.organizerLabel,
+    city: evidence.venue?.city,
+    officialUrl: evidence.officialUrl,
+    officialImageUrl: imageUrl,
+  });
+
+  return reparseCachedMediaEvidence(cached, mediaContext, corroborationLineup);
 }
 
 function buildContentSignals(input: {
@@ -156,6 +180,7 @@ export function collectEventMediaCandidates(
 
   const ticketImageUrl = ticketResult?.providerEvidence?.event.imageUrl;
   if (ticketImageUrl && ticketResult?.canonicalTicketUrl) {
+    const ticketMediaEvidence = resolveMediaEvidenceForImage(evidence, ticketImageUrl);
     pushCandidate(candidates, seen, {
       imageUrl: ticketImageUrl,
       sourceId: ticketResult.canonicalTicketUrl,
@@ -163,7 +188,11 @@ export function collectEventMediaCandidates(
       sourceUrl: ticketResult.canonicalTicketUrl,
       identityConfidence: mapTicketIdentity(ticketResult.identityResult),
       evidence,
-      supplementalLineupCount,
+      mediaEvidence: ticketMediaEvidence,
+      supplementalLineupCount: Math.max(
+        supplementalLineupCount,
+        ticketMediaEvidence?.lineupCandidates.length ?? 0,
+      ),
       providerKey: ticketResult.providerKey,
       discoveredAt: ticketResult.providerEvidence?.sourceObservedAt ?? evidence.fetchedAt,
     });

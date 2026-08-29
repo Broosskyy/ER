@@ -7,6 +7,9 @@ const PLACEHOLDER_IMAGE_PATTERN =
 const BRANDING_PATTERN = /\b(?:logo|brand|avatar|icon|favicon)\b/i;
 const MULTI_EVENT_PATTERN = /(?:^|\/)(?:programm|kalender|calendar|overview|ubersicht|übersicht)(?:\/|$)/i;
 const TICKET_MARKETING_PATTERN = /\b(?:earlybird|early-bird|phase\s*\d|vip|bundle|kombi)\b/i;
+const QUADA_EARLY_BIRD_URL_PATTERN = /(?:^|[/_-])eb(?:[_-]|$)|_eb_|(?:^|[/_-])earlybird|early.?bird/i;
+const QUADA_LINEUP_URL_PATTERN = /(?:^|[/_-])lineup(?:[_-]|$)|_lineup_|lineup|line-up/i;
+const EARLY_BIRD_OCR_PATTERN = /\bearly\s+bird\b/i;
 
 function urlPathForClassification(imageUrl: string, sourceUrl: string): string {
   try {
@@ -38,12 +41,22 @@ export function classifyEventMediaType(input: {
   if (TICKET_MARKETING_PATTERN.test(url)) {
     return 'ticket_marketing';
   }
+  if (
+    QUADA_EARLY_BIRD_URL_PATTERN.test(url) &&
+    !QUADA_LINEUP_URL_PATTERN.test(url)
+  ) {
+    return 'announcement_flyer';
+  }
+  if (input.mediaEvidence?.rawText && EARLY_BIRD_OCR_PATTERN.test(input.mediaEvidence.rawText)) {
+    return 'announcement_flyer';
+  }
 
   const mediaClassification = input.mediaEvidence?.mediaClassification;
   if (mediaClassification) {
     if (
       mediaClassification === 'unreadable' &&
-      /flyer|poster|lineup|line-up|_eb_|_lineup_|quada|web_/i.test(url)
+      /flyer|poster|lineup|line-up|_lineup_|quada|web_/i.test(url) &&
+      !QUADA_EARLY_BIRD_URL_PATTERN.test(url)
     ) {
       return (input.lineupActCount ?? 0) >= 3 ? 'lineup_flyer' : 'event_flyer';
     }

@@ -1,4 +1,5 @@
 import type { ConnectorErrorCounters, OfficialEventEvidence } from '../types';
+import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
 import {
   buildMediaEvidenceContextFromEvidence,
   type MediaEvidenceContext,
@@ -227,6 +228,49 @@ export async function enrichOfficialEvidenceWithMedia(
   }
 
   return reconciled.evidence;
+}
+
+export async function enrichVerifiedTicketProviderMediaImage(
+  evidence: OfficialEventEvidence,
+  ticketResult: VerifiedTicketCompleteResult,
+  options: EnrichOfficialEvidenceOptions,
+): Promise<void> {
+  const imageUrl = ticketResult.providerEvidence?.event.imageUrl;
+  if (!imageUrl || imageUrl === evidence.officialImageUrl) {
+    return;
+  }
+
+  const provider = options.provider ?? new TesseractMediaEvidenceProvider();
+  const mediaContext = buildMediaEvidenceContextFromEvidence({
+    venueName: evidence.venue?.name,
+    organizerLabel: evidence.organizerLabel,
+    city: evidence.venue?.city,
+    officialUrl: evidence.officialUrl,
+    officialImageUrl: imageUrl,
+  });
+
+  try {
+    const { fingerprint, mimeType, bytes: imageBytes } = await loadOfficialImage(imageUrl, options);
+    if (!seenFingerprints.has(fingerprint)) {
+      seenFingerprints.add(fingerprint);
+      options.mediaCounters.uniqueImageFingerprints += 1;
+    }
+    if (!analyzedFingerprints.has(fingerprint)) {
+      analyzedFingerprints.add(fingerprint);
+      options.mediaCounters.uniqueImagesAnalyzed += 1;
+    }
+
+    await provider.extractFromImage({
+      sourceImageUrl: imageUrl,
+      imageFingerprint: fingerprint,
+      imageBytes,
+      mimeType,
+      sourceObservedAt: ticketResult.providerEvidence?.sourceObservedAt ?? options.sourceObservedAt,
+      mediaContext,
+    });
+  } catch {
+    // Ticket image OCR is best-effort; verified ticket identity still gates selection.
+  }
 }
 
 export function resetMediaPassStateForTests(): void {
