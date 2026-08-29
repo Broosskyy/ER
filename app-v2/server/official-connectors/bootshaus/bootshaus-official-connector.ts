@@ -29,6 +29,7 @@ import { BOOTSHAUS_CONNECTOR_ID, BOOTSHAUS_LIST_URL } from './constants';
 import { buildBootshausMediaEvidenceContext } from './build-bootshaus-media-evidence';
 import { parseBootshausDetailPage } from './parse-detail';
 import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './parse-list';
+import { markPastOfficialEventIfNeeded } from '../shared/mark-past-official-event';
 
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
@@ -127,7 +128,6 @@ export class BootshausOfficialConnector implements OfficialConnector {
     const discovery = this.discoverFromListHtml(listResult.html, BOOTSHAUS_LIST_URL);
     counters.duplicateListEntries += discovery.duplicateCount;
 
-    const nowMs = Date.parse(fetchedAt);
     const detailUrls = discovery.detailUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
 
@@ -150,16 +150,14 @@ export class BootshausOfficialConnector implements OfficialConnector {
       const slug = new URL(detailResult.finalUrl).pathname.split('/').filter(Boolean)[1] ?? 'unknown';
       await writeCache(`m3-bootshaus-cache/details/${slug}.html`, detailResult.html);
 
-      const textEvidence = this.parseDetailPage(
+      let textEvidence = this.parseDetailPage(
         detailResult.html,
         detailResult.finalUrl,
         fetchedAt,
         counters,
       );
 
-      if (textEvidence.startsAt && Date.parse(textEvidence.startsAt) < nowMs) {
-        textEvidence.enrichmentGaps = [...new Set([...textEvidence.enrichmentGaps, 'past_event_skipped'])];
-      }
+      textEvidence = markPastOfficialEventIfNeeded(textEvidence);
 
       const finalized = await finalizeOfficialEventEvidence({
         evidence: textEvidence,
@@ -171,7 +169,7 @@ export class BootshausOfficialConnector implements OfficialConnector {
         buildMediaContext: buildBootshausMediaEvidenceContext,
         processTickets: Boolean(textEvidence.linkedTicketUrl),
       });
-      if (finalized.ticketResult) {
+      if (finalized.ticketResult && !textEvidence.enrichmentGaps.includes('past_event_skipped')) {
         ticketResults.push(finalized.ticketResult);
       }
 

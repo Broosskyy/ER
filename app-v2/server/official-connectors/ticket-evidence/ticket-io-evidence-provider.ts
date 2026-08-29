@@ -183,10 +183,19 @@ export class TicketIoEvidenceProvider implements TicketEvidenceProvider {
         rawTitle: domEvidence.eventTitle,
         startAt: domEvidence.startAt,
         venueName: domEvidence.venueName,
+        description: domEvidence.descriptionClean,
         imageUrl: domEvidence.imageUrl,
       },
       tickets,
       confidence: tickets.confidence,
+      supplementalContent:
+        domEvidence.descriptionClean || domEvidence.genreLabels.length > 0 || domEvidence.lineupCandidates.length > 0
+          ? {
+              descriptionClean: domEvidence.descriptionClean,
+              lineupCandidates: domEvidence.lineupCandidates,
+              genreLabels: domEvidence.genreLabels,
+            }
+          : undefined,
     };
   }
 }

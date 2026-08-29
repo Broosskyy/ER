@@ -8,6 +8,7 @@ import { normalizeTicketPriceLine } from './normalize-ticket-price';
 import type { TicketOfferRole, VerifiedTicketStatus } from './types';
 import { isTicketProviderBlockedBody } from './safe-fetch-ticket';
 import { extractPrimaryPageImageUrl } from '../media-evidence/extract-page-image-url';
+import { extractTicketProviderGenreLabels } from './extract-ticket-provider-genres';
 
 export interface TicketKingsDetailDomOffer {
   rawLabel: string;
@@ -33,6 +34,7 @@ export interface TicketKingsDetailDomEvidence {
   offers: TicketKingsDetailDomOffer[];
   rejectedOffers: Array<{ rawLabel: string; reason: string }>;
   embeddedTicketingUrls: string[];
+  genreLabels: string[];
   contentFingerprint: string;
 }
 
@@ -331,6 +333,8 @@ export function parseTicketKingsDetailDom(body: string, canonicalUrl: string): T
   const segments = new URL(canonicalUrl).pathname.split('/').filter(Boolean);
   const providerEventId = segments[segments.length - 1] || segments[0];
 
+  const genreLabels = extractTicketProviderGenreLabels({ body, description: descriptionClean });
+
   return {
     providerEventId,
     eventTitle: jsonLd ? String(jsonLd.name ?? '').trim() : undefined,
@@ -340,6 +344,7 @@ export function parseTicketKingsDetailDom(body: string, canonicalUrl: string): T
     descriptionClean,
     imageUrl,
     lineupCandidates: extractLineupFromTicketKingsDescription(descriptionClean),
+    genreLabels,
     ticketStatus: resolveTicketStatus(offers),
     offers,
     rejectedOffers,

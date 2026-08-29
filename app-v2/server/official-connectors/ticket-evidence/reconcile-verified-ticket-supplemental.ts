@@ -9,6 +9,7 @@ import {
 } from '../shared/lineup-normalization';
 import { buildMediaEvidenceContextFromEvidence } from '../shared/media-evidence-context';
 import { extractLineupFromTicketKingsDescription } from './parse-ticket-kings-detail-dom';
+import { normalizedGenresToExplicitLabels, normalizeOfficialGenreLabels } from '../shared/normalize-genre';
 
 function identityAllowsSupplementalMerge(result: VerifiedTicketCompleteResult): boolean {
   return result.identityResult === 'ticket_identity_verified';
@@ -113,11 +114,28 @@ export function reconcileVerifiedTicketSupplementalEvidence(
     }
   }
 
+  let explicitGenreLabels = [...evidence.explicitGenreLabels];
+  const supplementalGenres = supplemental?.genreLabels ?? [];
+  if (supplementalGenres.length > 0) {
+    const normalized = normalizeOfficialGenreLabels([...explicitGenreLabels, ...supplementalGenres]);
+    const mergedLabels = normalizedGenresToExplicitLabels(normalized.normalized);
+    if (mergedLabels.length > explicitGenreLabels.length) {
+      explicitGenreLabels = mergedLabels;
+      for (const gap of ['genres_missing', 'genres_media_required']) {
+        const index = enrichmentGaps.indexOf(gap);
+        if (index >= 0) {
+          enrichmentGaps.splice(index, 1);
+        }
+      }
+    }
+  }
+
   return {
     ...evidence,
     descriptionClean,
     descriptionRaw,
     lineupCandidates,
+    explicitGenreLabels,
     enrichmentGaps,
     rejectedCandidates,
   };

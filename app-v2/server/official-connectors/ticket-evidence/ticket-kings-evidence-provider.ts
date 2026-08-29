@@ -142,10 +142,11 @@ export class TicketKingsEvidenceProvider implements TicketEvidenceProvider {
       },
       tickets,
       confidence: tickets.confidence,
-      supplementalContent: enrichedDom.descriptionClean
+      supplementalContent: enrichedDom.descriptionClean || enrichedDom.genreLabels.length > 0
         ? {
             descriptionClean: enrichedDom.descriptionClean,
             lineupCandidates: enrichedDom.lineupCandidates,
+            genreLabels: enrichedDom.genreLabels,
           }
         : undefined,
     };

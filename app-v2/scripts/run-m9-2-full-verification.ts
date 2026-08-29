@@ -119,10 +119,27 @@ function classifyLineup(
   return 'mismatch';
 }
 
-function classifyGenres(realGenres: string[], dbGenres: string[]): FieldClassification {
-  if (realGenres.length === 0) return 'source_not_announced';
+function classifyGenres(
+  realGenres: string[],
+  parsedGenres: string[],
+  dbGenres: string[],
+): FieldClassification {
+  const available = realGenres.length > 0 ? realGenres : parsedGenres;
+  if (available.length === 0) return 'source_not_announced';
   if (dbGenres.length === 0) return 'mismatch';
   return 'verified';
+}
+
+function imageAssetMatches(left?: string | null, right?: string | null): boolean {
+  if (!left || !right) {
+    return false;
+  }
+  const leftBase = left.split('/').pop()?.slice(0, 12) ?? '';
+  const rightBase = right.split('/').pop()?.slice(0, 12) ?? '';
+  if (!leftBase || !rightBase) {
+    return false;
+  }
+  return leftBase === rightBase || left.includes(rightBase.slice(0, 8)) || right.includes(leftBase.slice(0, 8));
 }
 
 function loadDbBundles(runQuery: ReturnType<typeof createSupabaseCliLinkedQueryExecutor>): DbEventBundle[] {
@@ -387,7 +404,11 @@ function buildAffenkaefigEventMatrix(
       wrongLineup = true;
     }
 
-    const genreClassification = classifyGenres(realSource?.genres ?? [], db.genres.map((g) => g.display_name));
+    const genreClassification = classifyGenres(
+      realSource?.genres ?? [],
+      preview?.explicitGenreLabels ?? [],
+      db.genres.map((g) => g.display_name),
+    );
     if (genreClassification === 'mismatch') {
       mismatches.push('genres_pipeline_mismatch');
     }
@@ -422,13 +443,10 @@ function buildAffenkaefigEventMatrix(
     if (preview?.startsAt && !sameInstant(preview.startsAt, db.event.starts_at)) {
       mismatches.push('parsed_date_vs_db');
     }
-    if (realSource?.imageUrl && db.event.image_url && !db.event.image_url.includes(new URL(realSource.imageUrl).pathname.split('/').pop()?.slice(0, 8) ?? '___')) {
-      const realBase = realSource.imageUrl.split('/').pop()?.slice(0, 12) ?? '';
-      const dbBase = db.event.image_url.split('/').pop()?.slice(0, 12) ?? '';
-      if (realBase && dbBase && realBase !== dbBase) {
-        mismatches.push('image_assignment_suspect');
-        wrongImage = true;
-      }
+    const canonicalImageUrl = preview?.officialImageUrl ?? realSource?.imageUrl;
+    if (canonicalImageUrl && db.event.image_url && !imageAssetMatches(canonicalImageUrl, db.event.image_url)) {
+      mismatches.push('image_assignment_suspect');
+      wrongImage = true;
     }
 
     const unsafeCta =

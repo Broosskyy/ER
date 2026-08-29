@@ -288,7 +288,7 @@ export function planOfficialEventWrite(
       reconciliation.fieldDecisions.some(
         (decision) =>
           decision.decision === 'accept' &&
-          ['description', 'lineup', 'title', 'startsAt', 'endsAt', 'organizer', 'image'].includes(decision.field),
+          ['description', 'lineup', 'genres', 'title', 'startsAt', 'endsAt', 'organizer', 'image'].includes(decision.field),
       );
     if (!hasAcceptedSupplementalChange) {
       eventAction = 'noop';

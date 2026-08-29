@@ -38,6 +38,7 @@ import {
   dedupeAffenkaefigDetailUrls,
   extractAffenkaefigDetailUrlsFromListHtml,
 } from './parse-list';
+import { markPastOfficialEventIfNeeded } from '../shared/mark-past-official-event';
 
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
@@ -132,7 +133,6 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
     const discovery = this.discoverFromListHtml(listResult.html, AFFENKAEFIG_LIST_URL);
     counters.duplicateListEntries += discovery.duplicateCount;
 
-    const nowMs = Date.parse(fetchedAt);
     const detailUrls = discovery.detailUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
 
@@ -155,16 +155,14 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
       const slug = new URL(detailResult.finalUrl).pathname.split('/').filter(Boolean).pop() ?? 'unknown';
       await writeCache(`m8-6-affenkaefig-cache/details/${slug}.html`, detailResult.html);
 
-      const evidence = this.parseDetailPage(
+      let evidence = this.parseDetailPage(
         detailResult.html,
         detailResult.finalUrl,
         fetchedAt,
         counters,
       );
 
-      if (evidence.startsAt && Date.parse(evidence.startsAt) < nowMs) {
-        evidence.enrichmentGaps = [...new Set([...evidence.enrichmentGaps, 'past_event_skipped'])];
-      }
+      evidence = markPastOfficialEventIfNeeded(evidence);
 
       const finalized = await finalizeOfficialEventEvidence({
         evidence,
@@ -176,7 +174,7 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
         buildMediaContext: buildAffenkaefigMediaEvidenceContext,
         processTickets: true,
       });
-      if (finalized.ticketResult) {
+      if (finalized.ticketResult && !evidence.enrichmentGaps.includes('past_event_skipped')) {
         ticketResults.push(finalized.ticketResult);
       }
 

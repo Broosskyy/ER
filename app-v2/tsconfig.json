@@ -4,9 +4,22 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "app/**/*.ts", "app/**/*.tsx", ".expo/types/**/*.ts", "src/types/expo-app-ambient.d.ts"],
-  "exclude": ["scripts/**", "node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    ".expo/types/**/*.ts",
+    "src/types/expo-app-ambient.d.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": [
+    "scripts/**",
+    "node_modules"
+  ]
 }

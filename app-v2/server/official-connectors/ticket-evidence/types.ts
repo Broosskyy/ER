@@ -300,6 +300,7 @@ export interface TicketProviderEventEvidence {
   supplementalContent?: {
     descriptionClean?: string;
     lineupCandidates?: Array<{ displayName: string; rawText: string }>;
+    genreLabels?: string[];
   };
 }
 

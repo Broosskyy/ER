@@ -13,6 +13,8 @@ import type { TicketOfferRole, VerifiedTicketStatus } from './types';
 import { canonicalizeTicketIoUrl, extractTicketIoProviderEventId } from './url-policy';
 import { isTicketProviderBlockedBody } from './safe-fetch-ticket';
 import { extractPrimaryPageImageUrl } from '../media-evidence/extract-page-image-url';
+import { extractTicketProviderGenreLabels } from './extract-ticket-provider-genres';
+import { extractLineupFromTicketKingsDescription } from './parse-ticket-kings-detail-dom';
 
 export type CachedResponseClassification =
   | 'security_challenge_only'
@@ -37,7 +39,10 @@ export interface TicketIoDetailDomEvidence {
   eventTitle?: string;
   startAt?: string;
   venueName?: string;
+  descriptionClean?: string;
   imageUrl?: string;
+  genreLabels: string[];
+  lineupCandidates: Array<{ displayName: string; rawText: string }>;
   canonicalTicketUrl?: string;
   ticketStatus: VerifiedTicketStatus;
   offers: TicketIoDetailDomOffer[];
@@ -373,6 +378,12 @@ export function parseTicketIoDetailDom(
   const offerUrl = offer ? String(offer.url ?? '').trim() : expected?.sourceUrl;
   const canonicalTicketUrl = offerUrl ? canonicalizeTicketIoUrl(offerUrl) : undefined;
   const imageUrl = canonicalTicketUrl ? extractPrimaryPageImageUrl(body, canonicalTicketUrl) : undefined;
+  const descriptionClean =
+    jsonLd && typeof jsonLd.description === 'string'
+      ? jsonLd.description.replace(/\s+/g, ' ').trim()
+      : undefined;
+  const genreLabels = extractTicketProviderGenreLabels({ body, description: descriptionClean });
+  const lineupCandidates = extractLineupFromTicketKingsDescription(descriptionClean);
   const providerEventId =
     expected?.providerEventId ??
     (canonicalTicketUrl ? extractTicketIoProviderEventId(canonicalTicketUrl) : undefined);
@@ -410,7 +421,10 @@ export function parseTicketIoDetailDom(
     eventTitle,
     startAt,
     venueName,
+    descriptionClean,
     imageUrl,
+    genreLabels,
+    lineupCandidates,
     canonicalTicketUrl,
     ticketStatus: finalTicketStatus,
     offers,
