@@ -563,4 +563,89 @@ describe('ticket persistence planning', () => {
     expect(plans[0]?.plannedTicketRow?.salesStatus).toBe('sold_out');
     expect(plans[0]?.consumerProjection.hasActivePurchaseCta).toBe(false);
   });
+
+  it('skips conflicting global ticket-source inserts without blocking ticket row writes', () => {
+    const sharedUrl = 'https://bootshaus-club.ticket.io/By06xnf4/';
+    const result = enrichResultWithM6_4({
+      sourceEventKey: 'chris-stussy',
+      officialUrl: 'https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/',
+      title: 'CHRIS STUSSY pres. by BOOTSHAUS',
+      startsAt: '2026-10-16T23:00:00+02:00',
+      discoveredLinks: [],
+      rejectedCandidates: [],
+      primaryLink: {
+        rawUrl: sharedUrl,
+        relation: 'ticket_provider',
+        discoveredOnUrl: 'https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/',
+        discoveredFromSource: 'a[href]',
+        observedAt: '2026-08-31T12:00:00.000Z',
+      },
+      canonicalTicketUrl: sharedUrl,
+      providerKey: 'ticket_io',
+      identityResult: 'ticket_identity_verified',
+      identityReasons: [],
+      classification: 'verified_ticket_complete',
+      verifiedTicketComplete: true,
+      ticketEvidence: {
+        providerKey: 'ticket_io',
+        providerIdentity: {
+          providerKey: 'ticket_io',
+          providerEventId: 'By06xnf4',
+          providerScope: 'bootshaus-club.ticket.io',
+          identityKey: 'ticket_io:bootshaus-club.ticket.io:By06xnf4',
+        },
+        sourceUrl: sharedUrl,
+        canonicalTicketUrl: sharedUrl,
+        sourceObservedAt: '2026-08-31T12:00:00.000Z',
+        extractedAt: '2026-08-31T12:00:00.000Z',
+        contentFingerprint: 'fp-stussy',
+        offers: [
+          {
+            rawLabel: 'Phase 2',
+            normalizedLabel: 'Phase 2',
+            rawPrice: 'ab 29,90 EUR',
+            amountMinor: 2990,
+            currency: 'EUR',
+            role: 'admission',
+            availability: 'available',
+            confidence: 0.9,
+          },
+        ],
+        normalizedStatus: 'available',
+        statusLabel: 'Tickets verfügbar',
+        rejectedOffers: [],
+        confidence: 0.9,
+      },
+    });
+    const plans = planTicketEvidencePersistence([result], {
+      officialBindings: [
+        {
+          eventId: 'event-stussy',
+          officialUrl: 'https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/',
+          sourceId: 'source-stussy',
+          contentHash: 'fp',
+          rawPayload: {},
+          title: 'CHRIS STUSSY pres. by BOOTSHAUS',
+        },
+      ],
+      existingTickets: [],
+      existingTicketSources: [
+        {
+          sourceId: 'ticket-source-stassy',
+          eventId: 'event-stassy',
+          sourceUrl: sharedUrl,
+          contentHash: 'fp-stassy',
+          rawPayload: {
+            providerKey: 'ticket_io',
+            contentFingerprint: 'fp-stassy',
+            canonicalTicketUrl: sharedUrl,
+          },
+        },
+      ],
+    });
+    expect(plans[0]?.providerSourceOperation).toBe('noop');
+    expect(plans[0]?.providerSourceReason).toBe('provider_source_url_bound_to_other_event');
+    expect(plans[0]?.ticketOperation).toBe('insert');
+    expect(plans[0]?.plannedTicketRow?.priceFromMinor).toBe(2990);
+  });
 });

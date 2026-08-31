@@ -51,6 +51,14 @@ function findExistingTicketSource(
   return sources.find((source) => source.eventId === eventId && source.sourceUrl === canonical);
 }
 
+function findExistingTicketSourceByUrl(
+  sourceUrl: string,
+  sources: ExistingTicketSourceRecord[],
+): ExistingTicketSourceRecord | undefined {
+  const canonical = sourceUrl.trim();
+  return sources.find((source) => source.sourceUrl === canonical);
+}
+
 function resolveSourceState(result: VerifiedTicketCompleteResult): TicketSourceState {
   if (result.ticketSourceStateEvidence?.state) {
     return result.ticketSourceStateEvidence.state;
@@ -471,6 +479,15 @@ function resolveProviderSourceOperation(
     const payload = buildTicketSourcePayload(result.ticketEvidence);
     const existing = findExistingTicketSource(eventId, sourceUrl, existingSources);
     if (!existing) {
+      const globalExisting = findExistingTicketSourceByUrl(sourceUrl, existingSources);
+      if (globalExisting && globalExisting.eventId !== eventId) {
+        return {
+          operation: 'noop',
+          reason: 'provider_source_url_bound_to_other_event',
+          sourceUrl,
+          payload,
+        };
+      }
       return { operation: 'insert', reason: 'provider_source_missing', sourceUrl, payload };
     }
     const sameHash = existing.contentHash === result.ticketEvidence.contentFingerprint;
@@ -496,6 +513,15 @@ function resolveProviderSourceOperation(
   };
   const existing = findExistingTicketSource(eventId, presaleUrl, existingSources);
   if (!existing) {
+    const globalExisting = findExistingTicketSourceByUrl(presaleUrl, existingSources);
+    if (globalExisting && globalExisting.eventId !== eventId) {
+      return {
+        operation: 'noop',
+        reason: 'provider_source_url_bound_to_other_event',
+        sourceUrl: presaleUrl,
+        payload,
+      };
+    }
     return { operation: 'insert', reason: 'presale_source_missing', sourceUrl: presaleUrl, payload };
   }
   if (JSON.stringify(existing.rawPayload ?? {}) === JSON.stringify(payload)) {

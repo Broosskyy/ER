@@ -20,6 +20,8 @@ describe('ticket offer roles', () => {
 
   it('accepts positive admission labels', () => {
     expect(classifyTicketOffer({ label: 'Phase 3' }).role).toBe('regular_admission');
+    expect(classifyTicketOffer({ label: 'Final Phase' }).role).toBe('regular_admission');
+    expect(classifyTicketOffer({ label: 'Finale Phase' }).role).toBe('regular_admission');
     expect(classifyTicketOffer({ label: 'FRIDAY Dayticket (Phase 3)' }).grantsEventEntry).toBe(true);
     expect(classifyTicketOffer({ label: 'Upgrade only valid in combination with ticket' }).requiresBaseTicket).toBe(true);
   });

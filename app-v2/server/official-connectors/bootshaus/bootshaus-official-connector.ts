@@ -32,9 +32,10 @@ import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './pars
 import { markPastOfficialEventIfNeeded } from '../shared/mark-past-official-event';
 import { discoverOfficialTicketCtaFromHtml } from '../ticket-evidence/discover-official-ticket-cta';
 import { extractOfficialDoorAdmissionFromHtml } from '../ticket-evidence/extract-official-door-admission';
+import { createPlaywrightTicketBrowserOps } from '../ticket-evidence/create-playwright-ticket-browser-ops';
 
 const MAX_DETAIL_PAGES = 40;
-const DETAIL_CONCURRENCY = 3;
+const DETAIL_CONCURRENCY = 1;
 
 export interface BootshausConnectorRunOptions extends OfficialConnectorRunOptions {}
 
@@ -135,8 +136,10 @@ export class BootshausOfficialConnector implements OfficialConnector {
 
     const ticketResults: VerifiedTicketCompleteResult[] = [];
     resetTicketFetchCache();
+    const ticketBrowserOps = createPlaywrightTicketBrowserOps();
 
-    const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
+    try {
+      const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
       if (fetchedUrlSet.has(detailUrl)) {
         counters.duplicateDetailFetches += 1;
         throw new Error(`Duplicate detail fetch attempted for ${detailUrl}`);
@@ -174,6 +177,7 @@ export class BootshausOfficialConnector implements OfficialConnector {
         processTickets: Boolean(
           textEvidence.linkedTicketUrl || doorAdmission || ticketCta.hasTicketSemantics,
         ),
+        browserOps: ticketBrowserOps,
       });
       if (finalized.ticketResult && !textEvidence.enrichmentGaps.includes('past_event_skipped')) {
         ticketResults.push(finalized.ticketResult);
@@ -198,5 +202,8 @@ export class BootshausOfficialConnector implements OfficialConnector {
       mediaCounters,
       ticketResults,
     };
+    } finally {
+      await ticketBrowserOps.close();
+    }
   }
 }

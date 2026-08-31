@@ -1,6 +1,7 @@
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
+import { TicketStatusBadge } from '@/components/discovery/EventStatusBadge';
 import { EventImage } from '@/components/discovery/EventImage';
 import { AppText } from '@/components/layout/AppText';
 import { spacingRoles } from '@/design/spacing';
@@ -87,7 +88,9 @@ export function EventDetailContent({ detail, display }: EventDetailContentProps)
         <View style={styles.section}>
           <AppText role="titleSmall">Tickets</AppText>
           {surface.priceText ? <AppText role="body">{surface.priceText}</AppText> : null}
-          {surface.statusLabel ? (
+          {surface.ticketBadgeStatus ? (
+            <TicketStatusBadge status={surface.ticketBadgeStatus} />
+          ) : surface.statusLabel ? (
             <AppText role="caption" style={{ color: theme.colors.textMuted }}>
               {surface.statusLabel}
             </AppText>

@@ -7,6 +7,7 @@ import { buildImageHostAllowlist } from './safe-image-fetch';
 import { enrichOfficialEvidenceWithMedia, enrichVerifiedTicketProviderMediaImage } from './enrich-official-evidence';
 import { reconcileEventMediaEvidence } from './reconcile-event-media-evidence';
 import type { MediaPassCounters } from './types';
+import type { TicketBrowserOps } from '../ticket-evidence/ticket-browser-ops';
 
 export interface FinalizeOfficialEventEvidenceInput {
   evidence: OfficialEventEvidence;
@@ -17,6 +18,7 @@ export interface FinalizeOfficialEventEvidenceInput {
   allowedImageHosts: Set<string>;
   buildMediaContext: (evidence: OfficialEventEvidence) => MediaEvidenceContext;
   processTickets?: boolean;
+  browserOps?: TicketBrowserOps;
 }
 
 export interface FinalizeOfficialEventEvidenceResult {
@@ -58,6 +60,7 @@ export async function finalizeOfficialEventEvidence(
       {
         prefetchedHtml: input.prefetchedHtml,
         observedAt: input.fetchedAt,
+        browserOps: input.browserOps,
       },
     );
   }

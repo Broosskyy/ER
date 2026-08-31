@@ -254,6 +254,9 @@ async function processConnectorResult(
     } catch (error) {
       counters.failures += 1;
       const classified = classifyIngestionError(error);
+      console.error(
+        `[sync] ticket persistence failed: ${classified.category} ${classified.message}`,
+      );
       errorCategories.push(classified.category);
     }
   }

@@ -48,6 +48,12 @@ describe('ticket price normalization', () => {
     expect(parsed.isMinimumPrice).toBe(true);
     expect(parsed.feeNotice).toContain('Gebühr');
   });
+
+  it('parses ticket.io Euro suffix prices', () => {
+    const parsed = normalizeTicketPriceLine('26,90 Euro');
+    expect(parsed.amountMinor).toBe(2690);
+    expect(parsed.currency).toBe('EUR');
+  });
 });
 
 describe('ticket.io parser', () => {
@@ -111,5 +117,29 @@ describe('cached response classification', () => {
     const { classifyCachedTicketIoResponse } = await import('../parse-ticket-io-detail-dom');
     const html = readFileSync(join(FIXTURE_DIR, 'ticket-io-blocked.html'), 'utf8');
     expect(classifyCachedTicketIoResponse(html)).toBe('security_challenge_only');
+  });
+});
+
+describe('ticket.io rendered shop table parser', () => {
+  it('parses ticket.io shop table rows and selects current regular admission', async () => {
+    const { parseTicketIoDetailDom } = await import('../parse-ticket-io-detail-dom');
+    const { parseTicketIoFromJsonLdOrDom } = await import('../ticket-io-evidence-provider');
+    const { selectRegularAdmissionOffer } = await import('../select-regular-admission-offer');
+    const html = readFileSync(join(FIXTURE_DIR, 'ticket-io-shop-table.html'), 'utf8');
+    const dom = parseTicketIoDetailDom(html, {
+      sourceUrl: 'https://bootshaus-club.ticket.io/C7JPnatZ/',
+    });
+    expect(dom?.offers.length).toBeGreaterThanOrEqual(3);
+    const evidence = parseTicketIoFromJsonLdOrDom({
+      sourceUrl: 'https://bootshaus-club.ticket.io/C7JPnatZ/',
+      body: html,
+      fingerprint: 'fixture-shop-table',
+      observedAt: '2026-08-29T12:00:00.000Z',
+      extractedAt: '2026-08-29T12:00:01.000Z',
+    });
+    const selected = evidence ? selectRegularAdmissionOffer(evidence) : undefined;
+    expect(selected?.rawLabel).toBe('Phase 2');
+    expect(selected?.amountMinor).toBe(2490);
+    expect(evidence?.normalizedStatus).toBe('available');
   });
 });

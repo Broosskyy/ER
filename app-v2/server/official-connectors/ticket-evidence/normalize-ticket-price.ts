@@ -8,7 +8,7 @@ export interface NormalizedTicketPrice {
 }
 
 const PRICE_PATTERN =
-  /(?:(?:ab|from)\s+)?(?:(€|EUR)\s*)?(\d{1,4}(?:[.,]\d{2})?)\s*(?:€|EUR)?(?:\s*\+\s*(?:Gebühr|fee|fees).*)?/i;
+  /(?:(?:ab|from)\s+)?(?:(€|EUR|Euro)\s*)?(\d{1,4}(?:[.,]\d{2})?)\s*(?:€|EUR|Euro)?(?:\s*\+\s*(?:Gebühr|fee|fees).*)?/i;
 
 export function normalizeTicketPriceLine(rawPrice: string): NormalizedTicketPrice {
   const trimmed = rawPrice.replace(/\s+/g, ' ').trim();
@@ -46,10 +46,17 @@ export function normalizeTicketPriceLine(rawPrice: string): NormalizedTicketPric
     };
   }
 
+  const hasEuroCurrency =
+    currencyToken === '€' ||
+    currencyToken === 'EUR' ||
+    currencyToken === 'EURO' ||
+    trimmed.includes('€') ||
+    /\b(?:EUR|Euro)\b/i.test(trimmed);
+
   return {
     rawPrice: trimmed,
     amountMinor: Math.round(amount * 100),
-    currency: currencyToken === '€' || currencyToken === 'EUR' || trimmed.includes('€') || trimmed.includes('EUR') ? 'EUR' : undefined,
+    currency: hasEuroCurrency ? 'EUR' : undefined,
     isMinimumPrice,
     feeNotice,
   };

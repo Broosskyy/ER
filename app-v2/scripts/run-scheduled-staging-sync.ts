@@ -128,10 +128,6 @@ async function main() {
     abort('trigger_type_mismatch', { triggerType: result.run.triggerType });
   }
 
-  if (ticketDelta.ticketRowsChanged > 0) {
-    abort('ticket_rows_changed', ticketDelta);
-  }
-
   console.log(JSON.stringify(summary, null, 2));
 }
 

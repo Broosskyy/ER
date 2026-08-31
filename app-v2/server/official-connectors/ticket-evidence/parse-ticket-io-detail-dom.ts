@@ -68,7 +68,9 @@ export function classifyCachedTicketIoResponse(
   const hasChallenge = isTicketProviderBlockedBody(body, contentType);
   const hasJsonLd = /application\/ld\+json/i.test(body) && /"@type"\s*:\s*"MusicEvent"/i.test(body);
   const hasEventDom =
-    /data-search=|class="a-eventlink"|event-row-|product-row|ticket-category|select-quantity/i.test(body);
+    /data-search=|class="a-eventlink"|event-row-|product-row|ticket-category|select-quantity|ticket-price-value|select\.ticketCount|data-tickettypename/i.test(
+      body,
+    );
   const hasPartialDom = /window\.publicShopInfo|eventoverview|btn-toshop/i.test(body);
 
   if (hasJsonLd) {
@@ -198,7 +200,67 @@ function parseEmbeddedJsonOffers(body: string): TicketIoDetailDomOffer[] {
   return offers;
 }
 
+function parseTicketIoShopTableOffers(body: string): TicketIoDetailDomOffer[] {
+  const offers: TicketIoDetailDomOffer[] = [];
+  const $ = cheerio.load(body);
+
+  $('select.ticketCount[data-tickettypename]').each((_index, element) => {
+    const node = $(element);
+    const rawLabel = String(node.attr('data-tickettypename') ?? '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!rawLabel) {
+      return;
+    }
+
+    const row = node.closest('tr');
+    const rowText = row.text().replace(/\s+/g, ' ');
+    const rowHtml = row.html() ?? '';
+    const priceFromCell = row.find('.ticket-price-value').first().text().replace(/\s+/g, ' ').trim();
+    const dataPrice = String(node.attr('data-price') ?? '').trim();
+    const rawPrice =
+      priceFromCell ||
+      (dataPrice
+        ? `${dataPrice.replace('.', ',')} Euro`
+        : '');
+
+    const soldOut =
+      SOLD_OUT_PATTERN.test(rowText) ||
+      /tickettypesumsoldout|class="[^"]*ticketTypeSumSoldOut/i.test(rowHtml) ||
+      (node.find('option').length <= 1 && SOLD_OUT_PATTERN.test(rawLabel));
+    const purchasable =
+      !soldOut &&
+      node.find('option').length > 1 &&
+      !node.is(':disabled') &&
+      !node.prop('disabled');
+
+    if (!rawPrice && !soldOut && !purchasable) {
+      return;
+    }
+
+    if (offers.some((offer) => offer.rawLabel === rawLabel && offer.rawPrice === rawPrice)) {
+      return;
+    }
+
+    offers.push(
+      toDomOffer({
+        rawLabel,
+        rawPrice,
+        soldOut,
+        purchasable,
+      }),
+    );
+  });
+
+  return offers;
+}
+
 function parseDomOffers(body: string): TicketIoDetailDomOffer[] {
+  const shopTableOffers = parseTicketIoShopTableOffers(body);
+  if (shopTableOffers.length > 0) {
+    return shopTableOffers;
+  }
+
   const offers: TicketIoDetailDomOffer[] = [];
   const rowPattern =
     /<tr[^>]*data-product[^>]*>[\s\S]*?<td[^>]*class="[^"]*product-name[^"]*"[^>]*>([\s\S]*?)<\/td>[\s\S]*?<td[^>]*class="[^"]*product-price[^"]*"[^>]*>([\s\S]*?)<\/td>/gi;

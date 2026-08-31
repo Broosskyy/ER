@@ -196,4 +196,20 @@ describe('bootshaus description and lineup parsing', () => {
     expect(split.lineupNotAnnounced).toBe(true);
     expect(parseBootshausLineupParagraphs(split.lineupParagraphs).lineupCandidates).toEqual([]);
   });
+
+  it('structures explicit FULL LINE-UP A-Z comma lists', () => {
+    const parsed = parseBootshausLineupParagraphs([
+      'Editorial intro.',
+      'FULL LINE-UP A-Z',
+      'Dr Donk pres. ZAAGSTEP (Album Showcase), Dr Donk b2b Yoshiko, GPF, Invaderz',
+      'HIGHLIGHTS',
+      '⚡ Official showcase',
+    ]);
+    expect(parsed.lineupCandidates.map((act) => act.displayName)).toEqual([
+      'Dr Donk pres. ZAAGSTEP (Album Showcase)',
+      'Dr Donk b2b Yoshiko',
+      'GPF',
+      'Invaderz',
+    ]);
+  });
 });

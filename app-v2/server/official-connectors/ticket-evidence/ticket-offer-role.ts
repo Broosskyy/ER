@@ -29,6 +29,7 @@ const FEE_PATTERN = /\bbooking fee\b|\bservice fee\b|\bgebühr\b|\bhardticket\b|
 const POSITIVE_ADMISSION_PATTERNS: RegExp[] = [
   /\bgeneral\s+admission\b/i,
   /\bphase\s*(?:[1-9]|[ivx]+|one|two|three|four|five|six|seven|eight|nine|ten)\b/i,
+  /\b(?:final|finale)\s+phase\b/i,
   /\bearly\s+bird\b/i,
   /\bfirst\s+release\b/i,
   /\bsecond\s+release\b/i,

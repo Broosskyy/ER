@@ -1,4 +1,5 @@
 import type { EventTicket } from '@/features/events/types/event-core';
+import type { EventTicketStatus } from '@/components/discovery/view-models';
 import { projectConsumerTicketStatusLabel } from './consumer-ticket-status-label';
 
 export interface ConsumerTicketPresentation {
@@ -10,6 +11,7 @@ export interface ConsumerTicketPresentation {
   presaleCtaLabel?: string;
   ticketStatus?: 'on_sale' | 'sold_out' | 'external_link';
   statusLabel?: string;
+  badgeStatus?: EventTicketStatus;
 }
 
 const BLOCKED_SALES_STATUSES = new Set([
@@ -48,6 +50,39 @@ function projectPriceText(ticket: EventTicket): string | undefined {
   return undefined;
 }
 
+export function mapConsumerSalesStatusToBadgeStatus(
+  salesStatus: string | null | undefined,
+): EventTicketStatus | undefined {
+  switch (salesStatus) {
+    case 'available':
+      return 'available';
+    case 'on_sale':
+      return 'on_sale';
+    case 'low_availability':
+      return 'limited';
+    case 'sold_out':
+      return 'sold_out';
+    case 'sale_not_started':
+      return 'coming_soon';
+    case 'sales_ended':
+      return 'expired';
+    case 'presale_registration':
+      return 'presale';
+    case 'registration_only':
+      return 'waitlist';
+    case 'door_only':
+      return 'unavailable';
+    case 'cancelled':
+      return 'cancelled';
+    case 'availability_unverified':
+    case 'provider_access_unavailable':
+    case 'unavailable_unknown':
+      return 'unavailable';
+    default:
+      return undefined;
+  }
+}
+
 export function resolveConsumerTicketPresentation(ticket: EventTicket | null): ConsumerTicketPresentation {
   if (!ticket) {
     return {
@@ -80,5 +115,6 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     presaleCtaLabel: showPresaleCta ? 'Zum Vorverkauf vormerken' : undefined,
     ticketStatus,
     statusLabel: projectConsumerTicketStatusLabel(salesStatus),
+    badgeStatus: mapConsumerSalesStatusToBadgeStatus(salesStatus),
   };
 }

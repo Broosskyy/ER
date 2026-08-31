@@ -1,5 +1,6 @@
 import type { EventDetail } from '@/features/events/types/event-core';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
+import type { EventTicketStatus } from '@/components/discovery/view-models';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 import {
   containsTechnicalProviderState,
@@ -16,6 +17,7 @@ export interface EventDetailVisibleSurface {
   genres: string[];
   priceText: string | null;
   statusLabel: string | null;
+  ticketBadgeStatus: EventTicketStatus | null;
   purchaseCtaLabel: string | null;
   presaleCtaLabel: string | null;
   ticketCtaUrl: string | null;
@@ -89,6 +91,7 @@ export function buildEventDetailVisibleSurface(
     genres,
     priceText: ticketPresentation.priceText ?? null,
     statusLabel: ticketPresentation.statusLabel ?? null,
+    ticketBadgeStatus: ticketPresentation.badgeStatus ?? null,
     purchaseCtaLabel: ticketPresentation.showPurchaseCta
       ? ticketPresentation.purchaseCtaLabel ?? 'Tickets kaufen'
       : null,

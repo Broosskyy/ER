@@ -173,6 +173,25 @@ export function parseExplicitLineupSentences(paragraphs: string[]): ParsedLineup
       continue;
     }
 
+    const fullLineupInline = text.match(
+      /full\s+line\s*-?\s*up(?:\s+a\s*-?\s*z)?\s*:?\s*(.+?)(?:\s+highlights\b|$)/i,
+    );
+    if (fullLineupInline?.[1]) {
+      for (const name of splitParenthesisAwareCommas(fullLineupInline[1])) {
+        acts.push({
+          displayName: name,
+          rawText: name,
+          evidenceRole: 'artist',
+          blockType: 'explicit_sentence',
+          blockIndex: 0,
+          lineIndex: acts.length,
+          confidence: 'high',
+          sentenceKind: 'lineup_list',
+        });
+      }
+      continue;
+    }
+
     const openingNight = text.match(/opening\s+the\s+night\s+is\s+.+?'s\s+([^,.]+)/i);
     if (openingNight?.[1]) {
       const name = normalizeLineupName(openingNight[1]);

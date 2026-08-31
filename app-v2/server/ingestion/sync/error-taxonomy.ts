@@ -45,7 +45,7 @@ export function classifyIngestionError(error: unknown): ClassifiedError {
   if (matchMessage(normalized, [/identity_review/, /identity_ambiguous/, /possible_match/])) {
     return { category: 'identity_ambiguous', message, retryable: false };
   }
-  if (matchMessage(normalized, [/validation_not_ready/, /validation_rejected/, /rejected/])) {
+  if (matchMessage(normalized, [/validation_not_ready/, /validation_rejected/])) {
     return { category: 'validation_rejected', message, retryable: false };
   }
   if (matchMessage(normalized, [/reconciliation_review/, /review_required/])) {

@@ -62,7 +62,8 @@ describe('event detail visible surface', () => {
     expect(surface.organizerName).toBe('INURFASE');
     expect(surface.organizerWebsiteUrl).toBeNull();
     expect(surface.priceText).toBeNull();
-    expect(surface.statusLabel).toBeNull();
+    expect(surface.statusLabel).toBe('Verfügbar');
+    expect(surface.ticketBadgeStatus).toBe('available');
     expect(surface.purchaseCtaLabel).toBe('Tickets kaufen');
     expect(surface.visibleText).not.toContain('Website ↗');
     expect(surface.rawTicketStatusValuesRendered).toBe(0);
