@@ -1,0 +1,1902 @@
+{
+  "connectorId": "affenkaefig-official",
+  "auditedAt": "2026-08-31T13:32:02.336Z",
+  "connectorEventCount": 6,
+  "ticketResultCount": 7,
+  "persistenceSummary": {
+    "currentTicketInsertsRequired": 0,
+    "currentTicketUpdatesRequired": 0,
+    "currentTicketDeletesRequired": 0,
+    "historicalTicketRelationsRequired": 0,
+    "presaleActionsRequired": 0,
+    "ticketLinkNotYetPublishedStates": 0,
+    "providerUnavailableStates": 0,
+    "providerSourceReferencesRequired": 6,
+    "provenanceUpdatesRequired": 6,
+    "eventCoreUpdatesRequired": 0,
+    "m2TicketUpdatesRequired": 0,
+    "allIdempotent": false,
+    "eventPlans": [
+      {
+        "sourceEventKey": "14-jahreaffenkafig19-09-2026",
+        "officialUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+        "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+        "eventTitle": "14 Jahre Affenkäfig 19.09.2026",
+        "officialSourceId": "d8d52029-9d47-42e2-b5b3-684f84fbed8a",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "organizer_shop",
+          "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "priceFromMinor": 2500,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "45294114-113c-4078-a4d8-df2541ed2ec2",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "providerSourcePayload": {
+          "providerKey": "organizer_shop",
+          "providerIdentity": {
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "providerScope": "rheinaudio.n8manager.de",
+            "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php"
+          },
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "contentFingerprint": "ea2bc45b6867e47e649da523d1ca80486496807b57b59eefae97342f85b8091c",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:45.013Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Standard Ticket Phase 1 Phase 1",
+              "normalizedLabel": "Standard Ticket Phase 1",
+              "rawPrice": "25,00 EUR pro Ticket",
+              "amountMinor": 2500,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {}
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "organizer_shop",
+            "priceLabel": "25,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2500,
+            "currency": "EUR",
+            "rawPriceText": "25,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ea2bc45b6867e47e649da523d1ca80486496807b57b59eefae97342f85b8091c"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+            "redirectChain": [
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21"
+            ],
+            "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ea2bc45b6867e47e649da523d1ca80486496807b57b59eefae97342f85b8091c",
+            "identityDecision": "redirected_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "organizer_shop",
+          "priceLabel": "25,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "affenkaefig-xxxa8xxx-02-10-2026",
+        "officialUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+        "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+        "eventTitle": "Affenkäfig xxx A8 xxx – 02.10.2026",
+        "officialSourceId": "ae845ce9-971f-4975-9553-7ead7db49967",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "organizer_shop",
+          "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "priceFromMinor": 1500,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "17418f4f-3623-41f3-b901-3374cf2a802d",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "providerSourcePayload": {
+          "providerKey": "organizer_shop",
+          "providerIdentity": {
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "providerScope": "rheinaudio.n8manager.de",
+            "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php"
+          },
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "contentFingerprint": "edfbac62f9b3f2803e38aa72c0cc105cff2bbadc414faa80f53df0cf89809484",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:45.064Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Standard Ticket Blind Ticket Blind Ticket",
+              "normalizedLabel": "Standard Ticket Blind Ticket",
+              "rawPrice": "15,00 EUR pro Ticket",
+              "amountMinor": 1500,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {}
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "organizer_shop",
+            "priceLabel": "15,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1500,
+            "currency": "EUR",
+            "rawPriceText": "15,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "edfbac62f9b3f2803e38aa72c0cc105cff2bbadc414faa80f53df0cf89809484"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43&embed=1&embed_layout=checkout&embed_flow=",
+            "redirectChain": [
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43&embed=1&embed_layout=checkout&embed_flow=",
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43"
+            ],
+            "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "edfbac62f9b3f2803e38aa72c0cc105cff2bbadc414faa80f53df0cf89809484",
+            "identityDecision": "redirected_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "organizer_shop",
+          "priceLabel": "15,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+        "officialUrl": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+        "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+        "eventTitle": "Affenkäfig XXX CAPITOL XXX Hagen",
+        "officialSourceId": "bcdc5800-3ffa-4e98-9041-26a3f4a6c6c1",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "organizer_shop",
+          "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "priceFromMinor": 1750,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "07ff2b09-4189-43bd-93c0-7f05cee85a39",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "providerSourcePayload": {
+          "providerKey": "organizer_shop",
+          "providerIdentity": {
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "providerScope": "rheinaudio.n8manager.de",
+            "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php"
+          },
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "contentFingerprint": "285fe9b0c2a4c2c986b624feccfeffc1cfe01b3c91df95a1c1b65b859aadfcbb",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:45.094Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Standard Ticket Early Bird Early Bird",
+              "normalizedLabel": "Standard Ticket Early Bird",
+              "rawPrice": "17,50 EUR pro Ticket",
+              "amountMinor": 1750,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {}
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "organizer_shop",
+            "priceLabel": "17,50 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1750,
+            "currency": "EUR",
+            "rawPriceText": "17,50 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "285fe9b0c2a4c2c986b624feccfeffc1cfe01b3c91df95a1c1b65b859aadfcbb"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14&embed=1&embed_layout=checkout&embed_flow=",
+            "redirectChain": [
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14&embed=1&embed_layout=checkout&embed_flow=",
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14"
+            ],
+            "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "285fe9b0c2a4c2c986b624feccfeffc1cfe01b3c91df95a1c1b65b859aadfcbb",
+            "identityDecision": "redirected_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "organizer_shop",
+          "priceLabel": "17,50 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "mdma-musik-die-mich-antreibt-10-10-26",
+        "officialUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+        "eventTitle": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "officialSourceId": "7c5f01b8-6534-4ebc-80ed-06a08a6c575b",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "ticket_kings",
+          "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "priceFromMinor": 2000,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "9c3e6b48-5615-485d-9436-51cbfd09b48b",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_kings",
+          "providerIdentity": {
+            "providerKey": "ticket_kings",
+            "providerEventId": "mdma-musik-die-mich-antreibt-10-10-26",
+            "providerScope": "ticketkings.de",
+            "identityKey": "ticket_kings:ticketkings.de:mdma-musik-die-mich-antreibt-10-10-26"
+          },
+          "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "sourceUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "contentFingerprint": "ee22582f1576fe24f14a78859a9377b0138fb54931ec4e0a0265f76951b4fe55",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:47.375Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "E-Ticket Phase 1 Phase 1",
+              "normalizedLabel": "E-Ticket Phase 1",
+              "phaseLabel": "Phase 1",
+              "rawPrice": "20,00 EUR pro Ticket",
+              "amountMinor": 2000,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "MDMA &#8211; Musik Die Mich Antreibt",
+            "startAt": "2026-10-10T23:00:00+02:00",
+            "venueName": "Essigfabrik"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_kings",
+            "priceLabel": "20,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2000,
+            "currency": "EUR",
+            "rawPriceText": "20,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ee22582f1576fe24f14a78859a9377b0138fb54931ec4e0a0265f76951b4fe55"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "redirectChain": [
+              "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+            ],
+            "terminalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "providerKey": "ticket_kings",
+            "providerEventId": "mdma-musik-die-mich-antreibt-10-10-26",
+            "terminalTitle": "MDMA &#8211; Musik Die Mich Antreibt",
+            "terminalStartAt": "2026-10-10T23:00:00+02:00",
+            "terminalVenue": "Essigfabrik",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ee22582f1576fe24f14a78859a9377b0138fb54931ec4e0a0265f76951b4fe55",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_kings",
+          "priceLabel": "20,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "halloween-weekender",
+        "officialUrl": "https://affenkaefig.info/event/halloween-weekender/",
+        "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+        "eventTitle": "Halloween Weekender",
+        "officialSourceId": "203748d9-408e-4f60-b43e-be7fb5a05bad",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "ticket_kings",
+          "ticketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "priceFromMinor": 1850,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "5fe6cce3-ece4-401b-b8c3-a208f0488a81",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_kings",
+          "providerIdentity": {
+            "providerKey": "ticket_kings",
+            "providerEventId": "halloween-suesses-oder-saures-30-10-31-10-2026",
+            "providerScope": "ticketkings.de",
+            "identityKey": "ticket_kings:ticketkings.de:halloween-suesses-oder-saures-30-10-31-10-2026"
+          },
+          "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "sourceUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "contentFingerprint": "ac307a0032058c184be5387d204585774725e5bda7626f001561abea108e1e74",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:47.342Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Tagesticket 30.10 Early Bird Early Bird",
+              "normalizedLabel": "Tagesticket 30.10 Early Bird",
+              "phaseLabel": "Early Bird",
+              "rawPrice": "18,50 EUR pro Ticket",
+              "amountMinor": 1850,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Tagesticket 31.10 Early Bird Early Bird",
+              "normalizedLabel": "Tagesticket 31.10 Early Bird",
+              "phaseLabel": "Early Bird",
+              "rawPrice": "18,50 EUR pro Ticket",
+              "amountMinor": 1850,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Kombiticket 30.10 & 31.10 Early Bird Early Bird",
+              "normalizedLabel": "Kombiticket 30.10 & 31.10 Early Bird",
+              "phaseLabel": "Early Bird",
+              "rawPrice": "36,00 EUR pro Ticket",
+              "amountMinor": 3600,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Halloween Weekender",
+            "startAt": "2026-10-30T22:00:00+01:00",
+            "venueName": "Essigfabrik"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_kings",
+            "priceLabel": "18,50 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1850,
+            "currency": "EUR",
+            "rawPriceText": "18,50 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ac307a0032058c184be5387d204585774725e5bda7626f001561abea108e1e74"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "redirectChain": [
+              "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/"
+            ],
+            "terminalUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "providerKey": "ticket_kings",
+            "providerEventId": "halloween-suesses-oder-saures-30-10-31-10-2026",
+            "terminalTitle": "Halloween Weekender",
+            "terminalStartAt": "2026-10-30T22:00:00+01:00",
+            "terminalVenue": "Essigfabrik",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ac307a0032058c184be5387d204585774725e5bda7626f001561abea108e1e74",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_kings",
+          "priceLabel": "18,50 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "underland-essigfabrik-05-09-2026",
+        "officialUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+        "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+        "eventTitle": "Underland Essigfabrik 05.09.2026",
+        "officialSourceId": "4467d147-088a-4a8c-83b7-86cae727bcba",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "ticket_kings",
+          "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "priceFromMinor": 2000,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_kings",
+          "providerIdentity": {
+            "providerKey": "ticket_kings",
+            "providerEventId": "underland-essigfabrik-05-09-2026",
+            "providerScope": "ticketkings.de",
+            "identityKey": "ticket_kings:ticketkings.de:underland-essigfabrik-05-09-2026"
+          },
+          "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "sourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "contentFingerprint": "d4f3bf9a044ea410745b0889063bcd928ccc20f9920b03bbed188090946a56aa",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:48.097Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "E-Ticket Phase 2 Phase 2",
+              "normalizedLabel": "E-Ticket Phase 2",
+              "phaseLabel": "Phase 2",
+              "rawPrice": "20,00 EUR pro Ticket",
+              "amountMinor": 2000,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Underland Essigfabrik",
+            "startAt": "2026-09-05T22:00:00+02:00",
+            "venueName": "Essigfabrik"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_kings",
+            "priceLabel": "20,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2000,
+            "currency": "EUR",
+            "rawPriceText": "20,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "d4f3bf9a044ea410745b0889063bcd928ccc20f9920b03bbed188090946a56aa"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "redirectChain": [
+              "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            ],
+            "terminalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "providerKey": "ticket_kings",
+            "providerEventId": "underland-essigfabrik-05-09-2026",
+            "terminalTitle": "Underland Essigfabrik",
+            "terminalStartAt": "2026-09-05T22:00:00+02:00",
+            "terminalVenue": "Essigfabrik",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "d4f3bf9a044ea410745b0889063bcd928ccc20f9920b03bbed188090946a56aa",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_kings",
+          "priceLabel": "20,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "hasActivePurchaseCta": true
+        }
+      }
+    ]
+  },
+  "dryExecutionPlan": {
+    "currentTicketInsertsRequired": 0,
+    "currentTicketUpdatesRequired": 0,
+    "currentTicketDeletesRequired": 0,
+    "historicalTicketRelationsRequired": 0,
+    "presaleActionsRequired": 0,
+    "ticketLinkNotYetPublishedStates": 0,
+    "providerUnavailableStates": 0,
+    "providerSourceReferencesRequired": 6,
+    "provenanceUpdatesRequired": 6,
+    "eventCoreUpdatesRequired": 0,
+    "m2TicketUpdatesRequired": 0,
+    "allIdempotent": false,
+    "eventPlans": [
+      {
+        "sourceEventKey": "14-jahreaffenkafig19-09-2026",
+        "officialUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+        "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+        "eventTitle": "14 Jahre Affenkäfig 19.09.2026",
+        "officialSourceId": "d8d52029-9d47-42e2-b5b3-684f84fbed8a",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "organizer_shop",
+          "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "priceFromMinor": 2500,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "45294114-113c-4078-a4d8-df2541ed2ec2",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "providerSourcePayload": {
+          "providerKey": "organizer_shop",
+          "providerIdentity": {
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "providerScope": "rheinaudio.n8manager.de",
+            "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php"
+          },
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "contentFingerprint": "ea2bc45b6867e47e649da523d1ca80486496807b57b59eefae97342f85b8091c",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:45.013Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Standard Ticket Phase 1 Phase 1",
+              "normalizedLabel": "Standard Ticket Phase 1",
+              "rawPrice": "25,00 EUR pro Ticket",
+              "amountMinor": 2500,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {}
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "organizer_shop",
+            "priceLabel": "25,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2500,
+            "currency": "EUR",
+            "rawPriceText": "25,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ea2bc45b6867e47e649da523d1ca80486496807b57b59eefae97342f85b8091c"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+            "redirectChain": [
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21"
+            ],
+            "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ea2bc45b6867e47e649da523d1ca80486496807b57b59eefae97342f85b8091c",
+            "identityDecision": "redirected_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "organizer_shop",
+          "priceLabel": "25,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "affenkaefig-xxxa8xxx-02-10-2026",
+        "officialUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+        "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+        "eventTitle": "Affenkäfig xxx A8 xxx – 02.10.2026",
+        "officialSourceId": "ae845ce9-971f-4975-9553-7ead7db49967",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "organizer_shop",
+          "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "priceFromMinor": 1500,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "17418f4f-3623-41f3-b901-3374cf2a802d",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "providerSourcePayload": {
+          "providerKey": "organizer_shop",
+          "providerIdentity": {
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "providerScope": "rheinaudio.n8manager.de",
+            "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php"
+          },
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "contentFingerprint": "edfbac62f9b3f2803e38aa72c0cc105cff2bbadc414faa80f53df0cf89809484",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:45.064Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Standard Ticket Blind Ticket Blind Ticket",
+              "normalizedLabel": "Standard Ticket Blind Ticket",
+              "rawPrice": "15,00 EUR pro Ticket",
+              "amountMinor": 1500,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {}
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "organizer_shop",
+            "priceLabel": "15,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1500,
+            "currency": "EUR",
+            "rawPriceText": "15,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "edfbac62f9b3f2803e38aa72c0cc105cff2bbadc414faa80f53df0cf89809484"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43&embed=1&embed_layout=checkout&embed_flow=",
+            "redirectChain": [
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43&embed=1&embed_layout=checkout&embed_flow=",
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43"
+            ],
+            "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "edfbac62f9b3f2803e38aa72c0cc105cff2bbadc414faa80f53df0cf89809484",
+            "identityDecision": "redirected_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "organizer_shop",
+          "priceLabel": "15,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+        "officialUrl": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+        "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+        "eventTitle": "Affenkäfig XXX CAPITOL XXX Hagen",
+        "officialSourceId": "bcdc5800-3ffa-4e98-9041-26a3f4a6c6c1",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "organizer_shop",
+          "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "priceFromMinor": 1750,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "07ff2b09-4189-43bd-93c0-7f05cee85a39",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "providerSourcePayload": {
+          "providerKey": "organizer_shop",
+          "providerIdentity": {
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "providerScope": "rheinaudio.n8manager.de",
+            "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php"
+          },
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "contentFingerprint": "285fe9b0c2a4c2c986b624feccfeffc1cfe01b3c91df95a1c1b65b859aadfcbb",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:45.094Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Standard Ticket Early Bird Early Bird",
+              "normalizedLabel": "Standard Ticket Early Bird",
+              "rawPrice": "17,50 EUR pro Ticket",
+              "amountMinor": 1750,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {}
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "organizer_shop",
+            "priceLabel": "17,50 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1750,
+            "currency": "EUR",
+            "rawPriceText": "17,50 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "285fe9b0c2a4c2c986b624feccfeffc1cfe01b3c91df95a1c1b65b859aadfcbb"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14&embed=1&embed_layout=checkout&embed_flow=",
+            "redirectChain": [
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14&embed=1&embed_layout=checkout&embed_flow=",
+              "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14"
+            ],
+            "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+            "providerKey": "organizer_shop",
+            "providerEventId": "ticketing/native_event.php",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "285fe9b0c2a4c2c986b624feccfeffc1cfe01b3c91df95a1c1b65b859aadfcbb",
+            "identityDecision": "redirected_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "organizer_shop",
+          "priceLabel": "17,50 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "mdma-musik-die-mich-antreibt-10-10-26",
+        "officialUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+        "eventTitle": "MDMA – Musik Die Mich Antreibt 10.10.26",
+        "officialSourceId": "7c5f01b8-6534-4ebc-80ed-06a08a6c575b",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "ticket_kings",
+          "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "priceFromMinor": 2000,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "9c3e6b48-5615-485d-9436-51cbfd09b48b",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_kings",
+          "providerIdentity": {
+            "providerKey": "ticket_kings",
+            "providerEventId": "mdma-musik-die-mich-antreibt-10-10-26",
+            "providerScope": "ticketkings.de",
+            "identityKey": "ticket_kings:ticketkings.de:mdma-musik-die-mich-antreibt-10-10-26"
+          },
+          "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "sourceUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "contentFingerprint": "ee22582f1576fe24f14a78859a9377b0138fb54931ec4e0a0265f76951b4fe55",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:47.375Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "E-Ticket Phase 1 Phase 1",
+              "normalizedLabel": "E-Ticket Phase 1",
+              "phaseLabel": "Phase 1",
+              "rawPrice": "20,00 EUR pro Ticket",
+              "amountMinor": 2000,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "MDMA &#8211; Musik Die Mich Antreibt",
+            "startAt": "2026-10-10T23:00:00+02:00",
+            "venueName": "Essigfabrik"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_kings",
+            "priceLabel": "20,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2000,
+            "currency": "EUR",
+            "rawPriceText": "20,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ee22582f1576fe24f14a78859a9377b0138fb54931ec4e0a0265f76951b4fe55"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "redirectChain": [
+              "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+            ],
+            "terminalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+            "providerKey": "ticket_kings",
+            "providerEventId": "mdma-musik-die-mich-antreibt-10-10-26",
+            "terminalTitle": "MDMA &#8211; Musik Die Mich Antreibt",
+            "terminalStartAt": "2026-10-10T23:00:00+02:00",
+            "terminalVenue": "Essigfabrik",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ee22582f1576fe24f14a78859a9377b0138fb54931ec4e0a0265f76951b4fe55",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_kings",
+          "priceLabel": "20,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "halloween-weekender",
+        "officialUrl": "https://affenkaefig.info/event/halloween-weekender/",
+        "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+        "eventTitle": "Halloween Weekender",
+        "officialSourceId": "203748d9-408e-4f60-b43e-be7fb5a05bad",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "ticket_kings",
+          "ticketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "priceFromMinor": 1850,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "5fe6cce3-ece4-401b-b8c3-a208f0488a81",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_kings",
+          "providerIdentity": {
+            "providerKey": "ticket_kings",
+            "providerEventId": "halloween-suesses-oder-saures-30-10-31-10-2026",
+            "providerScope": "ticketkings.de",
+            "identityKey": "ticket_kings:ticketkings.de:halloween-suesses-oder-saures-30-10-31-10-2026"
+          },
+          "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "sourceUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "contentFingerprint": "ac307a0032058c184be5387d204585774725e5bda7626f001561abea108e1e74",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:47.342Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Tagesticket 30.10 Early Bird Early Bird",
+              "normalizedLabel": "Tagesticket 30.10 Early Bird",
+              "phaseLabel": "Early Bird",
+              "rawPrice": "18,50 EUR pro Ticket",
+              "amountMinor": 1850,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Tagesticket 31.10 Early Bird Early Bird",
+              "normalizedLabel": "Tagesticket 31.10 Early Bird",
+              "phaseLabel": "Early Bird",
+              "rawPrice": "18,50 EUR pro Ticket",
+              "amountMinor": 1850,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Kombiticket 30.10 & 31.10 Early Bird Early Bird",
+              "normalizedLabel": "Kombiticket 30.10 & 31.10 Early Bird",
+              "phaseLabel": "Early Bird",
+              "rawPrice": "36,00 EUR pro Ticket",
+              "amountMinor": 3600,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Halloween Weekender",
+            "startAt": "2026-10-30T22:00:00+01:00",
+            "venueName": "Essigfabrik"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_kings",
+            "priceLabel": "18,50 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1850,
+            "currency": "EUR",
+            "rawPriceText": "18,50 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ac307a0032058c184be5387d204585774725e5bda7626f001561abea108e1e74"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "redirectChain": [
+              "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/"
+            ],
+            "terminalUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+            "providerKey": "ticket_kings",
+            "providerEventId": "halloween-suesses-oder-saures-30-10-31-10-2026",
+            "terminalTitle": "Halloween Weekender",
+            "terminalStartAt": "2026-10-30T22:00:00+01:00",
+            "terminalVenue": "Essigfabrik",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "ac307a0032058c184be5387d204585774725e5bda7626f001561abea108e1e74",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_kings",
+          "priceLabel": "18,50 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "underland-essigfabrik-05-09-2026",
+        "officialUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+        "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+        "eventTitle": "Underland Essigfabrik 05.09.2026",
+        "officialSourceId": "4467d147-088a-4a8c-83b7-86cae727bcba",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "ticketOperation": "noop",
+        "ticketOperationReason": "ticket_row_already_matches",
+        "plannedTicketRow": {
+          "provider": "ticket_kings",
+          "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "priceFromMinor": 2000,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "existingTicketId": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+        "providerSourceOperation": "update",
+        "providerSourceReason": "provider_source_changed",
+        "providerSourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_kings",
+          "providerIdentity": {
+            "providerKey": "ticket_kings",
+            "providerEventId": "underland-essigfabrik-05-09-2026",
+            "providerScope": "ticketkings.de",
+            "identityKey": "ticket_kings:ticketkings.de:underland-essigfabrik-05-09-2026"
+          },
+          "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "sourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "contentFingerprint": "d4f3bf9a044ea410745b0889063bcd928ccc20f9920b03bbed188090946a56aa",
+          "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+          "extractedAt": "2026-08-31T13:31:48.097Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "E-Ticket Phase 2 Phase 2",
+              "normalizedLabel": "E-Ticket Phase 2",
+              "phaseLabel": "Phase 2",
+              "rawPrice": "20,00 EUR pro Ticket",
+              "amountMinor": 2000,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Underland Essigfabrik",
+            "startAt": "2026-09-05T22:00:00+02:00",
+            "venueName": "Essigfabrik"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_kings",
+            "priceLabel": "20,00 EUR pro Ticket",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2000,
+            "currency": "EUR",
+            "rawPriceText": "20,00 EUR pro Ticket",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "sourceObservedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "d4f3bf9a044ea410745b0889063bcd928ccc20f9920b03bbed188090946a56aa"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-08-31T13:31:43.560Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "redirectChain": [
+              "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+            ],
+            "terminalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "providerKey": "ticket_kings",
+            "providerEventId": "underland-essigfabrik-05-09-2026",
+            "terminalTitle": "Underland Essigfabrik",
+            "terminalStartAt": "2026-09-05T22:00:00+02:00",
+            "terminalVenue": "Essigfabrik",
+            "observedAt": "2026-08-31T13:31:43.560Z",
+            "contentFingerprint": "d4f3bf9a044ea410745b0889063bcd928ccc20f9920b03bbed188090946a56aa",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_kings",
+          "priceLabel": "20,00 EUR pro Ticket",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "hasActivePurchaseCta": true
+        }
+      }
+    ]
+  },
+  "priceDeltaCount": 0,
+  "urlDeltaCount": 0,
+  "divergentCount": 0,
+  "priceDeltas": [],
+  "urlDeltas": [],
+  "divergent": [],
+  "goldenRows": [
+    {
+      "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+      "eventTitle": "14 Jahre Affenkäfig 19.09.2026",
+      "sourceEventKey": "14-jahreaffenkafig19-09-2026",
+      "officialUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+      "existingRow": {
+        "ticketId": "45294114-113c-4078-a4d8-df2541ed2ec2",
+        "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "priceFromMinor": 2500,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "priceFromMinor": 2500,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    },
+    {
+      "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "eventTitle": "Underland Essigfabrik 05.09.2026",
+      "sourceEventKey": "underland-essigfabrik-05-09-2026",
+      "officialUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+      "existingRow": {
+        "ticketId": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+        "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "priceFromMinor": 2000,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "priceFromMinor": 2000,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+      "eventTitle": "14 Jahre Affenkäfig 19.09.2026",
+      "sourceEventKey": "14-jahreaffenkafig19-09-2026",
+      "officialUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+      "existingRow": {
+        "ticketId": "45294114-113c-4078-a4d8-df2541ed2ec2",
+        "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "priceFromMinor": 2500,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "priceFromMinor": 2500,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    },
+    {
+      "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+      "eventTitle": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "sourceEventKey": "affenkaefig-xxxa8xxx-02-10-2026",
+      "officialUrl": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+      "existingRow": {
+        "ticketId": "17418f4f-3623-41f3-b901-3374cf2a802d",
+        "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "priceFromMinor": 1500,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "priceFromMinor": 1500,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    },
+    {
+      "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+      "eventTitle": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "sourceEventKey": "affenkaefig-xxx-capitol-xxx-hagen-17-10-2026",
+      "officialUrl": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+      "existingRow": {
+        "ticketId": "07ff2b09-4189-43bd-93c0-7f05cee85a39",
+        "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "priceFromMinor": 1750,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "organizer_shop",
+        "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "priceFromMinor": 1750,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    },
+    {
+      "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+      "eventTitle": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "sourceEventKey": "mdma-musik-die-mich-antreibt-10-10-26",
+      "officialUrl": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "existingRow": {
+        "ticketId": "9c3e6b48-5615-485d-9436-51cbfd09b48b",
+        "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "priceFromMinor": 2000,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "priceFromMinor": 2000,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    },
+    {
+      "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+      "eventTitle": "Halloween Weekender",
+      "sourceEventKey": "halloween-weekender",
+      "officialUrl": "https://affenkaefig.info/event/halloween-weekender/",
+      "existingRow": {
+        "ticketId": "5fe6cce3-ece4-401b-b8c3-a208f0488a81",
+        "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "priceFromMinor": 1850,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "priceFromMinor": 1850,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    },
+    {
+      "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "eventTitle": "Underland Essigfabrik 05.09.2026",
+      "sourceEventKey": "underland-essigfabrik-05-09-2026",
+      "officialUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+      "existingRow": {
+        "ticketId": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+        "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "priceFromMinor": 2000,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "plannedRow": {
+        "provider": "ticket_kings",
+        "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "priceFromMinor": 2000,
+        "currency": "EUR",
+        "salesStatus": "available",
+        "sortOrder": 0
+      },
+      "changedFields": [],
+      "ticketOperation": "noop",
+      "ticketOperationReason": "ticket_row_already_matches",
+      "providerSourceOperation": "update",
+      "providerSourceReason": "provider_source_changed",
+      "resolutionClass": "verified_ticket_complete",
+      "ticketSourceState": "current_ticket_detail",
+      "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "classification": "ALIGNED",
+      "writeAttempted": false,
+      "writeApplied": false,
+      "skipReason": null,
+      "conflictReason": null,
+      "liveProvider": {
+        "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "salesStatus": "available",
+        "actionKind": "ticket_detail",
+        "resolutionClass": "verified_ticket_complete"
+      }
+    }
+  ],
+  "snapshotDuringRun": {
+    "ticketRowsChanged": 0,
+    "ticketPricesChanged": 0,
+    "ticketUrlsChanged": 0,
+    "ticketStatusesChanged": 0,
+    "semanticUrlDeltas": 0,
+    "fieldDeltas": []
+  }
+}

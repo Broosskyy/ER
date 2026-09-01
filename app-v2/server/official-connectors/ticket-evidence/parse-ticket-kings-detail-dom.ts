@@ -183,7 +183,7 @@ function parseOffersFromEmbedDom(body: string): TicketKingsDetailDomOffer[] {
     }
 
     offers.push({
-      rawLabel: title,
+      rawLabel: phase ? `${title} ${phase}` : title,
       phaseLabel: phase || undefined,
       role: classification.role,
       rawPrice,

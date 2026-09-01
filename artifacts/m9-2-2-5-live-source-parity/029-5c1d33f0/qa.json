@@ -1,0 +1,42 @@
+{
+  "canonicalEventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+  "title": "MI * 30.12.2026 | KitKatClub",
+  "checkedAt": "2026-08-31T19:07:46.929Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/",
+    "lineupCount": 0,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": null,
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": 3500,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "NONE",
+  "sourceDescription": null,
+  "dbDescription": "",
+  "consumerDescription": null,
+  "sourceLineup": [],
+  "dbLineup": [],
+  "consumerLineup": [],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": null,
+  "consumerCtaTarget": null,
+  "targetIdentityVerified": false,
+  "targetReachable": false,
+  "targetMobileUsable": null,
+  "outboundFinalUrl": null,
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

@@ -1,0 +1,61 @@
+{
+  "canonicalEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+  "title": "Bootshaus & Loonyland pres. NYE 2026",
+  "checkedAt": "2026-08-31T19:07:57.965Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026/",
+    "lineupCount": 0,
+    "genreCount": 2,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+    "finalUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+    "provider": "ticket_io",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5616035275419772183451960_7561256723362226899913166.jpeg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": null,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "Ring in the new year at Bootshaus.\n\nOn December 31st, we open all floors for our annual New Year’s Eve celebration, taking you from the final hours of 2026 straight into the first morning of 2027.\n\nExpect a full-club experience across Mainfloor, Blckbx, and Dreherei, with carefully curated lineups, extended sets, and the signature Bootshaus atmosphere all night long.",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [],
+  "dbLineup": [],
+  "consumerLineup": [],
+  "sourceGenres": [
+    "Electro",
+    "EDM"
+  ],
+  "dbGenres": [
+    "Electro",
+    "EDM"
+  ],
+  "consumerGenres": [
+    "Electro",
+    "EDM"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5616035275419772183451960_7561256723362226899913166.jpeg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://bootshaus-club.ticket.io/S0cbXDda/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

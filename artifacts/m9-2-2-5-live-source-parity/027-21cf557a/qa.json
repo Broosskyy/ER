@@ -1,0 +1,52 @@
+{
+  "canonicalEventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+  "title": "Bootshaus & Loonyland pres. Halloween 2026",
+  "checkedAt": "2026-08-31T19:05:48.457Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026/",
+    "lineupCount": 0,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+    "finalUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+    "provider": "ticket_io",
+    "currentPhase": "Early Bird",
+    "currentPriceMinor": 3200,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/Hv4f09p8/img/holder-1080.jpg?bf64c054"
+  },
+  "currentTicketProduct": "Early Bird",
+  "currentPhase": "Early Bird",
+  "currentPrice": 3200,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "Loonyland returns to Bootshaus for its annual Halloween takeover.\n\nOn October 31st, all three floors open from early night until morning, transforming the club into a full Halloween experience.\n\nDressing up is not mandatory, but always appreciated.",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [],
+  "dbLineup": [],
+  "consumerLineup": [],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://cdn.ticket.io/companies/DMnDlIN6/events/Hv4f09p8/img/holder-1080.jpg?bf64c054",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

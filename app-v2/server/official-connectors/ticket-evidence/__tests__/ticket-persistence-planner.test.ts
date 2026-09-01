@@ -648,4 +648,70 @@ describe('ticket persistence planning', () => {
     expect(plans[0]?.ticketOperation).toBe('insert');
     expect(plans[0]?.plannedTicketRow?.priceFromMinor).toBe(2990);
   });
+
+  it('plans sold-out presale registration ticket rows for verified sibforms targets', () => {
+    const registrationUrl =
+      'https://73b85ec6.sibforms.com/serve/MUIFATEST';
+    const result = enrichResultWithM6_4({
+      sourceEventKey: 'blacklist-inurfase-pres-zaagstep-by-dr-donk',
+      officialUrl: 'https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/',
+      title: 'Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk',
+      startsAt: '2026-09-11T23:00:00+02:00',
+      discoveredLinks: [
+        {
+          rawUrl: 'https://bit.ly/ZAAGSTEP',
+          relation: 'official_ticket',
+          discoveredOnUrl: 'https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/',
+          discoveredFromSource: 'a[href]',
+          observedAt: '2026-08-31T13:00:00.000Z',
+          elementText: 'Tickets',
+        },
+      ],
+      rejectedCandidates: [],
+      primaryLink: {
+        rawUrl: 'https://bit.ly/ZAAGSTEP',
+        relation: 'official_ticket',
+        discoveredOnUrl: 'https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/',
+        discoveredFromSource: 'a[href]',
+        observedAt: '2026-08-31T13:00:00.000Z',
+        elementText: 'Tickets',
+      },
+      canonicalTicketUrl: registrationUrl,
+      providerKey: 'presale_registration',
+      identityResult: 'ticket_identity_verified',
+      identityReasons: ['official_presale_registration_target'],
+      classification: 'verified_presale_registration',
+      verifiedTicketComplete: false,
+      resolvedAction: {
+        kind: 'presale_registration',
+        sourceEventUrl: 'https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/',
+        rawUrl: 'https://bit.ly/ZAAGSTEP',
+        resolvedUrl: registrationUrl,
+        canonicalTicketUrl: registrationUrl,
+        providerKey: 'presale_registration',
+        observedAt: '2026-08-31T13:00:00.000Z',
+        contentFingerprint: 'fp-zaagstep',
+      },
+    });
+
+    const plans = planTicketEvidencePersistence([result], {
+      officialBindings: [
+        {
+          eventId: 'f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e',
+          officialUrl: 'https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/',
+          sourceId: 'source-zaagstep',
+          contentHash: 'fp',
+          rawPayload: {},
+          title: 'Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk',
+        },
+      ],
+      existingTickets: [],
+      existingTicketSources: [],
+    });
+
+    expect(plans[0]?.ticketOperation).toBe('insert');
+    expect(plans[0]?.plannedTicketRow?.salesStatus).toBe('sold_out');
+    expect(plans[0]?.plannedTicketRow?.ticketUrl).toBe(registrationUrl);
+    expect(plans[0]?.consumerProjection.actionKind).toBe('presale_registration');
+  });
 });

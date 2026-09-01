@@ -1,3 +1,5 @@
+import { deduplicateDescriptionBlocks } from '../shared/deduplicate-description';
+
 const LINEUP_NOT_ANNOUNCED_PATTERNS = [
   /line\s*-?\s*up.*bald/i,
   /lineup.*soon/i,
@@ -26,5 +28,5 @@ export function cleanAffenkaefigDescription(html: string): string | undefined {
     return undefined;
   }
 
-  return normalized;
+  return deduplicateDescriptionBlocks(normalized);
 }

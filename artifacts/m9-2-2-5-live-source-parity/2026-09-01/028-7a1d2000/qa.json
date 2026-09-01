@@ -1,0 +1,63 @@
+{
+  "canonicalEventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+  "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+  "checkedAt": "2026-09-01T09:08:53.718Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/",
+    "lineupCount": 0,
+    "genreCount": 2,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://unreal-bootshaus.ticket.io/nUs0Ktl4/",
+    "finalUrl": "https://unreal-bootshaus.ticket.io/nUs0Ktl4/",
+    "provider": "ticket_io",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "sold_out",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://cdn.ticket.io/companies/Fb6ZLtHW/events/nUs0Ktl4/img/holder-1080.jpg?d665e4a5"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": null,
+  "currency": "EUR",
+  "availability": "SOLD_OUT",
+  "actionType": "NONE",
+  "sourceDescription": "CELEBRATING THE END OF THE TOUR\n\nAfter many months of preparation, we can finally announce that we’re going once around the world and back - together.\n\nWe can’t wait to see all of you in Cologne!",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [],
+  "dbLineup": [],
+  "consumerLineup": [],
+  "sourceGenres": [
+    "Hard Techno",
+    "Techno"
+  ],
+  "dbGenres": [
+    "Hard Techno",
+    "Techno"
+  ],
+  "consumerGenres": [
+    "Hard Techno",
+    "Techno"
+  ],
+  "canonicalMedia": "https://cdn.ticket.io/companies/Fb6ZLtHW/events/nUs0Ktl4/img/holder-1080.jpg?d665e4a5",
+  "consumerCardStatus": "Ausverkauft",
+  "consumerDetailStatus": "Ausverkauft",
+  "consumerCtaLabel": null,
+  "consumerCtaTarget": null,
+  "targetIdentityVerified": false,
+  "targetReachable": false,
+  "targetMobileUsable": null,
+  "outboundFinalUrl": null,
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

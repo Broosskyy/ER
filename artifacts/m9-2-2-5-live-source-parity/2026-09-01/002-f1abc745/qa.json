@@ -1,0 +1,96 @@
+{
+  "canonicalEventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+  "title": "R3HAB pres. by BOOTSHAUS",
+  "checkedAt": "2026-09-01T08:43:42.939Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus/",
+    "lineupCount": 6,
+    "genreCount": 6,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "finalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "provider": "ticket_io",
+    "currentPhase": "Phase 3",
+    "currentPriceMinor": 2690,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?4e87961e"
+  },
+  "currentTicketProduct": "Phase 3",
+  "currentPhase": "Phase 3",
+  "currentPrice": 2690,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "On September 4th, BOOTSHAUS presents R3HAB on the MAINFLOOR.\n\nA special night with one of electronic music’s most established names.",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [
+    "R3HAB",
+    "LA FUENTE",
+    "OLIVER MAGENTA",
+    "RELOVA",
+    "DHALI",
+    "DAVE REPLAY"
+  ],
+  "dbLineup": [
+    "R3HAB",
+    "LA FUENTE",
+    "OLIVER MAGENTA",
+    "RELOVA",
+    "DHALI",
+    "DAVE REPLAY"
+  ],
+  "consumerLineup": [
+    "R3HAB",
+    "LA FUENTE",
+    "OLIVER MAGENTA",
+    "RELOVA",
+    "DHALI",
+    "DAVE REPLAY"
+  ],
+  "sourceGenres": [
+    "Bass House",
+    "Electro",
+    "House",
+    "Progressive House",
+    "EDM",
+    "Dance"
+  ],
+  "dbGenres": [
+    "Bass House",
+    "Electro",
+    "House",
+    "Progressive House",
+    "EDM",
+    "Dance"
+  ],
+  "consumerGenres": [
+    "Bass House",
+    "Electro",
+    "House",
+    "Progressive House",
+    "EDM",
+    "Dance"
+  ],
+  "canonicalMedia": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?4e87961e",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

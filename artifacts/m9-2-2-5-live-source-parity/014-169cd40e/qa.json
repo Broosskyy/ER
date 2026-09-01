@@ -1,0 +1,85 @@
+{
+  "canonicalEventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+  "title": "Unreal Weekender Night II - September 2026",
+  "checkedAt": "2026-08-31T18:52:29.395Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026/",
+    "lineupCount": 8,
+    "genreCount": 1,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+    "finalUrl": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+    "provider": "ticket_io",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "sold_out",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": null,
+  "currency": "EUR",
+  "availability": "SOLD_OUT",
+  "actionType": "NONE",
+  "sourceDescription": null,
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [
+    "ANNIE",
+    "DJ DRECKISCH",
+    "DVAID",
+    "GLANZ B2B ROSILICIOUS",
+    "KARAH",
+    "KUKO",
+    "TASSERY",
+    "TRIPTYKH B2B GOLPE"
+  ],
+  "dbLineup": [
+    "ANNIE",
+    "DJ DRECKISCH",
+    "DVAID",
+    "GLANZ B2B ROSILICIOUS",
+    "KARAH",
+    "KUKO",
+    "TASSERY",
+    "TRIPTYKH B2B GOLPE"
+  ],
+  "consumerLineup": [
+    "ANNIE",
+    "DJ DRECKISCH",
+    "DVAID",
+    "GLANZ B2B ROSILICIOUS",
+    "KARAH",
+    "KUKO",
+    "TASSERY",
+    "TRIPTYKH B2B GOLPE"
+  ],
+  "sourceGenres": [
+    "Hard Techno"
+  ],
+  "dbGenres": [
+    "Hard Techno"
+  ],
+  "consumerGenres": [
+    "Hard Techno"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg",
+  "consumerCardStatus": "Ausverkauft",
+  "consumerDetailStatus": "Ausverkauft",
+  "consumerCtaLabel": null,
+  "consumerCtaTarget": null,
+  "targetIdentityVerified": false,
+  "targetReachable": false,
+  "targetMobileUsable": null,
+  "outboundFinalUrl": null,
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

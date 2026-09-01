@@ -225,6 +225,7 @@ function FeaturedHomeCard({
             {event.ticketLabel ? (
               <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
             ) : null}
+            {event.ticketStatus ? <TicketStatusBadge status={event.ticketStatus} /> : null}
           </View>
         </View>
       </View>
@@ -265,9 +266,7 @@ function CompactPremiumCard({
           {(event.status || event.ticketStatus) && (
             <View style={styles.statusRow}>
               {event.status ? <EventStatusBadge status={event.status} showIcon /> : null}
-              {event.ticketStatus && event.ticketStatus !== 'sold_out' ? (
-                <TicketStatusBadge status={event.ticketStatus} />
-              ) : null}
+              {event.ticketStatus ? <TicketStatusBadge status={event.ticketStatus} /> : null}
             </View>
           )}
           <AppText role="cardTitle" numberOfLines={2}>

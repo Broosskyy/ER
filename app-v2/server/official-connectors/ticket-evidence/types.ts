@@ -235,6 +235,7 @@ export interface RejectedTicketOffer {
 export interface TicketOfferEvidence {
   rawLabel?: string;
   normalizedLabel?: string;
+  phaseLabel?: string;
   rawPrice?: string;
   amountMinor?: number;
   currency?: string;

@@ -150,6 +150,7 @@ export interface SyncRunResult {
   run: IngestionRunRecord;
   eventResults: SyncEventProcessingResult[];
   health: SourceHealthRecord;
+  ticketPersistence?: import('./execute-ticket-persistence').TicketPersistenceExecutionResult;
 }
 
 export interface ApplyExecutionResult {

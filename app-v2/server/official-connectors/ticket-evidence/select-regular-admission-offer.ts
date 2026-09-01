@@ -7,6 +7,7 @@ import {
   normalizeOfferRole,
   rejectionReasonForRole,
 } from './ticket-offer-role';
+import { compareCurrentAdmissionPhaseRank } from './ticket-offer-phase';
 
 function isPurchasableOffer(offer: TicketOfferEvidence): boolean {
   return offer.availability === 'available' || offer.availability === 'free';
@@ -57,9 +58,18 @@ export function selectRegularAdmissionOfferWithAudit(
   const selected =
     purchasable.length === 0
       ? undefined
-      : purchasable.sort(
-          (left, right) => (left.amountMinor ?? Number.MAX_SAFE_INTEGER) - (right.amountMinor ?? Number.MAX_SAFE_INTEGER),
-        )[0];
+      : purchasable.sort((left, right) => {
+          const phaseCompare = compareCurrentAdmissionPhaseRank(
+            left.normalizedLabel ?? left.rawLabel ?? '',
+            right.normalizedLabel ?? right.rawLabel ?? '',
+            left.phaseLabel,
+            right.phaseLabel,
+          );
+          if (phaseCompare !== 0) {
+            return phaseCompare;
+          }
+          return (left.amountMinor ?? Number.MAX_SAFE_INTEGER) - (right.amountMinor ?? Number.MAX_SAFE_INTEGER);
+        })[0];
 
   const rejectedCheaperOffers: RegularAdmissionSelection['rejectedCheaperOffers'] = [];
   for (const offer of evidence.offers) {

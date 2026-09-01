@@ -1,0 +1,75 @@
+{
+  "canonicalEventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+  "title": "Cosmic Gate pres by Bootshaus & Senses!",
+  "checkedAt": "2026-09-01T09:04:09.146Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/",
+    "lineupCount": 4,
+    "genreCount": 1,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+    "finalUrl": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+    "provider": "ticket_io",
+    "currentPhase": "Phase 1",
+    "currentPriceMinor": 2890,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8423424595234835988097199_3186011873792818761687899.jpeg"
+  },
+  "currentTicketProduct": "Phase 1",
+  "currentPhase": "Phase 1",
+  "currentPrice": 2890,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "On October 17th, BOOTSHAUS and SENSES present COSMIC GATE on the MAINFLOOR.\n\nJoined by YOTTO, LAURA VAN DAM and BENJAMIN R, the German duo returns to Cologne for a special night built around club energy, melodic sounds and big moments on the Mainfloor.",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [
+    "COSMIC GATE",
+    "YOTTO",
+    "LAURA VAN DAM",
+    "BENJAMIN R"
+  ],
+  "dbLineup": [
+    "COSMIC GATE",
+    "YOTTO",
+    "LAURA VAN DAM",
+    "BENJAMIN R"
+  ],
+  "consumerLineup": [
+    "COSMIC GATE",
+    "YOTTO",
+    "LAURA VAN DAM",
+    "BENJAMIN R"
+  ],
+  "sourceGenres": [
+    "Trance"
+  ],
+  "dbGenres": [
+    "Trance"
+  ],
+  "consumerGenres": [
+    "Trance"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8423424595234835988097199_3186011873792818761687899.jpeg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

@@ -138,8 +138,8 @@ describe('ticket.io rendered shop table parser', () => {
       extractedAt: '2026-08-29T12:00:01.000Z',
     });
     const selected = evidence ? selectRegularAdmissionOffer(evidence) : undefined;
-    expect(selected?.rawLabel).toBe('Phase 2');
-    expect(selected?.amountMinor).toBe(2490);
+    expect(selected?.rawLabel).toBe('Phase 3');
+    expect(selected?.amountMinor).toBe(2690);
     expect(evidence?.normalizedStatus).toBe('available');
   });
 });

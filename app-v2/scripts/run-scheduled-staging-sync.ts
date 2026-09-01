@@ -28,6 +28,8 @@ import { assertScheduledStagingApplyAllowed } from '../server/ingestion/sync/sch
 import { PRODUCTION_PROJECT_REF, STAGING_PROJECT_REF } from '../server/ingestion/sync/staging-guard';
 import {
   compareTicketSnapshots,
+  compareTicketSnapshotsDetailed,
+  filterTicketRowsByEventIds,
   normalizeTicketRows,
 } from '../server/ingestion/sync/ticket-snapshot';
 
@@ -70,12 +72,26 @@ async function main() {
   });
 
   const runQuery = createSupabaseCliLinkedQueryExecutor(cwd);
+  const connectorEventIds = new Set(
+    loadJsonAgg<{ event_id: string }>(
+      runQuery,
+      `SELECT jsonb_agg(DISTINCT jsonb_build_object('event_id', s.event_id)) AS rows
+       FROM public.event_sources s
+       WHERE s.source_role = 'official'
+         AND (
+           (s.source_url ILIKE '%bootshaus.tv%' AND '${connectorId}' = 'bootshaus-official')
+           OR (s.source_url ILIKE '%affenkaefig.info%' AND '${connectorId}' = 'affenkaefig-official')
+         );`,
+    ).map((row) => row.event_id),
+  );
+
   const preTickets = normalizeTicketRows(
     loadJsonAgg<Record<string, unknown>>(
       runQuery,
       `SELECT jsonb_agg(to_jsonb(t) ORDER BY t.id) AS rows FROM public.event_tickets t;`,
     ),
   );
+  const preScopedTickets = filterTicketRowsByEventIds(preTickets, connectorEventIds);
 
   writeJson('preflight.json', {
     branch: 'rebuild/event-core-clean',
@@ -100,7 +116,9 @@ async function main() {
       `SELECT jsonb_agg(to_jsonb(t) ORDER BY t.id) AS rows FROM public.event_tickets t;`,
     ),
   );
+  const postScopedTickets = filterTicketRowsByEventIds(postTickets, connectorEventIds);
   const ticketDelta = compareTicketSnapshots(preTickets, postTickets);
+  const connectorTicketDelta = compareTicketSnapshotsDetailed(preScopedTickets, postScopedTickets);
 
   const healthRow = loadJsonAgg<Record<string, unknown>>(
     runQuery,
@@ -119,6 +137,16 @@ async function main() {
     appliedWrites: result.run.counters.appliedWrites,
     reviewRequired: result.run.counters.reviewRequired,
     ticketDelta,
+    connectorTicketDelta,
+    realSnapshotDeltas: {
+      price: connectorTicketDelta.ticketPricesChanged,
+      url: connectorTicketDelta.semanticUrlDeltas,
+      status: connectorTicketDelta.ticketStatusesChanged,
+      inserted: connectorTicketDelta.inserted,
+      updated: connectorTicketDelta.updated,
+      deleted: connectorTicketDelta.deleted,
+    },
+    ticketPersistence: result.ticketPersistence ?? null,
     persistedHealth: healthRow,
   };
 

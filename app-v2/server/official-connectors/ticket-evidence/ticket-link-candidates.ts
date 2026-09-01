@@ -2,6 +2,7 @@ import type { DiscoveredTicketLink, TicketLinkRelation } from './types';
 import {
   isCheckoutOrSessionTicketUrl,
   isMerchandiseUrl,
+  isN8ManagerPortalRootUrl,
   isShopRootUrl,
   isTicketIoEventDetailUrl,
 } from './url-policy';
@@ -79,8 +80,8 @@ export function classifyTicketLinkCandidate(input: {
   } else if (SOCIAL_PATTERN.test(url) || SOCIAL_PATTERN.test(text)) {
     rejectionReason = 'social_link_rejected';
     confidence = -400;
-  } else if (isShopRootUrl(url) || isCheckoutOrSessionTicketUrl(url)) {
-    rejectionReason = isShopRootUrl(url) ? 'shop_root' : 'checkout_url';
+  } else if (isShopRootUrl(url) || isCheckoutOrSessionTicketUrl(url) || isN8ManagerPortalRootUrl(url)) {
+    rejectionReason = isShopRootUrl(url) ? 'shop_root' : isN8ManagerPortalRootUrl(url) ? 'shop_root' : 'checkout_url';
     confidence = -500;
   } else if (/\.ticket\.io\b/i.test(url) && !isTicketIoEventDetailUrl(url)) {
     rejectionReason = 'ticket_io_non_detail';
@@ -91,6 +92,12 @@ export function classifyTicketLinkCandidate(input: {
     }
     if (/paylogic\.com|fourvenues\.com|\.ticket\.io\b/i.test(url)) {
       confidence += 80;
+    }
+    if (/n8manager\.de\/ticketing\/native_event\.php/i.test(url) && !/embed=/i.test(url)) {
+      confidence += 90;
+    }
+    if (/embed=1/i.test(url)) {
+      confidence -= 40;
     }
     if (inferRelation(text, className, url) === 'ticket_provider') {
       confidence += 50;

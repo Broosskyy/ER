@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { shouldCollapseDescription } from '@/components/layout/expandable-text-logic';
 import { mapEventDetail } from '@/data/mappers/event-core-mapper';
 import { toEventDisplayModelFromDetail } from '@/data/mappers/event-core-display';
 import { buildEventDetailVisibleSurface } from '@/features/event-detail/event-detail-visible-surface';
@@ -68,5 +69,11 @@ describe('event detail visible surface', () => {
     expect(surface.visibleText).not.toContain('Website ↗');
     expect(surface.rawTicketStatusValuesRendered).toBe(0);
     expect(surface.technicalProviderStatesRendered).toBe(0);
+  });
+
+  it('collapses long descriptions in the visible surface contract', () => {
+    const longDescription = Array.from({ length: 10 }, (_, index) => `Paragraph ${index + 1}`).join('\n');
+    expect(shouldCollapseDescription(longDescription)).toBe(true);
+    expect(shouldCollapseDescription('Short teaser only.')).toBe(false);
   });
 });

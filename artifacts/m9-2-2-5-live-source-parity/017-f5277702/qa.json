@@ -1,0 +1,61 @@
+{
+  "canonicalEventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+  "title": "Blacklist Festival 2026",
+  "checkedAt": "2026-08-31T18:55:29.467Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026/",
+    "lineupCount": 0,
+    "genreCount": 2,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+    "finalUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+    "provider": "ticket_io",
+    "currentPhase": "GENERAL ADMISSION - FR - PHASE 2",
+    "currentPriceMinor": 4700,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png"
+  },
+  "currentTicketProduct": "GENERAL ADMISSION - FR - PHASE 2",
+  "currentPhase": "GENERAL ADMISSION - FR - PHASE 2",
+  "currentPrice": 4700,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "2 DAYS\n\nOCTOBER 9–10, 2026Friday, October 9 | 18:00 – 06:00Saturday, October 10 | 18:00 – 06:00\n\nTHE SECOND WAVE IS OUT NOW!\n\nHERE ARE ALL ARTISTS (A–Z):\n\nA.M.C | AKIRAH | AUTODRIVE | AUTOPSKI | BLANKE PRESENTS: FALLOUT | BURR OAK | DJ MII | ECRAZE B2B BIZO | ELLIE RICH | EPTIC | ESKEI83 | FLUX PAVILION | FORMULA | GLADDE PALING | GOURSKI | HAMMERHEAD | K MOTIONZ | KANINE | KARA B2B YOUPHORIA | KOVEN | KREWELLA | MACHINYST | MADCORE B2B ELLIE RICH | MEFJUS | NOIZBOIZ | PRIMATE | RICKY WEST | RIOT | SAMPLIFIRE | SKIYE | STOOG3S | THE RESISTANCE | UPGRADE | VDV B2B MISCALL | ZOMBOY | [IVY] | [SAFYRE] | ÆON:MODE\n\n....MORE TBA\n\nSAVE THE DATE: OCTOBER 09-10, 2026",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [],
+  "dbLineup": [],
+  "consumerLineup": [],
+  "sourceGenres": [
+    "Dubstep",
+    "Drum'n'Bass"
+  ],
+  "dbGenres": [
+    "Dubstep",
+    "Drum'n'Bass"
+  ],
+  "consumerGenres": [
+    "Dubstep",
+    "Drum'n'Bass"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

@@ -5,8 +5,10 @@ import {
   isOcrFlyerNoiseLine,
   sanitizeFinalLineupCandidates,
   validateOfficialLineupAct,
+  canonicalActKey,
   type LineupValidationContext,
 } from '../shared/lineup-normalization';
+import { deduplicateDescriptionBlocks } from '../shared/deduplicate-description';
 import { buildMediaEvidenceContextFromEvidence } from '../shared/media-evidence-context';
 import { extractLineupFromTicketKingsDescription } from './parse-ticket-kings-detail-dom';
 import { normalizedGenresToExplicitLabels, normalizeOfficialGenreLabels } from '../shared/normalize-genre';
@@ -31,12 +33,21 @@ export function reconcileVerifiedTicketSupplementalEvidence(
   let descriptionRaw = evidence.descriptionRaw;
 
   if (!descriptionClean && providerDescription && providerDescription.length >= 40) {
-    descriptionClean = providerDescription;
-    descriptionRaw = providerDescription;
+    descriptionClean = deduplicateDescriptionBlocks(providerDescription);
+    descriptionRaw = descriptionClean;
     const gapIndex = enrichmentGaps.indexOf('description_missing');
     if (gapIndex >= 0) {
       enrichmentGaps.splice(gapIndex, 1);
     }
+  } else if (
+    providerDescription &&
+    providerDescription.length > (descriptionClean?.length ?? 0) + 40
+  ) {
+    descriptionClean = deduplicateDescriptionBlocks(providerDescription);
+    descriptionRaw = descriptionClean;
+  } else if (descriptionClean) {
+    descriptionClean = deduplicateDescriptionBlocks(descriptionClean);
+    descriptionRaw = descriptionClean;
   } else if (
     providerDescription &&
     /line[- ]?up/i.test(providerDescription) &&
@@ -70,7 +81,18 @@ export function reconcileVerifiedTicketSupplementalEvidence(
   const mediaLineupLooksNoisy = lineupCandidates.some((act) => isOcrFlyerNoiseLine(act.displayName));
   const allLineupLooksNoisy =
     lineupCandidates.length > 0 && lineupCandidates.every((act) => isOcrFlyerNoiseLine(act.displayName));
-  if (supplementalLineup.length > 0 && (allLineupLooksNoisy || (mediaOnlyLineup && mediaLineupLooksNoisy))) {
+  const soleEventBrandingLineup =
+    lineupCandidates.length === 1 &&
+    supplementalLineup.length >= 2 &&
+    canonicalActKey(lineupCandidates[0]?.displayName ?? '') ===
+      canonicalActKey(evidence.title.split(/\s+/)[0] ?? evidence.title);
+  if (
+    supplementalLineup.length > 0 &&
+    (allLineupLooksNoisy ||
+      soleEventBrandingLineup ||
+      (mediaOnlyLineup && mediaLineupLooksNoisy) ||
+      (supplementalLineup.length >= 2 && lineupCandidates.length <= 1))
+  ) {
     for (const act of lineupCandidates) {
       rejectedCandidates.push({ rawText: act.rawText, reason: 'replaced_by_verified_supplemental_lineup' });
     }

@@ -1,0 +1,72 @@
+{
+  "canonicalEventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+  "title": "Bootshaus on a Ship Vol. IV",
+  "checkedAt": "2026-09-01T08:47:57.695Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/",
+    "lineupCount": 5,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "finalUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "provider": "ticket_io",
+    "currentPhase": "Phase 2",
+    "currentPriceMinor": 3600,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png"
+  },
+  "currentTicketProduct": "Phase 2",
+  "currentPhase": "Phase 2",
+  "currentPrice": 3600,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "Bootshaus returns to the water.\n\nOn September 13th, Bootshaus on a Ship Vol. IV sets sail on the KD Boot for another open-air daytime session.",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [
+    "NIKLAS DEE",
+    "FABIAN FARELL",
+    "OLIVER MAGENTA",
+    "TEKNOCLASH",
+    "DANTH"
+  ],
+  "dbLineup": [
+    "DANTH",
+    "FABIAN FARELL",
+    "NIKLAS DEE",
+    "OLIVER MAGENTA",
+    "TEKNOCLASH"
+  ],
+  "consumerLineup": [
+    "DANTH",
+    "FABIAN FARELL",
+    "NIKLAS DEE",
+    "OLIVER MAGENTA",
+    "TEKNOCLASH"
+  ],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

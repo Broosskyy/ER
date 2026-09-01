@@ -28,6 +28,7 @@ const SHOP_ROOT_PATTERNS = [
   /^https:\/\/[a-z0-9-]+\.ticket\.io\/$/i,
   /^https:\/\/shop\.paylogic\.com\/$/i,
   /^https:\/\/affenkaefig\.info\/tickets\/?$/i,
+  /^https:\/\/[a-z0-9.-]+\.n8manager\.de\/eventportal\/?$/i,
 ];
 
 const TRACKING_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid', '_gl'];
@@ -147,6 +148,43 @@ export function isFourvenuesEventDetailUrl(url: string): boolean {
   const parsed = new URL(canonical);
   const segments = parsed.pathname.split('/').filter(Boolean);
   return segments.includes('events') && segments.length >= 3;
+}
+
+export function isN8ManagerHost(hostname: string): boolean {
+  return /n8manager\.de$/i.test(hostname.toLowerCase());
+}
+
+export function isN8ManagerPortalRootUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    if (!isN8ManagerHost(parsed.hostname)) {
+      return false;
+    }
+    return /\/eventportal\/?$/i.test(parsed.pathname);
+  } catch {
+    return false;
+  }
+}
+
+export function canonicalizeN8ManagerTicketUrl(url: string): string | undefined {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== 'https:' || !isN8ManagerHost(parsed.hostname)) {
+      return undefined;
+    }
+    if (!/\/ticketing\/native_event\.php$/i.test(parsed.pathname)) {
+      return undefined;
+    }
+    const eventId = parsed.searchParams.get('id');
+    if (!eventId) {
+      return undefined;
+    }
+    parsed.search = `?id=${encodeURIComponent(eventId)}`;
+    parsed.hash = '';
+    return parsed.toString();
+  } catch {
+    return undefined;
+  }
 }
 
 export function isCheckoutOrSessionTicketUrl(url: string): boolean {

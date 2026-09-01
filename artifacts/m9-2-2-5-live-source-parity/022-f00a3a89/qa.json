@@ -1,0 +1,58 @@
+{
+  "canonicalEventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+  "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+  "checkedAt": "2026-08-31T19:01:01.727Z",
+  "officialEvidence": {
+    "url": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+    "lineupCount": 1,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+    "finalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+    "provider": "n8manager",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "sold_out",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB.jpg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": 1750,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": null,
+  "dbDescription": "",
+  "consumerDescription": null,
+  "sourceLineup": [
+    "Folgt"
+  ],
+  "dbLineup": [
+    "Folgt"
+  ],
+  "consumerLineup": [
+    "Folgt"
+  ],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB.jpg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

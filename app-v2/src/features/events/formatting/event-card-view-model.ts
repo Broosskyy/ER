@@ -7,7 +7,6 @@ import type { EventDisplayModel } from './display-event';
 import { formatWeekdayLabel } from './date-time';
 import {
   resolveConsumerEventStatus,
-  resolveConsumerTicketStatus,
 } from '../status/event-status-resolver';
 
 export function toEventCardViewModel(event: EventDisplayModel): EventCardViewModel {
@@ -30,7 +29,7 @@ export function toEventCardViewModel(event: EventDisplayModel): EventCardViewMod
     organizerLabel: event.organizer,
     ticketLabel: event.priceText,
     ticketColorToken: undefined,
-    ticketStatus: resolveConsumerTicketStatus(event),
+    ticketStatus: event.ticketBadgeStatus,
     status: resolveConsumerEventStatus(event),
     accessibilityLabel: `${event.title}, ${locationLabel}`,
   };
@@ -51,7 +50,7 @@ export function toEventListItemViewModel(event: EventDisplayModel): EventListIte
     cityLabel,
     genreLabels: event.genres,
     ticketLabel: event.priceText,
-    ticketStatus: resolveConsumerTicketStatus(event),
+    ticketStatus: event.ticketBadgeStatus,
     status: resolveConsumerEventStatus(event),
     accessibilityLabel: `${event.title}, ${locationLabel}`,
   };

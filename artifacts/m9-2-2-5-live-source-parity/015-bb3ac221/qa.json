@@ -1,0 +1,58 @@
+{
+  "canonicalEventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+  "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+  "checkedAt": "2026-08-31T18:53:25.072Z",
+  "officialEvidence": {
+    "url": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+    "lineupCount": 1,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+    "finalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+    "provider": "n8manager",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "sold_out",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/media-20260812-151321-08104fe22efe.jpg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": 1500,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": null,
+  "dbDescription": "",
+  "consumerDescription": null,
+  "sourceLineup": [
+    "Folgt"
+  ],
+  "dbLineup": [
+    "Folgt"
+  ],
+  "consumerLineup": [
+    "Folgt"
+  ],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://affenkaefig.info/wp-content/uploads/2026/06/media-20260812-151321-08104fe22efe.jpg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

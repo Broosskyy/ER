@@ -213,8 +213,8 @@ async function continueWithResolvedLink(
       primaryLink: primary,
       canonicalTicketUrl: resolved.canonicalTicketUrl,
       providerKey: 'presale_registration',
-      identityResult: identity.result,
-      identityReasons: identity.reasons,
+      identityResult: 'ticket_identity_verified',
+      identityReasons: ['official_presale_registration_target'],
       classification: 'verified_presale_registration',
       verifiedTicketComplete: false,
     };
@@ -449,7 +449,9 @@ async function continueWithResolvedLink(
   };
 
   let classification = 'ticket_evidence_missing';
-  if (mergedIdentityResult === 'ticket_identity_verified' && lowest?.amountMinor !== undefined) {
+  if (mergedIdentityResult === 'ticket_identity_verified' && tickets.normalizedStatus === 'sold_out') {
+    classification = 'verified_ticket_sold_out';
+  } else if (mergedIdentityResult === 'ticket_identity_verified' && lowest?.amountMinor !== undefined) {
     classification = `verified_ticket_${tickets.normalizedStatus}`;
   } else if (mergedIdentityResult === 'ticket_identity_conflict') {
     classification = 'ticket_identity_conflict';

@@ -2,6 +2,7 @@ import type { EventDetail, EventSummary, EventTicket } from '@/features/events/t
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
 import { resolveConsumerOfficialSource } from '@/features/events/sources/consumer-official-source';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
+import { deduplicateDescriptionBlocks } from '../../../server/official-connectors/shared/deduplicate-description';
 import {
   formatDateLabel,
   formatEventTimeRange,
@@ -56,7 +57,7 @@ function toDisplayFields(
     id: summary.id,
     slug: summary.id,
     title: summary.title,
-    description: detail?.description ?? '',
+    description: deduplicateDescriptionBlocks(detail?.description ?? ''),
     image: summary.imageUrl ? { uri: summary.imageUrl } : ({ uri: '' } as const),
     date: formatDateLabel(startDateTime, timezone),
     startTime: hasClock ? timeRange.split(' – ')[0] ?? timeRange : 'Open',
@@ -94,6 +95,7 @@ function toDisplayFields(
     venueId: summary.venue?.id,
     ticketProviderLabel: ticket?.provider ?? undefined,
     ticketStatus: mapTicketStatus(ticket, ticketPresentation),
+    ticketBadgeStatus: ticketPresentation.badgeStatus,
     venueLabel: venueName,
     cityLabel: city,
     locationLabelComma: venueName && city ? `${venueName}, ${city}` : venueName || city,

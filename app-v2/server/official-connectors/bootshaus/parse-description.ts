@@ -1,3 +1,4 @@
+import { deduplicateDescriptionBlocks } from '../shared/deduplicate-description';
 import {
   isFloorOrStageHeader,
   isLineupIntroMarker,
@@ -23,7 +24,7 @@ const LINEUP_NOT_ANNOUNCED_PATTERNS = [
 ];
 
 const FLOOR_HEADER_PATTERN = /^[A-Z0-9][A-Z0-9\s/&-]{1,40}:$/;
-const DECORATIVE_SEPARATOR_PATTERN = /^[▔_\-\s]{6,}$/;
+const DECORATIVE_SEPARATOR_PATTERN = /^[▔_\-\s*]{6,}$/;
 
 export type RemovedDescriptionBlockCategory =
   | 'footer_address'
@@ -265,10 +266,11 @@ export function stripTrailingFooterParagraphs(paragraphs: string[]): string[] {
 }
 
 export function cleanDescriptionParagraphs(paragraphs: string[]): string {
-  return paragraphs
+  const cleaned = paragraphs
     .map((paragraph) => normalizeDescriptionParagraph(paragraph))
     .filter((paragraph) => paragraph.length > 0 && !isBoilerplateParagraph(paragraph))
     .join('\n\n');
+  return deduplicateDescriptionBlocks(cleaned);
 }
 
 export function extractDescriptionParagraphsFromHtml(html: string): string[] {

@@ -191,7 +191,11 @@ async function processConnectorResult(
   mode: SyncRunMode,
   counters: SyncRunCounters,
   deps: SyncOrchestratorDependencies,
-): Promise<{ eventResults: SyncEventProcessingResult[]; errorCategories: IngestionErrorCategory[] }> {
+): Promise<{
+  eventResults: SyncEventProcessingResult[];
+  errorCategories: IngestionErrorCategory[];
+  ticketPersistence?: TicketPersistenceExecutionResult;
+}> {
   const eventResults: SyncEventProcessingResult[] = [];
   const errorCategories: IngestionErrorCategory[] = [];
 
@@ -250,7 +254,8 @@ async function processConnectorResult(
   const ticketResults = connectorResult.ticketResults ?? [];
   if (ticketResults.length > 0 && deps.applyTicketResults) {
     try {
-      await deps.applyTicketResults(ticketResults, mode);
+      const ticketPersistence = await deps.applyTicketResults(ticketResults, mode);
+      return { eventResults, errorCategories: [...new Set(errorCategories)], ticketPersistence };
     } catch (error) {
       counters.failures += 1;
       const classified = classifyIngestionError(error);
@@ -413,6 +418,7 @@ export async function runSourceSync(
 
   let eventResults: SyncEventProcessingResult[] = [];
   let errorCategories: IngestionErrorCategory[] = [];
+  let ticketPersistence: TicketPersistenceExecutionResult | undefined;
   let connectorFailed = false;
 
   if (connectorExecution.result) {
@@ -425,6 +431,7 @@ export async function runSourceSync(
     );
     eventResults = processed.eventResults;
     errorCategories = processed.errorCategories;
+    ticketPersistence = processed.ticketPersistence;
   } else {
     connectorFailed = true;
     if (connectorExecution.errorCategory) {
@@ -467,7 +474,7 @@ export async function runSourceSync(
   health.lastDurationMs = durationMs;
   await deps.persistence.upsertHealth(health);
 
-  return { run, eventResults, health };
+  return { run, eventResults, health, ticketPersistence };
 }
 
 export function simulateApplyExecution(plan: EventWritePlan): ApplyExecutionResult {

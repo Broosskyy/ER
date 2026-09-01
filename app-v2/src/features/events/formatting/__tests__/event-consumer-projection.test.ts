@@ -135,7 +135,7 @@ describe('consumer projection without ticket evidence', () => {
     expect(display.priceText).toBe('ab 19,90 €');
     expect(display.ticketUrl).toBe('https://example.com/eternal-rave-core-test');
     expect(card.ticketLabel).toBe('ab 19,90 €');
-    expect(card.ticketStatus).toBe('on_sale');
+    expect(card.ticketStatus).toBe('available');
   });
 
   it('never surfaces internal lineup role keys in display models', () => {

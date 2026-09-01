@@ -70,7 +70,7 @@ export function buildEventDetailVisibleSurface(
     ticketPresentation.priceText ?? null,
     ticketPresentation.statusLabel ?? null,
     ticketPresentation.showPurchaseCta ? ticketPresentation.purchaseCtaLabel ?? 'Tickets kaufen' : null,
-    ticketPresentation.showPresaleCta ? ticketPresentation.presaleCtaLabel ?? 'Zum Vorverkauf vormerken' : null,
+    ticketPresentation.showPresaleCta ? ticketPresentation.presaleCtaLabel ?? 'Vorregistrieren' : null,
     officialSource ? `${officialSource.label} ↗` : null,
     display.organizer ?? null,
     ...(display.organizerLinks ?? []).map((link) => `${link.label} ↗`),
@@ -96,7 +96,7 @@ export function buildEventDetailVisibleSurface(
       ? ticketPresentation.purchaseCtaLabel ?? 'Tickets kaufen'
       : null,
     presaleCtaLabel: ticketPresentation.showPresaleCta
-      ? ticketPresentation.presaleCtaLabel ?? 'Zum Vorverkauf vormerken'
+      ? ticketPresentation.presaleCtaLabel ?? 'Vorregistrieren'
       : null,
     ticketCtaUrl,
     officialSourceLabel: officialSource?.label ?? null,

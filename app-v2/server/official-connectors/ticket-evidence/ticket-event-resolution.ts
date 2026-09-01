@@ -17,6 +17,29 @@ import { buildTicketPriceEvidence, projectConsumerPriceLabel } from './ticket-pr
 import type { VerifiedTicketCompleteResult } from './ticket-audit-metrics';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
 
+const REGISTRATION_DISCOVERED_LINK_PATTERN =
+  /sibforms\.com|mailchimp|newsletter|waitlist|vormerken|presale.?reg|pre-?register|registrier/i;
+
+function findRegistrationDiscoveredLink(links: DiscoveredTicketLink[] | undefined): DiscoveredTicketLink | undefined {
+  return links?.find((link) => REGISTRATION_DISCOVERED_LINK_PATTERN.test(link.rawUrl));
+}
+
+function isRegistrationTargetUrl(url: string | undefined): boolean {
+  return Boolean(url && REGISTRATION_DISCOVERED_LINK_PATTERN.test(url));
+}
+
+function isSoldOutPreregistrationTarget(result: VerifiedTicketCompleteResult): boolean {
+  if (result.classification !== 'verified_presale_registration') {
+    return false;
+  }
+  const targetUrl = result.canonicalTicketUrl ?? result.resolvedAction?.canonicalTicketUrl;
+  if (!isRegistrationTargetUrl(targetUrl)) {
+    return false;
+  }
+  const ctaText = result.primaryLink?.elementText ?? '';
+  return /\btickets?\b/i.test(ctaText) && !/\bvorverkauf\b|\bpresale\b/i.test(ctaText);
+}
+
 export interface M6_4ConsumerPreview {
   title: string;
   startsAt: string;
@@ -163,8 +186,9 @@ export function enrichResultWithM6_4(
         })
       : undefined;
 
-  const isPresaleRegistration =
-    result.classification === 'verified_presale_registration' || resolvedAction?.kind === 'presale_registration';
+  const registrationLink = findRegistrationDiscoveredLink(result.discoveredLinks);
+  let effectiveResolvedAction = resolvedAction;
+  const soldOutPreregistration = isSoldOutPreregistrationTarget(result);
 
   const statusProjection = isTicketLinkNotYetPublished
     ? {
@@ -173,13 +197,51 @@ export function enrichResultWithM6_4(
         statusLabel: 'Ticketlink noch nicht veröffentlicht',
         statusEvidenceOrigin: 'official_source_dom' as TicketStatusEvidenceOrigin,
       }
-    : projectTicketStatus({
-        ticketEvidence: result.ticketEvidence,
-        officialStartsAt: result.startsAt,
-        officialEndsAt: options?.officialEndsAt,
-        providerBlocked: options?.providerBlocked,
-        presaleRegistration: isPresaleRegistration,
-      });
+    : soldOutPreregistration
+      ? {
+          availabilityStatus: 'sold_out' as const,
+          normalizedStatus: 'sold_out' as const,
+          statusLabel: 'Ausverkauft',
+          statusEvidenceOrigin: 'official_source_dom' as TicketStatusEvidenceOrigin,
+        }
+      : projectTicketStatus({
+          ticketEvidence: result.ticketEvidence,
+          officialStartsAt: result.startsAt,
+          officialEndsAt: options?.officialEndsAt,
+          providerBlocked: options?.providerBlocked,
+          presaleRegistration:
+            result.classification === 'verified_presale_registration' ||
+            effectiveResolvedAction?.kind === 'presale_registration',
+        });
+
+  if (
+    registrationLink &&
+    (statusProjection.availabilityStatus === 'sold_out' ||
+      result.ticketEvidence?.normalizedStatus === 'sold_out')
+  ) {
+    effectiveResolvedAction = buildResolvedTicketAction({
+      discovered: registrationLink,
+      resolved: {
+        discovered: registrationLink,
+        resolvedUrl: registrationLink.rawUrl,
+        canonicalTicketUrl: registrationLink.rawUrl,
+        providerKey: 'presale_registration',
+        redirectChain: [],
+        isEventDetailUrl: true,
+      },
+      observedAt: result.ticketEvidence?.sourceObservedAt ?? options?.historicalCapture?.sourceObservedAt ?? '',
+      contentFingerprint:
+        result.ticketEvidence?.contentFingerprint ??
+        options?.blockedFingerprint ??
+        options?.historicalCapture?.contentFingerprint ??
+        '',
+      eventEnded,
+    });
+  }
+
+  const isPresaleRegistration =
+    result.classification === 'verified_presale_registration' ||
+    effectiveResolvedAction?.kind === 'presale_registration';
 
   const priceEvidence: TicketPriceEvidence = isTicketLinkNotYetPublished
     ? officialDoorAdmission
@@ -217,7 +279,7 @@ export function enrichResultWithM6_4(
     identityResult: result.identityResult,
     identityReasons: result.identityReasons,
     primaryLink: result.primaryLink,
-    resolvedAction,
+    resolvedAction: effectiveResolvedAction,
     priceEvidence,
     statusAvailability: statusProjection.availabilityStatus,
     pipelineError: options?.pipelineError,
@@ -226,7 +288,7 @@ export function enrichResultWithM6_4(
 
   const tentativeSourceState =
     options?.ticketSourceStateEvidence?.state ??
-    mapResolutionToTicketSourceState(resolutionClass, resolvedAction?.kind);
+    mapResolutionToTicketSourceState(resolutionClass, effectiveResolvedAction?.kind);
 
   const consumerPreview: M6_4ConsumerPreview = {
     title: result.title,
@@ -235,7 +297,7 @@ export function enrichResultWithM6_4(
     providerKey: isTicketLinkNotYetPublished ? undefined : result.providerKey,
     canonicalTicketUrl: isTicketLinkNotYetPublished
       ? undefined
-      : resolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
+      : effectiveResolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
     priceLabel: projectConsumerPriceLabel(priceEvidence, {
       identityResult: result.identityResult,
       identityDecision: result.targetIdentityEvidence?.identityDecision,
@@ -245,7 +307,7 @@ export function enrichResultWithM6_4(
     status: statusProjection.normalizedStatus,
     badge: statusProjection.statusLabel,
     statusEvidenceOrigin: statusProjection.statusEvidenceOrigin,
-    actionKind: isTicketLinkNotYetPublished ? 'ticket_detail' : resolvedAction?.kind ?? 'ticket_detail',
+    actionKind: isTicketLinkNotYetPublished ? 'ticket_detail' : effectiveResolvedAction?.kind ?? 'ticket_detail',
     actionLabel: isTicketLinkNotYetPublished
       ? ''
       : hasActivePurchaseCta({
@@ -253,8 +315,8 @@ export function enrichResultWithM6_4(
           identityResult: result.identityResult,
           identityDecision: result.targetIdentityEvidence?.identityDecision,
           salesStatus: statusProjection.availabilityStatus,
-          actionKind: resolvedAction?.kind,
-          actionLabel: consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail'),
+          actionKind: effectiveResolvedAction?.kind,
+          actionLabel: consumerActionLabel(effectiveResolvedAction?.kind ?? 'ticket_detail'),
           canonicalTicketUrl: resolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
           priceEvidenceState: priceEvidence.state,
         }) || hasVerifiedPresaleCta({
@@ -262,12 +324,12 @@ export function enrichResultWithM6_4(
           identityResult: result.identityResult,
           identityDecision: result.targetIdentityEvidence?.identityDecision,
           salesStatus: statusProjection.availabilityStatus,
-          actionKind: resolvedAction?.kind,
-          actionLabel: consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail'),
+          actionKind: effectiveResolvedAction?.kind,
+          actionLabel: consumerActionLabel(effectiveResolvedAction?.kind ?? 'ticket_detail'),
           canonicalTicketUrl: resolvedAction?.canonicalTicketUrl ?? result.canonicalTicketUrl,
           priceEvidenceState: priceEvidence.state,
         })
-        ? consumerActionLabel(resolvedAction?.kind ?? 'ticket_detail')
+        ? consumerActionLabel(effectiveResolvedAction?.kind ?? 'ticket_detail')
         : '',
     evidenceObservedAt: priceEvidence.sourceObservedAt,
     identityResult: result.identityResult,
@@ -275,7 +337,7 @@ export function enrichResultWithM6_4(
 
   return {
     ...result,
-    resolvedAction,
+    resolvedAction: effectiveResolvedAction,
     priceEvidence,
     statusProjection,
     resolutionClass,

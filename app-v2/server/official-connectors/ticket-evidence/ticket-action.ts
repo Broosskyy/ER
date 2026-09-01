@@ -1,7 +1,13 @@
-import type { DiscoveredTicketLink, ResolvedTicketLink, TicketActionKind, ResolvedTicketAction } from './types';
+import type {
+  TicketActionKind,
+  DiscoveredTicketLink,
+  ResolvedTicketLink,
+  ResolvedTicketAction,
+} from './types';
 import { isMerchandiseUrl } from './url-policy';
 
-const PRESALE_REGISTRATION_PATTERN = /sibforms\.com|mailchimp|newsletter|waitlist|vormerken|presale.?reg/i;
+const PRESALE_REGISTRATION_PATTERN =
+  /sibforms\.com|mailchimp|newsletter|waitlist|vormerken|presale.?reg|pre-?register|registrier/i;
 const BOX_OFFICE_PATTERN = /abendkasse|box\s*office/i;
 
 export function classifyTicketActionKind(
@@ -17,11 +23,11 @@ export function classifyTicketActionKind(
   if (isMerchandiseUrl(url)) {
     return 'ticket_detail';
   }
-  if (/sibforms\.com/i.test(url)) {
+  if (PRESALE_REGISTRATION_PATTERN.test(url)) {
     return 'presale_registration';
   }
-  if (PRESALE_REGISTRATION_PATTERN.test(url) || PRESALE_REGISTRATION_PATTERN.test(text) || discovered.relation === 'presale') {
-    if (/vorverkauf|presale|vormerken/i.test(text)) {
+  if (PRESALE_REGISTRATION_PATTERN.test(text) || discovered.relation === 'presale') {
+    if (/vorverkauf|presale|vormerken|registrier|pre-?register/i.test(text)) {
       return 'presale_registration';
     }
   }
@@ -54,7 +60,7 @@ export function buildResolvedTicketAction(input: {
 export function consumerActionLabel(kind: TicketActionKind): string {
   switch (kind) {
     case 'presale_registration':
-      return 'Zum Vorverkauf vormerken';
+      return 'Vorregistrieren';
     case 'waitlist':
       return 'Auf Warteliste';
     case 'box_office':

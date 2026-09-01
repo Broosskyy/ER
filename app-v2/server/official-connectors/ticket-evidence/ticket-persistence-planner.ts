@@ -10,7 +10,8 @@ import {
 } from './consumer-ticket-safety-gate';
 import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
-import { isShopRootUrl } from './url-policy';
+import { isN8ManagerPortalRootUrl, isShopRootUrl, canonicalizeN8ManagerTicketUrl } from './url-policy';
+import { canonicalTicketUrlForSnapshotCompare } from '../../ingestion/sync/ticket-snapshot';
 import type {
   ExistingEventTicketRecord,
   ExistingOfficialEventBinding,
@@ -23,6 +24,34 @@ import type {
 import type { TicketSourceState } from './types';
 
 const M2_TEST_EVENT_TITLE = 'Eternal Rave Core Test';
+
+const REGISTRATION_URL_PATTERN =
+  /sibforms\.com|mailchimp|newsletter|waitlist|vormerken|presale.?reg|pre-?register|registrier/i;
+
+function canonicalizePersistedTicketUrl(url: string | undefined): string | undefined {
+  if (!url?.startsWith('https://')) {
+    return undefined;
+  }
+  return canonicalizeN8ManagerTicketUrl(url) ?? url;
+}
+
+function findRegistrationUrlFromResult(result: VerifiedTicketCompleteResult): string | undefined {
+  if (result.resolvedAction?.kind === 'presale_registration' || result.resolvedAction?.kind === 'waitlist') {
+    const url =
+      result.resolvedAction.canonicalTicketUrl ??
+      result.resolvedAction.resolvedUrl ??
+      result.canonicalTicketUrl;
+    if (url && REGISTRATION_URL_PATTERN.test(url)) {
+      return url;
+    }
+  }
+  for (const link of result.discoveredLinks ?? []) {
+    if (REGISTRATION_URL_PATTERN.test(link.rawUrl)) {
+      return link.rawUrl;
+    }
+  }
+  return undefined;
+}
 
 export interface TicketPersistencePlannerContext {
   officialBindings: ExistingOfficialEventBinding[];
@@ -95,10 +124,10 @@ function resolveVerifiedEventTicketUrl(result: VerifiedTicketCompleteResult): st
     result.targetIdentityEvidence?.terminalUrl ??
     result.canonicalTicketUrl ??
     result.resolvedAction?.canonicalTicketUrl;
-  if (!url?.startsWith('https://') || isShopRootUrl(url)) {
+  if (!url?.startsWith('https://') || isShopRootUrl(url) || isN8ManagerPortalRootUrl(url)) {
     return undefined;
   }
-  return url;
+  return canonicalizePersistedTicketUrl(url);
 }
 
 function hasVerifiedEventSpecificTicketTargetFromResult(result: VerifiedTicketCompleteResult): boolean {
@@ -110,6 +139,17 @@ function hasVerifiedEventSpecificTicketTargetFromResult(result: VerifiedTicketCo
       result.resolvedAction?.canonicalTicketUrl ??
       result.targetIdentityEvidence?.terminalUrl,
   });
+}
+
+function isVerifiedPresaleRegistrationResult(result: VerifiedTicketCompleteResult): boolean {
+  if (result.classification !== 'verified_presale_registration') {
+    return false;
+  }
+  const url =
+    result.canonicalTicketUrl ??
+    result.resolvedAction?.canonicalTicketUrl ??
+    findRegistrationUrlFromResult(result);
+  return Boolean(url?.startsWith('https://'));
 }
 
 function shouldPersistTicketRow(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): boolean {
@@ -133,6 +173,9 @@ function shouldPersistTicketRow(sourceState: TicketSourceState, result: Verified
     return true;
   }
   if (sourceState === 'presale_registration' || sourceState === 'waitlist') {
+    if (isVerifiedPresaleRegistrationResult(result)) {
+      return true;
+    }
     return hasVerifiedPresaleCta(buildSafetyInput(sourceState, result));
   }
   if (sourceState === 'current_ticket_detail') {
@@ -200,6 +243,16 @@ function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCo
   if (normalized === 'sale_not_started') {
     return 'sale_not_started';
   }
+  if (sourceState === 'presale_registration' || sourceState === 'waitlist') {
+    const registrationUrl =
+      result.canonicalTicketUrl ??
+      result.resolvedAction?.canonicalTicketUrl ??
+      findRegistrationUrlFromResult(result);
+    if (registrationUrl && REGISTRATION_URL_PATTERN.test(registrationUrl)) {
+      return 'sold_out';
+    }
+    return 'presale_registration';
+  }
   return 'available';
 }
 
@@ -218,7 +271,10 @@ function existingTicketNeedsShopRootDowngrade(
   existing: ExistingEventTicketRecord,
   result: VerifiedTicketCompleteResult,
 ): boolean {
-  if (!existing.ticketUrl || !isShopRootUrl(existing.ticketUrl)) {
+  if (
+    !existing.ticketUrl ||
+    (!isShopRootUrl(existing.ticketUrl) && !isN8ManagerPortalRootUrl(existing.ticketUrl))
+  ) {
     return false;
   }
   if (result.classification === 'ticket_evidence_missing') {
@@ -257,10 +313,14 @@ function mapPlannedTicketRow(
     salesStatus = existing.salesStatus;
   }
   const verifiedEventUrl = resolveVerifiedEventTicketUrl(result);
+  const registrationUrl = findRegistrationUrlFromResult(result);
   let ticketUrl =
-    salesStatus === 'sold_out' || salesStatus === 'sales_ended' || salesStatus === 'cancelled'
-      ? verifiedEventUrl
-      : consumerTicketUrl(safetyInput) ?? verifiedEventUrl;
+    salesStatus === 'sold_out' && registrationUrl
+      ? registrationUrl
+      : salesStatus === 'sold_out' || salesStatus === 'sales_ended' || salesStatus === 'cancelled'
+        ? verifiedEventUrl
+        : consumerTicketUrl(safetyInput) ?? verifiedEventUrl;
+  ticketUrl = canonicalizePersistedTicketUrl(ticketUrl);
   if (!ticketUrl?.startsWith('https://')) {
     ticketUrl = undefined;
   }
@@ -329,9 +389,11 @@ function ticketsEqual(
   existing: ExistingEventTicketRecord,
   planned: EventCandidateTicket,
 ): boolean {
+  const existingUrl = canonicalTicketUrlForSnapshotCompare(existing.ticketUrl);
+  const plannedUrl = canonicalTicketUrlForSnapshotCompare(planned.ticketUrl ?? null);
   return (
     (existing.provider ?? '') === (planned.provider ?? '') &&
-    (existing.ticketUrl ?? '') === (planned.ticketUrl ?? '') &&
+    existingUrl === plannedUrl &&
     existing.priceFromMinor === (planned.priceFromMinor ?? null) &&
     (existing.currency ?? '') === (planned.currency ?? '') &&
     (existing.salesStatus ?? '') === (planned.salesStatus ?? '')

@@ -83,4 +83,22 @@ describe('consumer ticket safety gate', () => {
     expect(withHistorical.priceText).toBe('zuletzt ab 25 €');
     expect(withHistorical.statusLabel).toBe('Verkauf beendet');
   });
+
+  it('shows Vorregistrieren for sold out events with registration target', () => {
+    const presentation = resolveConsumerTicketPresentation({
+      id: 'ticket-1',
+      provider: 'ticket_io',
+      ticketUrl: 'https://sibforms.com/serve/MUIFAexample',
+      priceFromMinor: 1500,
+      currency: 'EUR',
+      salesStatus: 'sold_out',
+      sortOrder: 0,
+    });
+
+    expect(presentation.showPurchaseCta).toBe(false);
+    expect(presentation.showPresaleCta).toBe(true);
+    expect(presentation.presaleCtaLabel).toBe('Vorregistrieren');
+    expect(presentation.badgeStatus).toBe('sold_out');
+    expect(presentation.ticketAction).toBe('pre_register');
+  });
 });

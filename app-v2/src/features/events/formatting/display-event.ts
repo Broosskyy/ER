@@ -60,6 +60,7 @@ export interface EventDisplayModel {
   galleryImageUrls?: string[];
   ticketProviderLabel?: string;
   ticketStatus?: Event['ticketStatus'];
+  ticketBadgeStatus?: import('@/components/discovery/view-models').EventTicketStatus;
   cancelledAt?: string;
   postponedAt?: string;
   venueLabel?: string;

@@ -2,6 +2,8 @@ import type { EventTicket } from '@/features/events/types/event-core';
 import type { EventTicketStatus } from '@/components/discovery/view-models';
 import { projectConsumerTicketStatusLabel } from './consumer-ticket-status-label';
 
+export type ConsumerTicketAction = 'purchase' | 'pre_register' | 'waitlist' | 'door_only' | 'none';
+
 export interface ConsumerTicketPresentation {
   priceText?: string;
   ticketUrl?: string;
@@ -12,6 +14,7 @@ export interface ConsumerTicketPresentation {
   ticketStatus?: 'on_sale' | 'sold_out' | 'external_link';
   statusLabel?: string;
   badgeStatus?: EventTicketStatus;
+  ticketAction: ConsumerTicketAction;
 }
 
 const BLOCKED_SALES_STATUSES = new Set([
@@ -20,6 +23,38 @@ const BLOCKED_SALES_STATUSES = new Set([
   'sale_not_started',
   'sold_out',
 ]);
+
+const REGISTRATION_URL_PATTERN =
+  /sibforms\.com|mailchimp|newsletter|waitlist|vormerken|presale.?reg|pre-?register|registrier/i;
+
+function isRegistrationTargetUrl(url: string | null | undefined): boolean {
+  return Boolean(url && REGISTRATION_URL_PATTERN.test(url));
+}
+
+function resolveTicketAction(
+  salesStatus: string,
+  ticketUrl: string | null | undefined,
+): ConsumerTicketAction {
+  if (!ticketUrl?.startsWith('https://')) {
+    return 'none';
+  }
+  if (isRegistrationTargetUrl(ticketUrl)) {
+    return 'pre_register';
+  }
+  if (salesStatus === 'presale_registration' || salesStatus === 'registration_only') {
+    return 'pre_register';
+  }
+  if (salesStatus === 'door_only') {
+    return 'door_only';
+  }
+  if (salesStatus === 'sold_out') {
+    return 'none';
+  }
+  if (salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability') {
+    return 'purchase';
+  }
+  return 'none';
+}
 
 function formatMinorAsEuro(amountMinor: number): string {
   const amount = amountMinor / 100;
@@ -88,22 +123,28 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     return {
       showPurchaseCta: false,
       showPresaleCta: false,
+      ticketAction: 'none',
     };
   }
 
   const salesStatus = ticket.salesStatus ?? '';
   const hasUrl = Boolean(ticket.ticketUrl?.startsWith('https://'));
+  const ticketAction = resolveTicketAction(salesStatus, ticket.ticketUrl);
+  const registrationTarget = isRegistrationTargetUrl(ticket.ticketUrl);
+  const showPresaleCta =
+    hasUrl &&
+    (ticketAction === 'pre_register' || (salesStatus === 'sold_out' && registrationTarget));
   const showPurchaseCta =
     hasUrl &&
+    ticketAction === 'purchase' &&
     !BLOCKED_SALES_STATUSES.has(salesStatus) &&
-    (salesStatus === 'available' || salesStatus === 'on_sale');
-  const showPresaleCta = hasUrl && salesStatus === 'presale_registration';
+    (salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability');
 
   let ticketStatus: ConsumerTicketPresentation['ticketStatus'];
   if (showPurchaseCta) {
     ticketStatus = 'on_sale';
   } else if (hasUrl) {
-    ticketStatus = 'external_link';
+    ticketStatus = salesStatus === 'sold_out' ? 'sold_out' : 'external_link';
   }
 
   return {
@@ -112,9 +153,10 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     showPurchaseCta,
     showPresaleCta,
     purchaseCtaLabel: showPurchaseCta ? 'Tickets kaufen' : undefined,
-    presaleCtaLabel: showPresaleCta ? 'Zum Vorverkauf vormerken' : undefined,
+    presaleCtaLabel: showPresaleCta ? 'Vorregistrieren' : undefined,
     ticketStatus,
     statusLabel: projectConsumerTicketStatusLabel(salesStatus),
     badgeStatus: mapConsumerSalesStatusToBadgeStatus(salesStatus),
+    ticketAction,
   };
 }

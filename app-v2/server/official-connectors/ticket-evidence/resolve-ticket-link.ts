@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import type { DiscoveredTicketLink, ResolvedTicketLink } from './types';
 import {
   canonicalizeFourvenuesUrl,
+  canonicalizeN8ManagerTicketUrl,
   canonicalizePaylogicUrl,
   canonicalizeTicketIoUrl,
   classifyProviderKey,
@@ -11,6 +12,7 @@ import {
   extractTicketIoProviderEventId,
   isCheckoutOrSessionTicketUrl,
   isFourvenuesEventDetailUrl,
+  isN8ManagerHost,
   isPaylogicEventDetailUrl,
   isShopRootUrl,
   isTicketIoEventDetailUrl,
@@ -55,6 +57,13 @@ function canonicalizeForProvider(url: string, providerKey: string): {
       return { isEventDetail: false };
     }
     parsed.hash = '';
+    if (isN8ManagerHost(parsed.hostname)) {
+      const canonical = canonicalizeN8ManagerTicketUrl(parsed.toString());
+      return {
+        canonical: canonical ?? parsed.toString(),
+        isEventDetail: Boolean(canonical),
+      };
+    }
     return { canonical: parsed.toString(), isEventDetail: parsed.pathname.length > 1 };
   } catch {
     return { isEventDetail: false };

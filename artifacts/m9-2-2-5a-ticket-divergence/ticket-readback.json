@@ -1,0 +1,639 @@
+{
+  "readbackAt": "2026-08-31T16:11:06.038Z",
+  "recentInserts": [
+    {
+      "created_at": "2026-08-31T13:54:59.488834+00:00",
+      "currency": null,
+      "event_id": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "event_title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "id": "78ce68af-c489-4983-b880-e1d59c0d857a",
+      "price_from_minor": null,
+      "provider": "presale_registration",
+      "sales_status": "sold_out",
+      "sort_order": 0,
+      "ticket_url": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+      "updated_at": "2026-08-31T13:54:59.488834+00:00"
+    },
+    {
+      "created_at": "2026-08-29T17:06:33.584217+00:00",
+      "currency": "EUR",
+      "event_id": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+      "event_title": "MI * 30.12.2026 | KitKatClub",
+      "id": "7463116c-2db8-4a0e-ac2b-33d7bcc78e02",
+      "price_from_minor": 3500,
+      "provider": "unknown",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": null,
+      "updated_at": "2026-08-29T17:06:33.584217+00:00"
+    },
+    {
+      "created_at": "2026-08-29T17:06:33.584217+00:00",
+      "currency": "EUR",
+      "event_id": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+      "event_title": "SA * 24.10.2026 | KitKatClub",
+      "id": "5ad05018-9f2b-4786-99f2-a91715088986",
+      "price_from_minor": 3500,
+      "provider": "unknown",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": null,
+      "updated_at": "2026-08-29T17:06:33.584217+00:00"
+    },
+    {
+      "created_at": "2026-08-29T15:58:32.131674+00:00",
+      "currency": "EUR",
+      "event_id": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+      "event_title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "id": "17418f4f-3623-41f3-b901-3374cf2a802d",
+      "price_from_minor": 1500,
+      "provider": "organizer_shop",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+      "updated_at": "2026-08-31T12:52:52.552348+00:00"
+    },
+    {
+      "created_at": "2026-08-29T15:58:32.131674+00:00",
+      "currency": "EUR",
+      "event_id": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+      "event_title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "id": "07ff2b09-4189-43bd-93c0-7f05cee85a39",
+      "price_from_minor": 1750,
+      "provider": "organizer_shop",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+      "updated_at": "2026-08-31T12:52:52.552348+00:00"
+    },
+    {
+      "created_at": "2026-08-29T12:43:59.95416+00:00",
+      "currency": "EUR",
+      "event_id": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+      "event_title": "Cosmic Gate pres by Bootshaus & Senses!",
+      "id": "baa01ebc-5a23-46dd-8ec6-d3c86c880123",
+      "price_from_minor": 2890,
+      "provider": "ticket_io",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+      "updated_at": "2026-08-29T20:31:41.787056+00:00"
+    },
+    {
+      "created_at": "2026-08-29T12:43:59.95416+00:00",
+      "currency": null,
+      "event_id": "2c00fbb7-baa9-47eb-aaa5-52cda45c79a1",
+      "event_title": "CHRIS STASSY pres. by BOOTSHAUS",
+      "id": "b3de9134-df78-4dd9-9504-1e64a327ddbc",
+      "price_from_minor": null,
+      "provider": "ticket_io",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://bootshaus-club.ticket.io/By06xnf4/",
+      "updated_at": "2026-08-29T12:43:59.95416+00:00"
+    },
+    {
+      "created_at": "2026-08-27T19:30:09.23778+00:00",
+      "currency": "EUR",
+      "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+      "event_title": "14 Jahre Affenkäfig 19.09.2026",
+      "id": "45294114-113c-4078-a4d8-df2541ed2ec2",
+      "price_from_minor": 2500,
+      "provider": "organizer_shop",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+      "updated_at": "2026-08-31T12:52:52.552348+00:00"
+    },
+    {
+      "created_at": "2026-08-27T19:30:09.23778+00:00",
+      "currency": "EUR",
+      "event_id": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "event_title": "Underland Essigfabrik 05.09.2026",
+      "id": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+      "price_from_minor": 2000,
+      "provider": "ticket_kings",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "updated_at": "2026-08-31T11:45:58.313354+00:00"
+    },
+    {
+      "created_at": "2026-08-27T19:30:09.23778+00:00",
+      "currency": "EUR",
+      "event_id": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+      "event_title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "id": "9c3e6b48-5615-485d-9436-51cbfd09b48b",
+      "price_from_minor": 2000,
+      "provider": "ticket_kings",
+      "sales_status": "available",
+      "sort_order": 0,
+      "ticket_url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "updated_at": "2026-08-27T19:30:09.23778+00:00"
+    }
+  ],
+  "liveZaagstep": {
+    "hasSibformsLink": false,
+    "hasBitlyCta": true
+  },
+  "goldenReadback": [
+    {
+      "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "ticketRowCount": 1,
+      "ticketRows": [
+        {
+          "created_at": "2026-08-27T19:30:09.23778+00:00",
+          "currency": "EUR",
+          "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+          "id": "45294114-113c-4078-a4d8-df2541ed2ec2",
+          "price_from_minor": 2500,
+          "provider": "organizer_shop",
+          "sales_status": "available",
+          "sort_order": 0,
+          "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "updated_at": "2026-08-31T12:52:52.552348+00:00"
+        }
+      ],
+      "officialSources": [
+        {
+          "content_hash": "bd35d7a03115b8f253cff79b6549138e7f836c09b9dd804a184fdfe5c0f7409f",
+          "created_at": "2026-08-26T21:50:43.385208+00:00",
+          "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+          "id": "d8d52029-9d47-42e2-b5b3-684f84fbed8a",
+          "observed_at": "2026-08-26T21:50:22.007+00:00",
+          "raw_payload": {
+            "connectorId": "affenkaefig-official",
+            "descriptionClean": "Seit über 14 Jahren trifft sich nun das Rudel und durchstreift Monat für Monat den Großstadt-Dschungel Deutschlands!\nWir erinnern uns gerne an die guten alten Zeiten zurück. Unzählige Momente haben wir mit euch verbracht und für diesen Support sind wir euch unendlich Dankbar.\n14 Jahre Affenkäfig\n+ OPEN AIR - Achtung - Um die Location wird gerade viel umgebaut. Sollte dies dadurch zu Einschränkungen kommen fängt die VA ganz normal um 22 Uhr an.\n+ In & Outdoor Event\n+ 15Std Rave\n+ Food Truck\nUnser Big B-Day Jubiläum steht an!\n► 14 Jahre Gute Laune!\n► 14 Jahre Party hard!\n► 14 Jahre Feierkultur!\n► 14 Jahre Affenkäfig!",
+            "endsAt": null,
+            "enrichmentGaps": [
+              "genres_missing"
+            ],
+            "fetchedAt": "2026-08-26T21:50:22.007Z",
+            "fingerprint": "bd35d7a03115b8f253cff79b6549138e7f836c09b9dd804a184fdfe5c0f7409f",
+            "genreCount": 0,
+            "lineupCount": 13,
+            "officialImageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB.jpg",
+            "officialUrl": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+            "organizerLabel": "Affenkäfig",
+            "sourceEventKey": "14-jahreaffenkafig19-09-2026",
+            "startsAt": "2026-09-19T22:00:00+02:00",
+            "ticketEvidenceProjection": {
+              "consumerProjection": {
+                "actionKind": "ticket_detail",
+                "actionLabel": "Tickets kaufen",
+                "badge": "Tickets verfügbar",
+                "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+                "hasActivePurchaseCta": true,
+                "priceEvidenceState": "verified_current",
+                "priceLabel": "25,00 EUR pro Ticket",
+                "providerKey": "organizer_shop",
+                "status": "available",
+                "ticketSourceState": "current_ticket_detail"
+              },
+              "identityResult": "ticket_identity_verified",
+              "observedAt": "2026-08-31T12:52:10.468Z",
+              "priceEvidence": {
+                "amountMinor": 2500,
+                "contentFingerprint": "56bd16d8e92c87b31b180a87c5df7c56d7bf4b4f6ca09b2e899d98469d96be45",
+                "currency": "EUR",
+                "evidenceOrigin": "provider_detail",
+                "rawPriceText": "25,00 EUR pro Ticket",
+                "sourceObservedAt": "2026-08-31T12:52:10.468Z",
+                "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+                "state": "verified_current"
+              },
+              "resolutionClass": "verified_ticket_complete",
+              "statusProjection": {
+                "availabilityStatus": "available",
+                "normalizedStatus": "available",
+                "statusEvidenceOrigin": "provider",
+                "statusLabel": "Tickets verfügbar"
+              },
+              "targetIdentityEvidence": {
+                "contentFingerprint": "56bd16d8e92c87b31b180a87c5df7c56d7bf4b4f6ca09b2e899d98469d96be45",
+                "identityDecision": "redirected_same_event",
+                "observedAt": "2026-08-31T12:52:10.468Z",
+                "originalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+                "providerEventId": "ticketing/native_event.php",
+                "providerKey": "organizer_shop",
+                "reasons": [],
+                "redirectChain": [
+                  "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+                  "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21"
+                ],
+                "terminalUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21"
+              },
+              "ticketSourceState": "current_ticket_detail",
+              "ticketSourceStateEvidence": null
+            },
+            "title": "14 Jahre Affenkäfig 19.09.2026"
+          },
+          "source_role": "official",
+          "source_url": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+          "verified_at": null
+        }
+      ],
+      "ticketSources": [
+        {
+          "content_hash": "3ba4b27a3f1fb0c4ebf334cdb57069182d267f6220f144ed548f1a5687629dac",
+          "created_at": "2026-08-27T19:30:09.23778+00:00",
+          "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+          "id": "120ef054-bc5f-4ea6-b6ca-7b49ca6632ad",
+          "observed_at": "2026-08-27T22:09:12.446809+00:00",
+          "raw_payload": {
+            "canonicalTicketUrl": "https://affenkaefig.info/tickets/",
+            "confidence": 0.4,
+            "contentFingerprint": "3ba4b27a3f1fb0c4ebf334cdb57069182d267f6220f144ed548f1a5687629dac",
+            "eventIdentityEvidence": {},
+            "extractedAt": "2026-08-27T22:08:45.443Z",
+            "normalizedStatus": "available",
+            "offers": [],
+            "providerIdentity": {
+              "identityKey": "organizer_shop:affenkaefig.info:tickets",
+              "providerEventId": "tickets",
+              "providerKey": "organizer_shop",
+              "providerScope": "affenkaefig.info"
+            },
+            "providerKey": "organizer_shop",
+            "rejectedOffers": [],
+            "sourceObservedAt": "2026-08-27T22:08:44.116Z",
+            "sourceUrl": "https://affenkaefig.info/tickets/",
+            "statusLabel": "unavailable_unknown"
+          },
+          "source_role": "ticket",
+          "source_url": "https://affenkaefig.info/tickets/",
+          "verified_at": null
+        },
+        {
+          "content_hash": "56bd16d8e92c87b31b180a87c5df7c56d7bf4b4f6ca09b2e899d98469d96be45",
+          "created_at": "2026-08-31T12:52:52.552348+00:00",
+          "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+          "id": "d3f1fc33-99dd-44be-b145-dcc337e81de5",
+          "observed_at": "2026-08-31T12:52:52.552348+00:00",
+          "raw_payload": {
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "confidence": 0.9,
+            "contentFingerprint": "56bd16d8e92c87b31b180a87c5df7c56d7bf4b4f6ca09b2e899d98469d96be45",
+            "eventIdentityEvidence": {},
+            "extractedAt": "2026-08-31T12:52:11.988Z",
+            "normalizedStatus": "available",
+            "offers": [
+              {
+                "amountMinor": 2500,
+                "availability": "available",
+                "confidence": 0.9,
+                "currency": "EUR",
+                "normalizedLabel": "Standard Ticket Phase 1",
+                "rawLabel": "Standard Ticket Phase 1 Phase 1",
+                "rawPrice": "25,00 EUR pro Ticket",
+                "role": "regular_admission"
+              }
+            ],
+            "providerIdentity": {
+              "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php",
+              "providerEventId": "ticketing/native_event.php",
+              "providerKey": "organizer_shop",
+              "providerScope": "rheinaudio.n8manager.de"
+            },
+            "providerKey": "organizer_shop",
+            "rejectedOffers": [],
+            "sourceObservedAt": "2026-08-31T12:52:10.468Z",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+            "statusLabel": "Tickets verfügbar"
+          },
+          "source_role": "ticket",
+          "source_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+          "verified_at": null
+        },
+        {
+          "content_hash": "972900010b8cbd7e1a16920ed57160b43e3651c1dcb595235d22cfaee04f1719",
+          "created_at": "2026-08-29T15:58:32.131674+00:00",
+          "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+          "id": "ea96c991-297a-4aeb-b482-3b916a8489f5",
+          "observed_at": "2026-08-29T16:59:19.04443+00:00",
+          "raw_payload": {
+            "canonicalTicketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+            "confidence": 0.9,
+            "contentFingerprint": "972900010b8cbd7e1a16920ed57160b43e3651c1dcb595235d22cfaee04f1719",
+            "eventIdentityEvidence": {},
+            "extractedAt": "2026-08-29T16:58:45.512Z",
+            "normalizedStatus": "available",
+            "offers": [
+              {
+                "amountMinor": 2500,
+                "availability": "available",
+                "confidence": 0.9,
+                "currency": "EUR",
+                "normalizedLabel": "Standard Ticket",
+                "rawLabel": "Standard Ticket Phase 1",
+                "rawPrice": "25,00 EUR pro Ticket",
+                "role": "regular_admission"
+              }
+            ],
+            "providerIdentity": {
+              "identityKey": "organizer_shop:rheinaudio.n8manager.de:ticketing/native_event.php",
+              "providerEventId": "ticketing/native_event.php",
+              "providerKey": "organizer_shop",
+              "providerScope": "rheinaudio.n8manager.de"
+            },
+            "providerKey": "organizer_shop",
+            "rejectedOffers": [],
+            "sourceObservedAt": "2026-08-29T16:58:43.501Z",
+            "sourceUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+            "statusLabel": "Tickets verfügbar"
+          },
+          "source_role": "ticket",
+          "source_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+          "verified_at": null
+        }
+      ],
+      "consumer": {
+        "cardBadge": "available",
+        "cardTicketLabel": "ab 25 €",
+        "detailBadge": "available",
+        "purchaseCtaLabel": "Tickets kaufen",
+        "presaleCtaLabel": null,
+        "ticketCtaUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "priceText": "ab 25 €",
+        "ticketAction": "purchase",
+        "showPurchaseCta": true,
+        "showPresaleCta": false
+      }
+    },
+    {
+      "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "ticketRowCount": 1,
+      "ticketRows": [
+        {
+          "created_at": "2026-08-31T13:54:59.488834+00:00",
+          "currency": null,
+          "event_id": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+          "id": "78ce68af-c489-4983-b880-e1d59c0d857a",
+          "price_from_minor": null,
+          "provider": "presale_registration",
+          "sales_status": "sold_out",
+          "sort_order": 0,
+          "ticket_url": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+          "updated_at": "2026-08-31T13:54:59.488834+00:00"
+        }
+      ],
+      "officialSources": [
+        {
+          "content_hash": "90ee7036956c4cbf49039b403d5cb4e319f1c1f40495726d55875a2ca232d52b",
+          "created_at": "2026-08-14T15:26:05.421991+00:00",
+          "event_id": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+          "id": "942378db-7579-4c10-985e-10c29af8a8f0",
+          "observed_at": "2026-08-26T21:15:52.07+00:00",
+          "raw_payload": {
+            "connectorId": "bootshaus-official",
+            "descriptionClean": "BLACKLIST & INURFASE pres.\n\nZAAGSTEP by Dr Donk\n\nFor years, electronic music has been built on genres.\n\nZaag. Uptempo. Hard Dance. Dubstep. Drum & Bass. Bass Music.\n\nBut what happens when the boundaries between them disappear?\n\nOn September 11th, BLACKLIST and INURFASE invite you to witness the official launch of ZAAGSTEP - the sound created by Dr Donk that combines the high BPM intensity of Uptempo and Zaag with the energy, and influence of Bass Music.\n\nA never-seen-before crossover between Dubstep, Zaag, Drum & Bass, Uptempo and everything in between. WELCOME TO ZAAGSTEP 😈\n\nTo celebrate his upcoming album release, Dr Donk presents the world's first full-scale ZAAGSTEP showcase at Bootshaus Cologne, featuring artists who have helped shape the sound and artists who represent the different worlds colliding within it.",
+            "endsAt": "2026-09-12T06:00:00+02:00",
+            "enrichmentGaps": [
+              "genre_evidence_insufficient"
+            ],
+            "fetchedAt": "2026-08-26T21:15:52.070Z",
+            "fingerprint": "90ee7036956c4cbf49039b403d5cb4e319f1c1f40495726d55875a2ca232d52b",
+            "genreCount": 0,
+            "lineupCount": 9,
+            "officialImageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png",
+            "officialUrl": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/",
+            "organizerLabel": "INURFASE",
+            "sourceEventKey": "blacklist-inurfase-pres-zaagstep-by-dr-donk",
+            "startsAt": "2026-09-11T22:00:00+02:00",
+            "ticketEvidenceProjection": {
+              "consumerProjection": {
+                "actionKind": "presale_registration",
+                "actionLabel": "Vorregistrieren",
+                "badge": "Ausverkauft",
+                "canonicalTicketUrl": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+                "hasActivePurchaseCta": false,
+                "priceEvidenceState": "not_yet_published",
+                "priceLabel": "Preis noch nicht veröffentlicht",
+                "providerKey": "presale_registration",
+                "status": "sold_out",
+                "ticketSourceState": "presale_registration"
+              },
+              "identityResult": "ticket_identity_verified",
+              "observedAt": "",
+              "priceEvidence": {
+                "contentFingerprint": "",
+                "evidenceOrigin": "provider_detail",
+                "reason": "presale_registration",
+                "sourceObservedAt": "",
+                "sourceUrl": "",
+                "state": "not_yet_published"
+              },
+              "resolutionClass": "verified_presale_registration",
+              "statusProjection": {
+                "availabilityStatus": "sold_out",
+                "normalizedStatus": "sold_out",
+                "statusEvidenceOrigin": "official_source_dom",
+                "statusLabel": "Ausverkauft"
+              },
+              "targetIdentityEvidence": null,
+              "ticketSourceState": "presale_registration",
+              "ticketSourceStateEvidence": null
+            },
+            "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk"
+          },
+          "source_role": "official",
+          "source_url": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/",
+          "verified_at": null
+        }
+      ],
+      "ticketSources": [
+        {
+          "content_hash": null,
+          "created_at": "2026-08-17T15:29:35.640617+00:00",
+          "event_id": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+          "id": "60f54b23-4c03-4387-a65a-327a9017eced",
+          "observed_at": "2026-08-17T15:29:35.640617+00:00",
+          "raw_payload": {
+            "actionKind": "presale_registration",
+            "canonicalTicketUrl": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+            "observedAt": "",
+            "resolutionClass": "verified_presale_registration"
+          },
+          "source_role": "ticket",
+          "source_url": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+          "verified_at": null
+        }
+      ],
+      "consumer": {
+        "cardBadge": "sold_out",
+        "detailBadge": "sold_out",
+        "purchaseCtaLabel": null,
+        "presaleCtaLabel": "Vorregistrieren",
+        "ticketCtaUrl": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+        "priceText": null,
+        "ticketAction": "pre_register",
+        "showPurchaseCta": false,
+        "showPresaleCta": true
+      }
+    },
+    {
+      "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "ticketRowCount": 1,
+      "ticketRows": [
+        {
+          "created_at": "2026-08-27T19:30:09.23778+00:00",
+          "currency": "EUR",
+          "event_id": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+          "id": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+          "price_from_minor": 2000,
+          "provider": "ticket_kings",
+          "sales_status": "available",
+          "sort_order": 0,
+          "ticket_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "updated_at": "2026-08-31T11:45:58.313354+00:00"
+        }
+      ],
+      "officialSources": [
+        {
+          "content_hash": "2c7e44204fc9013d2b02c6244578014c8afcadb5a9f66b05dfe3155d441fcef7",
+          "created_at": "2026-08-26T21:50:56.937601+00:00",
+          "event_id": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+          "id": "4467d147-088a-4a8c-83b7-86cae727bcba",
+          "observed_at": "2026-08-29T11:34:53.296+00:00",
+          "raw_payload": {
+            "connectorId": "affenkaefig-official",
+            "descriptionClean": "🔥 UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten Beats: UNDERLAND ESSIGFABRIK! Am Samstag, den 05. September 2026, öffnen sich die Tore zu einer Dimension, die ihr so noch nicht erlebt habt. Das ist nicht nur ein Event, das ist der Auftakt von etwas ganz Großem! Seit 2010 stehen wir für „Quality Events“, und jetzt zünden wir die nächste Stufe. Holt eure Rave-Crew zusammen, denn wir tauchen ab in das Underland der Essigfabrik! Zwei Floors, Eine Mission: Abriss Total! Die Essigfabrik Köln und die Elektroküche werden zu eurem persönlichen Spielplatz für Hardtechno und Uptempo. Zwei Floors, zwölf Artists – eine Mission: Euch in Ekstase zu versetzen. Erlebt die pure Energie und die rohe Kraft der Musik, die uns alle antreibt. Von den ersten Beats bis zum Morgengrauen wird hier keine Sekunde stillgestanden! Das Lineup, das euch zerlegt! 🎶 Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026, wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go! 🔥 UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 🔥 UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥",
+            "endsAt": null,
+            "enrichmentGaps": [
+              "genre_evidence_insufficient"
+            ],
+            "fetchedAt": "2026-08-29T11:34:53.296Z",
+            "fingerprint": "2c7e44204fc9013d2b02c6244578014c8afcadb5a9f66b05dfe3155d441fcef7",
+            "genreCount": 1,
+            "lineupCount": 1,
+            "officialImageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/original-20260522-134011-7db369482b94.jpg",
+            "officialUrl": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+            "organizerLabel": "Affenkäfig",
+            "sourceEventKey": "underland-essigfabrik-05-09-2026",
+            "startsAt": "2026-09-05T00:00:00+02:00",
+            "ticketEvidenceProjection": {
+              "consumerProjection": {
+                "actionKind": "ticket_detail",
+                "actionLabel": "Tickets kaufen",
+                "badge": "Tickets verfügbar",
+                "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "hasActivePurchaseCta": true,
+                "priceEvidenceState": "verified_current",
+                "priceLabel": "20,00 EUR pro Ticket",
+                "providerKey": "ticket_kings",
+                "status": "available",
+                "ticketSourceState": "current_ticket_detail"
+              },
+              "identityResult": "ticket_identity_verified",
+              "observedAt": "2026-08-31T12:52:10.468Z",
+              "priceEvidence": {
+                "amountMinor": 2000,
+                "contentFingerprint": "1fd3508919ed006a64bbd05c56864825751b7e254ad14d3b07beeaee9200c510",
+                "currency": "EUR",
+                "evidenceOrigin": "provider_detail",
+                "rawPriceText": "20,00 EUR pro Ticket",
+                "sourceObservedAt": "2026-08-31T12:52:10.468Z",
+                "sourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "state": "verified_current"
+              },
+              "resolutionClass": "verified_ticket_complete",
+              "statusProjection": {
+                "availabilityStatus": "available",
+                "normalizedStatus": "available",
+                "statusEvidenceOrigin": "provider",
+                "statusLabel": "Tickets verfügbar"
+              },
+              "targetIdentityEvidence": {
+                "contentFingerprint": "1fd3508919ed006a64bbd05c56864825751b7e254ad14d3b07beeaee9200c510",
+                "identityDecision": "verified_same_event",
+                "observedAt": "2026-08-31T12:52:10.468Z",
+                "originalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "providerEventId": "underland-essigfabrik-05-09-2026",
+                "providerKey": "ticket_kings",
+                "reasons": [],
+                "redirectChain": [
+                  "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+                ],
+                "terminalStartAt": "2026-09-05T22:00:00+02:00",
+                "terminalTitle": "Underland Essigfabrik",
+                "terminalUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+                "terminalVenue": "Essigfabrik"
+              },
+              "ticketSourceState": "current_ticket_detail",
+              "ticketSourceStateEvidence": null
+            },
+            "title": "Underland Essigfabrik 05.09.2026"
+          },
+          "source_role": "official",
+          "source_url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+          "verified_at": null
+        }
+      ],
+      "ticketSources": [
+        {
+          "content_hash": "1fd3508919ed006a64bbd05c56864825751b7e254ad14d3b07beeaee9200c510",
+          "created_at": "2026-08-27T19:30:09.23778+00:00",
+          "event_id": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+          "id": "860e3a70-2ba2-40b7-9d36-88f755299e4c",
+          "observed_at": "2026-08-31T12:52:52.552348+00:00",
+          "raw_payload": {
+            "canonicalTicketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "confidence": 0.9,
+            "contentFingerprint": "1fd3508919ed006a64bbd05c56864825751b7e254ad14d3b07beeaee9200c510",
+            "eventIdentityEvidence": {
+              "rawTitle": "Underland Essigfabrik",
+              "startAt": "2026-09-05T22:00:00+02:00",
+              "venueName": "Essigfabrik"
+            },
+            "extractedAt": "2026-08-31T12:52:15.021Z",
+            "normalizedStatus": "available",
+            "offers": [
+              {
+                "amountMinor": 2000,
+                "availability": "available",
+                "confidence": 0.9,
+                "currency": "EUR",
+                "normalizedLabel": "E-Ticket Phase 2",
+                "phaseLabel": "Phase 2",
+                "rawLabel": "E-Ticket Phase 2 Phase 2",
+                "rawPrice": "20,00 EUR pro Ticket",
+                "role": "regular_admission"
+              }
+            ],
+            "providerIdentity": {
+              "identityKey": "ticket_kings:ticketkings.de:underland-essigfabrik-05-09-2026",
+              "providerEventId": "underland-essigfabrik-05-09-2026",
+              "providerKey": "ticket_kings",
+              "providerScope": "ticketkings.de"
+            },
+            "providerKey": "ticket_kings",
+            "rejectedOffers": [],
+            "sourceObservedAt": "2026-08-31T12:52:10.468Z",
+            "sourceUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+            "statusLabel": "Tickets verfügbar"
+          },
+          "source_role": "ticket",
+          "source_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+          "verified_at": null
+        }
+      ],
+      "consumer": {
+        "cardBadge": "available",
+        "cardTicketLabel": "ab 20 €",
+        "detailBadge": "available",
+        "purchaseCtaLabel": "Tickets kaufen",
+        "presaleCtaLabel": null,
+        "ticketCtaUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "priceText": "ab 20 €",
+        "ticketAction": "purchase",
+        "showPurchaseCta": true,
+        "showPresaleCta": false
+      }
+    }
+  ],
+  "zaagstepPersistenceVerified": true,
+  "zaagstepDuplicateTicketRows": 0
+}

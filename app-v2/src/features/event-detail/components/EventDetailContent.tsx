@@ -1,5 +1,6 @@
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
+import { ExpandableText } from '@/components/layout/ExpandableText';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { TicketStatusBadge } from '@/components/discovery/EventStatusBadge';
 import { EventImage } from '@/components/discovery/EventImage';
@@ -56,9 +57,7 @@ export function EventDetailContent({ detail, display }: EventDetailContentProps)
       {surface.description ? (
         <View style={styles.section}>
           <AppText role="titleSmall">Beschreibung</AppText>
-          <AppText role="body" style={styles.description}>
-            {surface.description}
-          </AppText>
+          <ExpandableText text={surface.description} testID="event-description" />
         </View>
       ) : null}
 

@@ -40,6 +40,7 @@ function buildEvidenceFromDom(
       offers.push({
         rawLabel: label,
         normalizedLabel: offer.rawLabel,
+        phaseLabel: offer.phaseLabel,
         rawPrice: offer.rawPrice,
         amountMinor: offer.amountMinor,
         currency: offer.currency ?? 'EUR',

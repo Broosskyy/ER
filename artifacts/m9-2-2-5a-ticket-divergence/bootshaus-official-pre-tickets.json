@@ -1,0 +1,242 @@
+[
+  {
+    "id": "0b6c0d60-cba3-4e02-a9b5-e5c617f0e27f",
+    "event_id": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+    "provider": "ticket_io",
+    "ticket_url": "https://musical-madness.ticket.io/eACzcM9S/",
+    "price_from_minor": 3690,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "1c223232-9ea7-4925-88b6-7dfdb54904db",
+    "event_id": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/S0cbXDda/",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "21c8e936-b3dc-40f1-bf9d-983c3e089871",
+    "event_id": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+    "provider": "ticket_io",
+    "ticket_url": "https://unreal-bootshaus.ticket.io/nUs0Ktl4/",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "sold_out",
+    "sort_order": 0
+  },
+  {
+    "id": "2363c0be-d76c-4ac7-b19a-908f625fbbe0",
+    "event_id": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+    "price_from_minor": 2690,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "2a102798-17ce-4643-8175-885336e29860",
+    "event_id": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "price_from_minor": 1490,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "32e54d49-bb53-4389-aaf5-a32ec8dcc172",
+    "event_id": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "34cf25f5-a466-44c5-8990-3b2926351dbb",
+    "event_id": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+    "price_from_minor": 2490,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "35133988-97be-4fe5-92d2-68e0632fdbe0",
+    "event_id": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/fjspvLe4/",
+    "price_from_minor": 2290,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "4136fcb9-09fb-4d6c-bdf4-f4d9aefefd36",
+    "event_id": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "provider": "ticket_io",
+    "ticket_url": "https://polyamor.ticket.io/PDikPg1v/",
+    "price_from_minor": 3500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "492a03ce-1c8e-4af1-b917-eb8902e54c03",
+    "event_id": "7af0f06a-81e1-4708-8359-4a1078b600e3",
+    "provider": "ticket_io",
+    "ticket_url": "https://nibirii-festival.ticket.io/uw3dsjtw/",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "5ad05018-9f2b-4786-99f2-a91715088986",
+    "event_id": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "provider": "unknown",
+    "ticket_url": null,
+    "price_from_minor": 3500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "6a29c5e3-1c9e-4a71-acf4-e8eabdfea942",
+    "event_id": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+    "provider": "ticket_io",
+    "ticket_url": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+    "price_from_minor": 4500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "7463116c-2db8-4a0e-ac2b-33d7bcc78e02",
+    "event_id": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "provider": "unknown",
+    "ticket_url": null,
+    "price_from_minor": 3500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "78bc0cf9-98d1-4dd8-bbee-3260e43b2cdf",
+    "event_id": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+    "price_from_minor": 3200,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "b3de9134-df78-4dd9-9504-1e64a327ddbc",
+    "event_id": "2c00fbb7-baa9-47eb-aaa5-52cda45c79a1",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "baa01ebc-5a23-46dd-8ec6-d3c86c880123",
+    "event_id": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+    "provider": "ticket_io",
+    "ticket_url": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+    "price_from_minor": 2890,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "c0c7ad6b-5627-4b9d-b407-be26a25377cf",
+    "event_id": "301c217d-651a-4110-b759-a019f6546bb1",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/c4CUlNfm/",
+    "price_from_minor": 2690,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "cc12c2f1-9c7b-4fc1-ba1a-fbd9a11142c4",
+    "event_id": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+    "provider": "fourvenues",
+    "ticket_url": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "dca9eb8d-e1d9-4dd5-98b3-ce4a55aa261b",
+    "event_id": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+    "provider": "ticket_io",
+    "ticket_url": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+    "price_from_minor": 4500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "e09885f4-c7e9-4ca5-854f-f6edf5445bd8",
+    "event_id": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "price_from_minor": 3600,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "e298caf6-0783-4819-8a91-22c0a3e1caba",
+    "event_id": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+    "provider": "ticket_io",
+    "ticket_url": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+    "price_from_minor": 4700,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "ef2a06c3-6f9d-4ebc-ab04-b111ff93020a",
+    "event_id": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+    "price_from_minor": 3490,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "f0f092e3-4c17-4e67-8eac-7a3da29a9536",
+    "event_id": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "provider": "fourvenues",
+    "ticket_url": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U",
+    "price_from_minor": null,
+    "currency": null,
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "fecd40ad-8cb4-47bc-83a5-dee5c183ffbd",
+    "event_id": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "provider": "ticket_io",
+    "ticket_url": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+    "price_from_minor": 1500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  }
+]

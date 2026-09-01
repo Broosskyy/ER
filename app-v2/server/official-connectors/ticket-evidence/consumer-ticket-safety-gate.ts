@@ -46,6 +46,13 @@ const BLOCKED_SALES_STATUSES = new Set([
   'cancelled',
 ]);
 
+const REGISTRATION_URL_PATTERN =
+  /sibforms\.com|mailchimp|newsletter|waitlist|vormerken|presale.?reg|pre-?register|registrier/i;
+
+function isRegistrationTargetUrl(url: string | null | undefined): boolean {
+  return Boolean(url && REGISTRATION_URL_PATTERN.test(url));
+}
+
 export function hasVerifiedEventSpecificTicketTarget(input: ConsumerTicketSafetyInput): boolean {
   if (input.identityResult !== 'ticket_identity_verified') {
     return false;
@@ -120,8 +127,8 @@ export function hasVerifiedPresaleCta(input: ConsumerTicketSafetyInput): boolean
   if (!input.canonicalTicketUrl?.startsWith('https://')) {
     return false;
   }
-  if (input.ticketSourceState !== 'presale_registration') {
-    return false;
+  if (input.ticketSourceState === 'presale_registration' && isRegistrationTargetUrl(input.canonicalTicketUrl)) {
+    return true;
   }
   if (input.identityResult && BLOCKED_IDENTITY_RESULTS.has(input.identityResult)) {
     return false;
@@ -129,7 +136,13 @@ export function hasVerifiedPresaleCta(input: ConsumerTicketSafetyInput): boolean
   if (input.identityDecision && BLOCKED_IDENTITY_DECISIONS.has(input.identityDecision)) {
     return false;
   }
-  return input.actionKind === 'presale_registration' || input.actionKind === 'waitlist';
+  if (input.ticketSourceState === 'presale_registration' || input.ticketSourceState === 'waitlist') {
+    return input.actionKind === 'presale_registration' || input.actionKind === 'waitlist';
+  }
+  if (input.salesStatus === 'sold_out' && isRegistrationTargetUrl(input.canonicalTicketUrl)) {
+    return true;
+  }
+  return false;
 }
 
 export function consumerTicketUrl(input: ConsumerTicketSafetyInput): string | undefined {
