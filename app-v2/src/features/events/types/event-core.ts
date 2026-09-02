@@ -43,6 +43,7 @@ export interface EventSummary {
   endsAt: string | null;
   timezone: string | null;
   imageUrl: string | null;
+  officialUrl: string | null;
   organizerName: string | null;
   venue: EventVenue | null;
   genres: EventGenre[];

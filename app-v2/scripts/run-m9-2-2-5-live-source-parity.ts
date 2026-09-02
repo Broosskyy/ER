@@ -20,6 +20,7 @@ import { deduplicateDescriptionBlocks } from '../server/official-connectors/shar
 import { canonicalActKey } from '../server/official-connectors/shared/lineup-normalization';
 import { createEmptyConnectorCounters } from '../server/official-connectors/types';
 import { createPlaywrightTicketBrowserOps } from '../server/official-connectors/ticket-evidence/create-playwright-ticket-browser-ops';
+import { extractVisibleAdmissionPriceFromTicketIoBody } from '../server/official-connectors/ticket-evidence/extract-visible-admission-price';
 import { discoverTicketLinksFromHtml } from '../server/official-connectors/ticket-evidence/discover-ticket-links';
 import {
   enrichTicketKingsDomWithEmbeds,
@@ -110,6 +111,9 @@ interface TicketSourceAudit {
   provider: string | null;
   currentPhase: string | null;
   currentPriceMinor: number | null;
+  visibleAdmissionPriceMinor: number | null;
+  visibleAdmissionProduct: string | null;
+  browserVisibleProducts: Array<Record<string, unknown>>;
   currency: string | null;
   availability: string | null;
   registrationUrl: string | null;
@@ -285,6 +289,14 @@ function parseOfficialEvidence(html: string, url: string, observedAt: string) {
   return null;
 }
 
+function emptyVisibleAdmissionAuditFields() {
+  return {
+    visibleAdmissionPriceMinor: null as number | null,
+    visibleAdmissionProduct: null as string | null,
+    browserVisibleProducts: [] as Array<Record<string, unknown>>,
+  };
+}
+
 async function auditTicketProvider(
   ticketUrl: string,
   browserOps: ReturnType<typeof createPlaywrightTicketBrowserOps>,
@@ -299,6 +311,7 @@ async function auditTicketProvider(
         provider: 'presale_registration',
         currentPhase: null,
         currentPriceMinor: null,
+        ...emptyVisibleAdmissionAuditFields(),
         currency: 'EUR',
         availability: 'sold_out',
         registrationUrl: ticketUrl,
@@ -334,6 +347,9 @@ async function auditTicketProvider(
         provider: 'fourvenues',
         currentPhase: null,
         currentPriceMinor: amountMinor,
+        visibleAdmissionPriceMinor: amountMinor,
+        visibleAdmissionProduct: null,
+        browserVisibleProducts: [],
         currency: 'EUR',
         availability: /sold\s*out|ausverkauft/i.test(body) ? 'sold_out' : 'available',
         registrationUrl: null,
@@ -393,6 +409,9 @@ async function auditTicketProvider(
         provider: 'ticket_kings',
         currentPhase: selected?.phaseLabel ?? selected?.rawLabel ?? null,
         currentPriceMinor: selected?.amountMinor ?? null,
+        visibleAdmissionPriceMinor: selected?.amountMinor ?? null,
+        visibleAdmissionProduct: selected?.rawLabel ?? null,
+        browserVisibleProducts: [],
         currency: selected?.currency ?? 'EUR',
         availability: purchasable ? 'available' : allSoldOut ? 'sold_out' : dom.ticketStatus,
         registrationUrl: null,
@@ -448,6 +467,9 @@ async function auditTicketProvider(
         provider: 'n8manager',
         currentPhase: selected?.phaseLabel ?? selected?.rawLabel ?? null,
         currentPriceMinor: selected?.amountMinor ?? null,
+        visibleAdmissionPriceMinor: selected?.amountMinor ?? null,
+        visibleAdmissionProduct: selected?.rawLabel ?? null,
+        browserVisibleProducts: [],
         currency: selected?.currency ?? 'EUR',
         availability: purchasable
           ? 'available'
@@ -462,6 +484,7 @@ async function auditTicketProvider(
     }
 
     const finalUrl = fetchResult.finalUrl || ticketUrl;
+    const visibleAdmission = extractVisibleAdmissionPriceFromTicketIoBody(fetchResult.body, finalUrl);
 
     const evidence = parseTicketIoFromJsonLdOrDom({
       sourceUrl: finalUrl,
@@ -478,19 +501,23 @@ async function auditTicketProvider(
           soldOut: evidence.normalizedStatus === 'sold_out',
         })
       : undefined;
-    const currentPriceMinor =
+    const parsedPriceMinor =
       priceEvidence && hasVerifiedPriceAmount(priceEvidence.state) ? (priceEvidence.amountMinor ?? null) : null;
+    const currentPriceMinor = visibleAdmission.amountMinor ?? parsedPriceMinor;
 
     return {
       ticketUrl,
       finalUrl,
       provider: 'ticket_io',
-      currentPhase: selected?.phaseLabel ?? selected?.rawLabel ?? null,
+      currentPhase: selected?.phaseLabel ?? selected?.rawLabel ?? visibleAdmission.productLabel,
       currentPriceMinor,
+      visibleAdmissionPriceMinor: visibleAdmission.amountMinor,
+      visibleAdmissionProduct: visibleAdmission.productLabel,
+      browserVisibleProducts: visibleAdmission.browserVisibleProducts,
       currency: selected?.currency ?? 'EUR',
       availability: evidence?.normalizedStatus ?? null,
       registrationUrl: null,
-      blocked: fetchResult.blocked && !selected?.amountMinor,
+      blocked: fetchResult.blocked && currentPriceMinor == null,
     };
   } catch {
     return {
@@ -499,6 +526,7 @@ async function auditTicketProvider(
       provider: null,
       currentPhase: null,
       currentPriceMinor: null,
+      ...emptyVisibleAdmissionAuditFields(),
       currency: 'EUR',
       availability: null,
       registrationUrl: null,
@@ -988,25 +1016,52 @@ async function main() {
       const cardBadgeLabel = ticketBadgeLabel(cardVm.ticketStatus);
       const detailBadgeLabel = ticketBadgeLabel(surface.ticketBadgeStatus ?? undefined) ?? surface.statusLabel;
 
-      if (ticketAudit?.currentPriceMinor != null) {
-        if (ticket.price_from_minor !== ticketAudit.currentPriceMinor) {
+      const liveAdmissionMinor =
+        ticketAudit?.visibleAdmissionPriceMinor ?? ticketAudit?.currentPriceMinor ?? null;
+      const consumerHasDetailPrice = priceVisibleInText(
+        detailCapture.detailText,
+        liveAdmissionMinor,
+        surface.priceText,
+      );
+      const consumerHasCardPrice =
+        cardCapture.cardFound &&
+        priceVisibleInText(cardCapture.text, liveAdmissionMinor, cardVm.ticketLabel ?? null);
+
+      if (liveAdmissionMinor != null) {
+        if (ticket?.price_from_minor == null) {
+          mismatches.push('source_prices_missing_in_db');
+          rootCauses.push('PRICE_FRESHNESS_FAILURE');
+        } else if (ticket.price_from_minor !== liveAdmissionMinor) {
           mismatches.push('wrong_db_price');
           rootCauses.push('PRICE_FRESHNESS_FAILURE');
         }
-        if (!priceVisibleInText(detailCapture.detailText, ticketAudit.currentPriceMinor, surface.priceText)) {
+        if (!consumerHasDetailPrice) {
           mismatches.push('source_price_missing_in_consumer');
           rootCauses.push('READ_MODEL_FAILURE');
         }
-        if (
-          cardCapture.cardFound &&
-          !priceVisibleInText(cardCapture.text, ticketAudit.currentPriceMinor, cardVm.ticketLabel ?? null)
-        ) {
+        if (cardCapture.cardFound && !consumerHasCardPrice) {
           mismatches.push('card_wrong_price');
           rootCauses.push('CONSUMER_BINDING_FAILURE');
         }
       } else if (ticketAudit?.blocked && ticket?.price_from_minor != null) {
         mismatches.push('live_ticket_fetch_blocked_with_stale_db_price');
         rootCauses.push('PRICE_FRESHNESS_FAILURE');
+      }
+
+      if (
+        ticketTarget &&
+        liveAdmissionMinor != null &&
+        expected.availability !== 'SOLD_OUT' &&
+        (!ticket?.price_from_minor || !consumerHasDetailPrice || (cardCapture.cardFound && !consumerHasCardPrice))
+      ) {
+        if (!ticket?.price_from_minor && !mismatches.includes('source_prices_missing_in_db')) {
+          mismatches.push('source_prices_missing_in_db');
+          rootCauses.push('PRICE_FRESHNESS_FAILURE');
+        }
+        if (!consumerHasDetailPrice && !mismatches.includes('source_price_missing_in_consumer')) {
+          mismatches.push('source_price_missing_in_consumer');
+          rootCauses.push('READ_MODEL_FAILURE');
+        }
       }
 
       if (ticketTarget && isN8ManagerPortalRootUrl(ticketTarget)) {

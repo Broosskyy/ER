@@ -86,6 +86,7 @@ export function mapEventSummary(
     endsAt: event.ends_at,
     timezone: event.timezone,
     imageUrl: event.image_url,
+    officialUrl: event.official_url,
     organizerName: event.organizer_name,
     venue: venue ? mapVenue(venue) : null,
     genres: mappedGenres,

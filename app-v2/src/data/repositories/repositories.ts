@@ -13,6 +13,7 @@ export class EventRepository {
   private summaries: EventSummary[] = [];
   private detailsById = new Map<string, EventDetail>();
   private loadError: AppError | null = null;
+  private canonicalAliases = new Map<string, string>();
 
   async initialize(): Promise<void> {
     await this.reloadFromSupabase();
@@ -31,6 +32,7 @@ export class EventRepository {
     this.summaries = [];
     this.detailsById.clear();
     this.loadError = null;
+    this.canonicalAliases.clear();
   }
 
   isInitialized(): boolean {
@@ -95,10 +97,16 @@ export class EventRepository {
   }
 
   resolveCanonicalId(eventId: string): string {
-    return eventId;
+    let current = eventId;
+    const visited = new Set<string>();
+    while (this.canonicalAliases.has(current) && !visited.has(current)) {
+      visited.add(current);
+      current = this.canonicalAliases.get(current) ?? current;
+    }
+    return current;
   }
 
-  applyCanonicalAliases(_aliases: Map<string, string>): void {
-    // No-op until multi-source identity is reintroduced on the new core.
+  applyCanonicalAliases(aliases: Map<string, string>): void {
+    this.canonicalAliases = new Map(aliases);
   }
 }

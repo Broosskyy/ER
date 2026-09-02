@@ -137,6 +137,30 @@ describe('event matcher golden matrix', () => {
     expect(result.decision).toBe('strong_match');
   });
 
+  it('F2 — Chris Stussy/Stassy title typo with same lineup and slot', () => {
+    const result = matchEventToCatalog(
+      candidate({
+        title: 'CHRIS STASSY pres. by BOOTSHAUS',
+        startsAt: '2026-10-16T22:00:00+02:00',
+        venueName: 'Bootshaus',
+        venueCity: 'Köln',
+        lineupBillingNames: ['CHRIS STUSSY'],
+      }),
+      [
+        catalogEntry({
+          eventId: 'event-stussy',
+          title: 'CHRIS STUSSY pres. by BOOTSHAUS',
+          startsAt: '2026-10-16T22:00:00+02:00',
+          venueName: 'Bootshaus',
+          venueCity: 'Köln',
+          lineupBillingNames: ['CHRIS STUSSY'],
+        }),
+      ],
+    );
+    expect(result.decision).toBe('strong_match');
+    expect(result.autoBindAllowed).toBe(true);
+  });
+
   it('G — source URL changed with strong remaining identity', () => {
     const plan = planOfficialEventWrite(officialEvidenceToEventCandidate(evidence({
       sourceEventKey: 'nibirii-2027',

@@ -143,6 +143,7 @@ export function toPublishedSummaries(details: EventDetail[]): EventSummary[] {
       endsAt: detail.endsAt,
       timezone: detail.timezone,
       imageUrl: detail.imageUrl,
+      officialUrl: detail.officialUrl,
       organizerName: detail.organizerName,
       venue: detail.venue,
       genres: detail.genres,

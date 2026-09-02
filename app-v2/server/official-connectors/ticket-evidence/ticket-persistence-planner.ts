@@ -592,6 +592,141 @@ function resolveProviderSourceOperation(
   return { operation: 'update', reason: 'presale_source_changed', sourceUrl: presaleUrl, payload };
 }
 
+function expandSharedTicketUrlMirrors(
+  plans: EventTicketPersistencePlan[],
+  context: TicketPersistencePlannerContext,
+): EventTicketPersistencePlan[] {
+  const coveredTicketUpdates = new Set(
+    plans
+      .filter((plan) => plan.ticketOperation === 'update' || plan.ticketOperation === 'insert')
+      .map((plan) => plan.eventId),
+  );
+  const mirrors: EventTicketPersistencePlan[] = [];
+  const donorsByUrl = new Map<
+    string,
+    {
+      template: EventTicketPersistencePlan;
+      planned: EventCandidateTicket;
+    }
+  >();
+
+  for (const plan of plans) {
+    const planned = plan.plannedTicketRow;
+    if (!planned?.ticketUrl || planned.priceFromMinor == null) {
+      continue;
+    }
+    if (plan.ticketOperation !== 'update' && plan.ticketOperation !== 'insert') {
+      continue;
+    }
+    const canonicalUrl = canonicalTicketUrlForSnapshotCompare(planned.ticketUrl);
+    if (canonicalUrl) {
+      donorsByUrl.set(canonicalUrl, { template: plan, planned });
+    }
+  }
+
+  for (const donorTicket of context.existingTickets) {
+    if (donorTicket.priceFromMinor == null) {
+      continue;
+    }
+    const canonicalUrl = canonicalTicketUrlForSnapshotCompare(donorTicket.ticketUrl);
+    if (!canonicalUrl || donorsByUrl.has(canonicalUrl)) {
+      continue;
+    }
+    const binding = context.officialBindings.find((entry) => entry.eventId === donorTicket.eventId);
+    if (!binding) {
+      continue;
+    }
+    donorsByUrl.set(canonicalUrl, {
+      template: {
+        sourceEventKey: `existing_ticket_donor:${donorTicket.eventId}`,
+        officialUrl: binding.officialUrl,
+        eventId: donorTicket.eventId,
+        eventTitle: binding.title,
+        officialSourceId: binding.sourceId,
+        ticketSourceState: 'current_ticket_detail',
+        resolutionClass: 'shared_ticket_url_mirror',
+        evidenceSummary: 'shared_ticket_url_mirror_from_existing_donor',
+        ticketOperation: 'noop',
+        ticketOperationReason: 'donor_only',
+        plannedTicketRow: {
+          provider: donorTicket.provider ?? 'ticket_io',
+          ticketUrl: donorTicket.ticketUrl ?? undefined,
+          priceFromMinor: donorTicket.priceFromMinor,
+          currency: donorTicket.currency ?? 'EUR',
+          salesStatus: donorTicket.salesStatus ?? 'available',
+          sortOrder: 0,
+        },
+        existingTicketId: donorTicket.ticketId,
+        providerSourceOperation: 'noop',
+        providerSourceReason: 'shared_ticket_url_mirror_skips_provider_source',
+        provenanceOperation: 'noop',
+        provenanceReason: 'shared_ticket_url_mirror_preserves_official_provenance',
+        provenancePayload: {},
+        consumerProjection: {
+          ticketSourceState: 'current_ticket_detail',
+          priceLabel: '',
+          priceEvidenceState: 'verified_current',
+          status: donorTicket.salesStatus ?? 'available',
+          badge: '',
+          actionKind: 'purchase',
+          actionLabel: 'Tickets kaufen',
+          hasActivePurchaseCta: true,
+        },
+      },
+      planned: {
+        provider: donorTicket.provider ?? 'ticket_io',
+        ticketUrl: donorTicket.ticketUrl ?? undefined,
+        priceFromMinor: donorTicket.priceFromMinor,
+        currency: donorTicket.currency ?? 'EUR',
+        salesStatus: donorTicket.salesStatus ?? 'available',
+        sortOrder: 0,
+      },
+    });
+  }
+
+  for (const [canonicalUrl, donor] of donorsByUrl.entries()) {
+    for (const sibling of context.existingTickets) {
+      if (sibling.eventId === donor.template.eventId || coveredTicketUpdates.has(sibling.eventId)) {
+        continue;
+      }
+      if (canonicalTicketUrlForSnapshotCompare(sibling.ticketUrl) !== canonicalUrl) {
+        continue;
+      }
+      if (
+        sibling.priceFromMinor === donor.planned.priceFromMinor &&
+        sibling.currency === donor.planned.currency &&
+        sibling.salesStatus === donor.planned.salesStatus
+      ) {
+        continue;
+      }
+      const binding = context.officialBindings.find((entry) => entry.eventId === sibling.eventId);
+      if (!binding) {
+        continue;
+      }
+
+      coveredTicketUpdates.add(sibling.eventId);
+      mirrors.push({
+        ...donor.template,
+        sourceEventKey: `${donor.template.sourceEventKey}:shared_ticket_url_mirror`,
+        officialUrl: binding.officialUrl,
+        eventId: sibling.eventId,
+        eventTitle: binding.title,
+        officialSourceId: binding.sourceId,
+        ticketOperation: 'update',
+        ticketOperationReason: 'shared_ticket_url_price_mirror',
+        plannedTicketRow: donor.planned,
+        existingTicketId: sibling.ticketId,
+        provenanceOperation: 'noop',
+        provenanceReason: 'shared_ticket_url_mirror_preserves_official_provenance',
+        providerSourceOperation: 'noop',
+        providerSourceReason: 'shared_ticket_url_mirror_skips_provider_source',
+      });
+    }
+  }
+
+  return [...plans, ...mirrors];
+}
+
 export function planTicketEvidencePersistence(
   results: VerifiedTicketCompleteResult[],
   context: TicketPersistencePlannerContext,
@@ -658,7 +793,7 @@ export function planTicketEvidencePersistence(
     });
   }
 
-  return plans;
+  return expandSharedTicketUrlMirrors(plans, context);
 }
 
 export function summarizeTicketPersistencePlan(plans: EventTicketPersistencePlan[]): TicketPersistenceWritePlanSummary {

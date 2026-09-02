@@ -16,7 +16,7 @@ const PARKING_PATTERN = /\bparking\b|\bparken\b|\bparkticket\b|\bparkplatz\b|\bp
 const SHUTTLE_PATTERN = /\bshuttle\b|\bbus\s*transfer\b|\btransfer\s*ticket\b/i;
 const MERCH_PATTERN = /\bmerch\b|\bmerchandise\b|\bt-?shirt\b|\bhoodie\b|\bcap\b/i;
 const DONATION_PATTERN = /\bdonation\b|\bspende\b/i;
-const VIP_PATTERN = /\bvip\b|\bbalcony\b|\blounge\b|\bpremium\s*deck\b/i;
+const VIP_PATTERN = /\bvip\b|\bpremium\s+ticket\b|\bbalcony\b|\blounge\b|\bpremium\s*deck\b/i;
 const TABLE_PATTERN = /\btable\b|\btisch\b|\breservation\b|\breservierung\b|\blounge\s*table\b/i;
 const GROUP_PATTERN = /\bgroup\b|\bgruppen\b|\b5er\b|\b10er\b/i;
 const CAMPING_PATTERN = /\bcamping\b|\bstellplatz\b/i;
@@ -45,7 +45,9 @@ const POSITIVE_ADMISSION_PATTERNS: RegExp[] = [
   /\be-?ticket\b/i,
   /\bregular(?:\s+ticket)?\b/i,
   /\bfestival\s+ticket\b/i,
-  /\bgeneral\s+admission\b/i,
+  /\bdoorsale\b|\bdoor\s*sale\b|\babendkasse\b/i,
+  /\bblind\s+ticket\b/i,
+  /\bpresale\b|\bvorverkauf\b/i,
 ];
 
 function combinedOfferText(input: ClassifyTicketOfferInput): string {
@@ -143,6 +145,17 @@ export function classifyTicketOffer(input: ClassifyTicketOfferInput): TicketOffe
 
   const positiveAdmission = POSITIVE_ADMISSION_PATTERNS.some((pattern) => pattern.test(text));
   if (positiveAdmission && !requiresBaseTicket) {
+    return classify('regular_admission', true);
+  }
+
+  const labelOnly = input.label.replace(/\s+/g, ' ').trim();
+  const EVENT_ADMISSION_PRODUCT_HINT =
+    /\b(?:ticket|tickets|eintritt|eintrittskarte|admission|einlass|kombi(?:ticket)?|combi)\b/i;
+  if (
+    EVENT_ADMISSION_PRODUCT_HINT.test(text) &&
+    !requiresBaseTicket &&
+    !isGenericPlaceholderOfferLabel(labelOnly)
+  ) {
     return classify('regular_admission', true);
   }
 

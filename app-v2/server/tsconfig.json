@@ -6,7 +6,7 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["official-connectors/**/*.ts", "ingestion/**/*.ts"],
+  "include": ["official-connectors/**/*.ts", "ingestion/**/*.ts", "../shared/**/*.ts"],
   "exclude": [
     "official-connectors/**/__tests__/**",
     "official-connectors/scripts/**",
