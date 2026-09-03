@@ -1,0 +1,1132 @@
+{
+  "matches": [
+    {
+      "identityKey": "ticket_io:bootshaus-club:vb0camwg",
+      "title": "Bootshaus Sommerfest",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "matchedEventTitle": "Bootshaus Sommerfest auf 4 Floors!",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:4zjkrnsa",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+      "matchedEventTitle": "Bootshaus on a Ship Vol. IV",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:fjspvle4",
+      "title": "BC173 Airport Session pres. by Bootshaus IV",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+      "matchedEventTitle": "BC173 Airport Session pres. by Bootshaus",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:ycdxwvrm",
+      "title": "Bootshaus Sommerfest Closing",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+      "matchedEventTitle": "Bootshaus Sommerfest Closing",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:c4culnfm",
+      "title": "NIBIRII pres. ELY OAKS and more",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "301c217d-651a-4110-b759-a019f6546bb1",
+      "matchedEventTitle": "NIBIRII pres. ELY OAKS and more!",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:atz0dhlx",
+      "title": "CHROME @ Bootshaus",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+      "matchedEventTitle": "CHROME COLOGNE",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:by06xnf4",
+      "title": "CHRIS STASSY pres. by Bootshaus!",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+      "matchedEventTitle": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:b3jk8apc",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+      "matchedEventTitle": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:hv4f09p8",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+      "matchedEventTitle": "Bootshaus & Loonyland pres. Halloween 2026",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_possible_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:s0cbxdda",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "matchClassification": "EXISTING_EXACT",
+      "matchedEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+      "matchedEventTitle": "Bootshaus & Loonyland pres. NYE 2026",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:gl1jaacf",
+      "title": "Konzertgutscheine",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:sph3zrj3",
+      "title": "Tom-Tom Discotec presents: La Recocha /w Sandunguera (Cali)",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:9c4ngmql",
+      "title": "Foggy Notion: The Necks",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:hxuytamv",
+      "title": "Jack Botts",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:bqevqbuh",
+      "title": "Rodrigo Amado The Bridge",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:92dd3hw9",
+      "title": "Jens Düppe Quartett x Gregor Schwellenbach",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:qpcnqgg9",
+      "title": "Ayumi Tanaka / Thomas Morgan / Thomas Strønen",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:2lek1mnd",
+      "title": "NICA live: Mount Meander feat. Auziņš, Leidinger, Jacobson, Sauerborn",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:tryyux0h",
+      "title": "Fuchsthone Orchestra feat. Evi Filippou",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:2qnfprx9",
+      "title": "HERZOG | MUCHE | NILLESEN – TON meets RYOSUKE KIYASU",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:jdb3r3mj",
+      "title": "Le Pop la Série: Loa Mercury",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:mdh98fwe",
+      "title": "Jazz at JAKI: Marc Doffey Quartett",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:cnp8zy0c",
+      "title": "Lera Lynn",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:xbhpgglk",
+      "title": "Pomplamoose",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:ebmclu7p",
+      "title": "Jason Moran solo",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:qbcmk0dj",
+      "title": "Low Down Brass Band",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:fxthupuz",
+      "title": "Jazz at JAKI: Eva Buchmann",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:8vzccp9j",
+      "title": "SONIQ meets Marie Daniels",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:mq0nzke0",
+      "title": "Gretchen Parlato Quartet",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:bksxay66",
+      "title": "Elephant9",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:wqvy97db",
+      "title": "Foggy Notion: Deradoorian",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:w8w1jwtr",
+      "title": "Nik Bärtsch's Ronin",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:r19jzrmj",
+      "title": "Finojet",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:k69sh9mj",
+      "title": "AB Syndrom",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:8rbmpmfh",
+      "title": "Paul Heller invites Swing Masters Vol. 2",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:sjwjze6n",
+      "title": "Maria Taylor",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:wctead6s",
+      "title": "Le Pop La Série: Coline Rio",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:48wlahcw",
+      "title": "CGNYC w/ Kate Gentile",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:va16tkrq",
+      "title": "Tay Oskee",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:3eczax4p",
+      "title": "Max Fry",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:eswgguxr",
+      "title": "Shalosh",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:klgegcwp",
+      "title": "NICA live: RAY LOZANO | Release-Konzert \"#4a79b1\"",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:mmwvvxkn",
+      "title": "Myles Sanko",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:u3j41fbk",
+      "title": "Kira Linns „Her Wings“",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:axujyuwf",
+      "title": "Greg Mendez",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:kkvz7uwx",
+      "title": "Bill Stewart ft. Walter Smith III and Larry Grenadier",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:cb6z82hy",
+      "title": "Lots Of Hands",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:squncc29",
+      "title": "Christina Lux & Oliver George",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:tykhxb6s",
+      "title": "MITTANZ-HALLOWEEN-SPEKTAKEL 2026",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:ea89a73b",
+      "title": "Charlotte Greve Quartett",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:sptqfkey",
+      "title": "Guacayo",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:djpvqrsf",
+      "title": "Patricia Brennan Septet",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:q7lel1js",
+      "title": "Chanson Trottoir",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:cg38bm4p",
+      "title": "Paul Heller invites Emma Rawicz",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:3jxakprg",
+      "title": "Foggy Notion: Eliana Glass",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:bpykgwup",
+      "title": "Foggy Notion: SML",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:l2z0mp9q",
+      "title": "KLAENG Festival 2026 | Tag #1",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:rpamhgzx",
+      "title": "KLAENG Festival 2026 | Early Bird Festival Pass",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:f8c8lb2n",
+      "title": "David Lübke",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:pcukfaxt",
+      "title": "KLAENG Festival 2026 | Tag #2",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:cswbgsrw",
+      "title": "KLAENG Festival 2026 | Tag #3",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:xmcuv92s",
+      "title": "PULSE",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:7hjpwwna",
+      "title": "Shai Maestro The Guesthouse Quartet",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+      "title": "Lézard",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:vguajrsr",
+      "title": "Ben van Gelder Quintet",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:m8rs836f",
+      "title": "Oskar Haag",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:4wn1qak0",
+      "title": "As Yet Untitled: Bex Burch - Esther Coorevits - Stan Maris - James McClure",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:eydcgpqw",
+      "title": "MAUSTETYTÖT",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:lsqkhdqz",
+      "title": "Swinging Christmas – Paul Heller invites Tijn Trommelen",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:khqnwps6",
+      "title": "City of the Sun",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:d3qyftnc",
+      "title": "Der Literarische Salon mit Ursula Krechel",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:cqnvdwhs",
+      "title": "Jamaram Meets Jahcoustix",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:gleh62qb",
+      "title": "Alexandra Grimal REWILD",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:c3w3jda7",
+      "title": "J. Bernardt",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:qqcddrpb",
+      "title": "RasgaRasga - XX-Tour",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:ncbz4psk",
+      "title": "To Athena",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:3qqlsvz4",
+      "title": "Girls In Airports \"Cirkular\"",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:4ljakcaq",
+      "title": "Phil Siemers",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:stadtgarten:3vcemgev",
+      "title": "Daniel Herskedal Trio",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:aura:b19vx5rj",
+      "title": "Aura at Odonien w/ ÜBERKIKZ & ALARICO",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:aura:1ujhlvky",
+      "title": "Aura at fi w/ Chlär & more",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:aura:nhbir0f5",
+      "title": "Aura at fi w/ SHDW all night long",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:tonite:sopkke0c",
+      "title": "#MITTWOCHENENDE in ODONIEN",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:tonite:6v2yubq7",
+      "title": "GUTE NACHT! mit Jannik van der Vegt, JO KX, Lisek, Mischkonsum",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:sasgsbzg",
+      "title": "Simple Present w/ DCHM, Lara Fein, Ryan Elliott",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:hvphx9cx",
+      "title": "Phonovision w/ HiHat, PAU, Various Identities",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+      "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+      "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:auhcwfap",
+      "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:u7szdlae",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:mcg0qu1n",
+      "title": "My Dear w/ Ellen Allien, Denis Stockhausen",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:nachtresidenz:6i7izq8y",
+      "title": "Sweet HELL of COOKIES & Scream ,,Die Größte Halloween Party der Stadt\"",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:nachtresidenz:ho6t1h9j",
+      "title": "GOOD OLD TIMES \"Die größte Halloween Party aus Monheim\"",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ]
+    }
+  ],
+  "goldenRegression": [
+    {
+      "anchor": "Chris Stussy",
+      "discovered": 1,
+      "classifications": [
+        {
+          "title": "CHRIS STASSY pres. by Bootshaus!",
+          "matchClassification": "EXISTING_EXACT",
+          "matchedEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+          "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/"
+        }
+      ],
+      "duplicateRisk": false
+    },
+    {
+      "anchor": "NYE 2026",
+      "discovered": 1,
+      "classifications": [
+        {
+          "title": "Bootshaus & Loonyland pres. NYE 2026",
+          "matchClassification": "EXISTING_EXACT",
+          "matchedEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+          "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/"
+        }
+      ],
+      "duplicateRisk": false
+    },
+    {
+      "anchor": "ZAAGSTEP",
+      "discovered": 0,
+      "classifications": [],
+      "duplicateRisk": false
+    },
+    {
+      "anchor": "Unreal Weekender Night I",
+      "discovered": 0,
+      "classifications": [],
+      "duplicateRisk": false
+    }
+  ]
+}

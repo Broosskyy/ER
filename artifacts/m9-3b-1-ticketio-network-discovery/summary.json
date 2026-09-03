@@ -1,0 +1,227 @@
+{
+  "generatedAt": "2026-09-02T19:06:47.491Z",
+  "referenceDateLocal": "2026-09-02",
+  "timezone": "Europe/Berlin",
+  "baselineHead": "e3e012838738680a6b01efad691776f64052cf30",
+  "totalShopsDiscovered": 25,
+  "reachableShops": 25,
+  "activeShops": 19,
+  "totalUpcomingTicketIoEvents": 97,
+  "highRelevanceEvents": 16,
+  "likelyRelevantEvents": 1,
+  "ambiguousEvents": 80,
+  "irrelevantEvents": 0,
+  "existingExact": 10,
+  "existingStrongMatch": 0,
+  "possibleMatch": 0,
+  "netNewRelevantEvents": 7,
+  "reviewRequired": 0,
+  "coverageByCity": {
+    "Unknown": 94,
+    "Köln": 2,
+    "Düsseldorf": 1
+  },
+  "coverageByGenre": {
+    "Ambiguous": 93,
+    "Electronic Festival": 4
+  },
+  "newEventWrites": 0,
+  "eventUpdates": 0,
+  "ticketWrites": 0,
+  "mediaWrites": 0,
+  "productionMutations": 0,
+  "stagingPublishedEventCount": 30,
+  "goldenRegression": [
+    {
+      "anchor": "Chris Stussy",
+      "discovered": 1,
+      "classifications": [
+        {
+          "title": "CHRIS STASSY pres. by Bootshaus!",
+          "matchClassification": "EXISTING_EXACT",
+          "matchedEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+          "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/"
+        }
+      ],
+      "duplicateRisk": false
+    },
+    {
+      "anchor": "NYE 2026",
+      "discovered": 1,
+      "classifications": [
+        {
+          "title": "Bootshaus & Loonyland pres. NYE 2026",
+          "matchClassification": "EXISTING_EXACT",
+          "matchedEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+          "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/"
+        }
+      ],
+      "duplicateRisk": false
+    },
+    {
+      "anchor": "ZAAGSTEP",
+      "discovered": 0,
+      "classifications": [],
+      "duplicateRisk": false
+    },
+    {
+      "anchor": "Unreal Weekender Night I",
+      "discovered": 0,
+      "classifications": [],
+      "duplicateRisk": false
+    }
+  ],
+  "topShops": [
+    {
+      "shopId": "stadtgarten",
+      "slug": "stadtgarten",
+      "canonicalUrl": "https://stadtgarten.ticket.io/",
+      "upcomingEventCount": 68,
+      "highRelevanceCount": 4,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 4,
+      "electronicRelevanceRatio": 0.058823529411764705,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=de",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=en",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=fr",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=nl",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pl",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=it",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "metrics": {
+    "eventsWithTicketTarget": 97,
+    "eventsWithAdmissionPrice": 97,
+    "eventsWithMultipleProducts": 0,
+    "eventsWithSoldOutSignal": 0,
+    "eventsWithAdmissionClass": 0
+  },
+  "samples": [
+    {
+      "title": "Bootshaus Sommerfest",
+      "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "listRawPrice": "ab 8,00 €",
+      "listAmountMinor": 800,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 8,00 €",
+          "amountMinor": 800,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Bootshaus on a Ship Vol. IV",
+      "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "listRawPrice": "ab 0,00 €",
+      "listAmountMinor": 0,
+      "listTicketStatus": "unavailable_unknown",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 0,00 €",
+          "amountMinor": 0,
+          "currency": "EUR",
+          "availability": "unavailable_unknown"
+        }
+      ]
+    },
+    {
+      "title": "BC173 Airport Session pres. by Bootshaus IV",
+      "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+      "listRawPrice": "ab 22,90 €",
+      "listAmountMinor": 2290,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 22,90 €",
+          "amountMinor": 2290,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Bootshaus Sommerfest Closing",
+      "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+      "listRawPrice": "ab 15,00 €",
+      "listAmountMinor": 1500,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 15,00 €",
+          "amountMinor": 1500,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "NIBIRII pres. ELY OAKS and more",
+      "ticketUrl": "https://bootshaus-club.ticket.io/c4CUlNfm/",
+      "listRawPrice": "ab 26,90 €",
+      "listAmountMinor": 2690,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 26,90 €",
+          "amountMinor": 2690,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "CHROME @ Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+      "listRawPrice": "ab 8,00 €",
+      "listAmountMinor": 800,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 8,00 €",
+          "amountMinor": 800,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "CHRIS STASSY pres. by Bootshaus!",
+      "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+      "listRawPrice": "ab 8,00 €",
+      "listAmountMinor": 800,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 8,00 €",
+          "amountMinor": 800,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+      "listRawPrice": "ab 24,90 €",
+      "listAmountMinor": 2490,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 24,90 €",
+          "amountMinor": 2490,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+      "listRawPrice": "ab 32,00 €",
+      "listAmountMinor": 3200,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 32,00 €",
+          "amountMinor": 3200,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+      "listRawPrice": "ab 0,00 €",
+      "listAmountMinor": 0,
+      "listTicketStatus": "unavailable_unknown",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 0,00 €",
+          "amountMinor": 0,
+          "currency": "EUR",
+          "availability": "unavailable_unknown"
+        }
+      ]
+    },
+    {
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+      "listRawPrice": "ab 29,00 €",
+      "listAmountMinor": 2900,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 29,00 €",
+          "amountMinor": 2900,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+      "listRawPrice": "ab 19,90 €",
+      "listAmountMinor": 1990,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 19,90 €",
+          "amountMinor": 1990,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Tom-Tom Discotec presents: La Recocha /w Sandunguera (Cali)",
+      "ticketUrl": "https://stadtgarten.ticket.io/sPH3zrj3/",
+      "listRawPrice": "ab 10,00 €",
+      "listAmountMinor": 1000,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 10,00 €",
+          "amountMinor": 1000,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Foggy Notion: The Necks",
+      "ticketUrl": "https://stadtgarten.ticket.io/9C4NGMql/",
+      "listRawPrice": "ab 12,00 €",
+      "listAmountMinor": 1200,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 12,00 €",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Jack Botts",
+      "ticketUrl": "https://stadtgarten.ticket.io/hxUYTaMV/",
+      "listRawPrice": "ab 25,00 €",
+      "listAmountMinor": 2500,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 25,00 €",
+          "amountMinor": 2500,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Rodrigo Amado The Bridge",
+      "ticketUrl": "https://stadtgarten.ticket.io/bQEVQBUh/",
+      "listRawPrice": "ab 0,00 €",
+      "listAmountMinor": 0,
+      "listTicketStatus": "unavailable_unknown",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 0,00 €",
+          "amountMinor": 0,
+          "currency": "EUR",
+          "availability": "unavailable_unknown"
+        }
+      ]
+    },
+    {
+      "title": "Jens Düppe Quartett x Gregor Schwellenbach",
+      "ticketUrl": "https://stadtgarten.ticket.io/92Dd3hW9/",
+      "listRawPrice": "ab 10,00 €",
+      "listAmountMinor": 1000,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 10,00 €",
+          "amountMinor": 1000,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Ayumi Tanaka / Thomas Morgan / Thomas Strønen",
+      "ticketUrl": "https://stadtgarten.ticket.io/QPcnqGG9/",
+      "listRawPrice": "ab 0,00 €",
+      "listAmountMinor": 0,
+      "listTicketStatus": "unavailable_unknown",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 0,00 €",
+          "amountMinor": 0,
+          "currency": "EUR",
+          "availability": "unavailable_unknown"
+        }
+      ]
+    },
+    {
+      "title": "NICA live: Mount Meander feat. Auziņš, Leidinger, Jacobson, Sauerborn",
+      "ticketUrl": "https://stadtgarten.ticket.io/2LeK1mNd/",
+      "listRawPrice": "ab 8,00 €",
+      "listAmountMinor": 800,
+      "listTicketStatus": "available",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 8,00 €",
+          "amountMinor": 800,
+          "currency": "EUR",
+          "availability": "available"
+        }
+      ]
+    },
+    {
+      "title": "Fuchsthone Orchestra feat. Evi Filippou",
+      "ticketUrl": "https://stadtgarten.ticket.io/TRyyUx0h/",
+      "listRawPrice": "ab 0,00 €",
+      "listAmountMinor": 0,
+      "listTicketStatus": "unavailable_unknown",
+      "visibleProducts": [
+        {
+          "productName": "list_minimum",
+          "rawPrice": "ab 0,00 €",
+          "amountMinor": 0,
+          "currency": "EUR",
+          "availability": "unavailable_unknown"
+        }
+      ]
+    }
+  ]
+}

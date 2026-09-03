@@ -1,0 +1,458 @@
+{
+  "coverageByCity": {
+    "Unknown": 94,
+    "Köln": 2,
+    "Düsseldorf": 1
+  },
+  "coverageByGenre": {
+    "Ambiguous": 93,
+    "Electronic Festival": 4
+  },
+  "shopScores": [
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "stadtgarten",
+      "slug": "stadtgarten",
+      "canonicalUrl": "https://stadtgarten.ticket.io/",
+      "upcomingEventCount": 68,
+      "highRelevanceCount": 4,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 4,
+      "electronicRelevanceRatio": 0.058823529411764705,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence"
+      ]
+    },
+    {
+      "shopId": "nibirii-festival",
+      "slug": "nibirii-festival",
+      "canonicalUrl": "https://nibirii-festival.ticket.io/",
+      "upcomingEventCount": 0,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "no_relevant_upcoming_events",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "odonien",
+      "slug": "odonien",
+      "canonicalUrl": "https://odonien.ticket.io/",
+      "upcomingEventCount": 0,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "aura",
+      "slug": "aura",
+      "canonicalUrl": "https://aura.ticket.io/",
+      "upcomingEventCount": 3,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 1,
+      "netNewRelevantCount": 1,
+      "electronicRelevanceRatio": 0.3333333333333333,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "SUPPLEMENTAL_ONLY",
+      "tierReasons": [
+        "low_net_new_but_useful_for_ticket_evidence"
+      ]
+    },
+    {
+      "shopId": "tonite",
+      "slug": "tonite",
+      "canonicalUrl": "https://tonite.ticket.io/",
+      "upcomingEventCount": 2,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "gewoelbe",
+      "slug": "gewoelbe",
+      "canonicalUrl": "https://gewoelbe.ticket.io/",
+      "upcomingEventCount": 10,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "glow",
+      "slug": "glow",
+      "canonicalUrl": "https://glow.ticket.io/",
+      "upcomingEventCount": 0,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "zakk",
+      "slug": "zakk",
+      "canonicalUrl": "https://www.ticket.io/",
+      "upcomingEventCount": 0,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "nachtresidenz",
+      "slug": "nachtresidenz",
+      "canonicalUrl": "https://nachtresidenz.ticket.io/",
+      "upcomingEventCount": 2,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=de",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=en",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=fr",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=nl",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pl",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=it",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=es",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=ru",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=tr",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=hr",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pt",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sq",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "bootshaus-club",
+      "slug": "bootshaus-club",
+      "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sl",
+      "upcomingEventCount": 12,
+      "highRelevanceCount": 12,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 2,
+      "electronicRelevanceRatio": 1,
+      "ticketEvidenceCompleteness": 0.6,
+      "mediaQualityScore": 0,
+      "tier": "TIER_1_ENABLE_FIRST",
+      "tierReasons": [
+        "strong_electronic_signal",
+        "net_new_inventory",
+        "usable_ticket_evidence",
+        "verified_existing_canonical_overlap"
+      ]
+    },
+    {
+      "shopId": "cdn",
+      "slug": "cdn",
+      "canonicalUrl": "https://cdn.ticket.io/",
+      "upcomingEventCount": 0,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    },
+    {
+      "shopId": "srvded",
+      "slug": "srvded",
+      "canonicalUrl": "https://srvded.ticket.io/",
+      "upcomingEventCount": 0,
+      "highRelevanceCount": 0,
+      "likelyRelevantCount": 0,
+      "netNewRelevantCount": 0,
+      "electronicRelevanceRatio": 0,
+      "ticketEvidenceCompleteness": 0,
+      "mediaQualityScore": 0,
+      "tier": "REJECT",
+      "tierReasons": [
+        "no_relevant_upcoming_events"
+      ]
+    }
+  ]
+}
