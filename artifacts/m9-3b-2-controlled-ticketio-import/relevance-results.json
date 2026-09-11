@@ -1,0 +1,38 @@
+[
+  {
+    "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+    "relevance": "LIKELY_RELEVANT",
+    "relevanceReasons": [
+      "likely:electronic_venue_corroboration"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:house"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:auhcwfap",
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:house",
+      "weak_positive:live"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+    "relevance": "LIKELY_RELEVANT",
+    "relevanceReasons": [
+      "likely:electronic_venue_corroboration"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:house"
+    ]
+  }
+]

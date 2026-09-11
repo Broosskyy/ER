@@ -1,0 +1,24 @@
+{
+  "applied": true,
+  "eventInserts": 5,
+  "eventUpdates": 0,
+  "lineupWrites": 12,
+  "genreWrites": 3,
+  "sourceBindingWrites": 5,
+  "mediaWrites": 5,
+  "ticketInserts": 5,
+  "ticketUpdates": 0,
+  "ticketDeletes": 0,
+  "firstApplyAt": "2026-09-11T06:00:00+02:00",
+  "reapplyAt": "2026-09-11T06:17:36+02:00",
+  "reapplyWrites": {
+    "eventInserts": 0,
+    "eventUpdates": 0,
+    "ticketInserts": 0,
+    "ticketUpdates": 0,
+    "ticketDeletes": 0,
+    "lineupWrites": 0,
+    "genreWrites": 0,
+    "sourceBindingWrites": 0
+  }
+}

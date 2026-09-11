@@ -1,0 +1,72 @@
+[
+  {
+    "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "ctaRendered": true,
+    "ctaClicked": true,
+    "targetReached": true,
+    "sameEventVerified": true,
+    "mobileUsable": false,
+    "priceParity": true,
+    "statusParity": true,
+    "actionParity": true,
+    "consumerAvailable": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+    "ctaRendered": true,
+    "ctaClicked": true,
+    "targetReached": true,
+    "sameEventVerified": true,
+    "mobileUsable": false,
+    "priceParity": true,
+    "statusParity": true,
+    "actionParity": true,
+    "consumerAvailable": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:auhcwfap",
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "eventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+    "ctaRendered": true,
+    "ctaClicked": true,
+    "targetReached": true,
+    "sameEventVerified": true,
+    "mobileUsable": false,
+    "priceParity": true,
+    "statusParity": true,
+    "actionParity": true,
+    "consumerAvailable": true
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "eventId": "e2db143a-49f9-4522-a1f8-e796c7742d14",
+    "ctaRendered": true,
+    "ctaClicked": true,
+    "targetReached": true,
+    "sameEventVerified": true,
+    "mobileUsable": false,
+    "priceParity": true,
+    "statusParity": true,
+    "actionParity": true,
+    "consumerAvailable": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+    "ctaRendered": true,
+    "ctaClicked": true,
+    "targetReached": true,
+    "sameEventVerified": true,
+    "mobileUsable": false,
+    "priceParity": true,
+    "statusParity": true,
+    "actionParity": true,
+    "consumerAvailable": true
+  }
+]

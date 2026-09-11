@@ -1,8 +1,11 @@
+import { createHash } from 'node:crypto';
+
 import type {
   DiscoveredTicketLink,
   EventTicketEvidence,
   ResolvedTicketLink,
   TicketAuditCounters,
+  TicketFetchResult,
   TicketIdentityResult,
   TicketProviderEventEvidence,
 } from './types';
@@ -27,7 +30,13 @@ import { evaluateTicketTargetIdentity, isVerifiedTicketTargetIdentity } from './
 import type { TicketBrowserOps } from './ticket-browser-ops';
 import { isAdmissionOfferRole } from './ticket-offer-role';
 import { enrichResultWithM6_4 } from './ticket-event-resolution';
-import { isCheckoutOrSessionTicketUrl, isMerchandiseUrl, isShopRootUrl } from './url-policy';
+import {
+  canonicalizeTicketIoUrl,
+  isCheckoutOrSessionTicketUrl,
+  isMerchandiseUrl,
+  isShopRootUrl,
+  isTicketIoEventDetailUrl,
+} from './url-policy';
 import { discoverOfficialTicketCtaFromHtml } from './discover-official-ticket-cta';
 import { resolveTicketSourceState } from './ticket-source-state';
 import type { OfficialPageCaptureResult } from './ticket-browser-ops';
@@ -91,7 +100,19 @@ export async function processOfficialEventTickets(
 
   const discoveredLinks = discoverTicketLinksFromHtml(html, input.officialUrl, observedAt);
   const rejectedCandidates = discoverRejectedTicketCandidates(html, input.officialUrl);
-  const primary = selectPrimaryTicketLink(discoveredLinks);
+  let primary = selectPrimaryTicketLink(discoveredLinks);
+  const canonicalOfficialTicketUrl = canonicalizeTicketIoUrl(input.officialUrl);
+  if (canonicalOfficialTicketUrl && isTicketIoEventDetailUrl(canonicalOfficialTicketUrl)) {
+    primary = {
+      rawUrl: canonicalOfficialTicketUrl,
+      relation: 'ticket_provider',
+      discoveredOnUrl: input.officialUrl,
+      discoveredFromSource: 'ticket_io_event_page_self',
+      observedAt,
+      elementTag: 'page',
+    };
+    discoveredLinks.unshift(primary);
+  }
 
   if (!primary) {
     const ctaObservation = discoverOfficialTicketCtaFromHtml(html);
@@ -168,7 +189,20 @@ async function continueWithResolvedLink(
   observedAt: string,
   options: ProcessOfficialEventTicketsOptions,
 ): Promise<TicketEvidencePipelineResult> {
-  const resolved = await resolveTicketLink(primary);
+  const officialEventUrl = canonicalizeTicketIoUrl(input.officialUrl);
+  const resolved =
+    primary.discoveredFromSource === 'ticket_io_event_page_self' &&
+    officialEventUrl &&
+    isTicketIoEventDetailUrl(officialEventUrl)
+      ? {
+          discovered: primary,
+          resolvedUrl: officialEventUrl,
+          canonicalTicketUrl: officialEventUrl,
+          providerKey: 'ticket_io' as const,
+          redirectChain: [officialEventUrl],
+          isEventDetailUrl: true,
+        }
+      : await resolveTicketLink(primary);
   if (resolved.rejectedUrlReason) {
     rejectedCandidates.push({ url: resolved.canonicalTicketUrl, reason: resolved.rejectedUrlReason });
   }
@@ -226,9 +260,24 @@ async function continueWithResolvedLink(
 
   if (!providerEvidence && !fetchedCanonicalUrls.has(canonicalKey)) {
     fetchedCanonicalUrls.add(canonicalKey);
-    const fetchResult = options.browserOps
-      ? await options.browserOps.fetchTicketPage(resolved.canonicalTicketUrl)
-      : await fetchTicketPage(resolved.canonicalTicketUrl);
+    const officialCanonical = canonicalizeTicketIoUrl(input.officialUrl);
+    const reuseOfficialHtml = Boolean(
+      options.prefetchedHtml &&
+        officialCanonical &&
+        officialCanonical.toLowerCase() === canonicalKey,
+    );
+    const fetchResult: TicketFetchResult = reuseOfficialHtml
+      ? {
+          finalUrl: resolved.canonicalTicketUrl,
+          body: options.prefetchedHtml ?? '',
+          contentType: 'text/html',
+          fingerprint: createHash('sha256').update(options.prefetchedHtml ?? '').digest('hex'),
+          blocked: false,
+          redirectChain: resolved.redirectChain.length > 0 ? resolved.redirectChain : [resolved.canonicalTicketUrl],
+        }
+      : options.browserOps
+        ? await options.browserOps.fetchTicketPage(resolved.canonicalTicketUrl)
+        : await fetchTicketPage(resolved.canonicalTicketUrl);
 
     const terminalUrl = fetchResult.finalUrl || resolved.canonicalTicketUrl;
     const fetchRedirectChain =

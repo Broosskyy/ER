@@ -1,0 +1,145 @@
+[
+  {
+    "city": "Köln",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endgültig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver's license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-WeiterverkaufsinformationDer Ticketkäufer darf keinen höheren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und fähig ist diese Veranstaltung zu besuchen.Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "endsAt": null,
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "genres": [],
+    "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+    "lineup": [
+      "DEBORAH DE LUCA"
+    ],
+    "officialUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+    "sourceEventKey": "ticket_io:bootshaus-club:usxejhhu",
+    "startsAt": "2027-01-23T21:00:00+00:00",
+    "status": "published",
+    "tickets": [
+      {
+        "currency": "EUR",
+        "priceMinor": 3090,
+        "provider": "ticket_io",
+        "salesStatus": "available",
+        "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/"
+      }
+    ],
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "venueName": "Bootshaus"
+  },
+  {
+    "city": "Köln",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endgültig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver's license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-WeiterverkaufsinformationDer Ticketkäufer darf keinen höheren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und fähig ist diese Veranstaltung zu besuchen.Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "endsAt": null,
+    "eventId": "e2db143a-49f9-4522-a1f8-e796c7742d14",
+    "genres": [],
+    "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/jhUP7WQl/img/holder-1080.jpg?efde210d",
+    "lineup": [
+      "SARA LANDRY"
+    ],
+    "officialUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+    "sourceEventKey": "ticket_io:bootshaus-club:jhup7wql",
+    "startsAt": "2026-12-11T22:00:00+00:00",
+    "status": "published",
+    "tickets": [
+      {
+        "currency": "EUR",
+        "priceMinor": 3290,
+        "provider": "ticket_io",
+        "salesStatus": "available",
+        "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/"
+      }
+    ],
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "venueName": "Bootshaus"
+  },
+  {
+    "city": "Köln",
+    "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+    "endsAt": null,
+    "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+    "genres": [
+      "House"
+    ],
+    "imageUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/ZAqMQtZU/img/holder-1080.jpg?958eee22",
+    "lineup": [
+      "Janis Zielinski",
+      "Mike Momburg"
+    ],
+    "officialUrl": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+    "sourceEventKey": "ticket_io:gewoelbe:zaqmqtzu",
+    "startsAt": "2026-09-12T21:00:00+00:00",
+    "status": "published",
+    "tickets": [
+      {
+        "currency": "EUR",
+        "priceMinor": 1200,
+        "provider": "ticket_io",
+        "salesStatus": "available",
+        "ticketUrl": "https://gewoelbe.ticket.io/ZAqMQtZU/"
+      }
+    ],
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "venueName": "Gewölbe"
+  },
+  {
+    "city": "Köln",
+    "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+    "endsAt": null,
+    "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+    "genres": [
+      "House"
+    ],
+    "imageUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/ylGM2drQ/img/holder-1080.jpg?958eee22",
+    "lineup": [
+      "aphasit",
+      "Lingy",
+      "Polschi",
+      "Mike Starr"
+    ],
+    "officialUrl": "https://gewoelbe.ticket.io/ylGM2drQ/",
+    "sourceEventKey": "ticket_io:gewoelbe:ylgm2drq",
+    "startsAt": "2026-09-11T21:00:00+00:00",
+    "status": "published",
+    "tickets": [
+      {
+        "currency": "EUR",
+        "priceMinor": 1200,
+        "provider": "ticket_io",
+        "salesStatus": "available",
+        "ticketUrl": "https://gewoelbe.ticket.io/ylGM2drQ/"
+      }
+    ],
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "venueName": "Gewölbe"
+  },
+  {
+    "city": "Köln",
+    "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+    "endsAt": null,
+    "eventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+    "genres": [
+      "House"
+    ],
+    "imageUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/auHCwFAp/img/holder-1080.jpg?73758f8f",
+    "lineup": [
+      "Beste Hira",
+      "Maxim Vukovic",
+      "Tils",
+      "Reduks -live"
+    ],
+    "officialUrl": "https://gewoelbe.ticket.io/auHCwFAp/",
+    "sourceEventKey": "ticket_io:gewoelbe:auhcwfap",
+    "startsAt": "2026-09-25T21:00:00+00:00",
+    "status": "published",
+    "tickets": [
+      {
+        "currency": "EUR",
+        "priceMinor": 1200,
+        "provider": "ticket_io",
+        "salesStatus": "available",
+        "ticketUrl": "https://gewoelbe.ticket.io/auHCwFAp/"
+      }
+    ],
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "venueName": "Gewölbe"
+  }
+]

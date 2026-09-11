@@ -1,0 +1,10 @@
+{
+  "setA_eligibleCanonical": 30,
+  "setB_consumerReadModel": 30,
+  "setC_renderedCards": 0,
+  "expectedImportedEvents": 5,
+  "missingFromConsumer": 0,
+  "missingFromDb": 0,
+  "skipUi": true,
+  "stagingDbUnavailable": false
+}

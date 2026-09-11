@@ -1,4 +1,15 @@
+import { TICKET_IO_NETWORK_DISCOVERY_CONNECTOR_ID } from '../../official-connectors/ticket-evidence/network-discovery/constants';
 import type { EventCandidate, EventCandidateValidation } from '../types/event-candidate';
+
+function allowsTicketIoDiscoveryOfficialUrl(candidate: EventCandidate): boolean {
+  if (candidate.origin.kind !== 'official_connector') {
+    return false;
+  }
+  return (
+    candidate.origin.connectorId === TICKET_IO_NETWORK_DISCOVERY_CONNECTOR_ID &&
+    candidate.origin.sourceEventKey.startsWith('ticket_io:')
+  );
+}
 
 function isHttpsUrl(value: string | undefined): boolean {
   return typeof value === 'string' && value.startsWith('https://');
@@ -103,7 +114,10 @@ export function validateEventCandidate(candidate: EventCandidate): EventCandidat
     if (!isHttpsUrl(candidate.origin.officialUrl)) {
       reasons.push('official_source_missing');
       reasons.push('missing_official_url');
-    } else if (isTicketProviderOfficialUrl(candidate.origin.officialUrl)) {
+    } else if (
+      isTicketProviderOfficialUrl(candidate.origin.officialUrl) &&
+      !allowsTicketIoDiscoveryOfficialUrl(candidate)
+    ) {
       reasons.push('official_source_missing');
       reasons.push('ticket_url_used_as_official_source');
     } else if (isGenericOfficialHomepage(candidate.origin.officialUrl)) {

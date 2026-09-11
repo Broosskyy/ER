@@ -1,0 +1,445 @@
+[
+  {
+    "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+    "verification": {
+      "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+      "verifiedAt": "2026-09-11T06:12:18.567Z",
+      "referenceDateLocal": "2026-09-11",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "startsAt": "2027-01-23T22:00:00+01:00",
+      "venueName": "Bootshaus",
+      "city": "Köln",
+      "citySource": "verified_venue_identity",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "DEBORAH DE LUCA"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [],
+      "relevance": "LIKELY_RELEVANT",
+      "relevanceReasons": [
+        "likely:electronic_venue_corroboration"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "Early Bird",
+          "category": "ADMISSION",
+          "rawPrice": "19,90 Euro",
+          "amountMinor": 1990,
+          "currency": "EUR",
+          "phaseLabel": "Early Bird",
+          "availability": "SOLD_OUT",
+          "soldOut": true,
+          "purchasable": false,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Phase 1",
+          "category": "ADMISSION",
+          "rawPrice": "24,90 Euro",
+          "amountMinor": 2490,
+          "currency": "EUR",
+          "phaseLabel": "Phase 1",
+          "availability": "SOLD_OUT",
+          "soldOut": true,
+          "purchasable": false,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Phase 3",
+          "category": "ADMISSION",
+          "rawPrice": "30,90 Euro",
+          "amountMinor": 3090,
+          "currency": "EUR",
+          "phaseLabel": "Phase 3",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Locker - Size: M",
+          "category": "LOCKER",
+          "rawPrice": "4,00 Euro",
+          "amountMinor": 400,
+          "currency": "EUR",
+          "phaseLabel": "Locker - Size: M",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": false,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Locker - Size: L",
+          "category": "LOCKER",
+          "rawPrice": "7,00 Euro",
+          "amountMinor": 700,
+          "currency": "EUR",
+          "phaseLabel": "Locker - Size: L",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": false,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 3090,
+      "currentAdmissionPhase": "Phase 3",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 91,
+      "uncertainties": [
+        "likely_relevant_only"
+      ]
+    },
+    "eligible": true,
+    "eligibilityReasons": []
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+      "verifiedAt": "2026-09-11T06:12:42.521Z",
+      "referenceDateLocal": "2026-09-11",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+      "startsAt": "2026-09-11T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "aphasit",
+        "Lingy",
+        "Polschi",
+        "Mike Starr"
+      ],
+      "lineupQualification": "FULL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "strong_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/ylGM2drQ/img/holder-1080.jpg?958eee22",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/ylGM2drQ/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligible": true,
+    "eligibilityReasons": []
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:auhcwfap",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:auhcwfap",
+      "verifiedAt": "2026-09-11T06:13:06.440Z",
+      "referenceDateLocal": "2026-09-11",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+      "startsAt": "2026-09-25T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Beste Hira",
+        "Maxim Vukovic",
+        "Tils",
+        "Reduks -live"
+      ],
+      "lineupQualification": "FULL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "strong_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/auHCwFAp/img/holder-1080.jpg?73758f8f",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/auHCwFAp/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligible": true,
+    "eligibilityReasons": []
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+    "verification": {
+      "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+      "verifiedAt": "2026-09-11T06:13:30.531Z",
+      "referenceDateLocal": "2026-09-11",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "startsAt": "2026-12-11T23:00:00+01:00",
+      "venueName": "Bootshaus",
+      "city": "Köln",
+      "citySource": "verified_venue_identity",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "SARA LANDRY"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [],
+      "relevance": "LIKELY_RELEVANT",
+      "relevanceReasons": [
+        "likely:electronic_venue_corroboration"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/jhUP7WQl/img/holder-1080.jpg?efde210d",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "Early Bird - Presale",
+          "category": "ADMISSION",
+          "rawPrice": "24,90 Euro",
+          "amountMinor": 2490,
+          "currency": "EUR",
+          "phaseLabel": "Early Bird - Presale",
+          "availability": "SOLD_OUT",
+          "soldOut": true,
+          "purchasable": false,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Phase 1",
+          "category": "ADMISSION",
+          "rawPrice": "28,90 Euro",
+          "amountMinor": 2890,
+          "currency": "EUR",
+          "phaseLabel": "Phase 1",
+          "availability": "SOLD_OUT",
+          "soldOut": true,
+          "purchasable": false,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Phase 2",
+          "category": "ADMISSION",
+          "rawPrice": "32,90 Euro",
+          "amountMinor": 3290,
+          "currency": "EUR",
+          "phaseLabel": "Phase 2",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Locker - Size: M",
+          "category": "LOCKER",
+          "rawPrice": "4,00 Euro",
+          "amountMinor": 400,
+          "currency": "EUR",
+          "phaseLabel": "Locker - Size: M",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": false,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Locker - Size: L",
+          "category": "LOCKER",
+          "rawPrice": "7,00 Euro",
+          "amountMinor": 700,
+          "currency": "EUR",
+          "phaseLabel": "Locker - Size: L",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": false,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "Parkticket – Claudius Therme",
+          "category": "PARKING",
+          "rawPrice": "8,00 Euro",
+          "amountMinor": 800,
+          "currency": "EUR",
+          "phaseLabel": "Parkticket – Claudius Therme",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": false,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 3290,
+      "currentAdmissionPhase": "Phase 2",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 91,
+      "uncertainties": [
+        "likely_relevant_only"
+      ]
+    },
+    "eligible": true,
+    "eligibilityReasons": []
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+      "verifiedAt": "2026-09-11T06:13:54.386Z",
+      "referenceDateLocal": "2026-09-11",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+      "startsAt": "2026-09-12T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Janis Zielinski",
+        "Mike Momburg"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "strong_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/ZAqMQtZU/img/holder-1080.jpg?958eee22",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligible": true,
+    "eligibilityReasons": []
+  }
+]

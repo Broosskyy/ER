@@ -143,3 +143,25 @@ describe('ticket.io rendered shop table parser', () => {
     expect(evidence?.normalizedStatus).toBe('available');
   });
 });
+
+describe('ticket.io event page self-target', () => {
+  it('uses the ticket.io event page itself when no outbound ticket CTA links exist', async () => {
+    const { processOfficialEventTickets } = await import('../ticket-evidence-pipeline');
+    const { isVerifiedTicketComplete } = await import('../ticket-audit-metrics');
+    const html = readFileSync(join(FIXTURE_DIR, 'ticket-io-loonyland.html'), 'utf8');
+    const result = await processOfficialEventTickets(
+      {
+        sourceEventKey: 'ticket_io:gewoelbe:ylgm2drq',
+        officialUrl: 'https://gewoelbe.ticket.io/ylGM2drQ/',
+        title: 'Jack This',
+        startsAt: '2026-09-11T23:00:00+02:00',
+        venueName: 'Gewölbe',
+      },
+      { prefetchedHtml: html, observedAt: '2026-09-10T12:00:00.000Z' },
+    );
+
+    expect(result.primaryLink?.discoveredFromSource).toBe('ticket_io_event_page_self');
+    expect(isVerifiedTicketComplete(result)).toBe(true);
+    expect(result.ticketEvidence?.offers.some((offer) => offer.grantsEventEntry)).toBe(true);
+  });
+});
