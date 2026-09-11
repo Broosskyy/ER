@@ -66,6 +66,49 @@ export function getAncestorGenreKeys(genreKey: string): string[] {
   return ancestors;
 }
 
+export function getPrimaryGenreFamily(genreKey: string): string {
+  const normalized = canonicalGenreKey(genreKey);
+  const node = getGenreTaxonomyNode(normalized);
+  if (!node) {
+    return normalized;
+  }
+  if (node.parentGenreKey === 'electronic' || !node.parentGenreKey) {
+    return node.genreKey;
+  }
+  const ancestors = getAncestorGenreKeys(normalized);
+  const directElectronicChild = [normalized, ...ancestors].find((key) => {
+    const entry = getGenreTaxonomyNode(key);
+    return entry?.parentGenreKey === 'electronic';
+  });
+  return directElectronicChild ?? normalized;
+}
+
+export function areGenreKeysTaxonomyCompatible(left: string, right: string): boolean {
+  const a = canonicalGenreKey(left);
+  const b = canonicalGenreKey(right);
+  if (a === b) {
+    return true;
+  }
+  const ancestorsA = new Set([a, ...getAncestorGenreKeys(a)]);
+  const ancestorsB = new Set([b, ...getAncestorGenreKeys(b)]);
+  if (ancestorsA.has(b) || ancestorsB.has(a)) {
+    return true;
+  }
+  return getPrimaryGenreFamily(a) === getPrimaryGenreFamily(b);
+}
+
+export function hasIncompatibleGenreFamilies(genreKeys: string[]): boolean {
+  const normalized = genreKeys.map((key) => canonicalGenreKey(key));
+  for (let index = 0; index < normalized.length; index += 1) {
+    for (let inner = index + 1; inner < normalized.length; inner += 1) {
+      if (!areGenreKeysTaxonomyCompatible(normalized[index]!, normalized[inner]!)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 export function expandGenreKeysForSearch(queryGenreKey: string): Set<string> {
   const normalized = canonicalGenreKey(queryGenreKey);
   const expanded = new Set<string>([normalized]);

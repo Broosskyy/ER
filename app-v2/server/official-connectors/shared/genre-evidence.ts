@@ -1,4 +1,7 @@
 import { deriveLineupGenresFromIdentityCache } from './artist-genre-corroboration-pass';
+import { deriveEventGenresFromLineupConsensus } from './artist-genre-intelligence/lineup-genre-consensus';
+import type { ArtistProfileStore } from './artist-genre-intelligence/artist-profile-store';
+import { isSearchableGenreConfidence } from './artist-genre-intelligence/discovery-confidence-policy';
 import { canonicalGenreKey } from './normalize-genre';
 import {
   collectGenreEvidenceLabels,
@@ -22,6 +25,10 @@ export interface GenreEvidenceRecord {
   sourceUrl?: string;
   evidenceText?: string;
   classificationReason: string;
+}
+
+export interface GenreEvidenceContext {
+  artistStore?: ArtistProfileStore;
 }
 
 export interface GenreEvidenceExhaustionResult {
@@ -69,6 +76,7 @@ function genreKeysEquivalent(left: string[], right: string[]): boolean {
 export function exhaustGenreEvidence(
   event: StagingEventSnapshot,
   sourceRows: SourcePayloadRow[],
+  context?: GenreEvidenceContext,
 ): GenreEvidenceExhaustionResult {
   const checkedLayers: string[] = [];
   const evidence: GenreEvidenceRecord[] = [];
@@ -123,24 +131,57 @@ export function exhaustGenreEvidence(
 
   const sourceEventKey =
     event.sources.find((source) => source.sourceEventKey)?.sourceEventKey ?? event.eventId;
-  const lineupProjection = deriveLineupGenresFromIdentityCache({
-    sourceEventKey,
-    lineup,
-    officialGenres: event.genres,
-  });
-  if (lineupProjection.checkedArtistCache) {
-    checkedLayers.push('artist_identity_cache');
-  }
-  const lineupDerivedGenres = lineupProjection.genres.map((genre) => genre.displayName);
-  for (const genre of lineupProjection.genres) {
-    if (!evidence.some((entry) => entry.genreKey === genre.genreKey)) {
-      evidence.push({
-        genreKey: genre.genreKey,
-        displayName: genre.displayName,
-        confidence: confidenceFromTier('C_LINEUP'),
-        evidenceType: 'C_LINEUP',
-        classificationReason: 'lineup_artist_metadata_consensus',
-      });
+  let lineupDerivedGenres: string[] = [];
+
+  if (context?.artistStore && lineup.length > 0) {
+    checkedLayers.push('artist_intelligence');
+    const consensus = deriveEventGenresFromLineupConsensus({
+      eventId: event.eventId,
+      title: event.title,
+      lineup,
+      store: context.artistStore,
+    });
+    lineupDerivedGenres = consensus.genres.map((genre) => genre.displayName);
+    for (const genre of consensus.genres) {
+      if (!isSearchableGenreConfidence(genre.confidence)) {
+        continue;
+      }
+      if (!evidence.some((entry) => entry.genreKey === genre.genreKey)) {
+        evidence.push({
+          genreKey: genre.genreKey,
+          displayName: genre.displayName,
+          confidence: genre.confidence,
+          evidenceType: 'C_LINEUP',
+          classificationReason:
+            consensus.explanation.type === 'HEADLINER_PROFILE'
+              ? 'headliner_artist_profile_consensus'
+              : 'lineup_artist_intelligence_consensus',
+        });
+      }
+    }
+    if (consensus.classifiedArtists > 0) {
+      checkedLayers.push('artist_identity_cache');
+    }
+  } else {
+    const lineupProjection = deriveLineupGenresFromIdentityCache({
+      sourceEventKey,
+      lineup,
+      officialGenres: event.genres,
+    });
+    if (lineupProjection.checkedArtistCache) {
+      checkedLayers.push('artist_identity_cache');
+    }
+    lineupDerivedGenres = lineupProjection.genres.map((genre) => genre.displayName);
+    for (const genre of lineupProjection.genres) {
+      if (!evidence.some((entry) => entry.genreKey === genre.genreKey)) {
+        evidence.push({
+          genreKey: genre.genreKey,
+          displayName: genre.displayName,
+          confidence: confidenceFromTier('C_LINEUP'),
+          evidenceType: 'C_LINEUP',
+          classificationReason: 'lineup_artist_metadata_consensus',
+        });
+      }
     }
   }
 
@@ -181,9 +222,10 @@ export function hasGenreConflict(
 export function auditGenreEvidenceForStaging(
   runQuery: LinkedQueryExecutor,
   events: StagingEventSnapshot[],
+  context?: GenreEvidenceContext,
 ): GenreEvidenceExhaustionResult[] {
   return events.map((event) => {
     const sourceRows = loadEventSourcePayloads(runQuery, event.eventId);
-    return exhaustGenreEvidence(event, sourceRows);
+    return exhaustGenreEvidence(event, sourceRows, context);
   });
 }

@@ -5,6 +5,7 @@ import { loadStagingEventSnapshots, type StagingEventSnapshot } from '../../../i
 import {
   auditGenreEvidenceForStaging,
   hasGenreConflict,
+  type GenreEvidenceContext,
   type GenreEvidenceExhaustionResult,
 } from '../../shared/genre-evidence';
 
@@ -88,9 +89,12 @@ function classifyGenreEntry(
   };
 }
 
-export function auditGenreCoverage(runQuery: LinkedQueryExecutor): GenreCoverageEntry[] {
+export function auditGenreCoverage(
+  runQuery: LinkedQueryExecutor,
+  context?: GenreEvidenceContext,
+): GenreCoverageEntry[] {
   const events = loadStagingEventSnapshots(runQuery).filter((event) => event.status === 'published');
-  const exhaustions = auditGenreEvidenceForStaging(runQuery, events);
+  const exhaustions = auditGenreEvidenceForStaging(runQuery, events, context);
   return events.map((event, index) => classifyGenreEntry(event, exhaustions[index]!));
 }
 
