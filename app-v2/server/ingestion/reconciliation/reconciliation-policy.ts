@@ -1,4 +1,9 @@
 import type { EventCandidate, EventCandidateGenre, EventCandidateLineupAct } from '../types/event-candidate';
+import {
+  descriptionQualityScore,
+  extractEditorialDescription,
+  isInvalidPrimaryDescription,
+} from '../../official-connectors/shared/description-quality';
 import { isOcrFlyerNoiseLine } from '../../official-connectors/shared/lineup-normalization';
 import type {
   ChangeClassification,
@@ -72,10 +77,63 @@ function venueSignatureFromVenue(venue?: EventCandidateVenue): string {
 }
 
 function isBoilerplateHeavy(description: string): boolean {
+  if (isInvalidPrimaryDescription(description)) {
+    return true;
+  }
   if (description.length < 120) {
     return true;
   }
   return BOILERPLATE_PATTERNS.some((pattern) => pattern.test(description));
+}
+
+function reconcileDescription(
+  incoming: string | null | undefined,
+  existing: string | null | undefined,
+  context: ReconciliationEvidenceContext,
+): FieldReconciliationResult {
+  const field: ReconcilableField = 'description';
+  const incomingEditorial = extractEditorialDescription(incoming ?? undefined);
+  const existingEditorial = extractEditorialDescription(existing ?? undefined);
+  const incomingValue = normalizeText(incomingEditorial ?? incoming);
+  const existingValue = normalizeText(existingEditorial ?? existing);
+
+  if (!incomingValue && existingValue) {
+    return finalizeDecision(field, 'noop', 'preserve_existing_on_missing_incoming', context, {
+      preservedExisting: true,
+    });
+  }
+  if (!existingValue && incomingValue) {
+    if (isInvalidPrimaryDescription(incoming ?? undefined)) {
+      return finalizeDecision(field, 'noop', 'reject_invalid_incoming_description', context, {
+        preservedExisting: true,
+      });
+    }
+    return finalizeDecision(field, 'accept', 'populate_missing_existing', context);
+  }
+  if (incomingValue === existingValue) {
+    return finalizeDecision(field, 'noop', 'unchanged', context);
+  }
+
+  const incomingScore = descriptionQualityScore(incoming ?? undefined);
+  const existingScore = descriptionQualityScore(existing ?? undefined);
+  if (isInvalidPrimaryDescription(incoming ?? undefined) && existingScore > 0) {
+    return finalizeDecision(field, 'noop', 'preserve_editorial_over_ticket_boilerplate', context, {
+      preservedExisting: true,
+    });
+  }
+  if (incomingScore > existingScore + 0.05) {
+    return finalizeDecision(field, 'accept', 'incoming_description_higher_quality', context);
+  }
+  if (existingScore > incomingScore + 0.05) {
+    return finalizeDecision(field, 'noop', 'preserve_higher_quality_existing_description', context, {
+      preservedExisting: true,
+    });
+  }
+
+  return reconcileScalarField(field, incomingEditorial ?? incoming, existingEditorial ?? existing, context, {
+    destructiveShrinkRatio: 0.25,
+    boilerplateCheck: true,
+  });
 }
 
 function titleSimilarity(left: string, right: string): number {
@@ -558,10 +616,7 @@ export function reconcileOfficialEvent(
 
   const fieldDecisions: FieldReconciliationResult[] = [
     reconcileScalarField('title', input.candidate.title, existing.title, context, { destructiveShrinkRatio: 0.45 }),
-    reconcileScalarField('description', input.candidate.description, existing.description, context, {
-      destructiveShrinkRatio: 0.25,
-      boilerplateCheck: true,
-    }),
+    reconcileDescription(input.candidate.description, existing.description, context),
     reconcileDateField('startsAt', input.candidate.startsAt, existing.startsAt, context),
     reconcileDateField('endsAt', input.candidate.endsAt, existing.endsAt, context),
     reconcileVenue(input.candidate, existing, context),

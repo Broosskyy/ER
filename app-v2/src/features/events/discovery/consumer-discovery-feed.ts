@@ -7,7 +7,9 @@ import {
 import {
   calendarDayKey,
   canonicalTicketUrlForCompare,
+  normalizeCity,
   normalizeEventTitle,
+  normalizeVenueName,
   startTimeDeltaMs,
   titleSimilarity,
 } from '../../../../shared/match-normalizers';
@@ -37,7 +39,13 @@ function eventVenueKey(event: EventSummary): string | null {
   if (!event.venue) {
     return null;
   }
-  return [event.venue.id, event.venue.city ?? '', event.venue.name ?? ''].join('|');
+  const normalized = [normalizeVenueName(event.venue.name), normalizeCity(event.venue.city)]
+    .filter(Boolean)
+    .join('|');
+  if (normalized) {
+    return normalized;
+  }
+  return event.venue.id ?? null;
 }
 
 function officialUrlCanonicalScore(officialUrl: string | null | undefined): number {
@@ -73,6 +81,12 @@ function eventEvidenceScore(event: EventSummary): number {
     score += 1;
   }
   if (event.genres.length > 0) {
+    score += 1;
+  }
+  if (event.officialUrl && /bootshaus\.tv|arep\.co/i.test(event.officialUrl)) {
+    score += 2;
+  }
+  if (event.endsAt) {
     score += 1;
   }
   score += officialUrlCanonicalScore(event.officialUrl);

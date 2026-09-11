@@ -8,6 +8,7 @@ import {
   normalizeCity,
   normalizeEventTitle,
   normalizeMatchText,
+  normalizeVenueName,
   startTimeDeltaMs,
   titleSimilarity,
 } from './match-normalizers';
@@ -215,14 +216,19 @@ function scoreCatalogEntry(
 
   const candidateVenueKey = buildVenueMatchKey(candidate);
   const entryVenueKey = buildVenueMatchKey(entry);
+  const venueNameMatch =
+    normalizeVenueName(candidate.venueName) &&
+    normalizeVenueName(candidate.venueName) === normalizeVenueName(entry.venueName);
   if (candidateVenueKey && entryVenueKey) {
-    signals.push(
-      signal(
-        'venue',
-        candidateVenueKey === entryVenueKey ? 'match' : 'mismatch',
-        candidateVenueKey === entryVenueKey ? 'venue_key_match' : 'venue_key_mismatch',
-      ),
-    );
+    if (candidateVenueKey === entryVenueKey) {
+      signals.push(signal('venue', 'match', 'venue_key_match'));
+    } else if (venueNameMatch) {
+      signals.push(signal('venue', 'match', 'venue_name_match_cross_source'));
+    } else {
+      signals.push(signal('venue', 'mismatch', 'venue_key_mismatch'));
+    }
+  } else if (venueNameMatch) {
+    signals.push(signal('venue', 'match', 'venue_name_match_without_full_key'));
   } else {
     signals.push(signal('venue', 'missing', 'venue_missing'));
   }

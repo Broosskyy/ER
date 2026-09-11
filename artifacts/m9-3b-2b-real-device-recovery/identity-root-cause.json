@@ -1,0 +1,24 @@
+{
+  "ticketIoEventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+  "bootshausEventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+  "titleSimilarity": 1,
+  "identityDecision": "exact_match",
+  "identityReasons": [
+    "canonical_source_url_already_bound"
+  ],
+  "directMatcherDecision": "exact_match",
+  "directMatcherReasons": [
+    "canonical_source_url_already_bound"
+  ],
+  "rootCause": "identity_engine_would_match_but_duplicate_already_exists_in_staging",
+  "venueComparison": {
+    "ticketIo": {
+      "name": "Bootshaus",
+      "city": "Köln"
+    },
+    "bootshaus": {
+      "name": "Bootshaus",
+      "city": "Köln"
+    }
+  }
+}

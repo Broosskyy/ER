@@ -106,12 +106,17 @@ export function loadPublishedEventSummaries(runQuery: LinkedQueryExecutor): Even
     price_from_minor: number | null;
     currency: string | null;
     sales_status: string | null;
+    genres: string[] | null;
   }>(
     runQuery,
     `SELECT jsonb_agg(row_to_json(t) ORDER BY t.starts_at, t.title) AS rows FROM (
       SELECT e.id, e.title, e.starts_at, e.ends_at, e.timezone, e.image_url, e.official_url, e.organizer_name,
         v.id AS venue_id, v.name AS venue_name, v.city AS venue_city,
-        t.ticket_url, t.price_from_minor, t.currency, t.sales_status
+        t.ticket_url, t.price_from_minor, t.currency, t.sales_status,
+        (
+          SELECT COALESCE(jsonb_agg(g.display_name ORDER BY g.sort_order), '[]'::jsonb)
+          FROM public.event_genres g WHERE g.event_id = e.id
+        ) AS genres
       FROM events e
       LEFT JOIN venues v ON v.id = e.venue_id
       LEFT JOIN event_tickets t ON t.event_id = e.id AND t.sort_order = 0
@@ -141,7 +146,12 @@ export function loadPublishedEventSummaries(runQuery: LinkedQueryExecutor): Even
           officialUrl: null,
         }
       : null,
-    genres: [],
+    genres: (row.genres ?? []).map((displayName, index) => ({
+      id: `${row.id}-genre-${index}`,
+      genreKey: displayName.toLowerCase().replace(/\s+/g, '-'),
+      displayName,
+      sortOrder: index,
+    })),
     primaryTicket: row.ticket_url
       ? {
           id: `${row.id}-ticket`,

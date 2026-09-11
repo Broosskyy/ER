@@ -1,0 +1,5 @@
+{
+  "skipped": true,
+  "note": "Repair apply is one-shot; subsequent duplicate audit should remain zero-write.",
+  "highConfidenceDuplicateGroupsAfter": 0
+}
