@@ -412,6 +412,33 @@ export function projectEventGenres(input: {
   return { genres: consensusGenres, rejectionReasons: [] };
 }
 
+export function loadArtistGenreIdentityCache(): Map<string, ArtistCorroborationRecord> {
+  return loadCache();
+}
+
+export function deriveLineupGenresFromIdentityCache(input: {
+  sourceEventKey: string;
+  lineup: string[];
+  officialGenres: string[];
+  identities?: Map<string, ArtistCorroborationRecord>;
+}): {
+  genres: Array<{ genreKey: string; displayName: string }>;
+  rejectionReasons: string[];
+  checkedArtistCache: boolean;
+} {
+  const identities = input.identities ?? loadCache();
+  const projection = projectEventGenres({
+    sourceEventKey: input.sourceEventKey,
+    lineup: input.lineup,
+    officialGenres: input.officialGenres,
+    identities,
+  });
+  return {
+    ...projection,
+    checkedArtistCache: identities.size > 0,
+  };
+}
+
 export async function runArtistGenreCorroborationPass(input: {
   events: Array<{
     sourceEventKey: string;

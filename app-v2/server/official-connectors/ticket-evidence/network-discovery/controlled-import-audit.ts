@@ -178,6 +178,8 @@ export function buildConsumerReadback(runQuery: LinkedQueryExecutor, referenceIn
       venueName: event.venue?.name,
       city: event.venue?.city,
       imageUrl: event.imageUrl,
+      genres: event.genres.map((genre) => genre.displayName),
+      lineup: [],
       ticketPriceMinor: event.primaryTicket?.priceFromMinor,
       ticketCurrency: event.primaryTicket?.currency,
       ticketStatus: event.primaryTicket?.salesStatus,

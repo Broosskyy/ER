@@ -1,0 +1,2782 @@
+[
+  {
+    "eventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+    "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+    "startsAt": "2026-08-31T21:45:00+00:00",
+    "endsAt": "2026-09-01T04:00:00+00:00",
+    "venue": "AMØK CLUB, Palma de Mallorca",
+    "city": "S’Aranjassa",
+    "organizer": "122",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-08-31T21:45:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-01T04:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "AMØK CLUB, Palma de Mallorca"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "S’Aranjassa"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "122"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nTripolism, three friends from Copenhagen, bring melodic house, indie dance and euphoric techno together — playful, driving, melancholic. Their track \"Dope Dance\" became one of Pete Tong's top 5 Essential New Tunes of the year, and 2025 saw them hit the Coachella lineup. Opening the night, the German B2B duo Jean Philippe & Mole deliver punchy, organic grooves between Afro House and melodic house, with chart hits like \"You Got The Love\" on MAJA Records and festival stages including MYLE.\n\n23:45 - TILL LATE"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "JEAN PHILIPPE & MOLE, LOUIS RYDER"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "House, Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4104502394484890044878497_8364976970428405951449660.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/31-8-26-122-pres-tripolism-at-palma-de-mallorca-es/",
+        "connectorId": "bootshaus-official"
+      }
+    ]
+  },
+  {
+    "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "startsAt": "2026-09-04T20:00:00+00:00",
+    "endsAt": "2026-09-05T03:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "R3HAB pres. by BOOTSHAUS"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-04T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-05T03:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "R3HAB, LA FUENTE, OLIVER MAGENTA, RELOVA, DHALI, DAVE REPLAY"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bass House, Electro, House, Progressive House, EDM, Dance"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/C7JPnatZ/img/holder-1080.jpg?9c77b130"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/C7JPnatZ/"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/r3hab-pres-by-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "startsAt": "2026-09-04T22:00:00+00:00",
+    "endsAt": null,
+    "venue": "Essigfabrik / Elektroküche",
+    "city": "Köln",
+    "organizer": "Affenkäfig",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Underland Essigfabrik 05.09.2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-04T22:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Essigfabrik / Elektroküche"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "🔥 UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 Bereit für den Vibe, der NRW zum Beben bringt? Rheinaudio präsentiert euch ein brandneues Kapitel in der Geschichte der härtesten Beats: UNDERLAND ESSIGFABRIK! Am Samstag, den 05. September 2026, öffnen sich die Tore zu einer Dimension, die ihr so noch nicht erlebt habt. Das ist nicht nur ein Event, das ist der Auftakt von etwas ganz Großem! Seit 2010 stehen wir für „Quality Events“, und jetzt zünden wir die nächste Stufe. Holt eure Rave-Crew zusammen, denn wir tauchen ab in das Underland der Essigfabrik! Zwei Floors, Eine Mission: Abriss Total! Die Essigfabrik Köln und die Elektroküche werden zu eurem persönlichen Spielplatz für Hardtechno und Uptempo. Zwei Floors, zwölf Artists – eine Mission: Euch in Ekstase zu versetzen. Erlebt die pure Energie und die rohe Kraft der Musik, die uns alle antreibt. Von den ersten Beats bis zum Morgengrauen wird hier keine Sekunde stillgestanden! Das Lineup, das euch zerlegt! 🎶 Wir haben für euch eine Selektion an Artists zusammengestellt, die wissen, wie man einen Floor zum Kochen bringt. Hier ist das Team, das euch ins Underland entführt: Sichert euch euer Ticket ins Underland! 🎟️ Das hier ist der Start von etwas Großem, und ihr wollt von Anfang an dabei sein! Die Nachfrage wird enorm sein, also zögert nicht. Sichert euch eure Tickets und seid Teil dieser Premiere. Alle Infos und Tickets findet ihr auf . Seid schnell, bevor es zu spät ist! Wir sehen uns im Chaos! 🎉 Packt eure Tanzschuhe ein, bereitet euch auf eine Nacht voller unvergesslicher Momente vor und lasst uns gemeinsam das Underland erobern. Am Samstag, 05. September 2026, wird die Essigfabrik zum Epizentrum der harten Sounds. Affenkäfig lädt ein – seid ihr bereit für den Abriss? Wir können es kaum erwarten, mit euch die Wände zum Wackeln zu bringen! Let’s go! 🔥 UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥 🔥 UNDERLAND ESSIGFABRIK – Der Start einer neuen Ära! 🔥",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "UNDERLAND"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hard Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://ticketkings.de/wp-content/uploads/2026/04/original-20260522-134011-7db369482b94.jpg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2000"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "title": "Bootshaus Sommerfest auf 4 Floors!",
+    "startsAt": "2026-09-05T20:00:00+00:00",
+    "endsAt": "2026-09-06T04:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus Sommerfest auf 4 Floors!"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-05T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-06T04:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "MBP, MAX BERING, CRÜPO, MILLY, MAKLA, VENTRIS, ATZENDENT, VYKA, MARCI, ELYANTE, Jon Void, Rebko, FLYKE, KBS, Bass Adder, MAXCHERRY, O´DOYLE"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Dubstep, Electro, Hard Techno, Techno, EDM"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5062988071453877682745299_7978516036277668571976162.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/vB0cAmWg/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1490"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/5-9-26-bootshaus-sommerfest-auf-4-floors/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "startsAt": "2026-09-07T21:45:00+00:00",
+    "endsAt": "2026-09-08T03:00:00+00:00",
+    "venue": "AMØK CLUB, Palma de Mallorca",
+    "city": "S’Aranjassa",
+    "organizer": "122",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-07T21:45:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-08T03:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "AMØK CLUB, Palma de Mallorca"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "S’Aranjassa"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "122"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nMarten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions of streams and backing from Drake's OVO and Atlantic Records, brings emotional, melodic Afro House shaped by his German roots and Parisian flair — already played by Keinemusik, Adriatique, BLOND:ISH and CamelPhat. Opening the night, Nicole Da Silva returns to AMØK with her signature blend of Afro House and organic percussion — Today Is Life, and tonight proves it.\n\n23:45 - TILL LATE"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "MARTEN LOU, NICOLE DA SILVA, MANUEL SANCHEZ"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "House, Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6178357450458178989924376_4997503238604356820895660.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es/",
+        "connectorId": "bootshaus-official"
+      }
+    ]
+  },
+  {
+    "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "startsAt": "2026-09-11T20:00:00+00:00",
+    "endsAt": "2026-09-12T04:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "INURFASE",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-11T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-12T04:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "INURFASE"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BLACKLIST & INURFASE pres.\n\nZAAGSTEP by Dr Donk\n\nFor years, electronic music has been built on genres.\n\nZaag. Uptempo. Hard Dance. Dubstep. Drum & Bass. Bass Music.\n\nBut what happens when the boundaries between them disappear?\n\nOn September 11th, BLACKLIST and INURFASE invite you to witness the official launch of ZAAGSTEP - the sound created by Dr Donk that combines the high BPM intensity of Uptempo and Zaag with the energy, and influence of Bass Music.\n\nA never-seen-before crossover between Dubstep, Zaag, Drum & Bass, Uptempo and everything in between. WELCOME TO ZAAGSTEP 😈\n\nTo celebrate his upcoming album release, Dr Donk presents the world's first full-scale ZAAGSTEP showcase at Bootshaus Cologne, featuring artists who have helped shape the sound and artists who represent the different worlds colliding within it."
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Dr Donk pres. ZAAGSTEP (Album Showcase), Dr Donk b2b Yoshiko, GPF, Invaderz, Lekkerfaces, Madcore, Must Die!, Revenge Of The Nerds (Albino b2b Dr Donk b2b Ricky West), TMPR"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Drum'n'Bass, Hard Dance, Dubstep"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8797178639641873553462974_5848136236055337948931789.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "sold_out"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "startsAt": "2026-09-11T21:00:00+00:00",
+    "endsAt": null,
+    "venue": "Gewölbe",
+    "city": "Köln",
+    "organizer": null,
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-11T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Gewölbe"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket."
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "aphasit, Lingy, Polschi, Mike Starr"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "House"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/bc7bTOMU/events/ylGM2drQ/img/holder-1080.jpg?958eee22"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://gewoelbe.ticket.io/ylGM2drQ/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1200"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://gewoelbe.ticket.io/ylGM2drQ/",
+        "connectorId": "ticket-io-network-discovery"
+      },
+      {
+        "role": "ticket",
+        "url": "https://gewoelbe.ticket.io/ylGM2drQ/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "startsAt": "2026-09-12T21:00:00+00:00",
+    "endsAt": null,
+    "venue": "Gewölbe",
+    "city": "Köln",
+    "organizer": null,
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-12T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Gewölbe"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket."
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "Janis Zielinski, Mike Momburg"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "House"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/bc7bTOMU/events/ZAqMQtZU/img/holder-1080.jpg?958eee22"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://gewoelbe.ticket.io/ZAqMQtZU/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1200"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+        "connectorId": "ticket-io-network-discovery"
+      },
+      {
+        "role": "ticket",
+        "url": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "startsAt": "2026-09-13T12:00:00+00:00",
+    "endsAt": "2026-09-13T18:00:00+00:00",
+    "venue": "KD Anleger 1",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus on a Ship Vol. IV"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-13T12:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-13T18:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "KD Anleger 1"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "DANTH, FABIAN FARELL, NIKLAS DEE, OLIVER MAGENTA, TEKNOCLASH"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9461438911352535241288023_8277658293979572598593280.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "sold_out"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "startsAt": "2026-09-18T21:00:00+00:00",
+    "endsAt": "2026-09-19T05:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-18T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-19T05:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "CLEOPARD2000 b2b ALBA FRANCH, DAVYBOI b2b TRANCEMASTER KRAUSE, MIKA HEGGEMANN, PRADA2000, TESTPRESS, ELOTRANCE, HITMiLOW, SATYS FYRE"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/5fuNyczv/events/PDikPg1v/img/holder-1080.jpg?6b22d493"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://polyamor.ticket.io/PDikPg1v/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://polyamor.ticket.io/PDikPg1v/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "startsAt": "2026-09-19T14:00:00+00:00",
+    "endsAt": "2026-09-19T20:00:00+00:00",
+    "venue": "Moxy Köln/Bonn Flughafen",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BC173 Airport Session pres. by Bootshaus"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-19T14:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-19T20:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Moxy Köln/Bonn Flughafen"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Public Transport: Public transport tickets included for an easy ride in and out. The travel pass is valid across the entire VRS network for both inbound and return journeys. Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket. Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure. Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "MOGUAI, ALUKES b2b DAVE REPLAY, JOHANNA KLEEN, OLIVER MAGENTA"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5762150602999975239476766_4667780831304626581238070.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/fjspvLe4/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2290"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/fjspvLe4/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "title": "14 Jahre Affenkäfig 19.09.2026",
+    "startsAt": "2026-09-19T20:00:00+00:00",
+    "endsAt": null,
+    "venue": "Essigfabrik / Elektroküche",
+    "city": "Köln",
+    "organizer": "Affenkäfig",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "14 Jahre Affenkäfig 19.09.2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-19T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Essigfabrik / Elektroküche"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Seit über 14 Jahren trifft sich nun das Rudel und durchstreift Monat für Monat den Großstadt-Dschungel Deutschlands!\nWir erinnern uns gerne an die guten alten Zeiten zurück. Unzählige Momente haben wir mit euch verbracht und für diesen Support sind wir euch unendlich Dankbar.\n14 Jahre Affenkäfig\n+ OPEN AIR - Achtung - Um die Location wird gerade viel umgebaut. Sollte dies dadurch zu Einschränkungen kommen fängt die VA ganz normal um 22 Uhr an.\n+ In & Outdoor Event\n+ 15Std Rave\n+ Food Truck\nUnser Big B-Day Jubiläum steht an!\n► 14 Jahre Gute Laune!\n► 14 Jahre Party hard!\n► 14 Jahre Feierkultur!\n► 14 Jahre Affenkäfig!"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "IMHAPPY, KOPF & HÖRER, PART TIME KILLER, TIEFUNDTON, DYSTOPIA, FLASH FORWARD, RISKO B2B REMEK666, SUPER DARIO, TOMMY LIBERA, TURBOTIMOS, THE EVELOPER, JULEZ BRIXTON, SEBI LIEMEN"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://affenkaefig.info/wp-content/uploads/2026/06/19.09.26_QUADA_LineUP_AK_WEB.jpg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "4"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://affenkaefig.info/tickets/",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21&embed=1&embed_layout=checkout&embed_flow=",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "title": "Bootshaus Sommerfest Closing",
+    "startsAt": "2026-09-19T20:00:00+00:00",
+    "endsAt": "2026-09-20T04:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus Sommerfest Closing"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-19T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-20T04:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "OLIVER MAGENTA, PHAKE, TIMBO & THIS CHRIS, ENNA EVAR, DMNK, VENTRIS, INFERNUS7, JACUZI, MAURO, CHAYA, 4GIVEN, GOURSKI, ENALY, JAYCUT, MIMI GARCIA, OFFERGELD, ADRIAN GASPAR, KARL JENS WEST"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Tech House, Techno, Electro, Dubstep"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8311451292830292998984815_4138875109974764091665143.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/ycDXwvrm/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+    "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+    "startsAt": "2026-09-20T16:00:00+00:00",
+    "endsAt": "2026-09-20T20:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-20T16:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-20T20:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren!&nbsp; All sales are final / Jeder Kauf ist endg&uuml;ltig&nbsp; No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. &nbsp; Ticket-Weiterverkaufsinformation Der Ticketk&auml;ufer darf keinen h&ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird.&nbsp; Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!&nbsp;",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "VERTILE"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hardstyle"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://musical-madness.ticket.io/eACzcM9S/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3690"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://musical-madness.ticket.io/eACzcM9S/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+    "title": "Unreal Weekender Night I - September 2026",
+    "startsAt": "2026-09-25T20:30:00+00:00",
+    "endsAt": "2026-09-26T06:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "unreal",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Unreal Weekender Night I - September 2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-25T20:30:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-26T06:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "unreal"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "AFEM SYKO, BIIANCO, JOHANNES SCHUSTER, KOTORRI, MAD DOG, NIKOLINA, PIXIE DUST, WILL ATKINSON"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hard Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://unreal-bootshaus.ticket.io/U1dUL7lG/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "4500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "startsAt": "2026-09-25T21:00:00+00:00",
+    "endsAt": null,
+    "venue": "Gewölbe",
+    "city": "Köln",
+    "organizer": null,
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-25T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Gewölbe"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket."
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Beste Hira, Maxim Vukovic, Tils, Reduks -live"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "House"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/bc7bTOMU/events/auHCwFAp/img/holder-1080.jpg?73758f8f"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://gewoelbe.ticket.io/auHCwFAp/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1200"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://gewoelbe.ticket.io/auHCwFAp/",
+        "connectorId": "ticket-io-network-discovery"
+      },
+      {
+        "role": "ticket",
+        "url": "https://gewoelbe.ticket.io/auHCwFAp/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+    "title": "Unreal Weekender Night II - September 2026",
+    "startsAt": "2026-09-26T20:30:00+00:00",
+    "endsAt": "2026-09-27T06:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "unreal",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Unreal Weekender Night II - September 2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-26T20:30:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-09-27T06:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "unreal"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "ANNIE, DJ DRECKISCH, DVAID, GLANZ B2B ROSILICIOUS, KARAH, KUKO, TASSERY, TRIPTYKH B2B GOLPE"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hard Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6545440122112161600489835_4102187427091406125812180.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "https://unreal-bootshaus.ticket.io/Zt24QJcV/"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "sold_out"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "startsAt": "2026-10-01T22:00:00+00:00",
+    "endsAt": null,
+    "venue": "A8 Stage Club",
+    "city": "Saarbrücken",
+    "organizer": "Affenkäfig",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig xxx A8 xxx – 02.10.2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-01T22:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "A8 Stage Club"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Saarbrücken"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": null
+      },
+      "lineup": {
+        "state": "INVALID",
+        "value": "Folgt",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://affenkaefig.info/wp-content/uploads/2026/06/media-20260812-151321-08104fe22efe.jpg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43&embed=1&embed_layout=checkout&embed_flow=",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "startsAt": "2026-10-02T20:00:00+00:00",
+    "endsAt": "2026-10-03T05:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "NIBIRII",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "NIBIRII pres. ELY OAKS and more!"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-02T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-03T05:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "NIBIRII"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "NIBIRII pres. ELY OAKS!\n\nAfter a summer full of countless memories, it's time to head to our home ground\n\nonce again! At BOOTSHAUS, we will welcome you to a night filled with unleashed energy and pure music."
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "ELY OAKS, ADEMES, NORDCORREIA.MP3, VENTRIS, LEO.PARDYY, 2HOT2PLAY, BLONDESHAVEMOREFUN, MAIKE, DJ DISCOSTOFF, LIMONCELLO, PAMELA RAVE b2b BOUNCY BITCH, BBXNGZ ALL NIGHT LONG b2b, SUPPORTET BY, 333CXT, KULISCHKIN, KRANK., PARANORMILA, DUTCHMAN, ZOLTEC, GEHTHARDT, MATECH, NØEL, THAY, EMBRIX"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "House, Hard Techno, Techno, Trance"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6182025241205434360813116_7849080218319149542792833.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/c4CUlNfm/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2690"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "4"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/nibirii-pres-ely-oaks-and-more/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/nibirii-pres-ely-oaks/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://arep.co/m/ely-oaks-02-oct-2026",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/c4CUlNfm/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+    "title": "Blacklist Festival 2026",
+    "startsAt": "2026-10-09T16:00:00+00:00",
+    "endsAt": "2026-10-10T04:00:00+00:00",
+    "venue": "Turbinenhalle Oberhausen",
+    "city": "Oberhausen",
+    "organizer": "BLACKLIST",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Blacklist Festival 2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-09T16:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-10T04:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Turbinenhalle Oberhausen"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Oberhausen"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BLACKLIST"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Dubstep, Drum'n'Bass"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1076731085817763966290365_1596071649173286176473550.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://blacklist-festival.ticket.io/BF2Qb7HL/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "4700"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/10-2026-blacklist-festival-2026/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+    "title": "CHROME COLOGNE",
+    "startsAt": "2026-10-09T20:30:00+00:00",
+    "endsAt": "2026-10-10T06:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "CHROME COLOGNE",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "CHROME COLOGNE"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-09T20:30:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-10T06:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "CHROME COLOGNE"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Welcome to Chrome Cologne Chrome Cologne is a place for music, creativity, and freedom. At its core is an immersive hard techno experience where people come together to dance, express themselves, and enjoy the moment. As a sex-positive event, Chrome Cologne also offers an optional playroom. Participation is entirely voluntary. No one is expected or pressured to take part. The dancefloor remains the heart of the event. Awareness Comes First Creating a respectful and as safe as possible environment for all guests is our highest priority. Our Awareness Team is present throughout the entire event and can be easily identified by their printed Awareness shirts and blue LED lights. In addition, there is an Awareness Point located at the entrance of the playroom, where a team member will always be available to assist you. If you feel uncomfortable, experience harassment, or need help for any reason, please speak to us at any time. If you notice someone who may need support, we appreciate you informing our team as well. In addition to the Awareness Team, you can also approach the bar staff, cloakroom staff, or security personnel. Playroom Rules The playroom is a protected space for consensual encounters. The following rules apply without exception: Consent is key. Only a clear &quot;yes&quot; means yes. Always ask before observing, touching, or joining others. Respect personal boundaries without discussion. Treat all guests with respect and discretion. No drinks are allowed inside the playroom. Violations of these rules will be addressed consistently by our team. Dress Code Chrome Cologne is built on individuality and artistic expression. The dress code is an integral part of the concept and will be checked at the entrance. Examples of welcome attire include: Fetish wear Latex Leather Rubber Metal elements Masks Kinky fashion Creative and unconventional looks Bold and stylish outfits This list serves as guidance and is not exhaustive. What matters is not a single item of clothing, but the overall impression of your outfit and a visible engagement with the event&#039;s concept. The following are not permitted: Everyday clothing Regular jeans Cargo pants Tank tops Tracksuits Basic rave outfits without creative expression Cotton underwear Simple skirts or basic fashion made from everyday standard materials without a creative connection to the concept The dress code does not mean that you must show skin or dress revealingly. Creativity, personality, and a willingness to be part of the overall concept are what matter most. Our experienced entrance and sorting team will evaluate each outfit individually within the overall context of the event. The decision of the staff is final and binding. Guests who do not meet the dress code requirements will not be admitted to the event. Changing facilities and a cloakroom are available on site. If you are unsure about your outfit, feel free to bring an alternative. You may also contact us up to 24 hours before the event at outfit@chromecologne.com. Phone-Free Event A strict no-phone policy applies throughout the entire event. Smartphones must be checked in at the cloakroom unless there is a medical necessity requiring access to the device. In such cases, stickers will be provided to cover the phone&#039;s cameras. Guests who violate the phone policy will be required to leave the event. Together We Create the Space Chrome Cologne thrives on mutual respect, openness, and mindfulness. Look out for one another, support each other, and help create a space where everyone feels welcome, respected, and comfortable. Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "OGUZ"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hard Techno, Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7928634490493560351503764_7574647932272803674637142.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/Atz0dHLX/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3490"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/9-10-26-chrome-cologne/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "startsAt": "2026-10-09T22:00:00+00:00",
+    "endsAt": null,
+    "venue": "Essigfabrik / Elektroküche",
+    "city": "Köln",
+    "organizer": "Affenkäfig",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "MDMA – Musik Die Mich Antreibt 10.10.26"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-09T22:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Essigfabrik / Elektroküche"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "MDMA – 10. Oktober 2026 Am Samstag, den 10. Oktober 2026, kehrt MDMA in die Essigfabrik / Elektroküche Köln zurück. Freut euch auf eine kompromisslose Nacht mit treibenden Sounds, hoher Energie und einem Line-up, das den Dancefloor von Anfang bis Ende unter Strom setzt. Angeführt von Paolo Ferrara und Le Klown erwartet euch ein druckvolles Programm mit internationalen und lokalen Acts – in der unverwechselbaren Atmosphäre der Elektroküche. LINE-UP PAOLO FERRARA LE KLOWN ANNX HELLMAYER LHYST PØUL STZ TATTI VALKYRIE VANY 📅 Samstag, 10. Oktober 2026 📍 Elektroküche Köln / Essigfabrik 📌 Siegburger Straße 110, 50679 Köln Weitere Informationen zu Einlass, Beginn und Tickets folgen. MDMA – see you on the dancefloor."
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "PAOLO FERRARA, LE KLOWN, ANNX HELLMAYER, LHYST, PØUL STZ, TATTI VALKYRIE, VANY"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_LineUP_MDMA-1024x536.jpg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2000"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "startsAt": "2026-10-16T20:00:00+00:00",
+    "endsAt": "2026-10-17T03:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "CHRIS STUSSY pres. by BOOTSHAUS"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-16T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-17T03:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "On 16th October, CHRIS STUSSY plays the Bootshaus MAINFLOOR for the first time.\n\nKnown for flowing sets and an approach where the music comes first, he brings his distinctive energy to Bootshaus."
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "CHRIS STUSSY"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/1208667081739855683831546_8054987023148389219298412.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/By06xnf4/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "4500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/By06xnf4/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "startsAt": "2026-10-16T22:00:00+00:00",
+    "endsAt": null,
+    "venue": "Capitol",
+    "city": "Hagen",
+    "organizer": "Affenkäfig Veranstaltungen",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig XXX CAPITOL XXX Hagen"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-16T22:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Capitol"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hagen"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig Veranstaltungen"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": null
+      },
+      "lineup": {
+        "state": "INVALID",
+        "value": "Folgt",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB.jpg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1750"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "4"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/eventportal/",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14&embed=1&embed_layout=checkout&embed_flow=",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+    "title": "Cosmic Gate pres by Bootshaus & Senses!",
+    "startsAt": "2026-10-17T18:00:00+00:00",
+    "endsAt": "2026-10-18T00:30:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Cosmic Gate pres by Bootshaus & Senses!"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-17T18:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-18T00:30:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "COSMIC GATE, YOTTO, LAURA VAN DAM, BENJAMIN R"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Trance"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8423424595234835988097199_3186011873792818761687899.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://senses-bootshaus.ticket.io/GhUtpLGh/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2890"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "startsAt": "2026-10-23T21:00:00+00:00",
+    "endsAt": "2026-10-24T05:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "AFFENKÄFIG",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-23T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-24T05:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "AFFENKÄFIG"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/B3jK8aPC/img/holder-1080.jpg?7cf46cde"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/B3jK8aPC/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2490"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "title": "SA * 24.10.2026 | KitKatClub",
+    "startsAt": "2026-10-24T19:30:00+00:00",
+    "endsAt": "2026-10-25T05:30:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "KITKATCLUB",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "SA * 24.10.2026 | KitKatClub"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-24T19:30:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-25T05:30:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "KITKATCLUB"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "SA * 24.10.2026 | KitKatClub\n\nUhrzeit: 22:00 Uhr\n\nEintritt: 35 Euro\n\nVeranstalterkontakt: [email protected]\n\nSTRICT SEXUAL FANTASY DRESSCODE | Einlass vorbehalten!\n\nBUNT - SCHRILL - EXTRAVAGANT - VERRÜCKT - FANTASIEVOLLE ACCESSOIRES ausdrücklich herzlich willkommen! Darüber hinaus passend: Fetisch - Lack - Leder - Latex - Gummi - Plastik - Metall - Nylon - Gothic - Kostüm - Uniform - Drag - Burlesque - Straps - Heels - Strass - Barock - Rock - Kilt - Punk - Bodypainting - extravagant elegante Abendgarderobe - fantasievolle Accessoires - Style - Kink - Frech - Pornös - Glamour – Make-Up - Glitter - Glitzer - Bunt - Schrill - Extravagant - Verrückt | BEEINDRUCKT MIT KREATIVITÄT + ORIGINALITÄT!\n\nABSOLUTE NO GOs: normale Straßenkleidung – Straßenanzüge – Jeans – Sportkleidung – normale (schwarze) Stoffhosen – Camouflage – Baumwollunterwäsche – nicht zum hedonistischen Gesamteindruck positiv beitragende ausgelatschte alte Sneaker/Turnschuhe/Chucks.\n\nEine wichtige GRUNDREGEL als Orientierungshilfe: sofern Du mit Deinem Outfit durch die Innenstadt schlendern kannst, ohne dass sich jemand nach Dir umdreht, liegst Du mit an Sicherheit grenzender Wahrscheinlichkeit falsch! Und wer sich hinsichtlich der \"passenden Schale\" unsicher ist, empfehlen wir zur Überwindung unserer strikten Einlasskontrolle das Mitführen einer optionalen \"zweiten Hülle\".\n\nMÄNNNLICHE GÄSTE verbessern Ihre Chance auf Einlass erheblich per gerne bunt hedonistischer Kreativität statt Einbringung der faden Standardkombination \"schwarze Hose/Short + schwarzes Top bzw. schwarzer Harness\".\n\nDetailinfos + Shoppingadressen: www.vault-events.de/faq/sexual-fantasy-dresscode/\n\nVerkleide Dich nicht, sondern erfinde Dich neu!\n\nUmkleidebereich + anmietbare Schließfächer + bewachte Garderobe | ausschließlich Barzahlung\n\nGarderobe: 3 Euro (Jacken/Mäntel), 5 Euro (Gepäckstücke) // Schließfächer Medium (40 cm x 29 cm x 22 cm): 7 Euro // Schließfächer Large (40 cm x 29 cm x 32 cm): 10 Euro\n\nSTRIKTES HANDYVERBOT im gesamten Veranstaltungsbereich. Wer versucht, ebensolche einzuschmuggeln, darf 100%ig sicher DRAUSSEN weiterfeiern….!\n\nPLAY AREA SPIELREGELN: Es gelten die vor allen Spielbereichen sowie in der Umkleide/Garderobe auf großflächigen Bannern ausgehängten „PLAY AREA SPIELREGELN“. Übergriffige Gäste werden aus dem Verkehr gezogen + erhalten Hausverbot. Darüber hinaus der wichtige Hinweis, dass Euch während der gesamten Veranstaltung vor allen Spielbereichen und im Garderobenzelt unsere 15köpfige Kitty-Crew als hilfsbereite Ansprechpartner*innen für Anliegen aller Art zur Verfügung stehen * deutlich erkennbar am „KKC@Bootshaus Crew“ Badge + Neon-Leuchtarmband.\n\nDJ LineUp: to be announced\n\nSTYLE: mainly energetic Techno + uplifting TechHouse\n\nKitKatClub Cologne ist eine authentische Adaption des 1994 gegründeten und in Berlin ansässigen KitKatClub. Unangefochten einer der fantasievollsten Undergroundclubs weltweit, definiert sich der KitKatClub als avantgardistischer Nachtclub, der die Traditionen der „verruchten“ Berliner Clubs der „Goldenen Zwanziger“ aufgreift. Somit fusioniert der KitKatClub multimediale und künstlerische Elemente zum innovativen Konzept im Sinne des avantgardistischen Zeitgeistes.\n\nLIVE THE HEDONISTIC SPIRIT!"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Tech House, Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5661772516122494432347632_1676272899454372541097967.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub/",
+        "connectorId": "bootshaus-official"
+      }
+    ]
+  },
+  {
+    "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+    "title": "Halloween Weekender",
+    "startsAt": "2026-10-30T21:00:00+00:00",
+    "endsAt": "2026-10-31T23:00:00+00:00",
+    "venue": "Essigfabrik / Elektroküche",
+    "city": "Köln",
+    "organizer": "Affenkäfig",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Halloween Weekender"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-30T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-31T23:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Essigfabrik / Elektroküche"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Affenkäfig"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "SÜSSES ODER SAURES – DER ULTIMATIVE HALLOWEEN-ABRISS! Es wird dunkel, es wird laut, es wird absolut wild! Am Freitag, den 30.10.2026, starten wir in das brutalste Halloween-Wochenende des Jahres. Unter dem legendären Motto „Süsses oder Saures“ verwandeln wir die heiligen Hallen der Essigfabrik und der Elektroküche in Köln in einen düsteren Rave-Tempel. Macht euch bereit für schweißtreibende Bässe, exzessive Vibes und eine Nacht, die ihr so schnell nicht vergessen werdet. Wir servieren euch keine Süßigkeiten, sondern reinsten, kompromisslosen Techno auf zwei Floors! 🎃🔥 30.10 Zapravka Ian Crank b2b Modze EDNA Mr. Techno Dystopia Hellmayer Jenni Zimnol Matthias Olck 31.10 F!ymeon H!Dude Lee Ann Jens Lissat Ployzz Sandra Romina Tommy Libera"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://ticketkings.de/wp-content/uploads/2026/08/fb-format-2022-real.jpg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1850"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/halloween-weekender/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "startsAt": "2026-10-31T20:00:00+00:00",
+    "endsAt": "2026-11-01T06:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "LOONYLAND",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus & Loonyland pres. Halloween 2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-10-31T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-11-01T06:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "LOONYLAND"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/Hv4f09p8/img/holder-1080.jpg?bf64c054"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/Hv4f09p8/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3200"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "startsAt": "2026-12-11T22:00:00+00:00",
+    "endsAt": "2026-12-12T06:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "SARA LANDRY pres. by BOOTSHAUS"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-11T22:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-12T06:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "BOOTSHAUS"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "The High Priestess of Hard Techno is coming to Bootshaus.\n\nOn December 11th, one of the most defining artists of the new generation of hard techno takes over Bootshaus: Sara Landry.\n\nDJ, producer, label head and one of the most powerful forces in electronic music right now — Sara Landry has built a world that goes far beyond BPM and distorted kicks. Her sound is intense, emotional, spiritual and unapologetically heavy. What makes Sara Landry special is her ability to turn a DJ set into something much bigger than a night out.\n\nFrom sold-out headline shows to the world’s biggest festival stages, her rise has been nothing short of extraordinary. And now she's going to bring her energy to Bootshaus Cologne- We're more than excited for the one and only High Priestess!"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "SARA LANDRY"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hard Techno, Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2411844699771444345571847_3604682555113511790557907.png"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/jhUP7WQl/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3290"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+        "connectorId": "ticket-io-network-discovery"
+      },
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/sara-landry-pres-by-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+    "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+    "startsAt": "2026-12-19T21:00:00+00:00",
+    "endsAt": "2026-12-20T06:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "unreal",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "UNREAL x KUKO All Night Long World Tour (Cologne)"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-19T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-20T06:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "unreal"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Hard Techno, Techno"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/Fb6ZLtHW/events/nUs0Ktl4/img/holder-1080.jpg?d665e4a5"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "https://unreal-bootshaus.ticket.io/nUs0Ktl4/"
+      },
+      "ticketPrice": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "sold_out"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://unreal-bootshaus.ticket.io/nUs0Ktl4/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "startsAt": "2026-12-30T20:30:00+00:00",
+    "endsAt": "2026-12-31T05:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "KITKATCLUB",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "MI * 30.12.2026 | KitKatClub"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-30T20:30:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-31T05:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "KITKATCLUB"
+      },
+      "description": {
+        "state": "VERIFIED_COMPLETE",
+        "value": ""
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3500"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "1"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/",
+        "connectorId": "bootshaus-official"
+      }
+    ]
+  },
+  {
+    "eventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "title": "Bootshaus & Loonyland pres. NYE 2026",
+    "startsAt": "2026-12-31T20:00:00+00:00",
+    "endsAt": "2027-01-01T05:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "LOONYLAND",
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus & Loonyland pres. NYE 2026"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2026-12-31T20:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2027-01-01T05:00:00+00:00"
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "LOONYLAND"
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "no_verified_lineup_evidence"
+      },
+      "genres": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Electro, EDM"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5616035275419772183451960_7561256723362226899913166.jpeg"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/S0cbXDda/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2900"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "DISCOVERY_READY",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/S0cbXDda/",
+        "connectorId": null
+      }
+    ]
+  },
+  {
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "startsAt": "2027-01-23T21:00:00+00:00",
+    "endsAt": null,
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": null,
+    "fields": {
+      "title": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "DEBORAH DE LUCA pres by Bootshaus"
+      },
+      "startsAt": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2027-01-23T21:00:00+00:00"
+      },
+      "endsAt": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "venue": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Bootshaus"
+      },
+      "city": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "Köln"
+      },
+      "organizer": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": null
+      },
+      "description": {
+        "state": "INVALID",
+        "value": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endgültig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver's license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-WeiterverkaufsinformationDer Ticketkäufer darf keinen höheren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und fähig ist diese Veranstaltung zu besuchen.Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+        "reason": "no_verified_editorial_description_evidence"
+      },
+      "lineup": {
+        "state": "VERIFIED_PARTIAL",
+        "value": "DEBORAH DE LUCA"
+      },
+      "genres": {
+        "state": "UNRESOLVED_NO_EVIDENCE",
+        "value": "",
+        "reason": "evidence_layers_exhausted_without_genre"
+      },
+      "media": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf"
+      },
+      "ticketUrl": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "https://bootshaus-club.ticket.io/uSXeJhHU/"
+      },
+      "ticketPrice": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "3090"
+      },
+      "ticketStatus": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "available"
+      },
+      "sourceBindings": {
+        "state": "VERIFIED_COMPLETE",
+        "value": "2"
+      }
+    },
+    "readiness": "PARTIAL",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "connectorId": "ticket-io-network-discovery"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "connectorId": null
+      }
+    ]
+  }
+]

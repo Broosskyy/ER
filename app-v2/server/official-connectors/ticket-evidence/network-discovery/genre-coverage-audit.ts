@@ -1,7 +1,12 @@
 import type { LinkedQueryExecutor } from '../../../ingestion/sync/linked-db';
-import { parseDescriptionExplicitGenres } from '../../shared/parse-description-genres';
-import { normalizeOfficialGenreLabels, normalizedGenresToExplicitLabels } from '../../shared/normalize-genre';
+import { recoverBootshausGenresFromOfficialUrl } from '../../shared/bootshaus-genre-recovery';
+import { canonicalGenreKey, normalizeOfficialGenreLabels, normalizedGenresToExplicitLabels } from '../../shared/normalize-genre';
 import { loadStagingEventSnapshots, type StagingEventSnapshot } from '../../../ingestion/sync/canonical-consolidation';
+import {
+  auditGenreEvidenceForStaging,
+  hasGenreConflict,
+  type GenreEvidenceExhaustionResult,
+} from '../../shared/genre-evidence';
 
 export type GenreCoverageClassification =
   | 'GENRE_VERIFIED'
@@ -19,74 +24,109 @@ export interface GenreCoverageEntry {
   recommendedGenres: string[];
   classification: GenreCoverageClassification;
   reason?: string;
+  checkedLayers: string[];
+  explicitGenreCount: number;
+  lineupDerivedGenres: string[];
+  confidenceBand: 'EXPLICIT' | 'HIGH' | 'MEDIUM' | 'LOW' | 'UNRESOLVED';
 }
 
-function collectGenreEvidence(event: StagingEventSnapshot): string[] {
-  const labels = new Set<string>(event.genres);
-  for (const label of parseDescriptionExplicitGenres(event.description ?? undefined)) {
-    labels.add(label);
+function classifyGenreEntry(
+  event: StagingEventSnapshot,
+  exhaustion: GenreEvidenceExhaustionResult,
+): GenreCoverageEntry {
+  const sources = event.sources.map((source) => source.connectorId ?? source.sourceRole).filter(Boolean) as string[];
+  const recommended = exhaustion.recommendedGenres;
+  const available = [...new Set([...event.genres, ...recommended])];
+
+  let classification: GenreCoverageClassification;
+  let reason: string | undefined;
+  let evidenceStrength: 'strong' | 'weak' | 'none' = 'none';
+  let confidenceBand: GenreCoverageEntry['confidenceBand'] = 'UNRESOLVED';
+
+  if (event.genres.length > 0 && hasGenreConflict(event.genres, recommended)) {
+    classification = 'GENRE_CONFLICT_REVIEW';
+    reason = 'current_genres_disagree_with_verified_evidence';
+    evidenceStrength = 'strong';
+    confidenceBand = 'HIGH';
+  } else if (event.genres.length > 0) {
+    classification = 'GENRE_VERIFIED';
+    evidenceStrength = event.genres.length > 0 ? 'strong' : 'weak';
+    confidenceBand = exhaustion.explicitGenreCount > 0 ? 'EXPLICIT' : 'HIGH';
+  } else if (recommended.length > 0) {
+    classification = 'GENRE_RECOVERABLE';
+    reason = 'verified_evidence_after_exhaustion';
+    evidenceStrength = 'strong';
+    confidenceBand =
+      exhaustion.explicitGenreCount > 0
+        ? 'EXPLICIT'
+        : exhaustion.lineupDerivedCount > 0
+          ? 'HIGH'
+          : 'HIGH';
+  } else {
+    classification = 'GENRE_UNRESOLVED_NO_EVIDENCE';
+    reason =
+      exhaustion.checkedLayers.length > 0
+        ? 'evidence_layers_exhausted_without_genre'
+        : 'no_verified_genre_evidence_available';
+    confidenceBand = 'UNRESOLVED';
   }
-  return [...labels];
+
+  return {
+    eventId: event.eventId,
+    title: event.title,
+    sources,
+    currentGenres: event.genres,
+    availableGenreEvidence: available,
+    evidenceStrength,
+    recommendedGenres: recommended,
+    classification,
+    reason,
+    checkedLayers: exhaustion.checkedLayers,
+    explicitGenreCount: exhaustion.explicitGenreCount,
+    lineupDerivedGenres: exhaustion.lineupDerivedGenres,
+    confidenceBand,
+  };
 }
 
 export function auditGenreCoverage(runQuery: LinkedQueryExecutor): GenreCoverageEntry[] {
   const events = loadStagingEventSnapshots(runQuery).filter((event) => event.status === 'published');
-  return events.map((event) => {
-    const available = collectGenreEvidence(event);
-    const recommended = normalizedGenresToExplicitLabels(normalizeOfficialGenreLabels(available).normalized);
-    const sources = event.sources.map((source) => source.connectorId ?? source.sourceRole).filter(Boolean) as string[];
+  const exhaustions = auditGenreEvidenceForStaging(runQuery, events);
+  return events.map((event, index) => classifyGenreEntry(event, exhaustions[index]!));
+}
 
-    if (event.genres.length > 0 && recommended.length > 0) {
-      return {
-        eventId: event.eventId,
-        title: event.title,
-        sources,
-        currentGenres: event.genres,
-        availableGenreEvidence: available,
-        evidenceStrength: 'strong',
-        recommendedGenres: recommended,
-        classification: 'GENRE_VERIFIED',
-      };
+export async function repairBootshausMissingGenres(
+  runQuery: LinkedQueryExecutor,
+  entries: GenreCoverageEntry[],
+  events: StagingEventSnapshot[],
+): Promise<number> {
+  let repaired = 0;
+  const unresolved = entries.filter((entry) => entry.classification === 'GENRE_UNRESOLVED_NO_EVIDENCE');
+  for (const entry of unresolved) {
+    const event = events.find((item) => item.eventId === entry.eventId);
+    const bootshausUrl = event?.sources.find(
+      (source) => /bootshaus\.tv\/events\//i.test(source.sourceUrl ?? ''),
+    )?.sourceUrl;
+    if (!bootshausUrl) {
+      continue;
     }
-
-    if (event.genres.length === 0 && recommended.length > 0) {
-      return {
-        eventId: event.eventId,
-        title: event.title,
-        sources,
-        currentGenres: event.genres,
-        availableGenreEvidence: available,
-        evidenceStrength: 'strong',
-        recommendedGenres: recommended,
-        classification: 'GENRE_RECOVERABLE',
-        reason: 'verified_description_or_source_genre_evidence',
-      };
+    const recovered = await recoverBootshausGenresFromOfficialUrl(bootshausUrl);
+    if (recovered.length === 0) {
+      continue;
     }
-
-    if (event.genres.length > 0 && recommended.length === 0) {
-      return {
-        eventId: event.eventId,
-        title: event.title,
-        sources,
-        currentGenres: event.genres,
-        availableGenreEvidence: available,
-        evidenceStrength: 'weak',
-        recommendedGenres: event.genres,
-        classification: 'GENRE_VERIFIED',
-      };
+    runQuery(`DELETE FROM public.event_genres WHERE event_id = '${entry.eventId}'::uuid;`);
+    const normalized = normalizeOfficialGenreLabels(recovered);
+    for (const [index, label] of normalizedGenresToExplicitLabels(normalized.normalized).entries()) {
+      const genreKey =
+        normalized.normalized.find((genre) => genre.displayName === label)?.genreKey ??
+        canonicalGenreKey(label);
+      runQuery(
+        `INSERT INTO public.event_genres (event_id, genre_key, display_name, sort_order)
+         VALUES ('${entry.eventId}'::uuid, '${genreKey.replace(/'/g, "''")}', '${label.replace(/'/g, "''")}', ${index});`,
+      );
     }
-
-    return {
-      eventId: event.eventId,
-      title: event.title,
-      sources,
-      currentGenres: event.genres,
-      availableGenreEvidence: available,
-      evidenceStrength: 'none',
-      recommendedGenres: [],
-      classification: 'GENRE_UNRESOLVED_NO_EVIDENCE',
-    };
-  });
+    repaired += 1;
+  }
+  return repaired;
 }
 
 export function repairRecoverableGenres(
@@ -100,7 +140,7 @@ export function repairRecoverableGenres(
     for (const [index, label] of normalizedGenresToExplicitLabels(normalized.normalized).entries()) {
       const genreKey =
         normalized.normalized.find((genre) => genre.displayName === label)?.genreKey ??
-        label.toLowerCase().replace(/\s+/g, '-');
+        canonicalGenreKey(label);
       runQuery(
         `INSERT INTO public.event_genres (event_id, genre_key, display_name, sort_order)
          VALUES ('${entry.eventId}'::uuid, '${genreKey.replace(/'/g, "''")}', '${label.replace(/'/g, "''")}', ${index});`,

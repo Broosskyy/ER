@@ -73,7 +73,7 @@ const OCR_PIPE_PATTERN = /\|/;
 const EVENT_TITLE_DESCRIPTOR_PATTERN =
   /\b(?:festival|weekender|sessions?|showcase|world tour|all night long|paint[- ]?rave|paint splash)\b/i;
 const LINEUP_PLACEHOLDER_PATTERN =
-  /^(?:soon|tba|to be announced|more tba|support tba|and more|and many more|coming\s*:?\s*soon|coming soon|line-?up\s+soon|lineup\s+soon|announced\s+soon)$/i;
+  /^(?:soon|tba|to be announced|more tba|support tba|and more|and many more|coming\s*:?\s*soon|coming soon|line-?up\s+soon|lineup\s+soon|announced\s+soon|folgt|line-?up\s+folgt|lineup\s+folgt)$/i;
 const LINEUP_OCR_PLACEHOLDER_PATTERN =
   /^line\s*-?\s*up(?:\s+[a-z]{1,4})?$/i;
 const LINEUP_OCR_SUFFIX_PATTERN = /\b(?:ss|soon|tba)\b/i;

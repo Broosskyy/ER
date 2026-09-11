@@ -9,6 +9,8 @@ const DESCRIPTION_GENRE_PHRASE_PATTERNS: Array<{
   rejectWindow?: RegExp;
 }> = [
   { pattern: /\bhard[\s-]?techno\b/i, label: 'Hard Techno' },
+  { pattern: /\bindustrial[\s-]?techno\b/i, label: 'Industrial Techno' },
+  { pattern: /\bmelodic[\s-]?techno\b/i, label: 'Melodic Techno' },
   { pattern: /\btech[\s-]?house\b/i, label: 'Tech House' },
   { pattern: /\bdeep[\s-]?house\b/i, label: 'Deep House' },
   { pattern: /\bprogressive[\s-]?house\b/i, label: 'Progressive House' },

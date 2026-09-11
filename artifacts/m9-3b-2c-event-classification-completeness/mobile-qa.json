@@ -1,0 +1,4 @@
+{
+  "skipped": true,
+  "note": "Playwright mobile viewport verification deferred to manual Android QA pass."
+}
