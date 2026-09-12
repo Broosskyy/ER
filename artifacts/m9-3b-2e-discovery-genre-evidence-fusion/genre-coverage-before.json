@@ -51,7 +51,8 @@
       "House",
       "Progressive House",
       "EDM",
-      "Dance"
+      "Dance",
+      "Electronic"
     ],
     "evidenceStrength": "strong",
     "recommendedGenres": [
@@ -60,7 +61,7 @@
       "House",
       "Progressive House",
       "EDM",
-      "Dance"
+      "Electronic"
     ],
     "classification": "GENRE_VERIFIED",
     "checkedLayers": [
@@ -74,7 +75,7 @@
       "House",
       "Progressive House",
       "EDM",
-      "Dance"
+      "Electronic"
     ],
     "confidenceBand": "HIGH"
   },
@@ -301,19 +302,30 @@
       "bootshaus-official",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
       "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
@@ -322,19 +334,26 @@
       "bootshaus-official",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
       "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
@@ -526,18 +545,26 @@
       "ticket",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
+      "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
@@ -696,18 +723,26 @@
       "ticket",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
+      "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
@@ -744,18 +779,26 @@
       "bootshaus-official",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
+      "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
@@ -823,18 +866,26 @@
       "bootshaus-official",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
+      "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
@@ -907,18 +958,30 @@
     "sources": [
       "bootshaus-official"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Tech House",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
+      "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
   },
   {
     "eventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
@@ -959,18 +1022,25 @@
       "ticket-io-network-discovery",
       "ticket"
     ],
-    "currentGenres": [],
-    "availableGenreEvidence": [],
-    "evidenceStrength": "none",
-    "recommendedGenres": [],
-    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
-    "reason": "evidence_layers_exhausted_without_genre",
+    "currentGenres": [
+      "Peak Time Techno"
+    ],
+    "availableGenreEvidence": [
+      "Peak Time Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Peak Time Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
     "checkedLayers": [
       "canonical_db",
       "artist_identity_cache"
     ],
     "explicitGenreCount": 0,
-    "lineupDerivedGenres": [],
-    "confidenceBand": "UNRESOLVED"
+    "lineupDerivedGenres": [
+      "Peak Time Techno"
+    ],
+    "confidenceBand": "HIGH"
   }
 ]

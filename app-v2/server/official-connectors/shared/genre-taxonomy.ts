@@ -97,6 +97,22 @@ export function areGenreKeysTaxonomyCompatible(left: string, right: string): boo
   return getPrimaryGenreFamily(a) === getPrimaryGenreFamily(b);
 }
 
+export function isTaxonomyAncestor(ancestor: string, descendant: string): boolean {
+  const normalizedAncestor = canonicalGenreKey(ancestor);
+  const normalizedDescendant = canonicalGenreKey(descendant);
+  if (normalizedAncestor === normalizedDescendant) {
+    return false;
+  }
+  return getAncestorGenreKeys(normalizedDescendant).includes(normalizedAncestor);
+}
+
+export function pruneRedundantGenreKeys(genreKeys: string[]): string[] {
+  const normalized = genreKeys.map((key) => canonicalGenreKey(key));
+  return normalized.filter(
+    (key) => !normalized.some((other) => other !== key && isTaxonomyAncestor(key, other)),
+  );
+}
+
 export function hasIncompatibleGenreFamilies(genreKeys: string[]): boolean {
   const normalized = genreKeys.map((key) => canonicalGenreKey(key));
   for (let index = 0; index < normalized.length; index += 1) {

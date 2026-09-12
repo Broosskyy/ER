@@ -1,6 +1,23 @@
-import { hasIncompatibleGenreFamilies } from '../genre-taxonomy';
+import {
+  getPrimaryGenreFamily,
+  hasIncompatibleGenreFamilies,
+  pruneRedundantGenreKeys,
+} from '../genre-taxonomy';
 import { canonicalGenreKey } from '../normalize-genre';
 import type { ArtistGenreEvidence, ArtistGenreProfile, ArtistProfileConfidence } from './types';
+
+const ELECTRONIC_FAMILY_PRIORITY = [
+  'techno',
+  'hard-dance',
+  'hardstyle',
+  'house',
+  'trance',
+  'electro',
+  'drum-and-bass',
+  'dubstep',
+  'bounce',
+  'electronic',
+];
 
 const STRENGTH_WEIGHT: Record<ArtistGenreEvidence['evidenceStrength'], number> = {
   STRONG: 3,
@@ -56,7 +73,7 @@ export function buildArtistGenreProfile(input: {
     genreVotes.set(key, current);
   }
 
-  const canonicalGenres = [...genreVotes.values()]
+  let canonicalGenres = [...genreVotes.values()]
     .map((entry) => {
       let confidence: ArtistProfileConfidence = 'UNRESOLVED';
       if (entry.sourceTypes.size >= 2 && entry.weight >= 4) {
@@ -80,6 +97,18 @@ export function buildArtistGenreProfile(input: {
     })
     .filter((entry) => entry.confidence !== 'UNRESOLVED' && entry.confidence !== 'LOW')
     .sort((left, right) => CONFIDENCE_RANK[right.confidence] - CONFIDENCE_RANK[left.confidence]);
+
+  const prunedKeys = new Set(
+    pruneRedundantGenreKeys(canonicalGenres.map((genre) => genre.genreKey)),
+  );
+  canonicalGenres = canonicalGenres.filter((genre) => prunedKeys.has(genre.genreKey));
+
+  if (
+    canonicalGenres.length >= 2 &&
+    hasIncompatibleGenreFamilies(canonicalGenres.map((genre) => genre.genreKey))
+  ) {
+    canonicalGenres = collapseSingleSourceGenreConflict(canonicalGenres, input.evidence);
+  }
 
   const hasNarrowConflict =
     canonicalGenres.length >= 2 &&
@@ -113,6 +142,77 @@ export function buildArtistGenreProfile(input: {
           ? 'artist_genre_conflict_review'
           : 'artist_evidence_consensus',
   };
+}
+
+function familyPriorityScore(family: string): number {
+  const index = ELECTRONIC_FAMILY_PRIORITY.indexOf(family);
+  return index === -1 ? 0 : ELECTRONIC_FAMILY_PRIORITY.length - index;
+}
+
+function collapseSingleSourceGenreConflict(
+  genres: Array<{
+    genreKey: string;
+    displayName: string;
+    confidence: ArtistProfileConfidence;
+    sourceCount: number;
+  }>,
+  evidence: ArtistGenreEvidence[],
+): Array<{
+  genreKey: string;
+  displayName: string;
+  confidence: ArtistProfileConfidence;
+  sourceCount: number;
+}> {
+  const sourceRefs = new Set(evidence.map((record) => record.sourceReference));
+  if (sourceRefs.size !== 1) {
+    return genres;
+  }
+
+  const familyBuckets = new Map<
+    string,
+    Array<{
+      genreKey: string;
+      displayName: string;
+      confidence: ArtistProfileConfidence;
+      sourceCount: number;
+      score: number;
+    }>
+  >();
+
+  for (const genre of genres) {
+    const family = getPrimaryGenreFamily(genre.genreKey);
+    const bucket = familyBuckets.get(family) ?? [];
+    bucket.push({
+      ...genre,
+      score: CONFIDENCE_RANK[genre.confidence] + familyPriorityScore(family),
+    });
+    familyBuckets.set(family, bucket);
+  }
+
+  const winningFamily = [...familyBuckets.entries()].sort((left, right) => {
+    const leftScore = left[1].reduce((sum, entry) => sum + entry.score, 0);
+    const rightScore = right[1].reduce((sum, entry) => sum + entry.score, 0);
+    if (rightScore !== leftScore) {
+      return rightScore - leftScore;
+    }
+    return familyPriorityScore(right[0]) - familyPriorityScore(left[0]);
+  })[0]?.[1];
+
+  if (!winningFamily || winningFamily.length === 0) {
+    return genres;
+  }
+
+  const winningKeys = new Set(
+    pruneRedundantGenreKeys(winningFamily.map((genre) => genre.genreKey)),
+  );
+  return winningFamily
+    .filter((genre) => winningKeys.has(genre.genreKey))
+    .map(({ genreKey, displayName, confidence, sourceCount }) => ({
+      genreKey,
+      displayName,
+      confidence,
+      sourceCount,
+    }));
 }
 
 export function mergeArtistEvidence(

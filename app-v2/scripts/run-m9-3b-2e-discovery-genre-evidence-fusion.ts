@@ -157,6 +157,8 @@ async function main(): Promise<void> {
   if (existsSync(b2dProfilesPath)) {
     store.importProfiles(JSON.parse(readFileSync(b2dProfilesPath, 'utf8')) as ArtistGenreProfile[]);
   }
+  const profilesRebuiltFromEvidence = store.rebuildAllProfiles();
+  store.save();
   const intelligenceDryRun = await runArtistIntelligencePass({
     events: snapshots,
     runQuery,
@@ -166,6 +168,7 @@ async function main(): Promise<void> {
     negativeCache,
   });
   writeJson('artist-evidence-acquisition.json', {
+    profilesRebuiltFromEvidence,
     artistsEvaluated: intelligenceDryRun.artistsEvaluated,
     artistsClassified: intelligenceDryRun.artistsClassified,
     artistsUnresolved: intelligenceDryRun.artistsUnresolved,

@@ -1,23 +1,32 @@
 {
+  "profilesRebuiltFromEvidence": 134,
   "artistsEvaluated": 153,
-  "artistsClassified": 46,
-  "artistsUnresolved": 107,
+  "artistsClassified": 117,
+  "artistsUnresolved": 36,
   "lineupConsensus": [
     {
       "eventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
       "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
       "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 2,
-      "genreDistribution": {}
+      "classifiedArtists": 1,
+      "unclassifiedArtists": 1,
+      "genreDistribution": {
+        "techno": 1
+      }
     },
     {
       "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
       "title": "R3HAB pres. by BOOTSHAUS",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 6,
-      "genreDistribution": {}
+      "genres": [
+        "Bass House",
+        "Progressive House"
+      ],
+      "classifiedArtists": 3,
+      "unclassifiedArtists": 3,
+      "genreDistribution": {
+        "bass-house": 3,
+        "progressive-house": 3
+      }
     },
     {
       "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
@@ -28,32 +37,42 @@
       "classifiedArtists": 1,
       "unclassifiedArtists": 0,
       "genreDistribution": {
-        "hardtechno": 1
+        "hardtechno": 2
       }
     },
     {
       "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
       "title": "Bootshaus Sommerfest auf 4 Floors!",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 17,
-      "genreDistribution": {}
+      "genres": [
+        "Hard Techno"
+      ],
+      "classifiedArtists": 14,
+      "unclassifiedArtists": 3,
+      "genreDistribution": {
+        "hardtechno": 14
+      }
     },
     {
       "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
       "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
       "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 3,
-      "genreDistribution": {}
+      "classifiedArtists": 1,
+      "unclassifiedArtists": 2,
+      "genreDistribution": {
+        "techno": 1
+      }
     },
     {
       "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
       "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 9,
-      "genreDistribution": {}
+      "genres": [
+        "Hard Dance"
+      ],
+      "classifiedArtists": 5,
+      "unclassifiedArtists": 6,
+      "genreDistribution": {
+        "hard-dance": 5
+      }
     },
     {
       "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
@@ -64,7 +83,7 @@
       "classifiedArtists": 4,
       "unclassifiedArtists": 0,
       "genreDistribution": {
-        "house": 4
+        "house": 5
       }
     },
     {
@@ -76,7 +95,7 @@
       "classifiedArtists": 2,
       "unclassifiedArtists": 0,
       "genreDistribution": {
-        "house": 2
+        "house": 3
       }
     },
     {
@@ -90,19 +109,27 @@
     {
       "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
       "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 8,
-      "genreDistribution": {}
+      "genres": [
+        "Hard Techno"
+      ],
+      "classifiedArtists": 4,
+      "unclassifiedArtists": 6,
+      "genreDistribution": {
+        "hardtechno": 4
+      }
     },
     {
       "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
       "title": "BC173 Airport Session pres. by Bootshaus",
-      "genres": [],
-      "classifiedArtists": 1,
-      "unclassifiedArtists": 3,
+      "genres": [
+        "Techno"
+      ],
+      "classifiedArtists": 3,
+      "unclassifiedArtists": 2,
       "genreDistribution": {
-        "techno": 1
+        "techno": 3,
+        "bass-house": 1,
+        "progressive-house": 1
       }
     },
     {
@@ -111,8 +138,8 @@
       "genres": [
         "Techno"
       ],
-      "classifiedArtists": 11,
-      "unclassifiedArtists": 2,
+      "classifiedArtists": 10,
+      "unclassifiedArtists": 4,
       "genreDistribution": {
         "techno": 11
       }
@@ -120,10 +147,14 @@
     {
       "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
       "title": "Bootshaus Sommerfest Closing",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 18,
-      "genreDistribution": {}
+      "genres": [
+        "Techno"
+      ],
+      "classifiedArtists": 15,
+      "unclassifiedArtists": 3,
+      "genreDistribution": {
+        "techno": 15
+      }
     },
     {
       "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
@@ -146,8 +177,7 @@
       "classifiedArtists": 7,
       "unclassifiedArtists": 1,
       "genreDistribution": {
-        "hardtechno": 7,
-        "techno": 1
+        "hardtechno": 8
       }
     },
     {
@@ -159,7 +189,7 @@
       "classifiedArtists": 4,
       "unclassifiedArtists": 0,
       "genreDistribution": {
-        "house": 4
+        "house": 5
       }
     },
     {
@@ -168,10 +198,10 @@
       "genres": [
         "Hard Techno"
       ],
-      "classifiedArtists": 7,
-      "unclassifiedArtists": 1,
+      "classifiedArtists": 5,
+      "unclassifiedArtists": 5,
       "genreDistribution": {
-        "hardtechno": 7
+        "hardtechno": 6
       }
     },
     {
@@ -185,10 +215,14 @@
     {
       "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
       "title": "NIBIRII pres. ELY OAKS and more!",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 24,
-      "genreDistribution": {}
+      "genres": [
+        "Hard Techno"
+      ],
+      "classifiedArtists": 19,
+      "unclassifiedArtists": 6,
+      "genreDistribution": {
+        "hardtechno": 19
+      }
     },
     {
       "eventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
@@ -202,14 +236,12 @@
       "eventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
       "title": "CHROME COLOGNE",
       "genres": [
-        "Hard Techno",
-        "Techno"
+        "Hard Techno"
       ],
       "classifiedArtists": 1,
       "unclassifiedArtists": 0,
       "genreDistribution": {
-        "hardtechno": 1,
-        "techno": 1
+        "hardtechno": 1
       }
     },
     {
@@ -284,14 +316,12 @@
       "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
       "title": "SARA LANDRY pres. by BOOTSHAUS",
       "genres": [
-        "Hard Techno",
-        "Techno"
+        "Hard Techno"
       ],
       "classifiedArtists": 1,
       "unclassifiedArtists": 0,
       "genreDistribution": {
-        "hardtechno": 2,
-        "techno": 2
+        "hardtechno": 2
       }
     },
     {
@@ -321,10 +351,14 @@
     {
       "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
       "title": "DEBORAH DE LUCA pres by Bootshaus",
-      "genres": [],
-      "classifiedArtists": 0,
-      "unclassifiedArtists": 1,
-      "genreDistribution": {}
+      "genres": [
+        "Peak Time Techno"
+      ],
+      "classifiedArtists": 1,
+      "unclassifiedArtists": 0,
+      "genreDistribution": {
+        "peak-time-techno": 2
+      }
     }
   ]
 }

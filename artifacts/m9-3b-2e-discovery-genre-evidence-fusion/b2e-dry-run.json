@@ -41,19 +41,36 @@
       "title": "R3HAB pres. by BOOTSHAUS",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "WEAK_IMPORT_QUALIFICATION",
-      "contributions": [],
+      "contributions": [
+        {
+          "genreKey": "bass-house",
+          "displayName": "Bass House",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        },
+        {
+          "genreKey": "progressive-house",
+          "displayName": "Progressive House",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ],
       "recommendedGenres": [
         "Bass House",
-        "Electro",
-        "House",
-        "Progressive House",
-        "EDM",
-        "Dance"
+        "Progressive House"
       ],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
       "changedFromCurrent": true,
-      "importEligibilityReview": true
+      "importEligibilityReview": false
     },
     {
       "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
@@ -95,18 +112,25 @@
       "title": "Bootshaus Sommerfest auf 4 Floors!",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "WEAK_IMPORT_QUALIFICATION",
-      "contributions": [],
-      "recommendedGenres": [
-        "Dubstep",
-        "Electro",
-        "Hard Techno",
-        "Techno",
-        "EDM"
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
       ],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
+      "recommendedGenres": [
+        "Hard Techno"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
       "changedFromCurrent": true,
-      "importEligibilityReview": true
+      "importEligibilityReview": false
     },
     {
       "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
@@ -178,6 +202,16 @@
           "sourceReference": "dnb,electro",
           "classificationReason": "discovery_relevance_genre_candidate",
           "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hard-dance",
+          "displayName": "Hard Dance",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
         }
       ],
       "recommendedGenres": [
@@ -258,24 +292,50 @@
       "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "WEAK_IMPORT_QUALIFICATION",
-      "contributions": [],
-      "recommendedGenres": [],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
-      "changedFromCurrent": false,
-      "importEligibilityReview": true
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ],
+      "recommendedGenres": [
+        "Hard Techno"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
+      "changedFromCurrent": true,
+      "importEligibilityReview": false
     },
     {
       "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
       "title": "BC173 Airport Session pres. by Bootshaus",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "WEAK_IMPORT_QUALIFICATION",
-      "contributions": [],
-      "recommendedGenres": [],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
+      "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ],
+      "recommendedGenres": [
+        "Techno"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
       "changedFromCurrent": false,
-      "importEligibilityReview": true
+      "importEligibilityReview": false
     },
     {
       "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
@@ -307,17 +367,25 @@
       "title": "Bootshaus Sommerfest Closing",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "WEAK_IMPORT_QUALIFICATION",
-      "contributions": [],
-      "recommendedGenres": [
-        "Tech House",
-        "Techno",
-        "Electro",
-        "Dubstep"
+      "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
       ],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
+      "recommendedGenres": [
+        "Techno"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
       "changedFromCurrent": true,
-      "importEligibilityReview": true
+      "importEligibilityReview": false
     },
     {
       "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
@@ -428,20 +496,20 @@
         {
           "genreKey": "techno",
           "displayName": "Techno",
-          "layer": "DESCRIPTION",
-          "authority": 82,
-          "confidence": "MEDIUM",
-          "sourceReference": "classified_series_sibling",
-          "classificationReason": "event_series_genre_inheritance",
-          "independenceGroup": "exhaustion:B_STRONG"
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_metadata_consensus",
+          "classificationReason": "lineup_artist_metadata_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
         }
       ],
       "recommendedGenres": [
         "Techno"
       ],
-      "genreConfidence": "MEDIUM",
-      "classificationMethod": "multi_source_fusion",
-      "changedFromCurrent": true,
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
+      "changedFromCurrent": false,
       "importEligibilityReview": false
     },
     {
@@ -449,15 +517,23 @@
       "title": "NIBIRII pres. ELY OAKS and more!",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "MODERATE_EVENT_SPECIFIC",
-      "contributions": [],
-      "recommendedGenres": [
-        "House",
-        "Hard Techno",
-        "Techno",
-        "Trance"
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
       ],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
+      "recommendedGenres": [
+        "Hard Techno"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
       "changedFromCurrent": true,
       "importEligibilityReview": false
     },
@@ -504,8 +580,8 @@
       "importQualification": "STRONG_EVENT_SPECIFIC",
       "contributions": [
         {
-          "genreKey": "hard techno",
-          "displayName": "Hard Techno",
+          "genreKey": "techno",
+          "displayName": "Techno",
           "layer": "DESCRIPTION",
           "authority": 82,
           "confidence": "HIGH",
@@ -514,14 +590,14 @@
           "independenceGroup": "exhaustion:B_STRONG"
         },
         {
-          "genreKey": "techno",
-          "displayName": "Techno",
-          "layer": "DISCOVERY_GENRE_CANDIDATE",
-          "authority": 78,
+          "genreKey": "hard techno",
+          "displayName": "Hard Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
           "confidence": "HIGH",
           "sourceReference": "techno,hard_techno,rave,hard_techno_abbrev",
           "classificationReason": "discovery_relevance_genre_candidate",
-          "independenceGroup": "discovery:genre"
+          "independenceGroup": "exhaustion:B_STRONG"
         },
         {
           "genreKey": "hardtechno",
@@ -535,8 +611,8 @@
         }
       ],
       "recommendedGenres": [
-        "Hard Techno",
-        "Techno"
+        "Techno",
+        "Hard Techno"
       ],
       "genreConfidence": "HIGH",
       "classificationMethod": "artist_lineup_fusion",
@@ -576,20 +652,20 @@
         {
           "genreKey": "techno",
           "displayName": "Techno",
-          "layer": "DESCRIPTION",
-          "authority": 82,
-          "confidence": "MEDIUM",
-          "sourceReference": "classified_series_sibling",
-          "classificationReason": "event_series_genre_inheritance",
-          "independenceGroup": "exhaustion:B_STRONG"
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_metadata_consensus",
+          "classificationReason": "lineup_artist_metadata_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
         }
       ],
       "recommendedGenres": [
         "Techno"
       ],
-      "genreConfidence": "MEDIUM",
-      "classificationMethod": "multi_source_fusion",
-      "changedFromCurrent": true,
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
+      "changedFromCurrent": false,
       "importEligibilityReview": false
     },
     {
@@ -626,51 +702,6 @@
         {
           "genreKey": "techno",
           "displayName": "Techno",
-          "layer": "DESCRIPTION",
-          "authority": 82,
-          "confidence": "MEDIUM",
-          "sourceReference": "classified_series_sibling",
-          "classificationReason": "event_series_genre_inheritance",
-          "independenceGroup": "exhaustion:B_STRONG"
-        }
-      ],
-      "recommendedGenres": [
-        "Techno"
-      ],
-      "genreConfidence": "MEDIUM",
-      "classificationMethod": "multi_source_fusion",
-      "changedFromCurrent": true,
-      "importEligibilityReview": false
-    },
-    {
-      "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
-      "title": "SA * 24.10.2026 | KitKatClub",
-      "domainClassification": "ELECTRONIC_HIGH",
-      "importQualification": "STRONG_EVENT_SPECIFIC",
-      "contributions": [
-        {
-          "genreKey": "tech house",
-          "displayName": "Tech House",
-          "layer": "DESCRIPTION",
-          "authority": 82,
-          "confidence": "HIGH",
-          "sourceReference": "techno,tech_house",
-          "classificationReason": "discovery_relevance_genre_candidate",
-          "independenceGroup": "exhaustion:B_STRONG"
-        },
-        {
-          "genreKey": "techno",
-          "displayName": "Techno",
-          "layer": "DISCOVERY_GENRE_CANDIDATE",
-          "authority": 78,
-          "confidence": "HIGH",
-          "sourceReference": "techno,tech_house",
-          "classificationReason": "discovery_relevance_genre_candidate",
-          "independenceGroup": "discovery:genre"
-        },
-        {
-          "genreKey": "tech-house",
-          "displayName": "Tech House",
           "layer": "LINEUP_CONSENSUS",
           "authority": 72,
           "confidence": "HIGH",
@@ -680,11 +711,46 @@
         }
       ],
       "recommendedGenres": [
-        "Tech House",
         "Techno"
       ],
       "genreConfidence": "HIGH",
-      "classificationMethod": "discovery_evidence_fusion",
+      "classificationMethod": "artist_lineup_fusion",
+      "changedFromCurrent": false,
+      "importEligibilityReview": false
+    },
+    {
+      "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "importQualification": "STRONG_EVENT_SPECIFIC",
+      "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,tech_house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "tech house",
+          "displayName": "Tech House",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,tech_house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        }
+      ],
+      "recommendedGenres": [
+        "Techno",
+        "Tech House"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "multi_source_fusion",
       "changedFromCurrent": false,
       "importEligibilityReview": false
     },
@@ -722,20 +788,20 @@
         {
           "genreKey": "techno",
           "displayName": "Techno",
-          "layer": "DESCRIPTION",
-          "authority": 82,
-          "confidence": "MEDIUM",
-          "sourceReference": "classified_series_sibling",
-          "classificationReason": "event_series_genre_inheritance",
-          "independenceGroup": "exhaustion:B_STRONG"
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_metadata_consensus",
+          "classificationReason": "lineup_artist_metadata_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
         }
       ],
       "recommendedGenres": [
         "Techno"
       ],
-      "genreConfidence": "MEDIUM",
-      "classificationMethod": "multi_source_fusion",
-      "changedFromCurrent": true,
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
+      "changedFromCurrent": false,
       "importEligibilityReview": false
     },
     {
@@ -744,6 +810,16 @@
       "domainClassification": "ELECTRONIC_HIGH",
       "importQualification": "STRONG_EVENT_SPECIFIC",
       "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,hard_techno,electro,dj_set,hard_techno_abbrev",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
         {
           "genreKey": "hard techno",
           "displayName": "Hard Techno",
@@ -765,16 +841,6 @@
           "independenceGroup": "exhaustion:B_STRONG"
         },
         {
-          "genreKey": "techno",
-          "displayName": "Techno",
-          "layer": "DISCOVERY_GENRE_CANDIDATE",
-          "authority": 78,
-          "confidence": "HIGH",
-          "sourceReference": "techno,hard_techno,electro,dj_set,hard_techno_abbrev",
-          "classificationReason": "discovery_relevance_genre_candidate",
-          "independenceGroup": "discovery:genre"
-        },
-        {
           "genreKey": "hardtechno",
           "displayName": "Hard Techno",
           "layer": "HEADLINER_PROFILE",
@@ -786,9 +852,9 @@
         }
       ],
       "recommendedGenres": [
+        "Techno",
         "Hard Techno",
-        "Electro",
-        "Techno"
+        "Electro"
       ],
       "genreConfidence": "HIGH",
       "classificationMethod": "artist_lineup_fusion",
@@ -864,7 +930,7 @@
       ],
       "genreConfidence": "MEDIUM",
       "classificationMethod": "multi_source_fusion",
-      "changedFromCurrent": true,
+      "changedFromCurrent": false,
       "importEligibilityReview": false
     },
     {
@@ -884,7 +950,7 @@
           "independenceGroup": "exhaustion:C_LINEUP"
         },
         {
-          "genreKey": "edm",
+          "genreKey": "electronic",
           "displayName": "EDM",
           "layer": "LINEUP_CONSENSUS",
           "authority": 72,
@@ -908,14 +974,27 @@
       "title": "DEBORAH DE LUCA pres by Bootshaus",
       "domainClassification": "ELECTRONIC_MEDIUM",
       "importQualification": "WEAK_IMPORT_QUALIFICATION",
-      "contributions": [],
-      "recommendedGenres": [],
-      "genreConfidence": "LOW",
-      "classificationMethod": "no_searchable_evidence",
+      "contributions": [
+        {
+          "genreKey": "peak-time-techno",
+          "displayName": "Peak Time Techno",
+          "layer": "HEADLINER_PROFILE",
+          "authority": 76,
+          "confidence": "HIGH",
+          "sourceReference": "headliner_artist_profile_consensus",
+          "classificationReason": "headliner_artist_profile_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ],
+      "recommendedGenres": [
+        "Peak Time Techno"
+      ],
+      "genreConfidence": "HIGH",
+      "classificationMethod": "artist_lineup_fusion",
       "changedFromCurrent": false,
-      "importEligibilityReview": true
+      "importEligibilityReview": false
     }
   ],
-  "recoverableCount": 5,
-  "unresolvedCount": 6
+  "recoverableCount": 0,
+  "unresolvedCount": 3
 }

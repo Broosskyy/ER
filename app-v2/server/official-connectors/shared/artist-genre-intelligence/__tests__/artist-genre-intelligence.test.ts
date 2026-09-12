@@ -56,6 +56,47 @@ describe('artist genre consensus', () => {
     expect(profile.confidence).not.toBe('CONFLICT');
   });
 
+  it('publishes musicbrainz multi-tag techno profiles without false conflict', () => {
+    const profile = buildArtistGenreProfile({
+      artistIdentity: 'deborah de luca',
+      normalizedName: 'DEBORAH DE LUCA',
+      observedAt: new Date().toISOString(),
+      evidence: [
+        evidence({
+          genreKey: 'electronic',
+          displayName: 'Electronic',
+          sourceType: 'MUSICBRAINZ',
+          sourceReference: 'musicbrainz:deborah',
+        }),
+        evidence({
+          genreKey: 'dance',
+          displayName: 'Dance',
+          sourceType: 'MUSICBRAINZ',
+          sourceReference: 'musicbrainz:deborah',
+        }),
+        evidence({
+          genreKey: 'peak-time-techno',
+          displayName: 'Peak Time Techno',
+          sourceType: 'MUSICBRAINZ',
+          sourceReference: 'musicbrainz:deborah',
+        }),
+        evidence({
+          genreKey: 'techno',
+          displayName: 'Techno',
+          sourceType: 'MUSICBRAINZ',
+          sourceReference: 'musicbrainz:deborah',
+        }),
+      ],
+    });
+    expect(profile.confidence).not.toBe('CONFLICT');
+    expect(profile.canonicalGenres.length).toBeGreaterThan(0);
+    expect(
+      profile.canonicalGenres.some((genre) =>
+        ['Techno', 'Peak Time Techno'].includes(genre.displayName),
+      ),
+    ).toBe(true);
+  });
+
   it('merges evidence without duplication', () => {
     const merged = mergeArtistEvidence(
       [evidence({ genreKey: 'techno', displayName: 'Techno', sourceType: 'MUSICBRAINZ' })],
@@ -91,6 +132,30 @@ describe('lineup consensus', () => {
     });
     expect(result.genres.map((genre) => genre.displayName)).toContain('Techno');
     expect(result.classifiedArtists).toBe(6);
+  });
+
+  it('uses primary billing act when title has no headliner', () => {
+    const store = new ArtistProfileStore();
+    store.upsertEvidence(
+      'MOGUAI',
+      [
+        evidence({
+          artistIdentity: getArtistIdentityKey('MOGUAI'),
+          normalizedName: 'MOGUAI',
+          genreKey: 'techno',
+          displayName: 'Techno',
+          sourceType: 'STRUCTURED_SOURCE',
+          confidence: 'MEDIUM',
+        }),
+      ],
+    );
+    const result = deriveEventGenresFromLineupConsensus({
+      eventId: 'event-3',
+      title: 'BC173 Airport Session pres. by Bootshaus',
+      lineup: ['MOGUAI', 'SUPPORT ACT'],
+      store,
+    });
+    expect(result.genres.map((genre) => genre.displayName)).toContain('Techno');
   });
 
   it('uses headliner profile for single-act events', () => {

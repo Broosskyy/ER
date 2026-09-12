@@ -33,18 +33,17 @@
     ],
     "genresAfter": [
       "Bass House",
-      "Electro",
-      "House",
-      "Progressive House",
-      "EDM",
-      "Dance"
+      "Progressive House"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "LINEUP_CONSENSUS",
+      "LINEUP_CONSENSUS"
+    ],
     "changed": true,
-    "reason": ""
+    "reason": "lineup_artist_intelligence_consensus; lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
@@ -76,18 +75,16 @@
       "EDM"
     ],
     "genresAfter": [
-      "Dubstep",
-      "Electro",
-      "Hard Techno",
-      "Techno",
-      "EDM"
+      "Hard Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "LINEUP_CONSENSUS"
+    ],
     "changed": true,
-    "reason": ""
+    "reason": "lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
@@ -129,10 +126,11 @@
       "DESCRIPTION",
       "DESCRIPTION",
       "DESCRIPTION",
-      "DESCRIPTION"
+      "DESCRIPTION",
+      "LINEUP_CONSENSUS"
     ],
     "changed": true,
-    "reason": "discovery_relevance_genre_candidate; discovery_relevance_genre_candidate; discovery_relevance_genre_candidate; discovery_relevance_genre_candidate"
+    "reason": "discovery_relevance_genre_candidate; discovery_relevance_genre_candidate; discovery_relevance_genre_candidate; discovery_relevance_genre_candidate; lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
@@ -185,26 +183,39 @@
   {
     "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
     "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
-    "genresBefore": [],
-    "genresAfter": [],
+    "genresBefore": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "genresAfter": [
+      "Hard Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
-    "changed": false,
-    "reason": ""
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "LINEUP_CONSENSUS"
+    ],
+    "changed": true,
+    "reason": "lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
     "title": "BC173 Airport Session pres. by Bootshaus",
-    "genresBefore": [],
-    "genresAfter": [],
+    "genresBefore": [
+      "Techno"
+    ],
+    "genresAfter": [
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "LINEUP_CONSENSUS"
+    ],
     "changed": false,
-    "reason": ""
+    "reason": "lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
@@ -234,17 +245,16 @@
       "Dubstep"
     ],
     "genresAfter": [
-      "Tech House",
-      "Techno",
-      "Electro",
-      "Dubstep"
+      "Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "LINEUP_CONSENSUS"
+    ],
     "changed": true,
-    "reason": ""
+    "reason": "lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
@@ -321,18 +331,20 @@
   {
     "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
     "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
-    "genresBefore": [],
+    "genresBefore": [
+      "Techno"
+    ],
     "genresAfter": [
       "Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "multi_source_fusion",
-    "confidence": "MEDIUM",
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
     "evidenceSources": [
-      "DESCRIPTION"
+      "LINEUP_CONSENSUS"
     ],
-    "changed": true,
-    "reason": "event_series_genre_inheritance"
+    "changed": false,
+    "reason": "lineup_artist_metadata_consensus"
   },
   {
     "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
@@ -344,17 +356,16 @@
       "Trance"
     ],
     "genresAfter": [
-      "House",
-      "Hard Techno",
-      "Techno",
-      "Trance"
+      "Hard Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "LINEUP_CONSENSUS"
+    ],
     "changed": true,
-    "reason": ""
+    "reason": "lineup_artist_intelligence_consensus"
   },
   {
     "eventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
@@ -385,15 +396,15 @@
       "Techno"
     ],
     "genresAfter": [
-      "Hard Techno",
-      "Techno"
+      "Techno",
+      "Hard Techno"
     ],
     "domainClassification": "ELECTRONIC_HIGH",
     "classificationMethod": "artist_lineup_fusion",
     "confidence": "HIGH",
     "evidenceSources": [
       "DESCRIPTION",
-      "DISCOVERY_GENRE_CANDIDATE",
+      "DESCRIPTION",
       "HEADLINER_PROFILE"
     ],
     "changed": false,
@@ -426,18 +437,20 @@
   {
     "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
     "title": "Affenkäfig XXX CAPITOL XXX Hagen",
-    "genresBefore": [],
+    "genresBefore": [
+      "Techno"
+    ],
     "genresAfter": [
       "Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "multi_source_fusion",
-    "confidence": "MEDIUM",
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
     "evidenceSources": [
-      "DESCRIPTION"
+      "LINEUP_CONSENSUS"
     ],
-    "changed": true,
-    "reason": "event_series_genre_inheritance"
+    "changed": false,
+    "reason": "lineup_artist_metadata_consensus"
   },
   {
     "eventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
@@ -460,18 +473,20 @@
   {
     "eventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
     "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
-    "genresBefore": [],
+    "genresBefore": [
+      "Techno"
+    ],
     "genresAfter": [
       "Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "multi_source_fusion",
-    "confidence": "MEDIUM",
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
     "evidenceSources": [
-      "DESCRIPTION"
+      "LINEUP_CONSENSUS"
     ],
-    "changed": true,
-    "reason": "event_series_genre_inheritance"
+    "changed": false,
+    "reason": "lineup_artist_metadata_consensus"
   },
   {
     "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
@@ -481,19 +496,18 @@
       "Techno"
     ],
     "genresAfter": [
-      "Tech House",
-      "Techno"
+      "Techno",
+      "Tech House"
     ],
     "domainClassification": "ELECTRONIC_HIGH",
-    "classificationMethod": "discovery_evidence_fusion",
+    "classificationMethod": "multi_source_fusion",
     "confidence": "HIGH",
     "evidenceSources": [
       "DESCRIPTION",
-      "DISCOVERY_GENRE_CANDIDATE",
-      "LINEUP_CONSENSUS"
+      "DESCRIPTION"
     ],
     "changed": false,
-    "reason": "discovery_relevance_genre_candidate; discovery_relevance_genre_candidate; lineup_artist_metadata_consensus"
+    "reason": "discovery_relevance_genre_candidate; discovery_relevance_genre_candidate"
   },
   {
     "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
@@ -516,18 +530,20 @@
   {
     "eventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
     "title": "Bootshaus & Loonyland pres. Halloween 2026",
-    "genresBefore": [],
+    "genresBefore": [
+      "Techno"
+    ],
     "genresAfter": [
       "Techno"
     ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "multi_source_fusion",
-    "confidence": "MEDIUM",
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
     "evidenceSources": [
-      "DESCRIPTION"
+      "LINEUP_CONSENSUS"
     ],
-    "changed": true,
-    "reason": "event_series_genre_inheritance"
+    "changed": false,
+    "reason": "lineup_artist_metadata_consensus"
   },
   {
     "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
@@ -537,9 +553,9 @@
       "Techno"
     ],
     "genresAfter": [
+      "Techno",
       "Hard Techno",
-      "Electro",
-      "Techno"
+      "Electro"
     ],
     "domainClassification": "ELECTRONIC_HIGH",
     "classificationMethod": "artist_lineup_fusion",
@@ -547,7 +563,7 @@
     "evidenceSources": [
       "DESCRIPTION",
       "DESCRIPTION",
-      "DISCOVERY_GENRE_CANDIDATE",
+      "DESCRIPTION",
       "HEADLINER_PROFILE"
     ],
     "changed": true,
@@ -577,7 +593,10 @@
   {
     "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
     "title": "MI * 30.12.2026 | KitKatClub",
-    "genresBefore": [],
+    "genresBefore": [
+      "Tech House",
+      "Techno"
+    ],
     "genresAfter": [
       "Tech House",
       "Techno"
@@ -589,7 +608,7 @@
       "DESCRIPTION",
       "DESCRIPTION"
     ],
-    "changed": true,
+    "changed": false,
     "reason": "event_series_genre_inheritance; event_series_genre_inheritance"
   },
   {
@@ -616,13 +635,19 @@
   {
     "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
     "title": "DEBORAH DE LUCA pres by Bootshaus",
-    "genresBefore": [],
-    "genresAfter": [],
+    "genresBefore": [
+      "Peak Time Techno"
+    ],
+    "genresAfter": [
+      "Peak Time Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
-    "classificationMethod": "no_searchable_evidence",
-    "confidence": "LOW",
-    "evidenceSources": [],
+    "classificationMethod": "artist_lineup_fusion",
+    "confidence": "HIGH",
+    "evidenceSources": [
+      "HEADLINER_PROFILE"
+    ],
     "changed": false,
-    "reason": ""
+    "reason": "headliner_artist_profile_consensus"
   }
 ]

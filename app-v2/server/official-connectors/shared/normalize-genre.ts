@@ -51,7 +51,7 @@ const GENRE_CANONICAL: Record<string, { genreKey: string; displayName: string }>
   'bass house': { genreKey: 'bass-house', displayName: 'Bass House' },
   electro: { genreKey: 'electro', displayName: 'Electro' },
   edm: { genreKey: 'edm', displayName: 'EDM' },
-  dance: { genreKey: 'dance', displayName: 'Dance' },
+  dance: { genreKey: 'electronic', displayName: 'Electronic' },
   trap: { genreKey: 'trap', displayName: 'Trap' },
   'hip hop': { genreKey: 'hip-hop', displayName: 'Hip Hop' },
   'hip-hop': { genreKey: 'hip-hop', displayName: 'Hip Hop' },
@@ -119,6 +119,8 @@ const GENRE_KEY_ALIASES: Record<string, string> = {
   basshouse: 'bass-house',
   "drum'n'bass": 'drum-and-bass',
   'drum and bass': 'drum-and-bass',
+  dance: 'electronic',
+  edm: 'electronic',
 };
 
 export function canonicalGenreKey(genreKey: string): string {

@@ -1,0 +1,224 @@
+[
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "date": "2026-09-13T12:00:00+00:00",
+    "venue": "KD Anleger 1",
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "discoveryRelevanceEvidence": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "lineup": [
+      "DANTH",
+      "FABIAN FARELL",
+      "NIKLAS DEE",
+      "OLIVER MAGENTA",
+      "TEKNOCLASH"
+    ],
+    "headliners": [],
+    "artistIdentities": [
+      {
+        "name": "DANTH",
+        "identityKey": "danth",
+        "searchName": "Danth"
+      },
+      {
+        "name": "FABIAN FARELL",
+        "identityKey": "fabian farell",
+        "searchName": "Fabian Farell"
+      },
+      {
+        "name": "NIKLAS DEE",
+        "identityKey": "niklas dee",
+        "searchName": "Niklas Dee"
+      },
+      {
+        "name": "OLIVER MAGENTA",
+        "identityKey": "oliver magenta",
+        "searchName": "Oliver Magenta"
+      },
+      {
+        "name": "TEKNOCLASH",
+        "identityKey": "teknoclash",
+        "searchName": "Teknoclash"
+      }
+    ],
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/4zjKRnsa/"
+      }
+    ],
+    "eventDescriptionEvidence": [],
+    "ticketEvidence": [
+      "https://bootshaus-club.ticket.io/4zjKRnsa/"
+    ],
+    "seriesEvidence": [],
+    "promoterEvidence": [
+      "BOOTSHAUS"
+    ],
+    "musicBrainzResult": null,
+    "discogsResult": null,
+    "wikipediaResult": null,
+    "officialWebResult": null,
+    "historicalEternalRaveEvidence": [],
+    "providerFailures": [],
+    "rateLimits": [],
+    "timeouts": [],
+    "identityMismatch": [],
+    "cacheResult": "global=92 active=91 relevant=20",
+    "candidateGenres": [],
+    "confidence": "LOW",
+    "blockingReason": "artist_metadata_missing_for_all_lineup_acts",
+    "importEligibilityReview": true
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "date": "2026-10-09T22:00:00+00:00",
+    "venue": "Essigfabrik / Elektroküche",
+    "domainClassification": "AMBIGUOUS",
+    "discoveryRelevanceEvidence": [
+      "genre_not_explicit"
+    ],
+    "lineup": [
+      "PAOLO FERRARA",
+      "LE KLOWN",
+      "ANNX HELLMAYER",
+      "LHYST",
+      "PØUL STZ",
+      "TATTI VALKYRIE",
+      "VANY"
+    ],
+    "headliners": [],
+    "artistIdentities": [
+      {
+        "name": "PAOLO FERRARA",
+        "identityKey": "paolo ferrara",
+        "searchName": "Paolo Ferrara"
+      },
+      {
+        "name": "LE KLOWN",
+        "identityKey": "le klown",
+        "searchName": "LE Klown"
+      },
+      {
+        "name": "ANNX HELLMAYER",
+        "identityKey": "annx hellmayer",
+        "searchName": "Annx Hellmayer"
+      },
+      {
+        "name": "LHYST",
+        "identityKey": "lhyst",
+        "searchName": "Lhyst"
+      },
+      {
+        "name": "PØUL STZ",
+        "identityKey": "pøul stz",
+        "searchName": "Pøul Stz"
+      },
+      {
+        "name": "TATTI VALKYRIE",
+        "identityKey": "tatti valkyrie",
+        "searchName": "Tatti Valkyrie"
+      },
+      {
+        "name": "VANY",
+        "identityKey": "vany",
+        "searchName": "Vany"
+      }
+    ],
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/"
+      },
+      {
+        "role": "ticket",
+        "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+      }
+    ],
+    "eventDescriptionEvidence": [],
+    "ticketEvidence": [
+      "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+    ],
+    "seriesEvidence": [],
+    "promoterEvidence": [
+      "Affenkäfig"
+    ],
+    "musicBrainzResult": null,
+    "discogsResult": null,
+    "wikipediaResult": null,
+    "officialWebResult": null,
+    "historicalEternalRaveEvidence": [],
+    "providerFailures": [],
+    "rateLimits": [],
+    "timeouts": [],
+    "identityMismatch": [],
+    "cacheResult": "global=92 active=91 relevant=26",
+    "candidateGenres": [],
+    "confidence": "LOW",
+    "blockingReason": "artist_metadata_missing_for_all_lineup_acts",
+    "importEligibilityReview": true
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "date": "2026-10-16T20:00:00+00:00",
+    "venue": "Bootshaus",
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "discoveryRelevanceEvidence": [
+      "weak_positive:mainfloor",
+      "likely:electronic_venue_corroboration"
+    ],
+    "lineup": [
+      "CHRIS STUSSY"
+    ],
+    "headliners": [
+      "CHRIS STUSSY"
+    ],
+    "artistIdentities": [
+      {
+        "name": "CHRIS STUSSY",
+        "identityKey": "chris stussy",
+        "searchName": "Chris Stussy"
+      }
+    ],
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/By06xnf4/"
+      }
+    ],
+    "eventDescriptionEvidence": [],
+    "ticketEvidence": [
+      "https://bootshaus-club.ticket.io/By06xnf4/"
+    ],
+    "seriesEvidence": [],
+    "promoterEvidence": [
+      "BOOTSHAUS"
+    ],
+    "musicBrainzResult": null,
+    "discogsResult": null,
+    "wikipediaResult": null,
+    "officialWebResult": null,
+    "historicalEternalRaveEvidence": [],
+    "providerFailures": [],
+    "rateLimits": [],
+    "timeouts": [],
+    "identityMismatch": [],
+    "cacheResult": "global=92 active=91 relevant=4",
+    "candidateGenres": [],
+    "confidence": "LOW",
+    "blockingReason": "artist_metadata_missing_for_all_lineup_acts",
+    "importEligibilityReview": false
+  }
+]

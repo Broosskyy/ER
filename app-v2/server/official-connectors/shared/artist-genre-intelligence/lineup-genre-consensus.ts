@@ -1,8 +1,12 @@
-import { getAncestorGenreKeys } from '../genre-taxonomy';
+import { getAncestorGenreKeys, hasIncompatibleGenreFamilies } from '../genre-taxonomy';
 import { canonicalGenreKey } from '../normalize-genre';
 import type { GenreConfidenceBand } from '../genre-evidence';
 import { artistConfidenceToGenreBand, lineupConsensusConfidence } from './discovery-confidence-policy';
-import { extractHeadlinerFromTitle, getArtistIdentityKey } from './artist-identity';
+import {
+  expandLineupActsForProfileLookup,
+  extractHeadlinerFromTitle,
+  getArtistIdentityKey,
+} from './artist-identity';
 import type { ArtistGenreProfile, EventGenreExplanation, LineupConsensusEvidence } from './types';
 import type { ArtistProfileStore } from './artist-profile-store';
 
@@ -25,12 +29,15 @@ export function deriveEventGenresFromLineupConsensus(input: {
   store: ArtistProfileStore;
 }): LineupGenreConsensusResult {
   const headliner = extractHeadlinerFromTitle(input.title);
-  const headlinerKey = headliner ? getArtistIdentityKey(headliner) : undefined;
+  const primaryBillingAct = input.lineup[0];
+  const primaryBillingKey = primaryBillingAct ? getArtistIdentityKey(primaryBillingAct) : undefined;
+  const headlinerKey = headliner ? getArtistIdentityKey(headliner) : primaryBillingKey;
+  const profileLookupLineup = expandLineupActsForProfileLookup(input.lineup);
   const genreVotes = new Map<string, { genreKey: string; displayName: string; votes: number }>();
   let classifiedArtists = 0;
   const artistProfilesUsed: string[] = [];
 
-  for (const act of input.lineup) {
+  for (const act of profileLookupLineup) {
     const profile = input.store.getProfile(act);
     const actKey = getArtistIdentityKey(act);
     const weight =
@@ -51,7 +58,7 @@ export function deriveEventGenresFromLineupConsensus(input: {
     }
   }
 
-  const totalArtists = input.lineup.length;
+  const totalArtists = profileLookupLineup.length;
   const unclassifiedArtists = Math.max(0, totalArtists - classifiedArtists);
   const genreDistribution: Record<string, number> = {};
   for (const [key, value] of genreVotes.entries()) {
@@ -138,7 +145,7 @@ export function deriveEventGenresFromLineupConsensus(input: {
     unanimousAmongClassified: classifiedArtists > 0 && maxVotes >= classifiedArtists,
   });
 
-  const selected = [...genreVotes.values()]
+  let selected = [...genreVotes.values()]
     .filter((entry) => entry.votes >= threshold)
     .sort((left, right) => right.votes - left.votes)
     .slice(0, 3)
@@ -148,8 +155,32 @@ export function deriveEventGenresFromLineupConsensus(input: {
       confidence,
     }));
 
+  if (
+    selected.length === 0 &&
+    classifiedArtists >= 2 &&
+    genreVotes.size > 0 &&
+    !hasIncompatibleGenreFamilies([...genreVotes.keys()])
+  ) {
+    selected = [...genreVotes.values()]
+      .sort((left, right) => right.votes - left.votes)
+      .slice(0, 3)
+      .map((entry) => ({
+        genreKey: entry.genreKey,
+        displayName: entry.displayName,
+        confidence: lineupConsensusConfidence({
+          classifiedArtists,
+          totalArtists,
+          headlinerMatch: Boolean(headlinerKey && artistProfilesUsed.includes(headlinerKey)),
+          maxVotes: entry.votes,
+          voteThreshold: 1,
+          unanimousAmongClassified: classifiedArtists === genreVotes.size,
+        }),
+      }));
+  }
+
   if (selected.length === 0 && headlinerKey) {
-    const headlinerProfile = input.store.getProfile(headliner ?? '');
+    const headlinerLookupName = headliner ?? primaryBillingAct ?? '';
+    const headlinerProfile = input.store.getProfile(headlinerLookupName);
     if (headlinerProfile && headlinerProfile.canonicalGenres.length > 0) {
       const genres = headlinerProfile.canonicalGenres.slice(0, 3).map((genre) => ({
         genreKey: genre.genreKey,

@@ -120,7 +120,9 @@ export async function runArtistIntelligencePass(input: {
   externalUnresolvedOnly?: boolean;
   negativeCache?: ProviderNegativeCache;
 }): Promise<ArtistIntelligenceDryRunResult> {
-  input.store.load();
+  if (input.store.allProfiles().length === 0) {
+    input.store.load();
+  }
   const negativeCache = input.negativeCache ?? new ProviderNegativeCache();
   negativeCache.load();
   const artistNames = prioritizeArtistsForExternalFetch(

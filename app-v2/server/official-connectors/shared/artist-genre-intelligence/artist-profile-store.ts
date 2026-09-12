@@ -126,6 +126,24 @@ export class ArtistProfileStore {
     return profile;
   }
 
+  rebuildAllProfiles(): number {
+    let rebuilt = 0;
+    for (const existing of this.allProfiles()) {
+      const profile = buildArtistGenreProfile({
+        artistIdentity: existing.artistIdentity,
+        normalizedName: existing.normalizedName,
+        evidence: existing.genreEvidence,
+        observedAt: existing.observedAt,
+      });
+      profile.refreshedAt = new Date().toISOString();
+      profile.staleAfter = existing.staleAfter;
+      this.profiles.set(existing.artistIdentity, profile);
+      rebuilt += 1;
+    }
+    this.refreshMetrics();
+    return rebuilt;
+  }
+
   allProfiles(): ArtistGenreProfile[] {
     return [...this.profiles.values()];
   }

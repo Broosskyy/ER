@@ -1,4 +1,5 @@
 import { deriveLineupGenresFromIdentityCache } from './artist-genre-corroboration-pass';
+import { extractHeadlinerFromTitle } from './artist-genre-intelligence/artist-identity';
 import { deriveEventGenresFromLineupConsensus } from './artist-genre-intelligence/lineup-genre-consensus';
 import type { ArtistProfileStore } from './artist-genre-intelligence/artist-profile-store';
 import { isSearchableGenreConfidence } from './artist-genre-intelligence/discovery-confidence-policy';
@@ -131,17 +132,21 @@ export function exhaustGenreEvidence(
 
   const { lineup, checkedLayers: lineupLayers } = collectLineupEvidence(event, sourceRows);
   checkedLayers.push(...lineupLayers);
+  const headlinerFromTitle =
+    lineup.length === 0 ? extractHeadlinerFromTitle(event.title) : undefined;
+  const effectiveLineup =
+    lineup.length > 0 ? lineup : headlinerFromTitle ? [headlinerFromTitle] : [];
 
   const sourceEventKey =
     event.sources.find((source) => source.sourceEventKey)?.sourceEventKey ?? event.eventId;
   let lineupDerivedGenres: string[] = [];
 
-  if (context?.artistStore && lineup.length > 0) {
+  if (context?.artistStore && effectiveLineup.length > 0) {
     checkedLayers.push('artist_intelligence');
     const consensus = deriveEventGenresFromLineupConsensus({
       eventId: event.eventId,
       title: event.title,
-      lineup,
+      lineup: effectiveLineup,
       store: context.artistStore,
     });
     lineupDerivedGenres = consensus.genres.map((genre) => genre.displayName);

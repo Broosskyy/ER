@@ -447,7 +447,10 @@
     "mediaSignals": [
       "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "WEAK_IMPORT_QUALIFICATION",
     "discoveryGenreLabels": []
@@ -483,7 +486,9 @@
     "mediaSignals": [
       "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "WEAK_IMPORT_QUALIFICATION",
     "discoveryGenreLabels": []
@@ -788,7 +793,9 @@
     "mediaSignals": [
       "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "MODERATE_EVENT_SPECIFIC",
     "discoveryGenreLabels": []
@@ -1048,7 +1055,9 @@
     "mediaSignals": [
       "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "WEAK_IMPORT_QUALIFICATION",
     "discoveryGenreLabels": []
@@ -1122,7 +1131,9 @@
     "mediaSignals": [
       "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "WEAK_IMPORT_QUALIFICATION",
     "discoveryGenreLabels": []
@@ -1257,7 +1268,9 @@
     "mediaSignals": [
       "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "WEAK_IMPORT_QUALIFICATION",
     "discoveryGenreLabels": []
@@ -1402,7 +1415,10 @@
     "mediaSignals": [
       "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Tech House",
+      "Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "MODERATE_EVENT_SPECIFIC",
     "discoveryGenreLabels": []
@@ -1477,7 +1493,9 @@
     "mediaSignals": [
       "https://bootshaus-club.ticket.io/uSXeJhHU/"
     ],
-    "existingCanonicalGenres": [],
+    "existingCanonicalGenres": [
+      "Peak Time Techno"
+    ],
     "domainClassification": "ELECTRONIC_MEDIUM",
     "importQualification": "WEAK_IMPORT_QUALIFICATION",
     "discoveryGenreLabels": []

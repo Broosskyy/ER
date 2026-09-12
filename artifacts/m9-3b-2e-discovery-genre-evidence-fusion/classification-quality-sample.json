@@ -36,14 +36,31 @@
       "title": "R3HAB pres. by BOOTSHAUS",
       "genres": [
         "Bass House",
-        "Electro",
-        "House",
-        "Progressive House",
-        "EDM",
-        "Dance"
+        "Progressive House"
       ],
-      "method": "no_searchable_evidence",
-      "contributions": []
+      "method": "artist_lineup_fusion",
+      "contributions": [
+        {
+          "genreKey": "bass-house",
+          "displayName": "Bass House",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        },
+        {
+          "genreKey": "progressive-house",
+          "displayName": "Progressive House",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
     },
     {
       "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
@@ -79,14 +96,21 @@
       "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
       "title": "Bootshaus Sommerfest auf 4 Floors!",
       "genres": [
-        "Dubstep",
-        "Electro",
-        "Hard Techno",
-        "Techno",
-        "EDM"
+        "Hard Techno"
       ],
-      "method": "no_searchable_evidence",
-      "contributions": []
+      "method": "artist_lineup_fusion",
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
     },
     {
       "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
@@ -261,15 +285,14 @@
         "Techno"
       ],
       "fusionProjection": [
-        "Tech House",
-        "Techno"
+        "Techno",
+        "Tech House"
       ],
-      "method": "discovery_evidence_fusion",
+      "method": "multi_source_fusion",
       "confidence": "HIGH",
       "evidenceSources": [
         "DESCRIPTION",
-        "DISCOVERY_GENRE_CANDIDATE",
-        "LINEUP_CONSENSUS"
+        "DESCRIPTION"
       ],
       "lineupState": "LINEUP_NOT_ANNOUNCED",
       "ticketState": "TICKET_TARGET_VERIFIED"
@@ -282,16 +305,16 @@
         "Techno"
       ],
       "fusionProjection": [
+        "Techno",
         "Hard Techno",
-        "Electro",
-        "Techno"
+        "Electro"
       ],
       "method": "artist_lineup_fusion",
       "confidence": "HIGH",
       "evidenceSources": [
         "DESCRIPTION",
         "DESCRIPTION",
-        "DISCOVERY_GENRE_CANDIDATE",
+        "DESCRIPTION",
         "HEADLINER_PROFILE"
       ],
       "lineupState": "LINEUP_PARTIAL",
@@ -300,7 +323,10 @@
     {
       "title": "MI * 30.12.2026 | KitKatClub",
       "domainClassification": "ELECTRONIC_MEDIUM",
-      "genres": [],
+      "genres": [
+        "Tech House",
+        "Techno"
+      ],
       "fusionProjection": [
         "Tech House",
         "Techno"
@@ -317,11 +343,17 @@
     {
       "title": "DEBORAH DE LUCA pres by Bootshaus",
       "domainClassification": "ELECTRONIC_MEDIUM",
-      "genres": [],
-      "fusionProjection": [],
-      "method": "no_searchable_evidence",
-      "confidence": "LOW",
-      "evidenceSources": [],
+      "genres": [
+        "Peak Time Techno"
+      ],
+      "fusionProjection": [
+        "Peak Time Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "HEADLINER_PROFILE"
+      ],
       "lineupState": "LINEUP_PARTIAL",
       "ticketState": "TICKET_TARGET_VERIFIED"
     }

@@ -41,6 +41,23 @@ export function getArtistIdentityKey(name: string): string {
   return canonicalActKey(name);
 }
 
+export function expandLineupActsForProfileLookup(lineup: string[]): string[] {
+  const expanded: string[] = [];
+  for (const act of lineup) {
+    if (/\bb2b\b/i.test(act)) {
+      for (const part of act.split(/\bb2b\b/i)) {
+        const normalized = normalizeArtistDisplayName(part);
+        if (normalized) {
+          expanded.push(normalized);
+        }
+      }
+      continue;
+    }
+    expanded.push(act);
+  }
+  return [...new Set(expanded)];
+}
+
 export function artistNamesEquivalent(left: string, right: string): boolean {
   return getArtistIdentityKey(left) === getArtistIdentityKey(right);
 }

@@ -1,113 +1,103 @@
 # M9.3B.2E Discovery-to-Genre Evidence Fusion Report
 
-Generated: 2026-09-12T13:44:02.656Z  
+Generated: 2026-09-12T16:42:54.657Z  
 Status: **M9_3B_2E_DISCOVERY_GENRE_EVIDENCE_FUSION_REVIEW_REQUIRED**
 
-## Executive Summary
+## Closure Pass Summary (M9.3B.2E.1)
 
-B.2E delivers the generic **discovery-to-genre evidence fusion** architecture, domain classification separation, discovery signal bridge, weighted fusion engine, expanded artist evidence providers, and full staging orchestration with artifacts.
+| Phase | Events with genre | Coverage |
+|-------|-------------------|----------|
+| BEFORE B.2E (baseline) | 23 / 34 | 67.6% |
+| Known recoverable (dry-run) | +5 | → 82.4% projected |
+| AFTER first apply (series/sibling) | 28 / 34 | 82.4% |
+| AFTER external + generic fixes | 31 / 34 | **91.2%** |
+| FINAL (idempotent dry-run) | 31 / 34 | **91.2%** |
 
-The **≥95% classification gate is not met** after exhaustive dry-run evaluation:
+**95% gate:** requires 33 / 34 — **NOT MET** (3 unresolved, 2 short of gate).
 
-| Metric | Value |
-|--------|-------|
-| Eligible events | 34 |
-| With genre (before) | 23 (67.6%) |
-| Recoverable via fusion (dry-run) | 5 |
-| Projected after apply | 28 (82.4%) |
-| Required for ≥95% | 33 |
-| Still unresolved | 6 |
+### Recoveries applied in closure pass (generic B.2E path)
 
-Staging **apply was not executed** in this session (requires explicit approval). Run:
+1. Affenkäfig A8, CAPITOL Hagen, AFFENKÄFIG RULES → Techno (series/sibling)
+2. Bootshaus Halloween 2026 → Techno (halloween series)
+3. MI KitKat 30.12 → Tech House, Techno (KitKat series)
+4. BC173 Airport Session / MOGUAI → Techno (primary billing + Wikipedia)
+5. Deborah de Luca → Peak Time Techno (MusicBrainz + headliner-from-title bridge)
+6. Polyamor Bootshaus → Hard Techno, Techno (lineup consensus after artist-profile conflict fix)
 
-```bash
-cd app-v2
-npx tsx scripts/run-m9-3b-2e-discovery-genre-evidence-fusion.ts --apply
-```
+### Generic fixes shipped (REVIEW_REQUIRED progress)
 
-Then re-run without `--apply` for idempotency verification.
+- **Artist profile conflict:** MusicBrainz multi-tag sets (Electronic + Techno + Dance) no longer false-CONFLICT; taxonomy pruning + single-source family collapse
+- **Dance → Electronic** normalization for MB tags
+- **Headliner-from-title** when lineup empty in `genre-evidence` exhaustion
+- **Primary billing act** fallback when title has no `pres.` headliner
+- **b2b lineup expansion** for profile lookup
+- **Compatible-family lineup consensus** when ≥2 artists agree within taxonomy-compatible families
+- **Profile rebuild** after cache load; intelligence pass no longer reloads stale disk cache over rebuilt profiles
+- **Negative cache** distinguishes NO_RESULT / RATE_LIMITED / TIMEOUT with expiry (no durable NO_EVIDENCE on transient failure)
 
-## Architecture Delivered
+## Genre Coverage Gate
 
-### New module: `discovery-genre-fusion/`
+- Required for ≥95%: **33 / 34**
+- Final: **31 / 34 (91.2%)**
+- Recoverable after fusion: **0**
+- `knownWrongGenreAssignments`: **0**
 
-- `discovery-signal-bridge.ts` — rebuilds relevance + genre candidates from staging snapshots + M9.3B.1a artifacts; preserves strong/weak signals
-- `domain-classification.ts` — `ELECTRONIC_HIGH` / `ELECTRONIC_MEDIUM` / `AMBIGUOUS` / `NON_ELECTRONIC` + `WEAK_IMPORT_QUALIFICATION` detection
-- `event-genre-fusion.ts` — weighted authority fusion (not majority voting); shop-only rejection; series inheritance from classified siblings
-- `event-series-evidence.ts` — KitKat, Affenkäfig, Halloween series keys
-- `discovery-provenance-audit.ts` — reverse-audit all 34 events
-- `unresolved-reverse-audit.ts` — deep audit of unresolved events
+## Remaining Unresolved (3)
 
-### Extended modules
+### 1. Bootshaus on a Ship Vol. IV
 
-- `genre-evidence.ts` — integrates fusion via `GenreFusionContext`
-- `artist-intelligence-service.ts` — headliner priority, unresolved-only external fetch, Wikipedia + official-web fallback
-- `external-metadata-provider.ts` — Discogs-only path, name variants, case normalization
-- `wikipedia-artist-provider.ts`, `official-artist-web-provider.ts` — bounded additional evidence
-- `artist-identity.ts` — headliner extraction for pure-artist titles, `toArtistSearchName()`
+| Field | Value |
+|-------|-------|
+| Domain | ELECTRONIC_MEDIUM |
+| Lineup | DANTH, FABIAN FARELL, NIKLAS DEE, OLIVER MAGENTA, TEKNOCLASH (complete) |
+| Discovery | `likely:electronic_venue_corroboration` only — shop-only, not narrow genre |
+| Providers | MB/Discogs/Wikipedia/official-web: **no genre evidence** for any lineup act |
+| Blocking | `artist_metadata_missing_for_all_lineup_acts` |
+| Ticket | SOLD_OUT preserved |
+| Needed | Artist-level MB/Discogs/Wikipedia recovery for ≥2 lineup acts OR explicit event description/ticket genre text |
 
-### Orchestrator
+### 2. MDMA – Musik Die Mich Antreibt
 
-`app-v2/scripts/run-m9-3b-2e-discovery-genre-evidence-fusion.ts`
+| Field | Value |
+|-------|-------|
+| Domain | **AMBIGUOUS** (`genre_not_explicit`) |
+| Lineup | 7 acts — **0 classified** after external pass |
+| Discovery | No event-specific genre signal |
+| Providers | LE KLOWN had transient MB psytrance in earlier pass; negative cache + no durable profile |
+| Blocking | `artist_metadata_missing_for_all_lineup_acts` |
+| Needed | Lineup artist evidence (Affenkäfig-local acts) OR explicit event description genre terms |
+
+### 3. CHRIS STUSSY pres. by BOOTSHAUS
+
+| Field | Value |
+|-------|-------|
+| Domain | ELECTRONIC_MEDIUM |
+| Headliner | CHRIS STUSSY |
+| Discovery | `weak_positive:mainfloor` + venue corroboration — **not** narrow genre |
+| Providers | MB, Discogs, Wikipedia, official-web, chrisstussy.com: **no extractable genre terms** |
+| Blocking | `artist_metadata_missing_for_all_lineup_acts` |
+| Needed | Bootshaus official page editorial genre/style text OR agency/label biography with searchable genre terms |
+
+## Safety & Regression Gates
+
+| Gate | Result |
+|------|--------|
+| productionMutations | 0 |
+| consumerParityFailures | 0 |
+| duplicateGroups | 0 |
+| ticketRegressionFailures | 0 |
+| search recoverable false negatives | 0 |
+| Sara Landry cards | 1 |
+| Idempotent re-run genre writes | 0 |
+| goldenRegressionFailures | 0 |
+
+## Git
+
+| Item | Value |
+|------|-------|
+| Foundation checkpoint | `9852e7e` feat(classification): checkpoint B2E discovery genre fusion foundation |
+| Closure commit | pending (REVIEW_REQUIRED generic fixes + artifacts) |
+| Branch | `rebuild/event-core-clean` |
+| Staging | `gnkjzinwvmrxcadwebhv` |
 
 Artifacts: `artifacts/m9-3b-2e-discovery-genre-evidence-fusion/`
-
-## Recoverable Events (5)
-
-| Event | Projected genre(s) | Method |
-|-------|-------------------|--------|
-| Affenkäfig xxx A8 | Techno | Event series (Affenkäfig) |
-| Affenkäfig CAPITOL Hagen | Techno | Event series |
-| AFFENKÄFIG RULES Bootshaus | Techno | Event series |
-| Bootshaus Halloween 2026 | Techno | Halloween series |
-| MI KitKat 30.12 | Tech House, Techno | KitKat series (SA sibling) |
-
-## Remaining Unresolved (6)
-
-| Event | Blocker | Next evidence needed |
-|-------|---------|---------------------|
-| Bootshaus on a Ship IV | Complete lineup; 0 artist profiles resolved | External metadata for lineup acts; bootshaus.tv page genres empty |
-| Polyamor Bootshaus | Complete lineup; weak import qualification | Artist profiles (DAVYBOI has Trance via MB when fetched) |
-| BC173 Airport Session (MOGUAI) | Headliner MOGUAI — MB/Wikipedia intermittent | Reliable MOGUAI profile (Techno/Progressive House) |
-| MDMA 10.10.26 | 7-act lineup; 0 classified artists | Full lineup external pass + description signals |
-| CHRIS STUSSY | Headliner; MB/Discogs/Wikipedia/official web all empty | Bootshaus event page editorial or structured ticket metadata |
-| DEBORAH DE LUCA | Headliner; MB works as "Deborah de Luca" (Techno) but uppercase/cache miss | Apply title-case search + external pass with rate-limit spacing |
-
-## QA Anchors (post dry-run)
-
-| Anchor | Domain | Genres (DB) | Fusion projection |
-|--------|--------|-------------|-------------------|
-| 14 Jahre Affenkäfig | ELECTRONIC_HIGH | Techno | Techno ✓ |
-| Sara Landry | ELECTRONIC_HIGH | Hard Techno, Techno | Hard Techno ✓ |
-| SA KitKat | ELECTRONIC_HIGH | Tech House, Techno | Tech House, Techno ✓ |
-| MI KitKat | ELECTRONIC_MEDIUM | — | Tech House, Techno (recoverable) |
-| Deborah de Luca | ELECTRONIC_MEDIUM | — | — (blocked) |
-| Chris Stussy | ELECTRONIC_MEDIUM | — | — (blocked) |
-| MDMA | AMBIGUOUS | — | — (blocked) |
-| Bootshaus on a Ship IV | ELECTRONIC_MEDIUM | — | — (blocked) |
-
-## Safety Gates (dry-run)
-
-- `productionMutations`: 0
-- `duplicateGroups`: 0
-- `consumerParityFailures`: 0
-- `ticketRegressionFailures`: 0
-- `knownWrongGenreAssignments`: 0
-- Sara rendered cards: 1
-
-## Tests
-
-```
-vitest run server/official-connectors/shared/discovery-genre-fusion/__tests__/
-vitest run server/official-connectors/shared/artist-genre-intelligence/__tests__/
-```
-
-16 tests passing.
-
-## Recommended Next Steps
-
-1. **Staging apply** the 5 recoverable classifications (`--apply`)
-2. **External unresolved pass** with rate-limit backoff for the 6 remaining events
-3. **Persist discovery evidence** into `event_sources.raw_payload` at import time (architectural follow-up)
-4. **Bootshaus editorial recovery** for headliner-only events where official pages lack genre markup
-5. Re-run B.2E until `eventsWithGenreAfter >= 33`

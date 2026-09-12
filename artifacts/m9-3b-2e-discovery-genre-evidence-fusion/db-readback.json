@@ -58,7 +58,10 @@
       "venueName": "Bootshaus",
       "city": "Köln",
       "imageUrl": "https://cdn.ticket.io/companies/5fuNyczv/events/PDikPg1v/img/holder-1080.jpg?6b22d493",
-      "genres": [],
+      "genres": [
+        "Techno",
+        "Hard Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 3500,
       "ticketCurrency": "EUR",
@@ -73,7 +76,9 @@
       "venueName": "Moxy Köln/Bonn Flughafen",
       "city": "Köln",
       "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/5762150602999975239476766_4667780831304626581238070.png",
-      "genres": [],
+      "genres": [
+        "Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 2290,
       "ticketCurrency": "EUR",
@@ -193,7 +198,9 @@
       "venueName": "A8 Stage Club",
       "city": "Saarbrücken",
       "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/media-20260812-151321-08104fe22efe.jpg",
-      "genres": [],
+      "genres": [
+        "Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 1500,
       "ticketCurrency": "EUR",
@@ -294,7 +301,9 @@
       "venueName": "Capitol",
       "city": "Hagen",
       "imageUrl": "https://affenkaefig.info/wp-content/uploads/2026/06/17.10.26_QUADA_LineUP_AFK_WEB.jpg",
-      "genres": [],
+      "genres": [
+        "Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 1750,
       "ticketCurrency": "EUR",
@@ -326,7 +335,9 @@
       "venueName": "Bootshaus",
       "city": "Köln",
       "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/B3jK8aPC/img/holder-1080.jpg?7cf46cde",
-      "genres": [],
+      "genres": [
+        "Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 2490,
       "ticketCurrency": "EUR",
@@ -372,7 +383,9 @@
       "venueName": "Bootshaus",
       "city": "Köln",
       "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/Hv4f09p8/img/holder-1080.jpg?bf64c054",
-      "genres": [],
+      "genres": [
+        "Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 3200,
       "ticketCurrency": "EUR",
@@ -423,7 +436,10 @@
       "venueName": "Bootshaus",
       "city": "Köln",
       "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/8058054091304654528927563_3420038451690378061887075.jpeg",
-      "genres": [],
+      "genres": [
+        "Tech House",
+        "Techno"
+      ],
       "lineup": [],
       "lifecycle": "UPCOMING"
     },
@@ -452,7 +468,9 @@
       "venueName": "Bootshaus",
       "city": "Köln",
       "imageUrl": "https://cdn.ticket.io/companies/DMnDlIN6/events/uSXeJhHU/img/holder-1080.jpg?52aa8bdf",
-      "genres": [],
+      "genres": [
+        "Peak Time Techno"
+      ],
       "lineup": [],
       "ticketPriceMinor": 3090,
       "ticketCurrency": "EUR",

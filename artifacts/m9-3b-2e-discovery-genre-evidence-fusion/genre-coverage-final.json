@@ -1,0 +1,72 @@
+{
+  "eventsWithGenreAfter": 31,
+  "genreCoverageAfter": 0.9117647058823529,
+  "unresolved": [
+    {
+      "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "sources": [
+        "bootshaus-official",
+        "ticket"
+      ],
+      "currentGenres": [],
+      "availableGenreEvidence": [],
+      "evidenceStrength": "none",
+      "recommendedGenres": [],
+      "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
+      "reason": "evidence_layers_exhausted_without_genre",
+      "checkedLayers": [
+        "canonical_db",
+        "artist_intelligence",
+        "discovery_genre_fusion"
+      ],
+      "explicitGenreCount": 0,
+      "lineupDerivedGenres": [],
+      "confidenceBand": "UNRESOLVED"
+    },
+    {
+      "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "sources": [
+        "affenkaefig-official",
+        "ticket"
+      ],
+      "currentGenres": [],
+      "availableGenreEvidence": [],
+      "evidenceStrength": "none",
+      "recommendedGenres": [],
+      "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
+      "reason": "evidence_layers_exhausted_without_genre",
+      "checkedLayers": [
+        "canonical_db",
+        "artist_intelligence",
+        "discovery_genre_fusion"
+      ],
+      "explicitGenreCount": 0,
+      "lineupDerivedGenres": [],
+      "confidenceBand": "UNRESOLVED"
+    },
+    {
+      "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "sources": [
+        "bootshaus-official",
+        "ticket"
+      ],
+      "currentGenres": [],
+      "availableGenreEvidence": [],
+      "evidenceStrength": "none",
+      "recommendedGenres": [],
+      "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
+      "reason": "evidence_layers_exhausted_without_genre",
+      "checkedLayers": [
+        "canonical_db",
+        "artist_intelligence",
+        "discovery_genre_fusion"
+      ],
+      "explicitGenreCount": 0,
+      "lineupDerivedGenres": [],
+      "confidenceBand": "UNRESOLVED"
+    }
+  ]
+}

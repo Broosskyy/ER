@@ -1,39 +1,39 @@
 {
-  "generatedAt": "2026-09-12T13:44:02.656Z",
+  "generatedAt": "2026-09-12T16:42:54.657Z",
   "baselineHead": "50c41208e3eecb097bddd22fa5e946c133e9e0ee",
-  "currentHead": "50c41208e3eecb097bddd22fa5e946c133e9e0ee",
+  "currentHead": "9852e7ead2170d190b68c048dc1aa64b3492c1c1",
   "stagingProject": "gnkjzinwvmrxcadwebhv",
   "productionProject": "irgsllewfrxvbtznqmxh",
   "productionMutations": 0,
   "applyRepair": false,
-  "skipExternal": true,
+  "skipExternal": false,
   "eligibleEventCount": 34,
-  "eventsWithGenreBefore": 23,
-  "eventsWithGenreAfter": 23,
-  "eventsWithoutGenreBefore": 11,
-  "eventsWithoutGenreAfter": 11,
-  "genreCoverageBefore": 0.6764705882352942,
-  "genreCoverageAfter": 0.6764705882352942,
+  "eventsWithGenreBefore": 31,
+  "eventsWithGenreAfter": 31,
+  "eventsWithoutGenreBefore": 3,
+  "eventsWithoutGenreAfter": 3,
+  "genreCoverageBefore": 0.9117647058823529,
+  "genreCoverageAfter": 0.9117647058823529,
   "domainElectronicHigh": 12,
   "domainElectronicMedium": 20,
   "domainAmbiguous": 2,
   "domainNonElectronic": 0,
-  "discoveryDerivedAssignments": 7,
-  "artistDerivedAssignments": 12,
+  "discoveryDerivedAssignments": 4,
+  "artistDerivedAssignments": 23,
   "seriesDerivedAssignments": 0,
   "eventsRecoveredByB2E": 0,
-  "eventsStillUnresolved": 6,
+  "eventsStillUnresolved": 3,
   "weakImportQualificationCount": 13,
-  "importEligibilityReviewCount": 8,
+  "importEligibilityReviewCount": 2,
   "artistProfilesEvaluated": 153,
-  "artistProfilesResolved": 46,
-  "artistProfilesUnresolved": 107,
+  "artistProfilesResolved": 117,
+  "artistProfilesUnresolved": 36,
   "evidenceProviderRequests": 306,
   "evidenceProviderSuccesses": 306,
   "evidenceProviderFailures": 0,
-  "genreRecoverableAfter": 5,
+  "genreRecoverableAfter": 0,
   "knownWrongGenreAssignments": 0,
-  "searchFalseNegatives": 12,
+  "searchFalseNegatives": 0,
   "searchFalsePositives": 0,
   "consumerParityFailures": 0,
   "ticketRegressionFailures": 0,
@@ -103,15 +103,14 @@
         "Techno"
       ],
       "fusionProjection": [
-        "Tech House",
-        "Techno"
+        "Techno",
+        "Tech House"
       ],
-      "method": "discovery_evidence_fusion",
+      "method": "multi_source_fusion",
       "confidence": "HIGH",
       "evidenceSources": [
         "DESCRIPTION",
-        "DISCOVERY_GENRE_CANDIDATE",
-        "LINEUP_CONSENSUS"
+        "DESCRIPTION"
       ],
       "lineupState": "LINEUP_NOT_ANNOUNCED",
       "ticketState": "TICKET_TARGET_VERIFIED"
@@ -124,16 +123,16 @@
         "Techno"
       ],
       "fusionProjection": [
+        "Techno",
         "Hard Techno",
-        "Electro",
-        "Techno"
+        "Electro"
       ],
       "method": "artist_lineup_fusion",
       "confidence": "HIGH",
       "evidenceSources": [
         "DESCRIPTION",
         "DESCRIPTION",
-        "DISCOVERY_GENRE_CANDIDATE",
+        "DESCRIPTION",
         "HEADLINER_PROFILE"
       ],
       "lineupState": "LINEUP_PARTIAL",
@@ -142,7 +141,10 @@
     {
       "title": "MI * 30.12.2026 | KitKatClub",
       "domainClassification": "ELECTRONIC_MEDIUM",
-      "genres": [],
+      "genres": [
+        "Tech House",
+        "Techno"
+      ],
       "fusionProjection": [
         "Tech House",
         "Techno"
@@ -159,11 +161,17 @@
     {
       "title": "DEBORAH DE LUCA pres by Bootshaus",
       "domainClassification": "ELECTRONIC_MEDIUM",
-      "genres": [],
-      "fusionProjection": [],
-      "method": "no_searchable_evidence",
-      "confidence": "LOW",
-      "evidenceSources": [],
+      "genres": [
+        "Peak Time Techno"
+      ],
+      "fusionProjection": [
+        "Peak Time Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "HEADLINER_PROFILE"
+      ],
       "lineupState": "LINEUP_PARTIAL",
       "ticketState": "TICKET_TARGET_VERIFIED"
     }
