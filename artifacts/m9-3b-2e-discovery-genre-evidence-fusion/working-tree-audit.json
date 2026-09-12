@@ -1,0 +1,31 @@
+{
+  "milestone": "M9.3B.2E.1",
+  "generatedAt": "2026-09-12T16:14:00.000Z",
+  "baselineHead": "50c41208e3eecb097bddd22fa5e946c133e9e0ee",
+  "b2eFoundationFiles": [
+    "M9_3B_2E_DISCOVERY_GENRE_EVIDENCE_FUSION_REPORT.md",
+    "app-v2/scripts/run-m9-3b-2e-discovery-genre-evidence-fusion.ts",
+    "app-v2/server/official-connectors/shared/discovery-genre-fusion/",
+    "app-v2/server/official-connectors/shared/genre-evidence.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/artist-identity.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/artist-intelligence-service.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/external-metadata-provider.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/lineup-genre-consensus.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/official-artist-web-provider.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/wikipedia-artist-provider.ts",
+    "artifacts/m9-3b-2e-discovery-genre-evidence-fusion/"
+  ],
+  "b2eClosureFiles": [
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/provider-negative-cache.ts",
+    "app-v2/server/official-connectors/shared/artist-genre-intelligence/provider-fetch.ts",
+    "app-v2/server/official-connectors/shared/discovery-genre-fusion/remaining-six-evidence-dossiers.ts"
+  ],
+  "excludedUnrelated": [
+    "app-v2/server/official-connectors/ticket-evidence/network-discovery/* (M9.3B.1)",
+    "app-v2/scripts/debug-*",
+    "app-v2/scripts/run-m9-3b-1*",
+    "artifacts/m9-3b-2c-* modifications",
+    "M8/M9 historical reports"
+  ],
+  "recommendation": "Commit b2eFoundationFiles only for checkpoint; closure files in follow-up commit after apply pass."
+}

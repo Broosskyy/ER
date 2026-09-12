@@ -1,0 +1,193 @@
+[
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "howDiscovered": "bootshaus-official, ticket",
+    "whyRelevant": "likely:electronic_venue_corroboration",
+    "highLikelySignals": [
+      "LIKELY_RELEVANT"
+    ],
+    "signalsStillAvailable": true,
+    "signalsDiscardedOnImport": false,
+    "canContributeDomain": true,
+    "canContributeGenre": false,
+    "originalQualificationTooWeak": true,
+    "weakImportQualification": true,
+    "importEligibilityReview": true,
+    "lineupState": "LINEUP_COMPLETE",
+    "headliner": null,
+    "artistEvidenceAttempted": [],
+    "artistEvidenceGaps": [
+      "DANTH",
+      "FABIAN FARELL",
+      "NIKLAS DEE",
+      "OLIVER MAGENTA",
+      "TEKNOCLASH"
+    ],
+    "fusionProjection": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "recommendedNextEvidence": [
+      "artist_external_metadata_or_official_bio",
+      "event_specific_description_or_category",
+      "bootshaus_official_page_refetch"
+    ]
+  },
+  {
+    "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "howDiscovered": "bootshaus-official, ticket",
+    "whyRelevant": "likely:electronic_venue_corroboration",
+    "highLikelySignals": [
+      "LIKELY_RELEVANT"
+    ],
+    "signalsStillAvailable": true,
+    "signalsDiscardedOnImport": false,
+    "canContributeDomain": true,
+    "canContributeGenre": false,
+    "originalQualificationTooWeak": true,
+    "weakImportQualification": true,
+    "importEligibilityReview": true,
+    "lineupState": "LINEUP_COMPLETE",
+    "headliner": null,
+    "artistEvidenceAttempted": [],
+    "artistEvidenceGaps": [
+      "CLEOPARD2000 b2b ALBA FRANCH",
+      "DAVYBOI b2b TRANCEMASTER KRAUSE",
+      "MIKA HEGGEMANN",
+      "PRADA2000",
+      "TESTPRESS",
+      "ELOTRANCE",
+      "HITMiLOW",
+      "SATYS FYRE"
+    ],
+    "fusionProjection": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "recommendedNextEvidence": [
+      "artist_external_metadata_or_official_bio",
+      "event_specific_description_or_category",
+      "bootshaus_official_page_refetch"
+    ]
+  },
+  {
+    "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "howDiscovered": "bootshaus-official, ticket",
+    "whyRelevant": "likely:electronic_venue_corroboration",
+    "highLikelySignals": [
+      "LIKELY_RELEVANT"
+    ],
+    "signalsStillAvailable": true,
+    "signalsDiscardedOnImport": false,
+    "canContributeDomain": true,
+    "canContributeGenre": false,
+    "originalQualificationTooWeak": true,
+    "weakImportQualification": true,
+    "importEligibilityReview": true,
+    "lineupState": "LINEUP_COMPLETE",
+    "headliner": null,
+    "artistEvidenceAttempted": [
+      "MOGUAI: Techno"
+    ],
+    "artistEvidenceGaps": [
+      "ALUKES b2b DAVE REPLAY",
+      "JOHANNA KLEEN",
+      "OLIVER MAGENTA"
+    ],
+    "fusionProjection": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "recommendedNextEvidence": [
+      "artist_external_metadata_or_official_bio",
+      "event_specific_description_or_category",
+      "bootshaus_official_page_refetch"
+    ]
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "howDiscovered": "affenkaefig-official, ticket",
+    "whyRelevant": "genre_not_explicit",
+    "highLikelySignals": [],
+    "signalsStillAvailable": true,
+    "signalsDiscardedOnImport": false,
+    "canContributeDomain": true,
+    "canContributeGenre": false,
+    "originalQualificationTooWeak": true,
+    "weakImportQualification": true,
+    "importEligibilityReview": true,
+    "lineupState": "LINEUP_COMPLETE",
+    "headliner": null,
+    "artistEvidenceAttempted": [],
+    "artistEvidenceGaps": [
+      "PAOLO FERRARA",
+      "LE KLOWN",
+      "ANNX HELLMAYER",
+      "LHYST",
+      "PØUL STZ",
+      "TATTI VALKYRIE",
+      "VANY"
+    ],
+    "fusionProjection": [],
+    "domainClassification": "AMBIGUOUS",
+    "recommendedNextEvidence": [
+      "artist_external_metadata_or_official_bio",
+      "event_specific_description_or_category"
+    ]
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "howDiscovered": "bootshaus-official, ticket",
+    "whyRelevant": "weak_positive:mainfloor; likely:electronic_venue_corroboration",
+    "highLikelySignals": [
+      "LIKELY_RELEVANT"
+    ],
+    "signalsStillAvailable": true,
+    "signalsDiscardedOnImport": false,
+    "canContributeDomain": true,
+    "canContributeGenre": false,
+    "originalQualificationTooWeak": false,
+    "weakImportQualification": false,
+    "importEligibilityReview": false,
+    "lineupState": "LINEUP_PARTIAL",
+    "headliner": "CHRIS STUSSY",
+    "artistEvidenceAttempted": [],
+    "artistEvidenceGaps": [
+      "CHRIS STUSSY"
+    ],
+    "fusionProjection": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "recommendedNextEvidence": [
+      "artist_external_metadata_or_official_bio",
+      "event_specific_description_or_category",
+      "bootshaus_official_page_refetch"
+    ]
+  },
+  {
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "howDiscovered": "ticket-io-network-discovery, ticket",
+    "whyRelevant": "likely:electronic_venue_corroboration",
+    "highLikelySignals": [
+      "LIKELY_RELEVANT"
+    ],
+    "signalsStillAvailable": true,
+    "signalsDiscardedOnImport": false,
+    "canContributeDomain": true,
+    "canContributeGenre": false,
+    "originalQualificationTooWeak": true,
+    "weakImportQualification": true,
+    "importEligibilityReview": true,
+    "lineupState": "LINEUP_PARTIAL",
+    "headliner": "DEBORAH DE LUCA",
+    "artistEvidenceAttempted": [],
+    "artistEvidenceGaps": [
+      "DEBORAH DE LUCA"
+    ],
+    "fusionProjection": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "recommendedNextEvidence": [
+      "artist_external_metadata_or_official_bio",
+      "event_specific_description_or_category"
+    ]
+  }
+]

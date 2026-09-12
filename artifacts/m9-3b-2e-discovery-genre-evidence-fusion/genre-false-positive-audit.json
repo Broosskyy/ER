@@ -1,0 +1,79 @@
+{
+  "knownWrongGenreAssignments": 0,
+  "reviewedConflicts": [
+    {
+      "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "sources": [
+        "bootshaus-official",
+        "ticket"
+      ],
+      "currentGenres": [
+        "Drum'n'Bass",
+        "Hard Dance",
+        "Dubstep"
+      ],
+      "availableGenreEvidence": [
+        "Drum'n'Bass",
+        "Hard Dance",
+        "Dubstep",
+        "Electro"
+      ],
+      "evidenceStrength": "strong",
+      "recommendedGenres": [
+        "Drum'n'Bass",
+        "Hard Dance",
+        "Dubstep",
+        "Electro"
+      ],
+      "classification": "GENRE_CONFLICT_REVIEW",
+      "reason": "current_genres_disagree_with_verified_evidence",
+      "checkedLayers": [
+        "canonical_db",
+        "artist_intelligence",
+        "discovery_genre_fusion"
+      ],
+      "explicitGenreCount": 0,
+      "lineupDerivedGenres": [],
+      "confidenceBand": "HIGH"
+    },
+    {
+      "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "sources": [
+        "ticket-io-network-discovery",
+        "bootshaus-official",
+        "ticket"
+      ],
+      "currentGenres": [
+        "Hard Techno",
+        "Techno"
+      ],
+      "availableGenreEvidence": [
+        "Hard Techno",
+        "Techno",
+        "Electro"
+      ],
+      "evidenceStrength": "strong",
+      "recommendedGenres": [
+        "Hard Techno",
+        "Techno",
+        "Electro"
+      ],
+      "classification": "GENRE_CONFLICT_REVIEW",
+      "reason": "current_genres_disagree_with_verified_evidence",
+      "checkedLayers": [
+        "canonical_db",
+        "artist_intelligence",
+        "artist_identity_cache",
+        "discovery_genre_fusion"
+      ],
+      "explicitGenreCount": 0,
+      "lineupDerivedGenres": [
+        "Hard Techno",
+        "Techno"
+      ],
+      "confidenceBand": "HIGH"
+    }
+  ]
+}

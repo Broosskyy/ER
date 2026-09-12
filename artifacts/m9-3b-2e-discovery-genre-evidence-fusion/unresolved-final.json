@@ -1,0 +1,63 @@
+[
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_intelligence",
+      "discovery_genre_fusion"
+    ]
+  },
+  {
+    "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_intelligence",
+      "discovery_genre_fusion"
+    ]
+  },
+  {
+    "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_intelligence",
+      "artist_identity_cache",
+      "discovery_genre_fusion"
+    ]
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_intelligence",
+      "discovery_genre_fusion"
+    ]
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_intelligence",
+      "discovery_genre_fusion"
+    ]
+  },
+  {
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_intelligence",
+      "discovery_genre_fusion"
+    ]
+  }
+]

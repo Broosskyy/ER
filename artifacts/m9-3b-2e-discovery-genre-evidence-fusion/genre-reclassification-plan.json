@@ -1,0 +1,298 @@
+[
+  {
+    "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "oldGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance"
+    ],
+    "newGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "LOW",
+    "method": "no_searchable_evidence",
+    "evidence": []
+  },
+  {
+    "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "title": "Bootshaus Sommerfest auf 4 Floors!",
+    "oldGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "newGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "LOW",
+    "method": "no_searchable_evidence",
+    "evidence": []
+  },
+  {
+    "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "oldGenres": [
+      "House",
+      "Techno"
+    ],
+    "newGenres": [
+      "House"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "confidence": "HIGH",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "House",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      }
+    ]
+  },
+  {
+    "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "oldGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "newGenres": [
+      "Drum'n'Bass",
+      "Electro",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "confidence": "HIGH",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Drum'n'Bass",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Electro",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Hard Dance",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Dubstep",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      }
+    ]
+  },
+  {
+    "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "title": "Bootshaus Sommerfest Closing",
+    "oldGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "newGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "LOW",
+    "method": "no_searchable_evidence",
+    "evidence": []
+  },
+  {
+    "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "oldGenres": [],
+    "newGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "MEDIUM",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "event_series_genre_inheritance"
+      }
+    ]
+  },
+  {
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "oldGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "newGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "LOW",
+    "method": "no_searchable_evidence",
+    "evidence": []
+  },
+  {
+    "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "oldGenres": [],
+    "newGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "MEDIUM",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "event_series_genre_inheritance"
+      }
+    ]
+  },
+  {
+    "eventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "oldGenres": [],
+    "newGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "MEDIUM",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "event_series_genre_inheritance"
+      }
+    ]
+  },
+  {
+    "eventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "oldGenres": [],
+    "newGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "MEDIUM",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "event_series_genre_inheritance"
+      }
+    ]
+  },
+  {
+    "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "oldGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "newGenres": [
+      "Hard Techno",
+      "Electro",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Hard Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Electro",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Techno",
+        "layer": "DISCOVERY_GENRE_CANDIDATE",
+        "authority": 78,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Hard Techno",
+        "layer": "HEADLINER_PROFILE",
+        "authority": 76,
+        "reason": "headliner_artist_profile_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "oldGenres": [],
+    "newGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "MEDIUM",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Tech House",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "event_series_genre_inheritance"
+      },
+      {
+        "genre": "Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "event_series_genre_inheritance"
+      }
+    ]
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "samples": [
+    {
+      "eventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "genres": [
+        "Techno",
+        "House"
+      ],
+      "method": "multi_source_fusion",
+      "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "house",
+          "displayName": "House",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        }
+      ]
+    },
+    {
+      "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "genres": [
+        "Bass House",
+        "Electro",
+        "House",
+        "Progressive House",
+        "EDM",
+        "Dance"
+      ],
+      "method": "no_searchable_evidence",
+      "contributions": []
+    },
+    {
+      "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "genres": [
+        "Hard Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "contributions": [
+        {
+          "genreKey": "hard techno",
+          "displayName": "Hard Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "hard_techno,rave,hard_techno_abbrev",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "HEADLINER_PROFILE",
+          "authority": 76,
+          "confidence": "HIGH",
+          "sourceReference": "headliner_artist_profile_consensus",
+          "classificationReason": "headliner_artist_profile_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "title": "Bootshaus Sommerfest auf 4 Floors!",
+      "genres": [
+        "Dubstep",
+        "Electro",
+        "Hard Techno",
+        "Techno",
+        "EDM"
+      ],
+      "method": "no_searchable_evidence",
+      "contributions": []
+    },
+    {
+      "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "genres": [
+        "House"
+      ],
+      "method": "multi_source_fusion",
+      "contributions": [
+        {
+          "genreKey": "house",
+          "displayName": "House",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        }
+      ]
+    },
+    {
+      "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "genres": [
+        "Drum'n'Bass",
+        "Electro",
+        "Hard Dance",
+        "Dubstep"
+      ],
+      "method": "multi_source_fusion",
+      "contributions": [
+        {
+          "genreKey": "drum-and-bass",
+          "displayName": "Drum'n'Bass",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "electro",
+          "displayName": "Electro",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hard dance",
+          "displayName": "Hard Dance",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "dubstep",
+          "displayName": "Dubstep",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        }
+      ]
+    },
+    {
+      "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+      "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+      "genres": [
+        "House"
+      ],
+      "method": "discovery_evidence_fusion",
+      "contributions": [
+        {
+          "genreKey": "house",
+          "displayName": "House",
+          "layer": "DISCOVERY_GENRE_CANDIDATE",
+          "authority": 78,
+          "confidence": "HIGH",
+          "sourceReference": "house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "discovery:genre"
+        }
+      ]
+    },
+    {
+      "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+      "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+      "genres": [
+        "House"
+      ],
+      "method": "discovery_evidence_fusion",
+      "contributions": [
+        {
+          "genreKey": "house",
+          "displayName": "House",
+          "layer": "DISCOVERY_GENRE_CANDIDATE",
+          "authority": 78,
+          "confidence": "HIGH",
+          "sourceReference": "house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "discovery:genre"
+        }
+      ]
+    }
+  ],
+  "qaAnchors": [
+    {
+      "title": "Bootshaus on a Ship Vol. IV",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_COMPLETE",
+      "ticketState": "SOLD_OUT"
+    },
+    {
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "genres": [
+        "Techno"
+      ],
+      "fusionProjection": [
+        "Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "LINEUP_CONSENSUS"
+      ],
+      "lineupState": "LINEUP_COMPLETE",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domainClassification": "AMBIGUOUS",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_COMPLETE",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_PARTIAL",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "genres": [
+        "Tech House",
+        "Techno"
+      ],
+      "fusionProjection": [
+        "Tech House",
+        "Techno"
+      ],
+      "method": "discovery_evidence_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "DESCRIPTION",
+        "DISCOVERY_GENRE_CANDIDATE",
+        "LINEUP_CONSENSUS"
+      ],
+      "lineupState": "LINEUP_NOT_ANNOUNCED",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "genres": [
+        "Hard Techno",
+        "Techno"
+      ],
+      "fusionProjection": [
+        "Hard Techno",
+        "Electro",
+        "Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "DESCRIPTION",
+        "DESCRIPTION",
+        "DISCOVERY_GENRE_CANDIDATE",
+        "HEADLINER_PROFILE"
+      ],
+      "lineupState": "LINEUP_PARTIAL",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [
+        "Tech House",
+        "Techno"
+      ],
+      "method": "multi_source_fusion",
+      "confidence": "MEDIUM",
+      "evidenceSources": [
+        "DESCRIPTION",
+        "DESCRIPTION"
+      ],
+      "lineupState": "LINEUP_NOT_ANNOUNCED",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_PARTIAL",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    }
+  ]
+}

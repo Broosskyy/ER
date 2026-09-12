@@ -1,0 +1,1485 @@
+[
+  {
+    "eventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+    "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+    "source": [
+      "bootshaus-official"
+    ],
+    "shop": null,
+    "discoveryCandidate": false,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:techno",
+      "strong_positive:house",
+      "weak_positive:festival",
+      "weak_positive:club",
+      "weak_positive:night",
+      "weak_positive:b2b"
+    ],
+    "strongSignals": [
+      "techno",
+      "house"
+    ],
+    "weakSignals": [
+      "festival",
+      "club",
+      "night",
+      "b2b"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Techno",
+      "House",
+      "Electronic Festival"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "club",
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "bootshaus-official"
+    ],
+    "ticketMetadata": [],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/31-8-26-122-pres-tripolism-at-palma-de-mallorca-es/"
+    ],
+    "existingCanonicalGenres": [
+      "House",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Techno",
+      "House"
+    ]
+  },
+  {
+    "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/C7JPnatZ/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/r3hab-pres-by-bootshaus/"
+    ],
+    "existingCanonicalGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "source": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "shop": "ticketkings.de",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:hard_techno",
+      "strong_positive:rave",
+      "strong_positive:hard_techno_abbrev"
+    ],
+    "strongSignals": [
+      "hard_techno",
+      "rave",
+      "hard_techno_abbrev"
+    ],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Hard Techno"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+    ],
+    "mediaSignals": [
+      "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/"
+    ],
+    "existingCanonicalGenres": [
+      "Hard Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Hard Techno"
+    ]
+  },
+  {
+    "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "title": "Bootshaus Sommerfest auf 4 Floors!",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/vB0cAmWg/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/5-9-26-bootshaus-sommerfest-auf-4-floors/"
+    ],
+    "existingCanonicalGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "source": [
+      "bootshaus-official"
+    ],
+    "shop": null,
+    "discoveryCandidate": false,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:house",
+      "weak_positive:club",
+      "weak_positive:night"
+    ],
+    "strongSignals": [
+      "house"
+    ],
+    "weakSignals": [
+      "club",
+      "night"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "House"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "club",
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "bootshaus-official"
+    ],
+    "ticketMetadata": [],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es/"
+    ],
+    "existingCanonicalGenres": [
+      "House",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "House"
+    ]
+  },
+  {
+    "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "73b85ec6.sibforms.com",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:dnb",
+      "strong_positive:electro"
+    ],
+    "strongSignals": [
+      "dnb",
+      "electro"
+    ],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/"
+    ],
+    "existingCanonicalGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Drum'n'Bass",
+      "Electro",
+      "Hard Dance",
+      "Dubstep"
+    ]
+  },
+  {
+    "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "source": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "shop": "gewoelbe.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:house"
+    ],
+    "strongSignals": [
+      "house"
+    ],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "House"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://gewoelbe.ticket.io/ylGM2drQ/"
+    ],
+    "mediaSignals": [
+      "https://gewoelbe.ticket.io/ylGM2drQ/"
+    ],
+    "existingCanonicalGenres": [
+      "House"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "House"
+    ]
+  },
+  {
+    "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "source": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "shop": "gewoelbe.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:house"
+    ],
+    "strongSignals": [
+      "house"
+    ],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "House"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://gewoelbe.ticket.io/ZAqMQtZU/"
+    ],
+    "mediaSignals": [
+      "https://gewoelbe.ticket.io/ZAqMQtZU/"
+    ],
+    "existingCanonicalGenres": [
+      "House"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "House"
+    ]
+  },
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/4zjKRnsa/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "polyamor.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://polyamor.ticket.io/PDikPg1v/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/fjspvLe4/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "title": "14 Jahre Affenkäfig 19.09.2026",
+    "source": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket",
+      "ticket"
+    ],
+    "shop": "affenkaefig.info",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:rave",
+      "weak_positive:open_air"
+    ],
+    "strongSignals": [
+      "rave"
+    ],
+    "weakSignals": [
+      "open_air"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://affenkaefig.info/tickets/"
+    ],
+    "mediaSignals": [
+      "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/"
+    ],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "title": "Bootshaus Sommerfest Closing",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/ycDXwvrm/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26/"
+    ],
+    "existingCanonicalGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+    "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "musical-madness.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:live",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "live"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://musical-madness.ticket.io/eACzcM9S/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus/"
+    ],
+    "existingCanonicalGenres": [
+      "Hardstyle"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+    "title": "Unreal Weekender Night I - September 2026",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "unreal-bootshaus.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:night",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "night"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://unreal-bootshaus.ticket.io/U1dUL7lG/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026/"
+    ],
+    "existingCanonicalGenres": [
+      "Hard Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "source": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "shop": "gewoelbe.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:house",
+      "weak_positive:live"
+    ],
+    "strongSignals": [
+      "house"
+    ],
+    "weakSignals": [
+      "live"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "House"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://gewoelbe.ticket.io/auHCwFAp/"
+    ],
+    "mediaSignals": [
+      "https://gewoelbe.ticket.io/auHCwFAp/"
+    ],
+    "existingCanonicalGenres": [
+      "House"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "House"
+    ]
+  },
+  {
+    "eventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+    "title": "Unreal Weekender Night II - September 2026",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "unreal-bootshaus.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:night",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "night"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://unreal-bootshaus.ticket.io/Zt24QJcV/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026/"
+    ],
+    "existingCanonicalGenres": [
+      "Hard Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "source": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket"
+    ],
+    "shop": "rheinaudio.n8manager.de",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:club",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "club"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "club"
+    ],
+    "sourceNetworkSignals": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43"
+    ],
+    "mediaSignals": [
+      "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "source": [
+      "bootshaus-official",
+      "bootshaus-official",
+      "ticket",
+      "ticket"
+    ],
+    "shop": "arep.co",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:night",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "night"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "bootshaus-official",
+      "ticket",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://arep.co/m/ely-oaks-02-oct-2026"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/nibirii-pres-ely-oaks-and-more/"
+    ],
+    "existingCanonicalGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+    "title": "Blacklist Festival 2026",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "blacklist-festival.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "AMBIGUOUS",
+    "relevanceClassification": "AMBIGUOUS",
+    "relevanceSignals": [
+      "weak_positive:festival",
+      "ambiguous:weak_signal_only"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "festival"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://blacklist-festival.ticket.io/BF2Qb7HL/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/10-2026-blacklist-festival-2026/"
+    ],
+    "existingCanonicalGenres": [
+      "Dubstep",
+      "Drum'n'Bass"
+    ],
+    "domainClassification": "AMBIGUOUS",
+    "importQualification": "UNKNOWN",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+    "title": "CHROME COLOGNE",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:rave",
+      "strong_positive:hard_techno_abbrev"
+    ],
+    "strongSignals": [
+      "techno",
+      "hard_techno",
+      "rave",
+      "hard_techno_abbrev"
+    ],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/Atz0dHLX/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/9-10-26-chrome-cologne/"
+    ],
+    "existingCanonicalGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Techno",
+      "Hard Techno"
+    ]
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "source": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "shop": "ticketkings.de",
+    "discoveryCandidate": true,
+    "relevanceScore": "AMBIGUOUS",
+    "relevanceClassification": "AMBIGUOUS",
+    "relevanceSignals": [
+      "genre_not_explicit"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+    ],
+    "mediaSignals": [
+      "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "AMBIGUOUS",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:mainfloor",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "mainfloor"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/By06xnf4/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "source": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket",
+      "ticket"
+    ],
+    "shop": "rheinaudio.n8manager.de",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://rheinaudio.n8manager.de/eventportal/"
+    ],
+    "mediaSignals": [
+      "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+    "title": "Cosmic Gate pres by Bootshaus & Senses!",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "senses-bootshaus.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://senses-bootshaus.ticket.io/GhUtpLGh/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/"
+    ],
+    "existingCanonicalGenres": [
+      "Trance"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/B3jK8aPC/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "title": "SA * 24.10.2026 | KitKatClub",
+    "source": [
+      "bootshaus-official"
+    ],
+    "shop": null,
+    "discoveryCandidate": false,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:techno",
+      "strong_positive:tech_house",
+      "weak_positive:live",
+      "weak_positive:dj"
+    ],
+    "strongSignals": [
+      "techno",
+      "tech_house"
+    ],
+    "weakSignals": [
+      "live",
+      "dj"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Tech House",
+      "Techno"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official"
+    ],
+    "ticketMetadata": [],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub/"
+    ],
+    "existingCanonicalGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Techno",
+      "Tech House"
+    ]
+  },
+  {
+    "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+    "title": "Halloween Weekender",
+    "source": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "shop": "ticketkings.de",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:techno",
+      "strong_positive:rave",
+      "weak_positive:b2b"
+    ],
+    "strongSignals": [
+      "techno",
+      "rave"
+    ],
+    "weakSignals": [
+      "b2b"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Techno"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/"
+    ],
+    "mediaSignals": [
+      "https://affenkaefig.info/event/halloween-weekender/"
+    ],
+    "existingCanonicalGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Techno"
+    ]
+  },
+  {
+    "eventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/Hv4f09p8/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "source": [
+      "ticket-io-network-discovery",
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "HIGH_RELEVANCE",
+    "relevanceClassification": "HIGH_RELEVANCE",
+    "relevanceSignals": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:electro",
+      "strong_positive:dj_set",
+      "strong_positive:hard_techno_abbrev",
+      "weak_positive:festival",
+      "weak_positive:night",
+      "weak_positive:dj"
+    ],
+    "strongSignals": [
+      "techno",
+      "hard_techno",
+      "electro",
+      "dj_set",
+      "hard_techno_abbrev"
+    ],
+    "weakSignals": [
+      "festival",
+      "night",
+      "dj"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "ticket-io-network-discovery",
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/jhUP7WQl/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus-club.ticket.io/jhUP7WQl/"
+    ],
+    "existingCanonicalGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "importQualification": "STRONG_EVENT_SPECIFIC",
+    "discoveryGenreLabels": [
+      "Techno",
+      "Hard Techno",
+      "Electro"
+    ]
+  },
+  {
+    "eventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+    "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "unreal-bootshaus.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "weak_positive:night",
+      "weak_positive:all_night_long",
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [
+      "night",
+      "all_night_long"
+    ],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [
+      "night"
+    ],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://unreal-bootshaus.ticket.io/nUs0Ktl4/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/"
+    ],
+    "existingCanonicalGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "source": [
+      "bootshaus-official"
+    ],
+    "shop": null,
+    "discoveryCandidate": false,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official"
+    ],
+    "ticketMetadata": [],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "MODERATE_EVENT_SPECIFIC",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "title": "Bootshaus & Loonyland pres. NYE 2026",
+    "source": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/S0cbXDda/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026/"
+    ],
+    "existingCanonicalGenres": [
+      "Electro",
+      "EDM"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  },
+  {
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "source": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "shop": "bootshaus-club.ticket.io",
+    "discoveryCandidate": true,
+    "relevanceScore": "LIKELY_RELEVANT",
+    "relevanceClassification": "LIKELY_RELEVANT",
+    "relevanceSignals": [
+      "likely:electronic_venue_corroboration"
+    ],
+    "strongSignals": [],
+    "weakSignals": [],
+    "eventTitleSignals": [],
+    "descriptionSignals": [],
+    "categorySignals": [],
+    "lineupSignals": [],
+    "shopSignals": [],
+    "sourceNetworkSignals": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "ticketMetadata": [
+      "https://bootshaus-club.ticket.io/uSXeJhHU/"
+    ],
+    "mediaSignals": [
+      "https://bootshaus-club.ticket.io/uSXeJhHU/"
+    ],
+    "existingCanonicalGenres": [],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "importQualification": "WEAK_IMPORT_QUALIFICATION",
+    "discoveryGenreLabels": []
+  }
+]

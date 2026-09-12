@@ -7,7 +7,14 @@ import {
   runArtistEvidenceProviders,
 } from './artist-evidence-providers';
 import { fetchExternalArtistGenreEvidence } from './external-metadata-provider';
-import { getArtistIdentityKey } from './artist-identity';
+import { ProviderNegativeCache } from './provider-negative-cache';
+import { fetchWikipediaArtistGenreEvidence } from './wikipedia-artist-provider';
+import {
+  fetchDiscogsOfficialUrls,
+  fetchOfficialArtistWebEvidence,
+} from './official-artist-web-provider';
+import { toArtistSearchName } from './artist-identity';
+import { extractHeadlinerFromTitle, getArtistIdentityKey } from './artist-identity';
 import {
   buildEventGenreExplanation,
   deriveEventGenresFromLineupConsensus,
@@ -37,6 +44,10 @@ export interface ArtistIntelligenceDryRunResult {
 function collectUniqueLineupArtists(events: StagingEventSnapshot[], runQuery?: LinkedQueryExecutor): string[] {
   const artists = new Set<string>();
   for (const event of events) {
+    const headliner = extractHeadlinerFromTitle(event.title);
+    if (headliner) {
+      artists.add(headliner);
+    }
     const sourceRows = runQuery ? loadEventSourcePayloads(runQuery, event.eventId) : [];
     const { lineup } = collectLineupEvidence(event, sourceRows);
     for (const act of lineup) {
@@ -46,14 +57,77 @@ function collectUniqueLineupArtists(events: StagingEventSnapshot[], runQuery?: L
   return [...artists].sort();
 }
 
+function prioritizeArtistsForExternalFetch(
+  events: StagingEventSnapshot[],
+  artistNames: string[],
+  runQuery?: LinkedQueryExecutor,
+): string[] {
+  const unresolvedHeadliners = new Set<string>();
+  for (const event of events) {
+    if (event.genres.length > 0) {
+      continue;
+    }
+    const headliner = extractHeadlinerFromTitle(event.title);
+    if (headliner) {
+      unresolvedHeadliners.add(headliner);
+    }
+    if (!runQuery) {
+      continue;
+    }
+    const sourceRows = loadEventSourcePayloads(runQuery, event.eventId);
+    const { lineup } = collectLineupEvidence(event, sourceRows);
+    if (lineup.length === 1) {
+      unresolvedHeadliners.add(lineup[0]!);
+    }
+  }
+  const prioritized = [
+    ...artistNames.filter((name) => unresolvedHeadliners.has(name)),
+    ...artistNames.filter((name) => !unresolvedHeadliners.has(name)),
+  ];
+  return [...new Set(prioritized)];
+}
+
+function artistsForUnresolvedEvents(
+  events: StagingEventSnapshot[],
+  runQuery?: LinkedQueryExecutor,
+): Set<string> {
+  const targets = new Set<string>();
+  for (const event of events) {
+    if (event.genres.length > 0) {
+      continue;
+    }
+    const headliner = extractHeadlinerFromTitle(event.title);
+    if (headliner) {
+      targets.add(headliner);
+    }
+    if (!runQuery) {
+      continue;
+    }
+    const sourceRows = loadEventSourcePayloads(runQuery, event.eventId);
+    const { lineup } = collectLineupEvidence(event, sourceRows);
+    for (const act of lineup) {
+      targets.add(act);
+    }
+  }
+  return targets;
+}
+
 export async function runArtistIntelligencePass(input: {
   events: StagingEventSnapshot[];
   runQuery?: LinkedQueryExecutor;
   store: ArtistProfileStore;
   fetchExternal?: boolean;
+  externalUnresolvedOnly?: boolean;
+  negativeCache?: ProviderNegativeCache;
 }): Promise<ArtistIntelligenceDryRunResult> {
   input.store.load();
-  const artistNames = collectUniqueLineupArtists(input.events, input.runQuery);
+  const negativeCache = input.negativeCache ?? new ProviderNegativeCache();
+  negativeCache.load();
+  const artistNames = prioritizeArtistsForExternalFetch(
+    input.events,
+    collectUniqueLineupArtists(input.events, input.runQuery),
+    input.runQuery,
+  );
   let artistProfilesReused = 0;
   for (const artistName of artistNames) {
     if (input.store.getProfile(artistName)) {
@@ -84,21 +158,72 @@ export async function runArtistIntelligencePass(input: {
   }
 
   if (input.fetchExternal) {
+    const unresolvedTargets = input.externalUnresolvedOnly
+      ? artistsForUnresolvedEvents(input.events, input.runQuery)
+      : undefined;
     for (const artistName of artistNames) {
+      if (unresolvedTargets && !unresolvedTargets.has(artistName)) {
+        continue;
+      }
       const profile = input.store.getProfile(artistName);
       if (profile && profile.canonicalGenres.length > 0) {
         continue;
       }
-      const externalEvidence = await fetchExternalArtistGenreEvidence(artistName);
-      input.store.recordProviderRequest(
-        'external-metadata',
-        externalEvidence.length > 0 ? 'success' : 'failure',
+      const shouldFetchExternal = ['musicbrainz', 'discogs'].some((providerId) =>
+        negativeCache.shouldFetch(providerId, artistName),
       );
-      if (externalEvidence.length === 0) {
+      if (!shouldFetchExternal) {
+        continue;
+      }
+      const external = await fetchExternalArtistGenreEvidence(artistName);
+      for (const attempt of external.attempts) {
+        negativeCache.record(attempt.providerId, artistName, attempt.outcome, attempt.detail);
+        input.store.recordProviderRequest(
+          attempt.providerId,
+          attempt.outcome === 'EVIDENCE_FOUND'
+            ? 'success'
+            : attempt.outcome === 'TIMEOUT'
+              ? 'timeout'
+              : 'failure',
+        );
+      }
+      let mergedEvidence = external.evidence;
+      if (mergedEvidence.length === 0 && negativeCache.shouldFetch('wikipedia', artistName)) {
+        const wikiEvidence = await fetchWikipediaArtistGenreEvidence(artistName);
+        negativeCache.record(
+          'wikipedia',
+          artistName,
+          wikiEvidence.length > 0 ? 'EVIDENCE_FOUND' : 'NO_RESULT',
+        );
+        input.store.recordProviderRequest(
+          'wikipedia',
+          wikiEvidence.length > 0 ? 'success' : 'failure',
+        );
+        mergedEvidence = wikiEvidence;
+      }
+      if (mergedEvidence.length === 0 && negativeCache.shouldFetch('official-artist-web', artistName)) {
+        const searchName = toArtistSearchName(artistName);
+        const officialUrls = await fetchDiscogsOfficialUrls(searchName);
+        const webEvidence = await fetchOfficialArtistWebEvidence({
+          artistName,
+          officialUrls,
+        });
+        negativeCache.record(
+          'official-artist-web',
+          artistName,
+          webEvidence.length > 0 ? 'EVIDENCE_FOUND' : 'NO_RESULT',
+        );
+        input.store.recordProviderRequest(
+          'official-artist-web',
+          webEvidence.length > 0 ? 'success' : 'failure',
+        );
+        mergedEvidence = webEvidence;
+      }
+      if (mergedEvidence.length === 0) {
         continue;
       }
       const hadProfile = Boolean(profile);
-      input.store.upsertEvidence(artistName, externalEvidence);
+      input.store.upsertEvidence(artistName, mergedEvidence);
       if (!hadProfile) {
         artistProfilesCreated += 1;
       }
@@ -144,6 +269,7 @@ export async function runArtistIntelligencePass(input: {
   const artistGenreConflicts = profiles.filter((profile) => profile.confidence === 'CONFLICT').length;
 
   input.store.save();
+  negativeCache.save();
 
   return {
     artistProfilesCreated,

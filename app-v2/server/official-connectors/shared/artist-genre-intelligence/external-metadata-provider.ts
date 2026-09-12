@@ -1,46 +1,19 @@
 import type { ArtistGenreEvidence } from './types';
-import { getArtistIdentityKey, normalizeArtistDisplayName } from './artist-identity';
+import {
+  artistSearchNameVariants,
+  getArtistIdentityKey,
+  normalizeArtistDisplayName,
+  toArtistSearchName,
+} from './artist-identity';
 import { normalizeOfficialGenreLabel } from '../normalize-genre';
+import { fetchProviderJson, PROVIDER_THROTTLE_MS } from './provider-fetch';
+import type { ProviderOutcome } from './provider-negative-cache';
 
-const USER_AGENT = 'EternalRave/0.2.0 (m9.3b.2d-artist-intelligence; contact@eternal-rave.local)';
 const MUSICBRAINZ_BASE_URL = 'https://musicbrainz.org/ws/2';
 const DISCOGS_BASE_URL = 'https://api.discogs.com';
-const FETCH_TIMEOUT_MS = 15_000;
-const MAX_JSON_BYTES = 512_000;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function safeFetchJson<T>(url: string): Promise<T | undefined> {
-  if (!url.startsWith('https://')) {
-    return undefined;
-  }
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-  try {
-    const response = await fetch(url, {
-      headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' },
-      signal: controller.signal,
-      redirect: 'follow',
-    });
-    if (!response.ok) {
-      return undefined;
-    }
-    const contentType = response.headers.get('content-type') ?? '';
-    if (!contentType.includes('application/json')) {
-      return undefined;
-    }
-    const text = await response.text();
-    if (text.length > MAX_JSON_BYTES) {
-      return undefined;
-    }
-    return JSON.parse(text) as T;
-  } catch {
-    return undefined;
-  } finally {
-    clearTimeout(timeout);
-  }
 }
 
 function labelsToEvidence(input: {
@@ -63,7 +36,7 @@ function labelsToEvidence(input: {
     seen.add(normalized.genreKey);
     records.push({
       artistIdentity: identity,
-      normalizedName: normalizeArtistDisplayName(input.artistName),
+      normalizedName: toArtistSearchName(input.artistName),
       genreKey: normalized.genreKey,
       displayName: normalized.displayName,
       sourceType: input.sourceType,
@@ -78,91 +51,181 @@ function labelsToEvidence(input: {
   return records;
 }
 
-export async function fetchExternalArtistGenreEvidence(
+function namesMatch(left: string, right: string): boolean {
+  return left.toLowerCase() === right.toLowerCase();
+}
+
+export interface ExternalProviderAttempt {
+  providerId: string;
+  outcome: ProviderOutcome;
+  detail?: string;
+  genres: string[];
+}
+
+async function fetchMusicBrainzTags(
   artistName: string,
-): Promise<ArtistGenreEvidence[]> {
-  const mbUrl = `${MUSICBRAINZ_BASE_URL}/artist?query=${encodeURIComponent(`artist:"${artistName}"`)}&fmt=json&limit=5`;
-  const mbPayload = await safeFetchJson<{ artists?: Array<{ id: string; name: string; score?: number }> }>(
-    mbUrl,
-  );
-  await sleep(1100);
-  const mbMatch =
-    mbPayload?.artists?.find((artist) => artist.name.toLowerCase() === artistName.toLowerCase()) ??
-    mbPayload?.artists?.find((artist) => (artist.score ?? 0) >= 95);
-  if (!mbMatch) {
-    return [];
+): Promise<{ result?: { id: string; name: string; tags: string[] }; attempt: ExternalProviderAttempt }> {
+  for (const variant of artistSearchNameVariants(artistName)) {
+    const mbUrl = `${MUSICBRAINZ_BASE_URL}/artist?query=${encodeURIComponent(`artist:"${variant}"`)}&fmt=json&limit=5`;
+    const search = await fetchProviderJson<{ artists?: Array<{ id: string; name: string; score?: number }> }>(
+      mbUrl,
+    );
+    await sleep(PROVIDER_THROTTLE_MS);
+    if (search.status === 'rate_limited') {
+      return { attempt: { providerId: 'musicbrainz', outcome: 'RATE_LIMITED', detail: 'search_429', genres: [] } };
+    }
+    if (search.status === 'timeout') {
+      return { attempt: { providerId: 'musicbrainz', outcome: 'TIMEOUT', detail: 'search_timeout', genres: [] } };
+    }
+    if (search.status !== 'success') {
+      continue;
+    }
+    const mbMatch =
+      search.data?.artists?.find((artist) => namesMatch(artist.name, variant)) ??
+      search.data?.artists?.find((artist) => (artist.score ?? 0) >= 92);
+    if (!mbMatch) {
+      continue;
+    }
+    const mbTagsUrl = `${MUSICBRAINZ_BASE_URL}/artist/${mbMatch.id}?inc=tags&fmt=json`;
+    const tagsResponse = await fetchProviderJson<{ tags?: Array<{ name: string; count?: number }> }>(mbTagsUrl);
+    await sleep(PROVIDER_THROTTLE_MS);
+    if (tagsResponse.status === 'rate_limited') {
+      return { attempt: { providerId: 'musicbrainz', outcome: 'RATE_LIMITED', detail: 'tags_429', genres: [] } };
+    }
+    const tags = (tagsResponse.data?.tags ?? [])
+      .filter((tag) => (tag.count ?? 0) >= 1)
+      .sort((left, right) => (right.count ?? 0) - (left.count ?? 0))
+      .map((tag) => tag.name)
+      .slice(0, 8);
+    if (tags.length > 0) {
+      return {
+        result: { id: mbMatch.id, name: mbMatch.name, tags },
+        attempt: { providerId: 'musicbrainz', outcome: 'EVIDENCE_FOUND', genres: tags },
+      };
+    }
   }
+  return { attempt: { providerId: 'musicbrainz', outcome: 'NO_RESULT', genres: [] } };
+}
 
-  const mbTagsUrl = `${MUSICBRAINZ_BASE_URL}/artist/${mbMatch.id}?inc=tags&fmt=json`;
-  const mbTagsPayload = await safeFetchJson<{ tags?: Array<{ name: string; count?: number }> }>(
-    mbTagsUrl,
-  );
-  await sleep(1100);
-  const mbTags = (mbTagsPayload?.tags ?? [])
-    .filter((tag) => (tag.count ?? 0) >= 1)
-    .sort((left, right) => (right.count ?? 0) - (left.count ?? 0))
-    .map((tag) => tag.name)
-    .slice(0, 8);
-
-  const discogsSearchUrl = `${DISCOGS_BASE_URL}/database/search?q=${encodeURIComponent(artistName)}&type=artist&per_page=5`;
-  const discogsSearch = await safeFetchJson<{ results?: Array<{ id: number; title: string }> }>(
-    discogsSearchUrl,
-  );
-  await sleep(1100);
-  const discogsMatch =
-    discogsSearch?.results?.find((result) => result.title.toLowerCase() === artistName.toLowerCase()) ??
-    discogsSearch?.results?.[0];
-  const discogsLabels: string[] = [];
-  if (discogsMatch) {
-    const discogsArtist = await safeFetchJson<{
+async function fetchDiscogsLabels(
+  artistName: string,
+): Promise<{ result?: { id: number; title: string; labels: string[] }; attempt: ExternalProviderAttempt }> {
+  for (const variant of artistSearchNameVariants(artistName)) {
+    const discogsSearchUrl = `${DISCOGS_BASE_URL}/database/search?q=${encodeURIComponent(variant)}&type=artist&per_page=5`;
+    const search = await fetchProviderJson<{ results?: Array<{ id: number; title: string }> }>(discogsSearchUrl);
+    await sleep(PROVIDER_THROTTLE_MS);
+    if (search.status === 'rate_limited') {
+      return { attempt: { providerId: 'discogs', outcome: 'RATE_LIMITED', detail: 'search_429', genres: [] } };
+    }
+    const discogsMatch =
+      search.data?.results?.find((result) => namesMatch(result.title, variant)) ??
+      search.data?.results?.find((result) => namesMatch(result.title, artistName));
+    if (!discogsMatch) {
+      continue;
+    }
+    const artistResponse = await fetchProviderJson<{
       genres?: string[];
       styles?: string[];
       profile?: string;
     }>(`${DISCOGS_BASE_URL}/artists/${discogsMatch.id}`);
-    await sleep(1100);
-    discogsLabels.push(...(discogsArtist?.genres ?? []), ...(discogsArtist?.styles ?? []));
-    const profile = discogsArtist?.profile ?? '';
+    await sleep(PROVIDER_THROTTLE_MS);
+    const labels = [
+      ...(artistResponse.data?.genres ?? []),
+      ...(artistResponse.data?.styles ?? []),
+    ];
+    const profile = artistResponse.data?.profile ?? '';
     for (const match of profile.matchAll(
       /\b(?:techno|house|trance|hardstyle|hard techno|hip hop|hip-hop|edm|electro|drum and bass|dubstep|tech house|hard techno)\b/gi,
     )) {
-      discogsLabels.push(match[0]);
+      labels.push(match[0]);
+    }
+    if (labels.length > 0) {
+      return {
+        result: { id: discogsMatch.id, title: discogsMatch.title, labels },
+        attempt: { providerId: 'discogs', outcome: 'EVIDENCE_FOUND', genres: labels },
+      };
     }
   }
+  return { attempt: { providerId: 'discogs', outcome: 'NO_RESULT', genres: [] } };
+}
 
-  const mbEvidence = labelsToEvidence({
-    artistName,
-    labels: mbTags,
-    sourceType: 'MUSICBRAINZ',
-    sourceReference: `musicbrainz:${mbMatch.id}`,
-    evidenceStrength: 'STRONG',
-    confidence: 'HIGH',
-    classificationReason: 'musicbrainz_artist_tags',
-  });
-  const discogsEvidence = labelsToEvidence({
-    artistName,
-    labels: discogsLabels,
-    sourceType: 'DISCOGS',
-    sourceReference: discogsMatch ? `discogs:${discogsMatch.id}` : 'discogs:none',
-    evidenceStrength: 'MODERATE',
-    confidence: 'MEDIUM',
-    classificationReason: 'discogs_artist_genres_styles',
-  });
+export async function fetchExternalArtistGenreEvidence(
+  artistName: string,
+): Promise<{ evidence: ArtistGenreEvidence[]; attempts: ExternalProviderAttempt[] }> {
+  const attempts: ExternalProviderAttempt[] = [];
+  const mb = await fetchMusicBrainzTags(artistName);
+  attempts.push(mb.attempt);
+  if (mb.attempt.outcome === 'RATE_LIMITED' || mb.attempt.outcome === 'TIMEOUT') {
+    return { evidence: [], attempts };
+  }
+  const discogs = await fetchDiscogsLabels(artistName);
+  attempts.push(discogs.attempt);
+
+  const mbEvidence = mb.result
+    ? labelsToEvidence({
+        artistName,
+        labels: mb.result.tags,
+        sourceType: 'MUSICBRAINZ',
+        sourceReference: `musicbrainz:${mb.result.id}`,
+        evidenceStrength: 'STRONG',
+        confidence: 'HIGH',
+        classificationReason: 'musicbrainz_artist_tags',
+      })
+    : [];
+  const discogsEvidence = discogs.result
+    ? labelsToEvidence({
+        artistName,
+        labels: discogs.result.labels,
+        sourceType: 'DISCOGS',
+        sourceReference: `discogs:${discogs.result.id}`,
+        evidenceStrength: 'MODERATE',
+        confidence: 'MEDIUM',
+        classificationReason: 'discogs_artist_genres_styles',
+      })
+    : [];
 
   const mbKeys = new Set(mbEvidence.map((entry) => entry.genreKey));
   const agreed = discogsEvidence.filter((entry) => mbKeys.has(entry.genreKey));
   if (agreed.length > 0) {
-    return [...agreed.map((entry) => ({ ...entry, confidence: 'HIGH' as const, evidenceStrength: 'STRONG' as const }))];
+    return {
+      evidence: agreed.map((entry) => ({
+        ...entry,
+        confidence: 'HIGH' as const,
+        evidenceStrength: 'STRONG' as const,
+      })),
+      attempts,
+    };
   }
   if (mbEvidence.length > 0) {
-    return mbEvidence.map((entry) => ({
-      ...entry,
-      confidence: discogsMatch ? ('MEDIUM' as const) : ('LOW' as const),
-      evidenceStrength: discogsMatch ? ('MODERATE' as const) : ('WEAK' as const),
-      classificationReason: 'musicbrainz_single_source_tags',
-    }));
+    const exactMbMatch =
+      mb.result &&
+      (namesMatch(mb.result.name, artistName) || namesMatch(mb.result.name, toArtistSearchName(artistName)));
+    const highConfidenceSingleSource = Boolean(exactMbMatch && mbEvidence.length >= 1);
+    return {
+      evidence: mbEvidence.map((entry) => ({
+        ...entry,
+        confidence: highConfidenceSingleSource ? ('HIGH' as const) : ('MEDIUM' as const),
+        evidenceStrength: highConfidenceSingleSource ? ('STRONG' as const) : ('MODERATE' as const),
+        classificationReason: highConfidenceSingleSource
+          ? 'musicbrainz_exact_match_tags'
+          : 'musicbrainz_single_source_tags',
+      })),
+      attempts,
+    };
   }
-  if (discogsEvidence.length > 0 && discogsMatch?.title.toLowerCase() === artistName.toLowerCase()) {
-    return discogsEvidence;
+  if (
+    discogsEvidence.length > 0 &&
+    discogs.result &&
+    (namesMatch(discogs.result.title, artistName) || namesMatch(discogs.result.title, toArtistSearchName(artistName)))
+  ) {
+    return {
+      evidence: discogsEvidence.map((entry) => ({
+        ...entry,
+        confidence: discogsEvidence.length >= 2 ? ('HIGH' as const) : ('MEDIUM' as const),
+        evidenceStrength: discogsEvidence.length >= 2 ? ('STRONG' as const) : ('MODERATE' as const),
+      })),
+      attempts,
+    };
   }
-  return [];
+  return { evidence: [], attempts };
 }

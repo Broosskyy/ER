@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2026-09-12T13:44:02.656Z",
+  "baselineHead": "50c41208e3eecb097bddd22fa5e946c133e9e0ee",
+  "currentHead": "50c41208e3eecb097bddd22fa5e946c133e9e0ee",
+  "stagingProject": "gnkjzinwvmrxcadwebhv",
+  "productionProject": "irgsllewfrxvbtznqmxh",
+  "productionMutations": 0,
+  "applyRepair": false,
+  "skipExternal": true,
+  "eligibleEventCount": 34,
+  "eventsWithGenreBefore": 23,
+  "eventsWithGenreAfter": 23,
+  "eventsWithoutGenreBefore": 11,
+  "eventsWithoutGenreAfter": 11,
+  "genreCoverageBefore": 0.6764705882352942,
+  "genreCoverageAfter": 0.6764705882352942,
+  "domainElectronicHigh": 12,
+  "domainElectronicMedium": 20,
+  "domainAmbiguous": 2,
+  "domainNonElectronic": 0,
+  "discoveryDerivedAssignments": 7,
+  "artistDerivedAssignments": 12,
+  "seriesDerivedAssignments": 0,
+  "eventsRecoveredByB2E": 0,
+  "eventsStillUnresolved": 6,
+  "weakImportQualificationCount": 13,
+  "importEligibilityReviewCount": 8,
+  "artistProfilesEvaluated": 153,
+  "artistProfilesResolved": 46,
+  "artistProfilesUnresolved": 107,
+  "evidenceProviderRequests": 306,
+  "evidenceProviderSuccesses": 306,
+  "evidenceProviderFailures": 0,
+  "genreRecoverableAfter": 5,
+  "knownWrongGenreAssignments": 0,
+  "searchFalseNegatives": 12,
+  "searchFalsePositives": 0,
+  "consumerParityFailures": 0,
+  "ticketRegressionFailures": 0,
+  "descriptionRegressionFailures": 0,
+  "mediaRegressionFailures": 0,
+  "duplicateGroups": 0,
+  "goldenRegressionFailures": 0,
+  "saraRenderedCardCount": 1,
+  "coverageGateMet": false,
+  "requiredClassifiedFor95Percent": 33,
+  "qaAnchors": [
+    {
+      "title": "Bootshaus on a Ship Vol. IV",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_COMPLETE",
+      "ticketState": "SOLD_OUT"
+    },
+    {
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "genres": [
+        "Techno"
+      ],
+      "fusionProjection": [
+        "Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "LINEUP_CONSENSUS"
+      ],
+      "lineupState": "LINEUP_COMPLETE",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "domainClassification": "AMBIGUOUS",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_COMPLETE",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_PARTIAL",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "genres": [
+        "Tech House",
+        "Techno"
+      ],
+      "fusionProjection": [
+        "Tech House",
+        "Techno"
+      ],
+      "method": "discovery_evidence_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "DESCRIPTION",
+        "DISCOVERY_GENRE_CANDIDATE",
+        "LINEUP_CONSENSUS"
+      ],
+      "lineupState": "LINEUP_NOT_ANNOUNCED",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "domainClassification": "ELECTRONIC_HIGH",
+      "genres": [
+        "Hard Techno",
+        "Techno"
+      ],
+      "fusionProjection": [
+        "Hard Techno",
+        "Electro",
+        "Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "evidenceSources": [
+        "DESCRIPTION",
+        "DESCRIPTION",
+        "DISCOVERY_GENRE_CANDIDATE",
+        "HEADLINER_PROFILE"
+      ],
+      "lineupState": "LINEUP_PARTIAL",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [
+        "Tech House",
+        "Techno"
+      ],
+      "method": "multi_source_fusion",
+      "confidence": "MEDIUM",
+      "evidenceSources": [
+        "DESCRIPTION",
+        "DESCRIPTION"
+      ],
+      "lineupState": "LINEUP_NOT_ANNOUNCED",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "domainClassification": "ELECTRONIC_MEDIUM",
+      "genres": [],
+      "fusionProjection": [],
+      "method": "no_searchable_evidence",
+      "confidence": "LOW",
+      "evidenceSources": [],
+      "lineupState": "LINEUP_PARTIAL",
+      "ticketState": "TICKET_TARGET_VERIFIED"
+    }
+  ],
+  "status": "M9_3B_2E_DISCOVERY_GENRE_EVIDENCE_FUSION_DRY_RUN_COMPLETE"
+}

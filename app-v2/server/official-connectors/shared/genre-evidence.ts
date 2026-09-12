@@ -2,6 +2,8 @@ import { deriveLineupGenresFromIdentityCache } from './artist-genre-corroboratio
 import { deriveEventGenresFromLineupConsensus } from './artist-genre-intelligence/lineup-genre-consensus';
 import type { ArtistProfileStore } from './artist-genre-intelligence/artist-profile-store';
 import { isSearchableGenreConfidence } from './artist-genre-intelligence/discovery-confidence-policy';
+import { fuseEventGenreEvidence } from './discovery-genre-fusion/event-genre-fusion';
+import type { GenreFusionContext } from './discovery-genre-fusion/types';
 import { canonicalGenreKey } from './normalize-genre';
 import {
   collectGenreEvidenceLabels,
@@ -29,6 +31,7 @@ export interface GenreEvidenceRecord {
 
 export interface GenreEvidenceContext {
   artistStore?: ArtistProfileStore;
+  fusionContext?: GenreFusionContext;
 }
 
 export interface GenreEvidenceExhaustionResult {
@@ -185,10 +188,61 @@ export function exhaustGenreEvidence(
     }
   }
 
-  const recommended = normalizeGenreLabelSet([
+  let recommended = normalizeGenreLabelSet([
     ...event.genres,
     ...evidence.map((entry) => entry.displayName),
   ]);
+
+  if (context?.fusionContext) {
+    checkedLayers.push('discovery_genre_fusion');
+    const fusion = fuseEventGenreEvidence({
+      event,
+      exhaustion: {
+        eventId: event.eventId,
+        title: event.title,
+        currentGenres: event.genres,
+        recommendedGenres: recommended,
+        evidence,
+        checkedLayers,
+        lineupDerivedGenres,
+        explicitGenreCount: evidence.filter((entry) => entry.evidenceType === 'A_DIRECT').length,
+        highConfidenceCount: evidence.filter(
+          (entry) => entry.confidence === 'EXPLICIT' || entry.confidence === 'HIGH',
+        ).length,
+        lineupDerivedCount: lineupDerivedGenres.length,
+      },
+      fusionContext: context.fusionContext,
+    });
+    if (fusion.recommendedGenres.length > 0) {
+      recommended = normalizeGenreLabelSet([
+        ...event.genres,
+        ...fusion.recommendedGenres,
+      ]);
+      for (const contribution of fusion.contributions) {
+        if (!isSearchableGenreConfidence(contribution.confidence)) {
+          continue;
+        }
+        if (evidence.some((entry) => entry.genreKey === contribution.genreKey)) {
+          continue;
+        }
+        evidence.push({
+          genreKey: contribution.genreKey,
+          displayName: contribution.displayName,
+          confidence: contribution.confidence,
+          evidenceType:
+            contribution.layer === 'DOMAIN_ELECTRONIC'
+              ? 'D_CONTEXTUAL'
+              : contribution.layer === 'LINEUP_CONSENSUS' || contribution.layer === 'HEADLINER_PROFILE'
+                ? 'C_LINEUP'
+                : contribution.layer === 'EXPLICIT_EVENT' || contribution.layer === 'BOOTSHAUS_OFFICIAL'
+                  ? 'A_DIRECT'
+                  : 'B_STRONG',
+          sourceUrl: contribution.sourceReference,
+          classificationReason: contribution.classificationReason,
+        });
+      }
+    }
+  }
 
   return {
     eventId: event.eventId,

@@ -59,6 +59,30 @@ export function deriveEventGenresFromLineupConsensus(input: {
   }
 
   if (totalArtists === 0) {
+    if (headliner) {
+      const headlinerProfile = input.store.getProfile(headliner);
+      if (headlinerProfile && headlinerProfile.canonicalGenres.length > 0 && headlinerProfile.confidence !== 'CONFLICT') {
+        const genres = headlinerProfile.canonicalGenres.slice(0, 3).map((genre) => ({
+          genreKey: genre.genreKey,
+          displayName: genre.displayName,
+          confidence: artistConfidenceToGenreBand(headlinerProfile.confidence),
+        }));
+        return {
+          genres,
+          classifiedArtists: 1,
+          unclassifiedArtists: 0,
+          genreDistribution: Object.fromEntries(genres.map((genre) => [genre.genreKey, 1])),
+          artistProfilesUsed: [headlinerKey!],
+          explanation: {
+            type: 'HEADLINER_PROFILE',
+            artistCount: 0,
+            classifiedArtists: 1,
+            genreVotes: Object.fromEntries(genres.map((genre) => [genre.genreKey, 1])),
+            headlinerIdentity: headlinerKey,
+          },
+        };
+      }
+    }
     return {
       genres: [],
       classifiedArtists: 0,
