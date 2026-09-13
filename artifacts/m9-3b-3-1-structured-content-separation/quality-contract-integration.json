@@ -1,0 +1,13 @@
+{
+  "module": "import-quality-contract-gate",
+  "structuredContentEvaluated": true,
+  "fields": [
+    "structuredContentEvaluated",
+    "lineupLeakage",
+    "genreLeakage",
+    "ticketLeakage",
+    "scheduleLeakage",
+    "descriptionQuality"
+  ],
+  "pipeline": "raw description -> separateStructuredEventContent -> lineup/genre/ticket extraction -> description residual -> quality contract gate"
+}

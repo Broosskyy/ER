@@ -1,5 +1,9 @@
 import { extractEditorialDescription, isInvalidPrimaryDescription } from '../../shared/description-quality';
 import { parseDescriptionExplicitGenres } from '../../shared/parse-description-genres';
+import {
+  separateStructuredEventContent,
+  type StructuredContentSeparationResult,
+} from '../../shared/structured-content-separation';
 import { calendarDayKey, titleSimilarity } from '../../../../shared/match-normalizers';
 import { classifyOutboundUrl } from './outbound-sources';
 import { isEventSpecificSupplementalUrl, isGenericNonEventSupplementalUrl } from './supplemental-authority';
@@ -8,10 +12,32 @@ import type { TicketIoEventDiscoveryCandidate } from './types';
 
 const OCR_NOISE = /^(?:early bird|sold out|tickets?|phase \d+|presents?|venue|abendkasse)$/i;
 
+export function separateDescriptionFields(text?: string): StructuredContentSeparationResult {
+  return separateStructuredEventContent(text);
+}
+
 export function dedupeDescription(text?: string): string | undefined {
   if (!text?.trim()) {
     return undefined;
   }
+  const separated = separateStructuredEventContent(text);
+  const candidate = separated.descriptionResidual ?? separated.editorialText;
+  if (candidate?.trim()) {
+    const paragraphs = candidate
+      .split(/\n{2,}/)
+      .map((part) => part.trim())
+      .filter(Boolean);
+    const unique: string[] = [];
+    for (const paragraph of paragraphs) {
+      if (!unique.some((existing) => existing === paragraph || existing.includes(paragraph))) {
+        unique.push(paragraph);
+      }
+    }
+    const joined = unique.join('\n\n').trim();
+    const editorial = extractEditorialDescription(joined);
+    return editorial ?? (isInvalidPrimaryDescription(joined) ? undefined : joined);
+  }
+
   const paragraphs = text
     .split(/\n{2,}/)
     .map((part) => part.trim())

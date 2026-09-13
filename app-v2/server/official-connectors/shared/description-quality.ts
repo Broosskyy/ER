@@ -3,6 +3,7 @@ import {
   isBoilerplateParagraph,
   isTicketCtaParagraph,
 } from '../bootshaus/parse-description';
+import { publishedDescriptionStructuredLeakage } from './structured-content-separation';
 
 export type DescriptionBlockCategory =
   | 'EVENT_EDITORIAL'
@@ -116,6 +117,9 @@ export function isInvalidPrimaryDescription(text?: string): boolean {
   const clean = text?.trim();
   if (!clean) {
     return false;
+  }
+  if (publishedDescriptionStructuredLeakage(clean)) {
+    return true;
   }
   const editorial = extractEditorialDescription(clean);
   if (!editorial) {

@@ -14,6 +14,7 @@ import {
   dedupeDescription,
   qualifyDescription,
   qualifyLineup,
+  separateDescriptionFields,
   verifyOutboundSources,
 } from './field-evidence';
 import { classifyMediaUrls, mediaQualityScore } from './media-classifier';
@@ -43,13 +44,18 @@ export function enrichCandidateWithDetail(
       dom?.imageUrl,
     ].filter(Boolean) as string[]),
   ];
+  const rawDescription = dom?.descriptionClean ?? candidate.description;
+  const structured = separateDescriptionFields(rawDescription);
   const lineupHints = mergeLineupHints(
     dom?.eventTitle ?? candidate.title,
-    dom?.lineupCandidates.map((entry) => entry.displayName) ?? candidate.lineupHints,
+    [
+      ...(dom?.lineupCandidates.map((entry) => entry.displayName) ?? candidate.lineupHints),
+      ...structured.lineupCandidates,
+    ],
   );
-  const description = dedupeDescription(dom?.descriptionClean ?? candidate.description);
+  const description = dedupeDescription(rawDescription);
   const genreHints = [
-    ...new Set([...candidate.genreHints, ...(dom?.genreLabels ?? [])]),
+    ...new Set([...candidate.genreHints, ...(dom?.genreLabels ?? []), ...structured.genreCandidates]),
   ];
   const productState = dom
     ? enumerateTicketProducts(dom.offers, candidate.ticketUrl)

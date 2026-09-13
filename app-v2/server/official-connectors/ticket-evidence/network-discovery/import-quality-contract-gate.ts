@@ -3,6 +3,10 @@ import { classifyDomainFromRelevance, classifyImportQualification } from '../../
 import type { DiscoverySignalBundle } from '../../shared/discovery-genre-fusion/types';
 import { evaluateEventQuality } from '../../shared/event-quality/evaluate-event-quality';
 import type { EventQualityEvaluation, EventQualityState } from '../../shared/event-quality/types';
+import {
+  detectStructuredDescriptionLeakage,
+  publishedDescriptionStructuredLeakage,
+} from '../../shared/structured-content-separation';
 import type { EnrichedTicketIoEvent } from './detail-types';
 import type { EventCompletenessEntry } from './event-completeness-audit';
 import type { GenreCoverageEntry } from './genre-coverage-audit';
@@ -25,6 +29,12 @@ export interface ImportQualityContractResult {
   reviewReasons: string[];
   passesQualityContract: boolean;
   qualityContractBypass: boolean;
+  structuredContentEvaluated: boolean;
+  lineupLeakage: boolean;
+  genreLeakage: boolean;
+  ticketLeakage: boolean;
+  scheduleLeakage: boolean;
+  descriptionQuality: 'EDITORIAL' | 'STRUCTURED_ONLY' | 'MIXED' | 'MISSING';
   evaluation: EventQualityEvaluation;
 }
 
@@ -194,12 +204,31 @@ export function evaluateImportCandidateQualityContract(
     completeness: buildCompletenessEntry(event, snapshot),
   });
 
+  const structuredLeakage = detectStructuredDescriptionLeakage(event.description);
+  const reviewReasons = [...evaluation.reviewReasons];
+  if (publishedDescriptionStructuredLeakage(event.description)) {
+    reviewReasons.push('structured_description_leakage');
+  }
+  if (structuredLeakage.placeholderLeakage) {
+    reviewReasons.push('lineup_placeholder_in_description');
+  }
+
+  const descriptionQuality: ImportQualityContractResult['descriptionQuality'] =
+    !event.description?.trim()
+      ? 'MISSING'
+      : structuredLeakage.recoverable
+        ? 'MIXED'
+        : event.descriptionQualification === 'NO_DESCRIPTION'
+          ? 'STRUCTURED_ONLY'
+          : 'EDITORIAL';
+
   const titleReady = evaluation.identity.state === 'VERIFIED';
   const timeReady = Boolean(snapshot.startsAt);
   const venueReady = Boolean(snapshot.venueName);
 
   const passesQualityContract =
-    evaluation.qualityState === 'READY' || evaluation.qualityState === 'READY_WITH_WARNINGS';
+    (evaluation.qualityState === 'READY' || evaluation.qualityState === 'READY_WITH_WARNINGS') &&
+    !publishedDescriptionStructuredLeakage(event.description);
 
   return {
     identityKey: event.identityKey,
@@ -215,10 +244,24 @@ export function evaluateImportCandidateQualityContract(
     ticketState: evaluation.ticket.state,
     mediaState: evaluation.media.state,
     descriptionState: evaluation.description.state,
-    reviewReasons: evaluation.reviewReasons,
+    reviewReasons,
     passesQualityContract,
     qualityContractBypass: false,
-    evaluation,
+    structuredContentEvaluated: true,
+    lineupLeakage: structuredLeakage.lineupLeakage,
+    genreLeakage: structuredLeakage.genreLeakage,
+    ticketLeakage: structuredLeakage.ticketLeakage,
+    scheduleLeakage: structuredLeakage.scheduleLeakage,
+    descriptionQuality,
+    evaluation: {
+      ...evaluation,
+      reviewReasons,
+      qualityState: passesQualityContract
+        ? evaluation.qualityState
+        : reviewReasons.length > 0
+          ? 'REVIEW_REQUIRED'
+          : evaluation.qualityState,
+    },
   };
 }
 

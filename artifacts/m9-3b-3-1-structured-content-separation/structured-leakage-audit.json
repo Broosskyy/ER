@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "eligibleEvents": 44,
+    "eventsWithDescription": 22,
+    "cleanEditorialDescriptions": 22,
+    "mixedDescriptions": 0,
+    "lineupLeakageCount": 0,
+    "genreLeakageCount": 0,
+    "ticketLeakageCount": 0,
+    "scheduleLeakageCount": 0,
+    "legalBoilerplateCount": 0,
+    "placeholderLeakageCount": 0,
+    "recoverableDescriptionIssues": 0
+  },
+  "recoverableCases": [],
+  "publishedDescriptionStructuredLeakage": 0
+}

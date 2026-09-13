@@ -1,0 +1,4 @@
+{
+  "mobileQa": "SKIPPED_ENVIRONMENT",
+  "reason": "--skip-ui or no consumer server"
+}

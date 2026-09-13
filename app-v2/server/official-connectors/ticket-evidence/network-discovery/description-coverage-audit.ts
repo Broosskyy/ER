@@ -7,6 +7,7 @@ import {
   isInvalidPrimaryDescription,
   preferDescription,
 } from '../../shared/description-quality';
+import { separateStructuredEventContent } from '../../shared/structured-content-separation';
 
 export type DescriptionCoverageClassification =
   | 'DESCRIPTION_VERIFIED'
@@ -59,14 +60,27 @@ function loadSourcePayloads(
   );
 }
 
+function editorialResidualFromRaw(text?: string): string | undefined {
+  if (!text?.trim()) {
+    return undefined;
+  }
+  const separated = separateStructuredEventContent(text);
+  const residual = separated.descriptionResidual ?? separated.editorialText;
+  if (residual?.trim()) {
+    return extractEditorialDescription(residual) ?? residual.trim();
+  }
+  return undefined;
+}
+
 function pickRecommendedDescription(
   current: string | null | undefined,
   evidence: string[],
 ): { value?: string; strength: 'strong' | 'weak' | 'none' } {
-  let best = current?.trim();
+  let best = editorialResidualFromRaw(current);
   let bestScore = descriptionQualityScore(best);
   for (const candidate of evidence) {
-    const preferred = preferDescription(best, candidate);
+    const separated = editorialResidualFromRaw(candidate);
+    const preferred = preferDescription(best, separated);
     const score = descriptionQualityScore(preferred.value);
     if (score > bestScore + 0.05) {
       best = preferred.value;
@@ -74,12 +88,18 @@ function pickRecommendedDescription(
     }
   }
   if (!best || bestScore <= 0) {
+    const structuredOnly = evidence
+      .map((entry) => separateStructuredEventContent(entry))
+      .find((entry) => entry.classification === 'PURE_STRUCTURED');
+    if (structuredOnly) {
+      return { value: undefined, strength: 'strong' };
+    }
     return { strength: 'none' };
   }
   if (bestScore >= 0.35) {
-    return { value: extractEditorialDescription(best) ?? best, strength: 'strong' };
+    return { value: best, strength: 'strong' };
   }
-  return { value: extractEditorialDescription(best) ?? best, strength: 'weak' };
+  return { value: best, strength: 'weak' };
 }
 
 export function auditDescriptionCoverage(runQuery: LinkedQueryExecutor): DescriptionCoverageEntry[] {
@@ -105,7 +125,12 @@ export function auditDescriptionCoverage(runQuery: LinkedQueryExecutor): Descrip
       };
     }
 
-    if (recommended.value && recommendedQuality > currentQuality + 0.1 && recommended.strength !== 'none') {
+    const pureStructuredResidual =
+      invalid && recommended.strength === 'strong' && !recommended.value?.trim();
+    if (
+      pureStructuredResidual ||
+      (recommended.value && recommendedQuality > currentQuality + 0.1 && recommended.strength !== 'none')
+    ) {
       return {
         eventId: event.eventId,
         title: event.title,
@@ -115,7 +140,9 @@ export function auditDescriptionCoverage(runQuery: LinkedQueryExecutor): Descrip
         evidenceStrength: recommended.strength,
         recommendedDescription: recommended.value,
         classification: 'DESCRIPTION_RECOVERABLE',
-        reason: 'verified_source_or_payload_editorial_evidence',
+        reason: pureStructuredResidual
+          ? 'structured_metadata_only_source_description'
+          : 'verified_source_or_payload_editorial_evidence',
       };
     }
 
@@ -138,11 +165,12 @@ export function repairRecoverableDescriptions(
 ): number {
   let repaired = 0;
   for (const entry of entries.filter((item) => item.classification === 'DESCRIPTION_RECOVERABLE')) {
-    if (!entry.recommendedDescription?.trim()) {
-      continue;
-    }
+    const descriptionSql =
+      entry.recommendedDescription?.trim()
+        ? `'${entry.recommendedDescription.replace(/'/g, "''")}'`
+        : 'NULL';
     runQuery(
-      `UPDATE public.events SET description = '${entry.recommendedDescription.replace(/'/g, "''")}', updated_at = now() WHERE id = '${entry.eventId}'::uuid;`,
+      `UPDATE public.events SET description = ${descriptionSql}, updated_at = now() WHERE id = '${entry.eventId}'::uuid;`,
     );
     repaired += 1;
   }

@@ -1,0 +1,14 @@
+{
+  "eventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+  "title": "#MITTWOCHENENDE in Odonien",
+  "rootCause": [
+    "ticket.io detail parser retained full JSON-LD description without stripping structured lineup blocks",
+    "extractEditorialDescription classified LINEUP_CONTEXT but did not remove it from consumer description",
+    "lineup extraction missed bullet separator ● used in condensed ticket.io descriptions",
+    "structured lineup was never persisted while genres were extracted separately"
+  ],
+  "consumerDescriptionOrigin": "canonical events.description from import without structured-content separation",
+  "structuredLineupEmpty": false,
+  "lineupLeakageInDescription": false,
+  "genreHashtagLeakageInDescription": false
+}
