@@ -1,0 +1,8 @@
+{
+  "schedulerReady": false,
+  "blockers": [
+    "manual_milestone_only",
+    "no_automated_scheduler_enabled",
+    "requires_post_import_genre_fusion_at_scale"
+  ]
+}

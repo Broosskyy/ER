@@ -2,6 +2,7 @@ import { classifyConsumerEventLifecycle } from '../../../ingestion/consumer-even
 import { calendarDayKey, titleSimilarity } from '../../../../shared/match-normalizers';
 import { canonicalizeTicketIoUrl } from '../url-policy';
 import type { TicketIoShopListEntry } from '../parse-ticket-io-shop-list';
+import { inferCityFromGermanText } from './germany-geography';
 import { classifyElectronicRelevance } from './relevance-classifier';
 import { shopSlugFromUrl } from './shop-seeds';
 import type { TicketIoEventDiscoveryCandidate, TicketIoLifecycleStatus } from './types';
@@ -203,25 +204,7 @@ export function extractImageUrlsFromHtml(html: string): string[] {
 }
 
 export function inferCityFromText(...parts: Array<string | undefined>): string | undefined {
-  const cities = [
-    'Köln',
-    'Cologne',
-    'Düsseldorf',
-    'Duesseldorf',
-    'Bonn',
-    'Dortmund',
-    'Essen',
-    'Bochum',
-    'Münster',
-    'Muenster',
-    'Aachen',
-    'Oberhausen',
-    'Saarbrücken',
-    'Hagen',
-    'Palma',
-  ];
-  const corpus = parts.filter(Boolean).join(' ');
-  return cities.find((city) => new RegExp(`\\b${city}\\b`, 'i').test(corpus));
+  return inferCityFromGermanText(...parts);
 }
 
 export function shopSlugFromEventCandidate(candidate: TicketIoEventDiscoveryCandidate): string | null {

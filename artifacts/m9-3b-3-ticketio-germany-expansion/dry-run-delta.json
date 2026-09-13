@@ -1,0 +1,6 @@
+{
+  "dryRun": null,
+  "currentBatchSize": 10,
+  "expectedBatchSize": 10,
+  "deltaNote": "Live inventory may differ from dry-run snapshot"
+}

@@ -417,6 +417,47 @@ function normalizeComparableJson(value: unknown): unknown {
   return value;
 }
 
+const VOLATILE_PROVENANCE_KEYS = new Set([
+  'sourceObservedAt',
+  'observedAt',
+  'extractedAt',
+  'contentFingerprint',
+]);
+
+function stripVolatileProvenanceFields(
+  value: Record<string, unknown> | undefined | null,
+): Record<string, unknown> | undefined | null {
+  if (!value) {
+    return value;
+  }
+  return Object.fromEntries(
+    Object.entries(value).filter(([key]) => !VOLATILE_PROVENANCE_KEYS.has(key)),
+  );
+}
+
+function ticketSourcePayloadSemanticallyEqual(
+  existing: Record<string, unknown> | null | undefined,
+  planned: Record<string, unknown>,
+): boolean {
+  if (!existing) {
+    return false;
+  }
+  const semanticKeys = [
+    'providerKey',
+    'canonicalTicketUrl',
+    'normalizedStatus',
+    'statusLabel',
+    'offers',
+    'rejectedOffers',
+    'eventIdentityEvidence',
+  ] as const;
+  return semanticKeys.every(
+    (key) =>
+      JSON.stringify(normalizeComparableJson(existing[key])) ===
+      JSON.stringify(normalizeComparableJson(planned[key])),
+  );
+}
+
 function comparableProjectionSubset(
   current: Record<string, unknown> | undefined | null,
   planned: Record<string, unknown> | undefined | null,
@@ -427,9 +468,11 @@ function comparableProjectionSubset(
   if (!current) {
     return false;
   }
-  for (const [key, value] of Object.entries(planned)) {
+  const stableCurrent = stripVolatileProvenanceFields(current) ?? current;
+  const stablePlanned = stripVolatileProvenanceFields(planned) ?? planned;
+  for (const [key, value] of Object.entries(stablePlanned)) {
     if (
-      JSON.stringify(normalizeComparableJson(current[key])) !==
+      JSON.stringify(normalizeComparableJson(stableCurrent[key])) !==
       JSON.stringify(normalizeComparableJson(value))
     ) {
       return false;
@@ -552,12 +595,7 @@ function resolveProviderSourceOperation(
       }
       return { operation: 'insert', reason: 'provider_source_missing', sourceUrl, payload };
     }
-    const sameHash = existing.contentHash === result.ticketEvidence.contentFingerprint;
-    const samePayload =
-      (existing.rawPayload?.providerKey as string | undefined) === payload.providerKey &&
-      (existing.rawPayload?.contentFingerprint as string | undefined) === payload.contentFingerprint &&
-      (existing.rawPayload?.canonicalTicketUrl as string | undefined) === payload.canonicalTicketUrl;
-    if (sameHash && samePayload) {
+    if (ticketSourcePayloadSemanticallyEqual(existing.rawPayload, payload)) {
       return { operation: 'noop', reason: 'provider_source_already_matches', sourceUrl, payload };
     }
     return { operation: 'update', reason: 'provider_source_changed', sourceUrl, payload };

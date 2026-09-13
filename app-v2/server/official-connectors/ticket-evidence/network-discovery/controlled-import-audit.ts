@@ -204,6 +204,10 @@ export const GOLDEN_CASE_PATTERNS = [
   /kitkat/i,
   /chris stussy/i,
   /bootshaus.*(?:new years|nye)/i,
+  /bootshaus.*ship/i,
+  /sara landry/i,
+  /deborah de luca/i,
+  /\bmdma\b/i,
   /nibirii/i,
   /ely oaks/i,
 ];

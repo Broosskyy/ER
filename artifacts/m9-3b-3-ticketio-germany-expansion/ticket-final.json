@@ -1,0 +1,97 @@
+{
+  "entries": [
+    {
+      "eventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "ticketUrl": "https://tonite.ticket.io/WnEdISCS/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "fd71951f-e59a-4cf2-a8ed-b0bda5a198db",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "ticketUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "a82b7c0d-9d29-4bb2-a4f6-c99fece53569",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "ticketUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "3281c605-a9b4-4276-9432-9bcf5c9575de",
+      "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+      "ticketUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "827e1492-bb0f-44ed-bdad-1594c854fac9",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "ticketUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "0cfc083a-5e61-4979-8a66-d44f242bcae8",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "ticketUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "ticketUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+      "priceMinor": 2000,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "0c9e9a9b-ae6d-44ad-bc9b-92d0d4f5e58b",
+      "title": "Remember the Future w/ Axel Boman, Shumi",
+      "ticketUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "91da2d35-8fc8-498f-9980-e8b055815762",
+      "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+      "ticketUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "209ce805-9ed1-4647-a96e-2a2fcfb782ed",
+      "title": "Lézard",
+      "ticketUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+      "priceMinor": 2300,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    }
+  ],
+  "unsafeTicketTargets": 0,
+  "wrongEventTicketTargets": 0,
+  "ticketRegressionFailures": 0
+}

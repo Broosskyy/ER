@@ -43,7 +43,9 @@ export type TicketIoMediaRole =
   | 'event_hero'
   | 'announcement_flyer'
   | 'ticket_marketing'
+  | 'multi_event_poster'
   | 'organizer_branding'
+  | 'venue_branding'
   | 'generic_shop_image'
   | 'decorative'
   | 'unknown';

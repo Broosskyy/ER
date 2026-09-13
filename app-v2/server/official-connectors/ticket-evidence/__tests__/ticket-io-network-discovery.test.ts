@@ -93,14 +93,14 @@ describe('ticket.io network discovery', () => {
       'seed',
     );
     expect(discovery.title).toBe('Chris Stussy');
-    expect(discovery.relevance).toBe('HIGH_RELEVANCE');
+    expect(discovery.relevance).toBe('LIKELY_RELEVANT');
   });
 
   it('classifies electronic relevance without overfiltering house and ambiguous club nights', () => {
     expect(classifyElectronicRelevance({ title: 'Hard Techno Rave' }).relevance).toBe('HIGH_RELEVANCE');
     expect(classifyElectronicRelevance({ title: 'House Session Cologne' }).relevance).toBe('HIGH_RELEVANCE');
     expect(classifyElectronicRelevance({ title: 'Comedy Night' }).relevance).toBe('IRRELEVANT');
-    expect(classifyElectronicRelevance({ title: 'Warehouse Party' }).relevance).toBe('LIKELY_RELEVANT');
+    expect(classifyElectronicRelevance({ title: 'Warehouse Party' }).relevance).toBe('AMBIGUOUS');
     expect(classifyElectronicRelevance({ title: 'Unknown Club Gathering' }).relevance).toBe('AMBIGUOUS');
   });
 

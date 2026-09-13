@@ -1,0 +1,13 @@
+{
+  "verifiedAt": "2026-09-13T18:12:42.889Z",
+  "publishedEventCount": 45,
+  "eligibleElectronicEvents": 45,
+  "genreCoverage": 1,
+  "genreCoveragePercent": "100.0%",
+  "recoverableGenreMissing": 0,
+  "knownWrongGenreAssignments": 0,
+  "duplicateGroups": 0,
+  "consumerParityFailures": 0,
+  "productionMutations": 0,
+  "healthy": true
+}

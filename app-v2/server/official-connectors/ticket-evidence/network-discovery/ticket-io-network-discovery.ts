@@ -33,9 +33,20 @@ import type {
 } from './types';
 
 export const TICKET_IO_DISCOVERY_USER_AGENT =
-  'EternalRave-M9.3B.1-Discovery/1.0 (+research; read-only; no-automation)';
+  'EternalRave-M9.3B.3-GermanyDiscovery/1.0 (+research; read-only; no-automation)';
 
-const MAX_DISCOVERED_SHOPS = 25;
+/** Legacy NRW sample cap from M9.3B.1 qualification run. */
+export const DEFAULT_MAX_DISCOVERED_SHOPS = 25;
+
+/** Germany-wide expansion uses a higher bound with saturation tracking. */
+export const GERMANY_MAX_DISCOVERED_SHOPS = 150;
+
+export interface DiscoveryRoundSummary {
+  round: number;
+  seedsProcessed: number;
+  newShopsDiscovered: number;
+  cumulativeShops: number;
+}
 
 export interface TicketIoNetworkDiscoveryOptions {
   referenceInstant?: Date;
@@ -44,6 +55,10 @@ export interface TicketIoNetworkDiscoveryOptions {
   sampleDetailCountPerShop?: number;
   stagingCatalog?: StagingCatalogEvent[];
   baselineHead?: string;
+  /** Override shop discovery cap (default: DEFAULT_MAX_DISCOVERED_SHOPS). */
+  maxDiscoveredShops?: number;
+  /** Track shops discovered per BFS round for saturation measurement. */
+  trackDiscoveryRounds?: boolean;
 }
 
 export interface TicketIoNetworkDiscoveryResult {
@@ -51,6 +66,7 @@ export interface TicketIoNetworkDiscoveryResult {
   events: TicketIoEventDiscoveryCandidate[];
   shopScores: TicketIoShopValueScore[];
   outboundGraph: Array<ReturnType<typeof buildOutboundSourceGraph>>;
+  discoveryRounds: DiscoveryRoundSummary[];
   summary: TicketIoNetworkDiscoverySummary;
 }
 
@@ -142,19 +158,29 @@ export async function runTicketIoNetworkDiscovery(
   const timezone = 'Europe/Berlin';
   const fetchHtml = options.fetchHtml ?? defaultFetchHtml;
   const sampleDetailCountPerShop = options.sampleDetailCountPerShop ?? 2;
+  const maxDiscoveredShops = options.maxDiscoveredShops ?? DEFAULT_MAX_DISCOVERED_SHOPS;
+  const trackRounds = options.trackDiscoveryRounds ?? false;
 
   let seeds = [...(options.shopSeeds ?? TICKET_IO_SHOP_SEEDS)];
   const shops: TicketIoShopCandidate[] = [];
   const rawCandidates: TicketIoEventDiscoveryCandidate[] = [];
   const visitedShopUrls = new Set<string>();
+  const discoveryRounds: DiscoveryRoundSummary[] = [];
+  let currentRound = 0;
 
-  while (seeds.length > 0 && visitedShopUrls.size < MAX_DISCOVERED_SHOPS) {
+  while (seeds.length > 0 && visitedShopUrls.size < maxDiscoveredShops) {
+    const shopsAtRoundStart = visitedShopUrls.size;
+    const roundQueueSize = seeds.length;
+    let roundSeedsProcessed = 0;
+
+    for (let roundIndex = 0; roundIndex < roundQueueSize && visitedShopUrls.size < maxDiscoveredShops; roundIndex += 1) {
     const seed = seeds.shift()!;
     const normalizedUrl = normalizeTicketIoShopUrl(seed.canonicalUrl);
     if (!normalizedUrl || visitedShopUrls.has(normalizedUrl.toLowerCase())) {
       continue;
     }
     visitedShopUrls.add(normalizedUrl.toLowerCase());
+    roundSeedsProcessed += 1;
 
     const lastSeenAt = referenceInstant.toISOString();
     try {
@@ -232,6 +258,17 @@ export async function runTicketIoNetworkDiscovery(
         status: 'UNREACHABLE',
         error: error instanceof Error ? error.message : String(error),
       });
+    }
+    }
+
+    if (trackRounds) {
+      discoveryRounds.push({
+        round: currentRound,
+        seedsProcessed: roundSeedsProcessed,
+        newShopsDiscovered: visitedShopUrls.size - shopsAtRoundStart,
+        cumulativeShops: visitedShopUrls.size,
+      });
+      currentRound += 1;
     }
   }
 
@@ -319,7 +356,7 @@ export async function runTicketIoNetworkDiscovery(
     productionMutations: 0,
   };
 
-  return { shops, events, shopScores, outboundGraph, summary };
+  return { shops, events, shopScores, outboundGraph, discoveryRounds, summary };
 }
 
 export function ticketEvidenceMetrics(events: TicketIoEventDiscoveryCandidate[]) {

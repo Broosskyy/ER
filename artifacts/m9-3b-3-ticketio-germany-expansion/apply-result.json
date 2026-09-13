@@ -1,0 +1,17 @@
+{
+  "applied": true,
+  "eventInserts": 10,
+  "eventUpdates": 0,
+  "lineupWrites": 19,
+  "genreWrites": 12,
+  "ticketInserts": 10,
+  "ticketUpdates": 0,
+  "ticketDeletes": 0,
+  "sourceBindingWrites": 10,
+  "productionMutations": 0,
+  "canonicalCreated": 10,
+  "canonicalMatched": 0,
+  "canonicalEnriched": 0,
+  "reviewRequired": 0,
+  "notApplied": 0
+}

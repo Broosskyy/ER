@@ -1,0 +1,1636 @@
+[
+  {
+    "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+    "verification": {
+      "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+      "verifiedAt": "2026-09-13T04:28:52.133Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Lézard",
+      "startsAt": "2026-11-26T19:30:00+01:00",
+      "venueName": "JAKI",
+      "city": "Köln",
+      "citySource": "verified_venue_identity",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro",
+        "weak_positive:festival"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/qKCunIrO/events/ZBj8pQcY/img/holder-1080.jpg?90cd0263",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "23,00 Euro",
+          "amountMinor": 2300,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 2300,
+      "currentAdmissionPhase": "Reguläres Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+      "title": "Lézard",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro;weak_positive:festival"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Electro"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:tonite:wnediscs",
+    "verification": {
+      "identityKey": "ticket_io:tonite:wnediscs",
+      "verifiedAt": "2026-09-13T04:29:16.267Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "startsAt": "2026-09-16T23:00:00+02:00",
+      "venueName": "Odonien",
+      "city": "Köln",
+      "citySource": "verified_venue_identity",
+      "descriptionQualification": "PARTIAL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Hard Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:hard_techno",
+        "strong_positive:trance",
+        "strong_positive:hard_techno_abbrev",
+        "weak_positive:b2b"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/UreYcIRC/events/WnEdISCS/img/holder-1080.jpg?fad5f2fb",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "Presale",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "Presale",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "Presale",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://tonite.ticket.io/WnEdISCS/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:tonite:wnediscs",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:trance;strong_positive:hard_techno_abbrev;weak_positive:b2b"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Hard Techno",
+            "Trance",
+            "Techno"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://tonite.ticket.io/WnEdISCS/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+      "verifiedAt": "2026-09-13T04:29:39.598Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "startsAt": "2026-09-18T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Gerd Janson",
+        "lyzanne"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/3qKuB9ea/img/holder-1080.jpg?958eee22",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/3qKuB9ea/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:tonite:5ji6tv2d",
+    "verification": {
+      "identityKey": "ticket_io:tonite:5ji6tv2d",
+      "verifiedAt": "2026-09-13T04:30:03.001Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "startsAt": "2026-10-16T23:00:00+02:00",
+      "venueName": "Schrotty",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/UreYcIRC/events/5jI6Tv2D/img/holder-1080.jpg?7b6f27b7",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "early bird",
+          "category": "ADMISSION",
+          "rawPrice": "20,00 Euro",
+          "amountMinor": 2000,
+          "currency": "EUR",
+          "phaseLabel": "early bird",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 2000,
+      "currentAdmissionPhase": "early bird",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:tonite:5ji6tv2d",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://tonite.ticket.io/5jI6Tv2D/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+      "verifiedAt": "2026-09-13T04:30:26.438Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "startsAt": "2026-09-19T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Adiel",
+        "Di²",
+        "EPHIE"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/vfuXdxqy/img/holder-1080.jpg?958eee22",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/vfuXdxqy/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:acnlnyak",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:acnlnyak",
+      "verifiedAt": "2026-09-13T04:30:49.835Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+      "startsAt": "2026-09-26T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "DJ Ass Tits",
+        "Sarah Sommers -live",
+        "Plumitaa"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:live",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/ACnLNyAK/img/holder-1080.jpg?957053e5",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:acnlnyak",
+      "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:live;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/ACnLNyAK/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:u7szdlae",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:u7szdlae",
+      "verifiedAt": "2026-09-13T04:31:13.198Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "startsAt": "2026-10-02T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "BLANKA",
+        "Marco Hilbert",
+        "Nick Deeken"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/U7SzDlAE/img/holder-1080.jpg?19c8ce6f",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:u7szdlae",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/U7SzDlAE/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+      "verifiedAt": "2026-09-13T04:31:36.586Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "startsAt": "2026-10-10T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Franca",
+        "Philipp Fein"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/Mmxwyrx2/img/holder-1080.jpg?3d4d1715",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:sau31e99",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:sau31e99",
+      "verifiedAt": "2026-09-13T04:32:00.011Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+      "startsAt": "2026-10-24T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Leyla",
+        "Tanjuesch",
+        "lu.wicked",
+        "Zenker Brothers"
+      ],
+      "lineupQualification": "FULL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/Sau31E99/img/holder-1080.jpg?3d4d1715",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:sau31e99",
+      "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/Sau31E99/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:b7ltcedc",
+    "verification": {
+      "identityKey": "ticket_io:gewoelbe:b7ltcedc",
+      "verifiedAt": "2026-09-13T04:32:23.395Z",
+      "referenceDateLocal": "2026-09-13",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Remember the Future w/ Axel Boman, Shumi",
+      "startsAt": "2026-10-23T23:00:00+02:00",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "citySource": "text_or_address",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Axel Boman",
+        "Shumi"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/b7LTcEdC/img/holder-1080.jpg?522005c",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "ticketEventUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+      "matchClassification": "NET_NEW",
+      "importReadinessScore": 100,
+      "uncertainties": []
+    },
+    "eligibility": {
+      "eligible": true,
+      "reasons": []
+    },
+    "acceptance": true,
+    "qualityResult": {
+      "identityKey": "ticket_io:gewoelbe:b7ltcedc",
+      "title": "Remember the Future w/ Axel Boman, Shumi",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://gewoelbe.ticket.io/b7LTcEdC/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "eligible": true
+  }
+]

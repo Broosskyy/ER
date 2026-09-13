@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-09-13T04:32:23.478Z",
+  "shopsAnalyzed": 132,
+  "tierDistribution": {
+    "TIER_1_ENABLE_FIRST": 8,
+    "TIER_2_ENABLE_LATER": 15,
+    "SUPPLEMENTAL_ONLY": 22,
+    "REJECT": 87
+  },
+  "topShopsByNetNew": [
+    { "slug": "stadtgarten", "tier": "TIER_2_ENABLE_LATER", "netNewRelevantCount": 4, "electronicRelevanceRatio": 0.31 },
+    { "slug": "gewoelbe", "tier": "TIER_1_ENABLE_FIRST", "netNewRelevantCount": 3, "electronicRelevanceRatio": 0.72 },
+    { "slug": "tonite", "tier": "TIER_2_ENABLE_LATER", "netNewRelevantCount": 2, "electronicRelevanceRatio": 0.45 },
+    { "slug": "bootshaus-club", "tier": "TIER_1_ENABLE_FIRST", "netNewRelevantCount": 0, "electronicRelevanceRatio": 0.95 }
+  ],
+  "importCandidateShops": [
+    { "slug": "stadtgarten", "eventsSeen": 18, "electronicQualified": 6, "netNew": 4, "genreCoverage": 1.0, "reviewRate": 0.33 },
+    { "slug": "gewoelbe", "eventsSeen": 12, "electronicQualified": 8, "netNew": 3, "genreCoverage": 0.75, "reviewRate": 0.25 },
+    { "slug": "tonite", "eventsSeen": 8, "electronicQualified": 3, "netNew": 2, "genreCoverage": 0.67, "reviewRate": 0.38 }
+  ],
+  "aggregateMetrics": {
+    "eventsSeen": 99,
+    "electronicQualified": 24,
+    "netNew": 9,
+    "existingMatches": 13,
+    "importCandidates": 12,
+    "qualityContractReady": 12,
+    "qualityContractBypass": 0
+  }
+}

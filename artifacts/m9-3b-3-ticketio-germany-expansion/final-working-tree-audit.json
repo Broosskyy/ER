@@ -1,0 +1,632 @@
+[
+  {
+    "path": "9_3B_2C_EVENT_CLASSIFICATION_COMPLETENESS_REPORT.md",
+    "status": "M",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/__tests__/ticket-io-network-discovery.test.ts",
+    "status": "M",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/network-discovery/event-candidate.ts",
+    "status": "M",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/network-discovery/media-classifier.ts",
+    "status": "M",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/network-discovery/relevance-classifier.ts",
+    "status": "M",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/network-discovery/ticket-io-network-discovery.ts",
+    "status": "M",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/network-discovery/types.ts",
+    "status": "M",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "pp-v2/server/official-connectors/ticket-evidence/ticket-persistence-planner.ts",
+    "status": "M",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "rtifacts/m9-3b-2c-event-classification-completeness/consumer-parity.json",
+    "status": "M",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "rtifacts/m9-3b-2c-event-classification-completeness/genre-search-recall.json",
+    "status": "M",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "rtifacts/m9-3b-2c-event-classification-completeness/summary.json",
+    "status": "M",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "rtifacts/m9-3b-2c-event-classification-completeness/working-tree-audit.json",
+    "status": "M",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_1_GENERIC_SYNC_CONTRACT_APPLY_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_2_SAFE_RECONCILIATION_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_3_EVENT_IDENTITY_MULTI_SOURCE_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_4_SYNC_ORCHESTRATION_HEALTH_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_5_CONTROLLED_STAGING_E2E_SYNC_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_6_SECOND_SOURCE_EXPANSION_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M8_7_OPERATIONAL_READINESS_REPORT.md",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "M9_0_CONTROLLED_STAGING_SCHEDULER_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_0_LOCAL_SCHEDULER_VERIFICATION_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_1A_SOURCE_DISCOVERY_BATCH_SELECTION_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_1_CURRENT_SOURCE_CONTENT_AUDIT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_2_2_5B_CONFIRMED_LIVE_PRICE_RECOVERY_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_2_2_5C_REAL_DEVICE_CONSUMER_REGRESSIONS_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_2_2_5C_STAGING_DATA_HYGIENE_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_3B_1A_TICKETIO_DETAIL_QUALIFICATION_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_3B_1B_FIRST_BATCH_CORRECTION_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_3B_1C_FINAL_FIRST_BATCH_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "M9_3B_3_TICKETIO_GERMANY_NETWORK_EXPANSION_REPORT.md",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "app-v2/scripts/clear-stale-sync-lock.ts",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-audit-three.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-chris-mdma.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-chris.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-discogs-chris.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-discogs-releases.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-evidence.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-fetch.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-probe.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-repair-three.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-b2e2-series.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-halloween-media.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-1-db.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-1-identity.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-1-nibirii.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-1-summary.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-1-media-sanity.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-1-underland-evidence.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-affenkaefig-browser-ua.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-affenkaefig-fetch-fallback.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-affenkaefig-html.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-affenkaefig-playwright.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-affenkaefig-ticket-pipeline.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-consumer-golden-case.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-golden-case.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-pipeline-14jahre.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-3-ticket-persistence-plan.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-5b-price-trace.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-2-2-5c-consumer-inventory.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-3b-2-ticket-verify.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-m9-3b-3-ticket-idempotency.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-mdma-editorial.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-n8manager-live-status.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/debug-wp-post-id.ts",
+    "status": "??",
+    "class": "D",
+    "reason": "debug_or_temp"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-1a-ticketio-detail-qualification.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-1b-first-batch-correction.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-1c-final-first-batch.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-3-apply-controlled-batch.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-3-final-recertification.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-3-phase-a-discovery-only.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/scripts/run-m9-3b-3-ticketio-germany-expansion.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/__tests__/ticket-io-detail-qualification.test.ts",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/__tests__/ticket-io-first-batch-correction.test.ts",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/__tests__/ticket-io-germany-network-discovery.test.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/artifact-rescore.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/city-resolution.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/controlled-batch-selection.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/detail-enrichment.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/detail-fetch.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/detail-qualification.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/detail-relevance.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/detail-types.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/event-media-quality.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/field-evidence.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/first-batch.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/germany-geography.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/germany-shop-seeds.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/import-quality-contract-gate.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/inventory-delta.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/lineup-from-title.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/product-qualification.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/qualification.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/relevance-evidence.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/supplemental-authority.ts",
+    "status": "??",
+    "class": "B",
+    "reason": "network_discovery_foundation"
+  },
+  {
+    "path": "app-v2/server/official-connectors/ticket-evidence/network-discovery/ticket-io-germany-network-discovery.ts",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  },
+  {
+    "path": "artifacts/m9-2-2-2-ticket-gap-closure/",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "artifacts/m9-2-2-2-visual-qa/",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "artifacts/m9-2-2-3-ticket-parity/",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "artifacts/m9-2-2-4-recovery/",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "artifacts/m9-2-2-5b-price-recovery/",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "artifacts/m9-2-2-5c-consumer-recovery/",
+    "status": "??",
+    "class": "C",
+    "reason": "unrelated_prior_milestone"
+  },
+  {
+    "path": "artifacts/m9-3b-1a-ticketio-detail-qualification/",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "artifacts/m9-3b-1b-first-batch-correction/",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "artifacts/m9-3b-1c-final-first-batch/",
+    "status": "??",
+    "class": "E",
+    "reason": "uncertain"
+  },
+  {
+    "path": "artifacts/m9-3b-3-ticketio-germany-expansion/",
+    "status": "??",
+    "class": "A",
+    "reason": "m9.3b.3_implementation"
+  }
+]

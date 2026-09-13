@@ -1,0 +1,8 @@
+{
+  "scaleReady": false,
+  "evidence": {
+    "identityReliability": "good",
+    "qualityContractReliability": 10,
+    "idempotencyPass": false
+  }
+}

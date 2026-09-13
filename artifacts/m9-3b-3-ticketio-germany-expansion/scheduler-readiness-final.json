@@ -1,0 +1,8 @@
+{
+  "schedulerReady": false,
+  "blockers": [
+    "manual_milestone_only",
+    "nrw_geographic_bias",
+    "genre_fusion_at_import_scale_unproven"
+  ]
+}

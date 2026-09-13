@@ -1,0 +1,20 @@
+{
+  "Köln": {
+    "shops": 46,
+    "upcomingEvents": 1202,
+    "electronicCandidates": 164,
+    "netNewCandidates": 9
+  },
+  "Essen": {
+    "shops": 1,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Düsseldorf": {
+    "shops": 14,
+    "upcomingEvents": 28,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  }
+}

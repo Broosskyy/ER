@@ -1,0 +1,10 @@
+{
+  "baselinePublishedElectronicEvents": 45,
+  "baselineGenreCoverage": 1,
+  "newPublishedElectronicEvents": 10,
+  "newBatchGenreCoverage": 1,
+  "combinedPublishedElectronicEvents": 45,
+  "combinedGenreCoverage": 1,
+  "combinedGenreCoveragePercent": "100.0%",
+  "recoverableGenreMissing": 0
+}

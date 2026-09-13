@@ -1,0 +1,164 @@
+{
+  "entries": [
+    {
+      "eventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "currentLineup": [],
+      "recommendedLineup": [],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_NOT_ANNOUNCED",
+      "checkedLayers": [],
+      "reason": "no_verified_lineup_evidence"
+    },
+    {
+      "eventId": "fd71951f-e59a-4cf2-a8ed-b0bda5a198db",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "currentLineup": [
+        "Gerd Janson",
+        "lyzanne"
+      ],
+      "recommendedLineup": [
+        "Gerd Janson",
+        "lyzanne"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_PARTIAL",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "a82b7c0d-9d29-4bb2-a4f6-c99fece53569",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "currentLineup": [
+        "Adiel",
+        "Di²",
+        "EPHIE"
+      ],
+      "recommendedLineup": [
+        "Adiel",
+        "Di²",
+        "EPHIE"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_PARTIAL",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "3281c605-a9b4-4276-9432-9bcf5c9575de",
+      "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+      "currentLineup": [
+        "DJ Ass Tits",
+        "Sarah Sommers -live",
+        "Plumitaa"
+      ],
+      "recommendedLineup": [
+        "DJ Ass Tits",
+        "Sarah Sommers -live",
+        "Plumitaa"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_PARTIAL",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "827e1492-bb0f-44ed-bdad-1594c854fac9",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "currentLineup": [
+        "BLANKA",
+        "Marco Hilbert",
+        "Nick Deeken"
+      ],
+      "recommendedLineup": [
+        "BLANKA",
+        "Marco Hilbert",
+        "Nick Deeken"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_PARTIAL",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "0cfc083a-5e61-4979-8a66-d44f242bcae8",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "currentLineup": [
+        "Franca",
+        "Philipp Fein"
+      ],
+      "recommendedLineup": [
+        "Franca",
+        "Philipp Fein"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_PARTIAL",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "currentLineup": [],
+      "recommendedLineup": [],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_NOT_ANNOUNCED",
+      "checkedLayers": [],
+      "reason": "no_verified_lineup_evidence"
+    },
+    {
+      "eventId": "0c9e9a9b-ae6d-44ad-bc9b-92d0d4f5e58b",
+      "title": "Remember the Future w/ Axel Boman, Shumi",
+      "currentLineup": [
+        "Axel Boman",
+        "Shumi"
+      ],
+      "recommendedLineup": [
+        "Axel Boman",
+        "Shumi"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_PARTIAL",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "91da2d35-8fc8-498f-9980-e8b055815762",
+      "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+      "currentLineup": [
+        "Leyla",
+        "Tanjuesch",
+        "lu.wicked",
+        "Zenker Brothers"
+      ],
+      "recommendedLineup": [
+        "Leyla",
+        "Tanjuesch",
+        "lu.wicked",
+        "Zenker Brothers"
+      ],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_COMPLETE",
+      "checkedLayers": [
+        "canonical_db"
+      ]
+    },
+    {
+      "eventId": "209ce805-9ed1-4647-a96e-2a2fcfb782ed",
+      "title": "Lézard",
+      "currentLineup": [],
+      "recommendedLineup": [],
+      "invalidPlaceholderLineup": false,
+      "classification": "LINEUP_NOT_ANNOUNCED",
+      "checkedLayers": [],
+      "reason": "no_verified_lineup_evidence"
+    }
+  ],
+  "recoverableLineups": 0
+}

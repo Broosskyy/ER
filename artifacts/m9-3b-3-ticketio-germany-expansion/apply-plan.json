@@ -1,0 +1,13 @@
+{
+  "plans": 10,
+  "planReview": [],
+  "plannedMutations": {
+    "eventInserts": 10,
+    "eventUpdates": 0,
+    "lineupWrites": 19,
+    "genreWrites": 12,
+    "sourceBindingWrites": 10,
+    "reviewRequiredCount": 0,
+    "idempotentPlans": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "recommendation": "C_ADD_SECOND_HIGH_COVERAGE_SOURCE",
+  "rationale": "Ticket.io network expanded 5x in shop nodes but remains NRW-biased; marginal value split between net-new and enrichment suggests second source layer before larger ticket.io batch scale-up",
+  "alternatives": [
+    "A_MORE_TICKETIO_NETWORK_SATURATION",
+    "B_TICKETIO_LARGER_BATCH_SCALEUP"
+  ]
+}

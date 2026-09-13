@@ -1,0 +1,16 @@
+{
+  "knownWrongGenreAssignments": 0,
+  "auditedEventIds": [
+    "91da2d35-8fc8-498f-9980-e8b055815762",
+    "0c9e9a9b-ae6d-44ad-bc9b-92d0d4f5e58b",
+    "209ce805-9ed1-4647-a96e-2a2fcfb782ed",
+    "77f830dd-10c9-4643-adaf-15febd278f60",
+    "fd71951f-e59a-4cf2-a8ed-b0bda5a198db",
+    "8c493d72-345e-4b37-ba52-00da60c79fbb",
+    "a82b7c0d-9d29-4bb2-a4f6-c99fece53569",
+    "3281c605-a9b4-4276-9432-9bcf5c9575de",
+    "827e1492-bb0f-44ed-bdad-1594c854fac9",
+    "0cfc083a-5e61-4979-8a66-d44f242bcae8"
+  ],
+  "note": "No shop-only or venue-only genre assignments detected in batch readback"
+}

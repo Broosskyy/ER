@@ -1,0 +1,3489 @@
+{
+  "selected": [
+    {
+      "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+      "ticketIoEventId": "ZBj8pQcY",
+      "shopId": "stadtgarten",
+      "shopSlug": "stadtgarten",
+      "listingUrl": "https://stadtgarten.ticket.io/",
+      "eventUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+      "canonicalUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+      "title": "Lézard",
+      "startsAt": "2026-11-26T19:30:00+01:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "JAKI",
+      "city": "Köln",
+      "description": "Lézard sind eine Band aus Belgien, und rückblickend macht das irgendwie Sinn. In einem Land, das mitten durch die flämische und die französischsprachige Bevölkerung gespalten ist, dürfte Verwirrung der Normalzustand sein. Ihre hochenergetische Mischung aus Post-Punk, Disco, Glam Rock, New Wave und Electro-Clash bewegt sich auf dem schmalen Grat zwischen Komödie und Tragödie – Songs, die sich sowohl als theatralische Inszenierung als auch als Kacophonie hinter den Kulissen entfalten. Ihr Debütalbum Que Se Passe t-il ist ein Diorama, in dem sich die Gebrochenen, die Voyeure, die Drogenberauschten und die Träumer unter einer zerbrochenen Discokugel vermischen und wiegen. Auf der Grundlage ihrer ersten Singles, angeführt vom spritzigen „Nothing At All“, haben sich Lézard einen Ruf für spektakuläre Bühnenauftritte im In- und Ausland erarbeitet, darunter Auftritte bei Festivals wie Eurosonic, Reeperbahn, MaMA Festival, The Great Escape, Nurnberg Pop, Left of the Dial, Pukkelpop, Best Kept Secret, Eurosonic und Radiance. Eine Veranstaltung der prime entertainment GmbH.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [],
+      "lineupQualification": "NO_LINEUP",
+      "genreHints": [
+        "Electro"
+      ],
+      "genreCandidates": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://stadtgarten.ticket.io/ZBj8pQcY/",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=de",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=en",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=fr",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=nl",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=pl",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=it",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=es",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=ru",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=tr",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=hr",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=pt",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=sq",
+        "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=sl",
+        "https://cdn.ticket.io/companies/qKCunIrO/img/logo-192.png?90cd0263",
+        "https://cdn.ticket.io/companies/qKCunIrO/img/logo-180.png?90cd0263",
+        "http://www.enable-javascript.com/de/",
+        "https://stadtgarten.de/content/ikjh_hausordnung.pdf?1701965201",
+        "https://www.google.com/maps/place/50.942941300000,6.935301400000",
+        "https://ticketiosupport.zendesk.com/hc/de"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.ticket.io/ZBj8pQcY/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/qKCunIrO/img/logo-192.png?90cd0263",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/qKCunIrO/img/logo-180.png?90cd0263",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://stadtgarten.de/content/ikjh_hausordnung.pdf?1701965201",
+          "role": "official_organizer",
+          "verified": false,
+          "verificationReasons": [
+            "identity_uncertain"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.942941300000,6.935301400000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/qKCunIrO/img/logo-192.png?90cd0263",
+        "https://cdn.ticket.io/companies/qKCunIrO/img/logo-180.png?90cd0263",
+        "https://cdn.ticket.io/companies/qKCunIrO/events/ZBj8pQcY/img/holder-1080.jpg?90cd0263",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/qKCunIrO/events/ZBj8pQcY/img/holder-1080.jpg?90cd0263",
+      "products": [
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "23,00 Euro",
+          "amountMinor": 2300,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 2300,
+      "currentAdmissionPhase": "Reguläres Ticket",
+      "currentAdmissionLabel": "Reguläres Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:15:23.275Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro",
+        "weak_positive:festival"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "Lézard",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-11-26T19:30:00+01:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "JAKI",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2300",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "278e23c152a9f47be65af243f4739c3ae16f929bd4f155a64f473b0d8c7f8dbb",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:tonite:wnediscs",
+      "ticketIoEventId": "WnEdISCS",
+      "shopId": "tonite",
+      "shopSlug": "tonite",
+      "listingUrl": "https://tonite.ticket.io/",
+      "eventUrl": "https://tonite.ticket.io/WnEdISCS/",
+      "canonicalUrl": "https://tonite.ticket.io/WnEdISCS/",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "startsAt": "2026-09-16T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Odonien",
+      "city": "Köln",
+      "description": "LINEUP: #bounce #hardbounce #trance● AMON● NORDCORREIA.MP3 B2B DOCTOR MÜCKE● LSG● CAROLINKA● NSLZ #techno #hardtechno● STELLA MARIA● MAURO● RAFFA● VYKA● RUSSEL B2B FLUMMI",
+      "descriptionQualification": "PARTIAL_DESCRIPTION",
+      "lineupHints": [],
+      "lineupQualification": "NO_LINEUP",
+      "genreHints": [
+        "Hard Techno",
+        "Trance",
+        "Techno"
+      ],
+      "genreCandidates": [
+        {
+          "label": "Hard Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://tonite.ticket.io/WnEdISCS/",
+        "https://tonite.ticket.io/WnEdISCS/?lang=de",
+        "https://tonite.ticket.io/WnEdISCS/?lang=en",
+        "https://tonite.ticket.io/WnEdISCS/?lang=fr",
+        "https://tonite.ticket.io/WnEdISCS/?lang=nl",
+        "https://tonite.ticket.io/WnEdISCS/?lang=pl",
+        "https://tonite.ticket.io/WnEdISCS/?lang=it",
+        "https://tonite.ticket.io/WnEdISCS/?lang=es",
+        "https://tonite.ticket.io/WnEdISCS/?lang=ru",
+        "https://tonite.ticket.io/WnEdISCS/?lang=tr",
+        "https://tonite.ticket.io/WnEdISCS/?lang=hr",
+        "https://tonite.ticket.io/WnEdISCS/?lang=pt",
+        "https://tonite.ticket.io/WnEdISCS/?lang=sq",
+        "https://tonite.ticket.io/WnEdISCS/?lang=sl",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-192.png?fad5f2fb",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-180.png?fad5f2fb",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.954909600000,6.939474500000",
+        "https://ticketiosupport.zendesk.com/hc/de"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/WnEdISCS/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/UreYcIRC/img/logo-192.png?fad5f2fb",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/UreYcIRC/img/logo-180.png?fad5f2fb",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.954909600000,6.939474500000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-192.png?fad5f2fb",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-180.png?fad5f2fb",
+        "https://cdn.ticket.io/companies/UreYcIRC/events/WnEdISCS/img/holder-1080.jpg?fad5f2fb",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "organizer_branding",
+        "event_flyer",
+        "ticket_marketing"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/UreYcIRC/events/WnEdISCS/img/holder-1080.jpg?fad5f2fb",
+      "products": [
+        {
+          "label": "Presale",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "Presale",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "Presale",
+      "currentAdmissionLabel": "Presale",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:22:56.451Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:hard_techno",
+        "strong_positive:trance",
+        "strong_positive:hard_techno_abbrev",
+        "weak_positive:b2b"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://tonite.ticket.io/WnEdISCS/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "#MITTWOCHENENDE in Odonien",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://tonite.ticket.io/WnEdISCS/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-09-16T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://tonite.ticket.io/WnEdISCS/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Odonien",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://tonite.ticket.io/WnEdISCS/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://tonite.ticket.io/WnEdISCS/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://tonite.ticket.io/WnEdISCS/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "b2c41505353621d913b10ecff7cd1174d1b79b119ee3cfb3cd3b13b3f5fc7371",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+      "ticketIoEventId": "3qKuB9ea",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "startsAt": "2026-09-18T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "Gerd Janson",
+        "lyzanne"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/3qKuB9ea/",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=de",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=en",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=fr",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=nl",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=pl",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=it",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=es",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=ru",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=tr",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=hr",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=pt",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=sq",
+        "https://gewoelbe.ticket.io/3qKuB9ea/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?958eee22",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?958eee22",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/3qKuB9ea/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?958eee22",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?958eee22",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?958eee22",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?958eee22",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/3qKuB9ea/img/holder-1080.jpg?958eee22",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "organizer_branding",
+        "event_flyer",
+        "ticket_marketing"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/3qKuB9ea/img/holder-1080.jpg?958eee22",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:24:07.428Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "Klubnacht w/ Gerd Janson, lyzanne",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-09-18T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "47cd44ae00c0e85383d8574f58958474c33fa66a9c417593c617dfc3b2185eb0",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:tonite:5ji6tv2d",
+      "ticketIoEventId": "5jI6Tv2D",
+      "shopId": "tonite",
+      "shopSlug": "tonite",
+      "listingUrl": "https://tonite.ticket.io/",
+      "eventUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+      "canonicalUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "startsAt": "2026-10-16T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Schrotty",
+      "city": "Köln",
+      "description": "DANCEFIELD × BACK2BASICS Seit über 20 Jahren ist Dancefield als Bookingagentur in Köln zu Hause und fester Bestandteil der elektronischen Musikszene. Seit 2002 begleiten und vertreten wir Künstler, bringen Artists und Veranstalter zusammen und haben dabei unzählige Clubnächte, Festivals und Events weit über die Grenzen Kölns hinaus mitgestaltet. Am 16.10. bringen wir unser Techno-Roster dorthin, wo Dancefield zu Hause ist: nach Köln. Gemeinsam mit BACK2BASICS übernehmen wir für eine Nacht das SCHROTTY. Dabei treffen Künstler, die Techno seit vielen Jahren mitprägen, auf eine neue Generation, die ihren eigenen Sound und neue Impulse in die Szene bringt. A*S*Y*SANDREAS KRAEMERDANIELA HENSELDIYUDRUMCOMPLEXKERSTIN EDENMARKUS WEIGELTMATTHIAS OLCKNICK SCHWENDERLINGPAPPENHEIMERPERLA NERAPETER PAHNSEBASTIAN GROTH 13 KÜNSTLER.2 FLOORS.1 NACHT. DANCEFIELD × BACK2BASICS16.10. · SCHROTTY · KÖLNAb 21 Jahren.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [],
+      "lineupQualification": "NO_LINEUP",
+      "genreHints": [
+        "Techno"
+      ],
+      "genreCandidates": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://tonite.ticket.io/5jI6Tv2D/",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=de",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=en",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=fr",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=nl",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=pl",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=it",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=es",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=ru",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=tr",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=hr",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=pt",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=sq",
+        "https://tonite.ticket.io/5jI6Tv2D/?lang=sl",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-192.png?7b6f27b7",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-180.png?7b6f27b7",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.954671300000,6.889246100000",
+        "https://ticketiosupport.zendesk.com/hc/de"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://tonite.ticket.io/5jI6Tv2D/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/UreYcIRC/img/logo-192.png?7b6f27b7",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/UreYcIRC/img/logo-180.png?7b6f27b7",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.954671300000,6.889246100000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-192.png?7b6f27b7",
+        "https://cdn.ticket.io/companies/UreYcIRC/img/logo-180.png?7b6f27b7",
+        "https://cdn.ticket.io/companies/UreYcIRC/events/5jI6Tv2D/img/holder-1080.jpg?7b6f27b7",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/UreYcIRC/events/5jI6Tv2D/img/holder-1080.jpg?7b6f27b7",
+      "products": [
+        {
+          "label": "early bird",
+          "category": "ADMISSION",
+          "rawPrice": "20,00 Euro",
+          "amountMinor": 2000,
+          "currency": "EUR",
+          "phaseLabel": "early bird",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 2000,
+      "currentAdmissionPhase": "early bird",
+      "currentAdmissionLabel": "early bird",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:23:43.764Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://tonite.ticket.io/5jI6Tv2D/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "BACK2BASICS XXL @ Schrotty",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://tonite.ticket.io/5jI6Tv2D/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-10-16T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://tonite.ticket.io/5jI6Tv2D/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Schrotty",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://tonite.ticket.io/5jI6Tv2D/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://tonite.ticket.io/5jI6Tv2D/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://tonite.ticket.io/5jI6Tv2D/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2000",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "37d7b4342577240c0db368a9c081fb4c7296cdedd22f8a4d94a802513860d83a",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+      "ticketIoEventId": "vfuXdxqy",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "startsAt": "2026-09-19T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "Adiel",
+        "Di²",
+        "EPHIE"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/vfuXdxqy/",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=de",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=en",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=fr",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=nl",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=pl",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=it",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=es",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=ru",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=tr",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=hr",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=pt",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=sq",
+        "https://gewoelbe.ticket.io/vfuXdxqy/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?958eee22",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?958eee22",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/vfuXdxqy/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?958eee22",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?958eee22",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?958eee22",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?958eee22",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/vfuXdxqy/img/holder-1080.jpg?958eee22",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "organizer_branding",
+        "event_flyer",
+        "ticket_marketing"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/vfuXdxqy/img/holder-1080.jpg?958eee22",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:24:31.122Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "Klubnacht w/ Adiel, Di², EPHIE",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-09-19T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "e62287415515216dcf9f315adf532d1088afa5c20b550c669259c123901c48b5",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:acnlnyak",
+      "ticketIoEventId": "ACnLNyAK",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+      "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+      "startsAt": "2026-09-26T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "DJ Ass Tits",
+        "Sarah Sommers -live",
+        "Plumitaa"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/ACnLNyAK/",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=de",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=en",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=fr",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=nl",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=pl",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=it",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=es",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=ru",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=tr",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=hr",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=pt",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=sq",
+        "https://gewoelbe.ticket.io/ACnLNyAK/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?957053e5",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?957053e5",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/ACnLNyAK/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?957053e5",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?957053e5",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?957053e5",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?957053e5",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/ACnLNyAK/img/holder-1080.jpg?957053e5",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/ACnLNyAK/img/holder-1080.jpg?957053e5",
+      "products": [
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        },
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:25:18.556Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:live",
+        "weak_positive:dj"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-09-26T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "6a91ce2b403f26a97d66944cfcf467928b2b966c68409646120d3f419e15586d",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:u7szdlae",
+      "ticketIoEventId": "U7SzDlAE",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "startsAt": "2026-10-02T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "BLANKA",
+        "Marco Hilbert",
+        "Nick Deeken"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/U7SzDlAE/",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=de",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=en",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=fr",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=nl",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=pl",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=it",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=es",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=ru",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=tr",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=hr",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=pt",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=sq",
+        "https://gewoelbe.ticket.io/U7SzDlAE/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?19c8ce6f",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?19c8ce6f",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/U7SzDlAE/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?19c8ce6f",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?19c8ce6f",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?19c8ce6f",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?19c8ce6f",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/U7SzDlAE/img/holder-1080.jpg?19c8ce6f",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/U7SzDlAE/img/holder-1080.jpg?19c8ce6f",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:25:42.272Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-10-02T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "9cd125d2512ef4d0a3ac5d11d25aaa1978742a39fca3a55f8e0fe80e633296b8",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+      "ticketIoEventId": "Mmxwyrx2",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "startsAt": "2026-10-10T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "Franca",
+        "Philipp Fein"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/Mmxwyrx2/",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=de",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=en",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=fr",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=nl",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=pl",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=it",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=es",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=ru",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=tr",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=hr",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=pt",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=sq",
+        "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?3d4d1715",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?3d4d1715",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Mmxwyrx2/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?3d4d1715",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?3d4d1715",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?3d4d1715",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?3d4d1715",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/Mmxwyrx2/img/holder-1080.jpg?3d4d1715",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/Mmxwyrx2/img/holder-1080.jpg?3d4d1715",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:26:06.003Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "Feines Tier w/ Franca & Philipp Fein",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-10-10T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "b2a21992d15a417d956844df7c24bac9798be52b5483a65733ed5c7b833ee843",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:sau31e99",
+      "ticketIoEventId": "Sau31E99",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+      "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+      "startsAt": "2026-10-24T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "Leyla",
+        "Tanjuesch",
+        "lu.wicked",
+        "Zenker Brothers"
+      ],
+      "lineupQualification": "FULL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/Sau31E99/",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=de",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=en",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=fr",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=nl",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=pl",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=it",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=es",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=ru",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=tr",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=hr",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=pt",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=sq",
+        "https://gewoelbe.ticket.io/Sau31E99/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?3d4d1715",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?3d4d1715",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/Sau31E99/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?3d4d1715",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?3d4d1715",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?3d4d1715",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?3d4d1715",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/Sau31E99/img/holder-1080.jpg?3d4d1715",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/Sau31E99/img/holder-1080.jpg?3d4d1715",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:26:29.917Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/Sau31E99/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/Sau31E99/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-10-24T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/Sau31E99/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/Sau31E99/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/Sau31E99/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/Sau31E99/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "3dc988ffd410b87d491750ddd2dd77a69d4931e06e464b152ba68a594315e11e",
+      "importReadinessScore": 100
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:b7ltcedc",
+      "ticketIoEventId": "b7LTcEdC",
+      "shopId": "gewoelbe",
+      "shopSlug": "gewoelbe",
+      "listingUrl": "https://gewoelbe.ticket.io/",
+      "eventUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+      "canonicalUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+      "title": "Remember the Future w/ Axel Boman, Shumi",
+      "startsAt": "2026-10-23T23:00:00+02:00",
+      "lifecycle": "UPCOMING",
+      "venueName": "Gewölbe",
+      "city": "Köln",
+      "description": "Der Verkauf dieses Tickets geschieht nur unter Vorbehalt. Wir behalten uns vor, der*m Käufer*in am Veranstaltungstag den Zutritt trotz vorhandenen Tickets zu verwehren, sofern diese*r gegen unsere Hausregeln verstößt. Die Zustimmung zu unseren Hausregeln erteilt die*der Käufer*in beim Kauf dieses Tickets. The sale of this ticket is conditional. We reserve the right to deny entry to the buyer on the event day, even if they have a valid ticket, in case they violate our house rules. The buyer gives their consent to our house rules upon purchasing this ticket.",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineupHints": [
+        "Axel Boman",
+        "Shumi"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genreHints": [
+        "House"
+      ],
+      "genreCandidates": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "outboundLinks": [
+        "https://gewoelbe.ticket.io/b7LTcEdC/",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=de",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=en",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=fr",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=nl",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=pl",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=it",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=es",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=ru",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=tr",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=hr",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=pt",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=sq",
+        "https://gewoelbe.ticket.io/b7LTcEdC/?lang=sl",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?522005c",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?522005c",
+        "http://www.enable-javascript.com/de/",
+        "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+        "https://ticketiosupport.zendesk.com/hc/de",
+        "https://www.gewoelbe.club/",
+        "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+        "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night"
+      ],
+      "verifiedOutbound": [
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=de",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=en",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=fr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=nl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=pl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=it",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=es",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=ru",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=tr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=hr",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=pt",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=sq",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://gewoelbe.ticket.io/b7LTcEdC/?lang=sl",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?522005c",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?522005c",
+          "role": "ticket_provider",
+          "verified": false,
+          "verificationReasons": [
+            "different_ticket_surface"
+          ]
+        },
+        {
+          "url": "http://www.enable-javascript.com/de/",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://www.google.com/maps/place/50.943748100000,6.933825600000",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://ticketiosupport.zendesk.com/hc/de",
+          "role": "other_official",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://www.gewoelbe.club/",
+          "role": "official_venue",
+          "verified": false,
+          "verificationReasons": [
+            "generic_non_event_page"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/zombies-in-miami-bon-voyage-2025",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        },
+        {
+          "url": "https://t.rausgegangen.de/tickets/cologne-club-days-2025-club-night",
+          "role": "unknown",
+          "verified": false,
+          "verificationReasons": [
+            "non_authoritative_surface"
+          ]
+        }
+      ],
+      "imageUrls": [
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE.jpg",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-192.png?522005c",
+        "https://cdn.ticket.io/companies/bc7bTOMU/img/logo-180.png?522005c",
+        "https://cdn.ticket.io/companies/bc7bTOMU/events/b7LTcEdC/img/holder-1080.jpg?522005c",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MAGIC_MOMENT@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CHEERS_TO_YOU@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/MERRY_CHRISTMAS@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/CELEBRATION@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/ALAAF@2x.jpg",
+        "https://cdn.ticket.io/assets/checkout/giftPackages/SURPRISE@2x.jpg",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle-gtm.js",
+        "https://cdn.ticket.io/assets/shop/js/tio-track/bundle.js",
+        "https://cdn.ticket.io/assets/maintenance/maintenance.js?v3"
+      ],
+      "mediaRoles": [
+        "ticket_marketing",
+        "organizer_branding",
+        "event_flyer"
+      ],
+      "bestMediaUrl": "https://cdn.ticket.io/companies/bc7bTOMU/events/b7LTcEdC/img/holder-1080.jpg?522005c",
+      "products": [
+        {
+          "label": "12 vor 12 Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "12,00 Euro",
+          "amountMinor": 1200,
+          "currency": "EUR",
+          "phaseLabel": "12 vor 12 Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": true
+        },
+        {
+          "label": "Reguläres Ticket",
+          "category": "ADMISSION",
+          "rawPrice": "14,00 Euro",
+          "amountMinor": 1400,
+          "currency": "EUR",
+          "phaseLabel": "Reguläres Ticket",
+          "availability": "AVAILABLE",
+          "soldOut": false,
+          "purchasable": true,
+          "grantsAdmission": true,
+          "selectedAsCurrentAdmission": false
+        }
+      ],
+      "currentAdmissionPriceMinor": 1200,
+      "currentAdmissionPhase": "12 vor 12 Ticket",
+      "currentAdmissionLabel": "12 vor 12 Ticket",
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "fetchMethod": "playwright",
+      "evidenceTimestamp": "2026-09-13T04:26:53.671Z",
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "qualification": "IMPORT_CANDIDATE",
+      "fieldEvidence": [
+        {
+          "field": "title",
+          "candidateSource": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "Remember the Future w/ Axel Boman, Shumi",
+          "conflicts": []
+        },
+        {
+          "field": "startsAt",
+          "candidateSource": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "2026-10-23T23:00:00+02:00",
+          "conflicts": []
+        },
+        {
+          "field": "venue",
+          "candidateSource": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.85,
+          "selectedValue": "Gewölbe",
+          "conflicts": []
+        },
+        {
+          "field": "ticket_target",
+          "candidateSource": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.95,
+          "selectedValue": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "conflicts": []
+        },
+        {
+          "field": "current_price",
+          "candidateSource": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "authorityType": "ticket_io_detail",
+          "confidence": 0.9,
+          "selectedValue": "1200",
+          "conflicts": []
+        }
+      ],
+      "contentFingerprint": "9458c1cf4fd4129624f4e7b8f02b15aeadfdd5e1065bced778f4414c41c616d9",
+      "importReadinessScore": 100
+    }
+  ],
+  "selectionReasons": [
+    {
+      "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+      "title": "Lézard",
+      "shopSlug": "stadtgarten",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "new_shop",
+        "new_city",
+        "new_bundesland",
+        "new_genre"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:tonite:wnediscs",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "shopSlug": "tonite",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "new_shop",
+        "new_genre"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+      "title": "Klubnacht w/ Gerd Janson, lyzanne",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "new_shop",
+        "new_genre"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:tonite:5ji6tv2d",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "shopSlug": "tonite",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+      "title": "Klubnacht w/ Adiel, Di², EPHIE",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:acnlnyak",
+      "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:u7szdlae",
+      "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+      "title": "Feines Tier w/ Franca & Philipp Fein",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:sau31e99",
+      "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    },
+    {
+      "identityKey": "ticket_io:gewoelbe:b7ltcedc",
+      "title": "Remember the Future w/ Axel Boman, Shumi",
+      "shopSlug": "gewoelbe",
+      "city": "Köln",
+      "bundesland": "Nordrhein-Westfalen",
+      "importReadinessScore": 100,
+      "diversityFactors": [
+        "diversity_fallback"
+      ]
+    }
+  ],
+  "skippedDueToDiversity": 9,
+  "candidatesConsidered": 12
+}
