@@ -1,0 +1,16 @@
+{
+  "before": {
+    "total": 70,
+    "byOutcome": {
+      "EVIDENCE_FOUND": 5,
+      "NO_RESULT": 64,
+      "TEMPORARY_FAILURE": 0,
+      "RATE_LIMITED": 1,
+      "TIMEOUT": 0,
+      "IDENTITY_UNRESOLVED": 0
+    },
+    "activeBlocks": 69,
+    "expired": 1
+  },
+  "invalidatedArtists": []
+}

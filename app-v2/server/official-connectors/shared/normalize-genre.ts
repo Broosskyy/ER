@@ -128,6 +128,15 @@ export function canonicalGenreKey(genreKey: string): string {
   return GENRE_KEY_ALIASES[normalized] ?? normalized;
 }
 
+/** Generic umbrella label that should not block stronger evidence-backed upgrades. */
+export function isWeakOnlyGenericGenre(genres: string[]): boolean {
+  if (genres.length === 0) {
+    return false;
+  }
+  const keys = genres.map((genre) => canonicalGenreKey(genre));
+  return keys.every((key) => key === 'electronic');
+}
+
 export function normalizeOfficialGenreLabels(rawLabels: string[]): {
   normalized: NormalizedGenreLabel[];
   unmapped: NormalizedGenreLabel[];

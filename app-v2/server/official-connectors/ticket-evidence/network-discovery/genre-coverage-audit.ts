@@ -1,6 +1,12 @@
 import type { LinkedQueryExecutor } from '../../../ingestion/sync/linked-db';
 import { recoverBootshausGenresFromOfficialUrl } from '../../shared/bootshaus-genre-recovery';
-import { canonicalGenreKey, normalizeOfficialGenreLabels, normalizedGenresToExplicitLabels } from '../../shared/normalize-genre';
+import {
+  canonicalGenreKey,
+  isWeakOnlyGenericGenre,
+  normalizeOfficialGenreLabels,
+  normalizedGenresToExplicitLabels,
+} from '../../shared/normalize-genre';
+import type { EventGenreFusionResult } from '../../shared/discovery-genre-fusion/types';
 import { loadStagingEventSnapshots, type StagingEventSnapshot } from '../../../ingestion/sync/canonical-consolidation';
 import {
   auditGenreEvidenceForStaging,
@@ -133,23 +139,67 @@ export async function repairBootshausMissingGenres(
   return repaired;
 }
 
+function writeEventGenres(runQuery: LinkedQueryExecutor, eventId: string, genres: string[]): void {
+  runQuery(`DELETE FROM public.event_genres WHERE event_id = '${eventId}'::uuid;`);
+  const normalized = normalizeOfficialGenreLabels(genres);
+  for (const [index, label] of normalizedGenresToExplicitLabels(normalized.normalized).entries()) {
+    const genreKey =
+      normalized.normalized.find((genre) => genre.displayName === label)?.genreKey ??
+      canonicalGenreKey(label);
+    runQuery(
+      `INSERT INTO public.event_genres (event_id, genre_key, display_name, sort_order)
+       VALUES ('${eventId}'::uuid, '${genreKey.replace(/'/g, "''")}', '${label.replace(/'/g, "''")}', ${index});`,
+    );
+  }
+}
+
+export function shouldRepairGenreFromFusion(
+  currentGenres: string[],
+  recommendedGenres: string[],
+  changedFromCurrent: boolean,
+): boolean {
+  if (recommendedGenres.length === 0) {
+    return false;
+  }
+  if (currentGenres.length === 0) {
+    return true;
+  }
+  if (isWeakOnlyGenericGenre(currentGenres) && changedFromCurrent) {
+    return true;
+  }
+  return false;
+}
+
 export function repairRecoverableGenres(
   runQuery: LinkedQueryExecutor,
   entries: GenreCoverageEntry[],
 ): number {
   let repaired = 0;
   for (const entry of entries.filter((item) => item.classification === 'GENRE_RECOVERABLE')) {
-    runQuery(`DELETE FROM public.event_genres WHERE event_id = '${entry.eventId}'::uuid;`);
-    const normalized = normalizeOfficialGenreLabels(entry.recommendedGenres);
-    for (const [index, label] of normalizedGenresToExplicitLabels(normalized.normalized).entries()) {
-      const genreKey =
-        normalized.normalized.find((genre) => genre.displayName === label)?.genreKey ??
-        canonicalGenreKey(label);
-      runQuery(
-        `INSERT INTO public.event_genres (event_id, genre_key, display_name, sort_order)
-         VALUES ('${entry.eventId}'::uuid, '${genreKey.replace(/'/g, "''")}', '${label.replace(/'/g, "''")}', ${index});`,
-      );
+    writeEventGenres(runQuery, entry.eventId, entry.recommendedGenres);
+    repaired += 1;
+  }
+  return repaired;
+}
+
+export function repairFusionGenrePlans(
+  runQuery: LinkedQueryExecutor,
+  fusionResults: EventGenreFusionResult[],
+  events: StagingEventSnapshot[],
+): number {
+  let repaired = 0;
+  const eventsById = new Map(events.map((event) => [event.eventId, event]));
+  for (const result of fusionResults) {
+    const event = eventsById.get(result.eventId);
+    if (!event) {
+      continue;
     }
+    if (
+      !shouldRepairGenreFromFusion(event.genres, result.recommendedGenres, result.changedFromCurrent)
+    ) {
+      continue;
+    }
+    writeEventGenres(runQuery, result.eventId, result.recommendedGenres);
     repaired += 1;
   }
   return repaired;

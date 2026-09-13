@@ -4,7 +4,7 @@ import type { ArtistGenreEvidence } from './types';
 
 const USER_AGENT = 'EternalRave/0.2.0 (m9.3b.2e-artist-intelligence; contact@eternal-rave.local)';
 const GENRE_TERMS =
-  /\b(?:techno|hard techno|house|tech house|deep house|trance|hard trance|psytrance|hardstyle|hardcore|gabber|drum(?:\s|&|and|n)?\s*bass|dnb|jungle|electro|edm|minimal(?:\s+techno)?|melodic techno)\b/gi;
+  /\b(?:techno|hard techno|house|tech house|deep house|trance|hard trance|psytrance|hardstyle|hardcore|gabber|drum(?:\s|&|and|n)?\s*bass|dnb|jungle|electro|electronic|edm|minimal(?:\s+techno)?|melodic techno|disco)\b/gi;
 
 const ALLOWED_HOSTS = [
   'chrisstussy.com',
@@ -14,13 +14,35 @@ const ALLOWED_HOSTS = [
   'ra.co',
 ];
 
+function normalizeOfficialUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === 'http:') {
+      parsed.protocol = 'https:';
+    }
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
+
 function isAllowedOfficialUrl(url: string): boolean {
   try {
-    const host = new URL(url).hostname.replace(/^www\./, '');
+    const host = new URL(normalizeOfficialUrl(url)).hostname.replace(/^www\./, '');
     return ALLOWED_HOSTS.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
   } catch {
     return false;
   }
+}
+
+function pageRefersToArtist(html: string, artistName: string): boolean {
+  const normalizedArtist = artistName.toLowerCase().replace(/\s+/g, ' ');
+  const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.toLowerCase() ?? '';
+  if (titleMatch.includes(normalizedArtist)) {
+    return true;
+  }
+  const firstToken = normalizedArtist.split(' ')[0] ?? '';
+  return firstToken.length >= 4 && html.toLowerCase().includes(firstToken);
 }
 
 function extractGenreLabels(text: string): string[] {
@@ -40,14 +62,15 @@ export async function fetchOfficialArtistWebEvidence(input: {
   const seen = new Set<string>();
 
   for (const url of input.officialUrls) {
-    if (!isAllowedOfficialUrl(url)) {
+    const normalizedUrl = normalizeOfficialUrl(url);
+    if (!isAllowedOfficialUrl(normalizedUrl)) {
       continue;
     }
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 12_000);
     let html = '';
     try {
-      const response = await fetch(url, {
+      const response = await fetch(normalizedUrl, {
         headers: { 'User-Agent': USER_AGENT, Accept: 'text/html' },
         signal: controller.signal,
         redirect: 'follow',
@@ -64,6 +87,9 @@ export async function fetchOfficialArtistWebEvidence(input: {
     } finally {
       clearTimeout(timeout);
     }
+    if (!pageRefersToArtist(html, input.artistName)) {
+      continue;
+    }
     const labels = extractGenreLabels(html);
     for (const label of labels) {
       const normalized = normalizeOfficialGenreLabel(label);
@@ -77,7 +103,7 @@ export async function fetchOfficialArtistWebEvidence(input: {
         genreKey: normalized.genreKey,
         displayName: normalized.displayName,
         sourceType: 'STRUCTURED_SOURCE',
-        sourceReference: url,
+        sourceReference: normalizedUrl,
         evidenceStrength: 'STRONG',
         confidence: 'HIGH',
         observedAt: new Date().toISOString(),

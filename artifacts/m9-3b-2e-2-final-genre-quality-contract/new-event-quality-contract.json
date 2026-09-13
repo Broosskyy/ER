@@ -1,0 +1,23 @@
+{
+  "contract": "NEW_EVENT_QUALITY_CONTRACT",
+  "entrypoint": "evaluateEventQuality",
+  "pipeline": [
+    "SOURCE",
+    "DISCOVERY",
+    "DOMAIN_RELEVANCE",
+    "IDENTITY_DEDUP",
+    "EVIDENCE_COLLECTION",
+    "CANONICAL_FIELD_RECONCILIATION",
+    "LINEUP_ARTIST_INTELLIGENCE",
+    "GENRE_FUSION",
+    "TICKET_SAFETY",
+    "MEDIA_QUALITY",
+    "DESCRIPTION_QUALITY",
+    "COMPLETENESS_GATE",
+    "CANONICAL_EVENT",
+    "CONSUMER_READ_MODEL"
+  ],
+  "genreSlo": {
+    "publishedElectronicGenreCoverageTarget": 0.95
+  }
+}

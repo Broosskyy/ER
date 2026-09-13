@@ -1,0 +1,74 @@
+{
+  "artist": "Chris Stussy",
+  "profile": {
+    "canonicalGenres": [
+      {
+        "genreKey": "deep-house",
+        "displayName": "Deep House",
+        "confidence": "HIGH",
+        "sourceCount": 2
+      },
+      {
+        "genreKey": "tech-house",
+        "displayName": "Tech House",
+        "confidence": "HIGH",
+        "sourceCount": 2
+      }
+    ],
+    "confidence": "HIGH",
+    "evidence": [
+      {
+        "artistIdentity": "chris stussy",
+        "normalizedName": "Chris Stussy",
+        "genreKey": "electronic",
+        "displayName": "Electronic",
+        "sourceType": "DISCOGS",
+        "sourceReference": "discogs:4465293",
+        "evidenceStrength": "STRONG",
+        "confidence": "HIGH",
+        "observedAt": "2026-09-12T18:45:47.536Z",
+        "rawLabel": "Electronic",
+        "classificationReason": "discogs_release_style_consensus"
+      },
+      {
+        "artistIdentity": "chris stussy",
+        "normalizedName": "Chris Stussy",
+        "genreKey": "house",
+        "displayName": "House",
+        "sourceType": "DISCOGS",
+        "sourceReference": "discogs:4465293",
+        "evidenceStrength": "STRONG",
+        "confidence": "HIGH",
+        "observedAt": "2026-09-12T18:45:47.536Z",
+        "rawLabel": "House",
+        "classificationReason": "discogs_release_style_consensus"
+      },
+      {
+        "artistIdentity": "chris stussy",
+        "normalizedName": "Chris Stussy",
+        "genreKey": "deep-house",
+        "displayName": "Deep House",
+        "sourceType": "DISCOGS",
+        "sourceReference": "discogs:4465293",
+        "evidenceStrength": "STRONG",
+        "confidence": "HIGH",
+        "observedAt": "2026-09-12T18:45:47.536Z",
+        "rawLabel": "Deep House",
+        "classificationReason": "discogs_release_style_consensus"
+      },
+      {
+        "artistIdentity": "chris stussy",
+        "normalizedName": "Chris Stussy",
+        "genreKey": "tech-house",
+        "displayName": "Tech House",
+        "sourceType": "DISCOGS",
+        "sourceReference": "discogs:4465293",
+        "evidenceStrength": "STRONG",
+        "confidence": "HIGH",
+        "observedAt": "2026-09-12T18:45:47.536Z",
+        "rawLabel": "Tech House",
+        "classificationReason": "discogs_release_style_consensus"
+      }
+    ]
+  }
+}

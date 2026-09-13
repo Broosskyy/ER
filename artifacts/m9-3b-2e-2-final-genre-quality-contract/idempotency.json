@@ -1,0 +1,5 @@
+{
+  "applyRepair": false,
+  "genreWrites": 0,
+  "note": "Re-run without --apply should be stable when verified."
+}

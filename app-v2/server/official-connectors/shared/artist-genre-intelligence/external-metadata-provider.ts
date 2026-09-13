@@ -107,6 +107,39 @@ async function fetchMusicBrainzTags(
   return { attempt: { providerId: 'musicbrainz', outcome: 'NO_RESULT', genres: [] } };
 }
 
+const DISCOGS_RELEASE_SAMPLE_SIZE = 10;
+const DISCOGS_RELEASE_STYLE_MIN_VOTES = 2;
+
+async function fetchDiscogsReleaseStyleLabels(
+  artistId: number,
+): Promise<string[]> {
+  const releasesResponse = await fetchProviderJson<{
+    releases?: Array<{ title: string; type: string; main_release?: number; id: number }>;
+  }>(`${DISCOGS_BASE_URL}/artists/${artistId}/releases?per_page=${DISCOGS_RELEASE_SAMPLE_SIZE}&sort=year&sort_order=desc`);
+  await sleep(PROVIDER_THROTTLE_MS);
+  if (releasesResponse.status !== 'success') {
+    return [];
+  }
+  const styleVotes = new Map<string, number>();
+  for (const release of releasesResponse.data?.releases ?? []) {
+    const releaseId = release.main_release ?? release.id;
+    const detailResponse = await fetchProviderJson<{ genres?: string[]; styles?: string[] }>(
+      `${DISCOGS_BASE_URL}/releases/${releaseId}`,
+    );
+    await sleep(PROVIDER_THROTTLE_MS);
+    if (detailResponse.status !== 'success') {
+      continue;
+    }
+    for (const label of [...(detailResponse.data?.genres ?? []), ...(detailResponse.data?.styles ?? [])]) {
+      styleVotes.set(label, (styleVotes.get(label) ?? 0) + 1);
+    }
+  }
+  const ranked = [...styleVotes.entries()].sort((left, right) => right[1] - left[1]);
+  const topVotes = ranked[0]?.[1] ?? 0;
+  const threshold = Math.max(DISCOGS_RELEASE_STYLE_MIN_VOTES, Math.ceil(topVotes * 0.4));
+  return ranked.filter(([, votes]) => votes >= threshold).map(([label]) => label).slice(0, 4);
+}
+
 async function fetchDiscogsLabels(
   artistName: string,
 ): Promise<{ result?: { id: number; title: string; labels: string[] }; attempt: ExternalProviderAttempt }> {
@@ -145,6 +178,18 @@ async function fetchDiscogsLabels(
         attempt: { providerId: 'discogs', outcome: 'EVIDENCE_FOUND', genres: labels },
       };
     }
+    const releaseLabels = await fetchDiscogsReleaseStyleLabels(discogsMatch.id);
+    if (releaseLabels.length > 0) {
+      return {
+        result: { id: discogsMatch.id, title: discogsMatch.title, labels: releaseLabels },
+        attempt: {
+          providerId: 'discogs',
+          outcome: 'EVIDENCE_FOUND',
+          detail: 'release_style_consensus',
+          genres: releaseLabels,
+        },
+      };
+    }
   }
   return { attempt: { providerId: 'discogs', outcome: 'NO_RESULT', genres: [] } };
 }
@@ -180,7 +225,10 @@ export async function fetchExternalArtistGenreEvidence(
         sourceReference: `discogs:${discogs.result.id}`,
         evidenceStrength: 'MODERATE',
         confidence: 'MEDIUM',
-        classificationReason: 'discogs_artist_genres_styles',
+        classificationReason:
+          discogs.attempt.detail === 'release_style_consensus'
+            ? 'discogs_release_style_consensus'
+            : 'discogs_artist_genres_styles',
       })
     : [];
 

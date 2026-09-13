@@ -119,12 +119,19 @@ export async function runArtistIntelligencePass(input: {
   fetchExternal?: boolean;
   externalUnresolvedOnly?: boolean;
   negativeCache?: ProviderNegativeCache;
+  invalidateNegativeCacheForArtists?: string[];
 }): Promise<ArtistIntelligenceDryRunResult> {
   if (input.store.allProfiles().length === 0) {
     input.store.load();
   }
   const negativeCache = input.negativeCache ?? new ProviderNegativeCache();
   negativeCache.load();
+  const forcedArtistIdentities = new Set(
+    (input.invalidateNegativeCacheForArtists ?? []).map((name) => getArtistIdentityKey(name)),
+  );
+  if (forcedArtistIdentities.size > 0) {
+    negativeCache.invalidateForArtists(input.invalidateNegativeCacheForArtists ?? []);
+  }
   const artistNames = prioritizeArtistsForExternalFetch(
     input.events,
     collectUniqueLineupArtists(input.events, input.runQuery),
@@ -171,9 +178,10 @@ export async function runArtistIntelligencePass(input: {
       if (profile && profile.canonicalGenres.length > 0) {
         continue;
       }
-      const shouldFetchExternal = ['musicbrainz', 'discogs'].some((providerId) =>
-        negativeCache.shouldFetch(providerId, artistName),
-      );
+      const forceRetry = forcedArtistIdentities.has(getArtistIdentityKey(artistName));
+      const shouldFetchExternal =
+        forceRetry ||
+        ['musicbrainz', 'discogs'].some((providerId) => negativeCache.shouldFetch(providerId, artistName));
       if (!shouldFetchExternal) {
         continue;
       }
@@ -203,7 +211,10 @@ export async function runArtistIntelligencePass(input: {
         );
         mergedEvidence = wikiEvidence;
       }
-      if (mergedEvidence.length === 0 && negativeCache.shouldFetch('official-artist-web', artistName)) {
+      if (
+        mergedEvidence.length === 0 &&
+        (forceRetry || negativeCache.shouldFetch('official-artist-web', artistName))
+      ) {
         const searchName = toArtistSearchName(artistName);
         const officialUrls = await fetchDiscogsOfficialUrls(searchName);
         const webEvidence = await fetchOfficialArtistWebEvidence({

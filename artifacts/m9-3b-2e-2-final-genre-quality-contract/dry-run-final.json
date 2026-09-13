@@ -1,0 +1,310 @@
+{
+  "applyRepair": false,
+  "genrePlan": [
+    {
+      "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "oldGenres": [
+        "Bass House",
+        "Electro",
+        "House",
+        "Progressive House",
+        "EDM",
+        "Dance"
+      ],
+      "newGenres": [
+        "Bass House",
+        "Progressive House"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "bass-house",
+          "displayName": "Bass House",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        },
+        {
+          "genreKey": "progressive-house",
+          "displayName": "Progressive House",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "title": "Bootshaus Sommerfest auf 4 Floors!",
+      "oldGenres": [
+        "Dubstep",
+        "Electro",
+        "Hard Techno",
+        "Techno",
+        "EDM"
+      ],
+      "newGenres": [
+        "Hard Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "oldGenres": [
+        "House",
+        "Techno"
+      ],
+      "newGenres": [
+        "House"
+      ],
+      "method": "multi_source_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "house",
+          "displayName": "House",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "house",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        }
+      ]
+    },
+    {
+      "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "oldGenres": [
+        "Drum'n'Bass",
+        "Hard Dance",
+        "Dubstep"
+      ],
+      "newGenres": [
+        "Drum'n'Bass",
+        "Electro",
+        "Hard Dance",
+        "Dubstep"
+      ],
+      "method": "multi_source_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "drum-and-bass",
+          "displayName": "Drum'n'Bass",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "electro",
+          "displayName": "Electro",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hard dance",
+          "displayName": "Hard Dance",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "dubstep",
+          "displayName": "Dubstep",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "dnb,electro",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hard-dance",
+          "displayName": "Hard Dance",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "oldGenres": [
+        "Techno",
+        "Hard Techno"
+      ],
+      "newGenres": [
+        "Hard Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+      "title": "Bootshaus Sommerfest Closing",
+      "oldGenres": [
+        "Tech House",
+        "Techno",
+        "Electro",
+        "Dubstep"
+      ],
+      "newGenres": [
+        "Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+      "title": "NIBIRII pres. ELY OAKS and more!",
+      "oldGenres": [
+        "House",
+        "Hard Techno",
+        "Techno",
+        "Trance"
+      ],
+      "newGenres": [
+        "Hard Techno"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "LINEUP_CONSENSUS",
+          "authority": 72,
+          "confidence": "HIGH",
+          "sourceReference": "lineup_artist_intelligence_consensus",
+          "classificationReason": "lineup_artist_intelligence_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    },
+    {
+      "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "oldGenres": [
+        "Hard Techno",
+        "Techno"
+      ],
+      "newGenres": [
+        "Techno",
+        "Hard Techno",
+        "Electro"
+      ],
+      "method": "artist_lineup_fusion",
+      "confidence": "HIGH",
+      "contributions": [
+        {
+          "genreKey": "techno",
+          "displayName": "Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,hard_techno,electro,dj_set,hard_techno_abbrev",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hard techno",
+          "displayName": "Hard Techno",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,hard_techno,electro,dj_set,hard_techno_abbrev",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "electro",
+          "displayName": "Electro",
+          "layer": "DESCRIPTION",
+          "authority": 82,
+          "confidence": "HIGH",
+          "sourceReference": "techno,hard_techno,electro,dj_set,hard_techno_abbrev",
+          "classificationReason": "discovery_relevance_genre_candidate",
+          "independenceGroup": "exhaustion:B_STRONG"
+        },
+        {
+          "genreKey": "hardtechno",
+          "displayName": "Hard Techno",
+          "layer": "HEADLINER_PROFILE",
+          "authority": 76,
+          "confidence": "HIGH",
+          "sourceReference": "headliner_artist_profile_consensus",
+          "classificationReason": "headliner_artist_profile_consensus",
+          "independenceGroup": "exhaustion:C_LINEUP"
+        }
+      ]
+    }
+  ],
+  "recoverableCount": 8,
+  "intelligenceDryRun": {
+    "artistsEvaluated": 153,
+    "artistsClassified": 126,
+    "artistsUnresolved": 27,
+    "eventsRecoveredByArtistIntelligence": 0
+  }
+}

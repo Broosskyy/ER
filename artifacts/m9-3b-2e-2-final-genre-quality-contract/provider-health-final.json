@@ -1,0 +1,42 @@
+{
+  "store": [
+    {
+      "providerId": "historical-event",
+      "requests": 153,
+      "successes": 153,
+      "failures": 0,
+      "timeouts": 0
+    },
+    {
+      "providerId": "event-description",
+      "requests": 153,
+      "successes": 153,
+      "failures": 0,
+      "timeouts": 0
+    }
+  ],
+  "negativeCache": {
+    "total": 70,
+    "byOutcome": {
+      "EVIDENCE_FOUND": 5,
+      "NO_RESULT": 64,
+      "TEMPORARY_FAILURE": 0,
+      "RATE_LIMITED": 1,
+      "TIMEOUT": 0,
+      "IDENTITY_UNRESOLVED": 0
+    },
+    "activeBlocks": 69,
+    "expired": 1
+  },
+  "attemptsByProvider": {
+    "artistCacheEntries": 150,
+    "artistEvidenceRecords": 574,
+    "artistCacheHits": 897,
+    "artistCacheMisses": 103,
+    "artistEvidenceProviderRequests": 306,
+    "providerSuccesses": 306,
+    "providerFailures": 0,
+    "providerTimeouts": 0,
+    "staleArtistProfiles": 0
+  }
+}

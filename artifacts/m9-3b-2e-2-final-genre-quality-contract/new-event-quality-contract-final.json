@@ -1,0 +1,30 @@
+{
+  "contract": "NEW_EVENT_QUALITY_CONTRACT",
+  "publishedElectronicGenreCoverage": 1,
+  "batchQuality": {
+    "candidatesSeen": 34,
+    "domainElectronicHigh": 12,
+    "domainElectronicMedium": 20,
+    "domainAmbiguous": 2,
+    "domainNonElectronic": 0,
+    "canonicalCreated": 34,
+    "canonicalMatched": 0,
+    "duplicateCandidates": 0,
+    "publishedEligible": 34,
+    "genreClassified": 34,
+    "genreUnresolved": 0,
+    "genreCoverage": 1,
+    "lineupComplete": 24,
+    "lineupPartial": 0,
+    "lineupNotAnnounced": 10,
+    "ticketVerified": 28,
+    "ticketUnsafe": 0,
+    "ticketUnavailable": 6,
+    "mediaQualified": 34,
+    "mediaMissing": 0,
+    "descriptionQualified": 16,
+    "descriptionMissing": 18,
+    "reviewRequired": 14,
+    "rejected": 0
+  }
+}

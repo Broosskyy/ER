@@ -3,6 +3,7 @@ import { isSearchableGenreConfidence } from '../artist-genre-intelligence/discov
 import type { GenreEvidenceExhaustionResult, GenreConfidenceBand } from '../genre-evidence';
 import { canonicalGenreKey } from '../normalize-genre';
 import { normalizeGenreLabelSet } from '../staging-source-evidence';
+import { matchEventSeriesIdentity } from '../event-series-intelligence/series-identity';
 import { domainSupportsBroadElectronic } from './domain-classification';
 import type {
   DiscoverySignalBundle,
@@ -216,16 +217,28 @@ export function fuseEventGenreEvidence(input: {
   }
 
   if (seriesGenres.length > 0) {
+    const seriesIdentity = matchEventSeriesIdentity(input.event);
+    const seriesProfile =
+      seriesIdentity && input.fusionContext?.seriesProfilesBySeriesId
+        ? input.fusionContext.seriesProfilesBySeriesId.get(seriesIdentity.seriesId)
+        : undefined;
     for (const label of seriesGenres) {
+      const profileEvidence = seriesProfile?.evidence.find(
+        (entry) => canonicalGenreKey(entry.displayName) === canonicalGenreKey(label),
+      );
+      const editorialSeries =
+        profileEvidence?.classificationReason.includes('promoter_editorial') ?? false;
       contributions.push(
         contributionFromLayer({
           genreKey: label,
           displayName: label,
-          layer: 'EVENT_SERIES',
-          confidence: 'MEDIUM',
-          sourceReference: 'classified_series_sibling',
-          classificationReason: 'event_series_genre_inheritance',
-          independenceGroup: 'series:related',
+          layer: editorialSeries ? 'DESCRIPTION' : 'EVENT_SERIES',
+          confidence: seriesProfile?.confidence ?? 'MEDIUM',
+          sourceReference: profileEvidence?.sourceReference ?? 'classified_series_sibling',
+          classificationReason:
+            profileEvidence?.classificationReason ?? 'event_series_genre_inheritance',
+          independenceGroup: editorialSeries ? 'series:editorial' : 'series:related',
+          authorityOverride: editorialSeries ? FUSION_AUTHORITY.DESCRIPTION : undefined,
         }),
       );
     }

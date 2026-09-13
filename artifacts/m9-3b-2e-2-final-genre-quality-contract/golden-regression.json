@@ -1,0 +1,56 @@
+[
+  {
+    "pattern": "underland",
+    "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "issues": []
+  },
+  {
+    "pattern": "14\\s*jahre.*affen",
+    "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "title": "14 Jahre Affenkäfig 19.09.2026",
+    "issues": []
+  },
+  {
+    "pattern": "zaagstep",
+    "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "issues": []
+  },
+  {
+    "pattern": "unreal weekender night i",
+    "eventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+    "title": "Unreal Weekender Night II - September 2026",
+    "issues": []
+  },
+  {
+    "pattern": "kitkat",
+    "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "title": "SA * 24.10.2026 | KitKatClub",
+    "issues": []
+  },
+  {
+    "pattern": "chris stussy",
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "issues": []
+  },
+  {
+    "pattern": "bootshaus.*(?:new years|nye)",
+    "eventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "title": "Bootshaus & Loonyland pres. NYE 2026",
+    "issues": []
+  },
+  {
+    "pattern": "nibirii",
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "issues": []
+  },
+  {
+    "pattern": "ely oaks",
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "issues": []
+  }
+]

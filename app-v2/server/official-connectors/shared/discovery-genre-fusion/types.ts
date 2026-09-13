@@ -68,6 +68,7 @@ export interface GenreFusionContext {
   discoveryByEventId: Map<string, DiscoverySignalBundle>;
   bootshausGenresByEventId: Map<string, string[]>;
   seriesGenresByEventId: Map<string, string[]>;
+  seriesProfilesBySeriesId?: Map<string, import('../event-series-intelligence/types').EventSeriesGenreProfile>;
 }
 
 export const FUSION_AUTHORITY: Record<FusionSourceLayer, number> = {

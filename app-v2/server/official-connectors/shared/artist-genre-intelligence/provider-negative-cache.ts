@@ -89,6 +89,24 @@ export class ProviderNegativeCache {
     return [...this.entries.values()];
   }
 
+  invalidateForArtists(artistNames: string[], providerIds?: string[]): number {
+    let removed = 0;
+    for (const artistName of artistNames) {
+      const identity = getArtistIdentityKey(artistName);
+      for (const [key, entry] of [...this.entries.entries()]) {
+        if (entry.artistIdentity !== identity) {
+          continue;
+        }
+        if (providerIds && !providerIds.includes(entry.providerId)) {
+          continue;
+        }
+        this.entries.delete(key);
+        removed += 1;
+      }
+    }
+    return removed;
+  }
+
   audit(): {
     total: number;
     byOutcome: Record<ProviderOutcome, number>;
