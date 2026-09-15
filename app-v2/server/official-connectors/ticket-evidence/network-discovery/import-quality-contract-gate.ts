@@ -3,9 +3,12 @@ import { classifyDomainFromRelevance, classifyImportQualification } from '../../
 import type { DiscoverySignalBundle } from '../../shared/discovery-genre-fusion/types';
 import { evaluateEventQuality } from '../../shared/event-quality/evaluate-event-quality';
 import type { EventQualityEvaluation, EventQualityState } from '../../shared/event-quality/types';
+import { canonicalGenreKey } from '../../shared/normalize-genre';
+import { normalizeGenreLabelSet } from '../../shared/staging-source-evidence';
 import {
   detectStructuredDescriptionLeakage,
   publishedDescriptionStructuredLeakage,
+  separateStructuredEventContent,
 } from '../../shared/structured-content-separation';
 import type { EnrichedTicketIoEvent } from './detail-types';
 import type { EventCompletenessEntry } from './event-completeness-audit';
@@ -35,7 +38,43 @@ export interface ImportQualityContractResult {
   ticketLeakage: boolean;
   scheduleLeakage: boolean;
   descriptionQuality: 'EDITORIAL' | 'STRUCTURED_ONLY' | 'MIXED' | 'MISSING';
+  genrePresenceCoverage: boolean;
+  genreEvidenceCompleteness: boolean;
+  explicitGenreClaims: number;
+  canonicalizedExplicitGenreClaims: number;
+  explicitGenreEvidenceParity: number;
+  recoverableExplicitGenreMissing: number;
   evaluation: EventQualityEvaluation;
+}
+
+function assessExplicitGenreEvidenceParity(event: EnrichedTicketIoEvent, snapshotGenres: string[]): {
+  explicitGenreClaims: number;
+  canonicalizedExplicitGenreClaims: number;
+  explicitGenreEvidenceParity: number;
+  recoverableExplicitGenreMissing: number;
+  genreEvidenceCompleteness: boolean;
+} {
+  const separated = event.description ? separateStructuredEventContent(event.description) : undefined;
+  const explicitClaims = normalizeGenreLabelSet([
+    ...event.genreHints,
+    ...event.genreCandidates
+      .filter((genre) => genre.confidence === 'explicit' || genre.confidence === 'strong_inferred')
+      .map((genre) => genre.label),
+    ...(separated?.genreCandidates ?? []),
+  ]);
+  const canonicalKeys = new Set(snapshotGenres.map((genre) => canonicalGenreKey(genre)));
+  const canonicalized = explicitClaims.filter((genre) => canonicalKeys.has(canonicalGenreKey(genre)));
+  const recoverableExplicitGenreMissing = explicitClaims.filter(
+    (genre) => !canonicalKeys.has(canonicalGenreKey(genre)),
+  ).length;
+  return {
+    explicitGenreClaims: explicitClaims.length,
+    canonicalizedExplicitGenreClaims: canonicalized.length,
+    explicitGenreEvidenceParity:
+      explicitClaims.length > 0 ? canonicalized.length / explicitClaims.length : 1,
+    recoverableExplicitGenreMissing,
+    genreEvidenceCompleteness: recoverableExplicitGenreMissing === 0,
+  };
 }
 
 function buildSyntheticSnapshot(event: EnrichedTicketIoEvent): StagingEventSnapshot {
@@ -226,9 +265,15 @@ export function evaluateImportCandidateQualityContract(
   const timeReady = Boolean(snapshot.startsAt);
   const venueReady = Boolean(snapshot.venueName);
 
+  const genreParity = assessExplicitGenreEvidenceParity(event, snapshot.genres);
+  if (!genreParity.genreEvidenceCompleteness && genreParity.explicitGenreClaims > 0) {
+    reviewReasons.push('genre_evidence_incomplete');
+  }
+
   const passesQualityContract =
     (evaluation.qualityState === 'READY' || evaluation.qualityState === 'READY_WITH_WARNINGS') &&
-    !publishedDescriptionStructuredLeakage(event.description);
+    !publishedDescriptionStructuredLeakage(event.description) &&
+    genreParity.genreEvidenceCompleteness;
 
   return {
     identityKey: event.identityKey,
@@ -253,6 +298,12 @@ export function evaluateImportCandidateQualityContract(
     ticketLeakage: structuredLeakage.ticketLeakage,
     scheduleLeakage: structuredLeakage.scheduleLeakage,
     descriptionQuality,
+    genrePresenceCoverage: snapshot.genres.length > 0,
+    genreEvidenceCompleteness: genreParity.genreEvidenceCompleteness,
+    explicitGenreClaims: genreParity.explicitGenreClaims,
+    canonicalizedExplicitGenreClaims: genreParity.canonicalizedExplicitGenreClaims,
+    explicitGenreEvidenceParity: genreParity.explicitGenreEvidenceParity,
+    recoverableExplicitGenreMissing: genreParity.recoverableExplicitGenreMissing,
     evaluation: {
       ...evaluation,
       reviewReasons,

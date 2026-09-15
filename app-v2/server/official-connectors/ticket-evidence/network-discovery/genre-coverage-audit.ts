@@ -18,6 +18,7 @@ import {
 export type GenreCoverageClassification =
   | 'GENRE_VERIFIED'
   | 'GENRE_RECOVERABLE'
+  | 'GENRE_EVIDENCE_INCOMPLETE'
   | 'GENRE_UNRESOLVED_NO_EVIDENCE'
   | 'GENRE_CONFLICT_REVIEW';
 
@@ -56,9 +57,25 @@ function classifyGenreEntry(
     evidenceStrength = 'strong';
     confidenceBand = 'HIGH';
   } else if (event.genres.length > 0) {
-    classification = 'GENRE_VERIFIED';
-    evidenceStrength = event.genres.length > 0 ? 'strong' : 'weak';
-    confidenceBand = exhaustion.explicitGenreCount > 0 ? 'EXPLICIT' : 'HIGH';
+    const missingExplicit = recommended.filter(
+      (genre) =>
+        !event.genres.some((current) => canonicalGenreKey(current) === canonicalGenreKey(genre)),
+    );
+    if (missingExplicit.length > 0 && exhaustion.explicitGenreCount > 0) {
+      classification = 'GENRE_EVIDENCE_INCOMPLETE';
+      reason = 'explicit_genre_evidence_not_fully_canonicalized';
+      evidenceStrength = 'strong';
+      confidenceBand = 'EXPLICIT';
+    } else if (missingExplicit.length > 0) {
+      classification = 'GENRE_RECOVERABLE';
+      reason = 'verified_genre_evidence_superset';
+      evidenceStrength = 'strong';
+      confidenceBand = exhaustion.explicitGenreCount > 0 ? 'EXPLICIT' : 'HIGH';
+    } else {
+      classification = 'GENRE_VERIFIED';
+      evidenceStrength = event.genres.length > 0 ? 'strong' : 'weak';
+      confidenceBand = exhaustion.explicitGenreCount > 0 ? 'EXPLICIT' : 'HIGH';
+    }
   } else if (recommended.length > 0) {
     classification = 'GENRE_RECOVERABLE';
     reason = 'verified_evidence_after_exhaustion';
@@ -139,7 +156,7 @@ export async function repairBootshausMissingGenres(
   return repaired;
 }
 
-function writeEventGenres(runQuery: LinkedQueryExecutor, eventId: string, genres: string[]): void {
+export function writeEventGenres(runQuery: LinkedQueryExecutor, eventId: string, genres: string[]): void {
   runQuery(`DELETE FROM public.event_genres WHERE event_id = '${eventId}'::uuid;`);
   const normalized = normalizeOfficialGenreLabels(genres);
   for (const [index, label] of normalizedGenresToExplicitLabels(normalized.normalized).entries()) {
@@ -175,7 +192,9 @@ export function repairRecoverableGenres(
   entries: GenreCoverageEntry[],
 ): number {
   let repaired = 0;
-  for (const entry of entries.filter((item) => item.classification === 'GENRE_RECOVERABLE')) {
+  for (const entry of entries.filter(
+    (item) => item.classification === 'GENRE_RECOVERABLE' || item.classification === 'GENRE_EVIDENCE_INCOMPLETE',
+  )) {
     writeEventGenres(runQuery, entry.eventId, entry.recommendedGenres);
     repaired += 1;
   }

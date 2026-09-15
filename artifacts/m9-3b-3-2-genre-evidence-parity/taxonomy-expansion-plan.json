@@ -1,0 +1,19 @@
+{
+  "additions": [
+    {
+      "genreKey": "hard-bounce",
+      "displayName": "Hard Bounce",
+      "parentGenreKey": "electronic",
+      "aliases": [
+        "hardbounce",
+        "hard bounce",
+        "hard-bounce",
+        "#hardbounce"
+      ],
+      "evidenceExamples": [
+        "Odonien #MITTWOCHENENDE source hashtag block"
+      ],
+      "rationale": "Explicit recurring electronic subgenre label in verified ticket.io source evidence"
+    }
+  ]
+}

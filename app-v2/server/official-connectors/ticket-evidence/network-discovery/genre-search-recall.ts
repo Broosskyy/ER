@@ -35,7 +35,7 @@ function eventMatchesGenreQuery(entry: GenreCoverageEntry, queryGenreKey: string
 }
 
 export function simulateGenreSearchRecall(entries: GenreCoverageEntry[]): GenreSearchRecallReport {
-  const queries = ['Electronic', 'Techno', 'Hard Techno', 'House', 'Tech House'];
+  const queries = ['Electronic', 'Techno', 'Hard Techno', 'Trance', 'Bounce', 'Hard Bounce', 'House', 'Tech House'];
   const results: GenreSearchRecallQuery[] = [];
   let totalFalseNegatives = 0;
   let recoverableFalseNegatives = 0;

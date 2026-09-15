@@ -1,0 +1,1786 @@
+[
+  {
+    "canonicalEventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+    "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+    "rawGenreClaims": [
+      "Techno",
+      "House"
+    ],
+    "normalizedClaims": [
+      "Techno",
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      },
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance"
+    ],
+    "searchExpandedGenres": [
+      "bass house",
+      "electro",
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house",
+      "progressive house",
+      "electronic",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "trance",
+      "hard-trance",
+      "psytrance",
+      "hard-dance",
+      "hardstyle",
+      "rawstyle",
+      "hardcore",
+      "gabber",
+      "drum-and-bass",
+      "jungle",
+      "dubstep",
+      "breakbeat",
+      "disco",
+      "uk-garage",
+      "hip-hop",
+      "goa",
+      "groove",
+      "bounce",
+      "hard-bounce",
+      "trap"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "rawGenreClaims": [
+      "Hard Techno"
+    ],
+    "normalizedClaims": [
+      "Hard Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Hard Techno",
+        "detected": true,
+        "normalized": "Hard Techno",
+        "taxonomyMatch": "Hard Techno",
+        "evidenceClaim": "Hard Techno",
+        "fusion": "Hard Techno",
+        "canonical": "Hard Techno",
+        "consumer": "Hard Techno",
+        "search": "hard techno",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno"
+    ],
+    "searchExpandedGenres": [
+      "hard techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "title": "Bootshaus Sommerfest auf 4 Floors!",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "searchExpandedGenres": [
+      "dubstep",
+      "electro",
+      "hard techno",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "electronic",
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house",
+      "trance",
+      "hard-trance",
+      "psytrance",
+      "hard-dance",
+      "hardstyle",
+      "rawstyle",
+      "hardcore",
+      "gabber",
+      "drum-and-bass",
+      "jungle",
+      "breakbeat",
+      "disco",
+      "uk-garage",
+      "hip-hop",
+      "goa",
+      "groove",
+      "bounce",
+      "hard-bounce",
+      "trap"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "rawGenreClaims": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "normalizedClaims": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Drum'n'Bass",
+        "detected": true,
+        "normalized": "Drum'n'Bass",
+        "taxonomyMatch": "Drum'n'Bass",
+        "evidenceClaim": "Drum'n'Bass",
+        "fusion": "Drum'n'Bass",
+        "canonical": "Drum'n'Bass",
+        "consumer": "Drum'n'Bass",
+        "search": "drum-and-bass, jungle",
+        "dropped": false
+      },
+      {
+        "raw": "Hard Dance",
+        "detected": true,
+        "normalized": "Hard Dance",
+        "taxonomyMatch": "Hard Dance",
+        "evidenceClaim": "Hard Dance",
+        "fusion": "Hard Dance",
+        "canonical": "Hard Dance",
+        "consumer": "Hard Dance",
+        "search": "hard dance",
+        "dropped": false
+      },
+      {
+        "raw": "Dubstep",
+        "detected": true,
+        "normalized": "Dubstep",
+        "taxonomyMatch": "Dubstep",
+        "evidenceClaim": "Dubstep",
+        "fusion": "Dubstep",
+        "canonical": "Dubstep",
+        "consumer": "Dubstep",
+        "search": "dubstep",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "searchExpandedGenres": [
+      "drum-and-bass",
+      "jungle",
+      "hard dance",
+      "dubstep"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "rawGenreClaims": [
+      "Hard Bounce",
+      "Trance",
+      "Bounce",
+      "Hard Techno",
+      "Techno",
+      "#bounce",
+      "#hardbounce",
+      "#trance",
+      "#techno",
+      "#hardtechno"
+    ],
+    "normalizedClaims": [
+      "Hard Bounce",
+      "Trance",
+      "Bounce",
+      "Hard Techno",
+      "Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Hard Bounce",
+        "detected": true,
+        "normalized": "Hard Bounce",
+        "taxonomyMatch": "Hard Bounce",
+        "evidenceClaim": "Hard Bounce",
+        "fusion": "Hard Bounce",
+        "canonical": "Hard Bounce",
+        "consumer": "Hard Bounce",
+        "search": "hard bounce",
+        "dropped": false
+      },
+      {
+        "raw": "Trance",
+        "detected": true,
+        "normalized": "Trance",
+        "taxonomyMatch": "Trance",
+        "evidenceClaim": "Trance",
+        "fusion": "Trance",
+        "canonical": "Trance",
+        "consumer": "Trance",
+        "search": "trance, hard-trance, psytrance, goa",
+        "dropped": false
+      },
+      {
+        "raw": "Bounce",
+        "detected": true,
+        "normalized": "Bounce",
+        "taxonomyMatch": "Bounce",
+        "evidenceClaim": "Bounce",
+        "fusion": "Bounce",
+        "canonical": "Bounce",
+        "consumer": "Bounce",
+        "search": "bounce",
+        "dropped": false
+      },
+      {
+        "raw": "Hard Techno",
+        "detected": true,
+        "normalized": "Hard Techno",
+        "taxonomyMatch": "Hard Techno",
+        "evidenceClaim": "Hard Techno",
+        "fusion": "Hard Techno",
+        "canonical": "Hard Techno",
+        "consumer": "Hard Techno",
+        "search": "hard techno",
+        "dropped": false
+      },
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      },
+      {
+        "raw": "#bounce",
+        "detected": true,
+        "normalized": "Bounce",
+        "taxonomyMatch": "Bounce",
+        "evidenceClaim": "Bounce",
+        "fusion": "Bounce",
+        "canonical": "Bounce",
+        "consumer": "Bounce",
+        "search": "bounce",
+        "dropped": false
+      },
+      {
+        "raw": "#hardbounce",
+        "detected": true,
+        "normalized": "Hard Bounce",
+        "taxonomyMatch": "Hard Bounce",
+        "fusion": "Hard Bounce",
+        "canonical": "Hard Bounce",
+        "consumer": "Hard Bounce",
+        "search": "hard bounce",
+        "dropped": false
+      },
+      {
+        "raw": "#trance",
+        "detected": true,
+        "normalized": "Trance",
+        "taxonomyMatch": "Trance",
+        "evidenceClaim": "Trance",
+        "fusion": "Trance",
+        "canonical": "Trance",
+        "consumer": "Trance",
+        "search": "trance, hard-trance, psytrance, goa",
+        "dropped": false
+      },
+      {
+        "raw": "#techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      },
+      {
+        "raw": "#hardtechno",
+        "detected": true,
+        "normalized": "Hard Techno",
+        "taxonomyMatch": "Hard Techno",
+        "fusion": "Hard Techno",
+        "canonical": "Hard Techno",
+        "consumer": "Hard Techno",
+        "search": "hard techno",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno",
+      "Trance",
+      "Techno",
+      "Hard Bounce",
+      "Bounce"
+    ],
+    "searchExpandedGenres": [
+      "hard techno",
+      "trance",
+      "hard-trance",
+      "psytrance",
+      "goa",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "hard bounce",
+      "bounce"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "fd71951f-e59a-4cf2-a8ed-b0bda5a198db",
+    "title": "Klubnacht w/ Gerd Janson, lyzanne",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "hard techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "title": "14 Jahre Affenkäfig 19.09.2026",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "title": "Bootshaus Sommerfest Closing",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "searchExpandedGenres": [
+      "tech house",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "electro",
+      "dubstep"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "a82b7c0d-9d29-4bb2-a4f6-c99fece53569",
+    "title": "Klubnacht w/ Adiel, Di², EPHIE",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+    "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hardstyle"
+    ],
+    "searchExpandedGenres": [
+      "hardstyle",
+      "rawstyle"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+    "title": "Unreal Weekender Night I - September 2026",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno"
+    ],
+    "searchExpandedGenres": [
+      "hard techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+    "title": "Unreal Weekender Night II - September 2026",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno"
+    ],
+    "searchExpandedGenres": [
+      "hard techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "3281c605-a9b4-4276-9432-9bcf5c9575de",
+    "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house",
+      "hard techno",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "trance",
+      "hard-trance",
+      "psytrance",
+      "goa"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "827e1492-bb0f-44ed-bdad-1594c854fac9",
+    "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+    "title": "Blacklist Festival 2026",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Dubstep",
+      "Drum'n'Bass"
+    ],
+    "searchExpandedGenres": [
+      "dubstep",
+      "drum-and-bass",
+      "jungle"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+    "title": "CHROME COLOGNE",
+    "rawGenreClaims": [
+      "Hard Techno",
+      "Techno",
+      "#039"
+    ],
+    "normalizedClaims": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Hard Techno",
+        "detected": true,
+        "normalized": "Hard Techno",
+        "taxonomyMatch": "Hard Techno",
+        "evidenceClaim": "Hard Techno",
+        "fusion": "Hard Techno",
+        "canonical": "Hard Techno",
+        "consumer": "Hard Techno",
+        "search": "hard techno",
+        "dropped": false
+      },
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      },
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "hard techno",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "0cfc083a-5e61-4979-8a66-d44f242bcae8",
+    "title": "Feines Tier w/ Franca & Philipp Fein",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Deep House",
+      "Tech House"
+    ],
+    "searchExpandedGenres": [
+      "deep house",
+      "tech house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+    "title": "BACK2BASICS XXL @ Schrotty",
+    "rawGenreClaims": [
+      "Techno"
+    ],
+    "normalizedClaims": [
+      "Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+    "title": "Cosmic Gate pres by Bootshaus & Senses!",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Trance"
+    ],
+    "searchExpandedGenres": [
+      "trance",
+      "hard-trance",
+      "psytrance",
+      "goa"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "0c9e9a9b-ae6d-44ad-bc9b-92d0d4f5e58b",
+    "title": "Remember the Future w/ Axel Boman, Shumi",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "title": "SA * 24.10.2026 | KitKatClub",
+    "rawGenreClaims": [
+      "Tech House",
+      "Techno"
+    ],
+    "normalizedClaims": [
+      "Tech House",
+      "Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Tech House",
+        "detected": true,
+        "normalized": "Tech House",
+        "taxonomyMatch": "Tech House",
+        "evidenceClaim": "Tech House",
+        "fusion": "Tech House",
+        "canonical": "Tech House",
+        "consumer": "Tech House",
+        "search": "tech house",
+        "dropped": false
+      },
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "tech house",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "91da2d35-8fc8-498f-9980-e8b055815762",
+    "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+    "rawGenreClaims": [
+      "House"
+    ],
+    "normalizedClaims": [
+      "House"
+    ],
+    "claimTraces": [
+      {
+        "raw": "House",
+        "detected": true,
+        "normalized": "House",
+        "taxonomyMatch": "House",
+        "evidenceClaim": "House",
+        "fusion": "House",
+        "canonical": "House",
+        "consumer": "House",
+        "search": "house, tech-house, deep-house, deep-tech-house, progressive-house, melodic-house, afro-house, bass-house",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "House"
+    ],
+    "searchExpandedGenres": [
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+    "title": "Halloween Weekender",
+    "rawGenreClaims": [
+      "Techno"
+    ],
+    "normalizedClaims": [
+      "Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "209ce805-9ed1-4647-a96e-2a2fcfb782ed",
+    "title": "Lézard",
+    "rawGenreClaims": [
+      "Electro"
+    ],
+    "normalizedClaims": [
+      "Electro"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Electro",
+        "detected": true,
+        "normalized": "Electro",
+        "taxonomyMatch": "Electro",
+        "evidenceClaim": "Electro",
+        "fusion": "Electro",
+        "canonical": "Electro",
+        "consumer": "Electro",
+        "search": "electro",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Electro"
+    ],
+    "searchExpandedGenres": [
+      "electro"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "rawGenreClaims": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "normalizedClaims": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "claimTraces": [
+      {
+        "raw": "Hard Techno",
+        "detected": true,
+        "normalized": "Hard Techno",
+        "taxonomyMatch": "Hard Techno",
+        "evidenceClaim": "Hard Techno",
+        "fusion": "Hard Techno",
+        "canonical": "Hard Techno",
+        "consumer": "Hard Techno",
+        "search": "hard techno",
+        "dropped": false
+      },
+      {
+        "raw": "Techno",
+        "detected": true,
+        "normalized": "Techno",
+        "taxonomyMatch": "Techno",
+        "evidenceClaim": "Techno",
+        "fusion": "Techno",
+        "canonical": "Techno",
+        "consumer": "Techno",
+        "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "hard techno",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+    "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "hard techno",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "searchExpandedGenres": [
+      "tech house",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "title": "Bootshaus & Loonyland pres. NYE 2026",
+    "rawGenreClaims": [
+      "#039"
+    ],
+    "normalizedClaims": [],
+    "claimTraces": [
+      {
+        "raw": "#039",
+        "detected": false,
+        "dropped": false
+      }
+    ],
+    "canonicalGenres": [
+      "Electro",
+      "EDM"
+    ],
+    "searchExpandedGenres": [
+      "electro",
+      "electronic",
+      "techno",
+      "hardtechno",
+      "industrial-techno",
+      "melodic-techno",
+      "minimal-techno",
+      "acid-techno",
+      "peak-time-techno",
+      "house",
+      "tech-house",
+      "deep-house",
+      "deep-tech-house",
+      "progressive-house",
+      "melodic-house",
+      "afro-house",
+      "bass-house",
+      "trance",
+      "hard-trance",
+      "psytrance",
+      "hard-dance",
+      "hardstyle",
+      "rawstyle",
+      "hardcore",
+      "gabber",
+      "drum-and-bass",
+      "jungle",
+      "dubstep",
+      "breakbeat",
+      "disco",
+      "uk-garage",
+      "hip-hop",
+      "goa",
+      "groove",
+      "bounce",
+      "hard-bounce",
+      "trap"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  },
+  {
+    "canonicalEventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "rawGenreClaims": [],
+    "normalizedClaims": [],
+    "claimTraces": [],
+    "canonicalGenres": [
+      "Peak Time Techno"
+    ],
+    "searchExpandedGenres": [
+      "peak time techno"
+    ],
+    "droppedClaims": [],
+    "explicitClaimsMissingCanonical": [],
+    "recoverableExplicitMissing": []
+  }
+]

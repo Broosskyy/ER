@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-09-15T19:45:26.226Z",
+  "stagingProject": "gnkjzinwvmrxcadwebhv",
+  "productionProject": "irgsllewfrxvbtznqmxh",
+  "productionMutations": 0,
+  "eligiblePublishedElectronicEvents": 44,
+  "eventsWithAtLeastOneGenre": 44,
+  "oldGenreCoverage": 1,
+  "recoverableGenreMissing": 0,
+  "duplicateGroups": 0
+}

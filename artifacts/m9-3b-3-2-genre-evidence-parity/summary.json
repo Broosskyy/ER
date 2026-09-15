@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-09-15T19:45:26.226Z",
+  "baselineHead": "2628c8d3685ffbfe7750f9871e8dad75b0d68dd5",
+  "stagingProject": "gnkjzinwvmrxcadwebhv",
+  "productionMutations": 0,
+  "apply": true,
+  "repairedEvents": 0,
+  "recoverableExplicitGenreMissing": 0,
+  "explicitGenreEvidenceParity": 1,
+  "genrePresenceCoverage": 1,
+  "knownWrongGenreAssignments": 0,
+  "recoverableSearchFalseNegatives": 0,
+  "consumerGenreParityFailures": 0,
+  "idempotencyStable": true,
+  "odonien": {
+    "beforeGenres": [
+      "Hard Techno",
+      "Trance",
+      "Techno",
+      "Hard Bounce",
+      "Bounce"
+    ],
+    "afterGenres": [
+      "Hard Techno",
+      "Trance",
+      "Techno",
+      "Hard Bounce",
+      "Bounce"
+    ],
+    "missingBefore": [],
+    "missingAfter": []
+  },
+  "status": "M9_3B_3_2_GENRE_TAXONOMY_COMPLETENESS_VERIFIED"
+}

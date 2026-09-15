@@ -2,6 +2,7 @@ import type { LinkedQueryExecutor } from '../../ingestion/sync/linked-db';
 import { parseLinkedQueryRows } from '../../ingestion/sync/linked-db';
 import type { StagingEventSnapshot } from '../../ingestion/sync/canonical-consolidation';
 import { parseDescriptionExplicitGenres } from './parse-description-genres';
+import { separateStructuredEventContent } from './structured-content-separation';
 import { normalizedGenresToExplicitLabels, normalizeOfficialGenreLabels } from './normalize-genre';
 import { isLineupPlaceholderLine, normalizeLineupName } from './lineup-normalization';
 
@@ -105,7 +106,8 @@ export function collectGenreEvidenceLabels(
   }
 
   for (const text of collectDescriptionTexts(event, sourceRows)) {
-    for (const label of parseDescriptionExplicitGenres(text)) {
+    const separated = separateStructuredEventContent(text);
+    for (const label of [...parseDescriptionExplicitGenres(text), ...separated.genreCandidates]) {
       labels.add(label);
     }
   }

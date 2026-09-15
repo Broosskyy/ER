@@ -1,0 +1,35 @@
+[
+  {
+    "rawTerm": "039",
+    "normalizedTerm": "039",
+    "occurrences": 16,
+    "eventIds": [
+      "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+      "516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "f00f72f6-fb61-46f2-9f12-772951001afd",
+      "f39374dc-751a-48ca-8f29-78d2582627bb",
+      "15473810-0019-41a2-931e-3fd44fad7f2e",
+      "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+      "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+      "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+      "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+      "301c217d-651a-4110-b759-a019f6546bb1",
+      "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+      "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+      "96dda961-beeb-4d8d-9aac-73abab09fab5",
+      "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+      "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+      "b314fd67-61c5-4afe-9f12-1efabf48a602"
+    ],
+    "sourceTypes": [
+      "description_hashtag"
+    ],
+    "evidenceAuthority": [
+      "EXPLICIT_EVENT"
+    ],
+    "contexts": [
+      "#039"
+    ],
+    "classification": "AMBIGUOUS"
+  }
+]

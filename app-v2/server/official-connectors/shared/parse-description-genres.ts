@@ -17,9 +17,11 @@ const DESCRIPTION_GENRE_PHRASE_PATTERNS: Array<{
   { pattern: /\bdrum(?:\s*(?:and|n|&)\s*bass|['\u2019]?n['\u2019]?bass)\b/i, label: "Drum'n'Bass" },
   { pattern: /\bhardstyle\b/i, label: 'Hardstyle' },
   { pattern: /\bhard[\s-]?dance\b/i, label: 'Hard Dance' },
+  { pattern: /\bhard[\s-]?bounce\b/i, label: 'Hard Bounce' },
   { pattern: /\bpsytrance\b/i, label: 'Psytrance' },
   { pattern: /\btrance\b/i, label: 'Trance' },
   { pattern: /\btechno\b/i, label: 'Techno' },
+  { pattern: /\bbounce\b/i, label: 'Bounce' },
   {
     pattern: /\bhouse\b/i,
     label: 'House',

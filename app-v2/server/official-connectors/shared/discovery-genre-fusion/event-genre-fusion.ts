@@ -102,7 +102,11 @@ function selectRecommendedGenres(contributions: FusionContribution[]): {
 
   const narrow = selected.filter((entry) => entry.layer !== 'DOMAIN_ELECTRONIC');
   const finalSelection = narrow.length > 0 ? narrow : selected;
-  const genres = normalizeGenreLabelSet(finalSelection.map((entry) => entry.displayName)).slice(0, 4);
+  const explicitCount = finalSelection.filter(
+    (entry) => entry.confidence === 'EXPLICIT' || entry.layer === 'EXPLICIT_EVENT',
+  ).length;
+  const genreCap = explicitCount >= 5 ? explicitCount : Math.max(4, explicitCount);
+  const genres = normalizeGenreLabelSet(finalSelection.map((entry) => entry.displayName)).slice(0, genreCap);
 
   const confidence = finalSelection.reduce<GenreConfidenceBand>((best, entry) => {
     const rank = ['UNRESOLVED', 'LOW', 'MEDIUM', 'HIGH', 'EXPLICIT'];

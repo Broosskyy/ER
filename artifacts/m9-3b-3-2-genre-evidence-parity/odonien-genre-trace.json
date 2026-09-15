@@ -1,0 +1,169 @@
+{
+  "canonicalEventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+  "title": "#MITTWOCHENENDE in Odonien",
+  "rawGenreClaims": [
+    "Hard Bounce",
+    "Trance",
+    "Bounce",
+    "Hard Techno",
+    "Techno",
+    "#bounce",
+    "#hardbounce",
+    "#trance",
+    "#techno",
+    "#hardtechno"
+  ],
+  "normalizedClaims": [
+    "Hard Bounce",
+    "Trance",
+    "Bounce",
+    "Hard Techno",
+    "Techno"
+  ],
+  "claimTraces": [
+    {
+      "raw": "Hard Bounce",
+      "detected": true,
+      "normalized": "Hard Bounce",
+      "taxonomyMatch": "Hard Bounce",
+      "evidenceClaim": "Hard Bounce",
+      "fusion": "Hard Bounce",
+      "canonical": "Hard Bounce",
+      "consumer": "Hard Bounce",
+      "search": "hard bounce",
+      "dropped": false
+    },
+    {
+      "raw": "Trance",
+      "detected": true,
+      "normalized": "Trance",
+      "taxonomyMatch": "Trance",
+      "evidenceClaim": "Trance",
+      "fusion": "Trance",
+      "canonical": "Trance",
+      "consumer": "Trance",
+      "search": "trance, hard-trance, psytrance, goa",
+      "dropped": false
+    },
+    {
+      "raw": "Bounce",
+      "detected": true,
+      "normalized": "Bounce",
+      "taxonomyMatch": "Bounce",
+      "evidenceClaim": "Bounce",
+      "fusion": "Bounce",
+      "canonical": "Bounce",
+      "consumer": "Bounce",
+      "search": "bounce",
+      "dropped": false
+    },
+    {
+      "raw": "Hard Techno",
+      "detected": true,
+      "normalized": "Hard Techno",
+      "taxonomyMatch": "Hard Techno",
+      "evidenceClaim": "Hard Techno",
+      "fusion": "Hard Techno",
+      "canonical": "Hard Techno",
+      "consumer": "Hard Techno",
+      "search": "hard techno",
+      "dropped": false
+    },
+    {
+      "raw": "Techno",
+      "detected": true,
+      "normalized": "Techno",
+      "taxonomyMatch": "Techno",
+      "evidenceClaim": "Techno",
+      "fusion": "Techno",
+      "canonical": "Techno",
+      "consumer": "Techno",
+      "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+      "dropped": false
+    },
+    {
+      "raw": "#bounce",
+      "detected": true,
+      "normalized": "Bounce",
+      "taxonomyMatch": "Bounce",
+      "evidenceClaim": "Bounce",
+      "fusion": "Bounce",
+      "canonical": "Bounce",
+      "consumer": "Bounce",
+      "search": "bounce",
+      "dropped": false
+    },
+    {
+      "raw": "#hardbounce",
+      "detected": true,
+      "normalized": "Hard Bounce",
+      "taxonomyMatch": "Hard Bounce",
+      "fusion": "Hard Bounce",
+      "canonical": "Hard Bounce",
+      "consumer": "Hard Bounce",
+      "search": "hard bounce",
+      "dropped": false
+    },
+    {
+      "raw": "#trance",
+      "detected": true,
+      "normalized": "Trance",
+      "taxonomyMatch": "Trance",
+      "evidenceClaim": "Trance",
+      "fusion": "Trance",
+      "canonical": "Trance",
+      "consumer": "Trance",
+      "search": "trance, hard-trance, psytrance, goa",
+      "dropped": false
+    },
+    {
+      "raw": "#techno",
+      "detected": true,
+      "normalized": "Techno",
+      "taxonomyMatch": "Techno",
+      "evidenceClaim": "Techno",
+      "fusion": "Techno",
+      "canonical": "Techno",
+      "consumer": "Techno",
+      "search": "techno, hardtechno, industrial-techno, melodic-techno, minimal-techno, acid-techno, peak-time-techno",
+      "dropped": false
+    },
+    {
+      "raw": "#hardtechno",
+      "detected": true,
+      "normalized": "Hard Techno",
+      "taxonomyMatch": "Hard Techno",
+      "fusion": "Hard Techno",
+      "canonical": "Hard Techno",
+      "consumer": "Hard Techno",
+      "search": "hard techno",
+      "dropped": false
+    }
+  ],
+  "canonicalGenres": [
+    "Hard Techno",
+    "Trance",
+    "Techno",
+    "Hard Bounce",
+    "Bounce"
+  ],
+  "searchExpandedGenres": [
+    "hard techno",
+    "trance",
+    "hard-trance",
+    "psytrance",
+    "goa",
+    "techno",
+    "hardtechno",
+    "industrial-techno",
+    "melodic-techno",
+    "minimal-techno",
+    "acid-techno",
+    "peak-time-techno",
+    "hard bounce",
+    "bounce"
+  ],
+  "droppedClaims": [],
+  "explicitClaimsMissingCanonical": [],
+  "recoverableExplicitMissing": []
+}

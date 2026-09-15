@@ -43,6 +43,7 @@ const TAXONOMY: GenreTaxonomyNode[] = [
   { genreKey: 'goa', displayName: 'Goa', parentGenreKey: 'psytrance', searchAliases: ['goa'] },
   { genreKey: 'groove', displayName: 'Groove', parentGenreKey: 'electronic', searchAliases: ['groove'] },
   { genreKey: 'bounce', displayName: 'Bounce', parentGenreKey: 'electronic', searchAliases: ['bounce'] },
+  { genreKey: 'hard-bounce', displayName: 'Hard Bounce', parentGenreKey: 'electronic', searchAliases: ['hard bounce', 'hard-bounce', 'hardbounce'] },
   { genreKey: 'trap', displayName: 'Trap', parentGenreKey: 'electronic', searchAliases: ['trap'] },
 ];
 
