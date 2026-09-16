@@ -1,0 +1,21 @@
+{
+  "anchor": {
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  "samples": [
+    {
+      "title": "Feiern wie früher, nur früher by ANNA REUSCH & THOMAS SCHUMACHER @Schrotty",
+      "matchClassification": "NET_NEW"
+    },
+    {
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "matchClassification": "NET_NEW"
+    }
+  ]
+}

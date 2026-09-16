@@ -1,0 +1,33 @@
+{
+  "anchorSearchTerms": [
+    "ehreklub",
+    "ehrenklub",
+    "schrotty"
+  ],
+  "spellingNote": "Live source uses EhrenKlub (with n), not Ehreklub",
+  "schrottyLocationReachable": true,
+  "anchorFound": true,
+  "anchorEntry": {
+    "eventUrl": "https://rausgegangen.de/events/ehrenklub-im-schrotty-14-0/",
+    "eventSlug": "ehrenklub-im-schrotty-14-0",
+    "regionSlug": "location",
+    "listingSurface": "https://rausgegangen.de/locations/schrotty/",
+    "listingTitleHint": "ehrenklub im schrotty 14 0"
+  },
+  "anchorOnCologneCityListing": false,
+  "cologneListingEventCount": 455,
+  "liveEvidence": {
+    "title": "EhrenKlub im Schrotty #14 mit USH, RIOT SHIFT, TITI, DIKKE BAAP, S*Y*N*K uvm",
+    "sourceUrl": "https://rausgegangen.de/events/ehrenklub-im-schrotty-14-0/",
+    "startsAt": "2026-09-25T23:00+0200",
+    "endsAt": "2026-09-26T08:00+0200",
+    "venue": "Schrotty",
+    "city": "Köln",
+    "description": "TICKETS ONLINE NOW – EhrenKlub #14 at SchrottyFREITAG // 25.09.26 // SchrottyTOTAL MAYHEM FROM START TO FINISH GUARANTEEDLineup Main (A – Z)* DIKKE BAAP * RIOT SHIFT * S*Y*N*K * TITI * USH * 333CXT * CAMILLA V * GREEKZ B2B KARAMUSTAN * LAURA VOM JUPITER  SECOND FLOOR HOSTED BY ???* 4GIVEN * BASSSTØRM * LASZR * V Λ N Y * VYKATo assure the party a safer space for everyone the participation of all is required. Be aware of your own boundaries and respect the boundaries of others!If you are affected ",
+    "genres": [],
+    "lineup": [],
+    "imageUrls": [
+      "https://s3.eu-central-1.amazonaws.com/rausgegangen/NeBaZwW1Qu2exVDF1lPT_1000317028.png"
+    ]
+  }
+}

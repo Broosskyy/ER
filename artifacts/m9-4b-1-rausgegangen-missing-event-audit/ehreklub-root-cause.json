@@ -1,0 +1,29 @@
+{
+  "rootCauseState": "DISCOVERY_SURFACE_GAP",
+  "evidenceBackedConclusion": "EhrenKlub im Schrotty #14 is live on Rausgegangen /locations/schrotty/ but absent from /cologne/ city listing HTML. M9.4A discovery only enumerates /{city}/ surfaces, so this event was never in the 11,095 discovered URLs.",
+  "wasInM94aArtifacts": false,
+  "m94aArtifactSearch": {
+    "ehreklub": 0,
+    "ehrenklub": 0,
+    "schrotty": 0
+  },
+  "wasDetailEnrichedInM94a": false,
+  "wasInControlledBatch": false,
+  "isCanonicalOnStaging": false,
+  "stagingAnchorMatches": [],
+  "otherSchrottyVenueEventsOnStaging": [
+    {
+      "id": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "venue_name": "Schrotty"
+    }
+  ],
+  "wouldPassRelevanceToday": "AMBIGUOUS",
+  "wouldPassQualityContractToday": false,
+  "secondaryPipelineIfDiscovered": {
+    "relevance": "AMBIGUOUS",
+    "reason": "No explicit genre terms; lineup embedded in description prose not structurally recovered",
+    "qualityContractBlockers": ["domain_ambiguous", "genre_unresolved", "structured_description_leakage"]
+  },
+  "consumerVisible": false
+}

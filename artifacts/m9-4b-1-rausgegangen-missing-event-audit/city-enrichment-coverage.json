@@ -1,0 +1,548 @@
+{
+  "population": "M9.4A detail-enriched subset vs fresh city listing counts",
+  "note": "Enriched per-city counts from M9.4A city-distribution artifact (detail-fetched candidates assigned to regionSlug)",
+  "m94aCityDistribution": {
+    "Köln": {
+      "rawEvents": 453,
+      "upcoming": 453,
+      "relevant": 21,
+      "netNew": 0,
+      "qualityReady": 20
+    },
+    "Berlin": {
+      "rawEvents": 467,
+      "upcoming": 467,
+      "relevant": 25,
+      "netNew": 0,
+      "qualityReady": 25
+    },
+    "Hamburg": {
+      "rawEvents": 442,
+      "upcoming": 442,
+      "relevant": 17,
+      "netNew": 0,
+      "qualityReady": 17
+    },
+    "München": {
+      "rawEvents": 472,
+      "upcoming": 472,
+      "relevant": 20,
+      "netNew": 0,
+      "qualityReady": 20
+    },
+    "Frankfurt am Main": {
+      "rawEvents": 374,
+      "upcoming": 374,
+      "relevant": 11,
+      "netNew": 0,
+      "qualityReady": 11
+    },
+    "Stuttgart": {
+      "rawEvents": 406,
+      "upcoming": 406,
+      "relevant": 12,
+      "netNew": 0,
+      "qualityReady": 12
+    },
+    "Leipzig": {
+      "rawEvents": 428,
+      "upcoming": 428,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    },
+    "Dortmund": {
+      "rawEvents": 413,
+      "upcoming": 413,
+      "relevant": 4,
+      "netNew": 0,
+      "qualityReady": 4
+    },
+    "Essen": {
+      "rawEvents": 294,
+      "upcoming": 294,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Düsseldorf": {
+      "rawEvents": 446,
+      "upcoming": 446,
+      "relevant": 9,
+      "netNew": 0,
+      "qualityReady": 9
+    },
+    "Bonn": {
+      "rawEvents": 356,
+      "upcoming": 356,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Bremen": {
+      "rawEvents": 392,
+      "upcoming": 392,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    },
+    "Hannover": {
+      "rawEvents": 318,
+      "upcoming": 318,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Nürnberg": {
+      "rawEvents": 0,
+      "upcoming": 0,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Dresden": {
+      "rawEvents": 396,
+      "upcoming": 396,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    },
+    "Karlsruhe": {
+      "rawEvents": 224,
+      "upcoming": 224,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Mannheim": {
+      "rawEvents": 265,
+      "upcoming": 265,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Aachen": {
+      "rawEvents": 288,
+      "upcoming": 288,
+      "relevant": 4,
+      "netNew": 0,
+      "qualityReady": 4
+    },
+    "Bochum": {
+      "rawEvents": 301,
+      "upcoming": 301,
+      "relevant": 2,
+      "netNew": 0,
+      "qualityReady": 2
+    },
+    "Münster": {
+      "rawEvents": 286,
+      "upcoming": 286,
+      "relevant": 4,
+      "netNew": 0,
+      "qualityReady": 4
+    },
+    "Wiesbaden": {
+      "rawEvents": 212,
+      "upcoming": 212,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Mainz": {
+      "rawEvents": 264,
+      "upcoming": 264,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    },
+    "Kiel": {
+      "rawEvents": 176,
+      "upcoming": 176,
+      "relevant": 4,
+      "netNew": 0,
+      "qualityReady": 4
+    },
+    "Freiburg im Breisgau": {
+      "rawEvents": 307,
+      "upcoming": 307,
+      "relevant": 2,
+      "netNew": 0,
+      "qualityReady": 2
+    },
+    "Rostock": {
+      "rawEvents": 126,
+      "upcoming": 126,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    },
+    "Potsdam": {
+      "rawEvents": 233,
+      "upcoming": 233,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Magdeburg": {
+      "rawEvents": 140,
+      "upcoming": 140,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Erfurt": {
+      "rawEvents": 273,
+      "upcoming": 273,
+      "relevant": 4,
+      "netNew": 0,
+      "qualityReady": 4
+    },
+    "Saarbrücken": {
+      "rawEvents": 0,
+      "upcoming": 0,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Kassel": {
+      "rawEvents": 150,
+      "upcoming": 150,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Heidelberg": {
+      "rawEvents": 304,
+      "upcoming": 304,
+      "relevant": 2,
+      "netNew": 0,
+      "qualityReady": 2
+    },
+    "Augsburg": {
+      "rawEvents": 223,
+      "upcoming": 223,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Wuppertal": {
+      "rawEvents": 182,
+      "upcoming": 182,
+      "relevant": 9,
+      "netNew": 0,
+      "qualityReady": 9
+    },
+    "Bielefeld": {
+      "rawEvents": 193,
+      "upcoming": 193,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Chemnitz": {
+      "rawEvents": 208,
+      "upcoming": 208,
+      "relevant": 1,
+      "netNew": 0,
+      "qualityReady": 1
+    },
+    "Mönchengladbach": {
+      "rawEvents": 0,
+      "upcoming": 0,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Krefeld": {
+      "rawEvents": 227,
+      "upcoming": 227,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Lübeck": {
+      "rawEvents": 0,
+      "upcoming": 0,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Oberhausen": {
+      "rawEvents": 157,
+      "upcoming": 157,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Oldenburg": {
+      "rawEvents": 271,
+      "upcoming": 271,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    },
+    "Osnabrueck": {
+      "rawEvents": 0,
+      "upcoming": 0,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Paderborn": {
+      "rawEvents": 81,
+      "upcoming": 81,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Trier": {
+      "rawEvents": 126,
+      "upcoming": 126,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Siegen": {
+      "rawEvents": 107,
+      "upcoming": 107,
+      "relevant": 0,
+      "netNew": 0,
+      "qualityReady": 0
+    },
+    "Jena": {
+      "rawEvents": 114,
+      "upcoming": 114,
+      "relevant": 3,
+      "netNew": 0,
+      "qualityReady": 3
+    }
+  },
+  "freshListingOnlyCityCounts": {
+    "Köln": {
+      "discovered": 455,
+      "enriched": 102,
+      "enrichmentRate": 0.2243
+    },
+    "Berlin": {
+      "discovered": 467,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Hamburg": {
+      "discovered": 443,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "München": {
+      "discovered": 472,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Frankfurt am Main": {
+      "discovered": 377,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Stuttgart": {
+      "discovered": 406,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Leipzig": {
+      "discovered": 430,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Dortmund": {
+      "discovered": 415,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Essen": {
+      "discovered": 295,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Düsseldorf": {
+      "discovered": 447,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Bonn": {
+      "discovered": 358,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Bremen": {
+      "discovered": 391,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Hannover": {
+      "discovered": 319,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Nürnberg": {
+      "discovered": 0,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Dresden": {
+      "discovered": 397,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Karlsruhe": {
+      "discovered": 226,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Mannheim": {
+      "discovered": 269,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Aachen": {
+      "discovered": 290,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Bochum": {
+      "discovered": 305,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Münster": {
+      "discovered": 290,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Wiesbaden": {
+      "discovered": 215,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Mainz": {
+      "discovered": 264,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Kiel": {
+      "discovered": 194,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Freiburg im Breisgau": {
+      "discovered": 310,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Rostock": {
+      "discovered": 126,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Potsdam": {
+      "discovered": 233,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Magdeburg": {
+      "discovered": 141,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Erfurt": {
+      "discovered": 273,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Saarbrücken": {
+      "discovered": 0,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Kassel": {
+      "discovered": 150,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Heidelberg": {
+      "discovered": 305,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Augsburg": {
+      "discovered": 223,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Wuppertal": {
+      "discovered": 184,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Bielefeld": {
+      "discovered": 196,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Chemnitz": {
+      "discovered": 208,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Mönchengladbach": {
+      "discovered": 0,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Krefeld": {
+      "discovered": 227,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Lübeck": {
+      "discovered": 0,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Oberhausen": {
+      "discovered": 158,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Oldenburg": {
+      "discovered": 271,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Osnabrueck": {
+      "discovered": 0,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Paderborn": {
+      "discovered": 81,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Trier": {
+      "discovered": 126,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Siegen": {
+      "discovered": 107,
+      "enriched": 0,
+      "enrichmentRate": 0
+    },
+    "Jena": {
+      "discovered": 114,
+      "enriched": 0,
+      "enrichmentRate": 0
+    }
+  }
+}

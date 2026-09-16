@@ -27,6 +27,11 @@ const COLOGNE_LISTING_SNIPPET = `
 <a href="https://rausgegangen.de/events/technoliebe-ammittwoch-50/?utm_source=test">dup</a>
 `;
 
+const SCHROTTY_LOCATION_SNIPPET = `
+<a href="/events/ehrenklub-im-schrotty-14-0/">EhrenKlub</a>
+<a href="/events/bailoteo-schrotty-september-0/">Bailoteo</a>
+`;
+
 describe('rausgegangen url normalization', () => {
   it('normalizes event urls and builds identity keys', () => {
     expect(normalizeRausgegangenEventUrl('https://rausgegangen.de/events/technoliebe-ammittwoch-50/?utm=1')).toBe(
@@ -41,6 +46,17 @@ describe('rausgegangen url normalization', () => {
 });
 
 describe('rausgegangen listing parsing', () => {
+  it('extracts venue location page events not present on city listing', () => {
+    const cityEntries = parseRausgegangenCityListing(COLOGNE_LISTING_SNIPPET, 'cologne', 'https://rausgegangen.de/cologne/');
+    const locationEntries = parseRausgegangenCityListing(
+      SCHROTTY_LOCATION_SNIPPET,
+      'location',
+      'https://rausgegangen.de/locations/schrotty/',
+    );
+    expect(locationEntries.map((entry) => entry.eventSlug)).toContain('ehrenklub-im-schrotty-14-0');
+    expect(cityEntries.map((entry) => entry.eventSlug)).not.toContain('ehrenklub-im-schrotty-14-0');
+  });
+
   it('extracts and deduplicates listing urls', () => {
     const entries = parseRausgegangenCityListing(COLOGNE_LISTING_SNIPPET, 'cologne', 'https://rausgegangen.de/cologne/');
     expect(entries).toHaveLength(2);

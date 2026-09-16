@@ -1,0 +1,8 @@
+{
+  "population": "M9.4A full discovery run",
+  "discoveredUrls": 11095,
+  "detailEnriched": 2500,
+  "notDetailEnriched": 8595,
+  "detailCoverageRate": 0.2253,
+  "lifecycleScope": "upcoming detail-enriched: 2500"
+}

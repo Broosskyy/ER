@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-09-16T15:44:23.046Z",
+  "status": "M9_4B_1_MISSING_EVENT_AUDIT_COMPLETE_ACQUISITION_GAP_FOUND",
+  "baseline": "6e8bc82b45d343a626799b8944309ca4fc1c3395",
+  "localHead": "6e8bc82b45d343a626799b8944309ca4fc1c3395",
+  "anchorEvent": "EhrenKlub im Schrotty #14 mit USH, RIOT SHIFT, TITI, DIKKE BAAP, S*Y*N*K uvm",
+  "anchorRootCause": "DISCOVERY_SURFACE_GAP",
+  "anchorOnCityListing": false,
+  "anchorCanonicalOnStaging": false,
+  "secondaryPipelineNotes": {
+    "postDiscoveryRelevance": "AMBIGUOUS",
+    "postDiscoveryQualityContract": false,
+    "note": "If discovered via location surface, current classifier returns AMBIGUOUS (no explicit genre; lineup in description not structurally recovered). Quality contract would block until genre/lineup evidence improved."
+  },
+  "missingRelevantFoundInAudit": 2,
+  "dominantMissingReason": "DISCOVERY_SURFACE_GAP",
+  "locationOnlyEventsAudited": 66,
+  "m94aDetailCoverageRate": 0.2253,
+  "productionMutations": 0,
+  "stagingMutations": 0
+}
