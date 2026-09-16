@@ -1,6 +1,8 @@
 import { extractEditorialDescription, classifyDescriptionParagraph } from './description-quality';
 import {
+  isFloorOrStageHeader,
   isLineupIntroMarker,
+  isLineupMainInlineMarker,
   isLineupPlaceholderLine,
   normalizeLineupName,
 } from './lineup-normalization';
@@ -44,9 +46,14 @@ export interface StructuredContentSeparationResult {
 }
 
 const BULLET_SPLIT_PATTERN = /[●•▪◦|]\s*/;
+const STAR_BULLET_SPLIT_PATTERN = /\s+\*\s+/;
 const LINEUP_HEADER_PATTERN = /^(?:line\s*-?\s*up)\s*:?\s*/i;
+const LINEUP_MAIN_HEADER_PATTERN = /^lineup\s+main(?:\s*\([^)]*\))?\s*:?\s*/i;
 const ARTIST_SECTION_HEADER_PATTERN = /^(?:artists?|djs?|acts?)\s*:\s*/i;
 const INLINE_LINEUP_PATTERN = /^(?:line\s*-?\s*up|artists?|djs?|acts?)\s*:\s*(.+)$/i;
+const FLOOR_HOSTED_BY_PATTERN = /^(?:\d+(?:st|nd|rd|th)\s+)?(?:main|second|third|upper|lower|basement|outdoor)\s+floor(?:\s+hosted\s+by.*)?$/i;
+const PROSE_TRANSITION_PATTERN =
+  /\b(?:to assure|if you are affected|be aware of your own|safer space|dress\s*code|verkleide|garderobe)\b/i;
 const SCHEDULE_HEADER_PATTERN = /^(?:schedule|timetable|programm|ablauf)\s*:?\s*/i;
 const TICKET_HEADER_PATTERN = /^(?:tickets?|ticket\s*info|preise?)\s*:?\s*/i;
 const HASHTAG_TOKEN_PATTERN = /#[\w-]+/g;
@@ -85,6 +92,9 @@ function acceptArtistSegment(segment: string): string | undefined {
   if (/^(?:line\s*-?\s*up|artists?|djs?|acts?)$/i.test(trimmed)) {
     return undefined;
   }
+  if (/^main\s*\([^)]*\)$/i.test(trimmed) || isLineupMainInlineMarker(trimmed)) {
+    return undefined;
+  }
   if (
     /\b(?:present|celebrate|featuring|invite you|witness|upcoming album|never-seen-before|official launch)\b/i.test(
       trimmed,
@@ -117,10 +127,125 @@ function splitArtistList(segment: string): string[] {
   return accepted ? [accepted] : [];
 }
 
+function preprocessRunTogetherDescription(raw: string): string {
+  let text = raw;
+  text = text.replace(/([a-z])(Lineup\s+Main)/gi, '$1\n$2');
+  text = text.replace(/(Lineup\s+Main\s*\([^)]*\))/gi, '\n$1\n');
+  text = text.replace(
+    /\b((?:MAIN|SECOND|THIRD|UPPER|LOWER|BASEMENT|OUTDOOR)\s+FLOOR(?:\s+HOSTED\s+BY[^*]+)?)/gi,
+    '\n$1\n',
+  );
+  text = text.replace(/\bLINE\s*-?\s*UP\s*:/gi, '\nLINEUP:\n');
+  if ((text.match(/\s\*\s/g) ?? []).length >= 3) {
+    text = text.replace(/\s*\*\s+/g, '\n* ');
+  }
+  return text;
+}
+
+function truncateAtProseTransition(segment: string): string {
+  const match = segment.match(PROSE_TRANSITION_PATTERN);
+  if (match?.index != null && match.index > 0) {
+    return segment.slice(0, match.index).trim();
+  }
+  const gluedProse = segment.match(/to assure\b/i);
+  if (gluedProse?.index != null && gluedProse.index > 0) {
+    return segment.slice(0, gluedProse.index).trim();
+  }
+  return segment;
+}
+
+function stripTrailingProseGlue(segment: string): string {
+  const glued = segment.match(/^(.{2,}?)(?:to assure\b.*)$/i);
+  if (glued?.[1]) {
+    return glued[1].trim();
+  }
+  return segment;
+}
+
+function cleanStarBulletSegment(segment: string): string {
+  return stripTrailingProseGlue(stripFloorSuffix(segment.replace(/^\*\s*/, '').trim()));
+}
+
+function stripFloorSuffix(segment: string): string {
+  const floorIndex = segment.search(
+    /\s{1,}(?:SECOND|THIRD|MAIN|UPPER|LOWER|BASEMENT|OUTDOOR)\s+FLOOR\b/i,
+  );
+  if (floorIndex > 0) {
+    return segment.slice(0, floorIndex).trim();
+  }
+  return segment;
+}
+
+function parseStarBulletArtistBlock(body: string): string[] {
+  const artists: string[] = [];
+  const truncated = truncateAtProseTransition(body);
+  const segments = truncated.split(STAR_BULLET_SPLIT_PATTERN).map((part) => cleanStarBulletSegment(part)).filter(Boolean);
+  for (const segment of segments) {
+    if (FLOOR_HOSTED_BY_PATTERN.test(segment) || isFloorOrStageHeader(segment)) {
+      continue;
+    }
+    if (/^(?:second|third|main|upper|lower)\s+floor/i.test(segment)) {
+      continue;
+    }
+    if (/hosted\s+by/i.test(segment) && !/\bb2b\b/i.test(segment)) {
+      continue;
+    }
+    for (const artist of splitArtistList(segment)) {
+      artists.push(artist);
+    }
+  }
+  return [...new Set(artists)];
+}
+
+function extractEmbeddedLineupSections(raw: string): { artists: string[]; consumedSpans: Array<{ start: number; end: number }> } {
+  const artists: string[] = [];
+  const consumedSpans: Array<{ start: number; end: number }> = [];
+  const inlineMainPattern = /lineup\s+main(?:\s*\([^)]*\))?\s*:?\s*/gi;
+  for (const match of raw.matchAll(inlineMainPattern)) {
+    const start = match.index ?? 0;
+    const bodyStart = start + match[0].length;
+    const body = raw.slice(bodyStart);
+    const parsed = parseStarBulletArtistBlock(body);
+    if (parsed.length > 0) {
+      artists.push(...parsed);
+      const proseBreak = body.search(PROSE_TRANSITION_PATTERN);
+      const gluedBreak = body.search(/to assure\b/i);
+      const breakAt = [proseBreak, gluedBreak].filter((index) => index > 0).sort((a, b) => a - b)[0];
+      const end = breakAt != null ? bodyStart + breakAt : bodyStart + body.length;
+      consumedSpans.push({ start, end });
+    }
+  }
+
+  const floorSections = raw.match(
+    /\b(?:MAIN|SECOND|THIRD|UPPER|LOWER|BASEMENT|OUTDOOR)\s+FLOOR(?:\s+HOSTED\s+BY[^*\n]+)?[\s\S]*?(?=(?:\b(?:MAIN|SECOND|THIRD|UPPER|LOWER|BASEMENT|OUTDOOR)\s+FLOOR\b)|$)/gi,
+  );
+  for (const section of floorSections ?? []) {
+    const parsed = parseStarBulletArtistBlock(section);
+    artists.push(...parsed);
+  }
+
+  return { artists: [...new Set(artists)], consumedSpans };
+}
+
+function stripExtractedLineupFromRaw(raw: string): string {
+  let text = raw;
+  text = text.replace(/lineup\s+main(?:\s*\([^)]*\))?\s*:?[\s\S]*?(?=to assure\b|$)/gi, ' ');
+  text = text.replace(/\n\*\s+[^\n]+/g, '\n');
+  text = text.replace(
+    /\b(?:SECOND|THIRD|MAIN|UPPER|LOWER|BASEMENT|OUTDOOR)\s+FLOOR(?:\s+HOSTED\s+BY[^\n]*)?/gi,
+    ' ',
+  );
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 function parseCondensedLineupBody(body: string): { genres: string[]; artists: string[] } {
   const genres: string[] = [];
   const artists: string[] = [];
-  const normalizedBody = body.replace(/\s+/g, ' ').trim();
+  const normalizedBody = truncateAtProseTransition(body.replace(/\s+/g, ' ').trim());
+  if ((normalizedBody.match(STAR_BULLET_SPLIT_PATTERN) ?? []).length >= 2) {
+    artists.push(...parseStarBulletArtistBlock(normalizedBody));
+    return { genres: [...new Set(genres)], artists: [...new Set(artists)] };
+  }
   const segments = normalizedBody.split(BULLET_SPLIT_PATTERN).map((part) => part.trim()).filter(Boolean);
   const parts = segments.length > 1 ? segments : normalizedBody.split(/\s{2,}/).map((part) => part.trim()).filter(Boolean);
 
@@ -207,7 +332,9 @@ function isLineupSectionHeader(line: string): boolean {
   return (
     isLineupIntroMarker(trimmed) ||
     LINEUP_HEADER_PATTERN.test(trimmed) ||
-    ARTIST_SECTION_HEADER_PATTERN.test(trimmed)
+    LINEUP_MAIN_HEADER_PATTERN.test(trimmed) ||
+    ARTIST_SECTION_HEADER_PATTERN.test(trimmed) ||
+    isLineupMainInlineMarker(trimmed)
   );
 }
 
@@ -220,7 +347,7 @@ function pushUnique(target: string[], values: string[]): void {
 }
 
 export function separateStructuredEventContent(rawContent?: string): StructuredContentSeparationResult {
-  const raw = rawContent?.trim() ?? '';
+  const raw = preprocessRunTogetherDescription(rawContent?.trim() ?? '');
   const result: StructuredContentSeparationResult = {
     rawContent: raw,
     lineupCandidates: [],
@@ -236,6 +363,24 @@ export function separateStructuredEventContent(rawContent?: string): StructuredC
 
   if (!raw) {
     return result;
+  }
+
+  const embeddedLineup = extractEmbeddedLineupSections(raw);
+  let contentForParagraphs = raw;
+  if (embeddedLineup.artists.length > 0) {
+    pushUnique(result.lineupCandidates, embeddedLineup.artists);
+    for (const artist of embeddedLineup.artists) {
+      result.fragments.push({ text: artist, category: 'STRUCTURED_LINEUP' });
+      result.provenance.push({ field: 'lineup', sourceFragment: artist, category: 'STRUCTURED_LINEUP' });
+    }
+    contentForParagraphs = stripExtractedLineupFromRaw(raw);
+  }
+
+  const ticketLead = contentForParagraphs.match(/^(tickets?\s+online\b[^.!?\n]{0,120})/i);
+  if (ticketLead?.[1]) {
+    result.ticketCandidates.push(ticketLead[1].trim());
+    result.fragments.push({ text: ticketLead[1].trim(), category: 'STRUCTURED_TICKET' });
+    contentForParagraphs = contentForParagraphs.slice(ticketLead[1].length).trim();
   }
 
   const editorialParagraphs: string[] = [];
@@ -271,7 +416,7 @@ export function separateStructuredEventContent(rawContent?: string): StructuredC
     return result;
   }
 
-  for (const paragraph of splitParagraphs(raw)) {
+  for (const paragraph of splitParagraphs(contentForParagraphs)) {
     const normalizedParagraph = normalizeBulletParagraph(paragraph);
     const inlineLineup = normalizedParagraph.match(INLINE_LINEUP_PATTERN);
     if (inlineLineup?.[1] && normalizedParagraph.length < 400) {
@@ -304,6 +449,7 @@ export function separateStructuredEventContent(rawContent?: string): StructuredC
     if (lines.length === 1 && isLineupSectionHeader(lines[0]!)) {
       const body = lines[0]!
         .replace(LINEUP_HEADER_PATTERN, '')
+        .replace(LINEUP_MAIN_HEADER_PATTERN, '')
         .replace(ARTIST_SECTION_HEADER_PATTERN, '')
         .trim();
       if (body) {

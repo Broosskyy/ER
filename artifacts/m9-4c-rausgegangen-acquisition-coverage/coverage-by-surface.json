@@ -1,0 +1,3974 @@
+{
+  "cityOnly": 9721,
+  "locationOnly": 7283,
+  "cityAndLocation": 1486,
+  "locationOnlyElectronicRelevant": 348,
+  "locationOnlyQualityReady": 3888,
+  "locationSurfaceValue": [
+    {
+      "surfaceId": "elbphilharmonie",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "tanzbrunnen-koeln",
+      "eventsDiscovered": 32,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "mercedes-benz-arena-berlin",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "deutsches-theater-munchen-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "bootshaus",
+      "eventsDiscovered": 24,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "planetarium-hamburg",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "planetarium-bochum",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "waldbuhne-berlin",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "barclaycard-arena-hamburg",
+      "eventsDiscovered": 32,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "lanxess-arena-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "cineplex-munster",
+      "eventsDiscovered": 33,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "sap-arena",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "westfalenhalle",
+      "eventsDiscovered": 19,
+      "locationOnlyEvents": 14
+    },
+    {
+      "surfaceId": "essen",
+      "eventsDiscovered": 297,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "open-ground",
+      "eventsDiscovered": 21,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "aachen",
+      "eventsDiscovered": 290,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "fur",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "koln",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "vol",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "jahren",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "geheimnis",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "leipzig",
+      "eventsDiscovered": 433,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "berlin",
+      "eventsDiscovered": 468,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "slam",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "schatzsuche",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "smartphone",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "band",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "eoft",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "edition",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "dusseldorf",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "frankfurt",
+      "eventsDiscovered": 383,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "erfurt",
+      "eventsDiscovered": 273,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bochum",
+      "eventsDiscovered": 305,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "dortmund",
+      "eventsDiscovered": 415,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "dresden",
+      "eventsDiscovered": 399,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "stuttgart",
+      "eventsDiscovered": 407,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "freiburg",
+      "eventsDiscovered": 311,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "munster",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "mainz",
+      "eventsDiscovered": 266,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bonn",
+      "eventsDiscovered": 361,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "konzert",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "comedia-theater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 23
+    },
+    {
+      "surfaceId": "kassablanca",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "bremen",
+      "eventsDiscovered": 393,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "cafe",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "rausgegangen",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "alternative",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "hamburg",
+      "eventsDiscovered": 453,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "friends",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "heidelberg",
+      "eventsDiscovered": 305,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "oktoberfest",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "quiz",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "wunsche",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "fusion-club",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "filmforum-nrw-im-museum-ludwig",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 17
+    },
+    {
+      "surfaceId": "klubhaus-kickerkeller",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "special",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "dance",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "musikpark-erfurt",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "house",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "rave",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "potsdam",
+      "eventsDiscovered": 233,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "abend",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "munchen",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "omeu",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "filmforum-nrw",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "musik",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "tasting",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "museum",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kiel",
+      "eventsDiscovered": 194,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "jump",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "anna",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "frei",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kopf",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "karaoke",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "hannover",
+      "eventsDiscovered": 349,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "karlsruhe",
+      "eventsDiscovered": 226,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "magdeburg",
+      "eventsDiscovered": 142,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "augsburg",
+      "eventsDiscovered": 224,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "museum-fur-ostasiatische-kunst",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "musikbunker-aachen-ev",
+      "eventsDiscovered": 26,
+      "locationOnlyEvents": 13
+    },
+    {
+      "surfaceId": "rock",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "haus",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "freunde",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "yoga",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "peter-weiss-haus",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "leben",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "run",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "experience",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "koko-cafe-bar",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "schleuse-zwei",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "zollkantine",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "session",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "season",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bar",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "liebe",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bumann-sohn",
+      "eventsDiscovered": 34,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "stage",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "munich-club-house",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bielefeld",
+      "eventsDiscovered": 196,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "katakomben-theater",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "zum-scheuen-reh",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "studio-brick-dusseldorf",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "faust-warenannahme",
+      "eventsDiscovered": 23,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "zwischenbau",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kalif-storch",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "graf-karl",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "event",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "frauen",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "fest",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "disco",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "nachtigall",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "clubnight",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "reineke-fuchs",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "haus-73",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "oma-doris",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "romy-s",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 22
+    },
+    {
+      "surfaceId": "innside-by-melia-bremen",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "modernes",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "odonien",
+      "eventsDiscovered": 23,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "nacht",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "im-wizemann-",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "bingo",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kneipenquiz",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "afterwork",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "schneewittchen",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "markt",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "chemnitz",
+      "eventsDiscovered": 208,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "terror",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kinderweihnacht",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "closing",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "hour",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "omu",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "alle",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "vip",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "mannheim",
+      "eventsDiscovered": 269,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kartenhaus",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "horrornachte",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "rautenstrauch-joest-museum",
+      "eventsDiscovered": 28,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "oberhausen",
+      "eventsDiscovered": 158,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "paderborn",
+      "eventsDiscovered": 81,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "garagen-club-koln",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "wuppertal",
+      "eventsDiscovered": 185,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "cafe-durchblick",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kulturschlachthof-r25",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "schick",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 18
+    },
+    {
+      "surfaceId": "social-studio-koln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "dinner",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "mittwoch",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "werkstatt",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kulturkirche-altona",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "laeiszhalle-musikhalle-hamburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "staatsoper-hamburg",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "halle-424-3",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "sporthalle-hamburg-1",
+      "eventsDiscovered": 21,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "markthalle-hamburg",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "lichthof-der-staats-und-universitatsbibliothek-eingang-ecke-",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "hfmt-hamburg",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "theater-am-tanzbrunnen-1",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "marias-ballroom",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "buergerzentrum-ehrenfeld",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "werkhalle",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "coloneum",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "christophstrae-15-17-1",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "burgerhaus-kalk-1",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "house-of-bates-pop-up-museum",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "brauwelt-koeln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "kulturraum-405-ev",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "koelner-stadthalle-muelheim",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "helios-37",
+      "eventsDiscovered": 32,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "echtzeit-grill-thrill",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "live-music-hall-8dc65",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "eigelstein-torburg-1",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "filmhaus-koeln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "theaterehrenfeld",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "friesenstrae-54-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "die-kantine-yard-club",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "alte-feuerwache",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "hanns-martin-schleyer-halle",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "koelner-philharmonie",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "humboldt-forum-schluterhof",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "schloss-charlottenburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "kult-cafe",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "nachbarschaftshaus-urbanstrae",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "showfenster-theater-3",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "cic-berlin-1",
+      "eventsDiscovered": 14,
+      "locationOnlyEvents": 13
+    },
+    {
+      "surfaceId": "uferstudios",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "druckrausch-1",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "peter-edel",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "dna-cafe-art",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "schokoladen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "baergarten-revier-sudost",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "badehaus-szimpla-musiksalon",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "drink-and-draw-berlin",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "soda-club",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "friedrichstadt-palast",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "lettretage-ev",
+      "eventsDiscovered": 29,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "cassiopeia",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "art-stalker",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "so-36",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "heppel-ettlich",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "prinzregententheater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "theater-viel-larm-um-nichts-1",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "theater-drehleier",
+      "eventsDiscovered": 27,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "teamtheater-1",
+      "eventsDiscovered": 22,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "schwere-reiter-tanz-theater-musik",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "pathos",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "munchner-lach-und-schiegesellschaft-3",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "bayerische-staatsoper",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "hoftheater-munchen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "muenchner-kammerspiele",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "volkstheater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "lustspielhaus-4",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "cuvilliestheater-1",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "pepe-dome-2",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "theater-im-marstall",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "werk7-theater-2",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "lustspielhaus",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "schauburg-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "theater-im-fraunhofer",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "yuca",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "artheater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "club-einundfunfzig-koln",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "studentenclub-das-ding",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "veedel-club",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "goldfinger-3",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "nightwash-club",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "blue-shell",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "pm-in-kolle",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "garagen-2",
+      "eventsDiscovered": 32,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "tsunami-club",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "club-bahnhof-ehrenfeld",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "mtc-livemusicclub",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "club-subway",
+      "eventsDiscovered": 29,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "gewoelbe",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "red-cat-lounge-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "schrotty",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "hamburger-kunsthalle",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 23
+    },
+    {
+      "surfaceId": "goldbekhaus-3",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "kulturgut",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "the-painting-room-art-workshops-hamburg",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "birdland-hamburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "monkeys-music-club-1",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 14
+    },
+    {
+      "surfaceId": "quarterpipe",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "superbude-altona",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "hausdrei-stadtteilkulturzentrum-in-altona-altstadt",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "fabrik-hamburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "hafenbahnhof-2",
+      "eventsDiscovered": 27,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "logo-hamburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "freundlich-kompetent",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "korberhaus",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "edelfettwerk-1",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "landgang-brauerei",
+      "eventsDiscovered": 23,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "eventkuche-pottcooker",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "jazzhall-hamburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "ms-stubnitz",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "deutsches-bergbau-museum-bochum",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "kunstmuseum-bochum",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "lwl-museum-zeche-hannover",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "standige-sammlung-situation-kunst",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "eisenbahnmuseum-bochum",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "museum-unter-tage",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "zukunft-am-ostkreuz",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "hamburg-carsten-rehder-strae",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "stilwerk-hamburg",
+      "eventsDiscovered": 21,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "hauptkirche-st-katharinen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "reeperbahn-festival",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "kunsthaus-hamburg",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "cascadas",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "schrodingers",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "wandsbeker-marktplatz",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "cap-san-diego",
+      "eventsDiscovered": 26,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "opernloft-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "deichdiele",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "museum-der-arbeit",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "betahaus-schanze-1",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "brakula",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "landhaus-walter",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "wartehauschen-museumshafen-ovelgonne",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "antique-design-market-colonnaden-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kurhotel-st-pauli-fruhclub",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "magazin-filmkunsttheater",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "amp",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "conny-kramer",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "jovel",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "schlotheater-munster-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "cinema-kurbelkiste",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "kamp-flimmern-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "mannheimer-kunstverein",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "jugendkulturzentrum-forum",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "femme-art-atelier-mannheim",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "capitol-mannheim-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 13
+    },
+    {
+      "surfaceId": "7er-club",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "casablanca-2",
+      "eventsDiscovered": 26,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "zeitraumexit",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "casino-im-rampenlicht",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "barockschloss-mannheim",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "schloss-schwetzingen",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "engelhorn-mode-im-quadrat-2og",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "alte-feuerwache-20",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "congress-center-rosengarten",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "trommelpalast",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "maimarkthalle-mannheim",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "lagerstrae-3",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "blue-tower-mannheim",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "maimarktclub-mannheim",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "industriestrae-7b",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "maimarktgelande-mannheim",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "reinoldihaus-dortmund",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "konzerthaus-dortmund",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "orchesterzentrum-nrw",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "u-club",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "u-club-2",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kitchenklub",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "bundeskanzleramt",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "hackescher-markt",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "deutsches-technikmuseum",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "rebecca-horn-bees-planetary-map",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "schering-stiftung",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "amerika-gedenkbibliothek-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "galerie-verein-berliner-kunstler",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "cafe-der-kulturfabrik-moabit",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "regenbogenfabrik",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "theater-am-potsdamer-platz",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "theater-im-palais",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "galli-theater-berlin",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "gretchen-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "monbijou-theater",
+      "eventsDiscovered": 28,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "quatsch-comedy-club",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "feuerle-collection",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "kurfurstendamm-229-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "mauerpark",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "m24-jugendklub",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "dr-hochs-konservatorium",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "orwohaus",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "nachtleben-frankfurt",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "festhalle-frankfurt",
+      "eventsDiscovered": 25,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "jahrhunderthalle-frankfurt",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "batschkapp",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "kunstlerinnenhaus-mousonturm",
+      "eventsDiscovered": 19,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "frankfurt-am-main-4",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "zoom",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 14
+    },
+    {
+      "surfaceId": "kaiserstrae-39",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "nachtleben-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "das-bett",
+      "eventsDiscovered": 22,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "batschkapp-2",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "brotfabrik-3",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "das-bett-1",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "sankt-peter",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "zoom-kantine",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "myticket-jahrhunderthalle-frankfurt-sommerwiese",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "vielsinn",
+      "eventsDiscovered": 22,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "zoo-gesellschaftshaus",
+      "eventsDiscovered": 14,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "freigut-frankfurt-eventlocation-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "studio-trafique-1",
+      "eventsDiscovered": 26,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "theater-509",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "senftoepfchen-theater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "tanzfaktur",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "theater-der-keller",
+      "eventsDiscovered": 27,
+      "locationOnlyEvents": 23
+    },
+    {
+      "surfaceId": "ateliertheater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "impro-koln-studio-a",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "metropol-theater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "orangerie-theater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "theater-salzpfeffer-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "atelier-theater-klub",
+      "eventsDiscovered": 18,
+      "locationOnlyEvents": 18
+    },
+    {
+      "surfaceId": "theater-in-der-filmdose",
+      "eventsDiscovered": 18,
+      "locationOnlyEvents": 18
+    },
+    {
+      "surfaceId": "volksbuhne-am-rudolfplatz",
+      "eventsDiscovered": 26,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "koelner-kuenstler-theater",
+      "eventsDiscovered": 24,
+      "locationOnlyEvents": 22
+    },
+    {
+      "surfaceId": "hotel-am-chlodwigplatz-zimmer-406",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "zak-zirkus-und-artistikzentrum-1",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 14
+    },
+    {
+      "surfaceId": "ehrenfeldstudios-ev-2",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "freies-werkstatt-theater-koeln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "box-theater-in-der-sudstadt-2",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "alte-wursterei",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "volkshaus-jena-1",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "f-haus",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "cafe-wagner",
+      "eventsDiscovered": 26,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "cafe-wagner-2",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "volksbad-jena",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "trafo",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "braugasthof-papiermuhle",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kuba-jena",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "skaters-palace",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "hot-jazz-club-munster",
+      "eventsDiscovered": 14,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "heaven-5",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "gleis-22",
+      "eventsDiscovered": 27,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "puls-der-club-in-munster",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "club-favela-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kabinett-3",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "schaf-munster-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "gazelle",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "walk-of-fame",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "lilos-munster",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "zukunftswerkstatt-kreuzviertel-ev-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "traumathek",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "aula-kunsthochschule-fur-medien-koln",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "rex-am-ring-lichtspiele",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "lichtspiele-kalk-kino",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "residenz-filmtheater",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "odeon-kino-koln",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "cinenova",
+      "eventsDiscovered": 24,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "filmpalette",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "turistarama",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "weisshaus-kino-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "cineplex-filmpalast-koln",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "autokino-porz",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "metropolis-kino-3",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "open-air-kino-im-rheinauhafen",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "weinsberg-cinema",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "am-wasserturm-8-10",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "engelsburg",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "franz-melhose",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "zentralheize",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "kaisersaal-erfurt",
+      "eventsDiscovered": 14,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "hugo-john-strae-10",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "haus-dacheroden",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "hugo-john-strae-10-1",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "hugo-john-strae-8",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "stadtgarten",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "zughafen-erfurt",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bandhaus-erfurt-1",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "bandhaus-erfrut",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "alte-oper-erfurt-1",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "allerheiligenstrae-20",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "mandala-beachclub",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "barfuer-ruine",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "ajz-erfurt",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "ilvers-musikbar",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "speicher",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "cosmopolar",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "museumskeller",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "frau-korte",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "club-palais-13",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "eilenriede",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "hannover-platz-der-gottinger-sieben",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "opernplatz-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "hannover-am-hohen-ufer-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "stadtbibliothek-hannover",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "opernplatz-4",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "lindener-marktplatz-hannover",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "stadtbibliothek-am-kronsberg",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "kapunkt",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "stadt-schulbibliothek-bothfeld",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "hannover-24",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "stadtbibliothek-vahrenwald",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "marktkirche",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "fete-in-der-klinik",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "marktkirche-indoor",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "rathenauplatz",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "markthalle-hannover",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "brauhaus-hannover",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "hannah-arendt-platz",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "vhs",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "schokoladenmuseum-k-ln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "makk-museum-f-r-angewandte-kunst-k-ln",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "museum-schnutgen-2",
+      "eventsDiscovered": 28,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "kathe-kollwitz-museum-koln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "koelnisches-stadtmuseum",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "miqua-lvr-judisches-museum-im-archaologischen-quartier-koln",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "ns-dokumentationszentrum-koln-el-de-haus",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 18
+    },
+    {
+      "surfaceId": "das-museum-des-schmerzes-und-der-liebe",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "deutsches-sport-olympia-museum-1",
+      "eventsDiscovered": 24,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "the-photobookmuseum",
+      "eventsDiscovered": 18,
+      "locationOnlyEvents": 18
+    },
+    {
+      "surfaceId": "sk-stiftung-kultur",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "museum-ludwig",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "skulpturenpark",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "timeride-vr-koeln",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "atombunker-k-ln-kalk-dokk",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "weinmuseum-k-ln",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "japanisches-kulturinstitut",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "simultanhalle",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kolner-festungsmuseum-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kurhaus-aachen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "artbewegt-urbane-und-zeitgenossische-tanzplattform-fur-die-r",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "klangbrucke",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "franz-aachen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "raststatte",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "park-terrassen",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "kurpark-classix",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "meffis",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "bleiberger-fabrik",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kulturhaus-barockfabrik",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "mufab-konzertsaal",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "motel-one",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "tiergartenallee-2",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "helgas-stadtpalast",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "stadthalle-rostock",
+      "eventsDiscovered": 19,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "hansemesse",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "jaz-ev",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "parea-kaffeerosterei-bistro",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "spielecafe-tagedieb",
+      "eventsDiscovered": 25,
+      "locationOnlyEvents": 22
+    },
+    {
+      "surfaceId": "cafe-ocka",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "bluthner-weincafe",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "lukas-academy",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "trago",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "cafe-restaurant-292-karangahape-road",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "cafe-tunichtgut",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "second-hand-cafe-gold-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "milchbar-pinguin",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "biomare-sudvorstadt",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "fauna-x-flora",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "cafe-lux-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "cafe-bubu",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "cafe-kollwitz-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "cafe-nimo",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "ippuku",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kokopelli-das-traveler-cafe-leipzig",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "good-day-coffee-roasters",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "cafe-puschkin",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "brauerei-kurzer-flingern",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "petit-punch",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 19
+    },
+    {
+      "surfaceId": "bilker-hazz-1",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 13
+    },
+    {
+      "surfaceId": "the-roof-restaurant-bar-lounge-dusseldorf",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "the-paris-club-bar",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "giselle",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "brauart-dusseldorf",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "ghorban-delikatessen-manufaktur",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "bar-lola",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "dstrctart-1",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "elephant-bar",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "vino-s-weinbar-by-lynx",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "la-pallaite",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "salon-des-amateurs",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "tribe-dusseldorf",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "beerpong-bar-dusseldorf",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "pommes-und-wein",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "cafe-melancholie-2",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "ruby-leni-hotel-bar",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "bar-cherie-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "tor-40",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "aventura",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 13
+    },
+    {
+      "surfaceId": "freizeitklinik",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 23
+    },
+    {
+      "surfaceId": "institut-francais-bremen-4",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "pinokel",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kito-altes-packhaus",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 13
+    },
+    {
+      "surfaceId": "lagerhaus",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 22
+    },
+    {
+      "surfaceId": "kulturhaus-walle-brodelpott",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "heimathaven-bremen-1",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "ovb-arena",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "burgerhaus-mahndorf",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "studio-nord",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "litfass",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "doku-blumenthal",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "schlachthof-bremen",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "messe-bremen",
+      "eventsDiscovered": 25,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "schaulust-1",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "contemporary-crafts-studio",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "presseclub-im-schnoor",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "off-bar",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "suderman-1",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 19
+    },
+    {
+      "surfaceId": "die-kunstbar-1",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "umleitung",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "wundertute-2",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "the-bar",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "king-georg",
+      "eventsDiscovered": 23,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "fiffi-bar",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "wohngemeinschaft-wg-koeln",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "die-haengenden-g-rten-von-ehrenfeld-ba169",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "kleine-freiheit-8",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "sonnenscheinetage-2",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "frankys-bar",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "korkenzieher-champagner-wein-ginbar",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "anyway-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "asimmetric-bar",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "aperol-spritzeria-by-deli-sulz",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "paff-1",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "biergarten-der-rheinterrassen",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "grillo-theater-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "rabbit-hole-theater-1",
+      "eventsDiscovered": 28,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "theater-courage-so-spielt-das-leben",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "gop-variete-theater-essen",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "studio-buehne-essen",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "szene-10-buhne-im-girardet",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "stratmanns-theater",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "maschinenhaus-essen-1",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "grendtheater",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "theater-essen-sud",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "das-kleine-theater-essen",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "casa-tup-essen",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "zauber-theater-essen",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "theaterzelt-burgplatz",
+      "eventsDiscovered": 29,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "areal-boehler",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "eigenlob-keramik-malstudio-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "zakk-dusseldorf",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 23
+    },
+    {
+      "surfaceId": "maxhaus-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 23
+    },
+    {
+      "surfaceId": "jazz-schmiede-dus",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "plange-muhle-fuenf",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "mitsubishi-electric-halle",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "tonhalle-dusseldorf",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "tanzhaus-nrw",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "nilsson-martinstrasse",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "haus-spilles",
+      "eventsDiscovered": 22,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "stahlwerk-treibgut",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "comedy-fur-freunde-club-dusseldorf",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "kreativ-studio-dusseldorf",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "haus-der-universitaet",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "ballaballa",
+      "eventsDiscovered": 18,
+      "locationOnlyEvents": 18
+    },
+    {
+      "surfaceId": "jugendkulturcafe-franzmann",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "neanderkirche",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "weltkunstzimmer-dus",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "kulturzentrum-pavillon",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "huttenstrae-22b",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "stadtteilzentrum-stocken-2",
+      "eventsDiscovered": 29,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "feinkost-lampe",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "kulturpalast-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "stadtteilzentrum-ricklingen",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "stadtteilzentrum-lister-turm-3",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "tonstudio-tessmar",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "rampe-hannover",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "faust-mephisto",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "faust-60er-jahre-halle",
+      "eventsDiscovered": 25,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "wohlklang-handpan-studio-hannover",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "indiego-glocksee-1",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kulturhafen-hannover",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "swiss-life-hall",
+      "eventsDiscovered": 22,
+      "locationOnlyEvents": 19
+    },
+    {
+      "surfaceId": "musikzentrum-hannover",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 26
+    },
+    {
+      "surfaceId": "faust-open-air",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "faust-lieschen",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "kuppelsaal-hannover",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "feinkost-lampe-1",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "bunker-rostock",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "lt-club",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "theaterstubchen-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "musikpark-a7",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "ecstatic-dance-kassel-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "frau-tanz",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "gleis-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kater-bar",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "stellwerk",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "domicil",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "tresorwest",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "weinkeller",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "suavemente-club-1",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "stollen134",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "fox-hohensyburg",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "snrs-club-culture",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "november-club",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "burgtorclub",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "laufsteg-diskothek",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "iroom",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "rekorder-3",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "nightrooms",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "moog-2",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "blue-notez-club",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "q-31",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "laufsteg-dortmund-4",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "prismatic-club-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "rekorder-2",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "area-club",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "der-schwarze-keiler",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "climax-institutes",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "fridas-pier-2",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "proton-the-club-1",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "kowalski",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "die-schraglage",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 28
+    },
+    {
+      "surfaceId": "romantica",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "zubrovka-bar-club",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "goldmarks",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "boa-discothek",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "club-schiff-ms-neckarbesen-partyfloss-stuttgart",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "club25ahoi",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "k29-der-zieglerkeller",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "lerche-22-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "schwarzer-keiler",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "white-noise",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "stuttgart-67",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "boa-diskothek-stuttgart",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "dilayla",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "studio-gaga-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "detektiv-trail-bremen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "detektiv-trail-bremerhaven",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "colab",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "krimi-trail-bremen",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "buddhistisches-zentrum-bremen",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 14
+    },
+    {
+      "surfaceId": "olbers-planetarium",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "martinianleger",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "kippenberg-gymnasium",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kreativatelier-renate-buhn-1",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 27
+    },
+    {
+      "surfaceId": "dechanatstrae",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "diverse-veranstaltungsorte-in-bremen-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "john-will-silo-hotel-2",
+      "eventsDiscovered": 18,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "kirche-jesu-christi-ricarda-huch-strae-2-28215-bremen",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "initiative-zur-sozialen-rehabilitation-bremen-e-v",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "atelier-im-kubo",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "blaue-karawane-ev",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "radio-bremen-offentlich-rechtliche-rundfunkanstalt",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "jugendfreizeitheim-altaumund-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "bab-lab",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "albatros-buchhandlung",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "kulturverein-merlin-ev",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 21
+    },
+    {
+      "surfaceId": "theaterhaus-stuttgart",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 20
+    },
+    {
+      "surfaceId": "kultur-und-events-im-kiosk",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 5
+    },
+    {
+      "surfaceId": "yogathrive-x-ruby-fred",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "kunstraum-34",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "wagenhallen-stuttgart-1",
+      "eventsDiscovered": 14,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "kulturhaus-schwanen-2",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "porsche-arena-stuttgart",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "comedy-club-stuttgart",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "cafe-galao",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "kulturbunker-stuttgart",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "lka-longhorn-4",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 29
+    },
+    {
+      "surfaceId": "wonders-club-stuttgart",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "yogathrive-x-isopi",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "kulturinsel-stuttgart",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 4
+    },
+    {
+      "surfaceId": "kniffspace",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 3
+    },
+    {
+      "surfaceId": "yogathrive-x-coa-me",
+      "eventsDiscovered": 19,
+      "locationOnlyEvents": 17
+    },
+    {
+      "surfaceId": "yogathrive-outdoor-unterer-schlossgarten",
+      "eventsDiscovered": 5,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "yogathrive-x-fridas-pier",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "super-candy-pop-up-museum",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "hardtanlage",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "nordpark-wuppertal",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "die-kulturei",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "beben",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "kuz",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "frankfurter-hof",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "altes-postlager",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "halle-45",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "alte-lokhalle",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "mitternachtsgasse-8",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "holzhofstrae-1",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "zitadelle-mainz",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "haus-burgund",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "zitadelle-open-air-gelande",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "dagobertstrae-24",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "landesmuseum-mainz",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "museum-fur-druckkunst",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "thomaskirche-leipzig",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 12
+    },
+    {
+      "surfaceId": "volkshochschule-leipzig",
+      "eventsDiscovered": 7,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "soziokulturelles-zentrum-frauenkultur-e-v",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "mendelssohn-haus-leipzig",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "schaubuhne-lindenfels",
+      "eventsDiscovered": 30,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "philippuskirche",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "universitat-leipzig",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "parkbuhne-geyserhaus",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "rosental",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "beyerhaus-leipzig",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "nepomuk",
+      "eventsDiscovered": 18,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "tapetenwerk",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "neues-schauspiel-leipzig",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "baileo-tanzpassion-leipzig",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "westwerk-leipzig",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "bandhaus-leipzig",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 11
+    },
+    {
+      "surfaceId": "peterskirche-leipzig",
+      "eventsDiscovered": 15,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "lene-voigt-park",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "literaturforum-im-brecht-haus",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 19
+    },
+    {
+      "surfaceId": "zimmer-16-1",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 30
+    },
+    {
+      "surfaceId": "habibi-kiosk",
+      "eventsDiscovered": 8,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "ufafabrik",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 31
+    },
+    {
+      "surfaceId": "schauburg-labor",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "fischauktionshalle",
+      "eventsDiscovered": 16,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "kulturbahnhof-hiltrup",
+      "eventsDiscovered": 20,
+      "locationOnlyEvents": 15
+    },
+    {
+      "surfaceId": "ms-gunther",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 25
+    },
+    {
+      "surfaceId": "friedenskapelle",
+      "eventsDiscovered": 31,
+      "locationOnlyEvents": 24
+    },
+    {
+      "surfaceId": "westfalischer-kunstverein",
+      "eventsDiscovered": 4,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "b-side",
+      "eventsDiscovered": 13,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "cafe-sputnik",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 7
+    },
+    {
+      "surfaceId": "rare-guitar-1",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "pension-schmidt",
+      "eventsDiscovered": 11,
+      "locationOnlyEvents": 9
+    },
+    {
+      "surfaceId": "jovel-music-hall",
+      "eventsDiscovered": 6,
+      "locationOnlyEvents": 6
+    },
+    {
+      "surfaceId": "messe-congress-centrum-halle-munsterland",
+      "eventsDiscovered": 12,
+      "locationOnlyEvents": 10
+    },
+    {
+      "surfaceId": "congress-saal-messecongress-centrum-halle-munsterland",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "an-den-speichern-10",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "messe-und-congress-centrum-halle-munsterland-gmbh",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "coconut-beach",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kulturquartier-munster",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "wilhelmstrae-26-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "konzertsaal-der-waldorfschule-munster",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kulturbrucken-jungbusch-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "think-moto",
+      "eventsDiscovered": 3,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "bockenheimer-depot",
+      "eventsDiscovered": 9,
+      "locationOnlyEvents": 8
+    },
+    {
+      "surfaceId": "kasino-myticket-jahrhunderthalle",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "club-der-myticket-jahrhunderthalle",
+      "eventsDiscovered": 17,
+      "locationOnlyEvents": 16
+    },
+    {
+      "surfaceId": "konzertsommer-petersberg-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "schmuckdesign-detail",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "juri-gagarin-ring-127",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "kulturzentrum-engelsburg",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "klanggerust-ev-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "ballhof",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "rund-um-dem-platz-der-weltausstellung",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "zwischenfisch",
+      "eventsDiscovered": 2,
+      "locationOnlyEvents": 2
+    },
+    {
+      "surfaceId": "hansesaal-congress-centrum-bremen",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "bahnhofsvorplatz-bremen-1",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "messehalle-5-bremen",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "tresorwest-garten",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "laufsteg",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "gromarktschanke",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "people",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "wonders",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "lehmann",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "konzertchor-stuttgart-stuttgart-vokal-slk-sinfonieorchester-",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 1
+    },
+    {
+      "surfaceId": "lka-longhorn",
+      "eventsDiscovered": 0,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "perkins-park",
+      "eventsDiscovered": 1,
+      "locationOnlyEvents": 0
+    },
+    {
+      "surfaceId": "schumann-haus-leipzig",
+      "eventsDiscovered": 10,
+      "locationOnlyEvents": 10
+    }
+  ]
+}

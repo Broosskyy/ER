@@ -2,6 +2,7 @@ import { classifyConsumerEventLifecycle } from '../../ingestion/consumer-event-c
 import type { EventMatchCatalogEntry } from '../../ingestion/identity/event-match-types';
 import { classifyMediaUrls } from '../ticket-evidence/network-discovery/media-classifier';
 import { classifyDetailRelevance } from '../ticket-evidence/network-discovery/detail-relevance';
+import { deriveLineupDomainEvidence } from './lineup-domain-evidence';
 import {
   buildGenreCandidates,
   buildFieldEvidence,
@@ -82,20 +83,23 @@ export function applyDetailToCandidate(
   const structured = separateDescriptionFields(detail.description);
   const lineupHints = mergeLineupHints(title, [...detail.lineupHints, ...structured.lineupCandidates]);
   const genreHints = [...new Set([...candidate.genreHints, ...detail.genreHints, ...structured.genreCandidates, ...detail.tagHints])];
+  const lineupDomain = deriveLineupDomainEvidence({ title, lineup: lineupHints });
   const relevanceResult = classifyDetailRelevance({
     title,
-    description: detail.description,
+    description: structured.descriptionResidual ?? detail.description,
     genreHints,
     lineupHints,
     venueName: detail.venueName,
     organizerName: detail.organizerName,
     detailAccess: detail.jsonLdPresent ? 'DETAIL_ACCESSIBLE' : 'PARTIAL_DETAIL',
+    lineupDomainBoost: lineupDomain.domainBoost,
+    lineupElectronicArtistCount: lineupDomain.classifiedElectronicArtists,
   });
 
   return {
     ...candidate,
     title,
-    description: detail.description,
+    description: structured.descriptionResidual ?? detail.description,
     startsAt: detail.startsAt,
     endsAt: detail.endsAt,
     lifecycle: classifyLifecycle(detail.startsAt, detail.endsAt, referenceInstant),

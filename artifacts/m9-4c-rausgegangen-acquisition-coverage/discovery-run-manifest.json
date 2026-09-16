@@ -1,0 +1,32 @@
+{
+  "runId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1",
+  "startedAt": "2026-09-16T19:50:49.413Z",
+  "completedAt": "2026-09-16T20:49:56.517Z",
+  "configuration": {
+    "maxRegions": 45,
+    "maxExpansionDepth": 3,
+    "maxLocationSurfaces": 150,
+    "maxLocationCandidates": 500,
+    "maxGraphRequests": 12000,
+    "listingConcurrency": 2,
+    "detailConcurrency": 4,
+    "activeWindowDays": 90,
+    "requestDelayMs": 250,
+    "fetchTimeoutMs": 25000,
+    "maxRetries": 2
+  },
+  "citySurfaceCount": 45,
+  "locationSurfaceCandidates": 7651,
+  "locationSurfacesCrawled": 793,
+  "unionDiscovered": 18490,
+  "requestCounts": {
+    "httpRequests": 12000,
+    "cacheHits": 6036,
+    "cacheMisses": 5964,
+    "failedRequests": 109,
+    "retries": 0,
+    "totalRuntimeMs": 3547082,
+    "peakConcurrency": 4
+  },
+  "artifactDirectory": "C:\\Users\\manue\\.cursor\\projects\\c-ER\\wt-import-reference-baseline\\artifacts\\m9-4c-rausgegangen-acquisition-coverage"
+}

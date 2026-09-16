@@ -1,0 +1,502 @@
+[
+  {
+    "eventUrl": "https://rausgegangen.de/events/hall-of-fame/",
+    "reason": "http_404"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/die-teddy-show-1814/",
+    "reason": "http_404"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/brat-party-w-charli-xcx-other-brat-coded-artists-helios37-ko-3/",
+    "reason": "http_404"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/musikalische-pinselstriche-musik-horen-farben-fuhlen-bilder--2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/kochatelier-auf-zollverein-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/das-ruhrgebiet-ist-meins-16/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/ritter-rost-feiert-weihnachten-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/ritter-rost-feiert-weihnachten-familienkonzert-mit-jorg-hilb-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/musikalische-pinselstriche-reise-unter-die-erde-3/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/willi-live-und-wovon-traumst-du-14/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/willi-live-und-wovon-traumst-du-die-show-uber-traume-mut-und-10/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/krimi-trail-essen-giftskandal-in-kettwig-177/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/abenteuer-in-essen-questies-die-rettung-des-himmelstempels-m-36/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/auf-den-spuren-der-tuchmacher-rundgang-mit-deinem-smartphone-850/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/baldeneysee-und-dampfzug-fuhrung-im-essener-suden-mit-deinem-850/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/escape-the-city-essen-das-ungeklarte-verbrechen-mit-echtem-s-36/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/escape-the-city-essen-der-goldene-orden-mit-echtem-spielpake-36/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/escape-the-city-essen-der-verdachtige-fund-am-wasser-mit-ech-36/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/escape-the-city-essen-die-vermisste-opernsangerin-mit-echtem-36/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/highlights-der-innenstadt-stadtfuhrung-mit-deinem-smartphone-850/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/outdoor-gameshow-essen-adventure-battle-fur-410-personen-30/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/der-gluhwein-krimi-mission-winterkrone-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/asia-pop-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/blueprint-quiz-cocktails-90er-special-dusseldorf-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/pubquiz-im-bilker-hazz-30/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/geheimkonzert-dusseldorf-21-by-rausgegangen-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/bar-night-w-david-elimelech-polschi-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/secret-sound-vol-5-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dusseldorf-xxl-5-partys-in-einer-nacht-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/hotstuff-munchen-takeover-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/action-painting-splash-bloom-7/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/cute-cozy-board-games-sweet-teddy-cafe-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dogpark-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/eine-krankheit-wie-ein-gedicht-kinotour-in-dusseldorf-filmge-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/lande-hekt-uk-lunates-presented-by-anb-nord-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/das-allgemeine-kneipen-quiz-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/cozy-sounds-bei-bubbles-karla-lee-nange-emily-velroyen-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dinner-in-the-sky-mit-rausgegangen-dusseldorf-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/reisefotografie-workflow-und-tipps-vom-profi-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/detroit-lets-play-performance-von-montserrat-gardo-castillo--0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/chefs-in-town-onebite-roll-spielerisch-genieen-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/stone-foundation-trio-acoustic-gig-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/back-to-the-90th-vol-1-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/bar-night-w-sofiia-zoloto-ukr-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/ido-eroffnung-rheinische-rhapsodie-junge-blaserphilharmonie--0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/back-to-the-90th-vol-2-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/broncos-hannover-takeover-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/schamlos-20-jahre-millennium-edition-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/sunday-morning-wave-10/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/chefs-in-town-culinary-backstage-by-daniel-gottschlich-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/pluto-on-piano-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/sunset-skate-club-die-entspannte-feierabend-runde-6/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/strick-am-strand-5/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/blueprint-quiz-cocktails-dusseldorf-bei-gutem-wetter-open-ai-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/love-at-first-slide-dusseldorf-power-point-dating-by-rausgeg-4/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/herrlich-herzhaft-in-den-herbst-der-brotsommelierabend-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/mittwochsmaler-31/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/spiele-abend-mit-stadtfreunde-4/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/ladies-night-keramikmalen-im-eigenlob-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/lesung-miti-dana-vowinckel-anton-und-alma-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/molaya-live-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/jga-schatzsuche-dusseldorfs-geheimnis-185/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/clay-paint-wine-keramik-bemalen-wein-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/crochet-chill-hakle-deine-traumtasche-12/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/peter-and-the-test-tube-babies-12/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/soap-lab-seifen-selber-gieen-24/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/flinta-friends-date-night-open-game-night-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/after-work-ceramic-painting-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/topfern-mit-antipasti-wein-in-dusseldorf-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/singalong-das-grosse-mitsing-event-hits-der-80er-90er-48/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dusseldorf-night-pubcrawl-4-locations-welcome-shots-clubeint-60/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/entspannungsangebot-3/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/hocker-bauen-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/trodelmeile-zu-rock-am-bach-2026-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/afterwork-party-60/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/drags-in-town-party-11/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/little-friday-thursday-4/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/summer-beats-dusseldorf-5/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/song-bingo-10/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/sunset-jump-202/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dj-rundlauf-7/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/old-irish-pub-friday-33/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/kunstpunkte-dusseldorf-jubilaum-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dj-night-with-lucus-9/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/schlager-cafe-dj-party-125/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/hot-chocolat-60/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/instore-release-another-cotton-lab-x-puma-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/oktoberfest-an-den-kasematten-1/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/brot-butter-end-of-summer-party-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/rb-loverz-day-event-premiere-ruby-coco-dusseldorf-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/eroffnung-echt-jetzt-deutscher-jugendfotopreis-2026-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/lange-barnacht-36/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/sandkastenliebe-dusseldorfs-90er-2000er-party-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/old-irish-pub-saturday-41/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dj-night-with-marcin-7/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/destination-disco-59/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/afterhour-nr-4-21/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/afterhour-nr4-38/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/cara-rose-20/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/the-rheingans-sisters-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/live-band-karaoke-sing-deinen-lieblingssong-mit-eigener-band-3/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/liebesgrue-aus-italien-hor-abend-mit-wolfram-goertz-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/me-and-all-x-feierabend-mit-dj-maze-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/iva-zaki-acoustic-soul-x-musame-on-stage-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/sing-mit-sing-it-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/verdi-requiem-chor-und-orchester-der-kirche-st-andreas-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/espallardo-w-friends-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/lisa-live-is-smile-always15-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/stadtklang-mit-florian-franke-live-ruby-luna-hotel-bar-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/transmission-the-sound-of-joy-division-6/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/carl-de-wey-em-pootze-johnny-cash-special-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/dinner-for-mantra-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/gaudion-energiegeladener-indiepop-aus-down-under-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/niederrhein-musikfestival-into-the-wild-klang-der-freiheit-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/the-transcendent-triptych-janos-aved-david-six-tilo-weber-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/bluesgerinsel-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/der-rose-pilgerfahrt-dusseldorfer-toypiano-festival-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/schatten-licht-und-liebe-2/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/reggae-music-fest-one-love-one-heart-three-countries-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/30-jahre-trebecafe-das-muss-gefeiert-werden-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/vive-lespagne-0/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/eclectic-sheep-tiny-concert-3/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/klamotten-und-notwendiges-29/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/trodel-und-antikmarkt-aachener-platz-185/",
+    "reason": "request_budget_exhausted"
+  },
+  {
+    "eventUrl": "https://rausgegangen.de/events/nachtflohmarkt-moonlight-market-dusseldorf-6/",
+    "reason": "request_budget_exhausted"
+  }
+]

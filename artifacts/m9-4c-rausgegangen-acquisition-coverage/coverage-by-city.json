@@ -1,0 +1,452 @@
+{
+  "cologne": {
+    "city": "cologne",
+    "citySurfaceEvents": 458,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 458,
+    "detailEnriched": 401,
+    "electronicRelevant": 22,
+    "qualityReady": 183,
+    "netNew": 455
+  },
+  "hamburg": {
+    "city": "hamburg",
+    "citySurfaceEvents": 453,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 453,
+    "detailEnriched": 378,
+    "electronicRelevant": 16,
+    "qualityReady": 191,
+    "netNew": 452
+  },
+  "berlin": {
+    "city": "berlin",
+    "citySurfaceEvents": 468,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 468,
+    "detailEnriched": 419,
+    "electronicRelevant": 20,
+    "qualityReady": 222,
+    "netNew": 468
+  },
+  "frankfurt": {
+    "city": "frankfurt",
+    "citySurfaceEvents": 380,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 383,
+    "detailEnriched": 332,
+    "electronicRelevant": 12,
+    "qualityReady": 178,
+    "netNew": 379
+  },
+  "stuttgart": {
+    "city": "stuttgart",
+    "citySurfaceEvents": 407,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 407,
+    "detailEnriched": 357,
+    "electronicRelevant": 11,
+    "qualityReady": 185,
+    "netNew": 406
+  },
+  "muenchen": {
+    "city": "muenchen",
+    "citySurfaceEvents": 475,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 475,
+    "detailEnriched": 421,
+    "electronicRelevant": 19,
+    "qualityReady": 194,
+    "netNew": 475
+  },
+  "dortmund": {
+    "city": "dortmund",
+    "citySurfaceEvents": 415,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 415,
+    "detailEnriched": 373,
+    "electronicRelevant": 22,
+    "qualityReady": 178,
+    "netNew": 415
+  },
+  "leipzig": {
+    "city": "leipzig",
+    "citySurfaceEvents": 433,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 433,
+    "detailEnriched": 368,
+    "electronicRelevant": 26,
+    "qualityReady": 196,
+    "netNew": 432
+  },
+  "essen": {
+    "city": "essen",
+    "citySurfaceEvents": 297,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 297,
+    "detailEnriched": 273,
+    "electronicRelevant": 8,
+    "qualityReady": 127,
+    "netNew": 297
+  },
+  "duesseldorf": {
+    "city": "duesseldorf",
+    "citySurfaceEvents": 448,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 448,
+    "detailEnriched": 113,
+    "electronicRelevant": 7,
+    "qualityReady": 10,
+    "netNew": 447
+  },
+  "bonn": {
+    "city": "bonn",
+    "citySurfaceEvents": 361,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 361,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 361
+  },
+  "hannover": {
+    "city": "hannover",
+    "citySurfaceEvents": 320,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 349,
+    "detailEnriched": 2,
+    "electronicRelevant": 0,
+    "qualityReady": 2,
+    "netNew": 320
+  },
+  "nuernberg": {
+    "city": "nuernberg",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "dresden": {
+    "city": "dresden",
+    "citySurfaceEvents": 399,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 399,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 3,
+    "netNew": 398
+  },
+  "bremen": {
+    "city": "bremen",
+    "citySurfaceEvents": 393,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 393,
+    "detailEnriched": 5,
+    "electronicRelevant": 3,
+    "qualityReady": 5,
+    "netNew": 393
+  },
+  "karlsruhe": {
+    "city": "karlsruhe",
+    "citySurfaceEvents": 226,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 226,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 226
+  },
+  "aachen": {
+    "city": "aachen",
+    "citySurfaceEvents": 290,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 290,
+    "detailEnriched": 4,
+    "electronicRelevant": 3,
+    "qualityReady": 4,
+    "netNew": 290
+  },
+  "mannheim": {
+    "city": "mannheim",
+    "citySurfaceEvents": 269,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 269,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 269
+  },
+  "bochum": {
+    "city": "bochum",
+    "citySurfaceEvents": 305,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 305,
+    "detailEnriched": 2,
+    "electronicRelevant": 2,
+    "qualityReady": 2,
+    "netNew": 305
+  },
+  "muenster": {
+    "city": "muenster",
+    "citySurfaceEvents": 294,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 294,
+    "detailEnriched": 4,
+    "electronicRelevant": 4,
+    "qualityReady": 4,
+    "netNew": 294
+  },
+  "wiesbaden": {
+    "city": "wiesbaden",
+    "citySurfaceEvents": 219,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 219,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 219
+  },
+  "kiel": {
+    "city": "kiel",
+    "citySurfaceEvents": 194,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 194,
+    "detailEnriched": 4,
+    "electronicRelevant": 4,
+    "qualityReady": 4,
+    "netNew": 194
+  },
+  "mainz": {
+    "city": "mainz",
+    "citySurfaceEvents": 266,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 266,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 2,
+    "netNew": 266
+  },
+  "rostock": {
+    "city": "rostock",
+    "citySurfaceEvents": 126,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 126,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 3,
+    "netNew": 126
+  },
+  "freiburg": {
+    "city": "freiburg",
+    "citySurfaceEvents": 311,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 311,
+    "detailEnriched": 3,
+    "electronicRelevant": 1,
+    "qualityReady": 3,
+    "netNew": 311
+  },
+  "potsdam": {
+    "city": "potsdam",
+    "citySurfaceEvents": 233,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 233,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 233
+  },
+  "magdeburg": {
+    "city": "magdeburg",
+    "citySurfaceEvents": 142,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 142,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 142
+  },
+  "saarbruecken": {
+    "city": "saarbruecken",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "erfurt": {
+    "city": "erfurt",
+    "citySurfaceEvents": 273,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 273,
+    "detailEnriched": 5,
+    "electronicRelevant": 4,
+    "qualityReady": 3,
+    "netNew": 273
+  },
+  "kassel": {
+    "city": "kassel",
+    "citySurfaceEvents": 150,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 150,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 150
+  },
+  "heidelberg": {
+    "city": "heidelberg",
+    "citySurfaceEvents": 305,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 305,
+    "detailEnriched": 2,
+    "electronicRelevant": 2,
+    "qualityReady": 2,
+    "netNew": 305
+  },
+  "augsburg": {
+    "city": "augsburg",
+    "citySurfaceEvents": 224,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 224,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 224
+  },
+  "wuppertal": {
+    "city": "wuppertal",
+    "citySurfaceEvents": 185,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 185,
+    "detailEnriched": 10,
+    "electronicRelevant": 8,
+    "qualityReady": 10,
+    "netNew": 185
+  },
+  "bielefeld": {
+    "city": "bielefeld",
+    "citySurfaceEvents": 196,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 196,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 196
+  },
+  "moenchengladbach": {
+    "city": "moenchengladbach",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "krefeld": {
+    "city": "krefeld",
+    "citySurfaceEvents": 227,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 227,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 227
+  },
+  "luebeck": {
+    "city": "luebeck",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "chemnitz": {
+    "city": "chemnitz",
+    "citySurfaceEvents": 208,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 208,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 208
+  },
+  "oldenburg": {
+    "city": "oldenburg",
+    "citySurfaceEvents": 271,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 271,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 3,
+    "netNew": 271
+  },
+  "osnabrueck": {
+    "city": "osnabrueck",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "oberhausen": {
+    "city": "oberhausen",
+    "citySurfaceEvents": 158,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 158,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 158
+  },
+  "paderborn": {
+    "city": "paderborn",
+    "citySurfaceEvents": 81,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 81,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 81
+  },
+  "trier": {
+    "city": "trier",
+    "citySurfaceEvents": 126,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 126,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 126
+  },
+  "jena": {
+    "city": "jena",
+    "citySurfaceEvents": 114,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 114,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 3,
+    "netNew": 114
+  },
+  "siegen": {
+    "city": "siegen",
+    "citySurfaceEvents": 107,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 107,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 107
+  }
+}

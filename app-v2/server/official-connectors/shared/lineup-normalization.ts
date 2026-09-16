@@ -44,6 +44,8 @@ const FLOOR_STAGE_HEADER_PATTERN =
 
 const LINEUP_INTRO_MARKER_PATTERN = /^(?:line\s*-?\s*up|artists)\s*:?\s*$/i;
 const FULL_LINEUP_MARKER_PATTERN = /^full\s+line\s*-?\s*up(?:\s+a\s*-?\s*z)?\s*:?\s*$/i;
+const LINEUP_MAIN_MARKER_PATTERN = /^lineup\s+main(?:\s*\([^)]*\))?\s*:?\s*$/i;
+const LINEUP_MAIN_INLINE_PATTERN = /lineup\s+main(?:\s*\([^)]*\))?\s*:?\s*/i;
 const DJ_LINEUP_INTRO_MARKER_PATTERN = /^dj\s+line\s*-?\s*up\s*:?\s*$/i;
 const NON_LINEUP_SECTION_HEADER_PATTERN =
   /^(?:ELEMENTS|STYLE|INFO|INFOS|DETAILS|PROGRAM|LIVE THE|PUBLIC TRANSPORT INFO|HIGHLIGHTS)\s*:?$/i;
@@ -237,8 +239,13 @@ export function isLineupIntroMarker(text: string): boolean {
   return (
     LINEUP_INTRO_MARKER_PATTERN.test(normalized) ||
     DJ_LINEUP_INTRO_MARKER_PATTERN.test(normalized) ||
-    FULL_LINEUP_MARKER_PATTERN.test(normalized)
+    FULL_LINEUP_MARKER_PATTERN.test(normalized) ||
+    LINEUP_MAIN_MARKER_PATTERN.test(normalized)
   );
+}
+
+export function isLineupMainInlineMarker(text: string): boolean {
+  return LINEUP_MAIN_INLINE_PATTERN.test(text);
 }
 
 export function isNonLineupSectionHeader(text: string): boolean {

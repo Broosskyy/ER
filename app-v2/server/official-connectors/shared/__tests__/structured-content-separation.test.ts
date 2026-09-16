@@ -86,6 +86,23 @@ Phase 1 15 €`);
     expect(result.lineupCandidates).toHaveLength(0);
   });
 
+  it('extracts rausgegangen run-together star-bullet lineup prose', () => {
+    const description =
+      'TICKETS ONLINE NOW – EhrenKlub #14 at SchrottyFREITAG // 25.09.26 // SchrottyTOTAL MAYHEM FROM START TO FINISH GUARANTEEDLineup Main (A – Z)* DIKKE BAAP * RIOT SHIFT * S*Y*N*K * TITI * USH * 333CXT * CAMILLA V * GREEKZ B2B KARAMUSTAN * LAURA VOM JUPITER  SECOND FLOOR HOSTED BY ???* 4GIVEN * BASSSTØRM * LASZR * V Λ N Y * VYKATo assure the party a safer space';
+    const result = separateStructuredEventContent(description);
+    expect(result.lineupCandidates).toEqual(
+      expect.arrayContaining([
+        'DIKKE BAAP',
+        'RIOT SHIFT',
+        'GREEKZ B2B KARAMUSTAN',
+        'LAURA VOM JUPITER',
+        'VYKA',
+      ]),
+    );
+    expect(result.lineupCandidates.some((artist) => /to assure/i.test(artist))).toBe(false);
+    expect(detectStructuredDescriptionLeakage(result.descriptionResidual).recoverable).toBe(false);
+  });
+
   it('connector-agnostic rausgegangen-like mixed content', () => {
     const result = separateStructuredEventContent(`Freitag im Club — wir feiern zusammen.
 

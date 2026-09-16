@@ -1,0 +1,19 @@
+{
+  "bounds": {
+    "maxRegions": 45,
+    "maxExpansionDepth": 3,
+    "maxLocationSurfaces": 150,
+    "maxLocationCandidates": 500,
+    "maxGraphRequests": 12000,
+    "listingConcurrency": 2,
+    "detailConcurrency": 4,
+    "activeWindowDays": 90,
+    "requestDelayMs": 250,
+    "fetchTimeoutMs": 25000,
+    "maxRetries": 2
+  },
+  "cacheDir": "C:\\Users\\manue\\.cursor\\projects\\c-ER\\wt-import-reference-baseline\\artifacts\\m9-4a-rausgegangen-germany-discovery\\http-cache",
+  "checkpointPath": "C:\\Users\\manue\\.cursor\\projects\\c-ER\\wt-import-reference-baseline\\artifacts\\m9-4c-rausgegangen-acquisition-coverage\\acquisition-checkpoint.json",
+  "baselineCommit": "de6e8ed56ff1130242218310bc420b3e66ba84b3",
+  "referenceInstant": "2026-09-16T19:48:10.618Z"
+}

@@ -15,6 +15,7 @@ export interface FetchResult {
 
 export interface RausgegangenFetchOptions {
   cacheDir?: string;
+  skipCache?: boolean;
   requestDelayMs?: number;
   timeoutMs?: number;
   maxRetries?: number;
@@ -48,7 +49,7 @@ export async function fetchRausgegangenHtml(
   options: RausgegangenFetchOptions = {},
 ): Promise<FetchResult> {
   const cacheDir = options.cacheDir;
-  if (cacheDir) {
+  if (cacheDir && !options.skipCache) {
     const cached = readCache(cacheDir, url);
     if (cached != null) {
       return { ok: true, status: 200, html: cached, finalUrl: url, fromCache: true };

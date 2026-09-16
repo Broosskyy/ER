@@ -1,6 +1,8 @@
 import type { ElectronicRelevance } from './types';
 import type { DetailAccessStatus } from './detail-types';
 
+export type LineupDomainBoost = 'HIGH' | 'LIKELY' | 'NONE';
+
 export interface RelevanceEvidenceInput {
   title: string;
   description?: string;
@@ -9,6 +11,8 @@ export interface RelevanceEvidenceInput {
   venueName?: string;
   organizerName?: string;
   detailAccess?: DetailAccessStatus;
+  lineupDomainBoost?: LineupDomainBoost;
+  lineupElectronicArtistCount?: number;
 }
 
 export interface RelevanceEvidenceResult {
@@ -293,6 +297,34 @@ export function classifyRelevanceEvidence(input: RelevanceEvidenceInput): Releva
       weakPositiveHits,
       negativeHits,
     };
+  }
+
+  if (
+    input.lineupDomainBoost === 'HIGH' ||
+    (input.lineupElectronicArtistCount ?? 0) >= 2
+  ) {
+    return {
+      relevance: 'HIGH_RELEVANCE',
+      reasons: [...reasons, 'lineup_electronic_artist_consensus'],
+      strongPositiveHits: [...strongPositiveHits, 'lineup_consensus'],
+      weakPositiveHits,
+      negativeHits,
+    };
+  }
+
+  if (input.lineupDomainBoost === 'LIKELY' || (input.lineupHints?.length ?? 0) >= 5) {
+    const clubLineupSignal =
+      (input.lineupHints?.length ?? 0) >= 5 &&
+      /(?:klub|club|floor|rave|night|b2b)/i.test(corpus);
+    if (input.lineupDomainBoost === 'LIKELY' || clubLineupSignal) {
+      return {
+        relevance: 'LIKELY_RELEVANT',
+        reasons: [...reasons, 'lineup_multi_artist_club_evidence'],
+        strongPositiveHits,
+        weakPositiveHits: [...weakPositiveHits, 'lineup_structure'],
+        negativeHits,
+      };
+    }
   }
 
   if (hasWeakPositive) {

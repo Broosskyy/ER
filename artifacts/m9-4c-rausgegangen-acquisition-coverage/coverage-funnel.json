@@ -1,0 +1,20 @@
+{
+  "citySurfaceCount": 45,
+  "locationSurfaceCandidates": 7651,
+  "locationSurfacesQualified": 6652,
+  "locationSurfacesCrawled": 793,
+  "cityDiscovered": 11207,
+  "locationDiscovered": 8769,
+  "cityOnly": 9721,
+  "locationOnly": 7283,
+  "cityAndLocation": 1486,
+  "unionDiscovered": 18490,
+  "electronicHigh": 536,
+  "electronicLikely": 30,
+  "electronicAmbiguous": 11369,
+  "irrelevant": 6555,
+  "netNew": 18475,
+  "qualityReady": 5614,
+  "locationOnlyElectronicRelevant": 348,
+  "locationOnlyQualityReady": 3888
+}

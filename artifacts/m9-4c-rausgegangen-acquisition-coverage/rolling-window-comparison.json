@@ -1,0 +1,30 @@
+{
+  "comparison": [
+    {
+      "windowDays": 30,
+      "discoveredCount": 6262,
+      "upcomingCount": 6262,
+      "estimatedDetailRequests": 6262
+    },
+    {
+      "windowDays": 60,
+      "discoveredCount": 8191,
+      "upcomingCount": 8191,
+      "estimatedDetailRequests": 8191
+    },
+    {
+      "windowDays": 90,
+      "discoveredCount": 9159,
+      "upcomingCount": 9159,
+      "estimatedDetailRequests": 9159
+    },
+    {
+      "windowDays": 120,
+      "discoveredCount": 9394,
+      "upcomingCount": 9394,
+      "estimatedDetailRequests": 9394
+    }
+  ],
+  "chosenWindowDays": 90,
+  "rationale": "90 days balances near-term completeness, ticket freshness, and bounded source load versus 30/60 day under-coverage risk."
+}
