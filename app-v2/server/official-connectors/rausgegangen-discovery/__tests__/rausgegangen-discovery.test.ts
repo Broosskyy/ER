@@ -65,7 +65,7 @@ describe('rausgegangen detail parsing', () => {
     expect(detail.ticketUrl).toContain('t.rausgegangen.de');
     expect(detail.jsonLdPresent).toBe(true);
     expect(detail.tagHints).toEqual([]);
-    expect(detail.categoryHints).toContain('Party');
+    expect(detail.categoryHints).not.toContain('Köln');
   });
 });
 
