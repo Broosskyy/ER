@@ -1,0 +1,162 @@
+[
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "title": "Utopian Summer",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "AMBIGUOUS",
+    "negativeHits": [],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "house"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3",
+    "title": "Verkäufer werden beim Vintage Flohmarkt in Köln Ehrenfeld",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "IRRELEVANT",
+    "negativeHits": [
+      "flea_market",
+      "market_seller"
+    ],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": true
+  },
+  {
+    "identityKey": "rausgegangen:vintage-flohmarkt-7",
+    "title": "Vintage Flohmarkt",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "IRRELEVANT",
+    "negativeHits": [
+      "flea_market"
+    ],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": true
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "title": "Afterwork Deepdive IV",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "AMBIGUOUS",
+    "negativeHits": [],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:song-writing-session-49",
+    "title": "SONG-WRITING SESSION",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "IRRELEVANT",
+    "negativeHits": [
+      "workshop"
+    ],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": true
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "title": "Frame Sommer Closing",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "AMBIGUOUS",
+    "negativeHits": [],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0",
+    "title": "SPRUNGBRETT 2026 | Liveshow I mit THE HALF ORPHANS, INO YIN, NOAH JUAN und MONDWILD",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "AMBIGUOUS",
+    "negativeHits": [
+      "liveshow"
+    ],
+    "strongPositiveHits": [],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "title": "FRIENDS HOUSE",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "house"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "title": "TRANCE STATION",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "trance"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "title": "COFFEE PARTY RAVE",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "rave"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-24",
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "rave"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "techno"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "rave"
+    ],
+    "likelyFalsePositive": false
+  },
+  {
+    "identityKey": "rausgegangen:henge-galaktischer-rave-0",
+    "title": "Henge – Galaktischer Rave",
+    "m94aRelevance": "HIGH_RELEVANCE",
+    "currentRelevance": "HIGH_RELEVANCE",
+    "negativeHits": [],
+    "strongPositiveHits": [
+      "rave"
+    ],
+    "likelyFalsePositive": false
+  }
+]

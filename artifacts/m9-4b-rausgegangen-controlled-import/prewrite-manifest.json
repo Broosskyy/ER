@@ -1,0 +1,197 @@
+[
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "title": "Utopian Summer",
+    "sourceUrl": "https://rausgegangen.de/events/utopian-summer-0/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+    "sourceUrl": "https://rausgegangen.de/events/five-2-nine-001-house-boot-0/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3",
+    "title": "Verkäufer werden beim Vintage Flohmarkt in Köln Ehrenfeld",
+    "sourceUrl": "https://rausgegangen.de/events/verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3/",
+    "prewriteState": "BLOCKED_RELEVANCE",
+    "prewriteReasons": [
+      "negative:flea_market",
+      "negative:market_seller",
+      "strong_positive:house",
+      "weak_positive:dj",
+      "definitive_non_electronic_override"
+    ],
+    "relevance": "IRRELEVANT",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:vintage-flohmarkt-7",
+    "title": "Vintage Flohmarkt",
+    "sourceUrl": "https://rausgegangen.de/events/vintage-flohmarkt-7/",
+    "prewriteState": "BLOCKED_RELEVANCE",
+    "prewriteReasons": [
+      "negative:flea_market",
+      "strong_positive:house",
+      "weak_positive:dj",
+      "definitive_non_electronic_override"
+    ],
+    "relevance": "IRRELEVANT",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "title": "Afterwork Deepdive IV",
+    "sourceUrl": "https://rausgegangen.de/events/afterwork-deepdive-iv-0/",
+    "prewriteState": "BLOCKED_MEDIA",
+    "prewriteReasons": [
+      "NO_ACCEPTABLE_EVENT_MEDIA"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:song-writing-session-49",
+    "title": "SONG-WRITING SESSION",
+    "sourceUrl": "https://rausgegangen.de/events/song-writing-session-49/",
+    "prewriteState": "BLOCKED_RELEVANCE",
+    "prewriteReasons": [
+      "negative:workshop",
+      "strong_positive:house",
+      "weak_positive:club",
+      "weak_positive:night",
+      "definitive_non_electronic_override"
+    ],
+    "relevance": "IRRELEVANT",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "title": "Frame Sommer Closing",
+    "sourceUrl": "https://rausgegangen.de/events/frame-sommer-closing-0/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0",
+    "title": "SPRUNGBRETT 2026 | Liveshow I mit THE HALF ORPHANS, INO YIN, NOAH JUAN und MONDWILD",
+    "sourceUrl": "https://rausgegangen.de/events/sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0/",
+    "prewriteState": "BLOCKED_RELEVANCE",
+    "prewriteReasons": [
+      "ambiguous_relevance",
+      "negative:liveshow",
+      "strong_positive:house",
+      "conflict:mixed_electronic_and_non_electronic"
+    ],
+    "relevance": "AMBIGUOUS",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "title": "FRIENDS HOUSE",
+    "sourceUrl": "https://rausgegangen.de/events/friends-house-1/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "title": "TRANCE STATION",
+    "sourceUrl": "https://rausgegangen.de/events/trance-station-1/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "title": "COFFEE PARTY RAVE",
+    "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+    "prewriteState": "READY_EXISTING_MATCH",
+    "prewriteReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "EXISTING_EXACT",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-24",
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-24/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+    "sourceUrl": "https://rausgegangen.de/events/techno-dampfer-dusseldorf-w-klaudia-gawlas-0/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+    "sourceUrl": "https://rausgegangen.de/events/nostalgia-mega-90er-rave-dresden-1909-0/",
+    "prewriteState": "READY_NEW",
+    "prewriteReasons": [],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  },
+  {
+    "identityKey": "rausgegangen:henge-galaktischer-rave-0",
+    "title": "Henge – Galaktischer Rave",
+    "sourceUrl": "https://rausgegangen.de/events/henge-galaktischer-rave-0/",
+    "prewriteState": "BLOCKED_MEDIA",
+    "prewriteReasons": [
+      "NO_ACCEPTABLE_EVENT_MEDIA"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "matchClassification": "NET_NEW",
+    "passesQualityContract": true,
+    "qualityContractBypass": false
+  }
+]

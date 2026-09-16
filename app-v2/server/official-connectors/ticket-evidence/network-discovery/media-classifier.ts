@@ -19,6 +19,10 @@ export function classifyTicketIoMediaUrl(url: string, context?: { title?: string
     return 'announcement_flyer';
   }
 
+  if (/giftpackages\/magic_moment|\/assets\/checkout\/giftpackages\//i.test(lower)) {
+    return 'ticket_marketing';
+  }
+
   if (/logo|brand|company/i.test(lower)) {
     return 'organizer_branding';
   }
@@ -32,6 +36,19 @@ export function classifyTicketIoMediaUrl(url: string, context?: { title?: string
   }
 
   if (/cdn\.ticket\.io/i.test(url)) {
+    return 'event_flyer';
+  }
+
+  if (/s3\.eu-central-1\.amazonaws\.com\/rausgegangen\//i.test(url)) {
+    if (/pexels|stock-photos|placeholder|workbook-anzeige/i.test(lower)) {
+      return 'decorative';
+    }
+    if (/logo|brand|icon|rausgegangen[_-]?logo/i.test(lower)) {
+      return 'organizer_branding';
+    }
+    if (/flyer|poster|banner|cover|header|live|tour|querformat|instagram-post/i.test(lower)) {
+      return 'event_flyer';
+    }
     return 'event_flyer';
   }
 

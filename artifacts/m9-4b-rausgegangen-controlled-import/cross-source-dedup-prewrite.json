@@ -1,0 +1,153 @@
+[
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:vintage-flohmarkt-7",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:song-writing-session-49",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "matchClassification": "EXISTING_EXACT",
+    "matchedEventId": "d9c69a76-a602-42cf-bca5-52eb87a1e42f",
+    "matchedEventTitle": "COFFEE PARTY RAVE",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-24",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:henge-galaktischer-rave-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ]
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-09-16T11:07:30.077Z",
+  "status": "M9_4B_RAUSGEGANGEN_CONTROLLED_STAGING_IMPORT_VERIFIED",
+  "localHead": "409fe93970b6d93b6fa62fe6d72208a63fd0ff2b",
+  "remoteHead": "409fe93970b6d93b6fa62fe6d72208a63fd0ff2b",
+  "localEqualsRemote": true,
+  "originalCandidates": 15,
+  "actuallyImported": 8,
+  "matchedExisting": 1,
+  "blocked": 6,
+  "reviewRequired": 0,
+  "importedTitles": [
+    "Utopian Summer",
+    "FIVE 2 NINE - 001 HOUSE-BOOT",
+    "Frame Sommer Closing",
+    "FRIENDS HOUSE",
+    "TRANCE STATION",
+    "COFFEE PARTY RAVE",
+    "KYTES /// Indie Rave Tour 2026 & 2027",
+    "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+    "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09."
+  ],
+  "prewriteSummary": {
+    "originalCandidates": 15,
+    "liveRevalidated": 15,
+    "readyNew": 8,
+    "readyExistingMatch": 1,
+    "reviewRequired": 0,
+    "blocked": 6,
+    "irrelevant": 4,
+    "blockedByState": {
+      "READY_NEW": 8,
+      "BLOCKED_RELEVANCE": 4,
+      "BLOCKED_MEDIA": 2,
+      "READY_EXISTING_MATCH": 1
+    }
+  },
+  "globalGenre": {
+    "genrePresenceCoverage": 0.9622641509433962,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0,
+    "knownWrongGenreAssignments": 0
+  },
+  "consumerParityFailures": 0,
+  "idempotency": {
+    "structurallyIdempotent": true,
+    "secondRun": {
+      "eventInserts": 0,
+      "eventUpdates": 0,
+      "lineupWrites": 0,
+      "genreWrites": 0,
+      "sourceBindingWrites": 0,
+      "ticketInserts": 0,
+      "ticketUpdates": 0,
+      "canonicalCreated": 0,
+      "canonicalMatched": 0,
+      "canonicalEnriched": 0,
+      "applied": true,
+      "planSummary": {
+        "eventInserts": 0,
+        "eventUpdates": 0,
+        "lineupWrites": 0,
+        "genreWrites": 0,
+        "descriptionWrites": 0,
+        "mediaWrites": 0,
+        "sourceBindingWrites": 0,
+        "reviewRequiredCount": 0,
+        "idempotentPlans": 9
+      }
+    }
+  },
+  "productionMutations": 0,
+  "applyMode": true,
+  "manualAndroidQaRequired": true
+}

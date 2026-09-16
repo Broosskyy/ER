@@ -1,0 +1,24 @@
+{
+  "eventInserts": 0,
+  "eventUpdates": 0,
+  "lineupWrites": 0,
+  "genreWrites": 0,
+  "sourceBindingWrites": 0,
+  "ticketInserts": 0,
+  "ticketUpdates": 0,
+  "canonicalCreated": 0,
+  "canonicalMatched": 0,
+  "canonicalEnriched": 0,
+  "applied": true,
+  "planSummary": {
+    "eventInserts": 0,
+    "eventUpdates": 0,
+    "lineupWrites": 0,
+    "genreWrites": 0,
+    "descriptionWrites": 0,
+    "mediaWrites": 0,
+    "sourceBindingWrites": 0,
+    "reviewRequiredCount": 0,
+    "idempotentPlans": 9
+  }
+}

@@ -1,5 +1,7 @@
 export const RAUSGEGANGEN_BASE_URL = 'https://rausgegangen.de';
 
+export const RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID = 'rausgegangen-discovery';
+
 export const RAUSGEGANGEN_DISCOVERY_USER_AGENT =
   'EternalRave-M9.4A-GermanyDiscovery/1.0 (+research; read-only; no-automation)';
 

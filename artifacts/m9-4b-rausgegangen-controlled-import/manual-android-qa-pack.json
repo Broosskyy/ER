@@ -1,0 +1,109 @@
+{
+  "manualAndroidQaRequired": true,
+  "events": [
+    {
+      "title": "Utopian Summer",
+      "city": "Köln",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/utopian-summer-0/"
+    },
+    {
+      "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+      "city": "Köln",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/five-2-nine-001-house-boot-0/"
+    },
+    {
+      "title": "Frame Sommer Closing",
+      "city": "Hamburg",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/frame-sommer-closing-0/"
+    },
+    {
+      "title": "FRIENDS HOUSE",
+      "city": "Frankfurt am Main",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/friends-house-1/"
+    },
+    {
+      "title": "TRANCE STATION",
+      "city": "Stuttgart",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/trance-station-1/"
+    },
+    {
+      "title": "COFFEE PARTY RAVE",
+      "city": "Leipzig",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/"
+    },
+    {
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+      "city": "Essen",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Confirm no fake lineup section",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-24/"
+    },
+    {
+      "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+      "city": "Düsseldorf",
+      "checks": [
+        "Verify title and date on card",
+        "Verify genre badges match source",
+        "Verify lineup section renders",
+        "Verify description has no ticket/lineup leakage",
+        "Verify flyer image is event-specific",
+        "Tap ticket CTA and confirm correct destination"
+      ],
+      "sourceUrl": "https://rausgegangen.de/events/techno-dampfer-dusseldorf-w-klaudia-gawlas-0/"
+    }
+  ]
+}

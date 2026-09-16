@@ -1,0 +1,15 @@
+{
+  "eventInserts": 8,
+  "eventUpdates": 0,
+  "lineupWrites": 1,
+  "genreWrites": 11,
+  "sourceBindingWrites": 8,
+  "ticketInserts": 0,
+  "ticketUpdates": 0,
+  "canonicalCreated": 8,
+  "canonicalMatched": 0,
+  "canonicalEnriched": 0,
+  "applied": true,
+  "readyCandidates": 9,
+  "blockedCandidates": 6
+}

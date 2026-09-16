@@ -171,13 +171,29 @@ async function main(): Promise<void> {
   );
   const netNewRelevant = relevantEnriched.filter((event) => event.matchClassification === 'NET_NEW');
   const qualityContracts = detailEnriched.map((event) => evaluateImportCandidateQualityContract(event));
-  const qualityReady = qualityContracts.filter(
-    (entry) =>
-      entry.passesQualityContract &&
-      !entry.qualityContractBypass &&
-      (entry.domainState === 'ELECTRONIC_HIGH' || entry.domainState === 'ELECTRONIC_MEDIUM') &&
-      entry.identityState === 'NET_NEW',
-  );
+  const netNewUpcoming = upcomingEnriched.filter((event) => event.matchClassification === 'NET_NEW');
+  const qualityReady = netNewUpcoming
+    .map((event) => ({
+      event,
+      contract: evaluateImportCandidateQualityContract(event),
+    }))
+    .filter(
+      ({ event, contract }) =>
+        contract.passesQualityContract &&
+        !contract.qualityContractBypass &&
+        (contract.domainState === 'ELECTRONIC_HIGH' || contract.domainState === 'ELECTRONIC_MEDIUM') &&
+        (event.relevance === 'HIGH_RELEVANCE' || event.relevance === 'LIKELY_RELEVANT'),
+    );
+  const qualityReadyCount = qualityReady.length;
+  const qualityReadyAmbiguousDomainOnly = netNewUpcoming.filter((event) => {
+    const contract = evaluateImportCandidateQualityContract(event);
+    return (
+      contract.passesQualityContract &&
+      (contract.domainState === 'ELECTRONIC_HIGH' || contract.domainState === 'ELECTRONIC_MEDIUM') &&
+      event.relevance !== 'HIGH_RELEVANCE' &&
+      event.relevance !== 'LIKELY_RELEVANT'
+    );
+  }).length;
   const proposedBatch = selectProposedM94BBatch(discovery.enrichedEvents, 15);
 
   const unknownRegistry = new Map<string, UnknownGenreCandidate>();
@@ -385,8 +401,9 @@ async function main(): Promise<void> {
     existingStrong: detailEnriched.filter((event) => event.matchClassification === 'EXISTING_STRONG_MATCH').length,
     possibleMatch: detailEnriched.filter((event) => event.matchClassification === 'POSSIBLE_MATCH').length,
     netNewRelevant: netNewRelevant.length,
-    qualityReady: qualityReady.length,
-    netNewBlocked: Math.max(0, netNewRelevant.length - qualityReady.length),
+    qualityReady: qualityReadyCount,
+    qualityReadyAmbiguousDomainOnly,
+    netNewBlocked: Math.max(0, netNewRelevant.length - qualityReadyCount),
     note: 'Relevance/identity/net-new metrics computed on detail-enriched upcoming subset (max 2500 in this run).',
   });
   writeJson('quality-contract-dry-run.json', {
@@ -462,7 +479,8 @@ async function main(): Promise<void> {
     uniqueEventUrls: discovery.summary.uniqueEventUrls,
     detailFetched: discovery.summary.detailFetched,
     netNewRelevant: netNewRelevant.length,
-    qualityReady: qualityReady.length,
+    qualityReady: qualityReadyCount,
+    qualityReadyAmbiguousDomainOnly,
     proposedBatchSize: proposedBatch.length,
     decisionState,
     productionMutations: 0,
@@ -474,7 +492,8 @@ async function main(): Promise<void> {
     uniqueEventUrls: discovery.summary.uniqueEventUrls,
     netNewRelevant: netNewRelevant.length,
     proposedBatchSize: proposedBatch.length,
-    qualityReady: qualityReady.length,
+    qualityReady: qualityReadyCount,
+    qualityReadyAmbiguousDomainOnly,
   }, null, 2));
 }
 

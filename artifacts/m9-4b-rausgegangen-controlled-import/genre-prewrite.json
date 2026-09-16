@@ -1,0 +1,107 @@
+[
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "genres": 2,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:vintage-flohmarkt-7",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:song-writing-session-49",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "genres": 2,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "genres": 2,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "genres": 0,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-24",
+    "genres": 1,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "genres": 2,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "genres": 0,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  },
+  {
+    "identityKey": "rausgegangen:henge-galaktischer-rave-0",
+    "genres": 0,
+    "genrePresence": true,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0
+  }
+]
