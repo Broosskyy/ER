@@ -1,0 +1,9 @@
+{
+  "listingFetchSuccess": 40,
+  "listingFetchFailed": 5,
+  "detailFetchSuccess": 2500,
+  "detailFetchFailed": 0,
+  "blockedRequests": 0,
+  "timeouts": 0,
+  "parseFailures": 0
+}

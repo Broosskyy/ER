@@ -1,0 +1,620 @@
+[
+  {
+    "slug": "cologne",
+    "displayName": "Köln",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/cologne/",
+    "reachable": true,
+    "listingEventCount": 453,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "berlin",
+    "displayName": "Berlin",
+    "bundesland": "Berlin",
+    "stateCode": "DE-BE",
+    "listingSurface": "https://rausgegangen.de/berlin/",
+    "reachable": true,
+    "listingEventCount": 467,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "hamburg",
+    "displayName": "Hamburg",
+    "bundesland": "Hamburg",
+    "stateCode": "DE-HH",
+    "listingSurface": "https://rausgegangen.de/hamburg/",
+    "reachable": true,
+    "listingEventCount": 442,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "muenchen",
+    "displayName": "München",
+    "bundesland": "Bayern",
+    "stateCode": "DE-BY",
+    "listingSurface": "https://rausgegangen.de/muenchen/",
+    "reachable": true,
+    "listingEventCount": 472,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "frankfurt",
+    "displayName": "Frankfurt am Main",
+    "bundesland": "Hessen",
+    "stateCode": "DE-HE",
+    "listingSurface": "https://rausgegangen.de/frankfurt/",
+    "reachable": true,
+    "listingEventCount": 374,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "stuttgart",
+    "displayName": "Stuttgart",
+    "bundesland": "Baden-Württemberg",
+    "stateCode": "DE-BW",
+    "listingSurface": "https://rausgegangen.de/stuttgart/",
+    "reachable": true,
+    "listingEventCount": 406,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "leipzig",
+    "displayName": "Leipzig",
+    "bundesland": "Sachsen",
+    "stateCode": "DE-SN",
+    "listingSurface": "https://rausgegangen.de/leipzig/",
+    "reachable": true,
+    "listingEventCount": 428,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "dortmund",
+    "displayName": "Dortmund",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/dortmund/",
+    "reachable": true,
+    "listingEventCount": 413,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "essen",
+    "displayName": "Essen",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/essen/",
+    "reachable": true,
+    "listingEventCount": 294,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "duesseldorf",
+    "displayName": "Düsseldorf",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/duesseldorf/",
+    "reachable": true,
+    "listingEventCount": 446,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "bonn",
+    "displayName": "Bonn",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/bonn/",
+    "reachable": true,
+    "listingEventCount": 356,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "bremen",
+    "displayName": "Bremen",
+    "bundesland": "Bremen",
+    "stateCode": "DE-HB",
+    "listingSurface": "https://rausgegangen.de/bremen/",
+    "reachable": true,
+    "listingEventCount": 392,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "hannover",
+    "displayName": "Hannover",
+    "bundesland": "Niedersachsen",
+    "stateCode": "DE-NI",
+    "listingSurface": "https://rausgegangen.de/hannover/",
+    "reachable": true,
+    "listingEventCount": 318,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "nuernberg",
+    "displayName": "Nürnberg",
+    "bundesland": "Bayern",
+    "stateCode": "DE-BY",
+    "listingSurface": "https://rausgegangen.de/nuernberg/",
+    "reachable": false,
+    "listingEventCount": 0,
+    "paginationDepth": 1,
+    "coverageClass": "NONE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "dresden",
+    "displayName": "Dresden",
+    "bundesland": "Sachsen",
+    "stateCode": "DE-SN",
+    "listingSurface": "https://rausgegangen.de/dresden/",
+    "reachable": true,
+    "listingEventCount": 396,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "karlsruhe",
+    "displayName": "Karlsruhe",
+    "bundesland": "Baden-Württemberg",
+    "stateCode": "DE-BW",
+    "listingSurface": "https://rausgegangen.de/karlsruhe/",
+    "reachable": true,
+    "listingEventCount": 224,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "mannheim",
+    "displayName": "Mannheim",
+    "bundesland": "Baden-Württemberg",
+    "stateCode": "DE-BW",
+    "listingSurface": "https://rausgegangen.de/mannheim/",
+    "reachable": true,
+    "listingEventCount": 265,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "aachen",
+    "displayName": "Aachen",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/aachen/",
+    "reachable": true,
+    "listingEventCount": 288,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "bochum",
+    "displayName": "Bochum",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/bochum/",
+    "reachable": true,
+    "listingEventCount": 301,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "muenster",
+    "displayName": "Münster",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/muenster/",
+    "reachable": true,
+    "listingEventCount": 286,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "wiesbaden",
+    "displayName": "Wiesbaden",
+    "bundesland": "Hessen",
+    "stateCode": "DE-HE",
+    "listingSurface": "https://rausgegangen.de/wiesbaden/",
+    "reachable": true,
+    "listingEventCount": 212,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "mainz",
+    "displayName": "Mainz",
+    "bundesland": "Rheinland-Pfalz",
+    "stateCode": "DE-RP",
+    "listingSurface": "https://rausgegangen.de/mainz/",
+    "reachable": true,
+    "listingEventCount": 264,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "kiel",
+    "displayName": "Kiel",
+    "bundesland": "Schleswig-Holstein",
+    "stateCode": "DE-SH",
+    "listingSurface": "https://rausgegangen.de/kiel/",
+    "reachable": true,
+    "listingEventCount": 176,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "freiburg",
+    "displayName": "Freiburg im Breisgau",
+    "bundesland": "Baden-Württemberg",
+    "stateCode": "DE-BW",
+    "listingSurface": "https://rausgegangen.de/freiburg/",
+    "reachable": true,
+    "listingEventCount": 307,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "rostock",
+    "displayName": "Rostock",
+    "bundesland": "Mecklenburg-Vorpommern",
+    "stateCode": "DE-MV",
+    "listingSurface": "https://rausgegangen.de/rostock/",
+    "reachable": true,
+    "listingEventCount": 126,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "potsdam",
+    "displayName": "Potsdam",
+    "bundesland": "Brandenburg",
+    "stateCode": "DE-BB",
+    "listingSurface": "https://rausgegangen.de/potsdam/",
+    "reachable": true,
+    "listingEventCount": 233,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "magdeburg",
+    "displayName": "Magdeburg",
+    "bundesland": "Sachsen-Anhalt",
+    "stateCode": "DE-ST",
+    "listingSurface": "https://rausgegangen.de/magdeburg/",
+    "reachable": true,
+    "listingEventCount": 140,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "erfurt",
+    "displayName": "Erfurt",
+    "bundesland": "Thüringen",
+    "stateCode": "DE-TH",
+    "listingSurface": "https://rausgegangen.de/erfurt/",
+    "reachable": true,
+    "listingEventCount": 273,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "saarbruecken",
+    "displayName": "Saarbrücken",
+    "bundesland": "Saarland",
+    "stateCode": "DE-SL",
+    "listingSurface": "https://rausgegangen.de/saarbruecken/",
+    "reachable": false,
+    "listingEventCount": 0,
+    "paginationDepth": 1,
+    "coverageClass": "NONE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "kassel",
+    "displayName": "Kassel",
+    "bundesland": "Hessen",
+    "stateCode": "DE-HE",
+    "listingSurface": "https://rausgegangen.de/kassel/",
+    "reachable": true,
+    "listingEventCount": 150,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "heidelberg",
+    "displayName": "Heidelberg",
+    "listingSurface": "https://rausgegangen.de/heidelberg/",
+    "reachable": true,
+    "listingEventCount": 304,
+    "paginationDepth": 1,
+    "coverageClass": "STRONG",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "augsburg",
+    "displayName": "Augsburg",
+    "listingSurface": "https://rausgegangen.de/augsburg/",
+    "reachable": true,
+    "listingEventCount": 223,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "wuppertal",
+    "displayName": "Wuppertal",
+    "listingSurface": "https://rausgegangen.de/wuppertal/",
+    "reachable": true,
+    "listingEventCount": 182,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "bielefeld",
+    "displayName": "Bielefeld",
+    "listingSurface": "https://rausgegangen.de/bielefeld/",
+    "reachable": true,
+    "listingEventCount": 193,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "chemnitz",
+    "displayName": "Chemnitz",
+    "bundesland": "Sachsen",
+    "stateCode": "DE-SN",
+    "listingSurface": "https://rausgegangen.de/chemnitz/",
+    "reachable": true,
+    "listingEventCount": 208,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "moenchengladbach",
+    "displayName": "Mönchengladbach",
+    "listingSurface": "https://rausgegangen.de/moenchengladbach/",
+    "reachable": false,
+    "listingEventCount": 0,
+    "paginationDepth": 1,
+    "coverageClass": "NONE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "krefeld",
+    "displayName": "Krefeld",
+    "listingSurface": "https://rausgegangen.de/krefeld/",
+    "reachable": true,
+    "listingEventCount": 227,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "luebeck",
+    "displayName": "Lübeck",
+    "bundesland": "Schleswig-Holstein",
+    "stateCode": "DE-SH",
+    "listingSurface": "https://rausgegangen.de/luebeck/",
+    "reachable": false,
+    "listingEventCount": 0,
+    "paginationDepth": 1,
+    "coverageClass": "NONE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "oberhausen",
+    "displayName": "Oberhausen",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "listingSurface": "https://rausgegangen.de/oberhausen/",
+    "reachable": true,
+    "listingEventCount": 157,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "oldenburg",
+    "displayName": "Oldenburg",
+    "listingSurface": "https://rausgegangen.de/oldenburg/",
+    "reachable": true,
+    "listingEventCount": 271,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "osnabrueck",
+    "displayName": "Osnabrueck",
+    "listingSurface": "https://rausgegangen.de/osnabrueck/",
+    "reachable": false,
+    "listingEventCount": 0,
+    "paginationDepth": 1,
+    "coverageClass": "NONE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "paderborn",
+    "displayName": "Paderborn",
+    "listingSurface": "https://rausgegangen.de/paderborn/",
+    "reachable": true,
+    "listingEventCount": 81,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "trier",
+    "displayName": "Trier",
+    "listingSurface": "https://rausgegangen.de/trier/",
+    "reachable": true,
+    "listingEventCount": 126,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "siegen",
+    "displayName": "Siegen",
+    "listingSurface": "https://rausgegangen.de/siegen/",
+    "reachable": true,
+    "listingEventCount": 107,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  },
+  {
+    "slug": "jena",
+    "displayName": "Jena",
+    "listingSurface": "https://rausgegangen.de/jena/",
+    "reachable": true,
+    "listingEventCount": 114,
+    "paginationDepth": 1,
+    "coverageClass": "MODERATE",
+    "notes": [
+      "bundesland_unresolved",
+      "priority_metro"
+    ]
+  }
+]

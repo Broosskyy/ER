@@ -1,0 +1,14 @@
+[
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "matchedEventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "sourceUrl": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/",
+    "enrichmentDimensions": [
+      "description",
+      "genre",
+      "media",
+      "ticket"
+    ]
+  }
+]

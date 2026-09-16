@@ -1,0 +1,30 @@
+{
+  "platform": "rausgegangen.de",
+  "listingSurfaces": [
+    "/{city}/",
+    "/{city}/tags/{tag}/",
+    "/sitemap-events.xml"
+  ],
+  "detailSurfaces": [
+    "/events/{slug}/"
+  ],
+  "structuredData": [
+    "application/ld+json Event",
+    "application/ld+json BreadcrumbList"
+  ],
+  "ticketBackend": [
+    "t.rausgegangen.de",
+    "zentrale.events"
+  ],
+  "imageCdn": [
+    "imageflow.rausgegangen.de",
+    "s3.eu-central-1.amazonaws.com/rausgegangen"
+  ],
+  "rendering": "server_rendered_html",
+  "pagination": "single_page_city_listing",
+  "notes": [
+    "City slug is English (cologne not koeln)",
+    "City pages embed full event link graph in SSR HTML",
+    "Event detail pages expose schema.org Event JSON-LD"
+  ]
+}

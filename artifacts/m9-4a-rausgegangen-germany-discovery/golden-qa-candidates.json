@@ -1,0 +1,304 @@
+{
+  "multiGenre": {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "eventSlug": "mittwochenende-in-odonien-6",
+    "regionSlug": "cologne",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "lifecycle": "UPCOMING",
+    "lineupHints": [],
+    "genreHints": [
+      "Hard Techno",
+      "Hard Bounce",
+      "Trance",
+      "Techno",
+      "Bounce"
+    ],
+    "imageUrls": [
+      "https://s3.eu-central-1.amazonaws.com/rausgegangen/Dxj1ejvRZmIL1debjoFF_160926-odonienrausgegangen01.jpg"
+    ],
+    "canonicalUrl": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/",
+    "listingSurfaces": [
+      "https://rausgegangen.de/cologne/"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:trance",
+      "strong_positive:dnb_short",
+      "strong_positive:hard_techno_abbrev",
+      "weak_positive:club",
+      "weak_positive:b2b"
+    ],
+    "matchClassification": "REVIEW_REQUIRED",
+    "matchReasons": [],
+    "detailFetched": true,
+    "detailAccess": "DETAIL_ACCESSIBLE",
+    "description": "#MITTWOCHENENDE feat. ART OF URBAN LIFE x NEON DREAMSMi. 16.09.26 ab 23 Uhr Abendkasse durchgehend verfügbar. Cashless Payment vor Ort möglich. ----------------------------------------LINEUP:#bounce #hardbounce #trance ● AMON ● NORDCORREIA.MP3 B2B DOCTOR MÜCKE ● LSG ● CAROLINKA ● NSLZ#techno #hardtechno ● STELLA MARIA ● MAURO ● RAFFA ● VYKA ● RUSSEL B2B FLUMMI#dnb #bassbus ● TBA-------------------------------------------- Beats x Bass x Links: https://linktr.ee/beatsbasscologne -------------------------------------------- Adresse: Odonien - Hornstr. 85 - 50823 Köln www.odonien.de  Im Club gilt absolutes Fotoverbot! Odonien soll ein Ort sein, an dem gelebte Solidarität an erster Stelle steht. Wir laden alle Menschen ein, eine gute Zeit miteinander zu verbringen. Jegliche Form von Diskriminierung soll hier keinen Platz finden. Gemeinsam wollen wir einen Raum schaffen, in dem sich alle akzeptiert und respektiert fühlen. Kennt eure eigenen Grenzen und beachte die Grenzen von anderen Menschen. Passt aufeinander auf! NO PHONE CLUB ∙ WATCH YOUR DRINK ∙ ONLY YES MEANS YES ∙ RESPECT EACH OTHER ∙ NO GHB/GBL ∙ NO SHIRT NO PARTY",
+    "startsAt": "2026-09-16T23:00+0200",
+    "endsAt": "2026-09-17T07:00+0200",
+    "venueName": "Odonien",
+    "city": "Köln",
+    "address": "Hornstraße 85",
+    "organizerName": "Beats x Bass x Cologne",
+    "ticketUrl": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+    "ticketPriceMinor": 1390,
+    "ticketCurrency": "EUR"
+  },
+  "ticketRedirect": {
+    "identityKey": "rausgegangen:middance-crisis-die-20-party-0",
+    "eventSlug": "middance-crisis-die-20-party-0",
+    "regionSlug": "cologne",
+    "title": "MIDDANCE CRISIS  – Die 20. Party",
+    "lifecycle": "UPCOMING",
+    "lineupHints": [],
+    "genreHints": [],
+    "imageUrls": [
+      "https://s3.eu-central-1.amazonaws.com/rausgegangen/xFNjNaoNTqajLBv4jd08_september.jpg"
+    ],
+    "canonicalUrl": "https://rausgegangen.de/events/middance-crisis-die-20-party-0/",
+    "listingSurfaces": [
+      "https://rausgegangen.de/cologne/"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:electro"
+    ],
+    "matchClassification": "REVIEW_REQUIRED",
+    "matchReasons": [],
+    "detailFetched": true,
+    "detailAccess": "DETAIL_ACCESSIBLE",
+    "description": "Middance Crisis – Jubiläum für Murmeltiere und Frühaufsteher Im Mai 2024 fand die erste Middance Crisis statt. Am Freitag, den 18. September, feiern wir im Blue Shell unser erstes großes Jubiläum – die 20. Party - und damit alles, was diese Party inzwischen ausmacht: frühes Tanzen, volle Tanzflächen, offene Ohren, überraschende Songs und ein Publikum, das weder Genre- oder Altersgrenzen braucht. Die Middance Crisis ist die Party für tanzfreudige Murmeltiere und Frühaufsteher, egal welchen Alters und welchen Geschlechts. Einlass ist ab 19 Uhr. Während andere erst langsam ins Vorglühen starten, sind wir schon auf der Tanzfläche. Drei DJs, eine Frau und zwei Männer, sorgen mit unterschiedlichen musikalischen Schwerpunkten für viel Abwechslung an den Turntables und auf dem Dancefloor.Zu hören gibt es eine wilde Mischung aus tanzbarem Rock und Indie bis zu Pop, Electronic, Disco, R&B, Funk und Soul – aus den 70ern und 80ern bis heute. Wir feiern nicht nur eine weitere Party, sondern viele gemeinsame Abende, schöne Erinnerungen und vor allem: die Freude daran, tanzen zu gehen. Weitere Infos finden sich auf: https://middancecrisis.de/https://www.instagram.com/middance_crisis/ Eintritt: 10 € an der Abendkasse, 8 € im Vorverkauf (die Hälfte des Erlös geht als Spende an eine regionale Hilfsorganisation)",
+    "startsAt": "2026-09-18T19:00+0200",
+    "endsAt": "2026-09-18T23:00+0200",
+    "venueName": "Blue Shell",
+    "city": "Köln",
+    "address": "Luxemburger Straße 32",
+    "ticketUrl": "https://t.rausgegangen.de/tickets/middance-crisis-die-20-party",
+    "ticketPriceMinor": 908,
+    "ticketCurrency": "EUR"
+  },
+  "strongMedia": {
+    "identityKey": "rausgegangen:das-groe-houseterrasse-closing-2026-0",
+    "eventSlug": "das-groe-houseterrasse-closing-2026-0",
+    "regionSlug": "cologne",
+    "title": "Das große HouseTerrasse Closing 2026 ☀️🎶",
+    "lifecycle": "UPCOMING",
+    "lineupHints": [],
+    "genreHints": [
+      "House"
+    ],
+    "imageUrls": [
+      "https://s3.eu-central-1.amazonaws.com/rausgegangen/T6wbMRcjQY2nLNBq4udc_photo-2026-08-28-11-47-54.jpg"
+    ],
+    "canonicalUrl": "https://rausgegangen.de/events/das-groe-houseterrasse-closing-2026-0/",
+    "listingSurfaces": [
+      "https://rausgegangen.de/cologne/"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:house",
+      "weak_positive:dj"
+    ],
+    "matchClassification": "REVIEW_REQUIRED",
+    "matchReasons": [],
+    "detailFetched": true,
+    "detailAccess": "DETAIL_ACCESSIBLE",
+    "description": "Ein letzter Sommerabend über den Dächern von Köln. 🌇Bevor wir uns langsam vom Sommer verabschieden, drehen wir auf der SonnenscheinEtage noch ein letztes Mal richtig auf. Am 18. September 2026 heißt es: THE FINAL ONE – das große HOUSEterrasse Closing 2026!Von 17:00 bis 22:00 Uhr erwarten Euch House Sounds, kühle Drinks, Sonnenuntergang und natürlich einer der schönsten Ausblicke über Köln. 💛Für den passenden Sound sorgen:🎧 DJ TIMO C. 🎧 DJ LUCINEUnd wer früh kommt, wird belohnt: Die ersten 100 Gäste erhalten ein Freigetränk 🍾🍷 Zur Auswahl steht ein Flaschengetränk oder ein Glas Wein bzw. Prosecco.📅 Freitag, 18. September 2026 ⏰ 17:00 – 22:00 Uhr 📍 SonnenscheinEtage Köln An St. Agatha 19–25, Köln 🎟️ Eintritt: 7 €Noch einmal Sommer. Noch einmal House. Noch einmal Sonnenuntergang über Köln.THE FINAL ONE. Wir sehen uns auf dem Dach! ☀️🏙️🎶",
+    "startsAt": "2026-09-18T17:00+0200",
+    "endsAt": "2026-09-18T22:00+0200",
+    "venueName": "Sonnenscheinetage",
+    "city": "Köln",
+    "address": "An Sankt Agatha 19-25",
+    "ticketPriceMinor": 700,
+    "ticketCurrency": "EUR"
+  },
+  "existingMatch": {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "ticketIoEventId": "mittwochenende-in-odonien-6",
+    "shopId": "rausgegangen:cologne",
+    "shopSlug": "cologne",
+    "listingUrl": "https://rausgegangen.de/cologne/",
+    "eventUrl": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+    "canonicalUrl": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "startsAt": "2026-09-16T23:00+0200",
+    "endsAt": "2026-09-17T07:00+0200",
+    "lifecycle": "UPCOMING",
+    "venueName": "Odonien",
+    "city": "Köln",
+    "address": "Hornstraße 85",
+    "organizerName": "Beats x Bass x Cologne",
+    "description": "#MITTWOCHENENDE feat. ART OF URBAN LIFE x NEON DREAMSMi. 16.09.26 ab 23 Uhr Abendkasse durchgehend verfügbar. Cashless Payment vor Ort möglich. ----------------------------------------LINEUP:#bounce #hardbounce #trance AMON ● NORDCORREIA.MP3 B2B DOCTOR MÜCKE ● LSG ● CAROLINKA ● NSLZ#techno #hardtechno ● STELLA MARIA ● MAURO ● RAFFA ● VYKA ● RUSSEL B2B FLUMMI#dnb #bassbus ● TBA-------------------------------------------- Beats x Bass x Links: https://linktr.ee/beatsbasscologne -------------------------------------------- Adresse: Odonien - Hornstr. 85 - 50823 Köln www.odonien.de Im Club gilt absolutes Fotoverbot! Odonien soll ein Ort sein, an dem gelebte Solidarität an erster Stelle steht. Wir laden alle Menschen ein, eine gute Zeit miteinander zu verbringen. Jegliche Form von Diskriminierung soll hier keinen Platz finden. Gemeinsam wollen wir einen Raum schaffen, in dem sich alle akzeptiert und respektiert fühlen. Kennt eure eigenen Grenzen und beachte die Grenzen von anderen Menschen. Passt aufeinander auf! NO PHONE CLUB ∙ WATCH YOUR DRINK ∙ ONLY YES MEANS YES ∙ RESPECT EACH OTHER ∙ NO GHB/GBL ∙ NO SHIRT NO PARTY",
+    "descriptionQualification": "FULL_DESCRIPTION",
+    "lineupHints": [],
+    "lineupQualification": "NO_LINEUP",
+    "genreHints": [
+      "Hard Techno",
+      "Hard Bounce",
+      "Trance",
+      "Techno",
+      "Bounce"
+    ],
+    "genreCandidates": [
+      {
+        "label": "Hard Techno",
+        "confidence": "explicit"
+      },
+      {
+        "label": "Hard Bounce",
+        "confidence": "explicit"
+      },
+      {
+        "label": "Trance",
+        "confidence": "explicit"
+      },
+      {
+        "label": "Techno",
+        "confidence": "explicit"
+      },
+      {
+        "label": "Bounce",
+        "confidence": "explicit"
+      }
+    ],
+    "outboundLinks": [
+      "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6"
+    ],
+    "verifiedOutbound": [
+      {
+        "url": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "role": "unknown",
+        "verified": false,
+        "verificationReasons": [
+          "non_authoritative_surface"
+        ]
+      }
+    ],
+    "imageUrls": [
+      "https://s3.eu-central-1.amazonaws.com/rausgegangen/Dxj1ejvRZmIL1debjoFF_160926-odonienrausgegangen01.jpg"
+    ],
+    "mediaRoles": [
+      "unknown"
+    ],
+    "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/Dxj1ejvRZmIL1debjoFF_160926-odonienrausgegangen01.jpg",
+    "products": [
+      {
+        "label": "admission",
+        "category": "ADMISSION",
+        "rawPrice": "13.90",
+        "amountMinor": 1390,
+        "currency": "EUR",
+        "availability": "AVAILABLE",
+        "soldOut": false,
+        "purchasable": true,
+        "grantsAdmission": true,
+        "selectedAsCurrentAdmission": true
+      }
+    ],
+    "currentAdmissionPriceMinor": 1390,
+    "currentAdmissionLabel": "13.90 EUR",
+    "ticketAvailability": "AVAILABLE",
+    "ticketAction": "PURCHASE",
+    "detailAccess": "DETAIL_ACCESSIBLE",
+    "fetchMethod": "fetch",
+    "fetchStatus": 200,
+    "evidenceTimestamp": "2026-09-16T07:22:33.421Z",
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:trance",
+      "strong_positive:dnb_short",
+      "strong_positive:hard_techno_abbrev",
+      "weak_positive:club",
+      "weak_positive:b2b"
+    ],
+    "matchClassification": "EXISTING_STRONG_MATCH",
+    "matchedEventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+    "matchedEventTitle": "#MITTWOCHENENDE in Odonien",
+    "matchReasons": [
+      "composite_strong_identity",
+      "decision:strong_match",
+      "no_ticket_url_binding"
+    ],
+    "qualification": "EXISTING",
+    "fieldEvidence": [
+      {
+        "field": "title",
+        "candidateSource": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "authorityType": "ticket_io_detail",
+        "confidence": 0.95,
+        "selectedValue": "#MITTWOCHENENDE in Odonien",
+        "conflicts": []
+      },
+      {
+        "field": "startsAt",
+        "candidateSource": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "authorityType": "ticket_io_detail",
+        "confidence": 0.9,
+        "selectedValue": "2026-09-16T23:00+0200",
+        "conflicts": []
+      },
+      {
+        "field": "venue",
+        "candidateSource": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "authorityType": "ticket_io_detail",
+        "confidence": 0.85,
+        "selectedValue": "Odonien",
+        "conflicts": []
+      },
+      {
+        "field": "ticket_target",
+        "candidateSource": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "authorityType": "ticket_io_detail",
+        "confidence": 0.95,
+        "selectedValue": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "conflicts": []
+      },
+      {
+        "field": "current_price",
+        "candidateSource": "https://t.rausgegangen.de/tickets/mittwochenende-in-odonien-6",
+        "authorityType": "ticket_io_detail",
+        "confidence": 0.9,
+        "selectedValue": "1390",
+        "conflicts": []
+      }
+    ],
+    "importReadinessScore": 100
+  },
+  "outsideNrw": {
+    "identityKey": "rausgegangen:birgits-weekender-50",
+    "eventSlug": "birgits-weekender-50",
+    "regionSlug": "berlin",
+    "title": "Birgits WEEKENDER",
+    "lifecycle": "UPCOMING",
+    "lineupHints": [],
+    "genreHints": [],
+    "imageUrls": [
+      "https://s3.eu-central-1.amazonaws.com/rausgegangen/FYTHE9A3T3OzncPdZS6s_birgit-weekender.jpg"
+    ],
+    "canonicalUrl": "https://rausgegangen.de/events/birgits-weekender-50/",
+    "listingSurfaces": [
+      "https://rausgegangen.de/berlin/"
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "strong_positive:club_night",
+      "weak_positive:open_air"
+    ],
+    "matchClassification": "REVIEW_REQUIRED",
+    "matchReasons": [],
+    "detailFetched": true,
+    "detailAccess": "DETAIL_ACCESSIBLE",
+    "description": "FRIDAY // CLUBNIGHT - FREE ENTRYRUMMEL - 21h-END Danny D__SATURDAY // OPEN AIR & CLUBNIGHT - FREE ENTRY until 21hBUNKER l 21-END Vivi WonderKARUSSEL| 18-END Bambule Soundsystem",
+    "startsAt": "2026-09-18T18:00+0200",
+    "endsAt": "2026-09-20T06:00+0200",
+    "venueName": "Birgit&Bier",
+    "city": "Berlin",
+    "address": "Schleusenufer 3, 10997 Berlin-Kreuzberg",
+    "ticketUrl": "https://de.ra.co/events/2427155",
+    "ticketPriceMinor": 0,
+    "ticketCurrency": "EUR"
+  }
+}
