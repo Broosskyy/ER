@@ -1,0 +1,442 @@
+[
+  {
+    "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "matchedEventId": "2f72a4f7-2efd-4d6c-b269-31cd330f5a00",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "matchedEventId": "339c811c-ce1f-44f0-9c38-2fe212a63878",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "e36a5e6b-f079-436c-a546-af479ee80e06",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "546d7369-0d9d-4251-9882-4dfed910b926",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "caf57fa9-b061-4e3f-810d-b5c9b395e1c9",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "c354451b-7f96-452f-9569-655c814d5c77",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cosey-mueller-5",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "ae992601-faba-405b-b121-1c4975677e33",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-29",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "b81c9954-c126-4009-b994-bc354ff4bb92",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "3aeaca6a-63db-48f5-9254-dbdf0f0a9dfb",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "deda385d-a477-474d-9b4d-fa1ac728ee65",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "8e941ad1-5c30-46d2-b85d-0e77bbd3a336",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "79bda680-e106-4019-968f-7105f0949700",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "74143962-1e38-4612-80b0-b6382783805f",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "e227886d-d3fb-420a-8603-b0b7eac54377",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "4e84df6f-0acc-41ad-9266-787cb2c56171",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "outcome": "BLOCKED_MEDIA"
+  },
+  {
+    "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "d2c22487-bc43-47dc-b2b6-a38f99506aeb",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "63ca99e1-43b0-4994-a0af-abde433ab358",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:u30-party-hamburg-12",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "35415573-f1f6-456c-841e-ec08bb7d1240",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "8633bcf2-4172-424d-842d-6c027f8de19a",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:flightmode-17",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "196949b5-0cf0-437d-871d-94045aad80c3",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "626c6ae9-fb9b-49a5-95df-6365890ae722",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "outcome": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "753c6446-c4b1-4b86-8185-4c7e3374b4aa",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mariybu-frech-tour-2",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "71a782b9-44bc-4d14-b32f-5de2ea63a43c",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "f1e704d3-b66c-42c2-ba3b-2ec601fac89a",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "dcf3c6bb-c5a2-4982-8f53-86ebccf8d7c0",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sweat-summer-closing-2",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "5f6ef8ae-ee02-4cda-84a8-98d1b6dc9852",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "36158b6b-1ce1-4e51-a256-c9789cfbf181",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "bad42b44-0b20-4958-80ff-6f9156f29ba5",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "39920235-3ca3-46b5-9b23-2fb5d986009e",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "e50e1575-3274-4487-9fbe-878c9ffb45c1",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "d9c69a76-a602-42cf-bca5-52eb87a1e42f",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "c55a2794-1d66-462f-ba5d-1baec0c32c12",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "84eccb67-a4eb-4ca2-808e-eee070986fad",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "outcome": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "6aa93eea-36db-472d-9a00-78ed025bf445",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "matchedEventId": "4ac44a0b-77f2-4700-8c71-61936d84d51b",
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "outcome": "BLOCKED_MEDIA"
+  }
+]

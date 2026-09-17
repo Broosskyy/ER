@@ -4,6 +4,7 @@ import {
   extractEditorialDescription,
   isInvalidPrimaryDescription,
 } from '../../official-connectors/shared/description-quality';
+import { publishedDescriptionStructuredLeakage } from '../../official-connectors/shared/structured-content-separation';
 import { isOcrFlyerNoiseLine } from '../../official-connectors/shared/lineup-normalization';
 import type {
   ChangeClassification,
@@ -92,6 +93,14 @@ function reconcileDescription(
   context: ReconciliationEvidenceContext,
 ): FieldReconciliationResult {
   const field: ReconcilableField = 'description';
+  if (
+    existing &&
+    incoming &&
+    publishedDescriptionStructuredLeakage(existing) &&
+    !publishedDescriptionStructuredLeakage(incoming)
+  ) {
+    return finalizeDecision(field, 'accept', 'repair_structured_description_leakage', context);
+  }
   const incomingEditorial = extractEditorialDescription(incoming ?? undefined);
   const existingEditorial = extractEditorialDescription(existing ?? undefined);
   const incomingValue = normalizeText(incomingEditorial ?? incoming);
@@ -603,13 +612,26 @@ export function reconcileOfficialEvent(
     const fieldDecisions = (['title', 'description', 'startsAt', 'endsAt', 'venue', 'organizer', 'lineup', 'genres', 'image', 'eventStatus'] as const).map(
       (field) => finalizeDecision(field, 'noop', 'fingerprint_unchanged', context),
     );
+    const descriptionRepair = reconcileDescription(input.candidate.description, existing.description, context);
+    if (descriptionRepair.decision === 'accept') {
+      const descriptionIndex = fieldDecisions.findIndex((decision) => decision.field === 'description');
+      if (descriptionIndex >= 0) {
+        fieldDecisions[descriptionIndex] = descriptionRepair;
+      }
+    }
+    const classification =
+      fieldDecisions.some((decision) => decision.decision === 'accept') ? 'safe_update' : 'unchanged';
     return {
-      classification: 'unchanged',
+      classification,
       fieldDecisions,
       fieldProvenance: fieldDecisions.map((decision) => provenanceEntry(decision.field, decision, context)),
       reviewRequired: false,
       destructiveUpdatesBlocked: 0,
-      reasons: ['existing_official_source_unchanged'],
+      reasons: [
+        classification === 'safe_update'
+          ? 'existing_official_source_unchanged_with_description_repair'
+          : 'existing_official_source_unchanged',
+      ],
       reconciledCandidate: buildReconciledCandidate(input.candidate, existing, fieldDecisions),
     };
   }

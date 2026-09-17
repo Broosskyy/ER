@@ -1,0 +1,295 @@
+[
+  {
+    "rawTerm": "bochum",
+    "normalizedTerm": "bochum",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "konzerte & musik",
+    "normalizedTerm": "konzerte & musik",
+    "occurrences": 13,
+    "eventIds": [
+      "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+      "rausgegangen:cosey-mueller-5",
+      "rausgegangen:grandmas-house-29",
+      "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+      "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+      "rausgegangen:flightmode-17",
+      "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+      "rausgegangen:giddens-hard-rock-cafe-0",
+      "rausgegangen:mariybu-frech-tour-2",
+      "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+      "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+      "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+      "rausgegangen:kytes-indie-rave-tour-2026-2027-9"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+      "COSEY MUELLER",
+      "GRANDMAS HOUSE",
+      "Grandmas House - Baby you're a Winner Tour",
+      "KYTES /// Indie Rave Tour 2026 & 2027",
+      "FLIGHTMODE",
+      "Concrete Vehicles (exp post-punk/-hc noise-rock, can) + Older Friends (emo/screamo, bln)",
+      "Giddens @Hard Rock Cafe",
+      "Mariybu \"FRECH\"-Tour",
+      "Odd Beholder - Honest Work Tour 2026",
+      "Ausverkauft! aux animaux + This Eternal Decay + Another Tale",
+      "Techno Dampfer Düsseldorf w/ Klaudia Gawlas"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "münster",
+    "normalizedTerm": "münster",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m."
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "erfurt",
+    "normalizedTerm": "erfurt",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:kytes-indie-rave-tour-2026-2027-16"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "KYTES /// Indie Rave Tour 2026 & 2027"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "aktiv & kreativ",
+    "normalizedTerm": "aktiv & kreativ",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:afterwork-deepdive-iv-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Afterwork Deepdive IV"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "frankfurt",
+    "normalizedTerm": "frankfurt",
+    "occurrences": 3,
+    "eventIds": [
+      "rausgegangen:friends-house-1",
+      "rausgegangen:mariybu-frech-tour-2",
+      "rausgegangen:bus-zum-titanium-festival-2026-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "FRIENDS HOUSE",
+      "Mariybu \"FRECH\"-Tour",
+      "Bus zum Titanium Festival 2026"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "stuttgart",
+    "normalizedTerm": "stuttgart",
+    "occurrences": 3,
+    "eventIds": [
+      "rausgegangen:trance-station-1",
+      "rausgegangen:sweat-summer-closing-2",
+      "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "TRANCE STATION",
+      "SWEAT SUMMER CLOSING",
+      "Elektronisch Draussen @Fridas Pier - Unterdeck Session"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "feste & festival",
+    "normalizedTerm": "feste & festival",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Elektronisch Draussen @Fridas Pier - Unterdeck Session"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "leipzig",
+    "normalizedTerm": "leipzig",
+    "occurrences": 2,
+    "eventIds": [
+      "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+      "rausgegangen:coffee-party-rave-13"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "90er & 2000er Party - Täubchenthal Leipzig",
+      "COFFEE PARTY RAVE"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "düsseldorf",
+    "normalizedTerm": "düsseldorf",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Techno Dampfer Düsseldorf w/ Klaudia Gawlas"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "jederzeit verfügbar",
+    "normalizedTerm": "jederzeit verfügbar",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "FLUCHTGEFAHR Escape-Room \"Mad House – Sie sind in Deinem Kopf\""
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "dresden",
+    "normalizedTerm": "dresden",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09."
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "karlsruhe",
+    "normalizedTerm": "karlsruhe",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:kytes-indie-rave-tour-2026-2027-9"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "KYTES /// Indie Rave Tour 2026 & 2027"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "aachen",
+    "normalizedTerm": "aachen",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:dominext-kinky-psytrance-party-1"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Dominext Kinky-Psytrance Party"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  }
+]

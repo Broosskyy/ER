@@ -1,0 +1,40 @@
+[
+  {
+    "eventId": "6aa93eea-36db-472d-9a00-78ed025bf445",
+    "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+    "sources": [
+      "rausgegangen-discovery"
+    ],
+    "currentGenres": [],
+    "availableGenreEvidence": [],
+    "evidenceStrength": "none",
+    "recommendedGenres": [],
+    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [],
+    "confidenceBand": "UNRESOLVED"
+  },
+  {
+    "eventId": "d9c69a76-a602-42cf-bca5-52eb87a1e42f",
+    "title": "COFFEE PARTY RAVE",
+    "sources": [
+      "rausgegangen-discovery"
+    ],
+    "currentGenres": [],
+    "availableGenreEvidence": [],
+    "evidenceStrength": "none",
+    "recommendedGenres": [],
+    "classification": "GENRE_UNRESOLVED_NO_EVIDENCE",
+    "reason": "evidence_layers_exhausted_without_genre",
+    "checkedLayers": [
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [],
+    "confidenceBand": "UNRESOLVED"
+  }
+]

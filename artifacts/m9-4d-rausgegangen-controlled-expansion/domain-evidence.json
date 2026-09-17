@@ -1,0 +1,602 @@
+[
+  {
+    "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:house;strong_positive:tech_house;strong_positive:edm;strong_positive:dnb_short;strong_positive:electro;strong_positive:club_night;weak_positive:club;weak_positive:night;weak_positive:mainfloor"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:electro;strong_positive:dj_set;strong_positive:hard_techno_abbrev;weak_positive:festival;weak_positive:night;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:trance;weak_positive:live;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;weak_positive:club;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:electro;strong_positive:dj_set;weak_positive:live;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:house;weak_positive:club;weak_positive:night"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:cosey-mueller-5",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:electro;weak_positive:live;weak_positive:underground"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-29",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:electro;strong_positive:rave;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:psytrance;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:trance;strong_positive:electro;weak_positive:open_air"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:electro"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:house;weak_positive:club;weak_positive:b2b"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:trance;strong_positive:hard_techno_abbrev"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:electro"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:electro;weak_positive:open_air"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:u30-party-hamburg-12",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;strong_positive:tech_house;weak_positive:festival;weak_positive:open_air"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:flightmode-17",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:live;weak_positive:b2b;weak_positive:underground"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:hardcore;weak_positive:festival;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:dj_set;weak_positive:night;weak_positive:live;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:club"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:mariybu-frech-tour-2",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:hardstyle"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:hardcore;weak_positive:festival"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:trance;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:sweat-summer-closing-2",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:house;strong_positive:trance"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:melodic_techno;weak_positive:festival"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:electro;weak_positive:club"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:trance;strong_positive:rave"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:rave"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house;weak_positive:festival;weak_positive:night;weak_positive:live;weak_positive:industrial"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:hard_techno_abbrev;weak_positive:festival;weak_positive:dj"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:house"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:hardcore;strong_positive:rave"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:electro;strong_positive:rave;weak_positive:live"
+      }
+    }
+  },
+  {
+    "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+    "domainState": "ELECTRONIC_HIGH",
+    "relevance": "HIGH_RELEVANCE",
+    "evaluation": {
+      "classification": "ELECTRONIC_HIGH",
+      "state": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true,
+        "reason": "strong_positive:psytrance;strong_positive:rave"
+      }
+    }
+  }
+]

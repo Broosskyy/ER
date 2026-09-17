@@ -1,0 +1,4341 @@
+[
+  {
+    "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+    "qualityContract": {
+      "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+      "title": "Bootshaus Sommerfest Closing",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 4,
+      "canonicalizedExplicitGenreClaims": 4,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:house;strong_positive:tech_house;strong_positive:edm;strong_positive:dnb_short;strong_positive:electro;strong_positive:club_night;weak_positive:club;weak_positive:night;weak_positive:mainfloor"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Tech House",
+            "Techno",
+            "Electro",
+            "Dubstep"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:electro;strong_positive:dj_set;strong_positive:hard_techno_abbrev;weak_positive:festival;weak_positive:night;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Hard Techno",
+            "Techno"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+      "title": "Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [
+        "lineup_placeholder_in_description"
+      ],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:trance;weak_positive:live;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Trance",
+            "Bounce"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [
+          "lineup_placeholder_in_description"
+        ],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://bootshaus-club.ticket.io/gxSFfYGS/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+    "qualityContract": {
+      "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+      "title": "A TECHNO BALLET ODYSSEY",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;weak_positive:club;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://www.berlinballet.company/a-techno-ballet-odyssey?utm_source=bootshaus&utm_medium=referral&utm_campaign=tbo_koeln_bootshaus",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+      "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:electro;strong_positive:dj_set;weak_positive:live;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno",
+            "Electro",
+            "bochum",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://planetarium-bochum.de/de_DE/calendar/electric-lights.1399145",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+    "qualityContract": {
+      "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+      "title": "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m.",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:house;weak_positive:club;weak_positive:night"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno",
+            "House",
+            "münster"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://stgdts.com/83bf35",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cosey-mueller-5",
+    "qualityContract": {
+      "identityKey": "rausgegangen:cosey-mueller-5",
+      "title": "COSEY MUELLER",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 0,
+      "canonicalizedExplicitGenreClaims": 0,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro;weak_positive:live;weak_positive:underground"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://popanz.ticket.io/mW8u09X5/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-29",
+    "qualityContract": {
+      "identityKey": "rausgegangen:grandmas-house-29",
+      "title": "GRANDMAS HOUSE",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://popanz.ticket.io/MJKYcFGO/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+      "title": "Grandmas House - Baby you're a Winner Tour",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://popanz.ticket.io/MJKYcFGO/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+    "qualityContract": {
+      "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro;strong_positive:rave;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Electro",
+            "erfurt",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:utopian-summer-0",
+      "title": "Utopian Summer",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:psytrance;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Psytrance",
+            "Techno"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://111000111.de/3K/LC",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+      "title": "VERSCHOBEN * Electronic Garden of Love -OPEN AIR- #2 Südbrücke mit EGE 363, KATY ROUGH, KIRK uvm.",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:trance;strong_positive:electro;weak_positive:open_air"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Trance",
+            "Bounce"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://zukunftsmusik-k87a.stgdts.com/events/electronic-garden-of-love-open-air-2-sudbrucke-sudbrucke-20260919-POFIB/checkout/products",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+      "title": "QUEER AS HEAVEN - Queere Party in der Kirche",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Electro"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://t.rausgegangen.de/tickets/queer-as-heaven-queer-open-air-party-an-der-kirche",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+      "title": "CGN*DUS // Techno. Freundschaft. Community",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [
+        "lineup_placeholder_in_description"
+      ],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:house;weak_positive:club;weak_positive:b2b"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno",
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [
+          "lineup_placeholder_in_description"
+        ],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://silberschwein-shop.ticket.io/ZYjJJTGl",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "qualityContract": {
+      "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "MISSING",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 5,
+      "canonicalizedExplicitGenreClaims": 5,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:trance;strong_positive:hard_techno_abbrev"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Hard Techno",
+            "Hard Bounce",
+            "Trance",
+            "Techno",
+            "Bounce"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+      "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://t.rausgegangen.de/tickets/five-2-nine-001-house-boot",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+      "title": "Afterwork Deepdive IV",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "aktiv & kreativ"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://afterworkdeepdivepart4.eventbrite.de",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "BLOCKED_MEDIA"
+  },
+  {
+    "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+    "qualityContract": {
+      "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+      "title": "Angel-in-Bondage Hamburg",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Electro"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://t.rausgegangen.de/tickets/angel-in-bondage-hamburg-1",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+      "title": "NINA HEPBURN | ALL DAY LONG | OPEN AIR",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:electro;weak_positive:open_air"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno",
+            "Electro"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://ticketmaster.evyy.net/c/6519574/2038753/23890?u=https%3A%2F%2Fwww.universe.com%2Fevents%2Fnina-hepburn-all-day-long-19-september-2026-tickets-RSK2J4%3Fref%3Dticketmaster&utm_medium=affiliate",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:u30-party-hamburg-12",
+    "qualityContract": {
+      "identityKey": "rausgegangen:u30-party-hamburg-12",
+      "title": "Ü30 Party Hamburg",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://partytickets.ditix.shop/event/i0czfveozk8naxw8?t=false",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:frame-sommer-closing-0",
+      "title": "Frame Sommer Closing",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;strong_positive:tech_house;weak_positive:festival;weak_positive:open_air"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Tech House",
+            "House"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://de.ra.co/events/2523019",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:flightmode-17",
+    "qualityContract": {
+      "identityKey": "rausgegangen:flightmode-17",
+      "title": "FLIGHTMODE",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:live;weak_positive:b2b;weak_positive:underground"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://tickets.geisburgrecords.com/geisburg/flightmode-1909/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+      "title": "Concrete Vehicles (exp post-punk/-hc noise-rock, can) + Older Friends (emo/screamo, bln)",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:hardcore;weak_positive:festival;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Bounce",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://vvk.link/4fjp3n4",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+      "title": "Giddens @Hard Rock Cafe",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 0,
+      "canonicalizedExplicitGenreClaims": 0,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:dj_set;weak_positive:night;weak_positive:live;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://www.eventbrite.de/e/giddens-live-hard-rock-cafe-berlin-tickets-1998793322634?aff=oddtdtcreator",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "qualityContract": {
+      "identityKey": "rausgegangen:friends-house-1",
+      "title": "FRIENDS HOUSE",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:club"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "frankfurt"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://fortunairgendwo.ticket.io/tCXyfwFa/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mariybu-frech-tour-2",
+    "qualityContract": {
+      "identityKey": "rausgegangen:mariybu-frech-tour-2",
+      "title": "Mariybu \"FRECH\"-Tour",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:hardstyle"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Hardstyle",
+            "frankfurt",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://ticketmaster.evyy.net/c/6519574/2038753/23890?u=https%3A%2F%2Fwww.ticketmaster.de%2Fevent%2Fmariybu-frech-tour-tickets%2F1044148235&utm_medium=affiliate",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+      "title": "Bus zum Titanium Festival 2026",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 0,
+      "canonicalizedExplicitGenreClaims": 0,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:hardcore;weak_positive:festival"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "frankfurt"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://www.sonic-warrior.de/produkt/titianium-festival/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "qualityContract": {
+      "identityKey": "rausgegangen:trance-station-1",
+      "title": "TRANCE STATION",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:trance;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Trance",
+            "Techno",
+            "stuttgart"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://diginights.com/ticket/2026-10-03-trance-station-romy-s/step/1",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sweat-summer-closing-2",
+    "qualityContract": {
+      "identityKey": "rausgegangen:sweat-summer-closing-2",
+      "title": "SWEAT SUMMER CLOSING",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 4,
+      "canonicalizedExplicitGenreClaims": 4,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:house;strong_positive:trance"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Progressive House",
+            "Trance",
+            "Techno",
+            "House",
+            "stuttgart"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://fridas-pier.stgdts.com/events/sweat-summer-closing-w-alex-kassian-fridas-pier-20260919-o625w/checkout/products",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+      "title": "Elektronisch Draussen @Fridas Pier - Unterdeck Session",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:melodic_techno;weak_positive:festival"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Melodic Techno",
+            "Techno",
+            "stuttgart",
+            "feste & festival"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://fridas-pier.stgdts.com/events/elektronisch-draussen-unterdeck-session-fridas-pier-20261107-Ar6ND",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+    "qualityContract": {
+      "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+      "title": "Odd Beholder - Honest Work Tour 2026",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro;weak_positive:club"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Electro",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://t.rausgegangen.de/tickets/odd-beholder-honest-work-tour-2026-4",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+      "title": "TURBO pres. TRANCE ALLSTARS - Trance, Bounce & Techno im Oma Doris",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 3,
+      "canonicalizedExplicitGenreClaims": 3,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:trance;strong_positive:rave"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Trance",
+            "Bounce",
+            "Techno"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://stgdts.com/722319",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+      "title": "90er & 2000er Party - Täubchenthal Leipzig",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Techno",
+            "Hip Hop",
+            "leipzig"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://t.rausgegangen.de/tickets/90er-2000er-party-taubchenthal-leipzig",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "qualityContract": {
+      "identityKey": "rausgegangen:coffee-party-rave-13",
+      "title": "COFFEE PARTY RAVE",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 0,
+      "canonicalizedExplicitGenreClaims": 0,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:rave"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "leipzig"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://t.rausgegangen.de/tickets/coffee-party-rave-13",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+      "title": "Ausverkauft! aux animaux + This Eternal Decay + Another Tale",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house;weak_positive:festival;weak_positive:night;weak_positive:live;weak_positive:industrial"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://www.adticket.de/aux-animaux-This-Eternal-Decay-Another-Tale/Essen-Kulturzentrum-Grend/26-09-2026_20-00.html?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=Kulturzentrum+Grend+e.V.+%284945%29",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+      "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "VERIFIED",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 2,
+      "canonicalizedExplicitGenreClaims": 2,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:hard_techno_abbrev;weak_positive:festival;weak_positive:dj"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Hard Techno",
+            "Techno",
+            "düsseldorf",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://technodampfer.ticket.io/kVMC3cKZ/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+    "qualityContract": {
+      "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+      "title": "FLUCHTGEFAHR Escape-Room \"Mad House – Sie sind in Deinem Kopf\"",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:house"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "House",
+            "jederzeit verfügbar"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://fluchtgefahr.com/mad-house/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "qualityContract": {
+      "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+      "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 0,
+      "canonicalizedExplicitGenreClaims": 0,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:hardcore;strong_positive:rave"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "dresden"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://partysdresden.ticket.io/29a6ueLm/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+    "qualityContract": {
+      "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "EXISTING_EXACT",
+      "qualityState": "READY",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "VERIFIED",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:electro;strong_positive:rave;weak_positive:live"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Electro",
+            "karlsruhe",
+            "konzerte & musik"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+    "qualityContract": {
+      "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+      "title": "Dominext Kinky-Psytrance Party",
+      "domainState": "ELECTRONIC_HIGH",
+      "identityState": "NET_NEW",
+      "qualityState": "READY_WITH_WARNINGS",
+      "titleReady": true,
+      "timeReady": true,
+      "venueReady": true,
+      "genreState": "VERIFIED",
+      "lineupState": "MISSING",
+      "ticketState": "VERIFIED",
+      "mediaState": "MISSING",
+      "descriptionState": "VERIFIED",
+      "reviewReasons": [],
+      "passesQualityContract": true,
+      "qualityContractBypass": false,
+      "structuredContentEvaluated": true,
+      "lineupLeakage": false,
+      "genreLeakage": false,
+      "ticketLeakage": false,
+      "scheduleLeakage": false,
+      "descriptionQuality": "EDITORIAL",
+      "genrePresenceCoverage": true,
+      "genreEvidenceCompleteness": true,
+      "explicitGenreClaims": 1,
+      "canonicalizedExplicitGenreClaims": 1,
+      "explicitGenreEvidenceParity": 1,
+      "recoverableExplicitGenreMissing": 0,
+      "evaluation": {
+        "domain": {
+          "classification": "ELECTRONIC_HIGH",
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true,
+            "reason": "strong_positive:psytrance;strong_positive:rave"
+          }
+        },
+        "identity": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "completeness": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false,
+          "reason": "DISCOVERY_READY"
+        },
+        "genre": {
+          "state": {
+            "requirementClass": "REQUIRED_FOR_PUBLICATION",
+            "state": "VERIFIED",
+            "valuePresent": true,
+            "provenancePresent": true
+          },
+          "genres": [
+            "Psytrance",
+            "aachen"
+          ],
+          "confidence": "HIGH",
+          "coverageEligible": true
+        },
+        "lineup": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "ticket": {
+          "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "media": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "MISSING",
+          "valuePresent": false,
+          "provenancePresent": false,
+          "reason": "event_media_qualification"
+        },
+        "description": {
+          "requirementClass": "BEST_EFFORT",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": false
+        },
+        "qualityState": "READY_WITH_WARNINGS",
+        "reviewReasons": [],
+        "provenance": [
+          {
+            "field": "source_binding",
+            "sourceReference": "https://mubu.ac/event/dominext-kinky-psytrance-party/",
+            "authority": "ticket-io-network-discovery"
+          }
+        ],
+        "readiness": "DISCOVERY_READY"
+      }
+    },
+    "importEligibility": "BLOCKED_MEDIA"
+  }
+]

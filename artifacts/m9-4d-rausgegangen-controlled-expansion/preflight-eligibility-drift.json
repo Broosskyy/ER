@@ -1,0 +1,42 @@
+{
+  "frozen": {
+    "original": 40,
+    "eligibleNew": 0,
+    "eligibleExistingMatch": 36,
+    "reviewRequired": 0,
+    "blockedRelevance": 0,
+    "blockedDomain": 0,
+    "blockedGenre": 0,
+    "blockedContent": 0,
+    "blockedMedia": 2,
+    "blockedTicket": 0,
+    "blockedIdentity": 0,
+    "blockedOther": 2,
+    "diagnosticGateFailures": {
+      "media:NO_ACCEPTABLE_EVENT_MEDIA": 2,
+      "lifecycle_ended": 2
+    }
+  },
+  "live": {
+    "original": 40,
+    "eligibleNew": 0,
+    "eligibleExistingMatch": 36,
+    "reviewRequired": 0,
+    "blockedRelevance": 0,
+    "blockedDomain": 0,
+    "blockedGenre": 0,
+    "blockedContent": 0,
+    "blockedMedia": 2,
+    "blockedTicket": 0,
+    "blockedIdentity": 0,
+    "blockedOther": 2,
+    "diagnosticGateFailures": {
+      "media:NO_ACCEPTABLE_EVENT_MEDIA": 2,
+      "lifecycle_ended": 2
+    }
+  },
+  "frozenEligibleTotal": 36,
+  "liveEligibleTotal": 36,
+  "perCandidateDrift": [],
+  "postApplyIdentityMigrationExpected": false
+}

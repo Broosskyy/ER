@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-09-17T16:49:21.927Z",
+  "rootCause": [
+    "REPORTING_POPULATION_MISMATCH",
+    "QUALITY_CONTRACT_GAP",
+    "DOMAIN_RELEVANCE_SEMANTIC_MISMATCH"
+  ],
+  "explanation": "M9.4C qualityReady counted events passing NEW_EVENT_QUALITY_CONTRACT technical gates without requiring electronic relevance HIGH/LIKELY. The 566 HIGH/LIKELY figure applies to the full 18,490 URL union discovery population, while 5,614 qualityReady is the 90-day enriched pool with passesQualityContract only. 5060 IRRELEVANT and 81 AMBIGUOUS events incorrectly appear quality-ready because relevance is not part of passesQualityContract.",
+  "genericFix": "Introduced first-class ImportEligibility requiring HIGH/LIKELY relevance, ELECTRONIC_HIGH/MEDIUM domain, and passesQualityContract. qualityReady remains a technical completeness metric; import eligibility is a separate derived decision.",
+  "populations": {
+    "unionDiscovered": {
+      "count": 18490,
+      "scope": "city ∪ location canonical URL union (all lifecycles)"
+    },
+    "activeWindowEnriched": {
+      "count": 9159,
+      "scope": "90-day rolling window, detail-enriched"
+    },
+    "relevanceUnion": {
+      "scope": "relevance-summary counts apply to full unionDiscovered enriched corpus"
+    },
+    "qualityReadyPool": {
+      "count": 5614,
+      "scope": "90-day enriched events with passesQualityContract && !bypass"
+    }
+  },
+  "highRelevant": 536,
+  "likelyRelevant": 30,
+  "ambiguous": 11369,
+  "irrelevant": 6555,
+  "qualityReady": 5614,
+  "qualityReadyHigh": 464,
+  "qualityReadyLikely": 9,
+  "qualityReadyAmbiguous": 81,
+  "qualityReadyIrrelevant": 5060,
+  "qualityReadyElectronicHighConfidence": 467,
+  "qualityReadyElectronicMediumConfidence": 87,
+  "qualityReadyImportEligible": 473,
+  "qualityReadyBlockedByRelevanceOnly": 5141,
+  "intersections": {
+    "qualityReadyAndHighRelevant": 464,
+    "qualityReadyAndLikelyRelevant": 9,
+    "qualityReadyAndAmbiguousRelevant": 81,
+    "qualityReadyAndIrrelevant": 5060,
+    "highRelevantNotQualityReady": 93,
+    "importEligibleHigh": 464,
+    "importEligibleLikely": 9
+  }
+}

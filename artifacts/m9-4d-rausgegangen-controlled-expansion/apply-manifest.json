@@ -1,0 +1,37 @@
+{
+  "eventInserts": 27,
+  "eventUpdates": 3,
+  "lineupWrites": 12,
+  "genreWrites": 42,
+  "descriptionWrites": 1,
+  "mediaWrites": 0,
+  "sourceBindingWrites": 30,
+  "ticketInserts": 0,
+  "ticketUpdates": 0,
+  "canonicalCreated": 27,
+  "canonicalMatched": 4,
+  "canonicalEnriched": 3,
+  "applied": true,
+  "firstApply": {
+    "eventInserts": 27,
+    "eventUpdates": 2,
+    "lineupWrites": 12,
+    "genreWrites": 42,
+    "descriptionWrites": 0,
+    "mediaWrites": 0,
+    "sourceBindingWrites": 30,
+    "canonicalCreated": 27,
+    "canonicalMatched": 3,
+    "canonicalEnriched": 2
+  },
+  "repairApply": {
+    "eventInserts": 0,
+    "eventUpdates": 1,
+    "descriptionWrites": 1,
+    "canonicalMatched": 1,
+    "canonicalEnriched": 1,
+    "targetEventId": "8633bcf2-4172-424d-842d-6c027f8de19a",
+    "targetTitle": "Frame Sommer Closing",
+    "reason": "repair_structured_description_leakage"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "automatedConsumer": "PASS",
+  "realAndroid": "PENDING_USER_VERIFICATION",
+  "manualAndroidQaRequired": true,
+  "REAL_ANDROID": "PENDING_USER_VERIFICATION",
+  "AUTOMATED_RUNTIME": "SKIPPED_ENVIRONMENT"
+}

@@ -1,0 +1,444 @@
+[
+  {
+    "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:house",
+      "strong_positive:tech_house",
+      "strong_positive:edm",
+      "strong_positive:dnb_short",
+      "strong_positive:electro",
+      "strong_positive:club_night",
+      "weak_positive:club",
+      "weak_positive:night",
+      "weak_positive:mainfloor"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:electro",
+      "strong_positive:dj_set",
+      "strong_positive:hard_techno_abbrev",
+      "weak_positive:festival",
+      "weak_positive:night",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:trance",
+      "weak_positive:live",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "weak_positive:club",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:electro",
+      "strong_positive:dj_set",
+      "weak_positive:live",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:house",
+      "weak_positive:club",
+      "weak_positive:night"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cosey-mueller-5",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:electro",
+      "weak_positive:live",
+      "weak_positive:underground"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-29",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:electro",
+      "strong_positive:rave",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:psytrance",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:trance",
+      "strong_positive:electro",
+      "weak_positive:open_air"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:electro"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:house",
+      "weak_positive:club",
+      "weak_positive:b2b"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:trance",
+      "strong_positive:hard_techno_abbrev"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house"
+    ],
+    "outcome": "BLOCKED_MEDIA"
+  },
+  {
+    "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:electro"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:electro",
+      "weak_positive:open_air"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:u30-party-hamburg-12",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "strong_positive:tech_house",
+      "weak_positive:festival",
+      "weak_positive:open_air"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:flightmode-17",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:live",
+      "weak_positive:b2b",
+      "weak_positive:underground"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:hardcore",
+      "weak_positive:festival",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:dj_set",
+      "weak_positive:night",
+      "weak_positive:live",
+      "weak_positive:dj"
+    ],
+    "outcome": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:club"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mariybu-frech-tour-2",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:hardstyle"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:hardcore",
+      "weak_positive:festival"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:trance",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sweat-summer-closing-2",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:house",
+      "strong_positive:trance"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:melodic_techno",
+      "weak_positive:festival"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:electro",
+      "weak_positive:club"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:trance",
+      "strong_positive:rave"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:rave"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house",
+      "weak_positive:festival",
+      "weak_positive:night",
+      "weak_positive:live",
+      "weak_positive:industrial"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:techno",
+      "strong_positive:hard_techno",
+      "strong_positive:hard_techno_abbrev",
+      "weak_positive:festival",
+      "weak_positive:dj"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:house"
+    ],
+    "outcome": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:hardcore",
+      "strong_positive:rave"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:electro",
+      "strong_positive:rave",
+      "weak_positive:live"
+    ],
+    "outcome": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+    "m94cRelevance": "HIGH_RELEVANCE",
+    "liveRelevance": "HIGH_RELEVANCE",
+    "reasons": [
+      "strong_positive:psytrance",
+      "strong_positive:rave"
+    ],
+    "outcome": "BLOCKED_MEDIA"
+  }
+]

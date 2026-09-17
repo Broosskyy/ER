@@ -6,7 +6,10 @@ import {
   buildConsumerDuplicateGroups,
   getDiscoverablePublishedEvents,
 } from '../../../../src/features/events/discovery/consumer-discovery-feed';
-import { classifyConsumerEventLifecycle } from '../../../../shared/consumer-event-lifecycle';
+import {
+  classifyConsumerEventLifecycle,
+  isDiscoverableConsumerLifecycle,
+} from '../../../../shared/consumer-event-lifecycle';
 import type { EventRow, GenreRow, LineupRow, TicketRow, VenueRow } from '../../../../src/data/repositories/event-core-read';
 import { mapEventDetail } from '../../../../src/data/mappers/event-core-mapper';
 import { toEventDisplayModelFromDetail } from '../../../../src/data/mappers/event-core-display';
@@ -164,6 +167,53 @@ export function loadPublishedEventSummaries(runQuery: LinkedQueryExecutor): Even
         }
       : null,
   }));
+}
+
+export function auditAppliedConsumerParityFailures(
+  appliedKeys: string[],
+  dbReadback: DbEventReadbackRow[],
+  consumerReadback: ReturnType<typeof buildConsumerReadback>,
+  referenceInstant: Date,
+): Array<{ identityKey: string; eventId: string; reason: string }> {
+  const consumerIds = new Set(consumerReadback.events.map((event) => event.id));
+  const failures: Array<{ identityKey: string; eventId: string; reason: string }> = [];
+
+  for (const key of appliedKeys) {
+    const db = dbReadback.find((row) => row.sourceEventKey === key);
+    if (!db) {
+      failures.push({ identityKey: key, eventId: '', reason: 'missing_db_readback' });
+      continue;
+    }
+
+    const lifecycle = classifyConsumerEventLifecycle({
+      startsAt: db.startsAt,
+      endsAt: db.endsAt,
+      status: db.status,
+      referenceInstant,
+    });
+    if (!isDiscoverableConsumerLifecycle(lifecycle)) {
+      continue;
+    }
+
+    if (consumerIds.has(db.eventId)) {
+      continue;
+    }
+
+    const suppressedDuplicate = consumerReadback.duplicateGroups.find(
+      (group) =>
+        group.confidence === 'high' &&
+        group.eventIds.includes(db.eventId) &&
+        group.winnerId !== db.eventId &&
+        consumerIds.has(group.winnerId),
+    );
+    if (suppressedDuplicate) {
+      continue;
+    }
+
+    failures.push({ identityKey: key, eventId: db.eventId, reason: 'missing_from_discoverable_consumer_feed' });
+  }
+
+  return failures;
 }
 
 export function buildConsumerReadback(runQuery: LinkedQueryExecutor, referenceInstant: Date) {

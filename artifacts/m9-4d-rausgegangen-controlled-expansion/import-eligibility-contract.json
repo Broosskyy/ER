@@ -1,0 +1,16 @@
+{
+  "version": "M9.4D",
+  "requiresUpcomingLifecycle": true,
+  "requiresRelevance": [
+    "HIGH_RELEVANCE",
+    "LIKELY_RELEVANT"
+  ],
+  "requiresElectronicDomain": [
+    "ELECTRONIC_HIGH",
+    "ELECTRONIC_MEDIUM"
+  ],
+  "requiresQualityContract": true,
+  "qualityReadyAloneInsufficient": true,
+  "ambiguousNotAutomaticallyEligible": true,
+  "irrelevantNeverEligible": true
+}
