@@ -83,7 +83,7 @@ function pickRecommendedDescription(
     const preferred = preferDescription(best, separated);
     const score = descriptionQualityScore(preferred.value ?? undefined);
     if (score > bestScore + 0.05) {
-      best = preferred.value;
+      best = preferred.value ?? undefined;
       bestScore = score;
     }
   }
