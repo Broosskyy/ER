@@ -233,24 +233,31 @@ async function main(): Promise<void> {
     throw new Error('m94e_apply_forbidden_preview_only');
   }
 
+  const sourceOnly = process.argv.includes('--source-only');
   mkdirSync(OUT, { recursive: true });
   const referenceInstant = new Date();
   const referenceDateLocal = berlinDateKey(referenceInstant);
-
-  assertProductionNotLinked(process.cwd());
-  const staging = verifyLinkedStagingTarget(process.cwd());
-  if (staging.ref !== STAGING_PROJECT_REF) {
-    throw new Error(`m94e_staging_ref_mismatch:${staging.ref}`);
-  }
 
   const guards = stagingGuardConstants();
   if (guards.production) {
     throw new Error(`m94e_production_must_be_unset:${guards.production}`);
   }
 
-  const runQuery = createSupabaseCliLinkedQueryExecutor(process.cwd());
-  const before = fingerprint(runQuery);
-  const plannerContext = loadPlannerContextFromLinkedDb(runQuery);
+  let runQuery: ReturnType<typeof createSupabaseCliLinkedQueryExecutor> | undefined;
+  let before: DatabaseFingerprint | undefined;
+  let plannerContext: ReturnType<typeof loadPlannerContextFromLinkedDb> | undefined;
+  let staging: { ref: string; name: string } | undefined;
+
+  if (!sourceOnly) {
+    assertProductionNotLinked(process.cwd());
+    staging = verifyLinkedStagingTarget(process.cwd());
+    if (staging.ref !== STAGING_PROJECT_REF) {
+      throw new Error(`m94e_staging_ref_mismatch:${staging.ref}`);
+    }
+    runQuery = createSupabaseCliLinkedQueryExecutor(process.cwd());
+    before = fingerprint(runQuery);
+    plannerContext = loadPlannerContextFromLinkedDb(runQuery);
+  }
 
   const qualityPool = loadQualityPool();
   const locationOnlySlugs = loadLocationOnlySlugs();
@@ -288,8 +295,10 @@ async function main(): Promise<void> {
 
   writeJson('import-eligibility-contract.json', IMPORT_ELIGIBILITY_CONTRACT);
   writeJson('staging-safety.json', {
-    target: staging,
+    target: staging ?? { ref: STAGING_PROJECT_REF, name: 'Eternal-Rave' },
     previewOnly: true,
+    sourceOnly,
+    databaseLinked: !sourceOnly,
     databaseWrites: 0,
     schedulerChanges: 0,
   });
@@ -298,7 +307,9 @@ async function main(): Promise<void> {
     productionWrites: 0,
     productionAccessed: false,
   });
-  writeJson('database-fingerprint-before.json', before);
+  if (before) {
+    writeJson('database-fingerprint-before.json', before);
+  }
   writeJson('snapshot-pool-summary.json', {
     sourceTotalQualityReady: qualityPool.totalQualityReady,
     sourceBuckets: qualityPool.buckets ?? {},
@@ -345,14 +356,35 @@ async function main(): Promise<void> {
     try {
       const live = await verifyRausgegangenCandidateLive(
         toOriginalBatchEntry(cohort),
-        plannerContext.eventCatalog,
+        plannerContext?.eventCatalog ?? [],
         referenceInstant,
         referenceDateLocal,
       );
-      const qualityContract = evaluateImportCandidateQualityContract(live.enriched);
+
+      // In source-only CI the current staging identity catalog is intentionally unavailable.
+      // Preserve the frozen M9.4C identity state and mark it as pending direct DB reconciliation.
+      const identityState = sourceOnly
+        ? (cohort.matchClassification as typeof live.enriched.matchClassification)
+        : live.enriched.matchClassification;
+      const enriched = sourceOnly
+        ? {
+            ...live.enriched,
+            matchClassification: identityState,
+            matchReasons: ['m94c_snapshot_identity_pending_direct_db_reconciliation'],
+          }
+        : live.enriched;
+      const verification = sourceOnly
+        ? {
+            ...live.verification,
+            matchClassification: identityState,
+            matchReasons: ['m94c_snapshot_identity_pending_direct_db_reconciliation'],
+          }
+        : live.verification;
+
+      const qualityContract = evaluateImportCandidateQualityContract(enriched);
       const importEligibility = determineImportEligibility(
-        live.verification,
-        live.enriched,
+        verification,
+        enriched,
         qualityContract,
         referenceInstant,
       );
@@ -360,7 +392,7 @@ async function main(): Promise<void> {
       let evidence: PreparedPreview['evidence'];
       if (isImportEligibleOutcome(importEligibility.outcome)) {
         evidence = await finalizeRausgegangenControlledImportEvidence(
-          live.enriched,
+          enriched,
           live.fetchResult,
           referenceInstant.toISOString(),
         );
@@ -368,7 +400,7 @@ async function main(): Promise<void> {
 
       prepared.push({
         cohort,
-        verification: live.verification,
+        verification,
         qualityContract,
         importEligibility,
         evidence,
@@ -388,8 +420,11 @@ async function main(): Promise<void> {
   const candidates = plannable.map((entry) =>
     officialEvidenceToEventCandidate(entry.evidence.evidence),
   );
-  const plans = planOfficialEventWrites(candidates, plannerContext);
-  for (let index = 0; index < plannable.length; index += 1) {
+  const plans =
+    sourceOnly || !plannerContext
+      ? []
+      : planOfficialEventWrites(candidates, plannerContext);
+  for (let index = 0; index < Math.min(plannable.length, plans.length); index += 1) {
     plannable[index]!.plan = plans[index];
   }
 
@@ -423,9 +458,12 @@ async function main(): Promise<void> {
     actualWrites: 0,
   });
 
-  const after = fingerprint(runQuery);
-  const databaseUnchanged = JSON.stringify(before) === JSON.stringify(after);
-  writeJson('database-fingerprint-after.json', after);
+  const after = runQuery ? fingerprint(runQuery) : undefined;
+  const databaseUnchanged =
+    before && after ? JSON.stringify(before) === JSON.stringify(after) : undefined;
+  if (after) {
+    writeJson('database-fingerprint-after.json', after);
+  }
 
   const outcomes = summarizeOutcomes(prepared);
   const liveAccessible = prepared.filter((entry) => entry.verification?.liveAccessible).length;
@@ -434,14 +472,16 @@ async function main(): Promise<void> {
     (outcomes.ELIGIBLE_NEW ?? 0) + (outcomes.ELIGIBLE_EXISTING_MATCH ?? 0);
 
   const safetyPass =
-    databaseUnchanged &&
+    (sourceOnly || databaseUnchanged === true) &&
     blockingPlanIssues.length === 0 &&
     uniqueIdentities.size === TARGET_SIZE &&
     previewErrors === 0;
 
   const summary = {
     status: safetyPass
-      ? 'M9_4E_SCALE_PREVIEW_COMPLETE'
+      ? sourceOnly
+        ? 'M9_4E_SOURCE_PREVIEW_COMPLETE_DB_RECONCILIATION_PENDING'
+        : 'M9_4E_SCALE_PREVIEW_COMPLETE'
       : 'M9_4E_SCALE_PREVIEW_HOLD',
     generatedAt: new Date().toISOString(),
     referenceInstant: referenceInstant.toISOString(),
@@ -463,6 +503,7 @@ async function main(): Promise<void> {
       eligibleRate: TARGET_SIZE > 0 ? eligibleLive / TARGET_SIZE : 0,
     },
     planner: {
+      mode: sourceOnly ? 'PENDING_DIRECT_DB_RECONCILIATION' : 'CURRENT_STAGING_CONTEXT',
       plans: plans.length,
       blockingIssues: blockingPlanIssues.length,
       warnings: warningPlanIssues.length,
@@ -470,7 +511,8 @@ async function main(): Promise<void> {
     },
     safety: {
       stagingProjectRef: STAGING_PROJECT_REF,
-      databaseUnchanged,
+      databaseFingerprintChecked: !sourceOnly,
+      databaseUnchanged: databaseUnchanged ?? null,
       productionConfigured: Boolean(guards.production),
       productionAccessed: false,
       schedulerChanged: false,
@@ -478,14 +520,16 @@ async function main(): Promise<void> {
     },
     nextStep:
       safetyPass
-        ? 'Review preview artifacts. Controlled staging apply requires a separate explicit authorization and implementation step.'
+        ? sourceOnly
+          ? 'Reconcile the frozen live cohort directly against current staging DB, then review before any controlled apply.'
+          : 'Review preview artifacts. Controlled staging apply requires a separate explicit authorization and implementation step.'
         : 'Do not apply. Resolve preview errors or blocking plan issues, then rerun M9.4E preview.',
   };
 
   writeJson('summary.json', summary);
   process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);
 
-  if (!databaseUnchanged) {
+  if (!sourceOnly && !databaseUnchanged) {
     throw new Error('m94e_read_only_invariant_failed_database_changed');
   }
   if (blockingPlanIssues.length > 0) {
