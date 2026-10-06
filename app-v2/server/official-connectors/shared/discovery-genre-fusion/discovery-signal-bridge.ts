@@ -107,7 +107,7 @@ export function buildDiscoverySignalBundle(input: {
     genreHints,
     venueName: input.event.venueName ?? undefined,
     organizerName: input.event.organizerName ?? undefined,
-    detailAccess: 'AVAILABLE',
+    detailAccess: 'DETAIL_ACCESSIBLE',
   });
 
   const ticketUrl = input.event.sources.find((source) => source.sourceRole === 'ticket')?.sourceUrl;
