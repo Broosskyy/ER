@@ -1,0 +1,71 @@
+name: M9.4E Rausgegangen Scale Preview
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: m9-4e-rausgegangen-scale-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'feature/m9-4e-scale-validation'
+    name: Read-only 100-event scale preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    defaults:
+      run:
+        working-directory: app-v2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app-v2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cohort selection regression
+        run: npx vitest run server/official-connectors/rausgegangen-discovery/__tests__/m9-4e-cohort-selection.test.ts
+
+      - name: Link Eternal Rave staging Supabase
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
+
+      - name: Run M9.4E read-only scale preview
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          ETERNAL_RAVE_PRODUCTION_PROJECT_REF: ''
+        run: npx tsx scripts/run-m9-4e-rausgegangen-scale-preview.ts
+
+      - name: Print M9.4E summary
+        if: always()
+        run: |
+          if [ -f ../artifacts/m9-4e-rausgegangen-scale-validation/summary.json ]; then
+            cat ../artifacts/m9-4e-rausgegangen-scale-validation/summary.json
+          else
+            echo "M9.4E summary was not generated."
+          fi
+
+      - name: Upload M9.4E preview artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m9-4e-rausgegangen-scale-preview
+          path: artifacts/m9-4e-rausgegangen-scale-validation
+          if-no-files-found: warn
+          retention-days: 14
