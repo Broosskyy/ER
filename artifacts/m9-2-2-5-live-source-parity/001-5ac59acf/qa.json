@@ -1,0 +1,71 @@
+{
+  "canonicalEventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+  "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+  "checkedAt": "2026-08-31T18:41:06.444Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/31-8-26-122-pres-tripolism-at-palma-de-mallorca-es/",
+    "lineupCount": 3,
+    "genreCount": 2,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V",
+    "finalUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V",
+    "provider": "fourvenues",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4104502394484890044878497_8364976970428405951449660.png"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": null,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nTripolism, three friends from Copenhagen, bring melodic house, indie dance and euphoric techno together — playful, driving, melancholic. Their track \"Dope Dance\" became one of Pete Tong's top 5 Essential New Tunes of the year, and 2025 saw them hit the Coachella lineup. Opening the night, the German B2B duo Jean Philippe & Mole deliver punchy, organic grooves between Afro House and melodic house, with chart hits like \"You Got The Love\" on MAJA Records and festival stages including MYLE.\n\n23:45 - TILL LATE",
+  "dbDescription": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nTripolism, three friends from Copenhagen, bring melodic house, indie dance and euphoric techno together — playful, driving, melancholic. Their track \"Dope Dance\" became one of Pete Tong's top 5 Essential New Tunes of the year, and 2025 saw them hit the Coachella lineup. Opening the night, the German B2B duo Jean Philippe & Mole deliver punchy, organic grooves between Afro House and melodic house, with chart hits like \"You Got The Love\" on MAJA Records and festival stages including MYLE.\n\n23:45 - TILL LATE",
+  "consumerDescription": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nTripolism, three friends from Copenhagen, bring melodic house, indie dance and euphoric techno together — playful, driving, melancholic. Their track \"Dope Dance\" became one of Pete Tong's top 5 Essential New Tunes of the year, and 2025 saw them hit the Coachella lineup. Opening the night, the German B2B duo Jean Philippe & Mole deliver punchy, organic grooves between Afro House and melodic house, with chart hits like \"You Got The Love\" on MAJA Records and festival stages including MYLE.\n\n23:45 - TILL LATE",
+  "sourceLineup": [
+    "TRIPOLISM",
+    "JEAN PHILIPPE & MOLE",
+    "LOUIS RYDER"
+  ],
+  "dbLineup": [
+    "JEAN PHILIPPE & MOLE",
+    "LOUIS RYDER"
+  ],
+  "consumerLineup": [
+    "JEAN PHILIPPE & MOLE",
+    "LOUIS RYDER"
+  ],
+  "sourceGenres": [
+    "House",
+    "Techno"
+  ],
+  "dbGenres": [
+    "House",
+    "Techno"
+  ],
+  "consumerGenres": [
+    "House",
+    "Techno"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/4104502394484890044878497_8364976970428405951449660.png",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

@@ -2,54 +2,66 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react';
 import { useColorScheme } from 'react-native';
-import { ThemeProvider as NavigationThemeProvider } from 'expo-router';
 
 import { darkTheme } from './dark';
 import { lightTheme } from './light';
-import { createNavigationTheme, getThemeByResolvedMode, resolveThemeMode } from './theme-utils';
-import { missingProviderMessage } from './theme-constants';
-import type { EternalRaveTheme, ResolvedThemeMode, ThemeMode } from './types';
-
-export interface ThemeContextValue {
-  theme: EternalRaveTheme;
-  mode: ThemeMode;
-  resolvedMode: ResolvedThemeMode;
-  setMode: (mode: ThemeMode) => void;
-}
-
-const defaultThemes = {
-  light: lightTheme,
-  dark: darkTheme,
-};
+import { getThemeForMode, resolveThemeMode } from './resolve';
+import { loadThemeModePreference, saveThemeModePreference } from './theme-storage';
+import { assertThemeContext } from './context';
+import type { ThemeContextValue, ThemeModePreference } from './types';
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export interface ThemeProviderProps {
   children: ReactNode;
-  defaultMode?: ThemeMode;
+  /** Allows tests to override the initial preference without persistence. */
+  initialMode?: ThemeModePreference;
 }
 
-export function ThemeProvider({ children, defaultMode = 'dark' }: ThemeProviderProps) {
-  const systemColorScheme = useColorScheme();
-  const [mode, setModeState] = useState<ThemeMode>(defaultMode);
+export function ThemeProvider({
+  children,
+  initialMode = 'system',
+}: ThemeProviderProps) {
+  const systemScheme = useColorScheme();
+  const [mode, setModeState] = useState<ThemeModePreference>(initialMode);
+
+  useEffect(() => {
+    let active = true;
+
+    void loadThemeModePreference().then((stored) => {
+      if (active && stored) {
+        setModeState(stored);
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const resolvedMode = useMemo(
-    () => resolveThemeMode(mode, systemColorScheme === 'light' ? 'light' : 'dark'),
-    [mode, systemColorScheme],
+    () =>
+      resolveThemeMode(
+        mode,
+        systemScheme === 'light' || systemScheme === 'dark' ? systemScheme : null,
+      ),
+    [mode, systemScheme],
   );
 
   const theme = useMemo(
-    () => getThemeByResolvedMode(resolvedMode, defaultThemes),
+    () => getThemeForMode(resolvedMode, { light: lightTheme, dark: darkTheme }),
     [resolvedMode],
   );
 
-  const setMode = useCallback((nextMode: ThemeMode) => {
+  const setMode = useCallback((nextMode: ThemeModePreference) => {
     setModeState(nextMode);
+    void saveThemeModePreference(nextMode);
   }, []);
 
   const value = useMemo<ThemeContextValue>(
@@ -59,28 +71,16 @@ export function ThemeProvider({ children, defaultMode = 'dark' }: ThemeProviderP
       resolvedMode,
       setMode,
     }),
-    [mode, resolvedMode, setMode, theme],
+    [theme, mode, resolvedMode, setMode],
   );
 
-  const navigationTheme = useMemo(() => createNavigationTheme(theme), [theme]);
-
-  return (
-    <ThemeContext.Provider value={value}>
-      <NavigationThemeProvider value={navigationTheme}>{children}</NavigationThemeProvider>
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
-export function useTheme(): ThemeContextValue {
+export function useThemeContext(): ThemeContextValue {
   const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error(missingProviderMessage);
-  }
-
+  assertThemeContext(context);
   return context;
 }
 
-export function useThemeOptional(): ThemeContextValue | null {
-  return useContext(ThemeContext);
-}
+export { ThemeContext };

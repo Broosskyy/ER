@@ -1,0 +1,76 @@
+{
+  "samples": [
+    {
+      "name": "DANTH",
+      "identityKey": "danth",
+      "searchName": "Danth"
+    },
+    {
+      "name": "FABIAN FARELL",
+      "identityKey": "fabian farell",
+      "searchName": "Fabian Farell"
+    },
+    {
+      "name": "NIKLAS DEE",
+      "identityKey": "niklas dee",
+      "searchName": "Niklas Dee"
+    },
+    {
+      "name": "OLIVER MAGENTA",
+      "identityKey": "oliver magenta",
+      "searchName": "Oliver Magenta"
+    },
+    {
+      "name": "TEKNOCLASH",
+      "identityKey": "teknoclash",
+      "searchName": "Teknoclash"
+    },
+    {
+      "name": "PAOLO FERRARA",
+      "identityKey": "paolo ferrara",
+      "searchName": "Paolo Ferrara"
+    },
+    {
+      "name": "LE KLOWN",
+      "identityKey": "le klown",
+      "searchName": "LE Klown"
+    },
+    {
+      "name": "ANNX HELLMAYER",
+      "identityKey": "annx hellmayer",
+      "searchName": "Annx Hellmayer"
+    },
+    {
+      "name": "LHYST",
+      "identityKey": "lhyst",
+      "searchName": "Lhyst"
+    },
+    {
+      "name": "PØUL STZ",
+      "identityKey": "pøul stz",
+      "searchName": "Pøul Stz"
+    },
+    {
+      "name": "TATTI VALKYRIE",
+      "identityKey": "tatti valkyrie",
+      "searchName": "Tatti Valkyrie"
+    },
+    {
+      "name": "VANY",
+      "identityKey": "vany",
+      "searchName": "Vany"
+    },
+    {
+      "name": "CHRIS STUSSY",
+      "identityKey": "chris stussy",
+      "searchName": "Chris Stussy"
+    }
+  ],
+  "variantPolicy": "original + titleCase + lowercase",
+  "deLucaVariants": [
+    "DEBORAH DE LUCA",
+    "Deborah de Luca",
+    "deborah de luca"
+  ],
+  "deLucaSearchName": "Deborah de Luca"
+}

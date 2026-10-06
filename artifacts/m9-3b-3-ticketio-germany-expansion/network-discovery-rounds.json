@@ -1,0 +1,14 @@
+[
+  {
+    "round": 0,
+    "seedsProcessed": 28,
+    "newShopsDiscovered": 28,
+    "cumulativeShops": 28
+  },
+  {
+    "round": 1,
+    "seedsProcessed": 122,
+    "newShopsDiscovered": 122,
+    "cumulativeShops": 150
+  }
+]

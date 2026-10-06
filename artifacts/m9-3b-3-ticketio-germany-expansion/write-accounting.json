@@ -1,0 +1,1376 @@
+{
+  "applied": true,
+  "eventInserts": 10,
+  "eventUpdates": 0,
+  "lineupWrites": 19,
+  "genreWrites": 12,
+  "ticketInserts": 10,
+  "ticketUpdates": 0,
+  "ticketDeletes": 0,
+  "sourceBindingWrites": 10,
+  "productionMutations": 0,
+  "canonicalCreated": 10,
+  "canonicalMatched": 0,
+  "canonicalEnriched": 0,
+  "reviewRequired": 0,
+  "notApplied": 0,
+  "plannedMutations": {
+    "eventInserts": 10,
+    "eventUpdates": 0,
+    "lineupWrites": 19,
+    "genreWrites": 12,
+    "sourceBindingWrites": 10,
+    "reviewRequiredCount": 0,
+    "idempotentPlans": 0
+  },
+  "ticketPlan": {
+    "currentTicketInsertsRequired": 10,
+    "currentTicketUpdatesRequired": 0,
+    "currentTicketDeletesRequired": 0,
+    "historicalTicketRelationsRequired": 0,
+    "presaleActionsRequired": 0,
+    "ticketLinkNotYetPublishedStates": 0,
+    "providerUnavailableStates": 0,
+    "providerSourceReferencesRequired": 10,
+    "provenanceUpdatesRequired": 10,
+    "eventCoreUpdatesRequired": 0,
+    "m2TicketUpdatesRequired": 0,
+    "allIdempotent": false,
+    "eventPlans": [
+      {
+        "sourceEventKey": "ticket_io:stadtgarten:zbj8pqcy",
+        "officialUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+        "eventId": "209ce805-9ed1-4647-a96e-2a2fcfb782ed",
+        "eventTitle": "Lézard",
+        "officialSourceId": "c6ae00e4-70f2-4682-8bb8-981e1faac4cb",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://stadtgarten.ticket.io/ZBj8pQcY/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "priceFromMinor": 2300,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "ZBj8pQcY",
+            "providerScope": "stadtgarten.ticket.io",
+            "identityKey": "ticket_io:stadtgarten.ticket.io:ZBj8pQcY"
+          },
+          "canonicalTicketUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "sourceUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "contentFingerprint": "468ee51f0f30ac6e550d07b00bd70ebf0e7db31b3c1d3455295b7804305230d3",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:43:15.748Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "23,00 Euro",
+              "amountMinor": 2300,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Lézard",
+            "startAt": "2026-11-26T19:30:00+01:00",
+            "venueName": "JAKI"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "23,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2300,
+            "currency": "EUR",
+            "rawPriceText": "23,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "468ee51f0f30ac6e550d07b00bd70ebf0e7db31b3c1d3455295b7804305230d3"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+            "redirectChain": [
+              "https://stadtgarten.ticket.io/ZBj8pQcY/"
+            ],
+            "terminalUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+            "providerKey": "ticket_io",
+            "providerEventId": "ZBj8pQcY",
+            "terminalTitle": "Lézard",
+            "terminalStartAt": "2026-11-26T19:30:00+01:00",
+            "terminalVenue": "JAKI",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "468ee51f0f30ac6e550d07b00bd70ebf0e7db31b3c1d3455295b7804305230d3",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "23,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:tonite:wnediscs",
+        "officialUrl": "https://tonite.ticket.io/WnEdISCS/",
+        "eventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+        "eventTitle": "#MITTWOCHENENDE in Odonien",
+        "officialSourceId": "eefa5791-5640-4cd5-8e4d-3c6d63945233",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://tonite.ticket.io/WnEdISCS/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://tonite.ticket.io/WnEdISCS/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://tonite.ticket.io/WnEdISCS/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "WnEdISCS",
+            "providerScope": "tonite.ticket.io",
+            "identityKey": "ticket_io:tonite.ticket.io:WnEdISCS"
+          },
+          "canonicalTicketUrl": "https://tonite.ticket.io/WnEdISCS/",
+          "sourceUrl": "https://tonite.ticket.io/WnEdISCS/",
+          "contentFingerprint": "8504fca2299a4e4e92d77a7f0bc399e0f90783b84dab4cacff2e9da32eb659a1",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:43:40.475Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Presale",
+              "normalizedLabel": "Presale",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "#MITTWOCHENENDE in Odonien",
+            "startAt": "2026-09-16T23:00:00+02:00",
+            "venueName": "Odonien"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://tonite.ticket.io/WnEdISCS/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://tonite.ticket.io/WnEdISCS/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "8504fca2299a4e4e92d77a7f0bc399e0f90783b84dab4cacff2e9da32eb659a1"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://tonite.ticket.io/WnEdISCS/",
+            "redirectChain": [
+              "https://tonite.ticket.io/WnEdISCS/"
+            ],
+            "terminalUrl": "https://tonite.ticket.io/WnEdISCS/",
+            "providerKey": "ticket_io",
+            "providerEventId": "WnEdISCS",
+            "terminalTitle": "#MITTWOCHENENDE in Odonien",
+            "terminalStartAt": "2026-09-16T23:00:00+02:00",
+            "terminalVenue": "Odonien",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "8504fca2299a4e4e92d77a7f0bc399e0f90783b84dab4cacff2e9da32eb659a1",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://tonite.ticket.io/WnEdISCS/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:3qkub9ea",
+        "officialUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+        "eventId": "fd71951f-e59a-4cf2-a8ed-b0bda5a198db",
+        "eventTitle": "Klubnacht w/ Gerd Janson, lyzanne",
+        "officialSourceId": "50e8a659-4bed-4f0b-aa69-8c60b04ad5dd",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/3qKuB9ea/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "3qKuB9ea",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:3qKuB9ea"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "sourceUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "contentFingerprint": "fe652ec03f70f3237def1b0a97af3232e98162da9604ae334d4dfb684bed4e64",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:44:05.706Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Klubnacht w/ Gerd Janson, lyzanne",
+            "startAt": "2026-09-18T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "fe652ec03f70f3237def1b0a97af3232e98162da9604ae334d4dfb684bed4e64"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/3qKuB9ea/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+            "providerKey": "ticket_io",
+            "providerEventId": "3qKuB9ea",
+            "terminalTitle": "Klubnacht w/ Gerd Janson, lyzanne",
+            "terminalStartAt": "2026-09-18T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "fe652ec03f70f3237def1b0a97af3232e98162da9604ae334d4dfb684bed4e64",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:tonite:5ji6tv2d",
+        "officialUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+        "eventId": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+        "eventTitle": "BACK2BASICS XXL @ Schrotty",
+        "officialSourceId": "f4a52000-3b2d-4dfd-8cb0-4b4788fb74a2",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://tonite.ticket.io/5jI6Tv2D/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+          "priceFromMinor": 2000,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "5jI6Tv2D",
+            "providerScope": "tonite.ticket.io",
+            "identityKey": "ticket_io:tonite.ticket.io:5jI6Tv2D"
+          },
+          "canonicalTicketUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+          "sourceUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+          "contentFingerprint": "e060a69ec049dbbc648907931cf11300d6e2b61449a3f439fac744a68928dc1e",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:44:30.244Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "early bird",
+              "normalizedLabel": "early bird",
+              "rawPrice": "20,00 Euro",
+              "amountMinor": 2000,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "BACK2BASICS XXL @ Schrotty",
+            "startAt": "2026-10-16T23:00:00+02:00",
+            "venueName": "Schrotty"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "20,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 2000,
+            "currency": "EUR",
+            "rawPriceText": "20,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "e060a69ec049dbbc648907931cf11300d6e2b61449a3f439fac744a68928dc1e"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+            "redirectChain": [
+              "https://tonite.ticket.io/5jI6Tv2D/"
+            ],
+            "terminalUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+            "providerKey": "ticket_io",
+            "providerEventId": "5jI6Tv2D",
+            "terminalTitle": "BACK2BASICS XXL @ Schrotty",
+            "terminalStartAt": "2026-10-16T23:00:00+02:00",
+            "terminalVenue": "Schrotty",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "e060a69ec049dbbc648907931cf11300d6e2b61449a3f439fac744a68928dc1e",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "20,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:vfuxdxqy",
+        "officialUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+        "eventId": "a82b7c0d-9d29-4bb2-a4f6-c99fece53569",
+        "eventTitle": "Klubnacht w/ Adiel, Di², EPHIE",
+        "officialSourceId": "18323231-fe4e-42dd-a549-5f579eccdf03",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/vfuXdxqy/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "vfuXdxqy",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:vfuXdxqy"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "sourceUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "contentFingerprint": "89991bb19fa88e24aa85ffa6870ee1c6943da4acc5d0b789cc87130119cba646",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:44:55.113Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Klubnacht w/ Adiel, Di², EPHIE",
+            "startAt": "2026-09-19T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "89991bb19fa88e24aa85ffa6870ee1c6943da4acc5d0b789cc87130119cba646"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/vfuXdxqy/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+            "providerKey": "ticket_io",
+            "providerEventId": "vfuXdxqy",
+            "terminalTitle": "Klubnacht w/ Adiel, Di², EPHIE",
+            "terminalStartAt": "2026-09-19T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "89991bb19fa88e24aa85ffa6870ee1c6943da4acc5d0b789cc87130119cba646",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:acnlnyak",
+        "officialUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+        "eventId": "3281c605-a9b4-4276-9432-9bcf5c9575de",
+        "eventTitle": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+        "officialSourceId": "d21a17e5-782b-421d-9a80-664b238cd4e2",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/ACnLNyAK/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "ACnLNyAK",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:ACnLNyAK"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "sourceUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "contentFingerprint": "6fdca8f343a446e8a40df8350d31dd7398f9546aa9d6fd8b85fbeaf5612a5958",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:45:20.702Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+            "startAt": "2026-09-26T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "6fdca8f343a446e8a40df8350d31dd7398f9546aa9d6fd8b85fbeaf5612a5958"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/ACnLNyAK/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+            "providerKey": "ticket_io",
+            "providerEventId": "ACnLNyAK",
+            "terminalTitle": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+            "terminalStartAt": "2026-09-26T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "6fdca8f343a446e8a40df8350d31dd7398f9546aa9d6fd8b85fbeaf5612a5958",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:u7szdlae",
+        "officialUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+        "eventId": "827e1492-bb0f-44ed-bdad-1594c854fac9",
+        "eventTitle": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+        "officialSourceId": "a44e9b03-b9fb-4b24-bfdf-854cd10f26ed",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/U7SzDlAE/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "U7SzDlAE",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:U7SzDlAE"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "sourceUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "contentFingerprint": "f328b3487bb1b5e1f7ef6b2bb087d04004b14cb46b6f858d57b7acbb4b1d07cc",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:45:45.589Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+            "startAt": "2026-10-02T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "f328b3487bb1b5e1f7ef6b2bb087d04004b14cb46b6f858d57b7acbb4b1d07cc"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/U7SzDlAE/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+            "providerKey": "ticket_io",
+            "providerEventId": "U7SzDlAE",
+            "terminalTitle": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+            "terminalStartAt": "2026-10-02T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "f328b3487bb1b5e1f7ef6b2bb087d04004b14cb46b6f858d57b7acbb4b1d07cc",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:mmxwyrx2",
+        "officialUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+        "eventId": "0cfc083a-5e61-4979-8a66-d44f242bcae8",
+        "eventTitle": "Feines Tier w/ Franca & Philipp Fein",
+        "officialSourceId": "79269184-1542-41a2-98e3-15c1972d2ac5",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/Mmxwyrx2/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "Mmxwyrx2",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:Mmxwyrx2"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "sourceUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "contentFingerprint": "af4a281edb0ad7f8e800ab5d97b4b9a53d77343e9ab1f9211ab7273aaad3787c",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:46:09.969Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Feines Tier w/ Franca & Philipp Fein",
+            "startAt": "2026-10-10T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "af4a281edb0ad7f8e800ab5d97b4b9a53d77343e9ab1f9211ab7273aaad3787c"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/Mmxwyrx2/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+            "providerKey": "ticket_io",
+            "providerEventId": "Mmxwyrx2",
+            "terminalTitle": "Feines Tier w/ Franca & Philipp Fein",
+            "terminalStartAt": "2026-10-10T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "af4a281edb0ad7f8e800ab5d97b4b9a53d77343e9ab1f9211ab7273aaad3787c",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:sau31e99",
+        "officialUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+        "eventId": "91da2d35-8fc8-498f-9980-e8b055815762",
+        "eventTitle": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+        "officialSourceId": "d1359681-b525-453c-b5a9-f30c05ffbc7d",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/Sau31E99/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "Sau31E99",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:Sau31E99"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+          "sourceUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+          "contentFingerprint": "db20b6016b5fa33b8de62331e6c6b1ed5b1b53cbaf1d0b988608a5a95668e204",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:46:34.789Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+            "startAt": "2026-10-24T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "db20b6016b5fa33b8de62331e6c6b1ed5b1b53cbaf1d0b988608a5a95668e204"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/Sau31E99/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+            "providerKey": "ticket_io",
+            "providerEventId": "Sau31E99",
+            "terminalTitle": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+            "terminalStartAt": "2026-10-24T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "db20b6016b5fa33b8de62331e6c6b1ed5b1b53cbaf1d0b988608a5a95668e204",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/Sau31E99/",
+          "hasActivePurchaseCta": true
+        }
+      },
+      {
+        "sourceEventKey": "ticket_io:gewoelbe:b7ltcedc",
+        "officialUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+        "eventId": "0c9e9a9b-ae6d-44ad-bc9b-92d0d4f5e58b",
+        "eventTitle": "Remember the Future w/ Axel Boman, Shumi",
+        "officialSourceId": "6750c64c-cbd0-4e75-8309-ef67b90b7024",
+        "ticketSourceState": "current_ticket_detail",
+        "resolutionClass": "verified_ticket_complete",
+        "evidenceSummary": "resolution=verified_ticket_complete; sourceState=current_ticket_detail; ticketUrl=https://gewoelbe.ticket.io/b7LTcEdC/",
+        "ticketOperation": "insert",
+        "ticketOperationReason": "ticket_row_missing",
+        "plannedTicketRow": {
+          "provider": "ticket_io",
+          "ticketUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "priceFromMinor": 1200,
+          "currency": "EUR",
+          "salesStatus": "available",
+          "sortOrder": 0
+        },
+        "providerSourceOperation": "insert",
+        "providerSourceReason": "provider_source_missing",
+        "providerSourceUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+        "providerSourcePayload": {
+          "providerKey": "ticket_io",
+          "providerIdentity": {
+            "providerKey": "ticket_io",
+            "providerEventId": "b7LTcEdC",
+            "providerScope": "gewoelbe.ticket.io",
+            "identityKey": "ticket_io:gewoelbe.ticket.io:b7LTcEdC"
+          },
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "sourceUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "contentFingerprint": "fb75da459253abd5f2664b6b71a4bcfc6724bd72a15c7b7cb5e3bf1b2a0f00ad",
+          "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+          "extractedAt": "2026-09-13T17:46:59.634Z",
+          "normalizedStatus": "available",
+          "statusLabel": "Tickets verfügbar",
+          "offers": [
+            {
+              "rawLabel": "12 vor 12 Ticket",
+              "normalizedLabel": "12 vor 12 Ticket",
+              "rawPrice": "12,00 Euro",
+              "amountMinor": 1200,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            },
+            {
+              "rawLabel": "Reguläres Ticket",
+              "normalizedLabel": "Reguläres Ticket",
+              "rawPrice": "14,00 Euro",
+              "amountMinor": 1400,
+              "currency": "EUR",
+              "role": "regular_admission",
+              "grantsEventEntry": true,
+              "requiresBaseTicket": false,
+              "availability": "available",
+              "confidence": 0.9
+            }
+          ],
+          "rejectedOffers": [],
+          "confidence": 0.9,
+          "eventIdentityEvidence": {
+            "rawTitle": "Remember the Future w/ Axel Boman, Shumi",
+            "startAt": "2026-10-23T23:00:00+02:00",
+            "venueName": "Gewölbe"
+          }
+        },
+        "provenanceOperation": "update",
+        "provenanceReason": "official_provenance_update_required",
+        "provenancePayload": {
+          "ticketSourceState": "current_ticket_detail",
+          "resolutionClass": "verified_ticket_complete",
+          "consumerProjection": {
+            "ticketSourceState": "current_ticket_detail",
+            "providerKey": "ticket_io",
+            "priceLabel": "12,00 Euro",
+            "priceEvidenceState": "verified_current",
+            "status": "available",
+            "badge": "Tickets verfügbar",
+            "actionKind": "ticket_detail",
+            "actionLabel": "Tickets kaufen",
+            "canonicalTicketUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+            "hasActivePurchaseCta": true
+          },
+          "ticketSourceStateEvidence": null,
+          "priceEvidence": {
+            "state": "verified_current",
+            "amountMinor": 1200,
+            "currency": "EUR",
+            "rawPriceText": "12,00 Euro",
+            "evidenceOrigin": "provider_detail",
+            "sourceUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+            "sourceObservedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "fb75da459253abd5f2664b6b71a4bcfc6724bd72a15c7b7cb5e3bf1b2a0f00ad"
+          },
+          "statusProjection": {
+            "availabilityStatus": "available",
+            "normalizedStatus": "available",
+            "statusLabel": "Tickets verfügbar",
+            "statusEvidenceOrigin": "provider"
+          },
+          "identityResult": "ticket_identity_verified",
+          "observedAt": "2026-09-13T17:33:15.554Z",
+          "targetIdentityEvidence": {
+            "originalUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+            "redirectChain": [
+              "https://gewoelbe.ticket.io/b7LTcEdC/"
+            ],
+            "terminalUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+            "providerKey": "ticket_io",
+            "providerEventId": "b7LTcEdC",
+            "terminalTitle": "Remember the Future w/ Axel Boman, Shumi",
+            "terminalStartAt": "2026-10-23T23:00:00+02:00",
+            "terminalVenue": "Gewölbe",
+            "observedAt": "2026-09-13T17:33:15.554Z",
+            "contentFingerprint": "fb75da459253abd5f2664b6b71a4bcfc6724bd72a15c7b7cb5e3bf1b2a0f00ad",
+            "identityDecision": "verified_same_event",
+            "reasons": []
+          }
+        },
+        "consumerProjection": {
+          "ticketSourceState": "current_ticket_detail",
+          "providerKey": "ticket_io",
+          "priceLabel": "12,00 Euro",
+          "priceEvidenceState": "verified_current",
+          "status": "available",
+          "badge": "Tickets verfügbar",
+          "actionKind": "ticket_detail",
+          "actionLabel": "Tickets kaufen",
+          "canonicalTicketUrl": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "hasActivePurchaseCta": true
+        }
+      }
+    ]
+  }
+}

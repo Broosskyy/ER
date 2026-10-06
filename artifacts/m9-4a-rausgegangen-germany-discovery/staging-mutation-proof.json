@@ -1,0 +1,24 @@
+{
+  "before": {
+    "event_count": 48,
+    "genre_count": 84,
+    "lineup_count": 188,
+    "media_count": 47,
+    "source_binding_count": 96,
+    "ticket_count": 47
+  },
+  "after": {
+    "event_count": 48,
+    "genre_count": 84,
+    "lineup_count": 188,
+    "media_count": 47,
+    "source_binding_count": 96,
+    "ticket_count": 47
+  },
+  "eventMutationCount": 0,
+  "ticketMutationCount": 0,
+  "genreMutationCount": 0,
+  "lineupMutationCount": 0,
+  "mediaMutationCount": 0,
+  "sourceBindingMutationCount": 0
+}

@@ -8,6 +8,7 @@ import { colorRoles } from '@/design/colors';
 import { componentSize } from '@/design/layout';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export interface SearchEmptyStateProps {
   onClearAll: () => void;
@@ -15,6 +16,8 @@ export interface SearchEmptyStateProps {
 }
 
 export function SearchEmptyState({ onClearAll, onAdjustFilters }: SearchEmptyStateProps) {
+  const { t } = useAppTranslation();
+
   return (
     <View style={styles.container}>
       <View style={styles.iconWrap}>
@@ -24,11 +27,15 @@ export function SearchEmptyState({ onClearAll, onAdjustFilters }: SearchEmptySta
           color={colorRoles.emptyStateIcon}
         />
       </View>
-      <AppText style={styles.title}>No matching events</AppText>
-      <AppText style={styles.description}>Try removing one or more filters.</AppText>
+      <AppText style={styles.title}>{t('search.empty.title')}</AppText>
+      <AppText style={styles.description}>{t('search.empty.description')}</AppText>
       <View style={styles.actions}>
-        <PrimaryButton label="Clear All" onPress={onClearAll} style={styles.button} />
-        <SecondaryButton label="Adjust Filters" onPress={onAdjustFilters} style={styles.button} />
+        <PrimaryButton label={t('search.empty.clearAll')} onPress={onClearAll} style={styles.button} />
+        <SecondaryButton
+          label={t('search.empty.adjustFilters')}
+          onPress={onAdjustFilters}
+          style={styles.button}
+        />
       </View>
     </View>
   );

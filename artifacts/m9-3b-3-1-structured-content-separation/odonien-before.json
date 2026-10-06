@@ -1,0 +1,55 @@
+{
+  "eventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+  "title": "#MITTWOCHENENDE in Odonien",
+  "description": null,
+  "lineup": [
+    "AMON",
+    "NORDCORREIA.MP3 B2B DOCTOR MÜCKE",
+    "LSG",
+    "CAROLINKA",
+    "NSLZ",
+    "STELLA MARIA",
+    "MAURO",
+    "RAFFA",
+    "VYKA",
+    "RUSSEL B2B FLUMMI"
+  ],
+  "genres": [
+    "Hard Techno",
+    "Trance",
+    "Techno"
+  ],
+  "imageUrl": "https://cdn.ticket.io/companies/UreYcIRC/events/WnEdISCS/img/holder-1080.jpg?fad5f2fb",
+  "sources": [
+    {
+      "sourceUrl": "https://tonite.ticket.io/WnEdISCS/"
+    },
+    {
+      "sourceUrl": "https://tonite.ticket.io/WnEdISCS/",
+      "connectorId": "ticket-io-network-discovery",
+      "descriptionClean": "LINEUP: #bounce #hardbounce #trance● AMON● NORDCORREIA.MP3 B2B DOCTOR MÜCKE● LSG● CAROLINKA● NSLZ #techno #hardtechno● STELLA MARIA● MAURO● RAFFA● VYKA● RUSSEL B2B FLUMMI"
+    }
+  ],
+  "separation": {
+    "rawContent": "",
+    "lineupCandidates": [],
+    "genreCandidates": [],
+    "scheduleCandidates": [],
+    "ticketCandidates": [],
+    "metadataFragments": [],
+    "rejectedFragments": [],
+    "fragments": [],
+    "provenance": [],
+    "classification": "EMPTY"
+  },
+  "leakage": {
+    "lineupLeakage": false,
+    "genreLeakage": false,
+    "ticketLeakage": false,
+    "scheduleLeakage": false,
+    "legalBoilerplate": false,
+    "placeholderLeakage": false,
+    "recoverable": false
+  },
+  "structuredLeakage": false
+}

@@ -4,8 +4,23 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "shared/**/*.ts",
+    ".expo/types/**/*.ts",
+    "src/types/expo-app-ambient.d.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": [
+    "scripts/**",
+    "node_modules"
+  ]
 }

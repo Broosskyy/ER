@@ -1,0 +1,15 @@
+{
+  "originalCandidates": 15,
+  "liveRevalidated": 15,
+  "readyNew": 8,
+  "readyExistingMatch": 1,
+  "reviewRequired": 0,
+  "blocked": 6,
+  "irrelevant": 4,
+  "blockedByState": {
+    "READY_NEW": 8,
+    "BLOCKED_RELEVANCE": 4,
+    "BLOCKED_MEDIA": 2,
+    "READY_EXISTING_MATCH": 1
+  }
+}

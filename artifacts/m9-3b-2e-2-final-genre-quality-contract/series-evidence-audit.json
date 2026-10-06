@@ -1,0 +1,52 @@
+[
+  {
+    "seriesId": "series:bootshaus-ship",
+    "canonicalName": "Bootshaus on a Ship",
+    "aliases": [
+      "Bootshaus on a Ship"
+    ],
+    "genres": [
+      "Techno"
+    ],
+    "evidence": [
+      {
+        "genreKey": "techno",
+        "displayName": "Techno",
+        "sourceReference": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/",
+        "classificationReason": "bootshaus_promoter_editorial_genre",
+        "confidence": "HIGH"
+      }
+    ],
+    "confidence": "HIGH",
+    "sourceUrls": [
+      "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/"
+    ],
+    "observedAt": "2026-09-12T20:17:09.007Z",
+    "lastVerifiedAt": "2026-09-12T20:17:09.007Z"
+  },
+  {
+    "seriesId": "series:affenkaefig-mdma",
+    "canonicalName": "MDMA – Musik Die Mich Antreibt",
+    "aliases": [
+      "MDMA – Musik Die Mich Antreibt"
+    ],
+    "genres": [
+      "Techno"
+    ],
+    "evidence": [
+      {
+        "genreKey": "techno",
+        "displayName": "Techno",
+        "sourceReference": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "classificationReason": "affenkaefig_promoter_editorial_genre",
+        "confidence": "HIGH"
+      }
+    ],
+    "confidence": "HIGH",
+    "sourceUrls": [
+      "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/"
+    ],
+    "observedAt": "2026-09-12T20:17:09.007Z",
+    "lastVerifiedAt": "2026-09-12T20:17:09.007Z"
+  }
+]

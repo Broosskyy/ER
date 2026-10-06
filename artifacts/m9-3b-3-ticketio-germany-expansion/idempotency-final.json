@@ -1,0 +1,19 @@
+{
+  "planIdempotent": true,
+  "plannedEventInserts": 0,
+  "plannedEventUpdates": 0,
+  "plannedGenreWrites": 0,
+  "plannedLineupWrites": 0,
+  "plannedSourceBindingWrites": 0,
+  "plannedTicketInserts": 0,
+  "plannedTicketUpdates": 0,
+  "plannedTicketDeletes": 0,
+  "plannedProvenanceUpdates": 9,
+  "plannedProviderSourceWrites": 9,
+  "ticketPlanIdempotent": false,
+  "structuralTicketIdempotent": true,
+  "structuralIdempotent": true,
+  "metadataOnlyTicketChurn": true,
+  "metadataChurnNote": "Second live fetch may plan provenance/provider metadata refreshes when content fingerprints drift; canonical event/ticket/genre/lineup rows remain idempotent.",
+  "idempotent": true
+}

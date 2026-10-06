@@ -1,0 +1,12 @@
+{
+  "artifactRoots": [
+    "C:\\Users\\manue\\.cursor\\projects\\c-ER\\wt-import-reference-baseline\\artifacts\\m9-3b-1a-ticketio-detail-qualification"
+  ],
+  "eventsBridged": 34,
+  "preservedSignalTypes": [
+    "strongPositiveHits",
+    "weakPositiveHits",
+    "genreCandidates",
+    "relevance"
+  ]
+}

@@ -1,58 +1,86 @@
-import { Ionicons } from '@expo/vector-icons';
-import { Pressable, PressableProps, StyleSheet, ViewStyle } from 'react-native';
+import { ActivityIndicator, Pressable, PressableProps, StyleSheet, ViewStyle } from 'react-native';
 
-import { colors } from '@/design/colors';
-import { layout } from '@/design/layout';
-import { radii } from '@/design/radii';
+import { AppIcon, type AppIconName } from '@/components/primitives/AppIcon';
+import { useTheme } from '@/design/theme';
+
+import {
+  resolveIconButtonDimensions,
+  resolveIconButtonStyle,
+  type IconButtonSize,
+} from './button-styles';
 
 export interface IconButtonProps extends Omit<PressableProps, 'style'> {
-  icon: keyof typeof Ionicons.glyphMap;
-  size?: number;
-  color?: string;
+  icon: AppIconName;
+  size?: IconButtonSize;
   style?: ViewStyle;
   accessibilityLabel: string;
+  disabled?: boolean;
+  loading?: boolean;
+  destructive?: boolean;
 }
 
+/** Round icon action — mockup 52 IconButton. */
 export function IconButton({
   icon,
-  size = 22,
-  color = colors.textPrimary,
+  size = 'md',
   style,
   accessibilityLabel,
   disabled = false,
+  loading = false,
+  destructive = false,
   ...rest
 }: IconButtonProps) {
+  const { theme } = useTheme();
+  const isDisabled = disabled || loading;
+  const dimensions = resolveIconButtonDimensions(size);
+
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel}
-      disabled={disabled}
-      style={({ pressed }) => [
-        styles.button,
-        pressed && !disabled && styles.pressed,
-        disabled && styles.disabled,
-        style,
-      ]}
+      accessibilityState={{ disabled: isDisabled, busy: loading }}
+      disabled={isDisabled}
+      style={({ pressed }) => {
+        const resolved = resolveIconButtonStyle(theme, {
+          pressed,
+          disabled: isDisabled,
+          destructive,
+        });
+
+        return [
+          styles.button,
+          {
+            width: dimensions.buttonSize,
+            height: dimensions.buttonSize,
+            borderRadius: theme.radiusRoles.iconButton,
+            backgroundColor: resolved.backgroundColor,
+            opacity: resolved.opacity,
+          },
+          style,
+        ];
+      }}
       {...rest}
     >
-      <Ionicons name={icon} size={size} color={color} />
+      {({ pressed }) => {
+        const resolved = resolveIconButtonStyle(theme, {
+          pressed,
+          disabled: isDisabled,
+          destructive,
+        });
+
+        if (loading) {
+          return <ActivityIndicator size="small" color={resolved.iconColor} />;
+        }
+
+        return <AppIcon name={icon} size={size} color={resolved.iconColor} />;
+      }}
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    width: layout.minTouchTarget,
-    height: layout.minTouchTarget,
-    borderRadius: radii.full,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.surface,
-  },
-  pressed: {
-    backgroundColor: colors.surfaceElevated,
-  },
-  disabled: {
-    opacity: 0.5,
   },
 });

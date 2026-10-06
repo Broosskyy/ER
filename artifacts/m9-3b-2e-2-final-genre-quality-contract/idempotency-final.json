@@ -1,0 +1,14 @@
+{
+  "applyRepair": false,
+  "genreWrites": 0,
+  "eventWrites": 0,
+  "artistProfileWrites": 0,
+  "artistEvidenceWrites": 0,
+  "seriesProfileWrites": 0,
+  "lineupWrites": 0,
+  "ticketWrites": 0,
+  "mediaWrites": 0,
+  "sourceBindingWrites": 0,
+  "stable": true,
+  "note": "Post-apply dry-run with --skip-external produced zero writes."
+}

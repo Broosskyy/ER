@@ -1,0 +1,4 @@
+{
+  "phase": "loadPlannerContext",
+  "message": "Command failed: npx supabase db query --linked --yes\nnpm warn Unknown env config \"devdir\". This will error in a future major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run eternal-rave@0.2.0 npx\nnpm notice run supabase db query --linked --yes\nInitialising login role...\n\nSTDERR:\nnpm warn Unknown env config \"devdir\". This will error in a future major version of npm. See `npm help npmrc` for supported config options.\nnpm notice run eternal-rave@0.2.0 npx\nnpm notice run supabase db query --linked --yes\nInitialising login role...\n\nSTDOUT:\n{\"_tag\":\"Error\",\"error\":{\"code\":\"LegacyDbConfigLoginRoleStatusError\",\"message\":\"unexpected login role status 544: {\\\"message\\\":\\\"Failed to create login role: Connection terminated due to connection timeout\\\"}\"}}\n"
+}

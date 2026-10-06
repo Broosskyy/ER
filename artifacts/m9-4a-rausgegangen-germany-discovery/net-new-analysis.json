@@ -1,0 +1,16 @@
+{
+  "rawEvents": 11095,
+  "detailEnriched": 2500,
+  "upcomingDetailEnriched": 2500,
+  "electronicHigh": 178,
+  "electronicLikely": 4,
+  "ambiguousDetailEnriched": 1499,
+  "irrelevantDetailEnriched": 819,
+  "existingExact": 0,
+  "existingStrong": 1,
+  "possibleMatch": 0,
+  "netNewRelevant": 181,
+  "qualityReady": 195,
+  "netNewBlocked": -14,
+  "note": "Relevance/identity/net-new metrics computed on detail-enriched upcoming subset (max 2500 in this run)."
+}

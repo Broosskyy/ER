@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-import { colors } from './colors';
+import { darkColors } from './theme/palettes/darkColors';
 
 /**
  * Eternal Rave typography scale.
@@ -38,43 +38,43 @@ export const textVariants = {
   display: {
     fontSize: fontSize.display,
     fontWeight: fontWeight.bold,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.display * lineHeight.tight,
   },
   title: {
     fontSize: fontSize.xxl,
     fontWeight: fontWeight.semibold,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.xxl * lineHeight.tight,
   },
   heading: {
     fontSize: fontSize.xl,
     fontWeight: fontWeight.semibold,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.xl * lineHeight.tight,
   },
   body: {
     fontSize: fontSize.md,
     fontWeight: fontWeight.regular,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.md * lineHeight.normal,
   },
   bodySmall: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.base * lineHeight.normal,
   },
   caption: {
     fontSize: fontSize.sm,
     fontWeight: fontWeight.regular,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.sm * lineHeight.normal,
   },
   label: {
     fontSize: fontSize.sm,
     fontWeight: fontWeight.medium,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.sm * lineHeight.normal,
   },
 } as const satisfies Record<string, TextStyle>;
@@ -87,81 +87,81 @@ export const textRoles = {
   screenTitle: {
     fontSize: fontSize.xxl,
     fontWeight: fontWeight.bold,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.xxl * lineHeight.tight,
   },
   sectionTitle: {
     fontSize: fontSize.xl,
     fontWeight: fontWeight.semibold,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.xl * lineHeight.tight,
   },
   cardTitle: {
     fontSize: fontSize.md,
     fontWeight: fontWeight.semibold,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.md * lineHeight.tight,
   },
   cardSubtitle: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.base * lineHeight.normal,
   },
   body: textVariants.body,
   metadata: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.base * lineHeight.normal,
   },
   label: textVariants.label,
   button: {
     fontSize: fontSize.md,
     fontWeight: fontWeight.semibold,
-    color: colors.textOnPrimary,
+    color: darkColors.textOnPrimary,
     lineHeight: fontSize.md * lineHeight.tight,
   },
   chip: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.medium,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.base * lineHeight.tight,
   },
   chipSelected: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.semibold,
-    color: colors.textOnPrimary,
+    color: darkColors.textOnPrimary,
     lineHeight: fontSize.base * lineHeight.tight,
   },
   navLabel: {
     fontSize: fontSize.xs,
     fontWeight: fontWeight.medium,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.xs * lineHeight.tight,
   },
   navLabelActive: {
     fontSize: fontSize.xs,
     fontWeight: fontWeight.semibold,
-    color: colors.primary,
+    color: darkColors.primary,
     lineHeight: fontSize.xs * lineHeight.tight,
   },
   searchInput: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textPrimary,
+    color: darkColors.textPrimary,
     lineHeight: fontSize.base * lineHeight.normal,
   },
   searchPlaceholder: {
     fontSize: fontSize.base,
     fontWeight: fontWeight.regular,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.base * lineHeight.normal,
   },
   badge: {
     fontSize: fontSize.caption,
     fontWeight: fontWeight.semibold,
-    color: colors.textSecondary,
+    color: darkColors.textSecondary,
     lineHeight: fontSize.caption * lineHeight.tight,
   },
 } as const satisfies Record<string, TextStyle>;

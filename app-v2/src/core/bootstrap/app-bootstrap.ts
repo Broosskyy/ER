@@ -1,7 +1,5 @@
 import { featureFlags } from '@/core/config/feature-flags';
-import { ensureLocalContributorEventsHydrated } from '@/data/datasources/local/local-datasource';
 import type { EventRepository } from '@/data/repositories/repositories';
-import { runDefaultEventPipeline } from '@/features/events/pipeline/run-pipeline';
 
 let eventRepositoryRef: EventRepository | undefined;
 let bootstrapPromise: Promise<void> | undefined;
@@ -18,17 +16,21 @@ function getEventRepository(): EventRepository {
   return eventRepositoryRef;
 }
 
+async function hydrateFollowService(): Promise<void> {
+  const { followService } = await import('@/data/repositories/registry');
+  await followService.hydrate();
+}
+
 async function runBootstrap(): Promise<void> {
   const repository = getEventRepository();
 
   if (featureFlags.useSupabase) {
     await repository.initialize();
-    return;
+  } else {
+    repository.initializeSync([]);
   }
 
-  await ensureLocalContributorEventsHydrated();
-  const report = runDefaultEventPipeline();
-  repository.initializeSync(report.publishedEvents);
+  await hydrateFollowService();
 }
 
 export function isAppBootstrapped(): boolean {

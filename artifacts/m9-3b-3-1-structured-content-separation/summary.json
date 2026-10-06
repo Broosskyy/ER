@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-09-13T19:40:43.505Z",
+  "baselineHead": "f2babb496023d9629ddef264b2279fba26c913b1",
+  "stagingProject": "gnkjzinwvmrxcadwebhv",
+  "productionProject": "irgsllewfrxvbtznqmxh",
+  "productionMutations": 0,
+  "apply": true,
+  "eligibleEvents": 44,
+  "repairedEvents": 0,
+  "publishedDescriptionStructuredLeakage": 0,
+  "recoverableDescriptionIssuesAfter": 0,
+  "genreCoveragePercent": 1,
+  "recoverableLineups": 0,
+  "recoverableGenreMissing": 0,
+  "unsafeTicketTargets": 0,
+  "highConfidenceDuplicateGroups": 0,
+  "consumerParityFailures": 0,
+  "recoverableSearchFalseNegatives": 0,
+  "mediaRegressionFailures": 0,
+  "pastRenderedCards": 0,
+  "idempotencyStable": true,
+  "odonien": {
+    "lineupLeakageInDescription": false,
+    "genreHashtagLeakageInDescription": false,
+    "placeholderTBAInLineup": false,
+    "structuredLineupComplete": true
+  },
+  "status": "M9_3B_3_1_STRUCTURED_CONTENT_SEPARATION_VERIFIED"
+}

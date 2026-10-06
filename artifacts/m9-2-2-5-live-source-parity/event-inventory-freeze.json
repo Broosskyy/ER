@@ -1,0 +1,543 @@
+{
+  "frozenAt": "2026-08-31T18:41:06.358Z",
+  "scopeEventCount": 30,
+  "events": [
+    {
+      "canonicalEventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+      "slug": "001-5ac59acf",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "startsAt": "2026-08-31T21:45:00+00:00",
+      "endsAt": "2026-09-01T04:00:00+00:00",
+      "venue": "AMØK CLUB, Palma de Mallorca",
+      "city": "S’Aranjassa",
+      "organizer": "122",
+      "officialUrls": [
+        "https://bootshaus.tv/events/31-8-26-122-pres-tripolism-at-palma-de-mallorca-es/"
+      ],
+      "ticketUrls": [
+        "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V"
+      ],
+      "consumerRoute": "http://localhost:8081/event/5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+      "consumerCardTestId": "home-event-5ac59acf-ebc4-4176-a6b2-91d1ced7aedb"
+    },
+    {
+      "canonicalEventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+      "slug": "002-f1abc745",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "startsAt": "2026-09-04T20:00:00+00:00",
+      "endsAt": "2026-09-05T03:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/r3hab-pres-by-bootshaus/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/C7JPnatZ/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/f1abc745-ac00-4b54-ab11-8d3967d7c845",
+      "consumerCardTestId": "home-event-f1abc745-ac00-4b54-ab11-8d3967d7c845"
+    },
+    {
+      "canonicalEventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "slug": "003-84af63ab",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "startsAt": "2026-09-04T22:00:00+00:00",
+      "endsAt": null,
+      "venue": "Essigfabrik / Elektroküche",
+      "city": "Köln",
+      "organizer": "Affenkäfig",
+      "officialUrls": [
+        "https://affenkaefig.info/event/underland-essigfabrik-05-09-2026/"
+      ],
+      "ticketUrls": [
+        "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "consumerCardTestId": "home-event-84af63ab-bf10-4326-a9fb-f2251537dfed"
+    },
+    {
+      "canonicalEventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "slug": "004-516a9312",
+      "title": "Bootshaus Sommerfest auf 4 Floors!",
+      "startsAt": "2026-09-05T20:00:00+00:00",
+      "endsAt": "2026-09-06T04:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/5-9-26-bootshaus-sommerfest-auf-4-floors/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/vB0cAmWg/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "consumerCardTestId": "home-event-516a9312-aa7d-4db6-8cc7-f5054627f981"
+    },
+    {
+      "canonicalEventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+      "slug": "005-d59d7612",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "startsAt": "2026-09-07T21:45:00+00:00",
+      "endsAt": "2026-09-08T03:00:00+00:00",
+      "venue": "AMØK CLUB, Palma de Mallorca",
+      "city": "S’Aranjassa",
+      "organizer": "122",
+      "officialUrls": [
+        "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es/"
+      ],
+      "ticketUrls": [
+        "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U"
+      ],
+      "consumerRoute": "http://localhost:8081/event/d59d7612-8d8c-4381-a055-96e8e8819eaa",
+      "consumerCardTestId": "home-event-d59d7612-8d8c-4381-a055-96e8e8819eaa"
+    },
+    {
+      "canonicalEventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "slug": "006-f560d0f3",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "startsAt": "2026-09-11T20:00:00+00:00",
+      "endsAt": "2026-09-12T04:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "INURFASE",
+      "officialUrls": [
+        "https://bootshaus.tv/events/blacklist-inurfase-pres-zaagstep-by-dr-donk/"
+      ],
+      "ticketUrls": [
+        "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8"
+      ],
+      "consumerRoute": "http://localhost:8081/event/f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "consumerCardTestId": "home-event-f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e"
+    },
+    {
+      "canonicalEventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+      "slug": "007-f00f72f6",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "startsAt": "2026-09-13T12:00:00+00:00",
+      "endsAt": "2026-09-13T18:00:00+00:00",
+      "venue": "KD Anleger 1",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/4zjKRnsa/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/f00f72f6-fb61-46f2-9f12-772951001afd",
+      "consumerCardTestId": "home-event-f00f72f6-fb61-46f2-9f12-772951001afd"
+    },
+    {
+      "canonicalEventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+      "slug": "008-f39374dc",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "startsAt": "2026-09-18T21:00:00+00:00",
+      "endsAt": "2026-09-19T05:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more/"
+      ],
+      "ticketUrls": [
+        "https://polyamor.ticket.io/PDikPg1v/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/f39374dc-751a-48ca-8f29-78d2582627bb",
+      "consumerCardTestId": "home-event-f39374dc-751a-48ca-8f29-78d2582627bb"
+    },
+    {
+      "canonicalEventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+      "slug": "009-15473810",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T20:00:00+00:00",
+      "venue": "Moxy Köln/Bonn Flughafen",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/fjspvLe4/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/15473810-0019-41a2-931e-3fd44fad7f2e",
+      "consumerCardTestId": "home-event-15473810-0019-41a2-931e-3fd44fad7f2e"
+    },
+    {
+      "canonicalEventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+      "slug": "010-60cc24e4",
+      "title": "Bootshaus Sommerfest Closing",
+      "startsAt": "2026-09-19T20:00:00+00:00",
+      "endsAt": "2026-09-20T04:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/bootshaus-sommerfest-closing-26/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/ycDXwvrm/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+      "consumerCardTestId": "home-event-60cc24e4-4934-4b5a-8bbd-a41d77ca268d"
+    },
+    {
+      "canonicalEventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+      "slug": "011-451f27ac",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "startsAt": "2026-09-19T20:00:00+00:00",
+      "endsAt": null,
+      "venue": "Essigfabrik / Elektroküche",
+      "city": "Köln",
+      "organizer": "Affenkäfig",
+      "officialUrls": [
+        "https://affenkaefig.info/event/14-jahreaffenkafig19-09-2026/"
+      ],
+      "ticketUrls": [
+        "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21"
+      ],
+      "consumerRoute": "http://localhost:8081/event/451f27ac-f29e-4529-a367-f901420ffc0e",
+      "consumerCardTestId": "home-event-451f27ac-f29e-4529-a367-f901420ffc0e"
+    },
+    {
+      "canonicalEventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+      "slug": "012-49b8bfbb",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "startsAt": "2026-09-20T16:00:00+00:00",
+      "endsAt": "2026-09-20T20:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus/"
+      ],
+      "ticketUrls": [
+        "https://musical-madness.ticket.io/eACzcM9S/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+      "consumerCardTestId": "home-event-49b8bfbb-4f6c-4865-9b5d-e3223d66bffa"
+    },
+    {
+      "canonicalEventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+      "slug": "013-d03dd8ad",
+      "title": "Unreal Weekender Night I - September 2026",
+      "startsAt": "2026-09-25T20:30:00+00:00",
+      "endsAt": "2026-09-26T06:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "unreal",
+      "officialUrls": [
+        "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026/"
+      ],
+      "ticketUrls": [
+        "https://unreal-bootshaus.ticket.io/U1dUL7lG/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+      "consumerCardTestId": "home-event-d03dd8ad-b487-48af-b208-fb5b5cc2349b"
+    },
+    {
+      "canonicalEventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+      "slug": "014-169cd40e",
+      "title": "Unreal Weekender Night II - September 2026",
+      "startsAt": "2026-09-26T20:30:00+00:00",
+      "endsAt": "2026-09-27T06:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "unreal",
+      "officialUrls": [
+        "https://bootshaus.tv/events/unreal-weekender-night-ii-september-2026/"
+      ],
+      "ticketUrls": [
+        "https://unreal-bootshaus.ticket.io/Zt24QJcV/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+      "consumerCardTestId": "home-event-169cd40e-07c6-4b0c-bb61-d58bca00fce0"
+    },
+    {
+      "canonicalEventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+      "slug": "015-bb3ac221",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "startsAt": "2026-10-01T22:00:00+00:00",
+      "endsAt": null,
+      "venue": "A8 Stage Club",
+      "city": "Saarbrücken",
+      "organizer": "Affenkäfig",
+      "officialUrls": [
+        "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/"
+      ],
+      "ticketUrls": [
+        "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43"
+      ],
+      "consumerRoute": "http://localhost:8081/event/bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+      "consumerCardTestId": "home-event-bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10"
+    },
+    {
+      "canonicalEventId": "301c217d-651a-4110-b759-a019f6546bb1",
+      "slug": "016-301c217d",
+      "title": "NIBIRII pres. ELY OAKS and more!",
+      "startsAt": "2026-10-02T20:00:00+00:00",
+      "endsAt": "2026-10-03T05:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "NIBIRII",
+      "officialUrls": [
+        "https://bootshaus.tv/events/nibirii-pres-ely-oaks/",
+        "https://bootshaus.tv/events/nibirii-pres-ely-oaks-and-more/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/c4CUlNfm/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/301c217d-651a-4110-b759-a019f6546bb1",
+      "consumerCardTestId": "home-event-301c217d-651a-4110-b759-a019f6546bb1"
+    },
+    {
+      "canonicalEventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+      "slug": "017-f5277702",
+      "title": "Blacklist Festival 2026",
+      "startsAt": "2026-10-09T16:00:00+00:00",
+      "endsAt": "2026-10-10T04:00:00+00:00",
+      "venue": "Turbinenhalle Oberhausen",
+      "city": "Oberhausen",
+      "organizer": "BLACKLIST",
+      "officialUrls": [
+        "https://bootshaus.tv/events/10-2026-blacklist-festival-2026/"
+      ],
+      "ticketUrls": [
+        "https://blacklist-festival.ticket.io/BF2Qb7HL/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/f5277702-a97a-4c54-a9fa-a759437a5f03",
+      "consumerCardTestId": "home-event-f5277702-a97a-4c54-a9fa-a759437a5f03"
+    },
+    {
+      "canonicalEventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+      "slug": "018-48205adc",
+      "title": "CHROME COLOGNE",
+      "startsAt": "2026-10-09T20:30:00+00:00",
+      "endsAt": "2026-10-10T06:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "CHROME COLOGNE",
+      "officialUrls": [
+        "https://bootshaus.tv/events/9-10-26-chrome-cologne/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/Atz0dHLX/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/48205adc-fd4a-4deb-a110-9f5837eb64d7",
+      "consumerCardTestId": "home-event-48205adc-fd4a-4deb-a110-9f5837eb64d7"
+    },
+    {
+      "canonicalEventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+      "slug": "019-93a1d5a2",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "startsAt": "2026-10-09T22:00:00+00:00",
+      "endsAt": null,
+      "venue": "Essigfabrik / Elektroküche",
+      "city": "Köln",
+      "organizer": "Affenkäfig",
+      "officialUrls": [
+        "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/"
+      ],
+      "ticketUrls": [
+        "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+      "consumerCardTestId": "home-event-93a1d5a2-01d3-4ad4-83e5-070456c66bb4"
+    },
+    {
+      "canonicalEventId": "2c00fbb7-baa9-47eb-aaa5-52cda45c79a1",
+      "slug": "020-2c00fbb7",
+      "title": "CHRIS STASSY pres. by BOOTSHAUS",
+      "startsAt": "2026-10-16T20:00:00+00:00",
+      "endsAt": "2026-10-17T03:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/chris-stassy-pres-by-bootshaus/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/By06xnf4/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/2c00fbb7-baa9-47eb-aaa5-52cda45c79a1",
+      "consumerCardTestId": "home-event-2c00fbb7-baa9-47eb-aaa5-52cda45c79a1"
+    },
+    {
+      "canonicalEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+      "slug": "021-8a8eb9b7",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "startsAt": "2026-10-16T20:00:00+00:00",
+      "endsAt": "2026-10-17T03:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/By06xnf4/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/8a8eb9b7-593e-45de-926d-2514735b86cc",
+      "consumerCardTestId": "home-event-8a8eb9b7-593e-45de-926d-2514735b86cc"
+    },
+    {
+      "canonicalEventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+      "slug": "022-f00a3a89",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "startsAt": "2026-10-16T22:00:00+00:00",
+      "endsAt": null,
+      "venue": "Capitol",
+      "city": "Hagen",
+      "organizer": "Affenkäfig Veranstaltungen",
+      "officialUrls": [
+        "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/"
+      ],
+      "ticketUrls": [
+        "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14"
+      ],
+      "consumerRoute": "http://localhost:8081/event/f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+      "consumerCardTestId": "home-event-f00a3a89-0269-47d0-a2bb-cb9289873b7d"
+    },
+    {
+      "canonicalEventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+      "slug": "023-ee4a1d07",
+      "title": "Cosmic Gate pres by Bootshaus & Senses!",
+      "startsAt": "2026-10-17T18:00:00+00:00",
+      "endsAt": "2026-10-18T00:30:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "BOOTSHAUS",
+      "officialUrls": [
+        "https://bootshaus.tv/events/cosmic-gate-pres-by-bootshaus-senses/"
+      ],
+      "ticketUrls": [
+        "https://senses-bootshaus.ticket.io/GhUtpLGh/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+      "consumerCardTestId": "home-event-ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a"
+    },
+    {
+      "canonicalEventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+      "slug": "024-96dda961",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "startsAt": "2026-10-23T21:00:00+00:00",
+      "endsAt": "2026-10-24T05:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "AFFENKÄFIG",
+      "officialUrls": [
+        "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/B3jK8aPC/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/96dda961-beeb-4d8d-9aac-73abab09fab5",
+      "consumerCardTestId": "home-event-96dda961-beeb-4d8d-9aac-73abab09fab5"
+    },
+    {
+      "canonicalEventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+      "slug": "025-adbed680",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "startsAt": "2026-10-24T19:30:00+00:00",
+      "endsAt": "2026-10-25T05:30:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "KITKATCLUB",
+      "officialUrls": [
+        "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub/"
+      ],
+      "ticketUrls": [],
+      "consumerRoute": "http://localhost:8081/event/adbed680-24e3-4bca-8ca1-69666a7b21b5",
+      "consumerCardTestId": "home-event-adbed680-24e3-4bca-8ca1-69666a7b21b5"
+    },
+    {
+      "canonicalEventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+      "slug": "026-94aafc1e",
+      "title": "Halloween Weekender",
+      "startsAt": "2026-10-30T21:00:00+00:00",
+      "endsAt": "2026-10-31T23:00:00+00:00",
+      "venue": "Essigfabrik / Elektroküche",
+      "city": "Köln",
+      "organizer": "Affenkäfig",
+      "officialUrls": [
+        "https://affenkaefig.info/event/halloween-weekender/"
+      ],
+      "ticketUrls": [
+        "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/94aafc1e-1122-47e1-a776-cf41c531dc66",
+      "consumerCardTestId": "home-event-94aafc1e-1122-47e1-a776-cf41c531dc66"
+    },
+    {
+      "canonicalEventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+      "slug": "027-21cf557a",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "startsAt": "2026-10-31T20:00:00+00:00",
+      "endsAt": "2026-11-01T06:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "LOONYLAND",
+      "officialUrls": [
+        "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/Hv4f09p8/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+      "consumerCardTestId": "home-event-21cf557a-be4f-46a5-bbdf-39d24a8018d2"
+    },
+    {
+      "canonicalEventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+      "slug": "028-7a1d2000",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "startsAt": "2026-12-19T21:00:00+00:00",
+      "endsAt": "2026-12-20T06:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "unreal",
+      "officialUrls": [
+        "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/"
+      ],
+      "ticketUrls": [
+        "https://unreal-bootshaus.ticket.io/nUs0Ktl4/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+      "consumerCardTestId": "home-event-7a1d2000-19cf-4aa6-ba1d-12240f70c32a"
+    },
+    {
+      "canonicalEventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+      "slug": "029-5c1d33f0",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "startsAt": "2026-12-30T20:30:00+00:00",
+      "endsAt": "2026-12-31T05:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "KITKATCLUB",
+      "officialUrls": [
+        "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/"
+      ],
+      "ticketUrls": [],
+      "consumerRoute": "http://localhost:8081/event/5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+      "consumerCardTestId": "home-event-5c1d33f0-ae82-4a4f-9ef2-91d32f80820c"
+    },
+    {
+      "canonicalEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+      "slug": "030-b314fd67",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "startsAt": "2026-12-31T20:00:00+00:00",
+      "endsAt": "2027-01-01T05:00:00+00:00",
+      "venue": "Bootshaus",
+      "city": "Köln",
+      "organizer": "LOONYLAND",
+      "officialUrls": [
+        "https://bootshaus.tv/events/bootshaus-loonyland-pres-nye-2026/"
+      ],
+      "ticketUrls": [
+        "https://bootshaus-club.ticket.io/S0cbXDda/"
+      ],
+      "consumerRoute": "http://localhost:8081/event/b314fd67-61c5-4afe-9f12-1efabf48a602",
+      "consumerCardTestId": "home-event-b314fd67-61c5-4afe-9f12-1efabf48a602"
+    }
+  ]
+}

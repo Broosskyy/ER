@@ -1,0 +1,62 @@
+[
+  {
+    "id": "07ff2b09-4189-43bd-93c0-7f05cee85a39",
+    "event_id": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "provider": "organizer_shop",
+    "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+    "price_from_minor": 1750,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "17418f4f-3623-41f3-b901-3374cf2a802d",
+    "event_id": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "provider": "organizer_shop",
+    "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+    "price_from_minor": 1500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "45294114-113c-4078-a4d8-df2541ed2ec2",
+    "event_id": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "provider": "organizer_shop",
+    "ticket_url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+    "price_from_minor": 2500,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "5fe6cce3-ece4-401b-b8c3-a208f0488a81",
+    "event_id": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+    "provider": "ticket_kings",
+    "ticket_url": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+    "price_from_minor": 1850,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "9a03c11e-aef2-4b83-8081-b029a68325ec",
+    "event_id": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+    "provider": "ticket_kings",
+    "ticket_url": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+    "price_from_minor": 2000,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  },
+  {
+    "id": "9c3e6b48-5615-485d-9436-51cbfd09b48b",
+    "event_id": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "provider": "ticket_kings",
+    "ticket_url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+    "price_from_minor": 2000,
+    "currency": "EUR",
+    "sales_status": "available",
+    "sort_order": 0
+  }
+]

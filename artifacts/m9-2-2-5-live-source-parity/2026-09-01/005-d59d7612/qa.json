@@ -1,0 +1,75 @@
+{
+  "canonicalEventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+  "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+  "checkedAt": "2026-09-01T08:47:07.681Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/122-pres-marten-lou-at-palma-de-mallorca-es/",
+    "lineupCount": 3,
+    "genreCount": 2,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U",
+    "finalUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U",
+    "provider": "fourvenues",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6178357450458178989924376_4997503238604356820895660.png"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": null,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nMarten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions of streams and backing from Drake's OVO and Atlantic Records, brings emotional, melodic Afro House shaped by his German roots and Parisian flair — already played by Keinemusik, Adriatique, BLOND:ISH and CamelPhat. Opening the night, Nicole Da Silva returns to AMØK with her signature blend of Afro House and organic percussion — Today Is Life, and tonight proves it.\n\n23:45 - TILL LATE",
+  "dbDescription": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nMarten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions of streams and backing from Drake's OVO and Atlantic Records, brings emotional, melodic Afro House shaped by his German roots and Parisian flair — already played by Keinemusik, Adriatique, BLOND:ISH and CamelPhat. Opening the night, Nicole Da Silva returns to AMØK with her signature blend of Afro House and organic percussion — Today Is Life, and tonight proves it.\n\n23:45 - TILL LATE",
+  "consumerDescription": "The event takes place at AMØK CLUB Palma de Mallorca, not at Bootshaus!\n\nMarten Lou, the talent behind \"My Love For You (Yebba's Heartbreak)\" with millions of streams and backing from Drake's OVO and Atlantic Records, brings emotional, melodic Afro House shaped by his German roots and Parisian flair — already played by Keinemusik, Adriatique, BLOND:ISH and CamelPhat. Opening the night, Nicole Da Silva returns to AMØK with her signature blend of Afro House and organic percussion — Today Is Life, and tonight proves it.\n\n23:45 - TILL LATE",
+  "sourceLineup": [
+    "MARTEN LOU",
+    "NICOLE DA SILVA",
+    "MANUEL SANCHEZ"
+  ],
+  "dbLineup": [
+    "MARTEN LOU",
+    "NICOLE DA SILVA",
+    "MANUEL SANCHEZ"
+  ],
+  "consumerLineup": [
+    "MARTEN LOU",
+    "NICOLE DA SILVA",
+    "MANUEL SANCHEZ"
+  ],
+  "sourceGenres": [
+    "House",
+    "Techno"
+  ],
+  "dbGenres": [
+    "House",
+    "Techno"
+  ],
+  "consumerGenres": [
+    "House",
+    "Techno"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/6178357450458178989924376_4997503238604356820895660.png",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

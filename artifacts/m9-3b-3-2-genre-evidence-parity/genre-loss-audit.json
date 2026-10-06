@@ -1,0 +1,17 @@
+{
+  "eventsAudited": 44,
+  "eventsWithAnyDroppedGenreLikeClaim": 0,
+  "validGenresMissingCanonical": 0,
+  "invalidTermsDroppedCorrectly": 0,
+  "ambiguousTerms": 0,
+  "taxonomyMissingTerms": 0,
+  "normalizationMissingTerms": 0,
+  "pruningErrors": 0,
+  "fusionErrors": 0,
+  "consumerParityErrors": 0,
+  "searchParityErrors": 0,
+  "recoverableExplicitGenreMissing": 0,
+  "recoverableInferredGenreMissing": 0,
+  "explicitGenreEvidenceParity": 1,
+  "overallGenreEvidenceParity": 1
+}

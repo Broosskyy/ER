@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "genreKey": "electronic",
+      "displayName": "Electronic",
+      "searchAliases": [
+        "electronic",
+        "edm",
+        "dance"
+      ]
+    },
+    {
+      "genreKey": "techno",
+      "displayName": "Techno",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "techno"
+      ]
+    },
+    {
+      "genreKey": "hardtechno",
+      "displayName": "Hard Techno",
+      "parentGenreKey": "techno",
+      "searchAliases": [
+        "hard techno",
+        "hard-techno"
+      ]
+    },
+    {
+      "genreKey": "industrial-techno",
+      "displayName": "Industrial Techno",
+      "parentGenreKey": "techno",
+      "searchAliases": [
+        "industrial techno"
+      ]
+    },
+    {
+      "genreKey": "melodic-techno",
+      "displayName": "Melodic Techno",
+      "parentGenreKey": "techno",
+      "searchAliases": [
+        "melodic techno"
+      ]
+    },
+    {
+      "genreKey": "minimal-techno",
+      "displayName": "Minimal Techno",
+      "parentGenreKey": "techno",
+      "searchAliases": [
+        "minimal techno"
+      ]
+    },
+    {
+      "genreKey": "acid-techno",
+      "displayName": "Acid Techno",
+      "parentGenreKey": "techno",
+      "searchAliases": [
+        "acid techno"
+      ]
+    },
+    {
+      "genreKey": "peak-time-techno",
+      "displayName": "Peak Time Techno",
+      "parentGenreKey": "techno",
+      "searchAliases": [
+        "peak time techno",
+        "peak-time techno"
+      ]
+    },
+    {
+      "genreKey": "house",
+      "displayName": "House",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "house"
+      ]
+    },
+    {
+      "genreKey": "tech-house",
+      "displayName": "Tech House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "tech house",
+        "tech-house"
+      ]
+    },
+    {
+      "genreKey": "deep-house",
+      "displayName": "Deep House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "deep house"
+      ]
+    },
+    {
+      "genreKey": "deep-tech-house",
+      "displayName": "Deep/Tech House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "deep/tech house",
+        "deep tech house"
+      ]
+    },
+    {
+      "genreKey": "progressive-house",
+      "displayName": "Progressive House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "progressive house"
+      ]
+    },
+    {
+      "genreKey": "melodic-house",
+      "displayName": "Melodic House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "melodic house"
+      ]
+    },
+    {
+      "genreKey": "afro-house",
+      "displayName": "Afro House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "afro house"
+      ]
+    },
+    {
+      "genreKey": "bass-house",
+      "displayName": "Bass House",
+      "parentGenreKey": "house",
+      "searchAliases": [
+        "bass house"
+      ]
+    },
+    {
+      "genreKey": "trance",
+      "displayName": "Trance",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "trance"
+      ]
+    },
+    {
+      "genreKey": "hard-trance",
+      "displayName": "Hard Trance",
+      "parentGenreKey": "trance",
+      "searchAliases": [
+        "hard trance"
+      ]
+    },
+    {
+      "genreKey": "psytrance",
+      "displayName": "Psytrance",
+      "parentGenreKey": "trance",
+      "searchAliases": [
+        "psytrance",
+        "psy trance"
+      ]
+    },
+    {
+      "genreKey": "hard-dance",
+      "displayName": "Hard Dance",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "hard dance"
+      ]
+    },
+    {
+      "genreKey": "hardstyle",
+      "displayName": "Hardstyle",
+      "parentGenreKey": "hard-dance",
+      "searchAliases": [
+        "hardstyle"
+      ]
+    },
+    {
+      "genreKey": "rawstyle",
+      "displayName": "Rawstyle",
+      "parentGenreKey": "hardstyle",
+      "searchAliases": [
+        "rawstyle"
+      ]
+    },
+    {
+      "genreKey": "hardcore",
+      "displayName": "Hardcore",
+      "parentGenreKey": "hard-dance",
+      "searchAliases": [
+        "hardcore"
+      ]
+    },
+    {
+      "genreKey": "gabber",
+      "displayName": "Gabber",
+      "parentGenreKey": "hardcore",
+      "searchAliases": [
+        "gabber"
+      ]
+    },
+    {
+      "genreKey": "drum-and-bass",
+      "displayName": "Drum'n'Bass",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "drum and bass",
+        "drum & bass",
+        "dnb",
+        "drum'n'bass"
+      ]
+    },
+    {
+      "genreKey": "jungle",
+      "displayName": "Jungle",
+      "parentGenreKey": "drum-and-bass",
+      "searchAliases": [
+        "jungle"
+      ]
+    },
+    {
+      "genreKey": "dubstep",
+      "displayName": "Dubstep",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "dubstep"
+      ]
+    },
+    {
+      "genreKey": "breakbeat",
+      "displayName": "Breakbeat",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "breakbeat"
+      ]
+    },
+    {
+      "genreKey": "electro",
+      "displayName": "Electro",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "electro"
+      ]
+    },
+    {
+      "genreKey": "disco",
+      "displayName": "Disco",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "disco"
+      ]
+    },
+    {
+      "genreKey": "uk-garage",
+      "displayName": "UK Garage",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "uk garage",
+        "ukg"
+      ]
+    },
+    {
+      "genreKey": "hip-hop",
+      "displayName": "Hip Hop",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "hip hop",
+        "hip-hop"
+      ]
+    },
+    {
+      "genreKey": "goa",
+      "displayName": "Goa",
+      "parentGenreKey": "psytrance",
+      "searchAliases": [
+        "goa"
+      ]
+    },
+    {
+      "genreKey": "groove",
+      "displayName": "Groove",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "groove"
+      ]
+    },
+    {
+      "genreKey": "bounce",
+      "displayName": "Bounce",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "bounce"
+      ]
+    },
+    {
+      "genreKey": "trap",
+      "displayName": "Trap",
+      "parentGenreKey": "electronic",
+      "searchAliases": [
+        "trap"
+      ]
+    }
+  ]
+}

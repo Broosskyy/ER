@@ -17,16 +17,18 @@ export {
   countActiveFilters,
   getActiveFilterSummaries,
   hasActiveFilters,
+  hasDiscoverySearchQuery,
   isExploreMode,
   summarizeActiveFilters,
 } from './utils/filter-events';
 export {
   ExploreFeed,
-  ExplorePosterGrid,
   FilterSheet,
   FilterSummaryBar,
   QuickFilterRow,
   SearchEmptyState,
   SearchInput,
   SearchResultsMeta,
+  SearchExplorePanel,
 } from './components';
+export type { SearchInputHandle } from './components';

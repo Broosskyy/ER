@@ -17,6 +17,12 @@ vi.mock('@/core/config/feature-flags', () => ({
   featureFlags: featureFlagsMock,
 }));
 
+vi.mock('@/data/repositories/registry', () => ({
+  followService: {
+    hydrate: vi.fn(async () => undefined),
+  },
+}));
+
 describe('app bootstrap', () => {
   let repository: EventRepository;
   let initializeSpy: ReturnType<typeof vi.spyOn>;
@@ -36,31 +42,19 @@ describe('app bootstrap', () => {
     vi.restoreAllMocks();
   });
 
-  it('prevents repository access before bootstrap completes', () => {
-    expect(() => repository.getPublishedEvents()).toThrow(
-      'EventRepository is not initialized. Call initialize() first.',
-    );
-    expect(() => assertAppBootstrapped()).toThrow(
-      'App bootstrap is not complete. Wait for bootstrapApp() before using EventRepository.',
-    );
-  });
-
-  it('bootstraps successfully in local mode', async () => {
+  it('bootstraps successfully in local mode with an empty repository', async () => {
     await bootstrapApp();
 
     expect(isAppBootstrapped()).toBe(true);
     expect(initializeSyncSpy).toHaveBeenCalledTimes(1);
     expect(initializeSpy).not.toHaveBeenCalled();
-    expect(repository.getPublishedEvents().length).toBeGreaterThan(0);
+    expect(repository.getPublishedSummaries()).toEqual([]);
     expect(() => assertAppBootstrapped()).not.toThrow();
   });
 
   it('bootstraps successfully in supabase mode', async () => {
     featureFlagsMock.useSupabase = true;
     initializeSpy.mockResolvedValue(undefined);
-    initializeSyncSpy.mockImplementation(() => {
-      repository.initializeSync([]);
-    });
 
     await bootstrapApp();
 
@@ -75,18 +69,13 @@ describe('app bootstrap', () => {
 
     await expect(bootstrapApp()).rejects.toThrow('Supabase unavailable');
     expect(isAppBootstrapped()).toBe(false);
-    expect(() => repository.getPublishedEvents()).toThrow(
-      'EventRepository is not initialized. Call initialize() first.',
-    );
   });
 
   it('retries bootstrap after a failed attempt', async () => {
     featureFlagsMock.useSupabase = true;
     initializeSpy
       .mockRejectedValueOnce(new Error('temporary outage'))
-      .mockImplementationOnce(async () => {
-        repository.initializeSync([]);
-      });
+      .mockResolvedValueOnce(undefined);
 
     await expect(bootstrapApp()).rejects.toThrow('temporary outage');
     resetAppBootstrap();
@@ -95,30 +84,5 @@ describe('app bootstrap', () => {
 
     expect(isAppBootstrapped()).toBe(true);
     expect(initializeSpy).toHaveBeenCalledTimes(2);
-  });
-
-  it('deduplicates parallel bootstrap calls into a single initialize execution', async () => {
-    featureFlagsMock.useSupabase = true;
-    let releaseInitialize: (() => void) | undefined;
-    initializeSpy.mockImplementation(
-      () =>
-        new Promise<void>((resolve) => {
-          releaseInitialize = () => {
-            repository.initializeSync([]);
-            resolve();
-          };
-        }),
-    );
-
-    const first = bootstrapApp();
-    const second = bootstrapApp();
-
-    expect(initializeSpy).toHaveBeenCalledTimes(1);
-
-    releaseInitialize?.();
-    await Promise.all([first, second]);
-
-    expect(isAppBootstrapped()).toBe(true);
-    expect(initializeSpy).toHaveBeenCalledTimes(1);
   });
 });

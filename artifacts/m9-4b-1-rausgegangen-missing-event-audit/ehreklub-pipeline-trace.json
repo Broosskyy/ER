@@ -1,0 +1,158 @@
+{
+  "pipeline": [
+    {
+      "stage": "LIVE_SOURCE",
+      "status": "PRESENT",
+      "url": "https://rausgegangen.de/events/ehrenklub-im-schrotty-14-0/"
+    },
+    {
+      "stage": "CITY_LISTING_DISCOVERY",
+      "status": "ABSENT"
+    },
+    {
+      "stage": "LOCATION_LISTING_DISCOVERY",
+      "status": "PRESENT",
+      "surface": "/locations/schrotty/"
+    },
+    {
+      "stage": "M9_4A_RAW_DISCOVERY",
+      "status": "ABSENT",
+      "note": "No ehrenklub/schrotty in M9.4A artifacts or http-cache"
+    },
+    {
+      "stage": "M9_4A_DETAIL_ENRICHED",
+      "status": "NOT_REACHED"
+    },
+    {
+      "stage": "M9_4A_RELEVANCE",
+      "status": "NOT_CLASSIFIED"
+    },
+    {
+      "stage": "M9_4B_CONTROLLED_BATCH",
+      "status": "NOT_INCLUDED"
+    },
+    {
+      "stage": "STAGING_CANONICAL",
+      "status": "ABSENT",
+      "note": "BACK2BASICS @ Schrotty exists via ticket.io; EhrenKlub does not"
+    },
+    {
+      "stage": "CONSUMER",
+      "status": "NOT_VISIBLE"
+    }
+  ],
+  "anchorEnrichedSummary": {
+    "relevance": "AMBIGUOUS",
+    "matchClassification": "NET_NEW",
+    "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA"
+  },
+  "anchorQualityContract": {
+    "identityKey": "rausgegangen:ehrenklub-im-schrotty-14-0",
+    "title": "EhrenKlub im Schrotty #14 mit USH, RIOT SHIFT, TITI, DIKKE BAAP, S*Y*N*K uvm",
+    "domainState": "AMBIGUOUS",
+    "identityState": "NET_NEW",
+    "qualityState": "REVIEW_REQUIRED",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "REVIEW",
+    "lineupState": "MISSING",
+    "ticketState": "MISSING",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [
+      "domain_ambiguous",
+      "genre_unresolved",
+      "structured_description_leakage"
+    ],
+    "passesQualityContract": false,
+    "qualityContractBypass": false,
+    "structuredContentEvaluated": true,
+    "lineupLeakage": false,
+    "genreLeakage": false,
+    "ticketLeakage": true,
+    "scheduleLeakage": false,
+    "descriptionQuality": "MIXED",
+    "genrePresenceCoverage": false,
+    "genreEvidenceCompleteness": true,
+    "explicitGenreClaims": 0,
+    "canonicalizedExplicitGenreClaims": 0,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0,
+    "evaluation": {
+      "domain": {
+        "classification": "AMBIGUOUS",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "REVIEW",
+          "valuePresent": false,
+          "provenancePresent": true,
+          "reason": "weak_positive:b2b;ambiguous:weak_signal_only"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "PARTIAL",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "PARTIAL"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "REVIEW",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "genres": [],
+        "confidence": "UNRESOLVED",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "MISSING",
+        "valuePresent": false,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "MISSING",
+        "valuePresent": false,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "REVIEW_REQUIRED",
+      "reviewReasons": [
+        "domain_ambiguous",
+        "genre_unresolved",
+        "structured_description_leakage"
+      ],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://rausgegangen.de/events/ehrenklub-im-schrotty-14-0/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "PARTIAL"
+    }
+  }
+}

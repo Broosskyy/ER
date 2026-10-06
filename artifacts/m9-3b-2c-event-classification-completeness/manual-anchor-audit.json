@@ -1,0 +1,235 @@
+[
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [
+      "DANTH",
+      "FABIAN FARELL",
+      "NIKLAS DEE",
+      "OLIVER MAGENTA",
+      "TEKNOCLASH"
+    ],
+    "lineupEvidenceLayers": [
+      "canonical_db"
+    ],
+    "lineupAfterPreview": [
+      "DANTH",
+      "FABIAN FARELL",
+      "NIKLAS DEE",
+      "OLIVER MAGENTA",
+      "TEKNOCLASH"
+    ],
+    "lineupStatus": "LINEUP_COMPLETE",
+    "ticketTarget": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "ticketPrice": null,
+    "ticketStatus": "sold_out",
+    "descriptionState": "DESCRIPTION_UNRESOLVED_NO_EVIDENCE",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "title": "14 Jahre Affenkäfig 19.09.2026",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [
+      "IMHAPPY",
+      "KOPF & HÖRER",
+      "PART TIME KILLER",
+      "TIEFUNDTON",
+      "DYSTOPIA",
+      "FLASH FORWARD",
+      "RISKO B2B REMEK666",
+      "SUPER DARIO",
+      "TOMMY LIBERA",
+      "TURBOTIMOS",
+      "THE EVELOPER",
+      "JULEZ BRIXTON",
+      "SEBI LIEMEN"
+    ],
+    "lineupEvidenceLayers": [
+      "canonical_db"
+    ],
+    "lineupAfterPreview": [
+      "IMHAPPY",
+      "KOPF & HÖRER",
+      "PART TIME KILLER",
+      "TIEFUNDTON",
+      "DYSTOPIA",
+      "FLASH FORWARD",
+      "RISKO B2B REMEK666",
+      "SUPER DARIO",
+      "TOMMY LIBERA",
+      "TURBOTIMOS",
+      "THE EVELOPER",
+      "JULEZ BRIXTON",
+      "SEBI LIEMEN"
+    ],
+    "lineupStatus": "LINEUP_COMPLETE",
+    "ticketTarget": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+    "ticketPrice": 2500,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_VERIFIED",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [
+      "PAOLO FERRARA",
+      "LE KLOWN",
+      "ANNX HELLMAYER",
+      "LHYST",
+      "PØUL STZ",
+      "TATTI VALKYRIE",
+      "VANY"
+    ],
+    "lineupEvidenceLayers": [
+      "canonical_db"
+    ],
+    "lineupAfterPreview": [
+      "PAOLO FERRARA",
+      "LE KLOWN",
+      "ANNX HELLMAYER",
+      "LHYST",
+      "PØUL STZ",
+      "TATTI VALKYRIE",
+      "VANY"
+    ],
+    "lineupStatus": "LINEUP_COMPLETE",
+    "ticketTarget": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+    "ticketPrice": 2000,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_VERIFIED",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [
+      "CHRIS STUSSY"
+    ],
+    "lineupEvidenceLayers": [
+      "canonical_db"
+    ],
+    "lineupAfterPreview": [
+      "CHRIS STUSSY"
+    ],
+    "lineupStatus": "LINEUP_PARTIAL",
+    "ticketTarget": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "ticketPrice": 4500,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_VERIFIED",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [
+      "Folgt"
+    ],
+    "lineupEvidenceLayers": [],
+    "lineupAfterPreview": [],
+    "lineupStatus": "LINEUP_NOT_ANNOUNCED",
+    "ticketTarget": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+    "ticketPrice": 1750,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_VERIFIED",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "title": "SA * 24.10.2026 | KitKatClub",
+    "genreBefore": [
+      "Tech House",
+      "Techno"
+    ],
+    "genreEvidence": [
+      {
+        "genreKey": "tech-house",
+        "displayName": "Tech House",
+        "confidence": "HIGH",
+        "evidenceType": "C_LINEUP",
+        "classificationReason": "lineup_artist_metadata_consensus"
+      },
+      {
+        "genreKey": "techno",
+        "displayName": "Techno",
+        "confidence": "HIGH",
+        "evidenceType": "C_LINEUP",
+        "classificationReason": "lineup_artist_metadata_consensus"
+      }
+    ],
+    "genreAfterPreview": [
+      "Tech House",
+      "Techno"
+    ],
+    "genreConfidence": "HIGH",
+    "lineupBefore": [],
+    "lineupEvidenceLayers": [],
+    "lineupAfterPreview": [],
+    "lineupStatus": "LINEUP_NOT_ANNOUNCED",
+    "ticketTarget": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub/",
+    "ticketPrice": 3500,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_VERIFIED",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [],
+    "lineupEvidenceLayers": [],
+    "lineupAfterPreview": [],
+    "lineupStatus": "LINEUP_NOT_ANNOUNCED",
+    "ticketTarget": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/",
+    "ticketPrice": 3500,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_VERIFIED",
+    "mediaState": "present"
+  },
+  {
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "genreBefore": [],
+    "genreEvidence": [],
+    "genreAfterPreview": [],
+    "genreConfidence": "UNRESOLVED",
+    "lineupBefore": [
+      "DEBORAH DE LUCA"
+    ],
+    "lineupEvidenceLayers": [
+      "canonical_db"
+    ],
+    "lineupAfterPreview": [
+      "DEBORAH DE LUCA"
+    ],
+    "lineupStatus": "LINEUP_PARTIAL",
+    "ticketTarget": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+    "ticketPrice": 3090,
+    "ticketStatus": "available",
+    "descriptionState": "DESCRIPTION_UNRESOLVED_NO_EVIDENCE",
+    "mediaState": "present"
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/cologne/",
+    "surfaceId": "cologne",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/hamburg/",
+    "surfaceId": "hamburg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/berlin/",
+    "surfaceId": "berlin",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/frankfurt/",
+    "surfaceId": "frankfurt",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/stuttgart/",
+    "surfaceId": "stuttgart",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/muenchen/",
+    "surfaceId": "muenchen",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/dortmund/",
+    "surfaceId": "dortmund",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/leipzig/",
+    "surfaceId": "leipzig",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/essen/",
+    "surfaceId": "essen",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/duesseldorf/",
+    "surfaceId": "duesseldorf",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/bonn/",
+    "surfaceId": "bonn",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/hannover/",
+    "surfaceId": "hannover",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/nuernberg/",
+    "surfaceId": "nuernberg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/dresden/",
+    "surfaceId": "dresden",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/bremen/",
+    "surfaceId": "bremen",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/karlsruhe/",
+    "surfaceId": "karlsruhe",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/aachen/",
+    "surfaceId": "aachen",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/mannheim/",
+    "surfaceId": "mannheim",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/bochum/",
+    "surfaceId": "bochum",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/muenster/",
+    "surfaceId": "muenster",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/wiesbaden/",
+    "surfaceId": "wiesbaden",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/kiel/",
+    "surfaceId": "kiel",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/mainz/",
+    "surfaceId": "mainz",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/rostock/",
+    "surfaceId": "rostock",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/freiburg/",
+    "surfaceId": "freiburg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/potsdam/",
+    "surfaceId": "potsdam",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/magdeburg/",
+    "surfaceId": "magdeburg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/saarbruecken/",
+    "surfaceId": "saarbruecken",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/erfurt/",
+    "surfaceId": "erfurt",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/kassel/",
+    "surfaceId": "kassel",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/heidelberg/",
+    "surfaceId": "heidelberg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/augsburg/",
+    "surfaceId": "augsburg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/wuppertal/",
+    "surfaceId": "wuppertal",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/bielefeld/",
+    "surfaceId": "bielefeld",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/moenchengladbach/",
+    "surfaceId": "moenchengladbach",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/krefeld/",
+    "surfaceId": "krefeld",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/luebeck/",
+    "surfaceId": "luebeck",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/chemnitz/",
+    "surfaceId": "chemnitz",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/oldenburg/",
+    "surfaceId": "oldenburg",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/osnabrueck/",
+    "surfaceId": "osnabrueck",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/oberhausen/",
+    "surfaceId": "oberhausen",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/paderborn/",
+    "surfaceId": "paderborn",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/trier/",
+    "surfaceId": "trier",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/jena/",
+    "surfaceId": "jena",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  },
+  {
+    "surfaceType": "CITY",
+    "surfaceUrl": "https://rausgegangen.de/siegen/",
+    "surfaceId": "siegen",
+    "discoveredAt": "2026-09-16T19:48:10.618Z",
+    "discoveryRunId": "aef0db2f-25b7-460f-a8f6-6a079a9526d1"
+  }
+]

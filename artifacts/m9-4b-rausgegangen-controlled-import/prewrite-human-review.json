@@ -1,0 +1,273 @@
+[
+  {
+    "title": "Utopian Summer",
+    "date": "2026-09-18T23:00+0200",
+    "city": "Köln",
+    "venue": "Odonien",
+    "genres": [
+      "Psytrance",
+      "Techno"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://111000111.de/3K/LC",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/ucjWJIqrQKmtTCJL3LBY_flyer-breit.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/utopian-summer-0/"
+  },
+  {
+    "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+    "date": "2026-09-17T17:30+0200",
+    "city": "Köln",
+    "venue": "AQUA - auf dem Eventschiff Rhein Roxy",
+    "genres": [
+      "House"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://t.rausgegangen.de/tickets/five-2-nine-001-house-boot",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4HVEwthRTbObc0zT8N4n_live7ac139c3-18b5-4fc0-99f3-2f6c90174b37.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/five-2-nine-001-house-boot-0/"
+  },
+  {
+    "title": "Verkäufer werden beim Vintage Flohmarkt in Köln Ehrenfeld",
+    "date": "2026-09-19T13:00+0200",
+    "city": "Köln",
+    "venue": "Tante Astrid e.V.",
+    "genres": [
+      "House",
+      "markt"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://tante-astrid.de/flohmarkt/",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/0GWXqmYQKmqDIXHXsswN_vintageflohmarkt169gradient.jpg",
+    "relevance": "IRRELEVANT",
+    "identity": "NET_NEW",
+    "qualityState": "BLOCKED_RELEVANCE",
+    "sourceUrl": "https://rausgegangen.de/events/verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3/"
+  },
+  {
+    "title": "Vintage Flohmarkt",
+    "date": "2026-09-19T13:00+0200",
+    "city": "Köln",
+    "venue": "Tante Astrid e.V.",
+    "genres": [
+      "House",
+      "markt"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://tante-astrid.de/flohmarkt/",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/dTvmiX5CSC2y6dyancIS_vintageflohmarkt169gradient.jpg",
+    "relevance": "IRRELEVANT",
+    "identity": "NET_NEW",
+    "qualityState": "BLOCKED_RELEVANCE",
+    "sourceUrl": "https://rausgegangen.de/events/vintage-flohmarkt-7/"
+  },
+  {
+    "title": "Afterwork Deepdive IV",
+    "date": "2026-09-17T18:00+0200",
+    "city": "Köln",
+    "venue": "HOUSE OF BATES | Foto Erlebnis Studio",
+    "genres": [
+      "House",
+      "aktiv & kreativ"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://afterworkdeepdivepart4.eventbrite.de",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/GhBpknNGR160PoVNf3Fq_grau-grun-modern-asthetisch-instagram-post-workbook-anzeige-tablet-2.png",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "BLOCKED_MEDIA",
+    "sourceUrl": "https://rausgegangen.de/events/afterwork-deepdive-iv-0/"
+  },
+  {
+    "title": "SONG-WRITING SESSION",
+    "date": "2026-09-16T18:00+0200",
+    "city": "Berlin",
+    "venue": "DNA. HOUSE",
+    "genres": [
+      "House",
+      "aktiv & kreativ"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://t.rausgegangen.de/tickets/song-writing-session-16",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/3aXPKcGlQqGLKG96hm6R_69f8d57e9f399f6ecbe4b805pexels-startup-stock-photos-7095-p-2000.jpeg",
+    "relevance": "IRRELEVANT",
+    "identity": "NET_NEW",
+    "qualityState": "BLOCKED_RELEVANCE",
+    "sourceUrl": "https://rausgegangen.de/events/song-writing-session-49/"
+  },
+  {
+    "title": "Frame Sommer Closing",
+    "date": "2026-09-18T17:00+0200",
+    "city": "Hamburg",
+    "venue": "Villa Viva Hamburg",
+    "genres": [
+      "Tech House",
+      "House",
+      "Electronic Festival"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://de.ra.co/events/2523019",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/RvaQbCT9OPFKbqVxKpQv_3.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/frame-sommer-closing-0/"
+  },
+  {
+    "title": "SPRUNGBRETT 2026 | Liveshow I mit THE HALF ORPHANS, INO YIN, NOAH JUAN und MONDWILD",
+    "date": "2026-09-16T19:00+0200",
+    "city": "München",
+    "venue": "Feierwerk",
+    "genres": [
+      "House",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://www.feierwerk.de/konzert-kulturprogramm/detail/16-09-2026_sprungbrett-liveshow-i-0",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/ScvVeFUTX24JuvAQUFx4_header-sb-live-1.png",
+    "relevance": "AMBIGUOUS",
+    "identity": "NET_NEW",
+    "qualityState": "BLOCKED_RELEVANCE",
+    "sourceUrl": "https://rausgegangen.de/events/sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0/"
+  },
+  {
+    "title": "FRIENDS HOUSE",
+    "date": "2026-09-25T23:00+0200",
+    "city": "Frankfurt am Main",
+    "venue": "Fortuna Irgendwo",
+    "genres": [
+      "House",
+      "frankfurt"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://fortunairgendwo.ticket.io/tCXyfwFa/",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/FjKGZOTQciY62p6iZu0p_fifacebook-260925.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/friends-house-1/"
+  },
+  {
+    "title": "TRANCE STATION",
+    "date": "2026-10-03T23:00+0200",
+    "city": "Stuttgart",
+    "venue": "Romy S",
+    "genres": [
+      "Trance",
+      "Techno",
+      "stuttgart"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://diginights.com/ticket/2026-10-03-trance-station-romy-s/step/1",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/lXHx3I5qRM26foFhehcu_76916892116850718669514288927742473715765968n.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/trance-station-1/"
+  },
+  {
+    "title": "COFFEE PARTY RAVE",
+    "date": "2026-09-20T12:30+0200",
+    "city": "Leipzig",
+    "venue": "koko café-bar",
+    "genres": [
+      "leipzig"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://t.rausgegangen.de/tickets/coffee-party-rave-13",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4C83mznSTCxZeDvguHsR_cream-blue-coffee-poster-banner-medium-us-querformat-instagram-post-45-148-105-mm-10.png",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "EXISTING_EXACT",
+    "qualityState": "READY_EXISTING_MATCH",
+    "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/"
+  },
+  {
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "date": "2027-02-12T20:00+0100",
+    "city": "Essen",
+    "venue": "Zeche Carl",
+    "genres": [
+      "Electro",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/0Axr5N5uS3ui9s3w3gj5_kytesc4maxbublak1125.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-24/"
+  },
+  {
+    "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+    "date": "2026-09-19T17:30+0200",
+    "city": "Düsseldorf",
+    "venue": "Techno Dampfer Düsseldorf",
+    "genres": [
+      "Hard Techno",
+      "Techno",
+      "düsseldorf",
+      "konzerte & musik",
+      "Electronic Festival"
+    ],
+    "lineupCount": 1,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://technodampfer.ticket.io/kVMC3cKZ/",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/UdS11l7uRpi3INVQAvMc_amsterdam-bonn-bregenz-duisburg-dusseldorf-hamburg-kelheim-koblenz-2.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/techno-dampfer-dusseldorf-w-klaudia-gawlas-0/"
+  },
+  {
+    "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+    "date": "2026-09-19T22:00+0200",
+    "city": "Dresden",
+    "venue": "Strasse e",
+    "genres": [
+      "dresden"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://partysdresden.ticket.io/29a6ueLm/",
+    "media": "https://s3.eu-central-1.amazonaws.com/rausgegangen/jHBVpr8oSi2uOc34kxNC_fb-layout-nostalgia.jpg",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "READY_NEW",
+    "sourceUrl": "https://rausgegangen.de/events/nostalgia-mega-90er-rave-dresden-1909-0/"
+  },
+  {
+    "title": "Henge – Galaktischer Rave",
+    "date": "2026-10-07T20:00+0200",
+    "city": "Aachen",
+    "venue": "Musikbunker Aachen e.V.",
+    "genres": [
+      "aachen",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "descriptionState": "VERIFIED",
+    "ticket": "https://mubu.ac/event/henge-galaktischer-rave/",
+    "relevance": "HIGH_RELEVANCE",
+    "identity": "NET_NEW",
+    "qualityState": "BLOCKED_MEDIA",
+    "sourceUrl": "https://rausgegangen.de/events/henge-galaktischer-rave-0/"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "canonicalEventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+  "title": "Halloween Weekender",
+  "checkedAt": "2026-08-31T19:04:14.198Z",
+  "officialEvidence": {
+    "url": "https://affenkaefig.info/event/halloween-weekender/",
+    "lineupCount": 0,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+    "finalUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+    "provider": "ticket_kings",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "unavailable_unknown",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/08/fb-format-2022-real.jpg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": 1850,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "SÜSSES ODER SAURES – DER ULTIMATIVE HALLOWEEN-ABRISS!\nEs wird dunkel, es wird laut, es wird absolut wild! Am Freitag, den 30.10.2026, starten wir in das brutalste Halloween-Wochenende des Jahres. Unter dem legendären Motto „Süsses oder Saures“ verwandeln wir die heiligen Hallen der Essigfabrik und der Elektroküche in Köln in einen düsteren Rave-Tempel. Macht euch bereit für schweißtreibende Bässe, exzessive Vibes und eine Nacht, die ihr so schnell nicht vergessen werdet. Wir servieren euch keine Süßigkeiten, sondern reinsten, kompromisslosen Techno auf zwei Floors!",
+  "dbDescription": "SÜSSES ODER SAURES – DER ULTIMATIVE HALLOWEEN-ABRISS! Es wird dunkel, es wird laut, es wird absolut wild! Am Freitag, den 30.10.2026, starten wir in das brutalste Halloween-Wochenende des Jahres. Unter dem legendären Motto „Süsses oder Saures“ verwandeln wir die heiligen Hallen der Essigfabrik und der Elektroküche in Köln in einen düsteren Rave-Tempel. Macht euch bereit für schweißtreibende Bässe, exzessive Vibes und eine Nacht, die ihr so schnell nicht vergessen werdet. Wir servieren euch keine Süßigkeiten, sondern reinsten, kompromisslosen Techno auf zwei Floors! 🎃🔥 30.10 Zapravka Ian Crank b2b Modze EDNA Mr. Techno Dystopia Hellmayer Jenni Zimnol Matthias Olck 31.10 F!ymeon H!Dude Lee Ann Jens Lissat Ployzz Sandra Romina Tommy Libera",
+  "consumerDescription": "SÜSSES ODER SAURES – DER ULTIMATIVE HALLOWEEN-ABRISS! Es wird dunkel, es wird laut, es wird absolut wild! Am Freitag, den 30.10.2026, starten wir in das brutalste Halloween-Wochenende des Jahres. Unter dem legendären Motto „Süsses oder Saures“ verwandeln wir die heiligen Hallen der Essigfabrik und der Elektroküche in Köln in einen düsteren Rave-Tempel. Macht euch bereit für schweißtreibende Bässe, exzessive Vibes und eine Nacht, die ihr so schnell nicht vergessen werdet. Wir servieren euch keine Süßigkeiten, sondern reinsten, kompromisslosen Techno auf zwei Floors! 🎃🔥 30.10 Zapravka Ian Crank b2b Modze EDNA Mr. Techno Dystopia Hellmayer Jenni Zimnol Matthias Olck 31.10 F!ymeon H!Dude Lee Ann Jens Lissat Ployzz Sandra Romina Tommy Libera",
+  "sourceLineup": [],
+  "dbLineup": [],
+  "consumerLineup": [],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://ticketkings.de/wp-content/uploads/2026/08/fb-format-2022-real.jpg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

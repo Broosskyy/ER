@@ -1,0 +1,46 @@
+{
+  "populations": {
+    "discovered": {
+      "count": 11095,
+      "scope": "city listing URLs M9.4A",
+      "label": "DISCOVERED_ONLY"
+    },
+    "detailEnriched": {
+      "count": 2500,
+      "scope": "top 2500 by listing pre-score",
+      "label": "DETAIL_CLASSIFIED"
+    },
+    "electronicHighLikely": {
+      "count": 181,
+      "scope": "detail-enriched upcoming HIGH/LIKELY NET_NEW proxy",
+      "label": "ELECTRONIC_RELEVANT"
+    },
+    "netNewRelevant": {
+      "count": 181,
+      "scope": "detail-enriched upcoming HIGH/LIKELY NET_NEW",
+      "label": "NET_NEW_RELEVANT"
+    },
+    "qualityReady": {
+      "count": 195,
+      "scope": "M9.4A reported (pre-fix denominator)",
+      "label": "QUALITY_READY"
+    },
+    "controlledBatchSelected": {
+      "count": 15,
+      "scope": "frozen proposed batch",
+      "label": "SELECTED_FOR_IMPORT"
+    },
+    "imported": {
+      "count": 9,
+      "scope": "M9.4B applied",
+      "label": "IMPORTED"
+    },
+    "consumerVisible": {
+      "count": "not measured exhaustively",
+      "scope": "staging consumer",
+      "label": "CONSUMER_VISIBLE"
+    }
+  },
+  "detailCoverageRate": 0.2253,
+  "locationSurfaceGapNote": "Events on /locations/ not included in discovered count"
+}

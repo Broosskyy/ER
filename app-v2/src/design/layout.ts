@@ -47,8 +47,36 @@ export const componentSize = {
 
   eventListThumbnailWidth: 108,
   eventListThumbnailAspectRatio: 4 / 3,
+  /** Mockup 09–14 discovery list cards use a square thumbnail. */
+  discoveryListThumbnailAspectRatio: 1,
+  /** Mockup 09 compact "Heute Abend" list thumbnail. */
+  discoveryCompactThumbnailSize: 64,
+  /** Home golden screen — larger tonight thumbnail for consumer list rows. */
+  homeTonightThumbnailSize: 72,
+  /** Mockups 15 and 38 public-profile avatar diameter. */
+  profileAvatarSize: 76,
+  /** Mockup 54 organizer-card logo diameter. */
+  organizerLogoSize: 60,
+  /** Mockup 39 team-member avatar diameter. */
+  teamMemberAvatarSize: 42,
+  /** Mockup 39 team-member row minimum height. */
+  teamMemberRowMinHeight: 56,
+  /** Mockup 16 ticket-list event image widths. */
+  ticketCardImageWidth: 148,
+  ticketCardMinHeight: 168,
+  ticketCardCompactImageWidth: 84,
+  /** Mockup 17 ticket-detail QR placeholder size. */
+  ticketQrCodeSize: 152,
   eventListRowMinHeight: 96,
   featuredHeroAspectRatio: 16 / 9,
+  /** Home featured hero — tall portrait image dominates the card. */
+  featuredHomeAspectRatio: 3 / 4,
+  /** Vertical premium discovery card — image-first emotional layout. */
+  verticalPremiumAspectRatio: 4 / 5,
+  /** Compact premium tonight card thumbnail. */
+  compactPremiumThumbnailSize: 80,
+  /** Home Top Clubs — compact image-forward venue rail, below event-card dominance. */
+  venueSpotlightAspectRatio: 4 / 5,
   eventDetailHeroAspectRatio: 16 / 9,
   mapPreviewAspectRatio: 16 / 9,
 

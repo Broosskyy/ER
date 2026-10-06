@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-09-16T07:22:33.421Z",
+  "baselineCommit": "59cfd93c68f9bc7f85479966cf15301ba2262e98",
+  "currentHead": "59cfd93c68f9bc7f85479966cf15301ba2262e98",
+  "stagingProject": "gnkjzinwvmrxcadwebhv",
+  "productionProject": "irgsllewfrxvbtznqmxh",
+  "productionMutations": 0,
+  "eligiblePublishedEvents": 44,
+  "genrePresenceCoverage": 1,
+  "explicitGenreEvidenceParity": 1,
+  "recoverableExplicitGenreMissing": 0,
+  "structuredDescriptionLeakage": 0,
+  "recoverableLineups": 0,
+  "duplicateGroups": 0
+}

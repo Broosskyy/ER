@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "connectorId": "hypothetical-future-source",
+  "note": "See event-quality-contract.test.ts hypothetical new connector case."
+}

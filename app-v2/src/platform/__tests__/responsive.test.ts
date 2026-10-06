@@ -22,7 +22,7 @@ describe('responsive layout', () => {
   });
 
   it('returns explore grid columns by breakpoint', () => {
-    expect(getExploreGridColumns(360)).toBe(2);
+    expect(getExploreGridColumns(360)).toBe(3);
     expect(getExploreGridColumns(800)).toBe(3);
     expect(getExploreGridColumns(1200)).toBe(4);
   });

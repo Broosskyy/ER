@@ -1,0 +1,16 @@
+{
+  "eventInserts": 27,
+  "eventUpdates": 2,
+  "lineupWrites": 12,
+  "genreWrites": 42,
+  "descriptionWrites": 0,
+  "mediaWrites": 0,
+  "sourceBindingWrites": 30,
+  "ticketInserts": 0,
+  "ticketUpdates": 0,
+  "canonicalCreated": 27,
+  "canonicalMatched": 3,
+  "canonicalEnriched": 2,
+  "applied": true,
+  "note": "First controlled M9.4D staging apply (2026-09-17); idempotent re-runs confirmed zero structural writes except one description repair for Frame Sommer Closing."
+}

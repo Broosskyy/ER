@@ -1,61 +1,62 @@
 import type { TextStyle } from 'react-native';
 
-import type { layout } from '@/design/layout';
-import type { radii } from '@/design/radii';
-import type { spacing } from '@/design/spacing';
+import type { layout } from '../layout';
+import type { radiusRoles, radii } from '../radii';
+import type { spacing, spacingRoles } from '../spacing';
+import type { fontFamily, fontSize, fontWeight, lineHeight } from '../typography';
 
-export interface NavigationTheme {
-  dark: boolean;
-  colors: {
-    primary: string;
-    background: string;
-    card: string;
-    text: string;
-    border: string;
-    notification: string;
-  };
-  fonts: {
-    regular: { fontFamily: string; fontWeight: '400' };
-    medium: { fontFamily: string; fontWeight: '500' };
-    bold: { fontFamily: string; fontWeight: '700' };
-    heavy: { fontFamily: string; fontWeight: '800' };
-  };
-}
-
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeModePreference = 'light' | 'dark' | 'system';
 
 export type ResolvedThemeMode = 'light' | 'dark';
 
-export type StatusBarStyle = 'light' | 'dark' | 'auto';
-
+/**
+ * Semantic color contract shared by light and dark themes.
+ * Components should consume these roles — never raw hex values.
+ */
 export interface ThemeColors {
   background: string;
   surface: string;
   surfaceElevated: string;
   surfaceSubtle: string;
+
   textPrimary: string;
   textSecondary: string;
   textMuted: string;
   textOnAccent: string;
+
   borderSubtle: string;
   borderStrong: string;
+
   accent: string;
   accentPressed: string;
   accentMuted: string;
+
   destructive: string;
   destructiveMuted: string;
   success: string;
   successMuted: string;
   warning: string;
   warningMuted: string;
+  info: string;
+
   overlay: string;
   skeletonBase: string;
   skeletonHighlight: string;
+
+  /** Legacy aliases — prefer semantic names in new code */
+  primary: string;
+  primaryHighlight: string;
+  primaryDeep: string;
+  border: string;
+  divider: string;
+  textOnPrimary: string;
+  live: string;
   mapSurface: string;
-  info: string;
+  transparent: string;
+  white: string;
 }
 
-export interface LegacyColorRoles {
+export interface ThemeColorRoles {
   appBackground: string;
   screenBackground: string;
   headerBackground: string;
@@ -101,7 +102,7 @@ export interface LegacyColorRoles {
   skeletonHighlight: string;
 }
 
-export type TextRole =
+export type AppTextRole =
   | 'display'
   | 'titleLarge'
   | 'titleMedium'
@@ -121,100 +122,56 @@ export type TextRole =
   | 'chipSelected'
   | 'navLabel'
   | 'navLabelActive'
-  | 'badge'
   | 'searchInput'
-  | 'searchPlaceholder';
-
-export type ThemeTextRoles = Record<TextRole, TextStyle>;
+  | 'searchPlaceholder'
+  | 'badge';
 
 export interface ThemeTypography {
-  roles: ThemeTextRoles;
+  fontSize: typeof fontSize;
+  fontWeight: typeof fontWeight;
+  lineHeight: typeof lineHeight;
+  fontFamily: typeof fontFamily;
+  textRoles: Record<AppTextRole, TextStyle>;
 }
 
 export interface ThemeShadows {
-  none: {
-    shadowColor: string;
-    shadowOffset: { width: number; height: number };
-    shadowOpacity: number;
-    shadowRadius: number;
-    elevation: number;
-  };
-  card: {
-    shadowColor: string;
-    shadowOffset: { width: number; height: number };
-    shadowOpacity: number;
-    shadowRadius: number;
-    elevation: number;
-  };
-  elevated: {
-    shadowColor: string;
-    shadowOffset: { width: number; height: number };
-    shadowOpacity: number;
-    shadowRadius: number;
-    elevation: number;
-  };
+  none: object;
+  card: object;
+  elevated: object;
 }
 
-export interface EternalRaveTheme {
+export interface Theme {
   mode: ResolvedThemeMode;
   colors: ThemeColors;
-  colorRoles: LegacyColorRoles;
+  colorRoles: ThemeColorRoles;
   typography: ThemeTypography;
   spacing: typeof spacing;
+  spacingRoles: typeof spacingRoles;
   radii: typeof radii;
+  radiusRoles: typeof radiusRoles;
   layout: typeof layout;
   shadows: ThemeShadows;
-  statusBarStyle: StatusBarStyle;
+  statusBarStyle: 'light' | 'dark';
+  navigationBarStyle: 'light' | 'dark';
 }
 
-export const THEME_COLOR_KEYS = [
-  'background',
-  'surface',
-  'surfaceElevated',
-  'surfaceSubtle',
-  'textPrimary',
-  'textSecondary',
-  'textMuted',
-  'textOnAccent',
-  'borderSubtle',
-  'borderStrong',
-  'accent',
-  'accentPressed',
-  'accentMuted',
-  'destructive',
-  'destructiveMuted',
-  'success',
-  'successMuted',
-  'warning',
-  'warningMuted',
-  'overlay',
-  'skeletonBase',
-  'skeletonHighlight',
-  'mapSurface',
-  'info',
-] as const satisfies ReadonlyArray<keyof ThemeColors>;
+export interface ThemeContextValue {
+  theme: Theme;
+  mode: ThemeModePreference;
+  resolvedMode: ResolvedThemeMode;
+  setMode: (mode: ThemeModePreference) => void;
+}
 
-export const TEXT_ROLE_KEYS = [
-  'display',
-  'titleLarge',
-  'titleMedium',
-  'titleSmall',
-  'body',
-  'bodyStrong',
-  'bodyMuted',
-  'label',
-  'caption',
-  'screenTitle',
-  'sectionTitle',
-  'cardTitle',
-  'cardSubtitle',
-  'metadata',
-  'button',
-  'chip',
-  'chipSelected',
-  'navLabel',
-  'navLabelActive',
-  'badge',
-  'searchInput',
-  'searchPlaceholder',
-] as const satisfies ReadonlyArray<TextRole>;
+export interface NavigationThemeColors {
+  background: string;
+  card: string;
+  border: string;
+  primary: string;
+  text: string;
+  notification: string;
+}
+
+export interface ResolvedNavigationTheme {
+  dark: boolean;
+  colors: NavigationThemeColors;
+}

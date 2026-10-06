@@ -1,0 +1,107 @@
+[
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "ticketUrl": "https://111000111.de/3K/LC",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 0,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "ticketUrl": "https://t.rausgegangen.de/tickets/five-2-nine-001-house-boot",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 1000,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3",
+    "ticketUrl": "https://tante-astrid.de/flohmarkt/",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 1600,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:vintage-flohmarkt-7",
+    "ticketUrl": "https://tante-astrid.de/flohmarkt/",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 0,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "ticketUrl": "https://afterworkdeepdivepart4.eventbrite.de",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 3900,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:song-writing-session-49",
+    "ticketUrl": "https://t.rausgegangen.de/tickets/song-writing-session-16",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 950,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "ticketUrl": "https://de.ra.co/events/2523019",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 0,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0",
+    "ticketUrl": "https://www.feierwerk.de/konzert-kulturprogramm/detail/16-09-2026_sprungbrett-liveshow-i-0",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 0,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "ticketUrl": "https://fortunairgendwo.ticket.io/tCXyfwFa/",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 1200,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "ticketUrl": "https://diginights.com/ticket/2026-10-03-trance-station-romy-s/step/1",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 919,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "ticketUrl": "https://t.rausgegangen.de/tickets/coffee-party-rave-13",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 1400,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-24",
+    "ticketUrl": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 0,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "ticketUrl": "https://technodampfer.ticket.io/kVMC3cKZ/",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 5349,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "ticketUrl": "https://partysdresden.ticket.io/29a6ueLm/",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 1190,
+    "ticketAvailability": "AVAILABLE"
+  },
+  {
+    "identityKey": "rausgegangen:henge-galaktischer-rave-0",
+    "ticketUrl": "https://mubu.ac/event/henge-galaktischer-rave/",
+    "ticketAction": "PURCHASE",
+    "priceMinor": 2500,
+    "ticketAvailability": "AVAILABLE"
+  }
+]

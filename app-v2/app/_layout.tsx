@@ -2,14 +2,15 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import 'react-native-reanimated';
 
+import { ToastProvider } from '@/components/feedback/ToastProvider';
 import { RepositoryProvider } from '@/data/repositories/RepositoryProvider';
-import { ThemeProvider, useTheme } from '@/design/theme';
-import { ThemedSystemUi } from '@/design/theme/ThemedSystemUi';
+import { ThemeProvider, ThemeSystemUi, useTheme } from '@/design/theme';
 import { AuthProvider } from '@/features/auth';
 import { I18nProvider } from '@/features/i18n';
 import { FavoritesProvider } from '@/features/favorites';
 import { UserLocationProvider } from '@/features/location/UserLocationProvider';
 import { NotificationsProvider } from '@/features/notifications';
+import { UserProfileProvider } from '@/features/profile/UserProfileProvider';
 import { PwaProvider } from '@/platform/pwa/PwaProvider';
 import { AnalyticsProvider } from '@/platform/analytics/AnalyticsProvider';
 
@@ -17,57 +18,63 @@ export { ErrorBoundary } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
-function RootNavigation() {
+function RootStack() {
   const { theme } = useTheme();
 
   return (
-    <>
-      <ThemedSystemUi />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: theme.colors.background },
-        }}
-      >
-        <Stack.Screen name="login" />
-        <Stack.Screen name="register" />
-        <Stack.Screen name="forgot-password" />
-        <Stack.Screen name="reset-password" />
-        <Stack.Screen name="auth/callback" />
-        <Stack.Screen name="create" />
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="notifications" />
-        <Stack.Screen name="activity" />
-        <Stack.Screen name="event/[id]" />
-        <Stack.Screen name="profile/events" />
-        <Stack.Screen name="collection/[type]" />
-        <Stack.Screen name="admin" />
-        <Stack.Screen name="design-preview" />
-      </Stack>
-    </>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: theme.colors.background },
+      }}
+    >
+      <Stack.Screen name="login" />
+      <Stack.Screen name="register" />
+      <Stack.Screen name="forgot-password" />
+      <Stack.Screen name="reset-password" />
+      <Stack.Screen name="auth/callback" />
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="notifications" />
+      <Stack.Screen name="activity" />
+      <Stack.Screen name="event/[id]" />
+      <Stack.Screen name="profile/edit" />
+      <Stack.Screen name="settings/index" />
+      <Stack.Screen name="settings/account" />
+      <Stack.Screen name="settings/notifications" />
+      <Stack.Screen name="settings/appearance" />
+      <Stack.Screen name="settings/location" />
+      <Stack.Screen name="settings/privacy" />
+      <Stack.Screen name="settings/help" />
+      <Stack.Screen name="settings/about" />
+    </Stack>
   );
 }
 
 export default function RootLayout() {
   return (
-    <ThemeProvider defaultMode="dark">
-      <I18nProvider>
-        <AuthProvider>
+    <I18nProvider>
+      <AuthProvider>
+        <ThemeProvider>
+          <ThemeSystemUi />
           <RepositoryProvider>
             <FavoritesProvider>
-              <UserLocationProvider>
-                <NotificationsProvider>
-                  <PwaProvider>
-                    <AnalyticsProvider>
-                      <RootNavigation />
-                    </AnalyticsProvider>
-                  </PwaProvider>
-                </NotificationsProvider>
-              </UserLocationProvider>
+              <UserProfileProvider>
+                <UserLocationProvider>
+                  <NotificationsProvider>
+                    <PwaProvider>
+                      <AnalyticsProvider>
+                        <ToastProvider>
+                          <RootStack />
+                        </ToastProvider>
+                      </AnalyticsProvider>
+                    </PwaProvider>
+                  </NotificationsProvider>
+                </UserLocationProvider>
+              </UserProfileProvider>
             </FavoritesProvider>
           </RepositoryProvider>
-        </AuthProvider>
-      </I18nProvider>
-    </ThemeProvider>
+        </ThemeProvider>
+      </AuthProvider>
+    </I18nProvider>
   );
 }

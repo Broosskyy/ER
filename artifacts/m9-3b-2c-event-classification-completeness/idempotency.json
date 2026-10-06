@@ -1,0 +1,4 @@
+{
+  "skipped": true,
+  "note": "Re-run source ingestion after repair should produce zero writes."
+}

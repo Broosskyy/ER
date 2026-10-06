@@ -1,0 +1,11 @@
+{
+  "module": "import-quality-contract-gate",
+  "fields": [
+    "genrePresenceCoverage",
+    "genreEvidenceCompleteness",
+    "explicitGenreClaims",
+    "canonicalizedExplicitGenreClaims",
+    "explicitGenreEvidenceParity",
+    "recoverableExplicitGenreMissing"
+  ]
+}

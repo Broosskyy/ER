@@ -1,0 +1,180 @@
+[
+  {
+    "rawTerm": "markt",
+    "normalizedTerm": "markt",
+    "occurrences": 2,
+    "eventIds": [
+      "rausgegangen:verkaufer-werden-beim-vintage-flohmarkt-in-koln-ehrenfeld-3",
+      "rausgegangen:vintage-flohmarkt-7"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Verkäufer werden beim Vintage Flohmarkt in Köln Ehrenfeld",
+      "Vintage Flohmarkt"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "aktiv & kreativ",
+    "normalizedTerm": "aktiv & kreativ",
+    "occurrences": 2,
+    "eventIds": [
+      "rausgegangen:afterwork-deepdive-iv-0",
+      "rausgegangen:song-writing-session-49"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Afterwork Deepdive IV",
+      "SONG-WRITING SESSION"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "konzerte & musik",
+    "normalizedTerm": "konzerte & musik",
+    "occurrences": 4,
+    "eventIds": [
+      "rausgegangen:sprungbrett-2026-liveshow-i-mit-the-half-orphans-ino-yin-noa-0",
+      "rausgegangen:kytes-indie-rave-tour-2026-2027-24",
+      "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+      "rausgegangen:henge-galaktischer-rave-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "SPRUNGBRETT 2026 | Liveshow I mit THE HALF ORPHANS, INO YIN, NOAH JUAN und MONDWILD",
+      "KYTES /// Indie Rave Tour 2026 & 2027",
+      "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+      "Henge – Galaktischer Rave"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "frankfurt",
+    "normalizedTerm": "frankfurt",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:friends-house-1"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "FRIENDS HOUSE"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "stuttgart",
+    "normalizedTerm": "stuttgart",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:trance-station-1"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "TRANCE STATION"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "leipzig",
+    "normalizedTerm": "leipzig",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:coffee-party-rave-13"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "COFFEE PARTY RAVE"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "düsseldorf",
+    "normalizedTerm": "düsseldorf",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Techno Dampfer Düsseldorf w/ Klaudia Gawlas"
+    ],
+    "classification": "AMBIGUOUS"
+  },
+  {
+    "rawTerm": "dresden",
+    "normalizedTerm": "dresden",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09."
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  },
+  {
+    "rawTerm": "aachen",
+    "normalizedTerm": "aachen",
+    "occurrences": 1,
+    "eventIds": [
+      "rausgegangen:henge-galaktischer-rave-0"
+    ],
+    "sourceTypes": [
+      "rausgegangen"
+    ],
+    "evidenceAuthority": [
+      "detail_json_ld"
+    ],
+    "contexts": [
+      "Henge – Galaktischer Rave"
+    ],
+    "classification": "NEEDS_REVIEW",
+    "reviewReason": "taxonomy_missing"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "artistCacheEntries": 126,
+  "artistEvidenceRecords": 493,
+  "artistCacheHits": 366,
+  "artistCacheMisses": 71,
+  "artistEvidenceProviderRequests": 294,
+  "providerSuccesses": 294,
+  "providerFailures": 0,
+  "providerTimeouts": 0,
+  "staleArtistProfiles": 0
+}

@@ -1,9 +1,14 @@
-export { EventCard } from './EventCard';
-export { FeaturedEventCard } from './FeaturedEventCard';
 export { FilterChip } from './FilterChip';
 export { FilterChipRow } from './FilterChipRow';
 export { HomeHeader } from './HomeHeader';
+export { HomeHeaderSearchButton } from './HomeHeaderSearchButton';
 export { LocationSelector } from './LocationSelector';
 export { NotificationButton } from './NotificationButton';
-export { SectionHeader } from './SectionHeader';
-export { getFeaturedCardWidth } from './featured-card-layout';
+export {
+  getFeaturedCardWidth,
+  getHomeFeaturedCardWidth,
+  getHomeFeaturedPairCardWidth,
+  HOME_FEATURED_CARD_WIDTH_RATIO,
+  HOME_FEATURED_PAIR_GAP,
+  HOME_FEATURED_SLOT_COUNT,
+} from './featured-card-layout';

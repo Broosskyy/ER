@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { WebTopNav } from '@/components/navigation/WebTopNav';
 import { useTheme } from '@/design/theme';
 import { componentSize } from '@/design/layout';
+import { layout } from '@/design/layout';
 import { spacing } from '@/design/spacing';
 import { fontSize } from '@/design/typography';
 import { SearchProvider } from '@/features/search/SearchContext';
@@ -14,6 +15,21 @@ import { getBottomTabBarHeight, getBottomTabBarPadding } from '@/platform/tab-ba
 
 type TabIconName = keyof typeof Ionicons.glyphMap;
 
+function tabIcon(
+  name: TabIconName,
+  focused: boolean,
+  activeColor: string,
+  inactiveColor: string,
+) {
+  return (
+    <Ionicons
+      name={name}
+      size={focused ? componentSize.bottomNavIconSizeActive : componentSize.bottomNavIconSize}
+      color={focused ? activeColor : inactiveColor}
+    />
+  );
+}
+
 export default function TabLayout() {
   const insets = useSafeAreaInsets();
   const { showWebTopNav } = useResponsiveLayout();
@@ -21,14 +37,6 @@ export default function TabLayout() {
   const bottomPadding = getBottomTabBarPadding(insets);
   const tabBarHeight = getBottomTabBarHeight(insets);
   const { colorRoles } = theme;
-
-  const tabIcon = (name: TabIconName, focused: boolean) => (
-    <Ionicons
-      name={name}
-      size={focused ? componentSize.bottomNavIconSizeActive : componentSize.bottomNavIconSize}
-      color={focused ? colorRoles.bottomNavActive : colorRoles.bottomNavInactive}
-    />
-  );
 
   return (
     <SearchProvider>
@@ -62,7 +70,12 @@ export default function TabLayout() {
             options={{
               title: 'Home',
               tabBarIcon: ({ focused }) =>
-                tabIcon(focused ? 'home' : 'home-outline', focused),
+                tabIcon(
+                  focused ? 'home' : 'home-outline',
+                  focused,
+                  colorRoles.bottomNavActive,
+                  colorRoles.bottomNavInactive,
+                ),
             }}
           />
           <Tabs.Screen
@@ -70,7 +83,12 @@ export default function TabLayout() {
             options={{
               title: 'Events',
               tabBarIcon: ({ focused }) =>
-                tabIcon(focused ? 'calendar' : 'calendar-outline', focused),
+                tabIcon(
+                  focused ? 'calendar' : 'calendar-outline',
+                  focused,
+                  colorRoles.bottomNavActive,
+                  colorRoles.bottomNavInactive,
+                ),
             }}
           />
           <Tabs.Screen
@@ -83,7 +101,13 @@ export default function TabLayout() {
             name="saved"
             options={{
               title: 'Saved',
-              tabBarIcon: ({ focused }) => tabIcon(focused ? 'heart' : 'heart-outline', focused),
+              tabBarIcon: ({ focused }) =>
+                tabIcon(
+                  focused ? 'heart' : 'heart-outline',
+                  focused,
+                  colorRoles.bottomNavActive,
+                  colorRoles.bottomNavInactive,
+                ),
             }}
           />
           <Tabs.Screen
@@ -91,7 +115,12 @@ export default function TabLayout() {
             options={{
               title: 'Profile',
               tabBarIcon: ({ focused }) =>
-                tabIcon(focused ? 'person' : 'person-outline', focused),
+                tabIcon(
+                  focused ? 'person' : 'person-outline',
+                  focused,
+                  colorRoles.bottomNavActive,
+                  colorRoles.bottomNavInactive,
+                ),
             }}
           />
         </Tabs>
@@ -110,12 +139,14 @@ const styles = StyleSheet.create({
   tabBar: {
     paddingTop: spacing.sm,
     borderTopWidth: 1,
+    minHeight: layout.bottomNavHeight,
   },
   tabBarLabel: {
     fontSize: fontSize.xs,
     fontWeight: '500',
     marginTop: spacing.xs,
-    marginBottom: 0,
+    marginBottom: spacing.xs,
+    lineHeight: 14,
   },
   tabBarItem: {
     paddingVertical: 0,

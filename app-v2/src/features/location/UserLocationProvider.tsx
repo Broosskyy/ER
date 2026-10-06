@@ -18,6 +18,7 @@ import {
 import {
   loadStoredUserLocation,
   saveStoredUserLocation,
+  clearStoredUserLocation,
 } from '@/features/location/user-location-storage';
 import type {
   UserLocationErrorCode,
@@ -42,6 +43,7 @@ export interface UserLocationContextValue {
   loading: boolean;
   requestCurrentLocation: () => Promise<boolean>;
   selectDiscoveryCity: (city: ManualDiscoveryCityOption) => Promise<boolean>;
+  clearLocation: () => Promise<void>;
 }
 
 const UserLocationContext = createContext<UserLocationContextValue | null>(null);
@@ -151,6 +153,13 @@ export function UserLocationProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const clearLocation = useCallback(async (): Promise<void> => {
+    setLocation(null);
+    setErrorCode(null);
+    setStatus('ready');
+    await clearStoredUserLocation();
+  }, []);
+
   const displayLabel = useMemo(
     () =>
       resolveLocationDisplayLabel(hydrated ? status : 'initial', location, locale, {
@@ -169,8 +178,9 @@ export function UserLocationProvider({ children }: { children: ReactNode }) {
       loading: status === 'loading',
       requestCurrentLocation,
       selectDiscoveryCity,
+      clearLocation,
     }),
-    [displayLabel, errorCode, hydrated, location, requestCurrentLocation, selectDiscoveryCity, status],
+    [displayLabel, errorCode, hydrated, location, requestCurrentLocation, selectDiscoveryCity, clearLocation, status],
   );
 
   return <UserLocationContext.Provider value={value}>{children}</UserLocationContext.Provider>;

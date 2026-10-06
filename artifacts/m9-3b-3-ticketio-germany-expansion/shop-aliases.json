@@ -1,0 +1,662 @@
+[
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "odonien",
+    "canonicalUrl": "https://odonien.ticket.io/",
+    "slug": "odonien"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/",
+    "slug": "aura"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/",
+    "slug": "glow"
+  },
+  {
+    "shopId": "www",
+    "canonicalUrl": "https://www.ticket.io/",
+    "slug": "www"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/",
+    "slug": "events"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=de",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=en",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=fr",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=nl",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pl",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=it",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=es",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=ru",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=tr",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=hr",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pt",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sq",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sl",
+    "slug": "bootshaus-club"
+  },
+  {
+    "shopId": "cdn",
+    "canonicalUrl": "https://cdn.ticket.io/",
+    "slug": "cdn"
+  },
+  {
+    "shopId": "srvded",
+    "canonicalUrl": "https://srvded.ticket.io/",
+    "slug": "srvded"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=de",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=en",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=fr",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=nl",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=pl",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=it",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=es",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=ru",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=tr",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=hr",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=pt",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=sq",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=sl",
+    "slug": "stadtgarten"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=de",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=en",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=fr",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=nl",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=pl",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=it",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=es",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=ru",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=tr",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=hr",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=pt",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=sq",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=sl",
+    "slug": "nibirii-festival"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=de",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=en",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=fr",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=nl",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=pl",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=it",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=es",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=ru",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=tr",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=hr",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=pt",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=sq",
+    "slug": "aura"
+  },
+  {
+    "shopId": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=sl",
+    "slug": "aura"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=de",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=en",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=fr",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=nl",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=pl",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=it",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=es",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=ru",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=tr",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=hr",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=pt",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=sq",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=sl",
+    "slug": "tonite"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=de",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=en",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=fr",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=nl",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=pl",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=it",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=es",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=ru",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=tr",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=hr",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=pt",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=sq",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=sl",
+    "slug": "gewoelbe"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=de",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=en",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=fr",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=nl",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=pl",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=it",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=es",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=ru",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=tr",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=hr",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=pt",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=sq",
+    "slug": "glow"
+  },
+  {
+    "shopId": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=sl",
+    "slug": "glow"
+  },
+  {
+    "shopId": "8sgkjd",
+    "canonicalUrl": "https://8sgkjd.ticket.io/",
+    "slug": "8sgkjd"
+  },
+  {
+    "shopId": "my",
+    "canonicalUrl": "https://my.ticket.io/",
+    "slug": "my"
+  },
+  {
+    "shopId": "backstage",
+    "canonicalUrl": "https://backstage.ticket.io/",
+    "slug": "backstage"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=de",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=en",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=fr",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=nl",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=pl",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=it",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=es",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=ru",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=tr",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=hr",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=pt",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=sq",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=sl",
+    "slug": "nachtresidenz"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=de",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=en",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=fr",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=nl",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=pl",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=it",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=es",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=ru",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=tr",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=hr",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=pt",
+    "slug": "events"
+  },
+  {
+    "shopId": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=sq",
+    "slug": "events"
+  }
+]

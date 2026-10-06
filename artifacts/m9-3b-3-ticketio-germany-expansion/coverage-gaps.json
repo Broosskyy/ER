@@ -1,0 +1,77 @@
+[
+  {
+    "bundesland": "Baden-Württemberg",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Baden-Württemberg"
+  },
+  {
+    "bundesland": "Bayern",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Bayern"
+  },
+  {
+    "bundesland": "Berlin",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Berlin"
+  },
+  {
+    "bundesland": "Brandenburg",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Brandenburg"
+  },
+  {
+    "bundesland": "Bremen",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Bremen"
+  },
+  {
+    "bundesland": "Hamburg",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Hamburg"
+  },
+  {
+    "bundesland": "Hessen",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Hessen"
+  },
+  {
+    "bundesland": "Mecklenburg-Vorpommern",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Mecklenburg-Vorpommern"
+  },
+  {
+    "bundesland": "Niedersachsen",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Niedersachsen"
+  },
+  {
+    "bundesland": "Rheinland-Pfalz",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Rheinland-Pfalz"
+  },
+  {
+    "bundesland": "Saarland",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Saarland"
+  },
+  {
+    "bundesland": "Sachsen",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Sachsen"
+  },
+  {
+    "bundesland": "Sachsen-Anhalt",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Sachsen-Anhalt"
+  },
+  {
+    "bundesland": "Schleswig-Holstein",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Schleswig-Holstein"
+  },
+  {
+    "bundesland": "Thüringen",
+    "gapType": "zero_shops",
+    "detail": "No ticket.io shops discovered in Thüringen"
+  }
+]

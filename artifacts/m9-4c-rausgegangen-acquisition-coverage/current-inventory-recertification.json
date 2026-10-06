@@ -1,0 +1,25 @@
+{
+  "genrePresenceCoverage": 0.9622641509433962,
+  "explicitGenreEvidenceParity": 1,
+  "recoverableExplicitGenreMissing": 0,
+  "structuredDescriptionLeakage": 3,
+  "highConfidenceDuplicateGroups": 0,
+  "stagingFingerprintBefore": {
+    "event_count": 57,
+    "genre_count": 95,
+    "lineup_count": 189,
+    "media_count": 56,
+    "source_binding_count": 105,
+    "ticket_count": 47
+  },
+  "stagingFingerprintAfter": {
+    "event_count": 57,
+    "genre_count": 95,
+    "lineup_count": 189,
+    "media_count": 56,
+    "source_binding_count": 105,
+    "ticket_count": 47
+  },
+  "stagingMutations": 0,
+  "productionMutations": 0
+}

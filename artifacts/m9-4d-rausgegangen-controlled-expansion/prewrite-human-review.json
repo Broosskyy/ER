@@ -1,0 +1,815 @@
+[
+  {
+    "title": "Bootshaus Sommerfest Closing",
+    "date": "2026-09-19T22:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; ticket_url_binding_match",
+    "sourceUrl": "https://rausgegangen.de/events/bootshaus-sommerfest-closing-2/"
+  },
+  {
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "date": "2026-12-11T23:00+0100",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Hard Techno",
+      "Techno",
+      "Electronic Festival"
+    ],
+    "lineupCount": 1,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; ticket_url_binding_match",
+    "sourceUrl": "https://rausgegangen.de/events/sara-landry-pres-by-bootshaus-0/"
+  },
+  {
+    "title": "Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more",
+    "date": "2027-02-04T14:00+0100",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Trance",
+      "Bounce"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://bootshaus-club.ticket.io/gxSFfYGS/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0/"
+  },
+  {
+    "title": "A TECHNO BALLET ODYSSEY",
+    "date": "2027-04-22T19:30+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Techno"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://www.berlinballet.company/a-techno-ballet-odyssey?utm_source=bootshaus&utm_medium=referral&utm_campaign=tbo_koeln_bootshaus",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/a-techno-ballet-odyssey-17/"
+  },
+  {
+    "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+    "date": "2026-10-28T20:00+0100",
+    "city": "Bochum",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Techno",
+      "Electro",
+      "bochum",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://planetarium-bochum.de/de_DE/calendar/electric-lights.1399145",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0/"
+  },
+  {
+    "title": "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m.",
+    "date": "2026-10-31T15:00+0100",
+    "city": "Münster",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Techno",
+      "House",
+      "münster"
+    ],
+    "lineupCount": 3,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://stgdts.com/83bf35",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1/"
+  },
+  {
+    "title": "COSEY MUELLER",
+    "date": "2026-09-24T19:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://popanz.ticket.io/mW8u09X5/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/cosey-mueller-5/"
+  },
+  {
+    "title": "GRANDMAS HOUSE",
+    "date": "2026-10-07T19:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://popanz.ticket.io/MJKYcFGO/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/grandmas-house-29/"
+  },
+  {
+    "title": "Grandmas House - Baby you're a Winner Tour",
+    "date": "2026-10-07T19:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://popanz.ticket.io/MJKYcFGO/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/grandmas-house-baby-youre-a-winner-tour-0/"
+  },
+  {
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "date": "2027-02-07T20:00+0100",
+    "city": "Erfurt",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Electro",
+      "erfurt",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-16/"
+  },
+  {
+    "title": "Utopian Summer",
+    "date": "2026-09-18T23:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Psytrance",
+      "Techno"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://111000111.de/3K/LC",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/utopian-summer-0/"
+  },
+  {
+    "title": "VERSCHOBEN * Electronic Garden of Love -OPEN AIR- #2 Südbrücke mit EGE 363, KATY ROUGH, KIRK uvm.",
+    "date": "2026-09-19T14:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Trance",
+      "Bounce"
+    ],
+    "lineupCount": 3,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://zukunftsmusik-k87a.stgdts.com/events/electronic-garden-of-love-open-air-2-sudbrucke-sudbrucke-20260919-POFIB/checkout/products",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0/"
+  },
+  {
+    "title": "QUEER AS HEAVEN - Queere Party in der Kirche",
+    "date": "2026-09-19T15:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Electro"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://t.rausgegangen.de/tickets/queer-as-heaven-queer-open-air-party-an-der-kirche",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/queer-as-heaven-queer-open-air-party-an-der-kirche-0/"
+  },
+  {
+    "title": "CGN*DUS // Techno. Freundschaft. Community",
+    "date": "2026-09-19T17:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Techno",
+      "House"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://silberschwein-shop.ticket.io/ZYjJJTGl",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/cgndus-techno-freundschaft-community-0/"
+  },
+  {
+    "title": "#MITTWOCHENENDE in Odonien",
+    "date": "2026-09-16T23:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Hard Techno",
+      "Hard Bounce",
+      "Trance",
+      "Techno",
+      "Bounce"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/"
+  },
+  {
+    "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+    "date": "2026-09-17T17:30+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://t.rausgegangen.de/tickets/five-2-nine-001-house-boot",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/five-2-nine-001-house-boot-0/"
+  },
+  {
+    "title": "Afterwork Deepdive IV",
+    "date": "2026-09-17T18:00+0200",
+    "city": "Köln",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "aktiv & kreativ"
+    ],
+    "lineupCount": 0,
+    "media": "NO_ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://afterworkdeepdivepart4.eventbrite.de",
+    "identity": "NET_NEW",
+    "qualityContract": true,
+    "importEligibility": "BLOCKED_MEDIA",
+    "reason": "NO_ACCEPTABLE_EVENT_MEDIA",
+    "sourceUrl": "https://rausgegangen.de/events/afterwork-deepdive-iv-0/"
+  },
+  {
+    "title": "Angel-in-Bondage Hamburg",
+    "date": "2026-09-18T22:00+0200",
+    "city": "Hamburg",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Electro"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://t.rausgegangen.de/tickets/angel-in-bondage-hamburg-1",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/angel-in-bondage-hamburg-1/"
+  },
+  {
+    "title": "NINA HEPBURN | ALL DAY LONG | OPEN AIR",
+    "date": "2026-09-19T15:00+0200",
+    "city": "Hamburg",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Techno",
+      "Electro"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://ticketmaster.evyy.net/c/6519574/2038753/23890?u=https%3A%2F%2Fwww.universe.com%2Fevents%2Fnina-hepburn-all-day-long-19-september-2026-tickets-RSK2J4%3Fref%3Dticketmaster&utm_medium=affiliate",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/nina-hepburn-all-day-long-19-september-2026-0/"
+  },
+  {
+    "title": "Ü30 Party Hamburg",
+    "date": "2026-09-19T22:00+0200",
+    "city": "Hamburg",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://partytickets.ditix.shop/event/i0czfveozk8naxw8?t=false",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/u30-party-hamburg-12/"
+  },
+  {
+    "title": "Frame Sommer Closing",
+    "date": "2026-09-18T17:00+0200",
+    "city": "Hamburg",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Tech House",
+      "House"
+    ],
+    "lineupCount": 5,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://de.ra.co/events/2523019",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/frame-sommer-closing-0/"
+  },
+  {
+    "title": "FLIGHTMODE",
+    "date": "2026-09-19T19:00+0200",
+    "city": "Berlin",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://tickets.geisburgrecords.com/geisburg/flightmode-1909/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/flightmode-17/"
+  },
+  {
+    "title": "Concrete Vehicles (exp post-punk/-hc noise-rock, can) + Older Friends (emo/screamo, bln)",
+    "date": "2026-09-16T19:00+0200",
+    "city": "Berlin",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Bounce",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://vvk.link/4fjp3n4",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/concrete-vehicles-exp-post-punk-hc-noise-rock-can-0/"
+  },
+  {
+    "title": "Giddens @Hard Rock Cafe",
+    "date": "2026-09-16T19:00+0200",
+    "city": "Berlin",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://www.eventbrite.de/e/giddens-live-hard-rock-cafe-berlin-tickets-1998793322634?aff=oddtdtcreator",
+    "identity": "NET_NEW",
+    "qualityContract": true,
+    "importEligibility": "BLOCKED_OTHER",
+    "reason": "lifecycle_ended",
+    "sourceUrl": "https://rausgegangen.de/events/giddens-hard-rock-cafe-0/"
+  },
+  {
+    "title": "FRIENDS HOUSE",
+    "date": "2026-09-25T23:00+0200",
+    "city": "Frankfurt am Main",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "frankfurt"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://fortunairgendwo.ticket.io/tCXyfwFa/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/friends-house-1/"
+  },
+  {
+    "title": "Mariybu \"FRECH\"-Tour",
+    "date": "2026-09-26T19:00+0200",
+    "city": "Frankfurt am Main",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Hardstyle",
+      "frankfurt",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://ticketmaster.evyy.net/c/6519574/2038753/23890?u=https%3A%2F%2Fwww.ticketmaster.de%2Fevent%2Fmariybu-frech-tour-tickets%2F1044148235&utm_medium=affiliate",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/mariybu-frech-tour-2/"
+  },
+  {
+    "title": "Bus zum Titanium Festival 2026",
+    "date": "2026-09-19T05:00+0200",
+    "city": "Frankfurt am Main",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "frankfurt"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://www.sonic-warrior.de/produkt/titianium-festival/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/bus-zum-titanium-festival-2026-0/"
+  },
+  {
+    "title": "TRANCE STATION",
+    "date": "2026-10-03T23:00+0200",
+    "city": "Stuttgart",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Trance",
+      "Techno",
+      "stuttgart"
+    ],
+    "lineupCount": 2,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://diginights.com/ticket/2026-10-03-trance-station-romy-s/step/1",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/trance-station-1/"
+  },
+  {
+    "title": "SWEAT SUMMER CLOSING",
+    "date": "2026-09-19T15:00+0200",
+    "city": "Stuttgart",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Progressive House",
+      "Trance",
+      "Techno",
+      "House",
+      "stuttgart"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://fridas-pier.stgdts.com/events/sweat-summer-closing-w-alex-kassian-fridas-pier-20260919-o625w/checkout/products",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/sweat-summer-closing-2/"
+  },
+  {
+    "title": "Elektronisch Draussen @Fridas Pier - Unterdeck Session",
+    "date": "2026-11-07T23:00+0100",
+    "city": "Stuttgart",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Melodic Techno",
+      "Techno",
+      "stuttgart",
+      "feste & festival"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://fridas-pier.stgdts.com/events/elektronisch-draussen-unterdeck-session-fridas-pier-20261107-Ar6ND",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/elektronisch-draussen-fridas-pier-unterdeck-session-0/"
+  },
+  {
+    "title": "Odd Beholder - Honest Work Tour 2026",
+    "date": "2026-09-18T20:00+0200",
+    "city": "München",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Electro",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://t.rausgegangen.de/tickets/odd-beholder-honest-work-tour-2026-4",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/odd-beholder-honest-work-tour-2026-muenchen/"
+  },
+  {
+    "title": "TURBO pres. TRANCE ALLSTARS - Trance, Bounce & Techno im Oma Doris",
+    "date": "2026-09-18T23:00+0200",
+    "city": "Dortmund",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Trance",
+      "Bounce",
+      "Techno"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://stgdts.com/722319",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0/"
+  },
+  {
+    "title": "90er & 2000er Party - Täubchenthal Leipzig",
+    "date": "2026-09-19T22:00+0200",
+    "city": "Leipzig",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Techno",
+      "Hip Hop",
+      "leipzig"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://t.rausgegangen.de/tickets/90er-2000er-party-taubchenthal-leipzig",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/90er-2000er-party-taubchenthal-leipzig-0/"
+  },
+  {
+    "title": "COFFEE PARTY RAVE",
+    "date": "2026-09-20T12:30+0200",
+    "city": "Leipzig",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "leipzig"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://t.rausgegangen.de/tickets/coffee-party-rave-13",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/"
+  },
+  {
+    "title": "Ausverkauft! aux animaux + This Eternal Decay + Another Tale",
+    "date": "2026-09-26T19:00+0200",
+    "city": "Essen",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "konzerte & musik",
+      "Electronic Festival"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://www.adticket.de/aux-animaux-This-Eternal-Decay-Another-Tale/Essen-Kulturzentrum-Grend/26-09-2026_20-00.html?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=Kulturzentrum+Grend+e.V.+%284945%29",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/aux-animaux-this-eternal-decay-another-tale-0/"
+  },
+  {
+    "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+    "date": "2026-09-19T17:30+0200",
+    "city": "Düsseldorf",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Hard Techno",
+      "Techno",
+      "düsseldorf",
+      "konzerte & musik",
+      "Electronic Festival"
+    ],
+    "lineupCount": 1,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://technodampfer.ticket.io/kVMC3cKZ/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/techno-dampfer-dusseldorf-w-klaudia-gawlas-0/"
+  },
+  {
+    "title": "FLUCHTGEFAHR Escape-Room \"Mad House – Sie sind in Deinem Kopf\"",
+    "date": "2026-09-16T09:00+0200",
+    "city": "Bonn",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "House",
+      "jederzeit verfügbar"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://fluchtgefahr.com/mad-house/",
+    "identity": "NET_NEW",
+    "qualityContract": true,
+    "importEligibility": "BLOCKED_OTHER",
+    "reason": "lifecycle_ended",
+    "sourceUrl": "https://rausgegangen.de/events/fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243/"
+  },
+  {
+    "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+    "date": "2026-09-19T22:00+0200",
+    "city": "Dresden",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "dresden"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://partysdresden.ticket.io/29a6ueLm/",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/nostalgia-mega-90er-rave-dresden-1909-0/"
+  },
+  {
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "date": "2027-01-29T20:00+0100",
+    "city": "Karlsruhe",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Electro",
+      "karlsruhe",
+      "konzerte & musik"
+    ],
+    "lineupCount": 0,
+    "media": "ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+    "identity": "EXISTING_EXACT",
+    "qualityContract": true,
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH",
+    "reason": "canonical_source_url_already_bound; decision:exact_match; no_ticket_url_binding",
+    "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-9/"
+  },
+  {
+    "title": "Dominext Kinky-Psytrance Party",
+    "date": "2026-09-19T22:00+0200",
+    "city": "Aachen",
+    "discoverySurface": "CITY",
+    "relevance": "HIGH_RELEVANCE",
+    "domain": "ELECTRONIC_HIGH",
+    "genres": [
+      "Psytrance",
+      "aachen"
+    ],
+    "lineupCount": 0,
+    "media": "NO_ACCEPTABLE_EVENT_MEDIA",
+    "ticket": "https://mubu.ac/event/dominext-kinky-psytrance-party/",
+    "identity": "NET_NEW",
+    "qualityContract": true,
+    "importEligibility": "BLOCKED_MEDIA",
+    "reason": "NO_ACCEPTABLE_EVENT_MEDIA",
+    "sourceUrl": "https://rausgegangen.de/events/dominext-kinky-psytrance-party-1/"
+  }
+]

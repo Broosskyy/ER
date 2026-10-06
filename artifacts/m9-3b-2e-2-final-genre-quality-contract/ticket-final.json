@@ -1,0 +1,311 @@
+{
+  "failures": 0,
+  "coverage": [
+    {
+      "eventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+      "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-31-08-2026-1G2V",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "available",
+      "classification": "UNKNOWN"
+    },
+    {
+      "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+      "title": "R3HAB pres. by BOOTSHAUS",
+      "ticketUrl": "https://bootshaus-club.ticket.io/C7JPnatZ/",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+      "title": "Underland Essigfabrik 05.09.2026",
+      "ticketUrl": "https://ticketkings.de/event/underland-essigfabrik-05-09-2026/",
+      "priceMinor": 2000,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+      "title": "Bootshaus Sommerfest auf 4 Floors!",
+      "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+      "priceMinor": 1490,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+      "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+      "ticketUrl": "https://site.fourvenues.com/en/bootshaus/events/122---amok-x-bootshaus-07-09-2026-H31U",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "available",
+      "classification": "UNKNOWN"
+    },
+    {
+      "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+      "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+      "ticketUrl": "https://73b85ec6.sibforms.com/serve/MUIFABTQAfa7s9QYFeDNfdkBz5--nixgqbuFENNiNG9eRSzWkm-hjgfHopdM7y7-BC2pMAVhQ5q33pEybomdUH3Tn9Ugvz9K98HTvs4P-0b7OVdlsz_PTeF2p9VDtx_C6ngYe8FKRT4URRN6xv-C7u4NZSqmagD9cYzxKZa4sw4zzTgSwW0M1BGLxnwkuCCEgdA3Rh2KZdsMTea8",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "sold_out",
+      "classification": "SOLD_OUT"
+    },
+    {
+      "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+      "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+      "ticketUrl": "https://gewoelbe.ticket.io/ylGM2drQ/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+      "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+      "ticketUrl": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+      "title": "Bootshaus on a Ship Vol. IV",
+      "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "sold_out",
+      "classification": "SOLD_OUT"
+    },
+    {
+      "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+      "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+      "ticketUrl": "https://polyamor.ticket.io/PDikPg1v/",
+      "priceMinor": 3500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+      "title": "BC173 Airport Session pres. by Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+      "priceMinor": 2290,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+      "title": "14 Jahre Affenkäfig 19.09.2026",
+      "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=21",
+      "priceMinor": 2500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+      "title": "Bootshaus Sommerfest Closing",
+      "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+      "priceMinor": 1500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+      "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+      "ticketUrl": "https://musical-madness.ticket.io/eACzcM9S/",
+      "priceMinor": 3690,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+      "title": "Unreal Weekender Night I - September 2026",
+      "ticketUrl": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+      "priceMinor": 4500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+      "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+      "ticketUrl": "https://gewoelbe.ticket.io/auHCwFAp/",
+      "priceMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+      "title": "Unreal Weekender Night II - September 2026",
+      "ticketUrl": "https://unreal-bootshaus.ticket.io/Zt24QJcV/",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "sold_out",
+      "classification": "SOLD_OUT"
+    },
+    {
+      "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+      "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+      "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+      "priceMinor": 1500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+      "title": "NIBIRII pres. ELY OAKS and more!",
+      "ticketUrl": "https://bootshaus-club.ticket.io/c4CUlNfm/",
+      "priceMinor": 2690,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+      "title": "Blacklist Festival 2026",
+      "ticketUrl": "https://blacklist-festival.ticket.io/BF2Qb7HL/",
+      "priceMinor": 4700,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+      "title": "CHROME COLOGNE",
+      "ticketUrl": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+      "priceMinor": 3490,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+      "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+      "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+      "priceMinor": 2000,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+      "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+      "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+      "priceMinor": 4500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "ticketUrl": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+      "priceMinor": 1750,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+      "title": "Cosmic Gate pres by Bootshaus & Senses!",
+      "ticketUrl": "https://senses-bootshaus.ticket.io/GhUtpLGh/",
+      "priceMinor": 2890,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+      "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+      "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+      "priceMinor": 2490,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+      "title": "SA * 24.10.2026 | KitKatClub",
+      "ticketUrl": "https://bootshaus.tv/events/sa-24-10-2026-kitkatclub/",
+      "priceMinor": 3500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+      "title": "Halloween Weekender",
+      "ticketUrl": "https://ticketkings.de/event/halloween-suesses-oder-saures-30-10-31-10-2026/",
+      "priceMinor": 1850,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+      "title": "Bootshaus & Loonyland pres. Halloween 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+      "priceMinor": 3200,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+      "priceMinor": 3290,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "ticketUrl": "https://unreal-bootshaus.ticket.io/nUs0Ktl4/",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "sold_out",
+      "classification": "SOLD_OUT"
+    },
+    {
+      "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+      "title": "MI * 30.12.2026 | KitKatClub",
+      "ticketUrl": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/",
+      "priceMinor": 3500,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+      "title": "Bootshaus & Loonyland pres. NYE 2026",
+      "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+      "priceMinor": 2900,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    },
+    {
+      "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+      "title": "DEBORAH DE LUCA pres by Bootshaus",
+      "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+      "priceMinor": 3090,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "classification": "TICKET_TARGET_VERIFIED"
+    }
+  ]
+}

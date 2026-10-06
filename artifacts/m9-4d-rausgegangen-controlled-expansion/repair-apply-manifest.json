@@ -1,0 +1,16 @@
+{
+  "eventInserts": 0,
+  "eventUpdates": 1,
+  "lineupWrites": 0,
+  "genreWrites": 0,
+  "descriptionWrites": 1,
+  "mediaWrites": 0,
+  "sourceBindingWrites": 0,
+  "ticketInserts": 0,
+  "ticketUpdates": 0,
+  "canonicalCreated": 0,
+  "canonicalMatched": 1,
+  "canonicalEnriched": 1,
+  "applied": true,
+  "note": "Structured description leakage repair for Frame Sommer Closing (8633bcf2-4172-424d-842d-6c027f8de19a)."
+}

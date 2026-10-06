@@ -1,0 +1,5 @@
+{
+  "applyRepair": false,
+  "genreRecoverableAfter": 0,
+  "note": "Re-run without --apply should produce zero genre writes when stable."
+}

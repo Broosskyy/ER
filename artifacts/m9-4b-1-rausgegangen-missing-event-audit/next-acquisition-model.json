@@ -1,0 +1,21 @@
+{
+  "recommendation": "D_HYBRID",
+  "model": {
+    "A_full_detail_all_bounded": "Rejected for source load — 11k+ detail fetches per run",
+    "B_high_recall_prequal_then_detail": "Partial — already used but listing-title-only pre-score misses slug-opaque events",
+    "C_rolling_date_window": "Recommended component — enrich all upcoming within 60-90d per city+location union",
+    "D_hybrid": "RECOMMENDED: city listings + venue location surfaces + rolling 60-90d window + priority prequal for remainder"
+  },
+  "rationale": [
+    "EhrenKlub proves venue-only listings are invisible to city-only discovery",
+    "2500 cap creates secondary loss within city-discovered pool (~77% never detail-fetched)",
+    "Location surfaces are bounded (tens of venues) and high-yield for electronic clubs",
+    "Rolling window ensures near-term events are fully classified before bulk backlog"
+  ],
+  "rollingWindowEvaluation": {
+    "days30": "Too narrow for festival horizon",
+    "days60": "Good for club/nightlife core",
+    "days90": "Recommended default for Germany-wide acquisition",
+    "laterHorizon": "Use prequal sampling beyond 90d"
+  }
+}

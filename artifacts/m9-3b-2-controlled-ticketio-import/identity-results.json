@@ -1,0 +1,107 @@
+[
+  {
+    "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+    "eligible": true,
+    "planIdentity": {
+      "decision": "exact_match",
+      "candidateEventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+      "signals": [
+        {
+          "signal": "source_binding",
+          "outcome": "match",
+          "reason": "canonical_source_url_already_bound"
+        }
+      ],
+      "reasons": [
+        "canonical_source_url_already_bound"
+      ],
+      "autoBindAllowed": true
+    },
+    "matchClassification": "NET_NEW",
+    "resolvedEventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f"
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+    "eligible": true,
+    "planIdentity": {
+      "decision": "exact_match",
+      "candidateEventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+      "signals": [
+        {
+          "signal": "source_binding",
+          "outcome": "match",
+          "reason": "canonical_source_url_already_bound"
+        }
+      ],
+      "reasons": [
+        "canonical_source_url_already_bound"
+      ],
+      "autoBindAllowed": true
+    },
+    "matchClassification": "NET_NEW",
+    "resolvedEventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe"
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:auhcwfap",
+    "eligible": true,
+    "planIdentity": {
+      "decision": "exact_match",
+      "candidateEventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+      "signals": [
+        {
+          "signal": "source_binding",
+          "outcome": "match",
+          "reason": "canonical_source_url_already_bound"
+        }
+      ],
+      "reasons": [
+        "canonical_source_url_already_bound"
+      ],
+      "autoBindAllowed": true
+    },
+    "matchClassification": "NET_NEW",
+    "resolvedEventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+    "eligible": true,
+    "planIdentity": {
+      "decision": "exact_match",
+      "candidateEventId": "e2db143a-49f9-4522-a1f8-e796c7742d14",
+      "signals": [
+        {
+          "signal": "source_binding",
+          "outcome": "match",
+          "reason": "canonical_source_url_already_bound"
+        }
+      ],
+      "reasons": [
+        "canonical_source_url_already_bound"
+      ],
+      "autoBindAllowed": true
+    },
+    "matchClassification": "NET_NEW",
+    "resolvedEventId": "e2db143a-49f9-4522-a1f8-e796c7742d14"
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+    "eligible": true,
+    "planIdentity": {
+      "decision": "exact_match",
+      "candidateEventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+      "signals": [
+        {
+          "signal": "source_binding",
+          "outcome": "match",
+          "reason": "canonical_source_url_already_bound"
+        }
+      ],
+      "reasons": [
+        "canonical_source_url_already_bound"
+      ],
+      "autoBindAllowed": true
+    },
+    "matchClassification": "NET_NEW",
+    "resolvedEventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b"
+  }
+]

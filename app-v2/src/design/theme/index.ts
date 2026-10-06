@@ -1,58 +1,32 @@
-import { darkTheme } from './dark';
-import { lightTheme } from './light';
-
-export { ThemeProvider, useTheme, useThemeOptional } from './ThemeProvider';
-export { missingProviderMessage } from './theme-constants';
-
-export { lightTheme, lightThemeColors, lightThemeShadows } from './light';
-export { darkTheme, darkThemeColors, darkThemeShadows } from './dark';
-export { createEternalRaveTheme } from './create-theme';
-
+export { darkColors, darkTheme } from './dark';
+export { lightColors, lightTheme } from './light';
 export {
-  assertThemeContract,
-  createNavigationTheme,
-  getAndroidNavigationBarStyle,
-  getExpoStatusBarStyle,
-  getThemeByResolvedMode,
+  APP_TEXT_ROLES,
+  THEME_COLOR_KEYS,
+  buildColorRoles,
+  createTextRoles,
+  createTheme,
+} from './createTheme';
+export {
+  getThemeForMode,
+  resolveNavigationTheme,
+  resolveNavigationBarStyle,
+  resolveStatusBarStyle,
   resolveThemeMode,
-} from './theme-utils';
-
+} from './resolve';
+export { ThemeProvider, useThemeContext } from './ThemeProvider';
+export { ThemeSystemUi } from './ThemeSystemUi';
+export { useTheme } from './useTheme';
 export type {
-  EternalRaveTheme,
-  LegacyColorRoles,
-  NavigationTheme,
+  AppTextRole,
+  NavigationThemeColors,
+  ResolvedNavigationTheme,
   ResolvedThemeMode,
-  StatusBarStyle,
-  TextRole,
+  Theme,
+  ThemeColorRoles,
   ThemeColors,
-  ThemeMode,
+  ThemeContextValue,
+  ThemeModePreference,
   ThemeShadows,
-  ThemeTextRoles,
   ThemeTypography,
 } from './types';
-
-export { THEME_COLOR_KEYS, TEXT_ROLE_KEYS } from './types';
-
-export { resolveTextRoleStyle } from './text-role-styles';
-export { ThemedSystemUi } from './ThemedSystemUi';
-
-/**
- * Static theme snapshot for non-React contexts. Prefer `useTheme()` in components.
- */
-export const theme = darkTheme;
-
-export type Theme = typeof theme;
-
-export { colors, colorRoles, opacity } from '../colors';
-export { spacing, spacingRoles } from '../spacing';
-export {
-  fontSize,
-  fontWeight,
-  lineHeight,
-  fontFamily,
-  textVariants,
-  textRoles,
-} from '../typography';
-export { radii, radiusRoles, borderWidth } from '../radii';
-export { shadows } from '../shadows';
-export { layout, componentSize, v1Components, appConfig } from '../layout';

@@ -14,6 +14,8 @@ type WebPageTitleKey =
   | 'webTitles.eventPreview'
   | 'webTitles.eventSubmitted'
   | 'webTitles.myEvents'
+  | 'webTitles.organizerProfile'
+  | 'webTitles.organizerProfileEdit'
   | 'webTitles.activity'
   | 'webTitles.notifications'
   | 'webTitles.profile';

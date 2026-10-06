@@ -1,0 +1,9 @@
+{
+  "httpRequests": 12000,
+  "cacheHits": 6036,
+  "cacheMisses": 5964,
+  "failedRequests": 109,
+  "retries": 0,
+  "totalRuntimeMs": 3547082,
+  "peakConcurrency": 4
+}

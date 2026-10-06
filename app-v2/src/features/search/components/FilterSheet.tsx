@@ -21,16 +21,29 @@ import { FilterChip } from '@/features/home/components/FilterChip';
 import {
   getActiveCityOptions,
   getActiveDateOptions,
+  getActiveDistanceOptions,
+  getActiveFestivalOptions,
   getActiveGenreOptions,
+  getActiveOrganizerOptions,
+  getActivePriceOptions,
   getActiveSortOptions,
+  getActiveVenueEnvironmentOptions,
+  getActiveVenueOptions,
 } from '@/features/search/config/filter-config';
 import type { GenreFilterId } from '@/features/search/config/filter-config.types';
 import {
   DEFAULT_EVENT_FILTERS,
   type DateRangeFilter,
+  type DistanceFilter,
   type EventFilters,
+  type PriceFilter,
   type SortByFilter,
+  type VenueEnvironmentFilter,
 } from '@/features/search/constants';
+import {
+  GLOBAL_CITY_FILTER_VALUE,
+  type LocationScope,
+} from '@/features/search/domain/location-scope';
 import { getBottomTabBarHeight } from '@/platform/tab-bar-insets';
 
 export interface FilterSheetProps {
@@ -103,6 +116,12 @@ export function FilterSheet({
   const genreOptions = getActiveGenreOptions();
   const cityOptions = getActiveCityOptions();
   const sortOptions = getActiveSortOptions();
+  const distanceOptions = getActiveDistanceOptions();
+  const priceOptions = getActivePriceOptions();
+  const venueEnvironmentOptions = getActiveVenueEnvironmentOptions();
+  const venueOptions = getActiveVenueOptions();
+  const organizerOptions = getActiveOrganizerOptions();
+  const festivalOptions = getActiveFestivalOptions();
 
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onClose}>
@@ -167,12 +186,146 @@ export function FilterSheet({
           <View style={styles.section}>
             <AppText style={styles.sectionTitle}>City</AppText>
             <View style={styles.chipWrap}>
+              <FilterChip
+                label="Alle Standorte"
+                selected={draft.locationScope === 'global' && !draft.city.trim()}
+                onPress={() =>
+                  setDraft((current) => ({
+                    ...current,
+                    city: GLOBAL_CITY_FILTER_VALUE,
+                    locationScope: 'global' as LocationScope,
+                    distance: 'any',
+                  }))
+                }
+              />
               {cityOptions.map((option) => (
                 <FilterChip
                   key={option.id}
                   label={option.label}
-                  selected={draft.city === option.value}
-                  onPress={() => setDraft((current) => ({ ...current, city: option.value }))}
+                  selected={draft.city === option.value && draft.locationScope === 'city'}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      city: option.value,
+                      locationScope: 'city' as LocationScope,
+                    }))
+                  }
+                />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <AppText style={styles.sectionTitle}>Entfernung</AppText>
+            <View style={styles.chipWrap}>
+              {distanceOptions.map((option) => (
+                <FilterChip
+                  key={option.id}
+                  label={option.label}
+                  selected={draft.distance === option.id}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      distance: option.id as DistanceFilter,
+                      locationScope:
+                        option.id === 'any' ? ('global' as LocationScope) : ('nearby' as LocationScope),
+                    }))
+                  }
+                />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <AppText style={styles.sectionTitle}>Preis</AppText>
+            <View style={styles.chipWrap}>
+              {priceOptions.map((option) => (
+                <FilterChip
+                  key={option.id}
+                  label={option.label}
+                  selected={draft.price === option.id}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      price: option.id as PriceFilter,
+                    }))
+                  }
+                />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <AppText style={styles.sectionTitle}>Venue</AppText>
+            <View style={styles.chipWrap}>
+              {venueOptions.map((option) => (
+                <FilterChip
+                  key={option.id}
+                  label={option.label}
+                  selected={(draft.venueId ?? 'any') === option.id || draft.venueId === option.entityId}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      venueId: option.entityId ? option.id : null,
+                    }))
+                  }
+                />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <AppText style={styles.sectionTitle}>Organizer</AppText>
+            <View style={styles.chipWrap}>
+              {organizerOptions.map((option) => (
+                <FilterChip
+                  key={option.id}
+                  label={option.label}
+                  selected={(draft.organizerId ?? 'any') === option.id}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      organizerId: option.entityId ? option.id : null,
+                    }))
+                  }
+                />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <AppText style={styles.sectionTitle}>Festival</AppText>
+            <View style={styles.chipWrap}>
+              {festivalOptions.map((option) => (
+                <FilterChip
+                  key={option.id}
+                  label={option.label}
+                  selected={(draft.festivalId ?? 'any') === option.id}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      festivalId: option.entityId ? option.id : null,
+                    }))
+                  }
+                />
+              ))}
+            </View>
+          </View>
+
+          <View style={styles.section}>
+            <AppText style={styles.sectionTitle}>Indoor / Outdoor</AppText>
+            <View style={styles.chipWrap}>
+              {venueEnvironmentOptions.map((option) => (
+                <FilterChip
+                  key={option.id}
+                  label={option.label}
+                  selected={draft.venueEnvironment === option.id}
+                  onPress={() =>
+                    setDraft((current) => ({
+                      ...current,
+                      venueEnvironment: option.id as VenueEnvironmentFilter,
+                    }))
+                  }
                 />
               ))}
             </View>

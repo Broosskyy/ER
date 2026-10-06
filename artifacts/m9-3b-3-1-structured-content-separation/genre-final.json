@@ -1,0 +1,1359 @@
+[
+  {
+    "eventId": "5ac59acf-ebc4-4176-a6b2-91d1ced7aedb",
+    "title": "122 pres. TRIPOLISM @ Palma de Mallorca (ES)",
+    "sources": [
+      "bootshaus-official"
+    ],
+    "currentGenres": [
+      "House",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "House",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance"
+    ],
+    "availableGenreEvidence": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance",
+      "Electronic"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Electronic"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Electronic"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "84af63ab-bf10-4326-a9fb-f2251537dfed",
+    "title": "Underland Essigfabrik 05.09.2026",
+    "sources": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "title": "Bootshaus Sommerfest auf 4 Floors!",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "availableGenreEvidence": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "sources": [
+      "bootshaus-official"
+    ],
+    "currentGenres": [
+      "House",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "House",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "availableGenreEvidence": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "7b36309a-c709-4f93-839a-0417cd3bbdfe",
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "c8f8646a-a3df-4511-ab76-fe0ec933665b",
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "77f830dd-10c9-4643-adaf-15febd278f60",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno",
+      "Trance",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno",
+      "Trance",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno",
+      "Trance",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno",
+      "Trance",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "fd71951f-e59a-4cf2-a8ed-b0bda5a198db",
+    "title": "Klubnacht w/ Gerd Janson, lyzanne",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "451f27ac-f29e-4529-a367-f901420ffc0e",
+    "title": "14 Jahre Affenkäfig 19.09.2026",
+    "sources": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "title": "Bootshaus Sommerfest Closing",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "availableGenreEvidence": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "a82b7c0d-9d29-4bb2-a4f6-c99fece53569",
+    "title": "Klubnacht w/ Adiel, Di², EPHIE",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+    "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hardstyle"
+    ],
+    "availableGenreEvidence": [
+      "Hardstyle"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hardstyle"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hardstyle"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+    "title": "Unreal Weekender Night I - September 2026",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "da6ad038-dcfa-438e-a227-ef467d14ee3e",
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "169cd40e-07c6-4b0c-bb61-d58bca00fce0",
+    "title": "Unreal Weekender Night II - September 2026",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "3281c605-a9b4-4276-9432-9bcf5c9575de",
+    "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "sources": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "sources": [
+      "bootshaus-official",
+      "bootshaus-official",
+      "ticket",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "availableGenreEvidence": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "827e1492-bb0f-44ed-bdad-1594c854fac9",
+    "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "f5277702-a97a-4c54-a9fa-a759437a5f03",
+    "title": "Blacklist Festival 2026",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Dubstep",
+      "Drum'n'Bass"
+    ],
+    "availableGenreEvidence": [
+      "Dubstep",
+      "Drum'n'Bass"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Dubstep",
+      "Drum'n'Bass"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Dubstep",
+      "Drum'n'Bass"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+    "title": "CHROME COLOGNE",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "sources": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "0cfc083a-5e61-4979-8a66-d44f242bcae8",
+    "title": "Feines Tier w/ Franca & Philipp Fein",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Deep House",
+      "Tech House"
+    ],
+    "availableGenreEvidence": [
+      "Deep House",
+      "Tech House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Deep House",
+      "Tech House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Deep House",
+      "Tech House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+    "title": "BACK2BASICS XXL @ Schrotty",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "sources": [
+      "affenkaefig-official",
+      "ticket",
+      "ticket",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "ee4a1d07-d310-4a0a-bebf-d44f5bcf3a9a",
+    "title": "Cosmic Gate pres by Bootshaus & Senses!",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Trance"
+    ],
+    "availableGenreEvidence": [
+      "Trance"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Trance"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Trance"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "0c9e9a9b-ae6d-44ad-bc9b-92d0d4f5e58b",
+    "title": "Remember the Future w/ Axel Boman, Shumi",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "adbed680-24e3-4bca-8ca1-69666a7b21b5",
+    "title": "SA * 24.10.2026 | KitKatClub",
+    "sources": [
+      "bootshaus-official"
+    ],
+    "currentGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Tech House",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "91da2d35-8fc8-498f-9980-e8b055815762",
+    "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "House"
+    ],
+    "availableGenreEvidence": [
+      "House"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "House"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "House"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+    "title": "Halloween Weekender",
+    "sources": [
+      "affenkaefig-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "209ce805-9ed1-4647-a96e-2a2fcfb782ed",
+    "title": "Lézard",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Electro"
+    ],
+    "availableGenreEvidence": [
+      "Electro"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Electro"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Electro"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "sources": [
+      "ticket-io-network-discovery",
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+    "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "sources": [
+      "bootshaus-official"
+    ],
+    "currentGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "availableGenreEvidence": [
+      "Tech House",
+      "Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Tech House",
+      "Techno"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "title": "Bootshaus & Loonyland pres. NYE 2026",
+    "sources": [
+      "bootshaus-official",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Electro",
+      "EDM"
+    ],
+    "availableGenreEvidence": [
+      "Electro",
+      "EDM"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Electro",
+      "EDM"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Electro",
+      "EDM"
+    ],
+    "confidenceBand": "HIGH"
+  },
+  {
+    "eventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "sources": [
+      "ticket-io-network-discovery",
+      "ticket"
+    ],
+    "currentGenres": [
+      "Peak Time Techno"
+    ],
+    "availableGenreEvidence": [
+      "Peak Time Techno"
+    ],
+    "evidenceStrength": "strong",
+    "recommendedGenres": [
+      "Peak Time Techno"
+    ],
+    "classification": "GENRE_VERIFIED",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache"
+    ],
+    "explicitGenreCount": 0,
+    "lineupDerivedGenres": [
+      "Peak Time Techno"
+    ],
+    "confidenceBand": "HIGH"
+  }
+]

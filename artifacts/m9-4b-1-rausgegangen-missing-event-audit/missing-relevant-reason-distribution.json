@@ -1,0 +1,8 @@
+{
+  "totalMissingRelevantInAudit": 2,
+  "distribution": {
+    "DISCOVERY_SURFACE_GAP": 2
+  },
+  "dominantReason": "DISCOVERY_SURFACE_GAP",
+  "auditScope": "Bounded sample — not exhaustive enumeration"
+}

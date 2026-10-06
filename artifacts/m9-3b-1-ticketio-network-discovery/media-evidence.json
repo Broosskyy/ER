@@ -1,0 +1,9 @@
+{
+  "metrics": {
+    "eventsWithMedia": 0,
+    "eventsWithEventSpecificMedia": 0,
+    "eventsWithLineupFlyer": 0,
+    "eventsWithOnlyWeakMedia": 0
+  },
+  "samples": []
+}

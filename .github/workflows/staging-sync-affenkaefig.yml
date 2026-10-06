@@ -1,0 +1,45 @@
+name: Staging Sync — Affenkäfig
+
+on:
+  schedule:
+    # Europe/Berlin CEST (UTC+2): 00:45, 06:45, 12:45, 18:45
+    - cron: '45 22 * * *'
+    - cron: '45 4 * * *'
+    - cron: '45 10 * * *'
+    - cron: '45 16 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: staging-sync-affenkaefig
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: app-v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app-v2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Link staging Supabase project
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
+
+      - name: Run scheduled Affenkäfig sync
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx tsx scripts/run-scheduled-staging-sync.ts affenkaefig-official

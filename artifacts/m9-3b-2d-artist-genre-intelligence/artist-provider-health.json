@@ -1,0 +1,16 @@
+[
+  {
+    "providerId": "historical-event",
+    "requests": 147,
+    "successes": 147,
+    "failures": 0,
+    "timeouts": 0
+  },
+  {
+    "providerId": "event-description",
+    "requests": 147,
+    "successes": 147,
+    "failures": 0,
+    "timeouts": 0
+  }
+]

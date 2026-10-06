@@ -1,0 +1,31 @@
+[
+  {
+    "city": "Köln",
+    "description": "The High Priestess of Hard Techno is coming to Bootshaus.\n\nOn December 11th, one of the most defining artists of the new generation of hard techno takes over Bootshaus: Sara Landry.\n\nDJ, producer, label head and one of the most powerful forces in electronic music right now — Sara Landry has built a world that goes far beyond BPM and distorted kicks. Her sound is intense, emotional, spiritual and unapologetically heavy. What makes Sara Landry special is her ability to turn a DJ set into something much bigger than a night out.\n\nFrom sold-out headline shows to the world’s biggest festival stages, her rise has been nothing short of extraordinary. And now she's going to bring her energy to Bootshaus Cologne- We're more than excited for the one and only High Priestess!",
+    "endsAt": "2026-12-12T06:00:00+00:00",
+    "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "genres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/2411844699771444345571847_3604682555113511790557907.png",
+    "lineup": [
+      "SARA LANDRY"
+    ],
+    "officialUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+    "sourceEventKey": "ticket_io:bootshaus-club:jhup7wql",
+    "startsAt": "2026-12-11T22:00:00+00:00",
+    "status": "published",
+    "tickets": [
+      {
+        "currency": "EUR",
+        "priceMinor": 3290,
+        "provider": "ticket_io",
+        "salesStatus": "available",
+        "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/"
+      }
+    ],
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "venueName": "Bootshaus"
+  }
+]

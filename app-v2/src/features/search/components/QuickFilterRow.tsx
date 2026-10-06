@@ -44,7 +44,7 @@ export function QuickFilterRow({
         style={({ pressed }) => [styles.filtersButton, pressed && styles.pressed]}
       >
         <AppText style={styles.filtersLabel}>
-          Filters{activeFilterCount > 0 ? ` • ${activeFilterCount}` : ''}
+          Filter{activeFilterCount > 0 ? ` • ${activeFilterCount}` : ''}
         </AppText>
       </Pressable>
     </ScrollView>

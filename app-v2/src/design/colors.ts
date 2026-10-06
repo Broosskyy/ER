@@ -1,75 +1,42 @@
 /**
- * Legacy color tokens — backward-compatible re-exports from the dark theme.
+ * Eternal Rave color tokens — backward-compatible dark defaults.
  *
- * New code should use `useTheme().theme.colors` from `@/design/theme`.
+ * New theme-aware code should use `useTheme()` from `@/design/theme`.
+ * Static exports mirror the Evolution V2 dark palette.
  */
-import { darkThemeColors } from '@/design/theme/palettes';
+import { buildColorRoles } from './theme/createTheme';
+import { darkColors } from './theme/palettes/darkColors';
 
 export const colors = {
-  primary: darkThemeColors.accent,
-  primaryHighlight: darkThemeColors.accentPressed,
-  primaryDeep: '#4C1D95',
-  background: darkThemeColors.background,
-  surface: darkThemeColors.surface,
-  surfaceElevated: darkThemeColors.surfaceElevated,
-  mapSurface: darkThemeColors.mapSurface,
-  textPrimary: darkThemeColors.textPrimary,
-  textSecondary: darkThemeColors.textSecondary,
-  textOnPrimary: darkThemeColors.textOnAccent,
-  border: darkThemeColors.borderSubtle,
-  divider: darkThemeColors.borderSubtle,
-  live: darkThemeColors.destructive,
-  success: darkThemeColors.success,
-  warning: darkThemeColors.warning,
-  white: '#FFFFFF',
-  transparent: 'transparent',
+  primary: darkColors.primary,
+  primaryHighlight: darkColors.primaryHighlight,
+  primaryDeep: darkColors.primaryDeep,
+
+  background: darkColors.background,
+  surface: darkColors.surface,
+  surfaceElevated: darkColors.surfaceElevated,
+  mapSurface: darkColors.mapSurface,
+
+  textPrimary: darkColors.textPrimary,
+  textSecondary: darkColors.textSecondary,
+  textOnPrimary: darkColors.textOnPrimary,
+
+  border: darkColors.border,
+  divider: darkColors.divider,
+
+  live: darkColors.live,
+  success: darkColors.success,
+  warning: darkColors.warning,
+
+  white: darkColors.white,
+  transparent: darkColors.transparent,
 } as const;
 
-export const colorRoles = {
-  appBackground: darkThemeColors.background,
-  screenBackground: darkThemeColors.background,
-  headerBackground: darkThemeColors.background,
-  headerTitle: darkThemeColors.textPrimary,
-  headerIcon: darkThemeColors.textPrimary,
-  bottomNavBackground: darkThemeColors.surface,
-  bottomNavBorder: darkThemeColors.borderSubtle,
-  bottomNavActive: darkThemeColors.accent,
-  bottomNavInactive: darkThemeColors.textSecondary,
-  searchBackground: darkThemeColors.surface,
-  searchBorder: darkThemeColors.borderSubtle,
-  searchPlaceholder: darkThemeColors.textSecondary,
-  searchText: darkThemeColors.textPrimary,
-  chipBackground: darkThemeColors.surface,
-  chipBorder: darkThemeColors.borderSubtle,
-  chipText: darkThemeColors.textSecondary,
-  chipSelectedBackground: darkThemeColors.accent,
-  chipSelectedBorder: darkThemeColors.accent,
-  chipSelectedText: darkThemeColors.textOnAccent,
-  cardBackground: darkThemeColors.surface,
-  cardBorder: darkThemeColors.borderSubtle,
-  buttonPrimaryBackground: darkThemeColors.accent,
-  buttonPrimaryText: darkThemeColors.textOnAccent,
-  buttonPrimaryPressed: darkThemeColors.accentPressed,
-  buttonSecondaryBackground: colors.transparent,
-  buttonSecondaryBorder: darkThemeColors.borderSubtle,
-  buttonSecondaryText: darkThemeColors.textPrimary,
-  badgeBackground: darkThemeColors.surfaceElevated,
-  badgeText: darkThemeColors.textSecondary,
-  tagBackground: darkThemeColors.surfaceElevated,
-  tagText: darkThemeColors.textSecondary,
-  favoriteActive: darkThemeColors.destructive,
-  favoriteInactive: darkThemeColors.textSecondary,
-  mapCluster: darkThemeColors.accent,
-  mapUserLocation: darkThemeColors.info,
-  overlayScrim: darkThemeColors.overlay,
-  imageOverlayGradientStart: 'rgba(11, 11, 15, 0)',
-  imageOverlayGradientEnd: 'rgba(11, 11, 15, 0.85)',
-  emptyStateIcon: darkThemeColors.textSecondary,
-  emptyStateTitle: darkThemeColors.textPrimary,
-  emptyStateDescription: darkThemeColors.textSecondary,
-  skeletonBase: darkThemeColors.skeletonBase,
-  skeletonHighlight: darkThemeColors.skeletonHighlight,
-} as const;
+/**
+ * Semantic color roles for recurring V1 UI patterns.
+ * Values map to the active dark theme — use `useTheme().theme.colorRoles` when theme-aware.
+ */
+export const colorRoles = buildColorRoles(darkColors, 'dark');
 
 export const opacity = {
   disabled: 0.5,

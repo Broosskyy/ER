@@ -1,0 +1,134 @@
+[
+  {
+    "locationSlug": "schrotty",
+    "eventCount": 11,
+    "notOnAnyCityListing": 11,
+    "sampleEvents": [
+      {
+        "url": "https://rausgegangen.de/events/elton-the-joels-the-music-of-elton-john-billy-joel-1/",
+        "slug": "elton-the-joels-the-music-of-elton-john-billy-joel-1"
+      },
+      {
+        "url": "https://rausgegangen.de/events/feiern-wie-fruher-nur-fruher-by-anna-reusch-thomas-schumache-0/",
+        "slug": "feiern-wie-fruher-nur-fruher-by-anna-reusch-thomas-schumache-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/warehouse-rave-xxl-yena-s-birthday-0/",
+        "slug": "warehouse-rave-xxl-yena-s-birthday-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/charity-rave-by-neon-graveyard-0/",
+        "slug": "charity-rave-by-neon-graveyard-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/ehrenklub-im-schrotty-14-0/",
+        "slug": "ehrenklub-im-schrotty-14-0"
+      }
+    ]
+  },
+  {
+    "locationSlug": "bootshaus",
+    "eventCount": 24,
+    "notOnAnyCityListing": 24,
+    "sampleEvents": [
+      {
+        "url": "https://rausgegangen.de/events/tiavo-hotel-tiavo-tour-2026-0/",
+        "slug": "tiavo-hotel-tiavo-tour-2026-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-m-0/",
+        "slug": "polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-m-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/bootshaus-sommerfest-closing-2/",
+        "slug": "bootshaus-sommerfest-closing-2"
+      },
+      {
+        "url": "https://rausgegangen.de/events/vertile-pres-everything-changes-live-bootshaus-0/",
+        "slug": "vertile-pres-everything-changes-live-bootshaus-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/unreal-weekender-night-i-september-2026-0/",
+        "slug": "unreal-weekender-night-i-september-2026-0"
+      }
+    ]
+  },
+  {
+    "locationSlug": "gewoelbe",
+    "eventCount": 12,
+    "notOnAnyCityListing": 10,
+    "sampleEvents": [
+      {
+        "url": "https://rausgegangen.de/events/weltkindertag-koln-2026-0/",
+        "slug": "weltkindertag-koln-2026-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/klubnacht-w-anuli-maruhni-paaradoxx-0/",
+        "slug": "klubnacht-w-anuli-maruhni-paaradoxx-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/klubnacht-w-adiel-di2-ephie-0/",
+        "slug": "klubnacht-w-adiel-di2-ephie-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/schleuse-eins-w-beste-hira-maxim-vukovic-tils-reduks-live-0/",
+        "slug": "schleuse-eins-w-beste-hira-maxim-vukovic-tils-reduks-live-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/klubnacht-w-dj-ass-tits-sarah-sommers-live-plumitaa-0/",
+        "slug": "klubnacht-w-dj-ass-tits-sarah-sommers-live-plumitaa-0"
+      }
+    ]
+  },
+  {
+    "locationSlug": "glow",
+    "eventCount": 0,
+    "notOnAnyCityListing": 0,
+    "sampleEvents": []
+  },
+  {
+    "locationSlug": "underland",
+    "eventCount": 0,
+    "notOnAnyCityListing": 0,
+    "sampleEvents": []
+  },
+  {
+    "locationSlug": "nachtflug",
+    "eventCount": 0,
+    "notOnAnyCityListing": 0,
+    "sampleEvents": []
+  },
+  {
+    "locationSlug": "odion",
+    "eventCount": 0,
+    "notOnAnyCityListing": 0,
+    "sampleEvents": []
+  },
+  {
+    "locationSlug": "odonien",
+    "eventCount": 23,
+    "notOnAnyCityListing": 21,
+    "sampleEvents": [
+      {
+        "url": "https://rausgegangen.de/events/flohmi-x-tooth-gems-x-tattoo-im-bumi-0/",
+        "slug": "flohmi-x-tooth-gems-x-tattoo-im-bumi-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/",
+        "slug": "mittwochenende-in-odonien-6"
+      },
+      {
+        "url": "https://rausgegangen.de/events/odonische-freitagsbuhne-84/",
+        "slug": "odonische-freitagsbuhne-84"
+      },
+      {
+        "url": "https://rausgegangen.de/events/utopian-summer-0/",
+        "slug": "utopian-summer-0"
+      },
+      {
+        "url": "https://rausgegangen.de/events/odonien-records-x-bosburcht-festival-0/",
+        "slug": "odonien-records-x-bosburcht-festival-0"
+      }
+    ]
+  }
+]

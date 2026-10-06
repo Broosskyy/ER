@@ -1,0 +1,138 @@
+{
+  "discovered": true,
+  "discoveredViaLocation": true,
+  "discoverySurfaces": [
+    {
+      "surfaceType": "LOCATION",
+      "surfaceId": "schrotty",
+      "surfaceUrl": "https://rausgegangen.de/locations/schrotty/",
+      "discoveredAt": "2026-09-16T19:48:10.618Z"
+    }
+  ],
+  "lineupRecovered": true,
+  "lineup": [
+    "DIKKE BAAP",
+    "RIOT SHIFT",
+    "S*Y*N*K",
+    "TITI",
+    "USH",
+    "333CXT",
+    "CAMILLA V",
+    "GREEKZ B2B KARAMUSTAN",
+    "LAURA VOM JUPITER",
+    "4GIVEN",
+    "BASSSTØRM",
+    "LASZR",
+    "V Λ N Y",
+    "VYKA"
+  ],
+  "structuredLineupCandidates": [],
+  "domainBoost": "HIGH",
+  "relevance": "HIGH_RELEVANCE",
+  "qualityContract": {
+    "identityKey": "rausgegangen:ehrenklub-im-schrotty-14-0",
+    "title": "EhrenKlub im Schrotty #14 mit USH, RIOT SHIFT, TITI, DIKKE BAAP, S*Y*N*K uvm",
+    "domainState": "ELECTRONIC_MEDIUM",
+    "identityState": "NET_NEW",
+    "qualityState": "REVIEW_REQUIRED",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "REVIEW",
+    "lineupState": "VERIFIED",
+    "ticketState": "MISSING",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [
+      "genre_unresolved"
+    ],
+    "passesQualityContract": false,
+    "qualityContractBypass": false,
+    "structuredContentEvaluated": true,
+    "lineupLeakage": false,
+    "genreLeakage": false,
+    "ticketLeakage": false,
+    "scheduleLeakage": false,
+    "descriptionQuality": "EDITORIAL",
+    "genrePresenceCoverage": false,
+    "genreEvidenceCompleteness": true,
+    "explicitGenreClaims": 0,
+    "canonicalizedExplicitGenreClaims": 0,
+    "explicitGenreEvidenceParity": 1,
+    "recoverableExplicitGenreMissing": 0,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_MEDIUM",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "weak_positive:b2b;lineup_multi_artist_club_evidence"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "PARTIAL",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "PARTIAL"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "REVIEW",
+          "valuePresent": false,
+          "provenancePresent": false
+        },
+        "genres": [],
+        "confidence": "UNRESOLVED",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "MISSING",
+        "valuePresent": false,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "REVIEW_REQUIRED",
+      "reviewReasons": [
+        "genre_unresolved"
+      ],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://rausgegangen.de/events/ehrenklub-im-schrotty-14-0/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "PARTIAL"
+    }
+  },
+  "structuredDescriptionLeakage": false
+}

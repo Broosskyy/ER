@@ -1,0 +1,98 @@
+{
+  "Baden-Württemberg": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Bayern": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Berlin": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Brandenburg": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Bremen": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Hamburg": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Hessen": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Mecklenburg-Vorpommern": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Niedersachsen": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Nordrhein-Westfalen": {
+    "shops": 61,
+    "upcomingEvents": 1230,
+    "electronicCandidates": 164,
+    "netNewCandidates": 9
+  },
+  "Rheinland-Pfalz": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Saarland": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Sachsen": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Sachsen-Anhalt": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Schleswig-Holstein": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  },
+  "Thüringen": {
+    "shops": 0,
+    "upcomingEvents": 0,
+    "electronicCandidates": 0,
+    "netNewCandidates": 0
+  }
+}

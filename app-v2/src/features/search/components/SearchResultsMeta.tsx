@@ -4,6 +4,7 @@ import { AppText } from '@/components/layout/AppText';
 import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
+import { useAppTranslation } from '@/features/i18n/useAppTranslation';
 
 export interface SearchResultsMetaProps {
   count: number;
@@ -12,11 +13,13 @@ export interface SearchResultsMetaProps {
 }
 
 export function SearchResultsMeta({ count, summary, onClear }: SearchResultsMetaProps) {
+  const { t } = useAppTranslation();
+
   return (
     <View style={styles.container}>
       <View style={styles.textWrap}>
         <AppText style={styles.count}>
-          {count} {count === 1 ? 'result' : 'results'}
+          {count} {count === 1 ? t('search.results.singular') : t('search.results.plural')}
         </AppText>
         {summary ? <AppText style={styles.summary}>{summary}</AppText> : null}
       </View>
@@ -27,7 +30,7 @@ export function SearchResultsMeta({ count, summary, onClear }: SearchResultsMeta
           hitSlop={8}
           style={({ pressed }) => pressed && styles.pressed}
         >
-          <AppText style={styles.clear}>Clear All</AppText>
+          <AppText style={styles.clear}>{t('search.results.clearAll')}</AppText>
         </Pressable>
       ) : null}
     </View>

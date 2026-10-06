@@ -1,0 +1,453 @@
+[
+  {
+    "canonicalEventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "date": "2026-09-13T12:00:00+00:00",
+    "venue": "KD Anleger 1",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "currentGenres": [],
+    "lineup": [
+      "DANTH",
+      "FABIAN FARELL",
+      "NIKLAS DEE",
+      "OLIVER MAGENTA",
+      "TEKNOCLASH"
+    ],
+    "lineupCompleteness": "LINEUP_COMPLETE",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-on-a-ship-vol-iv/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "DANTH",
+      "FABIAN FARELL",
+      "NIKLAS DEE",
+      "OLIVER MAGENTA",
+      "TEKNOCLASH"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "date": "2026-09-18T21:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "currentGenres": [],
+    "lineup": [
+      "CLEOPARD2000 b2b ALBA FRANCH",
+      "DAVYBOI b2b TRANCEMASTER KRAUSE",
+      "MIKA HEGGEMANN",
+      "PRADA2000",
+      "TESTPRESS",
+      "ELOTRANCE",
+      "HITMiLOW",
+      "SATYS FYRE"
+    ],
+    "lineupCompleteness": "LINEUP_COMPLETE",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/polyamor-bootshaus-w-davyboi-prada2000-mika-heggemann-many-more/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://polyamor.ticket.io/PDikPg1v/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://polyamor.ticket.io/PDikPg1v/",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "CLEOPARD2000 b2b ALBA FRANCH",
+      "DAVYBOI b2b TRANCEMASTER KRAUSE",
+      "MIKA HEGGEMANN",
+      "PRADA2000",
+      "TESTPRESS",
+      "ELOTRANCE",
+      "HITMiLOW",
+      "SATYS FYRE"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "title": "BC173 Airport Session pres. by Bootshaus",
+    "date": "2026-09-19T14:00:00+00:00",
+    "venue": "Moxy Köln/Bonn Flughafen",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "currentGenres": [],
+    "lineup": [
+      "MOGUAI",
+      "ALUKES b2b DAVE REPLAY",
+      "JOHANNA KLEEN",
+      "OLIVER MAGENTA"
+    ],
+    "lineupCompleteness": "LINEUP_COMPLETE",
+    "description": "Public Transport: Public transport tickets included for an easy ride in and out. The travel pass is valid across the entire VRS network for both inbound and return journeys. Inbound travel is possible from 4 hours before the event start, and the return journey must be completed by 3:00 AM on the day following the last valid day of the ticket. Valid for 2nd class travel only. Passengers wishing to use 1st class can upgrade at their own cost before departure. Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/19-9-26-bc173-airport-session-pres-by-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/fjspvLe4/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://bootshaus-club.ticket.io/fjspvLe4/",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "MOGUAI",
+      "ALUKES b2b DAVE REPLAY",
+      "JOHANNA KLEEN",
+      "OLIVER MAGENTA"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "bb3ac221-a14c-46e9-84c8-f2f4c8bd7c10",
+    "title": "Affenkäfig xxx A8 xxx – 02.10.2026",
+    "date": "2026-10-01T22:00:00+00:00",
+    "venue": "A8 Stage Club",
+    "city": "Saarbrücken",
+    "organizer": "Affenkäfig",
+    "currentGenres": [],
+    "lineup": [
+      "Folgt"
+    ],
+    "lineupCompleteness": "LINEUP_NOT_ANNOUNCED",
+    "description": null,
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/affenkaefig-xxxa8xxx-02-10-2026/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43&embed=1&embed_layout=checkout&embed_flow=",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=43",
+    "checkedLayers": [
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "Folgt"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+    "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+    "date": "2026-10-09T22:00:00+00:00",
+    "venue": "Essigfabrik / Elektroküche",
+    "city": "Köln",
+    "organizer": "Affenkäfig",
+    "currentGenres": [],
+    "lineup": [
+      "PAOLO FERRARA",
+      "LE KLOWN",
+      "ANNX HELLMAYER",
+      "LHYST",
+      "PØUL STZ",
+      "TATTI VALKYRIE",
+      "VANY"
+    ],
+    "lineupCompleteness": "LINEUP_COMPLETE",
+    "description": "MDMA – 10. Oktober 2026 Am Samstag, den 10. Oktober 2026, kehrt MDMA in die Essigfabrik / Elektroküche Köln zurück. Freut euch auf eine kompromisslose Nacht mit treibenden Sounds, hoher Energie und einem Line-up, das den Dancefloor von Anfang bis Ende unter Strom setzt. Angeführt von Paolo Ferrara und Le Klown erwartet euch ein druckvolles Programm mit internationalen und lokalen Acts – in der unverwechselbaren Atmosphäre der Elektroküche. LINE-UP PAOLO FERRARA LE KLOWN ANNX HELLMAYER LHYST PØUL STZ TATTI VALKYRIE VANY 📅 Samstag, 10. Oktober 2026 📍 Elektroküche Köln / Essigfabrik 📌 Siegburger Straße 110, 50679 Köln Weitere Informationen zu Einlass, Beginn und Tickets folgen. MDMA – see you on the dancefloor.",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "PAOLO FERRARA",
+      "LE KLOWN",
+      "ANNX HELLMAYER",
+      "LHYST",
+      "PØUL STZ",
+      "TATTI VALKYRIE",
+      "VANY"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "title": "CHRIS STUSSY pres. by BOOTSHAUS",
+    "date": "2026-10-16T20:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "BOOTSHAUS",
+    "currentGenres": [],
+    "lineup": [
+      "CHRIS STUSSY"
+    ],
+    "lineupCompleteness": "LINEUP_PARTIAL",
+    "description": "On 16th October, CHRIS STUSSY plays the Bootshaus MAINFLOOR for the first time.\n\nKnown for flowing sets and an approach where the music comes first, he brings his distinctive energy to Bootshaus.",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/16-10-26-chris-stussy-pres-by-bootshaus/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/By06xnf4/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "CHRIS STUSSY"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+    "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+    "date": "2026-10-16T22:00:00+00:00",
+    "venue": "Capitol",
+    "city": "Hagen",
+    "organizer": "Affenkäfig Veranstaltungen",
+    "currentGenres": [],
+    "lineup": [
+      "Folgt"
+    ],
+    "lineupCompleteness": "LINEUP_NOT_ANNOUNCED",
+    "description": null,
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+        "connectorId": "affenkaefig-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/eventportal/",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14",
+        "connectorId": null
+      },
+      {
+        "role": "ticket",
+        "url": "https://rheinaudio.n8manager.de/ticketing/native_event.php?id=14&embed=1&embed_layout=checkout&embed_flow=",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://rheinaudio.n8manager.de/eventportal/",
+    "checkedLayers": [
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "Folgt"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  },
+  {
+    "canonicalEventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "date": "2026-10-23T21:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "AFFENKÄFIG",
+    "currentGenres": [],
+    "lineup": [],
+    "lineupCompleteness": "LINEUP_NOT_ANNOUNCED",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/affenkaefig-rules-bootshaus-koeln/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+    "checkedLayers": [
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [],
+    "failureReason": "LINEUP_INCOMPLETE",
+    "failureDetail": "no_verified_lineup_after_intelligence_pass"
+  },
+  {
+    "canonicalEventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "date": "2026-10-31T20:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "LOONYLAND",
+    "currentGenres": [],
+    "lineup": [],
+    "lineupCompleteness": "LINEUP_NOT_ANNOUNCED",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/bootshaus-loonyland-pres-halloween-2026/",
+        "connectorId": "bootshaus-official"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+    "checkedLayers": [
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [],
+    "failureReason": "LINEUP_INCOMPLETE",
+    "failureDetail": "no_verified_lineup_after_intelligence_pass"
+  },
+  {
+    "canonicalEventId": "5c1d33f0-ae82-4a4f-9ef2-91d32f80820c",
+    "title": "MI * 30.12.2026 | KitKatClub",
+    "date": "2026-12-30T20:30:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": "KITKATCLUB",
+    "currentGenres": [],
+    "lineup": [],
+    "lineupCompleteness": "LINEUP_NOT_ANNOUNCED",
+    "description": "",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus.tv/events/mi-30-12-2026-kitkatclub/",
+        "connectorId": "bootshaus-official"
+      }
+    ],
+    "ticketProvider": null,
+    "checkedLayers": [
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [],
+    "failureReason": "LINEUP_INCOMPLETE",
+    "failureDetail": "no_verified_lineup_after_intelligence_pass"
+  },
+  {
+    "canonicalEventId": "a28eb2da-149b-4cf4-8ed8-6a3903a2557f",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "date": "2027-01-23T21:00:00+00:00",
+    "venue": "Bootshaus",
+    "city": "Köln",
+    "organizer": null,
+    "currentGenres": [],
+    "lineup": [
+      "DEBORAH DE LUCA"
+    ],
+    "lineupCompleteness": "LINEUP_PARTIAL",
+    "description": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endgültig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver's license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-WeiterverkaufsinformationDer Ticketkäufer darf keinen höheren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und fähig ist diese Veranstaltung zu besuchen.Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+    "sourceBindings": [
+      {
+        "role": "official",
+        "url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "connectorId": "ticket-io-network-discovery"
+      },
+      {
+        "role": "ticket",
+        "url": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+        "connectorId": null
+      }
+    ],
+    "ticketProvider": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+    "checkedLayers": [
+      "canonical_db",
+      "artist_identity_cache",
+      "artist_intelligence"
+    ],
+    "artistsWithKnownGenreEvidence": [],
+    "artistsWithoutKnownGenreEvidence": [
+      "DEBORAH DE LUCA"
+    ],
+    "failureReason": "ARTIST_METADATA_MISSING",
+    "failureDetail": "artist_intelligence_layer_exhausted_without_publishable_profiles"
+  }
+]

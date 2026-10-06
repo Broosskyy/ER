@@ -1,0 +1,4 @@
+{
+  "profileShape": "SourceQualityProfile",
+  "batchGate": "summarizeBatchQuality"
+}

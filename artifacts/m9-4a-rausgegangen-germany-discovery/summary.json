@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-09-16T07:32:33.520Z",
+  "milestone": "M9.4A",
+  "branch": "rebuild/event-core-clean",
+  "baselineCommit": "59cfd93c68f9bc7f85479966cf15301ba2262e98",
+  "currentHead": "59cfd93c68f9bc7f85479966cf15301ba2262e98",
+  "userAgent": "EternalRave-M9.4A-GermanyDiscovery/1.0 (+research; read-only; no-automation)",
+  "discoveryMode": "STRATIFIED_SAMPLE",
+  "regionsReachable": 40,
+  "uniqueEventUrls": 11095,
+  "detailFetched": 2500,
+  "netNewRelevant": 181,
+  "qualityReady": 195,
+  "proposedBatchSize": 15,
+  "decisionState": "M9_4A_RAUSGEGANGEN_QUALIFIED_FOR_CONTROLLED_IMPORT",
+  "productionMutations": 0,
+  "stagingCanonicalMutations": 0
+}

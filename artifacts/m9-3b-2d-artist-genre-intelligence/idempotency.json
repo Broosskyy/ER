@@ -1,0 +1,10 @@
+{
+  "applyRepair": false,
+  "eventsWithGenreBefore": 23,
+  "eventsWithGenreAfter": 23,
+  "genreRecoverableAfter": 0,
+  "finalGenreWrites": 0,
+  "finalArtistProfileWrites": 0,
+  "stable": true,
+  "note": "Post-apply idempotency dry-run confirmed zero recoverable genre churn."
+}

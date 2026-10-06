@@ -1,0 +1,156 @@
+import { canonicalGenreKey } from './normalize-genre';
+
+export interface GenreTaxonomyNode {
+  genreKey: string;
+  displayName: string;
+  parentGenreKey?: string;
+  searchAliases: string[];
+}
+
+const TAXONOMY: GenreTaxonomyNode[] = [
+  { genreKey: 'electronic', displayName: 'Electronic', searchAliases: ['electronic', 'edm', 'dance'] },
+  { genreKey: 'techno', displayName: 'Techno', parentGenreKey: 'electronic', searchAliases: ['techno'] },
+  { genreKey: 'hardtechno', displayName: 'Hard Techno', parentGenreKey: 'techno', searchAliases: ['hard techno', 'hard-techno'] },
+  { genreKey: 'industrial-techno', displayName: 'Industrial Techno', parentGenreKey: 'techno', searchAliases: ['industrial techno'] },
+  { genreKey: 'melodic-techno', displayName: 'Melodic Techno', parentGenreKey: 'techno', searchAliases: ['melodic techno'] },
+  { genreKey: 'minimal-techno', displayName: 'Minimal Techno', parentGenreKey: 'techno', searchAliases: ['minimal techno'] },
+  { genreKey: 'acid-techno', displayName: 'Acid Techno', parentGenreKey: 'techno', searchAliases: ['acid techno'] },
+  { genreKey: 'peak-time-techno', displayName: 'Peak Time Techno', parentGenreKey: 'techno', searchAliases: ['peak time techno', 'peak-time techno'] },
+  { genreKey: 'house', displayName: 'House', parentGenreKey: 'electronic', searchAliases: ['house'] },
+  { genreKey: 'tech-house', displayName: 'Tech House', parentGenreKey: 'house', searchAliases: ['tech house', 'tech-house'] },
+  { genreKey: 'deep-house', displayName: 'Deep House', parentGenreKey: 'house', searchAliases: ['deep house'] },
+  { genreKey: 'deep-tech-house', displayName: 'Deep/Tech House', parentGenreKey: 'house', searchAliases: ['deep/tech house', 'deep tech house'] },
+  { genreKey: 'progressive-house', displayName: 'Progressive House', parentGenreKey: 'house', searchAliases: ['progressive house'] },
+  { genreKey: 'melodic-house', displayName: 'Melodic House', parentGenreKey: 'house', searchAliases: ['melodic house'] },
+  { genreKey: 'afro-house', displayName: 'Afro House', parentGenreKey: 'house', searchAliases: ['afro house'] },
+  { genreKey: 'bass-house', displayName: 'Bass House', parentGenreKey: 'house', searchAliases: ['bass house'] },
+  { genreKey: 'trance', displayName: 'Trance', parentGenreKey: 'electronic', searchAliases: ['trance'] },
+  { genreKey: 'hard-trance', displayName: 'Hard Trance', parentGenreKey: 'trance', searchAliases: ['hard trance'] },
+  { genreKey: 'psytrance', displayName: 'Psytrance', parentGenreKey: 'trance', searchAliases: ['psytrance', 'psy trance'] },
+  { genreKey: 'hard-dance', displayName: 'Hard Dance', parentGenreKey: 'electronic', searchAliases: ['hard dance'] },
+  { genreKey: 'hardstyle', displayName: 'Hardstyle', parentGenreKey: 'hard-dance', searchAliases: ['hardstyle'] },
+  { genreKey: 'rawstyle', displayName: 'Rawstyle', parentGenreKey: 'hardstyle', searchAliases: ['rawstyle'] },
+  { genreKey: 'hardcore', displayName: 'Hardcore', parentGenreKey: 'hard-dance', searchAliases: ['hardcore'] },
+  { genreKey: 'gabber', displayName: 'Gabber', parentGenreKey: 'hardcore', searchAliases: ['gabber'] },
+  { genreKey: 'drum-and-bass', displayName: "Drum'n'Bass", parentGenreKey: 'electronic', searchAliases: ['drum and bass', 'drum & bass', 'dnb', "drum'n'bass"] },
+  { genreKey: 'jungle', displayName: 'Jungle', parentGenreKey: 'drum-and-bass', searchAliases: ['jungle'] },
+  { genreKey: 'dubstep', displayName: 'Dubstep', parentGenreKey: 'electronic', searchAliases: ['dubstep'] },
+  { genreKey: 'breakbeat', displayName: 'Breakbeat', parentGenreKey: 'electronic', searchAliases: ['breakbeat'] },
+  { genreKey: 'electro', displayName: 'Electro', parentGenreKey: 'electronic', searchAliases: ['electro'] },
+  { genreKey: 'disco', displayName: 'Disco', parentGenreKey: 'electronic', searchAliases: ['disco'] },
+  { genreKey: 'uk-garage', displayName: 'UK Garage', parentGenreKey: 'electronic', searchAliases: ['uk garage', 'ukg'] },
+  { genreKey: 'hip-hop', displayName: 'Hip Hop', parentGenreKey: 'electronic', searchAliases: ['hip hop', 'hip-hop'] },
+  { genreKey: 'goa', displayName: 'Goa', parentGenreKey: 'psytrance', searchAliases: ['goa'] },
+  { genreKey: 'groove', displayName: 'Groove', parentGenreKey: 'electronic', searchAliases: ['groove'] },
+  { genreKey: 'bounce', displayName: 'Bounce', parentGenreKey: 'electronic', searchAliases: ['bounce'] },
+  { genreKey: 'hard-bounce', displayName: 'Hard Bounce', parentGenreKey: 'electronic', searchAliases: ['hard bounce', 'hard-bounce', 'hardbounce'] },
+  { genreKey: 'trap', displayName: 'Trap', parentGenreKey: 'electronic', searchAliases: ['trap'] },
+];
+
+const NODE_BY_KEY = new Map(TAXONOMY.map((node) => [node.genreKey, node]));
+
+export function getGenreTaxonomy(): GenreTaxonomyNode[] {
+  return [...TAXONOMY];
+}
+
+export function getGenreTaxonomyNode(genreKey: string): GenreTaxonomyNode | undefined {
+  return NODE_BY_KEY.get(canonicalGenreKey(genreKey));
+}
+
+export function getAncestorGenreKeys(genreKey: string): string[] {
+  const ancestors: string[] = [];
+  let current = getGenreTaxonomyNode(genreKey);
+  while (current?.parentGenreKey) {
+    ancestors.push(current.parentGenreKey);
+    current = getGenreTaxonomyNode(current.parentGenreKey);
+  }
+  return ancestors;
+}
+
+export function getPrimaryGenreFamily(genreKey: string): string {
+  const normalized = canonicalGenreKey(genreKey);
+  const node = getGenreTaxonomyNode(normalized);
+  if (!node) {
+    return normalized;
+  }
+  if (node.parentGenreKey === 'electronic' || !node.parentGenreKey) {
+    return node.genreKey;
+  }
+  const ancestors = getAncestorGenreKeys(normalized);
+  const directElectronicChild = [normalized, ...ancestors].find((key) => {
+    const entry = getGenreTaxonomyNode(key);
+    return entry?.parentGenreKey === 'electronic';
+  });
+  return directElectronicChild ?? normalized;
+}
+
+export function areGenreKeysTaxonomyCompatible(left: string, right: string): boolean {
+  const a = canonicalGenreKey(left);
+  const b = canonicalGenreKey(right);
+  if (a === b) {
+    return true;
+  }
+  const ancestorsA = new Set([a, ...getAncestorGenreKeys(a)]);
+  const ancestorsB = new Set([b, ...getAncestorGenreKeys(b)]);
+  if (ancestorsA.has(b) || ancestorsB.has(a)) {
+    return true;
+  }
+  return getPrimaryGenreFamily(a) === getPrimaryGenreFamily(b);
+}
+
+export function isTaxonomyAncestor(ancestor: string, descendant: string): boolean {
+  const normalizedAncestor = canonicalGenreKey(ancestor);
+  const normalizedDescendant = canonicalGenreKey(descendant);
+  if (normalizedAncestor === normalizedDescendant) {
+    return false;
+  }
+  return getAncestorGenreKeys(normalizedDescendant).includes(normalizedAncestor);
+}
+
+export function pruneRedundantGenreKeys(genreKeys: string[]): string[] {
+  const normalized = genreKeys.map((key) => canonicalGenreKey(key));
+  return normalized.filter(
+    (key) => !normalized.some((other) => other !== key && isTaxonomyAncestor(key, other)),
+  );
+}
+
+export function hasIncompatibleGenreFamilies(genreKeys: string[]): boolean {
+  const normalized = genreKeys.map((key) => canonicalGenreKey(key));
+  for (let index = 0; index < normalized.length; index += 1) {
+    for (let inner = index + 1; inner < normalized.length; inner += 1) {
+      if (!areGenreKeysTaxonomyCompatible(normalized[index]!, normalized[inner]!)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+export function expandGenreKeysForSearch(queryGenreKey: string): Set<string> {
+  const normalized = canonicalGenreKey(queryGenreKey);
+  const expanded = new Set<string>([normalized]);
+  for (const node of TAXONOMY) {
+    const ancestors = getAncestorGenreKeys(node.genreKey);
+    if (ancestors.includes(normalized) || node.genreKey === normalized) {
+      expanded.add(node.genreKey);
+    }
+  }
+  return expanded;
+}
+
+export function resolveSearchQueryToGenreKey(query: string): string | undefined {
+  const normalized = query.trim().toLowerCase();
+  for (const node of TAXONOMY) {
+    if (node.genreKey === normalized || node.displayName.toLowerCase() === normalized) {
+      return node.genreKey;
+    }
+    if (node.searchAliases.some((alias) => alias.toLowerCase() === normalized)) {
+      return node.genreKey;
+    }
+  }
+  return undefined;
+}
+
+export function exportGenreTaxonomyJson(): { nodes: GenreTaxonomyNode[] } {
+  return { nodes: getGenreTaxonomy() };
+}

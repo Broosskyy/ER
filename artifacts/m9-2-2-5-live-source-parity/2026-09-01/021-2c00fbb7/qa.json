@@ -1,0 +1,60 @@
+{
+  "canonicalEventId": "2c00fbb7-baa9-47eb-aaa5-52cda45c79a1",
+  "title": "CHRIS STASSY pres. by BOOTSHAUS",
+  "checkedAt": "2026-09-01T09:02:08.516Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/chris-stassy-pres-by-bootshaus/",
+    "lineupCount": 1,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "finalUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "provider": "ticket_io",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9303490689325213511521598_8340756522782552782070796.png"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": null,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "On 16th October, CHRIS STASSY plays the Bootshaus MAINFLOOR for the first time.\n\nKnown for flowing sets and an approach where the music comes first, he brings his distinctive energy to Bootshaus.",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [
+    "CHRIS STASSY"
+  ],
+  "dbLineup": [
+    "CHRIS STASSY"
+  ],
+  "consumerLineup": [
+    "CHRIS STASSY"
+  ],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/9303490689325213511521598_8340756522782552782070796.png",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://bootshaus-club.ticket.io/By06xnf4/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

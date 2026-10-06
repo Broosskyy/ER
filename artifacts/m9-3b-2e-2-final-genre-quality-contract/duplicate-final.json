@@ -1,0 +1,8 @@
+{
+  "groups": [],
+  "counts": {
+    "confirmedDuplicateGroups": 0,
+    "highConfidenceDuplicateGroups": 0,
+    "ambiguousDuplicateGroups": 0
+  }
+}

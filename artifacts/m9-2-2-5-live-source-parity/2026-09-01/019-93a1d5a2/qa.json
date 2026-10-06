@@ -1,0 +1,70 @@
+{
+  "canonicalEventId": "93a1d5a2-01d3-4ad4-83e5-070456c66bb4",
+  "title": "MDMA – Musik Die Mich Antreibt 10.10.26",
+  "checkedAt": "2026-09-01T08:59:35.858Z",
+  "auditDateLocal": "2026-09-01",
+  "timezone": "Europe/Berlin",
+  "officialEvidence": {
+    "url": "https://affenkaefig.info/event/mdma-musik-die-mich-antreibt-10-10-26/",
+    "lineupCount": 0,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+    "finalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+    "provider": "ticket_kings",
+    "currentPhase": null,
+    "currentPriceMinor": null,
+    "currency": "EUR",
+    "availability": "unavailable_unknown",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_LineUP_MDMA-1024x536.jpg"
+  },
+  "currentTicketProduct": null,
+  "currentPhase": null,
+  "currentPrice": 2000,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": null,
+  "dbDescription": "MDMA – 10. Oktober 2026 Am Samstag, den 10. Oktober 2026, kehrt MDMA in die Essigfabrik / Elektroküche Köln zurück. Freut euch auf eine kompromisslose Nacht mit treibenden Sounds, hoher Energie und einem Line-up, das den Dancefloor von Anfang bis Ende unter Strom setzt. Angeführt von Paolo Ferrara und Le Klown erwartet euch ein druckvolles Programm mit internationalen und lokalen Acts – in der unverwechselbaren Atmosphäre der Elektroküche. LINE-UP PAOLO FERRARA LE KLOWN ANNX HELLMAYER LHYST PØUL STZ TATTI VALKYRIE VANY 📅 Samstag, 10. Oktober 2026 📍 Elektroküche Köln / Essigfabrik 📌 Siegburger Straße 110, 50679 Köln Weitere Informationen zu Einlass, Beginn und Tickets folgen. MDMA – see you on the dancefloor.",
+  "consumerDescription": "MDMA – 10. Oktober 2026 Am Samstag, den 10. Oktober 2026, kehrt MDMA in die Essigfabrik / Elektroküche Köln zurück. Freut euch auf eine kompromisslose Nacht mit treibenden Sounds, hoher Energie und einem Line-up, das den Dancefloor von Anfang bis Ende unter Strom setzt. Angeführt von Paolo Ferrara und Le Klown erwartet euch ein druckvolles Programm mit internationalen und lokalen Acts – in der unverwechselbaren Atmosphäre der Elektroküche. LINE-UP PAOLO FERRARA LE KLOWN ANNX HELLMAYER LHYST PØUL STZ TATTI VALKYRIE VANY 📅 Samstag, 10. Oktober 2026 📍 Elektroküche Köln / Essigfabrik 📌 Siegburger Straße 110, 50679 Köln Weitere Informationen zu Einlass, Beginn und Tickets folgen. MDMA – see you on the dancefloor.",
+  "sourceLineup": [],
+  "dbLineup": [
+    "PAOLO FERRARA",
+    "LE KLOWN",
+    "ANNX HELLMAYER",
+    "LHYST",
+    "PØUL STZ",
+    "TATTI VALKYRIE",
+    "VANY"
+  ],
+  "consumerLineup": [
+    "PAOLO FERRARA",
+    "LE KLOWN",
+    "ANNX HELLMAYER",
+    "LHYST",
+    "PØUL STZ",
+    "TATTI VALKYRIE",
+    "VANY"
+  ],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://ticketkings.de/wp-content/uploads/2026/04/10.10.26_FB_LineUP_MDMA-1024x536.jpg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://ticketkings.de/event/mdma-musik-die-mich-antreibt-10-10-26/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

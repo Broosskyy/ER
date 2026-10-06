@@ -1,0 +1,85 @@
+{
+  "canonicalEventId": "d03dd8ad-b487-48af-b208-fb5b5cc2349b",
+  "title": "Unreal Weekender Night I - September 2026",
+  "checkedAt": "2026-08-31T18:51:31.099Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/unreal-weekender-night-i-september-2026/",
+    "lineupCount": 8,
+    "genreCount": 1,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+    "finalUrl": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+    "provider": "ticket_io",
+    "currentPhase": "Final Phase",
+    "currentPriceMinor": 4500,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg"
+  },
+  "currentTicketProduct": "Final Phase",
+  "currentPhase": "Final Phase",
+  "currentPrice": 4500,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": null,
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren! All sales are final / Jeder Kauf ist endg&amp;uuml;ltig No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. Ticket-Weiterverkaufsinformation Der Ticketk&amp;auml;ufer darf keinen h&amp;ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird. Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&amp;auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!",
+  "sourceLineup": [
+    "AFEM SYKO",
+    "BIIANCO",
+    "JOHANNES SCHUSTER",
+    "KOTORRI",
+    "MAD DOG",
+    "NIKOLINA",
+    "PIXIE DUST",
+    "WILL ATKINSON"
+  ],
+  "dbLineup": [
+    "AFEM SYKO",
+    "BIIANCO",
+    "JOHANNES SCHUSTER",
+    "KOTORRI",
+    "MAD DOG",
+    "NIKOLINA",
+    "PIXIE DUST",
+    "WILL ATKINSON"
+  ],
+  "consumerLineup": [
+    "AFEM SYKO",
+    "BIIANCO",
+    "JOHANNES SCHUSTER",
+    "KOTORRI",
+    "MAD DOG",
+    "NIKOLINA",
+    "PIXIE DUST",
+    "WILL ATKINSON"
+  ],
+  "sourceGenres": [
+    "Hard Techno"
+  ],
+  "dbGenres": [
+    "Hard Techno"
+  ],
+  "consumerGenres": [
+    "Hard Techno"
+  ],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/7572114598587918602110621_2877361043033547007838821.jpeg",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://unreal-bootshaus.ticket.io/U1dUL7lG/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

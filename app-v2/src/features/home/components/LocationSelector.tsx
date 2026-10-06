@@ -1,29 +1,25 @@
-import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet } from 'react-native';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
-import { AppText } from '@/components/layout/AppText';
-import { colorRoles, colors } from '@/design/colors';
-import { componentSize } from '@/design/layout';
-import { radiusRoles } from '@/design/radii';
-import { spacing } from '@/design/spacing';
-import { textRoles } from '@/design/typography';
+import { CitySelector } from '@/components';
 import { LocationPickerModal } from '@/features/location/components/LocationPickerModal';
 import { getManualDiscoveryCityOptions } from '@/features/location/discovery-city-options';
+import { useHomeRadiusPreference } from '@/features/location/hooks/use-home-radius-preference';
 import { useUserLocation } from '@/features/location/UserLocationProvider';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { spacing } from '@/design/spacing';
+import { useTheme } from '@/design/theme';
 
 export function LocationSelector() {
   const { t } = useAppTranslation();
-  const { displayLabel, loading, errorCode, location, requestCurrentLocation, selectDiscoveryCity } =
+  const { theme } = useTheme();
+  const { displayLabel, loading, errorCode, location, requestCurrentLocation, selectDiscoveryCity, clearLocation } =
     useUserLocation();
+  const { radiusKm, options: radiusOptions, setRadiusKm } = useHomeRadiusPreference();
   const [modalVisible, setModalVisible] = useState(false);
   const discoveryCities = getManualDiscoveryCityOptions();
 
   const handleOpen = () => {
-    if (loading) {
-      return;
-    }
     setModalVisible(true);
   };
 
@@ -43,27 +39,25 @@ export function LocationSelector() {
     });
   };
 
+  const handleClearLocation = () => {
+    void clearLocation().then(() => {
+      setModalVisible(false);
+    });
+  };
+
   return (
     <>
-      <Pressable
-        accessibilityRole="button"
+      <View
+        style={styles.row}
+        testID="home-location-selector"
         accessibilityLabel={t('home.location.a11y', { location: displayLabel })}
         accessibilityState={{ busy: loading }}
-        onPress={handleOpen}
-        disabled={loading}
-        style={({ pressed }) => [styles.container, pressed && styles.pressed]}
-        testID="home-location-selector"
       >
-        <Ionicons name="location" size={componentSize.iconSm} color={colors.primary} />
-        <AppText style={styles.label} numberOfLines={1}>
-          {displayLabel}
-        </AppText>
+        <CitySelector cityLabel={displayLabel} onPress={handleOpen} />
         {loading ? (
-          <ActivityIndicator size="small" color={colors.primary} />
-        ) : (
-          <Ionicons name="chevron-down" size={componentSize.iconSm} color={colors.textPrimary} />
-        )}
-      </Pressable>
+          <ActivityIndicator size="small" color={theme.colors.accent} testID="home-location-loading" />
+        ) : null}
+      </View>
 
       <LocationPickerModal
         visible={modalVisible}
@@ -71,36 +65,22 @@ export function LocationSelector() {
         errorCode={errorCode}
         discoveryCities={discoveryCities}
         selectedDiscoveryCityId={location?.discoveryCityId}
+        radiusKm={radiusKm}
+        radiusOptions={radiusOptions}
+        onRadiusChange={(next) => void setRadiusKm(next)}
         onClose={() => setModalVisible(false)}
         onUseCurrentLocation={handleUseCurrentLocation}
         onSelectDiscoveryCity={handleSelectDiscoveryCity}
+        onClearLocation={handleClearLocation}
       />
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  row: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'flex-start',
     gap: spacing.sm,
-    minHeight: componentSize.chipHeight,
-    maxWidth: '100%',
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
-    borderRadius: radiusRoles.chip,
-    backgroundColor: colorRoles.chipBackground,
-    borderWidth: 1,
-    borderColor: colorRoles.chipBorder,
-  },
-  pressed: {
-    opacity: 0.88,
-  },
-  label: {
-    ...textRoles.cardSubtitle,
-    color: colors.textPrimary,
-    fontWeight: '500',
-    flexShrink: 1,
   },
 });

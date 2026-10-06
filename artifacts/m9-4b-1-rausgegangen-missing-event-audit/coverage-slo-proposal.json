@@ -1,0 +1,16 @@
+{
+  "metrics": [
+    "discoveredUpcomingCityListing",
+    "discoveredUpcomingLocationListing",
+    "detailEnrichedUpcoming",
+    "electronicRelevant",
+    "qualityReady",
+    "canonicalExisting",
+    "canonicalNetNew",
+    "imported",
+    "blocked",
+    "consumerVisible"
+  ],
+  "detailCoverageRate": "detailEnrichedUpcoming / discoveredUpcomingUnion(city, location)",
+  "targetPopulations": "Label every metric with population, lifecycle scope, relevance scope, identity scope"
+}

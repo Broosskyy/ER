@@ -1,0 +1,10 @@
+{
+  "eligibleEvents": 34,
+  "genreClassifiedBefore": 34,
+  "genreUnresolvedBefore": 0,
+  "genreClassifiedAfter": 34,
+  "genreUnresolvedAfter": 0,
+  "genreCoverageAfter": 1,
+  "publishedElectronicGenreCoverage": 1,
+  "unresolved": []
+}

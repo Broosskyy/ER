@@ -1,0 +1,4515 @@
+[
+  {
+    "identityKey": "ticket_io:bootshaus-club:vb0camwg",
+    "ticketIoEventId": "vB0cAmWg",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "Bootshaus Sommerfest",
+    "startsAt": "2026-09-05T22:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/vB0cAmWg/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "matchedEventTitle": "Bootshaus Sommerfest auf 4 Floors!"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:4zjkrnsa",
+    "ticketIoEventId": "4zjKRnsa",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "Bootshaus on a Ship Vol. IV",
+    "startsAt": "2026-09-13T14:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "KD Anleger Nr. 2",
+    "ticketUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/4zjKRnsa/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "f00f72f6-fb61-46f2-9f12-772951001afd",
+    "matchedEventTitle": "Bootshaus on a Ship Vol. IV"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:fjspvle4",
+    "ticketIoEventId": "fjspvLe4",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "BC173 Airport Session pres. by Bootshaus IV",
+    "startsAt": "2026-09-19T16:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Moxy Köln/Bonn Flughafen",
+    "city": "Köln",
+    "ticketUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/fjspvLe4/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 22,90 €",
+    "listAmountMinor": 2290,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 22,90 €",
+        "amountMinor": 2290,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "15473810-0019-41a2-931e-3fd44fad7f2e",
+    "matchedEventTitle": "BC173 Airport Session pres. by Bootshaus"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:ycdxwvrm",
+    "ticketIoEventId": "ycDXwvrm",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "Bootshaus Sommerfest Closing",
+    "startsAt": "2026-09-19T22:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 15,00 €",
+    "listAmountMinor": 1500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 15,00 €",
+        "amountMinor": 1500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "matchedEventTitle": "Bootshaus Sommerfest Closing"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:c4culnfm",
+    "ticketIoEventId": "c4CUlNfm",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "NIBIRII pres. ELY OAKS and more",
+    "startsAt": "2026-10-02T22:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/c4CUlNfm/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/c4CUlNfm/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,90 €",
+    "listAmountMinor": 2690,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,90 €",
+        "amountMinor": 2690,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "matchedEventTitle": "NIBIRII pres. ELY OAKS and more!"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:atz0dhlx",
+    "ticketIoEventId": "Atz0dHLX",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "CHROME @ Bootshaus",
+    "startsAt": "2026-10-09T22:30:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/Atz0dHLX/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "48205adc-fd4a-4deb-a110-9f5837eb64d7",
+    "matchedEventTitle": "CHROME COLOGNE"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:by06xnf4",
+    "ticketIoEventId": "By06xnf4",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "CHRIS STASSY pres. by Bootshaus!",
+    "startsAt": "2026-10-16T22:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/By06xnf4/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "8a8eb9b7-593e-45de-926d-2514735b86cc",
+    "matchedEventTitle": "CHRIS STUSSY pres. by BOOTSHAUS"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:b3jk8apc",
+    "ticketIoEventId": "B3jK8aPC",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN",
+    "startsAt": "2026-10-23T22:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/B3jK8aPC/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 24,90 €",
+    "listAmountMinor": 2490,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 24,90 €",
+        "amountMinor": 2490,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "96dda961-beeb-4d8d-9aac-73abab09fab5",
+    "matchedEventTitle": "AFFENKÄFIG RULES // BOOTSHAUS KÖLN"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:hv4f09p8",
+    "ticketIoEventId": "Hv4f09p8",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "Bootshaus & Loonyland pres. Halloween 2026",
+    "startsAt": "2026-10-31T21:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/Hv4f09p8/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 32,00 €",
+    "listAmountMinor": 3200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 32,00 €",
+        "amountMinor": 3200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "21cf557a-be4f-46a5-bbdf-39d24a8018d2",
+    "matchedEventTitle": "Bootshaus & Loonyland pres. Halloween 2026"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:jhup7wql",
+    "ticketIoEventId": "jhUP7WQl",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "startsAt": "2026-12-11T23:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_possible_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:s0cbxdda",
+    "ticketIoEventId": "S0cbXDda",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "Bootshaus & Loonyland pres. NYE 2026",
+    "startsAt": "2026-12-31T21:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/S0cbXDda/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 29,00 €",
+    "listAmountMinor": 2900,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 29,00 €",
+        "amountMinor": 2900,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "EXISTING_EXACT",
+    "matchReasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ],
+    "matchedEventId": "b314fd67-61c5-4afe-9f12-1efabf48a602",
+    "matchedEventTitle": "Bootshaus & Loonyland pres. NYE 2026"
+  },
+  {
+    "identityKey": "ticket_io:bootshaus-club:usxejhhu",
+    "ticketIoEventId": "uSXeJhHU",
+    "shopId": "bootshaus-club",
+    "shopSlug": "bootshaus-club",
+    "title": "DEBORAH DE LUCA pres by Bootshaus",
+    "startsAt": "2027-01-23T22:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Bootshaus",
+    "ticketUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/uSXeJhHU/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 19,90 €",
+    "listAmountMinor": 1990,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 19,90 €",
+        "amountMinor": 1990,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:bootshaus|affenkaefig|affenkäfig|kitkat|unreal|nibirii|zaagstep|underland)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://bootshaus-club.ticket.io/",
+      "https://bootshaus-club.ticket.io/?lang=de",
+      "https://bootshaus-club.ticket.io/?lang=en",
+      "https://bootshaus-club.ticket.io/?lang=fr",
+      "https://bootshaus-club.ticket.io/?lang=nl",
+      "https://bootshaus-club.ticket.io/?lang=pl",
+      "https://bootshaus-club.ticket.io/?lang=it",
+      "https://bootshaus-club.ticket.io/?lang=es",
+      "https://bootshaus-club.ticket.io/?lang=ru",
+      "https://bootshaus-club.ticket.io/?lang=tr",
+      "https://bootshaus-club.ticket.io/?lang=hr",
+      "https://bootshaus-club.ticket.io/?lang=pt",
+      "https://bootshaus-club.ticket.io/?lang=sq",
+      "https://bootshaus-club.ticket.io/?lang=sl"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:gl1jaacf",
+    "ticketIoEventId": "gl1JAAcf",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Konzertgutscheine",
+    "startsAt": "2026-01-01T00:05:00+01:00",
+    "lifecycle": "ENDED",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/gl1JAAcf/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/gl1JAAcf/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:sph3zrj3",
+    "ticketIoEventId": "sPH3zrj3",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Tom-Tom Discotec presents: La Recocha /w Sandunguera (Cali)",
+    "startsAt": "2026-09-12T23:30:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/sPH3zrj3/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/sPH3zrj3/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:9c4ngmql",
+    "ticketIoEventId": "9C4NGMql",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Foggy Notion: The Necks",
+    "startsAt": "2026-09-15T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/9C4NGMql/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/9C4NGMql/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:hxuytamv",
+    "ticketIoEventId": "hxUYTaMV",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Jack Botts",
+    "startsAt": "2026-09-18T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/hxUYTaMV/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/hxUYTaMV/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 25,00 €",
+    "listAmountMinor": 2500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 25,00 €",
+        "amountMinor": 2500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:bqevqbuh",
+    "ticketIoEventId": "bQEVQBUh",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Rodrigo Amado The Bridge",
+    "startsAt": "2026-09-19T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/bQEVQBUh/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/bQEVQBUh/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:92dd3hw9",
+    "ticketIoEventId": "92Dd3hW9",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Jens Düppe Quartett x Gregor Schwellenbach",
+    "startsAt": "2026-09-20T18:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/92Dd3hW9/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/92Dd3hW9/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:qpcnqgg9",
+    "ticketIoEventId": "QPcnqGG9",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Ayumi Tanaka / Thomas Morgan / Thomas Strønen",
+    "startsAt": "2026-09-23T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/QPcnqGG9/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/QPcnqGG9/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:2lek1mnd",
+    "ticketIoEventId": "2LeK1mNd",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "NICA live: Mount Meander feat. Auziņš, Leidinger, Jacobson, Sauerborn",
+    "startsAt": "2026-09-28T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/2LeK1mNd/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/2LeK1mNd/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:tryyux0h",
+    "ticketIoEventId": "TRyyUx0h",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Fuchsthone Orchestra feat. Evi Filippou",
+    "startsAt": "2026-09-30T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/TRyyUx0h/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/TRyyUx0h/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:2qnfprx9",
+    "ticketIoEventId": "2QnFPrX9",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "HERZOG | MUCHE | NILLESEN – TON meets RYOSUKE KIYASU",
+    "startsAt": "2026-10-01T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/2QnFPrX9/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/2QnFPrX9/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:jdb3r3mj",
+    "ticketIoEventId": "JDB3r3Mj",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Le Pop la Série: Loa Mercury",
+    "startsAt": "2026-10-02T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/JDB3r3Mj/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/JDB3r3Mj/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:mdh98fwe",
+    "ticketIoEventId": "mdh98FWE",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Jazz at JAKI: Marc Doffey Quartett",
+    "startsAt": "2026-10-03T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/mdh98FWE/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/mdh98FWE/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:cnp8zy0c",
+    "ticketIoEventId": "CNp8Zy0C",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Lera Lynn",
+    "startsAt": "2026-10-06T19:30:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/CNp8Zy0C/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/CNp8Zy0C/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,00 €",
+    "listAmountMinor": 2600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,00 €",
+        "amountMinor": 2600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:xbhpgglk",
+    "ticketIoEventId": "XbHpGglk",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Pomplamoose",
+    "startsAt": "2026-10-06T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Die Kantine Kulturbetrieb",
+    "ticketUrl": "https://stadtgarten.ticket.io/XbHpGglk/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/XbHpGglk/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:ebmclu7p",
+    "ticketIoEventId": "EbMClu7P",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Jason Moran solo",
+    "startsAt": "2026-10-07T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/EbMClu7P/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/EbMClu7P/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:qbcmk0dj",
+    "ticketIoEventId": "qbcMK0dJ",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Low Down Brass Band",
+    "startsAt": "2026-10-08T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/qbcMK0dJ/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/qbcMK0dJ/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 30,40 €",
+    "listAmountMinor": 3040,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 30,40 €",
+        "amountMinor": 3040,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:fxthupuz",
+    "ticketIoEventId": "FXthuPuz",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Jazz at JAKI: Eva Buchmann",
+    "startsAt": "2026-10-10T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/FXthuPuz/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/FXthuPuz/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:8vzccp9j",
+    "ticketIoEventId": "8vzcCp9J",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "SONIQ meets Marie Daniels",
+    "startsAt": "2026-10-11T18:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/8vzcCp9J/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/8vzcCp9J/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:mq0nzke0",
+    "ticketIoEventId": "Mq0nzKE0",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Gretchen Parlato Quartet",
+    "startsAt": "2026-10-12T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/Mq0nzKE0/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/Mq0nzKE0/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:bksxay66",
+    "ticketIoEventId": "bKSxay66",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Elephant9",
+    "startsAt": "2026-10-13T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/bKSxay66/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/bKSxay66/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:wqvy97db",
+    "ticketIoEventId": "WqvY97db",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Foggy Notion: Deradoorian",
+    "startsAt": "2026-10-14T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/WqvY97db/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/WqvY97db/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:w8w1jwtr",
+    "ticketIoEventId": "W8w1JWtR",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Nik Bärtsch's Ronin",
+    "startsAt": "2026-10-14T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/W8w1JWtR/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/W8w1JWtR/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:r19jzrmj",
+    "ticketIoEventId": "R19jZRmj",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Finojet",
+    "startsAt": "2026-10-15T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/R19jZRmj/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/R19jZRmj/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 23,00 €",
+    "listAmountMinor": 2300,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 23,00 €",
+        "amountMinor": 2300,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:k69sh9mj",
+    "ticketIoEventId": "K69sH9mJ",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "AB Syndrom",
+    "startsAt": "2026-10-16T19:30:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/K69sH9mJ/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/K69sH9mJ/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 25,00 €",
+    "listAmountMinor": 2500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 25,00 €",
+        "amountMinor": 2500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:8rbmpmfh",
+    "ticketIoEventId": "8RbMpmfH",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Paul Heller invites Swing Masters Vol. 2",
+    "startsAt": "2026-10-18T18:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/8RbMpmfH/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/8RbMpmfH/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:sjwjze6n",
+    "ticketIoEventId": "sJwjZE6n",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Maria Taylor",
+    "startsAt": "2026-10-18T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/sJwjZE6n/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/sJwjZE6n/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,00 €",
+    "listAmountMinor": 2600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,00 €",
+        "amountMinor": 2600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:wctead6s",
+    "ticketIoEventId": "WCtEad6s",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Le Pop La Série: Coline Rio",
+    "startsAt": "2026-10-19T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/WCtEad6s/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/WCtEad6s/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:48wlahcw",
+    "ticketIoEventId": "48wlahcw",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "CGNYC w/ Kate Gentile",
+    "startsAt": "2026-10-19T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/48wlahcw/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/48wlahcw/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:va16tkrq",
+    "ticketIoEventId": "VA16tKrQ",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Tay Oskee",
+    "startsAt": "2026-10-20T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/VA16tKrQ/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/VA16tKrQ/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 25,00 €",
+    "listAmountMinor": 2500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 25,00 €",
+        "amountMinor": 2500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:3eczax4p",
+    "ticketIoEventId": "3ecZAX4p",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Max Fry",
+    "startsAt": "2026-10-22T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/3ecZAX4p/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/3ecZAX4p/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,00 €",
+    "listAmountMinor": 2600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,00 €",
+        "amountMinor": 2600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:eswgguxr",
+    "ticketIoEventId": "EsWggUxR",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Shalosh",
+    "startsAt": "2026-10-25T18:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/EsWggUxR/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/EsWggUxR/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:klgegcwp",
+    "ticketIoEventId": "kLGEgcWp",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "NICA live: RAY LOZANO | Release-Konzert \"#4a79b1\"",
+    "startsAt": "2026-10-26T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Konzertsaal",
+    "ticketUrl": "https://stadtgarten.ticket.io/kLGEgcWp/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/kLGEgcWp/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 8,00 €",
+    "listAmountMinor": 800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 8,00 €",
+        "amountMinor": 800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:mmwvvxkn",
+    "ticketIoEventId": "mmWvVxKN",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Myles Sanko",
+    "startsAt": "2026-10-27T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/mmWvVxKN/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/mmWvVxKN/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 35,00 €",
+    "listAmountMinor": 3500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 35,00 €",
+        "amountMinor": 3500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:u3j41fbk",
+    "ticketIoEventId": "u3J41fBK",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Kira Linns „Her Wings“",
+    "startsAt": "2026-10-28T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/u3J41fBK/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/u3J41fBK/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:axujyuwf",
+    "ticketIoEventId": "AxUJyUWF",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Greg Mendez",
+    "startsAt": "2026-10-29T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/AxUJyUWF/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/AxUJyUWF/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 24,00 €",
+    "listAmountMinor": 2400,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 24,00 €",
+        "amountMinor": 2400,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:kkvz7uwx",
+    "ticketIoEventId": "Kkvz7UWX",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Bill Stewart ft. Walter Smith III and Larry Grenadier",
+    "startsAt": "2026-10-29T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/Kkvz7UWX/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/Kkvz7UWX/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 16,00 €",
+    "listAmountMinor": 1600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 16,00 €",
+        "amountMinor": 1600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:cb6z82hy",
+    "ticketIoEventId": "CB6z82hY",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Lots Of Hands",
+    "startsAt": "2026-10-30T19:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/CB6z82hY/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/CB6z82hY/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 21,00 €",
+    "listAmountMinor": 2100,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 21,00 €",
+        "amountMinor": 2100,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:squncc29",
+    "ticketIoEventId": "squncC29",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Christina Lux & Oliver George",
+    "startsAt": "2026-10-30T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/squncC29/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/squncC29/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:tykhxb6s",
+    "ticketIoEventId": "tYKHXB6S",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "MITTANZ-HALLOWEEN-SPEKTAKEL 2026",
+    "startsAt": "2026-10-31T21:30:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten | JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/tYKHXB6S/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/tYKHXB6S/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 15,00 €",
+    "listAmountMinor": 1500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 15,00 €",
+        "amountMinor": 1500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:ea89a73b",
+    "ticketIoEventId": "ea89a73b",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Charlotte Greve Quartett",
+    "startsAt": "2026-11-08T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/ea89a73b/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/ea89a73b/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:sptqfkey",
+    "ticketIoEventId": "sptQfKey",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Guacayo",
+    "startsAt": "2026-11-10T19:30:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/sptQfKey/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/sptQfKey/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,00 €",
+    "listAmountMinor": 2600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,00 €",
+        "amountMinor": 2600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:djpvqrsf",
+    "ticketIoEventId": "djPVqRsF",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Patricia Brennan Septet",
+    "startsAt": "2026-11-10T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/djPVqRsF/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/djPVqRsF/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 16,00 €",
+    "listAmountMinor": 1600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 16,00 €",
+        "amountMinor": 1600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:q7lel1js",
+    "ticketIoEventId": "q7LEl1js",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Chanson Trottoir",
+    "startsAt": "2026-11-14T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/q7LEl1js/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/q7LEl1js/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 20,00 €",
+    "listAmountMinor": 2000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 20,00 €",
+        "amountMinor": 2000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:cg38bm4p",
+    "ticketIoEventId": "cG38bM4P",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Paul Heller invites Emma Rawicz",
+    "startsAt": "2026-11-15T18:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/cG38bM4P/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/cG38bM4P/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:3jxakprg",
+    "ticketIoEventId": "3jXAkpRg",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Foggy Notion: Eliana Glass",
+    "startsAt": "2026-11-16T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/3jXAkpRg/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/3jXAkpRg/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:bpykgwup",
+    "ticketIoEventId": "BpYkGwUp",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Foggy Notion: SML",
+    "startsAt": "2026-11-17T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/BpYkGwUp/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/BpYkGwUp/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:l2z0mp9q",
+    "ticketIoEventId": "L2z0mp9q",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "KLAENG Festival 2026 | Tag #1",
+    "startsAt": "2026-11-20T19:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/L2z0mp9q/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/L2z0mp9q/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:open\\s*air|festival)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:rpamhgzx",
+    "ticketIoEventId": "rpamHGzx",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "KLAENG Festival 2026 | Early Bird Festival Pass",
+    "startsAt": "2026-11-20T19:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/rpamHGzx/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/rpamHGzx/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 79,00 €",
+    "listAmountMinor": 7900,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 79,00 €",
+        "amountMinor": 7900,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:open\\s*air|festival)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:f8c8lb2n",
+    "ticketIoEventId": "f8c8Lb2n",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "David Lübke",
+    "startsAt": "2026-11-20T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/f8c8Lb2n/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/f8c8Lb2n/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 23,00 €",
+    "listAmountMinor": 2300,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 23,00 €",
+        "amountMinor": 2300,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:pcukfaxt",
+    "ticketIoEventId": "PCUkfAXT",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "KLAENG Festival 2026 | Tag #2",
+    "startsAt": "2026-11-21T19:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/PCUkfAXT/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/PCUkfAXT/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:open\\s*air|festival)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:cswbgsrw",
+    "ticketIoEventId": "cSWbgsRw",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "KLAENG Festival 2026 | Tag #3",
+    "startsAt": "2026-11-22T19:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/cSWbgsRw/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/cSWbgsRw/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "HIGH_RELEVANCE",
+    "relevanceReasons": [
+      "high:\\b(?:open\\s*air|festival)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:xmcuv92s",
+    "ticketIoEventId": "xMCuv92S",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "PULSE",
+    "startsAt": "2026-11-24T19:30:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/xMCuv92S/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/xMCuv92S/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:7hjpwwna",
+    "ticketIoEventId": "7hJpwwNA",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Shai Maestro The Guesthouse Quartet",
+    "startsAt": "2026-11-25T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/7hJpwwNA/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/7hJpwwNA/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 18,00 €",
+    "listAmountMinor": 1800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 18,00 €",
+        "amountMinor": 1800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+    "ticketIoEventId": "ZBj8pQcY",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Lézard",
+    "startsAt": "2026-11-26T19:30:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 23,00 €",
+    "listAmountMinor": 2300,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 23,00 €",
+        "amountMinor": 2300,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:vguajrsr",
+    "ticketIoEventId": "VguajRSr",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Ben van Gelder Quintet",
+    "startsAt": "2026-12-01T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/VguajRSr/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/VguajRSr/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:m8rs836f",
+    "ticketIoEventId": "M8Rs836f",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Oskar Haag",
+    "startsAt": "2026-12-07T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/M8Rs836f/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/M8Rs836f/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 22,00 €",
+    "listAmountMinor": 2200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 22,00 €",
+        "amountMinor": 2200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:4wn1qak0",
+    "ticketIoEventId": "4WN1QAK0",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "As Yet Untitled: Bex Burch - Esther Coorevits - Stan Maris - James McClure",
+    "startsAt": "2026-12-09T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/4WN1QAK0/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/4WN1QAK0/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:eydcgpqw",
+    "ticketIoEventId": "eydcGPqw",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "MAUSTETYTÖT",
+    "startsAt": "2026-12-10T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/eydcGPqw/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/eydcGPqw/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 32,00 €",
+    "listAmountMinor": 3200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 32,00 €",
+        "amountMinor": 3200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:lsqkhdqz",
+    "ticketIoEventId": "LsQkHdQZ",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Swinging Christmas – Paul Heller invites Tijn Trommelen",
+    "startsAt": "2026-12-13T18:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/LsQkHdQZ/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/LsQkHdQZ/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:khqnwps6",
+    "ticketIoEventId": "kHQNWPs6",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "City of the Sun",
+    "startsAt": "2026-12-15T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/kHQNWPs6/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/kHQNWPs6/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,00 €",
+    "listAmountMinor": 2600,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,00 €",
+        "amountMinor": 2600,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:d3qyftnc",
+    "ticketIoEventId": "d3QyftnC",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Der Literarische Salon mit Ursula Krechel",
+    "startsAt": "2026-12-17T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/d3QyftnC/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/d3QyftnC/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:cqnvdwhs",
+    "ticketIoEventId": "cQNvDWhs",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Jamaram Meets Jahcoustix",
+    "startsAt": "2026-12-29T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/cQNvDWhs/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/cQNvDWhs/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 28,00 €",
+    "listAmountMinor": 2800,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 28,00 €",
+        "amountMinor": 2800,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:gleh62qb",
+    "ticketIoEventId": "Gleh62Qb",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Alexandra Grimal REWILD",
+    "startsAt": "2027-01-14T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/Gleh62Qb/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/Gleh62Qb/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:c3w3jda7",
+    "ticketIoEventId": "c3W3jda7",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "J. Bernardt",
+    "startsAt": "2027-01-28T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/c3W3jda7/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/c3W3jda7/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 31,00 €",
+    "listAmountMinor": 3100,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 31,00 €",
+        "amountMinor": 3100,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:qqcddrpb",
+    "ticketIoEventId": "qqcddrPb",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "RasgaRasga - XX-Tour",
+    "startsAt": "2027-01-30T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/qqcddrPb/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/qqcddrPb/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 23,00 €",
+    "listAmountMinor": 2300,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 23,00 €",
+        "amountMinor": 2300,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:ncbz4psk",
+    "ticketIoEventId": "NCBz4PSk",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "To Athena",
+    "startsAt": "2027-02-27T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/NCBz4PSk/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/NCBz4PSk/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 26,50 €",
+    "listAmountMinor": 2650,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 26,50 €",
+        "amountMinor": 2650,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:3qqlsvz4",
+    "ticketIoEventId": "3qqlsVZ4",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Girls In Airports \"Cirkular\"",
+    "startsAt": "2027-03-08T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "JAKI",
+    "ticketUrl": "https://stadtgarten.ticket.io/3qqlsVZ4/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/3qqlsVZ4/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:4ljakcaq",
+    "ticketIoEventId": "4lJAKcAq",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Phil Siemers",
+    "startsAt": "2027-04-16T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten Köln",
+    "ticketUrl": "https://stadtgarten.ticket.io/4lJAKcAq/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/4lJAKcAq/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 30,00 €",
+    "listAmountMinor": 3000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 30,00 €",
+        "amountMinor": 3000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:stadtgarten:3vcemgev",
+    "ticketIoEventId": "3vCemgev",
+    "shopId": "stadtgarten",
+    "shopSlug": "stadtgarten",
+    "title": "Daniel Herskedal Trio",
+    "startsAt": "2027-05-02T20:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Stadtgarten",
+    "ticketUrl": "https://stadtgarten.ticket.io/3vCemgev/",
+    "canonicalUrl": "https://stadtgarten.ticket.io/3vCemgev/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 0,00 €",
+    "listAmountMinor": 0,
+    "listCurrency": "EUR",
+    "listTicketStatus": "unavailable_unknown",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 0,00 €",
+        "amountMinor": 0,
+        "currency": "EUR",
+        "availability": "unavailable_unknown"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://stadtgarten.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:aura:b19vx5rj",
+    "ticketIoEventId": "b19Vx5Rj",
+    "shopId": "aura",
+    "shopSlug": "aura",
+    "title": "Aura at Odonien w/ ÜBERKIKZ & ALARICO",
+    "startsAt": "2026-09-04T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Odonien",
+    "ticketUrl": "https://aura.ticket.io/b19Vx5Rj/",
+    "canonicalUrl": "https://aura.ticket.io/b19Vx5Rj/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 24,00 €",
+    "listAmountMinor": 2400,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 24,00 €",
+        "amountMinor": 2400,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://aura.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:aura:1ujhlvky",
+    "ticketIoEventId": "1uJhLVKy",
+    "shopId": "aura",
+    "shopSlug": "aura",
+    "title": "Aura at fi w/ Chlär & more",
+    "startsAt": "2026-10-02T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "fi",
+    "ticketUrl": "https://aura.ticket.io/1uJhLVKy/",
+    "canonicalUrl": "https://aura.ticket.io/1uJhLVKy/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 24,00 €",
+    "listAmountMinor": 2400,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 24,00 €",
+        "amountMinor": 2400,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://aura.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:aura:nhbir0f5",
+    "ticketIoEventId": "NhBir0F5",
+    "shopId": "aura",
+    "shopSlug": "aura",
+    "title": "Aura at fi w/ SHDW all night long",
+    "startsAt": "2026-12-04T23:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "fi",
+    "ticketUrl": "https://aura.ticket.io/NhBir0F5/",
+    "canonicalUrl": "https://aura.ticket.io/NhBir0F5/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 21,00 €",
+    "listAmountMinor": 2100,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 21,00 €",
+        "amountMinor": 2100,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "LIKELY_RELEVANT",
+    "relevanceReasons": [
+      "likely:\\b(?:dj|live act|b2b|all\\s*night\\s*long)\\b"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://aura.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:tonite:sopkke0c",
+    "ticketIoEventId": "SOPkKE0C",
+    "shopId": "tonite",
+    "shopSlug": "tonite",
+    "title": "#MITTWOCHENENDE in ODONIEN",
+    "startsAt": "2026-09-02T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Odonien",
+    "ticketUrl": "https://tonite.ticket.io/SOPkKE0C/",
+    "canonicalUrl": "https://tonite.ticket.io/SOPkKE0C/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://tonite.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:tonite:6v2yubq7",
+    "ticketIoEventId": "6V2YUbQ7",
+    "shopId": "tonite",
+    "shopSlug": "tonite",
+    "title": "GUTE NACHT! mit Jannik van der Vegt, JO KX, Lisek, Mischkonsum",
+    "startsAt": "2026-09-19T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Garagen Club Köln",
+    "city": "Köln",
+    "ticketUrl": "https://tonite.ticket.io/6V2YUbQ7/",
+    "canonicalUrl": "https://tonite.ticket.io/6V2YUbQ7/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 15,00 €",
+    "listAmountMinor": 1500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 15,00 €",
+        "amountMinor": 1500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "ambiguous_club_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://tonite.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:sasgsbzg",
+    "ticketIoEventId": "sasGSbzG",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Simple Present w/ DCHM, Lara Fein, Ryan Elliott",
+    "startsAt": "2026-09-04T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/sasGSbzG/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/sasGSbzG/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:hvphx9cx",
+    "ticketIoEventId": "HvPhx9cx",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Phonovision w/ HiHat, PAU, Various Identities",
+    "startsAt": "2026-09-05T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/HvPhx9cx/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/HvPhx9cx/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:ylgm2drq",
+    "ticketIoEventId": "ylGM2drQ",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Jack This w/ aphasit, Lingy & Polschi, Mike Starr",
+    "startsAt": "2026-09-11T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/ylGM2drQ/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/ylGM2drQ/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:zaqmqtzu",
+    "ticketIoEventId": "ZAqMQtZU",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "SOUNDSOUND w/ Janis Zielinski & Mike Momburg",
+    "startsAt": "2026-09-12T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/ZAqMQtZU/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+    "ticketIoEventId": "3qKuB9ea",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Klubnacht w/ Gerd Janson, lyzanne",
+    "startsAt": "2026-09-18T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/3qKuB9ea/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+    "ticketIoEventId": "vfuXdxqy",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Klubnacht w/ Adiel, Di², EPHIE",
+    "startsAt": "2026-09-19T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/vfuXdxqy/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:auhcwfap",
+    "ticketIoEventId": "auHCwFAp",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Schleuse Eins w/ Beste Hira, Maxim Vukovic & Tils, Reduks -live-",
+    "startsAt": "2026-09-25T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/auHCwFAp/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/auHCwFAp/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:u7szdlae",
+    "ticketIoEventId": "U7SzDlAE",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+    "startsAt": "2026-10-02T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/U7SzDlAE/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+    "ticketIoEventId": "Mmxwyrx2",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "Feines Tier w/ Franca & Philipp Fein",
+    "startsAt": "2026-10-10T23:00:00+02:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:mcg0qu1n",
+    "ticketIoEventId": "MCG0QU1N",
+    "shopId": "gewoelbe",
+    "shopSlug": "gewoelbe",
+    "title": "My Dear w/ Ellen Allien, Denis Stockhausen",
+    "startsAt": "2026-11-06T23:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Gewölbe",
+    "ticketUrl": "https://gewoelbe.ticket.io/MCG0QU1N/",
+    "canonicalUrl": "https://gewoelbe.ticket.io/MCG0QU1N/",
+    "lineupHints": [],
+    "genreHints": [],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 12,00 €",
+    "listAmountMinor": 1200,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 12,00 €",
+        "amountMinor": 1200,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "no_clear_electronic_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://gewoelbe.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:nachtresidenz:6i7izq8y",
+    "ticketIoEventId": "6i7Izq8y",
+    "shopId": "nachtresidenz",
+    "shopSlug": "nachtresidenz",
+    "title": "Sweet HELL of COOKIES & Scream ,,Die Größte Halloween Party der Stadt\"",
+    "startsAt": "2026-10-31T20:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "Nachtresidenz Düsseldorf",
+    "city": "Düsseldorf",
+    "ticketUrl": "https://nachtresidenz.ticket.io/6i7Izq8y/",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/6i7Izq8y/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 15,00 €",
+    "listAmountMinor": 1500,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 15,00 €",
+        "amountMinor": 1500,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "ambiguous_club_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://nachtresidenz.ticket.io/"
+    ]
+  },
+  {
+    "identityKey": "ticket_io:nachtresidenz:ho6t1h9j",
+    "ticketIoEventId": "Ho6t1H9j",
+    "shopId": "nachtresidenz",
+    "shopSlug": "nachtresidenz",
+    "title": "GOOD OLD TIMES \"Die größte Halloween Party aus Monheim\"",
+    "startsAt": "2026-10-31T21:00:00+01:00",
+    "lifecycle": "UPCOMING",
+    "venueName": "MONBERG",
+    "ticketUrl": "https://nachtresidenz.ticket.io/Ho6t1H9j/",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/Ho6t1H9j/",
+    "lineupHints": [],
+    "genreHints": [
+      "Ambiguous"
+    ],
+    "outboundLinks": [],
+    "imageUrls": [],
+    "listRawPrice": "ab 10,00 €",
+    "listAmountMinor": 1000,
+    "listCurrency": "EUR",
+    "listTicketStatus": "available",
+    "visibleProducts": [
+      {
+        "productName": "list_minimum",
+        "rawPrice": "ab 10,00 €",
+        "amountMinor": 1000,
+        "currency": "EUR",
+        "availability": "available"
+      }
+    ],
+    "relevance": "AMBIGUOUS",
+    "relevanceReasons": [
+      "ambiguous_club_signal"
+    ],
+    "matchClassification": "NET_NEW",
+    "matchReasons": [
+      "composite_weak_identity",
+      "insufficient_identity_evidence",
+      "decision:no_match",
+      "no_ticket_url_binding"
+    ],
+    "mediaRoles": [],
+    "discoveredFromSurfaces": [
+      "https://nachtresidenz.ticket.io/"
+    ]
+  }
+]

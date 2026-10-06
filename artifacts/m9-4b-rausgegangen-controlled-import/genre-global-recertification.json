@@ -1,0 +1,6 @@
+{
+  "genrePresenceCoverage": 0.9622641509433962,
+  "explicitGenreEvidenceParity": 1,
+  "recoverableExplicitGenreMissing": 0,
+  "knownWrongGenreAssignments": 0
+}

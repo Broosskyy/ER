@@ -1,0 +1,56 @@
+{
+  "canonicalEventId": "49b8bfbb-4f6c-4865-9b5d-e3223d66bffa",
+  "title": "VERTILE pres. EVERYTHING CHANGES -LIVE- @ BOOTSHAUS!",
+  "checkedAt": "2026-08-31T18:50:33.079Z",
+  "officialEvidence": {
+    "url": "https://bootshaus.tv/events/vertile-pres-everything-changes-live-at-bootshaus/",
+    "lineupCount": 0,
+    "genreCount": 0,
+    "registrationUrl": null
+  },
+  "ticketEvidence": {
+    "ticketUrl": "https://musical-madness.ticket.io/eACzcM9S/",
+    "finalUrl": "https://musical-madness.ticket.io/eACzcM9S/",
+    "provider": "ticket_io",
+    "currentPhase": "PHASE 3",
+    "currentPriceMinor": 3690,
+    "currency": "EUR",
+    "availability": "available",
+    "registrationUrl": null,
+    "blocked": false
+  },
+  "mediaEvidence": {
+    "imageUrl": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png"
+  },
+  "currentTicketProduct": "PHASE 3",
+  "currentPhase": "PHASE 3",
+  "currentPrice": 3690,
+  "currency": "EUR",
+  "availability": "AVAILABLE",
+  "actionType": "PURCHASE",
+  "sourceDescription": "YOU HEARD IT RIGHT!\n\nThe first time in Effenaar left us absolutely speechless and it had us all craving for more.\n\nSo there was only one option: taking my band to Germany!",
+  "dbDescription": "Age for Admission 18 years / Einlass ab 18 Jahren!&nbsp; All sales are final / Jeder Kauf ist endg&uuml;ltig&nbsp; No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. &nbsp; Ticket-Weiterverkaufsinformation Der Ticketk&auml;ufer darf keinen h&ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird.&nbsp; Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!&nbsp;",
+  "consumerDescription": "Age for Admission 18 years / Einlass ab 18 Jahren!&nbsp; All sales are final / Jeder Kauf ist endg&uuml;ltig&nbsp; No refund by artist cancellation / Kein Umtausch bei Artist Absage For identification and as proof of age we only accept an official ID: identity card, passport, driver&#039;s license. We cannot accept these documents as proof: Student ID, health insurance card, bank card/credit card, photos or scans of any identification documents. &nbsp; Ticket-Weiterverkaufsinformation Der Ticketk&auml;ufer darf keinen h&ouml;heren Preis als den auf der Karte angegebenen Preis verlangen, wenn das Ticket an dritte weiterverkauft wird.&nbsp; Der Besitz der Tickets verbrieft KEIN Zutrittsrecht zur Veranstaltung. Zutrittsberechtigt ist, wer das Besuchsrecht selbst aus offizieller Quelle erworben hat und f&auml;hig ist diese Veranstaltung zu besuchen. Tickets, die als verloren oder gestohlen gemeldet werden, oder mit einem Preisaufschlag weiterverkauft werden, werden gesperrt!&nbsp;",
+  "sourceLineup": [],
+  "dbLineup": [
+    "VERTILE"
+  ],
+  "consumerLineup": [
+    "VERTILE"
+  ],
+  "sourceGenres": [],
+  "dbGenres": [],
+  "consumerGenres": [],
+  "canonicalMedia": "https://s3.eu-central-1.amazonaws.com/cdn.pixend.de/CQYDNRZ9Q8QSS8D/events/0172024324658985582583473_5659234541463818286265735.png",
+  "consumerCardStatus": "Verfügbar",
+  "consumerDetailStatus": "Verfügbar",
+  "consumerCtaLabel": "Tickets kaufen",
+  "consumerCtaTarget": "https://musical-madness.ticket.io/eACzcM9S/",
+  "targetIdentityVerified": true,
+  "targetReachable": true,
+  "targetMobileUsable": true,
+  "outboundFinalUrl": "https://musical-madness.ticket.io/eACzcM9S/",
+  "mismatches": [],
+  "rootCauses": [],
+  "finalState": "VERIFIED"
+}

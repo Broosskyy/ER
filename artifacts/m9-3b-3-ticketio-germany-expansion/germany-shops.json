@@ -1,0 +1,1239 @@
+[
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/",
+    "organizerName": "BOOTSHAUS",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "m9.3a_probe",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city",
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/",
+    "organizerName": "Stadtgarten",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "m9.3a_probe",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city",
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/",
+    "organizerName": "NIBIRII",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "m9.3a_probe",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.6,
+    "status": "INACTIVE",
+    "upcomingEventCount": 0,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "odonien",
+    "slug": "odonien",
+    "canonicalUrl": "https://odonien.ticket.io/",
+    "organizerName": "Odonien",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "m9.3a_probe",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.6,
+    "status": "INACTIVE",
+    "upcomingEventCount": 0,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "m9.3a_network_sample",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "m9.3a_network_sample",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city",
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/",
+    "city": "Köln",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "nrw_electronic_expansion",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 10,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/",
+    "city": "Essen",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "nrw_electronic_expansion",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.6,
+    "status": "INACTIVE",
+    "upcomingEventCount": 0,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/",
+    "city": "Düsseldorf",
+    "region": "NRW",
+    "discoveryMethod": "seed_list",
+    "discoveredFrom": "nrw_electronic_expansion",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "HIGH",
+    "geographyEvidence": [
+      "seed_city",
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=de",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=en",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=fr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=nl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=it",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=es",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=ru",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=tr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=hr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pt",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sq",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "bootshaus-club",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 11,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=de",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=en",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=fr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=nl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=pl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=it",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=es",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=ru",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=tr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=hr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=pt",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=sq",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=sl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "stadtgarten",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 71,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=de",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=en",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=fr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=nl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=pl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=it",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=es",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=ru",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=tr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=hr",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=pt",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=sq",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=sl",
+    "city": "Köln",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "tonite",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 3,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=de",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=en",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=fr",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=nl",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=pl",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=it",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=es",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=ru",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=tr",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=hr",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=pt",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=sq",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=sl",
+    "city": "Düsseldorf",
+    "discoveryMethod": "outbound_link",
+    "discoveredFrom": "nachtresidenz",
+    "lastSeenAt": "2026-09-13T03:37:13.611Z",
+    "confidence": 0.95,
+    "status": "ACTIVE",
+    "upcomingEventCount": 2,
+    "country": "DE",
+    "bundesland": "Nordrhein-Westfalen",
+    "stateCode": "DE-NW",
+    "geographyConfidence": "MEDIUM",
+    "geographyEvidence": [
+      "venue_text"
+    ],
+    "isGermanShop": true
+  }
+]

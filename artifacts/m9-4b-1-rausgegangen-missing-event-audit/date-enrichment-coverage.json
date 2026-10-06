@@ -1,0 +1,10 @@
+{
+  "note": "M9.4A did not persist per-URL date index; lifecycle counts are for detail-enriched subset only",
+  "m94aLifecycleDetailEnriched": {
+    "upcoming": 2403,
+    "ongoing": 97,
+    "ended": 0,
+    "unknown": 8595
+  },
+  "anchorEventDate": "2026-09-25T23:00+0200"
+}

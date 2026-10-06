@@ -1,0 +1,244 @@
+[
+  {
+    "eventId": "f1abc745-ac00-4b54-ab11-8d3967d7c845",
+    "title": "R3HAB pres. by BOOTSHAUS",
+    "oldGenres": [
+      "Bass House",
+      "Electro",
+      "House",
+      "Progressive House",
+      "EDM",
+      "Dance"
+    ],
+    "newGenres": [
+      "Bass House",
+      "Progressive House"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Bass House",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      },
+      {
+        "genre": "Progressive House",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "516a9312-aa7d-4db6-8cc7-f5054627f981",
+    "title": "Bootshaus Sommerfest auf 4 Floors!",
+    "oldGenres": [
+      "Dubstep",
+      "Electro",
+      "Hard Techno",
+      "Techno",
+      "EDM"
+    ],
+    "newGenres": [
+      "Hard Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Hard Techno",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "d59d7612-8d8c-4381-a055-96e8e8819eaa",
+    "title": "122 pres. MARTEN LOU @ Palma de Mallorca (ES)",
+    "oldGenres": [
+      "House",
+      "Techno"
+    ],
+    "newGenres": [
+      "House"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "confidence": "HIGH",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "House",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      }
+    ]
+  },
+  {
+    "eventId": "f560d0f3-1bac-4bae-bf4a-48f8dfdb5f8e",
+    "title": "Blacklist & Inurfase pres. ZAAGSTEP by Dr Donk",
+    "oldGenres": [
+      "Drum'n'Bass",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "newGenres": [
+      "Drum'n'Bass",
+      "Electro",
+      "Hard Dance",
+      "Dubstep"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "confidence": "HIGH",
+    "method": "multi_source_fusion",
+    "evidence": [
+      {
+        "genre": "Drum'n'Bass",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Electro",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Hard Dance",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Dubstep",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Hard Dance",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "f39374dc-751a-48ca-8f29-78d2582627bb",
+    "title": "Polyamor Bootshaus w/ DAVYBOI, PRADA2000, MIKA HEGGEMANN & many more",
+    "oldGenres": [
+      "Techno",
+      "Hard Techno"
+    ],
+    "newGenres": [
+      "Hard Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Hard Techno",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "60cc24e4-4934-4b5a-8bbd-a41d77ca268d",
+    "title": "Bootshaus Sommerfest Closing",
+    "oldGenres": [
+      "Tech House",
+      "Techno",
+      "Electro",
+      "Dubstep"
+    ],
+    "newGenres": [
+      "Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Techno",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "301c217d-651a-4110-b759-a019f6546bb1",
+    "title": "NIBIRII pres. ELY OAKS and more!",
+    "oldGenres": [
+      "House",
+      "Hard Techno",
+      "Techno",
+      "Trance"
+    ],
+    "newGenres": [
+      "Hard Techno"
+    ],
+    "domainClassification": "ELECTRONIC_MEDIUM",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Hard Techno",
+        "layer": "LINEUP_CONSENSUS",
+        "authority": 72,
+        "reason": "lineup_artist_intelligence_consensus"
+      }
+    ]
+  },
+  {
+    "eventId": "7e57673a-bfee-49c7-8104-ab7569902fe2",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "oldGenres": [
+      "Hard Techno",
+      "Techno"
+    ],
+    "newGenres": [
+      "Techno",
+      "Hard Techno",
+      "Electro"
+    ],
+    "domainClassification": "ELECTRONIC_HIGH",
+    "confidence": "HIGH",
+    "method": "artist_lineup_fusion",
+    "evidence": [
+      {
+        "genre": "Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Hard Techno",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Electro",
+        "layer": "DESCRIPTION",
+        "authority": 82,
+        "reason": "discovery_relevance_genre_candidate"
+      },
+      {
+        "genre": "Hard Techno",
+        "layer": "HEADLINER_PROFILE",
+        "authority": 76,
+        "reason": "headliner_artist_profile_consensus"
+      }
+    ]
+  }
+]

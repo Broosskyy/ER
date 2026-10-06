@@ -1,0 +1,153 @@
+{
+  "cases": [
+    {
+      "title": "Bootshaus Sommerfest Closing",
+      "sourceUrl": "https://rausgegangen.de/events/bootshaus-sommerfest-closing-2/",
+      "city": "Köln",
+      "genres": [
+        "Tech House",
+        "Techno",
+        "Electro",
+        "Dubstep"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "sourceUrl": "https://rausgegangen.de/events/sara-landry-pres-by-bootshaus-0/",
+      "city": "Köln",
+      "genres": [
+        "Hard Techno",
+        "Techno",
+        "Electronic Festival"
+      ],
+      "lineupCount": 1,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more",
+      "sourceUrl": "https://rausgegangen.de/events/weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0/",
+      "city": "Köln",
+      "genres": [
+        "Trance",
+        "Bounce"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "A TECHNO BALLET ODYSSEY",
+      "sourceUrl": "https://rausgegangen.de/events/a-techno-ballet-odyssey-17/",
+      "city": "Köln",
+      "genres": [
+        "Techno"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+      "sourceUrl": "https://rausgegangen.de/events/electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0/",
+      "city": "Bochum",
+      "genres": [
+        "Techno",
+        "Electro",
+        "bochum",
+        "konzerte & musik"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m.",
+      "sourceUrl": "https://rausgegangen.de/events/wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1/",
+      "city": "Münster",
+      "genres": [
+        "Techno",
+        "House",
+        "münster"
+      ],
+      "lineupCount": 3,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "COSEY MUELLER",
+      "sourceUrl": "https://rausgegangen.de/events/cosey-mueller-5/",
+      "city": "Köln",
+      "genres": [
+        "konzerte & musik"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "GRANDMAS HOUSE",
+      "sourceUrl": "https://rausgegangen.de/events/grandmas-house-29/",
+      "city": "Köln",
+      "genres": [
+        "House",
+        "konzerte & musik"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "Grandmas House - Baby you're a Winner Tour",
+      "sourceUrl": "https://rausgegangen.de/events/grandmas-house-baby-youre-a-winner-tour-0/",
+      "city": "Köln",
+      "genres": [
+        "House",
+        "konzerte & musik"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+      "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-16/",
+      "city": "Erfurt",
+      "genres": [
+        "Electro",
+        "erfurt",
+        "konzerte & musik"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    },
+    {
+      "title": "Utopian Summer",
+      "sourceUrl": "https://rausgegangen.de/events/utopian-summer-0/",
+      "city": "Köln",
+      "genres": [
+        "Psytrance",
+        "Techno"
+      ],
+      "lineupCount": 0,
+      "matchClassification": "EXISTING_EXACT",
+      "qualityState": "READY"
+    },
+    {
+      "title": "Electronic Garden of Love -OPEN AIR- #2 Südbrücke mit EGE 363, KATY ROUGH, KIRK uvm.",
+      "sourceUrl": "https://rausgegangen.de/events/electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0/",
+      "city": "Köln",
+      "genres": [
+        "Trance",
+        "Bounce"
+      ],
+      "lineupCount": 3,
+      "matchClassification": "NET_NEW",
+      "qualityState": "READY"
+    }
+  ]
+}

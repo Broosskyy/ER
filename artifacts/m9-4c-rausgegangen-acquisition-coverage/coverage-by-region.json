@@ -1,0 +1,172 @@
+{
+  "Nordrhein-Westfalen": {
+    "city": "oberhausen",
+    "citySurfaceEvents": 158,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 158,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 158
+  },
+  "Hamburg": {
+    "city": "hamburg",
+    "citySurfaceEvents": 453,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 453,
+    "detailEnriched": 378,
+    "electronicRelevant": 16,
+    "qualityReady": 191,
+    "netNew": 452
+  },
+  "Berlin": {
+    "city": "berlin",
+    "citySurfaceEvents": 468,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 468,
+    "detailEnriched": 419,
+    "electronicRelevant": 20,
+    "qualityReady": 222,
+    "netNew": 468
+  },
+  "Hessen": {
+    "city": "kassel",
+    "citySurfaceEvents": 150,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 150,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 150
+  },
+  "Baden-Württemberg": {
+    "city": "freiburg",
+    "citySurfaceEvents": 311,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 311,
+    "detailEnriched": 3,
+    "electronicRelevant": 1,
+    "qualityReady": 3,
+    "netNew": 311
+  },
+  "Bayern": {
+    "city": "nuernberg",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "Sachsen": {
+    "city": "chemnitz",
+    "citySurfaceEvents": 208,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 208,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 208
+  },
+  "Niedersachsen": {
+    "city": "hannover",
+    "citySurfaceEvents": 320,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 349,
+    "detailEnriched": 2,
+    "electronicRelevant": 0,
+    "qualityReady": 2,
+    "netNew": 320
+  },
+  "Bremen": {
+    "city": "bremen",
+    "citySurfaceEvents": 393,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 393,
+    "detailEnriched": 5,
+    "electronicRelevant": 3,
+    "qualityReady": 5,
+    "netNew": 393
+  },
+  "Schleswig-Holstein": {
+    "city": "luebeck",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "Rheinland-Pfalz": {
+    "city": "mainz",
+    "citySurfaceEvents": 266,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 266,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 2,
+    "netNew": 266
+  },
+  "Mecklenburg-Vorpommern": {
+    "city": "rostock",
+    "citySurfaceEvents": 126,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 126,
+    "detailEnriched": 3,
+    "electronicRelevant": 3,
+    "qualityReady": 3,
+    "netNew": 126
+  },
+  "Brandenburg": {
+    "city": "potsdam",
+    "citySurfaceEvents": 233,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 233,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 233
+  },
+  "Sachsen-Anhalt": {
+    "city": "magdeburg",
+    "citySurfaceEvents": 142,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 142,
+    "detailEnriched": 1,
+    "electronicRelevant": 1,
+    "qualityReady": 1,
+    "netNew": 142
+  },
+  "Saarland": {
+    "city": "saarbruecken",
+    "citySurfaceEvents": 0,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 0,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 0
+  },
+  "Thüringen": {
+    "city": "erfurt",
+    "citySurfaceEvents": 273,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 273,
+    "detailEnriched": 5,
+    "electronicRelevant": 4,
+    "qualityReady": 3,
+    "netNew": 273
+  },
+  "Unknown": {
+    "city": "siegen",
+    "citySurfaceEvents": 107,
+    "locationSurfaceEvents": 0,
+    "unionUnique": 107,
+    "detailEnriched": 0,
+    "electronicRelevant": 0,
+    "qualityReady": 0,
+    "netNew": 107
+  }
+}

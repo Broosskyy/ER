@@ -1,0 +1,207 @@
+[
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "matchedEventId": "d9c69a76-a602-42cf-bca5-52eb87a1e42f",
+    "matchedEventTitle": "COFFEE PARTY RAVE",
+    "plan": {
+      "classification": "unchanged",
+      "fieldDecisions": [
+        {
+          "field": "title",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "description",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "startsAt",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "endsAt",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "venue",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "organizer",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "lineup",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "genres",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "image",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        },
+        {
+          "field": "eventStatus",
+          "decision": "noop",
+          "evidenceStrength": "acceptable",
+          "reason": "fingerprint_unchanged",
+          "preservedExisting": true
+        }
+      ],
+      "fieldProvenance": [
+        {
+          "field": "title",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "description",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "startsAt",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "endsAt",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "venue",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "organizer",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "lineup",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "genres",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "image",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        },
+        {
+          "field": "eventStatus",
+          "connectorId": "rausgegangen-discovery",
+          "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "observedAt": "2026-09-16T11:07:30.077Z",
+          "evidenceStrength": "acceptable",
+          "reconciliationResult": "noop",
+          "reason": "fingerprint_unchanged"
+        }
+      ],
+      "reviewRequired": false,
+      "destructiveUpdatesBlocked": 0,
+      "reasons": [
+        "existing_official_source_unchanged"
+      ],
+      "reconciledCandidate": {
+        "origin": {
+          "kind": "official_connector",
+          "connectorId": "rausgegangen-discovery",
+          "sourceEventKey": "rausgegangen:coffee-party-rave-13",
+          "officialUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+          "pageFingerprint": "66e29d2a8bbb5a4918152a9d22f09694c8e01814d57b3396f620466f03a85031",
+          "fetchedAt": "2026-09-16T11:07:30.077Z",
+          "enrichmentGaps": [
+            "partial_lineup"
+          ]
+        },
+        "title": "COFFEE PARTY RAVE",
+        "startsAt": "2026-09-20T10:30:00+00:00",
+        "endsAt": "2026-09-20T15:00:00+00:00",
+        "timezone": "Europe/Berlin",
+        "description": "Beim Coffee Party Rave trifft entspanntes Caféflair auf lässige Beats, die gemeinsam mit Matcha und Hōjicha für eine besondere September-Session sorgen. Es erwartet dich eine entspannte Runde mit coolen DJs und Drinks, perfekt für den Start in die neue Jahreszeit 🕺",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4C83mznSTCxZeDvguHsR_cream-blue-coffee-poster-banner-medium-us-querformat-instagram-post-45-148-105-mm-10.png",
+        "venue": {
+          "name": "koko café-bar",
+          "addressLine": "Gottschedstraße 10",
+          "city": "Leipzig",
+          "countryCode": "DE"
+        },
+        "lineup": [],
+        "genres": [],
+        "tickets": []
+      }
+    }
+  }
+]

@@ -7,6 +7,7 @@ import { colors, colorRoles } from '@/design/colors';
 import { spacing, spacingRoles } from '@/design/spacing';
 import { textRoles } from '@/design/typography';
 import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
 
 export type ActivityPresentation = 'screen' | 'panel';
 
@@ -34,7 +35,7 @@ export function NotificationsHeader({
       return;
     }
 
-    router.back();
+    navigateBackSafely(router);
   };
 
   return (

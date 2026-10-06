@@ -1,14 +1,15 @@
+import { useContext } from 'react';
 import { Text, TextProps, TextStyle } from 'react-native';
 
-import { darkTheme } from '@/design/theme/dark';
-import { useThemeOptional, resolveTextRoleStyle } from '@/design/theme';
-import type { TextRole } from '@/design/theme';
-import { colors } from '@/design/colors';
+import { ThemeContext } from '@/design/theme/ThemeProvider';
+import type { AppTextRole } from '@/design/theme/types';
 import { TextVariant, textVariants } from '@/design/typography';
 
 export interface AppTextProps extends Omit<TextProps, 'role'> {
+  /** Legacy variant — kept for backward compatibility */
   variant?: TextVariant;
-  role?: TextRole;
+  /** Semantic typography role — theme-aware, preferred for new code */
+  role?: AppTextRole;
   color?: string;
   style?: TextStyle;
 }
@@ -21,23 +22,25 @@ export function AppText({
   children,
   ...rest
 }: AppTextProps) {
-  const themeContext = useThemeOptional();
-  const roleStyle = role
-    ? resolveTextRoleStyle(themeContext?.theme ?? darkTheme, role)
-    : null;
+  const themeContext = useContext(ThemeContext);
+
+  let baseStyle: TextStyle;
+
+  if (role) {
+    if (!themeContext) {
+      throw new Error('AppText role prop requires a ThemeProvider ancestor');
+    }
+
+    baseStyle = themeContext.theme.typography.textRoles[role];
+  } else {
+    baseStyle = textVariants[variant];
+  }
 
   return (
-    <Text
-      style={[
-        role ? roleStyle : textVariants[variant],
-        color ? { color } : null,
-        style,
-      ]}
-      {...rest}
-    >
+    <Text style={[baseStyle, color ? { color } : null, style]} {...rest}>
       {children}
     </Text>
   );
 }
 
-export { colors };
+export { colors } from '@/design/colors';

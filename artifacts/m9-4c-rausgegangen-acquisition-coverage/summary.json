@@ -1,0 +1,16 @@
+{
+  "status": "M9_4C_RAUSGEGANGEN_ACQUISITION_COVERAGE_FOUNDATION_VERIFIED",
+  "baselineCommit": "de6e8ed56ff1130242218310bc420b3e66ba84b3",
+  "currentHead": "de6e8ed56ff1130242218310bc420b3e66ba84b3",
+  "verified": true,
+  "metrics": {
+    "citySurfaces": 45,
+    "locationCandidates": 7651,
+    "locationSurfacesCrawled": 793,
+    "unionDiscovered": 18490,
+    "locationOnly": 7283,
+    "activeWindowDetailCoverageRate": 1,
+    "qualityReady": 5614,
+    "ehrenklubDiscoveredViaLocation": true
+  }
+}

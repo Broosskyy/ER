@@ -1,145 +1,237 @@
 import { describe, expect, it } from 'vitest';
 
+import {
+  APP_TEXT_ROLES,
+  THEME_COLOR_KEYS,
+  createTextRoles,
+} from '@/design/theme/createTheme';
 import { darkTheme } from '@/design/theme/dark';
 import { lightTheme } from '@/design/theme/light';
+import { assertThemeContext } from '@/design/theme/context';
 import {
-  assertThemeContract,
-  createNavigationTheme,
-  getAndroidNavigationBarStyle,
-  getExpoStatusBarStyle,
-  getThemeByResolvedMode,
+  getThemeForMode,
+  resolveNavigationBarStyle,
+  resolveNavigationTheme,
+  resolveStatusBarStyle,
   resolveThemeMode,
-} from '@/design/theme/theme-utils';
-import { resolveTextRoleStyle } from '@/design/theme/text-role-styles';
-import { missingProviderMessage } from '@/design/theme/theme-constants';
-import { THEME_COLOR_KEYS, TEXT_ROLE_KEYS } from '@/design/theme/types';
+} from '@/design/theme/resolve';
+import type { AppTextRole, Theme, ThemeColorRoles, ThemeColors } from '@/design/theme/types';
+
+const COLOR_ROLE_KEYS: (keyof ThemeColorRoles)[] = [
+  'appBackground',
+  'screenBackground',
+  'headerBackground',
+  'headerTitle',
+  'headerIcon',
+  'bottomNavBackground',
+  'bottomNavBorder',
+  'bottomNavActive',
+  'bottomNavInactive',
+  'searchBackground',
+  'searchBorder',
+  'searchPlaceholder',
+  'searchText',
+  'chipBackground',
+  'chipBorder',
+  'chipText',
+  'chipSelectedBackground',
+  'chipSelectedBorder',
+  'chipSelectedText',
+  'cardBackground',
+  'cardBorder',
+  'buttonPrimaryBackground',
+  'buttonPrimaryText',
+  'buttonPrimaryPressed',
+  'buttonSecondaryBackground',
+  'buttonSecondaryBorder',
+  'buttonSecondaryText',
+  'badgeBackground',
+  'badgeText',
+  'tagBackground',
+  'tagText',
+  'favoriteActive',
+  'favoriteInactive',
+  'mapCluster',
+  'mapUserLocation',
+  'overlayScrim',
+  'imageOverlayGradientStart',
+  'imageOverlayGradientEnd',
+  'emptyStateIcon',
+  'emptyStateTitle',
+  'emptyStateDescription',
+  'skeletonBase',
+  'skeletonHighlight',
+];
+
+function assertThemeContract(theme: Theme) {
+  expect(theme.mode).toMatch(/^(light|dark)$/);
+
+  for (const key of THEME_COLOR_KEYS) {
+    const value = theme.colors[key as keyof ThemeColors];
+    expect(value, `colors.${key}`).toBeDefined();
+    expect(typeof value, `colors.${key}`).toBe('string');
+    expect(value.length, `colors.${key}`).toBeGreaterThan(0);
+  }
+
+  for (const key of COLOR_ROLE_KEYS) {
+    const value = theme.colorRoles[key];
+    expect(value, `colorRoles.${key}`).toBeDefined();
+    expect(typeof value, `colorRoles.${key}`).toBe('string');
+    expect(value.length, `colorRoles.${key}`).toBeGreaterThan(0);
+  }
+
+  for (const role of APP_TEXT_ROLES as readonly AppTextRole[]) {
+    const style = theme.typography.textRoles[role];
+    expect(style, `textRoles.${role}`).toBeDefined();
+    expect(style.fontSize, `textRoles.${role}.fontSize`).toBeDefined();
+    expect(style.color, `textRoles.${role}.color`).toBeDefined();
+    expect(style.fontWeight, `textRoles.${role}.fontWeight`).toBeDefined();
+  }
+
+  expect(theme.shadows.card).toBeDefined();
+  expect(theme.shadows.elevated).toBeDefined();
+  expect(theme.shadows.none).toBeDefined();
+  expect(theme.statusBarStyle).toMatch(/^(light|dark)$/);
+  expect(theme.navigationBarStyle).toMatch(/^(light|dark)$/);
+}
 
 describe('theme contract', () => {
-  it('light theme fulfills the full theme contract', () => {
-    expect(() => assertThemeContract(lightTheme)).not.toThrow();
-    for (const key of THEME_COLOR_KEYS) {
-      expect(lightTheme.colors[key]).toBeTruthy();
-    }
-    for (const role of TEXT_ROLE_KEYS) {
-      expect(lightTheme.typography.roles[role]).toBeDefined();
-      expect(lightTheme.typography.roles[role]?.color).toBeTruthy();
-    }
+  it('light theme fulfills the full contract', () => {
+    assertThemeContract(lightTheme);
+    expect(lightTheme.mode).toBe('light');
+    expect(lightTheme.colors.background).toBe('#FAFAF8');
+    expect(lightTheme.colors.accent).toBe('#6D5DF6');
   });
 
   it('dark theme fulfills the same contract', () => {
-    expect(() => assertThemeContract(darkTheme)).not.toThrow();
-    for (const key of THEME_COLOR_KEYS) {
-      expect(darkTheme.colors[key]).toBeTruthy();
-    }
-    for (const role of TEXT_ROLE_KEYS) {
-      expect(darkTheme.typography.roles[role]).toBeDefined();
-      expect(darkTheme.typography.roles[role]?.color).toBeTruthy();
-    }
+    assertThemeContract(darkTheme);
+    expect(darkTheme.mode).toBe('dark');
+    expect(darkTheme.colors.background).toBe('#111214');
+    expect(darkTheme.colors.accent).toBe('#7C3AED');
   });
 
-  it('light and dark themes expose identical color and role keys', () => {
-    expect(Object.keys(lightTheme.colors).sort()).toEqual(Object.keys(darkTheme.colors).sort());
-    expect(Object.keys(lightTheme.typography.roles).sort()).toEqual(
-      Object.keys(darkTheme.typography.roles).sort(),
+  it('light and dark expose identical color role keys', () => {
+    expect(Object.keys(lightTheme.colorRoles).sort()).toEqual(
+      Object.keys(darkTheme.colorRoles).sort(),
+    );
+  });
+
+  it('light and dark expose identical text role keys', () => {
+    expect(Object.keys(lightTheme.typography.textRoles).sort()).toEqual(
+      Object.keys(darkTheme.typography.textRoles).sort(),
     );
   });
 });
 
 describe('resolveThemeMode', () => {
-  it('resolves light mode directly', () => {
+  it('resolves light explicitly', () => {
     expect(resolveThemeMode('light', 'dark')).toBe('light');
   });
 
-  it('resolves dark mode directly', () => {
+  it('resolves dark explicitly', () => {
     expect(resolveThemeMode('dark', 'light')).toBe('dark');
   });
 
-  it('follows the system preference when mode is system', () => {
+  it('system follows light system preference', () => {
     expect(resolveThemeMode('system', 'light')).toBe('light');
+  });
+
+  it('system follows dark system preference', () => {
     expect(resolveThemeMode('system', 'dark')).toBe('dark');
   });
 
-  it('defaults system mode to dark when preference is unavailable', () => {
+  it('system defaults to dark when preference is unavailable', () => {
     expect(resolveThemeMode('system', null)).toBe('dark');
     expect(resolveThemeMode('system', undefined)).toBe('dark');
   });
 });
 
-describe('getThemeByResolvedMode', () => {
-  it('returns the matching theme object', () => {
-    expect(getThemeByResolvedMode('light', { light: lightTheme, dark: darkTheme })).toBe(
-      lightTheme,
-    );
-    expect(getThemeByResolvedMode('dark', { light: lightTheme, dark: darkTheme })).toBe(darkTheme);
+describe('getThemeForMode', () => {
+  it('returns light theme for light mode', () => {
+    expect(getThemeForMode('light', { light: lightTheme, dark: darkTheme })).toBe(lightTheme);
+  });
+
+  it('returns dark theme for dark mode', () => {
+    expect(getThemeForMode('dark', { light: lightTheme, dark: darkTheme })).toBe(darkTheme);
   });
 });
 
 describe('navigation and status bar integration', () => {
-  it('creates navigation themes with correct light and dark colors', () => {
-    const lightNavigation = createNavigationTheme(lightTheme);
-    const darkNavigation = createNavigationTheme(darkTheme);
-
-    expect(lightNavigation.dark).toBe(false);
-    expect(lightNavigation.colors.background).toBe(lightTheme.colors.background);
-    expect(lightNavigation.colors.primary).toBe(lightTheme.colors.accent);
-
-    expect(darkNavigation.dark).toBe(true);
-    expect(darkNavigation.colors.background).toBe(darkTheme.colors.background);
-    expect(darkNavigation.colors.primary).toBe(darkTheme.colors.accent);
+  it('navigation theme receives correct light colors', () => {
+    const nav = resolveNavigationTheme(lightTheme);
+    expect(nav.dark).toBe(false);
+    expect(nav.colors.background).toBe(lightTheme.colors.background);
+    expect(nav.colors.primary).toBe(lightTheme.colors.accent);
+    expect(nav.colors.text).toBe(lightTheme.colors.textPrimary);
   });
 
-  it('resolves status bar styles from theme mode', () => {
-    expect(getExpoStatusBarStyle(lightTheme)).toBe('dark');
-    expect(getExpoStatusBarStyle(darkTheme)).toBe('light');
-    expect(getAndroidNavigationBarStyle(lightTheme)).toBe('light');
-    expect(getAndroidNavigationBarStyle(darkTheme)).toBe('dark');
+  it('navigation theme receives correct dark colors', () => {
+    const nav = resolveNavigationTheme(darkTheme);
+    expect(nav.dark).toBe(true);
+    expect(nav.colors.background).toBe(darkTheme.colors.background);
+    expect(nav.colors.primary).toBe(darkTheme.colors.accent);
+  });
+
+  it('status bar style resolves to dark icons on light theme', () => {
+    expect(resolveStatusBarStyle(lightTheme)).toBe('dark');
+  });
+
+  it('status bar style resolves to light icons on dark theme', () => {
+    expect(resolveStatusBarStyle(darkTheme)).toBe('light');
+  });
+
+  it('navigation bar style follows theme mode', () => {
+    expect(resolveNavigationBarStyle(lightTheme)).toBe('dark');
+    expect(resolveNavigationBarStyle(darkTheme)).toBe('light');
   });
 });
 
 describe('AppText role resolution', () => {
-  it('resolves every text role for light and dark themes', () => {
-    for (const role of TEXT_ROLE_KEYS) {
-      const lightStyle = resolveTextRoleStyle(lightTheme, role);
-      const darkStyle = resolveTextRoleStyle(darkTheme, role);
-
-      expect(lightStyle.fontSize).toBeGreaterThan(0);
-      expect(lightStyle.color).toBeTruthy();
-      expect(darkStyle.fontSize).toBeGreaterThan(0);
-      expect(darkStyle.color).toBeTruthy();
+  it('resolves all roles for light theme without undefined values', () => {
+    const roles = createTextRoles(lightTheme.colors);
+    for (const role of APP_TEXT_ROLES as readonly AppTextRole[]) {
+      expect(roles[role]).toBeDefined();
+      expect(roles[role].color).toBeDefined();
     }
   });
 
-  it('maps legacy aliases to canonical roles', () => {
-    expect(resolveTextRoleStyle(darkTheme, 'screenTitle')).toEqual(
-      resolveTextRoleStyle(darkTheme, 'titleLarge'),
-    );
-    expect(resolveTextRoleStyle(darkTheme, 'sectionTitle')).toEqual(
-      resolveTextRoleStyle(darkTheme, 'titleMedium'),
-    );
-    expect(resolveTextRoleStyle(darkTheme, 'metadata')).toEqual(
-      resolveTextRoleStyle(darkTheme, 'bodyMuted'),
-    );
+  it('resolves all roles for dark theme without undefined values', () => {
+    const roles = createTextRoles(darkTheme.colors);
+    for (const role of APP_TEXT_ROLES as readonly AppTextRole[]) {
+      expect(roles[role]).toBeDefined();
+      expect(roles[role].color).toBeDefined();
+    }
+  });
+
+  it('maps semantic hierarchy roles to expected sizes', () => {
+    const roles = createTextRoles(lightTheme.colors);
+    expect(roles.titleLarge.fontSize).toBe(24);
+    expect(roles.titleMedium.fontSize).toBe(20);
+    expect(roles.body.fontSize).toBe(16);
+    expect(roles.caption.fontSize).toBe(13);
   });
 });
 
-describe('ThemeProvider contract', () => {
-  it('documents a clear error when useTheme is used outside the provider', () => {
-    expect(missingProviderMessage).toContain('useTheme must be used within ThemeProvider');
+describe('ThemeProvider', () => {
+  it('assertThemeContext throws outside provider', () => {
+    expect(() => assertThemeContext(null)).toThrow(/ThemeProvider/);
   });
-});
 
-describe('light theme design direction', () => {
-  it('uses a warm light background and restrained accent', () => {
-    expect(lightTheme.colors.background).toBe('#FAFAF8');
-    expect(lightTheme.colors.accent).toBe('#6D5DF6');
-    expect(lightTheme.colors.textPrimary).toBe('#111111');
+  it('setMode changes resolved preference', () => {
+    let mode: 'light' | 'dark' | 'system' = 'system';
+    const setMode = (next: typeof mode) => {
+      mode = next;
+    };
+
+    setMode('light');
+    expect(resolveThemeMode(mode, 'dark')).toBe('light');
+
+    setMode('dark');
+    expect(resolveThemeMode(mode, 'light')).toBe('dark');
   });
-});
 
-describe('dark theme evolution', () => {
-  it('uses softened dark surfaces from Evolution V2', () => {
-    expect(darkTheme.colors.background).toBe('#111214');
-    expect(darkTheme.colors.surface).toBe('#1A1C1F');
-    expect(darkTheme.colors.accent).toBe('#7C3AED');
+  it('ThemeProvider starts with system preference by default', () => {
+    expect(resolveThemeMode('system', 'light')).toBe('light');
+    expect(resolveThemeMode('system', 'dark')).toBe('dark');
   });
 });

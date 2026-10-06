@@ -1,0 +1,17 @@
+{
+  "eligiblePublishedEvents": 80,
+  "genrePresenceCoverage": 0.95,
+  "explicitGenreEvidenceParity": 1,
+  "recoverableExplicitGenreMissing": 0,
+  "wrongGenreAssignments": 0,
+  "structuredDescriptionLeakage": 1,
+  "affectedStructuredDescriptionLeakage": 0,
+  "recoverableLineups": 0,
+  "knownWrongEventMedia": 0,
+  "unsafeTicketTargets": 0,
+  "wrongEventTicketTargets": 0,
+  "highConfidenceDuplicateGroups": 0,
+  "pastRenderedCards": 0,
+  "searchFalseNegatives": 0,
+  "consumerParityFailures": 0
+}

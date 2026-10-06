@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-09-16T11:07:32.227Z",
+  "reportedNetNewRelevant": 181,
+  "reportedQualityReadyOld": 195,
+  "rootCause": "M9.4A qualityReady counted NET_NEW upcoming events passing quality contract with ELECTRONIC domain regardless of relevance HIGH/LIKELY; netNewRelevant required HIGH/LIKELY relevance. AMBIGUOUS events with strong_positive genre hits could pass domain ELECTRONIC_MEDIUM and quality contract while excluded from netNewRelevant.",
+  "netNewRelevantDefinition": {
+    "population": "detail-enriched upcoming subset",
+    "relevanceFilter": "HIGH_RELEVANCE or LIKELY_RELEVANT",
+    "identityFilter": "NET_NEW",
+    "countingUnit": "enriched events"
+  },
+  "qualityReadyOldDefinition": {
+    "population": "all detail-enriched (including ended)",
+    "relevanceFilter": "none (domain only)",
+    "identityFilter": "NET_NEW via identityState",
+    "domainFilter": "ELECTRONIC_HIGH or ELECTRONIC_MEDIUM",
+    "qualityContract": "passesQualityContract",
+    "countingUnit": "quality contract results"
+  },
+  "qualityReadyCorrectedDefinition": {
+    "population": "detail-enriched upcoming NET_NEW",
+    "relevanceFilter": "HIGH_RELEVANCE or LIKELY_RELEVANT",
+    "identityFilter": "NET_NEW",
+    "domainFilter": "ELECTRONIC_HIGH or ELECTRONIC_MEDIUM",
+    "qualityContract": "passesQualityContract"
+  },
+  "qualityReadyAmbiguousDomainOnly": "not_recorded_in_m9_4a",
+  "discrepancyExplained": true,
+  "reportingBugFixed": true
+}

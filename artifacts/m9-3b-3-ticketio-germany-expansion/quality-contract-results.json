@@ -1,0 +1,1096 @@
+[
+  {
+    "identityKey": "ticket_io:stadtgarten:zbj8pqcy",
+    "title": "Lézard",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "MISSING",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:electro;weak_positive:festival"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "Electro"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "MISSING",
+        "valuePresent": false,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://stadtgarten.ticket.io/ZBj8pQcY/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:tonite:wnediscs",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "MISSING",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:techno;strong_positive:hard_techno;strong_positive:trance;strong_positive:hard_techno_abbrev;weak_positive:b2b"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "Hard Techno",
+          "Trance",
+          "Techno"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "MISSING",
+        "valuePresent": false,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://tonite.ticket.io/WnEdISCS/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:tonite:5ji6tv2d",
+    "title": "BACK2BASICS XXL @ Schrotty",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "MISSING",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:techno"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "Techno"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "MISSING",
+        "valuePresent": false,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://tonite.ticket.io/5jI6Tv2D/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:3qkub9ea",
+    "title": "Klubnacht w/ Gerd Janson, lyzanne",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/3qKuB9ea/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:vfuxdxqy",
+    "title": "Klubnacht w/ Adiel, Di², EPHIE",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/vfuXdxqy/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:acnlnyak",
+    "title": "Klubnacht w/ DJ Ass Tits, Sarah Sommers -live-, Plumitaa",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house;weak_positive:live;weak_positive:dj"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/ACnLNyAK/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:u7szdlae",
+    "title": "rau.ton w/ BLANKA, Marco Hilbert, Nick Deeken",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/U7SzDlAE/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:mmxwyrx2",
+    "title": "Feines Tier w/ Franca & Philipp Fein",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/Mmxwyrx2/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:sau31e99",
+    "title": "breakfest w/ Leyla & Tanjuesch, lu.wicked, Zenker Brothers",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/Sau31E99/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:b7ltcedc",
+    "title": "Remember the Future w/ Axel Boman, Shumi",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/b7LTcEdC/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:zpb3mfw3",
+    "title": "krakelee club w/ Andy Garvey, a:tok, oskø",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house;weak_positive:club"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/zpb3mFW3/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  },
+  {
+    "identityKey": "ticket_io:gewoelbe:mcg0qu1n",
+    "title": "My Dear w/ Ellen Allien, Denis Stockhausen",
+    "domainState": "ELECTRONIC_HIGH",
+    "identityState": "NET_NEW",
+    "qualityState": "READY",
+    "titleReady": true,
+    "timeReady": true,
+    "venueReady": true,
+    "genreState": "VERIFIED",
+    "lineupState": "VERIFIED",
+    "ticketState": "VERIFIED",
+    "mediaState": "VERIFIED",
+    "descriptionState": "VERIFIED",
+    "reviewReasons": [],
+    "passesQualityContract": true,
+    "qualityContractBypass": false,
+    "evaluation": {
+      "domain": {
+        "classification": "ELECTRONIC_HIGH",
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true,
+          "reason": "strong_positive:house"
+        }
+      },
+      "identity": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": true
+      },
+      "completeness": {
+        "requirementClass": "REQUIRED_FOR_PUBLICATION",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "DISCOVERY_READY"
+      },
+      "genre": {
+        "state": {
+          "requirementClass": "REQUIRED_FOR_PUBLICATION",
+          "state": "VERIFIED",
+          "valuePresent": true,
+          "provenancePresent": true
+        },
+        "genres": [
+          "House"
+        ],
+        "confidence": "HIGH",
+        "coverageEligible": true
+      },
+      "lineup": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "ticket": {
+        "requirementClass": "REQUIRED_IF_EVIDENCE_EXISTS",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "media": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false,
+        "reason": "event_media_qualification"
+      },
+      "description": {
+        "requirementClass": "BEST_EFFORT",
+        "state": "VERIFIED",
+        "valuePresent": true,
+        "provenancePresent": false
+      },
+      "qualityState": "READY",
+      "reviewReasons": [],
+      "provenance": [
+        {
+          "field": "source_binding",
+          "sourceReference": "https://gewoelbe.ticket.io/MCG0QU1N/",
+          "authority": "ticket-io-network-discovery"
+        }
+      ],
+      "readiness": "DISCOVERY_READY"
+    }
+  }
+]

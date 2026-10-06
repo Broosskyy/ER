@@ -1,0 +1,442 @@
+[
+  {
+    "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+    "title": "Bootshaus Sommerfest Closing",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+    "title": "SARA LANDRY pres. by BOOTSHAUS",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "ticket_url_binding_match"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+    "title": "Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+    "title": "A TECHNO BALLET ODYSSEY",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+    "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+    "title": "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m.",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:cosey-mueller-5",
+    "title": "COSEY MUELLER",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-29",
+    "title": "GRANDMAS HOUSE",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+    "title": "Grandmas House - Baby you're a Winner Tour",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "title": "Utopian Summer",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+    "title": "VERSCHOBEN * Electronic Garden of Love -OPEN AIR- #2 Südbrücke mit EGE 363, KATY ROUGH, KIRK uvm.",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+    "title": "QUEER AS HEAVEN - Queere Party in der Kirche",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+    "title": "CGN*DUS // Techno. Freundschaft. Community",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "title": "#MITTWOCHENENDE in Odonien",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "title": "Afterwork Deepdive IV",
+    "outcome": "BLOCKED_MEDIA",
+    "reasons": [
+      "NO_ACCEPTABLE_EVENT_MEDIA"
+    ],
+    "diagnosticGateFailures": [
+      "media:NO_ACCEPTABLE_EVENT_MEDIA"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+    "title": "Angel-in-Bondage Hamburg",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+    "title": "NINA HEPBURN | ALL DAY LONG | OPEN AIR",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:u30-party-hamburg-12",
+    "title": "Ü30 Party Hamburg",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "title": "Frame Sommer Closing",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:flightmode-17",
+    "title": "FLIGHTMODE",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+    "title": "Concrete Vehicles (exp post-punk/-hc noise-rock, can) + Older Friends (emo/screamo, bln)",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+    "title": "Giddens @Hard Rock Cafe",
+    "outcome": "BLOCKED_OTHER",
+    "reasons": [
+      "lifecycle_ended"
+    ],
+    "diagnosticGateFailures": [
+      "lifecycle_ended"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "title": "FRIENDS HOUSE",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:mariybu-frech-tour-2",
+    "title": "Mariybu \"FRECH\"-Tour",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+    "title": "Bus zum Titanium Festival 2026",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "title": "TRANCE STATION",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:sweat-summer-closing-2",
+    "title": "SWEAT SUMMER CLOSING",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+    "title": "Elektronisch Draussen @Fridas Pier - Unterdeck Session",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+    "title": "Odd Beholder - Honest Work Tour 2026",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+    "title": "TURBO pres. TRANCE ALLSTARS - Trance, Bounce & Techno im Oma Doris",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+    "title": "90er & 2000er Party - Täubchenthal Leipzig",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "title": "COFFEE PARTY RAVE",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+    "title": "Ausverkauft! aux animaux + This Eternal Decay + Another Tale",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+    "title": "FLUCHTGEFAHR Escape-Room \"Mad House – Sie sind in Deinem Kopf\"",
+    "outcome": "BLOCKED_OTHER",
+    "reasons": [
+      "lifecycle_ended"
+    ],
+    "diagnosticGateFailures": [
+      "lifecycle_ended"
+    ]
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+    "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+    "outcome": "ELIGIBLE_EXISTING_MATCH",
+    "reasons": [
+      "canonical_source_url_already_bound",
+      "decision:exact_match",
+      "no_ticket_url_binding"
+    ],
+    "diagnosticGateFailures": []
+  },
+  {
+    "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+    "title": "Dominext Kinky-Psytrance Party",
+    "outcome": "BLOCKED_MEDIA",
+    "reasons": [
+      "NO_ACCEPTABLE_EVENT_MEDIA"
+    ],
+    "diagnosticGateFailures": [
+      "media:NO_ACCEPTABLE_EVENT_MEDIA"
+    ]
+  }
+]

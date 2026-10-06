@@ -1,0 +1,19 @@
+{
+  "eventInserts": 0,
+  "eventUpdates": 0,
+  "ticketInserts": 0,
+  "ticketUpdates": 0,
+  "ticketDeletes": 0,
+  "lineupWrites": 0,
+  "genreWrites": 0,
+  "sourceBindingWrites": 0,
+  "plannedEventInserts": 0,
+  "plannedEventUpdates": 0,
+  "plannedSourceBindingWrites": 0,
+  "plannedTicketInserts": 0,
+  "plannedTicketUpdates": 0,
+  "plannedTicketDeletes": 0,
+  "planIdempotent": true,
+  "ticketPlanIdempotent": true,
+  "idempotent": true
+}

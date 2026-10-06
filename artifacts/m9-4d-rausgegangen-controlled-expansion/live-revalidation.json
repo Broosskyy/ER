@@ -1,0 +1,2133 @@
+[
+  {
+    "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:bootshaus-sommerfest-closing-2",
+      "sourceUrl": "https://rausgegangen.de/events/bootshaus-sommerfest-closing-2/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Bootshaus Sommerfest Closing",
+      "startsAt": "2026-09-19T22:00+0200",
+      "endsAt": "2026-09-20T06:00+0200",
+      "venueName": "Bootshaus Köln",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Tech House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Dubstep",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:house",
+        "strong_positive:tech_house",
+        "strong_positive:edm",
+        "strong_positive:dnb_short",
+        "strong_positive:electro",
+        "strong_positive:club_night",
+        "weak_positive:club",
+        "weak_positive:night",
+        "weak_positive:mainfloor"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/B19kcS1nSmR28kO5c1YQ_bc26sommerfestcosing16x9.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://bootshaus-club.ticket.io/ycDXwvrm/",
+      "currentAdmissionPriceMinor": 1500,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:sara-landry-pres-by-bootshaus-0",
+      "sourceUrl": "https://rausgegangen.de/events/sara-landry-pres-by-bootshaus-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "SARA LANDRY pres. by BOOTSHAUS",
+      "startsAt": "2026-12-11T23:00+0100",
+      "endsAt": "2026-12-12T07:00+0100",
+      "venueName": "Bootshaus Köln",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "SARA LANDRY"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "Hard Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Electronic Festival",
+          "confidence": "weak_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:hard_techno",
+        "strong_positive:electro",
+        "strong_positive:dj_set",
+        "strong_positive:hard_techno_abbrev",
+        "weak_positive:festival",
+        "weak_positive:night",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/H1LxK1a4SmiOdRD3EU9n_bc26bootshauspresentssaralandry16x9.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
+      "currentAdmissionPriceMinor": 2490,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "ticket_url_binding_match"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
+      "sourceUrl": "https://rausgegangen.de/events/weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more",
+      "startsAt": "2027-02-04T14:00+0100",
+      "endsAt": "2027-02-05T01:00+0100",
+      "venueName": "Bootshaus Köln",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Bounce",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:trance",
+        "weak_positive:live",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/7laoGVn5QRenL6Y5tQ7H_chatgpt-image-16-sept-2026-161047.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://bootshaus-club.ticket.io/gxSFfYGS/",
+      "currentAdmissionPriceMinor": 2900,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:a-techno-ballet-odyssey-17",
+      "sourceUrl": "https://rausgegangen.de/events/a-techno-ballet-odyssey-17/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "A TECHNO BALLET ODYSSEY",
+      "startsAt": "2027-04-22T19:30+0200",
+      "endsAt": "2027-04-23T00:00+0200",
+      "venueName": "Bootshaus Köln",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "weak_positive:club",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/EBbVXv2mQuKZqxEyqsbA_bootshausfacebookbanner22apr2027.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://www.berlinballet.company/a-techno-ballet-odyssey?utm_source=bootshaus&utm_medium=referral&utm_campaign=tbo_koeln_bootshaus",
+      "currentAdmissionPriceMinor": 5900,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
+      "sourceUrl": "https://rausgegangen.de/events/electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+      "startsAt": "2026-10-28T20:00+0100",
+      "endsAt": "2026-10-28T23:00+0100",
+      "venueName": "Zeiss Planetarium Bochum",
+      "city": "Bochum",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        },
+        {
+          "label": "bochum",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:electro",
+        "strong_positive:dj_set",
+        "weak_positive:live",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/RgpBKucT9mb4hiPviCRw_el-bochum-10-2026-9-el-jakojako-hamburg-november-2025-1.jpeg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://planetarium-bochum.de/de_DE/calendar/electric-lights.1399145",
+      "currentAdmissionPriceMinor": 2400,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1",
+      "sourceUrl": "https://rausgegangen.de/events/wintergarden-halloween-w-ben-klock-beste-hira-gerd-janson-am-1/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m.",
+      "startsAt": "2026-10-31T15:00+0100",
+      "endsAt": "2026-11-01T05:00+0100",
+      "venueName": "Fusion Club",
+      "city": "Münster",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Ben Klock",
+        "Beste Hira",
+        "Gerd Janson a.m."
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "münster",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:house",
+        "weak_positive:club",
+        "weak_positive:night"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/KztTeyVqRt0oXBzKgzVh_dockland26wg2event-banner-1-1.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://stgdts.com/83bf35",
+      "currentAdmissionPriceMinor": 1800,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cosey-mueller-5",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:cosey-mueller-5",
+      "sourceUrl": "https://rausgegangen.de/events/cosey-mueller-5/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "COSEY MUELLER",
+      "startsAt": "2026-09-24T19:00+0200",
+      "endsAt": "2026-09-24T22:00+0200",
+      "venueName": "Bumann & SOHN",
+      "city": "Köln",
+      "organizerName": "POPANZ",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro",
+        "weak_positive:live",
+        "weak_positive:underground"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/LXS0ul5hSle7lDhcW42A_img4822.jpeg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://popanz.ticket.io/mW8u09X5/",
+      "currentAdmissionPriceMinor": 1800,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-29",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:grandmas-house-29",
+      "sourceUrl": "https://rausgegangen.de/events/grandmas-house-29/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "GRANDMAS HOUSE",
+      "startsAt": "2026-10-07T19:00+0200",
+      "endsAt": "2026-10-07T22:30+0200",
+      "venueName": "Bumann & SOHN",
+      "city": "Köln",
+      "organizerName": "POPANZ",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4cLxYSDtTcCaa0cTuyHp_lead-press1.JPG",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://popanz.ticket.io/MJKYcFGO/",
+      "currentAdmissionPriceMinor": 2000,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:grandmas-house-baby-youre-a-winner-tour-0",
+      "sourceUrl": "https://rausgegangen.de/events/grandmas-house-baby-youre-a-winner-tour-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Grandmas House - Baby you're a Winner Tour",
+      "startsAt": "2026-10-07T19:00+0200",
+      "endsAt": "2026-10-07T23:00+0200",
+      "venueName": "Bumann & SOHN",
+      "city": "Köln",
+      "organizerName": "killmebooking",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/O5XdvE2XRfGViyZgoLWY_lead-press.JPG",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://popanz.ticket.io/MJKYcFGO/",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-16",
+      "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-16/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+      "startsAt": "2027-02-07T20:00+0100",
+      "endsAt": "2027-02-08T05:00+0100",
+      "venueName": "Kalif Storch",
+      "city": "Erfurt",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        },
+        {
+          "label": "erfurt",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro",
+        "strong_positive:rave",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/0Axr5N5uS3ui9s3w3gj5_kytesc4maxbublak1125.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:utopian-summer-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:utopian-summer-0",
+      "sourceUrl": "https://rausgegangen.de/events/utopian-summer-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Utopian Summer",
+      "startsAt": "2026-09-18T23:00+0200",
+      "endsAt": "2026-09-19T09:00+0200",
+      "venueName": "Odonien",
+      "city": "Köln",
+      "organizerName": "Rave51",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Psytrance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:psytrance",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/ucjWJIqrQKmtTCJL3LBY_flyer-breit.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://111000111.de/3K/LC",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0",
+      "sourceUrl": "https://rausgegangen.de/events/electronic-garden-of-love-open-air-2-sudbrucke-mit-ege-363-k-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "VERSCHOBEN * Electronic Garden of Love -OPEN AIR- #2 Südbrücke mit EGE 363, KATY ROUGH, KIRK uvm.",
+      "startsAt": "2026-09-19T14:00+0200",
+      "endsAt": "2026-09-19T22:00+0200",
+      "venueName": "Südbrücke",
+      "city": "Köln",
+      "organizerName": "Electronic Love",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "überlassen wir es euch",
+        "ob ihr eure Tickets behalten",
+        "oder zurückgeben wollt.----------------------------------------------"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Bounce",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:trance",
+        "strong_positive:electro",
+        "weak_positive:open_air"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/8HKrxZ3QSsmqAykyBI55_10.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://zukunftsmusik-k87a.stgdts.com/events/electronic-garden-of-love-open-air-2-sudbrucke-sudbrucke-20260919-POFIB/checkout/products",
+      "currentAdmissionPriceMinor": 1500,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:queer-as-heaven-queer-open-air-party-an-der-kirche-0",
+      "sourceUrl": "https://rausgegangen.de/events/queer-as-heaven-queer-open-air-party-an-der-kirche-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "QUEER AS HEAVEN - Queere Party in der Kirche",
+      "startsAt": "2026-09-19T15:00+0200",
+      "endsAt": "2026-09-19T22:00+0200",
+      "venueName": "Ev. St. Johannes-Kirche Deutz",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/Zyxt8AvjTVOPANBecc1X_heavenrausgegangen.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/queer-as-heaven-queer-open-air-party-an-der-kirche",
+      "currentAdmissionPriceMinor": 1300,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:cgndus-techno-freundschaft-community-0",
+      "sourceUrl": "https://rausgegangen.de/events/cgndus-techno-freundschaft-community-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "CGN*DUS // Techno. Freundschaft. Community",
+      "startsAt": "2026-09-19T17:00+0200",
+      "endsAt": "2026-09-19T23:00+0200",
+      "venueName": "Garagen Club Köln",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:house",
+        "weak_positive:club",
+        "weak_positive:b2b"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/jaVyDK4SSeRlnq0ryhsJ_2026-09cgn-dus16-9-final.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://silberschwein-shop.ticket.io/ZYjJJTGl",
+      "currentAdmissionPriceMinor": 1800,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:mittwochenende-in-odonien-6",
+      "sourceUrl": "https://rausgegangen.de/events/mittwochenende-in-odonien-6/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "#MITTWOCHENENDE in Odonien",
+      "startsAt": "2026-09-16T23:00+0200",
+      "endsAt": "2026-09-17T07:00+0200",
+      "venueName": "Odonien",
+      "city": "Köln",
+      "organizerName": "Beats x Bass x Cologne",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Hard Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Hard Bounce",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Bounce",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:hard_techno",
+        "strong_positive:trance",
+        "strong_positive:hard_techno_abbrev"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/Dxj1ejvRZmIL1debjoFF_160926-odonienrausgegangen01.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketAvailability": "UNKNOWN",
+      "ticketAction": "NONE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:five-2-nine-001-house-boot-0",
+      "sourceUrl": "https://rausgegangen.de/events/five-2-nine-001-house-boot-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "FIVE 2 NINE - 001 HOUSE-BOOT",
+      "startsAt": "2026-09-17T17:30+0200",
+      "endsAt": "2026-09-18T01:00+0200",
+      "venueName": "AQUA - auf dem Eventschiff Rhein Roxy",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4HVEwthRTbObc0zT8N4n_live7ac139c3-18b5-4fc0-99f3-2f6c90174b37.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/five-2-nine-001-house-boot",
+      "currentAdmissionPriceMinor": 1200,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:afterwork-deepdive-iv-0",
+      "sourceUrl": "https://rausgegangen.de/events/afterwork-deepdive-iv-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Afterwork Deepdive IV",
+      "startsAt": "2026-09-17T18:00+0200",
+      "endsAt": "2026-09-17T22:00+0200",
+      "venueName": "HOUSE OF BATES | Foto Erlebnis Studio",
+      "city": "Köln",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "aktiv & kreativ",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/GhBpknNGR160PoVNf3Fq_grau-grun-modern-asthetisch-instagram-post-workbook-anzeige-tablet-2.png",
+      "mediaAcceptability": "NO_ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://afterworkdeepdivepart4.eventbrite.de",
+      "currentAdmissionPriceMinor": 3900,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "BLOCKED_MEDIA"
+  },
+  {
+    "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:angel-in-bondage-hamburg-1",
+      "sourceUrl": "https://rausgegangen.de/events/angel-in-bondage-hamburg-1/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Angel-in-Bondage Hamburg",
+      "startsAt": "2026-09-18T22:00+0200",
+      "endsAt": "2026-09-19T04:00+0200",
+      "venueName": "Catonium",
+      "city": "Hamburg",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/rCguM9VBQQ6PtgvjtVgG_260918-aib-hamburg600x400.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/angel-in-bondage-hamburg-1",
+      "currentAdmissionPriceMinor": 2000,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:nina-hepburn-all-day-long-19-september-2026-0",
+      "sourceUrl": "https://rausgegangen.de/events/nina-hepburn-all-day-long-19-september-2026-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "NINA HEPBURN | ALL DAY LONG | OPEN AIR",
+      "startsAt": "2026-09-19T15:00+0200",
+      "endsAt": "2026-09-19T22:00+0200",
+      "venueName": "Villa Viva Hamburg",
+      "city": "Hamburg",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:electro",
+        "weak_positive:open_air"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/GEQbDhOhSNm9TV2NdxQ1_rausgegangen.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://ticketmaster.evyy.net/c/6519574/2038753/23890?u=https%3A%2F%2Fwww.universe.com%2Fevents%2Fnina-hepburn-all-day-long-19-september-2026-tickets-RSK2J4%3Fref%3Dticketmaster&utm_medium=affiliate",
+      "currentAdmissionPriceMinor": 1000,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:u30-party-hamburg-12",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:u30-party-hamburg-12",
+      "sourceUrl": "https://rausgegangen.de/events/u30-party-hamburg-12/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Ü30 Party Hamburg",
+      "startsAt": "2026-09-19T22:00+0200",
+      "endsAt": "2026-09-20T04:00+0200",
+      "venueName": "Angie's",
+      "city": "Hamburg",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/L78GXegoTTqfpkvRyEKw_260421-u30-hamburg-1909-teaser.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://partytickets.ditix.shop/event/i0czfveozk8naxw8?t=false",
+      "currentAdmissionPriceMinor": 1449,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:frame-sommer-closing-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:frame-sommer-closing-0",
+      "sourceUrl": "https://rausgegangen.de/events/frame-sommer-closing-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Frame Sommer Closing",
+      "startsAt": "2026-09-18T17:00+0200",
+      "endsAt": "2026-09-18T22:00+0200",
+      "venueName": "Villa Viva Hamburg",
+      "city": "Hamburg",
+      "organizerName": "Frame Kollektiv",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "alexej",
+        "jashtech",
+        "mr. maggio",
+        "vi:lahouse",
+        "tech house"
+      ],
+      "lineupQualification": "FULL_LINEUP",
+      "genres": [
+        {
+          "label": "Tech House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "House",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "strong_positive:tech_house",
+        "weak_positive:festival",
+        "weak_positive:open_air"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/RvaQbCT9OPFKbqVxKpQv_3.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://de.ra.co/events/2523019",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:flightmode-17",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:flightmode-17",
+      "sourceUrl": "https://rausgegangen.de/events/flightmode-17/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "FLIGHTMODE",
+      "startsAt": "2026-09-19T19:00+0200",
+      "endsAt": "2026-09-20T05:00+0200",
+      "venueName": "Humboldthain",
+      "city": "Berlin",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:live",
+        "weak_positive:b2b",
+        "weak_positive:underground"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/tBVN3heZQWep9vOcQUtT_2026-09-19humboldthain16x9.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://tickets.geisburgrecords.com/geisburg/flightmode-1909/",
+      "currentAdmissionPriceMinor": 1500,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:concrete-vehicles-exp-post-punk-hc-noise-rock-can-0",
+      "sourceUrl": "https://rausgegangen.de/events/concrete-vehicles-exp-post-punk-hc-noise-rock-can-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Concrete Vehicles (exp post-punk/-hc noise-rock, can) + Older Friends (emo/screamo, bln)",
+      "startsAt": "2026-09-16T19:00+0200",
+      "endsAt": "2026-09-17T06:00+0200",
+      "venueName": "Schokoladen",
+      "city": "Berlin",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Bounce",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:hardcore",
+        "weak_positive:festival",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4myq3FKASImugk6PCZlt_9taqkhhg.jpeg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://vvk.link/4fjp3n4",
+      "currentAdmissionPriceMinor": 1150,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:giddens-hard-rock-cafe-0",
+      "sourceUrl": "https://rausgegangen.de/events/giddens-hard-rock-cafe-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Giddens @Hard Rock Cafe",
+      "startsAt": "2026-09-16T19:00+0200",
+      "endsAt": "2026-09-16T23:30+0200",
+      "venueName": "Hard Rock Cafe Berlin",
+      "city": "Berlin",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:dj_set",
+        "weak_positive:night",
+        "weak_positive:live",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/s3zvgpI2R2uTUqV2fkaH_chatgpt-image-24-aug-2026-185436.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://www.eventbrite.de/e/giddens-live-hard-rock-cafe-berlin-tickets-1998793322634?aff=oddtdtcreator",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:friends-house-1",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:friends-house-1",
+      "sourceUrl": "https://rausgegangen.de/events/friends-house-1/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "FRIENDS HOUSE",
+      "startsAt": "2026-09-25T23:00+0200",
+      "endsAt": "2026-09-26T04:00+0200",
+      "venueName": "Fortuna Irgendwo",
+      "city": "Frankfurt am Main",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "frankfurt",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:club"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/FjKGZOTQciY62p6iZu0p_fifacebook-260925.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://fortunairgendwo.ticket.io/tCXyfwFa/",
+      "currentAdmissionPriceMinor": 1200,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:mariybu-frech-tour-2",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:mariybu-frech-tour-2",
+      "sourceUrl": "https://rausgegangen.de/events/mariybu-frech-tour-2/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Mariybu \"FRECH\"-Tour",
+      "startsAt": "2026-09-26T19:00+0200",
+      "endsAt": "2026-09-26T23:59+0200",
+      "venueName": "Zoom Frankfurt",
+      "city": "Frankfurt am Main",
+      "organizerName": "Buback",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Hardstyle",
+          "confidence": "explicit"
+        },
+        {
+          "label": "frankfurt",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:hardstyle"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/1HOWMUnTk2TnKKBhKvxo_headerticketshop.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://ticketmaster.evyy.net/c/6519574/2038753/23890?u=https%3A%2F%2Fwww.ticketmaster.de%2Fevent%2Fmariybu-frech-tour-tickets%2F1044148235&utm_medium=affiliate",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:bus-zum-titanium-festival-2026-0",
+      "sourceUrl": "https://rausgegangen.de/events/bus-zum-titanium-festival-2026-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Bus zum Titanium Festival 2026",
+      "startsAt": "2026-09-19T05:00+0200",
+      "endsAt": "2026-09-20T06:00+0200",
+      "venueName": "Fernbusparkplatz P36 am Terminal 1 - Party und Festival Tours",
+      "city": "Frankfurt am Main",
+      "organizerName": "Sonic-Warrior / Party und Festival Tours",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "frankfurt",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:hardcore",
+        "weak_positive:festival"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/pHetlTRoRwbHMVaFm8wg_2026-09-titanium-festival-uptempo-hardcore-banner.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://www.sonic-warrior.de/produkt/titianium-festival/",
+      "currentAdmissionPriceMinor": 15700,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:trance-station-1",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:trance-station-1",
+      "sourceUrl": "https://rausgegangen.de/events/trance-station-1/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "TRANCE STATION",
+      "startsAt": "2026-10-03T23:00+0200",
+      "endsAt": "2026-10-04T05:00+0200",
+      "venueName": "Romy S",
+      "city": "Stuttgart",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Marc Jerome DJ Cruse Location: Romy S.",
+        "Stuttgart Lange Str. 7"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "stuttgart",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:trance",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/lXHx3I5qRM26foFhehcu_76916892116850718669514288927742473715765968n.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://diginights.com/ticket/2026-10-03-trance-station-romy-s/step/1",
+      "currentAdmissionPriceMinor": 919,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:sweat-summer-closing-2",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:sweat-summer-closing-2",
+      "sourceUrl": "https://rausgegangen.de/events/sweat-summer-closing-2/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "SWEAT SUMMER CLOSING",
+      "startsAt": "2026-09-19T15:00+0200",
+      "endsAt": "2026-09-20T05:00+0200",
+      "venueName": "Fridas Pier",
+      "city": "Stuttgart",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Progressive House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "stuttgart",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:house",
+        "strong_positive:trance"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/xgpJdn5vTXCUv7ukyCS8_webseitefrida.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://fridas-pier.stgdts.com/events/sweat-summer-closing-w-alex-kassian-fridas-pier-20260919-o625w/checkout/products",
+      "currentAdmissionPriceMinor": 1300,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
+      "sourceUrl": "https://rausgegangen.de/events/elektronisch-draussen-fridas-pier-unterdeck-session-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Elektronisch Draussen @Fridas Pier - Unterdeck Session",
+      "startsAt": "2026-11-07T23:00+0100",
+      "endsAt": "2026-11-08T06:00+0100",
+      "venueName": "Fridas Pier",
+      "city": "Stuttgart",
+      "organizerName": "Elektronisch Draussen",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Melodic Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "stuttgart",
+          "confidence": "explicit"
+        },
+        {
+          "label": "feste & festival",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:melodic_techno",
+        "weak_positive:festival"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/jh9hKNKDQ6GFROvJTltB_ed18landscape1920x1080260908.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://fridas-pier.stgdts.com/events/elektronisch-draussen-unterdeck-session-fridas-pier-20261107-Ar6ND",
+      "currentAdmissionPriceMinor": 1300,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:odd-beholder-honest-work-tour-2026-muenchen",
+      "sourceUrl": "https://rausgegangen.de/events/odd-beholder-honest-work-tour-2026-muenchen/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Odd Beholder - Honest Work Tour 2026",
+      "startsAt": "2026-09-18T20:00+0200",
+      "endsAt": "2026-09-18T23:00+0200",
+      "venueName": "Milla Club",
+      "city": "München",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro",
+        "weak_positive:club"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/HkOXOeBQKq25MYupfyCP_odd-beholderronjaburkard-01-web.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/odd-beholder-honest-work-tour-2026-4",
+      "currentAdmissionPriceMinor": 2725,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0",
+      "sourceUrl": "https://rausgegangen.de/events/turbo-pres-trance-allstars-trance-bounce-techno-im-oma-doris-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "TURBO pres. TRANCE ALLSTARS - Trance, Bounce & Techno im Oma Doris",
+      "startsAt": "2026-09-18T23:00+0200",
+      "endsAt": "2026-09-19T06:00+0200",
+      "venueName": "Oma Doris",
+      "city": "Dortmund",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Trance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Bounce",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "strong_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:trance",
+        "strong_positive:rave"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/sDmUKu9bSJOOSqvQpzWd_artowrkevent.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://stgdts.com/722319",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:90er-2000er-party-taubchenthal-leipzig-0",
+      "sourceUrl": "https://rausgegangen.de/events/90er-2000er-party-taubchenthal-leipzig-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "90er & 2000er Party - Täubchenthal Leipzig",
+      "startsAt": "2026-09-19T22:00+0200",
+      "endsAt": "2026-09-20T06:00+0200",
+      "venueName": "Täubchenthal",
+      "city": "Leipzig",
+      "organizerName": "The Hinge Party Events",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Hip Hop",
+          "confidence": "explicit"
+        },
+        {
+          "label": "leipzig",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/y1brj0bUTVOCW4GByktg_90er2000erpartyfbbannerneutral0925-16x9.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/90er-2000er-party-taubchenthal-leipzig",
+      "currentAdmissionPriceMinor": 1319,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:coffee-party-rave-13",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:coffee-party-rave-13",
+      "sourceUrl": "https://rausgegangen.de/events/coffee-party-rave-13/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "COFFEE PARTY RAVE",
+      "startsAt": "2026-09-20T12:30+0200",
+      "endsAt": "2026-09-20T17:00+0200",
+      "venueName": "koko café-bar",
+      "city": "Leipzig",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "leipzig",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:rave"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/4C83mznSTCxZeDvguHsR_cream-blue-coffee-poster-banner-medium-us-querformat-instagram-post-45-148-105-mm-10.png",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/coffee-party-rave-13",
+      "currentAdmissionPriceMinor": 1400,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:aux-animaux-this-eternal-decay-another-tale-0",
+      "sourceUrl": "https://rausgegangen.de/events/aux-animaux-this-eternal-decay-another-tale-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Ausverkauft! aux animaux + This Eternal Decay + Another Tale",
+      "startsAt": "2026-09-26T19:00+0200",
+      "endsAt": "2026-09-26T23:55+0200",
+      "venueName": "GREND Kulturzentrum",
+      "city": "Essen",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Electronic Festival",
+          "confidence": "weak_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house",
+        "weak_positive:festival",
+        "weak_positive:night",
+        "weak_positive:live",
+        "weak_positive:industrial"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/MctcMOwqSmKZkQprE0Se_aux-animaux-by-jannike-viveka.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://www.adticket.de/aux-animaux-This-Eternal-Decay-Another-Tale/Essen-Kulturzentrum-Grend/26-09-2026_20-00.html?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=Kulturzentrum+Grend+e.V.+%284945%29",
+      "currentAdmissionPriceMinor": 2500,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:techno-dampfer-dusseldorf-w-klaudia-gawlas-0",
+      "sourceUrl": "https://rausgegangen.de/events/techno-dampfer-dusseldorf-w-klaudia-gawlas-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Techno Dampfer Düsseldorf w/ Klaudia Gawlas",
+      "startsAt": "2026-09-19T17:30+0200",
+      "endsAt": "2026-09-19T21:30+0200",
+      "venueName": "Techno Dampfer Düsseldorf",
+      "city": "Düsseldorf",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [
+        "Klaudia Gawlas"
+      ],
+      "lineupQualification": "PARTIAL_LINEUP",
+      "genres": [
+        {
+          "label": "Hard Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Techno",
+          "confidence": "explicit"
+        },
+        {
+          "label": "düsseldorf",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        },
+        {
+          "label": "Electronic Festival",
+          "confidence": "weak_inferred"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:techno",
+        "strong_positive:hard_techno",
+        "strong_positive:hard_techno_abbrev",
+        "weak_positive:festival",
+        "weak_positive:dj"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/UdS11l7uRpi3INVQAvMc_amsterdam-bonn-bregenz-duisburg-dusseldorf-hamburg-kelheim-koblenz-2.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://technodampfer.ticket.io/kVMC3cKZ/",
+      "currentAdmissionPriceMinor": 5349,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243",
+      "sourceUrl": "https://rausgegangen.de/events/fluchtgefahr-escape-room-mad-house-sie-sind-in-deinem-kopf-243/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "FLUCHTGEFAHR Escape-Room \"Mad House – Sie sind in Deinem Kopf\"",
+      "startsAt": "2026-09-16T09:00+0200",
+      "endsAt": "2026-09-16T21:30+0200",
+      "venueName": "Fluchtgefahr",
+      "city": "Bonn",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "House",
+          "confidence": "explicit"
+        },
+        {
+          "label": "jederzeit verfügbar",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:house"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/CxyfAElTXOD0sixqlEn0_whatsapp-image-2024-09-12-at-140442.jpeg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://fluchtgefahr.com/mad-house/",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "BLOCKED_OTHER"
+  },
+  {
+    "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:nostalgia-mega-90er-rave-dresden-1909-0",
+      "sourceUrl": "https://rausgegangen.de/events/nostalgia-mega-90er-rave-dresden-1909-0/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "NOSTALGIA • MEGA 90er RAVE | Dresden - 19.09.",
+      "startsAt": "2026-09-19T22:00+0200",
+      "endsAt": "2026-09-20T04:00+0200",
+      "venueName": "Strasse e",
+      "city": "Dresden",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "dresden",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:hardcore",
+        "strong_positive:rave"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/jHBVpr8oSi2uOc34kxNC_fb-layout-nostalgia.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://partysdresden.ticket.io/29a6ueLm/",
+      "currentAdmissionPriceMinor": 1190,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:kytes-indie-rave-tour-2026-2027-9",
+      "sourceUrl": "https://rausgegangen.de/events/kytes-indie-rave-tour-2026-2027-9/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027",
+      "startsAt": "2027-01-29T20:00+0100",
+      "endsAt": "2027-01-30T05:00+0100",
+      "venueName": "TOLLHAUS Karlsruhe - Freier Kulturverein e. V",
+      "city": "Karlsruhe",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Electro",
+          "confidence": "explicit"
+        },
+        {
+          "label": "karlsruhe",
+          "confidence": "explicit"
+        },
+        {
+          "label": "konzerte & musik",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:electro",
+        "strong_positive:rave",
+        "weak_positive:live"
+      ],
+      "bestMediaUrl": "https://s3.eu-central-1.amazonaws.com/rausgegangen/0Axr5N5uS3ui9s3w3gj5_kytesc4maxbublak1125.jpg",
+      "mediaAcceptability": "ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://www.eventim.de/noapp/artist/kytes/kytes-indie-rave-tour-3555338/?affiliate=AAG&utm_campaign=allartistsagency&utm_source=AAG&utm_medium=dp",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "EXISTING_EXACT",
+      "matchReasons": [
+        "canonical_source_url_already_bound",
+        "decision:exact_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "ELIGIBLE_EXISTING_MATCH"
+  },
+  {
+    "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+    "liveAccessible": true,
+    "verification": {
+      "identityKey": "rausgegangen:dominext-kinky-psytrance-party-1",
+      "sourceUrl": "https://rausgegangen.de/events/dominext-kinky-psytrance-party-1/",
+      "verifiedAt": "2026-09-17T16:49:21.429Z",
+      "referenceDateLocal": "2026-09-17",
+      "liveAccessible": true,
+      "detailAccess": "DETAIL_ACCESSIBLE",
+      "title": "Dominext Kinky-Psytrance Party",
+      "startsAt": "2026-09-19T22:00+0200",
+      "endsAt": "2026-09-20T06:00+0200",
+      "venueName": "Musikbunker Aachen e.V.",
+      "city": "Aachen",
+      "descriptionQualification": "FULL_DESCRIPTION",
+      "lineup": [],
+      "lineupQualification": "NO_LINEUP",
+      "genres": [
+        {
+          "label": "Psytrance",
+          "confidence": "explicit"
+        },
+        {
+          "label": "aachen",
+          "confidence": "explicit"
+        }
+      ],
+      "relevance": "HIGH_RELEVANCE",
+      "relevanceReasons": [
+        "strong_positive:psytrance",
+        "strong_positive:rave"
+      ],
+      "mediaAcceptability": "NO_ACCEPTABLE_EVENT_MEDIA",
+      "ticketUrl": "https://mubu.ac/event/dominext-kinky-psytrance-party/",
+      "currentAdmissionPriceMinor": 0,
+      "ticketAvailability": "AVAILABLE",
+      "ticketAction": "PURCHASE",
+      "matchClassification": "NET_NEW",
+      "matchReasons": [
+        "composite_weak_identity",
+        "insufficient_identity_evidence",
+        "decision:no_match",
+        "no_ticket_url_binding"
+      ],
+      "fetchStatus": 200,
+      "fromCache": false
+    },
+    "importEligibility": "BLOCKED_MEDIA"
+  }
+]

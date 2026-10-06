@@ -1,0 +1,9 @@
+{
+  "phase": "dry-run",
+  "skipExternal": false,
+  "eventsWithGenreBefore": 31,
+  "eventsWithGenreAfter": 31,
+  "genreRecoverableAfter": 0,
+  "eventsStillUnresolved": 3,
+  "dossierCount": 3
+}

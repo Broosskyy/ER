@@ -1,0 +1,23 @@
+{
+  "method": "relevance_and_priority_city_score_sort_then_slice",
+  "description": "From merged city listing URLs, candidates sorted by listing-title relevance score (HIGH=4, LIKELY=3, AMBIGUOUS=2, else 1) plus +2 for PRIORITY_GERMAN_CITY_SLUGS. Top maxDetailCandidates (2500) receive detail fetch.",
+  "maxDetailCandidates": 2500,
+  "maxRegions": 45,
+  "maxListingPagesPerRegion": 1,
+  "listingSurfacesUsed": [
+    "/{city}/ only"
+  ],
+  "listingSurfacesNotUsed": [
+    "/locations/{venue}/",
+    "/organizers/{slug}/",
+    "pagination beyond page 1",
+    "sitemap bulk crawl"
+  ],
+  "blindSpots": [
+    "Events only on venue location pages",
+    "Events on organizer pages not linked from city listing",
+    "Events beyond first listing page if pagination exists",
+    "Listing-title-only relevance pre-score may deprioritize events with generic slugs"
+  ],
+  "systematicRisk": "HIGH for venue-only listings; MODERATE for 2500 cap within city-discovered pool"
+}

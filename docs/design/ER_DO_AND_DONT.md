@@ -235,4 +235,5 @@ Falls nein → nicht übernehmen.
 - `ER_UI_CONSTITUTION.md` — Grundgesetze
 - `ER_UI_REVIEW_CHECKLIST.md` — Prüfliste
 - `ER_DESIGN_EVOLUTION_V2.md` — Bewusste Verbesserungen
+- `ER_CONSUMER_VISUAL_POLISH.md` — Non-breaking Verfeinerungsregeln (Consumer-Migrationen)
 - `ER_CURSOR_UI_GUIDE.md` — KI-Leitfaden

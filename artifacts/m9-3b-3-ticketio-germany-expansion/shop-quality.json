@@ -1,0 +1,2170 @@
+[
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "odonien",
+    "slug": "odonien",
+    "canonicalUrl": "https://odonien.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "www",
+    "slug": "www",
+    "canonicalUrl": "https://www.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=de",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=en",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=fr",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=nl",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pl",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=it",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=es",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=ru",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=tr",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=hr",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=pt",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sq",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "bootshaus-club",
+    "slug": "bootshaus-club",
+    "canonicalUrl": "https://bootshaus-club.ticket.io/?lang=sl",
+    "upcomingEventCount": 11,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 11,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "moderate_electronic_coverage",
+      "verified_existing_canonical_overlap"
+    ]
+  },
+  {
+    "shopId": "cdn",
+    "slug": "cdn",
+    "canonicalUrl": "https://cdn.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "srvded",
+    "slug": "srvded",
+    "canonicalUrl": "https://srvded.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=de",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=en",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=fr",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=nl",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=pl",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=it",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=es",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=ru",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=tr",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=hr",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=pt",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=sq",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "stadtgarten",
+    "slug": "stadtgarten",
+    "canonicalUrl": "https://stadtgarten.ticket.io/?lang=sl",
+    "upcomingEventCount": 71,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=de",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=en",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=fr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=nl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=pl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=it",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=es",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=ru",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=tr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=hr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=pt",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=sq",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nibirii-festival",
+    "slug": "nibirii-festival",
+    "canonicalUrl": "https://nibirii-festival.ticket.io/?lang=sl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=de",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=en",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=fr",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=nl",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=pl",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=it",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=es",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=ru",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=tr",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=hr",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=pt",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=sq",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "aura",
+    "slug": "aura",
+    "canonicalUrl": "https://aura.ticket.io/?lang=sl",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=de",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=en",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=fr",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=nl",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=pl",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=it",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=es",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=ru",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=tr",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=hr",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=pt",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=sq",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "tonite",
+    "slug": "tonite",
+    "canonicalUrl": "https://tonite.ticket.io/?lang=sl",
+    "upcomingEventCount": 3,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=de",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=en",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=fr",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=nl",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=pl",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=it",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=es",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=ru",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=tr",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=hr",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=pt",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=sq",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "gewoelbe",
+    "slug": "gewoelbe",
+    "canonicalUrl": "https://gewoelbe.ticket.io/?lang=sl",
+    "upcomingEventCount": 10,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 10,
+    "netNewRelevantCount": 9,
+    "electronicRelevanceRatio": 1,
+    "ticketEvidenceCompleteness": 0.6,
+    "mediaQualityScore": 0,
+    "tier": "TIER_1_ENABLE_FIRST",
+    "tierReasons": [
+      "strong_electronic_signal",
+      "net_new_inventory",
+      "usable_ticket_evidence",
+      "high_electronic_ratio"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=de",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=en",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=fr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=nl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=pl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=it",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=es",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=ru",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=tr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=hr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=pt",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=sq",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "glow",
+    "slug": "glow",
+    "canonicalUrl": "https://glow.ticket.io/?lang=sl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "8sgkjd",
+    "slug": "8sgkjd",
+    "canonicalUrl": "https://8sgkjd.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "my",
+    "slug": "my",
+    "canonicalUrl": "https://my.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "backstage",
+    "slug": "backstage",
+    "canonicalUrl": "https://backstage.ticket.io/",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "shop_status:UNREACHABLE"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=de",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=en",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=fr",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=nl",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=pl",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=it",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=es",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=ru",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=tr",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=hr",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=pt",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=sq",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "nachtresidenz",
+    "slug": "nachtresidenz",
+    "canonicalUrl": "https://nachtresidenz.ticket.io/?lang=sl",
+    "upcomingEventCount": 2,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=de",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=en",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=fr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=nl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=pl",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=it",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=es",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=ru",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=tr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=hr",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=pt",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  },
+  {
+    "shopId": "events",
+    "slug": "events",
+    "canonicalUrl": "https://events.ticket.io/?lang=sq",
+    "upcomingEventCount": 0,
+    "highRelevanceCount": 0,
+    "likelyRelevantCount": 0,
+    "netNewRelevantCount": 0,
+    "electronicRelevanceRatio": 0,
+    "ticketEvidenceCompleteness": 0,
+    "mediaQualityScore": 0,
+    "tier": "REJECT",
+    "tierReasons": [
+      "no_relevant_upcoming_events"
+    ]
+  }
+]

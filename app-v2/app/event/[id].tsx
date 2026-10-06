@@ -1,215 +1,47 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { useCallback, useMemo } from 'react';
-import { Alert, ScrollView, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AppScreen, AppText, ResponsiveScreen } from '@/components';
-import { colors } from '@/design/colors';
-import { componentSize } from '@/design/layout';
-import { spacing, spacingRoles } from '@/design/spacing';
-import { textRoles } from '@/design/typography';
+import { AppScreen } from '@/components';
+import { EmptyState } from '@/components/feedback/EmptyState';
 import {
-  BottomTicketCTA,
-  EventDetailHero,
-  EventGenreChips,
-  EventInfoRow,
-  EventNotFoundState,
-  EventSection,
-  ExpandableDescription,
-  LineupList,
-  LocationSection,
-  openEventInMaps,
-  openEventTicketUrl,
-  shareEvent,
-} from '@/features/event-detail';
-import {
-  eventRepository,
-  formatEventDateTime,
-  toEventDisplayModel,
-} from '@/features/events';
-import { useFavorites } from '@/features/favorites';
-import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
-import { buildEventJsonLd } from '@/platform/seo/structured-data';
-import { useWebSeo } from '@/platform/seo/use-web-seo';
-
-const TICKET_CTA_HEIGHT = componentSize.buttonHeight + spacing.md * 2 + 1;
+  EventDetailContent,
+  EventDetailLoadingState,
+} from '@/features/event-detail/components/EventDetailContent';
+import { EventNotFoundState } from '@/features/event-detail';
+import { useEventCoreDetail } from '@/features/events/hooks/useEventCoreDetail';
+import { navigateBackSafely } from '@/features/navigation/safe-back-navigation';
 
 export default function EventDetailScreen() {
   const router = useRouter();
-  const insets = useSafeAreaInsets();
   const { id } = useLocalSearchParams<{ id: string }>();
-  const eventId = Array.isArray(id) ? id[0] : id;
-  const event = useMemo(() => {
-    if (!eventId) {
-      return undefined;
-    }
+  const state = useEventCoreDetail(id);
 
-    const found = eventRepository.getEventById(eventId);
-    return found ? toEventDisplayModel(found) : undefined;
-  }, [eventId]);
-  const { isFavorite, toggleFavorite, isHydrated } = useFavorites();
-
-  useWebSeo({
-    title: event ? `${event.title} — Eternal Rave` : WEB_PAGE_TITLES.eventDetail,
-    description: event?.description?.slice(0, 160),
-    path: eventId ? `/event/${eventId}` : undefined,
-    ogType: 'article',
-    jsonLd:
-      event && eventId
-        ? buildEventJsonLd({
-            id: event.id,
-            title: event.title,
-            description: event.description,
-            startDate: event.startDateTime,
-            endDate: event.endDateTime,
-            venueName: event.venue,
-            city: event.city,
-            ticketUrl: event.ticketUrl,
-          })
-        : null,
-    jsonLdId: 'event-json-ld',
-  });
-
-  const hasTicketAction = Boolean(event?.ticketUrl);
-  const scrollBottomPadding = useMemo(() => {
-    if (hasTicketAction) {
-      return TICKET_CTA_HEIGHT + Math.max(insets.bottom, spacing.md);
-    }
-
-    return Math.max(insets.bottom, spacing.lg);
-  }, [hasTicketAction, insets.bottom]);
-
-  const handleShare = useCallback(async () => {
-    if (!event) {
-      return;
-    }
-
-    try {
-      await shareEvent(event);
-    } catch {
-      // Share sheet dismissed or unavailable — no crash.
-    }
-  }, [event]);
-
-  const handleOpenMaps = useCallback(async () => {
-    if (!event) {
-      return;
-    }
-
-    const opened = await openEventInMaps(event);
-
-    if (!opened) {
-      Alert.alert('Maps unavailable', 'Could not open maps for this location.');
-    }
-  }, [event]);
-
-  const handleOpenTickets = useCallback(async () => {
-    if (!event?.ticketUrl) {
-      return;
-    }
-
-    const opened = await openEventTicketUrl(event.ticketUrl);
-
-    if (!opened) {
-      Alert.alert('Tickets unavailable', 'Could not open the ticket link.');
-    }
-  }, [event]);
-
-  if (!event) {
+  if (!id || state.status === 'not_found') {
     return (
       <AppScreen>
-        <EventNotFoundState onGoBack={() => router.back()} />
+        <EventNotFoundState onGoBack={() => navigateBackSafely(router)} />
+      </AppScreen>
+    );
+  }
+
+  if (state.status === 'loading' || state.status === 'idle') {
+    return (
+      <AppScreen>
+        <EventDetailLoadingState />
+      </AppScreen>
+    );
+  }
+
+  if (state.status === 'error') {
+    return (
+      <AppScreen>
+        <EmptyState title="Event nicht verfügbar" description={state.message} />
       </AppScreen>
     );
   }
 
   return (
     <AppScreen>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={[styles.scrollContent, { paddingBottom: scrollBottomPadding }]}
-      >
-        <ResponsiveScreen style={styles.detailFrame}>
-          <EventDetailHero
-            event={event}
-            isFavorite={isHydrated && isFavorite(event.id)}
-            onBack={() => router.back()}
-            onShare={handleShare}
-            onToggleFavorite={() => toggleFavorite(event.id)}
-          />
-
-          <View style={styles.content}>
-          <AppText style={styles.title}>{event.title}</AppText>
-
-          <EventInfoRow
-            icon="calendar-outline"
-            label="Date & time"
-            value={formatEventDateTime(event)}
-          />
-
-          <EventInfoRow
-            icon="location-outline"
-            label="Venue"
-            value={`${event.venue}, ${event.city}`}
-          />
-
-          {event.priceText ? (
-            <EventInfoRow icon="pricetag-outline" label="Price" value={event.priceText} />
-          ) : null}
-
-          <EventGenreChips genres={event.genres} />
-
-          {event.lineup && event.lineup.length > 0 ? (
-            <EventSection title="Line-up">
-              <LineupList artists={event.lineup} />
-            </EventSection>
-          ) : null}
-
-          {event.description ? (
-            <EventSection title="About">
-              <ExpandableDescription text={event.description} />
-            </EventSection>
-          ) : null}
-
-          <EventSection title="Location">
-            <LocationSection event={event} onOpenMaps={handleOpenMaps} />
-          </EventSection>
-
-          {event.ageRestriction ? (
-            <EventInfoRow icon="id-card-outline" label="Age" value={event.ageRestriction} />
-          ) : null}
-
-          {event.organizer ? (
-            <EventInfoRow icon="people-outline" label="Organizer" value={event.organizer} />
-          ) : null}
-
-          {event.sourceLabel ? (
-            <EventInfoRow icon="information-circle-outline" label="Source" value={event.sourceLabel} />
-          ) : null}
-          </View>
-        </ResponsiveScreen>
-      </ScrollView>
-
-      <BottomTicketCTA ticketUrl={event.ticketUrl} onPressTickets={handleOpenTickets} />
+      <EventDetailContent detail={state.detail} display={state.display} />
     </AppScreen>
   );
 }
-
-const styles = StyleSheet.create({
-  scrollContent: {
-    flexGrow: 0,
-    width: '100%',
-  },
-  detailFrame: {
-    flex: 0,
-  },
-  content: {
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingTop: spacing.lg,
-    gap: spacing.lg,
-  },
-  title: {
-    ...textRoles.screenTitle,
-    color: colors.textPrimary,
-  },
-});

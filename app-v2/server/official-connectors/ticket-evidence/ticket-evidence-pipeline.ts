@@ -1,0 +1,587 @@
+import { createHash } from 'node:crypto';
+
+import type {
+  DiscoveredTicketLink,
+  EventTicketEvidence,
+  ResolvedTicketLink,
+  TicketAuditCounters,
+  TicketFetchResult,
+  TicketIdentityResult,
+  TicketProviderEventEvidence,
+} from './types';
+import { createEmptyTicketAuditCounters } from './types';
+import {
+  discoverRejectedTicketCandidates,
+  discoverTicketLinksFromHtml,
+  selectPrimaryTicketLink,
+} from './discover-ticket-links';
+import { fetchTicketPage } from './fetch-ticket-page';
+import { defaultTicketProviderRegistry } from './provider-registry';
+import { resolveTicketLink, extractProviderEventIdFromResolved } from './resolve-ticket-link';
+import {
+  computeCoverageMetrics,
+  computeTicketAuditCountersFromResults,
+  isVerifiedTicketComplete,
+  type VerifiedTicketCompleteResult,
+} from './ticket-audit-metrics';
+import { verifyTicketIdentity } from './ticket-identity-verify';
+import { selectRegularAdmissionOffer } from './select-regular-admission-offer';
+import { evaluateTicketTargetIdentity, isVerifiedTicketTargetIdentity } from './ticket-target-identity';
+import type { TicketBrowserOps } from './ticket-browser-ops';
+import { isAdmissionOfferRole } from './ticket-offer-role';
+import { enrichResultWithM6_4 } from './ticket-event-resolution';
+import {
+  canonicalizeTicketIoUrl,
+  isCheckoutOrSessionTicketUrl,
+  isMerchandiseUrl,
+  isShopRootUrl,
+  isTicketIoEventDetailUrl,
+} from './url-policy';
+import { discoverOfficialTicketCtaFromHtml } from './discover-official-ticket-cta';
+import { resolveTicketSourceState } from './ticket-source-state';
+import type { OfficialPageCaptureResult } from './ticket-browser-ops';
+import { classifyProviderPageReadiness, isProviderPageReady } from './page-readiness';
+
+export interface OfficialEventTicketInput {
+  sourceEventKey: string;
+  officialUrl: string;
+  title: string;
+  startsAt: string;
+  venueName?: string;
+  organizerName?: string;
+  endsAt?: string;
+}
+
+export interface TicketConsumerPreviewRow {
+  title: string;
+  startsAt: string;
+  venueName?: string;
+  providerKey?: string;
+  visiblePrice?: string;
+  priceFromMinor?: number;
+  currency?: string;
+  status?: string;
+  badge?: string;
+  canonicalTicketUrl?: string;
+  admissionOfferCount: number;
+  rejectedAddonCount: number;
+  evidenceOrigin?: string;
+  identityResult: TicketIdentityResult;
+}
+
+export type TicketEvidencePipelineResult = VerifiedTicketCompleteResult;
+
+const fetchedCanonicalUrls = new Set<string>();
+const providerEvidenceCache = new Map<string, TicketProviderEventEvidence>();
+
+export interface ProcessOfficialEventTicketsOptions {
+  browserOps?: TicketBrowserOps;
+  prefetchedHtml?: string;
+  observedAt?: string;
+}
+
+export async function processOfficialEventTickets(
+  input: OfficialEventTicketInput,
+  options: ProcessOfficialEventTicketsOptions = {},
+): Promise<TicketEvidencePipelineResult> {
+  const observedAt = options.observedAt ?? new Date().toISOString();
+  let html = options.prefetchedHtml ?? '';
+  let officialCapture: OfficialPageCaptureResult | undefined;
+
+  if (!html && options.browserOps) {
+    officialCapture = await options.browserOps.captureOfficialEventPage(input.officialUrl);
+    html = officialCapture.html;
+  } else if (!html) {
+    const response = await fetch(input.officialUrl, {
+      headers: { 'User-Agent': 'EternalRave/0.2.0 (ticket-discovery)' },
+    });
+    html = await response.text();
+  }
+
+  const discoveredLinks = discoverTicketLinksFromHtml(html, input.officialUrl, observedAt);
+  const rejectedCandidates = discoverRejectedTicketCandidates(html, input.officialUrl);
+  let primary = selectPrimaryTicketLink(discoveredLinks);
+  const canonicalOfficialTicketUrl = canonicalizeTicketIoUrl(input.officialUrl);
+  if (canonicalOfficialTicketUrl && isTicketIoEventDetailUrl(canonicalOfficialTicketUrl)) {
+    primary = {
+      rawUrl: canonicalOfficialTicketUrl,
+      relation: 'ticket_provider',
+      discoveredOnUrl: input.officialUrl,
+      discoveredFromSource: 'ticket_io_event_page_self',
+      observedAt,
+      elementTag: 'page',
+    };
+    discoveredLinks.unshift(primary);
+  }
+
+  if (!primary) {
+    const ctaObservation = discoverOfficialTicketCtaFromHtml(html);
+    const ticketSourceStateEvidence = resolveTicketSourceState({
+      officialUrl: input.officialUrl,
+      startsAt: input.startsAt,
+      endsAt: input.endsAt,
+      html,
+      discoveredLinks,
+      rejectedCandidates,
+      observedAt,
+      ctaObservation,
+      captureMeta: officialCapture
+        ? {
+            html,
+            sourceEventUrl: input.officialUrl,
+            observedAt,
+            contentFingerprint: officialCapture.contentFingerprint,
+            ctaProbeAttempted: officialCapture.ctaProbe?.attempted ?? false,
+            ctaProbeProducedUrl: officialCapture.ctaProbe?.producedTicketUrl,
+          }
+        : undefined,
+    });
+
+    if (ticketSourceStateEvidence?.state === 'ticket_link_not_yet_published') {
+      return enrichResultWithM6_4(
+        buildIncompleteResult(
+          input,
+          discoveredLinks,
+          rejectedCandidates,
+          'ticket_identity_unverifiable',
+          [],
+          'ticket_link_not_yet_published',
+        ),
+        {
+          officialEndsAt: input.endsAt,
+          ticketSourceStateEvidence,
+          officialPageHtml: html,
+        },
+      );
+    }
+
+    return enrichResultWithM6_4(
+      buildIncompleteResult(input, discoveredLinks, rejectedCandidates, 'ticket_identity_unverifiable', [
+        'ticket_link_detection_failed',
+      ], 'ticket_evidence_missing'),
+      { officialEndsAt: input.endsAt },
+    );
+  }
+
+  try {
+    return await continueWithResolvedLink(input, primary, discoveredLinks, rejectedCandidates, observedAt, options);
+  } catch (error) {
+    return enrichResultWithM6_4(
+      buildIncompleteResult(
+        input,
+        discoveredLinks,
+        rejectedCandidates,
+        'ticket_identity_unverifiable',
+        [error instanceof Error ? error.message : 'pipeline_error'],
+        'internal_pipeline_failure',
+        primary,
+      ),
+      { officialEndsAt: input.endsAt, pipelineError: true },
+    );
+  }
+}
+
+async function continueWithResolvedLink(
+  input: OfficialEventTicketInput,
+  primary: DiscoveredTicketLink,
+  discoveredLinks: DiscoveredTicketLink[],
+  rejectedCandidates: Array<{ url: string; reason: string }>,
+  observedAt: string,
+  options: ProcessOfficialEventTicketsOptions,
+): Promise<TicketEvidencePipelineResult> {
+  const officialEventUrl = canonicalizeTicketIoUrl(input.officialUrl);
+  const resolved =
+    primary.discoveredFromSource === 'ticket_io_event_page_self' &&
+    officialEventUrl &&
+    isTicketIoEventDetailUrl(officialEventUrl)
+      ? {
+          discovered: primary,
+          resolvedUrl: officialEventUrl,
+          canonicalTicketUrl: officialEventUrl,
+          providerKey: 'ticket_io' as const,
+          redirectChain: [officialEventUrl],
+          isEventDetailUrl: true,
+        }
+      : await resolveTicketLink(primary);
+  if (resolved.rejectedUrlReason) {
+    rejectedCandidates.push({ url: resolved.canonicalTicketUrl, reason: resolved.rejectedUrlReason });
+  }
+
+  if (
+    resolved.rejectedUrlReason ||
+    isMerchandiseUrl(resolved.canonicalTicketUrl) ||
+    isShopRootUrl(resolved.canonicalTicketUrl) ||
+    isCheckoutOrSessionTicketUrl(resolved.canonicalTicketUrl)
+  ) {
+    return buildIncompleteResult(
+      input,
+      discoveredLinks,
+      rejectedCandidates,
+      'ticket_identity_unverifiable',
+      [resolved.rejectedUrlReason ?? 'invalid_ticket_url'],
+      'ticket_evidence_missing',
+      primary,
+      resolved,
+    );
+  }
+
+  const isPresaleRegistration = /sibforms\.com/i.test(resolved.canonicalTicketUrl);
+  if (isPresaleRegistration) {
+    const identity = verifyTicketIdentity({
+      providerEventId: resolved.canonicalTicketUrl,
+      shopHost: new URL(resolved.canonicalTicketUrl).hostname,
+      officialTitle: input.title,
+      officialStartAt: input.startsAt,
+      officialVenue: input.venueName,
+      officialTicketUrl: primary.rawUrl,
+      canonicalTicketUrl: resolved.canonicalTicketUrl,
+    });
+    const partial: VerifiedTicketCompleteResult = {
+      sourceEventKey: input.sourceEventKey,
+      officialUrl: input.officialUrl,
+      title: input.title,
+      startsAt: input.startsAt,
+      venueName: input.venueName,
+      discoveredLinks,
+      rejectedCandidates,
+      primaryLink: primary,
+      canonicalTicketUrl: resolved.canonicalTicketUrl,
+      providerKey: 'presale_registration',
+      identityResult: 'ticket_identity_verified',
+      identityReasons: ['official_presale_registration_target'],
+      classification: 'verified_presale_registration',
+      verifiedTicketComplete: false,
+    };
+    return enrichResultWithM6_4(partial, { officialEndsAt: input.endsAt });
+  }
+
+  const canonicalKey = resolved.canonicalTicketUrl.toLowerCase();
+  let providerEvidence: TicketProviderEventEvidence | undefined = providerEvidenceCache.get(canonicalKey);
+
+  if (!providerEvidence && !fetchedCanonicalUrls.has(canonicalKey)) {
+    fetchedCanonicalUrls.add(canonicalKey);
+    const officialCanonical = canonicalizeTicketIoUrl(input.officialUrl);
+    const reuseOfficialHtml = Boolean(
+      options.prefetchedHtml &&
+        officialCanonical &&
+        officialCanonical.toLowerCase() === canonicalKey,
+    );
+    const fetchResult: TicketFetchResult = reuseOfficialHtml
+      ? {
+          finalUrl: resolved.canonicalTicketUrl,
+          body: options.prefetchedHtml ?? '',
+          contentType: 'text/html',
+          fingerprint: createHash('sha256').update(options.prefetchedHtml ?? '').digest('hex'),
+          blocked: false,
+          redirectChain: resolved.redirectChain.length > 0 ? resolved.redirectChain : [resolved.canonicalTicketUrl],
+        }
+      : options.browserOps
+        ? await options.browserOps.fetchTicketPage(resolved.canonicalTicketUrl)
+        : await fetchTicketPage(resolved.canonicalTicketUrl);
+
+    const terminalUrl = fetchResult.finalUrl || resolved.canonicalTicketUrl;
+    const fetchRedirectChain =
+      fetchResult.redirectChain.length > 0 ? fetchResult.redirectChain : resolved.redirectChain;
+    const pageReady =
+      Boolean(fetchResult.body) &&
+      isProviderPageReady(classifyProviderPageReadiness(fetchResult.body, fetchResult.contentType));
+
+    if (fetchResult.blocked && !pageReady) {
+      let terminalTitle: string | undefined;
+      let terminalStartAt: string | undefined;
+      if (fetchResult.body) {
+        const provider = defaultTicketProviderRegistry.resolveProvider(new URL(terminalUrl));
+        if (provider) {
+          try {
+            const partialEvidence = await provider.fetchEventEvidence({
+              url: new URL(terminalUrl),
+              canonicalTicketUrl: resolved.canonicalTicketUrl,
+              redirectChain: fetchRedirectChain,
+              body: fetchResult.body,
+              contentType: fetchResult.contentType,
+              fingerprint: fetchResult.fingerprint,
+              observedAt,
+              extractedAt: new Date().toISOString(),
+            });
+            terminalTitle = partialEvidence.event.rawTitle;
+            terminalStartAt = partialEvidence.event.startAt;
+          } catch {
+            // blocked body may be unusable
+          }
+        }
+      }
+
+      const identity = verifyTicketIdentity({
+        providerEventId:
+          extractProviderEventIdFromResolved(resolved) ??
+          extractProviderEventIdFromResolved({
+            ...resolved,
+            canonicalTicketUrl: terminalUrl,
+            resolvedUrl: terminalUrl,
+          }) ??
+          terminalUrl,
+        shopHost: new URL(terminalUrl).hostname,
+        providerTitle: terminalTitle,
+        providerStartAt: terminalStartAt,
+        officialTitle: input.title,
+        officialStartAt: input.startsAt,
+        officialVenue: input.venueName,
+        officialTicketUrl: primary.rawUrl,
+        canonicalTicketUrl: terminalUrl,
+      });
+
+      const targetIdentityEvidence = evaluateTicketTargetIdentity({
+        originalUrl: primary.rawUrl,
+        redirectChain: fetchRedirectChain,
+        terminalUrl,
+        providerKey: resolved.providerKey,
+        providerEventId: extractProviderEventIdFromResolved({
+          ...resolved,
+          canonicalTicketUrl: terminalUrl,
+          resolvedUrl: terminalUrl,
+        }),
+        terminalTitle,
+        terminalStartAt,
+        officialTitle: input.title,
+        officialStartAt: input.startsAt,
+        officialVenue: input.venueName,
+        officialTicketUrl: primary.rawUrl,
+        observedAt,
+        contentFingerprint: fetchResult.fingerprint,
+      });
+
+      const mergedIdentityResult =
+        !isVerifiedTicketTargetIdentity(targetIdentityEvidence.identityDecision)
+          ? identity.result === 'ticket_identity_verified'
+            ? 'ticket_identity_conflict'
+            : identity.result
+          : identity.result;
+      const mergedIdentityReasons = [...new Set([...identity.reasons, ...targetIdentityEvidence.reasons])];
+
+      const partial: VerifiedTicketCompleteResult = {
+        sourceEventKey: input.sourceEventKey,
+        officialUrl: input.officialUrl,
+        title: input.title,
+        startsAt: input.startsAt,
+        venueName: input.venueName,
+        discoveredLinks,
+        rejectedCandidates,
+        primaryLink: primary,
+        canonicalTicketUrl: terminalUrl,
+        providerKey: resolved.providerKey,
+        identityResult: mergedIdentityResult,
+        identityReasons: mergedIdentityReasons,
+        targetIdentityEvidence,
+        classification:
+          mergedIdentityResult === 'ticket_identity_conflict'
+            ? 'ticket_identity_conflict'
+            : 'ticket_provider_blocked',
+        verifiedTicketComplete: false,
+      };
+      return enrichResultWithM6_4(partial, {
+        officialEndsAt: input.endsAt,
+        providerBlocked: true,
+        blockedFingerprint: fetchResult.fingerprint,
+      });
+    }
+
+    const provider = defaultTicketProviderRegistry.resolveProvider(new URL(terminalUrl));
+    if (!provider) {
+      return buildIncompleteResult(
+        input,
+        discoveredLinks,
+        rejectedCandidates,
+        'ticket_identity_unverifiable',
+        ['ticket_provider_unsupported'],
+        'ticket_provider_unsupported',
+        primary,
+        resolved,
+      );
+    }
+
+    const extractedAt = new Date().toISOString();
+    providerEvidence = await provider.fetchEventEvidence({
+      url: new URL(terminalUrl),
+      canonicalTicketUrl: resolved.canonicalTicketUrl,
+      redirectChain: fetchRedirectChain,
+      body: fetchResult.body,
+      contentType: fetchResult.contentType,
+      fingerprint: fetchResult.fingerprint,
+      observedAt,
+      extractedAt,
+    });
+    providerEvidenceCache.set(canonicalKey, providerEvidence);
+  }
+
+  if (!providerEvidence) {
+    return buildIncompleteResult(
+      input,
+      discoveredLinks,
+      rejectedCandidates,
+      'ticket_identity_unverifiable',
+      ['duplicate_fetch_skipped'],
+      'ticket_evidence_missing',
+      primary,
+      resolved,
+    );
+  }
+
+  const evidenceTerminalUrl =
+    providerEvidence.tickets.sourceUrl || providerEvidence.sourceUrl || resolved.canonicalTicketUrl;
+  const evidenceRedirectChain =
+    evidenceTerminalUrl !== primary.rawUrl
+      ? [primary.rawUrl, ...resolved.redirectChain.filter((url) => url !== primary.rawUrl), evidenceTerminalUrl]
+      : resolved.redirectChain;
+
+  const identity = verifyTicketIdentity({
+    providerEventId:
+      extractProviderEventIdFromResolved({
+        ...resolved,
+        canonicalTicketUrl: evidenceTerminalUrl,
+        resolvedUrl: evidenceTerminalUrl,
+      }) ?? providerEvidence.providerIdentity.providerEventId,
+    shopHost: providerEvidence.providerIdentity.providerScope ?? new URL(evidenceTerminalUrl).hostname,
+    providerTitle: providerEvidence.event.rawTitle,
+    providerStartAt: providerEvidence.event.startAt,
+    providerVenue: providerEvidence.event.venueName,
+    officialTitle: input.title,
+    officialStartAt: input.startsAt,
+    officialVenue: input.venueName,
+    officialTicketUrl: primary.rawUrl,
+    canonicalTicketUrl: evidenceTerminalUrl,
+  });
+
+  const targetIdentityEvidence = evaluateTicketTargetIdentity({
+    originalUrl: primary.rawUrl,
+    redirectChain: evidenceRedirectChain,
+    terminalUrl: evidenceTerminalUrl,
+    providerKey: resolved.providerKey,
+    providerEventId: providerEvidence.providerIdentity.providerEventId,
+    terminalTitle: providerEvidence.event.rawTitle,
+    terminalStartAt: providerEvidence.event.startAt,
+    terminalVenue: providerEvidence.event.venueName,
+    officialTitle: input.title,
+    officialStartAt: input.startsAt,
+    officialVenue: input.venueName,
+    officialTicketUrl: primary.rawUrl,
+    observedAt: observedAt,
+    contentFingerprint: providerEvidence.tickets.contentFingerprint,
+  });
+
+  const mergedIdentityResult =
+    !isVerifiedTicketTargetIdentity(targetIdentityEvidence.identityDecision)
+      ? identity.result === 'ticket_identity_verified'
+        ? 'ticket_identity_conflict'
+        : identity.result
+      : identity.result;
+  const mergedIdentityReasons = [...new Set([...identity.reasons, ...targetIdentityEvidence.reasons])];
+
+  const tickets = providerEvidence.tickets;
+  const lowest = selectRegularAdmissionOffer(tickets);
+  const admissionOffers = tickets.offers.filter((o) => isAdmissionOfferRole(o.role ?? 'unknown_addon'));
+
+  const consumerPreview: TicketConsumerPreviewRow = {
+    title: input.title,
+    startsAt: input.startsAt,
+    venueName: input.venueName,
+    providerKey: tickets.providerKey,
+    visiblePrice: lowest?.rawPrice,
+    priceFromMinor: lowest?.amountMinor,
+    currency: lowest?.currency,
+    status: tickets.normalizedStatus,
+    badge: tickets.statusLabel,
+    canonicalTicketUrl: tickets.canonicalTicketUrl,
+    admissionOfferCount: admissionOffers.length,
+    rejectedAddonCount: tickets.rejectedOffers.length,
+    evidenceOrigin: primary.discoveredFromSource,
+    identityResult: mergedIdentityResult,
+  };
+
+  let classification = 'ticket_evidence_missing';
+  if (mergedIdentityResult === 'ticket_identity_verified' && tickets.normalizedStatus === 'sold_out') {
+    classification = 'verified_ticket_sold_out';
+  } else if (mergedIdentityResult === 'ticket_identity_verified' && lowest?.amountMinor !== undefined) {
+    classification = `verified_ticket_${tickets.normalizedStatus}`;
+  } else if (mergedIdentityResult === 'ticket_identity_conflict') {
+    classification = 'ticket_identity_conflict';
+  } else if (mergedIdentityResult === 'ticket_identity_unverifiable') {
+    classification = 'ticket_identity_unverifiable';
+  }
+
+  const result: VerifiedTicketCompleteResult = {
+    sourceEventKey: input.sourceEventKey,
+    officialUrl: input.officialUrl,
+    title: input.title,
+    startsAt: input.startsAt,
+    venueName: input.venueName,
+    discoveredLinks,
+    rejectedCandidates,
+    primaryLink: primary,
+    canonicalTicketUrl: resolved.canonicalTicketUrl,
+    providerKey: tickets.providerKey,
+    providerEvidence,
+    ticketEvidence: tickets,
+    identityResult: mergedIdentityResult,
+    identityReasons: mergedIdentityReasons,
+    targetIdentityEvidence,
+    classification,
+    consumerPreview,
+    verifiedTicketComplete: false,
+  };
+  result.verifiedTicketComplete = isVerifiedTicketComplete(result);
+  return enrichResultWithM6_4(result, { officialEndsAt: input.endsAt });
+}
+
+function buildIncompleteResult(
+  input: OfficialEventTicketInput,
+  discoveredLinks: DiscoveredTicketLink[],
+  rejectedCandidates: Array<{ url: string; reason: string }>,
+  identityResult: TicketIdentityResult,
+  identityReasons: string[],
+  classification: string,
+  primaryLink?: DiscoveredTicketLink,
+  resolved?: ResolvedTicketLink,
+): VerifiedTicketCompleteResult {
+  const result: VerifiedTicketCompleteResult = {
+    sourceEventKey: input.sourceEventKey,
+    officialUrl: input.officialUrl,
+    title: input.title,
+    startsAt: input.startsAt,
+    venueName: input.venueName,
+    discoveredLinks,
+    rejectedCandidates,
+    primaryLink,
+    canonicalTicketUrl: resolved?.canonicalTicketUrl,
+    providerKey: resolved?.providerKey,
+    identityResult,
+    identityReasons,
+    classification,
+    verifiedTicketComplete: false,
+  };
+  return result;
+}
+
+export function computeTicketAuditCounters(results: TicketEvidencePipelineResult[]): TicketAuditCounters {
+  return computeTicketAuditCountersFromResults(results);
+}
+
+export function computeTicketCoverageMetrics(results: TicketEvidencePipelineResult[]) {
+  return computeCoverageMetrics(results);
+}
+
+export function resetTicketFetchCache(): void {
+  fetchedCanonicalUrls.clear();
+  providerEvidenceCache.clear();
+}
+
+export function ticketEvidenceToCandidateTicket(evidence: EventTicketEvidence) {
+  const lowest = selectRegularAdmissionOffer(evidence);
+  return {
+    provider: evidence.providerKey,
+    ticketUrl: evidence.canonicalTicketUrl,
+    priceFromMinor: lowest?.amountMinor,
+    currency: lowest?.currency,
+    salesStatus: evidence.normalizedStatus,
+    sortOrder: 0,
+  };
+}
