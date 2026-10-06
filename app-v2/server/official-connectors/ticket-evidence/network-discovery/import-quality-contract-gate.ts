@@ -114,7 +114,8 @@ function buildSyntheticSnapshot(event: EnrichedTicketIoEvent): StagingEventSnaps
             ticketUrl: event.eventUrl,
             priceMinor: event.currentAdmissionPriceMinor,
             currency: 'EUR',
-            availability: event.ticketAvailability,
+            salesStatus: event.ticketAvailability,
+            sortOrder: 0,
           },
         ]
       : [],
@@ -169,6 +170,11 @@ function buildCompletenessEntry(event: EnrichedTicketIoEvent, snapshot: StagingE
           ? 'DISCOVERY_READY'
           : 'PARTIAL'
         : 'REVIEW_REQUIRED',
+    sourceBindings: snapshot.sources.map((source) => ({
+      role: source.sourceRole,
+      url: source.sourceUrl,
+      connectorId: source.connectorId,
+    })),
   };
 }
 
