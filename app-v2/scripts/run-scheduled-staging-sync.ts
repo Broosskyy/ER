@@ -25,7 +25,10 @@ import {
   isStagingScheduledConnectorId,
 } from '../server/ingestion/sync/scheduler-boundary';
 import { assertScheduledStagingApplyAllowed } from '../server/ingestion/sync/scheduler-guard';
-import {\n  STAGING_PROJECT_REF,\n  getConfiguredProductionProjectRef,\n} from '../server/ingestion/sync/staging-guard';
+import {
+  STAGING_PROJECT_REF,
+  getConfiguredProductionProjectRef,
+} from '../server/ingestion/sync/staging-guard';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
