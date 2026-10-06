@@ -25,7 +25,7 @@ import {
   isStagingScheduledConnectorId,
 } from '../server/ingestion/sync/scheduler-boundary';
 import { assertScheduledStagingApplyAllowed } from '../server/ingestion/sync/scheduler-guard';
-import { PRODUCTION_PROJECT_REF, STAGING_PROJECT_REF } from '../server/ingestion/sync/staging-guard';
+import {\n  STAGING_PROJECT_REF,\n  getConfiguredProductionProjectRef,\n} from '../server/ingestion/sync/staging-guard';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
@@ -97,7 +97,7 @@ async function main() {
     branch: 'rebuild/event-core-clean',
     connectorId,
     staging: STAGING_PROJECT_REF,
-    production: PRODUCTION_PROJECT_REF,
+    production: getConfiguredProductionProjectRef() ?? null,
     linkedProject: stagingTarget,
     triggerType: 'scheduled',
     mode: 'apply',
