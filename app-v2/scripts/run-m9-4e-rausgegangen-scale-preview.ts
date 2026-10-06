@@ -269,6 +269,7 @@ async function main(): Promise<void> {
     excludedIdentityKeys,
     targetSize: TARGET_SIZE,
     locationOnlyShare: 0.25,
+    referenceInstant,
   });
 
   const uniqueIdentities = new Set(selection.entries.map((entry) => entry.identityKey));
