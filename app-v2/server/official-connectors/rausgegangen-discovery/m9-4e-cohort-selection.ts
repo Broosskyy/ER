@@ -44,12 +44,33 @@ function contractFor(entry: M94EQualityPoolEntry): ImportQualityContractResult |
   return entry.contract ?? entry.qualityContract;
 }
 
-function snapshotEligible(entry: M94EQualityPoolEntry): boolean {
+function isCurrentAtReference(
+  event: EnrichedTicketIoEvent,
+  referenceInstant: Date,
+): boolean {
+  const referenceMs = referenceInstant.getTime();
+  const startsMs = event.startsAt ? Date.parse(event.startsAt) : Number.NaN;
+  const endsMs = event.endsAt ? Date.parse(event.endsAt) : Number.NaN;
+
+  if (Number.isFinite(endsMs)) {
+    return endsMs >= referenceMs;
+  }
+  if (Number.isFinite(startsMs)) {
+    return startsMs >= referenceMs;
+  }
+  return false;
+}
+
+function snapshotEligible(
+  entry: M94EQualityPoolEntry,
+  referenceInstant: Date,
+): boolean {
   const contract = contractFor(entry);
   return Boolean(
     contract &&
       !contract.qualityContractBypass &&
       entry.event.lifecycle !== 'ENDED' &&
+      isCurrentAtReference(entry.event, referenceInstant) &&
       passesImportEligibilityFromSnapshot(
         entry.event.relevance,
         contract.domainState,
@@ -197,6 +218,7 @@ export function selectM94EScaleCohort(input: {
   excludedIdentityKeys: Set<string>;
   targetSize?: number;
   locationOnlyShare?: number;
+  referenceInstant: Date;
 }): M94ECohortSelection {
   const targetSize = input.targetSize ?? 100;
   const locationOnlyShare = input.locationOnlyShare ?? 0.25;
@@ -205,7 +227,9 @@ export function selectM94EScaleCohort(input: {
     throw new Error(`m94e_invalid_target_size:${targetSize}`);
   }
 
-  const eligibleSnapshot = input.poolEntries.filter(snapshotEligible);
+  const eligibleSnapshot = input.poolEntries.filter((entry) =>
+    snapshotEligible(entry, input.referenceInstant),
+  );
   const eligible = eligibleSnapshot.filter(
     (entry) => !input.excludedIdentityKeys.has(entry.event.identityKey),
   );
