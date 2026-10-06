@@ -4,10 +4,10 @@ import {
   isStagingScheduledConnectorId,
 } from './scheduler-boundary';
 import {
-  PRODUCTION_PROJECT_REF,
   STAGING_PROJECT_REF,
   assertNotProductionRef,
   assertStagingTarget,
+  getConfiguredProductionProjectRef,
   type VerifiedStagingTarget,
 } from './staging-guard';
 import type { IngestionErrorCategory, SyncRunMode, SyncTriggerType } from './types';
@@ -25,9 +25,14 @@ export interface ScheduledApplyGuardResult {
   errorSummary?: string;
 }
 
+export interface ScheduledApplyGuardOptions {
+  stagingSchedulerEnabled?: boolean;
+  productionProjectRef?: string;
+}
+
 export function evaluateScheduledApplyGuard(
   input: ScheduledApplyGuardInput,
-  options?: { stagingSchedulerEnabled?: boolean },
+  options?: ScheduledApplyGuardOptions,
 ): ScheduledApplyGuardResult {
   if (input.triggerType !== 'scheduled') {
     return { allowed: true };
@@ -38,6 +43,8 @@ export function evaluateScheduledApplyGuard(
   }
 
   const stagingSchedulerEnabled = options?.stagingSchedulerEnabled ?? STAGING_SCHEDULER_ENABLED;
+  const productionProjectRef =
+    options?.productionProjectRef ?? getConfiguredProductionProjectRef();
 
   if (PRODUCTION_SCHEDULER_ENABLED) {
     return {
@@ -56,7 +63,7 @@ export function evaluateScheduledApplyGuard(
   }
 
   if (input.linkedProjectRef) {
-    if (input.linkedProjectRef === PRODUCTION_PROJECT_REF) {
+    if (productionProjectRef && input.linkedProjectRef === productionProjectRef) {
       return {
         allowed: false,
         errorCategory: 'production_scheduler_forbidden',
@@ -99,13 +106,5 @@ export function assertStagingProjectRef(ref: string, name: string): VerifiedStag
 }
 
 export function productionSchedulerApplyWouldBeRejected(linkedProjectRef: string): boolean {
-  return (
-    linkedProjectRef === PRODUCTION_PROJECT_REF ||
-    evaluateScheduledApplyGuard({
-      connectorId: 'bootshaus-official',
-      mode: 'apply',
-      triggerType: 'scheduled',
-      linkedProjectRef,
-    }).errorCategory === 'production_scheduler_forbidden'
-  );
+  return linkedProjectRef !== STAGING_PROJECT_REF;
 }
