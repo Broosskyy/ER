@@ -76,7 +76,7 @@ function pickRecommendedDescription(
   current: string | null | undefined,
   evidence: string[],
 ): { value?: string; strength: 'strong' | 'weak' | 'none' } {
-  let best = editorialResidualFromRaw(current);
+  let best = editorialResidualFromRaw(current ?? undefined);
   let bestScore = descriptionQualityScore(best);
   for (const candidate of evidence) {
     const separated = editorialResidualFromRaw(candidate);
