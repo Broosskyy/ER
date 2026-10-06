@@ -27,7 +27,7 @@ export async function recoverPromoterEditorialGenresFromOfficialUrl(
 ): Promise<{ genres: string[]; sourceReference: string; classificationReason: string }> {
   const counters = createEmptyConnectorCounters();
   if (/affenkaefig\.info\/event\//i.test(officialUrl)) {
-    const fetched = await fetchAffenkaefigDetailHtml(officialUrl, { counters, allowDetailOnly: true });
+    const fetched = await fetchAffenkaefigDetailHtml(officialUrl, { counters });
     const detail = parseAffenkaefigDetailPage(fetched.html, fetched.finalUrl, new Date().toISOString(), counters);
     const labels = new Set<string>([
       ...extractMetaGenreLabels(fetched.html),
