@@ -46,7 +46,7 @@ export interface RausgegangenNetworkDiscoveryResult {
   candidates: RausgegangenDiscoveryCandidate[];
   enrichedEvents: EnrichedTicketIoEvent[];
   summary: RausgegangenDiscoverySummary;
-  coverageByState: Record<string, { regions: number; rawEvents: number; upcoming: number; relevant: number; netNew: number }>;
+  coverageByState: Record<string, { shops: number; upcomingEvents: number; electronicCandidates: number; netNewCandidates: number }>;
   coverageByCity: Record<string, { rawEvents: number; upcoming: number; relevant: number; netNew: number; qualityReady: number }>;
   accessReliability: {
     listingFetchSuccess: number;
