@@ -2,7 +2,7 @@
  * M9.0 — Controlled staging scheduler boundary.
  *
  * Topology (one connector per job):
- *   GitHub Actions cron (external worker)
+ *   Controlled/manual GitHub Actions worker
  *     → run-scheduled-staging-sync.ts
  *     → runSourceSync({ triggerType: 'scheduled', mode: 'apply' })
  *
@@ -12,8 +12,8 @@
 import { AFFENKAEFIG_CONNECTOR_ID } from '../../official-connectors/affenkaefig/constants';
 import { BOOTSHAUS_CONNECTOR_ID } from '../../official-connectors/bootshaus/constants';
 
-/** Global kill switch for unattended staging scheduled apply. */
-export const STAGING_SCHEDULER_ENABLED = true;
+/** Global kill switch for unattended staging scheduled apply. Keep false until explicitly recertified. */
+export const STAGING_SCHEDULER_ENABLED = false;
 
 /** Production scheduler must remain off for M9.0. */
 export const PRODUCTION_SCHEDULER_ENABLED = false;

@@ -1,12 +1,6 @@
 name: Staging Sync — Bootshaus
 
 on:
-  schedule:
-    # Europe/Berlin CEST (UTC+2): 00:15, 06:15, 12:15, 18:15
-    - cron: '15 22 * * *'
-    - cron: '15 4 * * *'
-    - cron: '15 10 * * *'
-    - cron: '15 16 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -39,7 +33,7 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
 
-      - name: Run scheduled Bootshaus sync
+      - name: Run controlled Bootshaus staging sync
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-scheduled-staging-sync.ts bootshaus-official
