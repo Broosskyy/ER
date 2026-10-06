@@ -4,7 +4,7 @@ import { join } from 'node:path';
 
 import {
   assertStagingTarget,
-  PRODUCTION_PROJECT_REF,
+  getConfiguredProductionProjectRef,
   STAGING_PROJECT_REF,
   type VerifiedStagingTarget,
 } from './staging-guard';
@@ -115,17 +115,18 @@ export function assertProductionNotLinked(cwd = process.cwd()): void {
   const projects = JSON.parse(
     execSync('npx supabase projects list', { cwd, encoding: 'utf8' }),
   ) as { projects: Array<{ ref: string; name: string; linked: boolean }> };
-  const linkedProduction = projects.projects.find(
-    (project) => project.linked && project.ref === PRODUCTION_PROJECT_REF,
+
+  const linkedNonStaging = projects.projects.find(
+    (project) => project.linked && project.ref !== STAGING_PROJECT_REF,
   );
-  if (linkedProduction) {
-    throw new Error(`production_project_linked:${linkedProduction.ref}`);
+  if (linkedNonStaging) {
+    throw new Error(`non_staging_project_linked:${linkedNonStaging.ref}`);
   }
 }
 
 export function stagingGuardConstants() {
   return {
     staging: STAGING_PROJECT_REF,
-    production: PRODUCTION_PROJECT_REF,
+    production: getConfiguredProductionProjectRef() ?? null,
   };
 }
