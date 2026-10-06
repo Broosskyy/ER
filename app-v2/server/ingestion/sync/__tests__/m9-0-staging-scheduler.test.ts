@@ -142,8 +142,8 @@ describe('M9.0 staging scheduler', () => {
     resetSourceOperationalConfigRegistryForTests();
   });
 
-  it('enables staging scheduler and keeps production scheduler disabled', () => {
-    expect(STAGING_SCHEDULER_ENABLED).toBe(true);
+  it('keeps unattended staging and production schedulers disabled', () => {
+    expect(STAGING_SCHEDULER_ENABLED).toBe(false);
     expect(PRODUCTION_SCHEDULER_ENABLED).toBe(false);
     expect(STAGING_SCHEDULED_CONNECTOR_IDS).toEqual(['bootshaus-official', 'affenkaefig-official']);
   });
@@ -177,12 +177,15 @@ describe('M9.0 staging scheduler', () => {
   });
 
   it('allows scheduled apply on staging for registered connectors', () => {
-    const result = evaluateScheduledApplyGuard({
-      connectorId: 'bootshaus-official',
-      mode: 'apply',
-      triggerType: 'scheduled',
-      linkedProjectRef: STAGING_PROJECT_REF,
-    });
+    const result = evaluateScheduledApplyGuard(
+      {
+        connectorId: 'bootshaus-official',
+        mode: 'apply',
+        triggerType: 'scheduled',
+        linkedProjectRef: STAGING_PROJECT_REF,
+      },
+      { stagingSchedulerEnabled: true },
+    );
     expect(result.allowed).toBe(true);
     expect(productionSchedulerApplyWouldBeRejected(STAGING_PROJECT_REF)).toBe(false);
   });
@@ -216,7 +219,7 @@ describe('M9.0 staging scheduler', () => {
     );
     const deps = createDeps(connector, false);
     const result = await runSourceSync(
-      { connectorId: 'bootshaus-official', mode: 'apply', triggerType: 'scheduled' },
+      { connectorId: 'bootshaus-official', mode: 'dry_run', triggerType: 'scheduled' },
       deps,
     );
     expect(result.run.status).toBe('cancelled');
