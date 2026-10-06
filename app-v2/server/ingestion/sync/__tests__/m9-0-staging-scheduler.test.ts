@@ -25,7 +25,7 @@ import {
   evaluateScheduledApplyGuard,
   productionSchedulerApplyWouldBeRejected,
 } from '../scheduler-guard';
-import { PRODUCTION_PROJECT_REF, STAGING_PROJECT_REF } from '../staging-guard';
+import { STAGING_PROJECT_REF } from '../staging-guard';
 import { runSourceSync, type SyncOrchestratorDependencies } from '../orchestrator';
 import { createInMemoryIngestionSyncPersistence } from '../run-persistence';
 
@@ -148,16 +148,32 @@ describe('M9.0 staging scheduler', () => {
     expect(STAGING_SCHEDULED_CONNECTOR_IDS).toEqual(['bootshaus-official', 'affenkaefig-official']);
   });
 
-  it('rejects production project ref for scheduled apply', () => {
+  it('rejects explicitly configured production project ref for scheduled apply', () => {
+    const productionProjectRef = 'eternalraveproduction';
+    const result = evaluateScheduledApplyGuard(
+      {
+        connectorId: 'bootshaus-official',
+        mode: 'apply',
+        triggerType: 'scheduled',
+        linkedProjectRef: productionProjectRef,
+      },
+      { productionProjectRef },
+    );
+    expect(result.allowed).toBe(false);
+    expect(result.errorCategory).toBe('production_scheduler_forbidden');
+    expect(productionSchedulerApplyWouldBeRejected(productionProjectRef)).toBe(true);
+  });
+
+  it('rejects every unknown non-staging project ref even without production config', () => {
     const result = evaluateScheduledApplyGuard({
       connectorId: 'bootshaus-official',
       mode: 'apply',
       triggerType: 'scheduled',
-      linkedProjectRef: PRODUCTION_PROJECT_REF,
+      linkedProjectRef: 'unknown-non-staging-project',
     });
     expect(result.allowed).toBe(false);
-    expect(result.errorCategory).toBe('production_scheduler_forbidden');
-    expect(productionSchedulerApplyWouldBeRejected(PRODUCTION_PROJECT_REF)).toBe(true);
+    expect(result.errorCategory).toBe('apply_precondition_failed');
+    expect(result.errorSummary).toBe('staging_target_mismatch:unknown-non-staging-project');
   });
 
   it('allows scheduled apply on staging for registered connectors', () => {
