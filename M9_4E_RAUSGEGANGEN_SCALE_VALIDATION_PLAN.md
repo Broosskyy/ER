@@ -55,18 +55,31 @@ Only live `ELIGIBLE_NEW` / `ELIGIBLE_EXISTING_MATCH` candidates are converted to
 
 ## Critical safety boundary
 
-This phase is **preview-only**.
+This phase is **preview-only** and deliberately split into two read-only layers.
 
-The runner:
+### GitHub Actions source layer
+
+The PR workflow runs without Supabase credentials:
 
 - refuses `--apply`,
-- verifies the linked project is exactly `gnkjzinwvmrxcadwebhv`,
-- requires no Eternal Rave production project to be configured,
-- never calls the apply executor,
-- never persists tickets,
-- never enables a scheduler,
-- fingerprints staging before and after,
-- fails if the database fingerprint changes.
+- live-revalidates the frozen Rausgegangen cohort,
+- recomputes relevance/domain/quality/media/lifecycle,
+- does not connect to Supabase,
+- does not call the apply executor,
+- does not persist tickets,
+- does not enable a scheduler.
+
+### Direct staging reconciliation layer
+
+Current staging reconciliation is performed separately through the authenticated Supabase connection:
+
+- project must be exactly `gnkjzinwvmrxcadwebhv`,
+- read-only SQL only,
+- production remains unset and untouched,
+- checks source URLs, source event keys, ticket URLs and canonical title/time identity,
+- no mutation is authorized by M9.4E preview.
+
+The runner still supports a linked read-only mode for a controlled local environment, but GitHub Actions intentionally does not require or store a Supabase access token.
 
 Projected writes are planning output only.
 
@@ -80,8 +93,10 @@ GitHub Actions uploads:
 - `prewrite-plans.json`
 - `prewrite-plan-issues.json`
 - `planned-mutations.json`
-- database fingerprints before/after
 - staging / production safety records
+- source-only CI safety state
+
+Direct DB reconciliation is recorded separately in the M9.4E report rather than embedding database credentials into GitHub Actions.
 - `summary.json`
 
 ## Exit criteria for preview
