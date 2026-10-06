@@ -81,7 +81,7 @@ function pickRecommendedDescription(
   for (const candidate of evidence) {
     const separated = editorialResidualFromRaw(candidate);
     const preferred = preferDescription(best, separated);
-    const score = descriptionQualityScore(preferred.value);
+    const score = descriptionQualityScore(preferred.value ?? undefined);
     if (score > bestScore + 0.05) {
       best = preferred.value;
       bestScore = score;
