@@ -40,8 +40,8 @@ function candidate(
 }
 
 describe('M8.7 operational readiness', () => {
-  it('keeps production scheduler disabled while staging scheduler is enabled', () => {
-    expect(STAGING_SCHEDULER_ENABLED).toBe(true);
+  it('keeps unattended staging and production schedulers disabled', () => {
+    expect(STAGING_SCHEDULER_ENABLED).toBe(false);
     expect(PRODUCTION_SCHEDULER_ENABLED).toBe(false);
   });
 
