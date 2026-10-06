@@ -157,7 +157,7 @@ describe('M9.0 staging scheduler', () => {
         triggerType: 'scheduled',
         linkedProjectRef: productionProjectRef,
       },
-      { productionProjectRef },
+      { productionProjectRef, stagingSchedulerEnabled: true },
     );
     expect(result.allowed).toBe(false);
     expect(result.errorCategory).toBe('production_scheduler_forbidden');
@@ -165,12 +165,15 @@ describe('M9.0 staging scheduler', () => {
   });
 
   it('rejects every unknown non-staging project ref even without production config', () => {
-    const result = evaluateScheduledApplyGuard({
-      connectorId: 'bootshaus-official',
-      mode: 'apply',
-      triggerType: 'scheduled',
-      linkedProjectRef: 'unknown-non-staging-project',
-    });
+    const result = evaluateScheduledApplyGuard(
+      {
+        connectorId: 'bootshaus-official',
+        mode: 'apply',
+        triggerType: 'scheduled',
+        linkedProjectRef: 'unknown-non-staging-project',
+      },
+      { stagingSchedulerEnabled: true },
+    );
     expect(result.allowed).toBe(false);
     expect(result.errorCategory).toBe('apply_precondition_failed');
     expect(result.errorSummary).toBe('staging_target_mismatch:unknown-non-staging-project');
