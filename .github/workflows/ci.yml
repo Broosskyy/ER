@@ -1,0 +1,50 @@
+name: Eternal Rave CI
+
+on:
+  push:
+    branches:
+      - main
+      - rebuild/event-core-clean
+      - integration/main-ui-into-rebuild
+  pull_request:
+    branches:
+      - main
+      - rebuild/event-core-clean
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eternal-rave-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Typecheck and ingestion tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    defaults:
+      run:
+        working-directory: app-v2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app-v2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Ingestion tests
+        run: npm run test:ingestion
