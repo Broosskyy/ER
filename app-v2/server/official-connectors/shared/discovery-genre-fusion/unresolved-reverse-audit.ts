@@ -6,7 +6,7 @@ import { extractHeadlinerFromTitle } from '../artist-genre-intelligence/artist-i
 import { collectLineupEvidence, loadEventSourcePayloads } from '../staging-source-evidence';
 import type { LinkedQueryExecutor } from '../../../ingestion/sync/linked-db';
 import type { DiscoverySignalBundle } from './types';
-import type { EventGenreFusionResult } from './event-genre-fusion';
+import type { EventGenreFusionResult } from './types';
 
 export interface UnresolvedReverseAuditEntry {
   eventId: string;
@@ -53,7 +53,7 @@ export function buildUnresolvedReverseAudit(input: {
       const lineupEntry = input.lineupCoverage.find((entry) => entry.eventId === event.eventId);
       const sourceRows = loadEventSourcePayloads(input.runQuery, event.eventId);
       const { lineup } = collectLineupEvidence(event, sourceRows);
-      const headliner = extractHeadlinerFromTitle(event.title) ?? (lineup.length === 1 ? lineup[0] : null);
+      const headliner = extractHeadlinerFromTitle(event.title) ?? (lineup.length === 1 ? lineup[0] ?? null : null);
 
       const artistEvidenceAttempted: string[] = [];
       const artistEvidenceGaps: string[] = [];
