@@ -21,7 +21,7 @@ function scoreLocationCandidate(seed: LocationCandidateSeed): {
   let electronicEvents = 0;
 
   for (const title of seed.observedTitles) {
-    const relevance = classifyRelevanceEvidence({ title, detailAccess: 'NOT_FETCHED' });
+    const relevance = classifyRelevanceEvidence({ title });
     if (relevance.relevance === 'HIGH_RELEVANCE' || relevance.relevance === 'LIKELY_RELEVANT') {
       electronicEvents += 1;
       score += relevance.relevance === 'HIGH_RELEVANCE' ? 3 : 2;
