@@ -7,7 +7,7 @@ import { extractHeadlinerFromTitle, getArtistIdentityKey, toArtistSearchName } f
 import type { ProviderNegativeCache } from '../artist-genre-intelligence/provider-negative-cache';
 import { collectLineupEvidence, loadEventSourcePayloads } from '../staging-source-evidence';
 import type { DiscoverySignalBundle } from './types';
-import type { EventGenreFusionResult } from './event-genre-fusion';
+import type { EventGenreFusionResult } from './types';
 
 export interface RemainingEventEvidenceDossier {
   eventId: string;
