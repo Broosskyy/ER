@@ -390,7 +390,7 @@ async function main(): Promise<void> {
       );
 
       let evidence: PreparedPreview['evidence'];
-      if (isImportEligibleOutcome(importEligibility.outcome)) {
+      if (!sourceOnly && isImportEligibleOutcome(importEligibility.outcome)) {
         evidence = await finalizeRausgegangenControlledImportEvidence(
           enriched,
           live.fetchResult,
