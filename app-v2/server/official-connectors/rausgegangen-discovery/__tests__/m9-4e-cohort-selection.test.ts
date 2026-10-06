@@ -7,10 +7,14 @@ import {
   type M94EQualityPoolEntry,
 } from '../m9-4e-cohort-selection';
 
+const REFERENCE = new Date('2026-10-06T22:00:00.000Z');
+
 function event(index: number, options?: {
   relevance?: EnrichedTicketIoEvent['relevance'];
   lifecycle?: EnrichedTicketIoEvent['lifecycle'];
   city?: string;
+  startsAt?: string;
+  endsAt?: string;
 }): EnrichedTicketIoEvent {
   const city = options?.city ?? ['Köln', 'Berlin', 'Hamburg', 'Leipzig'][index % 4]!;
   return {
@@ -22,7 +26,8 @@ function event(index: number, options?: {
     eventUrl: `https://rausgegangen.de/events/event-${index}/`,
     canonicalUrl: `https://rausgegangen.de/events/event-${index}/`,
     title: `Event ${index}`,
-    startsAt: new Date(Date.UTC(2027, index % 12, (index % 25) + 1)).toISOString(),
+    startsAt: options?.startsAt ?? new Date(Date.UTC(2027, index % 12, (index % 25) + 1)).toISOString(),
+    endsAt: options?.endsAt,
     lifecycle: options?.lifecycle ?? 'UPCOMING',
     city,
     descriptionQualification: 'FULL_DESCRIPTION',
@@ -104,12 +109,14 @@ describe('M9.4E scale cohort selection', () => {
       locationOnlySlugs: locationOnly,
       excludedIdentityKeys: excluded,
       targetSize: 100,
+      referenceInstant: REFERENCE,
     });
     const second = selectM94EScaleCohort({
       poolEntries: entries,
       locationOnlySlugs: locationOnly,
       excludedIdentityKeys: excluded,
       targetSize: 100,
+      referenceInstant: REFERENCE,
     });
 
     expect(first.entries).toEqual(second.entries);
@@ -131,6 +138,7 @@ describe('M9.4E scale cohort selection', () => {
       locationOnlySlugs: new Set(),
       excludedIdentityKeys: new Set(),
       targetSize: 100,
+      referenceInstant: REFERENCE,
     });
 
     const selected = new Set(selection.entries.map((entry) => entry.identityKey));
@@ -140,6 +148,27 @@ describe('M9.4E scale cohort selection', () => {
     expect(selected.has(entries[3]!.event.identityKey)).toBe(false);
   });
 
+  it('excludes stale UPCOMING snapshots whose event time has already passed', () => {
+    const entries = pool(120);
+    entries[0] = {
+      event: event(0, {
+        lifecycle: 'UPCOMING',
+        startsAt: '2026-09-20T22:00:00.000Z',
+      }),
+      contract: contract(),
+    };
+
+    const selection = selectM94EScaleCohort({
+      poolEntries: entries,
+      locationOnlySlugs: new Set(),
+      excludedIdentityKeys: new Set(),
+      targetSize: 100,
+      referenceInstant: REFERENCE,
+    });
+
+    expect(selection.entries.some((entry) => entry.identityKey === entries[0]!.event.identityKey)).toBe(false);
+  });
+
   it('fails instead of silently shrinking a requested cohort', () => {
     expect(() =>
       selectM94EScaleCohort({
@@ -147,6 +176,7 @@ describe('M9.4E scale cohort selection', () => {
         locationOnlySlugs: new Set(),
         excludedIdentityKeys: new Set(),
         targetSize: 100,
+        referenceInstant: REFERENCE,
       }),
     ).toThrow('m94e_insufficient_snapshot_pool');
   });
