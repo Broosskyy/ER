@@ -241,9 +241,12 @@ export function selectM94EScaleCohort(input: {
       genreCounts,
     ),
   );
+  const nonLocationOnlyPool = eligible.filter(
+    (entry) => !input.locationOnlySlugs.has(entry.event.ticketIoEventId),
+  );
   selected.push(
     ...selectDiverse(
-      eligible,
+      nonLocationOnlyPool,
       targetSize - selected.length,
       selectedKeys,
       cityCounts,
@@ -251,6 +254,22 @@ export function selectM94EScaleCohort(input: {
       genreCounts,
     ),
   );
+
+  // Only exceed the location-only target when the non-location pool cannot fill
+  // the requested cohort. This keeps the intended 25% representation stable
+  // without ever silently shrinking the cohort.
+  if (selected.length < targetSize) {
+    selected.push(
+      ...selectDiverse(
+        eligible,
+        targetSize - selected.length,
+        selectedKeys,
+        cityCounts,
+        regionCounts,
+        genreCounts,
+      ),
+    );
+  }
 
   if (selected.length !== targetSize) {
     throw new Error(
