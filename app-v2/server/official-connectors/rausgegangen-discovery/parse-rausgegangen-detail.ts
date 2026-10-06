@@ -192,7 +192,7 @@ export function parseRausgegangenEventDetail(html: string, sourceUrl: string): R
     organizerUrl: eventNode.organizer?.url,
     imageUrls: images.filter(Boolean),
     ticketUrl: offers?.url,
-    ticketPriceRaw,
+    ticketPriceRaw: ticketPriceRaw == null ? undefined : String(ticketPriceRaw),
     ticketPriceMinor: parsePriceMinor(ticketPriceRaw, ticketCurrency),
     ticketCurrency,
     ticketAvailability: offers?.availability,
