@@ -43,6 +43,7 @@ jobs:
           npx vitest run \
             server/official-connectors/rausgegangen-discovery/__tests__/m9-4e-cohort-selection.test.ts \
             server/official-connectors/ticket-evidence/network-discovery/__tests__/relevance-evidence-regression.test.ts \
+            server/official-connectors/ticket-evidence/network-discovery/__tests__/genre-hint-normalization.test.ts \
             server/official-connectors/shared/__tests__/parse-description-genres.test.ts
 
       - name: Run M9.4E credential-free source preview
