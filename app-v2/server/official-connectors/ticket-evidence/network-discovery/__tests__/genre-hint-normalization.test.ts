@@ -3,6 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { evaluateImportCandidateQualityContract } from '../import-quality-contract-gate';
 import { buildGenreCandidates } from '../field-evidence';
 import type { EnrichedTicketIoEvent } from '../detail-types';
+import { determineImportEligibility } from '../../../rausgegangen-discovery/import-eligibility';
+import type { RausgegangenLiveVerification } from '../../../rausgegangen-discovery/rausgegangen-controlled-import-bridge';
 
 describe('source genre hint normalization', () => {
   it('keeps generic city/category source tags weak instead of explicit', () => {
@@ -72,8 +74,42 @@ describe('source genre hint normalization', () => {
 
     const result = evaluateImportCandidateQualityContract(event);
 
+    const verification: RausgegangenLiveVerification = {
+      identityKey: event.identityKey,
+      sourceUrl: event.canonicalUrl,
+      verifiedAt: '2026-10-07T00:00:00.000Z',
+      referenceDateLocal: '2026-10-07',
+      liveAccessible: true,
+      detailAccess: event.detailAccess,
+      title: event.title,
+      startsAt: event.startsAt,
+      venueName: event.venueName,
+      city: event.city,
+      descriptionQualification: event.descriptionQualification,
+      lineup: event.lineupHints,
+      lineupQualification: event.lineupQualification,
+      genres: event.genreCandidates,
+      relevance: event.relevance,
+      relevanceReasons: event.relevanceReasons,
+      bestMediaUrl: event.bestMediaUrl,
+      mediaAcceptability: 'ACCEPTABLE_EVENT_MEDIA',
+      ticketUrl: event.eventUrl,
+      ticketAvailability: event.ticketAvailability,
+      ticketAction: event.ticketAction,
+      matchClassification: event.matchClassification,
+      matchReasons: [],
+      fromCache: false,
+    };
+    const eligibility = determineImportEligibility(
+      verification,
+      event,
+      result,
+      new Date('2026-10-07T00:00:00.000Z'),
+    );
+
     expect(result.genrePresenceCoverage).toBe(false);
     expect(result.genreState).not.toBe('VERIFIED');
-    expect(result.passesQualityContract).toBe(false);
+    expect(eligibility.outcome).toBe('BLOCKED_GENRE');
+    expect(eligibility.reasons).toContain('genre_presence_missing');
   });
 });
