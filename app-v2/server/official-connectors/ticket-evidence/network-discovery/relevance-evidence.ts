@@ -127,7 +127,12 @@ const STRONG_NEGATIVE: Array<{ id: string; pattern: RegExp; ambiguous?: boolean 
   { id: 'jazz', pattern: /\bjazz\b/i, ambiguous: false },
   { id: 'improvisation', pattern: /\bimprovisation\b/i, ambiguous: true },
   { id: 'new_music', pattern: /\bneuer\s+musik\b/i, ambiguous: true },
-  { id: 'acoustic', pattern: /\bakustisch\b/i, ambiguous: true },
+  {
+    id: 'electro_acoustic',
+    pattern: /\belectro(?:nic)?[\s-]?acoustic\b|\belektroakust/i,
+    ambiguous: true,
+  },
+  { id: 'acoustic', pattern: /\b(?:akustisch|acoustic)\b/i, ambiguous: true },
   { id: 'cultural_performance', pattern: /\b(?:tanztheater|performancekunst|kabarett)\b/i },
   { id: 'general_market', pattern: /\b(?:wochenmarkt|bauernmarkt|street\s*market)\b/i },
 ];
