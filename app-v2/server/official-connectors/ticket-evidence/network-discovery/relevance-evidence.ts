@@ -136,7 +136,6 @@ const EXPERIMENTAL_ELECTRONIC_POSITIVE = [
   /\bexperimental\s+electronic\b/i,
   /\belectronic\s+improvisation\b/i,
   /\blive\s+electronic\b/i,
-  /\belectro[\s-]?acoustic\b/i,
 ];
 
 function collectMatches(
