@@ -1,5 +1,6 @@
 import { extractEditorialDescription, isInvalidPrimaryDescription } from '../../shared/description-quality';
 import { parseDescriptionExplicitGenres } from '../../shared/parse-description-genres';
+import { normalizeOfficialGenreLabels } from '../../shared/normalize-genre';
 import {
   separateStructuredEventContent,
   type StructuredContentSeparationResult,
@@ -80,11 +81,21 @@ export function buildGenreCandidates(
   title: string,
   description?: string,
 ): EnrichedTicketIoEvent['genreCandidates'] {
-  const explicit = [...new Set(genreHints.filter(Boolean))];
-  const candidates: EnrichedTicketIoEvent['genreCandidates'] = explicit.map((label) => ({
-    label,
-    confidence: 'explicit',
-  }));
+  const normalizedHints = normalizeOfficialGenreLabels([
+    ...new Set(genreHints.map((label) => label.trim()).filter(Boolean)),
+  ]);
+  const candidates: EnrichedTicketIoEvent['genreCandidates'] = [
+    ...normalizedHints.normalized.map((genre) => ({
+      label: genre.displayName,
+      confidence: 'explicit' as const,
+    })),
+    // Preserve unknown source labels for diagnostics, but never let them satisfy
+    // the publication genre gate as explicit evidence.
+    ...normalizedHints.unmapped.map((genre) => ({
+      label: genre.displayName,
+      confidence: 'weak_inferred' as const,
+    })),
+  ];
 
   const descriptionGenres = parseDescriptionExplicitGenres(description);
   for (const label of descriptionGenres) {

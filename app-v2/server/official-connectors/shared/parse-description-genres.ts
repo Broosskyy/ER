@@ -25,9 +25,14 @@ const DESCRIPTION_GENRE_PHRASE_PATTERNS: Array<{
   {
     pattern: /\bhouse\b/i,
     label: 'House',
-    rejectWindow: /\bfull\s+house\b/i,
+    rejectWindow:
+      /\bfull\s+house\b|\b(?:random|publishing|book|chocolate)\s+house\b|\bhouse\s+of\b/i,
   },
-  { pattern: /\belectro\b/i, label: 'Electro' },
+  {
+    pattern: /\belectro\b/i,
+    label: 'Electro',
+    rejectWindow: /\belectro[\s-]?acoustic\b|\belektroakust/i,
+  },
   { pattern: /\bdubstep\b/i, label: 'Dubstep' },
   { pattern: /\bhip[\s-]?hop\b/i, label: 'Hip Hop' },
 ];
@@ -38,7 +43,7 @@ function matchesGenrePhrase(description: string, entry: (typeof DESCRIPTION_GENR
     return false;
   }
   if (entry.rejectWindow) {
-    const window = description.slice(Math.max(0, match.index - 8), match.index + match[0].length + 8);
+    const window = description.slice(Math.max(0, match.index - 24), match.index + match[0].length + 24);
     if (entry.rejectWindow.test(window)) {
       return false;
     }

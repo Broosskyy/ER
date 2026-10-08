@@ -56,7 +56,6 @@ function assessExplicitGenreEvidenceParity(event: EnrichedTicketIoEvent, snapsho
 } {
   const separated = event.description ? separateStructuredEventContent(event.description) : undefined;
   const explicitClaims = normalizeGenreLabelSet([
-    ...event.genreHints,
     ...event.genreCandidates
       .filter((genre) => genre.confidence === 'explicit' || genre.confidence === 'strong_inferred')
       .map((genre) => genre.label),

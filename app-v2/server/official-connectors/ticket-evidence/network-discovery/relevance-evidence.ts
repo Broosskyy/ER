@@ -24,10 +24,16 @@ export interface RelevanceEvidenceResult {
   negativeHits: string[];
 }
 
-const STRONG_POSITIVE: Array<{ id: string; pattern: RegExp }> = [
+const STRONG_POSITIVE: Array<{ id: string; pattern: RegExp; rejectWindow?: RegExp }> = [
   { id: 'techno', pattern: /\btechno\b/i },
   { id: 'hard_techno', pattern: /\bhard\s*techno\b/i },
-  { id: 'house', pattern: /\bhouse\b/i },
+  {
+    id: 'house',
+    pattern: /\bhouse\b/i,
+    // "House" is a highly ambiguous English noun and frequently appears in
+    // non-music entities such as Penguin Random House or "House of ...".
+    rejectWindow: /\b(?:random|publishing|book|chocolate)\s+house\b|\bhouse\s+of\b/i,
+  },
   { id: 'deep_house', pattern: /\bdeep\s*house\b/i },
   { id: 'tech_house', pattern: /\btech\s*house\b/i },
   { id: 'melodic_techno', pattern: /\bmelodic\s*techno\b/i },
@@ -35,19 +41,26 @@ const STRONG_POSITIVE: Array<{ id: string; pattern: RegExp }> = [
   { id: 'psytrance', pattern: /\bpsytrance\b/i },
   { id: 'edm', pattern: /\bedm\b/i },
   { id: 'hardstyle', pattern: /\bhardstyle\b/i },
-  { id: 'hardcore', pattern: /\bhardcore\b/i },
   { id: 'gabber', pattern: /\bgabber\b/i },
   { id: 'dnb', pattern: /\bdrum\s*(?:&|and|n)?\s*bass\b/i },
   { id: 'dnb_short', pattern: /\bdnb\b/i },
   { id: 'jungle', pattern: /\bjungle\b/i },
-  { id: 'electro', pattern: /\belectro(?:nic)?\b/i },
+  {
+    id: 'electro',
+    pattern: /\belectro(?:nic)?\b/i,
+    // Electro-acoustic / elektroakustisch is not equivalent to the club genre Electro.
+    rejectWindow: /\belectro(?:nic)?[\s-]?acoustic\b|\belektroakust/i,
+  },
   { id: 'rave', pattern: /\brave\b/i },
-  { id: 'club_night', pattern: /\bclub\s*night\b/i },
   { id: 'dj_set', pattern: /\bdj[\s-]?set\b/i },
   { id: 'hard_techno_abbrev', pattern: /\bhard[\s-]?techno\b/i },
 ];
 
 const WEAK_POSITIVE: Array<{ id: string; pattern: RegExp }> = [
+  // "hardcore" is cross-domain (hard dance vs. punk/post-hardcore). It needs corroboration.
+  { id: 'hardcore', pattern: /\bhardcore\b/i },
+  // A generic club night is not sufficient proof of electronic music by itself.
+  { id: 'club_night', pattern: /\bclub\s*night\b/i },
   { id: 'festival', pattern: /\bfestival\b/i },
   { id: 'open_air', pattern: /\bopen\s*air\b/i },
   { id: 'club', pattern: /\bclub\b/i },
@@ -81,7 +94,7 @@ const ELECTRONIC_VENUE_HINTS = [
 const STRONG_NEGATIVE: Array<{ id: string; pattern: RegExp; ambiguous?: boolean }> = [
   { id: 'comedy', pattern: /\b(?:comedy|kabarett|stand[\s-]?up)\b/i },
   { id: 'theatre', pattern: /\b(?:theater|theatre|musical)\b/i },
-  { id: 'opera', pattern: /\b(?:opera|oper)\b/i },
+  { id: 'opera', pattern: /\b(?:opera|oper(?:n|ette)?)\b/i },
   { id: 'classical', pattern: /\b(?:klassik|classical|symphon(?:y|ie)|orchestra)\b/i },
   { id: 'sport', pattern: /\b(?:sport|fußball|football|marathon|triathlon)\b/i },
   { id: 'family', pattern: /\b(?:kinder|family|familie|kindertheater)\b/i },
@@ -95,11 +108,31 @@ const STRONG_NEGATIVE: Array<{ id: string; pattern: RegExp; ambiguous?: boolean 
   { id: 'film', pattern: /\b(?:kino|filmvorführung|film\s*screening|movie\s*night)\b/i },
   { id: 'liveshow', pattern: /\b(?:liveshow|live\s*show|band\s*contest|sprungbrett)\b/i, ambiguous: true },
   { id: 'rock_pop', pattern: /\b(?:rock\s*concert|pop\s*concert|singer[-\s]?songwriter|indie\s*rock)\b/i },
-  { id: 'spoken_word', pattern: /\b(?:spoken\s*word|literatur|reading|vortrag)\b/i },
+  { id: 'punk_metal_hardcore', pattern: /\b(?:punk|post[\s-]?hardcore|metal(?:core)?|hardcore[\s-]?punk|screamo|noise[\s-]?rock|emo)\b/i },
+  { id: 'hip_hop_rap', pattern: /\b(?:hip[\s-]?hop|rap(?:per|music)?)\b/i },
+  { id: 'k_pop', pattern: /\bk[\s-]?pop\b/i },
+  { id: 'spoken_word', pattern: /\b(?:spoken\s*word|literatur|reading|vortrag|lesung)\b/i },
+  {
+    id: 'books_literature',
+    pattern: /\b(?:buchhandlung|buchhandlungen|buchtipp|buchtipps|buecher|bücher|krimi(?:s)?|thriller|autorin|autor|literaturkritik)\b/i,
+  },
+  {
+    id: 'culinary_food',
+    pattern: /\b(?:chocolate|schokolade|schokoladen|food|kulinarik|kulinarisch|tasting)\b/i,
+  },
+  {
+    id: 'performance_art',
+    pattern: /\b(?:konzert[-\s]?performance|lecture\s+performance|performance\s+art|installative\s+ausstellung|künstlerische\s+forschung|kuenstlerische\s+forschung)\b/i,
+  },
   { id: 'jazz', pattern: /\bjazz\b/i, ambiguous: false },
   { id: 'improvisation', pattern: /\bimprovisation\b/i, ambiguous: true },
   { id: 'new_music', pattern: /\bneuer\s+musik\b/i, ambiguous: true },
-  { id: 'acoustic', pattern: /\bakustisch\b/i, ambiguous: true },
+  {
+    id: 'electro_acoustic',
+    pattern: /\belectro(?:nic)?[\s-]?acoustic\b|\belektroakust/i,
+    ambiguous: true,
+  },
+  { id: 'acoustic', pattern: /\b(?:akustisch|acoustic)\b/i, ambiguous: true },
   { id: 'cultural_performance', pattern: /\b(?:tanztheater|performancekunst|kabarett)\b/i },
   { id: 'general_market', pattern: /\b(?:wochenmarkt|bauernmarkt|street\s*market)\b/i },
 ];
@@ -108,14 +141,29 @@ const EXPERIMENTAL_ELECTRONIC_POSITIVE = [
   /\bexperimental\s+electronic\b/i,
   /\belectronic\s+improvisation\b/i,
   /\blive\s+electronic\b/i,
-  /\belectro[\s-]?acoustic\b/i,
 ];
 
 function collectMatches(
   corpus: string,
-  entries: Array<{ id: string; pattern: RegExp }>,
+  entries: Array<{ id: string; pattern: RegExp; rejectWindow?: RegExp }>,
 ): string[] {
-  return entries.filter((entry) => entry.pattern.test(corpus)).map((entry) => entry.id);
+  return entries
+    .filter((entry) => {
+      entry.pattern.lastIndex = 0;
+      const match = entry.pattern.exec(corpus);
+      if (!match || match.index == null) {
+        return false;
+      }
+      if (!entry.rejectWindow) {
+        return true;
+      }
+      const window = corpus.slice(
+        Math.max(0, match.index - 24),
+        Math.min(corpus.length, match.index + match[0].length + 24),
+      );
+      return !entry.rejectWindow.test(window);
+    })
+    .map((entry) => entry.id);
 }
 
 function hasElectronicVenueCorroboration(input: RelevanceEvidenceInput): boolean {
@@ -147,7 +195,13 @@ const DEFINITIVE_CULTURE_NEGATIVE = new Set([
   'business',
   'circus',
   'rock_pop',
+  'punk_metal_hardcore',
+  'hip_hop_rap',
+  'k_pop',
   'spoken_word',
+  'books_literature',
+  'culinary_food',
+  'performance_art',
   'cultural_performance',
   'general_market',
 ]);
@@ -162,7 +216,6 @@ const UNAMBIGUOUS_ELECTRONIC_POSITIVE = new Set([
   'psytrance',
   'edm',
   'hardstyle',
-  'hardcore',
   'gabber',
   'dnb',
   'dnb_short',
