@@ -16,10 +16,10 @@ import type { EventMatchCatalogEntry } from '../server/ingestion/identity/event-
 import {
   planTicketEvidencePersistence,
   summarizeTicketPersistencePlan,
+  type TicketPersistencePlannerContext,
 } from '../server/official-connectors/ticket-evidence/ticket-persistence-planner';
 import type {
   ExistingEventTicketRecord,
-  TicketPersistencePlannerContext,
 } from '../server/official-connectors/ticket-evidence/ticket-persistence-types';
 import type { VerifiedTicketCompleteResult } from '../server/official-connectors/ticket-evidence/ticket-audit-metrics';
 import {
