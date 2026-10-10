@@ -1,0 +1,68 @@
+name: Upcoming Event Enrichment Preview
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upcoming-event-enrichment-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'feature/event-enrichment-completeness'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    defaults:
+      run:
+        working-directory: app-v2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app-v2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Enrichment regression tests
+        run: >-
+          npx vitest run
+          server/official-connectors/rausgegangen-discovery/__tests__/ticket-availability.test.ts
+          server/official-connectors/rausgegangen-discovery/__tests__/import-eligibility.test.ts
+          server/official-connectors/ticket-evidence/__tests__/ticket-persistence-status-safety.test.ts
+          src/features/events/tickets/__tests__/consumer-ticket-safety-gate.test.ts
+
+      - name: Run read-only live recovery preview
+        run: npx tsx scripts/run-upcoming-rausgegangen-enrichment-preview.ts
+
+      - name: Print summary
+        if: always()
+        run: |
+          if [ -f ../artifacts/event-enrichment-completeness/summary.json ]; then
+            cat ../artifacts/event-enrichment-completeness/summary.json
+          fi
+
+      - name: Upload preview artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upcoming-event-enrichment-preview
+          path: artifacts/event-enrichment-completeness
+          if-no-files-found: warn
+          retention-days: 30

@@ -74,6 +74,7 @@ export interface RausgegangenDiscoveryCandidate {
   ticketUrl?: string;
   ticketPriceMinor?: number;
   ticketCurrency?: string;
+  ticketAvailability?: string;
   canonicalUrl: string;
   listingSurfaces: string[];
   relevance: ElectronicRelevance;

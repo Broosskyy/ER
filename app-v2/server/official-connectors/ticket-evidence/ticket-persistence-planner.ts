@@ -10,7 +10,7 @@ import {
 } from './consumer-ticket-safety-gate';
 import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
-import { isN8ManagerPortalRootUrl, isShopRootUrl, canonicalizeN8ManagerTicketUrl } from './url-policy';
+import { canonicalizeN8ManagerTicketUrl, isGenericWebRootUrl, isN8ManagerPortalRootUrl, isShopRootUrl } from './url-policy';
 import { canonicalTicketUrlForSnapshotCompare } from '../../ingestion/sync/ticket-snapshot';
 import type {
   ExistingEventTicketRecord,
@@ -124,7 +124,7 @@ function resolveVerifiedEventTicketUrl(result: VerifiedTicketCompleteResult): st
     result.targetIdentityEvidence?.terminalUrl ??
     result.canonicalTicketUrl ??
     result.resolvedAction?.canonicalTicketUrl;
-  if (!url?.startsWith('https://') || isShopRootUrl(url) || isN8ManagerPortalRootUrl(url)) {
+  if (!url?.startsWith('https://') || isShopRootUrl(url) || isGenericWebRootUrl(url) || isN8ManagerPortalRootUrl(url)) {
     return undefined;
   }
   return canonicalizePersistedTicketUrl(url);
@@ -183,7 +183,7 @@ function shouldPersistTicketRow(sourceState: TicketSourceState, result: Verified
     if (salesStatus === 'sold_out' || salesStatus === 'sales_ended') {
       return true;
     }
-    if (identityAllowsPersistedPurchaseUrl(result) && (result.canonicalTicketUrl || result.resolvedAction?.canonicalTicketUrl)) {
+    if (resolveVerifiedEventTicketUrl(result)) {
       return true;
     }
     if (hasActivePurchaseCta(buildSafetyInput(sourceState, result))) {
@@ -212,37 +212,33 @@ function buildSafetyInput(sourceState: TicketSourceState, result: VerifiedTicket
   };
 }
 
+function evidenceBackedNormalizedStatus(
+  result: VerifiedTicketCompleteResult,
+): string | undefined {
+  if (result.ticketEvidence?.normalizedStatus) {
+    return result.ticketEvidence.normalizedStatus;
+  }
+  const projection = result.statusProjection;
+  if (projection && projection.statusEvidenceOrigin !== 'unavailable') {
+    return projection.normalizedStatus;
+  }
+  return undefined;
+}
+
 function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCompleteResult): string {
   if (sourceState === 'historical_ticket_detail') {
     return 'sales_ended';
   }
-  if (sourceState === 'provider_access_unavailable') {
-    if (hasVerifiedEventSpecificTicketTargetFromResult(result)) {
-      const normalized =
-        result.ticketEvidence?.normalizedStatus ?? result.statusProjection?.normalizedStatus;
-      if (normalized === 'sold_out') {
-        return 'sold_out';
-      }
-      if (normalized === 'sales_ended') {
-        return 'sales_ended';
-      }
-      if (normalized === 'sale_not_started') {
-        return 'sale_not_started';
-      }
-      return 'available';
-    }
-    return 'availability_unverified';
+
+  if (
+    sourceState === 'ticket_link_not_yet_published' &&
+    result.priceEvidence?.state === 'verified_current' &&
+    result.priceEvidence.amountMinor != null &&
+    result.priceEvidence.reason === 'official_door_admission_without_purchase_target'
+  ) {
+    return 'available';
   }
-  const normalized = result.statusProjection?.normalizedStatus;
-  if (normalized === 'sold_out') {
-    return 'sold_out';
-  }
-  if (normalized === 'sales_ended') {
-    return 'sales_ended';
-  }
-  if (normalized === 'sale_not_started') {
-    return 'sale_not_started';
-  }
+
   if (sourceState === 'presale_registration' || sourceState === 'waitlist') {
     const registrationUrl =
       result.canonicalTicketUrl ??
@@ -253,7 +249,25 @@ function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCo
     }
     return 'presale_registration';
   }
-  return 'available';
+
+  const normalized = evidenceBackedNormalizedStatus(result);
+  if (normalized === 'available') {
+    return 'available';
+  }
+  if (normalized === 'sold_out') {
+    return 'sold_out';
+  }
+  if (normalized === 'sales_ended') {
+    return 'sales_ended';
+  }
+  if (normalized === 'sale_not_started') {
+    return 'sale_not_started';
+  }
+  if (normalized === 'cancelled') {
+    return 'cancelled';
+  }
+
+  return 'availability_unverified';
 }
 
 function buildSafeShopRootTicketDowngrade(existing: ExistingEventTicketRecord): EventCandidateTicket {
@@ -558,6 +572,9 @@ function resolveTicketOperation(
   }
   if (ticketsEqual(existing, planned)) {
     return { operation: 'noop', reason: 'ticket_row_already_matches' };
+  }
+  if (shouldPreserveExistingTicketOnTransientFailure(result, sourceState)) {
+    return { operation: 'noop', reason: 'preserve_existing_ticket_on_transient_failure' };
   }
   return { operation: 'update', reason: 'ticket_row_changed' };
 }

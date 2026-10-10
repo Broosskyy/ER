@@ -6,7 +6,7 @@ import type {
   TicketTargetIdentityDecision,
 } from './types';
 import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
-import { isShopRootUrl } from './url-policy';
+import { isGenericWebRootUrl, isShopRootUrl } from './url-policy';
 
 export interface ConsumerTicketSafetyInput {
   ticketSourceState?: TicketSourceState;
@@ -63,7 +63,7 @@ export function hasVerifiedEventSpecificTicketTarget(input: ConsumerTicketSafety
   if (!input.canonicalTicketUrl?.startsWith('https://')) {
     return false;
   }
-  if (isShopRootUrl(input.canonicalTicketUrl)) {
+  if (isShopRootUrl(input.canonicalTicketUrl) || isGenericWebRootUrl(input.canonicalTicketUrl)) {
     return false;
   }
   return true;
@@ -73,7 +73,7 @@ export function hasVerifiedPurchaseTarget(input: ConsumerTicketSafetyInput): boo
   if (!input.canonicalTicketUrl?.startsWith('https://')) {
     return false;
   }
-  if (isShopRootUrl(input.canonicalTicketUrl)) {
+  if (isShopRootUrl(input.canonicalTicketUrl) || isGenericWebRootUrl(input.canonicalTicketUrl)) {
     return false;
   }
   if (

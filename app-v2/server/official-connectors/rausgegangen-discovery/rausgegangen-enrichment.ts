@@ -23,6 +23,10 @@ import { mergeLineupHints } from '../ticket-evidence/network-discovery/lineup-fr
 import type { RausgegangenDetailEvidence, RausgegangenDiscoveryCandidate, RausgegangenListingEntry } from './types';
 import { buildRausgegangenIdentityKey, titleFromEventSlug } from './rausgegangen-url';
 import { matchRausgegangenCandidateAgainstCatalog } from './match-rausgegangen-catalog';
+import {
+  normalizeRausgegangenTicketAvailability,
+  resolveRausgegangenTicketAction,
+} from './ticket-availability';
 
 function classifyLifecycle(
   startsAt?: string,
@@ -113,6 +117,7 @@ export function applyDetailToCandidate(
     ticketUrl: detail.ticketUrl,
     ticketPriceMinor: detail.ticketPriceMinor,
     ticketCurrency: detail.ticketCurrency,
+    ticketAvailability: detail.ticketAvailability,
     relevance: relevanceResult.relevance,
     relevanceReasons: relevanceResult.reasons,
     detailFetched: true,
@@ -132,6 +137,8 @@ export function enrichedFromRausgegangenCandidate(
   const descriptionQualification = qualifyDescription(description);
   const mediaRoles = classifyMediaUrls(candidate.imageUrls, { title: candidate.title });
   const bestMediaUrl = candidate.imageUrls[0];
+  const ticketAvailability = normalizeRausgegangenTicketAvailability(matched.ticketAvailability);
+  const ticketAction = resolveRausgegangenTicketAction(matched.ticketUrl, ticketAvailability);
   const detailAccess =
     candidate.detailAccess === 'NOT_FETCHED'
       ? 'DETAIL_NOT_FOUND'
@@ -185,9 +192,9 @@ export function enrichedFromRausgegangenCandidate(
             rawPrice: `${(matched.ticketPriceMinor / 100).toFixed(2)}`,
             amountMinor: matched.ticketPriceMinor,
             currency: matched.ticketCurrency ?? 'EUR',
-            availability: 'AVAILABLE',
-            soldOut: false,
-            purchasable: true,
+            availability: ticketAvailability,
+            soldOut: ticketAvailability === 'SOLD_OUT',
+            purchasable: ticketAction === 'PURCHASE',
             grantsAdmission: true,
             selectedAsCurrentAdmission: true,
           },
@@ -198,8 +205,8 @@ export function enrichedFromRausgegangenCandidate(
       matched.ticketPriceMinor != null
         ? `${(matched.ticketPriceMinor / 100).toFixed(2)} ${matched.ticketCurrency ?? 'EUR'}`
         : undefined,
-    ticketAvailability: matched.ticketUrl ? 'AVAILABLE' : 'UNKNOWN',
-    ticketAction: matched.ticketUrl ? 'PURCHASE' : 'NONE',
+    ticketAvailability,
+    ticketAction,
     detailAccess,
     fetchMethod: 'fetch',
     fetchStatus: detailAccess === 'DETAIL_ACCESSIBLE' ? 200 : undefined,
