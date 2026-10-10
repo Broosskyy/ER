@@ -170,7 +170,10 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
         : undefined,
     presaleCtaLabel: showPresaleCta ? 'Vorregistrieren' : undefined,
     ticketStatus,
-    statusLabel: badgeStatus ? undefined : projectConsumerTicketStatusLabel(salesStatus),
+    statusLabel:
+      salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability'
+        ? undefined
+        : projectConsumerTicketStatusLabel(salesStatus),
     badgeStatus,
     ticketAction,
   };
