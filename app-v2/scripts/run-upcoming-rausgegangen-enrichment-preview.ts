@@ -89,6 +89,7 @@ interface PreviewRow {
   };
   recovered: {
     description: boolean;
+    descriptionText?: string;
     descriptionQualification: string;
     lineupCount: number;
     lineupQualification: string;
@@ -314,6 +315,7 @@ async function main(): Promise<void> {
         current,
         recovered: {
           description: Boolean(evidence.descriptionClean?.trim()),
+          descriptionText: evidence.descriptionClean?.trim() || undefined,
           descriptionQualification: live.verification.descriptionQualification,
           lineupCount: recoveredLineup.length,
           lineupQualification: live.verification.lineupQualification,
@@ -343,7 +345,7 @@ async function main(): Promise<void> {
           lineup:
             current.lineupCount === 0 &&
             recoveredLineup.length > 0 &&
-            live.verification.lineupQualification !== 'NO_LINEUP',
+            live.verification.lineupQualification === 'FULL_LINEUP',
           // Ticket-field promotability is recalculated from the persistence
           // plan below. Raw pipeline fields are diagnostic only.
           ticketTarget: false,
@@ -393,11 +395,10 @@ async function main(): Promise<void> {
     const providerUnavailable = plan?.ticketSourceState === 'provider_access_unavailable';
     const plannedTicket = plan?.plannedTicketRow;
 
-    // The consumer read model currently only sees event_tickets.sales_status.
-    // If provider access was unavailable, persisting "available" would render
-    // as a confident "Verfügbar" badge and lose the uncertainty provenance.
-    // Keep those cases deferred until the read model can preserve that state.
-    const safeTicketMutation = ticketMutation && !providerUnavailable;
+    // Persisted ticket links may be useful even when availability is unknown.
+    // The planner now stores those as availability_unverified and the consumer
+    // renders a neutral "Ticketseite öffnen" action instead of claiming sales.
+    const safeTicketMutation = ticketMutation;
 
     return {
       ...row,
@@ -414,14 +415,21 @@ async function main(): Promise<void> {
         ticketStatus:
           !row.current.ticketStatus &&
           safeTicketMutation &&
-          Boolean(plannedTicket?.salesStatus),
+          Boolean(plannedTicket?.salesStatus) &&
+          !['availability_unverified', 'provider_access_unavailable', 'unavailable_unknown'].includes(
+            plannedTicket?.salesStatus ?? '',
+          ),
       },
       ticketPersistencePlan: plan
         ? {
             ticketOperation: plan.ticketOperation,
             ticketOperationReason: plan.ticketOperationReason,
             ticketSourceState: plan.ticketSourceState,
-            deferredProviderUnavailable: providerUnavailable && ticketMutation,
+            providerUnavailableNeutralLink:
+              providerUnavailable &&
+              ticketMutation &&
+              Boolean(plannedTicket?.ticketUrl) &&
+              plannedTicket?.salesStatus === 'availability_unverified',
             plannedTicketRow: plan.plannedTicketRow,
             providerSourceOperation: plan.providerSourceOperation,
             consumerProjection: plan.consumerProjection,
@@ -475,8 +483,8 @@ async function main(): Promise<void> {
         row.promotable.ticketPrice ||
         row.promotable.ticketStatus
       ).length,
-      deferredProviderUnavailable: rowsWithPlan.filter(
-        (row) => row.ticketPersistencePlan?.deferredProviderUnavailable,
+      providerUnavailableNeutralLinks: rowsWithPlan.filter(
+        (row) => row.ticketPersistencePlan?.providerUnavailableNeutralLink,
       ).length,
       updates: ticketPlanSummary.currentTicketUpdatesRequired,
       deletes: ticketPlanSummary.currentTicketDeletesRequired,
