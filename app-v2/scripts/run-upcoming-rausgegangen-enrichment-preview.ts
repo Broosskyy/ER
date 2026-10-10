@@ -257,6 +257,12 @@ async function main(): Promise<void> {
         catalog,
         referenceInstant,
         referenceDateLocal,
+        {
+          // Existing-event recovery is deliberately slower than discovery.
+          // Rausgegangen started returning 403s at the discovery cadence.
+          requestDelayMs: 1750,
+          maxRetries: 1,
+        },
       );
 
       const finalized = await finalizeRausgegangenControlledImportEvidence(
@@ -286,7 +292,6 @@ async function main(): Promise<void> {
       const verifiedTarget =
         ticket?.identityResult === 'ticket_identity_verified' &&
         Boolean(ticketUrl?.startsWith('https://'));
-      const verifiedStatus = Boolean(normalizedStatus);
       const blockers: string[] = [];
 
       if (!live.verification.liveAccessible) {
@@ -339,9 +344,11 @@ async function main(): Promise<void> {
             current.lineupCount === 0 &&
             recoveredLineup.length > 0 &&
             live.verification.lineupQualification !== 'NO_LINEUP',
-          ticketTarget: !current.ticketUrl && verifiedTarget,
-          ticketPrice: !current.ticketPrice && verifiedPrice != null,
-          ticketStatus: !current.ticketStatus && verifiedStatus,
+          // Ticket-field promotability is recalculated from the persistence
+          // plan below. Raw pipeline fields are diagnostic only.
+          ticketTarget: false,
+          ticketPrice: false,
+          ticketStatus: false,
         },
         blockers,
       });
@@ -380,12 +387,41 @@ async function main(): Promise<void> {
 
   const rowsWithPlan = rows.map((row) => {
     const plan = planByKey.get(row.sourceEventKey);
+    const ticketMutation =
+      Boolean(plan) &&
+      (plan!.ticketOperation === 'insert' || plan!.ticketOperation === 'update');
+    const providerUnavailable = plan?.ticketSourceState === 'provider_access_unavailable';
+    const plannedTicket = plan?.plannedTicketRow;
+
+    // The consumer read model currently only sees event_tickets.sales_status.
+    // If provider access was unavailable, persisting "available" would render
+    // as a confident "Verfügbar" badge and lose the uncertainty provenance.
+    // Keep those cases deferred until the read model can preserve that state.
+    const safeTicketMutation = ticketMutation && !providerUnavailable;
+
     return {
       ...row,
+      promotable: {
+        ...row.promotable,
+        ticketTarget:
+          !row.current.ticketUrl &&
+          safeTicketMutation &&
+          Boolean(plannedTicket?.ticketUrl),
+        ticketPrice:
+          !row.current.ticketPrice &&
+          safeTicketMutation &&
+          plannedTicket?.priceFromMinor != null,
+        ticketStatus:
+          !row.current.ticketStatus &&
+          safeTicketMutation &&
+          Boolean(plannedTicket?.salesStatus),
+      },
       ticketPersistencePlan: plan
         ? {
             ticketOperation: plan.ticketOperation,
             ticketOperationReason: plan.ticketOperationReason,
+            ticketSourceState: plan.ticketSourceState,
+            deferredProviderUnavailable: providerUnavailable && ticketMutation,
             plannedTicketRow: plan.plannedTicketRow,
             providerSourceOperation: plan.providerSourceOperation,
             consumerProjection: plan.consumerProjection,
@@ -397,42 +433,51 @@ async function main(): Promise<void> {
   const summary = {
     generatedAt: new Date().toISOString(),
     scopeCount: manifest.count,
-    liveAccessible: rows.filter((row) => row.liveAccessible).length,
-    sourceErrors: rows.filter((row) => row.error).length,
+    liveAccessible: rowsWithPlan.filter((row) => row.liveAccessible).length,
+    blockedOrUnavailable: rowsWithPlan.filter((row) => !row.liveAccessible).length,
+    sourceErrors: rowsWithPlan.filter((row) => row.error).length,
     current: {
-      withDescription: rows.filter((row) => row.current.description).length,
-      withLineup: rows.filter((row) => row.current.lineupCount > 0).length,
-      withTicketRow: rows.filter((row) => row.current.ticketRow).length,
-      withTicketUrl: rows.filter((row) => row.current.ticketUrl).length,
-      withTicketPrice: rows.filter((row) => row.current.ticketPrice).length,
-      withTicketStatus: rows.filter((row) => row.current.ticketStatus).length,
+      withDescription: rowsWithPlan.filter((row) => row.current.description).length,
+      withLineup: rowsWithPlan.filter((row) => row.current.lineupCount > 0).length,
+      withTicketRow: rowsWithPlan.filter((row) => row.current.ticketRow).length,
+      withTicketUrl: rowsWithPlan.filter((row) => row.current.ticketUrl).length,
+      withTicketPrice: rowsWithPlan.filter((row) => row.current.ticketPrice).length,
+      withTicketStatus: rowsWithPlan.filter((row) => row.current.ticketStatus).length,
     },
     recoverable: {
-      descriptions: rows.filter((row) => row.promotable.description).length,
-      lineups: rows.filter((row) => row.promotable.lineup).length,
-      ticketTargets: rows.filter((row) => row.promotable.ticketTarget).length,
-      ticketPrices: rows.filter((row) => row.promotable.ticketPrice).length,
-      ticketStatuses: rows.filter((row) => row.promotable.ticketStatus).length,
+      descriptions: rowsWithPlan.filter((row) => row.promotable.description).length,
+      lineups: rowsWithPlan.filter((row) => row.promotable.lineup).length,
+      ticketTargets: rowsWithPlan.filter((row) => row.promotable.ticketTarget).length,
+      ticketPrices: rowsWithPlan.filter((row) => row.promotable.ticketPrice).length,
+      ticketStatuses: rowsWithPlan.filter((row) => row.promotable.ticketStatus).length,
     },
     afterPotentialRecovery: {
-      withDescription: rows.filter(
+      withDescription: rowsWithPlan.filter(
         (row) => row.current.description || row.promotable.description,
       ).length,
-      withLineup: rows.filter(
+      withLineup: rowsWithPlan.filter(
         (row) => row.current.lineupCount > 0 || row.promotable.lineup,
       ).length,
-      withTicketUrl: rows.filter(
+      withTicketUrl: rowsWithPlan.filter(
         (row) => row.current.ticketUrl || row.promotable.ticketTarget,
       ).length,
-      withTicketPrice: rows.filter(
+      withTicketPrice: rowsWithPlan.filter(
         (row) => row.current.ticketPrice || row.promotable.ticketPrice,
       ).length,
-      withTicketStatus: rows.filter(
+      withTicketStatus: rowsWithPlan.filter(
         (row) => row.current.ticketStatus || row.promotable.ticketStatus,
       ).length,
     },
     ticketPlanSummary: {
       inserts: ticketPlanSummary.currentTicketInsertsRequired,
+      safeTicketMutations: rowsWithPlan.filter((row) =>
+        row.promotable.ticketTarget ||
+        row.promotable.ticketPrice ||
+        row.promotable.ticketStatus
+      ).length,
+      deferredProviderUnavailable: rowsWithPlan.filter(
+        (row) => row.ticketPersistencePlan?.deferredProviderUnavailable,
+      ).length,
       updates: ticketPlanSummary.currentTicketUpdatesRequired,
       deletes: ticketPlanSummary.currentTicketDeletesRequired,
       providerSourceReferences: ticketPlanSummary.providerSourceReferencesRequired,
