@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 
 describe('consumer ticket safety gate', () => {
-  it('blocks purchase CTA for availability_unverified', () => {
+  it('shows a neutral ticket-page link for availability_unverified', () => {
     const presentation = resolveConsumerTicketPresentation({
       id: 'ticket-1',
       provider: 'fourvenues',
@@ -14,10 +14,13 @@ describe('consumer ticket safety gate', () => {
       sortOrder: 0,
     });
 
-    expect(presentation.showPurchaseCta).toBe(false);
-    expect(presentation.ticketUrl).toBeUndefined();
+    expect(presentation.showPurchaseCta).toBe(true);
+    expect(presentation.purchaseCtaLabel).toBe('Ticketseite öffnen');
+    expect(presentation.ticketAction).toBe('external_link');
+    expect(presentation.ticketUrl).toBe('https://site.fourvenues.com/en/bootshaus/events/test');
     expect(presentation.priceText).toBeUndefined();
-    expect(presentation.statusLabel).toBe('Ticketverfügbarkeit wird geprüft');
+    expect(presentation.badgeStatus).toBeUndefined();
+    expect(presentation.statusLabel).toBe('Status unbekannt');
   });
 
   it('shows door admission price without purchase CTA', () => {
