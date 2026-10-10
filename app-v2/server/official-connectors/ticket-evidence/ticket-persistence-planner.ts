@@ -10,7 +10,7 @@ import {
 } from './consumer-ticket-safety-gate';
 import { isVerifiedTicketTargetIdentity } from './ticket-target-identity';
 import { mapResolutionToTicketSourceState } from './ticket-source-state';
-import { isN8ManagerPortalRootUrl, isShopRootUrl, canonicalizeN8ManagerTicketUrl } from './url-policy';
+import { canonicalizeN8ManagerTicketUrl, isGenericWebRootUrl, isN8ManagerPortalRootUrl, isShopRootUrl } from './url-policy';
 import { canonicalTicketUrlForSnapshotCompare } from '../../ingestion/sync/ticket-snapshot';
 import type {
   ExistingEventTicketRecord,
