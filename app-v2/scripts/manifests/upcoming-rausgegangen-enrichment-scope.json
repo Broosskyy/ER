@@ -498,6 +498,7 @@
       "currentTicket": {
         "currency": "EUR",
         "provider": "ticket_io",
+        "ticketId": "c43a2b7d-f817-4042-9f4f-e7e13ab94b3c",
         "sortOrder": 0,
         "ticketUrl": "https://bootshaus-club.ticket.io/jhUP7WQl/",
         "salesStatus": "available",
