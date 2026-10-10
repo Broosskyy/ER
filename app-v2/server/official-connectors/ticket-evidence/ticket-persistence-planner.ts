@@ -183,7 +183,7 @@ function shouldPersistTicketRow(sourceState: TicketSourceState, result: Verified
     if (salesStatus === 'sold_out' || salesStatus === 'sales_ended') {
       return true;
     }
-    if (identityAllowsPersistedPurchaseUrl(result) && (result.canonicalTicketUrl || result.resolvedAction?.canonicalTicketUrl)) {
+    if (resolveVerifiedEventTicketUrl(result)) {
       return true;
     }
     if (hasActivePurchaseCta(buildSafetyInput(sourceState, result))) {
@@ -572,6 +572,9 @@ function resolveTicketOperation(
   }
   if (ticketsEqual(existing, planned)) {
     return { operation: 'noop', reason: 'ticket_row_already_matches' };
+  }
+  if (shouldPreserveExistingTicketOnTransientFailure(result, sourceState)) {
+    return { operation: 'noop', reason: 'preserve_existing_ticket_on_transient_failure' };
   }
   return { operation: 'update', reason: 'ticket_row_changed' };
 }
