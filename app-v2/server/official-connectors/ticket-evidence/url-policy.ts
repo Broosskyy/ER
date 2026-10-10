@@ -203,6 +203,23 @@ export function isShopRootUrl(url: string): boolean {
   return isTicketIoShopRootUrl(url);
 }
 
+/**
+ * A bare website homepage is not an event-specific ticket target.
+ * Query/hash-only roots are treated as generic as well after tracking params.
+ */
+export function isGenericWebRootUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== 'https:') {
+      return false;
+    }
+    stripTrackingParams(parsed);
+    return (parsed.pathname === '' || parsed.pathname === '/') && parsed.searchParams.size === 0;
+  } catch {
+    return false;
+  }
+}
+
 export function extractTicketIoProviderEventId(url: string): string | undefined {
   const canonical = canonicalizeTicketIoUrl(url);
   if (!canonical || !isTicketIoEventDetailUrl(canonical)) {
