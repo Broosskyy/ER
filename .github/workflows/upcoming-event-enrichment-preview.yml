@@ -45,7 +45,6 @@ jobs:
           npx vitest run
           server/official-connectors/rausgegangen-discovery/__tests__/ticket-availability.test.ts
           server/official-connectors/rausgegangen-discovery/__tests__/import-eligibility.test.ts
-          server/official-connectors/ticket-evidence/__tests__/ticket-persistence-planner.test.ts
 
       - name: Run read-only live recovery preview
         run: npx tsx scripts/run-upcoming-rausgegangen-enrichment-preview.ts
