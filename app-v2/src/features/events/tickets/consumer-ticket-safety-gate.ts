@@ -156,6 +156,8 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     ticketStatus = salesStatus === 'sold_out' ? 'sold_out' : 'external_link';
   }
 
+  const badgeStatus = mapConsumerSalesStatusToBadgeStatus(salesStatus);
+
   return {
     priceText: projectPriceText(ticket),
     ticketUrl: showPurchaseCta || showPresaleCta ? ticket.ticketUrl ?? undefined : undefined,
@@ -168,8 +170,8 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
         : undefined,
     presaleCtaLabel: showPresaleCta ? 'Vorregistrieren' : undefined,
     ticketStatus,
-    statusLabel: projectConsumerTicketStatusLabel(salesStatus),
-    badgeStatus: mapConsumerSalesStatusToBadgeStatus(salesStatus),
+    statusLabel: badgeStatus ? undefined : projectConsumerTicketStatusLabel(salesStatus),
+    badgeStatus,
     ticketAction,
   };
 }
