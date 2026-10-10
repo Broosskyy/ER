@@ -2,7 +2,7 @@ import type { EventTicket } from '@/features/events/types/event-core';
 import type { EventTicketStatus } from '@/components/discovery/view-models';
 import { projectConsumerTicketStatusLabel } from './consumer-ticket-status-label';
 
-export type ConsumerTicketAction = 'purchase' | 'pre_register' | 'waitlist' | 'door_only' | 'none';
+export type ConsumerTicketAction = 'purchase' | 'external_link' | 'pre_register' | 'waitlist' | 'door_only' | 'none';
 
 export interface ConsumerTicketPresentation {
   priceText?: string;
@@ -52,6 +52,13 @@ function resolveTicketAction(
   }
   if (salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability') {
     return 'purchase';
+  }
+  if (
+    salesStatus === 'availability_unverified' ||
+    salesStatus === 'provider_access_unavailable' ||
+    salesStatus === 'unavailable_unknown'
+  ) {
+    return 'external_link';
   }
   return 'none';
 }
@@ -112,7 +119,7 @@ export function mapConsumerSalesStatusToBadgeStatus(
     case 'availability_unverified':
     case 'provider_access_unavailable':
     case 'unavailable_unknown':
-      return 'unavailable';
+      return undefined;
     default:
       return undefined;
   }
@@ -134,14 +141,16 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
   const showPresaleCta =
     hasUrl &&
     (ticketAction === 'pre_register' || (salesStatus === 'sold_out' && registrationTarget));
-  const showPurchaseCta =
+  const showVerifiedPurchaseCta =
     hasUrl &&
     ticketAction === 'purchase' &&
     !BLOCKED_SALES_STATUSES.has(salesStatus) &&
     (salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability');
+  const showNeutralTicketLink = hasUrl && ticketAction === 'external_link';
+  const showPurchaseCta = showVerifiedPurchaseCta || showNeutralTicketLink;
 
   let ticketStatus: ConsumerTicketPresentation['ticketStatus'];
-  if (showPurchaseCta) {
+  if (showVerifiedPurchaseCta) {
     ticketStatus = 'on_sale';
   } else if (hasUrl) {
     ticketStatus = salesStatus === 'sold_out' ? 'sold_out' : 'external_link';
@@ -152,7 +161,11 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     ticketUrl: showPurchaseCta || showPresaleCta ? ticket.ticketUrl ?? undefined : undefined,
     showPurchaseCta,
     showPresaleCta,
-    purchaseCtaLabel: showPurchaseCta ? 'Tickets kaufen' : undefined,
+    purchaseCtaLabel: showVerifiedPurchaseCta
+      ? 'Tickets kaufen'
+      : showNeutralTicketLink
+        ? 'Ticketseite öffnen'
+        : undefined,
     presaleCtaLabel: showPresaleCta ? 'Vorregistrieren' : undefined,
     ticketStatus,
     statusLabel: projectConsumerTicketStatusLabel(salesStatus),
