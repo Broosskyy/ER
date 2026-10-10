@@ -8,7 +8,7 @@ import {
   enrichedFromRausgegangenCandidate,
   listingEntryToCandidate,
 } from './rausgegangen-enrichment';
-import { fetchRausgegangenHtml } from './rausgegangen-fetch';
+import { fetchRausgegangenHtml, type RausgegangenFetchOptions } from './rausgegangen-fetch';
 import { parseRausgegangenEventDetail } from './parse-rausgegangen-detail';
 import type { RausgegangenLiveVerification } from './rausgegangen-controlled-import-bridge';
 import { extractEventSlugFromUrl } from './rausgegangen-url';
@@ -46,6 +46,7 @@ export async function verifyRausgegangenCandidateLive(
   catalog: EventMatchCatalogEntry[],
   referenceInstant: Date,
   referenceDateLocal: string,
+  fetchOptions: RausgegangenFetchOptions = {},
 ): Promise<{
   verification: RausgegangenLiveVerification;
   enriched: EnrichedTicketIoEvent;
@@ -61,7 +62,7 @@ export async function verifyRausgegangenCandidateLive(
     listingTitleHint: batchEntry.title,
   };
 
-  const fetch = await fetchRausgegangenHtml(batchEntry.sourceUrl);
+  const fetch = await fetchRausgegangenHtml(batchEntry.sourceUrl, fetchOptions);
   const liveAccessible = fetch.ok && fetch.html.length > 100;
   const detail = parseRausgegangenEventDetail(fetch.html, fetch.finalUrl || batchEntry.sourceUrl);
   const fetchResult = toDetailFetchResult(
