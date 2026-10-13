@@ -26,12 +26,14 @@ export function genericTicketPageHasRecoverableEvidence(body: string, contentTyp
   if (!body) {
     return false;
   }
-  if (isProviderPageReady(classifyProviderPageReadiness(body, contentType))) {
+  const hasDirectEvidence =
+    /application\/ld\+json|["']@type["']\s*:\s*["'](?:Music)?Event["']|(?:\d{1,4}[.,]\d{2}\s*€)|itemprop=["']price["']|data-price(?:=|\s)|class=["'][^"']*price/i.test(
+      body,
+    );
+  if (hasDirectEvidence) {
     return true;
   }
-  return /(?:\d{1,4}[.,]\d{2}\s*€)|itemprop=["']price["']|data-price(?:=|\s)|class=["'][^"']*price/i.test(
-    body,
-  );
+  return isProviderPageReady(classifyProviderPageReadiness(body, contentType));
 }
 
 function rawTicketPageIsUsable(result: TicketFetchResult): boolean {
