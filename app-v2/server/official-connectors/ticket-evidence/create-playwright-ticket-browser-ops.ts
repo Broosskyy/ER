@@ -101,12 +101,12 @@ export function createPlaywrightTicketBrowserOps(
         const pageContext = await ensureContext();
         const page = await pageContext.newPage();
         try {
-          await page.goto(url, { waitUntil: 'networkidle', timeout: 90_000 });
+          await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45_000 });
           await page
             .waitForSelector(
               'select.ticketCount, #ticket-event-data, .ticket-price-value, script[type="application/ld+json"], [data-price], [itemprop="price"], [class*="price"]',
               {
-                timeout: 20_000,
+                timeout: 15_000,
               },
             )
             .catch(() => undefined);
