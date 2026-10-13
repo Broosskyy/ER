@@ -22,7 +22,7 @@ function ticketPageHasRecoverableProducts(body: string): boolean {
   return Boolean(domEvidence && domEvidence.offers.length > 0);
 }
 
-function genericTicketPageHasRecoverableEvidence(body: string, contentType = 'text/html'): boolean {
+export function genericTicketPageHasRecoverableEvidence(body: string, contentType = 'text/html'): boolean {
   if (!body) {
     return false;
   }
