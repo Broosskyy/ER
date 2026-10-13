@@ -23,7 +23,9 @@ const SHOW_TITLE_DESCRIPTOR_PATTERN =
   /\b(?:festival|halloween|nye|weekender|sessions?|rave|paint|splash|night|tour|edition|showcase|closing|sommerfest|madness|changes|everything|live|world)\b/i;
 const PRESENTER_SPLIT_PATTERN = /\s+pres\.?\s+|\s+presents\s+/i;
 const LIVE_AT_PATTERN = /\s+live\s+at\s+/i;
-const WITH_PATTERN = /\s+with\s+/i;
+const WITH_PATTERN = /\s+(?:with|w\/|\/w|feat\.?|ft\.?)\s+/i;
+const GERMAN_SHOW_WITH_PATTERN =
+  /\b(?:rave|party|nacht|festival|session|show)\s+mit\s+(.+)$/i;
 
 function cleanTitleText(title: string): string {
   return normalizeLineupName(title.replace(/[!?]+$/g, '').trim());
@@ -236,6 +238,40 @@ function extractFromAtVenuePattern(
   pushCandidate(candidates, seen, rejected, withoutShowSuffix, title, validationContext);
 }
 
+function cleanExplicitBillingTail(value: string): string {
+  return cleanTitleText(value)
+    .replace(/\s+(?:&|\+)\s+more(?:\s+(?:at|@)\s+.+)?$/i, '')
+    .replace(/\s+(?:at|@)\s+.+$/i, '')
+    .replace(/\s+(?:and\s+)?more$/i, '')
+    .trim();
+}
+
+function splitExplicitBilling(value: string): string[] {
+  return cleanExplicitBillingTail(value)
+    .split(/\s*(?:,|&|\+)\s*/)
+    .map((part) => cleanTitleText(part))
+    .filter(Boolean);
+}
+
+function pushExplicitBilling(
+  value: string,
+  rawTitle: string,
+  validationContext: LineupValidationContext | undefined,
+  candidates: OfficialLineupCandidate[],
+  seen: Set<string>,
+  rejected: RejectedOfficialCandidate[],
+): void {
+  const acts = splitExplicitBilling(value);
+  if (acts.length === 0) {
+    return;
+  }
+  for (const act of acts) {
+    if (!looksLikeShowTitle(act)) {
+      pushCandidate(candidates, seen, rejected, act, rawTitle, validationContext);
+    }
+  }
+}
+
 function extractFromWithPattern(
   title: string,
   validationContext: LineupValidationContext | undefined,
@@ -248,12 +284,36 @@ function extractFromWithPattern(
     return;
   }
 
-  const right = cleanTitleText(parts[1]!);
-  if (!right || looksLikeShowTitle(right)) {
+  pushExplicitBilling(
+    parts[1]!,
+    title,
+    validationContext,
+    candidates,
+    seen,
+    rejected,
+  );
+}
+
+function extractFromGermanShowWithPattern(
+  title: string,
+  validationContext: LineupValidationContext | undefined,
+  candidates: OfficialLineupCandidate[],
+  seen: Set<string>,
+  rejected: RejectedOfficialCandidate[],
+): void {
+  const match = title.match(GERMAN_SHOW_WITH_PATTERN);
+  if (!match?.[1]) {
     return;
   }
 
-  pushCandidate(candidates, seen, rejected, right, title, validationContext);
+  pushExplicitBilling(
+    match[1],
+    title,
+    validationContext,
+    candidates,
+    seen,
+    rejected,
+  );
 }
 
 export function extractVerifiedTitleLineupCandidates(
@@ -281,6 +341,13 @@ export function extractVerifiedTitleLineupCandidates(
   extractFromLiveAtPattern(title, input.validationContext, candidates, seen, rejectedCandidates);
   extractFromAtVenuePattern(title, input.validationContext, candidates, seen, rejectedCandidates);
   extractFromWithPattern(title, input.validationContext, candidates, seen, rejectedCandidates);
+  extractFromGermanShowWithPattern(
+    title,
+    input.validationContext,
+    candidates,
+    seen,
+    rejectedCandidates,
+  );
 
   return {
     candidates: candidates.map((candidate, index) => ({
