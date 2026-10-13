@@ -22,6 +22,7 @@ import type {
   ExistingEventTicketRecord,
 } from '../server/official-connectors/ticket-evidence/ticket-persistence-types';
 import type { VerifiedTicketCompleteResult } from '../server/official-connectors/ticket-evidence/ticket-audit-metrics';
+import { createPlaywrightTicketBrowserOps } from '../server/official-connectors/ticket-evidence/create-playwright-ticket-browser-ops';
 import {
   finalizeRausgegangenControlledImportEvidence,
 } from '../server/official-connectors/rausgegangen-discovery/rausgegangen-controlled-import-bridge';
@@ -231,7 +232,9 @@ async function main(): Promise<void> {
 
   const rows: PreviewRow[] = [];
   const ticketResults: VerifiedTicketCompleteResult[] = [];
+  const ticketBrowserOps = createPlaywrightTicketBrowserOps({ ticketPageWaitMs: 3_000 });
 
+  try {
   for (const [index, event] of manifest.events.entries()) {
     if (index > 0 && index % 10 === 0) {
       process.stderr.write('[ENRICHMENT] cooldown 15s after ' + index + ' source pages\n');
@@ -275,6 +278,7 @@ async function main(): Promise<void> {
         live.enriched,
         live.fetchResult,
         referenceInstant.toISOString(),
+        { browserOps: ticketBrowserOps },
       );
       if (finalized.ticketResult) {
         ticketResults.push(finalized.ticketResult);
@@ -386,6 +390,10 @@ async function main(): Promise<void> {
         error: error instanceof Error ? error.message : String(error),
       });
     }
+  }
+
+  } finally {
+    await ticketBrowserOps.close();
   }
 
   const ticketPlans = planTicketEvidencePersistence(ticketResults, plannerContext);
