@@ -139,7 +139,7 @@ function loadManifest(): ScopeManifest {
   if (manifest.schemaVersion !== 1) {
     throw new Error('enrichment_scope_schema_invalid');
   }
-  if (manifest.events.length !== manifest.count || manifest.count !== 44) {
+  if (manifest.events.length !== manifest.count || manifest.count < 1) {
     throw new Error(
       'enrichment_scope_count_invalid:' + manifest.count + ':' + manifest.events.length,
     );
@@ -233,6 +233,11 @@ async function main(): Promise<void> {
   const ticketResults: VerifiedTicketCompleteResult[] = [];
 
   for (const [index, event] of manifest.events.entries()) {
+    if (index > 0 && index % 10 === 0) {
+      process.stderr.write('[ENRICHMENT] cooldown 15s after ' + index + ' source pages\n');
+      await new Promise((resolve) => setTimeout(resolve, 15000));
+    }
+
     process.stderr.write(
       '[ENRICHMENT] ' +
         String(index + 1).padStart(2, '0') +
@@ -261,8 +266,8 @@ async function main(): Promise<void> {
         {
           // Existing-event recovery is deliberately slower than discovery.
           // Rausgegangen started returning 403s at the discovery cadence.
-          requestDelayMs: 1750,
-          maxRetries: 1,
+          requestDelayMs: 2500,
+          maxRetries: 2,
         },
       );
 

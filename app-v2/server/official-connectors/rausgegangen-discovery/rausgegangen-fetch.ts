@@ -23,8 +23,42 @@ export interface RausgegangenFetchOptions {
 
 let lastRequestAt = 0;
 
+const RETRYABLE_HTTP_STATUSES = new Set([403, 408, 425, 429, 500, 502, 503, 504]);
+
 async function sleep(ms: number): Promise<void> {
   await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function waitForRequestSlot(delayMs: number): Promise<void> {
+  const sinceLast = Date.now() - lastRequestAt;
+  if (sinceLast < delayMs) {
+    await sleep(delayMs - sinceLast);
+  }
+}
+
+function parseRetryAfterMs(raw: string | null): number | undefined {
+  if (!raw) {
+    return undefined;
+  }
+  const seconds = Number.parseInt(raw, 10);
+  if (Number.isFinite(seconds) && seconds >= 0) {
+    return seconds * 1000;
+  }
+  const dateMs = Date.parse(raw);
+  if (!Number.isFinite(dateMs)) {
+    return undefined;
+  }
+  return Math.max(0, dateMs - Date.now());
+}
+
+function httpRetryDelayMs(
+  response: Response,
+  attempt: number,
+  requestDelayMs: number,
+): number {
+  const retryAfter = parseRetryAfterMs(response.headers.get('retry-after')) ?? 0;
+  const exponential = Math.max(5000, requestDelayMs * 4 * 2 ** attempt);
+  return Math.min(60000, Math.max(retryAfter, exponential));
 }
 
 function cacheKey(url: string): string {
@@ -57,16 +91,12 @@ export async function fetchRausgegangenHtml(
   }
 
   const delay = options.requestDelayMs ?? DEFAULT_DISCOVERY_BOUNDS.requestDelayMs;
-  const sinceLast = Date.now() - lastRequestAt;
-  if (sinceLast < delay) {
-    await sleep(delay - sinceLast);
-  }
-
   const timeoutMs = options.timeoutMs ?? DEFAULT_DISCOVERY_BOUNDS.fetchTimeoutMs;
   const maxRetries = options.maxRetries ?? DEFAULT_DISCOVERY_BOUNDS.maxRetries;
   let lastError: string | undefined;
 
   for (let attempt = 0; attempt <= maxRetries; attempt += 1) {
+    await waitForRequestSlot(delay);
     lastRequestAt = Date.now();
     try {
       const response = await fetch(url, {
@@ -78,21 +108,37 @@ export async function fetchRausgegangenHtml(
         signal: AbortSignal.timeout(timeoutMs),
       });
       const html = await response.text();
-      if (cacheDir && response.ok) {
-        writeCache(cacheDir, url, html);
+      if (response.ok) {
+        if (cacheDir) {
+          writeCache(cacheDir, url, html);
+        }
+        return {
+          ok: true,
+          status: response.status,
+          html,
+          finalUrl: response.url,
+          fromCache: false,
+        };
       }
+
+      lastError = `http_${response.status}`;
+      if (attempt < maxRetries && RETRYABLE_HTTP_STATUSES.has(response.status)) {
+        await sleep(httpRetryDelayMs(response, attempt, delay));
+        continue;
+      }
+
       return {
-        ok: response.ok,
+        ok: false,
         status: response.status,
         html,
         finalUrl: response.url,
         fromCache: false,
-        error: response.ok ? undefined : `http_${response.status}`,
+        error: lastError,
       };
     } catch (error) {
       lastError = error instanceof Error ? error.message : String(error);
       if (attempt < maxRetries) {
-        await sleep(delay * (attempt + 1));
+        await sleep(Math.max(1000, delay * (attempt + 1)));
       }
     }
   }
