@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   preview:
-    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'feature/event-enrichment-completeness' || startsWith(github.head_ref, 'fix/rausgegangen-recovery-')
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'feature/event-enrichment-completeness' || startsWith(github.head_ref, 'fix/rausgegangen-recovery-') || github.head_ref == 'feature/rausgegangen-lineup-price-recovery'
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
@@ -40,11 +40,16 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Install Chromium for provider recovery
+        run: npx playwright install --with-deps chromium
+
       - name: Enrichment regression tests
         run: >-
           npx vitest run
           server/official-connectors/rausgegangen-discovery/__tests__/ticket-availability.test.ts
           server/official-connectors/rausgegangen-discovery/__tests__/import-eligibility.test.ts
+          server/official-connectors/__tests__/title-lineup-evidence.test.ts
+          server/official-connectors/ticket-evidence/__tests__/generic-browser-ticket-evidence.test.ts
           server/official-connectors/ticket-evidence/__tests__/ticket-persistence-status-safety.test.ts
           src/features/events/tickets/__tests__/consumer-ticket-safety-gate.test.ts
 
