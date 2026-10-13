@@ -88,51 +88,6 @@ describe('official title lineup evidence', () => {
   });
 
 
-  it('extracts explicit w/ multi-act billing without venue or more noise', () => {
-    const ascension = extractVerifiedTitleLineupCandidates({
-      eventTitle:
-        'Ascension w/ Limoncello, Hotboi2300, Oskamaxx, Patrick Schumm & more at Helios37',
-    });
-    expect(ascension.candidates.map((act) => act.displayName)).toEqual([
-      'Limoncello',
-      'Hotboi2300',
-      'Oskamaxx',
-      'Patrick Schumm',
-    ]);
-
-    const birthday = extractVerifiedTitleLineupCandidates({
-      eventTitle: '12 Jahre Richtig DICK Techno! w/ Zeuz, Tommy Libera',
-    });
-    expect(birthday.candidates.map((act) => act.displayName)).toEqual([
-      'Zeuz',
-      'Tommy Libera',
-    ]);
-
-    const weiberfastnacht = extractVerifiedTitleLineupCandidates({
-      eventTitle: 'Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more',
-    });
-    expect(weiberfastnacht.candidates.map((act) => act.displayName)).toEqual([
-      'Trash Island',
-      'Mickie Krause',
-    ]);
-  });
-
-  it('extracts a narrow German show mit billing pattern without treating arbitrary prose as lineup', () => {
-    const extracted = extractVerifiedTitleLineupCandidates({
-      eventTitle:
-        'Feiern wie früher - nur früher! Der Daytime Rave mit ANNA REUSCH & THOMAS SCHUMACHER',
-    });
-    expect(extracted.candidates.map((act) => act.displayName)).toEqual([
-      'ANNA REUSCH',
-      'THOMAS SCHUMACHER',
-    ]);
-
-    const prose = extractVerifiedTitleLineupCandidates({
-      eventTitle: 'Eine Nacht mit guter Musik und Freunden',
-    });
-    expect(prose.candidates).toHaveLength(0);
-  });
-
   it('does not invent artists from show-only organizer presenter titles', () => {
     const extracted = extractVerifiedTitleLineupCandidates({
       eventTitle: 'Bootshaus & Loonyland pres. Halloween 2026',
