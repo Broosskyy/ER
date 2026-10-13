@@ -306,8 +306,19 @@ function extractFromGermanShowWithPattern(
     return;
   }
 
+  const billing = cleanTitleText(match[1]);
+  const hasMultipleActs = /[,|&|+]/.test(billing);
+  const letters = billing.replace(/[^A-Za-zÄÖÜäöüß]/g, '');
+  const looksLikeBillingCaps =
+    letters.length >= 4 &&
+    letters === letters.toLocaleUpperCase('de-DE');
+
+  if (!hasMultipleActs || !looksLikeBillingCaps) {
+    return;
+  }
+
   pushExplicitBilling(
-    match[1],
+    billing,
     title,
     validationContext,
     candidates,
