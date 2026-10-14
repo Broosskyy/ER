@@ -1,5 +1,6 @@
 import { ProfileScreenContent } from '@/features/profile/components/ProfileScreenContent';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { usePathname } from 'expo-router';
 
 import { AppScreen, AppText, SafeAreaContainer, ScreenContent } from '@/components';
 import { IconButton } from '@/components/buttons/IconButton';
@@ -11,7 +12,12 @@ import { useScreenBottomInset } from '@/platform/screen-insets';
 export default function ProfileScreen() {
   useWebPageTitle('webTitles.profile');
   const { t } = useAppTranslation();
+  const pathname = usePathname();
   const bottomInset = useScreenBottomInset();
+
+  if (Platform.OS === 'web' && pathname !== '/profile') {
+    return null;
+  }
 
   return (
     <AppScreen>
