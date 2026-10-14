@@ -26,6 +26,10 @@ const LIVE_AT_PATTERN = /\s+live\s+at\s+/i;
 const WITH_PATTERN = /\s+(?:with|w\/|\/w|feat\.?|ft\.?)\s+/i;
 const GERMAN_SHOW_WITH_PATTERN =
   /\b(?:rave|party|nacht|festival|session|show)\s+mit\s+(.+)$/i;
+const TOUR_PREFIX_PATTERNS = [
+  /^(.+?)\s*(?:\/\/\/|•|\|)\s+.*\btour\b/i,
+  /^(.+?)\s+["“][^"”]+["”]\s*[-–—]?\s*tour\b/i,
+];
 
 function cleanTitleText(title: string): string {
   return normalizeLineupName(title.replace(/[!?]+$/g, '').trim());
@@ -294,6 +298,39 @@ function extractFromWithPattern(
   );
 }
 
+function extractFromTourPrefixPattern(
+  title: string,
+  organizerLabel: string | undefined,
+  validationContext: LineupValidationContext | undefined,
+  candidates: OfficialLineupCandidate[],
+  seen: Set<string>,
+  rejected: RejectedOfficialCandidate[],
+): void {
+  for (const pattern of TOUR_PREFIX_PATTERNS) {
+    const match = title.match(pattern);
+    const rawArtist = match?.[1] ? cleanTitleText(match[1]) : '';
+    if (!rawArtist) {
+      continue;
+    }
+    if (isOrganizerOrVenueSegment(rawArtist, organizerLabel, validationContext)) {
+      return;
+    }
+    if (looksLikeShowTitle(rawArtist)) {
+      return;
+    }
+
+    pushCandidate(
+      candidates,
+      seen,
+      rejected,
+      rawArtist,
+      title,
+      validationContext,
+    );
+    return;
+  }
+}
+
 function extractFromGermanShowWithPattern(
   title: string,
   validationContext: LineupValidationContext | undefined,
@@ -352,6 +389,14 @@ export function extractVerifiedTitleLineupCandidates(
   extractFromLiveAtPattern(title, input.validationContext, candidates, seen, rejectedCandidates);
   extractFromAtVenuePattern(title, input.validationContext, candidates, seen, rejectedCandidates);
   extractFromWithPattern(title, input.validationContext, candidates, seen, rejectedCandidates);
+  extractFromTourPrefixPattern(
+    title,
+    input.organizerLabel,
+    input.validationContext,
+    candidates,
+    seen,
+    rejectedCandidates,
+  );
   extractFromGermanShowWithPattern(
     title,
     input.validationContext,
