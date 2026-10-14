@@ -88,6 +88,25 @@ describe('official title lineup evidence', () => {
   });
 
 
+  it.each([
+    ['OSWALD • WIR WAREN HIER TOUR 2026', 'OSWALD'],
+    ['Mariybu "FRECH"-Tour', 'Mariybu'],
+    ['KYTES /// Indie Rave Tour 2026 & 2027', 'KYTES'],
+    ['PaulWetz /// TOUR 2027', 'PaulWetz'],
+  ])('recovers explicit tour headliner from %s', (eventTitle, expected) => {
+    const extracted = extractVerifiedTitleLineupCandidates({ eventTitle });
+    expect(extracted.candidates.map((act) => act.displayName)).toEqual([expected]);
+  });
+
+  it.each([
+    'RAVEMANIA // WINTER WONDERLAND RAVE',
+    'WIR WAREN HIER TOUR 2026',
+    'FRECH-Tour',
+  ])('does not invent a tour headliner from show-only title %s', (eventTitle) => {
+    const extracted = extractVerifiedTitleLineupCandidates({ eventTitle });
+    expect(extracted.candidates).toHaveLength(0);
+  });
+
   it('does not invent artists from show-only organizer presenter titles', () => {
     const extracted = extractVerifiedTitleLineupCandidates({
       eventTitle: 'Bootshaus & Loonyland pres. Halloween 2026',
