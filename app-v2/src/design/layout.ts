@@ -69,8 +69,8 @@ export const componentSize = {
   ticketQrCodeSize: 152,
   eventListRowMinHeight: 96,
   featuredHeroAspectRatio: 16 / 9,
-  /** Home featured hero — tall portrait image dominates the card. */
-  featuredHomeAspectRatio: 3 / 4,
+  /** Home feed sources are overwhelmingly landscape event artwork; avoid destructive portrait cropping. */
+  featuredHomeAspectRatio: 16 / 9,
   /** Vertical premium discovery card — image-first emotional layout. */
   verticalPremiumAspectRatio: 4 / 5,
   /** Compact premium tonight card thumbnail. */

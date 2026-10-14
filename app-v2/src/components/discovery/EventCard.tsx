@@ -15,6 +15,22 @@ import { TicketPriceLabel } from './TicketPriceLabel';
 import { resolveEventCardMetrics, type EventCardVariant } from './event-card-styles';
 import type { EventCardViewModel } from './view-models';
 
+function formatVenueCity(venue?: string, city?: string): string {
+  const normalizedVenue = venue?.trim() ?? '';
+  const normalizedCity = city?.trim() ?? '';
+
+  if (!normalizedVenue) {
+    return normalizedCity;
+  }
+  if (!normalizedCity) {
+    return normalizedVenue;
+  }
+  if (normalizedVenue.toLocaleLowerCase('de-DE').includes(normalizedCity.toLocaleLowerCase('de-DE'))) {
+    return normalizedVenue;
+  }
+  return `${normalizedVenue}, ${normalizedCity}`;
+}
+
 export interface EventCardProps {
   event: EventCardViewModel;
   variant?: EventCardVariant;
@@ -199,7 +215,7 @@ function FeaturedHomeCard({
           <View style={styles.venueRow}>
             <AppIcon name="location" size="sm" colorRole="accent" />
             <AppText role="cardSubtitle" color={theme.colors.textSecondary} numberOfLines={1}>
-              {event.venueLabel}, {event.cityLabel}
+              {formatVenueCity(event.venueLabel, event.cityLabel)}
             </AppText>
           </View>
 
@@ -276,7 +292,7 @@ function CompactPremiumCard({
           <View style={styles.venueRow}>
             <AppIcon name="location" size="sm" colorRole="accent" />
             <AppText role="cardSubtitle" color={theme.colors.textSecondary} numberOfLines={1}>
-              {event.venueLabel}, {event.cityLabel}
+              {formatVenueCity(event.venueLabel, event.cityLabel)}
             </AppText>
           </View>
 
@@ -379,7 +395,7 @@ function VerticalPremiumCard({
         <View style={styles.venueRow}>
           <AppIcon name="location" size="sm" colorRole="accent" />
           <AppText role="cardSubtitle" color={theme.colors.textSecondary} numberOfLines={1}>
-            {event.venueLabel}, {event.cityLabel}
+            {formatVenueCity(event.venueLabel, event.cityLabel)}
           </AppText>
         </View>
 
@@ -467,7 +483,7 @@ function LegacyEventCard({
           <View style={styles.venueRow}>
             <AppIcon name="location" size="sm" colorRole="accent" />
             <AppText role="cardSubtitle" color={theme.colors.textSecondary} numberOfLines={1}>
-              {event.venueLabel}, {event.cityLabel}
+              {formatVenueCity(event.venueLabel, event.cityLabel)}
             </AppText>
           </View>
 

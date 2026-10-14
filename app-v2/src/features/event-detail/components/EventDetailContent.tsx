@@ -1,6 +1,7 @@
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { ExpandableText } from '@/components/layout/ExpandableText';
+import { FavoriteButton } from '@/components/buttons/FavoriteButton';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton';
 import { TicketStatusBadge } from '@/components/discovery/EventStatusBadge';
 import { EventImage } from '@/components/discovery/EventImage';
@@ -10,6 +11,7 @@ import { useTheme } from '@/design/theme';
 import type { EventDetail } from '@/features/events/types/event-core';
 import type { EventDisplayModel } from '@/features/events/formatting/display-event';
 import { buildEventDetailVisibleSurface } from '@/features/event-detail/event-detail-visible-surface';
+import { useFavoriteToggle } from '@/features/favorites';
 
 export interface EventDetailContentProps {
   detail: EventDetail;
@@ -37,13 +39,21 @@ function GenreChip({ label }: { label: string }) {
 export function EventDetailContent({ detail, display }: EventDetailContentProps) {
   const { theme } = useTheme();
   const surface = buildEventDetailVisibleSurface(detail, display);
+  const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle();
 
   return (
     <ScrollView contentContainerStyle={styles.content} testID="event-detail-content">
       <EventImage variant="hero" source={display.image} />
 
       <View style={styles.section}>
-        <AppText role="titleLarge">{surface.title}</AppText>
+        <View style={styles.titleRow}>
+          <AppText role="titleLarge" style={styles.titleText}>{surface.title}</AppText>
+          <FavoriteButton
+            active={isHydrated && isFavorite(display.id)}
+            onPress={() => toggleFavorite(display.id)}
+            accessibilityLabel={isFavorite(display.id) ? 'Aus Favoriten entfernen' : 'Event speichern'}
+          />
+        </View>
         <AppText role="body" style={styles.meta}>
           {display.date}
           {display.startTime ? ` · ${display.startTime}` : ''}
@@ -187,6 +197,15 @@ const styles = StyleSheet.create({
   section: {
     paddingHorizontal: spacingRoles.screenHorizontal,
     gap: 8,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+  },
+  titleText: {
+    flex: 1,
+    minWidth: 0,
   },
   meta: {
     marginTop: 4,

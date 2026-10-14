@@ -5,10 +5,16 @@ import { HomeFeedContent } from '@/features/home/components/HomeFeedContent';
 import { homeGoldenSpacing } from '@/features/home/home-golden-spacing';
 import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
+import { usePathname } from 'expo-router';
 
 export default function HomeScreen() {
   useWebDocumentTitle(WEB_PAGE_TITLES.home, '/');
+  const pathname = usePathname();
+
+  if (Platform.OS === 'web' && pathname !== '/') {
+    return null;
+  }
 
   return (
     <AppScreen>

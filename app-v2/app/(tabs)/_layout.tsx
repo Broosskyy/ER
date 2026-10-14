@@ -43,7 +43,9 @@ export default function TabLayout() {
       <View style={[styles.root, { backgroundColor: theme.colors.background }]}>
         {showWebTopNav ? <WebTopNav /> : null}
         <Tabs
+          detachInactiveScreens
           screenOptions={{
+            lazy: true,
             headerShown: false,
             tabBarActiveTintColor: colorRoles.bottomNavActive,
             tabBarInactiveTintColor: colorRoles.bottomNavInactive,

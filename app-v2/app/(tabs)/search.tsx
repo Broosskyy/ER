@@ -1,30 +1,75 @@
-import { StyleSheet, View } from 'react-native';
+import { useMemo, useState } from 'react';
+import { FlatList, Platform, StyleSheet, View } from 'react-native';
+import { usePathname } from 'expo-router';
 
 import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { EmptyState } from '@/components/feedback/EmptyState';
-import { AppText } from '@/components/layout/AppText';
 import { spacing, spacingRoles } from '@/design/spacing';
-import { useAppTranslation } from '@/features/i18n/useAppTranslation';
+import { EventDiscoveryCard } from '@/features/events/components/EventDiscoveryCard';
+import { usePublishedEvents } from '@/features/events/hooks/usePublishedEvents';
+import { useFavoriteToggle } from '@/features/favorites';
+import { SearchInput } from '@/features/search/components/SearchInput';
+import { buildEventSearchIndex } from '@/features/search/constants';
 import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
 import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function SearchScreen() {
   useWebDocumentTitle(WEB_PAGE_TITLES.search);
-  const { t } = useAppTranslation();
+  const pathname = usePathname();
+  const { events } = usePublishedEvents();
+  const [query, setQuery] = useState('');
+  const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle('/(tabs)/search');
+
+  const filteredEvents = useMemo(() => {
+    const normalized = query.trim().toLocaleLowerCase('de-DE');
+    if (!normalized) {
+      return events;
+    }
+
+    return events.filter((event) =>
+      buildEventSearchIndex(event).toLocaleLowerCase('de-DE').includes(normalized),
+    );
+  }, [events, query]);
+
+  if (Platform.OS === 'web' && pathname !== '/search') {
+    return null;
+  }
 
   return (
     <AppScreen>
       <SafeAreaContainer edges={['top']} style={styles.safeArea}>
         <ResponsiveScreen style={styles.container}>
-          <AppText role="titleLarge" style={styles.title}>
-            {t('search.title')}
-          </AppText>
-          <View style={styles.stateWrap}>
-            <EmptyState
-              title="Keine Events gefunden"
-              description="Die Suche ist bereit, aber der Event-Core enthält noch keine veröffentlichten Events."
+          <SearchInput value={query} onChangeText={setQuery} />
+
+          {filteredEvents.length === 0 ? (
+            <View style={styles.stateWrap}>
+              <EmptyState
+                title="Keine Events gefunden"
+                description={
+                  query.trim()
+                    ? 'Für deine Suche wurden keine passenden Events gefunden.'
+                    : 'Aktuell sind keine veröffentlichten Events verfügbar.'
+                }
+              />
+            </View>
+          ) : (
+            <FlatList
+              data={filteredEvents}
+              keyExtractor={(event) => event.id}
+              renderItem={({ item }) => (
+                <EventDiscoveryCard
+                  event={item}
+                  variant="standard"
+                  saved={isHydrated && isFavorite(item.id)}
+                  onFavoritePress={() => toggleFavorite(item.id)}
+                  testID={`events-event-${item.id}`}
+                />
+              )}
+              contentContainerStyle={styles.listContent}
+              keyboardShouldPersistTaps="handled"
+              testID="events-event-list"
             />
-          </View>
+          )}
         </ResponsiveScreen>
       </SafeAreaContainer>
     </AppScreen>
@@ -34,14 +79,14 @@ export default function SearchScreen() {
 const styles = StyleSheet.create({
   safeArea: { flex: 1 },
   container: { flex: 1 },
-  title: {
-    paddingHorizontal: spacingRoles.screenHorizontal,
-    paddingTop: spacing.sm,
-    paddingBottom: spacing.md,
-  },
   stateWrap: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: spacingRoles.screenHorizontal,
+  },
+  listContent: {
+    paddingHorizontal: spacingRoles.screenHorizontal,
+    paddingBottom: spacingRoles.listBottomInset,
+    gap: spacing.md,
   },
 });
