@@ -20,10 +20,6 @@ export default function SearchScreen() {
   const [query, setQuery] = useState('');
   const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle('/(tabs)/search');
 
-  if (Platform.OS === 'web' && pathname !== '/search') {
-    return null;
-  }
-
   const filteredEvents = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase('de-DE');
     if (!normalized) {
@@ -34,6 +30,10 @@ export default function SearchScreen() {
       buildEventSearchIndex(event).toLocaleLowerCase('de-DE').includes(normalized),
     );
   }, [events, query]);
+
+  if (Platform.OS === 'web' && pathname !== '/search') {
+    return null;
+  }
 
   return (
     <AppScreen>
