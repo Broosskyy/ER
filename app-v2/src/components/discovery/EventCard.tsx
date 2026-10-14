@@ -15,6 +15,10 @@ import { TicketPriceLabel } from './TicketPriceLabel';
 import { resolveEventCardMetrics, type EventCardVariant } from './event-card-styles';
 import type { EventCardViewModel } from './view-models';
 
+function shouldShowEventStatus(status: EventCardViewModel['status']): boolean {
+  return Boolean(status && status !== 'upcoming' && status !== 'unverified');
+}
+
 function formatVenueCity(venue?: string, city?: string): string {
   const normalizedVenue = venue?.trim() ?? '';
   const normalizedCity = city?.trim() ?? '';
@@ -279,9 +283,9 @@ function CompactPremiumCard({
         <EventImage source={event.image} variant="compactPremium" />
 
         <View style={styles.compactPremiumDetails}>
-          {(event.status || event.ticketStatus) && (
+          {(shouldShowEventStatus(event.status) || event.ticketStatus) && (
             <View style={styles.statusRow}>
-              {event.status ? <EventStatusBadge status={event.status} showIcon /> : null}
+              {shouldShowEventStatus(event.status) ? <EventStatusBadge status={event.status!} showIcon /> : null}
               {event.ticketStatus ? <TicketStatusBadge status={event.ticketStatus} /> : null}
             </View>
           )}
@@ -378,9 +382,9 @@ function VerticalPremiumCard({
       />
 
       <View style={[styles.verticalPremiumBody, { gap: spacing.xs }]}>
-        {(event.status || event.ticketStatus) && (
+        {(shouldShowEventStatus(event.status) || event.ticketStatus) && (
           <View style={styles.statusRow}>
-            {event.status ? <EventStatusBadge status={event.status} showIcon /> : null}
+            {shouldShowEventStatus(event.status) ? <EventStatusBadge status={event.status!} showIcon /> : null}
             {event.ticketStatus ? <TicketStatusBadge status={event.ticketStatus} /> : null}
           </View>
         )}
@@ -508,7 +512,7 @@ function LegacyEventCard({
                 ))}
               </View>
               <View style={styles.statusArea}>
-                {event.status ? <EventStatusBadge status={event.status} /> : null}
+                {shouldShowEventStatus(event.status) ? <EventStatusBadge status={event.status!} /> : null}
                 {event.ticketStatus ? <TicketStatusBadge status={event.ticketStatus} /> : null}
                 {event.ticketLabel ? (
                   <TicketPriceLabel label={event.ticketLabel} colorToken={event.ticketColorToken} />
