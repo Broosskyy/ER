@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-13T15:23:53.538839+00:00",
+  "generatedAt": "2026-10-14T09:15:46.442338+00:00",
   "source": "Eternal Rave staging gnkjzinwvmrxcadwebhv",
-  "scope": "upcoming Rausgegangen events only",
+  "scope": "upcoming published Rausgegangen events only",
   "count": 42,
   "events": [
     {
@@ -17,9 +17,9 @@
       "venueName": "Helios 37",
       "currentTicket": null,
       "organizerName": "Ascension",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:ascension-161026-0",
-      "currentLineupCount": 0
+      "currentLineupCount": 4
     },
     {
       "city": "Köln",
@@ -33,7 +33,7 @@
       "venueName": "artheater Köln",
       "currentTicket": null,
       "organizerName": "Connected Cologne",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:connected-friends-0",
       "currentLineupCount": 0
     },
@@ -47,9 +47,17 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/house-nacht-house-music-all-night-long-kalif-storch-erfurt-0/",
       "venueName": "Kalif Storch",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": "EUR",
+        "provider": "organizer_shop",
+        "ticketId": "e1721b8e-67ec-4dd3-8b80-10387d70a613",
+        "sortOrder": 0,
+        "ticketUrl": "https://www.tixforgigs.com/Event/76274?af=hybct529o893&saf=azkwpxh",
+        "salesStatus": "available",
+        "priceFromMinor": 1000
+      },
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:house-nacht-house-music-all-night-long-kalif-storch-erfurt-0",
       "currentLineupCount": 0
     },
@@ -65,7 +73,7 @@
       "venueName": "Fridas Pier",
       "currentTicket": null,
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:wyldhearts-25",
       "currentLineupCount": 0
     },
@@ -81,7 +89,7 @@
       "venueName": "Zoom",
       "currentTicket": null,
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:oswald-wir-waren-hier-tour-2026-9",
       "currentLineupCount": 0
     },
@@ -97,7 +105,7 @@
       "venueName": "Kulturzentrum Lagerhaus",
       "currentTicket": null,
       "organizerName": "Buback",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:mariybu-frech-tour-12",
       "currentLineupCount": 0
     },
@@ -111,11 +119,19 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/12-jahre-richtig-dick-techno-w-zeuz-tommy-libera-0/",
       "venueName": "Fusion Club",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "0bc81a7d-5160-470f-9143-bafc7d9a2ca5",
+        "sortOrder": 0,
+        "ticketUrl": "https://stagedates.com/events/12-jahre-richtig-dick-techno-fusion-munster-20261017-0XDD3",
+        "salesStatus": "available",
+        "priceFromMinor": null
+      },
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:12-jahre-richtig-dick-techno-w-zeuz-tommy-libera-0",
-      "currentLineupCount": 0
+      "currentLineupCount": 2
     },
     {
       "city": "Bielefeld",
@@ -127,7 +143,15 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/berrylectro-x-high-voltage-rave-0/",
       "venueName": "Sams Bielefeld",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "8edb79f8-0d1a-4f1e-9f42-f8e4ba6b9419",
+        "sortOrder": 0,
+        "ticketUrl": "https://stagedates.com/events/17-10-berrylectro-x-high-voltage-sams-bielefeld-club-sams-20261017-0BxeF",
+        "salesStatus": "available",
+        "priceFromMinor": null
+      },
       "organizerName": null,
       "hasDescription": false,
       "sourceEventKey": "rausgegangen:berrylectro-x-high-voltage-rave-0",
@@ -145,7 +169,7 @@
       "venueName": "Skaters Palace",
       "currentTicket": null,
       "organizerName": "Buback",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:mariybu-frech-tour-13",
       "currentLineupCount": 0
     },
@@ -159,7 +183,15 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0/",
       "venueName": "Zeiss Planetarium Bochum",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "ebcadce9-1cd8-4259-a0da-7abcec9e1337",
+        "sortOrder": 0,
+        "ticketUrl": "https://planetarium-bochum.de/de_DE/calendar/electric-lights.1399145",
+        "salesStatus": "availability_unverified",
+        "priceFromMinor": null
+      },
       "organizerName": null,
       "hasDescription": true,
       "sourceEventKey": "rausgegangen:electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0",
@@ -177,7 +209,7 @@
       "venueName": "Odonien",
       "currentTicket": null,
       "organizerName": "Beats x Bass x Cologne",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:mittwochenende-by-beats-x-bass-x-cologne-at-odonien-18",
       "currentLineupCount": 0
     },
@@ -193,7 +225,7 @@
       "venueName": "Kesselhaus München",
       "currentTicket": null,
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:fraktur-0",
       "currentLineupCount": 0
     },
@@ -225,7 +257,7 @@
       "venueName": "Graf Karl",
       "currentTicket": null,
       "organizerName": "Feiern wie früher - nur früher!",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:feiern-wie-fruher-nur-fruher-der-early-evening-rave-mit-anna-6",
       "currentLineupCount": 0
     },
@@ -239,9 +271,17 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/harder-horror-night-0/",
       "venueName": "Kesselhaus München",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "210b857f-507c-4208-8d2e-87b9b739b4e4",
+        "sortOrder": 0,
+        "ticketUrl": "https://www.permanent-entertainment.com/event/harder-horror-night-31-10-2026/",
+        "salesStatus": "available",
+        "priceFromMinor": null
+      },
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:harder-horror-night-0",
       "currentLineupCount": 0
     },
@@ -257,7 +297,7 @@
       "venueName": "zakk - Zentrum für Aktion, Kultur und Kommunikation",
       "currentTicket": null,
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:halloween-party-158",
       "currentLineupCount": 0
     },
@@ -271,14 +311,22 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/smag-pres-halloween-horror-dance-0/",
       "venueName": "Weststadthalle",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": "EUR",
+        "provider": "ticket_io",
+        "ticketId": "1ea8787f-b69c-492f-8798-36df97fe558d",
+        "sortOrder": 0,
+        "ticketUrl": "https://smagevents.ticket.io/lUVWvmAP/",
+        "salesStatus": "available",
+        "priceFromMinor": 2500
+      },
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:smag-pres-halloween-horror-dance-0",
       "currentLineupCount": 0
     },
     {
-      "city": null,
+      "city": "Stuttgart",
       "title": "Elektronisch Draussen @Fridas Pier - Unterdeck Session",
       "endsAt": "2026-11-08T05:00:00+00:00",
       "eventId": "36158b6b-1ce1-4e51-a256-c9789cfbf181",
@@ -286,8 +334,16 @@
       "startsAt": "2026-11-07T22:00:00+00:00",
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/elektronisch-draussen-fridas-pier-unterdeck-session-0/",
-      "venueName": null,
-      "currentTicket": null,
+      "venueName": "Fridas Pier",
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "e537e973-24e4-423b-9adb-769d9f8e64e9",
+        "sortOrder": 0,
+        "ticketUrl": "https://fridas-pier.stgdts.com/events/elektronisch-draussen-unterdeck-session-fridas-pier-20261107-Ar6ND",
+        "salesStatus": "available",
+        "priceFromMinor": null
+      },
       "organizerName": "Elektronisch Draussen",
       "hasDescription": true,
       "sourceEventKey": "rausgegangen:elektronisch-draussen-fridas-pier-unterdeck-session-0",
@@ -319,9 +375,17 @@
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/aesthetic-perfection-6/",
       "venueName": "MusikZentrum Hannover",
-      "currentTicket": null,
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "a9a53626-7f15-4d5d-9038-e7252ef59bb0",
+        "sortOrder": 0,
+        "ticketUrl": "https://www.livingconcerts.de/events/aesthetic-perfection-3",
+        "salesStatus": "available",
+        "priceFromMinor": null
+      },
       "organizerName": "Living Concerts",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:aesthetic-perfection-6",
       "currentLineupCount": 0
     },
@@ -449,7 +513,7 @@
       "venueName": "Schick",
       "currentTicket": null,
       "organizerName": "Dom Waits",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:midnight-ink-techno-tattoos-1",
       "currentLineupCount": 0
     },
@@ -489,7 +553,7 @@
       "venueName": "Beben",
       "currentTicket": null,
       "organizerName": null,
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:nachtstrom-recharged-dj-nachtstrom-4",
       "currentLineupCount": 0
     },
@@ -505,7 +569,7 @@
       "venueName": "Beben",
       "currentTicket": null,
       "organizerName": "Dom Waits",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:technophil-3",
       "currentLineupCount": 0
     },
@@ -521,7 +585,7 @@
       "venueName": "Beben",
       "currentTicket": null,
       "organizerName": "Dom Waits",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:der-gebrochene-samstag-5",
       "currentLineupCount": 0
     },
@@ -542,7 +606,7 @@
       "currentLineupCount": 0
     },
     {
-      "city": null,
+      "city": "Köln",
       "title": "Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more",
       "endsAt": "2027-02-05T00:00:00+00:00",
       "eventId": "e36a5e6b-f079-436c-a546-af479ee80e06",
@@ -550,12 +614,20 @@
       "startsAt": "2027-02-04T13:00:00+00:00",
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0/",
-      "venueName": null,
-      "currentTicket": null,
+      "venueName": "Bootshaus",
+      "currentTicket": {
+        "currency": "EUR",
+        "provider": "ticket_io",
+        "ticketId": "90cbb20e-5933-44c2-8dd9-85815b6885f5",
+        "sortOrder": 0,
+        "ticketUrl": "https://bootshaus-club.ticket.io/gxSFfYGS/",
+        "salesStatus": "available",
+        "priceFromMinor": 2900
+      },
       "organizerName": null,
       "hasDescription": true,
       "sourceEventKey": "rausgegangen:weiberfastnacht-im-bootshaus-w-trash-island-mickie-krause-mo-0",
-      "currentLineupCount": 0
+      "currentLineupCount": 2
     },
     {
       "city": "Erfurt",
@@ -665,12 +737,12 @@
       "venueName": "Wagenhallen Stuttgart",
       "currentTicket": null,
       "organizerName": "All Artists Agency GmbH",
-      "hasDescription": false,
+      "hasDescription": true,
       "sourceEventKey": "rausgegangen:paulwetz-tour-2027-9",
       "currentLineupCount": 0
     },
     {
-      "city": null,
+      "city": "Köln",
       "title": "A TECHNO BALLET ODYSSEY",
       "endsAt": "2027-04-22T22:00:00+00:00",
       "eventId": "546d7369-0d9d-4251-9882-4dfed910b926",
@@ -678,8 +750,16 @@
       "startsAt": "2027-04-22T17:30:00+00:00",
       "timezone": "Europe/Berlin",
       "sourceUrl": "https://rausgegangen.de/events/a-techno-ballet-odyssey-17/",
-      "venueName": null,
-      "currentTicket": null,
+      "venueName": "Bootshaus",
+      "currentTicket": {
+        "currency": null,
+        "provider": "organizer_shop",
+        "ticketId": "46589e2e-80b6-4104-995f-77c0f761540b",
+        "sortOrder": 0,
+        "ticketUrl": "https://www.berlinballet.company/a-techno-ballet-odyssey?utm_source=bootshaus&utm_medium=referral&utm_campaign=tbo_koeln_bootshaus",
+        "salesStatus": "available",
+        "priceFromMinor": null
+      },
       "organizerName": null,
       "hasDescription": true,
       "sourceEventKey": "rausgegangen:a-techno-ballet-odyssey-17",
