@@ -5,6 +5,7 @@ import type { OfficialEventEvidence, OfficialLineupCandidate } from '../types';
 import { processOfficialEventTickets } from '../ticket-evidence/ticket-evidence-pipeline';
 import { reconcileVerifiedTicketSupplementalEvidence } from '../ticket-evidence/reconcile-verified-ticket-supplemental';
 import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
+import type { TicketBrowserOps } from '../ticket-evidence/ticket-browser-ops';
 import { classifyEventMediaAcceptability } from '../ticket-evidence/network-discovery/event-media-quality';
 import type { DetailFetchResult } from '../ticket-evidence/network-discovery/detail-fetch';
 import type { EnrichedTicketIoEvent } from '../ticket-evidence/network-discovery/detail-types';
@@ -133,6 +134,7 @@ export async function finalizeRausgegangenControlledImportEvidence(
   enriched: EnrichedTicketIoEvent,
   fetchResult: DetailFetchResult,
   fetchedAt: string,
+  options: { browserOps?: TicketBrowserOps } = {},
 ): Promise<FinalizeRausgegangenImportResult> {
   const baseEvidence = buildOfficialEvidenceFromRausgegangenEnriched(enriched, fetchResult, fetchedAt);
   if (baseEvidence.enrichmentGaps.includes('past_event_skipped')) {
@@ -152,6 +154,7 @@ export async function finalizeRausgegangenControlledImportEvidence(
     {
       prefetchedHtml: fetchResult.html,
       observedAt: fetchedAt,
+      browserOps: options.browserOps,
     },
   );
 

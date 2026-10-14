@@ -22,14 +22,28 @@ function ticketPageHasRecoverableProducts(body: string): boolean {
   return Boolean(domEvidence && domEvidence.offers.length > 0);
 }
 
+export function genericTicketPageHasRecoverableEvidence(body: string, contentType = 'text/html'): boolean {
+  if (!body) {
+    return false;
+  }
+  const hasDirectEvidence =
+    /application\/ld\+json|["']@type["']\s*:\s*["'](?:Music)?Event["']|(?:\d{1,4}[.,]\d{2}\s*€)|itemprop=["']price["']|data-price(?:=|\s)|class=["'][^"']*price/i.test(
+      body,
+    );
+  if (hasDirectEvidence) {
+    return true;
+  }
+  return isProviderPageReady(classifyProviderPageReadiness(body, contentType));
+}
+
 function rawTicketPageIsUsable(result: TicketFetchResult): boolean {
   if (!result.body || result.blocked) {
     return false;
   }
-  if (!isProviderPageReady(classifyProviderPageReadiness(result.body, result.contentType))) {
-    return false;
-  }
-  return ticketPageHasRecoverableProducts(result.body);
+  return (
+    ticketPageHasRecoverableProducts(result.body) ||
+    genericTicketPageHasRecoverableEvidence(result.body, result.contentType)
+  );
 }
 
 export interface PlaywrightTicketBrowserOpsOptions {
@@ -87,12 +101,12 @@ export function createPlaywrightTicketBrowserOps(
         const pageContext = await ensureContext();
         const page = await pageContext.newPage();
         try {
-          await page.goto(url, { waitUntil: 'networkidle', timeout: 90_000 });
+          await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45_000 });
           await page
             .waitForSelector(
-              'select.ticketCount, #ticket-event-data, .ticket-price-value, script[type="application/ld+json"]',
+              'select.ticketCount, #ticket-event-data, .ticket-price-value, script[type="application/ld+json"], [data-price], [itemprop="price"], [class*="price"]',
               {
-                timeout: 20_000,
+                timeout: 15_000,
               },
             )
             .catch(() => undefined);
@@ -100,7 +114,10 @@ export function createPlaywrightTicketBrowserOps(
           const body = await page.content();
           const finalUrl = page.url();
           const fingerprint = fingerprintBody(body);
-          const blocked = !ticketPageHasRecoverableProducts(body);
+          const blocked = !(
+            ticketPageHasRecoverableProducts(body) ||
+            genericTicketPageHasRecoverableEvidence(body, 'text/html')
+          );
           return {
             finalUrl,
             body,

@@ -87,6 +87,7 @@ describe('official title lineup evidence', () => {
     expect(acts).not.toContain('CHANGES');
   });
 
+
   it('does not invent artists from show-only organizer presenter titles', () => {
     const extracted = extractVerifiedTitleLineupCandidates({
       eventTitle: 'Bootshaus & Loonyland pres. Halloween 2026',
