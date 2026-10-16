@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "appliedAt": "2026-10-16",
+  "projectRef": "gnkjzinwvmrxcadwebhv",
+  "scope": "Live-source lineup and clean-description recovery for existing published upcoming events",
+  "lineupChanges": [
+    {
+      "eventId": "f00a3a89-0269-47d0-a2bb-cb9289873b7d",
+      "title": "Affenkäfig XXX CAPITOL XXX Hagen",
+      "sourceId": "bcdc5800-3ffa-4e98-9041-26a3f4a6c6c1",
+      "sourceUrl": "https://affenkaefig.info/event/affenkaefig-xxx-capitol-xxx-hagen-17-10-2026/",
+      "removedPlaceholder": "Folgt",
+      "artists": [
+        "KAACEE",
+        "KOMACASPER",
+        "TAKTSTÖRER",
+        "ZAPRAVKA",
+        "8288",
+        "HELLMAYER",
+        "KIMIK KARAMUSTAN",
+        "LEE-ANN",
+        "MATTHIAS OLCK",
+        "TOMMY LIBERA",
+        "UNROMANTIC"
+      ]
+    },
+    {
+      "eventId": "08d6ffbc-f96a-4f41-bb1b-ddf509cc4323",
+      "title": "BERRYLECTRO x HIGH VOLTAGE - RAVE",
+      "sourceId": "42b4355f-b918-4ea0-a744-58126fd2cbf6",
+      "sourceUrl": "https://stagedates.com/events/17-10-berrylectro-x-high-voltage-sams-bielefeld-club-sams-20261017-0BxeF",
+      "artists": [
+        "ÆRES",
+        "Bodytricks",
+        "VÆGENT",
+        "LEVAA"
+      ]
+    }
+  ],
+  "descriptionChanges": [
+    {
+      "eventId": "08d6ffbc-f96a-4f41-bb1b-ddf509cc4323",
+      "title": "BERRYLECTRO x HIGH VOLTAGE - RAVE",
+      "sourceId": "42b4355f-b918-4ea0-a744-58126fd2cbf6",
+      "method": "live_browser_exact_ticket_page_summary"
+    },
+    {
+      "eventId": "dd7397a0-a3ec-4d70-9113-93424a870bdb",
+      "title": "ROYAL RUMBLE & HD BASS präsentieren: DRUM & BASS BUNDESLIGA",
+      "sourceId": "5943d242-6226-4074-a32c-cdeb28ea45cf",
+      "method": "live_browser_exact_ticket_page_summary"
+    }
+  ],
+  "excluded": [
+    "Rausgegangen pages that returned anti-bot HTTP 403 were not used for recovery.",
+    "Bootshaus ticket boilerplate was not promoted as event description."
+  ]
+}
