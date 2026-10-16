@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { FlatList, Platform, StyleSheet, View } from 'react-native';
-import { usePathname } from 'expo-router';
+import { useIsFocused } from 'expo-router';
 
 import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
 import { EmptyState } from '@/components/feedback/EmptyState';
@@ -15,7 +15,7 @@ import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function SearchScreen() {
   useWebDocumentTitle(WEB_PAGE_TITLES.search);
-  const pathname = usePathname();
+  const isFocused = useIsFocused();
   const { events } = usePublishedEvents();
   const [query, setQuery] = useState('');
   const { isFavorite, toggleFavorite, isHydrated } = useFavoriteToggle('/(tabs)/search');
@@ -31,7 +31,7 @@ export default function SearchScreen() {
     );
   }, [events, query]);
 
-  if (Platform.OS === 'web' && pathname !== '/search') {
+  if (Platform.OS === 'web' && !isFocused) {
     return null;
   }
 
