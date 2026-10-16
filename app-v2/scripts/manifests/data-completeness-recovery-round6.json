@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "appliedAt": "2026-10-16",
+  "projectRef": "gnkjzinwvmrxcadwebhv",
+  "scope": "Conservative existing-event lineup recovery from explicit official title/description evidence",
+  "inserts": [
+    {
+      "eventId": "b95a2adb-1751-460b-b8cd-a8147f73c1fa",
+      "title": "KAROTTE - ALL NIGHT LONG",
+      "sourceId": "e11468c5-5264-463b-b351-51317858cf2f",
+      "sourceUrl": "https://rausgegangen.de/events/karotte-all-night-long-17/",
+      "billingName": "KAROTTE",
+      "billingRole": "artist",
+      "sortOrder": 0,
+      "evidenceType": "official_title_explicit_headliner",
+      "evidenceText": "KAROTTE - ALL NIGHT LONG"
+    },
+    {
+      "eventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "sourceId": "3d84b9f3-52e3-4f76-beb8-735747d61814",
+      "sourceUrl": "https://bootshaus.tv/events/19-12-26unreal-x-kuko-all-night-long-world-tour-cologne/",
+      "billingName": "KUKO",
+      "billingRole": "artist",
+      "sortOrder": 0,
+      "evidenceType": "official_title_explicit_headliner",
+      "evidenceText": "UNREAL x KUKO All Night Long World Tour (Cologne)"
+    },
+    {
+      "eventId": "8888727c-ff44-486e-95bc-72ded236e9f7",
+      "title": "Technophil",
+      "sourceId": "038eeba0-4fd9-411a-a487-5eb6b1d35998",
+      "sourceUrl": "https://rausgegangen.de/events/technophil-3/",
+      "billingName": "Troppo Zump",
+      "billingRole": "artist",
+      "sortOrder": 0,
+      "evidenceType": "official_description_explicit_host",
+      "evidenceText": "Troppo Zump (EinKlang) lädt ein"
+    }
+  ]
+}
