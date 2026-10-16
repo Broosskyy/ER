@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { usePathname, useRouter } from 'expo-router';
+import { useIsFocused, useRouter } from 'expo-router';
 import { FlatList, ListRenderItem, Platform, StyleSheet, View } from 'react-native';
 
 import { AppScreen, ResponsiveScreen, SafeAreaContainer } from '@/components';
@@ -31,7 +31,7 @@ const FILTER_LABELS: Record<SavedFilterId, string> = {
 export default function SavedScreen() {
   useWebDocumentTitle(WEB_PAGE_TITLES.saved);
   const router = useRouter();
-  const pathname = usePathname();
+  const isFocused = useIsFocused();
   const bottomInset = useScreenBottomInset();
   const { showToast } = useToast();
   const [activeFilter, setActiveFilter] = useState<SavedFilterId>('all');
@@ -87,7 +87,7 @@ export default function SavedScreen() {
 
   const keyExtractor = useCallback((item: SavedEvent) => item.eventId, []);
 
-  if (Platform.OS === 'web' && pathname !== '/saved') {
+  if (Platform.OS === 'web' && !isFocused) {
     return null;
   }
 
