@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "appliedAt": "2026-10-16",
+  "projectRef": "gnkjzinwvmrxcadwebhv",
+  "scope": "Verified live-browser ticket-row recovery for existing published events",
+  "inserts": [
+    {
+      "eventId": "9b7731b1-2a50-4a29-aca3-7e8536c89642",
+      "title": "WYLDHEARTS",
+      "provider": "organizer_shop",
+      "ticketUrl": "https://fridas-pier.stgdts.com/events/wyldhearts-fridas-pier-20261016-yYDPq/checkout/products",
+      "priceMinor": 1400,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "evidence": "Exact checkout; Phase 1 14,00 € selectable; higher phases sold out/not yet available"
+    },
+    {
+      "eventId": "4116fcfe-0add-4f58-b074-a217f061e5c6",
+      "title": "OSWALD • WIR WAREN HIER TOUR 2026",
+      "provider": "organizer_shop",
+      "ticketUrl": "https://tix.to/oswald",
+      "priceMinor": null,
+      "currency": null,
+      "salesStatus": "sold_out",
+      "evidence": "Tour landing page explicitly marks 17 OCT Frankfurt, Zoom as Sold Out"
+    },
+    {
+      "eventId": "dd7397a0-a3ec-4d70-9113-93424a870bdb",
+      "title": "ROYAL RUMBLE & HD BASS präsentieren: DRUM & BASS BUNDESLIGA",
+      "provider": "organizer_shop",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/royal-rumble-hd-bass-prasentieren-drum-bass-bundesliga",
+      "priceMinor": 1316,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "evidence": "Exact Heidelberg event page; Presale 12,00 € + 1,16 € VVK fees"
+    },
+    {
+      "eventId": "b95a2adb-1751-460b-b8cd-a8147f73c1fa",
+      "title": "KAROTTE - ALL NIGHT LONG",
+      "provider": "organizer_shop",
+      "ticketUrl": "https://fridas-pier.stgdts.com/events/karotte-auf-der-frida-fridas-pier-20261114-K3iUU/checkout/products",
+      "priceMinor": 1400,
+      "currency": "EUR",
+      "salesStatus": "available",
+      "evidence": "Exact checkout; Early Bird 14,00 € available; Regular 16,00 € sold out"
+    }
+  ],
+  "excluded": [
+    {
+      "eventId": "b75df3df-c06d-425e-a17f-30cb7d2e2e10",
+      "title": "#MittWochenende by Beats x Bass x Cologne at Odonien",
+      "reason": "stored ticket URL now returns 404"
+    },
+    {
+      "eventId": "465ffa09-2aad-4284-a7c7-2165977bc156",
+      "title": "Connected & Friends",
+      "reason": "ticket.io target returned HTTP 403 so current event identity/status could not be independently verified"
+    }
+  ]
+}
