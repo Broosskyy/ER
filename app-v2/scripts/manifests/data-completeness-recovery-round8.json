@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "appliedAt": "2026-10-16",
+  "projectRef": "gnkjzinwvmrxcadwebhv",
+  "scope": "Event-specific ticket-target recovery for existing published upcoming events",
+  "inserts": [
+    {
+      "eventId": "98a3485f-b051-4f88-be9e-c5233061242b",
+      "title": "Mariybu \"FRECH\"-Tour",
+      "city": "Bremen",
+      "provider": "ticketmaster",
+      "ticketUrl": "https://www.ticketmaster.de/event/mariybu-frech-tour-tickets/774626075",
+      "salesStatus": "availability_unverified",
+      "priceMinor": null,
+      "evidence": "Rausgegangen affiliate target resolves to exact Ticketmaster event ID 774626075; Ticketmaster blocks content verification with HTTP 403"
+    },
+    {
+      "eventId": "4db409a3-3f30-462b-96d2-295a07960d45",
+      "title": "Mariybu \"FRECH\"-Tour",
+      "city": "Münster",
+      "provider": "ticketmaster",
+      "ticketUrl": "https://www.ticketmaster.de/event/mariybu-frech-tour-tickets/303647217",
+      "salesStatus": "availability_unverified",
+      "priceMinor": null,
+      "evidence": "Rausgegangen affiliate target resolves to exact Ticketmaster event ID 303647217; Ticketmaster blocks content verification with HTTP 403"
+    },
+    {
+      "eventId": "d6ac520a-47f2-4f75-a857-cd9a425ae649",
+      "title": "Fraktur",
+      "city": "München",
+      "provider": "organizer_shop",
+      "ticketUrl": "https://tickets.permanent-entertainment.com/checkout/fraktur-festival-2026-1et38o",
+      "salesStatus": "low_availability",
+      "priceMinor": null,
+      "evidence": "Exact Fraktur München checkout shows WENIGE TICKETS VERFÜGBAR"
+    }
+  ]
+}
