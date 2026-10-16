@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-15T09:05:00Z",
+  "projectRef": "gnkjzinwvmrxcadwebhv",
+  "scope": "Existing published upcoming events with explicit lineup evidence in official title/description",
+  "events": [
+    {
+      "eventId": "8c493d72-345e-4b37-ba52-00da60c79fbb",
+      "title": "BACK2BASICS XXL @ Schrotty",
+      "sourceUrl": "https://tonite.ticket.io/5jI6Tv2D/",
+      "evidenceType": "official_description_explicit_roster",
+      "lineup": [
+        [
+          "A*S*Y*S",
+          "artist"
+        ],
+        [
+          "ANDREAS KRAEMER",
+          "artist"
+        ],
+        [
+          "DANIELA HENSEL",
+          "artist"
+        ],
+        [
+          "DIYU",
+          "artist"
+        ],
+        [
+          "DRUMCOMPLEX",
+          "artist"
+        ],
+        [
+          "KERSTIN EDEN",
+          "artist"
+        ],
+        [
+          "MARKUS WEIGELT",
+          "artist"
+        ],
+        [
+          "MATTHIAS OLCK",
+          "artist"
+        ],
+        [
+          "NICK SCHWENDERLING",
+          "artist"
+        ],
+        [
+          "PAPPENHEIMER",
+          "artist"
+        ],
+        [
+          "PERLA NERA",
+          "artist"
+        ],
+        [
+          "PETER PAHN",
+          "artist"
+        ],
+        [
+          "SEBASTIAN GROTH",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "9b7731b1-2a50-4a29-aca3-7e8536c89642",
+      "title": "WYLDHEARTS",
+      "sourceUrl": "https://rausgegangen.de/events/wyldhearts-25/",
+      "evidenceType": "official_description_explicit_with_list",
+      "lineup": [
+        [
+          "BabaBass3000",
+          "artist"
+        ],
+        [
+          "Nachtwasser",
+          "artist"
+        ],
+        [
+          "DJ Rundfunk",
+          "artist"
+        ],
+        [
+          "Suitside",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "caf57fa9-b061-4e3f-810d-b5c9b395e1c9",
+      "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+      "sourceUrl": "https://rausgegangen.de/events/electric-lights-women-in-electronic-music-dj-mell-g-katja-ru-0/",
+      "evidenceType": "official_title_and_description_explicit_dj_sets",
+      "lineup": [
+        [
+          "Katja Ruge",
+          "artist"
+        ],
+        [
+          "DJ Mell G",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "0db10acf-3ef5-49db-9f72-e5d1d2bcecf3",
+      "title": "Feiern wie früher - nur früher! Der Daytime Rave mit ANNA REUSCH & THOMAS SCHUMACHER",
+      "sourceUrl": "https://rausgegangen.de/events/feiern-wie-fruher-nur-fruher-der-early-evening-rave-mit-anna-6/",
+      "evidenceType": "official_title_explicit_with",
+      "lineup": [
+        [
+          "Anna Reusch",
+          "artist"
+        ],
+        [
+          "Thomas Schumacher",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "94aafc1e-1122-47e1-a776-cf41c531dc66",
+      "title": "Halloween Weekender",
+      "sourceUrl": "https://affenkaefig.info/event/halloween-weekender/",
+      "evidenceType": "official_description_explicit_date_lineups",
+      "lineup": [
+        [
+          "Zapravka",
+          "artist"
+        ],
+        [
+          "Ian Crank b2b Modze",
+          "compound_act"
+        ],
+        [
+          "EDNA",
+          "artist"
+        ],
+        [
+          "Mr. Techno",
+          "artist"
+        ],
+        [
+          "Dystopia",
+          "artist"
+        ],
+        [
+          "Hellmayer",
+          "artist"
+        ],
+        [
+          "Jenni Zimnol",
+          "artist"
+        ],
+        [
+          "Matthias Olck",
+          "artist"
+        ],
+        [
+          "F!ymeon",
+          "artist"
+        ],
+        [
+          "H!Dude",
+          "artist"
+        ],
+        [
+          "Lee Ann",
+          "artist"
+        ],
+        [
+          "Jens Lissat",
+          "artist"
+        ],
+        [
+          "Ployzz",
+          "artist"
+        ],
+        [
+          "Sandra Romina",
+          "artist"
+        ],
+        [
+          "Tommy Libera",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "1fa49e6b-6610-41da-8292-4598ab4555e9",
+      "title": "Midnight Ink: Techno & Tattoos",
+      "sourceUrl": "https://rausgegangen.de/events/midnight-ink-techno-tattoos-1/",
+      "evidenceType": "official_description_explicit_music_performer",
+      "lineup": [
+        [
+          "dot.d",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "125ce3ff-5008-4989-89ba-94b1283d4108",
+      "title": "Nachtstrom Recharged: DJ Nachtstrom",
+      "sourceUrl": "https://rausgegangen.de/events/nachtstrom-recharged-dj-nachtstrom-4/",
+      "evidenceType": "official_title_and_description_explicit_dj",
+      "lineup": [
+        [
+          "DJ Nachtstrom",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "063feba3-400e-4270-80ae-bfb2564f4e52",
+      "title": "Der Gebrochene Samstag",
+      "sourceUrl": "https://rausgegangen.de/events/der-gebrochene-samstag-5/",
+      "evidenceType": "official_description_explicit_dj_crew",
+      "lineup": [
+        [
+          "Flatline",
+          "artist"
+        ],
+        [
+          "Tigger",
+          "artist"
+        ],
+        [
+          "Nicolas Dorwig",
+          "artist"
+        ]
+      ]
+    },
+    {
+      "eventId": "546d7369-0d9d-4251-9882-4dfed910b926",
+      "title": "A TECHNO BALLET ODYSSEY",
+      "sourceUrl": "https://rausgegangen.de/events/a-techno-ballet-odyssey-17/",
+      "evidenceType": "official_description_explicit_live_dj",
+      "lineup": [
+        [
+          "Marko Nastić",
+          "artist"
+        ]
+      ]
+    }
+  ]
+}
