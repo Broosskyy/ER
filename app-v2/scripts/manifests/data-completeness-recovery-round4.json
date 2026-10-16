@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "appliedAt": "2026-10-16",
+  "projectRef": "gnkjzinwvmrxcadwebhv",
+  "scope": "Verified live-browser ticket price recovery for existing published events",
+  "updates": [
+    {
+      "eventId": "5134c164-0a4b-459d-a341-7af2ee0acb0e",
+      "title": "12 Jahre Richtig DICK Techno! w/ Zeuz, Tommy Libera",
+      "ticketUrl": "https://stagedates.com/events/12-jahre-richtig-dick-techno-fusion-munster-20261017-0XDD3",
+      "priceMinor": 1800,
+      "currency": "EUR",
+      "evidence": "Tickets kaufen ab 18,00 €",
+      "priceIncludesFees": true
+    },
+    {
+      "eventId": "08d6ffbc-f96a-4f41-bb1b-ddf509cc4323",
+      "title": "BERRYLECTRO x HIGH VOLTAGE - RAVE",
+      "ticketUrl": "https://stagedates.com/events/17-10-berrylectro-x-high-voltage-sams-bielefeld-club-sams-20261017-0BxeF",
+      "priceMinor": 1645,
+      "currency": "EUR",
+      "evidence": "Tickets kaufen ab 16,45 €",
+      "priceIncludesFees": true
+    },
+    {
+      "eventId": "caf57fa9-b061-4e3f-810d-b5c9b395e1c9",
+      "title": "ELECTRIC LIGHTS - Women in Electronic Music *DJ Mell G *Katja Ruge *Planetarium Bochum",
+      "ticketUrl": "https://planetarium-bochum.de/de_DE/calendar/electric-lights.1399145",
+      "priceMinor": 2900,
+      "currency": "EUR",
+      "evidence": "Eintrittspreis: 29 €, ermäßigt: 24 €",
+      "priceIncludesFees": true
+    },
+    {
+      "eventId": "36158b6b-1ce1-4e51-a256-c9789cfbf181",
+      "title": "Elektronisch Draussen @Fridas Pier - Unterdeck Session",
+      "ticketUrl": "https://fridas-pier.stgdts.com/events/elektronisch-draussen-unterdeck-session-fridas-pier-20261107-Ar6ND",
+      "priceMinor": 1300,
+      "currency": "EUR",
+      "evidence": "Tickets kaufen ab 13,00 €",
+      "priceIncludesFees": true
+    },
+    {
+      "eventId": "0388aa0e-e35f-4a1f-b722-47a292cab2a9",
+      "title": "AESTHETIC PERFECTION",
+      "ticketUrl": "https://www.livingconcerts.de/events/aesthetic-perfection-3",
+      "priceMinor": 3500,
+      "currency": "EUR",
+      "evidence": "VVK: 35 € zzgl. aller Gebühren",
+      "priceIncludesFees": false
+    }
+  ],
+  "excluded": [
+    {
+      "eventId": "80159f18-5862-4862-9680-c5bca45af39e",
+      "title": "Harder Horror Night",
+      "reason": "provider blocked live verification with HTTP 403"
+    },
+    {
+      "eventId": "7a1d2000-19cf-4aa6-ba1d-12240f70c32a",
+      "title": "UNREAL x KUKO All Night Long World Tour (Cologne)",
+      "reason": "ticket status is sold_out; provider returned HTTP 403 and no current price was verified"
+    },
+    {
+      "eventId": "546d7369-0d9d-4251-9882-4dfed910b926",
+      "title": "A TECHNO BALLET ODYSSEY",
+      "reason": "official page exposed date/ticket navigation but no visible price"
+    }
+  ]
+}
