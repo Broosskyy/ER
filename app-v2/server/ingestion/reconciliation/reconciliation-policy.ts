@@ -612,13 +612,39 @@ export function reconcileOfficialEvent(
     const fieldDecisions = (['title', 'description', 'startsAt', 'endsAt', 'venue', 'organizer', 'lineup', 'genres', 'image', 'eventStatus'] as const).map(
       (field) => finalizeDecision(field, 'noop', 'fingerprint_unchanged', context),
     );
-    const descriptionRepair = reconcileDescription(input.candidate.description, existing.description, context);
-    if (descriptionRepair.decision === 'accept') {
-      const descriptionIndex = fieldDecisions.findIndex((decision) => decision.field === 'description');
-      if (descriptionIndex >= 0) {
-        fieldDecisions[descriptionIndex] = descriptionRepair;
+
+    // Extraction logic can improve even when the upstream page itself has not changed.
+    // Permit only additive/safe consumer enrichment on an unchanged source fingerprint;
+    // never use this path to shrink or overwrite already verified fields.
+    const supplementalDecisions: FieldReconciliationResult[] = [
+      reconcileDescription(input.candidate.description, existing.description, context),
+      ...(!existing.venueId && input.candidate.venue
+        ? [reconcileVenue(input.candidate, existing, context)]
+        : []),
+      ...(!normalizeText(existing.organizerName) && normalizeText(input.candidate.organizerName)
+        ? [reconcileScalarField('organizer', input.candidate.organizerName, existing.organizerName, context)]
+        : []),
+      ...(existing.lineup.length === 0 && input.candidate.lineup.length > 0
+        ? [reconcileLineup(input.candidate.lineup, existing.lineup, context)]
+        : []),
+      ...(existing.genres.length === 0 && input.candidate.genres.length > 0
+        ? [reconcileGenres(input.candidate.genres, existing.genres, context)]
+        : []),
+      ...(!normalizeText(existing.imageUrl) && normalizeText(input.candidate.imageUrl)
+        ? [reconcileScalarField('image', input.candidate.imageUrl, existing.imageUrl, context)]
+        : []),
+    ];
+
+    for (const supplemental of supplementalDecisions) {
+      if (supplemental.decision !== 'accept') {
+        continue;
+      }
+      const index = fieldDecisions.findIndex((decision) => decision.field === supplemental.field);
+      if (index >= 0) {
+        fieldDecisions[index] = supplemental;
       }
     }
+
     const classification =
       fieldDecisions.some((decision) => decision.decision === 'accept') ? 'safe_update' : 'unchanged';
     return {
@@ -629,7 +655,7 @@ export function reconcileOfficialEvent(
       destructiveUpdatesBlocked: 0,
       reasons: [
         classification === 'safe_update'
-          ? 'existing_official_source_unchanged_with_description_repair'
+          ? 'existing_official_source_unchanged_with_safe_supplemental_enrichment'
           : 'existing_official_source_unchanged',
       ],
       reconciledCandidate: buildReconciledCandidate(input.candidate, existing, fieldDecisions),
