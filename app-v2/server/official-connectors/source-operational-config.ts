@@ -84,4 +84,22 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 3,
     });
   }
+  if (!registry.get('rausgegangen-discovery')) {
+    registry.register({
+      connectorId: 'rausgegangen-discovery',
+      sourceType: 'event_platform',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      defaultIntervalMinutes: 720,
+      maxConcurrency: 1,
+      requestSpacingMs: 2500,
+      timeoutMs: 30000,
+      expectedMinParsedOnSuccess: 1,
+      retryPolicy: {
+        maxAttempts: 2,
+        initialDelayMs: 5000,
+        maxDelayMs: 30000,
+        backoffMultiplier: 2,
+      },
+    });
+  }
 }
