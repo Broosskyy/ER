@@ -1,4 +1,5 @@
 export const CONSUMER_EVENT_TIMEZONE = 'Europe/Berlin';
+export const CONSUMER_MISSING_END_MAX_DURATION_MS = 18 * 60 * 60 * 1000;
 
 interface BerlinLocalParts {
   ymd: string;
@@ -82,7 +83,7 @@ export function isPastConsumerEvent(input: ConsumerEventWindowInput): boolean {
     return endsAtMs < referenceInstant.getTime();
   }
 
-  return startsAtMs <= endOfPreviousDayMs;
+  return startsAtMs + CONSUMER_MISSING_END_MAX_DURATION_MS <= referenceInstant.getTime();
 }
 
 export type ConsumerEventLifecycleStatus =
