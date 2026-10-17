@@ -107,5 +107,7 @@ describe('Rausgegangen title lineup recovery', () => {
       'Oskamaxx',
       'Patrick Schumm',
     ]);
+    expect(evidence.lineupCandidates.every((act) => act.evidenceOrigin === 'official_title')).toBe(true);
+    expect(evidence.linkedTicketUrl).toBeUndefined();
   });
 });
