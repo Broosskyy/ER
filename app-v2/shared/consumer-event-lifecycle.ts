@@ -79,7 +79,7 @@ export function isPastConsumerEvent(input: ConsumerEventWindowInput): boolean {
     if (Number.isNaN(endsAtMs)) {
       return startsAtMs <= endOfPreviousDayMs;
     }
-    return endsAtMs < activeFromMs;
+    return endsAtMs < referenceInstant.getTime();
   }
 
   return startsAtMs <= endOfPreviousDayMs;
