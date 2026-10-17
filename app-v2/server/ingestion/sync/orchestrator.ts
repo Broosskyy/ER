@@ -410,6 +410,8 @@ export async function runSourceSync(
     () =>
       connector.runPreview({
         maxDetailPages: request.maxDetailPages,
+        requestDelayMs: operational?.requestSpacingMs,
+        timeoutMs: operational?.timeoutMs,
         now: () => now(),
       }),
     retryPolicy,
