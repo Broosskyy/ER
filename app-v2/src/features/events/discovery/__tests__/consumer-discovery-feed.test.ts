@@ -126,6 +126,36 @@ describe('consumer discovery feed — M9.2.2.5C', () => {
     expect(feed.events.map((event) => event.id)).toEqual([upcoming.id]);
   });
 
+  it('expires a same-day event immediately after its explicit end time', () => {
+    const endedEarlierToday = summary({
+      id: 'ended-earlier-today',
+      title: 'Night event',
+      startsAt: '2026-09-01T00:00:00+02:00',
+      endsAt: '2026-09-01T05:00:00+02:00',
+    });
+
+    const feed = getDiscoverablePublishedEvents([endedEarlierToday], {
+      referenceInstant: new Date('2026-09-01T20:00:00+02:00'),
+    });
+
+    expect(feed.events).toHaveLength(0);
+  });
+
+  it('keeps an event discoverable until its explicit end time', () => {
+    const stillRunning = summary({
+      id: 'still-running',
+      title: 'Day event',
+      startsAt: '2026-09-01T12:00:00+02:00',
+      endsAt: '2026-09-01T21:00:00+02:00',
+    });
+
+    const feed = getDiscoverablePublishedEvents([stillRunning], {
+      referenceInstant: new Date('2026-09-01T20:00:00+02:00'),
+    });
+
+    expect(feed.events).toHaveLength(1);
+  });
+
   it('keeps ongoing multi-day events in discoverable feed', () => {
     const ongoing = summary({
       id: 'ongoing-festival',
