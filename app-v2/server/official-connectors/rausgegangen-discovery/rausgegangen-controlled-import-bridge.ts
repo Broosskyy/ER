@@ -118,6 +118,7 @@ export function buildOfficialEvidenceFromRausgegangenEnriched(
       ? {
           name: enriched.venueName,
           address: enriched.address,
+          postalCode: enriched.postalCode,
           city: enriched.city,
           countryCode: 'DE',
         }
