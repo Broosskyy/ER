@@ -2,6 +2,10 @@ import { createHash } from 'node:crypto';
 
 import { reconcileEventMediaEvidence } from '../media-evidence/reconcile-event-media-evidence';
 import type { OfficialEventEvidence, OfficialLineupCandidate } from '../types';
+import {
+  extractVerifiedTitleLineupCandidates,
+  mergeTitleLineupCandidates,
+} from '../shared/title-lineup-evidence';
 import { processOfficialEventTickets } from '../ticket-evidence/ticket-evidence-pipeline';
 import { reconcileVerifiedTicketSupplementalEvidence } from '../ticket-evidence/reconcile-verified-ticket-supplemental';
 import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
@@ -80,7 +84,12 @@ export function buildOfficialEvidenceFromRausgegangenEnriched(
   const media = classifyEventMediaAcceptability(enriched.imageUrls, { title: enriched.title });
   const imageUrl = media.bestMediaUrl ?? enriched.bestMediaUrl;
   const description = dedupeDescription(enriched.description);
-  const lineup = buildLineupCandidates(enriched.lineupHints);
+  const parsedLineup = buildLineupCandidates(enriched.lineupHints);
+  const titleLineup = extractVerifiedTitleLineupCandidates({
+    eventTitle: enriched.title,
+    organizerLabel: enriched.organizerName,
+  });
+  const lineup = mergeTitleLineupCandidates(parsedLineup, titleLineup.candidates);
   const enrichmentGaps: string[] = [];
   const ticketUrl = enriched.outboundLinks[0] ?? enriched.eventUrl;
 
@@ -90,7 +99,7 @@ export function buildOfficialEvidenceFromRausgegangenEnriched(
   if (!description) {
     enrichmentGaps.push('missing_description');
   }
-  if (qualifyLineup(enriched.lineupHints) === 'NO_LINEUP') {
+  if (lineup.length === 0) {
     enrichmentGaps.push('partial_lineup');
   }
 
@@ -121,7 +130,7 @@ export function buildOfficialEvidenceFromRausgegangenEnriched(
     lineupCandidates: lineup,
     explicitGenreLabels: explicitGenreLabels(enriched),
     enrichmentGaps,
-    rejectedCandidates: [],
+    rejectedCandidates: titleLineup.rejectedCandidates,
   };
 }
 
