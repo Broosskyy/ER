@@ -14,7 +14,7 @@ import {
   enrichedFromRausgegangenCandidate,
   listingEntryToCandidate,
 } from './rausgegangen-enrichment';
-import { fetchRausgegangenHtml } from './rausgegangen-fetch';
+import { fetchRausgegangenHtml, type FetchResult } from './rausgegangen-fetch';
 import { parseRausgegangenEventDetail } from './parse-rausgegangen-detail';
 import {
   mergeListingSurfaces,
@@ -38,6 +38,11 @@ export interface RausgegangenNetworkDiscoveryOptions {
   listingConcurrency?: number;
   detailConcurrency?: number;
   regionSlugs?: string[];
+  onVerifiedDetail?: (input: {
+    candidate: RausgegangenDiscoveryCandidate;
+    enriched: EnrichedTicketIoEvent;
+    fetchResult: FetchResult;
+  }) => Promise<void>;
 }
 
 export interface RausgegangenNetworkDiscoveryResult {
@@ -163,12 +168,14 @@ export async function runRausgegangenNetworkDiscovery(
     .slice(0, bounds.maxDetailCandidates);
 
   const detailBySlug = new Map<string, RausgegangenDiscoveryCandidate>();
+  const detailFetchBySlug = new Map<string, FetchResult>();
 
   await mapWithConcurrency(detailTargets, bounds.detailConcurrency, async (candidate, index) => {
     if (index % 50 === 0) {
       console.error(`[m9.4a] detail ${index + 1}/${detailTargets.length}: ${candidate.title}`);
     }
     const response = await fetchRausgegangenHtml(candidate.canonicalUrl, { cacheDir });
+    detailFetchBySlug.set(candidate.eventSlug, response);
     if (!response.ok) {
       accessReliability.detailFetchFailed += 1;
       detailBySlug.set(candidate.eventSlug, {
@@ -199,6 +206,18 @@ export async function runRausgegangenNetworkDiscovery(
   const enrichedEvents = candidates.map((candidate) =>
     enrichedFromRausgegangenCandidate(candidate, catalog, referenceInstant),
   );
+
+  if (options.onVerifiedDetail) {
+    for (let index = 0; index < candidates.length; index += 1) {
+      const candidate = candidates[index]!;
+      const enriched = enrichedEvents[index]!;
+      const fetchResult = detailFetchBySlug.get(candidate.eventSlug);
+      if (!fetchResult?.ok) {
+        continue;
+      }
+      await options.onVerifiedDetail({ candidate, enriched, fetchResult });
+    }
+  }
 
   const duplicateListingEntries = allListingEntries.length - mergedListings.length;
   const lifecycle = { upcoming: 0, ongoing: 0, ended: 0, unknown: 0 };
