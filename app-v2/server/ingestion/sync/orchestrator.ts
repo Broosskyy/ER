@@ -26,7 +26,10 @@ import type {
 import { createEmptySyncRunCounters } from './types';
 import type { OfficialConnector, OfficialConnectorRunResult } from '../../official-connectors/connector-contract';
 import type { OfficialSourceRegistry } from '../../official-connectors/source-registry';
-import type { SourceOperationalConfigRegistry } from '../../official-connectors/source-operational-config';
+import type {
+  SourceOperationalConfigRegistry,
+  SourceWriteScope,
+} from '../../official-connectors/source-operational-config';
 import type { VerifiedTicketCompleteResult } from '../../official-connectors/ticket-evidence/ticket-audit-metrics';
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 
@@ -67,7 +70,13 @@ function isIdentityReview(plan: EventWritePlan): boolean {
   return decision === 'review_required' || decision === 'possible_match';
 }
 
-function canApplyPlan(plan: EventWritePlan): boolean {
+function canApplyPlan(
+  plan: EventWritePlan,
+  writeScope: SourceWriteScope = 'upsert',
+): boolean {
+  if (writeScope === 'existing_only' && plan.eventAction === 'insert') {
+    return false;
+  }
   return (
     plan.validation.decision === 'persist_ready' &&
     !plan.reconciliation?.reviewRequired &&
@@ -220,7 +229,7 @@ async function processConnectorResult(
       updatePlanCounters(counters, plan);
       let applied = false;
 
-      if (mode === 'apply' && canApplyPlan(plan) && deps.applyPlan) {
+      if (mode === 'apply' && canApplyPlan(plan, deps.operationalConfig.get(connectorId)?.writeScope) && deps.applyPlan) {
         const applyResult = await deps.applyPlan(plan);
         if (applyResult.applied) {
           counters.appliedWrites += 1;
