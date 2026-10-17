@@ -165,6 +165,7 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
         maxDetailCandidates: options.maxDetailPages ?? MAX_DETAIL_PAGES,
         detailConcurrency: 1,
         listingConcurrency: 1,
+        requestDelayMs: options.requestDelayMs,
         onVerifiedDetail: async ({ enriched, fetchResult }) => {
           if (
             enriched.lifecycle === 'ENDED' ||
