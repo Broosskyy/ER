@@ -1,4 +1,5 @@
 export const CONSUMER_EVENT_TIMEZONE = 'Europe/Berlin';
+export const CONSUMER_DISCOVERY_MISSING_END_MAX_DURATION_MS = 18 * 60 * 60 * 1000;
 
 interface BerlinLocalParts {
   ymd: string;
@@ -61,6 +62,26 @@ export interface ConsumerEventWindowInput {
   startsAt: string;
   endsAt?: string | null;
   referenceInstant?: Date;
+  /**
+   * Optional consumer-surface bound for events whose end time is missing/invalid.
+   * When omitted, legacy Berlin-day cutoff semantics remain unchanged for audit/ingestion callers.
+   */
+  missingEndMaxDurationMs?: number | null;
+}
+
+function pastByMissingEndFallback(
+  startsAtMs: number,
+  referenceInstant: Date,
+  maxDurationMs?: number | null,
+): boolean {
+  if (maxDurationMs != null) {
+    return startsAtMs + maxDurationMs <= referenceInstant.getTime();
+  }
+
+  const activeFromYmd = berlinYmd(referenceInstant);
+  const activeFromMs = berlinLocalMidnightUtcMs(activeFromYmd);
+  const endOfPreviousDayMs = activeFromMs - 1;
+  return startsAtMs <= endOfPreviousDayMs;
 }
 
 export function isPastConsumerEvent(input: ConsumerEventWindowInput): boolean {
@@ -70,19 +91,24 @@ export function isPastConsumerEvent(input: ConsumerEventWindowInput): boolean {
   }
 
   const referenceInstant = input.referenceInstant ?? new Date();
-  const activeFromYmd = berlinYmd(referenceInstant);
-  const activeFromMs = berlinLocalMidnightUtcMs(activeFromYmd);
-  const endOfPreviousDayMs = activeFromMs - 1;
 
   if (input.endsAt) {
     const endsAtMs = Date.parse(input.endsAt);
     if (Number.isNaN(endsAtMs)) {
-      return startsAtMs <= endOfPreviousDayMs;
+      return pastByMissingEndFallback(
+        startsAtMs,
+        referenceInstant,
+        input.missingEndMaxDurationMs,
+      );
     }
     return endsAtMs < referenceInstant.getTime();
   }
 
-  return startsAtMs <= endOfPreviousDayMs;
+  return pastByMissingEndFallback(
+    startsAtMs,
+    referenceInstant,
+    input.missingEndMaxDurationMs,
+  );
 }
 
 export type ConsumerEventLifecycleStatus =
@@ -99,6 +125,7 @@ export function classifyConsumerEventLifecycle(input: {
   endsAt?: string | null;
   status?: string | null;
   referenceInstant?: Date;
+  missingEndMaxDurationMs?: number | null;
 }): ConsumerEventLifecycleStatus {
   const normalizedStatus = (input.status ?? '').toLowerCase();
   if (normalizedStatus === 'cancelled') {
@@ -120,6 +147,7 @@ export function classifyConsumerEventLifecycle(input: {
       startsAt: input.startsAt,
       endsAt: input.endsAt,
       referenceInstant,
+      missingEndMaxDurationMs: input.missingEndMaxDurationMs,
     })
   ) {
     return 'ENDED';
