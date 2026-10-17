@@ -61,7 +61,7 @@ function buildLineupCandidates(lineup: string[]): OfficialLineupCandidate[] {
     rawText: name,
     billingOrder: index,
     evidenceRole: index === 0 ? 'headliner' : 'artist',
-    evidenceOrigin: 'official_title',
+    evidenceOrigin: 'official_text',
   }));
 }
 
