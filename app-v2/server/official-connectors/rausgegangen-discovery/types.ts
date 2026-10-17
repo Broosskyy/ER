@@ -66,6 +66,7 @@ export interface RausgegangenDiscoveryCandidate {
   venueName?: string;
   city?: string;
   address?: string;
+  postalCode?: string;
   organizerName?: string;
   description?: string;
   lineupHints: string[];

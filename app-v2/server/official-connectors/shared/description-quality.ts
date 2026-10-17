@@ -80,6 +80,16 @@ const NON_EDITORIAL_CATEGORIES = new Set<DescriptionBlockCategory>([
   'CHECKOUT_BOILERPLATE',
 ]);
 
+function stripInlineDescriptionUrls(text: string): string {
+  return text
+    .replace(/https?:\/\/[^\s)\]}]+/gi, ' ')
+    .replace(/\bwww\.[^\s)\]}]+/gi, ' ')
+    .replace(/[ \t]+([,.;!?])/g, '$1')
+    .replace(/[ \t]{2,}/g, ' ')
+    .replace(/\n[ \t]+/g, '\n')
+    .trim();
+}
+
 export function extractEditorialDescription(text?: string): string | undefined {
   if (!text?.trim()) {
     return undefined;
@@ -95,7 +105,7 @@ export function extractEditorialDescription(text?: string): string | undefined {
     return !NON_EDITORIAL_CATEGORIES.has(category);
   });
 
-  const joined = editorial.join('\n\n').trim();
+  const joined = stripInlineDescriptionUrls(editorial.join('\n\n').trim());
   return joined.length > 0 ? joined : undefined;
 }
 

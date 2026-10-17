@@ -7,9 +7,12 @@ export interface SourceRetryPolicyOverride {
   backoffMultiplier?: number;
 }
 
+export type SourceWriteScope = 'upsert' | 'existing_only';
+
 export interface SourceOperationalConfig {
   connectorId: string;
   enabled: boolean;
+  writeScope?: SourceWriteScope;
   sourceType: OfficialSourceType;
   defaultIntervalMinutes: number;
   maxConcurrency: number;
@@ -82,6 +85,25 @@ export function registerDefaultSourceOperationalConfigs(
       ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
       maxConcurrency: 2,
       expectedMinParsedOnSuccess: 3,
+    });
+  }
+  if (!registry.get('rausgegangen-discovery')) {
+    registry.register({
+      connectorId: 'rausgegangen-discovery',
+      sourceType: 'event_platform',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      writeScope: 'existing_only',
+      defaultIntervalMinutes: 720,
+      maxConcurrency: 1,
+      requestSpacingMs: 2500,
+      timeoutMs: 30000,
+      expectedMinParsedOnSuccess: 1,
+      retryPolicy: {
+        maxAttempts: 2,
+        initialDelayMs: 5000,
+        maxDelayMs: 30000,
+        backoffMultiplier: 2,
+      },
     });
   }
 }

@@ -242,6 +242,70 @@ describe('official event reconciliation policy', () => {
     );
   });
 
+
+  it('applies additive lineup recovery even when the official fingerprint is unchanged', () => {
+    const existing = buildExistingEvent({
+      lineup: [],
+      description: 'Stable editorial description',
+    });
+    const evidence = buildOrigin({
+      pageFingerprint: 'fingerprint-stable',
+      descriptionClean: 'Stable editorial description',
+      lineupCandidates: [
+        {
+          displayName: 'RECOVERED ACT',
+          rawText: 'RECOVERED ACT',
+          billingOrder: 0,
+          evidenceRole: 'headliner',
+          evidenceOrigin: 'official_title',
+        },
+      ],
+      explicitGenreLabels: existing.genres.map((genre) => genre.displayName),
+    });
+
+    const plan = planWithExisting(
+      officialEvidenceToEventCandidate(evidence),
+      existing,
+      'fingerprint-stable',
+    );
+
+    expect(plan.reconciliation?.classification).toBe('safe_update');
+    expect(plan.eventAction).toBe('noop');
+    expect(plan.lineupAction).toBe('replace');
+    expect(plan.sourceAction).toBe('noop');
+    expect(plan.candidate.lineup.map((act) => act.billingName)).toEqual(['RECOVERED ACT']);
+  });
+
+  it('applies missing organizer recovery on an unchanged official fingerprint', () => {
+    const existing = buildExistingEvent({
+      organizerName: null,
+      description: 'Stable editorial description',
+    });
+    const evidence = buildOrigin({
+      pageFingerprint: 'fingerprint-stable',
+      organizerLabel: 'Recovered Organizer',
+      descriptionClean: 'Stable editorial description',
+      lineupCandidates: existing.lineup.map((act, index) => ({
+        displayName: act.billingName,
+        rawText: act.billingName,
+        billingOrder: index,
+        evidenceRole: act.billingRole,
+        evidenceOrigin: 'official_text' as const,
+      })),
+      explicitGenreLabels: existing.genres.map((genre) => genre.displayName),
+    });
+
+    const plan = planWithExisting(
+      officialEvidenceToEventCandidate(evidence),
+      existing,
+      'fingerprint-stable',
+    );
+
+    expect(plan.reconciliation?.classification).toBe('safe_update');
+    expect(plan.eventAction).toBe('update');
+    expect(plan.candidate.organizerName).toBe('Recovered Organizer');
+  });
+
   it('remains idempotent on a second identical reconciliation run', () => {
     const existing = buildExistingEvent({ description: 'Stable description' });
     const evidence = buildOrigin({

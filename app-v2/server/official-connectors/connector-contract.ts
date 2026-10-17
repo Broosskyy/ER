@@ -32,6 +32,8 @@ export interface OfficialConnectorFetchResult {
 export interface OfficialConnectorRunOptions {
   now?: () => Date;
   maxDetailPages?: number;
+  requestDelayMs?: number;
+  timeoutMs?: number;
   writeCache?: (relativePath: string, contents: string) => Promise<void>;
 }
 

@@ -84,6 +84,7 @@ export interface EnrichedTicketIoEvent {
   venueName?: string;
   city?: string;
   address?: string;
+  postalCode?: string;
   organizerName?: string;
   description?: string;
   descriptionQualification: DescriptionQualification;

@@ -14,7 +14,7 @@ import {
   enrichedFromRausgegangenCandidate,
   listingEntryToCandidate,
 } from './rausgegangen-enrichment';
-import { fetchRausgegangenHtml } from './rausgegangen-fetch';
+import { fetchRausgegangenHtml, type FetchResult } from './rausgegangen-fetch';
 import { parseRausgegangenEventDetail } from './parse-rausgegangen-detail';
 import {
   mergeListingSurfaces,
@@ -38,6 +38,12 @@ export interface RausgegangenNetworkDiscoveryOptions {
   listingConcurrency?: number;
   detailConcurrency?: number;
   regionSlugs?: string[];
+  requestDelayMs?: number;
+  onVerifiedDetail?: (input: {
+    candidate: RausgegangenDiscoveryCandidate;
+    enriched: EnrichedTicketIoEvent;
+    fetchResult: FetchResult;
+  }) => Promise<void>;
 }
 
 export interface RausgegangenNetworkDiscoveryResult {
@@ -105,7 +111,8 @@ export async function runRausgegangenNetworkDiscovery(
     parseFailures: 0,
   };
 
-  const homepage = await fetchRausgegangenHtml(`${RAUSGEGANGEN_BASE_URL}/`, { cacheDir });
+  const fetchOptions = { cacheDir, requestDelayMs: options.requestDelayMs };
+  const homepage = await fetchRausgegangenHtml(`${RAUSGEGANGEN_BASE_URL}/`, fetchOptions);
   const discoveredSlugs = options.regionSlugs ?? discoverRegionSlugsFromHomepageHtml(homepage.html);
   const regionSlugs = [...new Set([...PRIORITY_GERMAN_CITY_SLUGS, ...discoveredSlugs])].slice(0, bounds.maxRegions);
 
@@ -115,7 +122,7 @@ export async function runRausgegangenNetworkDiscovery(
 
   await mapWithConcurrency(regionSlugs, bounds.listingConcurrency, async (slug) => {
     const listingSurface = `${RAUSGEGANGEN_BASE_URL}/${slug}/`;
-    const response = await fetchRausgegangenHtml(listingSurface, { cacheDir });
+    const response = await fetchRausgegangenHtml(listingSurface, fetchOptions);
     if (!response.ok) {
       accessReliability.listingFetchFailed += 1;
       if (response.status === 403) {
@@ -163,12 +170,14 @@ export async function runRausgegangenNetworkDiscovery(
     .slice(0, bounds.maxDetailCandidates);
 
   const detailBySlug = new Map<string, RausgegangenDiscoveryCandidate>();
+  const detailFetchBySlug = new Map<string, FetchResult>();
 
   await mapWithConcurrency(detailTargets, bounds.detailConcurrency, async (candidate, index) => {
     if (index % 50 === 0) {
       console.error(`[m9.4a] detail ${index + 1}/${detailTargets.length}: ${candidate.title}`);
     }
-    const response = await fetchRausgegangenHtml(candidate.canonicalUrl, { cacheDir });
+    const response = await fetchRausgegangenHtml(candidate.canonicalUrl, fetchOptions);
+    detailFetchBySlug.set(candidate.eventSlug, response);
     if (!response.ok) {
       accessReliability.detailFetchFailed += 1;
       detailBySlug.set(candidate.eventSlug, {
@@ -199,6 +208,18 @@ export async function runRausgegangenNetworkDiscovery(
   const enrichedEvents = candidates.map((candidate) =>
     enrichedFromRausgegangenCandidate(candidate, catalog, referenceInstant),
   );
+
+  if (options.onVerifiedDetail) {
+    for (let index = 0; index < candidates.length; index += 1) {
+      const candidate = candidates[index]!;
+      const enriched = enrichedEvents[index]!;
+      const fetchResult = detailFetchBySlug.get(candidate.eventSlug);
+      if (!fetchResult?.ok) {
+        continue;
+      }
+      await options.onVerifiedDetail({ candidate, enriched, fetchResult });
+    }
+  }
 
   const duplicateListingEntries = allListingEntries.length - mergedListings.length;
   const lifecycle = { upcoming: 0, ongoing: 0, ended: 0, unknown: 0 };
