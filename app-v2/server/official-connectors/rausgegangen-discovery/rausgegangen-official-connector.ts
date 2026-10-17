@@ -48,6 +48,10 @@ import {
 
 const MAX_DETAIL_PAGES = 40;
 
+export interface RausgegangenOfficialConnectorOptions {
+  regionSlugs?: string[];
+}
+
 function toDetailFetchResult(
   fetchResult: FetchResult,
   detailAccess: DetailFetchResult['detailAccess'],
@@ -65,6 +69,8 @@ function toDetailFetchResult(
 
 export class RausgegangenOfficialConnector implements OfficialConnector {
   readonly metadata: OfficialConnectorMetadata = {
+
+
     connectorId: RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
     sourceType: 'event_platform',
     displayName: 'Rausgegangen Discovery',
@@ -75,6 +81,8 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
       mediaEnrichment: true,
     },
   };
+
+  constructor(private readonly connectorOptions: RausgegangenOfficialConnectorOptions = {}) {}
 
   discoverFromListHtml(
     listHtml: string,
@@ -162,6 +170,7 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
     try {
       const discovery = await runRausgegangenNetworkDiscovery({
         referenceInstant,
+        regionSlugs: this.connectorOptions.regionSlugs,
         maxDetailCandidates: options.maxDetailPages ?? MAX_DETAIL_PAGES,
         detailConcurrency: 1,
         listingConcurrency: 1,
