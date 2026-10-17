@@ -1,6 +1,7 @@
 import type { EventSummary } from '@/features/events/types/event-core';
 
 import {
+  CONSUMER_DISCOVERY_MISSING_END_MAX_DURATION_MS,
   classifyConsumerEventLifecycle,
   isDiscoverableConsumerLifecycle,
 } from '../../../../shared/consumer-event-lifecycle';
@@ -213,6 +214,7 @@ export function getDiscoverablePublishedEvents(
       endsAt: event.endsAt,
       status: 'published',
       referenceInstant,
+      missingEndMaxDurationMs: CONSUMER_DISCOVERY_MISSING_END_MAX_DURATION_MS,
     });
     return isDiscoverableConsumerLifecycle(lifecycle);
   });
