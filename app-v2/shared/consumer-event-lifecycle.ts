@@ -71,9 +71,6 @@ export function isPastConsumerEvent(input: ConsumerEventWindowInput): boolean {
   }
 
   const referenceInstant = input.referenceInstant ?? new Date();
-  const activeFromYmd = berlinYmd(referenceInstant);
-  const activeFromMs = berlinLocalMidnightUtcMs(activeFromYmd);
-  const endOfPreviousDayMs = activeFromMs - 1;
 
   if (input.endsAt) {
     const endsAtMs = Date.parse(input.endsAt);
