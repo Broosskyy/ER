@@ -20,6 +20,7 @@ import {
   PRODUCTION_SCHEDULER_ENABLED,
   STAGING_SCHEDULER_ENABLED,
   STAGING_SCHEDULED_CONNECTOR_IDS,
+  isStagingScheduledConnectorId,
 } from '../scheduler-boundary';
 import {
   evaluateScheduledApplyGuard,
@@ -146,6 +147,7 @@ describe('M9.0 staging scheduler', () => {
     expect(STAGING_SCHEDULER_ENABLED).toBe(false);
     expect(PRODUCTION_SCHEDULER_ENABLED).toBe(false);
     expect(STAGING_SCHEDULED_CONNECTOR_IDS).toEqual(['bootshaus-official', 'affenkaefig-official']);
+    expect(isStagingScheduledConnectorId('rausgegangen-discovery')).toBe(false);
   });
 
   it('rejects explicitly configured production project ref for scheduled apply', () => {
