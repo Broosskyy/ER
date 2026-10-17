@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { extractVerifiedTitleLineupCandidates } from '../shared/title-lineup-evidence';
 import { buildOfficialEvidenceFromRausgegangenEnriched } from '../rausgegangen-discovery/rausgegangen-controlled-import-bridge';
+import { extractVerifiedTitleLineupCandidates } from '../shared/title-lineup-evidence';
 import type { EnrichedTicketIoEvent } from '../ticket-evidence/network-discovery/detail-types';
 
 describe('Rausgegangen title lineup recovery', () => {
@@ -9,7 +9,48 @@ describe('Rausgegangen title lineup recovery', () => {
     const ascension = extractVerifiedTitleLineupCandidates({
       eventTitle:
         'Ascension w/ Limoncello, Hotboi2300, Oskamaxx, Patrick Schumm & more at Helios37',
-      it('promotes verified title billing into normal Rausgegangen evidence', () => {
+    });
+    expect(ascension.candidates.map((act) => act.displayName)).toEqual([
+      'Limoncello',
+      'Hotboi2300',
+      'Oskamaxx',
+      'Patrick Schumm',
+    ]);
+
+    const birthday = extractVerifiedTitleLineupCandidates({
+      eventTitle: '12 Jahre Richtig DICK Techno! w/ Zeuz, Tommy Libera',
+    });
+    expect(birthday.candidates.map((act) => act.displayName)).toEqual([
+      'Zeuz',
+      'Tommy Libera',
+    ]);
+
+    const weiberfastnacht = extractVerifiedTitleLineupCandidates({
+      eventTitle: 'Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more',
+    });
+    expect(weiberfastnacht.candidates.map((act) => act.displayName)).toEqual([
+      'Trash Island',
+      'Mickie Krause',
+    ]);
+  });
+
+  it('accepts only clearly formatted German show billing after mit', () => {
+    const extracted = extractVerifiedTitleLineupCandidates({
+      eventTitle:
+        'Feiern wie früher - nur früher! Der Daytime Rave mit ANNA REUSCH & THOMAS SCHUMACHER',
+    });
+    expect(extracted.candidates.map((act) => act.displayName)).toEqual([
+      'ANNA REUSCH',
+      'THOMAS SCHUMACHER',
+    ]);
+
+    const prose = extractVerifiedTitleLineupCandidates({
+      eventTitle: 'Eine Nacht mit guter Musik und Freunden',
+    });
+    expect(prose.candidates).toHaveLength(0);
+  });
+
+  it('promotes verified title billing into normal Rausgegangen evidence', () => {
     const enriched = {
       identityKey: 'rausgegangen:ascension',
       ticketIoEventId: 'ascension',
@@ -66,45 +107,5 @@ describe('Rausgegangen title lineup recovery', () => {
       'Oskamaxx',
       'Patrick Schumm',
     ]);
-  });
-});
-    expect(ascension.candidates.map((act) => act.displayName)).toEqual([
-      'Limoncello',
-      'Hotboi2300',
-      'Oskamaxx',
-      'Patrick Schumm',
-    ]);
-
-    const birthday = extractVerifiedTitleLineupCandidates({
-      eventTitle: '12 Jahre Richtig DICK Techno! w/ Zeuz, Tommy Libera',
-    });
-    expect(birthday.candidates.map((act) => act.displayName)).toEqual([
-      'Zeuz',
-      'Tommy Libera',
-    ]);
-
-    const weiberfastnacht = extractVerifiedTitleLineupCandidates({
-      eventTitle: 'Weiberfastnacht im Bootshaus /w Trash Island, Mickie Krause & more',
-    });
-    expect(weiberfastnacht.candidates.map((act) => act.displayName)).toEqual([
-      'Trash Island',
-      'Mickie Krause',
-    ]);
-  });
-
-  it('accepts only clearly formatted German show billing after mit', () => {
-    const extracted = extractVerifiedTitleLineupCandidates({
-      eventTitle:
-        'Feiern wie früher - nur früher! Der Daytime Rave mit ANNA REUSCH & THOMAS SCHUMACHER',
-    });
-    expect(extracted.candidates.map((act) => act.displayName)).toEqual([
-      'ANNA REUSCH',
-      'THOMAS SCHUMACHER',
-    ]);
-
-    const prose = extractVerifiedTitleLineupCandidates({
-      eventTitle: 'Eine Nacht mit guter Musik und Freunden',
-    });
-    expect(prose.candidates).toHaveLength(0);
   });
 });
