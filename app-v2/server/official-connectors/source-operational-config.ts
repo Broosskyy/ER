@@ -7,9 +7,12 @@ export interface SourceRetryPolicyOverride {
   backoffMultiplier?: number;
 }
 
+export type SourceWriteScope = 'upsert' | 'existing_only';
+
 export interface SourceOperationalConfig {
   connectorId: string;
   enabled: boolean;
+  writeScope?: SourceWriteScope;
   sourceType: OfficialSourceType;
   defaultIntervalMinutes: number;
   maxConcurrency: number;
@@ -89,6 +92,7 @@ export function registerDefaultSourceOperationalConfigs(
       connectorId: 'rausgegangen-discovery',
       sourceType: 'event_platform',
       ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      writeScope: 'existing_only',
       defaultIntervalMinutes: 720,
       maxConcurrency: 1,
       requestSpacingMs: 2500,
