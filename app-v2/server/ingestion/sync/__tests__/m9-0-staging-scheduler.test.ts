@@ -288,4 +288,54 @@ describe('M9.0 staging scheduler', () => {
     release?.();
     await first;
   });
+  it('blocks net-new event applies for existing-only sources', async () => {
+    const connector = new MockOfficialConnector('rausgegangen-discovery', async () =>
+      buildRunResult([
+        buildPreview(
+          buildEvidence({
+            connectorId: 'rausgegangen-discovery',
+            sourceEventKey: 'rausgegangen:new-event',
+            officialUrl: 'https://rausgegangen.de/events/new-event/',
+            title: 'New Rausgegangen Event',
+            startsAt: '2027-08-21T22:00:00+02:00',
+          }),
+        ),
+      ]),
+    );
+    const deps = createDeps(connector, true);
+    deps.operationalConfig.register({
+      connectorId: 'rausgegangen-discovery',
+      sourceType: 'event_platform',
+      enabled: true,
+      writeScope: 'existing_only',
+      defaultIntervalMinutes: 720,
+      maxConcurrency: 1,
+      requestSpacingMs: 2500,
+      timeoutMs: 30_000,
+      expectedMinParsedOnSuccess: 1,
+    });
+
+    let applyCalls = 0;
+    deps.applyPlan = async () => {
+      applyCalls += 1;
+      return {
+        applied: true,
+        logicalOperations: 1,
+        databaseRowsInserted: 1,
+        databaseRowsUpdated: 0,
+        databaseRowsDeleted: 0,
+        ticketRowsChanged: 0,
+      };
+    };
+
+    const result = await runSourceSync(
+      { connectorId: 'rausgegangen-discovery', mode: 'apply', triggerType: 'manual' },
+      deps,
+    );
+
+    expect(applyCalls).toBe(0);
+    expect(result.run.counters.appliedWrites).toBe(0);
+    expect(result.eventResults[0]?.outcome).toBe('planned_only');
+  });
+
 });
