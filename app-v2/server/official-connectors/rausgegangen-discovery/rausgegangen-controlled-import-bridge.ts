@@ -91,7 +91,7 @@ export function buildOfficialEvidenceFromRausgegangenEnriched(
   });
   const lineup = mergeTitleLineupCandidates(parsedLineup, titleLineup.candidates);
   const enrichmentGaps: string[] = [];
-  const ticketUrl = enriched.outboundLinks[0] ?? enriched.eventUrl;
+  const ticketUrl = enriched.outboundLinks[0];
 
   if (enriched.lifecycle === 'ENDED') {
     enrichmentGaps.push('past_event_skipped');
