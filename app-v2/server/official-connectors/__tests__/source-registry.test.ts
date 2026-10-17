@@ -4,6 +4,7 @@ import { AFFENKAEFIG_CONNECTOR_ID } from '../affenkaefig/constants';
 import { BootshausOfficialConnector } from '../bootshaus/bootshaus-official-connector';
 import { BOOTSHAUS_CONNECTOR_ID } from '../bootshaus/constants';
 import { registerDefaultOfficialConnectors } from '../register-default-connectors';
+import { RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID } from '../rausgegangen-discovery/constants';
 import {
   DuplicateOfficialConnectorError,
   getOfficialSourceRegistry,
@@ -24,8 +25,10 @@ describe('official source registry', () => {
     expect(registry.listConnectorIds()).toEqual([
       AFFENKAEFIG_CONNECTOR_ID,
       BOOTSHAUS_CONNECTOR_ID,
+      RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
     ]);
     expect(registry.get(BOOTSHAUS_CONNECTOR_ID).metadata.displayName).toBe('Bootshaus Official');
+    expect(registry.get(RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID).metadata.sourceType).toBe('event_platform');
   });
 
   it('throws for unknown connector ids', () => {
