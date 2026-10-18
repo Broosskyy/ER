@@ -85,6 +85,28 @@ describe('rausgegangen detail parsing', () => {
   });
 });
 
+describe('Rausgegangen explicit admission price parsing', () => {
+  const detailForPrice = (price: string | number) =>
+    parseRausgegangenEventDetail(
+      `<script type="application/ld+json">${JSON.stringify({
+        '@type': 'Event', name: 'Future Party', startDate: '2027-01-01T22:00:00+01:00',
+        offers: { price, priceCurrency: 'EUR' },
+      })}</script>`,
+      'https://rausgegangen.de/events/future-party-0/',
+    );
+
+  it('keeps a single formatted offer amount', () => {
+    expect(detailForPrice('33,70 €').ticketPriceMinor).toBe(3370);
+    expect(detailForPrice(0).ticketPriceMinor).toBe(0);
+  });
+
+  it('does not treat a range or unresolved door amount as a single price', () => {
+    expect(detailForPrice('33,70 bis 39,80 €').ticketPriceMinor).toBeUndefined();
+    expect(detailForPrice('ab 33,70 EUR').ticketPriceMinor).toBeUndefined();
+    expect(detailForPrice('Preis an AK').ticketPriceMinor).toBeUndefined();
+  });
+});
+
 describe('rausgegangen region discovery', () => {
   it('discovers city slugs from homepage html', () => {
     const html = `
