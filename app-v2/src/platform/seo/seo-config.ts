@@ -1,5 +1,8 @@
 import { PWA_CONFIG } from '@/platform/pwa/pwa-config';
 
+/** Canonical public origin, also used for previews without explicit configuration. */
+export const DEFAULT_WEB_BASE_URL = 'https://eternal-rave.vercel.app';
+
 /** Maximum recommended lengths for SERP display. */
 export const SEO_LIMITS = {
   title: 60,
@@ -23,17 +26,16 @@ export const SEO_CONFIG = {
 } as const;
 
 /** Routes that must not be indexed (robots noindex). */
-export const NOINDEX_ROUTE_PREFIXES = ['/admin'] as const;
+export const NOINDEX_ROUTE_PREFIXES = [
+  '/admin', '/saved', '/notifications', '/profile', '/settings', '/activity',
+  '/login', '/register', '/forgot-password', '/reset-password', '/auth',
+] as const;
 
 /** Public indexable static routes for sitemap generation. */
+/** Only currently implemented, public routes should be indexed. */
 export const INDEXABLE_STATIC_ROUTES = [
   { path: '/', priority: 1.0, changefreq: 'daily' as const },
   { path: '/search', priority: 0.9, changefreq: 'daily' as const },
-  { path: '/saved', priority: 0.6, changefreq: 'weekly' as const },
-  { path: '/notifications', priority: 0.5, changefreq: 'weekly' as const },
-  { path: '/privacy', priority: 0.3, changefreq: 'monthly' as const },
-  { path: '/terms', priority: 0.3, changefreq: 'monthly' as const },
-  { path: '/impressum', priority: 0.3, changefreq: 'monthly' as const },
 ] as const;
 
 export const COLLECTION_SITEMAP_TYPES = [
@@ -54,12 +56,18 @@ export interface PageSeoInput {
   ogType?: 'website' | 'article';
 }
 
-export function getWebBaseUrl(): string | null {
+export function getWebBaseUrl(): string {
   const raw = process.env.EXPO_PUBLIC_WEB_BASE_URL?.trim();
-  if (!raw) {
-    return null;
+  if (!raw) return DEFAULT_WEB_BASE_URL;
+  try {
+    const url = new URL(raw);
+    if ((url.protocol === 'https:' || url.protocol === 'http:') && !url.username && !url.password) {
+      return url.origin;
+    }
+  } catch {
+    // Invalid configuration must not produce malformed canonical URLs.
   }
-  return raw.replace(/\/$/, '');
+  return DEFAULT_WEB_BASE_URL;
 }
 
 export function isGlobalNoIndex(): boolean {

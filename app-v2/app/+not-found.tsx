@@ -2,8 +2,10 @@ import { Stack } from 'expo-router';
 
 import { AppScreen, AppText, SafeAreaContainer, ScreenContent } from '@/components';
 import { colors } from '@/design/colors';
+import { useWebSeo } from '@/platform/seo/use-web-seo';
 
 export default function NotFoundScreen() {
+  useWebSeo({ title: 'Nicht gefunden — Eternal Rave', noindex: true });
   return (
     <AppScreen>
       <SafeAreaContainer>

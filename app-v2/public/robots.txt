@@ -6,4 +6,4 @@ Disallow: /admin
 Disallow: /_expo/
 Disallow: /assets/
 
-Sitemap: /sitemap.xml
+Sitemap: https://eternal-rave.vercel.app/sitemap.xml

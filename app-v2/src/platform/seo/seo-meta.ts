@@ -1,5 +1,6 @@
 import {
   SEO_CONFIG,
+  NOINDEX_ROUTE_PREFIXES,
   buildCanonicalUrl,
   isGlobalNoIndex,
   resolveOgImageUrl,
@@ -52,8 +53,14 @@ export function applyPageSeo(input: PageSeoInput): void {
   }
 
   const description = input.description ?? SEO_CONFIG.defaultDescription;
-  const robots = isGlobalNoIndex() || input.noindex ? 'noindex, nofollow' : 'index, follow';
-  const canonical = input.path ? buildCanonicalUrl(input.path) : buildCanonicalUrl('/');
+  const routePath = input.path ?? document.location?.pathname ?? '/';
+  const isPrivateRoute = NOINDEX_ROUTE_PREFIXES.some(
+    (prefix) => routePath === prefix || routePath.startsWith(prefix + '/'),
+  );
+  const robots = isGlobalNoIndex() || input.noindex || isPrivateRoute
+    ? 'noindex, nofollow'
+    : 'index, follow';
+  const canonical = buildCanonicalUrl(routePath);
   const ogImage = resolveOgImageUrl(input.imagePath);
   const ogType = input.ogType ?? SEO_CONFIG.ogType;
 
