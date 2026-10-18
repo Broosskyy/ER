@@ -2,11 +2,22 @@ import { describe, expect, it } from 'vitest';
 
 import {
   buildCanonicalUrl,
+  DEFAULT_WEB_BASE_URL,
+  getWebBaseUrl,
   isGlobalNoIndex,
   resolveOgImageUrl,
 } from '@/platform/seo/seo-config';
 
 describe('seo-config', () => {
+  it('uses production canonical URLs without a configured web base', () => {
+    const previous = process.env.EXPO_PUBLIC_WEB_BASE_URL;
+    delete process.env.EXPO_PUBLIC_WEB_BASE_URL;
+    expect(getWebBaseUrl()).toBe(DEFAULT_WEB_BASE_URL);
+    expect(buildCanonicalUrl('/search')).toBe('https://eternal-rave.vercel.app/search');
+    if (previous === undefined) delete process.env.EXPO_PUBLIC_WEB_BASE_URL;
+    else process.env.EXPO_PUBLIC_WEB_BASE_URL = previous;
+  });
+
   it('builds canonical URLs from base env', () => {
     const previous = process.env.EXPO_PUBLIC_WEB_BASE_URL;
     process.env.EXPO_PUBLIC_WEB_BASE_URL = 'https://www.example.com/';

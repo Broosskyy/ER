@@ -14,7 +14,7 @@ import { WEB_PAGE_TITLES } from '@/platform/pwa/pwa-config';
 import { useWebDocumentTitle } from '@/platform/web/use-web-document-title';
 
 export default function SearchScreen() {
-  useWebDocumentTitle(WEB_PAGE_TITLES.search);
+  useWebDocumentTitle(WEB_PAGE_TITLES.search, '/search');
   const isFocused = useIsFocused();
   const { events } = usePublishedEvents();
   const [query, setQuery] = useState('');

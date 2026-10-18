@@ -4,7 +4,6 @@ import { type PropsWithChildren } from 'react';
 import { PWA_CONFIG } from '@/platform/pwa/pwa-config';
 import {
   SEO_CONFIG,
-  getWebBaseUrl,
   isGlobalNoIndex,
   resolveOgImageUrl,
 } from '@/platform/seo/seo-config';
@@ -14,7 +13,6 @@ import {
   buildWebSiteJsonLd,
 } from '@/platform/seo/structured-data';
 
-const siteUrl = getWebBaseUrl() ?? '';
 const robots = isGlobalNoIndex() ? 'noindex, nofollow' : 'index, follow';
 const ogImage = resolveOgImageUrl();
 const googleVerification = process.env.EXPO_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
@@ -56,12 +54,11 @@ export default function Root({ children }: PropsWithChildren) {
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content={String(SEO_CONFIG.ogImageWidth)} />
         <meta property="og:image:height" content={String(SEO_CONFIG.ogImageHeight)} />
-        {siteUrl ? <meta property="og:url" content={siteUrl} /> : null}
         <meta name="twitter:card" content={SEO_CONFIG.twitterCard} />
         <meta name="twitter:title" content={SEO_CONFIG.defaultTitle} />
         <meta name="twitter:description" content={SEO_CONFIG.defaultDescription} />
         <meta name="twitter:image" content={ogImage} />
-        {siteUrl ? <link rel="canonical" href={siteUrl} /> : null}
+        {/* The SPA serves this HTML on every route; add the route-specific canonical after hydration. */}
         <link rel="manifest" href={PWA_CONFIG.manifestPath} />
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
