@@ -38,15 +38,17 @@ export function classifyRausgegangenAdmissionForReview(
 
   if (conditionalFree.test(description)) {
     kind = 'free_until_cutoff';
-  } else if (wholeEventFree.test(description) || detail.ticketPriceMinor === 0) {
+  } else if (wholeEventFree.test(description)) {
     kind = 'free_entry';
   } else if (doorPrice.test(description)) {
     kind = 'door_price_unknown';
   } else if (detail.ticketUrl?.startsWith('https://')) {
     kind = 'online_offer_needs_identity_verification';
-  } else if (detail.ticketPriceMinor != null) {
+  } else if (detail.ticketPriceMinor != null && detail.ticketPriceMinor > 0) {
     kind = 'numeric_offer_without_purchase_target';
   }
+  // A bare JSON-LD zero is NOT whole-event free admission.
+  // Some sources also use it for free entry only before midnight.
 
   return {
     kind,

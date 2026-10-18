@@ -77,8 +77,14 @@ function formatMinorAsEuro(amountMinor: number): string {
 
 function projectPriceText(ticket: EventTicket): string | undefined {
   const salesStatus = ticket.salesStatus ?? '';
-  if (salesStatus === 'availability_unverified') {
+  if (salesStatus === 'availability_unverified' || salesStatus === 'provider_access_unavailable' ||
+      salesStatus === 'unavailable_unknown') {
     return undefined;
+  }
+  if (salesStatus === 'free_entry') {
+    return ticket.priceFromMinor === 0 && ticket.currency === 'EUR' && !ticket.ticketUrl
+      ? 'Eintritt frei'
+      : undefined;
   }
   if (salesStatus === 'sale_not_started' && ticket.priceFromMinor == null) {
     return 'Preis noch nicht veröffentlicht';
@@ -99,6 +105,8 @@ export function mapConsumerSalesStatusToBadgeStatus(
   salesStatus: string | null | undefined,
 ): EventTicketStatus | undefined {
   switch (salesStatus) {
+    case 'free_entry':
+      return 'free';
     case 'available':
       return 'available';
     case 'on_sale':
@@ -159,7 +167,10 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     ticketStatus = salesStatus === 'sold_out' ? 'sold_out' : 'external_link';
   }
 
-  const badgeStatus = mapConsumerSalesStatusToBadgeStatus(salesStatus);
+  const badgeStatus = salesStatus === 'free_entry' &&
+      (ticket.priceFromMinor !== 0 || ticket.currency !== 'EUR' || hasUrl)
+    ? undefined
+    : mapConsumerSalesStatusToBadgeStatus(salesStatus);
 
   return {
     priceText: projectPriceText(ticket),
@@ -174,7 +185,8 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     presaleCtaLabel: showPresaleCta ? 'Vorregistrieren' : undefined,
     ticketStatus,
     statusLabel:
-      salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability'
+      salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability' ||
+        salesStatus === 'free_entry'
         ? undefined
         : projectConsumerTicketStatusLabel(salesStatus),
     badgeStatus,
