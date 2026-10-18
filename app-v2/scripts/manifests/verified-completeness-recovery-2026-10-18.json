@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-18T06:10:17.494Z",
+  "targetProjectRef": "gnkjzinwvmrxcadwebhv",
+  "recoveryPreviewRunId": 39101575913,
+  "recoveryPreviewHead": "ca2d464e558162ed4426803a0f654332f8c026f7",
+  "appliedBatch": "2026-10-18-batch1",
+  "tickets": [
+    {
+      "eventId": "b75df3df-c06d-425e-a17f-30cb7d2e2e10",
+      "title": "#MittWochenende by Beats x Bass x Cologne at Odonien",
+      "ticketUrl": "https://tonite.ticket.io/dfF8i3vL/",
+      "priceFromMinor": 1200,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "c354451b-7f96-452f-9569-655c814d5c77",
+      "title": "Wintergarden Halloween w/ Ben Klock, Beste Hira, Gerd Janson a.m.",
+      "ticketUrl": "https://dockland-w3l2.stgdts.com/events/37bf8291-9b98-46eb-82db-7260b1937cad?aid=7aa53d",
+      "priceFromMinor": 1800,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "0db10acf-3ef5-49db-9f72-e5d1d2bcecf3",
+      "title": "Feiern wie früher - nur früher! Der Daytime Rave mit ANNA REUSCH & THOMAS SCHUMACHER",
+      "ticketUrl": "https://stagedates.com/events/feiern-wie-fruher-nur-fruher-graf-karl-20261031-tdDM5?promoterId=4a353963-0fe4-4f0e-b4be-6ed5c9ca55ea",
+      "priceFromMinor": 2300,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "33a27125-1d24-40dd-9536-2bc5f90a7281",
+      "title": "11.11 – 14 STUNDEN ELEKTRONISCHER KARNEVAL IM REINEKE FUCHS 🎭",
+      "ticketUrl": "https://t.rausgegangen.de/tickets/1111-14-stunden-elektronischer-karneval-im-reineke-fuchs",
+      "priceFromMinor": 800,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "eadea3d9-964c-4c2f-8002-faf9d0c4fe28",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027 — Wiesbaden",
+      "ticketUrl": "https://www.eventim.de/event/kytes-indie-rave-tour-kulturzentrum-schlachthof-e-v-20982864/",
+      "priceFromMinor": 3485,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "4ac44a0b-77f2-4700-8c71-61936d84d51b",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027 — Karlsruhe",
+      "ticketUrl": "https://tickets.tollhaus.de/catalog/tickets/90513-tickets-kytes-kulturzentrum-tollhaus-karlsruhe-am-29-01-2027",
+      "priceFromMinor": 3490,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "0295cc92-057a-437f-8989-131c28beae67",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027 — Rostock",
+      "ticketUrl": "https://www.eventim.de/event/kytes-indie-rave-tour-peter-weiss-haus-20962393/",
+      "priceFromMinor": 3490,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "738897bc-c175-44c4-9c53-adae6056792a",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027 — Hannover",
+      "ticketUrl": "https://www.eventim.de/event/kytes-indie-rave-tour-musikzentrum-hannover-20973556/",
+      "priceFromMinor": 3490,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "20efdccf-db17-41c1-9ca6-feb9f944eedd",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027 — Münster",
+      "ticketUrl": "https://www.eventim.de/event/kytes-indie-rave-tour-sputnikhalle-20981634/",
+      "priceFromMinor": 3490,
+      "currency": "EUR",
+      "salesStatus": "available"
+    },
+    {
+      "eventId": "3a479d63-bf76-476c-8dd4-6b2756a59134",
+      "title": "KYTES /// Indie Rave Tour 2026 & 2027 — Essen",
+      "ticketUrl": "https://www.eventim.de/event/kytes-indie-rave-tour-zeche-carl-20981445/",
+      "priceFromMinor": 3490,
+      "currency": "EUR",
+      "salesStatus": "available"
+    }
+  ],
+  "corrections": {
+    "wintergarden": {
+      "eventId": "c354451b-7f96-452f-9569-655c814d5c77",
+      "venue": "Dockland",
+      "address": "Am Hawerkamp 29a",
+      "postalCode": "48155",
+      "city": "Münster",
+      "organizer": "Dockland GmbH",
+      "correctedBillingName": {
+        "from": "Gerd Janson a.m.",
+        "to": "Gerd Janson"
+      },
+      "addedLineup": [
+        "Greta Perola",
+        "Accul",
+        "FELI",
+        "Rubi"
+      ]
+    },
+    "kytesMuenster": {
+      "eventId": "20efdccf-db17-41c1-9ca6-feb9f944eedd",
+      "previousVenue": "Jovel Music Hall",
+      "venue": "Sputnikhalle",
+      "address": "Am Hawerkamp 31",
+      "postalCode": "48155",
+      "city": "Münster"
+    }
+  },
+  "postApplyCounts": {
+    "events": 122,
+    "venues": 77,
+    "eventSources": 202,
+    "eventLineup": 436,
+    "eventGenres": 204,
+    "eventTickets": 78
+  }
+}
