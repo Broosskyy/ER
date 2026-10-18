@@ -86,6 +86,9 @@ function projectPriceText(ticket: EventTicket): string | undefined {
   if (salesStatus === 'sales_ended' && ticket.priceFromMinor != null) {
     return `zuletzt ${formatMinorAsEuro(ticket.priceFromMinor)}`;
   }
+  if (ticket.priceFromMinor === 0 && (ticket.currency === 'EUR' || !ticket.currency)) {
+    return 'Eintritt frei';
+  }
   if (ticket.priceFromMinor != null) {
     return formatMinorAsEuro(ticket.priceFromMinor);
   }

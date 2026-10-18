@@ -27,6 +27,8 @@ import {
   finalizeRausgegangenControlledImportEvidence,
 } from '../server/official-connectors/rausgegangen-discovery/rausgegangen-controlled-import-bridge';
 import { verifyRausgegangenCandidateLive } from '../server/official-connectors/rausgegangen-discovery/rausgegangen-live-verify';
+import { parseRausgegangenEventDetail } from '../server/official-connectors/rausgegangen-discovery/parse-rausgegangen-detail';
+import { classifyRausgegangenAdmissionForReview, type AdmissionReviewEvidence } from '../server/official-connectors/rausgegangen-discovery/admission-review';
 
 const REPO_ROOT = join(process.cwd(), '..');
 const MANIFEST_PATH = process.env.RAUSGEGANGEN_ENRICHMENT_SCOPE_PATH?.trim()
@@ -95,6 +97,8 @@ interface PreviewRow {
     ticketAvailability: string;
     ticketAction: string;
     sourcePriceMinor?: number;
+    /** Source-only classification, never permission to mutate a ticket row. */
+    admissionReview?: AdmissionReviewEvidence;
   };
   ticketPipeline?: {
     classification: string;
@@ -288,6 +292,13 @@ async function main(): Promise<void> {
       }
 
       const evidence = finalized.evidence;
+      // Source-specific read-only admission triage. The ticket persistence
+      // planner below still exclusively determines safe changes.
+      const admissionReview = live.verification.liveAccessible
+        ? classifyRausgegangenAdmissionForReview(
+            parseRausgegangenEventDetail(live.fetchResult.html, event.sourceUrl),
+          )
+        : undefined;
       const recoveredLineup = evidence.lineupCandidates ?? [];
       const ticket = finalized.ticketResult;
       const ticketUrl =
@@ -335,6 +346,7 @@ async function main(): Promise<void> {
           ticketAvailability: live.verification.ticketAvailability,
           ticketAction: live.verification.ticketAction,
           sourcePriceMinor: live.verification.currentAdmissionPriceMinor,
+          admissionReview,
         },
         ticketPipeline: ticket
           ? {
@@ -467,6 +479,18 @@ async function main(): Promise<void> {
       withTicketUrl: rowsWithPlan.filter((row) => row.current.ticketUrl).length,
       withTicketPrice: rowsWithPlan.filter((row) => row.current.ticketPrice).length,
       withTicketStatus: rowsWithPlan.filter((row) => row.current.ticketStatus).length,
+    },
+    admissionReview: {
+      freeEntryCandidates: rowsWithPlan.filter((row) =>
+        row.recovered.admissionReview?.kind === 'free_entry').length,
+      timeLimitedFreeCandidates: rowsWithPlan.filter((row) =>
+        row.recovered.admissionReview?.kind === 'free_until_cutoff').length,
+      doorPriceUnknownCandidates: rowsWithPlan.filter((row) =>
+        row.recovered.admissionReview?.kind === 'door_price_unknown').length,
+      onlineOffersNeedingIdentityVerification: rowsWithPlan.filter((row) =>
+        row.recovered.admissionReview?.kind === 'online_offer_needs_identity_verification').length,
+      unclassifiedCandidates: rowsWithPlan.filter((row) =>
+        row.recovered.admissionReview?.kind === 'unknown').length,
     },
     recoverable: {
       descriptions: rowsWithPlan.filter((row) => row.promotable.description).length,

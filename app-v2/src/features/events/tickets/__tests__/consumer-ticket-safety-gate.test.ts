@@ -3,6 +3,28 @@ import { describe, expect, it } from 'vitest';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 
 describe('consumer ticket safety gate', () => {
+  it('renders a documented zero-price admission as free, not "ab 0 €"', () => {
+    const presentation = resolveConsumerTicketPresentation({
+      id: 'ticket-free', provider: 'organizer_shop', ticketUrl: null,
+      priceFromMinor: 0, currency: 'EUR', salesStatus: 'available', sortOrder: 0,
+    });
+    expect(presentation.priceText).toBe('Eintritt frei');
+    expect(presentation.showPurchaseCta).toBe(false);
+  });
+
+  it('never treats a missing price or unverified zero as proof of free entry', () => {
+    const unknown = resolveConsumerTicketPresentation({
+      id: 'ticket-unknown', provider: 'organizer_shop', ticketUrl: null,
+      priceFromMinor: null, currency: 'EUR', salesStatus: 'available', sortOrder: 0,
+    });
+    const unverified = resolveConsumerTicketPresentation({
+      id: 'ticket-unverified', provider: 'organizer_shop', ticketUrl: null,
+      priceFromMinor: 0, currency: 'EUR', salesStatus: 'availability_unverified', sortOrder: 0,
+    });
+    expect(unknown.priceText).toBeUndefined();
+    expect(unverified.priceText).toBeUndefined();
+  });
+
   it('shows a neutral ticket-page link for availability_unverified', () => {
     const presentation = resolveConsumerTicketPresentation({
       id: 'ticket-1',

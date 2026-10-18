@@ -57,3 +57,9 @@ jobs:
 
       - name: Live-scope regression tests
         run: npx vitest run server/official-connectors/rausgegangen-discovery/__tests__/live-completeness-scope.test.ts
+
+      - name: Admission review regression tests
+        run: >-
+          npx vitest run
+          server/official-connectors/rausgegangen-discovery/__tests__/admission-review.test.ts
+          src/features/events/tickets/__tests__/consumer-ticket-safety-gate.test.ts
