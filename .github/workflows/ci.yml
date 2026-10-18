@@ -52,5 +52,8 @@ jobs:
       - name: Ingestion tests
         run: npm run test:ingestion
 
+      - name: Ticket evidence guard regression tests
+        run: npx vitest run server/ingestion/sync/__tests__/ticket-result-eligibility.test.ts
+
       - name: Live-scope regression tests
         run: npx vitest run server/official-connectors/rausgegangen-discovery/__tests__/live-completeness-scope.test.ts

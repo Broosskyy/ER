@@ -32,6 +32,7 @@ import type {
 } from '../../official-connectors/source-operational-config';
 import type { VerifiedTicketCompleteResult } from '../../official-connectors/ticket-evidence/ticket-audit-metrics';
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
+import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 
 export interface SyncOrchestratorDependencies {
   registry: OfficialSourceRegistry;
@@ -207,6 +208,7 @@ async function processConnectorResult(
 }> {
   const eventResults: SyncEventProcessingResult[] = [];
   const errorCategories: IngestionErrorCategory[] = [];
+  const failedSourceKeys = new Set<string>();
 
   counters.discovered = connectorResult.discoveredDetailUrls.length;
   counters.fetched = connectorResult.loadedDetailUrls.length;
@@ -248,6 +250,7 @@ async function processConnectorResult(
       eventResults.push(buildEventProcessingResult(plan, sourceEventKey, officialUrl, outcome));
     } catch (error) {
       counters.failures += 1;
+      failedSourceKeys.add(sourceEventKey);
       const classified = classifyIngestionError(error);
       errorCategories.push(classified.category);
       eventResults.push({
@@ -260,7 +263,18 @@ async function processConnectorResult(
     }
   }
 
-  const ticketResults = connectorResult.ticketResults ?? [];
+  const { eligible: ticketResults, blocked: blockedTicketResults } =
+    filterTicketResultsForExistingOnlyConnector(
+      connectorResult.ticketResults ?? [],
+      plans,
+      deps.operationalConfig.get(connectorId)?.writeScope,
+      failedSourceKeys,
+    );
+  if (blockedTicketResults.length > 0) {
+    console.warn(
+      `[sync] ignored ${blockedTicketResults.length} unbound or unsafe ticket results for ${connectorId}`,
+    );
+  }
   if (ticketResults.length > 0 && deps.applyTicketResults) {
     try {
       const ticketPersistence = await deps.applyTicketResults(ticketResults, mode);
