@@ -231,12 +231,20 @@ async function processConnectorResult(
       updatePlanCounters(counters, plan);
       let applied = false;
 
-      if (mode === 'apply' && canApplyPlan(plan, deps.operationalConfig.get(connectorId)?.writeScope) && deps.applyPlan) {
-        const applyResult = await deps.applyPlan(plan);
-        if (applyResult.applied) {
-          counters.appliedWrites += 1;
-          applied = true;
+      // Ticket writes must not proceed when a required event-core apply was
+      // skipped or returned applied=false (including a missing apply executor).
+      const eventApplyRequired =
+        mode === 'apply' &&
+        canApplyPlan(plan, deps.operationalConfig.get(connectorId)?.writeScope);
+      if (eventApplyRequired) {
+        if (deps.applyPlan) {
+          const applyResult = await deps.applyPlan(plan);
+          if (applyResult.applied) {
+            counters.appliedWrites += 1;
+            applied = true;
+          }
         }
+        if (!applied) failedSourceKeys.add(sourceEventKey);
       }
 
       const outcome = classifyPlanOutcome(plan, mode, applied);
