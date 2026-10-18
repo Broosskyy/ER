@@ -6,7 +6,7 @@ describe('Rausgegangen read-only admission review', () => {
     const review = classifyRausgegangenAdmissionForReview({
       description: 'Entry price at the door is not announced.', ticketPriceMinor: 0,
     });
-    expect(review.kind).toBe('unknown');
+    expect(review.kind).toBe('door_price_unknown');
     expect(review.sourcePriceMinor).toBe(0);
     expect(review.autoPersistAllowed).toBe(false);
   });
