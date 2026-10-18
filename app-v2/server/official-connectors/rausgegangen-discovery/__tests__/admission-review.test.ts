@@ -2,6 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { classifyRausgegangenAdmissionForReview } from '../admission-review';
 
 describe('Rausgegangen read-only admission review', () => {
+  it('does not infer whole-event free entry from unqualified 0 EUR', () => {
+    const review = classifyRausgegangenAdmissionForReview({
+      description: 'Entry price at the door is not announced.', ticketPriceMinor: 0,
+    });
+    expect(review.kind).toBe('unknown');
+    expect(review.sourcePriceMinor).toBe(0);
+    expect(review.autoPersistAllowed).toBe(false);
+  });
   it('recognizes truly free admission when the event itself says so', () => {
     const review = classifyRausgegangenAdmissionForReview({
       description: 'Eintritt frei. Doors 19:30.', ticketPriceMinor: 0,

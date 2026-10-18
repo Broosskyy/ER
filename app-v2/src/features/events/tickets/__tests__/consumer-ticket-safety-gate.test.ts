@@ -3,6 +3,32 @@ import { describe, expect, it } from 'vitest';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 
 describe('consumer ticket safety gate', () => {
+  it('renders explicit free admission without purchase link', () => {
+    const p = resolveConsumerTicketPresentation({
+      id: 'e-free', provider: 'rausgegangen', ticketUrl: null,
+      priceFromMinor: 0, currency: 'EUR', salesStatus: 'free_entry', sortOrder: 0,
+    });
+    expect(p.priceText).toBe('Eintritt frei');
+    expect(p.badgeStatus).toBe('free');
+    expect(p.showPurchaseCta).toBe(false);
+    expect(p.ticketUrl).toBeUndefined();
+  });
+  it('does not display malformed free rows as verified free', () => {
+    for (const value of [
+      { priceFromMinor: null, currency: 'EUR', ticketUrl: null },
+      { priceFromMinor: 0, currency: null, ticketUrl: null },
+      { priceFromMinor: 0, currency: 'EUR', ticketUrl: 'https://tickets.example/e/1' },
+    ]) {
+      const p = resolveConsumerTicketPresentation({
+        id: 'invalid-free', provider: 'rausgegangen',
+        salesStatus: 'free_entry', sortOrder: 0, ...value,
+      });
+      expect(p.priceText).toBeUndefined();
+      expect(p.badgeStatus).toBeUndefined();
+      expect(p.showPurchaseCta).toBe(false);
+    }
+  });
+
   it('renders a documented zero-price admission as free, not "ab 0 €"', () => {
     const presentation = resolveConsumerTicketPresentation({
       id: 'ticket-free', provider: 'organizer_shop', ticketUrl: null,
