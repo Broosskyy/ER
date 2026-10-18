@@ -46,9 +46,15 @@ function parsePriceMinor(raw?: string | number, currency = 'EUR'): number | unde
   if (!text) {
     return undefined;
   }
-  const normalized = text.replace(',', '.').replace(/[^\d.]/g, '');
-  const value = Number.parseFloat(normalized);
-  if (!Number.isFinite(value)) {
+  // A range such as "33,70 bis 39,80" is NOT an event-specific regular
+  // admission amount. A permissive parseFloat would silently take the first
+  // number and misrepresent the displayed range as a verified price.
+  const singleAmount = text.replace(/^(?:€|EUR)\s*/i, '').replace(/\s*(?:€|EUR)$/i, '');
+  if (!/^\d{1,6}(?:[.,]\d{1,2})?$/.test(singleAmount)) {
+    return undefined;
+  }
+  const value = Number(singleAmount.replace(',', '.'));
+  if (!Number.isFinite(value) || value < 0) {
     return undefined;
   }
   return Math.round(value * 100);
