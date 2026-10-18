@@ -51,3 +51,6 @@ jobs:
 
       - name: Ingestion tests
         run: npm run test:ingestion
+
+      - name: Live-scope regression tests
+        run: npx vitest run server/official-connectors/rausgegangen-discovery/__tests__/live-completeness-scope.test.ts

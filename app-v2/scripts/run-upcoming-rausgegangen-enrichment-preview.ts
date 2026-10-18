@@ -29,12 +29,9 @@ import {
 import { verifyRausgegangenCandidateLive } from '../server/official-connectors/rausgegangen-discovery/rausgegangen-live-verify';
 
 const REPO_ROOT = join(process.cwd(), '..');
-const MANIFEST_PATH = join(
-  process.cwd(),
-  'scripts',
-  'manifests',
-  'upcoming-rausgegangen-enrichment-scope.json',
-);
+const MANIFEST_PATH = process.env.RAUSGEGANGEN_ENRICHMENT_SCOPE_PATH?.trim()
+  ? join(process.cwd(), process.env.RAUSGEGANGEN_ENRICHMENT_SCOPE_PATH)
+  : join(process.cwd(), 'scripts', 'manifests', 'upcoming-rausgegangen-enrichment-scope.json');
 const OUT = join(REPO_ROOT, 'artifacts', 'event-enrichment-completeness');
 
 interface CurrentTicket {
@@ -137,6 +134,12 @@ function berlinDateKey(instant: Date): string {
 
 function loadManifest(): ScopeManifest {
   const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8')) as ScopeManifest;
+  if (process.env.RAUSGEGANGEN_ENRICHMENT_SCOPE_PATH?.trim()) {
+    const ageMs = Date.now() - Date.parse(manifest.generatedAt);
+    if (!Number.isFinite(ageMs) || ageMs < -300_000 || ageMs > 6 * 60 * 60_000) {
+      throw new Error('live_scope_expired_or_invalid_timestamp');
+    }
+  }
   if (manifest.schemaVersion !== 1) {
     throw new Error('enrichment_scope_schema_invalid');
   }
