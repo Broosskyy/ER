@@ -86,6 +86,16 @@ function projectPriceText(ticket: EventTicket): string | undefined {
       ? 'Eintritt frei'
       : undefined;
   }
+  if (salesStatus === 'free_until_midnight') {
+    return ticket.priceFromMinor == null && !ticket.ticketUrl && ticket.currency === 'EUR'
+      ? 'Bis Mitternacht frei · danach Abendkasse'
+      : undefined;
+  }
+  if (salesStatus === 'door_only') {
+    return ticket.priceFromMinor == null && !ticket.ticketUrl
+      ? 'Abendkasse · Preis unbekannt'
+      : undefined;
+  }
   if (salesStatus === 'sale_not_started' && ticket.priceFromMinor == null) {
     return 'Preis noch nicht veröffentlicht';
   }
@@ -124,7 +134,10 @@ export function mapConsumerSalesStatusToBadgeStatus(
     case 'registration_only':
       return 'waitlist';
     case 'door_only':
-      return 'unavailable';
+    case 'free_until_midnight':
+      // Door admission is not "unavailable", and the free cutoff is not
+      // evidence of free entry for the full event.
+      return undefined;
     case 'cancelled':
       return 'cancelled';
     case 'availability_unverified':
@@ -186,7 +199,7 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     ticketStatus,
     statusLabel:
       salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability' ||
-        salesStatus === 'free_entry'
+        salesStatus === 'free_entry' || salesStatus === 'free_until_midnight'
         ? undefined
         : projectConsumerTicketStatusLabel(salesStatus),
     badgeStatus,
