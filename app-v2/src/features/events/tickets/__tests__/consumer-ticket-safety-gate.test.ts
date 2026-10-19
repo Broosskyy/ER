@@ -3,6 +3,46 @@ import { describe, expect, it } from 'vitest';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 
 describe('consumer ticket safety gate', () => {
+  it('shows time-limited free entry without a free-for-all-night badge or fake ticket CTA', () => {
+    const p = resolveConsumerTicketPresentation({
+      id: 'conditional', provider: 'rausgegangen',
+      ticketUrl: null, priceFromMinor: null, currency: 'EUR',
+      salesStatus: 'free_until_midnight', sortOrder: 0,
+    });
+    expect(p.priceText).toBe('Bis Mitternacht frei · danach Abendkasse');
+    expect(p.badgeStatus).toBeUndefined();
+    expect(p.ticketUrl).toBeUndefined();
+    expect(p.showPurchaseCta).toBe(false);
+    expect(p.showPresaleCta).toBe(false);
+    expect(p.ticketAction).toBe('none');
+  });
+  it('does not turn a malformed conditional ticket into full-event free admission', () => {
+    for (const row of [
+      { priceFromMinor: 0, currency: 'EUR', ticketUrl: null },
+      { priceFromMinor: 2500, currency: 'EUR', ticketUrl: null },
+      { priceFromMinor: null, currency: 'EUR', ticketUrl: 'https://tickets.example/other' },
+    ]) {
+      const p = resolveConsumerTicketPresentation({
+        id: 'unsafe', provider: 'rausgegangen', salesStatus: 'free_until_midnight',
+        sortOrder: 0, ...row,
+      });
+      expect(p.priceText).toBeUndefined();
+      expect(p.badgeStatus).toBeUndefined();
+      expect(p.showPurchaseCta).toBe(false);
+    }
+  });
+  it('shows door-only admission as an unknown door price, never sold out', () => {
+    const p = resolveConsumerTicketPresentation({
+      id: 'door', provider: 'rausgegangen', ticketUrl: null,
+      priceFromMinor: null, currency: 'EUR', salesStatus: 'door_only', sortOrder: 0,
+    });
+    expect(p.priceText).toBe('Abendkasse · Preis unbekannt');
+    expect(p.badgeStatus).toBeUndefined();
+    expect(p.statusLabel).toBe('Nur Abendkasse');
+    expect(p.showPurchaseCta).toBe(false);
+    expect(p.ticketUrl).toBeUndefined();
+  });
+
   it('renders explicit free admission without purchase link', () => {
     const p = resolveConsumerTicketPresentation({
       id: 'e-free', provider: 'rausgegangen', ticketUrl: null,

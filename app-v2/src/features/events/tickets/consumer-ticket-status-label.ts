@@ -1,6 +1,7 @@
 const CONSUMER_TICKET_STATUS_LABELS: Record<string, string> = {
   available: 'Verfügbar',
   free_entry: 'Eintritt frei',
+  free_until_midnight: 'Bis Mitternacht frei, danach Abendkasse',
   on_sale: 'Verfügbar',
   low_availability: 'Wenige verfügbar',
   sold_out: 'Ausverkauft',
@@ -18,6 +19,7 @@ const CONSUMER_TICKET_STATUS_LABELS: Record<string, string> = {
 const RAW_TICKET_STATUS_VALUES = new Set([
   'available',
   'free_entry',
+  'free_until_midnight',
   'on_sale',
   'low_availability',
   'sold_out',
