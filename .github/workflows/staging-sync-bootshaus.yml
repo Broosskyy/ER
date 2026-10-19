@@ -1,6 +1,12 @@
 name: Staging Sync — Bootshaus
 
 on:
+  # One-time smoke execution on the first merge of this workflow; ordinary
+  # application pushes do not trigger the expensive source crawler.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/staging-sync-bootshaus.yml'
   schedule:
     - cron: '17 3 * * *'
   workflow_dispatch:

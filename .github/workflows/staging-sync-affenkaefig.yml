@@ -1,6 +1,12 @@
 name: Staging Sync — Affenkäfig
 
 on:
+  # One-time smoke execution on the first merge of this workflow; ordinary
+  # application pushes do not trigger the expensive source crawler.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/staging-sync-affenkaefig.yml'
   schedule:
     - cron: '53 4 * * *'
   workflow_dispatch:
