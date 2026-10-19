@@ -40,6 +40,17 @@ describe('daily unattended official sync guard', () => {
       counters:{...b,safeUpdates:26},
     }),8).reasons).toContain('bulk_updates_requires_review');
   });
+  it('rejects automated ticket deletions or bulk repricing regardless of event-core count', () => {
+    expect(evaluateDailyOfficialSyncPreflight({
+      ...preview(),
+      ticketPersistence:{applied:false,inserts:0,updates:0,deletes:1,ticketRowsChanged:1,allIdempotent:false},
+    },8).reasons).toContain('automatic_ticket_deletions_forbidden');
+    expect(evaluateDailyOfficialSyncPreflight({
+      ...preview(),
+      ticketPersistence:{applied:false,inserts:0,updates:30,deletes:0,ticketRowsChanged:30,allIdempotent:false},
+    },8).reasons).toContain('bulk_ticket_mutations_require_review');
+  });
+
   it('blocks parser degradation, invalid candidates and source failures', () => {
     expect(evaluateDailyOfficialSyncPreflight(preview({
       errorCategories:['parser_degraded'],

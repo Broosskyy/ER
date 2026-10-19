@@ -42,15 +42,15 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
 
-      - name: Ticket.io Germany source network discovery (no DB writes)
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        run: npx tsx scripts/run-m9-3b-1-ticketio-network-discovery.ts
-
       - name: Audit every future public event ticket (read-only)
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-daily-public-ticket-quality-audit.ts
+
+      - name: Ticket.io Germany source network discovery (no DB writes)
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx tsx scripts/run-m9-3b-1-ticketio-network-discovery.ts
 
       - name: Upload read-only evidence and match review
         if: always()

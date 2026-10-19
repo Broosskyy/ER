@@ -32,6 +32,14 @@ export function evaluateDailyOfficialSyncPreflight(
   if (counters.rejected > 0) reasons.push('invalid_source_candidates');
   if (counters.newEvents > 8) reasons.push('bulk_new_events_requires_review');
   if (counters.safeUpdates > 25) reasons.push('bulk_updates_requires_review');
+  // Ticket evidence may change independently of event-core fields. Apply must
+  // never mass-reprice the public catalog or delete tickets unattended.
+  if ((preview.ticketPersistence?.deletes ?? 0) > 0) {
+    reasons.push('automatic_ticket_deletions_forbidden');
+  }
+  if ((preview.ticketPersistence?.ticketRowsChanged ?? 0) > 25) {
+    reasons.push('bulk_ticket_mutations_require_review');
+  }
   if (errorCategories.some((category) =>
     ['unexpected_zero_results','parser_degraded','invalid_response',
       'rate_limited','network_timeout','upstream_5xx','unknown'].includes(category),
