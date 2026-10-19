@@ -1,7 +1,18 @@
 name: Staging Sync — Affenkäfig
 
 on:
+  # One-time smoke execution on the first merge of this workflow; ordinary
+  # application pushes do not trigger the expensive source crawler.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/staging-sync-affenkaefig.yml'
+  schedule:
+    - cron: '53 4 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: staging-sync-affenkaefig
@@ -10,10 +21,13 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     defaults:
       run:
         working-directory: app-v2
+    env:
+      ETERNAL_RAVE_ENABLE_DAILY_SYNC: 'true'
+      ETERNAL_RAVE_PUBLIC_DB_SYNC_ACKNOWLEDGED: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,6 +42,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Fail closed if the Supabase access token is not configured
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
+            echo "::error::SUPABASE_ACCESS_TOKEN is missing; daily sync was not run."
+            exit 1
+          fi
+
       - name: Link staging Supabase project
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
@@ -37,3 +60,12 @@ jobs:
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-scheduled-staging-sync.ts affenkaefig-official
+
+      - name: Upload daily Affenkäfig audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-affenkaefig-audit
+          path: app-v2/.tmp/m9-0-scheduled-sync/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -29,6 +29,7 @@ import {
   STAGING_PROJECT_REF,
   getConfiguredProductionProjectRef,
 } from '../server/ingestion/sync/staging-guard';
+import { evaluateDailyOfficialSyncPreflight } from '../server/ingestion/sync/daily-sync-preflight';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
@@ -64,7 +65,10 @@ async function main() {
   const stagingTarget = verifyLinkedStagingTarget(cwd);
 
   if (!STAGING_SCHEDULER_ENABLED) {
-    abort('global_scheduler_disabled');
+    abort('daily_sync_disabled_or_public_db_not_acknowledged');
+  }
+  if (process.env.ETERNAL_RAVE_PUBLIC_DB_SYNC_ACKNOWLEDGED !== 'true') {
+    abort('public_database_write_not_acknowledged');
   }
 
   assertScheduledStagingApplyAllowed({
@@ -108,8 +112,36 @@ async function main() {
   });
 
   const deps = createStagingSyncDependencies({ cwd, runQuery, verifyTarget: false });
+
+  // Always plan first. Do NOT apply any source changes when source parsing,
+  // identity or unusually large write counts look unhealthy.
+  const preview = await runSourceSync(
+    { connectorId, mode: 'dry_run', triggerType: 'scheduled', maxDetailPages: 40 },
+    deps,
+  );
+  writeJson(`${connectorId}-daily-preflight.json`, preview);
+  const minimumParsed = connectorId === BOOTSHAUS_CONNECTOR_ID ? 8 : 2;
+  const gate = evaluateDailyOfficialSyncPreflight(preview, minimumParsed);
+  if (!gate.allowed) {
+    abort('daily_preflight_rejected', {
+      connectorId, reasons: gate.reasons, counters: preview.run.counters,
+      runStatus: preview.run.status, errorCategories: preview.run.errorCategories,
+    });
+  }
+
+  // A dry-run must not silently mutate ticket rows. Fail closed if it does.
+  const ticketsAfterPreview = normalizeTicketRows(
+    loadJsonAgg<Record<string, unknown>>(
+      runQuery,
+      'SELECT jsonb_agg(to_jsonb(t) ORDER BY t.id) AS rows FROM public.event_tickets t;',
+    ),
+  );
+  if (compareTicketSnapshots(preTickets, ticketsAfterPreview).ticketRowsChanged > 0) {
+    abort('daily_preflight_mutated_tickets');
+  }
+
   const result = await runSourceSync(
-    { connectorId, mode: 'apply', triggerType: 'scheduled' },
+    { connectorId, mode: 'apply', triggerType: 'scheduled', maxDetailPages: 40 },
     deps,
   );
 
@@ -133,6 +165,7 @@ async function main() {
     runId: result.run.runId,
     status: result.run.status,
     triggerType: result.run.triggerType,
+    previewCounters: preview.run.counters,
     counters: result.run.counters,
     errorCategories: result.run.errorCategories,
     healthStatus: result.health.healthStatus,
@@ -157,6 +190,11 @@ async function main() {
 
   if (result.run.triggerType !== 'scheduled') {
     abort('trigger_type_mismatch', { triggerType: result.run.triggerType });
+  }
+  if (result.run.status === 'failed' || result.run.status === 'cancelled' ||
+      result.run.counters.parsed < minimumParsed ||
+      result.run.counters.failures > 0) {
+    abort('daily_apply_unhealthy', { summary });
   }
 
   console.log(JSON.stringify(summary, null, 2));

@@ -21,7 +21,8 @@ import {
 } from '../server/official-connectors/ticket-evidence/network-discovery/ticket-io-network-discovery';
 
 const OUT = join(process.cwd(), '..', 'artifacts', 'm9-3b-1-ticketio-network-discovery');
-const REFERENCE = new Date('2026-09-02T12:00:00+02:00');
+// Rolling reference: never classify 2026-10/2027 events using a frozen September baseline.
+const REFERENCE = new Date();
 
 const GOLDEN_ANCHORS = [
   { pattern: /chris\s+stas{1,2}y/i, label: 'Chris Stussy' },
