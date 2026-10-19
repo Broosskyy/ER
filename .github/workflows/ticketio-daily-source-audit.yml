@@ -47,11 +47,18 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-m9-3b-1-ticketio-network-discovery.ts
 
+      - name: Audit every future public event ticket (read-only)
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx tsx scripts/run-daily-public-ticket-quality-audit.ts
+
       - name: Upload read-only evidence and match review
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ticketio-daily-source-audit
-          path: artifacts/m9-3b-1-ticketio-network-discovery/
+          path: |
+            artifacts/m9-3b-1-ticketio-network-discovery/
+            artifacts/daily-public-ticket-quality/
           if-no-files-found: ignore
           retention-days: 14
