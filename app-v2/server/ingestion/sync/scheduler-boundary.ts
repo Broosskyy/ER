@@ -6,14 +6,22 @@
  *     → run-scheduled-staging-sync.ts
  *     → runSourceSync({ triggerType: 'scheduled', mode: 'apply' })
  *
- * Production automation remains disabled until a later explicit gate.
+ * Every scheduled apply is bound to the exact known public-serving Supabase ref;
+ * other production projects remain forbidden.
  */
 
 import { AFFENKAEFIG_CONNECTOR_ID } from '../../official-connectors/affenkaefig/constants';
 import { BOOTSHAUS_CONNECTOR_ID } from '../../official-connectors/bootshaus/constants';
 
-/** Global kill switch for unattended staging scheduled apply. Keep false until explicitly recertified. */
-export const STAGING_SCHEDULER_ENABLED = false;
+/**
+ * Daily official-source sync: enabled ONLY in the dedicated scheduled worker,
+ * never in a browser, a local developer shell or a preview deployment.
+ * The target project serves the PUBLIC Eternal Rave site despite its legacy
+ * "staging" name. The separate workflow requires explicit acknowledgement.
+ */
+export const STAGING_SCHEDULER_ENABLED =
+  process.env.ETERNAL_RAVE_ENABLE_DAILY_SYNC === 'true' &&
+  process.env.ETERNAL_RAVE_PUBLIC_DB_SYNC_ACKNOWLEDGED === 'true';
 
 /** Production scheduler must remain off for M9.0. */
 export const PRODUCTION_SCHEDULER_ENABLED = false;
