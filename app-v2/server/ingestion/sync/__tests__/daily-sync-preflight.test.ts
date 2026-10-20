@@ -51,6 +51,25 @@ describe('daily unattended official sync guard', () => {
     },8).reasons).toContain('bulk_ticket_mutations_require_review');
   });
 
+  it('allows quarantined invalid events without globally skipping a bounded safe batch',()=>{
+    const baseline=preview();
+    baseline.run.counters.newEvents=16;
+    baseline.run.counters.rejected=1;
+    baseline.run.status='partially_succeeded';
+    expect(evaluateDailyOfficialSyncPreflight(baseline,8,{
+      selectedNewEvents:8,selectedExistingUpdates:5,
+      quarantinedRejected:1,duplicateBindingKeys:0,
+    }).allowed).toBe(true);
+    expect(evaluateDailyOfficialSyncPreflight(baseline,8,{
+      selectedNewEvents:9,selectedExistingUpdates:5,
+      quarantinedRejected:1,duplicateBindingKeys:0,
+    }).reasons).toContain('bulk_new_events_requires_review');
+    expect(evaluateDailyOfficialSyncPreflight(baseline,8,{
+      selectedNewEvents:8,selectedExistingUpdates:5,
+      quarantinedRejected:0,duplicateBindingKeys:0,
+    }).reasons).toContain('invalid_source_candidates');
+  });
+
   it('blocks parser degradation, invalid candidates and source failures', () => {
     expect(evaluateDailyOfficialSyncPreflight(preview({
       errorCategories:['parser_degraded'],

@@ -43,3 +43,10 @@ The Oct 23 `AFFENKÄFIG RULES` ticket.io checkout currently lists **Phase 2 €2
 For `SARA LANDRY`, the provider lists multiple tiers (€24.90 / €28.90 / €36.90): listing a past tier as **currently available** would be misleading. The DB shows €36.90 but independent checkout state verification is needed before treating any given tier as the active cheapest price.
 
 Never treat locker, parking, insurance or shipping products as entry tickets; price updates must be event-/phase-specific and sourced.
+
+## 20 Oct 2026: first real-run recertification
+
+- The first Bootshaus daily preview found 25 current event details, including **16 potential new events**, **7 safe existing updates**, one `review_required` and one rejected. The original all-or-nothing gate aborted without mutating consumer events or tickets.
+- The new **per-source key + exact URL allowlist** applies at most 8 approved net-new entries and 25 approved existing updates per daily pass, quarantines rejected/review-required events and records the deferred candidates. Tickets follow precisely the same allowlist and go through their independent verified checkout planner. Automatic ticket deletions and >25 ticket mutations stay forbidden.
+- The first Affenkäfig parallel run failed with Supabase CLI temp-role password authentication; the isolated rerun showed the project connection and query execution can work with the existing access token. Cross-workflow concurrency avoids simultaneous temporary-role database sessions. No new password is assumed necessary from one transient failure.
+- The daily cron jobs are staggered by at least 96 minutes. GitHub Actions concurrency allows one active + one queued run per group; overlapping manual launches can still supersede older pending jobs. Check each daily job result.

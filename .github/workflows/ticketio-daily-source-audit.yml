@@ -1,12 +1,6 @@
 name: Daily Ticket.io Discovery and Price Audit (read-only)
 
 on:
-  # One-time smoke execution on the first merge of this workflow; ordinary
-  # application pushes do not trigger the expensive source crawler.
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/ticketio-daily-source-audit.yml'
   schedule:
     - cron: '29 6 * * *'
   workflow_dispatch:
@@ -15,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ticketio-daily-discovery
+  group: eternal-rave-public-supabase-cli
   cancel-in-progress: false
 
 jobs:

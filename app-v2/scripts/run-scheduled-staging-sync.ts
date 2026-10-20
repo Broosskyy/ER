@@ -30,6 +30,8 @@ import {
   getConfiguredProductionProjectRef,
 } from '../server/ingestion/sync/staging-guard';
 import { evaluateDailyOfficialSyncPreflight } from '../server/ingestion/sync/daily-sync-preflight';
+import { selectDailySafeBatch } from '../server/ingestion/sync/daily-safe-batch';
+import { planTicketPersistenceFromResults } from '../server/ingestion/sync/execute-ticket-persistence';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
@@ -121,11 +123,17 @@ async function main() {
   );
   writeJson(`${connectorId}-daily-preflight.json`, preview);
   const minimumParsed = connectorId === BOOTSHAUS_CONNECTOR_ID ? 8 : 2;
-  const gate = evaluateDailyOfficialSyncPreflight(preview, minimumParsed);
+  const safeBatch = selectDailySafeBatch(preview);
+  writeJson(`${connectorId}-selected-safe-batch.json`, {
+    ...safeBatch,
+    bindings: Array.from(safeBatch.bindings.entries()),
+  });
+  const gate = evaluateDailyOfficialSyncPreflight(preview, minimumParsed, safeBatch);
   if (!gate.allowed) {
     abort('daily_preflight_rejected', {
       connectorId, reasons: gate.reasons, counters: preview.run.counters,
       runStatus: preview.run.status, errorCategories: preview.run.errorCategories,
+      safeBatch: { ...safeBatch, bindings: Array.from(safeBatch.bindings.entries()) },
     });
   }
 
@@ -140,6 +148,25 @@ async function main() {
     abort('daily_preflight_mutated_tickets');
   }
 
+  // Only exact key/URL pairs from this preview can write in the apply pass.
+  deps.scheduledApplyBindings = safeBatch.bindings;
+  const unguardedTicketApply = deps.applyTicketResults;
+  if (!unguardedTicketApply) abort('daily_ticket_executor_missing');
+  deps.applyTicketResults = async (ticketEvidence, mode) => {
+    if (mode === 'apply') {
+      const planned = planTicketPersistenceFromResults(runQuery, ticketEvidence);
+      const requestedWrites = planned.currentTicketInsertsRequired +
+        planned.currentTicketUpdatesRequired + planned.currentTicketDeletesRequired;
+      if (planned.currentTicketDeletesRequired > 0 || requestedWrites > 25) {
+        abort('daily_ticket_changes_exceed_safe_limits', {
+          inserts: planned.currentTicketInsertsRequired,
+          updates: planned.currentTicketUpdatesRequired,
+          deletes: planned.currentTicketDeletesRequired,
+        });
+      }
+    }
+    return unguardedTicketApply(ticketEvidence, mode);
+  };
   const result = await runSourceSync(
     { connectorId, mode: 'apply', triggerType: 'scheduled', maxDetailPages: 40 },
     deps,
@@ -166,6 +193,7 @@ async function main() {
     status: result.run.status,
     triggerType: result.run.triggerType,
     previewCounters: preview.run.counters,
+    selectedSafeBatch: { ...safeBatch, bindings: Array.from(safeBatch.bindings.entries()) },
     counters: result.run.counters,
     errorCategories: result.run.errorCategories,
     healthStatus: result.health.healthStatus,
