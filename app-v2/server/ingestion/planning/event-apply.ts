@@ -270,6 +270,13 @@ export function buildOfficialEventApplySql(
     return 'BEGIN; COMMIT;';
   }
 
+  if (plan.venueAction === 'insert' && plan.existingVenueId) {
+    throw new OfficialEventApplyError(
+      'venue_insert_conflicts_with_existing_event_binding',
+      'invalid_plan',
+    );
+  }
+
   const summary = buildOfficialEventApplySummary(plan, ids);
   if (summary.statements.length === 0) {
     return 'BEGIN; COMMIT;';
