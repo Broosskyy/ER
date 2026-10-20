@@ -125,6 +125,23 @@ function resolveVenueAction(
   return { action: 'insert' };
 }
 
+/**
+ * Re-imports of an event already bound to an official source must not
+ * try to create a venue under the event's existing venue ID.
+ *
+ * Source listings often spell the same club differently ("Bootshaus Köln"
+ * vs "Bootshaus"). A genuine venue move is an identity-sensitive change and
+ * requires a separately reviewed remapping, never an unattended upsert.
+ */
+export function preserveExistingEventVenueBinding(
+  resolution: { action: WriteAction; existingVenueId?: string },
+  canonicalEventVenueId?: string,
+): { action: WriteAction; existingVenueId?: string } {
+  return canonicalEventVenueId
+    ? { action: 'reuse', existingVenueId: canonicalEventVenueId }
+    : resolution;
+}
+
 function buildExpectedRowCounts(
   eventAction: WriteAction,
   venueAction: WriteAction,
@@ -200,12 +217,16 @@ export function planOfficialEventWrite(
     existingSource?.eventId ??
     (identity.autoBindAllowed ? identity.candidateEventId : undefined);
 
-  const venueResolution = resolveVenueAction(candidate, context);
+  const existingEvent = findExistingEvent(resolvedEventId, context);
+  const originalVenueResolution = resolveVenueAction(candidate, context);
+  const venueResolution = preserveExistingEventVenueBinding(
+    originalVenueResolution,
+    existingEvent?.venueId ?? undefined,
+  );
 
   const sameFingerprint = existingSource
     ? existingSource.contentHash === sourceIdentity.contentHash
     : false;
-  const existingEvent = findExistingEvent(resolvedEventId, context);
   const hasUrlBinding = Boolean(existingSource);
   const hasCanonicalEvent = Boolean(resolvedEventId);
 
@@ -307,6 +328,9 @@ export function planOfficialEventWrite(
     eventAction = eventWriteActionFromReconciliation(reconciliation.fieldDecisions, false);
   }
 
+  if (existingEvent?.venueId && originalVenueResolution.action !== 'reuse') {
+    reasons.push('existing_event_venue_id_preserved_no_auto_relocation');
+  }
   if (venueResolution.action === 'reuse') {
     reasons.push(hasCanonicalEvent ? 'venue_already_bound' : 'venue_reuse_or_pending');
   } else if (venueResolution.action === 'insert') {

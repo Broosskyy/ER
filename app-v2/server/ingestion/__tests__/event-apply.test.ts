@@ -9,6 +9,7 @@ import {
   OfficialEventApplyError,
 } from '../planning/event-apply';
 import type { EventCandidate, EventWritePlan } from '../types/event-candidate';
+import { preserveExistingEventVenueBinding } from '../planning/event-write-planner';
 
 function buildCandidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
   return {
@@ -87,6 +88,33 @@ const ids = {
 };
 
 describe('official event apply executor', () => {
+  it('preserves an existing venue ID when Rausgegangen uses a different venue label', () => {
+    expect(preserveExistingEventVenueBinding(
+      {action:'insert'},ids.venueId,
+    )).toEqual({action:'reuse',existingVenueId:ids.venueId});
+    expect(preserveExistingEventVenueBinding(
+      {action:'reuse',existingVenueId:'another-venue-id'},ids.venueId,
+    )).toEqual({action:'reuse',existingVenueId:ids.venueId});
+    expect(preserveExistingEventVenueBinding(
+      {action:'insert'},undefined,
+    )).toEqual({action:'insert'});
+  });
+
+  it('fails closed on the exact duplicate venue primary-key regression', () => {
+    const inconsistentPlan=buildPlan({
+      eventAction:'update',venueAction:'insert',existingVenueId:ids.venueId,
+      lineupAction:'noop',genresAction:'noop',sourceAction:'update',
+      existingSource:{
+        sourceId:ids.sourceId,eventId:ids.eventId,
+        sourceUrl:'https://bootshaus.tv/events/sample-event/',
+        contentHash:'fingerprint-old',
+      },
+    });
+    expect(()=>buildOfficialEventApplySql(inconsistentPlan,ids,{
+      description:'Sample description',sourceContentHash:'fingerprint-old',
+    })).toThrow('venue_insert_conflicts_with_existing_event_binding');
+  });
+
   it('plans insert writes for a persist-ready official plan', () => {
     const summary = buildOfficialEventApplySummary(buildPlan(), ids);
 
