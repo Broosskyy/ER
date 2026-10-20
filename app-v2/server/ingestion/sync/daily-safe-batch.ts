@@ -66,8 +66,10 @@ export function selectDailySafeBatch(
       continue;
     }
     if (options.existingOnly && !event.verifiedExistingSourceBinding) {
-      // A merely similar event must never receive Rausgegangen source edits.
-      quarantinedReview++;
+      // Unbound net-new discoveries are reported for future source onboarding.
+      // A similar-looking existing event must never receive Rausgegangen edits.
+      if (!event.matchedEventId) deferredNewEvents++;
+      else quarantinedReview++;
       continue;
     }
     if (!event.matchedEventId) {

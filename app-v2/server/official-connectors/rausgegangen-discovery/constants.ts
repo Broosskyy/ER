@@ -3,7 +3,7 @@ export const RAUSGEGANGEN_BASE_URL = 'https://rausgegangen.de';
 export const RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID = 'rausgegangen-discovery';
 
 export const RAUSGEGANGEN_DISCOVERY_USER_AGENT =
-  'EternalRave-M9.4A-GermanyDiscovery/1.0 (+research; read-only; no-automation)';
+  'EternalRave-SourceVerifier/1.0 (+daily controlled catalog verification; rate-limited)';
 
 /** Paths that are not city region slugs. */
 export const NON_CITY_PATHS = new Set([

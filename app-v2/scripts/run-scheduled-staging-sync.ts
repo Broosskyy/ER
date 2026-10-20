@@ -147,9 +147,18 @@ async function main() {
     });
   }
 
+  // A dry-run must not silently mutate ticket rows. Fail closed if it does.
+  const ticketsAfterPreview = normalizeTicketRows(
+    loadJsonAgg<Record<string, unknown>>(
+      runQuery,
+      'SELECT jsonb_agg(to_jsonb(t) ORDER BY t.id) AS rows FROM public.event_tickets t;',
+    ),
+  );
+  if (compareTicketSnapshots(preTickets, ticketsAfterPreview).ticketRowsChanged > 0) {
+    abort('daily_preflight_mutated_tickets');
+  }
+
   if (policy.writeScope === 'existing_only' && safeBatch.bindings.size === 0) {
-    // Current crawl yielded new/unbound records only. Keep discovery visible
-    // in the artifact and do not invoke an empty public-data apply.
     writeJson(`${connectorId}-scheduled-result.json`, {
       status: 'review_only_no_existing_bindings',
       selectedSafeBatch: {...safeBatch, bindings: []},
@@ -161,17 +170,6 @@ async function main() {
       parsed: preview.run.counters.parsed, databaseWrites: 0,
     }));
     return;
-  }
-
-  // A dry-run must not silently mutate ticket rows. Fail closed if it does.
-  const ticketsAfterPreview = normalizeTicketRows(
-    loadJsonAgg<Record<string, unknown>>(
-      runQuery,
-      'SELECT jsonb_agg(to_jsonb(t) ORDER BY t.id) AS rows FROM public.event_tickets t;',
-    ),
-  );
-  if (compareTicketSnapshots(preTickets, ticketsAfterPreview).ticketRowsChanged > 0) {
-    abort('daily_preflight_mutated_tickets');
   }
 
   // Only exact key/URL pairs from this preview can write in the apply pass.
