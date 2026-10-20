@@ -98,11 +98,7 @@ async function main(): Promise<void> {
   if (rawUrlDescriptions.length > 0) {
     throw new Error('standard_connector_smoke_raw_url_description_leakage');
   }
-  if (
-    STAGING_SCHEDULER_ENABLED ||
-    PRODUCTION_SCHEDULER_ENABLED ||
-    false
-  ) {
+  if (STAGING_SCHEDULER_ENABLED || PRODUCTION_SCHEDULER_ENABLED) {
     throw new Error('standard_connector_smoke_scheduler_boundary_violation');
   }
 }

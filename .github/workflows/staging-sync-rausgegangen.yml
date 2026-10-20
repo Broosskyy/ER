@@ -1,6 +1,11 @@
 name: Daily Rausgegangen Event & Ticket Verification
 
 on:
+  # First deployment verification; normal app pushes do not retrigger.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/staging-sync-rausgegangen.yml'
   schedule:
     - cron: '41 7 * * *'
   workflow_dispatch:
