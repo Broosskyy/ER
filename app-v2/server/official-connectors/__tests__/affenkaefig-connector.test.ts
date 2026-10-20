@@ -8,6 +8,7 @@ import { planOfficialEventWrite } from '../../ingestion/planning/event-write-pla
 import { AffenkaefigOfficialConnector } from '../affenkaefig/affenkaefig-official-connector';
 import { AFFENKAEFIG_CONNECTOR_ID, AFFENKAEFIG_LIST_URL } from '../affenkaefig/constants';
 import { parseAffenkaefigDetailPage } from '../affenkaefig/parse-detail';
+import { cleanAffenkaefigDescription, containsEmbeddedCheckoutContamination } from '../affenkaefig/parse-description';
 import {
   dedupeAffenkaefigDetailUrls,
   extractAffenkaefigDetailUrlsFromListHtml,
@@ -35,6 +36,40 @@ import {
 const FETCHED_AT = '2026-08-26T12:00:00.000Z';
 
 describe('affenkaefig official connector', () => {
+  it('isolates editorial content from a fully rendered embedded N8 checkout', () => {
+    const html = `<section>
+      Tickets: Elfter Elfter Elektroküche N8 Manager Events Ticketbörse Meine Tickets
+      Tickets kaufen Elfter Elfter Elektroküche ab 12,44 EUR.
+      Infos zur Veranstaltung Kölle Allaaaff! Rave am Elften Elften ab 18 Uhr.
+      ++ Line UP ++ DEGUZMAN RIKSO b2b ROMEK 666
+      Bitte prüfe deine Angaben Bestellerdaten Deine Angaben
+      Ticket Flex Option 2,50 EUR. Warenkorb ansehen.
+      <div>Weiter zu Teilnehmerdaten Sicher bezahlen über Stripe.</div>
+    </section>`;
+    const cleaned=cleanAffenkaefigDescription(html);
+    expect(cleaned).toContain('Kölle Allaaaff!');
+    expect(cleaned).not.toContain('Bestellerdaten');
+    expect(cleaned).not.toContain('N8 Manager');
+    expect(cleaned).not.toContain('DEGUZMAN');
+    expect(cleaned?.length).toBeLessThan(250);
+  });
+  it('rejects checkout text without a trustworthy editorial boundary', () => {
+    const checkout = 'N8 Manager Events Ticketbörse Bestellerdaten Deine Angaben ' +
+      'Bitte wähle mindestens ein Ticket aus. Warenkorb ansehen.';
+    expect(containsEmbeddedCheckoutContamination(checkout)).toBe(true);
+    expect(cleanAffenkaefigDescription(checkout)).toBeUndefined();
+  });
+  it('rejects the implausible 23:59 end-of-following-day placeholder', () => {
+    const html = `<script type="application/ld+json" class="event-cards-manager-schema">
+      {"@type":"Event","name":"Elfter Elfter Karneval","startDate":"2026-11-11T18:00:00+01:00",
+      "endDate":"2026-11-12T23:59:00+01:00"}</script>
+      <h1 class="ecm-event-single__title">Elfter Elfter Karneval</h1>
+      <div class="ecm-event-single__content"><p>Karnevalsrave ab 18 Uhr.</p></div>`;
+    const evidence=parseAffenkaefigDetailPage(html,'https://affenkaefig.info/event/elfter-elfter-karneval-elektrokueche/',FETCHED_AT,createEmptyConnectorCounters());
+    expect(evidence.endsAt).toBeUndefined();
+    expect(evidence.enrichmentGaps).toContain('unverified_end_time_placeholder');
+  });
+
   it('registers alongside bootshaus without duplicate ids', () => {
     resetOfficialSourceRegistryForTests();
     const registry = getOfficialSourceRegistry();

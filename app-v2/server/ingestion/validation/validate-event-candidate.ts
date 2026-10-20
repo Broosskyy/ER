@@ -102,6 +102,19 @@ export function validateEventCandidate(candidate: EventCandidate): EventCandidat
     reasons.push('end_before_start');
   }
 
+  // Cross-source circuit breaker: never write a full checkout, form,
+  // address collector or payment page as an event description.
+  if (candidate.description && candidate.description.length > 1200) {
+    const checkoutMarkers = [
+      /Bestellerdaten/i, /Bitte wähle mindestens ein Ticket/i,
+      /Warenkorb ansehen/i, /Sicher bezahlen über Stripe/i,
+      /N8 Manager Events Ticketbörse/i, /Zwischensumme\s*0,00\s*EUR/i,
+    ];
+    if (checkoutMarkers.filter(marker=>marker.test(candidate.description!)).length >= 2) {
+      reasons.push('checkout_html_in_description');
+    }
+  }
+
   if (!candidate.venue?.name?.trim()) {
     reasons.push('missing_venue');
   }
@@ -159,6 +172,7 @@ export function validateEventCandidate(candidate: EventCandidate): EventCandidat
           'missing_title',
           'invalid_starts_at',
           'end_before_start',
+          'checkout_html_in_description',
           'missing_official_url',
           'official_source_missing',
           'ticket_url_used_as_official_source',

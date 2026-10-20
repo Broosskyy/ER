@@ -201,6 +201,12 @@ export class AffenkaefigOfficialConnector implements OfficialConnector {
         buildMediaContext: buildAffenkaefigMediaEvidenceContext,
         processTickets: true,
       });
+      // A listing explicitly saying "Line-up folgt" is not corroborated by
+      // incidental venue lettering/OCR; do not invent artist billing.
+      if (evidence.enrichmentGaps.includes('lineup_not_announced') &&
+          evidence.lineupCandidates.length === 0) {
+        finalized.evidence.lineupCandidates = [];
+      }
       if (finalized.ticketResult && !evidence.enrichmentGaps.includes('past_event_skipped')) {
         ticketResults.push(finalized.ticketResult);
       }
