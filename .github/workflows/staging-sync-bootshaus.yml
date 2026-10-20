@@ -1,6 +1,12 @@
 name: Staging Sync — Bootshaus
 
 on:
+  # Single post-merge verification run for the controlled catch-up rollout.
+  # Ordinary pushes to app code do not trigger this expensive public import.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/staging-sync-bootshaus.yml'
   schedule:
     - cron: '17 3 * * *'
   workflow_dispatch:
