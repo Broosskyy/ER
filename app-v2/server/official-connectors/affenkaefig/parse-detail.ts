@@ -165,13 +165,21 @@ export function parseAffenkaefigDetailPage(
   const ogDescription = $('meta[property="og:description"]').attr('content')?.trim();
   const descriptionClean =
     cleanAffenkaefigDescription(descriptionHtml) ||
-    jsonLd?.description?.trim() ||
-    ogDescription ||
+    cleanAffenkaefigDescription(jsonLd?.description ?? '') ||
+    cleanAffenkaefigDescription(ogDescription ?? '') ||
     undefined;
   const descriptionRaw = descriptionClean;
 
   const startsAt = resolveStartsAt(jsonLd, displayDate, descriptionClean ?? '');
-  const endsAt = jsonLd?.endDate?.trim() || undefined;
+  const sourceEndsAt = jsonLd?.endDate?.trim() || undefined;
+  // Some WordPress pages use the following day's 23:59 as a placeholder
+  // even for overnight parties ending in the morning. Never persist that
+  // fabricated 30-hour duration as a verified end time.
+  const endIsPlaceholder = Boolean(
+    startsAt && sourceEndsAt && /T23:59(?::00)?(?:[+\-]\d{2}:?\d{2}|Z)?$/.test(sourceEndsAt) &&
+    Date.parse(sourceEndsAt) - Date.parse(startsAt) > 20 * 60 * 60 * 1000,
+  );
+  const endsAt = endIsPlaceholder ? undefined : sourceEndsAt;
   const officialImageUrl = resolveImageUrl(jsonLd, $);
 
   if (!startsAt || !isValidIsoDateTime(startsAt)) {
@@ -202,6 +210,7 @@ export function parseAffenkaefigDetailPage(
     }
   }
 
+  if (endIsPlaceholder) enrichmentGaps.push('unverified_end_time_placeholder');
   enrichmentGaps.push('genres_missing');
 
   const pageFingerprint = fingerprintHtmlPage(html);
