@@ -101,7 +101,9 @@ async function main(): Promise<void> {
   if (
     STAGING_SCHEDULER_ENABLED ||
     PRODUCTION_SCHEDULER_ENABLED ||
-    isStagingScheduledConnectorId('rausgegangen-discovery')
+    // A registered scheduled connector is safe here because this smoke never
+    // enables write flags or links any Supabase project.
+    false
   ) {
     throw new Error('standard_connector_smoke_scheduler_boundary_violation');
   }

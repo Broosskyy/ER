@@ -32,6 +32,7 @@ import {
 import { evaluateDailyOfficialSyncPreflight } from '../server/ingestion/sync/daily-sync-preflight';
 import { selectDailySafeBatch } from '../server/ingestion/sync/daily-safe-batch';
 import { planTicketPersistenceFromResults } from '../server/ingestion/sync/execute-ticket-persistence';
+import { getDailySourcePolicy } from '../server/ingestion/sync/daily-source-policies';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
@@ -62,6 +63,8 @@ async function main() {
     });
   }
 
+  const policy = getDailySourcePolicy(connectorId);
+  if (!policy) abort('unregistered_daily_source_policy', {connectorId});
   const cwd = process.cwd();
   assertProductionNotLinked(cwd);
   const stagingTarget = verifyLinkedStagingTarget(cwd);
@@ -90,6 +93,7 @@ async function main() {
          AND (
            (s.source_url ILIKE '%bootshaus.tv%' AND '${connectorId}' = 'bootshaus-official')
            OR (s.source_url ILIKE '%affenkaefig.info%' AND '${connectorId}' = 'affenkaefig-official')
+           OR (s.source_url ILIKE '%rausgegangen.de/events/%' AND '${connectorId}' = 'rausgegangen-discovery')
          );`,
     ).map((row) => row.event_id),
   );
@@ -118,23 +122,45 @@ async function main() {
   // Always plan first. Do NOT apply any source changes when source parsing,
   // identity or unusually large write counts look unhealthy.
   const preview = await runSourceSync(
-    { connectorId, mode: 'dry_run', triggerType: 'scheduled', maxDetailPages: 40 },
+    { connectorId, mode: 'dry_run', triggerType: 'scheduled', maxDetailPages: policy.maxDetailPages },
     deps,
   );
   writeJson(`${connectorId}-daily-preflight.json`, preview);
-  const minimumParsed = connectorId === BOOTSHAUS_CONNECTOR_ID ? 8 : 2;
-  const safeBatch = selectDailySafeBatch(preview);
+  const minimumParsed = policy.minimumParsed;
+  const safeBatch = selectDailySafeBatch(preview, {
+    newEvents: policy.maxNewEvents, existingUpdates: policy.maxExistingUpdates,
+  }, { existingOnly: policy.writeScope === 'existing_only' });
   writeJson(`${connectorId}-selected-safe-batch.json`, {
     ...safeBatch,
     bindings: Array.from(safeBatch.bindings.entries()),
   });
   const gate = evaluateDailyOfficialSyncPreflight(preview, minimumParsed, safeBatch);
-  if (!gate.allowed) {
+  if (!gate.allowed &&
+      !(policy.writeScope === 'existing_only' &&
+        safeBatch.bindings.size === 0 &&
+        gate.reasons.length === 1 &&
+        gate.reasons[0] === 'no_safe_candidates_to_apply')) {
     abort('daily_preflight_rejected', {
       connectorId, reasons: gate.reasons, counters: preview.run.counters,
       runStatus: preview.run.status, errorCategories: preview.run.errorCategories,
       safeBatch: { ...safeBatch, bindings: Array.from(safeBatch.bindings.entries()) },
     });
+  }
+
+  if (policy.writeScope === 'existing_only' && safeBatch.bindings.size === 0) {
+    // Current crawl yielded new/unbound records only. Keep discovery visible
+    // in the artifact and do not invoke an empty public-data apply.
+    writeJson(`${connectorId}-scheduled-result.json`, {
+      status: 'review_only_no_existing_bindings',
+      selectedSafeBatch: {...safeBatch, bindings: []},
+      preflight: preview.run,
+      databaseWrites: 0,
+    });
+    console.log(JSON.stringify({
+      connectorId, status: 'review_only_no_existing_bindings',
+      parsed: preview.run.counters.parsed, databaseWrites: 0,
+    }));
+    return;
   }
 
   // A dry-run must not silently mutate ticket rows. Fail closed if it does.
@@ -157,7 +183,7 @@ async function main() {
       const planned = planTicketPersistenceFromResults(runQuery, ticketEvidence);
       const requestedWrites = planned.currentTicketInsertsRequired +
         planned.currentTicketUpdatesRequired + planned.currentTicketDeletesRequired;
-      if (planned.currentTicketDeletesRequired > 0 || requestedWrites > 25) {
+      if (planned.currentTicketDeletesRequired > 0 || requestedWrites > policy.maxTicketChanges) {
         abort('daily_ticket_changes_exceed_safe_limits', {
           inserts: planned.currentTicketInsertsRequired,
           updates: planned.currentTicketUpdatesRequired,
@@ -168,7 +194,7 @@ async function main() {
     return unguardedTicketApply(ticketEvidence, mode);
   };
   const result = await runSourceSync(
-    { connectorId, mode: 'apply', triggerType: 'scheduled', maxDetailPages: 40 },
+    { connectorId, mode: 'apply', triggerType: 'scheduled', maxDetailPages: policy.maxDetailPages },
     deps,
   );
 

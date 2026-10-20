@@ -114,7 +114,11 @@ export async function runRausgegangenNetworkDiscovery(
   const fetchOptions = { cacheDir, requestDelayMs: options.requestDelayMs };
   const homepage = await fetchRausgegangenHtml(`${RAUSGEGANGEN_BASE_URL}/`, fetchOptions);
   const discoveredSlugs = options.regionSlugs ?? discoverRegionSlugsFromHomepageHtml(homepage.html);
-  const regionSlugs = [...new Set([...PRIORITY_GERMAN_CITY_SLUGS, ...discoveredSlugs])].slice(0, bounds.maxRegions);
+  // An explicitly bounded schedule/smoke set must not expand into a
+  // Germany-wide crawl. Default exploration still discovers broad regions.
+  const regionSlugs = [...new Set(
+    options.regionSlugs ?? [...PRIORITY_GERMAN_CITY_SLUGS, ...discoveredSlugs],
+  )].slice(0, bounds.maxRegions);
 
   const listingCounts = new Map<string, number>();
   const reachable = new Map<string, boolean>();

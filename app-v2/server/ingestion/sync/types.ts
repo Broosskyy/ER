@@ -135,6 +135,8 @@ export interface SyncEventProcessingResult {
   identityReasons?: string[];
   identitySignals?: SyncEventReviewSignal[];
   matchedEventId?: string;
+  /** Exact existing official-source binding; title/date similarity is insufficient. */
+  verifiedExistingSourceBinding?: boolean;
   reconciliationClassification?: string;
   reconciliationReviewReasons?: string[];
 }
