@@ -3,6 +3,45 @@ import { describe, expect, it } from 'vitest';
 import { resolveConsumerTicketPresentation } from '@/features/events/tickets/consumer-ticket-safety-gate';
 
 describe('consumer ticket safety gate', () => {
+  it('shows free admission with mandatory registration, never unconditional free', () => {
+    const p = resolveConsumerTicketPresentation({
+      id: 'early-access', provider: 'organizer_shop',
+      ticketUrl: null, priceFromMinor: 0, currency: 'EUR',
+      salesStatus: 'registration_only', sortOrder: 0,
+    });
+    expect(p.priceText).toBe('Eintritt frei · Anmeldung erforderlich');
+    expect(p.statusLabel).toBe('Registrierung erforderlich');
+    expect(p.badgeStatus).toBeUndefined();
+    expect(p.showPurchaseCta).toBe(false);
+    expect(p.showPresaleCta).toBe(false);
+    expect(p.ticketUrl).toBeUndefined();
+  });
+  it('does not infer free registration from a generic zero price or unsafe link', () => {
+    for (const invalid of [
+      {priceFromMinor: null, currency: 'EUR', ticketUrl: null},
+      {priceFromMinor: 0, currency: null, ticketUrl: null},
+    ]) {
+      const p = resolveConsumerTicketPresentation({
+        id: 'invalid', provider: 'unknown', salesStatus: 'registration_only',
+        sortOrder: 0, ...invalid,
+      });
+      expect(p.priceText).toBeUndefined();
+      expect(p.badgeStatus).toBeUndefined();
+    }
+  });
+  it('marks official sold-out events without inventing a ticket price or purchase URL', () => {
+    const p = resolveConsumerTicketPresentation({
+      id: 'inurfase', provider: 'organizer_shop', ticketUrl: null,
+      priceFromMinor: null, currency: 'EUR', salesStatus: 'sold_out',
+      sortOrder: 0,
+    });
+    expect(p.badgeStatus).toBe('sold_out');
+    expect(p.statusLabel).toBe('Ausverkauft');
+    expect(p.priceText).toBeUndefined();
+    expect(p.showPurchaseCta).toBe(false);
+    expect(p.ticketUrl).toBeUndefined();
+  });
+
   it('shows time-limited free entry without a free-for-all-night badge or fake ticket CTA', () => {
     const p = resolveConsumerTicketPresentation({
       id: 'conditional', provider: 'rausgegangen',
