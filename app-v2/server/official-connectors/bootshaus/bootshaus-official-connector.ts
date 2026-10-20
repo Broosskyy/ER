@@ -28,6 +28,7 @@ import {
 import { BOOTSHAUS_CONNECTOR_ID, BOOTSHAUS_LIST_URL } from './constants';
 import { buildBootshausMediaEvidenceContext } from './build-bootshaus-media-evidence';
 import { parseBootshausDetailPage } from './parse-detail';
+import { restrictBootshausLineupToOfficialText } from './restrict-ocr-lineup';
 import { dedupeDetailUrls, extractBootshausDetailUrlsFromListHtml } from './parse-list';
 import { markPastOfficialEventIfNeeded } from '../shared/mark-past-official-event';
 import { discoverOfficialTicketCtaFromHtml } from '../ticket-evidence/discover-official-ticket-cta';
@@ -183,7 +184,13 @@ export class BootshausOfficialConnector implements OfficialConnector {
         ticketResults.push(finalized.ticketResult);
       }
 
-      return buildConsumerPreview(finalized.evidence, counters);
+      // The official structured page/text is the artist evidence. OCR is useful
+      // as a review hint but has repeatedly produced merged names and random
+      // flyer words on live Bootshaus events.
+      const consumerEvidence = restrictBootshausLineupToOfficialText(
+        textEvidence, finalized.evidence,
+      );
+      return buildConsumerPreview(consumerEvidence, counters);
     });
 
     await terminateSharedTesseractWorker();
