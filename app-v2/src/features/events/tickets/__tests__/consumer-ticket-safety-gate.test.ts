@@ -16,6 +16,20 @@ describe('consumer ticket safety gate', () => {
     expect(p.showPresaleCta).toBe(false);
     expect(p.ticketUrl).toBeUndefined();
   });
+  it('shows exact zero-euro registration with event-specific ticket URL and a nonpurchase label', () => {
+    const p = resolveConsumerTicketPresentation({
+      id:'dyzen',provider:'ticket_io',
+      ticketUrl:'https://bootshaus-club.ticket.io/UfracQzq/',
+      priceFromMinor:0,currency:'EUR',salesStatus:'registration_only',sortOrder:0,
+    });
+    expect(p.priceText).toBe('Eintritt frei · Anmeldung erforderlich');
+    expect(p.badgeStatus).toBeUndefined();
+    expect(p.showPurchaseCta).toBe(false);
+    expect(p.showPresaleCta).toBe(true);
+    expect(p.presaleCtaLabel).toBe('Kostenloses Ticket sichern');
+    expect(p.ticketUrl).toBe('https://bootshaus-club.ticket.io/UfracQzq/');
+  });
+
   it('does not infer free registration from a generic zero price or unsafe link', () => {
     for (const invalid of [
       {priceFromMinor: null, currency: 'EUR', ticketUrl: null},
