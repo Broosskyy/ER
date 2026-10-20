@@ -96,6 +96,13 @@ function projectPriceText(ticket: EventTicket): string | undefined {
       ? 'Abendkasse · Preis unbekannt'
       : undefined;
   }
+  if (salesStatus === 'registration_only') {
+    // A verified zero price is not unconditional entry: this event explicitly
+    // requires advance registration. Never show a standard "Eintritt frei" badge.
+    return ticket.priceFromMinor === 0 && ticket.currency === 'EUR' && !ticket.ticketUrl
+      ? 'Eintritt frei · Anmeldung erforderlich'
+      : undefined;
+  }
   if (salesStatus === 'sale_not_started' && ticket.priceFromMinor == null) {
     return 'Preis noch nicht veröffentlicht';
   }
@@ -132,7 +139,9 @@ export function mapConsumerSalesStatusToBadgeStatus(
     case 'presale_registration':
       return 'presale';
     case 'registration_only':
-      return 'waitlist';
+      // Not a waitlist: free access can be conditional on registration.
+      // A registration-specific CTA is only shown when its verified link exists.
+      return undefined;
     case 'door_only':
     case 'free_until_midnight':
       // Door admission is not "unavailable", and the free cutoff is not

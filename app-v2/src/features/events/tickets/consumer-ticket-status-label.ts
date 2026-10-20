@@ -8,7 +8,7 @@ const CONSUMER_TICKET_STATUS_LABELS: Record<string, string> = {
   sales_ended: 'Verkauf beendet',
   sale_not_started: 'Verkauf startet bald',
   cancelled: 'Abgesagt',
-  registration_only: 'Registrierung',
+  registration_only: 'Registrierung erforderlich',
   door_only: 'Nur Abendkasse',
   availability_unverified: 'Status unbekannt',
   provider_access_unavailable: 'Status unbekannt',
