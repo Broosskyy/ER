@@ -12,6 +12,8 @@
 
 import { AFFENKAEFIG_CONNECTOR_ID } from '../../official-connectors/affenkaefig/constants';
 import { BOOTSHAUS_CONNECTOR_ID } from '../../official-connectors/bootshaus/constants';
+import { RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID } from '../../official-connectors/rausgegangen-discovery/constants';
+import { DAILY_SOURCE_POLICIES } from './daily-source-policies';
 
 /**
  * Daily official-source sync: enabled ONLY in the dedicated scheduled worker,
@@ -70,10 +72,12 @@ export const STAGING_CRON_UTC = {
 export const STAGING_SCHEDULED_CONNECTOR_IDS = [
   BOOTSHAUS_CONNECTOR_ID,
   AFFENKAEFIG_CONNECTOR_ID,
+  RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
 ] as const;
 
 export type StagingScheduledConnectorId = (typeof STAGING_SCHEDULED_CONNECTOR_IDS)[number];
 
 export function isStagingScheduledConnectorId(connectorId: string): connectorId is StagingScheduledConnectorId {
-  return (STAGING_SCHEDULED_CONNECTOR_IDS as readonly string[]).includes(connectorId);
+  return (STAGING_SCHEDULED_CONNECTOR_IDS as readonly string[]).includes(connectorId) &&
+    Object.prototype.hasOwnProperty.call(DAILY_SOURCE_POLICIES, connectorId);
 }

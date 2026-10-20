@@ -33,6 +33,7 @@ import type {
 import type { VerifiedTicketCompleteResult } from '../../official-connectors/ticket-evidence/ticket-audit-metrics';
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
+import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
 
 export interface SyncOrchestratorDependencies {
   registry: OfficialSourceRegistry;
@@ -81,7 +82,8 @@ function canApplyPlan(
   plan: EventWritePlan,
   writeScope: SourceWriteScope = 'upsert',
 ): boolean {
-  if (writeScope === 'existing_only' && plan.eventAction === 'insert') {
+  if (writeScope === 'existing_only' &&
+      (plan.eventAction === 'insert' || !hasVerifiedExistingSourceBinding(plan))) {
     return false;
   }
   return (
@@ -126,6 +128,7 @@ function buildEventProcessingResult(
       reason: entry.reason,
     })),
     matchedEventId: plan.identity?.candidateEventId ?? plan.resolvedEventId,
+    verifiedExistingSourceBinding: hasVerifiedExistingSourceBinding(plan),
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:
       reconciliationReviewReasons.length > 0 ? reconciliationReviewReasons : undefined,

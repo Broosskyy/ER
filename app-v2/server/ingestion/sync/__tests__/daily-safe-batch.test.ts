@@ -22,6 +22,22 @@ function preview(events:SyncEventProcessingResult[]):SyncRunResult {
   };
 }
 describe('daily safe public event selection',()=>{
+  it('keeps new Rausgegangen discoveries in review and only permits verified existing bindings',()=>{
+    const events=[
+      candidate(1),
+      candidate(2,{matchedEventId:'real-2',verifiedExistingSourceBinding:true}),
+      candidate(3,{matchedEventId:'real-3',verifiedExistingSourceBinding:false}),
+      candidate(4,{matchedEventId:'real-4',verifiedExistingSourceBinding:true,outcome:'noop'}),
+    ];
+    const selection=selectDailySafeBatch(preview(events),
+      {newEvents:0,existingUpdates:12},{existingOnly:true});
+    expect(selection.selectedNewEvents).toBe(0);
+    expect(selection.deferredNewEvents).toBe(1);
+    expect(selection.selectedExistingUpdates).toBe(1);
+    expect(selection.selectedExistingNoops).toBe(1);
+    expect(selection.quarantinedReview).toBe(1);
+    expect([...selection.bindings.keys()]).toEqual(['source:2','source:4']);
+  });
   it('caps verified inserts but retains safe matched updates and ticket-only noops',()=>{
     const events=[
       ...Array.from({length:16},(_,i)=>candidate(i)),

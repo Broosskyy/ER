@@ -26,6 +26,7 @@ const REVIEW_DECISIONS = new Set(['review_required','possible_match']);
 export function selectDailySafeBatch(
   preview: SyncRunResult,
   limits: { newEvents: number; existingUpdates: number } = {newEvents: 8, existingUpdates: 25},
+  options: { existingOnly?: boolean } = {},
 ): DailySafeBatch {
   const results = preview.eventResults;
   if (preview.run.mode !== 'dry_run' || preview.run.triggerType !== 'scheduled' ||
@@ -62,6 +63,13 @@ export function selectDailySafeBatch(
     }
     if (byKey.get(event.sourceEventKey) !== 1) {
       duplicateBindingKeys++;
+      continue;
+    }
+    if (options.existingOnly && !event.verifiedExistingSourceBinding) {
+      // Unbound net-new discoveries are reported for future source onboarding.
+      // A similar-looking existing event must never receive Rausgegangen edits.
+      if (!event.matchedEventId) deferredNewEvents++;
+      else quarantinedReview++;
       continue;
     }
     if (!event.matchedEventId) {

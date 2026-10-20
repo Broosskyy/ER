@@ -1,0 +1,26 @@
+import {describe,expect,it} from 'vitest';
+import {getDailySourcePolicy,DAILY_SOURCE_POLICIES} from '../daily-source-policies';
+import {isStagingScheduledConnectorId} from '../scheduler-boundary';
+
+describe('daily source onboarding contract',()=>{
+  it('registers Rausgegangen for daily verified existing-only source updates',()=>{
+    const policy=getDailySourcePolicy('rausgegangen-discovery');
+    expect(policy).toMatchObject({
+      writeScope:'existing_only',maxNewEvents:0,minimumParsed:1,
+    });
+    expect(isStagingScheduledConnectorId('rausgegangen-discovery')).toBe(true);
+  });
+  it('does not auto-enable newly registered but uncertified connectors',()=>{
+    expect(getDailySourcePolicy('some-future-ticket-provider')).toBeUndefined();
+    expect(isStagingScheduledConnectorId('some-future-ticket-provider')).toBe(false);
+  });
+  it('ensures every whitelisted connector has limited writes',()=>{
+    for(const policy of Object.values(DAILY_SOURCE_POLICIES)){
+      expect(policy.maxNewEvents).toBeLessThanOrEqual(8);
+      expect(policy.maxExistingUpdates).toBeLessThanOrEqual(25);
+      expect(policy.maxTicketChanges).toBeLessThanOrEqual(25);
+      expect(policy.minimumParsed).toBeGreaterThan(0);
+      expect(policy.maxDetailPages).toBeLessThanOrEqual(40);
+    }
+  });
+});

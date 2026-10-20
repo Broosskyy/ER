@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 
 import { registerDefaultOfficialConnectors } from '../../official-connectors/register-default-connectors';
+import type { RausgegangenOfficialConnectorOptions } from '../../official-connectors/rausgegangen-discovery/rausgegangen-official-connector';
 import { getOfficialSourceRegistry } from '../../official-connectors/source-registry';
 import {
   getSourceOperationalConfigRegistry,
@@ -24,6 +25,7 @@ export interface StagingSyncDependenciesOptions {
   runQuery?: LinkedQueryExecutor;
   persistence?: IngestionSyncPersistence;
   verifyTarget?: boolean;
+  rausgegangenOptions?: RausgegangenOfficialConnectorOptions;
 }
 
 export function createStagingSyncDependencies(
@@ -35,7 +37,7 @@ export function createStagingSyncDependencies(
   }
 
   const runQuery = options.runQuery ?? createSupabaseCliLinkedQueryExecutor(cwd);
-  registerDefaultOfficialConnectors();
+  registerDefaultOfficialConnectors(getOfficialSourceRegistry(), options.rausgegangenOptions);
   registerDefaultSourceOperationalConfigs();
 
   return {

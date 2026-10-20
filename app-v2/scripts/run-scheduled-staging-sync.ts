@@ -32,6 +32,8 @@ import {
 import { evaluateDailyOfficialSyncPreflight } from '../server/ingestion/sync/daily-sync-preflight';
 import { selectDailySafeBatch } from '../server/ingestion/sync/daily-safe-batch';
 import { planTicketPersistenceFromResults } from '../server/ingestion/sync/execute-ticket-persistence';
+import { getDailySourcePolicy } from '../server/ingestion/sync/daily-source-policies';
+import { pickScheduledRausgegangenSourceUrls } from '../server/ingestion/sync/daily-rausgegangen-scope';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
@@ -62,6 +64,8 @@ async function main() {
     });
   }
 
+  const policy = getDailySourcePolicy(connectorId);
+  if (!policy) abort('unregistered_daily_source_policy', {connectorId});
   const cwd = process.cwd();
   assertProductionNotLinked(cwd);
   const stagingTarget = verifyLinkedStagingTarget(cwd);
@@ -90,6 +94,7 @@ async function main() {
          AND (
            (s.source_url ILIKE '%bootshaus.tv%' AND '${connectorId}' = 'bootshaus-official')
            OR (s.source_url ILIKE '%affenkaefig.info%' AND '${connectorId}' = 'affenkaefig-official')
+           OR (s.source_url ILIKE '%rausgegangen.de/events/%' AND '${connectorId}' = 'rausgegangen-discovery')
          );`,
     ).map((row) => row.event_id),
   );
@@ -113,23 +118,49 @@ async function main() {
     stagingSchedulerEnabled: STAGING_SCHEDULER_ENABLED,
   });
 
-  const deps = createStagingSyncDependencies({ cwd, runQuery, verifyTarget: false });
+  const preferredSourceUrls = connectorId === 'rausgegangen-discovery'
+    ? pickScheduledRausgegangenSourceUrls(loadJsonAgg<{source_url: string}>(
+        runQuery,
+        `SELECT COALESCE(jsonb_agg(jsonb_build_object('source_url',s.source_url)
+          ORDER BY e.starts_at), '[]'::jsonb) AS rows
+         FROM public.event_sources s JOIN public.events e ON e.id=s.event_id
+         WHERE s.source_role='official'
+           AND s.source_url ~* '^https://(www[.])?rausgegangen[.]de/events/'
+           AND e.status='published' AND e.published_at IS NOT NULL
+           AND COALESCE(e.ends_at,e.starts_at+interval '18 hours')>now();`,
+      ).map(entry => entry.source_url), Math.floor(Date.now()/86400000))
+    : [];
+  writeJson(`${connectorId}-daily-source-scope.json`, {
+    connectorId, reviewedExistingSourceCount: preferredSourceUrls.length,
+    sourceUrls: preferredSourceUrls,
+  });
+
+  const deps = createStagingSyncDependencies({
+    cwd, runQuery, verifyTarget: false,
+    rausgegangenOptions: { preferredEventUrls: preferredSourceUrls },
+  });
 
   // Always plan first. Do NOT apply any source changes when source parsing,
   // identity or unusually large write counts look unhealthy.
   const preview = await runSourceSync(
-    { connectorId, mode: 'dry_run', triggerType: 'scheduled', maxDetailPages: 40 },
+    { connectorId, mode: 'dry_run', triggerType: 'scheduled', maxDetailPages: policy.maxDetailPages },
     deps,
   );
   writeJson(`${connectorId}-daily-preflight.json`, preview);
-  const minimumParsed = connectorId === BOOTSHAUS_CONNECTOR_ID ? 8 : 2;
-  const safeBatch = selectDailySafeBatch(preview);
+  const minimumParsed = policy.minimumParsed;
+  const safeBatch = selectDailySafeBatch(preview, {
+    newEvents: policy.maxNewEvents, existingUpdates: policy.maxExistingUpdates,
+  }, { existingOnly: policy.writeScope === 'existing_only' });
   writeJson(`${connectorId}-selected-safe-batch.json`, {
     ...safeBatch,
     bindings: Array.from(safeBatch.bindings.entries()),
   });
   const gate = evaluateDailyOfficialSyncPreflight(preview, minimumParsed, safeBatch);
-  if (!gate.allowed) {
+  if (!gate.allowed &&
+      !(policy.writeScope === 'existing_only' &&
+        safeBatch.bindings.size === 0 &&
+        gate.reasons.length === 1 &&
+        gate.reasons[0] === 'no_safe_candidates_to_apply')) {
     abort('daily_preflight_rejected', {
       connectorId, reasons: gate.reasons, counters: preview.run.counters,
       runStatus: preview.run.status, errorCategories: preview.run.errorCategories,
@@ -148,6 +179,20 @@ async function main() {
     abort('daily_preflight_mutated_tickets');
   }
 
+  if (policy.writeScope === 'existing_only' && safeBatch.bindings.size === 0) {
+    writeJson(`${connectorId}-scheduled-result.json`, {
+      status: 'review_only_no_existing_bindings',
+      selectedSafeBatch: {...safeBatch, bindings: []},
+      preflight: preview.run,
+      databaseWrites: 0,
+    });
+    console.log(JSON.stringify({
+      connectorId, status: 'review_only_no_existing_bindings',
+      parsed: preview.run.counters.parsed, databaseWrites: 0,
+    }));
+    return;
+  }
+
   // Only exact key/URL pairs from this preview can write in the apply pass.
   deps.scheduledApplyBindings = safeBatch.bindings;
   const unguardedTicketApply = deps.applyTicketResults;
@@ -157,7 +202,7 @@ async function main() {
       const planned = planTicketPersistenceFromResults(runQuery, ticketEvidence);
       const requestedWrites = planned.currentTicketInsertsRequired +
         planned.currentTicketUpdatesRequired + planned.currentTicketDeletesRequired;
-      if (planned.currentTicketDeletesRequired > 0 || requestedWrites > 25) {
+      if (planned.currentTicketDeletesRequired > 0 || requestedWrites > policy.maxTicketChanges) {
         abort('daily_ticket_changes_exceed_safe_limits', {
           inserts: planned.currentTicketInsertsRequired,
           updates: planned.currentTicketUpdatesRequired,
@@ -168,7 +213,7 @@ async function main() {
     return unguardedTicketApply(ticketEvidence, mode);
   };
   const result = await runSourceSync(
-    { connectorId, mode: 'apply', triggerType: 'scheduled', maxDetailPages: 40 },
+    { connectorId, mode: 'apply', triggerType: 'scheduled', maxDetailPages: policy.maxDetailPages },
     deps,
   );
 
