@@ -13,6 +13,8 @@ export interface DailySyncGateDecision {
 export function evaluateDailyOfficialSyncPreflight(
   preview: SyncRunResult,
   minimumParsed: number,
+  safeBatch?: { selectedNewEvents: number; selectedExistingUpdates: number;
+    quarantinedRejected: number; duplicateBindingKeys: number },
 ): DailySyncGateDecision {
   const reasons: string[] = [];
   const { run } = preview;
@@ -29,9 +31,22 @@ export function evaluateDailyOfficialSyncPreflight(
     reasons.push('too_few_verified_events');
   }
   if (counters.failures > 0) reasons.push('source_fetch_or_processing_failed');
-  if (counters.rejected > 0) reasons.push('invalid_source_candidates');
-  if (counters.newEvents > 8) reasons.push('bulk_new_events_requires_review');
-  if (counters.safeUpdates > 25) reasons.push('bulk_updates_requires_review');
+  // Quarantine may isolate unsafe candidates, but never ignore unaccounted
+  // rejects, duplicates or a batch that still exceeds the write ceiling.
+  if (counters.rejected > (safeBatch?.quarantinedRejected ?? 0)) {
+    reasons.push('invalid_source_candidates');
+  }
+  if ((safeBatch?.duplicateBindingKeys ?? 0) > 0) reasons.push('duplicate_official_source_keys');
+  if ((safeBatch?.selectedNewEvents ?? counters.newEvents) > 8) {
+    reasons.push('bulk_new_events_requires_review');
+  }
+  if ((safeBatch?.selectedExistingUpdates ?? counters.safeUpdates) > 25) {
+    reasons.push('bulk_updates_requires_review');
+  }
+  if (safeBatch && safeBatch.selectedNewEvents + safeBatch.selectedExistingUpdates === 0 &&
+      preview.eventResults.every(event => event.outcome !== 'noop')) {
+    reasons.push('no_safe_candidates_to_apply');
+  }
   // Ticket evidence may change independently of event-core fields. Apply must
   // never mass-reprice the public catalog or delete tickets unattended.
   if ((preview.ticketPersistence?.deletes ?? 0) > 0) {

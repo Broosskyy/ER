@@ -49,6 +49,12 @@ export interface SyncOrchestratorDependencies {
   sleep?: (ms: number) => Promise<void>;
   /** When set, scheduled apply guards validate the linked Supabase project ref. */
   linkedProjectRef?: string;
+  /**
+   * Extra ceiling for unattended public database applies. The preflight run
+   * binds each reviewed source key to its exact official URL. Unselected
+   * event/ticket data must NEVER be written on the next fetch.
+   */
+  scheduledApplyBindings?: ReadonlyMap<string,string>;
 }
 
 function createRunIdDefault(): string {
@@ -233,8 +239,10 @@ async function processConnectorResult(
 
       // Ticket writes must not proceed when a required event-core apply was
       // skipped or returned applied=false (including a missing apply executor).
+      const permittedByDailyBatch = !deps.scheduledApplyBindings ||
+        (deps.scheduledApplyBindings.get(sourceEventKey) === officialUrl);
       const eventApplyRequired =
-        mode === 'apply' &&
+        mode === 'apply' && permittedByDailyBatch &&
         canApplyPlan(plan, deps.operationalConfig.get(connectorId)?.writeScope);
       if (eventApplyRequired) {
         if (deps.applyPlan) {
@@ -283,9 +291,13 @@ async function processConnectorResult(
       `[sync] ignored ${blockedTicketResults.length} unbound or unsafe ticket results for ${connectorId}`,
     );
   }
-  if (ticketResults.length > 0 && deps.applyTicketResults) {
+  const approvedTicketResults = mode === 'apply' && deps.scheduledApplyBindings
+    ? ticketResults.filter((result) =>
+      deps.scheduledApplyBindings?.get(result.sourceEventKey) === result.officialUrl)
+    : ticketResults;
+  if (approvedTicketResults.length > 0 && deps.applyTicketResults) {
     try {
-      const ticketPersistence = await deps.applyTicketResults(ticketResults, mode);
+      const ticketPersistence = await deps.applyTicketResults(approvedTicketResults, mode);
       return { eventResults, errorCategories: [...new Set(errorCategories)], ticketPersistence };
     } catch (error) {
       counters.failures += 1;
