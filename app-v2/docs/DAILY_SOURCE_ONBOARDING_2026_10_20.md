@@ -30,3 +30,7 @@ The current standard source crawler covers national priority regions and process
 No wildcard registration of new connectors: a source being added to the repository does **not** silently enable public-data writes. Disable its GitHub workflow or remove its policy entry as a kill switch.
 
 Follow-up: Promote eligible new Rausgegangen events through a separate acceptance test suite after quality validation. The daily read-only candidate audit is the prerequisite, not authorization to publish.
+
+## Existing-source rotation and daily coverage
+
+The worker first reads public, published/upcoming **exact Rausgegangen event-source bindings** from Supabase, then picks up to 24 canonical HTTPS source URLs on a rotating UTC-day offset. These receive first priority among the 30 details fetched each run. Remaining detail slots are allocated to new region-listing candidates. This provides a repeatable cadence for currently listed events without assuming that the first city-page results always contain them. It does **not** guarantee 100% daily German event coverage; the full listing discovery remains source-dependent.

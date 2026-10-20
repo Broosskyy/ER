@@ -16,6 +16,7 @@ import {
 } from './rausgegangen-enrichment';
 import { fetchRausgegangenHtml, type FetchResult } from './rausgegangen-fetch';
 import { parseRausgegangenEventDetail } from './parse-rausgegangen-detail';
+import { normalizeRausgegangenEventUrl, extractEventSlugFromUrl } from './rausgegangen-url';
 import {
   mergeListingSurfaces,
   parseRausgegangenCityListing,
@@ -38,6 +39,8 @@ export interface RausgegangenNetworkDiscoveryOptions {
   listingConcurrency?: number;
   detailConcurrency?: number;
   regionSlugs?: string[];
+  /** Exact existing public DB sources to refresh ahead of new discoveries. */
+  preferredEventUrls?: string[];
   requestDelayMs?: number;
   onVerifiedDetail?: (input: {
     candidate: RausgegangenDiscoveryCandidate;
@@ -146,7 +149,27 @@ export async function runRausgegangenNetworkDiscovery(
     allListingEntries.push(...entries);
   });
 
-  const mergedListings = mergeListingSurfaces(allListingEntries);
+  const preferredEntries: RausgegangenListingEntry[] = [];
+  for (const rawUrl of options.preferredEventUrls ?? []) {
+    try {
+      const parsed = new URL(rawUrl);
+      if (parsed.protocol !== 'https:' ||
+          !['rausgegangen.de', 'www.rausgegangen.de'].includes(parsed.hostname)) continue;
+      const canonical = normalizeRausgegangenEventUrl(rawUrl);
+      const eventSlug = extractEventSlugFromUrl(rawUrl);
+      if (!canonical || !eventSlug) continue;
+      preferredEntries.push({
+        eventUrl: canonical, eventSlug, regionSlug: 'germany',
+        listingSurface: RAUSGEGANGEN_BASE_URL,
+      });
+    } catch {
+      // Malformed saved URL cannot trigger a network request.
+    }
+  }
+  // Saved public source URLs are verified first; nationwide listings still
+  // contribute candidates for review after those bounded refresh slots.
+  const preferredSlugs = new Set(preferredEntries.map(entry => entry.eventSlug));
+  const mergedListings = mergeListingSurfaces([...preferredEntries, ...allListingEntries]);
   const regions = buildRegionInventoryFromSlugs(regionSlugs, listingCounts, reachable);
   const discoveryMode: DiscoveryMode =
     regions.filter((region) => region.reachable && PRIORITY_GERMAN_CITY_SLUGS.includes(region.slug)).length >=
@@ -164,9 +187,11 @@ export async function runRausgegangenNetworkDiscovery(
     .slice()
     .sort((left, right) => {
       const leftScore =
+        (preferredSlugs.has(left.eventSlug) ? 100 : 0) +
         (left.relevance === 'HIGH_RELEVANCE' ? 4 : left.relevance === 'LIKELY_RELEVANT' ? 3 : left.relevance === 'AMBIGUOUS' ? 2 : 1) +
         (PRIORITY_GERMAN_CITY_SLUGS.includes(left.regionSlug) ? 2 : 0);
       const rightScore =
+        (preferredSlugs.has(right.eventSlug) ? 100 : 0) +
         (right.relevance === 'HIGH_RELEVANCE' ? 4 : right.relevance === 'LIKELY_RELEVANT' ? 3 : right.relevance === 'AMBIGUOUS' ? 2 : 1) +
         (PRIORITY_GERMAN_CITY_SLUGS.includes(right.regionSlug) ? 2 : 0);
       return rightScore - leftScore;

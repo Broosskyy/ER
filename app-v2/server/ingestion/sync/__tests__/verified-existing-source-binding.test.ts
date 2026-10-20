@@ -20,8 +20,13 @@ describe('public existing-only source-event update binding',()=>{
     expect(hasVerifiedExistingSourceBinding({
       ...base, existingSource:{...base.existingSource!,sourceUrl:'https://rausgegangen.de/events/different-0/'},
     })).toBe(false);
-    expect(hasVerifiedExistingSourceBinding({
-      ...base,candidate:{...base.candidate,origin:{kind:'official_connector',sourceEventKey:'rausgegangen:another',officialUrl:url}},
-    } as EventWritePlan['candidate']})).toBe(false);
+    const mismatched = {
+      ...base,
+      candidate: {
+        ...base.candidate,
+        origin: {kind:'official_connector',sourceEventKey:'rausgegangen:another',officialUrl:url},
+      },
+    } as EventWritePlan;
+    expect(hasVerifiedExistingSourceBinding(mismatched)).toBe(false);
   });
 });

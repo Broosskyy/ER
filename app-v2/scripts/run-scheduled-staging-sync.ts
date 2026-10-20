@@ -33,6 +33,7 @@ import { evaluateDailyOfficialSyncPreflight } from '../server/ingestion/sync/dai
 import { selectDailySafeBatch } from '../server/ingestion/sync/daily-safe-batch';
 import { planTicketPersistenceFromResults } from '../server/ingestion/sync/execute-ticket-persistence';
 import { getDailySourcePolicy } from '../server/ingestion/sync/daily-source-policies';
+import { pickScheduledRausgegangenSourceUrls } from '../server/ingestion/sync/daily-rausgegangen-scope';
 import {
   compareTicketSnapshots,
   compareTicketSnapshotsDetailed,
@@ -117,7 +118,27 @@ async function main() {
     stagingSchedulerEnabled: STAGING_SCHEDULER_ENABLED,
   });
 
-  const deps = createStagingSyncDependencies({ cwd, runQuery, verifyTarget: false });
+  const preferredSourceUrls = connectorId === 'rausgegangen-discovery'
+    ? pickScheduledRausgegangenSourceUrls(loadJsonAgg<{source_url: string}>(
+        runQuery,
+        `SELECT COALESCE(jsonb_agg(jsonb_build_object('source_url',s.source_url)
+          ORDER BY e.starts_at), '[]'::jsonb) AS rows
+         FROM public.event_sources s JOIN public.events e ON e.id=s.event_id
+         WHERE s.source_role='official'
+           AND s.source_url ~* '^https://(www[.])?rausgegangen[.]de/events/'
+           AND e.status='published' AND e.published_at IS NOT NULL
+           AND COALESCE(e.ends_at,e.starts_at+interval '18 hours')>now();`,
+      ).map(entry => entry.source_url), Math.floor(Date.now()/86400000))
+    : [];
+  writeJson(`${connectorId}-daily-source-scope.json`, {
+    connectorId, reviewedExistingSourceCount: preferredSourceUrls.length,
+    sourceUrls: preferredSourceUrls,
+  });
+
+  const deps = createStagingSyncDependencies({
+    cwd, runQuery, verifyTarget: false,
+    rausgegangenOptions: { preferredEventUrls: preferredSourceUrls },
+  });
 
   // Always plan first. Do NOT apply any source changes when source parsing,
   // identity or unusually large write counts look unhealthy.

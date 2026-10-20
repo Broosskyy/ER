@@ -50,6 +50,7 @@ const MAX_DETAIL_PAGES = 40;
 
 export interface RausgegangenOfficialConnectorOptions {
   regionSlugs?: string[];
+  preferredEventUrls?: string[];
 }
 
 function toDetailFetchResult(
@@ -171,6 +172,7 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
       const discovery = await runRausgegangenNetworkDiscovery({
         referenceInstant,
         regionSlugs: this.connectorOptions.regionSlugs,
+        preferredEventUrls: this.connectorOptions.preferredEventUrls,
         maxDetailCandidates: options.maxDetailPages ?? MAX_DETAIL_PAGES,
         detailConcurrency: 1,
         listingConcurrency: 1,
