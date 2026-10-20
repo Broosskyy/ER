@@ -99,7 +99,8 @@ function projectPriceText(ticket: EventTicket): string | undefined {
   if (salesStatus === 'registration_only') {
     // A verified zero price is not unconditional entry: this event explicitly
     // requires advance registration. Never show a standard "Eintritt frei" badge.
-    return ticket.priceFromMinor === 0 && ticket.currency === 'EUR' && !ticket.ticketUrl
+    return ticket.priceFromMinor === 0 && ticket.currency === 'EUR' &&
+      (!ticket.ticketUrl || ticket.ticketUrl.startsWith('https://'))
       ? 'Eintritt frei · Anmeldung erforderlich'
       : undefined;
   }
@@ -204,7 +205,11 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
       : showNeutralTicketLink
         ? 'Ticketseite öffnen'
         : undefined,
-    presaleCtaLabel: showPresaleCta ? 'Vorregistrieren' : undefined,
+    presaleCtaLabel: showPresaleCta
+      ? salesStatus === 'registration_only' && ticket.priceFromMinor === 0 && ticket.currency === 'EUR'
+        ? 'Kostenloses Ticket sichern'
+        : 'Vorregistrieren'
+      : undefined,
     ticketStatus,
     statusLabel:
       salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability' ||
