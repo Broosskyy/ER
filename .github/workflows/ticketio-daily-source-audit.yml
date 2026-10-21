@@ -52,6 +52,12 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-m9-3b-1-ticketio-network-discovery.ts
 
+      - name: Daily cross-source discovery readiness probe (read-only)
+        # Failures for individual sites are recorded in the audit report.
+        # An unavailable provider must never prevent the ticket.io report.
+        continue-on-error: true
+        run: npx tsx scripts/run-m9-3a-source-probe.ts
+
       - name: Upload read-only evidence and match review
         if: always()
         uses: actions/upload-artifact@v4
@@ -60,5 +66,6 @@ jobs:
           path: |
             artifacts/m9-3b-1-ticketio-network-discovery/
             artifacts/daily-public-ticket-quality/
+            app-v2/.tmp/m9-3a-probe/
           if-no-files-found: ignore
           retention-days: 14

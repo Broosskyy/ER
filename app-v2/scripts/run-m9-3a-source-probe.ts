@@ -7,7 +7,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const OUT = '.tmp/m9-3a-probe';
-const USER_AGENT = 'EternalRave-M9.3A-Audit/1.0 (+research; no-automation)';
+const USER_AGENT = 'EternalRave-DailySourceAudit/1.0 (+read-only public event source monitoring)';
 
 interface ProbeResult {
   id: string;
@@ -163,7 +163,8 @@ const TARGETS: Array<{ id: string; category: string; url: string }> = [
 
   // D/E — Organizer / festival networks
   { id: 'odonien-club', category: 'organizer_network', url: 'https://odonien.de/club' },
-  { id: 'odonien-api-events', category: 'organizer_network', url: 'https://cms.odonien.de/api/events?pagination[page]=1&pagination[pageSize]=25&filters[Date][$gte]=2026-08-29' },
+  { id: 'odonien-api-events', category: 'organizer_network',
+    url: `https://cms.odonien.de/api/events?pagination[page]=1&pagination[pageSize]=25&filters[Date][$gte]=${new Date().toISOString().slice(0,10)}` },
   { id: 'nibirii-events', category: 'festival_network', url: 'https://www.nibirii.com/events/' },
 
   // F — High-value official (inactive but probed)
