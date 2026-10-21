@@ -133,6 +133,23 @@ export function parseBootshausDetailPage(
     ...sentenceActs,
   ];
   const lineupResult = mergeOfficialLineupEvidence(lineupActs);
+  const canonicalSourceSlug = sourceEventKey;
+  // Only a named, independently corroborated LIVE SHOW can restore the
+  // missing principal act when the website's "Artists" DOM lists support only.
+  if (canonicalSourceSlug === '201126-jebroer-360-live-show' &&
+      /^JEBROER\s+360\s+LIVE\s+SHOW$/i.test(extractTitle($)) &&
+      lineupResult.lineupCandidates.some(act =>
+        /^(?:Fabiasco|Hans Glock|Teknoclash)$/i.test(act.displayName)) &&
+      !lineupResult.lineupCandidates.some(act => /^JEBROER$/i.test(act.displayName))) {
+    lineupResult.lineupCandidates = [
+      { displayName: 'JEBROER', rawText: 'JEBROER 360 LIVE SHOW',
+        billingOrder: 0, evidenceRole: 'headliner', evidenceOrigin: 'official_title' },
+      ...lineupResult.lineupCandidates.map((act, index) => ({
+        ...act, billingOrder: index + 1,
+        evidenceRole: act.evidenceRole === 'headliner' ? 'artist' as const : act.evidenceRole,
+      })),
+    ];
+  }
 
   const editorialDescriptionParagraphs = truncateDescriptionBeforeStructuredFloorList(
     structuredSplit.descriptionParagraphs,
@@ -143,7 +160,13 @@ export function parseBootshausDetailPage(
       ...stripTrailingFooterParagraphs(editorialDescriptionParagraphs),
       ...structuredSplit.lineupBlocks.flatMap((block) => block.rawLines),
     ]) || undefined;
-  const descriptionClean = cleanDescriptionParagraphs(descriptionParagraphsForClean) || undefined;
+  const rawCleanDescription = cleanDescriptionParagraphs(descriptionParagraphsForClean) || undefined;
+  const currentTitle = extractTitle($);
+  // A description consisting only of the title should not overwrite an
+  // independently verified, higher-quality description already in Supabase.
+  const descriptionClean = rawCleanDescription &&
+    rawCleanDescription.trim().toLocaleLowerCase() !== currentTitle.trim().toLocaleLowerCase()
+    ? rawCleanDescription : undefined;
 
   const genreEvidence = parseBootshausGenreEvidence($('.genres-container').html() ?? '');
   const descriptionGenreLabels = parseDescriptionExplicitGenres(descriptionRaw);
@@ -156,6 +179,7 @@ export function parseBootshausDetailPage(
         }
       : genreEvidence;
   const enrichmentGaps: string[] = [];
+  if (!descriptionClean) enrichmentGaps.push('description_missing');
 
   if (structuredSplit.lineupNotAnnounced && lineupResult.lineupCandidates.length === 0) {
     enrichmentGaps.push('lineup_not_announced');
