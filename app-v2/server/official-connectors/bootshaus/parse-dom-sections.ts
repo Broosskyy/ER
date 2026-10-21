@@ -10,7 +10,9 @@ function normalizeLine(text: string): string {
 function extractLinesFromContainerHtml(html: string): string[] {
   const withBreaks = html
     .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
+    // Adjacent DOM artist tags can touch without spaces:
+    // <div>DJ HYPERDRIVE</div><div>EMILIJA</div>.
+    .replace(/<\/(?:p|div|li|a|h[1-6])>/gi, '\n')
     .replace(/<[^>]+>/g, '')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&');

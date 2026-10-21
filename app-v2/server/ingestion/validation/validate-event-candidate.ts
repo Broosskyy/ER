@@ -118,6 +118,12 @@ export function validateEventCandidate(candidate: EventCandidate): EventCandidat
   if (!candidate.venue?.name?.trim()) {
     reasons.push('missing_venue');
   }
+  if (candidate.origin.kind === 'official_connector' && !candidate.venue?.city?.trim()) {
+    // Venue-only imports often assume the promoter's home city and can
+    // incorrectly publish international events as local German events.
+    // Requires source review before ANY new public event insertion.
+    reasons.push('venue_city_unverified');
+  }
 
   if (candidate.imageUrl && !isHttpsUrl(candidate.imageUrl)) {
     reasons.push('invalid_image_url');
