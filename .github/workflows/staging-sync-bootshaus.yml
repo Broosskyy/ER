@@ -1,7 +1,10 @@
 name: Staging Sync — Bootshaus
 
 on:
-  # Single post-merge verification run for the controlled catch-up rollout.
+  # One-time 21 October recertification: process next bounded batch of
+  # eligible existing Bootshaus-list events using approved source identity,
+  # venue, price/link and ticket-status safety gates (<=8 new events).
+  # This is NOT a provider-wide ungated publish.
   # Ordinary pushes to app code do not trigger this expensive public import.
   push:
     branches: [main]
