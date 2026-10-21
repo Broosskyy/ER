@@ -11,7 +11,7 @@ function detail(title: string, url: string) {
   </div>
   <div class="event-description-content"><p>${title}</p></div>
   <div class="artists-container">
-    <span>Fabiasco</span><span>Hans Glock</span><span>Teknoclash</span>
+    <p>Fabiasco</p><p>Hans Glock</p><p>Teknoclash</p>
   </div>`;
   return parseBootshausDetailPage(html,url,'2026-10-21T07:00:00Z',
     createEmptyConnectorCounters());
