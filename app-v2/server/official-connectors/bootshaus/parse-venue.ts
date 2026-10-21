@@ -28,13 +28,26 @@ export function parseBootshausVenueBlock(rawHtml: string): ParsedVenue | undefin
 
   const name = lines[0] ?? '';
   const addressLine = lines.slice(1).join(', ');
-  const postalMatch = addressLine.match(/(\d{5})\s+(.+)$/);
+  // Bootshaus also promotes shows outside Germany (e.g. Koepelkerk in
+  // Amsterdam). The Netherlands use a four-digit postal prefix, optionally
+  // followed by two letters. Never default an unrecognized foreign venue
+  // to Germany merely because the promoting club is based in Cologne.
+  const nlPostalMatch = addressLine.match(/(?:^|,\s*)(\d{4})(?:\s*[A-Z]{2})?\s+([\p{L}][\p{L}\s.\-]+)$/iu);
+  // Four digits also exist in Belgium; only infer NL for recognizable
+  // Dutch city names when the source omits the usual two-letter suffix.
+  const trustedNlCity = nlPostalMatch &&
+    /^(?:Amsterdam|Rotterdam|Utrecht|Eindhoven|Den Haag|Haarlem|Arnhem|Breda|Tilburg)$/i
+      .test(nlPostalMatch[2]?.trim() ?? '');
+  const safeNlPostalMatch = trustedNlCity ? nlPostalMatch : null;
+  const dePostalMatch = safeNlPostalMatch ? null : addressLine.match(/(\d{5})\s+(.+)$/);
+  const postalMatch = safeNlPostalMatch ?? dePostalMatch;
+  const countryCode = safeNlPostalMatch ? 'NL' : dePostalMatch ? 'DE' : undefined;
 
   return {
     name,
     address: postalMatch ? addressLine.replace(postalMatch[0], '').replace(/,\s*$/, '') : addressLine || undefined,
     postalCode: postalMatch?.[1],
-    city: postalMatch?.[2],
-    countryCode: 'DE',
+    city: postalMatch?.[2]?.trim(),
+    countryCode,
   };
 }
