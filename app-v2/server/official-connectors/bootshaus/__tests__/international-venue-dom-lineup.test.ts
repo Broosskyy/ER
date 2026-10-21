@@ -12,6 +12,11 @@ describe('international Bootshaus-promoted events',()=>{
       name:'Koepelkerk', city:'Amsterdam', countryCode:'NL',postalCode:'1012',
     });
   });
+  it('does not misclassify Belgian four-digit postal codes as NL',()=>{
+    const venue=parseBootshausVenueBlock('Club Brussel<br>Rue du Midi 18, 1000 Brussel');
+    expect(venue?.countryCode).toBeUndefined();
+    expect(venue?.city).toBeUndefined();
+  });
   it('still parses ordinary Cologne five-digit German venues',()=>{
     const venue=parseBootshausVenueBlock('Bootshaus<br>Auenweg 173, 51063 Köln');
     expect(venue).toMatchObject({

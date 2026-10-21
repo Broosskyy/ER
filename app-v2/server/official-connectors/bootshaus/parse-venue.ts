@@ -33,9 +33,15 @@ export function parseBootshausVenueBlock(rawHtml: string): ParsedVenue | undefin
   // followed by two letters. Never default an unrecognized foreign venue
   // to Germany merely because the promoting club is based in Cologne.
   const nlPostalMatch = addressLine.match(/(?:^|,\s*)(\d{4})(?:\s*[A-Z]{2})?\s+([\p{L}][\p{L}\s.\-]+)$/iu);
-  const dePostalMatch = nlPostalMatch ? null : addressLine.match(/(\d{5})\s+(.+)$/);
-  const postalMatch = nlPostalMatch ?? dePostalMatch;
-  const countryCode = nlPostalMatch ? 'NL' : dePostalMatch ? 'DE' : undefined;
+  // Four digits also exist in Belgium; only infer NL for recognizable
+  // Dutch city names when the source omits the usual two-letter suffix.
+  const trustedNlCity = nlPostalMatch &&
+    /^(?:Amsterdam|Rotterdam|Utrecht|Eindhoven|Den Haag|Haarlem|Arnhem|Breda|Tilburg)$/i
+      .test(nlPostalMatch[2]?.trim() ?? '');
+  const safeNlPostalMatch = trustedNlCity ? nlPostalMatch : null;
+  const dePostalMatch = safeNlPostalMatch ? null : addressLine.match(/(\d{5})\s+(.+)$/);
+  const postalMatch = safeNlPostalMatch ?? dePostalMatch;
+  const countryCode = safeNlPostalMatch ? 'NL' : dePostalMatch ? 'DE' : undefined;
 
   return {
     name,
