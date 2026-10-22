@@ -39,10 +39,13 @@ export const DAILY_SOURCE_POLICIES = {
   },
   [RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID]: {
     connectorId: RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
-    writeScope: 'existing_only',
+    // A bounded daily batch may now create NEW identity-safe Rausgegangen events.
+    // Price, sale status and checkout are independently verified; a missing
+    // ticket NEVER turns into a fabricated free/sold-out/available claim.
+    writeScope: 'upsert',
     minimumParsed: 1,
-    maxDetailPages: 30,
-    maxNewEvents: 0,
+    maxDetailPages: 40,
+    maxNewEvents: 8,
     maxExistingUpdates: 12,
     maxTicketChanges: 12,
   },
