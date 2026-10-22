@@ -128,7 +128,7 @@ async function main() {
            AND s.source_url ~* '^https://(www[.])?rausgegangen[.]de/events/'
            AND e.status='published' AND e.published_at IS NOT NULL
            AND COALESCE(e.ends_at,e.starts_at+interval '18 hours')>now();`,
-      ).map(entry => entry.source_url), Math.floor(Date.now()/86400000))
+      ).map(entry => entry.source_url), Math.floor(Date.now()/86400000), 10)
     : [];
   writeJson(`${connectorId}-daily-source-scope.json`, {
     connectorId, reviewedExistingSourceCount: preferredSourceUrls.length,
@@ -140,6 +140,7 @@ async function main() {
     rausgegangenOptions: { preferredEventUrls: preferredSourceUrls },
   });
 
+  // Prioritize net-new discovery while preserving ten rotating existing-source checks.
   // Always plan first. Do NOT apply any source changes when source parsing,
   // identity or unusually large write counts look unhealthy.
   const preview = await runSourceSync(
