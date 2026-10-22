@@ -32,6 +32,28 @@ describe('daily public ticket audit',()=>{
     const concerns=reviewPublicTicket(ticket({priceMinor:0,salesStatus:'available'}));
     expect(concerns).toContain('unqualified_zero_price');
   });
+  it('does not flag documented EUR 0 registration as an unqualified free entry',()=>{
+    const concerns=reviewPublicTicket(ticket({
+      priceMinor:0,currency:'EUR',salesStatus:'registration_only',
+      ticketUrl:'https://bootshaus-club.ticket.io/verified-event/',
+    }));
+    expect(concerns).not.toContain('unqualified_zero_price');
+  });
+  it('flags missing checkout URLs for available, on_sale and low_availability',()=>{
+    for(const salesStatus of ['available','on_sale','low_availability']){
+      const concerns=reviewPublicTicket(ticket({salesStatus,ticketUrl:null}));
+      expect(concerns).toContain('available_without_link_or_admission_context');
+    }
+  });
+  it('puts real data gaps before routine external ticket re-verification',()=>{
+    const report=auditPublicTickets([
+      ticket({eventId:'e1',ticketId:null,ticketUrl:null}),
+      ticket({eventId:'e2',ticketUrl:'https://provider.example/e/a'}),
+    ]);
+    expect(report.actionNeededCount).toBe(1);
+    expect(report.actionNeeded[0]?.eventId).toBe('e1');
+    expect(report.routineVerificationCount).toBe(1);
+  });
   it('marks available-without-link as separate from proof of sale ending',()=>{
     const concerns=reviewPublicTicket(ticket({priceMinor:3500,ticketUrl:null}));
     expect(concerns).toContain('available_without_link_or_admission_context');
