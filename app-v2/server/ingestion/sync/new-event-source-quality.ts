@@ -31,3 +31,30 @@ export function isRausgegangenNewEventSourceReady(
     (candidate.description?.trim().length ?? 0) >= 40
   );
 }
+
+/** Source-only fallback for an official Zakk party requires an exact dated
+ * event-specific listing plus reliable core fields. Provider ticket details
+ * are independently checked and never guessed. */
+export function isZakkNewEventSourceReady(
+  candidate: EventCandidate,
+  referenceInstant = new Date(),
+): boolean {
+  if (candidate.origin.kind !== 'official_connector' ||
+      candidate.origin.connectorId !== 'zakk-official') return false;
+  let url: URL;
+  try { url = new URL(candidate.origin.officialUrl); }
+  catch { return false; }
+  const eventId = url.searchParams.get('event');
+  if (url.protocol !== 'https:' ||
+      !['zakk.de', 'www.zakk.de'].includes(url.hostname) ||
+      !/^\/event-detail\/?$/i.test(url.pathname) ||
+      !eventId || !/^\d+$/.test(eventId) ||
+      url.username || url.password) return false;
+  const start = Date.parse(candidate.startsAt);
+  return (
+    Number.isFinite(start) && start > referenceInstant.getTime() &&
+    candidate.title.trim().length >= 5 &&
+    !!candidate.venue?.name?.trim() && !!candidate.venue?.city?.trim() &&
+    (candidate.description?.trim().length ?? 0) >= 40
+  );
+}

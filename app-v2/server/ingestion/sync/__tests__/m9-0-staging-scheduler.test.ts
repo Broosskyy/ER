@@ -146,7 +146,7 @@ describe('M9.0 staging scheduler', () => {
   it('keeps unattended staging and production schedulers disabled', () => {
     expect(STAGING_SCHEDULER_ENABLED).toBe(false);
     expect(PRODUCTION_SCHEDULER_ENABLED).toBe(false);
-    expect(STAGING_SCHEDULED_CONNECTOR_IDS).toEqual(['bootshaus-official', 'affenkaefig-official', 'rausgegangen-discovery']);
+    expect(STAGING_SCHEDULED_CONNECTOR_IDS).toEqual(['bootshaus-official', 'affenkaefig-official', 'rausgegangen-discovery', 'zakk-official']);
     expect(isStagingScheduledConnectorId('rausgegangen-discovery')).toBe(true);
   });
 

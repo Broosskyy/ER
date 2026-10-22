@@ -34,7 +34,7 @@ import type { VerifiedTicketCompleteResult } from '../../official-connectors/tic
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
-import { isRausgegangenNewEventSourceReady } from './new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady } from './new-event-source-quality';
 
 export interface SyncOrchestratorDependencies {
   registry: OfficialSourceRegistry;
@@ -89,8 +89,10 @@ function canApplyPlan(
   }
   if (plan.eventAction === 'insert' &&
       plan.candidate.origin.kind === 'official_connector' &&
-      plan.candidate.origin.connectorId === 'rausgegangen-discovery' &&
-      !isRausgegangenNewEventSourceReady(plan.candidate)) {
+      ((plan.candidate.origin.connectorId === 'rausgegangen-discovery' &&
+        !isRausgegangenNewEventSourceReady(plan.candidate)) ||
+       (plan.candidate.origin.connectorId === 'zakk-official' &&
+        !isZakkNewEventSourceReady(plan.candidate)))) {
     return false;
   }
   return (
@@ -137,9 +139,12 @@ function buildEventProcessingResult(
     matchedEventId: plan.identity?.candidateEventId ?? plan.resolvedEventId,
     verifiedExistingSourceBinding: hasVerifiedExistingSourceBinding(plan),
     newEventSourceReady: plan.candidate.origin.kind === 'official_connector' &&
-      plan.candidate.origin.connectorId === 'rausgegangen-discovery' &&
       plan.eventAction === 'insert'
-        ? isRausgegangenNewEventSourceReady(plan.candidate) : undefined,
+        ? plan.candidate.origin.connectorId === 'rausgegangen-discovery'
+          ? isRausgegangenNewEventSourceReady(plan.candidate)
+          : plan.candidate.origin.connectorId === 'zakk-official'
+            ? isZakkNewEventSourceReady(plan.candidate) : undefined
+        : undefined,
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:
       reconciliationReviewReasons.length > 0 ? reconciliationReviewReasons : undefined,

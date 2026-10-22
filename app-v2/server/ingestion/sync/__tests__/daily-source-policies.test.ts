@@ -10,6 +10,12 @@ describe('daily source onboarding contract',()=>{
     });
     expect(isStagingScheduledConnectorId('rausgegangen-discovery')).toBe(true);
   });
+  it('certifies zakk electronic-only official source with bounded new inserts',()=>{
+    expect(getDailySourcePolicy('zakk-official')).toMatchObject({
+      writeScope:'upsert',maxNewEvents:6,minimumParsed:1,
+    });
+    expect(isStagingScheduledConnectorId('zakk-official')).toBe(true);
+  });
   it('does not auto-enable newly registered but uncertified connectors',()=>{
     expect(getDailySourcePolicy('some-future-ticket-provider')).toBeUndefined();
     expect(isStagingScheduledConnectorId('some-future-ticket-provider')).toBe(false);

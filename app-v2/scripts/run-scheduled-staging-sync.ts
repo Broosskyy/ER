@@ -95,6 +95,7 @@ async function main() {
            (s.source_url ILIKE '%bootshaus.tv%' AND '${connectorId}' = 'bootshaus-official')
            OR (s.source_url ILIKE '%affenkaefig.info%' AND '${connectorId}' = 'affenkaefig-official')
            OR (s.source_url ILIKE '%rausgegangen.de/events/%' AND '${connectorId}' = 'rausgegangen-discovery')
+           OR (s.source_url ILIKE '%zakk.de/event-detail%' AND '${connectorId}' = 'zakk-official')
          );`,
     ).map((row) => row.event_id),
   );
@@ -148,6 +149,22 @@ async function main() {
     deps,
   );
   writeJson(`${connectorId}-daily-preflight.json`, preview);
+  // zakk is a multi-genre venue; a successful listing with no currently
+  // qualifying electronic parties is a review-only no-op, not permission
+  // to publish non-electronic parties to make a daily job pass.
+  if (connectorId === 'zakk-official' &&
+      preview.run.counters.discovered > 0 &&
+      preview.run.counters.fetched > 0 &&
+      preview.run.counters.parsed === 0 &&
+      preview.run.counters.failures === 0 &&
+      preview.run.errorCategories.every(category => category === 'unexpected_zero_results')) {
+    writeJson(`${connectorId}-scheduled-result.json`, {
+      connectorId, status:'no_qualifying_electronic_events_review_only',
+      reviewRequired:true, databaseWrites:0,
+      preflight:preview.run, sourceReview:'Check source calendar and electronic relevance',
+    });
+    return;
+  }
   const minimumParsed = policy.minimumParsed;
   const safeBatch = selectDailySafeBatch(preview, {
     newEvents: policy.maxNewEvents, existingUpdates: policy.maxExistingUpdates,
