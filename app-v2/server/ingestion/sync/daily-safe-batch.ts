@@ -80,7 +80,7 @@ export function selectDailySafeBatch(
       continue;
     }
     if (!event.matchedEventId) {
-      if (preview.run.connectorId === 'rausgegangen-discovery' &&
+      if (['rausgegangen-discovery','zakk-official'].includes(preview.run.connectorId) &&
           event.newEventSourceReady !== true) {
         quarantinedReview++;
         continue;
