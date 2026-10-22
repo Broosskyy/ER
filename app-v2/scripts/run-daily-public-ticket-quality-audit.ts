@@ -36,7 +36,9 @@ function main() {
     JSON.stringify({generatedAt:new Date().toISOString(),projectRef:target.ref,
       readOnly:true,summary:result},null,2)+'\n','utf8');
   console.log(JSON.stringify({count:result.upcomingPublishedEvents,
-    flags:result.flaggedEvents,countsByConcern:result.countsByConcern,
-    readOnly:true},null,2));
+    flags:result.flaggedEvents,actionNeededCount:result.actionNeededCount,
+    actionNeeded:result.actionNeeded,
+    routineVerificationCount:result.routineVerificationCount,
+    countsByConcern:result.countsByConcern,readOnly:true},null,2));
 }
 main();
