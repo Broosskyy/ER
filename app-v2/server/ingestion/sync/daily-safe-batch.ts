@@ -44,7 +44,14 @@ export function selectDailySafeBatch(
   let selectedNewEvents = 0, selectedExistingUpdates = 0, selectedExistingNoops = 0;
   let quarantinedRejected = 0, quarantinedReview = 0;
   let deferredNewEvents = 0, deferredExistingUpdates = 0, duplicateBindingKeys = 0;
-  for (const event of results) {
+  // Process known events first, then fill the bounded NEW-event batch with
+  // entries having the strongest ticket evidence. Source-only fallback is last.
+  const ordered = [
+    ...results.filter(event => !!event.matchedEventId),
+    ...results.filter(event => !event.matchedEventId)
+      .sort((a,b) => (b.ticketEvidencePriority ?? 0) - (a.ticketEvidencePriority ?? 0)),
+  ];
+  for (const event of ordered) {
     if (event.outcome === 'rejected') {
       quarantinedRejected++;
       continue;
@@ -73,6 +80,11 @@ export function selectDailySafeBatch(
       continue;
     }
     if (!event.matchedEventId) {
+      if (preview.run.connectorId === 'rausgegangen-discovery' &&
+          event.newEventSourceReady !== true) {
+        quarantinedReview++;
+        continue;
+      }
       if (event.outcome === 'noop') {
         quarantinedReview++;
       } else if (selectedNewEvents < limits.newEvents) {

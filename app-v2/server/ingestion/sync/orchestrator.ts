@@ -34,6 +34,7 @@ import type { VerifiedTicketCompleteResult } from '../../official-connectors/tic
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
+import { isRausgegangenNewEventSourceReady } from './new-event-source-quality';
 
 export interface SyncOrchestratorDependencies {
   registry: OfficialSourceRegistry;
@@ -86,6 +87,12 @@ function canApplyPlan(
       (plan.eventAction === 'insert' || !hasVerifiedExistingSourceBinding(plan))) {
     return false;
   }
+  if (plan.eventAction === 'insert' &&
+      plan.candidate.origin.kind === 'official_connector' &&
+      plan.candidate.origin.connectorId === 'rausgegangen-discovery' &&
+      !isRausgegangenNewEventSourceReady(plan.candidate)) {
+    return false;
+  }
   return (
     plan.validation.decision === 'persist_ready' &&
     !plan.reconciliation?.reviewRequired &&
@@ -129,6 +136,10 @@ function buildEventProcessingResult(
     })),
     matchedEventId: plan.identity?.candidateEventId ?? plan.resolvedEventId,
     verifiedExistingSourceBinding: hasVerifiedExistingSourceBinding(plan),
+    newEventSourceReady: plan.candidate.origin.kind === 'official_connector' &&
+      plan.candidate.origin.connectorId === 'rausgegangen-discovery' &&
+      plan.eventAction === 'insert'
+        ? isRausgegangenNewEventSourceReady(plan.candidate) : undefined,
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:
       reconciliationReviewReasons.length > 0 ? reconciliationReviewReasons : undefined,
@@ -218,6 +229,17 @@ async function processConnectorResult(
   const eventResults: SyncEventProcessingResult[] = [];
   const errorCategories: IngestionErrorCategory[] = [];
   const failedSourceKeys = new Set<string>();
+  // Ticket status, verified price and event-specific checkout remain the
+  // primary goal. New events with no verifiable ticket still retain their source.
+  const ticketPriorityBySource = new Map<string, number>();
+  for (const ticket of connectorResult.ticketResults ?? []) {
+    const rank = ticket.verifiedTicketComplete ? 3
+      : ticket.identityResult === 'ticket_identity_verified' &&
+        ticket.canonicalTicketUrl?.startsWith('https://') ? 2
+      : ticket.canonicalTicketUrl?.startsWith('https://') ? 1 : 0;
+    const pair = `${ticket.sourceEventKey}\n${ticket.officialUrl}`;
+    ticketPriorityBySource.set(pair, Math.max(rank, ticketPriorityBySource.get(pair) ?? 0));
+  }
 
   counters.discovered = connectorResult.discoveredDetailUrls.length;
   counters.fetched = connectorResult.loadedDetailUrls.length;
@@ -266,7 +288,9 @@ async function processConnectorResult(
         errorCategories.push('validation_rejected');
       }
 
-      eventResults.push(buildEventProcessingResult(plan, sourceEventKey, officialUrl, outcome));
+      eventResults.push(buildEventProcessingResult(plan, sourceEventKey, officialUrl, outcome, {
+        ticketEvidencePriority: ticketPriorityBySource.get(`${sourceEventKey}\n${officialUrl}`) ?? 0,
+      }));
     } catch (error) {
       counters.failures += 1;
       failedSourceKeys.add(sourceEventKey);

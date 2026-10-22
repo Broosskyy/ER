@@ -38,6 +38,26 @@ describe('daily safe public event selection',()=>{
     expect(selection.quarantinedReview).toBe(1);
     expect([...selection.bindings.keys()]).toEqual(['source:2','source:4']);
   });
+  it('prefers verified ticket price, sale status and checkout over source-only fallback',()=>{
+    const batch=preview([
+      candidate(1,{ticketEvidencePriority:0,newEventSourceReady:true}),
+      candidate(2,{ticketEvidencePriority:3,newEventSourceReady:true}),
+      candidate(3,{ticketEvidencePriority:2,newEventSourceReady:true}),
+      candidate(4,{ticketEvidencePriority:1,newEventSourceReady:false}),
+    ]);
+    batch.run.connectorId='rausgegangen-discovery';
+    const selected=selectDailySafeBatch(batch,{newEvents:2,existingUpdates:12});
+    expect([...selected.bindings.keys()]).toEqual(['source:2','source:3']);
+    expect(selected.deferredNewEvents).toBe(1);
+    expect(selected.quarantinedReview).toBe(1);
+  });
+  it('allows source-only as last resort without inventing ticket values',()=>{
+    const batch=preview([candidate(1,{ticketEvidencePriority:0,newEventSourceReady:true})]);
+    batch.run.connectorId='rausgegangen-discovery';
+    const selected=selectDailySafeBatch(batch,{newEvents:8,existingUpdates:12});
+    expect(selected.selectedNewEvents).toBe(1);
+    expect(selected.bindings.get('source:1')).toBe('https://example.com/e/1');
+  });
   it('caps verified inserts but retains safe matched updates and ticket-only noops',()=>{
     const events=[
       ...Array.from({length:16},(_,i)=>candidate(i)),

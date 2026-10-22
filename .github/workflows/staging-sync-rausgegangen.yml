@@ -1,7 +1,8 @@
-name: Daily Rausgegangen Event & Ticket Verification
+name: Daily Rausgegangen New Events & Tickets
 
 on:
-  # First deployment verification; normal app pushes do not retrigger.
+  # Re-certify bounded NEW event upserts after merge of this workflow.
+  # Normal app pushes do not retrigger; daily cron continues thereafter.
   push:
     branches: [main]
     paths:
@@ -18,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  existing-event-recovery:
+  verified-event-ingestion:
     runs-on: ubuntu-latest
     timeout-minutes: 100
     defaults:
@@ -54,11 +55,11 @@ jobs:
         run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
       - name: Verify source-refresh revision for post-fix recovery
         run: git rev-parse HEAD
-      - name: Run controlled Rausgegangen daily refresh
+      - name: Import up to eight verified new events (ticket-first, source fallback)
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-scheduled-staging-sync.ts rausgegangen-discovery
-      - name: Upload source preview, reviewed candidates, and ticket audit
+      - name: Upload new-event candidates, source/ticket evidence, and diff
         if: always()
         uses: actions/upload-artifact@v4
         with:
