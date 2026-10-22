@@ -5,6 +5,7 @@
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { planSourceProbeWaves } from '../server/ingestion/sync/source-probe-batch';
 
 const OUT = '.tmp/m9-3a-probe';
 const USER_AGENT = 'EternalRave-DailySourceAudit/1.0 (+read-only public event source monitoring)';
@@ -175,17 +176,26 @@ const TARGETS: Array<{ id: string; category: string; url: string }> = [
 
 async function main() {
   mkdirSync(OUT, { recursive: true });
-  const results: ProbeResult[] = [];
-  for (const target of TARGETS) {
-    const result = await fetchProbe(target.id, target.category, target.url);
-    results.push(result);
-    process.stdout.write(`${result.ok ? 'OK' : 'FAIL'} ${target.id} (${result.status ?? 'err'})\n`);
-    await new Promise((r) => setTimeout(r, 400));
+  // Four independent providers at a time. Never probe a hostname twice
+  // in the same wave; keep pacing between waves for provider courtesy.
+  const waves = planSourceProbeWaves(TARGETS, 4);
+  const results: ProbeResult[] = new Array(TARGETS.length);
+  for (let waveIndex = 0; waveIndex < waves.length; waveIndex += 1) {
+    await Promise.all(waves[waveIndex].map(async ({ index, target }) => {
+      const result = await fetchProbe(target.id, target.category, target.url);
+      results[index] = result;
+      process.stdout.write(`${result.ok ? 'OK' : 'FAIL'} ${target.id} (${result.status ?? 'err'})\n`);
+    }));
+    if (waveIndex < waves.length - 1) {
+      await new Promise((r) => setTimeout(r, 400));
+    }
   }
 
   const summary = {
     probedAt: new Date().toISOString(),
     totalTargets: results.length,
+    probeWaves: waves.length,
+    maxParallelProviders: 4,
     okCount: results.filter((r) => r.ok).length,
     failCount: results.filter((r) => !r.ok).length,
     byCategory: Object.fromEntries(
