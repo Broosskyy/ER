@@ -1,0 +1,33 @@
+import { describe, expect, it } from 'vitest';
+import type { EventCandidate } from '../../types/event-candidate';
+import { isRausgegangenNewEventSourceReady } from '../new-event-source-quality';
+
+function candidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
+  return {
+    origin: {kind:'official_connector',connectorId:'rausgegangen-discovery',
+      sourceEventKey:'rg:abc',officialUrl:'https://rausgegangen.de/events/example-techno-1/',
+      pageFingerprint:'fingerprint',fetchedAt:'2026-10-23T12:00:00Z'},
+    title:'Example Techno Night',startsAt:'2026-11-30T22:00:00+01:00',
+    timezone:'Europe/Berlin',description:'Confirmed electronic music night at the named venue in Cologne, with a published date.',
+    venue:{name:'Club',city:'Köln',countryCode:'DE'},lineup:[],genres:[],tickets:[],
+    ...overrides,
+  };
+}
+const now=new Date('2026-10-23T12:00:00Z');
+
+describe('Rausgegangen source-only publication fallback',()=>{
+  it('allows fully qualified event details without ticket price, status or URL',()=>{
+    expect(isRausgegangenNewEventSourceReady(candidate(),now)).toBe(true);
+  });
+  it('blocks generic source, missing description and missing venue city',()=>{
+    const base=candidate();
+    expect(isRausgegangenNewEventSourceReady(
+      {...base,origin:{...base.origin,officialUrl:'https://rausgegangen.de/'}} as EventCandidate,now)).toBe(false);
+    expect(isRausgegangenNewEventSourceReady(candidate({description:''}),now)).toBe(false);
+    expect(isRausgegangenNewEventSourceReady(
+      candidate({venue:{name:'Club',city:'',countryCode:'DE'}}),now)).toBe(false);
+  });
+  it('never publishes a past event',()=>{
+    expect(isRausgegangenNewEventSourceReady(candidate({startsAt:'2026-09-01T22:00:00Z'}),now)).toBe(false);
+  });
+});
