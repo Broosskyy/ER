@@ -108,13 +108,18 @@ export function parseBootshausDetailPage(
   const locationRaw = readDetailFieldHtml($, 'Location');
 
   const startsAt = parseBootshausDisplayDateTime(startsAtRaw) ?? '';
-  const endsAt = endsAtRaw ? parseBootshausDisplayDateTime(endsAtRaw) ?? undefined : undefined;
+  const sourceEndsAt = endsAtRaw ? parseBootshausDisplayDateTime(endsAtRaw) ?? undefined : undefined;
+  // Some organizer pages publish an impossible end date (for example
+  // blu|white on 30 January 2027 with a 31 December 2026 end).
+  // Keep the correct event start and mark its end as unverified. Never
+  // normalize an earlier end by guessing the next day or year.
+  const malformedEnd = Boolean(endsAtRaw) && (!sourceEndsAt ||
+    !startsAt || !isValidIsoDateTime(startsAt) ||
+    !isEndAfterStart(startsAt, sourceEndsAt));
+  const endsAt = malformedEnd ? undefined : sourceEndsAt;
 
   if (!startsAt || !isValidIsoDateTime(startsAt)) {
     counters.invalidDates += 1;
-  }
-  if (endsAt && (!isValidIsoDateTime(endsAt) || !isEndAfterStart(startsAt, endsAt))) {
-    counters.endBeforeStart += 1;
   }
 
   const descriptionHtml = $('.event-description-content').html() ?? '';
@@ -179,6 +184,7 @@ export function parseBootshausDetailPage(
         }
       : genreEvidence;
   const enrichmentGaps: string[] = [];
+  if (malformedEnd) enrichmentGaps.push('unverified_end_time_source_conflict');
   if (!descriptionClean) enrichmentGaps.push('description_missing');
 
   if (structuredSplit.lineupNotAnnounced && lineupResult.lineupCandidates.length === 0) {
