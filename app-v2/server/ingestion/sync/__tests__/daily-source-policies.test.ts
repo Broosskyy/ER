@@ -3,10 +3,10 @@ import {getDailySourcePolicy,DAILY_SOURCE_POLICIES} from '../daily-source-polici
 import {isStagingScheduledConnectorId} from '../scheduler-boundary';
 
 describe('daily source onboarding contract',()=>{
-  it('registers Rausgegangen for daily verified existing-only source updates',()=>{
+  it('permits bounded new Rausgegangen events after source + identity validation',()=>{
     const policy=getDailySourcePolicy('rausgegangen-discovery');
     expect(policy).toMatchObject({
-      writeScope:'existing_only',maxNewEvents:0,minimumParsed:1,
+      writeScope:'upsert',maxNewEvents:8,minimumParsed:1,
     });
     expect(isStagingScheduledConnectorId('rausgegangen-discovery')).toBe(true);
   });
