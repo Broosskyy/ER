@@ -174,8 +174,10 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
         regionSlugs: this.connectorOptions.regionSlugs,
         preferredEventUrls: this.connectorOptions.preferredEventUrls,
         maxDetailCandidates: options.maxDetailPages ?? MAX_DETAIL_PAGES,
-        detailConcurrency: 1,
-        listingConcurrency: 1,
+        // Speed up read-only discovery with bounded parallel requests.
+        // Provider-specific evidence and DB apply remain serialized.
+        detailConcurrency: 2,
+        listingConcurrency: 2,
         requestDelayMs: options.requestDelayMs,
         onVerifiedDetail: async ({ enriched, fetchResult }) => {
           if (
