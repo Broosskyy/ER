@@ -139,6 +139,10 @@ export interface SyncEventProcessingResult {
   verifiedExistingSourceBinding?: boolean;
   reconciliationClassification?: string;
   reconciliationReviewReasons?: string[];
+  /** Source-only fallback is safe for a NEW event only after core fact checks. */
+  newEventSourceReady?: boolean;
+  /** 3=complete verified ticket, 2=identity-confirmed link, 0=source-only. */
+  ticketEvidencePriority?: number;
 }
 
 export interface SyncRunRequest {
