@@ -16,7 +16,7 @@ export function planSourceProbeWaves<T extends { url: string }>(
     const wave: Array<{ index: number; target: T }> = [];
     const hosts = new Set<string>();
     for (let i = 0; i < pending.length && wave.length < maxConcurrency;) {
-      const item = pending[i];
+      const item = pending[i]!; // i is bounded by pending.length
       // Keep invalid configured URLs isolated; fetchProbe reports their error.
       let host: string;
       try {
