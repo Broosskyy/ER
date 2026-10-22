@@ -164,6 +164,26 @@ describe('consumer ticket safety gate', () => {
     expect(presentation.statusLabel).toBe('Status unbekannt');
   });
 
+  it('does not imply confirmed availability for priced tickets without checkout links', () => {
+    for (const salesStatus of ['available', 'on_sale', 'low_availability']) {
+      const presentation = resolveConsumerTicketPresentation({
+        id: 'unlinked-bootshaus',
+        provider: 'unknown',
+        ticketUrl: null,
+        priceFromMinor: 3500,
+        currency: 'EUR',
+        salesStatus,
+        sortOrder: 0,
+      });
+      expect(presentation.priceText).toBe('ab 35 €');
+      expect(presentation.showPurchaseCta).toBe(false);
+      expect(presentation.showPresaleCta).toBe(false);
+      expect(presentation.ticketUrl).toBeUndefined();
+      expect(presentation.badgeStatus).toBeUndefined();
+      expect(presentation.statusLabel).toBe('Status unbekannt');
+    }
+  });
+
   it('shows door admission price without purchase CTA', () => {
     const presentation = resolveConsumerTicketPresentation({
       id: 'ticket-1',
