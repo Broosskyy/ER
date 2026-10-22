@@ -37,6 +37,15 @@ export const DAILY_SOURCE_POLICIES = {
     maxExistingUpdates: 25,
     maxTicketChanges: 25,
   },
+  'zakk-official': {
+    connectorId: 'zakk-official',
+    writeScope: 'upsert',
+    minimumParsed: 1,
+    maxDetailPages: 30,
+    maxNewEvents: 6,
+    maxExistingUpdates: 12,
+    maxTicketChanges: 12,
+  },
   [RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID]: {
     connectorId: RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
     // A bounded daily batch may now create NEW identity-safe Rausgegangen events.
