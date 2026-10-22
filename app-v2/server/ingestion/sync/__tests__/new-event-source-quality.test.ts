@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EventCandidate } from '../../types/event-candidate';
-import { isRausgegangenNewEventSourceReady } from '../new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady } from '../new-event-source-quality';
 
 function candidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
   return {
@@ -29,5 +29,21 @@ describe('Rausgegangen source-only publication fallback',()=>{
   });
   it('never publishes a past event',()=>{
     expect(isRausgegangenNewEventSourceReady(candidate({startsAt:'2026-09-01T22:00:00Z'}),now)).toBe(false);
+  });
+});
+
+describe('zakk official new-event fallback',()=>{
+  const zakk={
+    ...candidate(),
+    origin:{kind:'official_connector' as const, connectorId:'zakk-official',
+      sourceEventKey:'12345', officialUrl:'https://zakk.de/event-detail?event=12345',
+      pageFingerprint:'valid',fetchedAt:'2026-10-23T12:00:00Z'},
+  };
+  it('permits a properly sourced future event with no verified checkout',()=>{
+    expect(isZakkNewEventSourceReady(zakk,now)).toBe(true);
+  });
+  it('blocks generic and non-event-specific source URLs',()=>{
+    expect(isZakkNewEventSourceReady({...zakk,origin:{
+      ...zakk.origin,officialUrl:'https://zakk.de/programm/party/' }},now)).toBe(false);
   });
 });
