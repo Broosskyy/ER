@@ -29,6 +29,9 @@ import {
   type ZakkListEntry,
 } from './parse-list';
 import { extractZakkEventId } from './url-policy';
+import { isZakkElectronicEvent } from './electronic-scope';
+import { processOfficialEventTickets } from '../ticket-evidence/ticket-evidence-pipeline';
+import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
 
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
@@ -130,6 +133,7 @@ export class ZakkOfficialConnector implements OfficialConnector {
     const nowMs = now.getTime();
     const detailUrls = discovery.detailUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
+    const ticketResults: VerifiedTicketCompleteResult[] = [];
 
     const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
       if (fetchedUrlSet.has(detailUrl)) {
@@ -157,14 +161,27 @@ export class ZakkOfficialConnector implements OfficialConnector {
       );
 
       if (evidence.startsAt && Date.parse(evidence.startsAt) < nowMs) {
-        evidence.enrichmentGaps = [...new Set([...evidence.enrichmentGaps, 'past_event_skipped'])];
+        return null;
       }
-
+      if (!isZakkElectronicEvent(evidence)) {
+        return null;
+      }
+      // First try to verify event-specific ticket price, status and checkout
+      // against the provider. An unresolved purchase link is not invented.
+      const ticket = await processOfficialEventTickets({
+        sourceEventKey: evidence.sourceEventKey,
+        officialUrl: evidence.officialUrl,
+        title: evidence.title,
+        startsAt: evidence.startsAt,
+        venueName: evidence.venue?.name,
+        organizerName: evidence.organizerLabel,
+      }, { prefetchedHtml: detailResult.html, observedAt: fetchedAt });
+      ticketResults.push(ticket);
       return buildConsumerPreview(evidence, counters);
     });
 
     const futurePreviews = previews.filter(
-      (preview) => !preview.enrichmentGaps.includes('past_event_skipped'),
+      (preview): preview is OfficialEventConsumerPreview => preview !== null,
     );
 
     return {
@@ -175,6 +192,7 @@ export class ZakkOfficialConnector implements OfficialConnector {
       previews: futurePreviews,
       counters,
       mediaCounters: createEmptyMediaPassCounters(),
+      ticketResults,
     };
   }
 }
