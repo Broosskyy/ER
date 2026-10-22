@@ -73,6 +73,7 @@ export const STAGING_SCHEDULED_CONNECTOR_IDS = [
   BOOTSHAUS_CONNECTOR_ID,
   AFFENKAEFIG_CONNECTOR_ID,
   RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
+  'zakk-official',
 ] as const;
 
 export type StagingScheduledConnectorId = (typeof STAGING_SCHEDULED_CONNECTOR_IDS)[number];
