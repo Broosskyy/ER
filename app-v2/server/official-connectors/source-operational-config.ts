@@ -87,6 +87,17 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 3,
     });
   }
+  if (!registry.get('zakk-official')) {
+    registry.register({
+      connectorId: 'zakk-official',
+      sourceType: 'venue_club',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      writeScope: 'upsert',
+      expectedMinParsedOnSuccess: 1,
+      maxConcurrency: 2,
+      requestSpacingMs: 800,
+    });
+  }
   if (!registry.get('rausgegangen-discovery')) {
     registry.register({
       connectorId: 'rausgegangen-discovery',
