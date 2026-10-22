@@ -23,6 +23,41 @@ describe('bootshaus list parsing', () => {
 describe('bootshaus detail parsing', () => {
   const counters = createEmptyConnectorCounters();
 
+  it('does not reject the official blu|white 2027 event for a prior-year end-date typo', () => {
+    const html = `<div class="event-details-container">
+      <div><h4>Begin</h4>30.01.2027 18:30</div>
+      <div><h4>End</h4>31.12.2026 03:00</div>
+      <div><h4>Location</h4>Bootshaus<br>Auenweg 173, 51063 Köln</div>
+    </div>
+    <div class="upcoming-title">blu|white 2027 - KARNEVAL MEETS CLUBBING</div>
+    <div class="event-description-content">
+      <p>Karneval goes clubbing vol. 9 mit drei Bands und elektronischer Musik.</p>
+      <p>Mainfloor:</p><p>Kasalla</p><p>Cat Ballou</p><p>Brings</p>
+    </div>`;
+    const countersLocal = createEmptyConnectorCounters();
+    const evidence = parseBootshausDetailPage(html,
+      'https://bootshaus.tv/events/blu-white-2027-karneval-meets-clubbing/',
+      '2026-10-22T18:00:00Z',countersLocal);
+    expect(evidence.startsAt).toBe('2027-01-30T18:30:00+01:00');
+    expect(evidence.endsAt).toBeUndefined();
+    expect(evidence.enrichmentGaps).toContain('unverified_end_time_source_conflict');
+    expect(countersLocal.endBeforeStart).toBe(0);
+    expect(evidence.venue?.city).toBe('Köln');
+  });
+
+  it('retains valid overnight end times unchanged', () => {
+    const html = `<div class="event-details-container">
+      <div><h4>Begin</h4>30.01.2027 18:30</div>
+      <div><h4>End</h4>31.01.2027 03:00</div>
+      <div><h4>Location</h4>Bootshaus<br>Auenweg 173, 51063 Köln</div>
+    </div><div class="upcoming-title">Test party</div>`;
+    const evidence=parseBootshausDetailPage(html,
+      'https://bootshaus.tv/events/blu-white-2027-karneval-meets-clubbing/',
+      '2026-10-22T18:00:00Z',createEmptyConnectorCounters());
+    expect(evidence.endsAt).toBe('2027-01-31T03:00:00+01:00');
+    expect(evidence.enrichmentGaps).not.toContain('unverified_end_time_source_conflict');
+  });
+
   it('parses loonyland control case', () => {
     const evidence = parseBootshausDetailPage(
       BOOTSHAUS_DETAIL_FRAGMENT,
