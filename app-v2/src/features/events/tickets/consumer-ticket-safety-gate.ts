@@ -170,6 +170,11 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
 
   const salesStatus = ticket.salesStatus ?? '';
   const hasUrl = Boolean(ticket.ticketUrl?.startsWith('https://'));
+  // A source-confirmed admission price without an event-specific checkout URL
+  // is not confirmation that online tickets are currently available.
+  const availabilityWithoutCheckout =
+    !hasUrl && (salesStatus === 'available' || salesStatus === 'on_sale' ||
+      salesStatus === 'low_availability');
   const ticketAction = resolveTicketAction(salesStatus, ticket.ticketUrl);
   const registrationTarget = isRegistrationTargetUrl(ticket.ticketUrl);
   const showPresaleCta =
@@ -190,7 +195,7 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
     ticketStatus = salesStatus === 'sold_out' ? 'sold_out' : 'external_link';
   }
 
-  const badgeStatus = salesStatus === 'free_entry' &&
+  const badgeStatus = availabilityWithoutCheckout ? undefined : salesStatus === 'free_entry' &&
       (ticket.priceFromMinor !== 0 || ticket.currency !== 'EUR' || hasUrl)
     ? undefined
     : mapConsumerSalesStatusToBadgeStatus(salesStatus);
@@ -211,8 +216,9 @@ export function resolveConsumerTicketPresentation(ticket: EventTicket | null): C
         : 'Vorregistrieren'
       : undefined,
     ticketStatus,
-    statusLabel:
-      salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability' ||
+    statusLabel: availabilityWithoutCheckout
+      ? projectConsumerTicketStatusLabel('availability_unverified')
+      : salesStatus === 'available' || salesStatus === 'on_sale' || salesStatus === 'low_availability' ||
         salesStatus === 'free_entry' || salesStatus === 'free_until_midnight'
         ? undefined
         : projectConsumerTicketStatusLabel(salesStatus),
