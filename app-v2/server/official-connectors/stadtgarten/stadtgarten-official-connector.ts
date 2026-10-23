@@ -37,6 +37,7 @@ import {
 import { assessStadtgartenScope } from './parse-scope';
 import { processOfficialEventTickets } from '../ticket-evidence/ticket-evidence-pipeline';
 import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
+import { addStadtgartenSourcePriceFallback } from './official-admission-evidence';
 
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
@@ -210,14 +211,19 @@ export class StadtgartenOfficialConnector implements OfficialConnector {
       }
       // Use the original event page to verify a direct ticket-provider link,
       // sale status and admission price; source-only fallback remains possible.
-      ticketResults.push(await processOfficialEventTickets({
+      const ticketResult = await processOfficialEventTickets({
         sourceEventKey: evidence.sourceEventKey,
         officialUrl: evidence.officialUrl,
         title: evidence.title,
         startsAt: evidence.startsAt,
         venueName: evidence.venue?.name,
         organizerName: evidence.organizerLabel,
-      }, { prefetchedHtml: detailResult.html, observedAt: fetchedAt }));
+      }, { prefetchedHtml: detailResult.html, observedAt: fetchedAt });
+      // When JAKI offers entrance only at the door, an official on-page
+      // price is still useful. Never fabricate a provider URL or sale status.
+      ticketResults.push(addStadtgartenSourcePriceFallback(
+        ticketResult, detailResult.html, fetchedAt,
+      ));
       return buildConsumerPreview(evidence, counters);
     });
 

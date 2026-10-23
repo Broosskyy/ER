@@ -157,7 +157,8 @@ function shouldPersistTicketRow(sourceState: TicketSourceState, result: Verified
     return (
       result.priceEvidence?.state === 'verified_current' &&
       result.priceEvidence.amountMinor != null &&
-      result.priceEvidence.reason === 'official_door_admission_without_purchase_target'
+      ['official_door_admission_without_purchase_target',
+       'official_presale_price_without_verified_purchase_target'].includes(result.priceEvidence.reason ?? '')
     );
   }
   if (sourceState === 'provider_access_unavailable') {
@@ -237,6 +238,15 @@ function mapSalesStatus(sourceState: TicketSourceState, result: VerifiedTicketCo
     result.priceEvidence.reason === 'official_door_admission_without_purchase_target'
   ) {
     return 'available';
+  }
+  // The organizer may quote a presale amount on the official event page
+  // while the actual ticket provider is unavailable/unverified.
+  // Preserve the price but never claim online tickets are for sale.
+  if (
+    sourceState === 'ticket_link_not_yet_published' &&
+    result.priceEvidence?.reason === 'official_presale_price_without_verified_purchase_target'
+  ) {
+    return 'availability_unverified';
   }
 
   if (sourceState === 'presale_registration' || sourceState === 'waitlist') {
@@ -569,6 +579,16 @@ function resolveTicketOperation(
   }
   if (!existing) {
     return { operation: 'insert', reason: 'ticket_row_missing' };
+  }
+  // A source-only admission quote cannot downgrade a previously verified
+  // checkout URL: preserve the existing ticket row if the shop temporarily
+  // omits the event-specific link.
+  if (existing.ticketUrl?.startsWith('https://') &&
+      !planned.ticketUrl &&
+      ['official_door_admission_without_purchase_target',
+       'official_presale_price_without_verified_purchase_target']
+        .includes(result.priceEvidence?.reason ?? '')) {
+    return { operation: 'noop', reason: 'preserve_verified_ticket_url_over_source_price_only' };
   }
   if (ticketsEqual(existing, planned)) {
     return { operation: 'noop', reason: 'ticket_row_already_matches' };

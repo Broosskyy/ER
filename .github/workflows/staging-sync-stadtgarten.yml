@@ -1,11 +1,13 @@
 name: Daily stadtgarten Electronic Events and Tickets
 
 on:
-  # One guarded import when the source is certified and merged.
+  # One guarded catch-up import whenever the admission parser changes.
+  # Source identity, dry-run and ticket mutation ceilings still apply.
   push:
     branches: [main]
     paths:
       - '.github/workflows/staging-sync-stadtgarten.yml'
+      - 'app-v2/server/official-connectors/stadtgarten/official-admission-evidence.ts'
   schedule:
     - cron: '07 11 * * *'
   workflow_dispatch:
