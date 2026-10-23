@@ -89,6 +89,19 @@ export function assessStadtgartenScope(
     return 'outside_scope';
   }
 
+  // A primarily jazz/experimental seated concert is not automatically a
+  // rave because its genre list also mentions ambient, electronic music or
+  // synthesizers. Keep actual jazz-techno/house/trance crossover bookings
+  // when the promoter explicitly names a dance-floor genre.
+  const isJazzConcert = categories.some(category => normalizeCategory(category) === 'konzert') &&
+    genreLabels.some(label => /\\bjazz(?:[- ]?fusion)?\\b/i.test(label));
+  const hasExplicitDanceGenre = genreLabels.some(label =>
+    /\\b(?:hard[ -]?techno|techno|house|trance|psytrance|hardstyle|hardcore|gabber|rave|drum\\s*(?:and|&)\\s*bass|dnb|breakbeat)\\b/i.test(label),
+  );
+  if (isJazzConcert && !hasExplicitDanceGenre) {
+    return 'outside_scope';
+  }
+
   if (hasExplicitElectronicGenreLabels(genreLabels)) {
     return 'include';
   }
