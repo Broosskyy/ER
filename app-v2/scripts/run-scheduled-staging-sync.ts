@@ -170,7 +170,7 @@ async function main() {
   // zakk is a multi-genre venue; a successful listing with no currently
   // qualifying electronic parties is a review-only no-op, not permission
   // to publish non-electronic parties to make a daily job pass.
-  if (connectorId === 'zakk-official' &&
+  if (['zakk-official','stadtgarten-official'].includes(connectorId) &&
       preview.run.counters.discovered > 0 &&
       preview.run.counters.fetched > 0 &&
       preview.run.counters.parsed === 0 &&
