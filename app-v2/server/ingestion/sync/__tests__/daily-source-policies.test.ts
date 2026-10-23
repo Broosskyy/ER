@@ -16,6 +16,12 @@ describe('daily source onboarding contract',()=>{
     });
     expect(isStagingScheduledConnectorId('zakk-official')).toBe(true);
   });
+  it('certifies electronic-only Stadtgarten in bounded batches',()=>{
+    expect(getDailySourcePolicy('stadtgarten-official')).toMatchObject({
+      writeScope:'upsert',maxNewEvents:8,minimumParsed:1,
+    });
+    expect(isStagingScheduledConnectorId('stadtgarten-official')).toBe(true);
+  });
   it('does not auto-enable newly registered but uncertified connectors',()=>{
     expect(getDailySourcePolicy('some-future-ticket-provider')).toBeUndefined();
     expect(isStagingScheduledConnectorId('some-future-ticket-provider')).toBe(false);
