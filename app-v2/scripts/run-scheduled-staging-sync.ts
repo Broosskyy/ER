@@ -96,6 +96,7 @@ async function main() {
            OR (s.source_url ILIKE '%affenkaefig.info%' AND '${connectorId}' = 'affenkaefig-official')
            OR (s.source_url ILIKE '%rausgegangen.de/events/%' AND '${connectorId}' = 'rausgegangen-discovery')
            OR (s.source_url ILIKE '%zakk.de/event-detail%' AND '${connectorId}' = 'zakk-official')
+           OR (s.source_url ILIKE '%stadtgarten.de/programm/%' AND '${connectorId}' = 'stadtgarten-official')
          );`,
     ).map((row) => row.event_id),
   );
