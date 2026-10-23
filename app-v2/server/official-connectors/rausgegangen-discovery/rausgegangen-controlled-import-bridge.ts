@@ -73,7 +73,7 @@ function explicitGenreLabels(enriched: EnrichedTicketIoEvent): string[] {
         .filter((genre) => genre.confidence === 'explicit' || genre.confidence === 'strong_inferred')
         .map((genre) => genre.label.trim())
         .filter(Boolean),
-      ...extractExplicitGenresFromPublishedText(enriched.description ?? ''),
+      ...extractExplicitGenresFromPublishedText([enriched.title, enriched.description ?? ''].join(' ')),
     ]),
   ];
 }
