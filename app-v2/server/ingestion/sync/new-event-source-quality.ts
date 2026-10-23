@@ -7,6 +7,16 @@ import type { EventCandidate } from '../types/event-candidate';
  *
  * A rejected or ambiguous identity is handled by the regular planner as well.
  */
+
+/**
+ * Transport, travel and admission services are not music performances.
+ * Require a matching service in the EVENT TITLE itself so ordinary event
+ * descriptions mentioning shuttle options are not accidentally suppressed.
+ */
+export function isEventServiceInsteadOfPerformance(title: string): boolean {
+  return /^(?:(?:bus|shuttle(?:bus)?)\s+(?:zu|zur|zum|nach|für)\b|(?:busfahrt|bustransfer|shuttleservice|shuttlefahrt|busreise|reisebus|transferbus)\b)/i.test(title.trim());
+}
+
 export function isRausgegangenNewEventSourceReady(
   candidate: EventCandidate,
   referenceInstant = new Date(),
@@ -26,6 +36,7 @@ export function isRausgegangenNewEventSourceReady(
     Number.isFinite(timestamp) &&
     timestamp > referenceInstant.getTime() &&
     candidate.title.trim().length >= 5 &&
+    !isEventServiceInsteadOfPerformance(candidate.title) &&
     !!candidate.venue?.name?.trim() &&
     !!candidate.venue?.city?.trim() &&
     (candidate.description?.trim().length ?? 0) >= 40

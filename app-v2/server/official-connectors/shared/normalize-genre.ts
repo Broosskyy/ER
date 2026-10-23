@@ -12,6 +12,8 @@ const GENRE_CANONICAL: Record<string, { genreKey: string; displayName: string }>
   house: { genreKey: 'house', displayName: 'House' },
   'tech house': { genreKey: 'tech-house', displayName: 'Tech House' },
   'deep house': { genreKey: 'deep-house', displayName: 'Deep House' },
+  hardhouse: { genreKey: 'hard-house', displayName: 'Hard House' },
+  'hard house': { genreKey: 'hard-house', displayName: 'Hard House' },
   'deep/techhouse': { genreKey: 'deep-tech-house', displayName: 'Deep/Tech House' },
   'deep tech house': { genreKey: 'deep-tech-house', displayName: 'Deep/Tech House' },
   'deep techhouse': { genreKey: 'deep-tech-house', displayName: 'Deep/Tech House' },
