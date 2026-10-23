@@ -58,3 +58,24 @@ export function isZakkNewEventSourceReady(
     (candidate.description?.trim().length ?? 0) >= 40
   );
 }
+
+/** Fresh electronic-only Stadtgarten event source. An event-specific page,
+ * confirmed time, location and description are mandatory for NEW imports. */
+export function isStadtgartenNewEventSourceReady(
+  candidate: EventCandidate,
+  referenceInstant = new Date(),
+): boolean {
+  if (candidate.origin.kind !== 'official_connector' ||
+      candidate.origin.connectorId !== 'stadtgarten-official') return false;
+  let url: URL;
+  try { url = new URL(candidate.origin.officialUrl); }
+  catch { return false; }
+  if (url.protocol !== 'https:' || url.hostname !== 'www.stadtgarten.de' ||
+      !/^\/programm\/[a-z0-9-]+-\d+\/?$/i.test(url.pathname) ||
+      url.username || url.password) return false;
+  const start = Date.parse(candidate.startsAt);
+  return Number.isFinite(start) && start > referenceInstant.getTime() &&
+    candidate.title.trim().length >= 5 &&
+    !!candidate.venue?.name?.trim() && !!candidate.venue?.city?.trim() &&
+    (candidate.description?.trim().length ?? 0) >= 40;
+}

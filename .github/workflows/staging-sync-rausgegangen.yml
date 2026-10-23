@@ -1,4 +1,4 @@
-name: Daily Rausgegangen New Events & Tickets
+name: Rausgegangen German Rave Discovery and Tickets
 
 on:
   # Re-certify bounded NEW event upserts after merge of this workflow.
@@ -8,7 +8,9 @@ on:
     paths:
       - '.github/workflows/staging-sync-rausgegangen.yml'
   schedule:
-    - cron: '41 7 * * *'
+    # Four bounded, differently rotated German discovery windows per day.
+    # Each job still has dry-run, source-identity and ticket-write guards.
+    - cron: '41 1,7,13,19 * * *'
   workflow_dispatch:
 
 permissions:
@@ -55,7 +57,7 @@ jobs:
         run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
       - name: Verify source-refresh revision for post-fix recovery
         run: git rev-parse HEAD
-      - name: Import up to eight verified new events (ticket-first, source fallback)
+      - name: Import up to eight verified new events per rotation (ticket-first)
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: npx tsx scripts/run-scheduled-staging-sync.ts rausgegangen-discovery

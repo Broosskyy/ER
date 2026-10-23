@@ -34,7 +34,8 @@ import type { VerifiedTicketCompleteResult } from '../../official-connectors/tic
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady } from './new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady } from './new-event-source-quality';
+import { RausgegangenOfficialConnector } from '../../official-connectors/rausgegangen-discovery/rausgegangen-official-connector';
 
 export interface SyncOrchestratorDependencies {
   registry: OfficialSourceRegistry;
@@ -92,7 +93,9 @@ function canApplyPlan(
       ((plan.candidate.origin.connectorId === 'rausgegangen-discovery' &&
         !isRausgegangenNewEventSourceReady(plan.candidate)) ||
        (plan.candidate.origin.connectorId === 'zakk-official' &&
-        !isZakkNewEventSourceReady(plan.candidate)))) {
+        !isZakkNewEventSourceReady(plan.candidate)) ||
+       (plan.candidate.origin.connectorId === 'stadtgarten-official' &&
+        !isStadtgartenNewEventSourceReady(plan.candidate)))) {
     return false;
   }
   return (
@@ -143,7 +146,9 @@ function buildEventProcessingResult(
         ? plan.candidate.origin.connectorId === 'rausgegangen-discovery'
           ? isRausgegangenNewEventSourceReady(plan.candidate)
           : plan.candidate.origin.connectorId === 'zakk-official'
-            ? isZakkNewEventSourceReady(plan.candidate) : undefined
+            ? isZakkNewEventSourceReady(plan.candidate)
+          : plan.candidate.origin.connectorId === 'stadtgarten-official'
+            ? isStadtgartenNewEventSourceReady(plan.candidate) : undefined
         : undefined,
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:
@@ -474,6 +479,15 @@ export async function runSourceSync(
     health.lastDurationMs = 0;
     await deps.persistence.upsertHealth(health);
     return { run, eventResults: [], health };
+  }
+
+  if (mode === 'apply' && triggerType === 'scheduled' &&
+      request.connectorId === 'rausgegangen-discovery' &&
+      deps.scheduledApplyBindings && connector instanceof RausgegangenOfficialConnector) {
+    // The discovery listing changes between the dry-run and apply passes.
+    // Re-fetch exactly the source URLs approved by the dry-run, not a new
+    // random nationwide sample that misses most approved candidates.
+    connector.setScheduledApplyEventUrls([...deps.scheduledApplyBindings.values()]);
   }
 
   const retryPolicy = {

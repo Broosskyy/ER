@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EventCandidate } from '../../types/event-candidate';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady } from '../new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady } from '../new-event-source-quality';
 
 function candidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
   return {
@@ -45,5 +45,20 @@ describe('zakk official new-event fallback',()=>{
   it('blocks generic and non-event-specific source URLs',()=>{
     expect(isZakkNewEventSourceReady({...zakk,origin:{
       ...zakk.origin,officialUrl:'https://zakk.de/programm/party/' }},now)).toBe(false);
+  });
+});
+
+describe('Stadtgarten official electronic-source fallback',()=>{
+  const event={
+    ...candidate(),
+    origin:{kind:'official_connector' as const,connectorId:'stadtgarten-official',
+      sourceEventKey:'12001',officialUrl:'https://www.stadtgarten.de/programm/techno-night-12001/',
+      pageFingerprint:'fp',fetchedAt:'2026-10-23T12:00:00Z'},
+  };
+  it('allows only detailed future listings with venue and source',()=>{
+    expect(isStadtgartenNewEventSourceReady(event,now)).toBe(true);
+    expect(isStadtgartenNewEventSourceReady({...event,description:''},now)).toBe(false);
+    expect(isStadtgartenNewEventSourceReady({...event,origin:{
+      ...event.origin,officialUrl:'https://www.stadtgarten.de/programm/'}},now)).toBe(false);
   });
 });

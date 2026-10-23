@@ -96,6 +96,7 @@ async function main() {
            OR (s.source_url ILIKE '%affenkaefig.info%' AND '${connectorId}' = 'affenkaefig-official')
            OR (s.source_url ILIKE '%rausgegangen.de/events/%' AND '${connectorId}' = 'rausgegangen-discovery')
            OR (s.source_url ILIKE '%zakk.de/event-detail%' AND '${connectorId}' = 'zakk-official')
+           OR (s.source_url ILIKE '%stadtgarten.de/programm/%' AND '${connectorId}' = 'stadtgarten-official')
          );`,
     ).map((row) => row.event_id),
   );
@@ -131,14 +132,31 @@ async function main() {
            AND COALESCE(e.ends_at,e.starts_at+interval '18 hours')>now();`,
       ).map(entry => entry.source_url), Math.floor(Date.now()/86400000), 10)
     : [];
+  // Already-bound source URLs are excluded from the NEW-event discovery
+  // slots; the rotating preferred subset above continues checking existing
+  // event prices, ticket URLs and sales statuses.
+  const knownSourceUrls = connectorId === 'rausgegangen-discovery'
+    ? loadJsonAgg<{source_url: string}>(runQuery,
+        `SELECT COALESCE(jsonb_agg(jsonb_build_object('source_url',source_url)),
+          '[]'::jsonb) AS rows FROM public.event_sources
+         WHERE source_role='official'
+           AND source_url ~* '^https://(www[.])?rausgegangen[.]de/events/';`)
+        .map(row => row.source_url)
+    : [];
+  const discoverySlot = Math.floor(Date.now() / 21_600_000);
   writeJson(`${connectorId}-daily-source-scope.json`, {
     connectorId, reviewedExistingSourceCount: preferredSourceUrls.length,
+    knownBindings: knownSourceUrls.length, discoverySlot,
     sourceUrls: preferredSourceUrls,
   });
 
   const deps = createStagingSyncDependencies({
     cwd, runQuery, verifyTarget: false,
-    rausgegangenOptions: { preferredEventUrls: preferredSourceUrls },
+    rausgegangenOptions: {
+      preferredEventUrls: preferredSourceUrls,
+      knownEventUrls: knownSourceUrls,
+      selectionSlot: discoverySlot,
+    },
   });
 
   // Prioritize net-new discovery while preserving ten rotating existing-source checks.
@@ -152,7 +170,7 @@ async function main() {
   // zakk is a multi-genre venue; a successful listing with no currently
   // qualifying electronic parties is a review-only no-op, not permission
   // to publish non-electronic parties to make a daily job pass.
-  if (connectorId === 'zakk-official' &&
+  if (['zakk-official','stadtgarten-official'].includes(connectorId) &&
       preview.run.counters.discovered > 0 &&
       preview.run.counters.fetched > 0 &&
       preview.run.counters.parsed === 0 &&
