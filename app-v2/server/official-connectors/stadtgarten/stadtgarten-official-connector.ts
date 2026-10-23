@@ -161,7 +161,14 @@ export class StadtgartenOfficialConnector implements OfficialConnector {
     counters.duplicateListEntries += duplicateCount;
 
     const nowMs = now.getTime();
-    const detailUrls = uniqueUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
+    // Filter out explicitly non-electronic listings BEFORE the 40-page
+    // detail limit. Otherwise a calendar full of jazz/pop consumed every
+    // detail slot and prevented any club nights from being fetched.
+    const electronicSourceUrls = uniqueUrls.filter((url) => {
+      const listing = listEntryByUrl.get(url);
+      return !listing || !shouldSkipScopeFromListEntry(listing);
+    });
+    const detailUrls = electronicSourceUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
     const ticketResults: VerifiedTicketCompleteResult[] = [];
 
