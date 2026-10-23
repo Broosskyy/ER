@@ -5,6 +5,8 @@ import { RausgegangenOfficialConnector, type RausgegangenOfficialConnectorOption
 import { RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID } from './rausgegangen-discovery/constants';
 import { ZakkOfficialConnector } from './zakk/zakk-official-connector';
 import { ZAKK_CONNECTOR_ID } from './zakk/constants';
+import { StadtgartenOfficialConnector } from './stadtgarten/stadtgarten-official-connector';
+import { STADTGARTEN_CONNECTOR_ID } from './stadtgarten/constants';
 
 export function registerDefaultOfficialConnectors(
   registry = getOfficialSourceRegistry(),
@@ -16,6 +18,9 @@ export function registerDefaultOfficialConnectors(
   }
   if (!connectorIds.has('affenkaefig-official')) {
     registry.register(new AffenkaefigOfficialConnector());
+  }
+  if (!connectorIds.has(STADTGARTEN_CONNECTOR_ID)) {
+    registry.register(new StadtgartenOfficialConnector());
   }
   if (!connectorIds.has(ZAKK_CONNECTOR_ID)) {
     registry.register(new ZakkOfficialConnector());
