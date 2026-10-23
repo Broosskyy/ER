@@ -51,6 +51,8 @@ const MAX_DETAIL_PAGES = 40;
 export interface RausgegangenOfficialConnectorOptions {
   regionSlugs?: string[];
   preferredEventUrls?: string[];
+  knownEventUrls?: string[];
+  selectionSlot?: number;
 }
 
 function toDetailFetchResult(
@@ -83,7 +85,15 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
     },
   };
 
+  private scheduledApplyEventUrls?: string[];
+
   constructor(private readonly connectorOptions: RausgegangenOfficialConnectorOptions = {}) {}
+
+  /** Apply ONLY the exact validated key/URL pairs from the preceding dry run.
+   * Safe to call only in a dedicated scheduled server worker. */
+  setScheduledApplyEventUrls(urls: readonly string[]): void {
+    this.scheduledApplyEventUrls = [...urls];
+  }
 
   discoverFromListHtml(
     listHtml: string,
@@ -169,11 +179,17 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
     resetTicketFetchCache();
 
     try {
+      const exactApplyUrls = this.scheduledApplyEventUrls;
       const discovery = await runRausgegangenNetworkDiscovery({
         referenceInstant,
-        regionSlugs: this.connectorOptions.regionSlugs,
-        preferredEventUrls: this.connectorOptions.preferredEventUrls,
-        maxDetailCandidates: options.maxDetailPages ?? MAX_DETAIL_PAGES,
+        regionSlugs: exactApplyUrls ? [] : this.connectorOptions.regionSlugs,
+        preferredEventUrls: exactApplyUrls ?? this.connectorOptions.preferredEventUrls,
+        preferredOnly: exactApplyUrls !== undefined,
+        knownEventUrls: exactApplyUrls ? [] : this.connectorOptions.knownEventUrls,
+        selectionSlot: this.connectorOptions.selectionSlot,
+        maxDetailCandidates: exactApplyUrls
+          ? Math.min(exactApplyUrls.length, options.maxDetailPages ?? MAX_DETAIL_PAGES)
+          : options.maxDetailPages ?? MAX_DETAIL_PAGES,
         // Speed up read-only discovery with bounded parallel requests.
         // Provider-specific evidence and DB apply remain serialized.
         detailConcurrency: 2,
