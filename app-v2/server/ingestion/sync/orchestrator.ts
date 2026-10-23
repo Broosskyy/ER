@@ -34,7 +34,7 @@ import type { VerifiedTicketCompleteResult } from '../../official-connectors/tic
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady } from './new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady ,isApprovedTicketIoNewEventSourceReady } from './new-event-source-quality';
 import { RausgegangenOfficialConnector } from '../../official-connectors/rausgegangen-discovery/rausgegangen-official-connector';
 
 export interface SyncOrchestratorDependencies {
@@ -95,7 +95,9 @@ function canApplyPlan(
        (plan.candidate.origin.connectorId === 'zakk-official' &&
         !isZakkNewEventSourceReady(plan.candidate)) ||
        (plan.candidate.origin.connectorId === 'stadtgarten-official' &&
-        !isStadtgartenNewEventSourceReady(plan.candidate)))) {
+        !isStadtgartenNewEventSourceReady(plan.candidate)) ||
+       (plan.candidate.origin.connectorId === 'ticketio-organizer-discovery' &&
+        !isApprovedTicketIoNewEventSourceReady(plan.candidate)))) {
     return false;
   }
   return (
@@ -148,7 +150,9 @@ function buildEventProcessingResult(
           : plan.candidate.origin.connectorId === 'zakk-official'
             ? isZakkNewEventSourceReady(plan.candidate)
           : plan.candidate.origin.connectorId === 'stadtgarten-official'
-            ? isStadtgartenNewEventSourceReady(plan.candidate) : undefined
+            ? isStadtgartenNewEventSourceReady(plan.candidate)
+          : plan.candidate.origin.connectorId === 'ticketio-organizer-discovery'
+            ? isApprovedTicketIoNewEventSourceReady(plan.candidate) : undefined
         : undefined,
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:

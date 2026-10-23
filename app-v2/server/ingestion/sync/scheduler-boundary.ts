@@ -75,6 +75,7 @@ export const STAGING_SCHEDULED_CONNECTOR_IDS = [
   RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID,
   'zakk-official',
   'stadtgarten-official',
+  'ticketio-organizer-discovery',
 ] as const;
 
 export type StagingScheduledConnectorId = (typeof STAGING_SCHEDULED_CONNECTOR_IDS)[number];

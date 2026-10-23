@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EventCandidate } from '../../types/event-candidate';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady, isEventServiceInsteadOfPerformance } from '../new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady, isEventServiceInsteadOfPerformance ,isApprovedTicketIoNewEventSourceReady } from '../new-event-source-quality';
 
 function candidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
   return {
@@ -74,5 +74,26 @@ describe('transport listings are not rave events',()=>{
       description:'Ticket includes additional bus-shuttle options to the venue'});
     expect(isEventServiceInsteadOfPerformance(event.title)).toBe(false);
     expect(isRausgegangenNewEventSourceReady(event,now)).toBe(true);
+  });
+});
+
+describe('approved ticket.io organizer discovery',()=>{
+  const data={
+    ...candidate(),
+    origin:{kind:'official_connector' as const,connectorId:'ticketio-organizer-discovery',
+      sourceEventKey:'ticketio:area51events.ticket.io:aLr3YQLG',
+      officialUrl:'https://area51events.ticket.io/aLr3YQLG/',
+      pageFingerprint:'fingerprint',fetchedAt:'2026-10-23T12:00:00Z'},
+    genres:[{genreKey:'techno',displayName:'Techno',sortOrder:0}],
+  };
+  it('accepts one future event with independently sourced details and genre',()=>{
+    expect(isApprovedTicketIoNewEventSourceReady(data,now)).toBe(true);
+  });
+  it('blocks shop roots, unknown shops and genre-less listings',()=>{
+    expect(isApprovedTicketIoNewEventSourceReady({...data,origin:{
+      ...data.origin,officialUrl:'https://area51events.ticket.io/' }},now)).toBe(false);
+    expect(isApprovedTicketIoNewEventSourceReady({...data,origin:{
+      ...data.origin,officialUrl:'https://random.ticket.io/aLr3YQLG/' }},now)).toBe(false);
+    expect(isApprovedTicketIoNewEventSourceReady({...data,genres:[]},now)).toBe(false);
   });
 });

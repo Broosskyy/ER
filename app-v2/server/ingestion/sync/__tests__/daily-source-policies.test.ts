@@ -22,6 +22,12 @@ describe('daily source onboarding contract',()=>{
     });
     expect(isStagingScheduledConnectorId('stadtgarten-official')).toBe(true);
   });
+  it('certifies only bounded source-verified ticket.io organizer shops',()=>{
+    expect(getDailySourcePolicy('ticketio-organizer-discovery')).toMatchObject({
+      writeScope:'upsert',maxNewEvents:8,minimumParsed:1,
+    });
+    expect(isStagingScheduledConnectorId('ticketio-organizer-discovery')).toBe(true);
+  });
   it('does not auto-enable newly registered but uncertified connectors',()=>{
     expect(getDailySourcePolicy('some-future-ticket-provider')).toBeUndefined();
     expect(isStagingScheduledConnectorId('some-future-ticket-provider')).toBe(false);

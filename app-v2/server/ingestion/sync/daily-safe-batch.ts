@@ -80,7 +80,7 @@ export function selectDailySafeBatch(
       continue;
     }
     if (!event.matchedEventId) {
-      if (['rausgegangen-discovery','zakk-official','stadtgarten-official'].includes(preview.run.connectorId) &&
+      if (['rausgegangen-discovery','zakk-official','stadtgarten-official','ticketio-organizer-discovery'].includes(preview.run.connectorId) &&
           event.newEventSourceReady !== true) {
         quarantinedReview++;
         continue;
