@@ -35,6 +35,8 @@ import {
   type StadtgartenListEntry,
 } from './parse-list';
 import { assessStadtgartenScope } from './parse-scope';
+import { processOfficialEventTickets } from '../ticket-evidence/ticket-evidence-pipeline';
+import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
 
 const MAX_DETAIL_PAGES = 40;
 const DETAIL_CONCURRENCY = 3;
@@ -161,6 +163,7 @@ export class StadtgartenOfficialConnector implements OfficialConnector {
     const nowMs = now.getTime();
     const detailUrls = uniqueUrls.slice(0, options.maxDetailPages ?? MAX_DETAIL_PAGES);
     const fetchedUrlSet = new Set<string>();
+    const ticketResults: VerifiedTicketCompleteResult[] = [];
 
     const previews = await mapWithConcurrency(detailUrls, DETAIL_CONCURRENCY, async (detailUrl) => {
       if (fetchedUrlSet.has(detailUrl)) {
@@ -196,9 +199,18 @@ export class StadtgartenOfficialConnector implements OfficialConnector {
       }
 
       if (evidence.startsAt && Date.parse(evidence.startsAt) < nowMs) {
-        evidence.enrichmentGaps = [...new Set([...evidence.enrichmentGaps, 'past_event_skipped'])];
+        return null;
       }
-
+      // Use the original event page to verify a direct ticket-provider link,
+      // sale status and admission price; source-only fallback remains possible.
+      ticketResults.push(await processOfficialEventTickets({
+        sourceEventKey: evidence.sourceEventKey,
+        officialUrl: evidence.officialUrl,
+        title: evidence.title,
+        startsAt: evidence.startsAt,
+        venueName: evidence.venue?.name,
+        organizerName: evidence.organizerLabel,
+      }, { prefetchedHtml: detailResult.html, observedAt: fetchedAt }));
       return buildConsumerPreview(evidence, counters);
     });
 
@@ -215,6 +227,7 @@ export class StadtgartenOfficialConnector implements OfficialConnector {
       previews: includedPreviews,
       counters,
       mediaCounters: createEmptyMediaPassCounters(),
+      ticketResults,
     };
   }
 }
