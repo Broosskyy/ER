@@ -94,9 +94,9 @@ export function assessStadtgartenScope(
   // synthesizers. Keep actual jazz-techno/house/trance crossover bookings
   // when the promoter explicitly names a dance-floor genre.
   const isJazzConcert = categories.some(category => normalizeCategory(category) === 'konzert') &&
-    genreLabels.some(label => /\\bjazz(?:[- ]?fusion)?\\b/i.test(label));
+    genreLabels.some(label => /\bjazz(?:[- ]?fusion)?\b/i.test(label));
   const hasExplicitDanceGenre = genreLabels.some(label =>
-    /\\b(?:hard[ -]?techno|techno|house|trance|psytrance|hardstyle|hardcore|gabber|rave|drum\\s*(?:and|&)\\s*bass|dnb|breakbeat)\\b/i.test(label),
+    /\b(?:hard[ -]?techno|techno|house|trance|psytrance|hardstyle|hardcore|gabber|rave|drum\s*(?:and|&)\s*bass|dnb|breakbeat)\b/i.test(label),
   );
   if (isJazzConcert && !hasExplicitDanceGenre) {
     return 'outside_scope';
