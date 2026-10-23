@@ -37,6 +37,15 @@ export const DAILY_SOURCE_POLICIES = {
     maxExistingUpdates: 25,
     maxTicketChanges: 25,
   },
+  'ticketio-organizer-discovery': {
+    connectorId: 'ticketio-organizer-discovery',
+    writeScope: 'upsert',
+    minimumParsed: 1,
+    maxDetailPages: 30,
+    maxNewEvents: 8,
+    maxExistingUpdates: 12,
+    maxTicketChanges: 12,
+  },
   'stadtgarten-official': {
     connectorId: 'stadtgarten-official',
     writeScope: 'upsert',

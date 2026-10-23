@@ -1,4 +1,5 @@
 import type { EventCandidate } from '../types/event-candidate';
+import { isApprovedTicketIoEventUrl } from '../../official-connectors/ticketio-organizer/url-policy';
 
 /**
  * Minimum event-core evidence for unattended publication from an aggregator.
@@ -89,4 +90,23 @@ export function isStadtgartenNewEventSourceReady(
     candidate.title.trim().length >= 5 &&
     !!candidate.venue?.name?.trim() && !!candidate.venue?.city?.trim() &&
     (candidate.description?.trim().length ?? 0) >= 40;
+}
+
+/** Only allow net-new entries from precisely reviewed official ticket.io
+ * organizer shops. A ticket shop ROOT is never an event or a purchase CTA. */
+export function isApprovedTicketIoNewEventSourceReady(
+  candidate: EventCandidate,
+  referenceInstant = new Date(),
+): boolean {
+  if (candidate.origin.kind !== 'official_connector' ||
+      candidate.origin.connectorId !== 'ticketio-organizer-discovery') return false;
+  let url: URL;
+  try { url = new URL(candidate.origin.officialUrl); } catch { return false; }
+  return isApprovedTicketIoEventUrl(url.toString()) &&
+    Number.isFinite(Date.parse(candidate.startsAt)) &&
+    Date.parse(candidate.startsAt) > referenceInstant.getTime() &&
+    candidate.title.trim().length >= 5 &&
+    (candidate.description?.trim().length ?? 0) >= 40 &&
+    !!candidate.venue?.name?.trim() &&
+    !!candidate.venue?.city?.trim() && candidate.genres.length > 0;
 }

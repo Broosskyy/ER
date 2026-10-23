@@ -22,6 +22,7 @@ const GENRE_CANONICAL: Record<string, { genreKey: string; displayName: string }>
   trance: { genreKey: 'trance', displayName: 'Trance' },
   hardstyle: { genreKey: 'hardstyle', displayName: 'Hardstyle' },
   hardtechno: { genreKey: 'hardtechno', displayName: 'Hard Techno' },
+  schranz: { genreKey: 'schranz', displayName: 'Schranz' },
   'hard techno': { genreKey: 'hardtechno', displayName: 'Hard Techno' },
   'industrial techno': { genreKey: 'industrial-techno', displayName: 'Industrial Techno' },
   'melodic techno': { genreKey: 'melodic-techno', displayName: 'Melodic Techno' },

@@ -39,6 +39,9 @@ export interface TicketIoDetailDomEvidence {
   eventTitle?: string;
   startAt?: string;
   venueName?: string;
+  cityName?: string;
+  venueAddress?: string;
+  countryName?: string;
   descriptionClean?: string;
   imageUrl?: string;
   genreLabels: string[];
@@ -436,6 +439,19 @@ export function parseTicketIoDetailDom(
   const startAt = jsonLd ? String(jsonLd.startDate ?? '').trim() : undefined;
   const location = jsonLd?.location as Record<string, unknown> | undefined;
   const venueName = location ? String(location.name ?? '').trim() : undefined;
+  // Official ticket.io MusicEvent JSON-LD provides the event location as
+  // PostalAddress. Avoid guessing city from shop headquarters or promoter.
+  const postal = location?.address && typeof location.address === 'object'
+    ? location.address as Record<string, unknown> : undefined;
+  const cityName = typeof postal?.addressLocality === 'string'
+    ? postal.addressLocality.trim() : undefined;
+  const countryName = typeof postal?.addressCountry === 'string'
+    ? postal.addressCountry.trim() : undefined;
+  const venueAddress = postal
+    ? [postal.streetAddress,postal.postalCode,cityName,countryName]
+        .filter(part => typeof part === 'string' && part.trim())
+        .join(', ') : undefined;
+
   const offer = jsonLd?.offers as Record<string, unknown> | undefined;
   const offerUrl = offer ? String(offer.url ?? '').trim() : expected?.sourceUrl;
   const canonicalTicketUrl = offerUrl ? canonicalizeTicketIoUrl(offerUrl) : undefined;
@@ -483,6 +499,9 @@ export function parseTicketIoDetailDom(
     eventTitle,
     startAt,
     venueName,
+    cityName,
+    venueAddress,
+    countryName,
     descriptionClean,
     imageUrl,
     genreLabels,

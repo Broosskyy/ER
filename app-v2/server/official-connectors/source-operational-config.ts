@@ -87,6 +87,17 @@ export function registerDefaultSourceOperationalConfigs(
       expectedMinParsedOnSuccess: 3,
     });
   }
+  if (!registry.get('ticketio-organizer-discovery')) {
+    registry.register({
+      connectorId: 'ticketio-organizer-discovery',
+      sourceType: 'event_platform',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+      writeScope: 'upsert',
+      expectedMinParsedOnSuccess: 1,
+      maxConcurrency: 1,
+      requestSpacingMs: 750,
+    });
+  }
   if (!registry.get('stadtgarten-official')) {
     registry.register({
       connectorId: 'stadtgarten-official',

@@ -18,6 +18,7 @@ const GENRE_SIGNALS: ReadonlyArray<{ label: string; expression: RegExp; family?:
   { label: 'Drum & Bass', expression: /\b(?:drum\s*(?:and|&)\s*bass|dnb)\b/i },
   { label: 'Hardstyle', expression: /\bhardstyle\b/i },
   { label: 'Gabber', expression: /\bgabber\b/i },
+  { label: 'Schranz', expression: /\bschranz\b/i },
   { label: 'Hardcore', expression: /\b(?:early[ -]?hardcore|hardcore)\b/i },
   { label: 'Breakbeat', expression: /\bbreakbeat\b/i },
   { label: 'UK Garage', expression: /\b(?:uk[ -]?garage|ukg)\b/i },
