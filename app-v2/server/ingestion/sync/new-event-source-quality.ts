@@ -14,7 +14,7 @@ import type { EventCandidate } from '../types/event-candidate';
  * descriptions mentioning shuttle options are not accidentally suppressed.
  */
 export function isEventServiceInsteadOfPerformance(title: string): boolean {
-  return /^(?:(?:bus|shuttle(?:bus)?)\\s+(?:zu|zur|zum|nach|für)\\b|(?:busfahrt|bustransfer|shuttleservice|shuttlefahrt|busreise|reisebus|transferbus)\\b)/i.test(title.trim());
+  return /^(?:(?:bus|shuttle(?:bus)?)\s+(?:zu|zur|zum|nach|für)\b|(?:busfahrt|bustransfer|shuttleservice|shuttlefahrt|busreise|reisebus|transferbus)\b)/i.test(title.trim());
 }
 
 export function isRausgegangenNewEventSourceReady(
