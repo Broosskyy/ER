@@ -37,6 +37,15 @@ export const DAILY_SOURCE_POLICIES = {
     maxExistingUpdates: 25,
     maxTicketChanges: 25,
   },
+  'stadtgarten-official': {
+    connectorId: 'stadtgarten-official',
+    writeScope: 'upsert',
+    minimumParsed: 1,
+    maxDetailPages: 40,
+    maxNewEvents: 8,
+    maxExistingUpdates: 12,
+    maxTicketChanges: 12,
+  },
   'zakk-official': {
     connectorId: 'zakk-official',
     writeScope: 'upsert',
