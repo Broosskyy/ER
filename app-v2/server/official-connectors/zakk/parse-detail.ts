@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 
 import { fingerprintHtmlPage } from '../fingerprint';
+import { extractExplicitGenresFromPublishedText } from '../shared/published-genre-evidence';
 import {
   discoverTicketLinksFromHtml,
   selectPrimaryTicketLink,
@@ -225,7 +226,11 @@ export function parseZakkDetailPage(
   const linkedTicketUrl = primaryTicket?.rawUrl;
   const officialImageUrl = resolveImageUrl(jsonLd, $);
 
-  const enrichmentGaps: string[] = ['lineup_not_announced', 'genres_missing'];
+  const explicitGenreLabels = extractExplicitGenresFromPublishedText(
+    [title, longDescription || teaser || jsonLd?.description || ''].join(' '),
+  );
+  const enrichmentGaps: string[] = ['lineup_not_announced'];
+  if (explicitGenreLabels.length === 0) enrichmentGaps.push('genres_missing');
   if (!descriptionClean) {
     enrichmentGaps.push('description_missing');
   }
@@ -260,7 +265,7 @@ export function parseZakkDetailPage(
     officialImageUrl,
     linkedTicketUrl,
     lineupCandidates: [],
-    explicitGenreLabels: [],
+    explicitGenreLabels,
     enrichmentGaps,
     rejectedCandidates: [],
   };
