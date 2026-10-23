@@ -28,19 +28,29 @@ const GENRE_SIGNALS: ReadonlyArray<{ label: string; expression: RegExp; family?:
 ];
 export function extractExplicitGenresFromPublishedText(sourceText: string): string[] {
   const genres: string[] = [];
-  const claimedFamilies = new Set<string>();
   for (const signal of GENRE_SIGNALS) {
     const found = signal.expression.exec(sourceText);
     if (!found) continue;
     // Do not claim a genre specifically negated on the official page.
     const context = sourceText.slice(Math.max(0, found.index - 18), found.index);
     if (/(?:\bkein(?:e|en|er)?|\bohne|\bnot|\bno)\s*$/i.test(context)) continue;
-    if (signal.family && claimedFamilies.has(signal.family) &&
-        ['Techno','House','Trance'].includes(signal.label)) continue;
+    // A generic term contained only inside "Hard Techno", "Deep House",
+    // etc. must not create a second genre. But if "House & Hardhouse"
+    // explicitly names both floors, retain both.
+    if (['Techno','House','Trance'].includes(signal.label)) {
+      const matches = [...sourceText.matchAll(
+        new RegExp(signal.expression.source, 'gi'),
+      )];
+      if (matches.every(match => {
+        const contextBefore = sourceText.slice(
+          Math.max(0, (match.index ?? 0) - 18), match.index ?? 0,
+        );
+        return /(?:hard|industrial|melodic|acid|tech|deep|psy)\\s*[- ]?$/i.test(contextBefore);
+      })) continue;
+    }
     const normalized = normalizeOfficialGenreLabels([signal.label]).normalized[0];
     if (normalized) {
       if (!genres.includes(normalized.displayName)) genres.push(normalized.displayName);
-      if (signal.family) claimedFamilies.add(signal.family);
     }
   }
   return genres;
