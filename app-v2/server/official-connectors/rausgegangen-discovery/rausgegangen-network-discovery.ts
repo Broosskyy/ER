@@ -17,6 +17,7 @@ import {
 import { fetchRausgegangenHtml, type FetchResult } from './rausgegangen-fetch';
 import { parseRausgegangenEventDetail } from './parse-rausgegangen-detail';
 import { normalizeRausgegangenEventUrl, extractEventSlugFromUrl } from './rausgegangen-url';
+import { selectRotatingRausgegangenDetails } from './rotating-detail-selection';
 import {
   mergeListingSurfaces,
   parseRausgegangenCityListing,
@@ -41,6 +42,11 @@ export interface RausgegangenNetworkDiscoveryOptions {
   regionSlugs?: string[];
   /** Exact existing public DB sources to refresh ahead of new discoveries. */
   preferredEventUrls?: string[];
+  /** All existing canonical source URLs, to avoid repeatedly re-probing them. */
+  knownEventUrls?: string[];
+  /** Directly recheck ONLY preflight-selected exact source URLs on apply. */
+  preferredOnly?: boolean;
+  selectionSlot?: number;
   requestDelayMs?: number;
   onVerifiedDetail?: (input: {
     candidate: RausgegangenDiscoveryCandidate;
@@ -115,12 +121,15 @@ export async function runRausgegangenNetworkDiscovery(
   };
 
   const fetchOptions = { cacheDir, requestDelayMs: options.requestDelayMs };
-  const homepage = await fetchRausgegangenHtml(`${RAUSGEGANGEN_BASE_URL}/`, fetchOptions);
-  const discoveredSlugs = options.regionSlugs ?? discoverRegionSlugsFromHomepageHtml(homepage.html);
+  const homepage = options.preferredOnly
+    ? null : await fetchRausgegangenHtml(`${RAUSGEGANGEN_BASE_URL}/`, fetchOptions);
+  const discoveredSlugs = options.preferredOnly ? []
+    : options.regionSlugs ?? discoverRegionSlugsFromHomepageHtml(homepage?.html ?? '');
   // An explicitly bounded schedule/smoke set must not expand into a
   // Germany-wide crawl. Default exploration still discovers broad regions.
   const regionSlugs = [...new Set(
-    options.regionSlugs ?? [...PRIORITY_GERMAN_CITY_SLUGS, ...discoveredSlugs],
+    options.preferredOnly ? [] :
+      options.regionSlugs ?? [...PRIORITY_GERMAN_CITY_SLUGS, ...discoveredSlugs],
   )].slice(0, bounds.maxRegions);
 
   const listingCounts = new Map<string, number>();
@@ -183,20 +192,17 @@ export async function runRausgegangenNetworkDiscovery(
 
   let candidates = mergedListings.map((entry) => listingEntryToCandidate(entry, referenceInstant));
 
-  const detailTargets = candidates
-    .slice()
-    .sort((left, right) => {
-      const leftScore =
-        (preferredSlugs.has(left.eventSlug) ? 100 : 0) +
-        (left.relevance === 'HIGH_RELEVANCE' ? 4 : left.relevance === 'LIKELY_RELEVANT' ? 3 : left.relevance === 'AMBIGUOUS' ? 2 : 1) +
-        (PRIORITY_GERMAN_CITY_SLUGS.includes(left.regionSlug) ? 2 : 0);
-      const rightScore =
-        (preferredSlugs.has(right.eventSlug) ? 100 : 0) +
-        (right.relevance === 'HIGH_RELEVANCE' ? 4 : right.relevance === 'LIKELY_RELEVANT' ? 3 : right.relevance === 'AMBIGUOUS' ? 2 : 1) +
-        (PRIORITY_GERMAN_CITY_SLUGS.includes(right.regionSlug) ? 2 : 0);
-      return rightScore - leftScore;
-    })
-    .slice(0, bounds.maxDetailCandidates);
+  const knownSlugs = new Set<string>();
+  for (const raw of options.knownEventUrls ?? []) {
+    const slug = extractEventSlugFromUrl(raw);
+    if (slug) knownSlugs.add(slug);
+  }
+  const detailTargets = selectRotatingRausgegangenDetails(candidates, {
+    preferredSlugs,
+    knownSlugs,
+    slot: options.selectionSlot ?? Math.floor(referenceInstant.getTime() / 21_600_000),
+    limit: bounds.maxDetailCandidates,
+  });
 
   const detailBySlug = new Map<string, RausgegangenDiscoveryCandidate>();
   const detailFetchBySlug = new Map<string, FetchResult>();
