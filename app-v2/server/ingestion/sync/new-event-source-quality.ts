@@ -1,4 +1,5 @@
 import type { EventCandidate } from '../types/event-candidate';
+import { isApprovedTicketIoEventUrl } from '../../official-connectors/ticketio-organizer/url-policy';
 
 /**
  * Minimum event-core evidence for unattended publication from an aggregator.
@@ -101,10 +102,7 @@ export function isApprovedTicketIoNewEventSourceReady(
       candidate.origin.connectorId !== 'ticketio-organizer-discovery') return false;
   let url: URL;
   try { url = new URL(candidate.origin.officialUrl); } catch { return false; }
-  const approved = ['area51events.ticket.io', 'electric-horizon.ticket.io'];
-  return url.protocol === 'https:' && approved.includes(url.hostname) &&
-    /^\/[a-z0-9]{8}\/?$/i.test(url.pathname) &&
-    !url.username && !url.password &&
+  return isApprovedTicketIoEventUrl(url.toString()) &&
     Number.isFinite(Date.parse(candidate.startsAt)) &&
     Date.parse(candidate.startsAt) > referenceInstant.getTime() &&
     candidate.title.trim().length >= 5 &&

@@ -5,6 +5,11 @@ import * as cheerio from 'cheerio';
 export const APPROVED_TICKETIO_SHOP_HOSTS = [
   'area51events.ticket.io',
   'electric-horizon.ticket.io',
+  'techno-rave.ticket.io',
+  'lieberscholli.ticket.io',
+  'capitolpaderborn.ticket.io',
+  'sheg-events.ticket.io',
+  's-club-fulda.ticket.io',
 ] as const;
 
 export function isApprovedTicketIoEventUrl(raw: string): boolean {
@@ -35,4 +40,28 @@ export function listApprovedTicketIoShopEvents(html: string, shopHost: string): 
     }
   });
   return [...links];
+}
+
+
+/** Interleave distinct organizer calendars, so the first busy shop cannot
+ * monopolize a bounded nationwide admission-check window. */
+export function pickBalancedTicketIoEventUrls(
+  shopLists: readonly (readonly string[])[],
+  limit: number,
+): string[] {
+  if (!Number.isInteger(limit) || limit < 0 || limit > 40)
+    throw new Error('invalid_ticketio_import_limit');
+  const output: string[] = [];
+  const seen = new Set<string>();
+  const maxDepth = Math.max(0,...shopLists.map(list=>list.length));
+  for (let depth=0;depth<maxDepth && output.length<limit;depth++) {
+    for (const shop of shopLists) {
+      const url=shop[depth];
+      if (!url || seen.has(url) || !isApprovedTicketIoEventUrl(url)) continue;
+      seen.add(url);
+      output.push(url);
+      if (output.length>=limit) break;
+    }
+  }
+  return output;
 }

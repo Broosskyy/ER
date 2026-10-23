@@ -17,10 +17,10 @@ import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-aud
 import { extractExplicitGenresFromPublishedText } from '../shared/published-genre-evidence';
 import { normalizeOfficialGenreLabels } from '../shared/normalize-genre';
 import { inferLineupEvidenceRole, validateOfficialLineupAct } from '../shared/lineup-normalization';
-import { APPROVED_TICKETIO_SHOP_HOSTS, isApprovedTicketIoEventUrl, listApprovedTicketIoShopEvents } from './url-policy';
+import { APPROVED_TICKETIO_SHOP_HOSTS, isApprovedTicketIoEventUrl, listApprovedTicketIoShopEvents, pickBalancedTicketIoEventUrls } from './url-policy';
 
 export const TICKETIO_ORGANIZER_CONNECTOR_ID = 'ticketio-organizer-discovery';
-const MAX_DETAILS = 30;
+const MAX_DETAILS = 40;
 const sourceHeader = { 'User-Agent': 'EternalRave-OfficialConnector/1.0', Accept:'text/html' };
 
 function assertSourceUrl(url: URL): void {
@@ -84,14 +84,17 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
     const counters = createEmptyConnectorCounters();
     const now = options.now?.() ?? new Date();
     const fetchedAt = now.toISOString();
-    const discovered = new Set<string>();
+    const shopLists: string[][] = [];
 
+    // Fail closed if one approved shop cannot be fetched: skipping a single
+    // provider should not fabricate missing prices or duplicate other shops.
     for (const host of APPROVED_TICKETIO_SHOP_HOSTS) {
       const root='https://' + host + '/';
       const list=await this.fetchHtml(root,{counters},{allowListOnly:true});
-      for(const url of this.discoverFromListHtml(list.html,list.finalUrl).detailUrls) discovered.add(url);
+      shopLists.push(this.discoverFromListHtml(list.html,list.finalUrl).detailUrls);
     }
-    const urls=[...discovered].slice(0,Math.min(MAX_DETAILS,options.maxDetailPages ?? MAX_DETAILS));
+    const discovered=[...new Set(shopLists.flat())];
+    const urls=pickBalancedTicketIoEventUrls(shopLists,Math.min(MAX_DETAILS,options.maxDetailPages ?? MAX_DETAILS));
     const previews: OfficialConnectorRunResult['previews']=[];
     const ticketResults:VerifiedTicketCompleteResult[]=[];
     const loaded:string[]=[];
@@ -173,7 +176,7 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
 
     return {
       fetchedAt,listUrl:this.metadata.defaultListUrl!,
-      discoveredDetailUrls:[...discovered],loadedDetailUrls:loaded,
+      discoveredDetailUrls:discovered,loadedDetailUrls:loaded,
       previews,counters,ticketResults,mediaCounters:createEmptyMediaPassCounters(),
     };
   }
