@@ -2,6 +2,7 @@ import * as cheerio from 'cheerio';
 
 import { fingerprintHtmlPage } from '../fingerprint';
 import { extractExplicitGenresFromPublishedText } from '../shared/published-genre-evidence';
+import { extractZakkPublishedTechnoBilling } from './explicit-techno-lineup';
 import {
   discoverTicketLinksFromHtml,
   selectPrimaryTicketLink,
@@ -229,7 +230,10 @@ export function parseZakkDetailPage(
   const explicitGenreLabels = extractExplicitGenresFromPublishedText(
     [title, longDescription || teaser || jsonLd?.description || ''].join(' '),
   );
-  const enrichmentGaps: string[] = ['lineup_not_announced'];
+  // Empty is valid: an unannounced lineup should not be invented or replaced
+  // with generic "TBA" artist rows.
+  const lineupCandidates = extractZakkPublishedTechnoBilling(longDescription || '');
+  const enrichmentGaps: string[] = lineupCandidates.length ? [] : ['lineup_not_announced'];
   if (explicitGenreLabels.length === 0) enrichmentGaps.push('genres_missing');
   if (!descriptionClean) {
     enrichmentGaps.push('description_missing');
@@ -264,7 +268,7 @@ export function parseZakkDetailPage(
     descriptionClean,
     officialImageUrl,
     linkedTicketUrl,
-    lineupCandidates: [],
+    lineupCandidates,
     explicitGenreLabels,
     enrichmentGaps,
     rejectedCandidates: [],
