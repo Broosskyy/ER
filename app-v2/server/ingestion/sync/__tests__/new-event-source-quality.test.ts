@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EventCandidate } from '../../types/event-candidate';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady } from '../new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady, isEventServiceInsteadOfPerformance } from '../new-event-source-quality';
 
 function candidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
   return {
@@ -60,5 +60,19 @@ describe('Stadtgarten official electronic-source fallback',()=>{
     expect(isStadtgartenNewEventSourceReady({...event,description:''},now)).toBe(false);
     expect(isStadtgartenNewEventSourceReady({...event,origin:{
       ...event.origin,officialUrl:'https://www.stadtgarten.de/programm/'}},now)).toBe(false);
+  });
+});
+
+describe('transport listings are not rave events',()=>{
+  it('quarantines bus and shuttle transfer pages even with hardcore keywords',()=>{
+    const service=candidate({title:'Bus zur Pandemonium 2026 (Gabber und Early Hardcore)'});
+    expect(isEventServiceInsteadOfPerformance(service.title)).toBe(true);
+    expect(isRausgegangenNewEventSourceReady(service,now)).toBe(false);
+  });
+  it('preserves genuine music nights even when their descriptions discuss travel',()=>{
+    const event=candidate({title:'Bus Stop Rave with the DJs',
+      description:'Ticket includes additional bus-shuttle options to the venue'});
+    expect(isEventServiceInsteadOfPerformance(event.title)).toBe(false);
+    expect(isRausgegangenNewEventSourceReady(event,now)).toBe(true);
   });
 });
