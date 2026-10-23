@@ -17,6 +17,7 @@ import { dedupeDescription, qualifyLineup } from '../ticket-evidence/network-dis
 import type { EventWritePlan } from '../../ingestion/types/event-candidate';
 import { isPlanIdempotent } from '../../ingestion/planning/event-write-planner';
 import { RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID } from './constants';
+import { extractExplicitGenresFromPublishedText } from '../shared/published-genre-evidence';
 
 export { RAUSGEGANGEN_DISCOVERY_CONNECTOR_ID };
 
@@ -67,12 +68,13 @@ function buildLineupCandidates(lineup: string[]): OfficialLineupCandidate[] {
 
 function explicitGenreLabels(enriched: EnrichedTicketIoEvent): string[] {
   return [
-    ...new Set(
-      enriched.genreCandidates
+    ...new Set([
+      ...enriched.genreCandidates
         .filter((genre) => genre.confidence === 'explicit' || genre.confidence === 'strong_inferred')
         .map((genre) => genre.label.trim())
         .filter(Boolean),
-    ),
+      ...extractExplicitGenresFromPublishedText(enriched.description ?? ''),
+    ]),
   ];
 }
 
