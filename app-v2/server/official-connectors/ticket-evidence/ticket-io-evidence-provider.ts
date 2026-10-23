@@ -183,6 +183,8 @@ export class TicketIoEvidenceProvider implements TicketEvidenceProvider {
         rawTitle: domEvidence.eventTitle,
         startAt: domEvidence.startAt,
         venueName: domEvidence.venueName,
+        cityName: domEvidence.cityName,
+        venueAddress: domEvidence.venueAddress,
         description: domEvidence.descriptionClean,
         imageUrl: domEvidence.imageUrl,
       },
