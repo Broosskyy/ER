@@ -54,12 +54,24 @@ export function parseTicketIoVisibleEventMetadata(html: string): TicketIoVisible
   const $ = cheerio.load(html);
   $('script,style,noscript,nav,footer').remove();
   const fullText = normalizeText($('body').text());
-  const eventTitle = normalizeText($('h1').first().text() ||
-    $('meta[property="og:title"]').attr('content') || '');
-  if (!eventTitle || eventTitle.length < 5 || eventTitle.length > 190 ||
-      /(?:tickets?\s+(?:für|for)|ticketshop benötigt javascript)/i.test(eventTitle)) return {};
+  // Ticket.io sometimes renders a JavaScript warning above the event h2.
+  // Headline order alone is unreliable. Prefer an explicit event heading near
+  // the dated Location/Date/Time summary, not a shop/page-global title.
+  const candidates = $('h1,h2,h3,[itemprop="name"]')
+    .toArray().map(node=>normalizeText($(node).text()))
+    .filter(value=>value.length>=5 && value.length<=190 &&
+      !/^(?:tickets?|infos?|ticketshop|javascript|shopping cart|warenkorb)$/i.test(value) &&
+      !/ticketshop benötigt javascript|(?:tickets?\s+(?:für|for))\b/i.test(value));
+  const metaTitle = normalizeText(
+    $('meta[property="og:title"]').attr('content') || '',
+  ).replace(/^Tickets?\s+(?:für|for)\s+/i,'')
+    .replace(/\s*[|–-]\s*(?:Karten|Tickets?)\s+(?:und Infos|and info).*$/i,'');
+  const eventTitle = candidates.find(name=>name === metaTitle)
+    ?? candidates.find(name=>!/(?:Ausverkauft|Sold out|Informationen zum Event|Buy tickets)/i.test(name))
+    ?? (metaTitle.length>=5 && metaTitle.length<=190 ? metaTitle : '');
+  if (!eventTitle || !/^[^<>]{5,190}$/.test(eventTitle)) return {};
 
-  const labelPattern = /(?:Adresse\s*\/\s*Location|Address\s*\/\s*Location)\s*:\s*(.{3,200}?)\s*(?:calendar_month\s*)?(?:Datum|Date)\s+(?:(?:Mo|Di|Mi|Do|Fr|Sa|So|Mon|Tue|Wed|Thu|Fri|Sat|Sun)\.?\s*)?(\d{1,2}[./]\d{1,2}[./]\d{4})\s*(?:schedule\s*)?(?:Uhrzeit|Time)\s*:?\s*(\d{1,2}:\d{2})/i;
+  const labelPattern = /(?:Adresse\s*\/\s*Location|Address\s*\/\s*Location)\s*:?\s*(.{3,200}?)\s*(?:calendar_month\s*)?(?:Datum|Date)\s+(?:(?:Mo|Di|Mi|Do|Fr|Sa|So|Mon|Tue|Wed|Thu|Fri|Sat|Sun)\.?\s*)?(\d{1,2}[./]\d{1,2}[./]\d{4})\s*(?:schedule\s*)?(?:Uhrzeit|Time)\s*:?\s*(\d{1,2}:\d{2})/i;
   const summary = labelPattern.exec(fullText);
   if (!summary) return { title: eventTitle };
   const venueCity = normalizeText(summary[1] ?? '');
@@ -92,22 +104,17 @@ export function parseTicketIoVisibleEventMetadata(html: string): TicketIoVisible
     }
   }
   if (!description) {
-    // An event-specific fallback stops at the ticket-product table. It must
-    // include the same explicitly titled event; generic shop or footer copy
-    // cannot count as a description.
-    const startIndex = fullText.indexOf(eventTitle);
-    const endMatch = /\bTickets?\s+(?:Einzelpreis|Single\s+price)\b/i.exec(
-      fullText.slice(Math.max(0,startIndex + eventTitle.length)),
-    );
-    if (startIndex >= 0 && endMatch) {
-      const start = startIndex + eventTitle.length;
-      const afterSummary = fullText.indexOf(summary[0],start);
-      const contentStart = afterSummary >= 0 ? afterSummary + summary[0].length : start;
-      const end = start + endMatch.index;
-      const extracted = normalizeText(fullText.slice(contentStart,end));
+    // The event-specific summary is the reliable boundary even when the
+    // headline occurs twice (h1 and h2). Capture only content between that
+    // summary and the *first* ticket table, never cart/insurance/footer copy.
+    const afterSummary = fullText.slice(summary.index + summary[0].length);
+    const ticketTable = /\bTickets?\s*(?:Einzelpreis|Single\s+price|Preis\s*Anzahl|Price\s*Quantity)\b/i.exec(afterSummary);
+    if (ticketTable && ticketTable.index <= 8000) {
+      const extracted = normalizeText(afterSummary.slice(0,ticketTable.index));
       if (extracted.length >= 40 && extracted.length <= 8000 &&
-          !/^(?:ticketshop|cookies?|datenschutz|impressum)/i.test(extracted))
+          !/^(?:ticketshop|cookies?|datenschutz|impressum)/i.test(extracted)) {
         description = extracted;
+      }
     }
   }
 

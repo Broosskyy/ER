@@ -48,3 +48,42 @@ describe('ticket.io visible event fallback when JSON-LD is absent',()=>{
     expect(result.event.cityName).toBe('Düsseldorf');
   });
 });
+
+describe('production-shaped Ticket.io event headings and description section',()=>{
+  function productionPage(dateLabel: string, location: string, title: string, prose: string): string {
+    return [
+      '<html><head><meta property="og:title" content="Tickets für '+title+' | Karten und Infos auf ticket.io"/></head><body>',
+      '<h1>Dieser Ticketshop benötigt JavaScript, du hast jedoch leider in Deinem Browser kein JavaScript aktiviert.</h1>',
+      '<h2>'+title+'</h2>',
+      '<p>location_on '+location+' calendar_month '+dateLabel+' schedule Uhrzeit 22:00 Uhr</p>',
+      '<h3>WELCOME TO CHAPTER THREE</h3><p>'+prose+'</p>',
+      '<table><tr><th>Tickets</th><th>Einzelpreis</th><th>Anzahl</th></tr>',
+      '<tr><td>REGULAR TICKET</td><td>15,00 Euro</td></tr></table>',
+      '<footer>Versicherung / Datenschutz und Anbieterangaben</footer>',
+      '</body></html>',
+    ].join('');
+  }
+  it('recovers a German ticket.io page with repeated title and no description CSS class',()=>{
+    const title='AREA51 TECHNO - HART AN DER GRENZE, Chapter 3 x AMPERE Düsseldorf';
+    const page=productionPage('Datum Sa. 28.11.2026',
+      'Adresse/Location:Ampere, Düsseldorf',title,
+      'SCHRANZ WITH HARDER TAKEOVER. HOEHENANGST, LIO, DØPAIR, SEELSORGER und DUTCHMAN. 28 NOVEMBER 2026.');
+    const parsed=parseTicketIoVisibleEventMetadata(page);
+    expect(parsed.title).toBe(title);
+    expect(parsed.startsAt).toBe('2026-11-28T22:00:00+01:00');
+    expect(parsed.venueName).toBe('Ampere');
+    expect(parsed.cityName).toBe('Düsseldorf');
+    expect(parsed.descriptionClean).toContain('SCHRANZ WITH HARDER TAKEOVER');
+    expect(parsed.descriptionClean).not.toContain('15,00 Euro');
+  });
+  it('reads English Date and Time formatting without inventing venue or future dates',()=>{
+    const title='ELECTRIC HORIZON - halle02 | HEIDELBERG';
+    const page=productionPage('Date Sat. 21/11/2026',
+      'Address/Location:halle02 - Heidelberg, Heidelberg',title,
+      'Zwei Floors Hardtechno, Trance & Bounce in der halle02. PARAÇEK, IN VERRUF, KOTORRI und DEGUZMAN.');
+    const parsed=parseTicketIoVisibleEventMetadata(page);
+    expect(parsed.startsAt).toBe('2026-11-21T22:00:00+01:00');
+    expect(parsed.cityName).toBe('Heidelberg');
+    expect(parsed.descriptionClean).toContain('Hardtechno');
+  });
+});
