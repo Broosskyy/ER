@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/staging-sync-ticketio-organizers.yml'
+      - 'app-v2/server/official-connectors/ticket-evidence/parse-ticketio-visible-event-metadata.ts'
+      - 'app-v2/server/official-connectors/ticket-evidence/parse-ticket-io-detail-dom.ts'
   schedule:
     - cron: '53 12 * * *'
   workflow_dispatch:

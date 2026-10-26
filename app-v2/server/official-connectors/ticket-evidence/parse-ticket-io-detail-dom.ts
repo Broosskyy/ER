@@ -15,6 +15,7 @@ import { isTicketProviderBlockedBody } from './safe-fetch-ticket';
 import { extractPrimaryPageImageUrl } from '../media-evidence/extract-page-image-url';
 import { extractTicketProviderGenreLabels } from './extract-ticket-provider-genres';
 import { extractLineupFromTicketKingsDescription } from './parse-ticket-kings-detail-dom';
+import { parseTicketIoVisibleEventMetadata } from './parse-ticketio-visible-event-metadata';
 
 export type CachedResponseClassification =
   | 'security_challenge_only'
@@ -420,7 +421,14 @@ export function parseTicketIoDetailDom(
 ): TicketIoDetailDomEvidence | undefined {
   const hasEmbeddedJson = Boolean(extractEmbeddedJsonPayload(body));
   const classification = classifyCachedTicketIoResponse(body);
-  if (classification === 'security_challenge_only' && !hasEmbeddedJson) {
+  // Ticket.io public pages can have real title/date/place facts but no
+  // structured JSON-LD or detected ticket product nodes at all. Requiring a
+  // product HTML selector here silently discarded 30/30 official details.
+  // Actual bot challenges remain rejected.
+  const visible = expected?.sourceUrl ? parseTicketIoVisibleEventMetadata(body) : {};
+  if (classification === 'security_challenge_only' && !hasEmbeddedJson &&
+      (!visible.startsAt || !visible.venueName || !visible.cityName ||
+       isTicketProviderBlockedBody(body, 'text/html'))) {
     return undefined;
   }
 
@@ -435,31 +443,31 @@ export function parseTicketIoDetailDom(
         ? domOffers
         : jsonLdOffers;
 
-  const eventTitle = jsonLd ? String(jsonLd.name ?? '').trim() : undefined;
-  const startAt = jsonLd ? String(jsonLd.startDate ?? '').trim() : undefined;
+  const eventTitle = (jsonLd ? String(jsonLd.name ?? '').trim() : '') || visible.title;
+  const startAt = (jsonLd ? String(jsonLd.startDate ?? '').trim() : '') || visible.startsAt;
   const location = jsonLd?.location as Record<string, unknown> | undefined;
-  const venueName = location ? String(location.name ?? '').trim() : undefined;
+  const venueName = (location ? String(location.name ?? '').trim() : '') || visible.venueName;
   // Official ticket.io MusicEvent JSON-LD provides the event location as
   // PostalAddress. Avoid guessing city from shop headquarters or promoter.
   const postal = location?.address && typeof location.address === 'object'
     ? location.address as Record<string, unknown> : undefined;
-  const cityName = typeof postal?.addressLocality === 'string'
-    ? postal.addressLocality.trim() : undefined;
-  const countryName = typeof postal?.addressCountry === 'string'
-    ? postal.addressCountry.trim() : undefined;
-  const venueAddress = postal
+  const cityName = (typeof postal?.addressLocality === 'string'
+    ? postal.addressLocality.trim() : '') || visible.cityName;
+  const countryName = (typeof postal?.addressCountry === 'string'
+    ? postal.addressCountry.trim() : '') || visible.countryName;
+  const venueAddress = (postal
     ? [postal.streetAddress,postal.postalCode,cityName,countryName]
         .filter(part => typeof part === 'string' && part.trim())
-        .join(', ') : undefined;
+        .join(', ') : '') || visible.venueAddress;
 
   const offer = jsonLd?.offers as Record<string, unknown> | undefined;
   const offerUrl = offer ? String(offer.url ?? '').trim() : expected?.sourceUrl;
   const canonicalTicketUrl = offerUrl ? canonicalizeTicketIoUrl(offerUrl) : undefined;
   const imageUrl = canonicalTicketUrl ? extractPrimaryPageImageUrl(body, canonicalTicketUrl) : undefined;
   const descriptionClean =
-    jsonLd && typeof jsonLd.description === 'string'
+    (jsonLd && typeof jsonLd.description === 'string'
       ? jsonLd.description.replace(/\s+/g, ' ').trim()
-      : undefined;
+      : '') || visible.descriptionClean;
   const genreLabels = extractTicketProviderGenreLabels({ body, description: descriptionClean });
   const lineupCandidates = extractLineupFromTicketKingsDescription(descriptionClean);
   const providerEventId =
