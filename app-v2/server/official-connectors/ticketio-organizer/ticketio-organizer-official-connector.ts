@@ -100,7 +100,7 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
     const loaded:string[]=[];
     // Counts of publicly fetched pages that did not meet mandatory quality.
     // Avoid logging page bodies or personal information.
-    const qualityReasons:Record<string,number> = {
+    const qualityReasons = {
       provider_not_ticketio:0,
       missing_title:0,
       missing_or_past_date:0,
