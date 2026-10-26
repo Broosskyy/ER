@@ -428,7 +428,7 @@ export function parseTicketIoDetailDom(
   const visible = expected?.sourceUrl ? parseTicketIoVisibleEventMetadata(body) : {};
   if (classification === 'security_challenge_only' && !hasEmbeddedJson &&
       (!visible.startsAt || !visible.venueName || !visible.cityName ||
-       isTicketProviderBlockedBody(body))) {
+       isTicketProviderBlockedBody(body, 'text/html'))) {
     return undefined;
   }
 
