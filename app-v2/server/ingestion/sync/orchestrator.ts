@@ -258,6 +258,14 @@ async function processConnectorResult(
   counters.discovered = connectorResult.discoveredDetailUrls.length;
   counters.fetched = connectorResult.loadedDetailUrls.length;
   counters.parsed = connectorResult.previews.length;
+  if (connectorId === 'ticketio-organizer-discovery' &&
+      counters.fetched >= 5 && counters.parsed === 0) {
+    // A platform that fetched many real event-detail pages but accepted none
+    // has a parsing/quality issue; reporting source health as "healthy" would
+    // hide a permanently stalled nationwide catalog import.
+    counters.failures++;
+    errorCategories.push('unexpected_zero_results');
+  }
 
   const context = await deps.loadPlannerContext(connectorId);
   const candidates = connectorResult.previews.map((preview) => officialEvidenceToEventCandidate(preview));

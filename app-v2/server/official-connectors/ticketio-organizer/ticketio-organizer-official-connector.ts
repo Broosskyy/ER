@@ -98,6 +98,18 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
     const previews: OfficialConnectorRunResult['previews']=[];
     const ticketResults:VerifiedTicketCompleteResult[]=[];
     const loaded:string[]=[];
+    // Counts of publicly fetched pages that did not meet mandatory quality.
+    // Avoid logging page bodies or personal information.
+    const qualityReasons = {
+      provider_not_ticketio:0,
+      missing_title:0,
+      missing_or_past_date:0,
+      missing_venue_or_city:0,
+      missing_event_description:0,
+      missing_explicit_genre:0,
+      foreign_venue:0,
+      selected:0,
+    };
     resetTicketFetchCache();
 
     for (const url of urls) {
@@ -107,7 +119,10 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
       const page=await this.fetchHtml(url,{counters},{allowDetailOnly:true});
       loaded.push(url);
       const provider=defaultTicketProviderRegistry.resolveProvider(new URL(page.finalUrl));
-      if (!provider || provider.providerKey !== 'ticket_io') continue;
+      if (!provider || provider.providerKey !== 'ticket_io') {
+        qualityReasons.provider_not_ticketio++;
+        continue;
+      }
       const sha=createHash('sha256').update(page.html).digest('hex');
       const verified=await provider.fetchEventEvidence({
         url:new URL(page.finalUrl),
@@ -127,12 +142,21 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
         ...extractExplicitGenresFromPublishedText(title + ' ' + description),
       ];
       const genres=normalizeOfficialGenreLabels(explicitLabels).normalized.map(label=>label.displayName);
-      if (!title || !startsAt || Date.parse(startsAt) <= now.getTime() ||
-          !Number.isFinite(Date.parse(startsAt)) || !venueName || !city ||
-          description.length < 40 || genres.length === 0) continue;
+      // Evaluate eligibility in a fixed, exclusive order: every rejected
+      // official URL is counted once and explained in the GitHub run logs.
+      if (!title) { qualityReasons.missing_title++; continue; }
+      if (!startsAt || !Number.isFinite(Date.parse(startsAt)) ||
+          Date.parse(startsAt) <= now.getTime()) {
+        qualityReasons.missing_or_past_date++;
+        continue;
+      }
+      if (!venueName || !city) { qualityReasons.missing_venue_or_city++; continue; }
+      if (description.length < 40) { qualityReasons.missing_event_description++; continue; }
+      if (genres.length === 0) { qualityReasons.missing_explicit_genre++; continue; }
       if (/\b(?:Netherlands|Nederland|Niederlande|Belgium|Belgien|Austria|Österreich)\b/i.test(
         event.venueAddress ?? '',
-      )) continue;
+      )) { qualityReasons.foreign_venue++; continue; }
+      qualityReasons.selected++;
 
       const supplemental=verified.supplementalContent?.lineupCandidates ?? [];
       const lineup=supplemental
@@ -174,6 +198,12 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
       previews.push(buildConsumerPreview(evidence,counters));
     }
 
+    // This is the source of truth for the next integration correction. A
+    // discovered=44/fetched=30/parsed=0 outcome must not look healthy again.
+    console.log('[ticketio-organizer] source-quality-audit ' + JSON.stringify({
+      discovered:discovered.length,fetched:loaded.length,parsed:previews.length,
+      reasons:qualityReasons,
+    }));
     return {
       fetchedAt,listUrl:this.metadata.defaultListUrl!,
       discoveredDetailUrls:discovered,loadedDetailUrls:loaded,
