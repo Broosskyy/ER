@@ -421,7 +421,14 @@ export function parseTicketIoDetailDom(
 ): TicketIoDetailDomEvidence | undefined {
   const hasEmbeddedJson = Boolean(extractEmbeddedJsonPayload(body));
   const classification = classifyCachedTicketIoResponse(body);
-  if (classification === 'security_challenge_only' && !hasEmbeddedJson) {
+  // Ticket.io public pages can have real title/date/place facts but no
+  // structured JSON-LD or detected ticket product nodes at all. Requiring a
+  // product HTML selector here silently discarded 30/30 official details.
+  // Actual bot challenges remain rejected.
+  const visible = expected?.sourceUrl ? parseTicketIoVisibleEventMetadata(body) : {};
+  if (classification === 'security_challenge_only' && !hasEmbeddedJson &&
+      (!visible.startsAt || !visible.venueName || !visible.cityName ||
+       isTicketProviderBlockedBody(body))) {
     return undefined;
   }
 
@@ -436,7 +443,6 @@ export function parseTicketIoDetailDom(
         ? domOffers
         : jsonLdOffers;
 
-  const visible = expected?.sourceUrl ? parseTicketIoVisibleEventMetadata(body) : {};
   const eventTitle = (jsonLd ? String(jsonLd.name ?? '').trim() : '') || visible.title;
   const startAt = (jsonLd ? String(jsonLd.startDate ?? '').trim() : '') || visible.startsAt;
   const location = jsonLd?.location as Record<string, unknown> | undefined;
