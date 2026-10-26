@@ -207,7 +207,8 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
     return {
       fetchedAt,listUrl:this.metadata.defaultListUrl!,
       discoveredDetailUrls:discovered,loadedDetailUrls:loaded,
-      previews,counters,ticketResults,mediaCounters:createEmptyMediaPassCounters(),
+      previews,counters,ticketResults,sourceQualityAudit:qualityReasons,
+      mediaCounters:createEmptyMediaPassCounters(),
     };
   }
 }

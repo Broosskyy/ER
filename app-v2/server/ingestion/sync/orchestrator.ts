@@ -562,7 +562,15 @@ export async function runSourceSync(
     durationMs,
     counters,
     errorCategories,
-    errorSummary: connectorExecution.errorMessage ?? errorCategories.join(','),
+    // Store bounded aggregate details for failed nationwide ticket.io runs in
+    // the existing ingestion_runs.error_summary column. This allows live
+    // diagnosis from Supabase without raw page data or private Actions logs.
+    errorSummary: request.connectorId === 'ticketio-organizer-discovery' &&
+      counters.fetched >= 5 && counters.parsed === 0 &&
+      connectorExecution.result?.sourceQualityAudit
+      ? ('ticketio_rejections:' + JSON.stringify(
+          connectorExecution.result.sourceQualityAudit)).slice(0, 700)
+      : connectorExecution.errorMessage ?? errorCategories.join(','),
     retryCount: Math.max(0, connectorExecution.attempts - 1),
   };
 

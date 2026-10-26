@@ -46,6 +46,8 @@ export interface OfficialConnectorRunResult {
   counters: ConnectorErrorCounters;
   mediaCounters: import('./media-evidence/types').MediaPassCounters;
   ticketResults?: import('./ticket-evidence/ticket-audit-metrics').VerifiedTicketCompleteResult[];
+  /** Aggregate rejection breakdown, never raw bodies or personal data. */
+  sourceQualityAudit?: Record<string, number>;
 }
 
 export interface OfficialConnector {
