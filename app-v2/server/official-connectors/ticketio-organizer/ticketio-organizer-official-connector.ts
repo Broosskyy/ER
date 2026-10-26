@@ -12,6 +12,8 @@ import {
 import { createEmptyMediaPassCounters } from '../media-evidence';
 import { buildConsumerPreview } from '../preview';
 import { defaultTicketProviderRegistry } from '../ticket-evidence/provider-registry';
+import { readTicketIoOfficialCore } from './read-official-event-core';
+import { isTicketProviderBlockedBody } from '../ticket-evidence/safe-fetch-ticket';
 import { processOfficialEventTickets, resetTicketFetchCache } from '../ticket-evidence/ticket-evidence-pipeline';
 import type { VerifiedTicketCompleteResult } from '../ticket-evidence/ticket-audit-metrics';
 import { extractExplicitGenresFromPublishedText } from '../shared/published-genre-evidence';
@@ -21,7 +23,11 @@ import { APPROVED_TICKETIO_SHOP_HOSTS, isApprovedTicketIoEventUrl, listApprovedT
 
 export const TICKETIO_ORGANIZER_CONNECTOR_ID = 'ticketio-organizer-discovery';
 const MAX_DETAILS = 40;
-const sourceHeader = { 'User-Agent': 'EternalRave-OfficialConnector/1.0', Accept:'text/html' };
+const sourceHeader = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+  Accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'de-DE,de;q=0.9,en;q=0.8',
+};
 
 function assertSourceUrl(url: URL): void {
   if (url.protocol !== 'https:' || !APPROVED_TICKETIO_SHOP_HOSTS.includes(url.hostname as never) ||
@@ -102,6 +108,11 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
     // Avoid logging page bodies or personal information.
     const qualityReasons = {
       provider_not_ticketio:0,
+      provider_missing_title:0,
+      public_html_has_event_title:0,
+      public_html_has_date:0,
+      public_html_has_venue_city:0,
+      page_has_challenge_marker:0,
       missing_title:0,
       missing_or_past_date:0,
       missing_venue_or_city:0,
@@ -132,11 +143,21 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
         observedAt:fetchedAt,extractedAt:fetchedAt,
       });
       const event=verified.event;
-      const title=event.rawTitle?.trim() ?? '';
-      const startsAt=event.startAt ?? '';
-      const venueName=event.venueName?.trim() ?? '';
-      const city=event.cityName?.trim() ?? '';
-      const description=(verified.supplementalContent?.descriptionClean ?? event.description ?? '').trim();
+      // Official event-core details are independent of whether checkout was
+      // verifiable. Ticket price/status/link remain separately provider-gated.
+      const official=readTicketIoOfficialCore(page.html,event);
+      if (!event.rawTitle?.trim()) qualityReasons.provider_missing_title++;
+      if (official.sourceTitleFound) qualityReasons.public_html_has_event_title++;
+      if (official.sourceDateFound) qualityReasons.public_html_has_date++;
+      if (official.sourceVenueFound) qualityReasons.public_html_has_venue_city++;
+      if (isTicketProviderBlockedBody(page.html,'text/html'))
+        qualityReasons.page_has_challenge_marker++;
+      const title=official.title;
+      const startsAt=official.startsAt;
+      const venueName=official.venueName;
+      const city=official.cityName;
+      const description=(verified.supplementalContent?.descriptionClean ??
+        event.description ?? official.descriptionClean ?? '').trim();
       const explicitLabels=[
         ...(verified.supplementalContent?.genreLabels ?? []),
         ...extractExplicitGenresFromPublishedText(title + ' ' + description),
@@ -154,7 +175,7 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
       if (description.length < 40) { qualityReasons.missing_event_description++; continue; }
       if (genres.length === 0) { qualityReasons.missing_explicit_genre++; continue; }
       if (/\b(?:Netherlands|Nederland|Niederlande|Belgium|Belgien|Austria|Österreich)\b/i.test(
-        event.venueAddress ?? '',
+        event.venueAddress ?? official.venueAddress ?? '',
       )) { qualityReasons.foreign_venue++; continue; }
       qualityReasons.selected++;
 
@@ -176,8 +197,9 @@ export class TicketIoOrganizerOfficialConnector implements OfficialConnector {
           title,startsAt,venueName,city,description,genres,lineup,
         })).digest('hex'),
         title,startsAt,endsAt:event.endAt,sourceTimezone:'Europe/Berlin',
-        venue:{name:venueName,city,address:event.venueAddress,
-          countryCode:/\b(?:Deutschland|Germany)\b/i.test(event.venueAddress ?? '')?'DE':undefined},
+        venue:{name:venueName,city,address:event.venueAddress ?? official.venueAddress,
+          countryCode:/\b(?:Deutschland|Germany)\b/i.test(
+            event.venueAddress ?? official.venueAddress ?? '')?'DE':undefined},
         organizerLabel:event.organizerName,
         descriptionClean:description,descriptionRaw:description,
         officialImageUrl:event.imageUrl?.startsWith('https://')?event.imageUrl:undefined,
