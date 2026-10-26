@@ -58,6 +58,16 @@ describe('daily safe public event selection',()=>{
     expect(selected.selectedNewEvents).toBe(1);
     expect(selected.bindings.get('source:1')).toBe('https://example.com/e/1');
   });
+  it('admits sixteen independently verified Rausgegangen events and defers the rest',()=>{
+    const batch=preview(Array.from({length:19},(_,i)=>
+      candidate(i,{newEventSourceReady:true,ticketEvidencePriority:i%4})));
+    batch.run.connectorId='rausgegangen-discovery';
+    const selection=selectDailySafeBatch(batch,{newEvents:16,existingUpdates:12});
+    expect(selection.selectedNewEvents).toBe(16);
+    expect(selection.deferredNewEvents).toBe(3);
+    expect(selection.quarantinedReview).toBe(0);
+    expect(selection.bindings.size).toBe(16);
+  });
   it('caps verified inserts but retains safe matched updates and ticket-only noops',()=>{
     const events=[
       ...Array.from({length:16},(_,i)=>candidate(i)),
