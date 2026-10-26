@@ -9,7 +9,10 @@ on:
       - 'app-v2/server/official-connectors/ticket-evidence/parse-ticketio-visible-event-metadata.ts'
       - 'app-v2/server/official-connectors/ticket-evidence/parse-ticket-io-detail-dom.ts'
   schedule:
-    - cron: '53 12 * * *'
+    # The seven ticket.io shops presently return challenge-only HTML to
+    # server-side requests: probe once weekly, not daily. Do not try to
+    # circumvent access controls; organizer event pages remain primary.
+    - cron: '53 12 * * 1'
   workflow_dispatch:
 
 permissions:

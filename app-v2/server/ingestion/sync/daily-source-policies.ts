@@ -72,9 +72,11 @@ export const DAILY_SOURCE_POLICIES = {
     writeScope: 'upsert',
     minimumParsed: 1,
     maxDetailPages: 40,
-    maxNewEvents: 8,
+    // Live dry-runs have verified 14–19 safe NEW events with only 8 slots.
+    // Raise the cap without changing any event-core/identity/provider gates.
+    maxNewEvents: 16,
     maxExistingUpdates: 12,
-    maxTicketChanges: 12,
+    maxTicketChanges: 24,
   },
 } as const satisfies Record<string, DailySourcePolicy>;
 
