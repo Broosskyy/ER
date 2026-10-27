@@ -68,6 +68,8 @@ export interface RausgegangenNetworkDiscoveryResult {
     listingFetchFailed: number;
     detailFetchSuccess: number;
     detailFetchFailed: number;
+    /** Aggregate HTTP/error reasons, no event-level private records. */
+    detailFailureReasons: Record<string, number>;
     blockedRequests: number;
     timeouts: number;
     parseFailures: number;
@@ -115,6 +117,7 @@ export async function runRausgegangenNetworkDiscovery(
     listingFetchFailed: 0,
     detailFetchSuccess: 0,
     detailFetchFailed: 0,
+    detailFailureReasons: {} as Record<string,number>,
     blockedRequests: 0,
     timeouts: 0,
     parseFailures: 0,
@@ -215,6 +218,21 @@ export async function runRausgegangenNetworkDiscovery(
     detailFetchBySlug.set(candidate.eventSlug, response);
     if (!response.ok) {
       accessReliability.detailFetchFailed += 1;
+      const key = response.status === 403 ? 'http_403'
+        : response.status === 404 ? 'http_404'
+        : response.status === 410 ? 'http_410'
+        : response.status === 429 ? 'http_429'
+        : response.status >= 500 ? 'http_5xx'
+        : response.status === 0 && /timeout|aborted/i.test(response.error ?? '')
+          ? 'timeout'
+        : response.status === 0 ? 'network_error'
+        : 'other_http';
+      accessReliability.detailFailureReasons[key] =
+        (accessReliability.detailFailureReasons[key] ?? 0) + 1;
+      if (response.status === 403 || response.status === 429) {
+        accessReliability.blockedRequests += 1;
+      }
+      if (key === 'timeout') accessReliability.timeouts += 1;
       detailBySlug.set(candidate.eventSlug, {
         ...candidate,
         detailFetched: true,

@@ -16,6 +16,16 @@ describe('Stadtgarten source genre focus', () => {
     expect(assessStadtgartenScope(['Konzert'], ['Elektronische Musik']))
       .toBe('include');
   });
+  it('excludes Latin / Cumbia parties unless explicit electronic dance genre is billed', () => {
+    expect(assessStadtgartenScope(['Late Night'], ['Cumbia', 'DJ', 'Dancehall']))
+      .toBe('outside_scope');
+    expect(assessStadtgartenScope(['Late Night'], ['Salsa', 'DJ Sets']))
+      .toBe('outside_scope');
+    expect(assessStadtgartenScope(['Late Night'], ['Cumbia', 'House']))
+      .toBe('include');
+    expect(assessStadtgartenScope(['Late Night'], ['Latin Techno', 'Techno']))
+      .toBe('include');
+  });
   it('does not import unrelated pop or standard jazz concerts', () => {
     expect(assessStadtgartenScope(['Konzert'], ['Jazz']))
       .toBe('outside_scope');
