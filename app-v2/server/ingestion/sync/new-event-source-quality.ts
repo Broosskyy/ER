@@ -1,5 +1,6 @@
 import type { EventCandidate } from '../types/event-candidate';
 import { isApprovedTicketIoEventUrl } from '../../official-connectors/ticketio-organizer/url-policy';
+import { isTresorEventUrl } from '../../official-connectors/tresor/parse-event';
 import {isNonPerformanceEventFormat} from '../../official-connectors/rausgegangen-discovery/format-exclusions';
 
 /**
@@ -111,4 +112,14 @@ export function isApprovedTicketIoNewEventSourceReady(
     (candidate.description?.trim().length ?? 0) >= 40 &&
     !!candidate.venue?.name?.trim() &&
     !!candidate.venue?.city?.trim() && candidate.genres.length > 0;
+}
+
+export function isTresorNewEventSourceReady(candidate:EventCandidate, referenceInstant=new Date()):boolean {
+  if(candidate.origin.kind!=='official_connector' || candidate.origin.connectorId!=='tresor-berlin-official' ||
+    !isTresorEventUrl(candidate.origin.officialUrl)) return false;
+  const time=Date.parse(candidate.startsAt);
+  return Number.isFinite(time) && time>referenceInstant.getTime() &&
+    candidate.title.trim().length>=5 &&
+    candidate.venue?.name==='Tresor' && candidate.venue.city==='Berlin' &&
+    (candidate.description?.trim().length??0)>=40;
 }
