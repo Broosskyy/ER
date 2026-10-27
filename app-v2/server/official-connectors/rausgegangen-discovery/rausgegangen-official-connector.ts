@@ -245,6 +245,16 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
           fetchedDetailPages:discovery.summary.detailFetched,
           detailSuccess:discovery.accessReliability.detailFetchSuccess,
           detailFailure:discovery.accessReliability.detailFetchFailed,
+          // Distinguish dead links (404) from rate limits (429/403) and
+          // timeouts before changing discovery strategy or request cadence.
+          failures403: discovery.accessReliability.detailFailureReasons.http_403 ?? 0,
+          failures404: discovery.accessReliability.detailFailureReasons.http_404 ?? 0,
+          failures410: discovery.accessReliability.detailFailureReasons.http_410 ?? 0,
+          failures429: discovery.accessReliability.detailFailureReasons.http_429 ?? 0,
+          failures5xx: discovery.accessReliability.detailFailureReasons.http_5xx ?? 0,
+          failureTimeouts: discovery.accessReliability.detailFailureReasons.timeout ?? 0,
+          failureNetwork: discovery.accessReliability.detailFailureReasons.network_error ?? 0,
+          failureOtherHttp: discovery.accessReliability.detailFailureReasons.other_http ?? 0,
           parseFailures:discovery.accessReliability.parseFailures,
         },
       };

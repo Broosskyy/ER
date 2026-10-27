@@ -102,6 +102,16 @@ export function assessStadtgartenScope(
     return 'outside_scope';
   }
 
+  // Latin dance / Cumbia / Salsa DJ nights are not automatically techno,
+  // house or electronic raves because the program lists "DJ" or "dancehall".
+  // An explicitly billed Techno/House/Trance crossover remains in scope.
+  const latinOnly = genreLabels.some(label =>
+    /\b(?:cumbia|salsa|bachata|merengue|reggaet[oó]n|latin(?:o|a)?)\b/i.test(label),
+  );
+  if (latinOnly && !hasExplicitDanceGenre) {
+    return 'outside_scope';
+  }
+
   if (hasExplicitElectronicGenreLabels(genreLabels)) {
     return 'include';
   }

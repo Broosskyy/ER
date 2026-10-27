@@ -9,6 +9,7 @@ on:
       - '.github/workflows/staging-sync-rausgegangen.yml'
       - 'app-v2/server/official-connectors/rausgegangen-discovery/format-exclusions.ts'
       - 'app-v2/server/official-connectors/rausgegangen-discovery/rotating-detail-selection.ts'
+      - 'app-v2/server/official-connectors/rausgegangen-discovery/rausgegangen-network-discovery.ts'
   schedule:
     # Four bounded, differently rotated German discovery windows per day.
     # Each job still has dry-run, source-identity and ticket-write guards.
