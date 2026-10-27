@@ -34,7 +34,7 @@ import type { VerifiedTicketCompleteResult } from '../../official-connectors/tic
 import type { TicketPersistenceExecutionResult } from './execute-ticket-persistence';
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady ,isApprovedTicketIoNewEventSourceReady } from './new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady ,isApprovedTicketIoNewEventSourceReady,isTresorNewEventSourceReady } from './new-event-source-quality';
 import { RausgegangenOfficialConnector } from '../../official-connectors/rausgegangen-discovery/rausgegangen-official-connector';
 
 export interface SyncOrchestratorDependencies {
@@ -97,7 +97,9 @@ function canApplyPlan(
        (plan.candidate.origin.connectorId === 'stadtgarten-official' &&
         !isStadtgartenNewEventSourceReady(plan.candidate)) ||
        (plan.candidate.origin.connectorId === 'ticketio-organizer-discovery' &&
-        !isApprovedTicketIoNewEventSourceReady(plan.candidate)))) {
+        !isApprovedTicketIoNewEventSourceReady(plan.candidate)) ||
+       (plan.candidate.origin.connectorId === 'tresor-berlin-official' &&
+        !isTresorNewEventSourceReady(plan.candidate)))) {
     return false;
   }
   return (
@@ -152,7 +154,9 @@ function buildEventProcessingResult(
           : plan.candidate.origin.connectorId === 'stadtgarten-official'
             ? isStadtgartenNewEventSourceReady(plan.candidate)
           : plan.candidate.origin.connectorId === 'ticketio-organizer-discovery'
-            ? isApprovedTicketIoNewEventSourceReady(plan.candidate) : undefined
+            ? isApprovedTicketIoNewEventSourceReady(plan.candidate)
+          : plan.candidate.origin.connectorId === 'tresor-berlin-official'
+            ? isTresorNewEventSourceReady(plan.candidate) : undefined
         : undefined,
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:

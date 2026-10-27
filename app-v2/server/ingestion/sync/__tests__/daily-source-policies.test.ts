@@ -16,6 +16,12 @@ describe('daily source onboarding contract',()=>{
     });
     expect(isStagingScheduledConnectorId('zakk-official')).toBe(true);
   });
+  it('certifies official Tresor Berlin calendar with bounded source writes',()=>{
+    expect(getDailySourcePolicy('tresor-berlin-official')).toMatchObject({
+      writeScope:'upsert',maxNewEvents:6,minimumParsed:1,maxDetailPages:24,
+    });
+    expect(isStagingScheduledConnectorId('tresor-berlin-official')).toBe(true);
+  });
   it('certifies electronic-only Stadtgarten in bounded batches',()=>{
     expect(getDailySourcePolicy('stadtgarten-official')).toMatchObject({
       writeScope:'upsert',maxNewEvents:8,minimumParsed:1,

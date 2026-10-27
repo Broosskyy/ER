@@ -69,6 +69,10 @@ export function resetSourceOperationalConfigRegistryForTests(): void {
 export function registerDefaultSourceOperationalConfigs(
   registry = getSourceOperationalConfigRegistry(),
 ): void {
+  if (!registry.get('tresor-berlin-official')) registry.register({
+    connectorId:'tresor-berlin-official',sourceType:'venue_club',...DEFAULT_SOURCE_OPERATIONAL_CONFIG,
+    writeScope:'upsert',expectedMinParsedOnSuccess:1,maxConcurrency:1,requestSpacingMs:800,
+  });
   if (!registry.get('bootshaus-official')) {
     registry.register({
       connectorId: 'bootshaus-official',

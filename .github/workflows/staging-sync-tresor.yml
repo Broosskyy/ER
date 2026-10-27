@@ -1,0 +1,58 @@
+name: Official Tresor Berlin Electronic Events
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/staging-sync-tresor.yml'
+  schedule:
+    - cron: '21 04 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eternal-rave-public-supabase-cli
+  cancel-in-progress: false
+
+jobs:
+  tresor-electronic-events:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    defaults:
+      run:
+        working-directory: app-v2
+    env:
+      ETERNAL_RAVE_ENABLE_DAILY_SYNC: 'true'
+      ETERNAL_RAVE_PUBLIC_DB_SYNC_ACKNOWLEDGED: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app-v2/package-lock.json
+      - run: npm ci
+      - name: Verify Supabase credential
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: test -n "$SUPABASE_ACCESS_TOKEN"
+      - name: Install ticket-evidence browser
+        run: npx playwright install --with-deps chromium
+      - name: Connect exactly to public-serving project
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx supabase link --project-ref gnkjzinwvmrxcadwebhv --yes
+      - name: Verify and import official Tresor club events
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: npx tsx scripts/run-scheduled-staging-sync.ts tresor-berlin-official
+      - name: Upload audit files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tresor-berlin-source-ticket-audit
+          path: app-v2/.tmp/m9-0-scheduled-sync/
+          if-no-files-found: warn
+          retention-days: 14

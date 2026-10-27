@@ -97,6 +97,7 @@ async function main() {
            OR (s.source_url ILIKE '%rausgegangen.de/events/%' AND '${connectorId}' = 'rausgegangen-discovery')
            OR (s.source_url ILIKE '%zakk.de/event-detail%' AND '${connectorId}' = 'zakk-official')
            OR (s.source_url ILIKE '%stadtgarten.de/programm/%' AND '${connectorId}' = 'stadtgarten-official')
+           OR (s.source_url ILIKE 'https://tresorberlin.com/event/%' AND '${connectorId}' = 'tresor-berlin-official')
            OR (s.source_url ~* '^https://(area51events|electric-horizon|techno-rave|lieberscholli|capitolpaderborn|sheg-events|s-club-fulda)[.]ticket[.]io/[a-z0-9]{8}/' AND '${connectorId}' = 'ticketio-organizer-discovery')
          );`,
     ).map((row) => row.event_id),

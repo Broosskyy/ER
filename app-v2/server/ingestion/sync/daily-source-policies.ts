@@ -46,6 +46,10 @@ export const DAILY_SOURCE_POLICIES = {
     maxExistingUpdates: 12,
     maxTicketChanges: 12,
   },
+  'tresor-berlin-official': {
+    connectorId:'tresor-berlin-official',writeScope:'upsert',minimumParsed:1,
+    maxDetailPages:24,maxNewEvents:6,maxExistingUpdates:8,maxTicketChanges:8,
+  },
   'stadtgarten-official': {
     connectorId: 'stadtgarten-official',
     writeScope: 'upsert',

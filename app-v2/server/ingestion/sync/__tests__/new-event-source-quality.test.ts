@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EventCandidate } from '../../types/event-candidate';
-import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady, isEventServiceInsteadOfPerformance ,isApprovedTicketIoNewEventSourceReady } from '../new-event-source-quality';
+import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady, isEventServiceInsteadOfPerformance ,isApprovedTicketIoNewEventSourceReady,isTresorNewEventSourceReady } from '../new-event-source-quality';
 
 function candidate(overrides: Partial<EventCandidate> = {}): EventCandidate {
   return {
@@ -96,4 +96,20 @@ describe('approved ticket.io organizer discovery',()=>{
       ...data.origin,officialUrl:'https://random.ticket.io/aLr3YQLG/' }},now)).toBe(false);
     expect(isApprovedTicketIoNewEventSourceReady({...data,genres:[]},now)).toBe(false);
   });
+});
+
+describe('Tresor official core event source',()=>{
+ const item={...candidate(),origin:{kind:'official_connector' as const,
+ connectorId:'tresor-berlin-official',sourceEventKey:'tresor:20261030-tresor-meets-downwards-records',
+ officialUrl:'https://tresorberlin.com/event/20261030-tresor-meets-downwards-records/',
+ pageFingerprint:'fp',fetchedAt:'2026-10-27T12:00:00Z'},
+ venue:{name:'Tresor',city:'Berlin',countryCode:'DE'}};
+ it('accepts a real dated official event with description',()=>{
+  expect(isTresorNewEventSourceReady(item,new Date('2026-10-27T12:00:00Z'))).toBe(true);
+ });
+ it('blocks the club root, wrong venue, or missing description',()=>{
+  expect(isTresorNewEventSourceReady({...item,origin:{...item.origin,officialUrl:'https://tresorberlin.com/club/events/'}})).toBe(false);
+  expect(isTresorNewEventSourceReady({...item,venue:{name:'Other',city:'Berlin'}})).toBe(false);
+  expect(isTresorNewEventSourceReady({...item,description:''})).toBe(false);
+ });
 });
