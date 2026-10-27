@@ -11,8 +11,10 @@ const ELECTRONIC_GENRE_SIGNALS = [
   'techno',
   'house',
   'trance',
-  'ambient',
-  'dancehall',
+  'disco',
+  'bounce',
+  'uk garage',
+  'hardgroove',
   'breakbeat',
   'breakbeats',
   'drum & bass',
@@ -26,10 +28,7 @@ const ELECTRONIC_GENRE_SIGNALS = [
   'dub techno',
   'dub house',
   'deep house',
-  'synth',
   'club session',
-  'dj ',
-  ' dj',
 ] as const;
 
 function normalizeCategory(value: string): string {
@@ -96,8 +95,15 @@ export function assessStadtgartenScope(
   const isJazzConcert = categories.some(category => normalizeCategory(category) === 'konzert') &&
     genreLabels.some(label => /\bjazz(?:[- ]?fusion)?\b/i.test(label));
   const hasExplicitDanceGenre = genreLabels.some(label =>
-    /\b(?:hard[ -]?techno|techno|house|trance|psytrance|hardstyle|hardcore|gabber|rave|drum\s*(?:and|&)\s*bass|dnb|breakbeat)\b/i.test(label),
+    /\b(?:hard[ -]?techno|techno|house|trance|psytrance|hardstyle|hardcore|gabber|rave|drum\s*(?:and|&)\s*bass|dnb|breakbeat|hardgroove|uk\s*garage|bounce)\b/i.test(label),
   );
+  // Electronic/ambient art, Art-Pop and hybrid chamber music are not rave
+  // concerts. "Electronica" by itself is not an event-format guarantee.
+  const isConcert = categories.some(category =>
+    normalizeCategory(category) === 'konzert');
+  if (isConcert && !hasExplicitDanceGenre) {
+    return 'outside_scope';
+  }
   if (isJazzConcert && !hasExplicitDanceGenre) {
     return 'outside_scope';
   }

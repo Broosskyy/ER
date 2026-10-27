@@ -10,10 +10,12 @@ describe('Stadtgarten source genre focus', () => {
     expect(assessStadtgartenScope(['Konzert'], ['Jazz','Techno','Global Sound']))
       .toBe('include');
   });
-  it('keeps electronic club nights and jazz-free electronic performances', () => {
+  it('keeps actual electronic club nights, but not broad-label concerts', () => {
     expect(assessStadtgartenScope(['Late Night'], ['House', 'Disco']))
       .toBe('include');
     expect(assessStadtgartenScope(['Konzert'], ['Elektronische Musik']))
+      .toBe('outside_scope');
+    expect(assessStadtgartenScope(['Konzert'], ['Techno']))
       .toBe('include');
   });
   it('excludes Latin / Cumbia parties unless explicit electronic dance genre is billed', () => {
@@ -31,5 +33,24 @@ describe('Stadtgarten source genre focus', () => {
       .toBe('outside_scope');
     expect(assessStadtgartenScope(['Konzert'], ['Pop']))
       .toBe('outside_scope');
+  });
+});
+
+describe('regressions from published irrelevant Stadtgarten events',()=>{
+  it('rejects electronica art-pop, ambient concert, string quartet and reggae-only club night',()=>{
+    expect(assessStadtgartenScope(['Konzert'], ['Electronica','Chanson','Art Pop']))
+      .toBe('outside_scope'); // Dillon
+    expect(assessStadtgartenScope(['Konzert'], ['Electronica','Ambient','Zeitgenössische Kammermusik']))
+      .toBe('outside_scope'); // PULSE
+    expect(assessStadtgartenScope(['Konzert'], ['Electronic','Ambient','Environmental Music']))
+      .toBe('outside_scope'); // Visible Cloaks
+    expect(assessStadtgartenScope(['Late Night'], ['Reggae','Dancehall','Hip Hop','Afrobeat']))
+      .toBe('outside_scope'); // KingStone Sound
+  });
+  it('preserves known electronic dance-floor lineups and 11.11 club formats',()=>{
+    expect(assessStadtgartenScope(['Late Night'], ['House','Tech-House'])).toBe('include');
+    expect(assessStadtgartenScope(['Late Night'], ['R&B','Elektro','Global Club Music'])).toBe('include');
+    expect(assessStadtgartenScope(['Late Night'], ['Electronica','Disco','Pop'])).toBe('include');
+    expect(assessStadtgartenScope(['Konzert'], ['Breakbeat','Hard Trance'])).toBe('include');
   });
 });
