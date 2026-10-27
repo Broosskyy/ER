@@ -1,5 +1,6 @@
 import type { EventCandidate } from '../types/event-candidate';
 import { isApprovedTicketIoEventUrl } from '../../official-connectors/ticketio-organizer/url-policy';
+import {isNonPerformanceEventFormat} from '../../official-connectors/rausgegangen-discovery/format-exclusions';
 
 /**
  * Minimum event-core evidence for unattended publication from an aggregator.
@@ -38,6 +39,7 @@ export function isRausgegangenNewEventSourceReady(
     timestamp > referenceInstant.getTime() &&
     candidate.title.trim().length >= 5 &&
     !isEventServiceInsteadOfPerformance(candidate.title) &&
+    !isNonPerformanceEventFormat(candidate.title,candidate.description ?? '') &&
     !!candidate.venue?.name?.trim() &&
     !!candidate.venue?.city?.trim() &&
     (candidate.description?.trim().length ?? 0) >= 40

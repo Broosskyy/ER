@@ -7,6 +7,7 @@ import type {
   OfficialConnectorRunResult,
 } from '../connector-contract';
 import { createEmptyMediaPassCounters } from '../media-evidence';
+import {isNonPerformanceEventFormat} from './format-exclusions';
 import { buildConsumerPreview } from '../preview';
 import { createPlaywrightTicketBrowserOps } from '../ticket-evidence/create-playwright-ticket-browser-ops';
 import type { DetailFetchResult } from '../ticket-evidence/network-discovery/detail-fetch';
@@ -175,6 +176,7 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
     const previews: OfficialConnectorRunResult['previews'] = [];
     const ticketResults: VerifiedTicketCompleteResult[] = [];
     const loadedDetailUrls: string[] = [];
+    const selectionQuality={pastOrEnded:0,notElectronic:0,notDanceEvent:0,unready:0,accepted:0};
     const browserOps = createPlaywrightTicketBrowserOps({ ticketPageWaitMs: 3_000 });
     resetTicketFetchCache();
 
@@ -196,12 +198,15 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
         listingConcurrency: 2,
         requestDelayMs: options.requestDelayMs,
         onVerifiedDetail: async ({ enriched, fetchResult }) => {
-          if (
-            enriched.lifecycle === 'ENDED' ||
-            enriched.relevance === 'IRRELEVANT' ||
-            enriched.relevance === 'AMBIGUOUS'
-          ) {
-            return;
+          if (enriched.lifecycle === 'ENDED') {
+            selectionQuality.pastOrEnded++; return;
+          }
+          if (enriched.relevance === 'IRRELEVANT' ||
+              enriched.relevance === 'AMBIGUOUS') {
+            selectionQuality.notElectronic++; return;
+          }
+          if (isNonPerformanceEventFormat(enriched.title, enriched.description ?? '')) {
+            selectionQuality.notDanceEvent++; return;
           }
 
           const finalized = await finalizeRausgegangenControlledImportEvidence(
@@ -212,8 +217,9 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
           );
 
           if (finalized.evidence.enrichmentGaps.includes('past_event_skipped')) {
-            return;
+            selectionQuality.unready++; return;
           }
+          selectionQuality.accepted++;
 
           previews.push(buildConsumerPreview(finalized.evidence, counters));
           loadedDetailUrls.push(finalized.evidence.officialUrl);
@@ -234,6 +240,13 @@ export class RausgegangenOfficialConnector implements OfficialConnector {
         counters,
         mediaCounters,
         ticketResults,
+        sourceQualityAudit:{
+          ...selectionQuality,
+          fetchedDetailPages:discovery.summary.detailFetched,
+          detailSuccess:discovery.accessReliability.detailFetchSuccess,
+          detailFailure:discovery.accessReliability.detailFetchFailed,
+          parseFailures:discovery.accessReliability.parseFailures,
+        },
       };
     } finally {
       await browserOps.close();

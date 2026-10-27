@@ -29,3 +29,16 @@ describe('rotating Rausgegangen nationwide discovery',()=>{
     expect(()=>selectRotatingRausgegangenDetails(items,{slot:0,limit:501})).toThrow();
   });
 });
+
+describe('relevance/lifecycle gating before limited requests',()=>{
+  it('skips expired and clearly irrelevant listings instead of spending the entire detail budget',()=>{
+    const pool=[
+      {eventSlug:'past',regionSlug:'berlin',relevance:'HIGH_RELEVANCE',lifecycle:'ENDED' as const},
+      {eventSlug:'pop',regionSlug:'berlin',relevance:'IRRELEVANT',lifecycle:'UPCOMING' as const},
+      {eventSlug:'rave',regionSlug:'hamburg',relevance:'HIGH_RELEVANCE',lifecycle:'UPCOMING' as const},
+      {eventSlug:'new',regionSlug:'koeln',relevance:'LIKELY_RELEVANT',lifecycle:'UNKNOWN' as const},
+    ];
+    const result=selectRotatingRausgegangenDetails(pool,{slot:4,limit:10});
+    expect(result.map(item=>item.eventSlug).sort()).toEqual(['new','rave']);
+  });
+});
