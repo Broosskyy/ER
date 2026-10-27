@@ -258,6 +258,13 @@ async function processConnectorResult(
   counters.discovered = connectorResult.discoveredDetailUrls.length;
   counters.fetched = connectorResult.loadedDetailUrls.length;
   counters.parsed = connectorResult.previews.length;
+  if (connectorId === 'rausgegangen-discovery' &&
+      counters.discovered >= 500 && counters.parsed === 0) {
+    // Thousands of listings with no usable event candidates should not be
+    // shown as an entirely healthy ingestion run. No automatic writes occur.
+    counters.failures++;
+    errorCategories.push('unexpected_zero_results');
+  }
   if (connectorId === 'ticketio-organizer-discovery' &&
       counters.fetched >= 5 && counters.parsed === 0) {
     // A platform that fetched many real event-detail pages but accepted none
@@ -565,11 +572,12 @@ export async function runSourceSync(
     // Store bounded aggregate details for failed nationwide ticket.io runs in
     // the existing ingestion_runs.error_summary column. This allows live
     // diagnosis from Supabase without raw page data or private Actions logs.
-    errorSummary: request.connectorId === 'ticketio-organizer-discovery' &&
-      counters.fetched >= 5 && counters.parsed === 0 &&
-      connectorExecution.result?.sourceQualityAudit
-      ? ('ticketio_rejections:' + JSON.stringify(
-          connectorExecution.result.sourceQualityAudit)).slice(0, 700)
+    errorSummary: (
+      (request.connectorId === 'ticketio-organizer-discovery' && counters.parsed === 0) ||
+      (request.connectorId === 'rausgegangen-discovery' && counters.discovered >= 500 && counters.parsed === 0)
+    ) && connectorExecution.result?.sourceQualityAudit
+      ? (request.connectorId + '_quality:' +
+          JSON.stringify(connectorExecution.result.sourceQualityAudit)).slice(0, 700)
       : connectorExecution.errorMessage ?? errorCategories.join(','),
     retryCount: Math.max(0, connectorExecution.attempts - 1),
   };

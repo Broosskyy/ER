@@ -11,6 +11,7 @@ export function selectRotatingRausgegangenDetails<T extends {
   eventSlug: string;
   regionSlug: string;
   relevance: string;
+  lifecycle?: 'UPCOMING' | 'ONGOING' | 'ENDED' | 'UNKNOWN';
 }>(
   candidates: readonly T[],
   options: {
@@ -38,8 +39,12 @@ export function selectRotatingRausgegangenDetails<T extends {
     return 3;
   }
   return candidates
-    .filter(event => preferredSlugs.has(event.eventSlug) ||
-      !knownSlugs.has(event.eventSlug))
+    // Do not burn today's scarce detail fetches on demonstrably ended
+    // listings or irrelevant non-electronic items. Still allow ambiguous
+    // unknown-date titles if they are explicitly scheduled for a refresh.
+    .filter(event => event.lifecycle !== 'ENDED' &&
+      event.relevance !== 'IRRELEVANT' &&
+      (preferredSlugs.has(event.eventSlug) || !knownSlugs.has(event.eventSlug)))
     .slice()
     .sort((a, b) => {
       const preferredDelta = Number(preferredSlugs.has(b.eventSlug)) -
