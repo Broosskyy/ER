@@ -9,6 +9,7 @@ import { TicketIoOrganizerOfficialConnector, TICKETIO_ORGANIZER_CONNECTOR_ID } f
 import { StadtgartenOfficialConnector } from './stadtgarten/stadtgarten-official-connector';
 import { STADTGARTEN_CONNECTOR_ID } from './stadtgarten/constants';
 import { TresorOfficialConnector } from './tresor/tresor-official-connector';
+import { OdonienOfficialConnector } from './odonien/odonien-official-connector';
 
 export function registerDefaultOfficialConnectors(
   registry = getOfficialSourceRegistry(),
@@ -16,6 +17,7 @@ export function registerDefaultOfficialConnectors(
 ): void {
   const connectorIds = new Set(registry.listConnectorIds());
   if (!connectorIds.has('tresor-berlin-official')) registry.register(new TresorOfficialConnector());
+  if (!connectorIds.has('odonien-club-official')) registry.register(new OdonienOfficialConnector());
   if (!connectorIds.has('bootshaus-official')) {
     registry.register(new BootshausOfficialConnector());
   }

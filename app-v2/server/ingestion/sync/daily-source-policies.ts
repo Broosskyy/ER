@@ -50,6 +50,15 @@ export const DAILY_SOURCE_POLICIES = {
     connectorId:'tresor-berlin-official',writeScope:'upsert',minimumParsed:1,
     maxDetailPages:24,maxNewEvents:6,maxExistingUpdates:8,maxTicketChanges:8,
   },
+  'odonien-club-official': {
+    connectorId: 'odonien-club-official',
+    writeScope: 'upsert',
+    minimumParsed: 1,
+    maxDetailPages: 22,
+    maxNewEvents: 6,
+    maxExistingUpdates: 12,
+    maxTicketChanges: 12,
+  },
   'stadtgarten-official': {
     connectorId: 'stadtgarten-official',
     writeScope: 'upsert',

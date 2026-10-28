@@ -35,6 +35,7 @@ import type { TicketPersistenceExecutionResult } from './execute-ticket-persiste
 import { filterTicketResultsForExistingOnlyConnector } from './ticket-result-eligibility';
 import { hasVerifiedExistingSourceBinding } from './verified-existing-source-binding';
 import { isRausgegangenNewEventSourceReady, isZakkNewEventSourceReady, isStadtgartenNewEventSourceReady ,isApprovedTicketIoNewEventSourceReady,isTresorNewEventSourceReady } from './new-event-source-quality';
+import { isOdonienNewEventSourceReady } from './new-event-source-quality';
 import { RausgegangenOfficialConnector } from '../../official-connectors/rausgegangen-discovery/rausgegangen-official-connector';
 
 export interface SyncOrchestratorDependencies {
@@ -99,7 +100,9 @@ function canApplyPlan(
        (plan.candidate.origin.connectorId === 'ticketio-organizer-discovery' &&
         !isApprovedTicketIoNewEventSourceReady(plan.candidate)) ||
        (plan.candidate.origin.connectorId === 'tresor-berlin-official' &&
-        !isTresorNewEventSourceReady(plan.candidate)))) {
+        !isTresorNewEventSourceReady(plan.candidate)) ||
+       (plan.candidate.origin.connectorId === 'odonien-club-official' &&
+        !isOdonienNewEventSourceReady(plan.candidate)))) {
     return false;
   }
   return (
@@ -156,7 +159,9 @@ function buildEventProcessingResult(
           : plan.candidate.origin.connectorId === 'ticketio-organizer-discovery'
             ? isApprovedTicketIoNewEventSourceReady(plan.candidate)
           : plan.candidate.origin.connectorId === 'tresor-berlin-official'
-            ? isTresorNewEventSourceReady(plan.candidate) : undefined
+            ? isTresorNewEventSourceReady(plan.candidate)
+          : plan.candidate.origin.connectorId === 'odonien-club-official'
+            ? isOdonienNewEventSourceReady(plan.candidate) : undefined
         : undefined,
     reconciliationClassification: plan.reconciliation?.classification,
     reconciliationReviewReasons:
