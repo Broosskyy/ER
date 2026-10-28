@@ -43,8 +43,19 @@ export function parseTresorDetail(html:string,url:string,fetchedAt:string):Offic
   const date=EVENT_PATH.exec(new URL(canonical).pathname)!;
   const $=cheerio.load(html);
   $('nav,footer,script,style,noscript').remove();
-  const title=$('h1,h2').toArray().map(el=>clean($(el).text())).find(t=>
-    t.length>5 && t.length<150 && !/^(?:guest information|ticket policy|tresor berlin|club|events|info|lockers)$/i.test(t));
+  // Tresor event pages place the DATE in h1 ("Sa 07.11") and the actual
+  // EVENT TITLE in h2 ("Tresor invites Dave Clarke"). Never publish the
+  // calendar label as the event name. Skip uncertain titles entirely.
+  const validTitle=(t:string):boolean=>
+    t.length>5 && t.length<150 &&
+    !/^(?:(?:Mo|Di|Mi|Do|Fr|Sa|So|Mon|Tue|Wed|Thu|Fri|Sat|Sun|We|Su)\s+\d{1,2}\.\d{2}(?:\.\d{4})?|guest information|ticket policy|tresor berlin|club|events|info|lockers)$/i.test(t) &&
+    !/^\d{1,2}\.\d{2}(?:\.\d{4})?$/.test(t);
+  const heading=(tag:string):string|undefined=>$(''+tag).toArray()
+    .map(el=>clean($(el).text())).find(validTitle);
+  const ogTitle=clean(($('meta[property="og:title"]').attr('content')||'')
+    .replace(/\s+\|\s+Tresor Berlin.*$/i,''));
+  const title=heading('h2')||(validTitle(ogTitle)?ogTitle:undefined)||
+    heading('h3')||heading('h1');
   if(!title)return null;
   const body=clean($('body').text());
   const heading=body.indexOf(title);
