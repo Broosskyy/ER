@@ -5,7 +5,8 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/staging-sync-odonien-club.yml'
+      - '.github/workflows/staging-sync-odonien.yml'
+      - 'app-v2/server/official-connectors/odonien/parse-official-event.ts'
   schedule:
     - cron: '27 12 * * *'
   workflow_dispatch:
