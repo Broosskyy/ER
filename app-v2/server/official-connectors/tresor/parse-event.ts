@@ -50,12 +50,12 @@ export function parseTresorDetail(html:string,url:string,fetchedAt:string):Offic
     t.length>5 && t.length<150 &&
     !/^(?:(?:Mo|Di|Mi|Do|Fr|Sa|So|Mon|Tue|Wed|Thu|Fri|Sat|Sun|We|Su)\s+\d{1,2}\.\d{2}(?:\.\d{4})?|guest information|ticket policy|tresor berlin|club|events|info|lockers)$/i.test(t) &&
     !/^\d{1,2}\.\d{2}(?:\.\d{4})?$/.test(t);
-  const heading=(tag:string):string|undefined=>$(''+tag).toArray()
+  const readHeading=(tag:string):string|undefined=>$(''+tag).toArray()
     .map(el=>clean($(el).text())).find(validTitle);
   const ogTitle=clean(($('meta[property="og:title"]').attr('content')||'')
     .replace(/\s+\|\s+Tresor Berlin.*$/i,''));
-  const title=heading('h2')||(validTitle(ogTitle)?ogTitle:undefined)||
-    heading('h3')||heading('h1');
+  const title=readHeading('h2')||(validTitle(ogTitle)?ogTitle:undefined)||
+    readHeading('h3')||readHeading('h1');
   if(!title)return null;
   const body=clean($('body').text());
   const heading=body.indexOf(title);
