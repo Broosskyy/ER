@@ -123,3 +123,23 @@ export function isTresorNewEventSourceReady(candidate:EventCandidate, referenceI
     candidate.venue?.name==='Tresor' && candidate.venue.city==='Berlin' &&
     (candidate.description?.trim().length??0)>=40;
 }
+
+
+/** Direct Odonien club calendar only. General culture listings and events
+ * without explicitly published electronic dance genres are not eligible. */
+export function isOdonienNewEventSourceReady(
+  candidate:EventCandidate,referenceInstant=new Date(),
+):boolean {
+  if(candidate.origin.kind!=='official_connector' ||
+     candidate.origin.connectorId!=='odonien-club-official')return false;
+  let url:URL;
+  try{url=new URL(candidate.origin.officialUrl);}catch{return false;}
+  const validUrl=url.protocol==='https:' && url.hostname==='odonien.de' &&
+    /^\/veranstaltungen\/[a-z0-9-]+\/?$/i.test(url.pathname) &&
+    !url.username&&!url.password;
+  const time=Date.parse(candidate.startsAt);
+  return validUrl && Number.isFinite(time)&&time>referenceInstant.getTime() &&
+    candidate.title.trim().length>=5 &&
+    candidate.venue?.name==='Odonien' && candidate.venue?.city==='Köln' &&
+    (candidate.description?.trim().length??0)>=60 && candidate.genres.length>0;
+}

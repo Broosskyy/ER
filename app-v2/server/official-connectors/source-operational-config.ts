@@ -102,6 +102,14 @@ export function registerDefaultSourceOperationalConfigs(
       requestSpacingMs: 750,
     });
   }
+  if (!registry.get('odonien-club-official')) {
+    registry.register({
+      connectorId: 'odonien-club-official', sourceType: 'venue_club',
+      ...DEFAULT_SOURCE_OPERATIONAL_CONFIG, writeScope: 'upsert',
+      maxConcurrency: 1, requestSpacingMs: 1000,
+      expectedMinParsedOnSuccess: 1,
+    });
+  }
   if (!registry.get('stadtgarten-official')) {
     registry.register({
       connectorId: 'stadtgarten-official',

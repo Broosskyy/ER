@@ -22,6 +22,12 @@ describe('daily source onboarding contract',()=>{
     });
     expect(isStagingScheduledConnectorId('tresor-berlin-official')).toBe(true);
   });
+  it('certifies Odonien official club-only electronic imports',()=>{
+    expect(getDailySourcePolicy('odonien-club-official')).toMatchObject({
+      writeScope:'upsert',maxNewEvents:6,maxDetailPages:22,minimumParsed:1,
+    });
+    expect(isStagingScheduledConnectorId('odonien-club-official')).toBe(true);
+  });
   it('certifies electronic-only Stadtgarten in bounded batches',()=>{
     expect(getDailySourcePolicy('stadtgarten-official')).toMatchObject({
       writeScope:'upsert',maxNewEvents:8,minimumParsed:1,
